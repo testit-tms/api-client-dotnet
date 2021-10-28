@@ -10,33 +10,33 @@ using TestIt.Api.Configuration;
 
 namespace TestIt.Api
 {
-    public class ClientsManager : IDisposable
+    public class TestItClientsManager : IDisposable
     {
         private const string HostEnv = "TESTIT_HOST";
         private const string PrivateTokenEnv = "TESTIT_PRIVATE_TOKEN";
-        private const string SettingsFileEnv = "TESTIT_API_SETTINGS_FILE";
+        private const string ConfigFileEnv = "TESTIT_CONFIG_FILE";
 
         private readonly HttpClient _httpClient;
 
-        public ClientsManager() : this(default(ApiSettings)) { }
+        public TestItClientsManager() : this(default(Config)) { }
 
-        public ClientsManager(string settingsFilePath) :
-            this(new ApiSettings { SettingsFilePath = settingsFilePath }) { }
+        public TestItClientsManager(string configFile) :
+            this(new Config { ConfigFile = configFile }) { }
 
-        public ClientsManager(ApiSettings? settings)
+        public TestItClientsManager(Config? config)
         {
-            settings ??= new ApiSettings();
-            EnrichFromFile(settings, settings.SettingsFilePath);
-            EnrichFromEnv(settings);
-            EnrichFromCli(settings);
+            config ??= new Config();
+            EnrichFromFile(config, config.ConfigFile);
+            EnrichFromEnv(config);
+            EnrichFromCli(config);
 
-            if (string.IsNullOrWhiteSpace(settings.Host))
-                throw new ConfigurationException(nameof(settings.Host));
+            if (string.IsNullOrWhiteSpace(config.Host))
+                throw new ConfigurationException(nameof(config.Host));
 
-            if (string.IsNullOrWhiteSpace(settings.PrivateToken))
-                throw new ConfigurationException(nameof(settings.PrivateToken));
+            if (string.IsNullOrWhiteSpace(config.PrivateToken))
+                throw new ConfigurationException(nameof(config.PrivateToken));
 
-            _httpClient = InitializeHttpClient(settings);
+            _httpClient = InitializeHttpClient(config);
 
             AttachmentsClient = new AttachmentsClient(_httpClient);
             AutoTestsClient = new AutoTestsClient(_httpClient);
@@ -69,43 +69,43 @@ namespace TestIt.Api
             GC.SuppressFinalize(this);
         }
 
-        private static HttpClient InitializeHttpClient(ApiSettings settings)
+        private static HttpClient InitializeHttpClient(Config config)
         {
-            var apiUri = new UriBuilder(Uri.UriSchemeHttp, settings.Host!, 80).Uri;
+            var apiUri = new UriBuilder(Uri.UriSchemeHttp, config.Host!, 80).Uri;
 
             var httpClient = new HttpClient
             {
                 BaseAddress = apiUri,
                 DefaultRequestHeaders =
                 {
-                    { "Authorization", $"PrivateToken {settings.PrivateToken!}" }
+                    { "Authorization", $"PrivateToken {config.PrivateToken!}" }
                 }
             };
 
             return httpClient;
         }
 
-        private static void MergeSettings(ApiSettings target, ApiSettings additional)
+        private static void MergeConfigurations(Config target, Config additional)
         {
             target.Host = additional.Host ?? target.Host;
             target.PrivateToken = additional.PrivateToken ?? target.PrivateToken;
         }
 
-        private static void EnrichFromFile(ApiSettings settings, string? filePath)
+        private static void EnrichFromFile(Config config, string? file)
         {
-            if (filePath is null)
+            if (file is null)
                 return;
 
-            if (!File.Exists(filePath))
+            if (!File.Exists(file))
                 return;
 
-            var settingsFileData = File.ReadAllText(filePath);
+            var configFileData = File.ReadAllText(file);
 
-            ApiSettings parsedSettings;
+            Config parsedConfig;
 
             try
             {
-                parsedSettings = JsonConvert.DeserializeObject<ApiSettings>(settingsFileData)
+                parsedConfig = JsonConvert.DeserializeObject<Config>(configFileData)
                     ?? throw new JsonSerializationException();
             }
             catch (JsonSerializationException)
@@ -113,36 +113,36 @@ namespace TestIt.Api
                 return;
             }
 
-            MergeSettings(settings, parsedSettings);
+            MergeConfigurations(config, parsedConfig);
         }
 
-        private static void EnrichFromEnv(ApiSettings settings)
+        private static void EnrichFromEnv(Config config)
         {
             var host = Environment.GetEnvironmentVariable(HostEnv);
             var privateToken = Environment.GetEnvironmentVariable(PrivateTokenEnv);
-            var settingsFilePath = Environment.GetEnvironmentVariable(SettingsFileEnv);
+            var configFile = Environment.GetEnvironmentVariable(ConfigFileEnv);
 
-            var parsedSettings = new ApiSettings
+            var parsedConfig = new Config
             {
                 Host = host,
                 PrivateToken = privateToken,
-                SettingsFilePath = settingsFilePath
+                ConfigFile = configFile
             };
 
-            EnrichFromFile(settings, parsedSettings.SettingsFilePath);
-            MergeSettings(settings, parsedSettings);
+            EnrichFromFile(config, parsedConfig.ConfigFile);
+            MergeConfigurations(config, parsedConfig);
         }
 
-        private static void EnrichFromCli(ApiSettings settings)
+        private static void EnrichFromCli(Config config)
         {
-            var parsedSettings = new ApiSettings();
+            var parsedConfig = new Config();
 
             Parser.Default
-               .ParseArguments<ApiSettings>(Environment.GetCommandLineArgs())
-               .WithParsed(s => parsedSettings = s);
+               .ParseArguments<Config>(Environment.GetCommandLineArgs())
+               .WithParsed(s => parsedConfig = s);
 
-            EnrichFromFile(settings, parsedSettings.SettingsFilePath);
-            MergeSettings(settings, parsedSettings);
+            EnrichFromFile(config, parsedConfig.ConfigFile);
+            MergeConfigurations(config, parsedConfig);
         }
     }
 }

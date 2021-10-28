@@ -5,7 +5,7 @@ using CommandLine;
 namespace TestIt.Api.Configuration
 {
     [Serializable]
-    public class ApiSettings
+    public class Config
     {
         [Option('h', "host", Required = false)]
         public string? Host { get; set; }
@@ -14,6 +14,6 @@ namespace TestIt.Api.Configuration
         public string? PrivateToken { get; set; }
 
         [Option('s', "settings-file", Required = false)]
-        public string? SettingsFilePath { get; set; }
+        public string? ConfigFile { get; set; }
     }
 }
