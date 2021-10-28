@@ -7,13 +7,13 @@ namespace TestIt.Api.Configuration
     [Serializable]
     public class TestItApiConfig
     {
-        [Option('h', "host", Required = false)]
+        [Option("testit-host", Required = false)]
         public string? Host { get; set; }
 
-        [Option('t', "private-token", Required = false)]
+        [Option("testit-private-token", Required = false)]
         public string? PrivateToken { get; set; }
 
-        [Option('c', "config-file", Required = false)]
+        [Option("testit-config-file", Required = false)]
         public string? ConfigFile { get; set; }
     }
 }
