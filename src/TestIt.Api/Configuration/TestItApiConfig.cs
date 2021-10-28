@@ -13,7 +13,7 @@ namespace TestIt.Api.Configuration
         [Option('t', "private-token", Required = false)]
         public string? PrivateToken { get; set; }
 
-        [Option('s', "settings-file", Required = false)]
+        [Option('c', "config-file", Required = false)]
         public string? ConfigFile { get; set; }
     }
 }
