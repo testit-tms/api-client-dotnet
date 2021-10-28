@@ -18,14 +18,14 @@ namespace TestIt.Api
 
         private readonly HttpClient _httpClient;
 
-        public TestItClientsManager() : this(default(Config)) { }
+        public TestItClientsManager() : this(default(TestItApiConfig)) { }
 
         public TestItClientsManager(string configFile) :
-            this(new Config { ConfigFile = configFile }) { }
+            this(new TestItApiConfig { ConfigFile = configFile }) { }
 
-        public TestItClientsManager(Config? config)
+        public TestItClientsManager(TestItApiConfig? config)
         {
-            config ??= new Config();
+            config ??= new TestItApiConfig();
             EnrichFromFile(config, config.ConfigFile);
             EnrichFromEnv(config);
             EnrichFromCli(config);
@@ -69,7 +69,7 @@ namespace TestIt.Api
             GC.SuppressFinalize(this);
         }
 
-        private static HttpClient InitializeHttpClient(Config config)
+        private static HttpClient InitializeHttpClient(TestItApiConfig config)
         {
             var apiUri = new UriBuilder(Uri.UriSchemeHttp, config.Host!, 80).Uri;
 
@@ -85,13 +85,13 @@ namespace TestIt.Api
             return httpClient;
         }
 
-        private static void MergeConfigurations(Config target, Config additional)
+        private static void MergeConfigurations(TestItApiConfig target, TestItApiConfig additional)
         {
             target.Host = additional.Host ?? target.Host;
             target.PrivateToken = additional.PrivateToken ?? target.PrivateToken;
         }
 
-        private static void EnrichFromFile(Config config, string? file)
+        private static void EnrichFromFile(TestItApiConfig config, string? file)
         {
             if (file is null)
                 return;
@@ -101,11 +101,11 @@ namespace TestIt.Api
 
             var configFileData = File.ReadAllText(file);
 
-            Config parsedConfig;
+            TestItApiConfig parsedConfig;
 
             try
             {
-                parsedConfig = JsonConvert.DeserializeObject<Config>(configFileData)
+                parsedConfig = JsonConvert.DeserializeObject<TestItApiConfig>(configFileData)
                     ?? throw new JsonSerializationException();
             }
             catch (JsonSerializationException)
@@ -116,13 +116,13 @@ namespace TestIt.Api
             MergeConfigurations(config, parsedConfig);
         }
 
-        private static void EnrichFromEnv(Config config)
+        private static void EnrichFromEnv(TestItApiConfig config)
         {
             var host = Environment.GetEnvironmentVariable(HostEnv);
             var privateToken = Environment.GetEnvironmentVariable(PrivateTokenEnv);
             var configFile = Environment.GetEnvironmentVariable(ConfigFileEnv);
 
-            var parsedConfig = new Config
+            var parsedConfig = new TestItApiConfig
             {
                 Host = host,
                 PrivateToken = privateToken,
@@ -133,13 +133,13 @@ namespace TestIt.Api
             MergeConfigurations(config, parsedConfig);
         }
 
-        private static void EnrichFromCli(Config config)
+        private static void EnrichFromCli(TestItApiConfig config)
         {
-            var parsedConfig = new Config();
+            var parsedConfig = new TestItApiConfig();
 
             Parser.Default
-               .ParseArguments<Config>(Environment.GetCommandLineArgs())
-               .WithParsed(s => parsedConfig = s);
+               .ParseArguments<TestItApiConfig>(Environment.GetCommandLineArgs())
+               .WithParsed(c => parsedConfig = c);
 
             EnrichFromFile(config, parsedConfig.ConfigFile);
             MergeConfigurations(config, parsedConfig);

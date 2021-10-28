@@ -5,7 +5,7 @@ using CommandLine;
 namespace TestIt.Api.Configuration
 {
     [Serializable]
-    public class Config
+    public class TestItApiConfig
     {
         [Option('h', "host", Required = false)]
         public string? Host { get; set; }
