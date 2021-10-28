@@ -69,7 +69,7 @@
       "dictionaryInstanceType": "System.Collections.Generic.Dictionary",
       "arrayBaseType": "System.Collections.Generic.List",
       "dictionaryBaseType": "System.Collections.Generic.Dictionary",
-      "classStyle": "Record",
+      "classStyle": "Poco",
       "jsonLibrary": "NewtonsoftJson",
       "generateDefaultValues": false,
       "generateDataAnnotations": false,
@@ -94,7 +94,7 @@
       "serviceHost": ".",
       "serviceSchemes": null,
       "output": "$(OutputPath)/Clients.g.cs",
-      "newLineBehavior": "LF"
+      "newLineBehavior": "Auto"
     }
   }
 }

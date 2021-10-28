@@ -46,35 +46,24 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class LinkPutModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public LinkPutModel(string? @description, bool? @hasInfo, System.Guid? @id, string? @title, LinkType? @type, string @url)
-        {
-            this.Id = @id;
-            this.Title = @title;
-            this.Url = @url;
-            this.Description = @description;
-            this.Type = @type;
-            this.HasInfo = @hasInfo;
-        }
-    
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Title { get; }
+        public string? Title { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("url", Required = Newtonsoft.Json.Required.Always)]
-        public string Url { get; }
+        public string Url { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public LinkType? Type { get; }
+        public LinkType? Type { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("hasInfo", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? HasInfo { get; }
+        public bool? HasInfo { get; set; }= default!;
     
     
     }
@@ -82,23 +71,15 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class AutoTestStepModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public AutoTestStepModel(string? @description, System.Collections.Generic.List<AutoTestStepModel>? @steps, string @title)
-        {
-            this.Title = @title;
-            this.Description = @description;
-            this.Steps = @steps;
-        }
-    
         [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Always)]
-        public string Title { get; }
+        public string Title { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("steps", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [System.Obsolete]
-        public System.Collections.Generic.List<AutoTestStepModel>? Steps { get; }
+        public System.Collections.Generic.List<AutoTestStepModel>? Steps { get; set; }= default!;
     
     
     }
@@ -106,18 +87,11 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class LabelShortModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public LabelShortModel(long? @globalId, string @name)
-        {
-            this.GlobalId = @globalId;
-            this.Name = @name;
-        }
-    
         [Newtonsoft.Json.JsonProperty("globalId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long? GlobalId { get; }
+        public long? GlobalId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
     
     }
@@ -125,100 +99,73 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class AutoTestModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public AutoTestModel(string? @classname, System.Guid? @createdById, System.DateTime? @createdDate, string? @description, string @externalId, long? @globalId, System.Guid? @id, bool? @isDeleted, bool? @isFlaky, System.Collections.Generic.List<LabelShortModel>? @labels, System.Collections.Generic.List<LinkPutModel>? @links, System.Guid? @modifiedById, System.DateTime? @modifiedDate, bool? @mustBeApproved, string @name, string? @namespace, System.Guid @projectId, System.Collections.Generic.List<AutoTestStepModel>? @setup, int? @stabilityPercentage, System.Collections.Generic.List<AutoTestStepModel>? @steps, System.Collections.Generic.List<AutoTestStepModel>? @teardown, string? @title)
-        {
-            this.GlobalId = @globalId;
-            this.IsDeleted = @isDeleted;
-            this.MustBeApproved = @mustBeApproved;
-            this.Id = @id;
-            this.CreatedDate = @createdDate;
-            this.ModifiedDate = @modifiedDate;
-            this.CreatedById = @createdById;
-            this.ModifiedById = @modifiedById;
-            this.ExternalId = @externalId;
-            this.Links = @links;
-            this.ProjectId = @projectId;
-            this.Name = @name;
-            this.Namespace = @namespace;
-            this.Classname = @classname;
-            this.Steps = @steps;
-            this.Setup = @setup;
-            this.Teardown = @teardown;
-            this.Title = @title;
-            this.Description = @description;
-            this.Labels = @labels;
-            this.IsFlaky = @isFlaky;
-            this.StabilityPercentage = @stabilityPercentage;
-        }
-    
         [Newtonsoft.Json.JsonProperty("globalId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long? GlobalId { get; }
+        public long? GlobalId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isDeleted", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsDeleted { get; }
+        public bool? IsDeleted { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("mustBeApproved", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? MustBeApproved { get; }
+        public bool? MustBeApproved { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? CreatedDate { get; }
+        public System.DateTime? CreatedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? ModifiedDate { get; }
+        public System.DateTime? ModifiedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdById", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? CreatedById { get; }
+        public System.Guid? CreatedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedById", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ModifiedById { get; }
+        public System.Guid? ModifiedById { get; set; }= default!;
     
         /// <summary>This property is used to set autotest identifier from client system</summary>
         [Newtonsoft.Json.JsonProperty("externalId", Required = Newtonsoft.Json.Required.Always)]
-        public string ExternalId { get; }
+        public string ExternalId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("links", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<LinkPutModel>? Links { get; }
+        public System.Collections.Generic.List<LinkPutModel>? Links { get; set; }= default!;
     
         /// <summary>This property is used to link autotest with project</summary>
         [Newtonsoft.Json.JsonProperty("projectId", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid ProjectId { get; }
+        public System.Guid ProjectId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("namespace", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Namespace { get; }
+        public string? Namespace { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("classname", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Classname { get; }
+        public string? Classname { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("steps", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AutoTestStepModel>? Steps { get; }
+        public System.Collections.Generic.List<AutoTestStepModel>? Steps { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("setup", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AutoTestStepModel>? Setup { get; }
+        public System.Collections.Generic.List<AutoTestStepModel>? Setup { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("teardown", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AutoTestStepModel>? Teardown { get; }
+        public System.Collections.Generic.List<AutoTestStepModel>? Teardown { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Title { get; }
+        public string? Title { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("labels", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<LabelShortModel>? Labels { get; }
+        public System.Collections.Generic.List<LabelShortModel>? Labels { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isFlaky", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsFlaky { get; }
+        public bool? IsFlaky { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("stabilityPercentage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int? StabilityPercentage { get; }
+        public int? StabilityPercentage { get; set; }= default!;
     
     
     }
@@ -226,31 +173,21 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class LinkPostModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public LinkPostModel(string? @description, bool? @hasInfo, string? @title, LinkType? @type, string @url)
-        {
-            this.Title = @title;
-            this.Url = @url;
-            this.Description = @description;
-            this.Type = @type;
-            this.HasInfo = @hasInfo;
-        }
-    
         [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Title { get; }
+        public string? Title { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("url", Required = Newtonsoft.Json.Required.Always)]
-        public string Url { get; }
+        public string Url { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public LinkType? Type { get; }
+        public LinkType? Type { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("hasInfo", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? HasInfo { get; }
+        public bool? HasInfo { get; set; }= default!;
     
     
     }
@@ -258,14 +195,8 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class LabelPostModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public LabelPostModel(string @name)
-        {
-            this.Name = @name;
-        }
-    
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
     
     }
@@ -273,68 +204,49 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class AutoTestPostModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public AutoTestPostModel(string? @classname, string? @description, string @externalId, bool? @isFlaky, System.Collections.Generic.List<LabelPostModel>? @labels, System.Collections.Generic.List<LinkPostModel>? @links, string @name, string? @namespace, System.Guid @projectId, System.Collections.Generic.List<AutoTestStepModel>? @setup, int? @stabilityPercentage, System.Collections.Generic.List<AutoTestStepModel>? @steps, System.Collections.Generic.List<AutoTestStepModel>? @teardown, string? @title)
-        {
-            this.ExternalId = @externalId;
-            this.Links = @links;
-            this.ProjectId = @projectId;
-            this.Name = @name;
-            this.Namespace = @namespace;
-            this.Classname = @classname;
-            this.Steps = @steps;
-            this.Setup = @setup;
-            this.Teardown = @teardown;
-            this.Title = @title;
-            this.Description = @description;
-            this.Labels = @labels;
-            this.IsFlaky = @isFlaky;
-            this.StabilityPercentage = @stabilityPercentage;
-        }
-    
         /// <summary>This property is used to set autotest identifier from client system</summary>
         [Newtonsoft.Json.JsonProperty("externalId", Required = Newtonsoft.Json.Required.Always)]
-        public string ExternalId { get; }
+        public string ExternalId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("links", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<LinkPostModel>? Links { get; }
+        public System.Collections.Generic.List<LinkPostModel>? Links { get; set; }= default!;
     
         /// <summary>This property is used to link autotest with project</summary>
         [Newtonsoft.Json.JsonProperty("projectId", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid ProjectId { get; }
+        public System.Guid ProjectId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("namespace", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Namespace { get; }
+        public string? Namespace { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("classname", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Classname { get; }
+        public string? Classname { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("steps", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AutoTestStepModel>? Steps { get; }
+        public System.Collections.Generic.List<AutoTestStepModel>? Steps { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("setup", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AutoTestStepModel>? Setup { get; }
+        public System.Collections.Generic.List<AutoTestStepModel>? Setup { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("teardown", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AutoTestStepModel>? Teardown { get; }
+        public System.Collections.Generic.List<AutoTestStepModel>? Teardown { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Title { get; }
+        public string? Title { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("labels", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<LabelPostModel>? Labels { get; }
+        public System.Collections.Generic.List<LabelPostModel>? Labels { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isFlaky", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsFlaky { get; }
+        public bool? IsFlaky { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("stabilityPercentage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int? StabilityPercentage { get; }
+        public int? StabilityPercentage { get; set; }= default!;
     
     
     }
@@ -342,73 +254,53 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class AutoTestPutModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public AutoTestPutModel(string? @classname, string? @description, string @externalId, System.Guid? @id, bool? @isFlaky, System.Collections.Generic.List<LabelPostModel>? @labels, System.Collections.Generic.List<LinkPutModel>? @links, string @name, string? @namespace, System.Guid @projectId, System.Collections.Generic.List<AutoTestStepModel>? @setup, int? @stabilityPercentage, System.Collections.Generic.List<AutoTestStepModel>? @steps, System.Collections.Generic.List<AutoTestStepModel>? @teardown, string? @title)
-        {
-            this.Id = @id;
-            this.ExternalId = @externalId;
-            this.Links = @links;
-            this.ProjectId = @projectId;
-            this.Name = @name;
-            this.Namespace = @namespace;
-            this.Classname = @classname;
-            this.Steps = @steps;
-            this.Setup = @setup;
-            this.Teardown = @teardown;
-            this.Title = @title;
-            this.Description = @description;
-            this.Labels = @labels;
-            this.IsFlaky = @isFlaky;
-            this.StabilityPercentage = @stabilityPercentage;
-        }
-    
         /// <summary>Used for search autotest. If value equals Guid mask filled with zeros, search will be executed using ExternalId</summary>
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         /// <summary>This property is used to set autotest identifier from client system</summary>
         [Newtonsoft.Json.JsonProperty("externalId", Required = Newtonsoft.Json.Required.Always)]
-        public string ExternalId { get; }
+        public string ExternalId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("links", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<LinkPutModel>? Links { get; }
+        public System.Collections.Generic.List<LinkPutModel>? Links { get; set; }= default!;
     
         /// <summary>This property is used to link autotest with project</summary>
         [Newtonsoft.Json.JsonProperty("projectId", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid ProjectId { get; }
+        public System.Guid ProjectId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("namespace", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Namespace { get; }
+        public string? Namespace { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("classname", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Classname { get; }
+        public string? Classname { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("steps", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AutoTestStepModel>? Steps { get; }
+        public System.Collections.Generic.List<AutoTestStepModel>? Steps { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("setup", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AutoTestStepModel>? Setup { get; }
+        public System.Collections.Generic.List<AutoTestStepModel>? Setup { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("teardown", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AutoTestStepModel>? Teardown { get; }
+        public System.Collections.Generic.List<AutoTestStepModel>? Teardown { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Title { get; }
+        public string? Title { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("labels", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<LabelPostModel>? Labels { get; }
+        public System.Collections.Generic.List<LabelPostModel>? Labels { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isFlaky", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsFlaky { get; }
+        public bool? IsFlaky { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("stabilityPercentage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int? StabilityPercentage { get; }
+        public int? StabilityPercentage { get; set; }= default!;
     
     
     }
@@ -416,15 +308,9 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class WorkItemIdModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public WorkItemIdModel(string? @id)
-        {
-            this.Id = @id;
-        }
-    
         /// <summary>Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format</summary>
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Id { get; }
+        public string? Id { get; set; }= default!;
     
     
     }
@@ -432,35 +318,24 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class LinkModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public LinkModel(string? @description, bool? @hasInfo, System.Guid? @id, string? @title, LinkType? @type, string @url)
-        {
-            this.Id = @id;
-            this.Title = @title;
-            this.Url = @url;
-            this.Description = @description;
-            this.Type = @type;
-            this.HasInfo = @hasInfo;
-        }
-    
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Title { get; }
+        public string? Title { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("url", Required = Newtonsoft.Json.Required.Always)]
-        public string Url { get; }
+        public string Url { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public LinkType? Type { get; }
+        public LinkType? Type { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("hasInfo", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? HasInfo { get; }
+        public bool? HasInfo { get; set; }= default!;
     
     
     }
@@ -468,46 +343,32 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class AttachmentModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public AttachmentModel(System.Guid? @createdById, System.DateTime? @createdDate, string @fileId, System.Guid @id, System.Guid? @modifiedById, System.DateTime? @modifiedDate, string @name, float @size, string @type)
-        {
-            this.FileId = @fileId;
-            this.Type = @type;
-            this.Size = @size;
-            this.CreatedDate = @createdDate;
-            this.ModifiedDate = @modifiedDate;
-            this.CreatedById = @createdById;
-            this.ModifiedById = @modifiedById;
-            this.Name = @name;
-            this.Id = @id;
-        }
-    
         [Newtonsoft.Json.JsonProperty("fileId", Required = Newtonsoft.Json.Required.Always)]
-        public string FileId { get; }
+        public string FileId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Always)]
-        public string Type { get; }
+        public string Type { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("size", Required = Newtonsoft.Json.Required.Always)]
-        public float Size { get; }
+        public float Size { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? CreatedDate { get; }
+        public System.DateTime? CreatedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? ModifiedDate { get; }
+        public System.DateTime? ModifiedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdById", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? CreatedById { get; }
+        public System.Guid? CreatedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedById", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ModifiedById { get; }
+        public System.Guid? ModifiedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid Id { get; }
+        public System.Guid Id { get; set; }= default!;
     
     
     }
@@ -515,108 +376,80 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class TestResultHistoryReportModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public TestResultHistoryReportModel(System.Collections.Generic.List<AttachmentModel>? @attachments, string? @comment, System.DateTime? @completedOn, string? @configurationName, System.Guid? @createdById, System.DateTime? @createdDate, long? @duration, System.Guid? @failureClassId, System.Guid? @id, bool? @isAutomated, System.Collections.Generic.List<LinkModel>? @links, System.Guid? @modifiedById, System.DateTime? @modifiedDate, string? @outcome, System.DateTime? @startedOn, long? @testPlanGlobalId, System.Guid? @testPlanId, string? @testPlanName, System.Guid? @testRunId, string? @testRunName, System.Guid? @userId, System.Guid? @workItemVersionId, int? @workItemVersionNumber)
-        {
-            this.Id = @id;
-            this.CreatedDate = @createdDate;
-            this.ModifiedDate = @modifiedDate;
-            this.UserId = @userId;
-            this.TestRunId = @testRunId;
-            this.TestRunName = @testRunName;
-            this.TestPlanId = @testPlanId;
-            this.TestPlanGlobalId = @testPlanGlobalId;
-            this.TestPlanName = @testPlanName;
-            this.ConfigurationName = @configurationName;
-            this.IsAutomated = @isAutomated;
-            this.Outcome = @outcome;
-            this.Comment = @comment;
-            this.Links = @links;
-            this.StartedOn = @startedOn;
-            this.CompletedOn = @completedOn;
-            this.Duration = @duration;
-            this.CreatedById = @createdById;
-            this.ModifiedById = @modifiedById;
-            this.Attachments = @attachments;
-            this.WorkItemVersionId = @workItemVersionId;
-            this.WorkItemVersionNumber = @workItemVersionNumber;
-            this.FailureClassId = @failureClassId;
-        }
-    
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdDate", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? CreatedDate { get; }
+        public System.DateTime? CreatedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedDate", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? ModifiedDate { get; }
+        public System.DateTime? ModifiedDate { get; set; }= default!;
     
         /// <summary>If test run was stopped, this property equals identifier of user who stopped it.Otherwise, the property equals identifier of user who created the test result</summary>
         [Newtonsoft.Json.JsonProperty("userId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? UserId { get; }
+        public System.Guid? UserId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("testRunId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? TestRunId { get; }
+        public System.Guid? TestRunId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("testRunName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? TestRunName { get; }
+        public string? TestRunName { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("testPlanId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? TestPlanId { get; }
+        public System.Guid? TestPlanId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("testPlanGlobalId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long? TestPlanGlobalId { get; }
+        public long? TestPlanGlobalId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("testPlanName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? TestPlanName { get; }
+        public string? TestPlanName { get; set; }= default!;
     
         /// <summary>If test point related to the test result has configuration, this property will be equal to the test point configuration name. Otherwise, this property will be equal to the test result configuration name</summary>
         [Newtonsoft.Json.JsonProperty("configurationName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? ConfigurationName { get; }
+        public string? ConfigurationName { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isAutomated", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsAutomated { get; }
+        public bool? IsAutomated { get; set; }= default!;
     
         /// <summary>If any test result related to the test run is linked with autotest and the run has an outcome, the outcome value equalsto the worst outcome of the last modified test result.Otherwise, the outcome equals to the outcome of first created test result in the test run</summary>
         [Newtonsoft.Json.JsonProperty("outcome", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Outcome { get; }
+        public string? Outcome { get; set; }= default!;
     
         /// <summary>If any test result related to the test run is linked with autotest, comment will have default valueOtherwise, the comment equals to the comment of first created test result in the test run</summary>
         [Newtonsoft.Json.JsonProperty("comment", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Comment { get; }
+        public string? Comment { get; set; }= default!;
     
         /// <summary>If any test result related to the test run is linked with autotest, link will be equal to the links of last modified test result.Otherwise, the links equals to the links of first created test result in the test run</summary>
         [Newtonsoft.Json.JsonProperty("links", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<LinkModel>? Links { get; }
+        public System.Collections.Generic.List<LinkModel>? Links { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("startedOn", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? StartedOn { get; }
+        public System.DateTime? StartedOn { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("completedOn", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? CompletedOn { get; }
+        public System.DateTime? CompletedOn { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("duration", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long? Duration { get; }
+        public long? Duration { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdById", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? CreatedById { get; }
+        public System.Guid? CreatedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedById", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ModifiedById { get; }
+        public System.Guid? ModifiedById { get; set; }= default!;
     
         /// <summary>If any test result related to the test run is linked with autotest, attachments will be equal to the attachments of last modified test result.Otherwise, the attachments equals to the attachments of first created test result in the test run</summary>
         [Newtonsoft.Json.JsonProperty("attachments", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AttachmentModel>? Attachments { get; }
+        public System.Collections.Generic.List<AttachmentModel>? Attachments { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("workItemVersionId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? WorkItemVersionId { get; }
+        public System.Guid? WorkItemVersionId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("workItemVersionNumber", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int? WorkItemVersionNumber { get; }
+        public int? WorkItemVersionNumber { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("failureClassId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? FailureClassId { get; }
+        public System.Guid? FailureClassId { get; set; }= default!;
     
     
     }
@@ -641,39 +474,27 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class TestRunShortModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public TestRunShortModel(string? @description, System.Guid? @id, bool? @isDeleted, string? @name, System.Guid? @projectId, TestRunStateTypeModel? @stateName, System.Guid? @testPlanId)
-        {
-            this.StateName = @stateName;
-            this.ProjectId = @projectId;
-            this.TestPlanId = @testPlanId;
-            this.Name = @name;
-            this.Description = @description;
-            this.Id = @id;
-            this.IsDeleted = @isDeleted;
-        }
-    
         [Newtonsoft.Json.JsonProperty("stateName", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public TestRunStateTypeModel? StateName { get; }
+        public TestRunStateTypeModel? StateName { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("projectId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ProjectId { get; }
+        public System.Guid? ProjectId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("testPlanId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? TestPlanId { get; }
+        public System.Guid? TestPlanId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Name { get; }
+        public string? Name { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isDeleted", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsDeleted { get; }
+        public bool? IsDeleted { get; set; }= default!;
     
     
     }
@@ -681,18 +502,11 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class AutoTestAverageDurationModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public AutoTestAverageDurationModel(double? @failedAverageDuration, double? @passedAverageDuration)
-        {
-            this.PassedAverageDuration = @passedAverageDuration;
-            this.FailedAverageDuration = @failedAverageDuration;
-        }
-    
         [Newtonsoft.Json.JsonProperty("passedAverageDuration", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? PassedAverageDuration { get; }
+        public double? PassedAverageDuration { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("failedAverageDuration", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? FailedAverageDuration { get; }
+        public double? FailedAverageDuration { get; set; }= default!;
     
     
     }
@@ -700,18 +514,11 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class TestResultChronologyModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public TestResultChronologyModel(int? @count, string? @outcome)
-        {
-            this.Outcome = @outcome;
-            this.Count = @count;
-        }
-    
         [Newtonsoft.Json.JsonProperty("outcome", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Outcome { get; }
+        public string? Outcome { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("count", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int? Count { get; }
+        public int? Count { get; set; }= default!;
     
     
     }
@@ -719,63 +526,45 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class ConfigurationModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public ConfigurationModel(System.Collections.Generic.Dictionary<string, string> @capabilities, System.Guid? @createdById, System.DateTime? @createdDate, string? @description, long? @globalId, System.Guid? @id, bool? @isActive, bool? @isDefault, bool? @isDeleted, System.Guid? @modifiedById, System.DateTime? @modifiedDate, string? @name, System.Guid? @projectId)
-        {
-            this.Description = @description;
-            this.IsActive = @isActive;
-            this.Capabilities = @capabilities;
-            this.ProjectId = @projectId;
-            this.IsDefault = @isDefault;
-            this.Name = @name;
-            this.CreatedDate = @createdDate;
-            this.ModifiedDate = @modifiedDate;
-            this.CreatedById = @createdById;
-            this.ModifiedById = @modifiedById;
-            this.GlobalId = @globalId;
-            this.Id = @id;
-            this.IsDeleted = @isDeleted;
-        }
-    
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isActive", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsActive { get; }
+        public bool? IsActive { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("capabilities", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.Dictionary<string, string> Capabilities { get; }
+        public System.Collections.Generic.Dictionary<string, string> Capabilities { get; } = new System.Collections.Generic.Dictionary<string, string>();
     
         /// <summary>This property is used to link configuration with project</summary>
         [Newtonsoft.Json.JsonProperty("projectId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ProjectId { get; }
+        public System.Guid? ProjectId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isDefault", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsDefault { get; }
+        public bool? IsDefault { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Name { get; }
+        public string? Name { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? CreatedDate { get; }
+        public System.DateTime? CreatedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? ModifiedDate { get; }
+        public System.DateTime? ModifiedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdById", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? CreatedById { get; }
+        public System.Guid? CreatedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedById", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ModifiedById { get; }
+        public System.Guid? ModifiedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("globalId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long? GlobalId { get; }
+        public long? GlobalId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isDeleted", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsDeleted { get; }
+        public bool? IsDeleted { get; set; }= default!;
     
     
     }
@@ -783,35 +572,24 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class ConfigurationPostModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public ConfigurationPostModel(System.Collections.Generic.Dictionary<string, string> @capabilities, string? @description, bool? @isActive, bool? @isDefault, string @name, System.Guid? @projectId)
-        {
-            this.Description = @description;
-            this.IsActive = @isActive;
-            this.Capabilities = @capabilities;
-            this.ProjectId = @projectId;
-            this.IsDefault = @isDefault;
-            this.Name = @name;
-        }
-    
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isActive", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsActive { get; }
+        public bool? IsActive { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("capabilities", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.Dictionary<string, string> Capabilities { get; }
+        public System.Collections.Generic.Dictionary<string, string> Capabilities { get; } = new System.Collections.Generic.Dictionary<string, string>();
     
         /// <summary>This property is used to link configuration with project</summary>
         [Newtonsoft.Json.JsonProperty("projectId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ProjectId { get; }
+        public System.Guid? ProjectId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isDefault", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsDefault { get; }
+        public bool? IsDefault { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
     
     }
@@ -819,39 +597,27 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class ConfigurationPutModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public ConfigurationPutModel(System.Collections.Generic.Dictionary<string, string> @capabilities, string? @description, System.Guid? @id, bool? @isActive, bool? @isDefault, string @name, System.Guid? @projectId)
-        {
-            this.Id = @id;
-            this.Description = @description;
-            this.IsActive = @isActive;
-            this.Capabilities = @capabilities;
-            this.ProjectId = @projectId;
-            this.IsDefault = @isDefault;
-            this.Name = @name;
-        }
-    
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isActive", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsActive { get; }
+        public bool? IsActive { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("capabilities", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.Dictionary<string, string> Capabilities { get; }
+        public System.Collections.Generic.Dictionary<string, string> Capabilities { get; } = new System.Collections.Generic.Dictionary<string, string>();
     
         /// <summary>This property is used to link configuration with project</summary>
         [Newtonsoft.Json.JsonProperty("projectId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ProjectId { get; }
+        public System.Guid? ProjectId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isDefault", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsDefault { get; }
+        public bool? IsDefault { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
     
     }
@@ -859,46 +625,32 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class ParameterModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public ParameterModel(System.Guid? @createdById, System.DateTime? @createdDate, System.Guid? @id, bool? @isDeleted, System.Guid? @modifiedById, System.DateTime? @modifiedDate, string @name, System.Guid? @parameterKeyId, string @value)
-        {
-            this.CreatedDate = @createdDate;
-            this.ModifiedDate = @modifiedDate;
-            this.CreatedById = @createdById;
-            this.ModifiedById = @modifiedById;
-            this.IsDeleted = @isDeleted;
-            this.ParameterKeyId = @parameterKeyId;
-            this.Id = @id;
-            this.Value = @value;
-            this.Name = @name;
-        }
-    
         [Newtonsoft.Json.JsonProperty("createdDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? CreatedDate { get; }
+        public System.DateTime? CreatedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? ModifiedDate { get; }
+        public System.DateTime? ModifiedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdById", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? CreatedById { get; }
+        public System.Guid? CreatedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedById", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ModifiedById { get; }
+        public System.Guid? ModifiedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isDeleted", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsDeleted { get; }
+        public bool? IsDeleted { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("parameterKeyId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ParameterKeyId { get; }
+        public System.Guid? ParameterKeyId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("value", Required = Newtonsoft.Json.Required.Always)]
-        public string Value { get; }
+        public string Value { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
     
     }
@@ -906,18 +658,11 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class ParameterPostModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public ParameterPostModel(string @name, string @value)
-        {
-            this.Value = @value;
-            this.Name = @name;
-        }
-    
         [Newtonsoft.Json.JsonProperty("value", Required = Newtonsoft.Json.Required.Always)]
-        public string Value { get; }
+        public string Value { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
     
     }
@@ -925,22 +670,14 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class ParameterPutModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public ParameterPutModel(System.Guid? @id, string @name, string @value)
-        {
-            this.Id = @id;
-            this.Value = @value;
-            this.Name = @name;
-        }
-    
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("value", Required = Newtonsoft.Json.Required.Always)]
-        public string Value { get; }
+        public string Value { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
     
     }
@@ -948,26 +685,17 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class CustomAttributeOptionModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public CustomAttributeOptionModel(System.Guid? @id, bool? @isDefault, bool? @isDeleted, string? @value)
-        {
-            this.Id = @id;
-            this.IsDeleted = @isDeleted;
-            this.Value = @value;
-            this.IsDefault = @isDefault;
-        }
-    
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isDeleted", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsDeleted { get; }
+        public bool? IsDeleted { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("value", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Value { get; }
+        public string? Value { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isDefault", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsDefault { get; }
+        public bool? IsDefault { get; set; }= default!;
     
     
     }
@@ -992,43 +720,30 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class CustomAttributeModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public CustomAttributeModel(bool? @enabled, System.Guid? @id, bool? @isDeleted, bool? @isGlobal, string @name, System.Collections.Generic.List<CustomAttributeOptionModel>? @options, bool? @required, CustomAttributeTypesEnum @type)
-        {
-            this.Id = @id;
-            this.Options = @options;
-            this.Type = @type;
-            this.IsDeleted = @isDeleted;
-            this.Name = @name;
-            this.Enabled = @enabled;
-            this.Required = @required;
-            this.IsGlobal = @isGlobal;
-        }
-    
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("options", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<CustomAttributeOptionModel>? Options { get; }
+        public System.Collections.Generic.List<CustomAttributeOptionModel>? Options { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Always)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public CustomAttributeTypesEnum Type { get; }
+        public CustomAttributeTypesEnum Type { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isDeleted", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsDeleted { get; }
+        public bool? IsDeleted { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("enabled", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? Enabled { get; }
+        public bool? Enabled { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("required", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? Required { get; }
+        public bool? Required { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isGlobal", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsGlobal { get; }
+        public bool? IsGlobal { get; set; }= default!;
     
     
     }
@@ -1036,71 +751,51 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class ProjectModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public ProjectModel(System.Collections.Generic.List<CustomAttributeModel>? @attributesScheme, int? @autoTestsCount, int? @checkListsCount, System.Guid? @createdById, System.DateTime? @createdDate, string? @description, long? @globalId, System.Guid? @id, bool? @isDeleted, bool? @isFavorite, System.Guid? @modifiedById, System.DateTime? @modifiedDate, string @name, int? @sharedStepsCount, int? @testCasesCount)
-        {
-            this.AttributesScheme = @attributesScheme;
-            this.TestCasesCount = @testCasesCount;
-            this.SharedStepsCount = @sharedStepsCount;
-            this.CheckListsCount = @checkListsCount;
-            this.AutoTestsCount = @autoTestsCount;
-            this.IsFavorite = @isFavorite;
-            this.IsDeleted = @isDeleted;
-            this.CreatedDate = @createdDate;
-            this.ModifiedDate = @modifiedDate;
-            this.CreatedById = @createdById;
-            this.ModifiedById = @modifiedById;
-            this.GlobalId = @globalId;
-            this.Id = @id;
-            this.Description = @description;
-            this.Name = @name;
-        }
-    
         [Newtonsoft.Json.JsonProperty("attributesScheme", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<CustomAttributeModel>? AttributesScheme { get; }
+        public System.Collections.Generic.List<CustomAttributeModel>? AttributesScheme { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("testCasesCount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int? TestCasesCount { get; }
+        public int? TestCasesCount { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("sharedStepsCount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int? SharedStepsCount { get; }
+        public int? SharedStepsCount { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("checkListsCount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int? CheckListsCount { get; }
+        public int? CheckListsCount { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("autoTestsCount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int? AutoTestsCount { get; }
+        public int? AutoTestsCount { get; set; }= default!;
     
         /// <summary>Property is used to filter favourite projects</summary>
         [Newtonsoft.Json.JsonProperty("isFavorite", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsFavorite { get; }
+        public bool? IsFavorite { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isDeleted", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsDeleted { get; }
+        public bool? IsDeleted { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? CreatedDate { get; }
+        public System.DateTime? CreatedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? ModifiedDate { get; }
+        public System.DateTime? ModifiedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdById", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? CreatedById { get; }
+        public System.Guid? CreatedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedById", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ModifiedById { get; }
+        public System.Guid? ModifiedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("globalId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long? GlobalId { get; }
+        public long? GlobalId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
     
     }
@@ -1108,18 +803,11 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class ProjectPostModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public ProjectPostModel(string? @description, string @name)
-        {
-            this.Description = @description;
-            this.Name = @name;
-        }
-    
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
     
     }
@@ -1127,22 +815,14 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class ProjectPutModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public ProjectPutModel(string? @description, System.Guid? @id, string @name)
-        {
-            this.Id = @id;
-            this.Description = @description;
-            this.Name = @name;
-        }
-    
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
     
     }
@@ -1150,46 +830,32 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class SectionModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public SectionModel(System.Guid? @createdById, System.DateTime? @createdDate, System.Guid? @id, bool? @isDeleted, System.Guid? @modifiedById, System.DateTime? @modifiedDate, string @name, System.Guid? @parentId, System.Guid? @projectId)
-        {
-            this.ProjectId = @projectId;
-            this.ParentId = @parentId;
-            this.IsDeleted = @isDeleted;
-            this.Id = @id;
-            this.CreatedDate = @createdDate;
-            this.ModifiedDate = @modifiedDate;
-            this.CreatedById = @createdById;
-            this.ModifiedById = @modifiedById;
-            this.Name = @name;
-        }
-    
         [Newtonsoft.Json.JsonProperty("projectId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ProjectId { get; }
+        public System.Guid? ProjectId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("parentId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ParentId { get; }
+        public System.Guid? ParentId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isDeleted", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsDeleted { get; }
+        public bool? IsDeleted { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? CreatedDate { get; }
+        public System.DateTime? CreatedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? ModifiedDate { get; }
+        public System.DateTime? ModifiedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdById", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? CreatedById { get; }
+        public System.Guid? CreatedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedById", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ModifiedById { get; }
+        public System.Guid? ModifiedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
     
     }
@@ -1197,18 +863,11 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class AutoTestNamespaceModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public AutoTestNamespaceModel(System.Collections.Generic.List<string>? @classes, string? @name)
-        {
-            this.Name = @name;
-            this.Classes = @classes;
-        }
-    
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Name { get; }
+        public string? Name { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("classes", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<string>? Classes { get; }
+        public System.Collections.Generic.List<string>? Classes { get; set; }= default!;
     
     
     }
@@ -1236,26 +895,17 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class ParameterShortModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public ParameterShortModel(System.Guid? @id, string @name, System.Guid? @parameterKeyId, string @value)
-        {
-            this.Id = @id;
-            this.ParameterKeyId = @parameterKeyId;
-            this.Value = @value;
-            this.Name = @name;
-        }
-    
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("parameterKeyId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ParameterKeyId { get; }
+        public System.Guid? ParameterKeyId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("value", Required = Newtonsoft.Json.Required.Always)]
-        public string Value { get; }
+        public string Value { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
     
     }
@@ -1263,18 +913,11 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class IterationModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public IterationModel(System.Guid? @id, System.Collections.Generic.List<ParameterShortModel>? @parameters)
-        {
-            this.Id = @id;
-            this.Parameters = @parameters;
-        }
-    
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("parameters", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<ParameterShortModel>? Parameters { get; }
+        public System.Collections.Generic.List<ParameterShortModel>? Parameters { get; set; }= default!;
     
     
     }
@@ -1282,92 +925,68 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class WorkItemShortModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public WorkItemShortModel(System.Collections.Generic.Dictionary<string, string>? @attributes, System.Guid? @createdById, System.DateTime? @createdDate, int? @duration, string @entityTypeName, long? @globalId, System.Guid? @id, bool? @isAutomated, bool? @isDeleted, System.Collections.Generic.List<IterationModel>? @iterations, System.Guid? @modifiedById, System.DateTime? @modifiedDate, string @name, WorkItemPriorityModel @priority, System.Guid @projectId, System.Guid @sectionId, string @state, System.Collections.Generic.List<string>? @tagNames, System.Guid? @versionId)
-        {
-            this.Id = @id;
-            this.VersionId = @versionId;
-            this.Name = @name;
-            this.EntityTypeName = @entityTypeName;
-            this.ProjectId = @projectId;
-            this.SectionId = @sectionId;
-            this.IsAutomated = @isAutomated;
-            this.GlobalId = @globalId;
-            this.Duration = @duration;
-            this.Attributes = @attributes;
-            this.CreatedById = @createdById;
-            this.ModifiedById = @modifiedById;
-            this.CreatedDate = @createdDate;
-            this.ModifiedDate = @modifiedDate;
-            this.State = @state;
-            this.Priority = @priority;
-            this.IsDeleted = @isDeleted;
-            this.TagNames = @tagNames;
-            this.Iterations = @iterations;
-        }
-    
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         /// <summary>used for versioning changes in workitem</summary>
         [Newtonsoft.Json.JsonProperty("versionId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? VersionId { get; }
+        public System.Guid? VersionId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
         /// <summary>Property can have one of these values: CheckLists, SharedSteps, TestCases</summary>
         [Newtonsoft.Json.JsonProperty("entityTypeName", Required = Newtonsoft.Json.Required.Always)]
-        public string EntityTypeName { get; }
+        public string EntityTypeName { get; set; }= default!;
     
         /// <summary>This property is used to link autotest with project</summary>
         [Newtonsoft.Json.JsonProperty("projectId", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid ProjectId { get; }
+        public System.Guid ProjectId { get; set; }= default!;
     
         /// <summary>This property links workitem with section</summary>
         [Newtonsoft.Json.JsonProperty("sectionId", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid SectionId { get; }
+        public System.Guid SectionId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isAutomated", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsAutomated { get; }
+        public bool? IsAutomated { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("globalId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long? GlobalId { get; }
+        public long? GlobalId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("duration", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int? Duration { get; }
+        public int? Duration { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("attributes", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.Dictionary<string, string>? Attributes { get; }
+        public System.Collections.Generic.Dictionary<string, string>? Attributes { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdById", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? CreatedById { get; }
+        public System.Guid? CreatedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedById", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ModifiedById { get; }
+        public System.Guid? ModifiedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? CreatedDate { get; }
+        public System.DateTime? CreatedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? ModifiedDate { get; }
+        public System.DateTime? ModifiedDate { get; set; }= default!;
     
         /// <summary>Property can have one of these values: NeedsWork, NotReady, Ready</summary>
         [Newtonsoft.Json.JsonProperty("state", Required = Newtonsoft.Json.Required.Always)]
-        public string State { get; }
+        public string State { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("priority", Required = Newtonsoft.Json.Required.Always)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public WorkItemPriorityModel Priority { get; }
+        public WorkItemPriorityModel Priority { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isDeleted", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsDeleted { get; }
+        public bool? IsDeleted { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("tagNames", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<string>? TagNames { get; }
+        public System.Collections.Generic.List<string>? TagNames { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("iterations", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<IterationModel>? Iterations { get; }
+        public System.Collections.Generic.List<IterationModel>? Iterations { get; set; }= default!;
     
     
     }
@@ -1375,18 +994,11 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class CustomAttributeOptionPostModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public CustomAttributeOptionPostModel(bool? @isDefault, string? @value)
-        {
-            this.Value = @value;
-            this.IsDefault = @isDefault;
-        }
-    
         [Newtonsoft.Json.JsonProperty("value", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Value { get; }
+        public string? Value { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isDefault", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsDefault { get; }
+        public bool? IsDefault { get; set; }= default!;
     
     
     }
@@ -1394,35 +1006,24 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class CustomAttributePostModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public CustomAttributePostModel(bool? @enabled, bool? @isGlobal, string @name, System.Collections.Generic.List<CustomAttributeOptionPostModel>? @options, bool? @required, CustomAttributeTypesEnum @type)
-        {
-            this.Options = @options;
-            this.Type = @type;
-            this.Name = @name;
-            this.Enabled = @enabled;
-            this.Required = @required;
-            this.IsGlobal = @isGlobal;
-        }
-    
         [Newtonsoft.Json.JsonProperty("options", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<CustomAttributeOptionPostModel>? Options { get; }
+        public System.Collections.Generic.List<CustomAttributeOptionPostModel>? Options { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Always)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public CustomAttributeTypesEnum Type { get; }
+        public CustomAttributeTypesEnum Type { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("enabled", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? Enabled { get; }
+        public bool? Enabled { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("required", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? Required { get; }
+        public bool? Required { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isGlobal", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsGlobal { get; }
+        public bool? IsGlobal { get; set; }= default!;
     
     
     }
@@ -1447,14 +1048,8 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class TagShortModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public TagShortModel(string @name)
-        {
-            this.Name = @name;
-        }
-    
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
     
     }
@@ -1462,100 +1057,74 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class TestPlanModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public TestPlanModel(string? @build, System.DateTime? @completedOn, System.Guid? @createdById, System.DateTime? @createdDate, string? @description, System.DateTime? @endDate, long? @globalId, bool? @hasAutomaticDurationTimer, System.Guid? @id, bool? @isDeleted, System.Guid? @lockedById, System.DateTime? @lockedDate, System.Guid? @modifiedById, System.DateTime? @modifiedDate, string @name, string? @productName, System.Guid @projectId, System.DateTime? @startDate, System.DateTime? @startedOn, TestPlanStatusModel? @status, System.Collections.Generic.List<TagShortModel>? @tags)
-        {
-            this.Status = @status;
-            this.StartedOn = @startedOn;
-            this.CompletedOn = @completedOn;
-            this.CreatedDate = @createdDate;
-            this.ModifiedDate = @modifiedDate;
-            this.CreatedById = @createdById;
-            this.ModifiedById = @modifiedById;
-            this.GlobalId = @globalId;
-            this.IsDeleted = @isDeleted;
-            this.LockedDate = @lockedDate;
-            this.Id = @id;
-            this.LockedById = @lockedById;
-            this.Tags = @tags;
-            this.Name = @name;
-            this.StartDate = @startDate;
-            this.EndDate = @endDate;
-            this.Description = @description;
-            this.Build = @build;
-            this.ProjectId = @projectId;
-            this.ProductName = @productName;
-            this.HasAutomaticDurationTimer = @hasAutomaticDurationTimer;
-        }
-    
         [Newtonsoft.Json.JsonProperty("status", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public TestPlanStatusModel? Status { get; }
+        public TestPlanStatusModel? Status { get; set; }= default!;
     
         /// <summary>Set when test plan is starter (status changed to: In Progress)</summary>
         [Newtonsoft.Json.JsonProperty("startedOn", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? StartedOn { get; }
+        public System.DateTime? StartedOn { get; set; }= default!;
     
         /// <summary>set when test plan status is completed (status changed to: Completed)</summary>
         [Newtonsoft.Json.JsonProperty("completedOn", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? CompletedOn { get; }
+        public System.DateTime? CompletedOn { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? CreatedDate { get; }
+        public System.DateTime? CreatedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? ModifiedDate { get; }
+        public System.DateTime? ModifiedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdById", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? CreatedById { get; }
+        public System.Guid? CreatedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedById", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ModifiedById { get; }
+        public System.Guid? ModifiedById { get; set; }= default!;
     
         /// <summary>Used for search Test plan</summary>
         [Newtonsoft.Json.JsonProperty("globalId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long? GlobalId { get; }
+        public long? GlobalId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isDeleted", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsDeleted { get; }
+        public bool? IsDeleted { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("lockedDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? LockedDate { get; }
+        public System.DateTime? LockedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("lockedById", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? LockedById { get; }
+        public System.Guid? LockedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("tags", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<TagShortModel>? Tags { get; }
+        public System.Collections.Generic.List<TagShortModel>? Tags { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
         /// <summary>Used for analytics</summary>
         [Newtonsoft.Json.JsonProperty("startDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? StartDate { get; }
+        public System.DateTime? StartDate { get; set; }= default!;
     
         /// <summary>Used for analytics</summary>
         [Newtonsoft.Json.JsonProperty("endDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? EndDate { get; }
+        public System.DateTime? EndDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("build", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Build { get; }
+        public string? Build { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("projectId", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid ProjectId { get; }
+        public System.Guid ProjectId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("productName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? ProductName { get; }
+        public string? ProductName { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("hasAutomaticDurationTimer", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? HasAutomaticDurationTimer { get; }
+        public bool? HasAutomaticDurationTimer { get; set; }= default!;
     
     
     }
@@ -1563,80 +1132,58 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class AutoTestModelV2GetModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public AutoTestModelV2GetModel(string? @classname, System.Guid? @createdById, System.DateTime? @createdDate, string? @externalId, long? @globalId, System.Guid? @id, bool? @isDeleted, System.Collections.Generic.List<LabelShortModel>? @labels, System.Collections.Generic.List<LinkModel>? @links, System.Guid? @modifiedById, System.DateTime? @modifiedDate, string? @name, string? @namespace, System.Guid? @projectId, System.Collections.Generic.List<AutoTestStepModel>? @setup, System.Collections.Generic.List<AutoTestStepModel>? @steps, System.Collections.Generic.List<AutoTestStepModel>? @teardown)
-        {
-            this.ExternalId = @externalId;
-            this.Links = @links;
-            this.ProjectId = @projectId;
-            this.Name = @name;
-            this.Namespace = @namespace;
-            this.Classname = @classname;
-            this.Steps = @steps;
-            this.Setup = @setup;
-            this.Teardown = @teardown;
-            this.GlobalId = @globalId;
-            this.CreatedDate = @createdDate;
-            this.ModifiedDate = @modifiedDate;
-            this.CreatedById = @createdById;
-            this.ModifiedById = @modifiedById;
-            this.Labels = @labels;
-            this.Id = @id;
-            this.IsDeleted = @isDeleted;
-        }
-    
         /// <summary>This property is used to set autotest identifier from client system</summary>
         [Newtonsoft.Json.JsonProperty("externalId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? ExternalId { get; }
+        public string? ExternalId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("links", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<LinkModel>? Links { get; }
+        public System.Collections.Generic.List<LinkModel>? Links { get; set; }= default!;
     
         /// <summary>This property is used to link autotest with project</summary>
         [Newtonsoft.Json.JsonProperty("projectId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ProjectId { get; }
+        public System.Guid? ProjectId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Name { get; }
+        public string? Name { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("namespace", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Namespace { get; }
+        public string? Namespace { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("classname", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Classname { get; }
+        public string? Classname { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("steps", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AutoTestStepModel>? Steps { get; }
+        public System.Collections.Generic.List<AutoTestStepModel>? Steps { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("setup", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AutoTestStepModel>? Setup { get; }
+        public System.Collections.Generic.List<AutoTestStepModel>? Setup { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("teardown", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AutoTestStepModel>? Teardown { get; }
+        public System.Collections.Generic.List<AutoTestStepModel>? Teardown { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("globalId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long? GlobalId { get; }
+        public long? GlobalId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? CreatedDate { get; }
+        public System.DateTime? CreatedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? ModifiedDate { get; }
+        public System.DateTime? ModifiedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdById", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? CreatedById { get; }
+        public System.Guid? CreatedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedById", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ModifiedById { get; }
+        public System.Guid? ModifiedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("labels", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<LabelShortModel>? Labels { get; }
+        public System.Collections.Generic.List<LabelShortModel>? Labels { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isDeleted", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsDeleted { get; }
+        public bool? IsDeleted { get; set; }= default!;
     
     
     }
@@ -1644,43 +1191,30 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class TestPointShortModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public TestPointShortModel(System.Guid? @configurationId, System.Guid? @id, System.Guid? @iterationId, System.Guid? @lastTestResultId, string? @status, System.Guid? @testerId, System.Guid? @testSuiteId, System.Guid? @workItemId)
-        {
-            this.TestSuiteId = @testSuiteId;
-            this.Id = @id;
-            this.TesterId = @testerId;
-            this.WorkItemId = @workItemId;
-            this.ConfigurationId = @configurationId;
-            this.Status = @status;
-            this.LastTestResultId = @lastTestResultId;
-            this.IterationId = @iterationId;
-        }
-    
         [Newtonsoft.Json.JsonProperty("testSuiteId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? TestSuiteId { get; }
+        public System.Guid? TestSuiteId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("testerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? TesterId { get; }
+        public System.Guid? TesterId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("workItemId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? WorkItemId { get; }
+        public System.Guid? WorkItemId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("configurationId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ConfigurationId { get; }
+        public System.Guid? ConfigurationId { get; set; }= default!;
     
         /// <summary>Applies one of these values: Blocked, NoResults, Failed, Passed</summary>
         [Newtonsoft.Json.JsonProperty("status", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Status { get; }
+        public string? Status { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("lastTestResultId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? LastTestResultId { get; }
+        public System.Guid? LastTestResultId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("iterationId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? IterationId { get; }
+        public System.Guid? IterationId { get; set; }= default!;
     
     
     }
@@ -1688,95 +1222,69 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class TestResultV2GetModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public TestResultV2GetModel(System.Collections.Generic.List<AttachmentModel>? @attachments, AutoTestModelV2GetModel? @autoTest, System.Guid? @autoTestId, string? @comment, System.DateTime? @completedOn, ConfigurationModel? @configuration, System.Guid? @configurationId, System.Guid? @id, System.Collections.Generic.List<LinkModel>? @links, string? @message, string? @outcome, System.Collections.Generic.Dictionary<string, string>? @parameters, System.Collections.Generic.Dictionary<string, string>? @properties, System.Guid? @runByUserId, System.DateTime? @startedOn, System.Guid? @stoppedByUserId, TestPointShortModel? @testPoint, System.Guid? @testPointId, System.Guid? @testRunId, string? @traces, System.Guid? @workItemVersionId)
-        {
-            this.Configuration = @configuration;
-            this.AutoTest = @autoTest;
-            this.Id = @id;
-            this.ConfigurationId = @configurationId;
-            this.WorkItemVersionId = @workItemVersionId;
-            this.AutoTestId = @autoTestId;
-            this.Message = @message;
-            this.Traces = @traces;
-            this.StartedOn = @startedOn;
-            this.CompletedOn = @completedOn;
-            this.RunByUserId = @runByUserId;
-            this.StoppedByUserId = @stoppedByUserId;
-            this.TestPointId = @testPointId;
-            this.TestPoint = @testPoint;
-            this.TestRunId = @testRunId;
-            this.Outcome = @outcome;
-            this.Comment = @comment;
-            this.Links = @links;
-            this.Attachments = @attachments;
-            this.Parameters = @parameters;
-            this.Properties = @properties;
-        }
-    
         [Newtonsoft.Json.JsonProperty("configuration", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public ConfigurationModel? Configuration { get; }
+        public ConfigurationModel? Configuration { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("autoTest", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public AutoTestModelV2GetModel? AutoTest { get; }
+        public AutoTestModelV2GetModel? AutoTest { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("configurationId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ConfigurationId { get; }
+        public System.Guid? ConfigurationId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("workItemVersionId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? WorkItemVersionId { get; }
+        public System.Guid? WorkItemVersionId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("autoTestId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? AutoTestId { get; }
+        public System.Guid? AutoTestId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("message", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Message { get; }
+        public string? Message { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("traces", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Traces { get; }
+        public string? Traces { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("startedOn", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? StartedOn { get; }
+        public System.DateTime? StartedOn { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("completedOn", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? CompletedOn { get; }
+        public System.DateTime? CompletedOn { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("runByUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? RunByUserId { get; }
+        public System.Guid? RunByUserId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("stoppedByUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? StoppedByUserId { get; }
+        public System.Guid? StoppedByUserId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("testPointId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? TestPointId { get; }
+        public System.Guid? TestPointId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("testPoint", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public TestPointShortModel? TestPoint { get; }
+        public TestPointShortModel? TestPoint { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("testRunId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? TestRunId { get; }
+        public System.Guid? TestRunId { get; set; }= default!;
     
         /// <summary>Property can contain one of these values: Passed, Failed, Pending, Blocked, Skipped</summary>
         [Newtonsoft.Json.JsonProperty("outcome", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Outcome { get; }
+        public string? Outcome { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("comment", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Comment { get; }
+        public string? Comment { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("links", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<LinkModel>? Links { get; }
+        public System.Collections.Generic.List<LinkModel>? Links { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("attachments", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AttachmentModel>? Attachments { get; }
+        public System.Collections.Generic.List<AttachmentModel>? Attachments { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("parameters", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.Dictionary<string, string>? Parameters { get; }
+        public System.Collections.Generic.Dictionary<string, string>? Parameters { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("properties", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.Dictionary<string, string>? Properties { get; }
+        public System.Collections.Generic.Dictionary<string, string>? Properties { get; set; }= default!;
     
     
     }
@@ -1784,65 +1292,47 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class TestRunV2GetModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public TestRunV2GetModel(System.DateTime? @completedOn, System.Guid? @createdById, System.DateTime? @createdDate, string? @description, System.Guid @id, System.Guid? @modifiedById, System.DateTime? @modifiedDate, string @name, System.Guid? @projectId, System.DateTime? @startedOn, TestRunStateTypeModel? @stateName, System.Guid? @testPlanId, System.Collections.Generic.List<TestResultV2GetModel>? @testResults)
-        {
-            this.StartedOn = @startedOn;
-            this.CompletedOn = @completedOn;
-            this.StateName = @stateName;
-            this.ProjectId = @projectId;
-            this.TestPlanId = @testPlanId;
-            this.TestResults = @testResults;
-            this.CreatedDate = @createdDate;
-            this.ModifiedDate = @modifiedDate;
-            this.CreatedById = @createdById;
-            this.ModifiedById = @modifiedById;
-            this.Id = @id;
-            this.Name = @name;
-            this.Description = @description;
-        }
-    
         [Newtonsoft.Json.JsonProperty("startedOn", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? StartedOn { get; }
+        public System.DateTime? StartedOn { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("completedOn", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? CompletedOn { get; }
+        public System.DateTime? CompletedOn { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("stateName", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public TestRunStateTypeModel? StateName { get; }
+        public TestRunStateTypeModel? StateName { get; set; }= default!;
     
         /// <summary>This property is used to link test run with project</summary>
         [Newtonsoft.Json.JsonProperty("projectId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ProjectId { get; }
+        public System.Guid? ProjectId { get; set; }= default!;
     
         /// <summary>This property is used to link test run with test plan</summary>
         [Newtonsoft.Json.JsonProperty("testPlanId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? TestPlanId { get; }
+        public System.Guid? TestPlanId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("testResults", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<TestResultV2GetModel>? TestResults { get; }
+        public System.Collections.Generic.List<TestResultV2GetModel>? TestResults { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? CreatedDate { get; }
+        public System.DateTime? CreatedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? ModifiedDate { get; }
+        public System.DateTime? ModifiedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdById", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? CreatedById { get; }
+        public System.Guid? CreatedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedById", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ModifiedById { get; }
+        public System.Guid? ModifiedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid Id { get; }
+        public System.Guid Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
     
     }
@@ -1850,18 +1340,11 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class ProjectExportQueryModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public ProjectExportQueryModel(System.Collections.Generic.List<System.Guid>? @sectionIds, System.Collections.Generic.List<System.Guid>? @workItemIds)
-        {
-            this.SectionIds = @sectionIds;
-            this.WorkItemIds = @workItemIds;
-        }
-    
         [Newtonsoft.Json.JsonProperty("sectionIds", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<System.Guid>? SectionIds { get; }
+        public System.Collections.Generic.List<System.Guid>? SectionIds { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("workItemIds", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<System.Guid>? WorkItemIds { get; }
+        public System.Collections.Generic.List<System.Guid>? WorkItemIds { get; set; }= default!;
     
     
     }
@@ -1869,30 +1352,20 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class ProblemDetails 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public ProblemDetails(string? @detail, string? @instance, int? @status, string? @title, string? @type)
-        {
-            this.Type = @type;
-            this.Title = @title;
-            this.Status = @status;
-            this.Detail = @detail;
-            this.Instance = @instance;
-        }
-    
         [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Type { get; }
+        public string? Type { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Title { get; }
+        public string? Title { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("status", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int? Status { get; }
+        public int? Status { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("detail", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Detail { get; }
+        public string? Detail { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("instance", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Instance { get; }
+        public string? Instance { get; set; }= default!;
     
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
     
@@ -1909,14 +1382,8 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class ProjectExportWithTestPlansPostModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public ProjectExportWithTestPlansPostModel(System.Collections.Generic.List<System.Guid>? @testPlansIds)
-        {
-            this.TestPlansIds = @testPlansIds;
-        }
-    
         [Newtonsoft.Json.JsonProperty("testPlansIds", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<System.Guid>? TestPlansIds { get; }
+        public System.Collections.Generic.List<System.Guid>? TestPlansIds { get; set; }= default!;
     
     
     }
@@ -1924,31 +1391,21 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class SharedStepModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public SharedStepModel(long? @globalId, bool? @isDeleted, string? @name, System.Collections.Generic.List<StepModel>? @steps, System.Guid? @versionId)
-        {
-            this.VersionId = @versionId;
-            this.GlobalId = @globalId;
-            this.Name = @name;
-            this.Steps = @steps;
-            this.IsDeleted = @isDeleted;
-        }
-    
         [Newtonsoft.Json.JsonProperty("versionId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? VersionId { get; }
+        public System.Guid? VersionId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("globalId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long? GlobalId { get; }
+        public long? GlobalId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Name { get; }
+        public string? Name { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("steps", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [System.Obsolete]
-        public System.Collections.Generic.List<StepModel>? Steps { get; }
+        public System.Collections.Generic.List<StepModel>? Steps { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isDeleted", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsDeleted { get; }
+        public bool? IsDeleted { get; set; }= default!;
     
     
     }
@@ -1956,38 +1413,26 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class StepModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public StepModel(string? @action, string? @comments, string? @expected, System.Guid? @id, string? @testData, SharedStepModel? @workItem, System.Guid? @workItemId)
-        {
-            this.WorkItem = @workItem;
-            this.Id = @id;
-            this.Action = @action;
-            this.Expected = @expected;
-            this.TestData = @testData;
-            this.Comments = @comments;
-            this.WorkItemId = @workItemId;
-        }
-    
         [Newtonsoft.Json.JsonProperty("workItem", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public SharedStepModel? WorkItem { get; }
+        public SharedStepModel? WorkItem { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("action", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Action { get; }
+        public string? Action { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("expected", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Expected { get; }
+        public string? Expected { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("testData", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? TestData { get; }
+        public string? TestData { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("comments", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Comments { get; }
+        public string? Comments { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("workItemId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? WorkItemId { get; }
+        public System.Guid? WorkItemId { get; set; }= default!;
     
     
     }
@@ -1995,54 +1440,38 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class SectionWithStepsModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public SectionWithStepsModel(System.Guid? @createdById, System.DateTime? @createdDate, System.Guid? @id, bool? @isDeleted, System.Guid? @modifiedById, System.DateTime? @modifiedDate, string @name, System.Guid? @parentId, System.Collections.Generic.List<StepModel>? @postconditionSteps, System.Collections.Generic.List<StepModel>? @preconditionSteps, System.Guid? @projectId)
-        {
-            this.PreconditionSteps = @preconditionSteps;
-            this.PostconditionSteps = @postconditionSteps;
-            this.ProjectId = @projectId;
-            this.ParentId = @parentId;
-            this.IsDeleted = @isDeleted;
-            this.Id = @id;
-            this.CreatedDate = @createdDate;
-            this.ModifiedDate = @modifiedDate;
-            this.CreatedById = @createdById;
-            this.ModifiedById = @modifiedById;
-            this.Name = @name;
-        }
-    
         [Newtonsoft.Json.JsonProperty("preconditionSteps", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<StepModel>? PreconditionSteps { get; }
+        public System.Collections.Generic.List<StepModel>? PreconditionSteps { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("postconditionSteps", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<StepModel>? PostconditionSteps { get; }
+        public System.Collections.Generic.List<StepModel>? PostconditionSteps { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("projectId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ProjectId { get; }
+        public System.Guid? ProjectId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("parentId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ParentId { get; }
+        public System.Guid? ParentId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isDeleted", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsDeleted { get; }
+        public bool? IsDeleted { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? CreatedDate { get; }
+        public System.DateTime? CreatedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? ModifiedDate { get; }
+        public System.DateTime? ModifiedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdById", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? CreatedById { get; }
+        public System.Guid? CreatedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedById", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ModifiedById { get; }
+        public System.Guid? ModifiedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
     
     }
@@ -2050,34 +1479,23 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class StepPutModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public StepPutModel(string? @action, string? @comments, string? @expected, System.Guid? @id, string? @testData, System.Guid? @workItemId)
-        {
-            this.Id = @id;
-            this.Action = @action;
-            this.Expected = @expected;
-            this.TestData = @testData;
-            this.Comments = @comments;
-            this.WorkItemId = @workItemId;
-        }
-    
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("action", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Action { get; }
+        public string? Action { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("expected", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Expected { get; }
+        public string? Expected { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("testData", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? TestData { get; }
+        public string? TestData { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("comments", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Comments { get; }
+        public string? Comments { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("workItemId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? WorkItemId { get; }
+        public System.Guid? WorkItemId { get; set; }= default!;
     
     
     }
@@ -2085,30 +1503,20 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class SectionPostModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public SectionPostModel(string @name, System.Guid? @parentId, System.Collections.Generic.List<StepPutModel>? @postconditionSteps, System.Collections.Generic.List<StepPutModel>? @preconditionSteps, System.Guid @projectId)
-        {
-            this.Name = @name;
-            this.ProjectId = @projectId;
-            this.ParentId = @parentId;
-            this.PreconditionSteps = @preconditionSteps;
-            this.PostconditionSteps = @postconditionSteps;
-        }
-    
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("projectId", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid ProjectId { get; }
+        public System.Guid ProjectId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("parentId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ParentId { get; }
+        public System.Guid? ParentId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("preconditionSteps", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<StepPutModel>? PreconditionSteps { get; }
+        public System.Collections.Generic.List<StepPutModel>? PreconditionSteps { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("postconditionSteps", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<StepPutModel>? PostconditionSteps { get; }
+        public System.Collections.Generic.List<StepPutModel>? PostconditionSteps { get; set; }= default!;
     
     
     }
@@ -2116,34 +1524,23 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class SectionPutModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public SectionPutModel(System.Guid @id, string @name, System.Guid? @parentId, System.Collections.Generic.List<StepPutModel>? @postconditionSteps, System.Collections.Generic.List<StepPutModel>? @preconditionSteps, System.Guid @projectId)
-        {
-            this.Id = @id;
-            this.Name = @name;
-            this.ProjectId = @projectId;
-            this.ParentId = @parentId;
-            this.PreconditionSteps = @preconditionSteps;
-            this.PostconditionSteps = @postconditionSteps;
-        }
-    
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid Id { get; }
+        public System.Guid Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("projectId", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid ProjectId { get; }
+        public System.Guid ProjectId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("parentId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ParentId { get; }
+        public System.Guid? ParentId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("preconditionSteps", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<StepPutModel>? PreconditionSteps { get; }
+        public System.Collections.Generic.List<StepPutModel>? PreconditionSteps { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("postconditionSteps", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<StepPutModel>? PostconditionSteps { get; }
+        public System.Collections.Generic.List<StepPutModel>? PostconditionSteps { get; set; }= default!;
     
     
     }
@@ -2151,18 +1548,11 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class SectionRenameModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public SectionRenameModel(System.Guid @id, string @name)
-        {
-            this.Id = @id;
-            this.Name = @name;
-        }
-    
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid Id { get; }
+        public System.Guid Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
     
     }
@@ -2170,27 +1560,18 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class SectionMoveModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public SectionMoveModel(System.Guid @id, System.Guid? @nextSectionId, System.Guid @oldParentId, System.Guid @parentId)
-        {
-            this.Id = @id;
-            this.OldParentId = @oldParentId;
-            this.ParentId = @parentId;
-            this.NextSectionId = @nextSectionId;
-        }
-    
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid Id { get; }
+        public System.Guid Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("oldParentId", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid OldParentId { get; }
+        public System.Guid OldParentId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("parentId", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid ParentId { get; }
+        public System.Guid ParentId { get; set; }= default!;
     
         /// <summary>Used for section rank set</summary>
         [Newtonsoft.Json.JsonProperty("nextSectionId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? NextSectionId { get; }
+        public System.Guid? NextSectionId { get; set; }= default!;
     
     
     }
@@ -2198,48 +1579,34 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class TestPlanPostModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public TestPlanPostModel(string? @build, string? @description, System.DateTime? @endDate, bool? @hasAutomaticDurationTimer, string @name, string? @productName, System.Guid @projectId, System.DateTime? @startDate, System.Collections.Generic.List<TagShortModel>? @tags)
-        {
-            this.Tags = @tags;
-            this.Name = @name;
-            this.StartDate = @startDate;
-            this.EndDate = @endDate;
-            this.Description = @description;
-            this.Build = @build;
-            this.ProjectId = @projectId;
-            this.ProductName = @productName;
-            this.HasAutomaticDurationTimer = @hasAutomaticDurationTimer;
-        }
-    
         [Newtonsoft.Json.JsonProperty("tags", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<TagShortModel>? Tags { get; }
+        public System.Collections.Generic.List<TagShortModel>? Tags { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
         /// <summary>Used for analytics</summary>
         [Newtonsoft.Json.JsonProperty("startDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? StartDate { get; }
+        public System.DateTime? StartDate { get; set; }= default!;
     
         /// <summary>Used for analytics</summary>
         [Newtonsoft.Json.JsonProperty("endDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? EndDate { get; }
+        public System.DateTime? EndDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("build", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Build { get; }
+        public string? Build { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("projectId", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid ProjectId { get; }
+        public System.Guid ProjectId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("productName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? ProductName { get; }
+        public string? ProductName { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("hasAutomaticDurationTimer", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? HasAutomaticDurationTimer { get; }
+        public bool? HasAutomaticDurationTimer { get; set; }= default!;
     
     
     }
@@ -2247,56 +1614,40 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class TestPlanPutModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public TestPlanPutModel(string? @build, string? @description, System.DateTime? @endDate, bool? @hasAutomaticDurationTimer, System.Guid? @id, System.Guid? @lockedById, string @name, string? @productName, System.Guid @projectId, System.DateTime? @startDate, System.Collections.Generic.List<TagShortModel>? @tags)
-        {
-            this.Id = @id;
-            this.LockedById = @lockedById;
-            this.Tags = @tags;
-            this.Name = @name;
-            this.StartDate = @startDate;
-            this.EndDate = @endDate;
-            this.Description = @description;
-            this.Build = @build;
-            this.ProjectId = @projectId;
-            this.ProductName = @productName;
-            this.HasAutomaticDurationTimer = @hasAutomaticDurationTimer;
-        }
-    
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("lockedById", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? LockedById { get; }
+        public System.Guid? LockedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("tags", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<TagShortModel>? Tags { get; }
+        public System.Collections.Generic.List<TagShortModel>? Tags { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
         /// <summary>Used for analytics</summary>
         [Newtonsoft.Json.JsonProperty("startDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? StartDate { get; }
+        public System.DateTime? StartDate { get; set; }= default!;
     
         /// <summary>Used for analytics</summary>
         [Newtonsoft.Json.JsonProperty("endDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? EndDate { get; }
+        public System.DateTime? EndDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("build", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Build { get; }
+        public string? Build { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("projectId", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid ProjectId { get; }
+        public System.Guid ProjectId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("productName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? ProductName { get; }
+        public string? ProductName { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("hasAutomaticDurationTimer", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? HasAutomaticDurationTimer { get; }
+        public bool? HasAutomaticDurationTimer { get; set; }= default!;
     
     
     }
@@ -2304,32 +1655,22 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class TestSuiteV2TreeModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public TestSuiteV2TreeModel(System.Collections.Generic.List<TestSuiteV2TreeModel>? @children, System.Guid? @id, string @name, System.Guid? @parentId, System.Guid? @testPlanId)
-        {
-            this.Children = @children;
-            this.Id = @id;
-            this.ParentId = @parentId;
-            this.TestPlanId = @testPlanId;
-            this.Name = @name;
-        }
-    
         /// <summary>nested enumeration of children is allowed</summary>
         [Newtonsoft.Json.JsonProperty("children", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [System.Obsolete]
-        public System.Collections.Generic.List<TestSuiteV2TreeModel>? Children { get; }
+        public System.Collections.Generic.List<TestSuiteV2TreeModel>? Children { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("parentId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ParentId { get; }
+        public System.Guid? ParentId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("testPlanId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? TestPlanId { get; }
+        public System.Guid? TestPlanId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
     
     }
@@ -2337,14 +1678,8 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class AttachmentPutModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public AttachmentPutModel(System.Guid @id)
-        {
-            this.Id = @id;
-        }
-    
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid Id { get; }
+        public System.Guid Id { get; set; }= default!;
     
     
     }
@@ -2352,48 +1687,34 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class AttachmentPutModelAutoTestStepResultsModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public AttachmentPutModelAutoTestStepResultsModel(System.Collections.Generic.List<AttachmentPutModel>? @attachments, System.DateTime? @completedOn, string? @description, long? @duration, string? @outcome, System.Collections.Generic.Dictionary<string, string>? @parameters, System.DateTime? @startedOn, System.Collections.Generic.List<AttachmentPutModelAutoTestStepResultsModel>? @stepResults, string? @title)
-        {
-            this.Title = @title;
-            this.Description = @description;
-            this.StartedOn = @startedOn;
-            this.CompletedOn = @completedOn;
-            this.Duration = @duration;
-            this.Outcome = @outcome;
-            this.StepResults = @stepResults;
-            this.Attachments = @attachments;
-            this.Parameters = @parameters;
-        }
-    
         [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Title { get; }
+        public string? Title { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("startedOn", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? StartedOn { get; }
+        public System.DateTime? StartedOn { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("completedOn", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? CompletedOn { get; }
+        public System.DateTime? CompletedOn { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("duration", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long? Duration { get; }
+        public long? Duration { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("outcome", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Outcome { get; }
+        public string? Outcome { get; set; }= default!;
     
         /// <summary>nested enumeration is allowed</summary>
         [Newtonsoft.Json.JsonProperty("stepResults", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [System.Obsolete]
-        public System.Collections.Generic.List<AttachmentPutModelAutoTestStepResultsModel>? StepResults { get; }
+        public System.Collections.Generic.List<AttachmentPutModelAutoTestStepResultsModel>? StepResults { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("attachments", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AttachmentPutModel>? Attachments { get; }
+        public System.Collections.Generic.List<AttachmentPutModel>? Attachments { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("parameters", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.Dictionary<string, string>? Parameters { get; }
+        public System.Collections.Generic.Dictionary<string, string>? Parameters { get; set; }= default!;
     
     
     }
@@ -2401,84 +1722,61 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class AutoTestResultPostModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public AutoTestResultPostModel(System.Collections.Generic.List<AttachmentPutModel>? @attachments, string @autoTestExternalId, System.DateTime? @completedOn, long @configurationGlobalId, long? @duration, string? @failureReasonName, System.Collections.Generic.List<LinkPostModel>? @links, string? @message, string @outcome, System.Collections.Generic.Dictionary<string, string>? @parameters, System.Collections.Generic.Dictionary<string, string>? @properties, System.Collections.Generic.List<AttachmentPutModelAutoTestStepResultsModel>? @setupResults, System.DateTime? @startedOn, System.Collections.Generic.List<AttachmentPutModelAutoTestStepResultsModel>? @stepResults, System.Collections.Generic.List<AttachmentPutModelAutoTestStepResultsModel>? @teardownResults, long @testPlanGlobalId, System.Guid @testRunId, string? @traces)
-        {
-            this.TestRunId = @testRunId;
-            this.TestPlanGlobalId = @testPlanGlobalId;
-            this.ConfigurationGlobalId = @configurationGlobalId;
-            this.Links = @links;
-            this.FailureReasonName = @failureReasonName;
-            this.AutoTestExternalId = @autoTestExternalId;
-            this.Outcome = @outcome;
-            this.Message = @message;
-            this.Traces = @traces;
-            this.StartedOn = @startedOn;
-            this.CompletedOn = @completedOn;
-            this.Duration = @duration;
-            this.Attachments = @attachments;
-            this.Parameters = @parameters;
-            this.Properties = @properties;
-            this.StepResults = @stepResults;
-            this.SetupResults = @setupResults;
-            this.TeardownResults = @teardownResults;
-        }
-    
         [Newtonsoft.Json.JsonProperty("testRunId", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid TestRunId { get; }
+        public System.Guid TestRunId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("testPlanGlobalId", Required = Newtonsoft.Json.Required.Always)]
-        public long TestPlanGlobalId { get; }
+        public long TestPlanGlobalId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("configurationGlobalId", Required = Newtonsoft.Json.Required.Always)]
-        public long ConfigurationGlobalId { get; }
+        public long ConfigurationGlobalId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("links", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<LinkPostModel>? Links { get; }
+        public System.Collections.Generic.List<LinkPostModel>? Links { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("failureReasonName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? FailureReasonName { get; }
+        public string? FailureReasonName { get; set; }= default!;
     
         /// <summary>This property is used to set autotest identifier from client system</summary>
         [Newtonsoft.Json.JsonProperty("autoTestExternalId", Required = Newtonsoft.Json.Required.Always)]
-        public string AutoTestExternalId { get; }
+        public string AutoTestExternalId { get; set; }= default!;
     
         /// <summary>Property can contain one of these values: Passed, Failed, Pending, Blocked, Skipped</summary>
         [Newtonsoft.Json.JsonProperty("outcome", Required = Newtonsoft.Json.Required.Always)]
-        public string Outcome { get; }
+        public string Outcome { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("message", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Message { get; }
+        public string? Message { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("traces", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Traces { get; }
+        public string? Traces { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("startedOn", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? StartedOn { get; }
+        public System.DateTime? StartedOn { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("completedOn", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? CompletedOn { get; }
+        public System.DateTime? CompletedOn { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("duration", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long? Duration { get; }
+        public long? Duration { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("attachments", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AttachmentPutModel>? Attachments { get; }
+        public System.Collections.Generic.List<AttachmentPutModel>? Attachments { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("parameters", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.Dictionary<string, string>? Parameters { get; }
+        public System.Collections.Generic.Dictionary<string, string>? Parameters { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("properties", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.Dictionary<string, string>? Properties { get; }
+        public System.Collections.Generic.Dictionary<string, string>? Properties { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("stepResults", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AttachmentPutModelAutoTestStepResultsModel>? StepResults { get; }
+        public System.Collections.Generic.List<AttachmentPutModelAutoTestStepResultsModel>? StepResults { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("setupResults", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AttachmentPutModelAutoTestStepResultsModel>? SetupResults { get; }
+        public System.Collections.Generic.List<AttachmentPutModelAutoTestStepResultsModel>? SetupResults { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("teardownResults", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AttachmentPutModelAutoTestStepResultsModel>? TeardownResults { get; }
+        public System.Collections.Generic.List<AttachmentPutModelAutoTestStepResultsModel>? TeardownResults { get; set; }= default!;
     
     
     }
@@ -2497,23 +1795,15 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class TestRunV2PostShortModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public TestRunV2PostShortModel(string? @description, string? @name, System.Guid @projectId)
-        {
-            this.ProjectId = @projectId;
-            this.Name = @name;
-            this.Description = @description;
-        }
-    
         /// <summary>This property is to link test run with a project</summary>
         [Newtonsoft.Json.JsonProperty("projectId", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid ProjectId { get; }
+        public System.Guid ProjectId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Name { get; }
+        public string? Name { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
     
     }
@@ -2521,22 +1811,14 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class TestRunV2PutModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public TestRunV2PutModel(string? @description, System.Guid @id, string @name)
-        {
-            this.Id = @id;
-            this.Name = @name;
-            this.Description = @description;
-        }
-    
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid Id { get; }
+        public System.Guid Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
     
     }
@@ -2544,36 +1826,25 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class TestRunFillByWorkItemsPostModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public TestRunFillByWorkItemsPostModel(System.Collections.Generic.List<System.Guid> @configurationIds, string? @description, string? @name, System.Guid @projectId, System.Guid @testPlanId, System.Collections.Generic.List<System.Guid> @workitemIds)
-        {
-            this.ConfigurationIds = @configurationIds;
-            this.WorkitemIds = @workitemIds;
-            this.ProjectId = @projectId;
-            this.TestPlanId = @testPlanId;
-            this.Name = @name;
-            this.Description = @description;
-        }
-    
         [Newtonsoft.Json.JsonProperty("configurationIds", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.List<System.Guid> ConfigurationIds { get; }
+        public System.Collections.Generic.List<System.Guid> ConfigurationIds { get; } = new System.Collections.Generic.List<System.Guid>();
     
         [Newtonsoft.Json.JsonProperty("workitemIds", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.List<System.Guid> WorkitemIds { get; }
+        public System.Collections.Generic.List<System.Guid> WorkitemIds { get; } = new System.Collections.Generic.List<System.Guid>();
     
         /// <summary>This property is used to link test run with project</summary>
         [Newtonsoft.Json.JsonProperty("projectId", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid ProjectId { get; }
+        public System.Guid ProjectId { get; set; }= default!;
     
         /// <summary>This property is used to link test run with test plan</summary>
         [Newtonsoft.Json.JsonProperty("testPlanId", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid TestPlanId { get; }
+        public System.Guid TestPlanId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Name { get; }
+        public string? Name { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
     
     }
@@ -2581,18 +1852,11 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class TestPointSelector 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public TestPointSelector(System.Guid @configurationId, System.Collections.Generic.List<System.Guid> @workitemIds)
-        {
-            this.ConfigurationId = @configurationId;
-            this.WorkitemIds = @workitemIds;
-        }
-    
         [Newtonsoft.Json.JsonProperty("configurationId", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid ConfigurationId { get; }
+        public System.Guid ConfigurationId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("workitemIds", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.List<System.Guid> WorkitemIds { get; }
+        public System.Collections.Generic.List<System.Guid> WorkitemIds { get; } = new System.Collections.Generic.List<System.Guid>();
     
     
     }
@@ -2600,32 +1864,22 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class TestRunFillByConfigurationsPostModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public TestRunFillByConfigurationsPostModel(string? @description, string? @name, System.Guid @projectId, System.Guid @testPlanId, System.Collections.Generic.List<TestPointSelector> @testPointSelectors)
-        {
-            this.TestPointSelectors = @testPointSelectors;
-            this.ProjectId = @projectId;
-            this.TestPlanId = @testPlanId;
-            this.Name = @name;
-            this.Description = @description;
-        }
-    
         [Newtonsoft.Json.JsonProperty("testPointSelectors", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.List<TestPointSelector> TestPointSelectors { get; }
+        public System.Collections.Generic.List<TestPointSelector> TestPointSelectors { get; } = new System.Collections.Generic.List<TestPointSelector>();
     
         /// <summary>This property is used to link test run with project</summary>
         [Newtonsoft.Json.JsonProperty("projectId", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid ProjectId { get; }
+        public System.Guid ProjectId { get; set; }= default!;
     
         /// <summary>This property is used to link test run with test plan</summary>
         [Newtonsoft.Json.JsonProperty("testPlanId", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid TestPlanId { get; }
+        public System.Guid TestPlanId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Name { get; }
+        public string? Name { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
     
     }
@@ -2633,31 +1887,21 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class TestRunFillByAutoTestsPostModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public TestRunFillByAutoTestsPostModel(System.Collections.Generic.List<string> @autoTestExternalIds, System.Collections.Generic.List<System.Guid> @configurationIds, string? @description, string? @name, System.Guid @projectId)
-        {
-            this.ProjectId = @projectId;
-            this.Name = @name;
-            this.ConfigurationIds = @configurationIds;
-            this.AutoTestExternalIds = @autoTestExternalIds;
-            this.Description = @description;
-        }
-    
         /// <summary>This property is used to link test run with project</summary>
         [Newtonsoft.Json.JsonProperty("projectId", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid ProjectId { get; }
+        public System.Guid ProjectId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Name { get; }
+        public string? Name { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("configurationIds", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.List<System.Guid> ConfigurationIds { get; }
+        public System.Collections.Generic.List<System.Guid> ConfigurationIds { get; } = new System.Collections.Generic.List<System.Guid>();
     
         [Newtonsoft.Json.JsonProperty("autoTestExternalIds", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.List<string> AutoTestExternalIds { get; }
+        public System.Collections.Generic.List<string> AutoTestExternalIds { get; } = new System.Collections.Generic.List<string>();
     
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
     
     }
@@ -2665,77 +1909,56 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class AutoTestResultsForTestRunModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public AutoTestResultsForTestRunModel(System.Collections.Generic.List<AttachmentPutModel>? @attachments, string @autoTestExternalId, System.DateTime? @completedOn, System.Guid @configurationId, long? @duration, string? @failureReasonName, System.Collections.Generic.List<LinkPostModel>? @links, string? @message, string @outcome, System.Collections.Generic.Dictionary<string, string>? @parameters, System.Collections.Generic.Dictionary<string, string>? @properties, System.Collections.Generic.List<AttachmentPutModelAutoTestStepResultsModel>? @setupResults, System.DateTime? @startedOn, System.Collections.Generic.List<AttachmentPutModelAutoTestStepResultsModel>? @stepResults, System.Collections.Generic.List<AttachmentPutModelAutoTestStepResultsModel>? @teardownResults, string? @traces)
-        {
-            this.ConfigurationId = @configurationId;
-            this.Links = @links;
-            this.FailureReasonName = @failureReasonName;
-            this.AutoTestExternalId = @autoTestExternalId;
-            this.Outcome = @outcome;
-            this.Message = @message;
-            this.Traces = @traces;
-            this.StartedOn = @startedOn;
-            this.CompletedOn = @completedOn;
-            this.Duration = @duration;
-            this.Attachments = @attachments;
-            this.Parameters = @parameters;
-            this.Properties = @properties;
-            this.StepResults = @stepResults;
-            this.SetupResults = @setupResults;
-            this.TeardownResults = @teardownResults;
-        }
-    
         [Newtonsoft.Json.JsonProperty("configurationId", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid ConfigurationId { get; }
+        public System.Guid ConfigurationId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("links", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<LinkPostModel>? Links { get; }
+        public System.Collections.Generic.List<LinkPostModel>? Links { get; set; }= default!;
     
         /// <summary>Property may have one of listed values: InfrastructureDefect, ProductDefect, TestDefect, NoDefect</summary>
         [Newtonsoft.Json.JsonProperty("failureReasonName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? FailureReasonName { get; }
+        public string? FailureReasonName { get; set; }= default!;
     
         /// <summary>This property is used to set autotest identifier from client system</summary>
         [Newtonsoft.Json.JsonProperty("autoTestExternalId", Required = Newtonsoft.Json.Required.Always)]
-        public string AutoTestExternalId { get; }
+        public string AutoTestExternalId { get; set; }= default!;
     
         /// <summary>Property can contain one of these values: Passed, Failed, Pending, Blocked, Skipped</summary>
         [Newtonsoft.Json.JsonProperty("outcome", Required = Newtonsoft.Json.Required.Always)]
-        public string Outcome { get; }
+        public string Outcome { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("message", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Message { get; }
+        public string? Message { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("traces", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Traces { get; }
+        public string? Traces { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("startedOn", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? StartedOn { get; }
+        public System.DateTime? StartedOn { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("completedOn", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? CompletedOn { get; }
+        public System.DateTime? CompletedOn { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("duration", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long? Duration { get; }
+        public long? Duration { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("attachments", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AttachmentPutModel>? Attachments { get; }
+        public System.Collections.Generic.List<AttachmentPutModel>? Attachments { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("parameters", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.Dictionary<string, string>? Parameters { get; }
+        public System.Collections.Generic.Dictionary<string, string>? Parameters { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("properties", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.Dictionary<string, string>? Properties { get; }
+        public System.Collections.Generic.Dictionary<string, string>? Properties { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("stepResults", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AttachmentPutModelAutoTestStepResultsModel>? StepResults { get; }
+        public System.Collections.Generic.List<AttachmentPutModelAutoTestStepResultsModel>? StepResults { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("setupResults", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AttachmentPutModelAutoTestStepResultsModel>? SetupResults { get; }
+        public System.Collections.Generic.List<AttachmentPutModelAutoTestStepResultsModel>? SetupResults { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("teardownResults", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AttachmentPutModelAutoTestStepResultsModel>? TeardownResults { get; }
+        public System.Collections.Generic.List<AttachmentPutModelAutoTestStepResultsModel>? TeardownResults { get; set; }= default!;
     
     
     }
@@ -2743,26 +1966,17 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class TestSuiteV2GetModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public TestSuiteV2GetModel(System.Guid? @id, string @name, System.Guid? @parentId, System.Guid? @testPlanId)
-        {
-            this.Id = @id;
-            this.ParentId = @parentId;
-            this.TestPlanId = @testPlanId;
-            this.Name = @name;
-        }
-    
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("parentId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ParentId { get; }
+        public System.Guid? ParentId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("testPlanId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? TestPlanId { get; }
+        public System.Guid? TestPlanId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
     
     }
@@ -2770,22 +1984,14 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class TestSuiteV2PostModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public TestSuiteV2PostModel(string @name, System.Guid? @parentId, System.Guid? @testPlanId)
-        {
-            this.ParentId = @parentId;
-            this.TestPlanId = @testPlanId;
-            this.Name = @name;
-        }
-    
         [Newtonsoft.Json.JsonProperty("parentId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ParentId { get; }
+        public System.Guid? ParentId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("testPlanId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? TestPlanId { get; }
+        public System.Guid? TestPlanId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
     
     }
@@ -2793,22 +1999,14 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class TestSuiteV2PutModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public TestSuiteV2PutModel(System.Guid? @id, string @name, System.Guid? @parentId)
-        {
-            this.Id = @id;
-            this.ParentId = @parentId;
-            this.Name = @name;
-        }
-    
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("parentId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ParentId { get; }
+        public System.Guid? ParentId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
     
     }
@@ -2816,39 +2014,27 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class TestPointByTestSuiteModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public TestPointByTestSuiteModel(System.Guid? @configurationId, System.Guid? @id, System.Guid? @iterationId, System.Guid? @lastTestResultId, string? @status, System.Guid? @testerId, System.Guid? @workItemId)
-        {
-            this.Id = @id;
-            this.TesterId = @testerId;
-            this.WorkItemId = @workItemId;
-            this.ConfigurationId = @configurationId;
-            this.Status = @status;
-            this.LastTestResultId = @lastTestResultId;
-            this.IterationId = @iterationId;
-        }
-    
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("testerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? TesterId { get; }
+        public System.Guid? TesterId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("workItemId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? WorkItemId { get; }
+        public System.Guid? WorkItemId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("configurationId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ConfigurationId { get; }
+        public System.Guid? ConfigurationId { get; set; }= default!;
     
         /// <summary>Applies one of these values: Blocked, NoResults, Failed, Passed</summary>
         [Newtonsoft.Json.JsonProperty("status", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Status { get; }
+        public string? Status { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("lastTestResultId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? LastTestResultId { get; }
+        public System.Guid? LastTestResultId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("iterationId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? IterationId { get; }
+        public System.Guid? IterationId { get; set; }= default!;
     
     
     }
@@ -2856,87 +2042,63 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class TestResultV2ShortModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public TestResultV2ShortModel(System.Collections.Generic.List<AttachmentModel>? @attachments, System.Guid? @autoTestId, string? @comment, System.DateTime? @completedOn, System.Guid? @configurationId, System.Guid? @id, System.Collections.Generic.List<LinkModel>? @links, string? @message, string? @outcome, System.Collections.Generic.Dictionary<string, string>? @parameters, System.Collections.Generic.Dictionary<string, string>? @properties, System.Guid? @runByUserId, System.DateTime? @startedOn, System.Guid? @stoppedByUserId, TestPointShortModel? @testPoint, System.Guid? @testPointId, System.Guid? @testRunId, string? @traces, System.Guid? @workItemVersionId)
-        {
-            this.Id = @id;
-            this.ConfigurationId = @configurationId;
-            this.WorkItemVersionId = @workItemVersionId;
-            this.AutoTestId = @autoTestId;
-            this.Message = @message;
-            this.Traces = @traces;
-            this.StartedOn = @startedOn;
-            this.CompletedOn = @completedOn;
-            this.RunByUserId = @runByUserId;
-            this.StoppedByUserId = @stoppedByUserId;
-            this.TestPointId = @testPointId;
-            this.TestPoint = @testPoint;
-            this.TestRunId = @testRunId;
-            this.Outcome = @outcome;
-            this.Comment = @comment;
-            this.Links = @links;
-            this.Attachments = @attachments;
-            this.Parameters = @parameters;
-            this.Properties = @properties;
-        }
-    
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("configurationId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ConfigurationId { get; }
+        public System.Guid? ConfigurationId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("workItemVersionId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? WorkItemVersionId { get; }
+        public System.Guid? WorkItemVersionId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("autoTestId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? AutoTestId { get; }
+        public System.Guid? AutoTestId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("message", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Message { get; }
+        public string? Message { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("traces", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Traces { get; }
+        public string? Traces { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("startedOn", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? StartedOn { get; }
+        public System.DateTime? StartedOn { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("completedOn", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? CompletedOn { get; }
+        public System.DateTime? CompletedOn { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("runByUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? RunByUserId { get; }
+        public System.Guid? RunByUserId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("stoppedByUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? StoppedByUserId { get; }
+        public System.Guid? StoppedByUserId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("testPointId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? TestPointId { get; }
+        public System.Guid? TestPointId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("testPoint", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public TestPointShortModel? TestPoint { get; }
+        public TestPointShortModel? TestPoint { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("testRunId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? TestRunId { get; }
+        public System.Guid? TestRunId { get; set; }= default!;
     
         /// <summary>Property can contain one of these values: Passed, Failed, Pending, Blocked, Skipped</summary>
         [Newtonsoft.Json.JsonProperty("outcome", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Outcome { get; }
+        public string? Outcome { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("comment", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Comment { get; }
+        public string? Comment { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("links", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<LinkModel>? Links { get; }
+        public System.Collections.Generic.List<LinkModel>? Links { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("attachments", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AttachmentModel>? Attachments { get; }
+        public System.Collections.Generic.List<AttachmentModel>? Attachments { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("parameters", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.Dictionary<string, string>? Parameters { get; }
+        public System.Collections.Generic.Dictionary<string, string>? Parameters { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("properties", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.Dictionary<string, string>? Properties { get; }
+        public System.Collections.Generic.Dictionary<string, string>? Properties { get; set; }= default!;
     
     
     }
@@ -2972,136 +2134,101 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class WorkItemModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public WorkItemModel(System.Collections.Generic.List<AttachmentModel>? @attachments, System.Collections.Generic.Dictionary<string, string> @attributes, System.Collections.Generic.List<AutoTestModel>? @autoTests, System.Guid? @createdById, System.DateTime? @createdDate, string? @description, int? @duration, WorkItemEntityTypes @entityTypeName, long? @globalId, System.Guid? @id, bool? @isAutomated, bool? @isDeleted, System.Collections.Generic.List<IterationModel>? @iterations, System.Collections.Generic.List<LinkModel> @links, long? @medianDuration, System.Guid? @modifiedById, System.DateTime? @modifiedDate, string @name, System.Collections.Generic.List<StepModel> @postconditionSteps, System.Collections.Generic.List<StepModel> @preconditionSteps, WorkItemPriorityModel @priority, System.Guid? @projectId, System.Guid? @sectionId, System.Collections.Generic.List<StepModel>? @sectionPostconditionSteps, System.Collections.Generic.List<StepModel>? @sectionPreconditionSteps, WorkItemStates @state, System.Collections.Generic.List<StepModel> @steps, System.Collections.Generic.List<TagShortModel> @tags, System.Guid? @versionId, int? @versionNumber)
-        {
-            this.VersionId = @versionId;
-            this.MedianDuration = @medianDuration;
-            this.IsDeleted = @isDeleted;
-            this.ProjectId = @projectId;
-            this.EntityTypeName = @entityTypeName;
-            this.IsAutomated = @isAutomated;
-            this.AutoTests = @autoTests;
-            this.Attachments = @attachments;
-            this.SectionPreconditionSteps = @sectionPreconditionSteps;
-            this.SectionPostconditionSteps = @sectionPostconditionSteps;
-            this.VersionNumber = @versionNumber;
-            this.Iterations = @iterations;
-            this.CreatedDate = @createdDate;
-            this.ModifiedDate = @modifiedDate;
-            this.CreatedById = @createdById;
-            this.ModifiedById = @modifiedById;
-            this.GlobalId = @globalId;
-            this.Id = @id;
-            this.SectionId = @sectionId;
-            this.Description = @description;
-            this.State = @state;
-            this.Priority = @priority;
-            this.Steps = @steps;
-            this.PreconditionSteps = @preconditionSteps;
-            this.PostconditionSteps = @postconditionSteps;
-            this.Duration = @duration;
-            this.Attributes = @attributes;
-            this.Tags = @tags;
-            this.Links = @links;
-            this.Name = @name;
-        }
-    
         /// <summary>used for versioning changes in workitem</summary>
         [Newtonsoft.Json.JsonProperty("versionId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? VersionId { get; }
+        public System.Guid? VersionId { get; set; }= default!;
     
         /// <summary>used for getting a median duration of all autotests related to this workitem</summary>
         [Newtonsoft.Json.JsonProperty("medianDuration", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long? MedianDuration { get; }
+        public long? MedianDuration { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isDeleted", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsDeleted { get; }
+        public bool? IsDeleted { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("projectId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ProjectId { get; }
+        public System.Guid? ProjectId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("entityTypeName", Required = Newtonsoft.Json.Required.Always)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public WorkItemEntityTypes EntityTypeName { get; }
+        public WorkItemEntityTypes EntityTypeName { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("isAutomated", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? IsAutomated { get; }
+        public bool? IsAutomated { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("autoTests", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AutoTestModel>? AutoTests { get; }
+        public System.Collections.Generic.List<AutoTestModel>? AutoTests { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("attachments", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AttachmentModel>? Attachments { get; }
+        public System.Collections.Generic.List<AttachmentModel>? Attachments { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("sectionPreconditionSteps", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<StepModel>? SectionPreconditionSteps { get; }
+        public System.Collections.Generic.List<StepModel>? SectionPreconditionSteps { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("sectionPostconditionSteps", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<StepModel>? SectionPostconditionSteps { get; }
+        public System.Collections.Generic.List<StepModel>? SectionPostconditionSteps { get; set; }= default!;
     
         /// <summary>used for define chronology of workitem state in each version</summary>
         [Newtonsoft.Json.JsonProperty("versionNumber", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int? VersionNumber { get; }
+        public int? VersionNumber { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("iterations", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<IterationModel>? Iterations { get; }
+        public System.Collections.Generic.List<IterationModel>? Iterations { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? CreatedDate { get; }
+        public System.DateTime? CreatedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? ModifiedDate { get; }
+        public System.DateTime? ModifiedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("createdById", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? CreatedById { get; }
+        public System.Guid? CreatedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedById", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ModifiedById { get; }
+        public System.Guid? ModifiedById { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("globalId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long? GlobalId { get; }
+        public long? GlobalId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("sectionId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? SectionId { get; }
+        public System.Guid? SectionId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("state", Required = Newtonsoft.Json.Required.Always)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public WorkItemStates State { get; }
+        public WorkItemStates State { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("priority", Required = Newtonsoft.Json.Required.Always)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public WorkItemPriorityModel Priority { get; }
+        public WorkItemPriorityModel Priority { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("steps", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.List<StepModel> Steps { get; }
+        public System.Collections.Generic.List<StepModel> Steps { get; } = new System.Collections.Generic.List<StepModel>();
     
         [Newtonsoft.Json.JsonProperty("preconditionSteps", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.List<StepModel> PreconditionSteps { get; }
+        public System.Collections.Generic.List<StepModel> PreconditionSteps { get; } = new System.Collections.Generic.List<StepModel>();
     
         [Newtonsoft.Json.JsonProperty("postconditionSteps", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.List<StepModel> PostconditionSteps { get; }
+        public System.Collections.Generic.List<StepModel> PostconditionSteps { get; } = new System.Collections.Generic.List<StepModel>();
     
         [Newtonsoft.Json.JsonProperty("duration", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int? Duration { get; }
+        public int? Duration { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("attributes", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.Dictionary<string, string> Attributes { get; }
+        public System.Collections.Generic.Dictionary<string, string> Attributes { get; } = new System.Collections.Generic.Dictionary<string, string>();
     
         [Newtonsoft.Json.JsonProperty("tags", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.List<TagShortModel> Tags { get; }
+        public System.Collections.Generic.List<TagShortModel> Tags { get; } = new System.Collections.Generic.List<TagShortModel>();
     
         [Newtonsoft.Json.JsonProperty("links", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.List<LinkModel> Links { get; }
+        public System.Collections.Generic.List<LinkModel> Links { get; } = new System.Collections.Generic.List<LinkModel>();
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
     
     }
@@ -3109,14 +2236,8 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class ParameterIterationModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public ParameterIterationModel(System.Guid @id)
-        {
-            this.Id = @id;
-        }
-    
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid Id { get; }
+        public System.Guid Id { get; set; }= default!;
     
     
     }
@@ -3124,18 +2245,11 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class IterationPutModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public IterationPutModel(System.Guid? @id, System.Collections.Generic.List<ParameterIterationModel> @parameters)
-        {
-            this.Parameters = @parameters;
-            this.Id = @id;
-        }
-    
         [Newtonsoft.Json.JsonProperty("parameters", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.List<ParameterIterationModel> Parameters { get; }
+        public System.Collections.Generic.List<ParameterIterationModel> Parameters { get; } = new System.Collections.Generic.List<ParameterIterationModel>();
     
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
     
     }
@@ -3143,78 +2257,57 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class WorkItemPostModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public WorkItemPostModel(System.Collections.Generic.List<AttachmentPutModel>? @attachments, System.Collections.Generic.Dictionary<string, string> @attributes, string? @description, int? @duration, WorkItemEntityTypes @entityTypeName, System.Collections.Generic.List<IterationPutModel>? @iterations, System.Collections.Generic.List<LinkPostModel> @links, string @name, System.Collections.Generic.List<StepPutModel> @postconditionSteps, System.Collections.Generic.List<StepPutModel> @preconditionSteps, WorkItemPriorityModel @priority, System.Guid @projectId, System.Guid @sectionId, WorkItemStates @state, System.Collections.Generic.List<StepPutModel> @steps, System.Collections.Generic.List<TagShortModel> @tags)
-        {
-            this.EntityTypeName = @entityTypeName;
-            this.Description = @description;
-            this.State = @state;
-            this.Priority = @priority;
-            this.Steps = @steps;
-            this.PreconditionSteps = @preconditionSteps;
-            this.PostconditionSteps = @postconditionSteps;
-            this.Duration = @duration;
-            this.Attributes = @attributes;
-            this.Tags = @tags;
-            this.Attachments = @attachments;
-            this.Iterations = @iterations;
-            this.Links = @links;
-            this.Name = @name;
-            this.ProjectId = @projectId;
-            this.SectionId = @sectionId;
-        }
-    
         [Newtonsoft.Json.JsonProperty("entityTypeName", Required = Newtonsoft.Json.Required.Always)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public WorkItemEntityTypes EntityTypeName { get; }
+        public WorkItemEntityTypes EntityTypeName { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("state", Required = Newtonsoft.Json.Required.Always)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public WorkItemStates State { get; }
+        public WorkItemStates State { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("priority", Required = Newtonsoft.Json.Required.Always)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public WorkItemPriorityModel Priority { get; }
+        public WorkItemPriorityModel Priority { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("steps", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.List<StepPutModel> Steps { get; }
+        public System.Collections.Generic.List<StepPutModel> Steps { get; } = new System.Collections.Generic.List<StepPutModel>();
     
         [Newtonsoft.Json.JsonProperty("preconditionSteps", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.List<StepPutModel> PreconditionSteps { get; }
+        public System.Collections.Generic.List<StepPutModel> PreconditionSteps { get; } = new System.Collections.Generic.List<StepPutModel>();
     
         [Newtonsoft.Json.JsonProperty("postconditionSteps", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.List<StepPutModel> PostconditionSteps { get; }
+        public System.Collections.Generic.List<StepPutModel> PostconditionSteps { get; } = new System.Collections.Generic.List<StepPutModel>();
     
         [Newtonsoft.Json.JsonProperty("duration", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int? Duration { get; }
+        public int? Duration { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("attributes", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.Dictionary<string, string> Attributes { get; }
+        public System.Collections.Generic.Dictionary<string, string> Attributes { get; } = new System.Collections.Generic.Dictionary<string, string>();
     
         [Newtonsoft.Json.JsonProperty("tags", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.List<TagShortModel> Tags { get; }
+        public System.Collections.Generic.List<TagShortModel> Tags { get; } = new System.Collections.Generic.List<TagShortModel>();
     
         [Newtonsoft.Json.JsonProperty("attachments", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<AttachmentPutModel>? Attachments { get; }
+        public System.Collections.Generic.List<AttachmentPutModel>? Attachments { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("iterations", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<IterationPutModel>? Iterations { get; }
+        public System.Collections.Generic.List<IterationPutModel>? Iterations { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("links", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.List<LinkPostModel> Links { get; }
+        public System.Collections.Generic.List<LinkPostModel> Links { get; } = new System.Collections.Generic.List<LinkPostModel>();
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
         /// <summary>This property is used to link workitem with project</summary>
         [Newtonsoft.Json.JsonProperty("projectId", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid ProjectId { get; }
+        public System.Guid ProjectId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("sectionId", Required = Newtonsoft.Json.Required.Always)]
-        public System.Guid SectionId { get; }
+        public System.Guid SectionId { get; set; }= default!;
     
     
     }
@@ -3222,72 +2315,52 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class WorkItemPutModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public WorkItemPutModel(System.Collections.Generic.List<AttachmentPutModel> @attachments, System.Collections.Generic.Dictionary<string, string> @attributes, string? @description, int? @duration, System.Guid? @id, System.Collections.Generic.List<IterationPutModel>? @iterations, System.Collections.Generic.List<LinkPutModel> @links, string @name, System.Collections.Generic.List<StepPutModel> @postconditionSteps, System.Collections.Generic.List<StepPutModel> @preconditionSteps, WorkItemPriorityModel @priority, System.Guid? @sectionId, WorkItemStates @state, System.Collections.Generic.List<StepPutModel> @steps, System.Collections.Generic.List<TagShortModel> @tags)
-        {
-            this.Attachments = @attachments;
-            this.Iterations = @iterations;
-            this.Id = @id;
-            this.SectionId = @sectionId;
-            this.Description = @description;
-            this.State = @state;
-            this.Priority = @priority;
-            this.Steps = @steps;
-            this.PreconditionSteps = @preconditionSteps;
-            this.PostconditionSteps = @postconditionSteps;
-            this.Duration = @duration;
-            this.Attributes = @attributes;
-            this.Tags = @tags;
-            this.Links = @links;
-            this.Name = @name;
-        }
-    
         [Newtonsoft.Json.JsonProperty("attachments", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.List<AttachmentPutModel> Attachments { get; }
+        public System.Collections.Generic.List<AttachmentPutModel> Attachments { get; } = new System.Collections.Generic.List<AttachmentPutModel>();
     
         [Newtonsoft.Json.JsonProperty("iterations", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.List<IterationPutModel>? Iterations { get; }
+        public System.Collections.Generic.List<IterationPutModel>? Iterations { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? Id { get; }
+        public System.Guid? Id { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("sectionId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? SectionId { get; }
+        public System.Guid? SectionId { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Description { get; }
+        public string? Description { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("state", Required = Newtonsoft.Json.Required.Always)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public WorkItemStates State { get; }
+        public WorkItemStates State { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("priority", Required = Newtonsoft.Json.Required.Always)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public WorkItemPriorityModel Priority { get; }
+        public WorkItemPriorityModel Priority { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("steps", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.List<StepPutModel> Steps { get; }
+        public System.Collections.Generic.List<StepPutModel> Steps { get; } = new System.Collections.Generic.List<StepPutModel>();
     
         [Newtonsoft.Json.JsonProperty("preconditionSteps", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.List<StepPutModel> PreconditionSteps { get; }
+        public System.Collections.Generic.List<StepPutModel> PreconditionSteps { get; } = new System.Collections.Generic.List<StepPutModel>();
     
         [Newtonsoft.Json.JsonProperty("postconditionSteps", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.List<StepPutModel> PostconditionSteps { get; }
+        public System.Collections.Generic.List<StepPutModel> PostconditionSteps { get; } = new System.Collections.Generic.List<StepPutModel>();
     
         [Newtonsoft.Json.JsonProperty("duration", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int? Duration { get; }
+        public int? Duration { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("attributes", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.Dictionary<string, string> Attributes { get; }
+        public System.Collections.Generic.Dictionary<string, string> Attributes { get; } = new System.Collections.Generic.Dictionary<string, string>();
     
         [Newtonsoft.Json.JsonProperty("tags", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.List<TagShortModel> Tags { get; }
+        public System.Collections.Generic.List<TagShortModel> Tags { get; } = new System.Collections.Generic.List<TagShortModel>();
     
         [Newtonsoft.Json.JsonProperty("links", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.List<LinkPutModel> Links { get; }
+        public System.Collections.Generic.List<LinkPutModel> Links { get; } = new System.Collections.Generic.List<LinkPutModel>();
     
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        public string Name { get; }
+        public string Name { get; set; }= default!;
     
     
     }
@@ -3295,28 +2368,19 @@ namespace TestIt.Api.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
     public partial class WorkItemVersionModel 
     {
-        [Newtonsoft.Json.JsonConstructor]
-        public WorkItemVersionModel(System.Guid? @modifiedById, System.DateTime? @modifiedDate, System.Guid? @versionId, int? @versionNumber)
-        {
-            this.VersionId = @versionId;
-            this.VersionNumber = @versionNumber;
-            this.ModifiedDate = @modifiedDate;
-            this.ModifiedById = @modifiedById;
-        }
-    
         /// <summary>used for versioning changes in workitem</summary>
         [Newtonsoft.Json.JsonProperty("versionId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? VersionId { get; }
+        public System.Guid? VersionId { get; set; }= default!;
     
         /// <summary>used for define chronology of workitem state in each version</summary>
         [Newtonsoft.Json.JsonProperty("versionNumber", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int? VersionNumber { get; }
+        public int? VersionNumber { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTime? ModifiedDate { get; }
+        public System.DateTime? ModifiedDate { get; set; }= default!;
     
         [Newtonsoft.Json.JsonProperty("modifiedById", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Guid? ModifiedById { get; }
+        public System.Guid? ModifiedById { get; set; }= default!;
     
     
     }
