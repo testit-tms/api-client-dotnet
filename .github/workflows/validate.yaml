@@ -1,0 +1,41 @@
+name: Validate
+
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - "src/**"
+
+  workflow_dispatch:
+
+env:
+  PROJECT_DIR: ./src/TestIt.Api
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-deps: 0
+
+      - name: Setup
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget
+
+      - name: Restore dependencies
+        run: dotnet restore ${{ env.PROJECT_DIR }}
+
+      - name: Build
+        run: dotnet build --no-restore ${{ env.PROJECT_DIR }}
