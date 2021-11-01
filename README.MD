@@ -1,5 +1,5 @@
 # Test IT TMS API client for .NET
-![Test IT](https://raw.githubusercontent.com/testit-tms/dotnet-api-client/master/images/banner.png)
+![Test IT](https://raw.githubusercontent.com/testit-tms/api-client-dotnet/master/images/banner.png)
 
 # Getting Started
 
