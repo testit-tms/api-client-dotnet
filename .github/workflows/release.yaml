@@ -58,11 +58,13 @@ jobs:
       - name: Publish to NuGet.org
         run: |
           dotnet nuget push ${{ env.NUGET_DIR }}/*.nupkg \
+          --skip-duplicate \
           --source https://api.nuget.org/v3/index.json \
           --api-key ${{ secrets.NUGET_KEY }}
 
       - name: Publish to GitHub Packages
         run: |
           dotnet nuget push ${{ env.NUGET_DIR }}/*.nupkg \
+          --skip-duplicate \
           --source https://nuget.pkg.github.com/testit-tms/index.json \
           --api-key ${{ secrets.GH_PACKAGES_KEY }}
