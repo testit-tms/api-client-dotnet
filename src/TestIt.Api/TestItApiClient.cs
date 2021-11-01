@@ -10,58 +10,58 @@ using TestIt.Api.Configuration;
 
 namespace TestIt.Api
 {
-    public class TestItClientsManager : IDisposable
+    public class TestItApiClient : IDisposable
     {
-        private const string HostEnv = "TESTIT_HOST";
+        private const string ServerAddressEnv = "TESTIT_SERVER_ADDRESS";
         private const string PrivateTokenEnv = "TESTIT_PRIVATE_TOKEN";
         private const string ConfigFileEnv = "TESTIT_CONFIG_FILE";
 
         private readonly HttpClient _httpClient;
 
-        public TestItClientsManager() : this(default(TestItApiConfig)) { }
+        public TestItApiClient() : this(default(TestItApiConfig)) { }
 
-        public TestItClientsManager(string configFile) :
+        public TestItApiClient(string configFile) :
             this(new TestItApiConfig { ConfigFile = configFile }) { }
 
-        public TestItClientsManager(TestItApiConfig? config)
+        public TestItApiClient(TestItApiConfig? config)
         {
             config ??= new TestItApiConfig();
             EnrichFromFile(config, config.ConfigFile);
             EnrichFromEnv(config);
             EnrichFromCli(config);
 
-            if (string.IsNullOrWhiteSpace(config.Host))
-                throw new ConfigurationException(nameof(config.Host));
+            if (string.IsNullOrWhiteSpace(config.ServerAddress))
+                throw new ConfigurationException(nameof(config.ServerAddress));
 
             if (string.IsNullOrWhiteSpace(config.PrivateToken))
                 throw new ConfigurationException(nameof(config.PrivateToken));
 
             _httpClient = InitializeHttpClient(config);
 
-            AttachmentsClient = new AttachmentsClient(_httpClient);
-            AutoTestsClient = new AutoTestsClient(_httpClient);
-            ConfigurationsClient = new ConfigurationsClient(_httpClient);
-            ParametersClient = new ParametersClient(_httpClient);
-            ProjectsClient = new ProjectsClient(_httpClient);
-            SectionsClient = new SectionsClient(_httpClient);
-            TestPlansClient = new TestPlansClient(_httpClient);
-            TestResultsClient = new TestResultsClient(_httpClient);
-            TestRunsClient = new TestRunsClient(_httpClient);
-            TestSuitesClient = new TestSuitesClient(_httpClient);
-            WorkItemsClient = new WorkItemsClient(_httpClient);
+            Attachments = new AttachmentsClient(_httpClient);
+            AutoTests = new AutoTestsClient(_httpClient);
+            Configurations = new ConfigurationsClient(_httpClient);
+            Parameters = new ParametersClient(_httpClient);
+            Projects = new ProjectsClient(_httpClient);
+            Sections = new SectionsClient(_httpClient);
+            TestPlans = new TestPlansClient(_httpClient);
+            TestResults = new TestResultsClient(_httpClient);
+            TestRuns = new TestRunsClient(_httpClient);
+            TestSuites = new TestSuitesClient(_httpClient);
+            WorkItems = new WorkItemsClient(_httpClient);
         }
 
-        public AttachmentsClient AttachmentsClient { get; }
-        public AutoTestsClient AutoTestsClient { get; }
-        public ConfigurationsClient ConfigurationsClient { get; }
-        public ParametersClient ParametersClient { get; }
-        public ProjectsClient ProjectsClient { get; }
-        public SectionsClient SectionsClient { get; }
-        public TestPlansClient TestPlansClient { get; }
-        public TestResultsClient TestResultsClient { get; }
-        public TestRunsClient TestRunsClient { get; }
-        public TestSuitesClient TestSuitesClient { get; }
-        public WorkItemsClient WorkItemsClient { get; }
+        public AttachmentsClient Attachments { get; }
+        public AutoTestsClient AutoTests { get; }
+        public ConfigurationsClient Configurations { get; }
+        public ParametersClient Parameters { get; }
+        public ProjectsClient Projects { get; }
+        public SectionsClient Sections { get; }
+        public TestPlansClient TestPlans { get; }
+        public TestResultsClient TestResults { get; }
+        public TestRunsClient TestRuns { get; }
+        public TestSuitesClient TestSuites { get; }
+        public WorkItemsClient WorkItems { get; }
 
         public void Dispose()
         {
@@ -71,7 +71,7 @@ namespace TestIt.Api
 
         private static HttpClient InitializeHttpClient(TestItApiConfig config)
         {
-            var apiUri = new UriBuilder(Uri.UriSchemeHttp, config.Host!, 80).Uri;
+            var apiUri = new Uri(config.ServerAddress!);
 
             var httpClient = new HttpClient
             {
@@ -87,7 +87,7 @@ namespace TestIt.Api
 
         private static void MergeConfigurations(TestItApiConfig target, TestItApiConfig additional)
         {
-            target.Host = additional.Host ?? target.Host;
+            target.ServerAddress = additional.ServerAddress ?? target.ServerAddress;
             target.PrivateToken = additional.PrivateToken ?? target.PrivateToken;
         }
 
@@ -118,13 +118,13 @@ namespace TestIt.Api
 
         private static void EnrichFromEnv(TestItApiConfig config)
         {
-            var host = Environment.GetEnvironmentVariable(HostEnv);
+            var host = Environment.GetEnvironmentVariable(ServerAddressEnv);
             var privateToken = Environment.GetEnvironmentVariable(PrivateTokenEnv);
             var configFile = Environment.GetEnvironmentVariable(ConfigFileEnv);
 
             var parsedConfig = new TestItApiConfig
             {
-                Host = host,
+                ServerAddress = host,
                 PrivateToken = privateToken,
                 ConfigFile = configFile
             };
