@@ -12,7 +12,7 @@ env:
   PROJECT_DIR: ./src/TestIt.Api
 
 jobs:
-  build:
+  validate:
     runs-on: ubuntu-latest
 
     steps:
