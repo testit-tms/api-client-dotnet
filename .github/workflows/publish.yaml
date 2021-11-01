@@ -1,0 +1,45 @@
+name: Publish
+
+on:
+  release:
+
+env:
+  PROJECT_DIR: ./src/TestIt.Api
+  NUGET_DIR: ./nuget
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-deps: 0
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget
+
+      - name: Restore dependencies
+        run: dotnet restore ${{ env.PROJECT_DIR }}
+
+      - name: Build
+        run: |
+          dotnet build --configuration Release \
+          --no-restore ${{ env.PROJECT_DIR }}
+
+      - name: Pack
+        run: |
+          dotnet pack --configuration Release \
+          --no-build --output ${{ env.NUGET_DIR }} \
+          ${{ env.PROJECT_DIR }}
+
+      - name: Push
+        run: |
+          dotnet nuget push ${{ env.NUGET_DIR }} \
+          --api-key ${{ secrets.NUGET_KEY }}
