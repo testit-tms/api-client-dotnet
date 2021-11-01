@@ -35,5 +35,5 @@ jobs:
       - name: Push
         run: |
           cd ./src
-          dotnet nuget push ${{ env.NUGET_DIR }} \
-          --api-key ../nuget
+          dotnet nuget push ../nuget \
+          --api-key ${{ secrets.NUGET_KEY }}
