@@ -6,6 +6,8 @@
         <Nullable>enable</Nullable>
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>TestIt.ApiClient</PackageId>
+        <Authors>Test IT</Authors>
     </PropertyGroup>
 
     <ItemGroup>

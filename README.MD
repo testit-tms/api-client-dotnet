@@ -93,7 +93,7 @@ var createdWorkItem = await clientsManager.WorkItemsClient.CreateWorkItemAsync(w
 
 # Contributing
 
-Most of the code in in this repository was automatically generated with [NSwag](https://github.com/RicoSuter/NSwag).
+Most of the code in this repository was automatically generated with [NSwag](https://github.com/RicoSuter/NSwag).
 Nevertheless you can help to develop the project. Any contributions are **greatly appreciated**.
 
 * If you have suggestions for adding or removing projects, feel free to [open an issue](https://github.com/testit-tms/dotnet-rest-client/issues/new) to discuss it, or directly create a pull request after you edit the *README.md* file with necessary changes.
