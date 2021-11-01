@@ -1,30 +1,50 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
-        <LangVersion>9</LangVersion>
-        <Nullable>enable</Nullable>
-        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageId>TestIt.ApiClient</PackageId>
-        <Authors>Test IT</Authors>
-    </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>9</LangVersion>
+    <Nullable>enable</Nullable>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
 
-    <ItemGroup>
-        <PackageReference Include="CommandLineParser" Version="2.8.0" />
+    <IsPackable>true</IsPackable>
+    <Title>Test IT API client</Title>
+    <PackageId>TestIt.ApiClient</PackageId>
+    <Authors>Test IT</Authors>
+    <Description>Test IT TMS API client for .NET</Description>
+    <Copyright>Copyright (c) 2019 - 2021 Test IT</Copyright>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/testit-tms/dotnet-api-client</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="../../README.md" Link="README.md">
+      <Pack>true</Pack>
+      <PackagePath>README.md</PackagePath>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../../LICENSE.md" Pack="true" PackagePath="$(PackageLicenseFile)" />
+    <None Include="../../images/icon.png" Pack="true" PackagePath="$(PackageIcon)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.8.0" />
+
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <Choose>
+    <When Condition="$(VALIDATION) != '1'">
+      <ItemGroup>
         <PackageReference Include="GitVersion.MsBuild" Version="5.7.0">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-        <PackageReference Include="Microsoft.CodeAnalysis.CSharp.CodeStyle" Version="3.11.0">
-            <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
-        <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.0.3">
-            <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
-    </ItemGroup>
+      </ItemGroup>
+    </When>
+  </Choose>
+
 
 </Project>

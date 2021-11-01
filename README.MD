@@ -1,4 +1,4 @@
-# Test IT .NET RESTful API client
+# Test IT TMS API client for .NET
 ![Test IT](/images/banner.png)
 
 # Getting Started
@@ -12,71 +12,71 @@ Supported platforms depend on .NET runtime.
 
 ### NuGet CLI
 ```
-Install-Package TestIt.Api
+Install-Package TestIt.ApiClient
 ```
 
 ### .NET CLI
 ```
-dotnet package add TestIt.Api
+dotnet package add TestIt.ApiClient
 ```
 
 # Usage
 
 ## Configuration
 
-To use client you need to provide configuration to `TestItClientManager`. There 4 ways to do it (sorted by priority ascending):
+To use client you need to provide configuration to `TestItApiClient`. There 4 ways to do it (sorted by priority ascending):
 
 1. `TestItApiConfig` object
 ```cs
 var config = new TestItApiConfig
 {
-    Host = "example.com",
+    ServerAddress = "example.com",
     PrivateToken = "ExampleToken"
 };
 
-var clientsManager = new TestItClientsManager(config);
+var client = new TestItApiClient(config);
 ```
 
 2. JSON-file
 ```json
 {
-    "host": "example.com",
+    "serverAddress": "example.com",
     "privateToken": "ExampleToken"
 }
 ```
 ```cs
-var clientsManager = new TestItClientsManager("/path/to/file.json");
+var client = new TestItApiClient("/path/to/file.json");
 ```
 
 3. Path to JSON-file from `TESTIT_CONFIG_FILE` environment variable
-4. Host address and private token from `TESTIT_HOST` and `TESTIT_PRIVATE_TOKEN` environment variables respectively
+4. Server address and private token from `TESTIT_SERVER_ADDRESS` and `TESTIT_PRIVATE_TOKEN` environment variables respectively
 
 5. Path to JSON-file from CLI arguments
 ```bash
 ./yourapp --testit-config-file "path/to/file.json"
 ```
 
-6. Host address and private token from CLI arguments
+6. Server address and private token from CLI arguments
 ```bash
-./yourapp --testit-host "example.com" --testit-private-token "ExampleToken"
+./yourapp --testit-server-address "example.com" --testit-private-token "ExampleToken"
 ```
 
-After configuration is done you can access different clients from clients manager and then use methods to control Test IT.
+After configuration is done you can access different clients from `TestItApiClient` object and then use methods to control Test IT.
 
 ## Examples
 
 ### Get project list
 ```cs
-var clientsManager = new TestItClientsManager();
-var projects = await clientsManager.ProjectsClient.GetAllProjectsAsync();
+var client = new TestItApiClient();
+var projects = await client.Projects.GetAllProjectsAsync();
 ```
 
 ### Create test-case
 ```cs
-var clientsManager = new TestItClientsManager();
+var client = new TestItApiClient();
 
-var project = (await clientsManager.ProjectsClient.GetAllProjectsAsync()).First();
-var rootSection = (await clientsManager.ProjectsClient.GetSectionsByProjectIdAsync(project.Id.ToString())).First();
+var project = (await client.Projects.GetAllProjectsAsync()).First();
+var rootSection = (await client.Projects.GetSectionsByProjectIdAsync(project.Id.ToString())).First();
 
 var workItemModel = new WorkItemPostModel
 {
@@ -88,7 +88,7 @@ var workItemModel = new WorkItemPostModel
     SectionId = rootSection.Id!.Value
 };
 
-var createdWorkItem = await clientsManager.WorkItemsClient.CreateWorkItemAsync(workItemModel);
+var createdWorkItem = await client.WorkItems.CreateWorkItemAsync(workItemModel);
 ```
 
 # Contributing
