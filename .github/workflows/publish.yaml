@@ -35,6 +35,6 @@ jobs:
 
       - name: Push
         run: |
-          dotnet nuget push ${{ env.NUGET_DIR }} \
+          dotnet nuget push ${{ env.NUGET_DIR }}/*.nupkg \
           --source https://api.nuget.org/v3/index.json \
           --api-key ${{ secrets.NUGET_KEY }}
