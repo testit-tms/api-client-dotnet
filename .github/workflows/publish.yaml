@@ -2,6 +2,8 @@ name: Publish
 
 on:
   release:
+    types:
+      - created
 
 env:
   PROJECT_DIR: ./src/TestIt.Api
