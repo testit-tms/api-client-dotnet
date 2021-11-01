@@ -7,7 +7,6 @@ on:
 
 env:
   PROJECT_DIR: ./src/TestIt.Api
-  NUGET_DIR: ./nuget
 
 jobs:
   publish:
@@ -30,10 +29,11 @@ jobs:
       - name: Pack
         run: |
           dotnet pack --configuration Release \
-          --no-build --output ${{ env.NUGET_DIR }} \
+          --no-build --output ./nuget \
           ${{ env.PROJECT_DIR }}
 
       - name: Push
         run: |
+          cd ./src
           dotnet nuget push ${{ env.NUGET_DIR }} \
-          --api-key ${{ secrets.NUGET_KEY }}
+          --api-key ../nuget
