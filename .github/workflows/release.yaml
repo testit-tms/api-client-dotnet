@@ -3,13 +3,47 @@ name: Release
 on:
   release:
     types:
-      - created
+      - released
 
 env:
   PROJECT_DIR: ./src/TestIt.Api
   NUGET_DIR: ./nuget
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore ${{ env.PROJECT_DIR }}
+
+      - name: Build project
+        run: |
+          dotnet build --configuration Release \
+          --no-restore ${{ env.PROJECT_DIR }}
+
+      - name: Create NuGet package
+        run: |
+          dotnet pack --configuration Release \
+          --no-build --output ${{ env.NUGET_DIR }} \
+          ${{ env.PROJECT_DIR }}
+
+      - name: Save artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: NuGet-package
+          path: ${{ env.NUGET_DIR }}/*.nupkg
+
   publish:
     runs-on: ubuntu-latest
 
