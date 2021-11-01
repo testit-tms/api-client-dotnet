@@ -7,8 +7,8 @@ namespace TestIt.Api.Configuration
     [Serializable]
     public class TestItApiConfig
     {
-        [Option("testit-host", Required = false)]
-        public string? Host { get; set; }
+        [Option("testit-server-address", Required = false)]
+        public string? ServerAddress { get; set; }
 
         [Option("testit-private-token", Required = false)]
         public string? PrivateToken { get; set; }
