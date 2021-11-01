@@ -1,16 +1,17 @@
-name: Publish
+name: Build
 
 on:
-  release:
-    types:
-      - created
+  push:
+    branches: [master]
+
+  workflow_dispatch:
 
 env:
   PROJECT_DIR: ./src/TestIt.Api
   NUGET_DIR: ./nuget
 
 jobs:
-  publish:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,22 +20,27 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+
       - name: Restore dependencies
         run: dotnet restore ${{ env.PROJECT_DIR }}
 
-      - name: Build
+      - name: Build project
         run: |
           dotnet build --configuration Release \
           --no-restore ${{ env.PROJECT_DIR }}
 
-      - name: Pack
+      - name: Pack to NuGet
         run: |
           dotnet pack --configuration Release \
           --no-build --output ${{ env.NUGET_DIR }} \
           ${{ env.PROJECT_DIR }}
 
-      - name: Push
-        run: |
-          dotnet nuget push ${{ env.NUGET_DIR }}/*.nupkg \
-          --source https://api.nuget.org/v3/index.json \
-          --api-key ${{ secrets.NUGET_KEY }}
+      - name: Save artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: NuGet-package
+          path: ${{ env.NUGET_DIR }}/*.nupkg

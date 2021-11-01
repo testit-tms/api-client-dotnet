@@ -6,8 +6,6 @@ on:
     paths:
       - "src/**"
 
-  workflow_dispatch:
-
 env:
   PROJECT_DIR: ./src/TestIt.Api
   VALIDATION: 1
@@ -20,7 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Setup
+      - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 5.0.x
@@ -28,5 +26,5 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore ${{ env.PROJECT_DIR }}
 
-      - name: Build
+      - name: Build project
         run: dotnet build --no-restore ${{ env.PROJECT_DIR }}
