@@ -67,4 +67,4 @@ jobs:
           dotnet nuget push ${{ env.NUGET_DIR }}/*.nupkg \
           --skip-duplicate \
           --source https://nuget.pkg.github.com/testit-tms/index.json \
-          --api-key ${{ secrets.GH_PACKAGES_KEY }}
+          --api-key ${{ secrets.GITHUB_TOKEN }}
