@@ -1,4 +1,4 @@
-# Test IT .NET RESTful API client
+# Test IT TMS API client for .NET
 ![Test IT](/images/banner.png)
 
 # Getting Started
