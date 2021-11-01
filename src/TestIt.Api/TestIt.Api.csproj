@@ -15,8 +15,8 @@
     <Copyright>Copyright (c) 2019 - 2021 Test IT</Copyright>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageIcon>icon.png</PackageIcon>
-    <PackageProjectUrl>https://github.com/testit-tms/dotnet-api-client</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/testit-tms/dotnet-api-client</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/testit-tms/api-client-dotnet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/testit-tms/api-client-dotnet</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
