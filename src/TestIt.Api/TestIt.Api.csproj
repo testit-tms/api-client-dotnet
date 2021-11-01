@@ -16,6 +16,7 @@
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageIcon>icon.png</PackageIcon>
     <PackageProjectUrl>https://github.com/testit-tms/dotnet-api-client</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/testit-tms/dotnet-api-client</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
