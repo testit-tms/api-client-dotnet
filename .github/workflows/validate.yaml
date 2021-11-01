@@ -10,6 +10,7 @@ on:
 
 env:
   PROJECT_DIR: ./src/TestIt.Api
+  VALIDATION: 1
 
 jobs:
   validate:
