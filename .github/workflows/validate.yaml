@@ -26,14 +26,6 @@ jobs:
         with:
           dotnet-version: 5.0.x
 
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.nuget/packages
-          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-nuget
-
       - name: Restore dependencies
         run: dotnet restore ${{ env.PROJECT_DIR }}
 
