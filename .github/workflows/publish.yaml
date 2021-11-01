@@ -17,14 +17,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.nuget/packages
-          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-nuget
-
       - name: Restore dependencies
         run: dotnet restore ${{ env.PROJECT_DIR }}
 
