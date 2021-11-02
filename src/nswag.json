@@ -3,7 +3,7 @@
   "defaultVariables": "OutputPath=./TestIt.Api",
   "documentGenerator": {
     "fromDocument": {
-      "url": "swagger.json",
+      "url": "./swagger.json",
       "output": null,
       "newLineBehavior": "Auto"
     }
@@ -85,7 +85,7 @@
       "inlineNamedAny": false,
       "generateDtoTypes": true,
       "generateOptionalPropertiesAsNullable": true,
-      "generateNullableReferenceTypes": true,
+      "generateNullableReferenceTypes": false,
       "templateDirectory": null,
       "typeNameGeneratorType": null,
       "propertyNameGeneratorType": null,
