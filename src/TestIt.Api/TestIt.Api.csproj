@@ -12,7 +12,7 @@
     <Authors>Test IT</Authors>
     <Description>Test IT TMS API client for .NET</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <Copyright>Copyright (c) 2019 - 2021 Test IT</Copyright>
+    <Copyright>Copyright (c) 2019 - 2022 Test IT</Copyright>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageIcon>icon.png</PackageIcon>
     <RepositoryUrl>https://github.com/testit-tms/api-client-dotnet</RepositoryUrl>
