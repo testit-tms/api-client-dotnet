@@ -20,6 +20,13 @@ Install-Package TestIt.ApiClient
 dotnet package add TestIt.ApiClient
 ```
 
+## Compatibility
+
+| Test IT | API Client |
+|---------|------------|
+| 3.3     | 1.0        |
+| 3.4     | 1.1        |
+
 # Usage
 
 ## Configuration
