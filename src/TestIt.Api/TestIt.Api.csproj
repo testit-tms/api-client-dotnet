@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <LangVersion>9</LangVersion>
+    <LangVersion>10</LangVersion>
     <Nullable>enable</Nullable>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
 
@@ -34,7 +34,7 @@
   <Choose>
     <When Condition="$(VALIDATION) != '1'">
       <ItemGroup>
-        <PackageReference Include="GitVersion.MsBuild" Version="5.7.0">
+        <PackageReference Include="GitVersion.MsBuild" Version="5.8.1">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
