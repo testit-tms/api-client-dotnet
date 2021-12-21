@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <LangVersion>9</LangVersion>
+    <LangVersion>10</LangVersion>
     <Nullable>enable</Nullable>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
 
@@ -12,7 +12,7 @@
     <Authors>Test IT</Authors>
     <Description>Test IT TMS API client for .NET</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <Copyright>Copyright (c) 2019 - 2021 Test IT</Copyright>
+    <Copyright>Copyright (c) 2019 - 2022 Test IT</Copyright>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageIcon>icon.png</PackageIcon>
     <RepositoryUrl>https://github.com/testit-tms/api-client-dotnet</RepositoryUrl>
@@ -34,7 +34,7 @@
   <Choose>
     <When Condition="$(VALIDATION) != '1'">
       <ItemGroup>
-        <PackageReference Include="GitVersion.MsBuild" Version="5.7.0">
+        <PackageReference Include="GitVersion.MsBuild" Version="5.8.1">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>

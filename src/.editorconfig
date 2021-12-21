@@ -394,4 +394,4 @@ dotnet_diagnostic.CA2248.severity = error
 dotnet_diagnostic.CA2249.severity = error
 
 [{Clients.g.cs, Models.g.cs}]
-dotnet_analyzer_diagnostic.severity = none
+generated_code = true
