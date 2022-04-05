@@ -20,8 +20,7 @@ namespace TestIt.Api
 
         public TestItApiClient() : this(default(TestItApiConfig)) { }
 
-        public TestItApiClient(string configFile) :
-            this(new TestItApiConfig { ConfigFile = configFile }) { }
+        public TestItApiClient(string configFile) : this(new TestItApiConfig { ConfigFile = configFile }) { }
 
         public TestItApiClient(TestItApiConfig? config)
         {
@@ -138,8 +137,8 @@ namespace TestIt.Api
             var parsedConfig = new TestItApiConfig();
 
             Parser.Default
-               .ParseArguments<TestItApiConfig>(Environment.GetCommandLineArgs())
-               .WithParsed(c => parsedConfig = c);
+                .ParseArguments<TestItApiConfig>(Environment.GetCommandLineArgs())
+                .WithParsed(c => parsedConfig = c);
 
             EnrichFromFile(config, parsedConfig.ConfigFile);
             MergeConfigurations(config, parsedConfig);
