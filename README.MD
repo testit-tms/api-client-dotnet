@@ -26,6 +26,7 @@ dotnet package add TestIt.ApiClient
 |---------|------------|
 | 3.3     | 1.0        |
 | 3.4     | 1.1        |
+| 3.5     | 1.2        |
 
 # Usage
 
