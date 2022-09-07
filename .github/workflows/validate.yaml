@@ -7,7 +7,7 @@ on:
       - "src/**"
 
 env:
-  PROJECT_DIR: ./src/TestIt.Api
+  PROJECT_DIR: ./src/TestIt.Client
   VALIDATION: 1
 
 jobs:

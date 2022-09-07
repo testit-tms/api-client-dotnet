@@ -1,0 +1,357 @@
+# Api client for Test IT TMS
+
+## Getting Started
+
+### Compatibility
+
+| Test IT | API Client |
+|---------|------------|
+| 3.3     | 1.0        |
+| 3.4     | 1.1        |
+| 3.5     | 1.2        |
+| 3.6     | 2.0        |
+
+<a name="frameworks-supported"></a>
+## Frameworks supported
+- .NET Core >=1.0
+- .NET Framework >=4.6
+
+<a name="installation"></a>
+## Installation
+
+### NuGet CLI
+```
+Install-Package TestIt.ApiClient
+```
+
+### .NET CLI
+```
+dotnet package add TestIt.ApiClient
+```
+
+<a name="examples"></a>
+## Examples
+
+Please follow the [installation](#installation) instruction and execute the following C# code:
+
+To use the API client with a HTTP proxy, setup a `System.Net.WebProxy`
+```csharp
+Configuration c = new Configuration();
+System.Net.WebProxy webProxy = new System.Net.WebProxy("http://myProxyUrl:80/");
+webProxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
+c.Proxy = webProxy;
+```
+
+<a name="getting-started"></a>
+## Getting Started
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class Example
+    {
+        public static void Main()
+        {
+
+            Configuration config = new Configuration();
+            config.BasePath = "Your TMS address";
+            config.AddApiKeyPrefix("Authorization","PrivateToken");
+            config.AddApiKey("Authorization","Your private token");
+
+            var apiInstance = new AttachmentsApi(config);
+            var id = "id_example";  // Guid | 
+
+            try
+            {
+                // Delete attachment file
+                apiInstance.ApiV2AttachmentsIdDelete(id);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling AttachmentsApi.ApiV2AttachmentsIdDelete: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+
+        }
+    }
+}
+```
+
+<a name="documentation-for-api-endpoints"></a>
+## Documentation for API Endpoints
+
+All URIs are relative to *http://localhost*
+
+Class | Method | HTTP request | Description
+------------ | ------------- | ------------- | -------------
+*AttachmentsApi* | [**ApiV2AttachmentsIdDelete**](docs/AttachmentsApi.md#apiv2attachmentsiddelete) | **DELETE** /api/v2/attachments/{id} | Delete attachment file
+*AttachmentsApi* | [**ApiV2AttachmentsIdGet**](docs/AttachmentsApi.md#apiv2attachmentsidget) | **GET** /api/v2/attachments/{id} | Download attachment file
+*AttachmentsApi* | [**ApiV2AttachmentsOccupiedFileStorageSizeGet**](docs/AttachmentsApi.md#apiv2attachmentsoccupiedfilestoragesizeget) | **GET** /api/v2/attachments/occupiedFileStorageSize | 
+*AttachmentsApi* | [**ApiV2AttachmentsPost**](docs/AttachmentsApi.md#apiv2attachmentspost) | **POST** /api/v2/attachments | Upload new attachment file
+*AutoTestsApi* | [**ApiV2AutoTestsFlakyBulkPost**](docs/AutoTestsApi.md#apiv2autotestsflakybulkpost) | **POST** /api/v2/autoTests/flaky/bulk | Set \"Flaky\" status for multiple autotests
+*AutoTestsApi* | [**ApiV2AutoTestsIdTestResultsSearchPost**](docs/AutoTestsApi.md#apiv2autotestsidtestresultssearchpost) | **POST** /api/v2/autoTests/{id}/testResults/search | Get test results history for autotest
+*AutoTestsApi* | [**ApiV2AutoTestsIdWorkItemsChangedIdGet**](docs/AutoTestsApi.md#apiv2autotestsidworkitemschangedidget) | **GET** /api/v2/autoTests/{id}/workItems/changed/id | Get identifiers of changed linked work items
+*AutoTestsApi* | [**ApiV2AutoTestsIdWorkItemsChangedWorkItemIdApprovePost**](docs/AutoTestsApi.md#apiv2autotestsidworkitemschangedworkitemidapprovepost) | **POST** /api/v2/autoTests/{id}/workItems/changed/{workItemId}/approve | Approve changes to work items linked to autotest
+*AutoTestsApi* | [**ApiV2AutoTestsSearchPost**](docs/AutoTestsApi.md#apiv2autotestssearchpost) | **POST** /api/v2/autoTests/search | 
+*AutoTestsApi* | [**CreateAutoTest**](docs/AutoTestsApi.md#createautotest) | **POST** /api/v2/autoTests | Create autotest
+*AutoTestsApi* | [**CreateMultiple**](docs/AutoTestsApi.md#createmultiple) | **POST** /api/v2/autoTests/bulk | Create multiple autotests
+*AutoTestsApi* | [**DeleteAutoTest**](docs/AutoTestsApi.md#deleteautotest) | **DELETE** /api/v2/autoTests/{id} | Delete autotest
+*AutoTestsApi* | [**DeleteAutoTestLinkFromWorkItem**](docs/AutoTestsApi.md#deleteautotestlinkfromworkitem) | **DELETE** /api/v2/autoTests/{id}/workItems | Unlink autotest from work item
+*AutoTestsApi* | [**GetAllAutoTests**](docs/AutoTestsApi.md#getallautotests) | **GET** /api/v2/autoTests | Get all autotests
+*AutoTestsApi* | [**GetAutoTestAverageDuration**](docs/AutoTestsApi.md#getautotestaverageduration) | **GET** /api/v2/autoTests/{id}/averageDuration | Get average autotest duration
+*AutoTestsApi* | [**GetAutoTestById**](docs/AutoTestsApi.md#getautotestbyid) | **GET** /api/v2/autoTests/{id} | Get autotest by internal or global ID
+*AutoTestsApi* | [**GetAutoTestChronology**](docs/AutoTestsApi.md#getautotestchronology) | **GET** /api/v2/autoTests/{id}/chronology | Get autotest chronology
+*AutoTestsApi* | [**GetTestRuns**](docs/AutoTestsApi.md#gettestruns) | **GET** /api/v2/autoTests/{id}/testRuns | Get completed tests runs for autotests
+*AutoTestsApi* | [**GetWorkItemResults**](docs/AutoTestsApi.md#getworkitemresults) | **GET** /api/v2/autoTests/{id}/testResultHistory | 
+*AutoTestsApi* | [**GetWorkItemsLinkedToAutoTest**](docs/AutoTestsApi.md#getworkitemslinkedtoautotest) | **GET** /api/v2/autoTests/{id}/workItems | Get work items linked to autotest
+*AutoTestsApi* | [**LinkAutoTestToWorkItem**](docs/AutoTestsApi.md#linkautotesttoworkitem) | **POST** /api/v2/autoTests/{id}/workItems | Link autotest with work items
+*AutoTestsApi* | [**UpdateAutoTest**](docs/AutoTestsApi.md#updateautotest) | **PUT** /api/v2/autoTests | Update autotest
+*AutoTestsApi* | [**UpdateMultiple**](docs/AutoTestsApi.md#updatemultiple) | **PUT** /api/v2/autoTests/bulk | Update multiple autotests
+*AutotestResultReasonsApi* | [**ApiV2AutotestsResultReasonsIdDelete**](docs/AutotestResultReasonsApi.md#apiv2autotestsresultreasonsiddelete) | **DELETE** /api/v2/autotests/resultReasons/{id} | Delete FailureClass
+*AutotestResultReasonsApi* | [**ApiV2AutotestsResultReasonsIdGet**](docs/AutotestResultReasonsApi.md#apiv2autotestsresultreasonsidget) | **GET** /api/v2/autotests/resultReasons/{id} | Get FailureClass by ID
+*AutotestResultReasonsApi* | [**ApiV2AutotestsResultReasonsNameNameExistsGet**](docs/AutotestResultReasonsApi.md#apiv2autotestsresultreasonsnamenameexistsget) | **GET** /api/v2/autotests/resultReasons/name/{name}/exists | 
+*AutotestResultReasonsApi* | [**ApiV2AutotestsResultReasonsPost**](docs/AutotestResultReasonsApi.md#apiv2autotestsresultreasonspost) | **POST** /api/v2/autotests/resultReasons | Create FailureClass
+*AutotestResultReasonsApi* | [**ApiV2AutotestsResultReasonsPut**](docs/AutotestResultReasonsApi.md#apiv2autotestsresultreasonsput) | **PUT** /api/v2/autotests/resultReasons | Update FailureClass
+*AutotestResultReasonsApi* | [**ApiV2AutotestsResultReasonsSearchPost**](docs/AutotestResultReasonsApi.md#apiv2autotestsresultreasonssearchpost) | **POST** /api/v2/autotests/resultReasons/search | 
+*ConfigurationsApi* | [**ApiV2ConfigurationsCreateByParametersPost**](docs/ConfigurationsApi.md#apiv2configurationscreatebyparameterspost) | **POST** /api/v2/configurations/createByParameters | Create Configurations by parameters
+*ConfigurationsApi* | [**ApiV2ConfigurationsSearchPost**](docs/ConfigurationsApi.md#apiv2configurationssearchpost) | **POST** /api/v2/configurations/search | Search for configurations
+*ConfigurationsApi* | [**CreateConfiguration**](docs/ConfigurationsApi.md#createconfiguration) | **POST** /api/v2/configurations | Create Configuration
+*ConfigurationsApi* | [**GetConfigurationById**](docs/ConfigurationsApi.md#getconfigurationbyid) | **GET** /api/v2/configurations/{id} | Get configuration by internal or global ID
+*ConfigurationsApi* | [**UpdateConfiguration**](docs/ConfigurationsApi.md#updateconfiguration) | **PUT** /api/v2/configurations | Update Configuration
+*CustomAttributeTemplatesApi* | [**ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePost**](docs/CustomAttributeTemplatesApi.md#apiv2customattributestemplatesidcustomattributesexcludepost) | **POST** /api/v2/customAttributes/templates/{id}/customAttributes/exclude | Exclude CustomAttributes from CustomAttributeTemplate
+*CustomAttributeTemplatesApi* | [**ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePost**](docs/CustomAttributeTemplatesApi.md#apiv2customattributestemplatesidcustomattributesincludepost) | **POST** /api/v2/customAttributes/templates/{id}/customAttributes/include | Include CustomAttributes to CustomAttributeTemplate
+*CustomAttributeTemplatesApi* | [**ApiV2CustomAttributesTemplatesIdDelete**](docs/CustomAttributeTemplatesApi.md#apiv2customattributestemplatesiddelete) | **DELETE** /api/v2/customAttributes/templates/{id} | Delete CustomAttributeTemplate
+*CustomAttributeTemplatesApi* | [**ApiV2CustomAttributesTemplatesIdGet**](docs/CustomAttributeTemplatesApi.md#apiv2customattributestemplatesidget) | **GET** /api/v2/customAttributes/templates/{id} | Get CustomAttributeTemplate by ID
+*CustomAttributeTemplatesApi* | [**ApiV2CustomAttributesTemplatesNameGet**](docs/CustomAttributeTemplatesApi.md#apiv2customattributestemplatesnameget) | **GET** /api/v2/customAttributes/templates/{name} | Get CustomAttributeTemplate by name
+*CustomAttributeTemplatesApi* | [**ApiV2CustomAttributesTemplatesPost**](docs/CustomAttributeTemplatesApi.md#apiv2customattributestemplatespost) | **POST** /api/v2/customAttributes/templates | Create CustomAttributeTemplate
+*CustomAttributeTemplatesApi* | [**ApiV2CustomAttributesTemplatesPut**](docs/CustomAttributeTemplatesApi.md#apiv2customattributestemplatesput) | **PUT** /api/v2/customAttributes/templates | Update CustomAttributeTemplate
+*CustomAttributeTemplatesApi* | [**ApiV2CustomAttributesTemplatesSearchPost**](docs/CustomAttributeTemplatesApi.md#apiv2customattributestemplatessearchpost) | **POST** /api/v2/customAttributes/templates/search | Search CustomAttributeTemplates
+*CustomAttributesApi* | [**ApiV2CustomAttributesGlobalIdDelete**](docs/CustomAttributesApi.md#apiv2customattributesglobaliddelete) | **DELETE** /api/v2/customAttributes/global/{id} | Delete global attribute
+*CustomAttributesApi* | [**ApiV2CustomAttributesGlobalIdPut**](docs/CustomAttributesApi.md#apiv2customattributesglobalidput) | **PUT** /api/v2/customAttributes/global/{id} | Edit global attribute
+*CustomAttributesApi* | [**ApiV2CustomAttributesGlobalPost**](docs/CustomAttributesApi.md#apiv2customattributesglobalpost) | **POST** /api/v2/customAttributes/global | Create global attribute
+*CustomAttributesApi* | [**ApiV2CustomAttributesIdGet**](docs/CustomAttributesApi.md#apiv2customattributesidget) | **GET** /api/v2/customAttributes/{id} | Get attribute
+*CustomAttributesApi* | [**ApiV2CustomAttributesSearchPost**](docs/CustomAttributesApi.md#apiv2customattributessearchpost) | **POST** /api/v2/customAttributes/search | Search for attributes
+*DashboardsApi* | [**ApiV2DashboardsGet**](docs/DashboardsApi.md#apiv2dashboardsget) | **GET** /api/v2/dashboards | Get all dashboards
+*DashboardsApi* | [**ApiV2DashboardsIdDelete**](docs/DashboardsApi.md#apiv2dashboardsiddelete) | **DELETE** /api/v2/dashboards/{id} | Delete dashboard
+*DashboardsApi* | [**ApiV2DashboardsIdGet**](docs/DashboardsApi.md#apiv2dashboardsidget) | **GET** /api/v2/dashboards/{id} | Get dashboard by ID
+*DashboardsApi* | [**ApiV2DashboardsIdGroupGroupIdDelete**](docs/DashboardsApi.md#apiv2dashboardsidgroupgroupiddelete) | **DELETE** /api/v2/dashboards/{id}/group/{groupId} | 
+*DashboardsApi* | [**ApiV2DashboardsIdPermissionsPut**](docs/DashboardsApi.md#apiv2dashboardsidpermissionsput) | **PUT** /api/v2/dashboards/{id}/permissions | 
+*DashboardsApi* | [**ApiV2DashboardsIdPut**](docs/DashboardsApi.md#apiv2dashboardsidput) | **PUT** /api/v2/dashboards/{id} | Update dashboard
+*DashboardsApi* | [**ApiV2DashboardsIdUserUserIdDelete**](docs/DashboardsApi.md#apiv2dashboardsiduseruseriddelete) | **DELETE** /api/v2/dashboards/{id}/user/{userId} | 
+*DashboardsApi* | [**ApiV2DashboardsIdWidgetsPut**](docs/DashboardsApi.md#apiv2dashboardsidwidgetsput) | **PUT** /api/v2/dashboards/{id}/widgets | 
+*DashboardsApi* | [**ApiV2DashboardsIdWidgetsWidgetIdBarChartTestPlanGet**](docs/DashboardsApi.md#apiv2dashboardsidwidgetswidgetidbarcharttestplanget) | **GET** /api/v2/dashboards/{id}/widgets/{widgetId}/barChart/testPlan | 
+*DashboardsApi* | [**ApiV2DashboardsIdWidgetsWidgetIdBarChartTestRunGet**](docs/DashboardsApi.md#apiv2dashboardsidwidgetswidgetidbarcharttestrunget) | **GET** /api/v2/dashboards/{id}/widgets/{widgetId}/barChart/testRun | 
+*DashboardsApi* | [**ApiV2DashboardsIdWidgetsWidgetIdGet**](docs/DashboardsApi.md#apiv2dashboardsidwidgetswidgetidget) | **GET** /api/v2/dashboards/{id}/widgets/{widgetId} | 
+*DashboardsApi* | [**ApiV2DashboardsIdWidgetsWidgetIdGroupsAutomatedWorkItemsGet**](docs/DashboardsApi.md#apiv2dashboardsidwidgetswidgetidgroupsautomatedworkitemsget) | **GET** /api/v2/dashboards/{id}/widgets/{widgetId}/groups/automatedWorkItems | 
+*DashboardsApi* | [**ApiV2DashboardsIdWidgetsWidgetIdGroupsTestPointResultsGet**](docs/DashboardsApi.md#apiv2dashboardsidwidgetswidgetidgroupstestpointresultsget) | **GET** /api/v2/dashboards/{id}/widgets/{widgetId}/groups/testPointResults | 
+*DashboardsApi* | [**ApiV2DashboardsIdWidgetsWidgetIdPieChartAutotestsGet**](docs/DashboardsApi.md#apiv2dashboardsidwidgetswidgetidpiechartautotestsget) | **GET** /api/v2/dashboards/{id}/widgets/{widgetId}/pieChart/autotests | 
+*DashboardsApi* | [**ApiV2DashboardsIdWidgetsWidgetIdPieChartTestResultsGet**](docs/DashboardsApi.md#apiv2dashboardsidwidgetswidgetidpiecharttestresultsget) | **GET** /api/v2/dashboards/{id}/widgets/{widgetId}/pieChart/testResults | 
+*DashboardsApi* | [**ApiV2DashboardsIdWidgetsWidgetIdPieChartWorkItemsGet**](docs/DashboardsApi.md#apiv2dashboardsidwidgetswidgetidpiechartworkitemsget) | **GET** /api/v2/dashboards/{id}/widgets/{widgetId}/pieChart/workItems | 
+*DashboardsApi* | [**ApiV2DashboardsIdWidgetsWidgetIdTimelineAutotestRunsGet**](docs/DashboardsApi.md#apiv2dashboardsidwidgetswidgetidtimelineautotestrunsget) | **GET** /api/v2/dashboards/{id}/widgets/{widgetId}/timeline/autotestRuns | 
+*DashboardsApi* | [**ApiV2DashboardsIdWidgetsWidgetIdTrendsAutotestsGet**](docs/DashboardsApi.md#apiv2dashboardsidwidgetswidgetidtrendsautotestsget) | **GET** /api/v2/dashboards/{id}/widgets/{widgetId}/trends/autotests | 
+*DashboardsApi* | [**ApiV2DashboardsIdWidgetsWidgetIdTrendsTestResultsGet**](docs/DashboardsApi.md#apiv2dashboardsidwidgetswidgetidtrendstestresultsget) | **GET** /api/v2/dashboards/{id}/widgets/{widgetId}/trends/testResults | 
+*DashboardsApi* | [**ApiV2DashboardsIdWidgetsWidgetIdTrendsWorkItemsGet**](docs/DashboardsApi.md#apiv2dashboardsidwidgetswidgetidtrendsworkitemsget) | **GET** /api/v2/dashboards/{id}/widgets/{widgetId}/trends/workItems | 
+*DashboardsApi* | [**ApiV2DashboardsIdWidgetsWidgetIdUsersRankTopTopCountGet**](docs/DashboardsApi.md#apiv2dashboardsidwidgetswidgetidusersranktoptopcountget) | **GET** /api/v2/dashboards/{id}/widgets/{widgetId}/users/rank/top/{topCount} | 
+*DashboardsApi* | [**ApiV2DashboardsPost**](docs/DashboardsApi.md#apiv2dashboardspost) | **POST** /api/v2/dashboards | Create dashboard
+*DashboardsApi* | [**ApiV2DashboardsSearchPost**](docs/DashboardsApi.md#apiv2dashboardssearchpost) | **POST** /api/v2/dashboards/search | Search dashboards
+*NotificationsApi* | [**ApiV2NotificationsCountGet**](docs/NotificationsApi.md#apiv2notificationscountget) | **GET** /api/v2/notifications/count | Get unread Notifications total in last 7 days
+*NotificationsApi* | [**ApiV2NotificationsGet**](docs/NotificationsApi.md#apiv2notificationsget) | **GET** /api/v2/notifications | Get all Notifications for current User
+*NotificationsApi* | [**ApiV2NotificationsIdReadPost**](docs/NotificationsApi.md#apiv2notificationsidreadpost) | **POST** /api/v2/notifications/{id}/read | Set Notification as read
+*NotificationsApi* | [**ApiV2NotificationsReadPost**](docs/NotificationsApi.md#apiv2notificationsreadpost) | **POST** /api/v2/notifications/read | Set all Notifications as read
+*ParametersApi* | [**ApiV2ParametersBulkPost**](docs/ParametersApi.md#apiv2parametersbulkpost) | **POST** /api/v2/parameters/bulk | Create multiple parameters
+*ParametersApi* | [**ApiV2ParametersBulkPut**](docs/ParametersApi.md#apiv2parametersbulkput) | **PUT** /api/v2/parameters/bulk | Update multiple parameters
+*ParametersApi* | [**ApiV2ParametersGroupsGet**](docs/ParametersApi.md#apiv2parametersgroupsget) | **GET** /api/v2/parameters/groups | Get parameters as group
+*ParametersApi* | [**ApiV2ParametersKeyNameNameExistsGet**](docs/ParametersApi.md#apiv2parameterskeynamenameexistsget) | **GET** /api/v2/parameters/key/name/{name}/exists | Check existence parameter key in system
+*ParametersApi* | [**ApiV2ParametersKeyValuesGet**](docs/ParametersApi.md#apiv2parameterskeyvaluesget) | **GET** /api/v2/parameters/{key}/values | Get all parameter key values
+*ParametersApi* | [**ApiV2ParametersKeysGet**](docs/ParametersApi.md#apiv2parameterskeysget) | **GET** /api/v2/parameters/keys | Get all parameter keys
+*ParametersApi* | [**CreateParameter**](docs/ParametersApi.md#createparameter) | **POST** /api/v2/parameters | Create parameter
+*ParametersApi* | [**DeleteByName**](docs/ParametersApi.md#deletebyname) | **DELETE** /api/v2/parameters/name/{name} | Delete parameter by name
+*ParametersApi* | [**DeleteByParameterKeyId**](docs/ParametersApi.md#deletebyparameterkeyid) | **DELETE** /api/v2/parameters/keyId/{keyId} | Delete parameters by parameter key identifier
+*ParametersApi* | [**DeleteParameter**](docs/ParametersApi.md#deleteparameter) | **DELETE** /api/v2/parameters/{id} | Delete parameter
+*ParametersApi* | [**GetAllParameters**](docs/ParametersApi.md#getallparameters) | **GET** /api/v2/parameters | Get all parameters
+*ParametersApi* | [**GetParameterById**](docs/ParametersApi.md#getparameterbyid) | **GET** /api/v2/parameters/{id} | Get parameter by ID
+*ParametersApi* | [**ObsoleteDeleteByName**](docs/ParametersApi.md#obsoletedeletebyname) | **POST** /api/v2/parameters/deleteByName | 
+*ParametersApi* | [**UpdateParameter**](docs/ParametersApi.md#updateparameter) | **PUT** /api/v2/parameters | Update parameter
+*ProjectsApi* | [**AddGlobaAttributesToProject**](docs/ProjectsApi.md#addglobaattributestoproject) | **POST** /api/v2/projects/{id}/globalAttributes | Add global attributes to project
+*ProjectsApi* | [**ApiV2ProjectsIdCustomAttributeTemplatesTemplateIdDelete**](docs/ProjectsApi.md#apiv2projectsidcustomattributetemplatestemplateiddelete) | **DELETE** /api/v2/projects/{id}/customAttributeTemplates/{templateId} | Delete CustomAttributeTemplate from Project
+*ProjectsApi* | [**ApiV2ProjectsIdCustomAttributeTemplatesTemplateIdPost**](docs/ProjectsApi.md#apiv2projectsidcustomattributetemplatestemplateidpost) | **POST** /api/v2/projects/{id}/customAttributeTemplates/{templateId} | Add CustomAttributeTemplate to Project
+*ProjectsApi* | [**ApiV2ProjectsIdFailureClassesGet**](docs/ProjectsApi.md#apiv2projectsidfailureclassesget) | **GET** /api/v2/projects/{id}/failureClasses | Get Project FailureClasses
+*ProjectsApi* | [**ApiV2ProjectsIdFavoritePut**](docs/ProjectsApi.md#apiv2projectsidfavoriteput) | **PUT** /api/v2/projects/{id}/favorite | Mark Project as favorite
+*ProjectsApi* | [**ApiV2ProjectsIdFiltersGet**](docs/ProjectsApi.md#apiv2projectsidfiltersget) | **GET** /api/v2/projects/{id}/filters | Get Project filters
+*ProjectsApi* | [**ApiV2ProjectsIdTestPlansAnalyticsGet**](docs/ProjectsApi.md#apiv2projectsidtestplansanalyticsget) | **GET** /api/v2/projects/{id}/testPlans/analytics | Get TestPlans analytics
+*ProjectsApi* | [**ApiV2ProjectsIdTestPlansSearchPost**](docs/ProjectsApi.md#apiv2projectsidtestplanssearchpost) | **POST** /api/v2/projects/{id}/testPlans/search | Get Project TestPlans with analytics
+*ProjectsApi* | [**ApiV2ProjectsIdTestRunsActiveGet**](docs/ProjectsApi.md#apiv2projectsidtestrunsactiveget) | **GET** /api/v2/projects/{id}/testRuns/active | Get active Project TestRuns
+*ProjectsApi* | [**ApiV2ProjectsIdTestRunsFullGet**](docs/ProjectsApi.md#apiv2projectsidtestrunsfullget) | **GET** /api/v2/projects/{id}/testRuns/full | Get Project TestRuns full models
+*ProjectsApi* | [**ApiV2ProjectsIdWorkItemsTagsGet**](docs/ProjectsApi.md#apiv2projectsidworkitemstagsget) | **GET** /api/v2/projects/{id}/workItems/tags | Get WorkItems Tags
+*ProjectsApi* | [**ApiV2ProjectsSearchPost**](docs/ProjectsApi.md#apiv2projectssearchpost) | **POST** /api/v2/projects/search | 
+*ProjectsApi* | [**CreateCustomAttributeTestPlanProjectRelations**](docs/ProjectsApi.md#createcustomattributetestplanprojectrelations) | **POST** /api/v2/projects/{id}/testPlans/attributes | Add attributes to project's test plans
+*ProjectsApi* | [**CreateProject**](docs/ProjectsApi.md#createproject) | **POST** /api/v2/projects | Create project
+*ProjectsApi* | [**CreateProjectsAttribute**](docs/ProjectsApi.md#createprojectsattribute) | **POST** /api/v2/projects/{id}/attributes | Create project attribute
+*ProjectsApi* | [**DeleteCustomAttributeTestPlanProjectRelations**](docs/ProjectsApi.md#deletecustomattributetestplanprojectrelations) | **DELETE** /api/v2/projects/{id}/testPlans/attribute/{attributeId} | Delete attribute from project's test plans
+*ProjectsApi* | [**DeleteProject**](docs/ProjectsApi.md#deleteproject) | **DELETE** /api/v2/projects/{id} | Delete project
+*ProjectsApi* | [**DeleteProjectAutoTests**](docs/ProjectsApi.md#deleteprojectautotests) | **DELETE** /api/v2/projects/{id}/autoTests | Delete project
+*ProjectsApi* | [**DeleteProjectsAttribute**](docs/ProjectsApi.md#deleteprojectsattribute) | **DELETE** /api/v2/projects/{id}/attributes/{attributeId} | Delete project attribute
+*ProjectsApi* | [**Export**](docs/ProjectsApi.md#export) | **POST** /api/v2/projects/{id}/export | Export project as JSON file
+*ProjectsApi* | [**ExportWithTestPlansAndConfigurations**](docs/ProjectsApi.md#exportwithtestplansandconfigurations) | **POST** /api/v2/projects/{id}/export-by-testPlans | Export project with test plans, test suites and test points as JSON file
+*ProjectsApi* | [**GetAllProjects**](docs/ProjectsApi.md#getallprojects) | **GET** /api/v2/projects | Get all projects
+*ProjectsApi* | [**GetAttributeByProjectId**](docs/ProjectsApi.md#getattributebyprojectid) | **GET** /api/v2/projects/{id}/attributes/{attributeId} | Get project attribute
+*ProjectsApi* | [**GetAttributesByProjectId**](docs/ProjectsApi.md#getattributesbyprojectid) | **GET** /api/v2/projects/{id}/attributes | Get project attributes
+*ProjectsApi* | [**GetAutoTestsNamespaces**](docs/ProjectsApi.md#getautotestsnamespaces) | **GET** /api/v2/projects/{id}/autoTestsNamespaces | Get namespaces of autotests in project
+*ProjectsApi* | [**GetConfigurationsByProjectId**](docs/ProjectsApi.md#getconfigurationsbyprojectid) | **GET** /api/v2/projects/{id}/configurations | Get project configurations
+*ProjectsApi* | [**GetCustomAttributeTestPlanProjectRelations**](docs/ProjectsApi.md#getcustomattributetestplanprojectrelations) | **GET** /api/v2/projects/{id}/testPlans/attributes | Get project's test plan attributes
+*ProjectsApi* | [**GetProjectById**](docs/ProjectsApi.md#getprojectbyid) | **GET** /api/v2/projects/{id} | Get project by ID
+*ProjectsApi* | [**GetSectionsByProjectId**](docs/ProjectsApi.md#getsectionsbyprojectid) | **GET** /api/v2/projects/{id}/sections | Get project sections
+*ProjectsApi* | [**GetTestPlansByProjectId**](docs/ProjectsApi.md#gettestplansbyprojectid) | **GET** /api/v2/projects/{id}/testPlans | Get project test plans
+*ProjectsApi* | [**GetTestRunsByProjectId**](docs/ProjectsApi.md#gettestrunsbyprojectid) | **GET** /api/v2/projects/{id}/testRuns | Get project test runs
+*ProjectsApi* | [**GetWorkItemsByProjectId**](docs/ProjectsApi.md#getworkitemsbyprojectid) | **GET** /api/v2/projects/{id}/workItems | Get project work items
+*ProjectsApi* | [**Import**](docs/ProjectsApi.md#import) | **POST** /api/v2/projects/import | Import project from JSON file
+*ProjectsApi* | [**ImportToExistingProject**](docs/ProjectsApi.md#importtoexistingproject) | **POST** /api/v2/projects/{id}/import | Import project from JSON file into existing project
+*ProjectsApi* | [**RestoreProject**](docs/ProjectsApi.md#restoreproject) | **POST** /api/v2/projects/{id}/restore | Restore project
+*ProjectsApi* | [**SearchAttributesInProject**](docs/ProjectsApi.md#searchattributesinproject) | **POST** /api/v2/projects/{id}/attributes/search | 
+*ProjectsApi* | [**SearchTestPlanAttributesInProject**](docs/ProjectsApi.md#searchtestplanattributesinproject) | **POST** /api/v2/projects/{id}/testPlans/attributes/search | 
+*ProjectsApi* | [**UpdateCustomAttributeTestPlanProjectRelations**](docs/ProjectsApi.md#updatecustomattributetestplanprojectrelations) | **PUT** /api/v2/projects/{id}/testPlans/attribute | Update attribute of project's test plans
+*ProjectsApi* | [**UpdateProject**](docs/ProjectsApi.md#updateproject) | **PUT** /api/v2/projects | Update project
+*ProjectsApi* | [**UpdateProjectsAttribute**](docs/ProjectsApi.md#updateprojectsattribute) | **PUT** /api/v2/projects/{id}/attributes | Update project attribute
+*SectionsApi* | [**CreateSection**](docs/SectionsApi.md#createsection) | **POST** /api/v2/sections | Create section
+*SectionsApi* | [**DeleteSection**](docs/SectionsApi.md#deletesection) | **DELETE** /api/v2/sections/{id} | Delete section
+*SectionsApi* | [**GetSectionById**](docs/SectionsApi.md#getsectionbyid) | **GET** /api/v2/sections/{id} | Get section
+*SectionsApi* | [**GetWorkItemsBySectionId**](docs/SectionsApi.md#getworkitemsbysectionid) | **GET** /api/v2/sections/{id}/workItems | Get section work items
+*SectionsApi* | [**Move**](docs/SectionsApi.md#move) | **POST** /api/v2/sections/move | Move section
+*SectionsApi* | [**Rename**](docs/SectionsApi.md#rename) | **POST** /api/v2/sections/rename | Rename section
+*SectionsApi* | [**UpdateSection**](docs/SectionsApi.md#updatesection) | **PUT** /api/v2/sections | Update section
+*StepCommentsApi* | [**ApiV2StepCommentsIdGet**](docs/StepCommentsApi.md#apiv2stepcommentsidget) | **GET** /api/v2/stepComments/{id} | Get StepComment by internal ID
+*TagsApi* | [**ApiV2TagsGet**](docs/TagsApi.md#apiv2tagsget) | **GET** /api/v2/tags | Get all Tags
+*TagsApi* | [**ApiV2TagsTestPlansTagsGet**](docs/TagsApi.md#apiv2tagstestplanstagsget) | **GET** /api/v2/tags/testPlansTags | Get all Tags that are used in TestPlans
+*TestPlansApi* | [**AddTestPointsWithSections**](docs/TestPlansApi.md#addtestpointswithsections) | **POST** /api/v2/testPlans/{id}/test-points/withSections | Add test-points to test suite with sections
+*TestPlansApi* | [**AddWorkItemsWithSections**](docs/TestPlansApi.md#addworkitemswithsections) | **POST** /api/v2/testPlans/{id}/workItems/withSections | Add WorkItems to TestPlan with Sections as TestSuites
+*TestPlansApi* | [**ApiV2TestPlansIdAnalyticsGet**](docs/TestPlansApi.md#apiv2testplansidanalyticsget) | **GET** /api/v2/testPlans/{id}/analytics | Get analytics by TestPlan
+*TestPlansApi* | [**ApiV2TestPlansIdAutobalancePost**](docs/TestPlansApi.md#apiv2testplansidautobalancepost) | **POST** /api/v2/testPlans/{id}/autobalance | Auto-balance for TestPlan with testers
+*TestPlansApi* | [**ApiV2TestPlansIdConfigurationsGet**](docs/TestPlansApi.md#apiv2testplansidconfigurationsget) | **GET** /api/v2/testPlans/{id}/configurations | Get TestPlan configurations
+*TestPlansApi* | [**ApiV2TestPlansIdExportTestPointsXlsxPost**](docs/TestPlansApi.md#apiv2testplansidexporttestpointsxlsxpost) | **POST** /api/v2/testPlans/{id}/export/testPoints/xlsx | Export TestPoints from TestPlan in xls format
+*TestPlansApi* | [**ApiV2TestPlansIdExportTestResultHistoryXlsxPost**](docs/TestPlansApi.md#apiv2testplansidexporttestresulthistoryxlsxpost) | **POST** /api/v2/testPlans/{id}/export/testResultHistory/xlsx | Export TestResults history from TestPlan in xls format
+*TestPlansApi* | [**ApiV2TestPlansIdHistoryGet**](docs/TestPlansApi.md#apiv2testplansidhistoryget) | **GET** /api/v2/testPlans/{id}/history | Get TestPlan history
+*TestPlansApi* | [**ApiV2TestPlansIdLinksGet**](docs/TestPlansApi.md#apiv2testplansidlinksget) | **GET** /api/v2/testPlans/{id}/links | Get Links of TestPlan
+*TestPlansApi* | [**ApiV2TestPlansIdTestPointsLastResultsGet**](docs/TestPlansApi.md#apiv2testplansidtestpointslastresultsget) | **GET** /api/v2/testPlans/{id}/testPoints/lastResults | Get TestPoints with last result from TestPlan
+*TestPlansApi* | [**ApiV2TestPlansIdTestPointsResetPost**](docs/TestPlansApi.md#apiv2testplansidtestpointsresetpost) | **POST** /api/v2/testPlans/{id}/testPoints/reset | Reset TestPoints status of TestPlan
+*TestPlansApi* | [**ApiV2TestPlansIdTestRunsGet**](docs/TestPlansApi.md#apiv2testplansidtestrunsget) | **GET** /api/v2/testPlans/{id}/testRuns | Get TestRuns of TestPlan
+*TestPlansApi* | [**ApiV2TestPlansIdTestRunsSearchPost**](docs/TestPlansApi.md#apiv2testplansidtestrunssearchpost) | **POST** /api/v2/testPlans/{id}/testRuns/search | Search TestRuns of TestPlan
+*TestPlansApi* | [**ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet**](docs/TestPlansApi.md#apiv2testplansidtestrunstestresultslastmodifiedmodifieddateget) | **GET** /api/v2/testPlans/{id}/testRuns/testResults/lastModified/modifiedDate | Get max modified date in TestRun for TestPlan
+*TestPlansApi* | [**ApiV2TestPlansIdUnlockRequestPost**](docs/TestPlansApi.md#apiv2testplansidunlockrequestpost) | **POST** /api/v2/testPlans/{id}/unlock/request | Send unlock TestPlan notification
+*TestPlansApi* | [**ApiV2TestPlansShortsPost**](docs/TestPlansApi.md#apiv2testplansshortspost) | **POST** /api/v2/testPlans/shorts | Get TestPlans short models by Project identifiers
+*TestPlansApi* | [**Clone**](docs/TestPlansApi.md#clone) | **POST** /api/v2/testPlans/{id}/clone | Clone TestPlan
+*TestPlansApi* | [**Complete**](docs/TestPlansApi.md#complete) | **POST** /api/v2/testPlans/{id}/complete | Complete TestPlan
+*TestPlansApi* | [**CreateTestPlan**](docs/TestPlansApi.md#createtestplan) | **POST** /api/v2/testPlans | Create TestPlan
+*TestPlansApi* | [**DeleteTestPlan**](docs/TestPlansApi.md#deletetestplan) | **DELETE** /api/v2/testPlans/{id} | Delete TestPlan
+*TestPlansApi* | [**GetTestPlanById**](docs/TestPlansApi.md#gettestplanbyid) | **GET** /api/v2/testPlans/{id} | Get TestPlan by Id
+*TestPlansApi* | [**GetTestSuitesById**](docs/TestPlansApi.md#gettestsuitesbyid) | **GET** /api/v2/testPlans/{id}/testSuites | Get TestSuites Tree By Id
+*TestPlansApi* | [**Pause**](docs/TestPlansApi.md#pause) | **POST** /api/v2/testPlans/{id}/pause | Pause TestPlan
+*TestPlansApi* | [**RestoreTestPlan**](docs/TestPlansApi.md#restoretestplan) | **POST** /api/v2/testPlans/{id}/restore | Restore TestPlan
+*TestPlansApi* | [**Start**](docs/TestPlansApi.md#start) | **POST** /api/v2/testPlans/{id}/start | Start TestPlan
+*TestPlansApi* | [**UpdateTestPlan**](docs/TestPlansApi.md#updatetestplan) | **PUT** /api/v2/testPlans | Update TestPlan
+*TestPointsApi* | [**ApiV2TestPointsIdTestRunsGet**](docs/TestPointsApi.md#apiv2testpointsidtestrunsget) | **GET** /api/v2/testPoints/{id}/testRuns | 
+*TestPointsApi* | [**ApiV2TestPointsIdWithLastResultGet**](docs/TestPointsApi.md#apiv2testpointsidwithlastresultget) | **GET** /api/v2/testPoints/{id}/withLastResult | 
+*TestPointsApi* | [**ApiV2TestPointsIdWorkItemGet**](docs/TestPointsApi.md#apiv2testpointsidworkitemget) | **GET** /api/v2/testPoints/{id}/workItem | 
+*TestPointsApi* | [**ApiV2TestPointsSearchIdPost**](docs/TestPointsApi.md#apiv2testpointssearchidpost) | **POST** /api/v2/testPoints/search/id | 
+*TestPointsApi* | [**ApiV2TestPointsSearchPost**](docs/TestPointsApi.md#apiv2testpointssearchpost) | **POST** /api/v2/testPoints/search | 
+*TestResultsApi* | [**ApiV2TestResultsIdAggregatedGet**](docs/TestResultsApi.md#apiv2testresultsidaggregatedget) | **GET** /api/v2/testResults/{id}/aggregated | 
+*TestResultsApi* | [**ApiV2TestResultsIdAttachmentsAttachmentIdPut**](docs/TestResultsApi.md#apiv2testresultsidattachmentsattachmentidput) | **PUT** /api/v2/testResults/{id}/attachments/{attachmentId} | 
+*TestResultsApi* | [**ApiV2TestResultsIdAttachmentsInfoGet**](docs/TestResultsApi.md#apiv2testresultsidattachmentsinfoget) | **GET** /api/v2/testResults/{id}/attachments/info | 
+*TestResultsApi* | [**ApiV2TestResultsIdExternalProjectsExternalProjectIdDefectPost**](docs/TestResultsApi.md#apiv2testresultsidexternalprojectsexternalprojectiddefectpost) | **POST** /api/v2/testResults/{id}/externalProjects/{externalProjectId}/defect | 
+*TestResultsApi* | [**ApiV2TestResultsIdExternalProjectsExternalProjectIdFormGet**](docs/TestResultsApi.md#apiv2testresultsidexternalprojectsexternalprojectidformget) | **GET** /api/v2/testResults/{id}/externalProjects/{externalProjectId}/form | 
+*TestResultsApi* | [**ApiV2TestResultsIdGet**](docs/TestResultsApi.md#apiv2testresultsidget) | **GET** /api/v2/testResults/{id} | 
+*TestResultsApi* | [**ApiV2TestResultsIdLinkRequestsPost**](docs/TestResultsApi.md#apiv2testresultsidlinkrequestspost) | **POST** /api/v2/testResults/{id}/linkRequests | 
+*TestResultsApi* | [**ApiV2TestResultsIdPut**](docs/TestResultsApi.md#apiv2testresultsidput) | **PUT** /api/v2/testResults/{id} | 
+*TestResultsApi* | [**ApiV2TestResultsLinkRequestsLinkRequestIdUsePost**](docs/TestResultsApi.md#apiv2testresultslinkrequestslinkrequestidusepost) | **POST** /api/v2/testResults/linkRequests/{linkRequestId}/use | 
+*TestResultsApi* | [**ApiV2TestResultsSearchPost**](docs/TestResultsApi.md#apiv2testresultssearchpost) | **POST** /api/v2/testResults/search | 
+*TestResultsApi* | [**ApiV2TestResultsStatisticsFilterPost**](docs/TestResultsApi.md#apiv2testresultsstatisticsfilterpost) | **POST** /api/v2/testResults/statistics/filter | 
+*TestResultsApi* | [**CreateAttachment**](docs/TestResultsApi.md#createattachment) | **POST** /api/v2/testResults/{id}/attachments | Upload and link attachment to TestResult
+*TestResultsApi* | [**DeleteAttachment**](docs/TestResultsApi.md#deleteattachment) | **DELETE** /api/v2/testResults/{id}/attachments/{attachmentId} | Remove attachment and unlink from TestResult
+*TestResultsApi* | [**DownloadAttachment**](docs/TestResultsApi.md#downloadattachment) | **GET** /api/v2/testResults/{id}/attachments/{attachmentId} | Get attachment of TestResult
+*TestResultsApi* | [**GetAttachment**](docs/TestResultsApi.md#getattachment) | **GET** /api/v2/testResults/{id}/attachments/{attachmentId}/info | Get Metadata of TestResult's attachment
+*TestResultsApi* | [**GetAttachments**](docs/TestResultsApi.md#getattachments) | **GET** /api/v2/testResults/{id}/attachments | Get all attachments of TestResult
+*TestRunsApi* | [**ApiV2TestRunsIdStatisticsFilterPost**](docs/TestRunsApi.md#apiv2testrunsidstatisticsfilterpost) | **POST** /api/v2/testRuns/{id}/statistics/filter | 
+*TestRunsApi* | [**ApiV2TestRunsIdTestPointsResultsGet**](docs/TestRunsApi.md#apiv2testrunsidtestpointsresultsget) | **GET** /api/v2/testRuns/{id}/testPoints/results | 
+*TestRunsApi* | [**ApiV2TestRunsIdTestResultsLastModifiedModificationDateGet**](docs/TestRunsApi.md#apiv2testrunsidtestresultslastmodifiedmodificationdateget) | **GET** /api/v2/testRuns/{id}/testResults/lastModified/modificationDate | 
+*TestRunsApi* | [**ApiV2TestRunsSearchPost**](docs/TestRunsApi.md#apiv2testrunssearchpost) | **POST** /api/v2/testRuns/search | 
+*TestRunsApi* | [**CompleteTestRun**](docs/TestRunsApi.md#completetestrun) | **POST** /api/v2/testRuns/{id}/complete | Complete TestRun
+*TestRunsApi* | [**CreateAndFillByAutoTests**](docs/TestRunsApi.md#createandfillbyautotests) | **POST** /api/v2/testRuns/byAutoTests | Create test runs based on autotests and configurations
+*TestRunsApi* | [**CreateAndFillByConfigurations**](docs/TestRunsApi.md#createandfillbyconfigurations) | **POST** /api/v2/testRuns/byConfigurations | Create test runs picking the needed test points
+*TestRunsApi* | [**CreateAndFillByWorkItems**](docs/TestRunsApi.md#createandfillbyworkitems) | **POST** /api/v2/testRuns/byWorkItems | Create test run based on configurations and work items
+*TestRunsApi* | [**CreateEmpty**](docs/TestRunsApi.md#createempty) | **POST** /api/v2/testRuns | Create empty TestRun
+*TestRunsApi* | [**GetTestRunById**](docs/TestRunsApi.md#gettestrunbyid) | **GET** /api/v2/testRuns/{id} | Get TestRun by Id
+*TestRunsApi* | [**SetAutoTestResultsForTestRun**](docs/TestRunsApi.md#setautotestresultsfortestrun) | **POST** /api/v2/testRuns/{id}/testResults | Send test results to the test runs in the system
+*TestRunsApi* | [**StartTestRun**](docs/TestRunsApi.md#starttestrun) | **POST** /api/v2/testRuns/{id}/start | Start TestRun
+*TestRunsApi* | [**StopTestRun**](docs/TestRunsApi.md#stoptestrun) | **POST** /api/v2/testRuns/{id}/stop | Stop TestRun
+*TestRunsApi* | [**UpdateEmpty**](docs/TestRunsApi.md#updateempty) | **PUT** /api/v2/testRuns | Update empty TestRun
+*TestSuitesApi* | [**AddTestPointsToTestSuite**](docs/TestSuitesApi.md#addtestpointstotestsuite) | **POST** /api/v2/testSuites/{id}/test-points | Add test-points to test suite
+*TestSuitesApi* | [**CreateTestSuite**](docs/TestSuitesApi.md#createtestsuite) | **POST** /api/v2/testSuites | Create TestSuite
+*TestSuitesApi* | [**DeleteTestSuite**](docs/TestSuitesApi.md#deletetestsuite) | **DELETE** /api/v2/testSuites/{id} | Delete TestSuite
+*TestSuitesApi* | [**GetConfigurationsByTestSuiteId**](docs/TestSuitesApi.md#getconfigurationsbytestsuiteid) | **GET** /api/v2/testSuites/{id}/configurations | Get Configurations By Id
+*TestSuitesApi* | [**GetTestPointsById**](docs/TestSuitesApi.md#gettestpointsbyid) | **GET** /api/v2/testSuites/{id}/testPoints | Get TestPoints By Id
+*TestSuitesApi* | [**GetTestResultsById**](docs/TestSuitesApi.md#gettestresultsbyid) | **GET** /api/v2/testSuites/{id}/testResults | Get TestResults By Id
+*TestSuitesApi* | [**GetTestSuiteById**](docs/TestSuitesApi.md#gettestsuitebyid) | **GET** /api/v2/testSuites/{id} | Get TestSuite by Id
+*TestSuitesApi* | [**GetWorkItemsById**](docs/TestSuitesApi.md#getworkitemsbyid) | **GET** /api/v2/testSuites/{id}/workItems | 
+*TestSuitesApi* | [**SearchWorkItems**](docs/TestSuitesApi.md#searchworkitems) | **POST** /api/v2/testSuites/{id}/workItems/search | Search WorkItems
+*TestSuitesApi* | [**SetConfigurationsByTestSuiteId**](docs/TestSuitesApi.md#setconfigurationsbytestsuiteid) | **POST** /api/v2/testSuites/{id}/configurations | Set Configurations By TestSuite Id
+*TestSuitesApi* | [**SetWorkItemsByTestSuiteId**](docs/TestSuitesApi.md#setworkitemsbytestsuiteid) | **POST** /api/v2/testSuites/{id}/workItems | Set WorkItems By TestSuite Id
+*TestSuitesApi* | [**UpdateTestSuite**](docs/TestSuitesApi.md#updatetestsuite) | **PUT** /api/v2/testSuites | Update TestSuite
+*WebhooksApi* | [**ApiV2WebhooksGet**](docs/WebhooksApi.md#apiv2webhooksget) | **GET** /api/v2/webhooks | 
+*WebhooksApi* | [**ApiV2WebhooksIdDelete**](docs/WebhooksApi.md#apiv2webhooksiddelete) | **DELETE** /api/v2/webhooks/{id} | 
+*WebhooksApi* | [**ApiV2WebhooksIdGet**](docs/WebhooksApi.md#apiv2webhooksidget) | **GET** /api/v2/webhooks/{id} | 
+*WebhooksApi* | [**ApiV2WebhooksIdPut**](docs/WebhooksApi.md#apiv2webhooksidput) | **PUT** /api/v2/webhooks/{id} | 
+*WebhooksApi* | [**ApiV2WebhooksPost**](docs/WebhooksApi.md#apiv2webhookspost) | **POST** /api/v2/webhooks | 
+*WebhooksApi* | [**ApiV2WebhooksSearchPost**](docs/WebhooksApi.md#apiv2webhookssearchpost) | **POST** /api/v2/webhooks/search | 
+*WebhooksApi* | [**ApiV2WebhooksSpecialVariablesGet**](docs/WebhooksApi.md#apiv2webhooksspecialvariablesget) | **GET** /api/v2/webhooks/specialVariables | 
+*WebhooksLogsApi* | [**ApiV2WebhooksLogsGet**](docs/WebhooksLogsApi.md#apiv2webhookslogsget) | **GET** /api/v2/webhooks/logs | 
+*WebhooksLogsApi* | [**ApiV2WebhooksLogsIdDelete**](docs/WebhooksLogsApi.md#apiv2webhookslogsiddelete) | **DELETE** /api/v2/webhooks/logs/{id} | 
+*WebhooksLogsApi* | [**ApiV2WebhooksLogsIdGet**](docs/WebhooksLogsApi.md#apiv2webhookslogsidget) | **GET** /api/v2/webhooks/logs/{id} | 
+*WorkItemsApi* | [**ApiV2WorkItemsIdCheckListTransformToTestCasePost**](docs/WorkItemsApi.md#apiv2workitemsidchecklisttransformtotestcasepost) | **POST** /api/v2/workItems/{id}/checkList/transformTo/testCase | Transform CheckList to TestCase
+*WorkItemsApi* | [**ApiV2WorkItemsIdHistoryGet**](docs/WorkItemsApi.md#apiv2workitemsidhistoryget) | **GET** /api/v2/workItems/{id}/history | Get change history of WorkItem
+*WorkItemsApi* | [**ApiV2WorkItemsIdLikeDelete**](docs/WorkItemsApi.md#apiv2workitemsidlikedelete) | **DELETE** /api/v2/workItems/{id}/like | Delete like from WorkItem
+*WorkItemsApi* | [**ApiV2WorkItemsIdLikePost**](docs/WorkItemsApi.md#apiv2workitemsidlikepost) | **POST** /api/v2/workItems/{id}/like | Set like to WorkItem
+*WorkItemsApi* | [**ApiV2WorkItemsIdLikesCountGet**](docs/WorkItemsApi.md#apiv2workitemsidlikescountget) | **GET** /api/v2/workItems/{id}/likes/count | Get likes count of WorkItem
+*WorkItemsApi* | [**ApiV2WorkItemsIdLikesGet**](docs/WorkItemsApi.md#apiv2workitemsidlikesget) | **GET** /api/v2/workItems/{id}/likes | Get likes of WorkItem
+*WorkItemsApi* | [**ApiV2WorkItemsIdTestResultsHistoryGet**](docs/WorkItemsApi.md#apiv2workitemsidtestresultshistoryget) | **GET** /api/v2/workItems/{id}/testResults/history | Get test results history of WorkItem
+*WorkItemsApi* | [**ApiV2WorkItemsIdVersionVersionIdActualPost**](docs/WorkItemsApi.md#apiv2workitemsidversionversionidactualpost) | **POST** /api/v2/workItems/{id}/version/{versionId}/actual | Set WorkItem as actual
+*WorkItemsApi* | [**ApiV2WorkItemsMovePost**](docs/WorkItemsApi.md#apiv2workitemsmovepost) | **POST** /api/v2/workItems/move | Move WorkItem to another section
+*WorkItemsApi* | [**ApiV2WorkItemsSharedStepIdReferencesSectionsPost**](docs/WorkItemsApi.md#apiv2workitemssharedstepidreferencessectionspost) | **POST** /api/v2/workItems/{sharedStepId}/references/sections | Get SharedStep references in sections
+*WorkItemsApi* | [**ApiV2WorkItemsSharedStepIdReferencesWorkItemsPost**](docs/WorkItemsApi.md#apiv2workitemssharedstepidreferencesworkitemspost) | **POST** /api/v2/workItems/{sharedStepId}/references/workItems | Get SharedStep references in workitems
+*WorkItemsApi* | [**ApiV2WorkItemsSharedStepsSharedStepIdReferencesGet**](docs/WorkItemsApi.md#apiv2workitemssharedstepssharedstepidreferencesget) | **GET** /api/v2/workItems/sharedSteps/{sharedStepId}/references | Get SharedStep references
+*WorkItemsApi* | [**CreateWorkItem**](docs/WorkItemsApi.md#createworkitem) | **POST** /api/v2/workItems | Create Test Case, Checklist or Shared Step
+*WorkItemsApi* | [**DeleteAllWorkItemsFromAutoTest**](docs/WorkItemsApi.md#deleteallworkitemsfromautotest) | **DELETE** /api/v2/workItems/{id}/autoTests | Delete all links AutoTests from WorkItem by Id or GlobalId
+*WorkItemsApi* | [**DeleteWorkItem**](docs/WorkItemsApi.md#deleteworkitem) | **DELETE** /api/v2/workItems/{id} | Delete Test Case, Checklist or Shared Step by Id or GlobalId
+*WorkItemsApi* | [**GetAutoTestsForWorkItem**](docs/WorkItemsApi.md#getautotestsforworkitem) | **GET** /api/v2/workItems/{id}/autoTests | Get all AutoTests linked to WorkItem by Id or GlobalId
+*WorkItemsApi* | [**GetIterations**](docs/WorkItemsApi.md#getiterations) | **GET** /api/v2/workItems/{id}/iterations | Get iterations by workitem Id or GlobalId
+*WorkItemsApi* | [**GetWorkItemById**](docs/WorkItemsApi.md#getworkitembyid) | **GET** /api/v2/workItems/{id} | Get Test Case, Checklist or Shared Step by Id or GlobalId
+*WorkItemsApi* | [**GetWorkItemChronology**](docs/WorkItemsApi.md#getworkitemchronology) | **GET** /api/v2/workItems/{id}/chronology | Get WorkItem chronology by Id or GlobalId
+*WorkItemsApi* | [**GetWorkItemVersions**](docs/WorkItemsApi.md#getworkitemversions) | **GET** /api/v2/workItems/{id}/versions | Get WorkItem versions
+*WorkItemsApi* | [**UpdateWorkItem**](docs/WorkItemsApi.md#updateworkitem) | **PUT** /api/v2/workItems | Update Test Case, Checklist or Shared Step
+*WorkItemsCommentsApi* | [**ApiV2WorkItemsCommentsCommentIdDelete**](docs/WorkItemsCommentsApi.md#apiv2workitemscommentscommentiddelete) | **DELETE** /api/v2/workItems/comments/{commentId} | Delete WorkItem comment
+*WorkItemsCommentsApi* | [**ApiV2WorkItemsCommentsPost**](docs/WorkItemsCommentsApi.md#apiv2workitemscommentspost) | **POST** /api/v2/workItems/comments | Create WorkItem comment
+*WorkItemsCommentsApi* | [**ApiV2WorkItemsCommentsPut**](docs/WorkItemsCommentsApi.md#apiv2workitemscommentsput) | **PUT** /api/v2/workItems/comments | Update WorkItem comment
+*WorkItemsCommentsApi* | [**ApiV2WorkItemsIdCommentsGet**](docs/WorkItemsCommentsApi.md#apiv2workitemsidcommentsget) | **GET** /api/v2/workItems/{id}/comments | Get WorkItem comments by Id or GlobalId
+
+## Documentation for Models
+
+You can see the documentation [here](https://github.com/testit-tms/api-client-dotnet/blob/main/docs/Readme.md)
+
+# Contributing
+
+You can help to develop the project. Any contributions are **greatly appreciated**.
+
+* If you have suggestions for adding or removing projects, feel free to [open an issue](https://github.com/testit-tms/api-client-dotnet/issues/new) to discuss it, or directly create a pull request after you edit the *README.md* file with necessary changes.
+* Please make sure you check your spelling and grammar.
+* Create individual PR for each suggestion.
+* Please also read through the [Code Of Conduct](https://github.com/testit-tms/api-client-dotnet/blob/main/CODE_OF_CONDUCT.md) before posting your first idea as well.
+
+# License
+
+Distributed under the Apache-2.0 License. See [LICENSE](https://github.com/testit-tms/api-client-dotnet/blob/main/LICENSE.md) for more information.
+
