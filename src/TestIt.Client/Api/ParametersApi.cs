@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Net.Mime;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -34,9 +35,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ParameterModel&gt;</returns>
-        List<ParameterModel> ApiV2ParametersBulkPost(List<ParameterPostModel> parameterPostModel = default(List<ParameterPostModel>), int operationIndex = 0);
+        List<ParameterModel> ApiV2ParametersBulkPost(List<ParameterPostModel> parameterPostModel = default(List<ParameterPostModel>));
 
         /// <summary>
         /// Create multiple parameters
@@ -46,9 +46,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ParameterModel&gt;</returns>
-        ApiResponse<List<ParameterModel>> ApiV2ParametersBulkPostWithHttpInfo(List<ParameterPostModel> parameterPostModel = default(List<ParameterPostModel>), int operationIndex = 0);
+        ApiResponse<List<ParameterModel>> ApiV2ParametersBulkPostWithHttpInfo(List<ParameterPostModel> parameterPostModel = default(List<ParameterPostModel>));
         /// <summary>
         /// Update multiple parameters
         /// </summary>
@@ -57,9 +56,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void ApiV2ParametersBulkPut(List<ParameterPutModel> parameterPutModel = default(List<ParameterPutModel>), int operationIndex = 0);
+        void ApiV2ParametersBulkPut(List<ParameterPutModel> parameterPutModel = default(List<ParameterPutModel>));
 
         /// <summary>
         /// Update multiple parameters
@@ -69,9 +67,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2ParametersBulkPutWithHttpInfo(List<ParameterPutModel> parameterPutModel = default(List<ParameterPutModel>), int operationIndex = 0);
+        ApiResponse<Object> ApiV2ParametersBulkPutWithHttpInfo(List<ParameterPutModel> parameterPutModel = default(List<ParameterPutModel>));
         /// <summary>
         /// Get parameters as group
         /// </summary>
@@ -86,9 +83,8 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ParameterGroupModel&gt;</returns>
-        List<ParameterGroupModel> ApiV2ParametersGroupsGet(bool? isDeleted = default(bool?), List<Guid> parameterKeyIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0);
+        List<ParameterGroupModel> ApiV2ParametersGroupsGet(bool? isDeleted = default(bool?), List<Guid> parameterKeyIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
 
         /// <summary>
         /// Get parameters as group
@@ -104,9 +100,8 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ParameterGroupModel&gt;</returns>
-        ApiResponse<List<ParameterGroupModel>> ApiV2ParametersGroupsGetWithHttpInfo(bool? isDeleted = default(bool?), List<Guid> parameterKeyIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0);
+        ApiResponse<List<ParameterGroupModel>> ApiV2ParametersGroupsGetWithHttpInfo(bool? isDeleted = default(bool?), List<Guid> parameterKeyIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
         /// <summary>
         /// Check existence parameter key in system
         /// </summary>
@@ -115,9 +110,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>bool</returns>
-        bool ApiV2ParametersKeyNameNameExistsGet(string name, int operationIndex = 0);
+        bool ApiV2ParametersKeyNameNameExistsGet(string name);
 
         /// <summary>
         /// Check existence parameter key in system
@@ -127,9 +121,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of bool</returns>
-        ApiResponse<bool> ApiV2ParametersKeyNameNameExistsGetWithHttpInfo(string name, int operationIndex = 0);
+        ApiResponse<bool> ApiV2ParametersKeyNameNameExistsGetWithHttpInfo(string name);
         /// <summary>
         /// Get all parameter key values
         /// </summary>
@@ -138,9 +131,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">Parameter key (string format)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;string&gt;</returns>
-        List<string> ApiV2ParametersKeyValuesGet(string key, int operationIndex = 0);
+        List<string> ApiV2ParametersKeyValuesGet(string key);
 
         /// <summary>
         /// Get all parameter key values
@@ -150,9 +142,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">Parameter key (string format)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        ApiResponse<List<string>> ApiV2ParametersKeyValuesGetWithHttpInfo(string key, int operationIndex = 0);
+        ApiResponse<List<string>> ApiV2ParametersKeyValuesGetWithHttpInfo(string key);
         /// <summary>
         /// Get all parameter keys
         /// </summary>
@@ -160,9 +151,8 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System search all parameter keys  &lt;br&gt;System returns parameter keys
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;string&gt;</returns>
-        List<string> ApiV2ParametersKeysGet(int operationIndex = 0);
+        List<string> ApiV2ParametersKeysGet();
 
         /// <summary>
         /// Get all parameter keys
@@ -171,9 +161,8 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System search all parameter keys  &lt;br&gt;System returns parameter keys
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        ApiResponse<List<string>> ApiV2ParametersKeysGetWithHttpInfo(int operationIndex = 0);
+        ApiResponse<List<string>> ApiV2ParametersKeysGetWithHttpInfo();
         /// <summary>
         /// Create parameter
         /// </summary>
@@ -182,9 +171,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ParameterModel</returns>
-        ParameterModel CreateParameter(ParameterPostModel parameterPostModel = default(ParameterPostModel), int operationIndex = 0);
+        ParameterModel CreateParameter(ParameterPostModel parameterPostModel = default(ParameterPostModel));
 
         /// <summary>
         /// Create parameter
@@ -194,9 +182,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ParameterModel</returns>
-        ApiResponse<ParameterModel> CreateParameterWithHttpInfo(ParameterPostModel parameterPostModel = default(ParameterPostModel), int operationIndex = 0);
+        ApiResponse<ParameterModel> CreateParameterWithHttpInfo(ParameterPostModel parameterPostModel = default(ParameterPostModel));
         /// <summary>
         /// Delete parameter by name
         /// </summary>
@@ -205,9 +192,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">Name of the parameter</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void DeleteByName(string name, int operationIndex = 0);
+        void DeleteByName(string name);
 
         /// <summary>
         /// Delete parameter by name
@@ -217,9 +203,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">Name of the parameter</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteByNameWithHttpInfo(string name, int operationIndex = 0);
+        ApiResponse<Object> DeleteByNameWithHttpInfo(string name);
         /// <summary>
         /// Delete parameters by parameter key identifier
         /// </summary>
@@ -228,9 +213,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="keyId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void DeleteByParameterKeyId(Guid keyId, int operationIndex = 0);
+        void DeleteByParameterKeyId(Guid keyId);
 
         /// <summary>
         /// Delete parameters by parameter key identifier
@@ -240,9 +224,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="keyId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteByParameterKeyIdWithHttpInfo(Guid keyId, int operationIndex = 0);
+        ApiResponse<Object> DeleteByParameterKeyIdWithHttpInfo(Guid keyId);
         /// <summary>
         /// Delete parameter
         /// </summary>
@@ -251,9 +234,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void DeleteParameter(Guid id, int operationIndex = 0);
+        void DeleteParameter(Guid id);
 
         /// <summary>
         /// Delete parameter
@@ -263,9 +245,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteParameterWithHttpInfo(Guid id, int operationIndex = 0);
+        ApiResponse<Object> DeleteParameterWithHttpInfo(Guid id);
         /// <summary>
         /// Get all parameters
         /// </summary>
@@ -279,9 +260,8 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ParameterModel</returns>
-        ParameterModel GetAllParameters(bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0);
+        ParameterModel GetAllParameters(bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
 
         /// <summary>
         /// Get all parameters
@@ -296,9 +276,8 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ParameterModel</returns>
-        ApiResponse<ParameterModel> GetAllParametersWithHttpInfo(bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0);
+        ApiResponse<ParameterModel> GetAllParametersWithHttpInfo(bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
         /// <summary>
         /// Get parameter by ID
         /// </summary>
@@ -307,9 +286,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ParameterModel</returns>
-        ParameterModel GetParameterById(Guid id, int operationIndex = 0);
+        ParameterModel GetParameterById(Guid id);
 
         /// <summary>
         /// Get parameter by ID
@@ -319,18 +297,16 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ParameterModel</returns>
-        ApiResponse<ParameterModel> GetParameterByIdWithHttpInfo(Guid id, int operationIndex = 0);
+        ApiResponse<ParameterModel> GetParameterByIdWithHttpInfo(Guid id);
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
         [Obsolete]
-        void ObsoleteDeleteByName(string name = default(string), int operationIndex = 0);
+        void ObsoleteDeleteByName(string name = default(string));
 
         /// <summary>
         /// 
@@ -340,10 +316,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
         [Obsolete]
-        ApiResponse<Object> ObsoleteDeleteByNameWithHttpInfo(string name = default(string), int operationIndex = 0);
+        ApiResponse<Object> ObsoleteDeleteByNameWithHttpInfo(string name = default(string));
         /// <summary>
         /// Update parameter
         /// </summary>
@@ -352,9 +327,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void UpdateParameter(ParameterPutModel parameterPutModel = default(ParameterPutModel), int operationIndex = 0);
+        void UpdateParameter(ParameterPutModel parameterPutModel = default(ParameterPutModel));
 
         /// <summary>
         /// Update parameter
@@ -364,9 +338,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateParameterWithHttpInfo(ParameterPutModel parameterPutModel = default(ParameterPutModel), int operationIndex = 0);
+        ApiResponse<Object> UpdateParameterWithHttpInfo(ParameterPutModel parameterPutModel = default(ParameterPutModel));
         #endregion Synchronous Operations
     }
 
@@ -384,10 +357,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ParameterModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ParameterModel>> ApiV2ParametersBulkPostAsync(List<ParameterPostModel> parameterPostModel = default(List<ParameterPostModel>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ParameterModel>> ApiV2ParametersBulkPostAsync(List<ParameterPostModel> parameterPostModel = default(List<ParameterPostModel>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create multiple parameters
@@ -397,10 +369,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ParameterModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ParameterModel>>> ApiV2ParametersBulkPostWithHttpInfoAsync(List<ParameterPostModel> parameterPostModel = default(List<ParameterPostModel>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ParameterModel>>> ApiV2ParametersBulkPostWithHttpInfoAsync(List<ParameterPostModel> parameterPostModel = default(List<ParameterPostModel>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update multiple parameters
         /// </summary>
@@ -409,10 +380,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2ParametersBulkPutAsync(List<ParameterPutModel> parameterPutModel = default(List<ParameterPutModel>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2ParametersBulkPutAsync(List<ParameterPutModel> parameterPutModel = default(List<ParameterPutModel>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update multiple parameters
@@ -422,10 +392,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ParametersBulkPutWithHttpInfoAsync(List<ParameterPutModel> parameterPutModel = default(List<ParameterPutModel>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ParametersBulkPutWithHttpInfoAsync(List<ParameterPutModel> parameterPutModel = default(List<ParameterPutModel>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get parameters as group
         /// </summary>
@@ -440,10 +409,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ParameterGroupModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ParameterGroupModel>> ApiV2ParametersGroupsGetAsync(bool? isDeleted = default(bool?), List<Guid> parameterKeyIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ParameterGroupModel>> ApiV2ParametersGroupsGetAsync(bool? isDeleted = default(bool?), List<Guid> parameterKeyIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get parameters as group
@@ -459,10 +427,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ParameterGroupModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ParameterGroupModel>>> ApiV2ParametersGroupsGetWithHttpInfoAsync(bool? isDeleted = default(bool?), List<Guid> parameterKeyIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ParameterGroupModel>>> ApiV2ParametersGroupsGetWithHttpInfoAsync(bool? isDeleted = default(bool?), List<Guid> parameterKeyIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Check existence parameter key in system
         /// </summary>
@@ -471,10 +438,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of bool</returns>
-        System.Threading.Tasks.Task<bool> ApiV2ParametersKeyNameNameExistsGetAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<bool> ApiV2ParametersKeyNameNameExistsGetAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Check existence parameter key in system
@@ -484,10 +450,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (bool)</returns>
-        System.Threading.Tasks.Task<ApiResponse<bool>> ApiV2ParametersKeyNameNameExistsGetWithHttpInfoAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<bool>> ApiV2ParametersKeyNameNameExistsGetWithHttpInfoAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get all parameter key values
         /// </summary>
@@ -496,10 +461,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">Parameter key (string format)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        System.Threading.Tasks.Task<List<string>> ApiV2ParametersKeyValuesGetAsync(string key, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<string>> ApiV2ParametersKeyValuesGetAsync(string key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get all parameter key values
@@ -509,10 +473,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">Parameter key (string format)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<string>>> ApiV2ParametersKeyValuesGetWithHttpInfoAsync(string key, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<string>>> ApiV2ParametersKeyValuesGetWithHttpInfoAsync(string key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get all parameter keys
         /// </summary>
@@ -520,10 +483,9 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System search all parameter keys  &lt;br&gt;System returns parameter keys
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        System.Threading.Tasks.Task<List<string>> ApiV2ParametersKeysGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<string>> ApiV2ParametersKeysGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get all parameter keys
@@ -532,10 +494,9 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System search all parameter keys  &lt;br&gt;System returns parameter keys
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<string>>> ApiV2ParametersKeysGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<string>>> ApiV2ParametersKeysGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create parameter
         /// </summary>
@@ -544,10 +505,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ParameterModel</returns>
-        System.Threading.Tasks.Task<ParameterModel> CreateParameterAsync(ParameterPostModel parameterPostModel = default(ParameterPostModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ParameterModel> CreateParameterAsync(ParameterPostModel parameterPostModel = default(ParameterPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create parameter
@@ -557,10 +517,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ParameterModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ParameterModel>> CreateParameterWithHttpInfoAsync(ParameterPostModel parameterPostModel = default(ParameterPostModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ParameterModel>> CreateParameterWithHttpInfoAsync(ParameterPostModel parameterPostModel = default(ParameterPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete parameter by name
         /// </summary>
@@ -569,10 +528,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">Name of the parameter</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteByNameAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteByNameAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete parameter by name
@@ -582,10 +540,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">Name of the parameter</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteByNameWithHttpInfoAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteByNameWithHttpInfoAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete parameters by parameter key identifier
         /// </summary>
@@ -594,10 +551,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="keyId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteByParameterKeyIdAsync(Guid keyId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteByParameterKeyIdAsync(Guid keyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete parameters by parameter key identifier
@@ -607,10 +563,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="keyId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteByParameterKeyIdWithHttpInfoAsync(Guid keyId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteByParameterKeyIdWithHttpInfoAsync(Guid keyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete parameter
         /// </summary>
@@ -619,10 +574,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteParameterAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteParameterAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete parameter
@@ -632,10 +586,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteParameterWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteParameterWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get all parameters
         /// </summary>
@@ -649,10 +602,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ParameterModel</returns>
-        System.Threading.Tasks.Task<ParameterModel> GetAllParametersAsync(bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ParameterModel> GetAllParametersAsync(bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get all parameters
@@ -667,10 +619,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ParameterModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ParameterModel>> GetAllParametersWithHttpInfoAsync(bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ParameterModel>> GetAllParametersWithHttpInfoAsync(bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get parameter by ID
         /// </summary>
@@ -679,10 +630,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ParameterModel</returns>
-        System.Threading.Tasks.Task<ParameterModel> GetParameterByIdAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ParameterModel> GetParameterByIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get parameter by ID
@@ -692,10 +642,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ParameterModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ParameterModel>> GetParameterByIdWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ParameterModel>> GetParameterByIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -704,11 +653,10 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         [Obsolete]
-        System.Threading.Tasks.Task ObsoleteDeleteByNameAsync(string name = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ObsoleteDeleteByNameAsync(string name = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -718,11 +666,10 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<Object>> ObsoleteDeleteByNameWithHttpInfoAsync(string name = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ObsoleteDeleteByNameWithHttpInfoAsync(string name = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update parameter
         /// </summary>
@@ -731,10 +678,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateParameterAsync(ParameterPutModel parameterPutModel = default(ParameterPutModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task UpdateParameterAsync(ParameterPutModel parameterPutModel = default(ParameterPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update parameter
@@ -744,10 +690,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateParameterWithHttpInfoAsync(ParameterPutModel parameterPutModel = default(ParameterPutModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateParameterWithHttpInfoAsync(ParameterPutModel parameterPutModel = default(ParameterPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -762,12 +707,14 @@ namespace TestIt.Client.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class ParametersApi : IParametersApi
+    public partial class ParametersApi : IDisposable, IParametersApi
     {
         private TestIt.Client.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ParametersApi"/> class.
+        /// **IMPORTANT** This will also create an instance of HttpClient, which is less than ideal.
+        /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHandler</see>.
         /// </summary>
         /// <returns></returns>
         public ParametersApi() : this((string)null)
@@ -776,7 +723,11 @@ namespace TestIt.Client.Api
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ParametersApi"/> class.
+        /// **IMPORTANT** This will also create an instance of HttpClient, which is less than ideal.
+        /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHandler</see>.
         /// </summary>
+        /// <param name="basePath">The target service's base path in URL format.</param>
+        /// <exception cref="ArgumentException"></exception>
         /// <returns></returns>
         public ParametersApi(string basePath)
         {
@@ -784,16 +735,19 @@ namespace TestIt.Client.Api
                 TestIt.Client.Client.GlobalConfiguration.Instance,
                 new TestIt.Client.Client.Configuration { BasePath = basePath }
             );
-            this.Client = new TestIt.Client.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new TestIt.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new TestIt.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.Client =  this.ApiClient;
+            this.AsynchronousClient = this.ApiClient;
             this.ExceptionFactory = TestIt.Client.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ParametersApi"/> class
-        /// using Configuration object
+        /// Initializes a new instance of the <see cref="ParametersApi"/> class using Configuration object.
+        /// **IMPORTANT** This will also create an instance of HttpClient, which is less than ideal.
+        /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHandler</see>.
         /// </summary>
-        /// <param name="configuration">An instance of Configuration</param>
+        /// <param name="configuration">An instance of Configuration.</param>
+        /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
         public ParametersApi(TestIt.Client.Client.Configuration configuration)
         {
@@ -803,8 +757,78 @@ namespace TestIt.Client.Api
                 TestIt.Client.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new TestIt.Client.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new TestIt.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new TestIt.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.Client = this.ApiClient;
+            this.AsynchronousClient = this.ApiClient;
+            ExceptionFactory = TestIt.Client.Client.Configuration.DefaultExceptionFactory;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ParametersApi"/> class.
+        /// </summary>
+        /// <param name="client">An instance of HttpClient.</param>
+        /// <param name="handler">An optional instance of HttpClientHandler that is used by HttpClient.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <returns></returns>
+        /// <remarks>
+        /// Some configuration settings will not be applied without passing an HttpClientHandler.
+        /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
+        /// </remarks>
+        public ParametersApi(HttpClient client, HttpClientHandler handler = null) : this(client, (string)null, handler)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ParametersApi"/> class.
+        /// </summary>
+        /// <param name="client">An instance of HttpClient.</param>
+        /// <param name="basePath">The target service's base path in URL format.</param>
+        /// <param name="handler">An optional instance of HttpClientHandler that is used by HttpClient.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="ArgumentException"></exception>
+        /// <returns></returns>
+        /// <remarks>
+        /// Some configuration settings will not be applied without passing an HttpClientHandler.
+        /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
+        /// </remarks>
+        public ParametersApi(HttpClient client, string basePath, HttpClientHandler handler = null)
+        {
+            if (client == null) throw new ArgumentNullException("client");
+
+            this.Configuration = TestIt.Client.Client.Configuration.MergeConfigurations(
+                TestIt.Client.Client.GlobalConfiguration.Instance,
+                new TestIt.Client.Client.Configuration { BasePath = basePath }
+            );
+            this.ApiClient = new TestIt.Client.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.Client =  this.ApiClient;
+            this.AsynchronousClient = this.ApiClient;
+            this.ExceptionFactory = TestIt.Client.Client.Configuration.DefaultExceptionFactory;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ParametersApi"/> class using Configuration object.
+        /// </summary>
+        /// <param name="client">An instance of HttpClient.</param>
+        /// <param name="configuration">An instance of Configuration.</param>
+        /// <param name="handler">An optional instance of HttpClientHandler that is used by HttpClient.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <returns></returns>
+        /// <remarks>
+        /// Some configuration settings will not be applied without passing an HttpClientHandler.
+        /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
+        /// </remarks>
+        public ParametersApi(HttpClient client, TestIt.Client.Client.Configuration configuration, HttpClientHandler handler = null)
+        {
+            if (configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+
+            this.Configuration = TestIt.Client.Client.Configuration.MergeConfigurations(
+                TestIt.Client.Client.GlobalConfiguration.Instance,
+                configuration
+            );
+            this.ApiClient = new TestIt.Client.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.Client = this.ApiClient;
+            this.AsynchronousClient = this.ApiClient;
             ExceptionFactory = TestIt.Client.Client.Configuration.DefaultExceptionFactory;
         }
 
@@ -815,6 +839,7 @@ namespace TestIt.Client.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
+        /// <exception cref="ArgumentNullException"></exception>
         public ParametersApi(TestIt.Client.Client.ISynchronousClient client, TestIt.Client.Client.IAsynchronousClient asyncClient, TestIt.Client.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
@@ -826,6 +851,19 @@ namespace TestIt.Client.Api
             this.Configuration = configuration;
             this.ExceptionFactory = TestIt.Client.Client.Configuration.DefaultExceptionFactory;
         }
+
+        /// <summary>
+        /// Disposes resources if they were created by us
+        /// </summary>
+        public void Dispose()
+        {
+            this.ApiClient?.Dispose();
+        }
+
+        /// <summary>
+        /// Holds the ApiClient if created
+        /// </summary>
+        public TestIt.Client.Client.ApiClient ApiClient { get; set; } = null;
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
@@ -873,9 +911,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ParameterModel&gt;</returns>
-        public List<ParameterModel> ApiV2ParametersBulkPost(List<ParameterPostModel> parameterPostModel = default(List<ParameterPostModel>), int operationIndex = 0)
+        public List<ParameterModel> ApiV2ParametersBulkPost(List<ParameterPostModel> parameterPostModel = default(List<ParameterPostModel>))
         {
             TestIt.Client.Client.ApiResponse<List<ParameterModel>> localVarResponse = ApiV2ParametersBulkPostWithHttpInfo(parameterPostModel);
             return localVarResponse.Data;
@@ -886,9 +923,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ParameterModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<ParameterModel>> ApiV2ParametersBulkPostWithHttpInfo(List<ParameterPostModel> parameterPostModel = default(List<ParameterPostModel>), int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<List<ParameterModel>> ApiV2ParametersBulkPostWithHttpInfo(List<ParameterPostModel> parameterPostModel = default(List<ParameterPostModel>))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -902,21 +938,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = parameterPostModel;
-
-            localVarRequestOptions.Operation = "ParametersApi.ApiV2ParametersBulkPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -926,13 +953,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<List<ParameterModel>>("/api/v2/parameters/bulk", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2ParametersBulkPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -943,12 +968,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ParameterModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ParameterModel>> ApiV2ParametersBulkPostAsync(List<ParameterPostModel> parameterPostModel = default(List<ParameterPostModel>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ParameterModel>> ApiV2ParametersBulkPostAsync(List<ParameterPostModel> parameterPostModel = default(List<ParameterPostModel>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<ParameterModel>> localVarResponse = await ApiV2ParametersBulkPostWithHttpInfoAsync(parameterPostModel, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<ParameterModel>> localVarResponse = await ApiV2ParametersBulkPostWithHttpInfoAsync(parameterPostModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -957,10 +981,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ParameterModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<ParameterModel>>> ApiV2ParametersBulkPostWithHttpInfoAsync(List<ParameterPostModel> parameterPostModel = default(List<ParameterPostModel>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<ParameterModel>>> ApiV2ParametersBulkPostWithHttpInfoAsync(List<ParameterPostModel> parameterPostModel = default(List<ParameterPostModel>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -974,22 +997,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = parameterPostModel;
-
-            localVarRequestOptions.Operation = "ParametersApi.ApiV2ParametersBulkPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -998,15 +1013,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.PostAsync<List<ParameterModel>>("/api/v2/parameters/bulk", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2ParametersBulkPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1017,9 +1030,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void ApiV2ParametersBulkPut(List<ParameterPutModel> parameterPutModel = default(List<ParameterPutModel>), int operationIndex = 0)
+        public void ApiV2ParametersBulkPut(List<ParameterPutModel> parameterPutModel = default(List<ParameterPutModel>))
         {
             ApiV2ParametersBulkPutWithHttpInfo(parameterPutModel);
         }
@@ -1029,9 +1041,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> ApiV2ParametersBulkPutWithHttpInfo(List<ParameterPutModel> parameterPutModel = default(List<ParameterPutModel>), int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<Object> ApiV2ParametersBulkPutWithHttpInfo(List<ParameterPutModel> parameterPutModel = default(List<ParameterPutModel>))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1045,21 +1056,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = parameterPutModel;
-
-            localVarRequestOptions.Operation = "ParametersApi.ApiV2ParametersBulkPut";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1069,13 +1071,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Put<Object>("/api/v2/parameters/bulk", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2ParametersBulkPut", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1086,12 +1086,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2ParametersBulkPutAsync(List<ParameterPutModel> parameterPutModel = default(List<ParameterPutModel>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2ParametersBulkPutAsync(List<ParameterPutModel> parameterPutModel = default(List<ParameterPutModel>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ApiV2ParametersBulkPutWithHttpInfoAsync(parameterPutModel, operationIndex, cancellationToken).ConfigureAwait(false);
+            await ApiV2ParametersBulkPutWithHttpInfoAsync(parameterPutModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1099,10 +1098,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2ParametersBulkPutWithHttpInfoAsync(List<ParameterPutModel> parameterPutModel = default(List<ParameterPutModel>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2ParametersBulkPutWithHttpInfoAsync(List<ParameterPutModel> parameterPutModel = default(List<ParameterPutModel>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1116,22 +1114,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = parameterPutModel;
-
-            localVarRequestOptions.Operation = "ParametersApi.ApiV2ParametersBulkPut";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1140,15 +1130,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/api/v2/parameters/bulk", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2ParametersBulkPut", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1165,9 +1153,8 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ParameterGroupModel&gt;</returns>
-        public List<ParameterGroupModel> ApiV2ParametersGroupsGet(bool? isDeleted = default(bool?), List<Guid> parameterKeyIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0)
+        public List<ParameterGroupModel> ApiV2ParametersGroupsGet(bool? isDeleted = default(bool?), List<Guid> parameterKeyIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
             TestIt.Client.Client.ApiResponse<List<ParameterGroupModel>> localVarResponse = ApiV2ParametersGroupsGetWithHttpInfo(isDeleted, parameterKeyIds, skip, take, orderBy, searchField, searchValue);
             return localVarResponse.Data;
@@ -1184,9 +1171,8 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ParameterGroupModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<ParameterGroupModel>> ApiV2ParametersGroupsGetWithHttpInfo(bool? isDeleted = default(bool?), List<Guid> parameterKeyIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<List<ParameterGroupModel>> ApiV2ParametersGroupsGetWithHttpInfo(bool? isDeleted = default(bool?), List<Guid> parameterKeyIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1199,16 +1185,10 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (isDeleted != null)
             {
@@ -1239,9 +1219,6 @@ namespace TestIt.Client.Api
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
 
-            localVarRequestOptions.Operation = "ParametersApi.ApiV2ParametersGroupsGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1250,13 +1227,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<List<ParameterGroupModel>>("/api/v2/parameters/groups", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2ParametersGroupsGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1273,12 +1248,11 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ParameterGroupModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ParameterGroupModel>> ApiV2ParametersGroupsGetAsync(bool? isDeleted = default(bool?), List<Guid> parameterKeyIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ParameterGroupModel>> ApiV2ParametersGroupsGetAsync(bool? isDeleted = default(bool?), List<Guid> parameterKeyIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<ParameterGroupModel>> localVarResponse = await ApiV2ParametersGroupsGetWithHttpInfoAsync(isDeleted, parameterKeyIds, skip, take, orderBy, searchField, searchValue, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<ParameterGroupModel>> localVarResponse = await ApiV2ParametersGroupsGetWithHttpInfoAsync(isDeleted, parameterKeyIds, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1293,10 +1267,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ParameterGroupModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<ParameterGroupModel>>> ApiV2ParametersGroupsGetWithHttpInfoAsync(bool? isDeleted = default(bool?), List<Guid> parameterKeyIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<ParameterGroupModel>>> ApiV2ParametersGroupsGetWithHttpInfoAsync(bool? isDeleted = default(bool?), List<Guid> parameterKeyIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1309,17 +1282,12 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (isDeleted != null)
             {
@@ -1350,9 +1318,6 @@ namespace TestIt.Client.Api
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
 
-            localVarRequestOptions.Operation = "ParametersApi.ApiV2ParametersGroupsGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1360,15 +1325,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.GetAsync<List<ParameterGroupModel>>("/api/v2/parameters/groups", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2ParametersGroupsGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1379,9 +1342,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>bool</returns>
-        public bool ApiV2ParametersKeyNameNameExistsGet(string name, int operationIndex = 0)
+        public bool ApiV2ParametersKeyNameNameExistsGet(string name)
         {
             TestIt.Client.Client.ApiResponse<bool> localVarResponse = ApiV2ParametersKeyNameNameExistsGetWithHttpInfo(name);
             return localVarResponse.Data;
@@ -1392,15 +1354,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of bool</returns>
-        public TestIt.Client.Client.ApiResponse<bool> ApiV2ParametersKeyNameNameExistsGetWithHttpInfo(string name, int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<bool> ApiV2ParametersKeyNameNameExistsGetWithHttpInfo(string name)
         {
             // verify the required parameter 'name' is set
             if (name == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'name' when calling ParametersApi->ApiV2ParametersKeyNameNameExistsGet");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1413,21 +1372,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("name", TestIt.Client.Client.ClientUtils.ParameterToString(name)); // path parameter
-
-            localVarRequestOptions.Operation = "ParametersApi.ApiV2ParametersKeyNameNameExistsGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1437,13 +1387,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<bool>("/api/v2/parameters/key/name/{name}/exists", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2ParametersKeyNameNameExistsGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1454,12 +1402,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of bool</returns>
-        public async System.Threading.Tasks.Task<bool> ApiV2ParametersKeyNameNameExistsGetAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<bool> ApiV2ParametersKeyNameNameExistsGetAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<bool> localVarResponse = await ApiV2ParametersKeyNameNameExistsGetWithHttpInfoAsync(name, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<bool> localVarResponse = await ApiV2ParametersKeyNameNameExistsGetWithHttpInfoAsync(name, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1468,16 +1415,13 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (bool)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<bool>> ApiV2ParametersKeyNameNameExistsGetWithHttpInfoAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<bool>> ApiV2ParametersKeyNameNameExistsGetWithHttpInfoAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'name' is set
             if (name == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'name' when calling ParametersApi->ApiV2ParametersKeyNameNameExistsGet");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1490,22 +1434,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("name", TestIt.Client.Client.ClientUtils.ParameterToString(name)); // path parameter
-
-            localVarRequestOptions.Operation = "ParametersApi.ApiV2ParametersKeyNameNameExistsGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1514,15 +1450,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.GetAsync<bool>("/api/v2/parameters/key/name/{name}/exists", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2ParametersKeyNameNameExistsGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1533,9 +1467,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">Parameter key (string format)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;string&gt;</returns>
-        public List<string> ApiV2ParametersKeyValuesGet(string key, int operationIndex = 0)
+        public List<string> ApiV2ParametersKeyValuesGet(string key)
         {
             TestIt.Client.Client.ApiResponse<List<string>> localVarResponse = ApiV2ParametersKeyValuesGetWithHttpInfo(key);
             return localVarResponse.Data;
@@ -1546,15 +1479,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">Parameter key (string format)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<string>> ApiV2ParametersKeyValuesGetWithHttpInfo(string key, int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<List<string>> ApiV2ParametersKeyValuesGetWithHttpInfo(string key)
         {
             // verify the required parameter 'key' is set
             if (key == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'key' when calling ParametersApi->ApiV2ParametersKeyValuesGet");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1567,21 +1497,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("key", TestIt.Client.Client.ClientUtils.ParameterToString(key)); // path parameter
-
-            localVarRequestOptions.Operation = "ParametersApi.ApiV2ParametersKeyValuesGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1591,13 +1512,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<List<string>>("/api/v2/parameters/{key}/values", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2ParametersKeyValuesGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1608,12 +1527,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">Parameter key (string format)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        public async System.Threading.Tasks.Task<List<string>> ApiV2ParametersKeyValuesGetAsync(string key, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<string>> ApiV2ParametersKeyValuesGetAsync(string key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<string>> localVarResponse = await ApiV2ParametersKeyValuesGetWithHttpInfoAsync(key, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<string>> localVarResponse = await ApiV2ParametersKeyValuesGetWithHttpInfoAsync(key, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1622,16 +1540,13 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">Parameter key (string format)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<string>>> ApiV2ParametersKeyValuesGetWithHttpInfoAsync(string key, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<string>>> ApiV2ParametersKeyValuesGetWithHttpInfoAsync(string key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'key' is set
             if (key == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'key' when calling ParametersApi->ApiV2ParametersKeyValuesGet");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1644,22 +1559,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("key", TestIt.Client.Client.ClientUtils.ParameterToString(key)); // path parameter
-
-            localVarRequestOptions.Operation = "ParametersApi.ApiV2ParametersKeyValuesGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1668,15 +1575,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/api/v2/parameters/{key}/values", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2ParametersKeyValuesGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1686,9 +1591,8 @@ namespace TestIt.Client.Api
         /// Get all parameter keys &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System search all parameter keys  &lt;br&gt;System returns parameter keys
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;string&gt;</returns>
-        public List<string> ApiV2ParametersKeysGet(int operationIndex = 0)
+        public List<string> ApiV2ParametersKeysGet()
         {
             TestIt.Client.Client.ApiResponse<List<string>> localVarResponse = ApiV2ParametersKeysGetWithHttpInfo();
             return localVarResponse.Data;
@@ -1698,9 +1602,8 @@ namespace TestIt.Client.Api
         /// Get all parameter keys &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System search all parameter keys  &lt;br&gt;System returns parameter keys
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<string>> ApiV2ParametersKeysGetWithHttpInfo(int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<List<string>> ApiV2ParametersKeysGetWithHttpInfo()
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1713,20 +1616,11 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-
-            localVarRequestOptions.Operation = "ParametersApi.ApiV2ParametersKeysGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1736,13 +1630,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<List<string>>("/api/v2/parameters/keys", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2ParametersKeysGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1752,12 +1644,11 @@ namespace TestIt.Client.Api
         /// Get all parameter keys &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System search all parameter keys  &lt;br&gt;System returns parameter keys
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        public async System.Threading.Tasks.Task<List<string>> ApiV2ParametersKeysGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<string>> ApiV2ParametersKeysGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<string>> localVarResponse = await ApiV2ParametersKeysGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<string>> localVarResponse = await ApiV2ParametersKeysGetWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1765,10 +1656,9 @@ namespace TestIt.Client.Api
         /// Get all parameter keys &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System search all parameter keys  &lt;br&gt;System returns parameter keys
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<string>>> ApiV2ParametersKeysGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<string>>> ApiV2ParametersKeysGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1781,21 +1671,13 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-
-            localVarRequestOptions.Operation = "ParametersApi.ApiV2ParametersKeysGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1804,15 +1686,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/api/v2/parameters/keys", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2ParametersKeysGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1823,9 +1703,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ParameterModel</returns>
-        public ParameterModel CreateParameter(ParameterPostModel parameterPostModel = default(ParameterPostModel), int operationIndex = 0)
+        public ParameterModel CreateParameter(ParameterPostModel parameterPostModel = default(ParameterPostModel))
         {
             TestIt.Client.Client.ApiResponse<ParameterModel> localVarResponse = CreateParameterWithHttpInfo(parameterPostModel);
             return localVarResponse.Data;
@@ -1836,9 +1715,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ParameterModel</returns>
-        public TestIt.Client.Client.ApiResponse<ParameterModel> CreateParameterWithHttpInfo(ParameterPostModel parameterPostModel = default(ParameterPostModel), int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<ParameterModel> CreateParameterWithHttpInfo(ParameterPostModel parameterPostModel = default(ParameterPostModel))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1852,21 +1730,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = parameterPostModel;
-
-            localVarRequestOptions.Operation = "ParametersApi.CreateParameter";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1876,13 +1745,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<ParameterModel>("/api/v2/parameters", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateParameter", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1893,12 +1760,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ParameterModel</returns>
-        public async System.Threading.Tasks.Task<ParameterModel> CreateParameterAsync(ParameterPostModel parameterPostModel = default(ParameterPostModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ParameterModel> CreateParameterAsync(ParameterPostModel parameterPostModel = default(ParameterPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<ParameterModel> localVarResponse = await CreateParameterWithHttpInfoAsync(parameterPostModel, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<ParameterModel> localVarResponse = await CreateParameterWithHttpInfoAsync(parameterPostModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1907,10 +1773,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ParameterModel)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<ParameterModel>> CreateParameterWithHttpInfoAsync(ParameterPostModel parameterPostModel = default(ParameterPostModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<ParameterModel>> CreateParameterWithHttpInfoAsync(ParameterPostModel parameterPostModel = default(ParameterPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1924,22 +1789,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = parameterPostModel;
-
-            localVarRequestOptions.Operation = "ParametersApi.CreateParameter";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1948,15 +1805,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.PostAsync<ParameterModel>("/api/v2/parameters", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateParameter", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1967,9 +1822,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">Name of the parameter</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void DeleteByName(string name, int operationIndex = 0)
+        public void DeleteByName(string name)
         {
             DeleteByNameWithHttpInfo(name);
         }
@@ -1979,15 +1833,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">Name of the parameter</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> DeleteByNameWithHttpInfo(string name, int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<Object> DeleteByNameWithHttpInfo(string name)
         {
             // verify the required parameter 'name' is set
             if (name == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'name' when calling ParametersApi->DeleteByName");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -2000,21 +1851,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("name", TestIt.Client.Client.ClientUtils.ParameterToString(name)); // path parameter
-
-            localVarRequestOptions.Operation = "ParametersApi.DeleteByName";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2024,13 +1866,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Delete<Object>("/api/v2/parameters/name/{name}", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteByName", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -2041,12 +1881,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">Name of the parameter</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteByNameAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteByNameAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DeleteByNameWithHttpInfoAsync(name, operationIndex, cancellationToken).ConfigureAwait(false);
+            await DeleteByNameWithHttpInfoAsync(name, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -2054,16 +1893,13 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">Name of the parameter</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> DeleteByNameWithHttpInfoAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> DeleteByNameWithHttpInfoAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'name' is set
             if (name == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'name' when calling ParametersApi->DeleteByName");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -2076,22 +1912,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("name", TestIt.Client.Client.ClientUtils.ParameterToString(name)); // path parameter
-
-            localVarRequestOptions.Operation = "ParametersApi.DeleteByName";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2100,15 +1928,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/v2/parameters/name/{name}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteByName", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -2119,9 +1945,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="keyId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void DeleteByParameterKeyId(Guid keyId, int operationIndex = 0)
+        public void DeleteByParameterKeyId(Guid keyId)
         {
             DeleteByParameterKeyIdWithHttpInfo(keyId);
         }
@@ -2131,9 +1956,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="keyId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> DeleteByParameterKeyIdWithHttpInfo(Guid keyId, int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<Object> DeleteByParameterKeyIdWithHttpInfo(Guid keyId)
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -2146,21 +1970,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("keyId", TestIt.Client.Client.ClientUtils.ParameterToString(keyId)); // path parameter
-
-            localVarRequestOptions.Operation = "ParametersApi.DeleteByParameterKeyId";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2170,13 +1985,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Delete<Object>("/api/v2/parameters/keyId/{keyId}", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteByParameterKeyId", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -2187,12 +2000,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="keyId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteByParameterKeyIdAsync(Guid keyId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteByParameterKeyIdAsync(Guid keyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DeleteByParameterKeyIdWithHttpInfoAsync(keyId, operationIndex, cancellationToken).ConfigureAwait(false);
+            await DeleteByParameterKeyIdWithHttpInfoAsync(keyId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -2200,10 +2012,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="keyId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> DeleteByParameterKeyIdWithHttpInfoAsync(Guid keyId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> DeleteByParameterKeyIdWithHttpInfoAsync(Guid keyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -2216,22 +2027,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("keyId", TestIt.Client.Client.ClientUtils.ParameterToString(keyId)); // path parameter
-
-            localVarRequestOptions.Operation = "ParametersApi.DeleteByParameterKeyId";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2240,15 +2043,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/v2/parameters/keyId/{keyId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteByParameterKeyId", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -2259,9 +2060,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void DeleteParameter(Guid id, int operationIndex = 0)
+        public void DeleteParameter(Guid id)
         {
             DeleteParameterWithHttpInfo(id);
         }
@@ -2271,9 +2071,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> DeleteParameterWithHttpInfo(Guid id, int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<Object> DeleteParameterWithHttpInfo(Guid id)
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -2286,21 +2085,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "ParametersApi.DeleteParameter";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2310,13 +2100,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Delete<Object>("/api/v2/parameters/{id}", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteParameter", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -2327,12 +2115,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteParameterAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteParameterAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DeleteParameterWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            await DeleteParameterWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -2340,10 +2127,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> DeleteParameterWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> DeleteParameterWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -2356,22 +2142,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "ParametersApi.DeleteParameter";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2380,15 +2158,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/v2/parameters/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteParameter", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -2404,9 +2180,8 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ParameterModel</returns>
-        public ParameterModel GetAllParameters(bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0)
+        public ParameterModel GetAllParameters(bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
             TestIt.Client.Client.ApiResponse<ParameterModel> localVarResponse = GetAllParametersWithHttpInfo(isDeleted, skip, take, orderBy, searchField, searchValue);
             return localVarResponse.Data;
@@ -2422,9 +2197,8 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ParameterModel</returns>
-        public TestIt.Client.Client.ApiResponse<ParameterModel> GetAllParametersWithHttpInfo(bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<ParameterModel> GetAllParametersWithHttpInfo(bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -2437,16 +2211,10 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (isDeleted != null)
             {
@@ -2473,9 +2241,6 @@ namespace TestIt.Client.Api
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
 
-            localVarRequestOptions.Operation = "ParametersApi.GetAllParameters";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -2484,13 +2249,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<ParameterModel>("/api/v2/parameters", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetAllParameters", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -2506,12 +2269,11 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ParameterModel</returns>
-        public async System.Threading.Tasks.Task<ParameterModel> GetAllParametersAsync(bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ParameterModel> GetAllParametersAsync(bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<ParameterModel> localVarResponse = await GetAllParametersWithHttpInfoAsync(isDeleted, skip, take, orderBy, searchField, searchValue, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<ParameterModel> localVarResponse = await GetAllParametersWithHttpInfoAsync(isDeleted, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2525,10 +2287,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ParameterModel)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<ParameterModel>> GetAllParametersWithHttpInfoAsync(bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<ParameterModel>> GetAllParametersWithHttpInfoAsync(bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -2541,17 +2302,12 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (isDeleted != null)
             {
@@ -2578,9 +2334,6 @@ namespace TestIt.Client.Api
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
 
-            localVarRequestOptions.Operation = "ParametersApi.GetAllParameters";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -2588,15 +2341,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.GetAsync<ParameterModel>("/api/v2/parameters", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetAllParameters", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -2607,9 +2358,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ParameterModel</returns>
-        public ParameterModel GetParameterById(Guid id, int operationIndex = 0)
+        public ParameterModel GetParameterById(Guid id)
         {
             TestIt.Client.Client.ApiResponse<ParameterModel> localVarResponse = GetParameterByIdWithHttpInfo(id);
             return localVarResponse.Data;
@@ -2620,9 +2370,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ParameterModel</returns>
-        public TestIt.Client.Client.ApiResponse<ParameterModel> GetParameterByIdWithHttpInfo(Guid id, int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<ParameterModel> GetParameterByIdWithHttpInfo(Guid id)
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -2635,21 +2384,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "ParametersApi.GetParameterById";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2659,13 +2399,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<ParameterModel>("/api/v2/parameters/{id}", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetParameterById", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -2676,12 +2414,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ParameterModel</returns>
-        public async System.Threading.Tasks.Task<ParameterModel> GetParameterByIdAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ParameterModel> GetParameterByIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<ParameterModel> localVarResponse = await GetParameterByIdWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<ParameterModel> localVarResponse = await GetParameterByIdWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2690,10 +2427,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ParameterModel)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<ParameterModel>> GetParameterByIdWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<ParameterModel>> GetParameterByIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -2706,22 +2442,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "ParametersApi.GetParameterById";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2730,15 +2458,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.GetAsync<ParameterModel>("/api/v2/parameters/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetParameterById", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -2749,10 +2475,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
         [Obsolete]
-        public void ObsoleteDeleteByName(string name = default(string), int operationIndex = 0)
+        public void ObsoleteDeleteByName(string name = default(string))
         {
             ObsoleteDeleteByNameWithHttpInfo(name);
         }
@@ -2762,10 +2487,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
         [Obsolete]
-        public TestIt.Client.Client.ApiResponse<Object> ObsoleteDeleteByNameWithHttpInfo(string name = default(string), int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<Object> ObsoleteDeleteByNameWithHttpInfo(string name = default(string))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -2777,24 +2501,15 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (name != null)
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "name", name));
             }
-
-            localVarRequestOptions.Operation = "ParametersApi.ObsoleteDeleteByName";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2804,13 +2519,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/api/v2/parameters/deleteByName", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ObsoleteDeleteByName", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -2821,13 +2534,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task ObsoleteDeleteByNameAsync(string name = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ObsoleteDeleteByNameAsync(string name = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ObsoleteDeleteByNameWithHttpInfoAsync(name, operationIndex, cancellationToken).ConfigureAwait(false);
+            await ObsoleteDeleteByNameWithHttpInfoAsync(name, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -2835,11 +2547,10 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ObsoleteDeleteByNameWithHttpInfoAsync(string name = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ObsoleteDeleteByNameWithHttpInfoAsync(string name = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -2851,25 +2562,17 @@ namespace TestIt.Client.Api
             string[] _accepts = new string[] {
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (name != null)
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "name", name));
             }
-
-            localVarRequestOptions.Operation = "ParametersApi.ObsoleteDeleteByName";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2878,15 +2581,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/parameters/deleteByName", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ObsoleteDeleteByName", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -2897,9 +2598,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void UpdateParameter(ParameterPutModel parameterPutModel = default(ParameterPutModel), int operationIndex = 0)
+        public void UpdateParameter(ParameterPutModel parameterPutModel = default(ParameterPutModel))
         {
             UpdateParameterWithHttpInfo(parameterPutModel);
         }
@@ -2909,9 +2609,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> UpdateParameterWithHttpInfo(ParameterPutModel parameterPutModel = default(ParameterPutModel), int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<Object> UpdateParameterWithHttpInfo(ParameterPutModel parameterPutModel = default(ParameterPutModel))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -2925,21 +2624,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = parameterPutModel;
-
-            localVarRequestOptions.Operation = "ParametersApi.UpdateParameter";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2949,13 +2639,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Put<Object>("/api/v2/parameters", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateParameter", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -2966,12 +2654,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateParameterAsync(ParameterPutModel parameterPutModel = default(ParameterPutModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task UpdateParameterAsync(ParameterPutModel parameterPutModel = default(ParameterPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await UpdateParameterWithHttpInfoAsync(parameterPutModel, operationIndex, cancellationToken).ConfigureAwait(false);
+            await UpdateParameterWithHttpInfoAsync(parameterPutModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -2979,10 +2666,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> UpdateParameterWithHttpInfoAsync(ParameterPutModel parameterPutModel = default(ParameterPutModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> UpdateParameterWithHttpInfoAsync(ParameterPutModel parameterPutModel = default(ParameterPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -2996,22 +2682,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = parameterPutModel;
-
-            localVarRequestOptions.Operation = "ParametersApi.UpdateParameter";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3020,15 +2698,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/api/v2/parameters", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateParameter", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;

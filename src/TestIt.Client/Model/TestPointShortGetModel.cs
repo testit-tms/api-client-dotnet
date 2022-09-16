@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
+using FileParameter = TestIt.Client.Client.FileParameter;
 using OpenAPIDateConverter = TestIt.Client.Client.OpenAPIDateConverter;
 
 namespace TestIt.Client.Model
@@ -58,6 +59,7 @@ namespace TestIt.Client.Model
         /// <param name="links">links.</param>
         /// <param name="testSuiteId">testSuiteId.</param>
         /// <param name="workItemGlobalId">workItemGlobalId.</param>
+        /// <param name="workItemVersionId">workItemVersionId.</param>
         /// <param name="status">status.</param>
         /// <param name="priority">priority.</param>
         /// <param name="isAutomated">isAutomated.</param>
@@ -67,7 +69,8 @@ namespace TestIt.Client.Model
         /// <param name="sectionId">sectionId.</param>
         /// <param name="projectId">projectId.</param>
         /// <param name="lastTestResult">lastTestResult.</param>
-        public TestPointShortGetModel(Guid id = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), Guid? testerId = default(Guid?), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<string> tags = default(List<string>), List<string> links = default(List<string>), Guid testSuiteId = default(Guid), long workItemGlobalId = default(long), TestPointStatus? status = default(TestPointStatus?), WorkItemPriorityModel? priority = default(WorkItemPriorityModel?), bool isAutomated = default(bool), string name = default(string), Guid configurationId = default(Guid), long duration = default(long), Guid sectionId = default(Guid), Guid projectId = default(Guid), LastTestResultModel lastTestResult = default(LastTestResultModel))
+        /// <param name="iterationId">iterationId.</param>
+        public TestPointShortGetModel(Guid id = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), Guid? testerId = default(Guid?), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<string> tags = default(List<string>), List<string> links = default(List<string>), Guid testSuiteId = default(Guid), long workItemGlobalId = default(long), Guid workItemVersionId = default(Guid), TestPointStatus? status = default(TestPointStatus?), WorkItemPriorityModel? priority = default(WorkItemPriorityModel?), bool isAutomated = default(bool), string name = default(string), Guid configurationId = default(Guid), int duration = default(int), Guid sectionId = default(Guid), Guid projectId = default(Guid), LastTestResultModel lastTestResult = default(LastTestResultModel), Guid iterationId = default(Guid))
         {
             this.Id = id;
             this.CreatedDate = createdDate;
@@ -81,6 +84,7 @@ namespace TestIt.Client.Model
             this.Links = links;
             this.TestSuiteId = testSuiteId;
             this.WorkItemGlobalId = workItemGlobalId;
+            this.WorkItemVersionId = workItemVersionId;
             this.Status = status;
             this.Priority = priority;
             this.IsAutomated = isAutomated;
@@ -90,6 +94,7 @@ namespace TestIt.Client.Model
             this.SectionId = sectionId;
             this.ProjectId = projectId;
             this.LastTestResult = lastTestResult;
+            this.IterationId = iterationId;
         }
 
         /// <summary>
@@ -165,6 +170,12 @@ namespace TestIt.Client.Model
         public long WorkItemGlobalId { get; set; }
 
         /// <summary>
+        /// Gets or Sets WorkItemVersionId
+        /// </summary>
+        [DataMember(Name = "workItemVersionId", EmitDefaultValue = false)]
+        public Guid WorkItemVersionId { get; set; }
+
+        /// <summary>
         /// Gets or Sets IsAutomated
         /// </summary>
         [DataMember(Name = "isAutomated", EmitDefaultValue = true)]
@@ -186,7 +197,7 @@ namespace TestIt.Client.Model
         /// Gets or Sets Duration
         /// </summary>
         [DataMember(Name = "duration", EmitDefaultValue = false)]
-        public long Duration { get; set; }
+        public int Duration { get; set; }
 
         /// <summary>
         /// Gets or Sets SectionId
@@ -205,6 +216,12 @@ namespace TestIt.Client.Model
         /// </summary>
         [DataMember(Name = "lastTestResult", EmitDefaultValue = false)]
         public LastTestResultModel LastTestResult { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IterationId
+        /// </summary>
+        [DataMember(Name = "iterationId", EmitDefaultValue = false)]
+        public Guid IterationId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -226,6 +243,7 @@ namespace TestIt.Client.Model
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  TestSuiteId: ").Append(TestSuiteId).Append("\n");
             sb.Append("  WorkItemGlobalId: ").Append(WorkItemGlobalId).Append("\n");
+            sb.Append("  WorkItemVersionId: ").Append(WorkItemVersionId).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Priority: ").Append(Priority).Append("\n");
             sb.Append("  IsAutomated: ").Append(IsAutomated).Append("\n");
@@ -235,6 +253,7 @@ namespace TestIt.Client.Model
             sb.Append("  SectionId: ").Append(SectionId).Append("\n");
             sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
             sb.Append("  LastTestResult: ").Append(LastTestResult).Append("\n");
+            sb.Append("  IterationId: ").Append(IterationId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -334,6 +353,11 @@ namespace TestIt.Client.Model
                     this.WorkItemGlobalId.Equals(input.WorkItemGlobalId)
                 ) && 
                 (
+                    this.WorkItemVersionId == input.WorkItemVersionId ||
+                    (this.WorkItemVersionId != null &&
+                    this.WorkItemVersionId.Equals(input.WorkItemVersionId))
+                ) && 
+                (
                     this.Status == input.Status ||
                     this.Status.Equals(input.Status)
                 ) && 
@@ -373,6 +397,11 @@ namespace TestIt.Client.Model
                     this.LastTestResult == input.LastTestResult ||
                     (this.LastTestResult != null &&
                     this.LastTestResult.Equals(input.LastTestResult))
+                ) && 
+                (
+                    this.IterationId == input.IterationId ||
+                    (this.IterationId != null &&
+                    this.IterationId.Equals(input.IterationId))
                 );
         }
 
@@ -430,6 +459,10 @@ namespace TestIt.Client.Model
                     hashCode = (hashCode * 59) + this.TestSuiteId.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.WorkItemGlobalId.GetHashCode();
+                if (this.WorkItemVersionId != null)
+                {
+                    hashCode = (hashCode * 59) + this.WorkItemVersionId.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.Status.GetHashCode();
                 hashCode = (hashCode * 59) + this.Priority.GetHashCode();
                 hashCode = (hashCode * 59) + this.IsAutomated.GetHashCode();
@@ -453,6 +486,10 @@ namespace TestIt.Client.Model
                 if (this.LastTestResult != null)
                 {
                     hashCode = (hashCode * 59) + this.LastTestResult.GetHashCode();
+                }
+                if (this.IterationId != null)
+                {
+                    hashCode = (hashCode * 59) + this.IterationId.GetHashCode();
                 }
                 return hashCode;
             }

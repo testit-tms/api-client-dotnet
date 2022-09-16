@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Net.Mime;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -27,27 +28,25 @@ namespace TestIt.Client.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Add test-points to test suite with sections
+        /// Add test-points to TestPlan with sections
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test suite internal identifier</param>
+        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="workItemSelectModel">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void AddTestPointsWithSections(string id, WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), int operationIndex = 0);
+        void AddTestPointsWithSections(string id, WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel));
 
         /// <summary>
-        /// Add test-points to test suite with sections
+        /// Add test-points to TestPlan with sections
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test suite internal identifier</param>
+        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="workItemSelectModel">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> AddTestPointsWithSectionsWithHttpInfo(string id, WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), int operationIndex = 0);
+        ApiResponse<Object> AddTestPointsWithSectionsWithHttpInfo(string id, WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel));
         /// <summary>
         /// Add WorkItems to TestPlan with Sections as TestSuites
         /// </summary>
@@ -57,9 +56,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void AddWorkItemsWithSections(string id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0);
+        void AddWorkItemsWithSections(string id, List<Guid> requestBody = default(List<Guid>));
 
         /// <summary>
         /// Add WorkItems to TestPlan with Sections as TestSuites
@@ -70,9 +68,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> AddWorkItemsWithSectionsWithHttpInfo(string id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0);
+        ApiResponse<Object> AddWorkItemsWithSectionsWithHttpInfo(string id, List<Guid> requestBody = default(List<Guid>));
         /// <summary>
         /// Get analytics by TestPlan
         /// </summary>
@@ -81,9 +78,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TestPointAnalyticResult</returns>
-        TestPointAnalyticResult ApiV2TestPlansIdAnalyticsGet(string id, int operationIndex = 0);
+        TestPointAnalyticResult ApiV2TestPlansIdAnalyticsGet(string id);
 
         /// <summary>
         /// Get analytics by TestPlan
@@ -93,9 +89,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TestPointAnalyticResult</returns>
-        ApiResponse<TestPointAnalyticResult> ApiV2TestPlansIdAnalyticsGetWithHttpInfo(string id, int operationIndex = 0);
+        ApiResponse<TestPointAnalyticResult> ApiV2TestPlansIdAnalyticsGetWithHttpInfo(string id);
         /// <summary>
         /// Auto-balance for TestPlan with testers
         /// </summary>
@@ -105,9 +100,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="testers">List of testers internal identifiers (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TestPlanWithTestSuiteTreeModel</returns>
-        TestPlanWithTestSuiteTreeModel ApiV2TestPlansIdAutobalancePost(string id, List<Guid> testers = default(List<Guid>), int operationIndex = 0);
+        TestPlanWithTestSuiteTreeModel ApiV2TestPlansIdAutobalancePost(string id, List<Guid> testers = default(List<Guid>));
 
         /// <summary>
         /// Auto-balance for TestPlan with testers
@@ -118,9 +112,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="testers">List of testers internal identifiers (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TestPlanWithTestSuiteTreeModel</returns>
-        ApiResponse<TestPlanWithTestSuiteTreeModel> ApiV2TestPlansIdAutobalancePostWithHttpInfo(string id, List<Guid> testers = default(List<Guid>), int operationIndex = 0);
+        ApiResponse<TestPlanWithTestSuiteTreeModel> ApiV2TestPlansIdAutobalancePostWithHttpInfo(string id, List<Guid> testers = default(List<Guid>));
         /// <summary>
         /// Get TestPlan configurations
         /// </summary>
@@ -129,9 +122,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ConfigurationModel&gt;</returns>
-        List<ConfigurationModel> ApiV2TestPlansIdConfigurationsGet(string id, int operationIndex = 0);
+        List<ConfigurationModel> ApiV2TestPlansIdConfigurationsGet(string id);
 
         /// <summary>
         /// Get TestPlan configurations
@@ -141,9 +133,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ConfigurationModel&gt;</returns>
-        ApiResponse<List<ConfigurationModel>> ApiV2TestPlansIdConfigurationsGetWithHttpInfo(string id, int operationIndex = 0);
+        ApiResponse<List<ConfigurationModel>> ApiV2TestPlansIdConfigurationsGetWithHttpInfo(string id);
         /// <summary>
         /// Export TestPoints from TestPlan in xls format
         /// </summary>
@@ -154,9 +145,8 @@ namespace TestIt.Client.Api
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="getXlsxTestPointsByTestPlanModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>System.IO.Stream</returns>
-        System.IO.Stream ApiV2TestPlansIdExportTestPointsXlsxPost(string id, long? timeZoneOffsetInMinutes = default(long?), GetXlsxTestPointsByTestPlanModel getXlsxTestPointsByTestPlanModel = default(GetXlsxTestPointsByTestPlanModel), int operationIndex = 0);
+        /// <returns>FileParameter</returns>
+        FileParameter ApiV2TestPlansIdExportTestPointsXlsxPost(string id, long? timeZoneOffsetInMinutes = default(long?), GetXlsxTestPointsByTestPlanModel getXlsxTestPointsByTestPlanModel = default(GetXlsxTestPointsByTestPlanModel));
 
         /// <summary>
         /// Export TestPoints from TestPlan in xls format
@@ -168,9 +158,8 @@ namespace TestIt.Client.Api
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="getXlsxTestPointsByTestPlanModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of System.IO.Stream</returns>
-        ApiResponse<System.IO.Stream> ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), GetXlsxTestPointsByTestPlanModel getXlsxTestPointsByTestPlanModel = default(GetXlsxTestPointsByTestPlanModel), int operationIndex = 0);
+        /// <returns>ApiResponse of FileParameter</returns>
+        ApiResponse<FileParameter> ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), GetXlsxTestPointsByTestPlanModel getXlsxTestPointsByTestPlanModel = default(GetXlsxTestPointsByTestPlanModel));
         /// <summary>
         /// Export TestResults history from TestPlan in xls format
         /// </summary>
@@ -183,9 +172,8 @@ namespace TestIt.Client.Api
         /// <param name="includeSteps"> (optional)</param>
         /// <param name="includeDeletedTestSuites"> (optional)</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>System.IO.Stream</returns>
-        System.IO.Stream ApiV2TestPlansIdExportTestResultHistoryXlsxPost(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?), int operationIndex = 0);
+        /// <returns>FileParameter</returns>
+        FileParameter ApiV2TestPlansIdExportTestResultHistoryXlsxPost(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?));
 
         /// <summary>
         /// Export TestResults history from TestPlan in xls format
@@ -199,9 +187,8 @@ namespace TestIt.Client.Api
         /// <param name="includeSteps"> (optional)</param>
         /// <param name="includeDeletedTestSuites"> (optional)</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of System.IO.Stream</returns>
-        ApiResponse<System.IO.Stream> ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfo(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?), int operationIndex = 0);
+        /// <returns>ApiResponse of FileParameter</returns>
+        ApiResponse<FileParameter> ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfo(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?));
         /// <summary>
         /// Get TestPlan history
         /// </summary>
@@ -215,9 +202,8 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TestPlanChangeModel&gt;</returns>
-        List<TestPlanChangeModel> ApiV2TestPlansIdHistoryGet(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0);
+        List<TestPlanChangeModel> ApiV2TestPlansIdHistoryGet(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
 
         /// <summary>
         /// Get TestPlan history
@@ -232,9 +218,8 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TestPlanChangeModel&gt;</returns>
-        ApiResponse<List<TestPlanChangeModel>> ApiV2TestPlansIdHistoryGetWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0);
+        ApiResponse<List<TestPlanChangeModel>> ApiV2TestPlansIdHistoryGetWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
         /// <summary>
         /// Get Links of TestPlan
         /// </summary>
@@ -246,9 +231,8 @@ namespace TestIt.Client.Api
         /// <param name="skip"> (optional)</param>
         /// <param name="take"> (optional)</param>
         /// <param name="orderBy"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TestPlanLink&gt;</returns>
-        List<TestPlanLink> ApiV2TestPlansIdLinksGet(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), int operationIndex = 0);
+        List<TestPlanLink> ApiV2TestPlansIdLinksGet(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string));
 
         /// <summary>
         /// Get Links of TestPlan
@@ -261,9 +245,8 @@ namespace TestIt.Client.Api
         /// <param name="skip"> (optional)</param>
         /// <param name="take"> (optional)</param>
         /// <param name="orderBy"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TestPlanLink&gt;</returns>
-        ApiResponse<List<TestPlanLink>> ApiV2TestPlansIdLinksGetWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), int operationIndex = 0);
+        ApiResponse<List<TestPlanLink>> ApiV2TestPlansIdLinksGetWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string));
         /// <summary>
         /// Get TestPoints with last result from TestPlan
         /// </summary>
@@ -279,9 +262,8 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TestPointWithLastResultModel&gt;</returns>
-        List<TestPointWithLastResultModel> ApiV2TestPlansIdTestPointsLastResultsGet(string id, bool? mustAddGroupingElements = default(bool?), Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0);
+        List<TestPointWithLastResultModel> ApiV2TestPlansIdTestPointsLastResultsGet(string id, bool? mustAddGroupingElements = default(bool?), Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
 
         /// <summary>
         /// Get TestPoints with last result from TestPlan
@@ -298,9 +280,8 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TestPointWithLastResultModel&gt;</returns>
-        ApiResponse<List<TestPointWithLastResultModel>> ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfo(string id, bool? mustAddGroupingElements = default(bool?), Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0);
+        ApiResponse<List<TestPointWithLastResultModel>> ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfo(string id, bool? mustAddGroupingElements = default(bool?), Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
         /// <summary>
         /// Reset TestPoints status of TestPlan
         /// </summary>
@@ -310,9 +291,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void ApiV2TestPlansIdTestPointsResetPost(string id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0);
+        void ApiV2TestPlansIdTestPointsResetPost(string id, List<Guid> requestBody = default(List<Guid>));
 
         /// <summary>
         /// Reset TestPoints status of TestPlan
@@ -323,9 +303,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2TestPlansIdTestPointsResetPostWithHttpInfo(string id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0);
+        ApiResponse<Object> ApiV2TestPlansIdTestPointsResetPostWithHttpInfo(string id, List<Guid> requestBody = default(List<Guid>));
         /// <summary>
         /// Get TestRuns of TestPlan
         /// </summary>
@@ -343,9 +322,8 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TestRunModel&gt;</returns>
-        List<TestRunModel> ApiV2TestPlansIdTestRunsGet(string id, bool? notStarted = default(bool?), bool? inProgress = default(bool?), bool? stopped = default(bool?), bool? completed = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0);
+        List<TestRunModel> ApiV2TestPlansIdTestRunsGet(string id, bool? notStarted = default(bool?), bool? inProgress = default(bool?), bool? stopped = default(bool?), bool? completed = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
 
         /// <summary>
         /// Get TestRuns of TestPlan
@@ -364,9 +342,8 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TestRunModel&gt;</returns>
-        ApiResponse<List<TestRunModel>> ApiV2TestPlansIdTestRunsGetWithHttpInfo(string id, bool? notStarted = default(bool?), bool? inProgress = default(bool?), bool? stopped = default(bool?), bool? completed = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0);
+        ApiResponse<List<TestRunModel>> ApiV2TestPlansIdTestRunsGetWithHttpInfo(string id, bool? notStarted = default(bool?), bool? inProgress = default(bool?), bool? stopped = default(bool?), bool? completed = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
         /// <summary>
         /// Search TestRuns of TestPlan
         /// </summary>
@@ -381,9 +358,8 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="testRunSearchQueryModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TestRunModel&gt;</returns>
-        List<TestRunModel> ApiV2TestPlansIdTestRunsSearchPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestRunSearchQueryModel testRunSearchQueryModel = default(TestRunSearchQueryModel), int operationIndex = 0);
+        List<TestRunModel> ApiV2TestPlansIdTestRunsSearchPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestRunSearchQueryModel testRunSearchQueryModel = default(TestRunSearchQueryModel));
 
         /// <summary>
         /// Search TestRuns of TestPlan
@@ -399,9 +375,8 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="testRunSearchQueryModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TestRunModel&gt;</returns>
-        ApiResponse<List<TestRunModel>> ApiV2TestPlansIdTestRunsSearchPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestRunSearchQueryModel testRunSearchQueryModel = default(TestRunSearchQueryModel), int operationIndex = 0);
+        ApiResponse<List<TestRunModel>> ApiV2TestPlansIdTestRunsSearchPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestRunSearchQueryModel testRunSearchQueryModel = default(TestRunSearchQueryModel));
         /// <summary>
         /// Get max modified date in TestRun for TestPlan
         /// </summary>
@@ -410,9 +385,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DateTime</returns>
-        DateTime ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet(string id, int operationIndex = 0);
+        DateTime ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet(string id);
 
         /// <summary>
         /// Get max modified date in TestRun for TestPlan
@@ -422,9 +396,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DateTime</returns>
-        ApiResponse<DateTime> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfo(string id, int operationIndex = 0);
+        ApiResponse<DateTime> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfo(string id);
         /// <summary>
         /// Send unlock TestPlan notification
         /// </summary>
@@ -433,9 +406,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void ApiV2TestPlansIdUnlockRequestPost(string id, int operationIndex = 0);
+        void ApiV2TestPlansIdUnlockRequestPost(string id);
 
         /// <summary>
         /// Send unlock TestPlan notification
@@ -445,9 +417,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2TestPlansIdUnlockRequestPostWithHttpInfo(string id, int operationIndex = 0);
+        ApiResponse<Object> ApiV2TestPlansIdUnlockRequestPostWithHttpInfo(string id);
         /// <summary>
         /// Get TestPlans short models by Project identifiers
         /// </summary>
@@ -457,9 +428,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TestPlanShortModel&gt;</returns>
-        List<TestPlanShortModel> ApiV2TestPlansShortsPost(bool? isDeleted = default(bool?), List<Guid> requestBody = default(List<Guid>), int operationIndex = 0);
+        List<TestPlanShortModel> ApiV2TestPlansShortsPost(bool? isDeleted = default(bool?), List<Guid> requestBody = default(List<Guid>));
 
         /// <summary>
         /// Get TestPlans short models by Project identifiers
@@ -470,9 +440,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TestPlanShortModel&gt;</returns>
-        ApiResponse<List<TestPlanShortModel>> ApiV2TestPlansShortsPostWithHttpInfo(bool? isDeleted = default(bool?), List<Guid> requestBody = default(List<Guid>), int operationIndex = 0);
+        ApiResponse<List<TestPlanShortModel>> ApiV2TestPlansShortsPostWithHttpInfo(bool? isDeleted = default(bool?), List<Guid> requestBody = default(List<Guid>));
         /// <summary>
         /// Clone TestPlan
         /// </summary>
@@ -481,9 +450,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TestPlanModel</returns>
-        TestPlanModel Clone(string id, int operationIndex = 0);
+        TestPlanModel Clone(string id);
 
         /// <summary>
         /// Clone TestPlan
@@ -493,9 +461,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TestPlanModel</returns>
-        ApiResponse<TestPlanModel> CloneWithHttpInfo(string id, int operationIndex = 0);
+        ApiResponse<TestPlanModel> CloneWithHttpInfo(string id);
         /// <summary>
         /// Complete TestPlan
         /// </summary>
@@ -504,9 +471,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void Complete(string id, int operationIndex = 0);
+        void Complete(string id);
 
         /// <summary>
         /// Complete TestPlan
@@ -516,9 +482,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CompleteWithHttpInfo(string id, int operationIndex = 0);
+        ApiResponse<Object> CompleteWithHttpInfo(string id);
         /// <summary>
         /// Create TestPlan
         /// </summary>
@@ -527,9 +492,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testPlanPostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TestPlanModel</returns>
-        TestPlanModel CreateTestPlan(TestPlanPostModel testPlanPostModel = default(TestPlanPostModel), int operationIndex = 0);
+        TestPlanModel CreateTestPlan(TestPlanPostModel testPlanPostModel = default(TestPlanPostModel));
 
         /// <summary>
         /// Create TestPlan
@@ -539,9 +503,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testPlanPostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TestPlanModel</returns>
-        ApiResponse<TestPlanModel> CreateTestPlanWithHttpInfo(TestPlanPostModel testPlanPostModel = default(TestPlanPostModel), int operationIndex = 0);
+        ApiResponse<TestPlanModel> CreateTestPlanWithHttpInfo(TestPlanPostModel testPlanPostModel = default(TestPlanPostModel));
         /// <summary>
         /// Delete TestPlan
         /// </summary>
@@ -550,9 +513,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void DeleteTestPlan(string id, int operationIndex = 0);
+        void DeleteTestPlan(string id);
 
         /// <summary>
         /// Delete TestPlan
@@ -562,9 +524,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteTestPlanWithHttpInfo(string id, int operationIndex = 0);
+        ApiResponse<Object> DeleteTestPlanWithHttpInfo(string id);
         /// <summary>
         /// Get TestPlan by Id
         /// </summary>
@@ -573,9 +534,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TestPlanModel</returns>
-        TestPlanModel GetTestPlanById(string id, int operationIndex = 0);
+        TestPlanModel GetTestPlanById(string id);
 
         /// <summary>
         /// Get TestPlan by Id
@@ -585,9 +545,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TestPlanModel</returns>
-        ApiResponse<TestPlanModel> GetTestPlanByIdWithHttpInfo(string id, int operationIndex = 0);
+        ApiResponse<TestPlanModel> GetTestPlanByIdWithHttpInfo(string id);
         /// <summary>
         /// Get TestSuites Tree By Id
         /// </summary>
@@ -596,9 +555,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TestSuiteV2TreeModel&gt;</returns>
-        List<TestSuiteV2TreeModel> GetTestSuitesById(string id, int operationIndex = 0);
+        List<TestSuiteV2TreeModel> GetTestSuitesById(string id);
 
         /// <summary>
         /// Get TestSuites Tree By Id
@@ -608,9 +566,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TestSuiteV2TreeModel&gt;</returns>
-        ApiResponse<List<TestSuiteV2TreeModel>> GetTestSuitesByIdWithHttpInfo(string id, int operationIndex = 0);
+        ApiResponse<List<TestSuiteV2TreeModel>> GetTestSuitesByIdWithHttpInfo(string id);
         /// <summary>
         /// Pause TestPlan
         /// </summary>
@@ -619,9 +576,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void Pause(string id, int operationIndex = 0);
+        void Pause(string id);
 
         /// <summary>
         /// Pause TestPlan
@@ -631,9 +587,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> PauseWithHttpInfo(string id, int operationIndex = 0);
+        ApiResponse<Object> PauseWithHttpInfo(string id);
         /// <summary>
         /// Restore TestPlan
         /// </summary>
@@ -642,9 +597,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void RestoreTestPlan(string id, int operationIndex = 0);
+        void RestoreTestPlan(string id);
 
         /// <summary>
         /// Restore TestPlan
@@ -654,9 +608,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RestoreTestPlanWithHttpInfo(string id, int operationIndex = 0);
+        ApiResponse<Object> RestoreTestPlanWithHttpInfo(string id);
         /// <summary>
         /// Start TestPlan
         /// </summary>
@@ -665,9 +618,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void Start(string id, int operationIndex = 0);
+        void Start(string id);
 
         /// <summary>
         /// Start TestPlan
@@ -677,9 +629,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> StartWithHttpInfo(string id, int operationIndex = 0);
+        ApiResponse<Object> StartWithHttpInfo(string id);
         /// <summary>
         /// Update TestPlan
         /// </summary>
@@ -688,9 +639,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testPlanPutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void UpdateTestPlan(TestPlanPutModel testPlanPutModel = default(TestPlanPutModel), int operationIndex = 0);
+        void UpdateTestPlan(TestPlanPutModel testPlanPutModel = default(TestPlanPutModel));
 
         /// <summary>
         /// Update TestPlan
@@ -700,9 +650,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testPlanPutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateTestPlanWithHttpInfo(TestPlanPutModel testPlanPutModel = default(TestPlanPutModel), int operationIndex = 0);
+        ApiResponse<Object> UpdateTestPlanWithHttpInfo(TestPlanPutModel testPlanPutModel = default(TestPlanPutModel));
         #endregion Synchronous Operations
     }
 
@@ -713,32 +662,30 @@ namespace TestIt.Client.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Add test-points to test suite with sections
+        /// Add test-points to TestPlan with sections
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test suite internal identifier</param>
+        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="workItemSelectModel">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task AddTestPointsWithSectionsAsync(string id, WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task AddTestPointsWithSectionsAsync(string id, WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Add test-points to test suite with sections
+        /// Add test-points to TestPlan with sections
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test suite internal identifier</param>
+        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="workItemSelectModel">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> AddTestPointsWithSectionsWithHttpInfoAsync(string id, WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> AddTestPointsWithSectionsWithHttpInfoAsync(string id, WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Add WorkItems to TestPlan with Sections as TestSuites
         /// </summary>
@@ -748,10 +695,9 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task AddWorkItemsWithSectionsAsync(string id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task AddWorkItemsWithSectionsAsync(string id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Add WorkItems to TestPlan with Sections as TestSuites
@@ -762,10 +708,9 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> AddWorkItemsWithSectionsWithHttpInfoAsync(string id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> AddWorkItemsWithSectionsWithHttpInfoAsync(string id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get analytics by TestPlan
         /// </summary>
@@ -774,10 +719,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestPointAnalyticResult</returns>
-        System.Threading.Tasks.Task<TestPointAnalyticResult> ApiV2TestPlansIdAnalyticsGetAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TestPointAnalyticResult> ApiV2TestPlansIdAnalyticsGetAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get analytics by TestPlan
@@ -787,10 +731,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestPointAnalyticResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TestPointAnalyticResult>> ApiV2TestPlansIdAnalyticsGetWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TestPointAnalyticResult>> ApiV2TestPlansIdAnalyticsGetWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Auto-balance for TestPlan with testers
         /// </summary>
@@ -800,10 +743,9 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="testers">List of testers internal identifiers (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestPlanWithTestSuiteTreeModel</returns>
-        System.Threading.Tasks.Task<TestPlanWithTestSuiteTreeModel> ApiV2TestPlansIdAutobalancePostAsync(string id, List<Guid> testers = default(List<Guid>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TestPlanWithTestSuiteTreeModel> ApiV2TestPlansIdAutobalancePostAsync(string id, List<Guid> testers = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Auto-balance for TestPlan with testers
@@ -814,10 +756,9 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="testers">List of testers internal identifiers (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestPlanWithTestSuiteTreeModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TestPlanWithTestSuiteTreeModel>> ApiV2TestPlansIdAutobalancePostWithHttpInfoAsync(string id, List<Guid> testers = default(List<Guid>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TestPlanWithTestSuiteTreeModel>> ApiV2TestPlansIdAutobalancePostWithHttpInfoAsync(string id, List<Guid> testers = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get TestPlan configurations
         /// </summary>
@@ -826,10 +767,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ConfigurationModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ConfigurationModel>> ApiV2TestPlansIdConfigurationsGetAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ConfigurationModel>> ApiV2TestPlansIdConfigurationsGetAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get TestPlan configurations
@@ -839,10 +779,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ConfigurationModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ConfigurationModel>>> ApiV2TestPlansIdConfigurationsGetWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ConfigurationModel>>> ApiV2TestPlansIdConfigurationsGetWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Export TestPoints from TestPlan in xls format
         /// </summary>
@@ -853,10 +792,9 @@ namespace TestIt.Client.Api
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="getXlsxTestPointsByTestPlanModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of System.IO.Stream</returns>
-        System.Threading.Tasks.Task<System.IO.Stream> ApiV2TestPlansIdExportTestPointsXlsxPostAsync(string id, long? timeZoneOffsetInMinutes = default(long?), GetXlsxTestPointsByTestPlanModel getXlsxTestPointsByTestPlanModel = default(GetXlsxTestPointsByTestPlanModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of FileParameter</returns>
+        System.Threading.Tasks.Task<FileParameter> ApiV2TestPlansIdExportTestPointsXlsxPostAsync(string id, long? timeZoneOffsetInMinutes = default(long?), GetXlsxTestPointsByTestPlanModel getXlsxTestPointsByTestPlanModel = default(GetXlsxTestPointsByTestPlanModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Export TestPoints from TestPlan in xls format
@@ -868,10 +806,9 @@ namespace TestIt.Client.Api
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="getXlsxTestPointsByTestPlanModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), GetXlsxTestPointsByTestPlanModel getXlsxTestPointsByTestPlanModel = default(GetXlsxTestPointsByTestPlanModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (FileParameter)</returns>
+        System.Threading.Tasks.Task<ApiResponse<FileParameter>> ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), GetXlsxTestPointsByTestPlanModel getXlsxTestPointsByTestPlanModel = default(GetXlsxTestPointsByTestPlanModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Export TestResults history from TestPlan in xls format
         /// </summary>
@@ -884,10 +821,9 @@ namespace TestIt.Client.Api
         /// <param name="includeSteps"> (optional)</param>
         /// <param name="includeDeletedTestSuites"> (optional)</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of System.IO.Stream</returns>
-        System.Threading.Tasks.Task<System.IO.Stream> ApiV2TestPlansIdExportTestResultHistoryXlsxPostAsync(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of FileParameter</returns>
+        System.Threading.Tasks.Task<FileParameter> ApiV2TestPlansIdExportTestResultHistoryXlsxPostAsync(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Export TestResults history from TestPlan in xls format
@@ -901,10 +837,9 @@ namespace TestIt.Client.Api
         /// <param name="includeSteps"> (optional)</param>
         /// <param name="includeDeletedTestSuites"> (optional)</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfoAsync(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (FileParameter)</returns>
+        System.Threading.Tasks.Task<ApiResponse<FileParameter>> ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfoAsync(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get TestPlan history
         /// </summary>
@@ -918,10 +853,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestPlanChangeModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TestPlanChangeModel>> ApiV2TestPlansIdHistoryGetAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TestPlanChangeModel>> ApiV2TestPlansIdHistoryGetAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get TestPlan history
@@ -936,10 +870,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPlanChangeModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestPlanChangeModel>>> ApiV2TestPlansIdHistoryGetWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TestPlanChangeModel>>> ApiV2TestPlansIdHistoryGetWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get Links of TestPlan
         /// </summary>
@@ -951,10 +884,9 @@ namespace TestIt.Client.Api
         /// <param name="skip"> (optional)</param>
         /// <param name="take"> (optional)</param>
         /// <param name="orderBy"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestPlanLink&gt;</returns>
-        System.Threading.Tasks.Task<List<TestPlanLink>> ApiV2TestPlansIdLinksGetAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TestPlanLink>> ApiV2TestPlansIdLinksGetAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Links of TestPlan
@@ -967,10 +899,9 @@ namespace TestIt.Client.Api
         /// <param name="skip"> (optional)</param>
         /// <param name="take"> (optional)</param>
         /// <param name="orderBy"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPlanLink&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestPlanLink>>> ApiV2TestPlansIdLinksGetWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TestPlanLink>>> ApiV2TestPlansIdLinksGetWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get TestPoints with last result from TestPlan
         /// </summary>
@@ -986,10 +917,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestPointWithLastResultModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TestPointWithLastResultModel>> ApiV2TestPlansIdTestPointsLastResultsGetAsync(string id, bool? mustAddGroupingElements = default(bool?), Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TestPointWithLastResultModel>> ApiV2TestPlansIdTestPointsLastResultsGetAsync(string id, bool? mustAddGroupingElements = default(bool?), Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get TestPoints with last result from TestPlan
@@ -1006,10 +936,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPointWithLastResultModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestPointWithLastResultModel>>> ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfoAsync(string id, bool? mustAddGroupingElements = default(bool?), Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TestPointWithLastResultModel>>> ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfoAsync(string id, bool? mustAddGroupingElements = default(bool?), Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Reset TestPoints status of TestPlan
         /// </summary>
@@ -1019,10 +948,9 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2TestPlansIdTestPointsResetPostAsync(string id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2TestPlansIdTestPointsResetPostAsync(string id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Reset TestPoints status of TestPlan
@@ -1033,10 +961,9 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestPlansIdTestPointsResetPostWithHttpInfoAsync(string id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestPlansIdTestPointsResetPostWithHttpInfoAsync(string id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get TestRuns of TestPlan
         /// </summary>
@@ -1054,10 +981,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestRunModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TestRunModel>> ApiV2TestPlansIdTestRunsGetAsync(string id, bool? notStarted = default(bool?), bool? inProgress = default(bool?), bool? stopped = default(bool?), bool? completed = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TestRunModel>> ApiV2TestPlansIdTestRunsGetAsync(string id, bool? notStarted = default(bool?), bool? inProgress = default(bool?), bool? stopped = default(bool?), bool? completed = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get TestRuns of TestPlan
@@ -1076,10 +1002,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestRunModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestRunModel>>> ApiV2TestPlansIdTestRunsGetWithHttpInfoAsync(string id, bool? notStarted = default(bool?), bool? inProgress = default(bool?), bool? stopped = default(bool?), bool? completed = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TestRunModel>>> ApiV2TestPlansIdTestRunsGetWithHttpInfoAsync(string id, bool? notStarted = default(bool?), bool? inProgress = default(bool?), bool? stopped = default(bool?), bool? completed = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Search TestRuns of TestPlan
         /// </summary>
@@ -1094,10 +1019,9 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="testRunSearchQueryModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestRunModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TestRunModel>> ApiV2TestPlansIdTestRunsSearchPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestRunSearchQueryModel testRunSearchQueryModel = default(TestRunSearchQueryModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TestRunModel>> ApiV2TestPlansIdTestRunsSearchPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestRunSearchQueryModel testRunSearchQueryModel = default(TestRunSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Search TestRuns of TestPlan
@@ -1113,10 +1037,9 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="testRunSearchQueryModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestRunModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestRunModel>>> ApiV2TestPlansIdTestRunsSearchPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestRunSearchQueryModel testRunSearchQueryModel = default(TestRunSearchQueryModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TestRunModel>>> ApiV2TestPlansIdTestRunsSearchPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestRunSearchQueryModel testRunSearchQueryModel = default(TestRunSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get max modified date in TestRun for TestPlan
         /// </summary>
@@ -1125,10 +1048,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DateTime</returns>
-        System.Threading.Tasks.Task<DateTime> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DateTime> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get max modified date in TestRun for TestPlan
@@ -1138,10 +1060,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DateTime)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DateTime>> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DateTime>> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Send unlock TestPlan notification
         /// </summary>
@@ -1150,10 +1071,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2TestPlansIdUnlockRequestPostAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2TestPlansIdUnlockRequestPostAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Send unlock TestPlan notification
@@ -1163,10 +1083,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestPlansIdUnlockRequestPostWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestPlansIdUnlockRequestPostWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get TestPlans short models by Project identifiers
         /// </summary>
@@ -1176,10 +1095,9 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestPlanShortModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TestPlanShortModel>> ApiV2TestPlansShortsPostAsync(bool? isDeleted = default(bool?), List<Guid> requestBody = default(List<Guid>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TestPlanShortModel>> ApiV2TestPlansShortsPostAsync(bool? isDeleted = default(bool?), List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get TestPlans short models by Project identifiers
@@ -1190,10 +1108,9 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPlanShortModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestPlanShortModel>>> ApiV2TestPlansShortsPostWithHttpInfoAsync(bool? isDeleted = default(bool?), List<Guid> requestBody = default(List<Guid>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TestPlanShortModel>>> ApiV2TestPlansShortsPostWithHttpInfoAsync(bool? isDeleted = default(bool?), List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Clone TestPlan
         /// </summary>
@@ -1202,10 +1119,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestPlanModel</returns>
-        System.Threading.Tasks.Task<TestPlanModel> CloneAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TestPlanModel> CloneAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Clone TestPlan
@@ -1215,10 +1131,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestPlanModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TestPlanModel>> CloneWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TestPlanModel>> CloneWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Complete TestPlan
         /// </summary>
@@ -1227,10 +1142,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CompleteAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task CompleteAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Complete TestPlan
@@ -1240,10 +1154,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CompleteWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> CompleteWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create TestPlan
         /// </summary>
@@ -1252,10 +1165,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testPlanPostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestPlanModel</returns>
-        System.Threading.Tasks.Task<TestPlanModel> CreateTestPlanAsync(TestPlanPostModel testPlanPostModel = default(TestPlanPostModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TestPlanModel> CreateTestPlanAsync(TestPlanPostModel testPlanPostModel = default(TestPlanPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create TestPlan
@@ -1265,10 +1177,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testPlanPostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestPlanModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TestPlanModel>> CreateTestPlanWithHttpInfoAsync(TestPlanPostModel testPlanPostModel = default(TestPlanPostModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TestPlanModel>> CreateTestPlanWithHttpInfoAsync(TestPlanPostModel testPlanPostModel = default(TestPlanPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete TestPlan
         /// </summary>
@@ -1277,10 +1188,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteTestPlanAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteTestPlanAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete TestPlan
@@ -1290,10 +1200,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteTestPlanWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteTestPlanWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get TestPlan by Id
         /// </summary>
@@ -1302,10 +1211,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestPlanModel</returns>
-        System.Threading.Tasks.Task<TestPlanModel> GetTestPlanByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TestPlanModel> GetTestPlanByIdAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get TestPlan by Id
@@ -1315,10 +1223,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestPlanModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TestPlanModel>> GetTestPlanByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TestPlanModel>> GetTestPlanByIdWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get TestSuites Tree By Id
         /// </summary>
@@ -1327,10 +1234,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestSuiteV2TreeModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TestSuiteV2TreeModel>> GetTestSuitesByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TestSuiteV2TreeModel>> GetTestSuitesByIdAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get TestSuites Tree By Id
@@ -1340,10 +1246,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestSuiteV2TreeModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestSuiteV2TreeModel>>> GetTestSuitesByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TestSuiteV2TreeModel>>> GetTestSuitesByIdWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Pause TestPlan
         /// </summary>
@@ -1352,10 +1257,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task PauseAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task PauseAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Pause TestPlan
@@ -1365,10 +1269,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> PauseWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> PauseWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Restore TestPlan
         /// </summary>
@@ -1377,10 +1280,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RestoreTestPlanAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task RestoreTestPlanAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Restore TestPlan
@@ -1390,10 +1292,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RestoreTestPlanWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RestoreTestPlanWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Start TestPlan
         /// </summary>
@@ -1402,10 +1303,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task StartAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task StartAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Start TestPlan
@@ -1415,10 +1315,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> StartWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> StartWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update TestPlan
         /// </summary>
@@ -1427,10 +1326,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testPlanPutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateTestPlanAsync(TestPlanPutModel testPlanPutModel = default(TestPlanPutModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task UpdateTestPlanAsync(TestPlanPutModel testPlanPutModel = default(TestPlanPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update TestPlan
@@ -1440,10 +1338,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testPlanPutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateTestPlanWithHttpInfoAsync(TestPlanPutModel testPlanPutModel = default(TestPlanPutModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateTestPlanWithHttpInfoAsync(TestPlanPutModel testPlanPutModel = default(TestPlanPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1458,12 +1355,14 @@ namespace TestIt.Client.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class TestPlansApi : ITestPlansApi
+    public partial class TestPlansApi : IDisposable, ITestPlansApi
     {
         private TestIt.Client.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPlansApi"/> class.
+        /// **IMPORTANT** This will also create an instance of HttpClient, which is less than ideal.
+        /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHandler</see>.
         /// </summary>
         /// <returns></returns>
         public TestPlansApi() : this((string)null)
@@ -1472,7 +1371,11 @@ namespace TestIt.Client.Api
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPlansApi"/> class.
+        /// **IMPORTANT** This will also create an instance of HttpClient, which is less than ideal.
+        /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHandler</see>.
         /// </summary>
+        /// <param name="basePath">The target service's base path in URL format.</param>
+        /// <exception cref="ArgumentException"></exception>
         /// <returns></returns>
         public TestPlansApi(string basePath)
         {
@@ -1480,16 +1383,19 @@ namespace TestIt.Client.Api
                 TestIt.Client.Client.GlobalConfiguration.Instance,
                 new TestIt.Client.Client.Configuration { BasePath = basePath }
             );
-            this.Client = new TestIt.Client.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new TestIt.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new TestIt.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.Client =  this.ApiClient;
+            this.AsynchronousClient = this.ApiClient;
             this.ExceptionFactory = TestIt.Client.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TestPlansApi"/> class
-        /// using Configuration object
+        /// Initializes a new instance of the <see cref="TestPlansApi"/> class using Configuration object.
+        /// **IMPORTANT** This will also create an instance of HttpClient, which is less than ideal.
+        /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHandler</see>.
         /// </summary>
-        /// <param name="configuration">An instance of Configuration</param>
+        /// <param name="configuration">An instance of Configuration.</param>
+        /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
         public TestPlansApi(TestIt.Client.Client.Configuration configuration)
         {
@@ -1499,8 +1405,78 @@ namespace TestIt.Client.Api
                 TestIt.Client.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new TestIt.Client.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new TestIt.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new TestIt.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.Client = this.ApiClient;
+            this.AsynchronousClient = this.ApiClient;
+            ExceptionFactory = TestIt.Client.Client.Configuration.DefaultExceptionFactory;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestPlansApi"/> class.
+        /// </summary>
+        /// <param name="client">An instance of HttpClient.</param>
+        /// <param name="handler">An optional instance of HttpClientHandler that is used by HttpClient.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <returns></returns>
+        /// <remarks>
+        /// Some configuration settings will not be applied without passing an HttpClientHandler.
+        /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
+        /// </remarks>
+        public TestPlansApi(HttpClient client, HttpClientHandler handler = null) : this(client, (string)null, handler)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestPlansApi"/> class.
+        /// </summary>
+        /// <param name="client">An instance of HttpClient.</param>
+        /// <param name="basePath">The target service's base path in URL format.</param>
+        /// <param name="handler">An optional instance of HttpClientHandler that is used by HttpClient.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="ArgumentException"></exception>
+        /// <returns></returns>
+        /// <remarks>
+        /// Some configuration settings will not be applied without passing an HttpClientHandler.
+        /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
+        /// </remarks>
+        public TestPlansApi(HttpClient client, string basePath, HttpClientHandler handler = null)
+        {
+            if (client == null) throw new ArgumentNullException("client");
+
+            this.Configuration = TestIt.Client.Client.Configuration.MergeConfigurations(
+                TestIt.Client.Client.GlobalConfiguration.Instance,
+                new TestIt.Client.Client.Configuration { BasePath = basePath }
+            );
+            this.ApiClient = new TestIt.Client.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.Client =  this.ApiClient;
+            this.AsynchronousClient = this.ApiClient;
+            this.ExceptionFactory = TestIt.Client.Client.Configuration.DefaultExceptionFactory;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestPlansApi"/> class using Configuration object.
+        /// </summary>
+        /// <param name="client">An instance of HttpClient.</param>
+        /// <param name="configuration">An instance of Configuration.</param>
+        /// <param name="handler">An optional instance of HttpClientHandler that is used by HttpClient.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <returns></returns>
+        /// <remarks>
+        /// Some configuration settings will not be applied without passing an HttpClientHandler.
+        /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
+        /// </remarks>
+        public TestPlansApi(HttpClient client, TestIt.Client.Client.Configuration configuration, HttpClientHandler handler = null)
+        {
+            if (configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+
+            this.Configuration = TestIt.Client.Client.Configuration.MergeConfigurations(
+                TestIt.Client.Client.GlobalConfiguration.Instance,
+                configuration
+            );
+            this.ApiClient = new TestIt.Client.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.Client = this.ApiClient;
+            this.AsynchronousClient = this.ApiClient;
             ExceptionFactory = TestIt.Client.Client.Configuration.DefaultExceptionFactory;
         }
 
@@ -1511,6 +1487,7 @@ namespace TestIt.Client.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
+        /// <exception cref="ArgumentNullException"></exception>
         public TestPlansApi(TestIt.Client.Client.ISynchronousClient client, TestIt.Client.Client.IAsynchronousClient asyncClient, TestIt.Client.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
@@ -1522,6 +1499,19 @@ namespace TestIt.Client.Api
             this.Configuration = configuration;
             this.ExceptionFactory = TestIt.Client.Client.Configuration.DefaultExceptionFactory;
         }
+
+        /// <summary>
+        /// Disposes resources if they were created by us
+        /// </summary>
+        public void Dispose()
+        {
+            this.ApiClient?.Dispose();
+        }
+
+        /// <summary>
+        /// Holds the ApiClient if created
+        /// </summary>
+        public TestIt.Client.Client.ApiClient ApiClient { get; set; } = null;
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
@@ -1565,33 +1555,29 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Add test-points to test suite with sections 
+        /// Add test-points to TestPlan with sections 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test suite internal identifier</param>
+        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="workItemSelectModel">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void AddTestPointsWithSections(string id, WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), int operationIndex = 0)
+        public void AddTestPointsWithSections(string id, WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel))
         {
             AddTestPointsWithSectionsWithHttpInfo(id, workItemSelectModel);
         }
 
         /// <summary>
-        /// Add test-points to test suite with sections 
+        /// Add test-points to TestPlan with sections 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test suite internal identifier</param>
+        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="workItemSelectModel">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> AddTestPointsWithSectionsWithHttpInfo(string id, WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<Object> AddTestPointsWithSectionsWithHttpInfo(string id, WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->AddTestPointsWithSections");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1601,25 +1587,17 @@ namespace TestIt.Client.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/json"
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = workItemSelectModel;
-
-            localVarRequestOptions.Operation = "TestPlansApi.AddTestPointsWithSections";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1629,48 +1607,42 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/api/v2/testPlans/{id}/test-points/withSections", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AddTestPointsWithSections", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
         }
 
         /// <summary>
-        /// Add test-points to test suite with sections 
+        /// Add test-points to TestPlan with sections 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test suite internal identifier</param>
+        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="workItemSelectModel">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task AddTestPointsWithSectionsAsync(string id, WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task AddTestPointsWithSectionsAsync(string id, WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await AddTestPointsWithSectionsWithHttpInfoAsync(id, workItemSelectModel, operationIndex, cancellationToken).ConfigureAwait(false);
+            await AddTestPointsWithSectionsWithHttpInfoAsync(id, workItemSelectModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Add test-points to test suite with sections 
+        /// Add test-points to TestPlan with sections 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test suite internal identifier</param>
+        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="workItemSelectModel">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> AddTestPointsWithSectionsWithHttpInfoAsync(string id, WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> AddTestPointsWithSectionsWithHttpInfoAsync(string id, WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->AddTestPointsWithSections");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1681,25 +1653,18 @@ namespace TestIt.Client.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = workItemSelectModel;
-
-            localVarRequestOptions.Operation = "TestPlansApi.AddTestPointsWithSections";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1708,15 +1673,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/testPlans/{id}/test-points/withSections", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AddTestPointsWithSections", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1728,9 +1691,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void AddWorkItemsWithSections(string id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0)
+        public void AddWorkItemsWithSections(string id, List<Guid> requestBody = default(List<Guid>))
         {
             AddWorkItemsWithSectionsWithHttpInfo(id, requestBody);
         }
@@ -1741,15 +1703,12 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> AddWorkItemsWithSectionsWithHttpInfo(string id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<Object> AddWorkItemsWithSectionsWithHttpInfo(string id, List<Guid> requestBody = default(List<Guid>))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->AddWorkItemsWithSections");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1763,22 +1722,13 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = requestBody;
-
-            localVarRequestOptions.Operation = "TestPlansApi.AddWorkItemsWithSections";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1788,13 +1738,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/api/v2/testPlans/{id}/workItems/withSections", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AddWorkItemsWithSections", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1806,12 +1754,11 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task AddWorkItemsWithSectionsAsync(string id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task AddWorkItemsWithSectionsAsync(string id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await AddWorkItemsWithSectionsWithHttpInfoAsync(id, requestBody, operationIndex, cancellationToken).ConfigureAwait(false);
+            await AddWorkItemsWithSectionsWithHttpInfoAsync(id, requestBody, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1820,16 +1767,13 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> AddWorkItemsWithSectionsWithHttpInfoAsync(string id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> AddWorkItemsWithSectionsWithHttpInfoAsync(string id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->AddWorkItemsWithSections");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1843,23 +1787,15 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = requestBody;
-
-            localVarRequestOptions.Operation = "TestPlansApi.AddWorkItemsWithSections";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1868,15 +1804,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/testPlans/{id}/workItems/withSections", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AddWorkItemsWithSections", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1887,9 +1821,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TestPointAnalyticResult</returns>
-        public TestPointAnalyticResult ApiV2TestPlansIdAnalyticsGet(string id, int operationIndex = 0)
+        public TestPointAnalyticResult ApiV2TestPlansIdAnalyticsGet(string id)
         {
             TestIt.Client.Client.ApiResponse<TestPointAnalyticResult> localVarResponse = ApiV2TestPlansIdAnalyticsGetWithHttpInfo(id);
             return localVarResponse.Data;
@@ -1900,15 +1833,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TestPointAnalyticResult</returns>
-        public TestIt.Client.Client.ApiResponse<TestPointAnalyticResult> ApiV2TestPlansIdAnalyticsGetWithHttpInfo(string id, int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<TestPointAnalyticResult> ApiV2TestPlansIdAnalyticsGetWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdAnalyticsGet");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1921,21 +1851,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdAnalyticsGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1945,13 +1866,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<TestPointAnalyticResult>("/api/v2/testPlans/{id}/analytics", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdAnalyticsGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1962,12 +1881,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestPointAnalyticResult</returns>
-        public async System.Threading.Tasks.Task<TestPointAnalyticResult> ApiV2TestPlansIdAnalyticsGetAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestPointAnalyticResult> ApiV2TestPlansIdAnalyticsGetAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<TestPointAnalyticResult> localVarResponse = await ApiV2TestPlansIdAnalyticsGetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<TestPointAnalyticResult> localVarResponse = await ApiV2TestPlansIdAnalyticsGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1976,16 +1894,13 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestPointAnalyticResult)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<TestPointAnalyticResult>> ApiV2TestPlansIdAnalyticsGetWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<TestPointAnalyticResult>> ApiV2TestPlansIdAnalyticsGetWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdAnalyticsGet");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1998,22 +1913,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdAnalyticsGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2022,15 +1929,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.GetAsync<TestPointAnalyticResult>("/api/v2/testPlans/{id}/analytics", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdAnalyticsGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -2042,9 +1947,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="testers">List of testers internal identifiers (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TestPlanWithTestSuiteTreeModel</returns>
-        public TestPlanWithTestSuiteTreeModel ApiV2TestPlansIdAutobalancePost(string id, List<Guid> testers = default(List<Guid>), int operationIndex = 0)
+        public TestPlanWithTestSuiteTreeModel ApiV2TestPlansIdAutobalancePost(string id, List<Guid> testers = default(List<Guid>))
         {
             TestIt.Client.Client.ApiResponse<TestPlanWithTestSuiteTreeModel> localVarResponse = ApiV2TestPlansIdAutobalancePostWithHttpInfo(id, testers);
             return localVarResponse.Data;
@@ -2056,15 +1960,12 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="testers">List of testers internal identifiers (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TestPlanWithTestSuiteTreeModel</returns>
-        public TestIt.Client.Client.ApiResponse<TestPlanWithTestSuiteTreeModel> ApiV2TestPlansIdAutobalancePostWithHttpInfo(string id, List<Guid> testers = default(List<Guid>), int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<TestPlanWithTestSuiteTreeModel> ApiV2TestPlansIdAutobalancePostWithHttpInfo(string id, List<Guid> testers = default(List<Guid>))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdAutobalancePost");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -2077,25 +1978,16 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (testers != null)
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("multi", "testers", testers));
             }
-
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdAutobalancePost";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2105,13 +1997,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<TestPlanWithTestSuiteTreeModel>("/api/v2/testPlans/{id}/autobalance", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdAutobalancePost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -2123,12 +2013,11 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="testers">List of testers internal identifiers (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestPlanWithTestSuiteTreeModel</returns>
-        public async System.Threading.Tasks.Task<TestPlanWithTestSuiteTreeModel> ApiV2TestPlansIdAutobalancePostAsync(string id, List<Guid> testers = default(List<Guid>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestPlanWithTestSuiteTreeModel> ApiV2TestPlansIdAutobalancePostAsync(string id, List<Guid> testers = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<TestPlanWithTestSuiteTreeModel> localVarResponse = await ApiV2TestPlansIdAutobalancePostWithHttpInfoAsync(id, testers, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<TestPlanWithTestSuiteTreeModel> localVarResponse = await ApiV2TestPlansIdAutobalancePostWithHttpInfoAsync(id, testers, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2138,16 +2027,13 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="testers">List of testers internal identifiers (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestPlanWithTestSuiteTreeModel)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<TestPlanWithTestSuiteTreeModel>> ApiV2TestPlansIdAutobalancePostWithHttpInfoAsync(string id, List<Guid> testers = default(List<Guid>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<TestPlanWithTestSuiteTreeModel>> ApiV2TestPlansIdAutobalancePostWithHttpInfoAsync(string id, List<Guid> testers = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdAutobalancePost");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -2160,26 +2046,18 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (testers != null)
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("multi", "testers", testers));
             }
-
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdAutobalancePost";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2188,15 +2066,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.PostAsync<TestPlanWithTestSuiteTreeModel>("/api/v2/testPlans/{id}/autobalance", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdAutobalancePost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -2207,9 +2083,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ConfigurationModel&gt;</returns>
-        public List<ConfigurationModel> ApiV2TestPlansIdConfigurationsGet(string id, int operationIndex = 0)
+        public List<ConfigurationModel> ApiV2TestPlansIdConfigurationsGet(string id)
         {
             TestIt.Client.Client.ApiResponse<List<ConfigurationModel>> localVarResponse = ApiV2TestPlansIdConfigurationsGetWithHttpInfo(id);
             return localVarResponse.Data;
@@ -2220,15 +2095,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ConfigurationModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<ConfigurationModel>> ApiV2TestPlansIdConfigurationsGetWithHttpInfo(string id, int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<List<ConfigurationModel>> ApiV2TestPlansIdConfigurationsGetWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdConfigurationsGet");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -2241,21 +2113,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdConfigurationsGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2265,13 +2128,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<List<ConfigurationModel>>("/api/v2/testPlans/{id}/configurations", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdConfigurationsGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -2282,12 +2143,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ConfigurationModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ConfigurationModel>> ApiV2TestPlansIdConfigurationsGetAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ConfigurationModel>> ApiV2TestPlansIdConfigurationsGetAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<ConfigurationModel>> localVarResponse = await ApiV2TestPlansIdConfigurationsGetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<ConfigurationModel>> localVarResponse = await ApiV2TestPlansIdConfigurationsGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2296,16 +2156,13 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ConfigurationModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<ConfigurationModel>>> ApiV2TestPlansIdConfigurationsGetWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<ConfigurationModel>>> ApiV2TestPlansIdConfigurationsGetWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdConfigurationsGet");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -2318,22 +2175,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdConfigurationsGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2342,15 +2191,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.GetAsync<List<ConfigurationModel>>("/api/v2/testPlans/{id}/configurations", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdConfigurationsGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -2363,11 +2210,10 @@ namespace TestIt.Client.Api
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="getXlsxTestPointsByTestPlanModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream ApiV2TestPlansIdExportTestPointsXlsxPost(string id, long? timeZoneOffsetInMinutes = default(long?), GetXlsxTestPointsByTestPlanModel getXlsxTestPointsByTestPlanModel = default(GetXlsxTestPointsByTestPlanModel), int operationIndex = 0)
+        /// <returns>FileParameter</returns>
+        public FileParameter ApiV2TestPlansIdExportTestPointsXlsxPost(string id, long? timeZoneOffsetInMinutes = default(long?), GetXlsxTestPointsByTestPlanModel getXlsxTestPointsByTestPlanModel = default(GetXlsxTestPointsByTestPlanModel))
         {
-            TestIt.Client.Client.ApiResponse<System.IO.Stream> localVarResponse = ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(id, timeZoneOffsetInMinutes, getXlsxTestPointsByTestPlanModel);
+            TestIt.Client.Client.ApiResponse<FileParameter> localVarResponse = ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(id, timeZoneOffsetInMinutes, getXlsxTestPointsByTestPlanModel);
             return localVarResponse.Data;
         }
 
@@ -2378,15 +2224,12 @@ namespace TestIt.Client.Api
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="getXlsxTestPointsByTestPlanModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of System.IO.Stream</returns>
-        public TestIt.Client.Client.ApiResponse<System.IO.Stream> ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), GetXlsxTestPointsByTestPlanModel getXlsxTestPointsByTestPlanModel = default(GetXlsxTestPointsByTestPlanModel), int operationIndex = 0)
+        /// <returns>ApiResponse of FileParameter</returns>
+        public TestIt.Client.Client.ApiResponse<FileParameter> ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), GetXlsxTestPointsByTestPlanModel getXlsxTestPointsByTestPlanModel = default(GetXlsxTestPointsByTestPlanModel))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdExportTestPointsXlsxPost");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -2401,16 +2244,10 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (timeZoneOffsetInMinutes != null)
@@ -2419,9 +2256,6 @@ namespace TestIt.Client.Api
             }
             localVarRequestOptions.Data = getXlsxTestPointsByTestPlanModel;
 
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdExportTestPointsXlsxPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -2429,14 +2263,12 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<System.IO.Stream>("/api/v2/testPlans/{id}/export/testPoints/xlsx", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<FileParameter>("/api/v2/testPlans/{id}/export/testPoints/xlsx", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdExportTestPointsXlsxPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -2449,12 +2281,11 @@ namespace TestIt.Client.Api
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="getXlsxTestPointsByTestPlanModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> ApiV2TestPlansIdExportTestPointsXlsxPostAsync(string id, long? timeZoneOffsetInMinutes = default(long?), GetXlsxTestPointsByTestPlanModel getXlsxTestPointsByTestPlanModel = default(GetXlsxTestPointsByTestPlanModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of FileParameter</returns>
+        public async System.Threading.Tasks.Task<FileParameter> ApiV2TestPlansIdExportTestPointsXlsxPostAsync(string id, long? timeZoneOffsetInMinutes = default(long?), GetXlsxTestPointsByTestPlanModel getXlsxTestPointsByTestPlanModel = default(GetXlsxTestPointsByTestPlanModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<System.IO.Stream> localVarResponse = await ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfoAsync(id, timeZoneOffsetInMinutes, getXlsxTestPointsByTestPlanModel, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<FileParameter> localVarResponse = await ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfoAsync(id, timeZoneOffsetInMinutes, getXlsxTestPointsByTestPlanModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2465,16 +2296,13 @@ namespace TestIt.Client.Api
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="getXlsxTestPointsByTestPlanModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<System.IO.Stream>> ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), GetXlsxTestPointsByTestPlanModel getXlsxTestPointsByTestPlanModel = default(GetXlsxTestPointsByTestPlanModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (FileParameter)</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<FileParameter>> ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), GetXlsxTestPointsByTestPlanModel getXlsxTestPointsByTestPlanModel = default(GetXlsxTestPointsByTestPlanModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdExportTestPointsXlsxPost");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -2489,17 +2317,12 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (timeZoneOffsetInMinutes != null)
@@ -2508,9 +2331,6 @@ namespace TestIt.Client.Api
             }
             localVarRequestOptions.Data = getXlsxTestPointsByTestPlanModel;
 
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdExportTestPointsXlsxPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -2518,15 +2338,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<System.IO.Stream>("/api/v2/testPlans/{id}/export/testPoints/xlsx", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<FileParameter>("/api/v2/testPlans/{id}/export/testPoints/xlsx", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdExportTestPointsXlsxPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -2541,11 +2359,10 @@ namespace TestIt.Client.Api
         /// <param name="includeSteps"> (optional)</param>
         /// <param name="includeDeletedTestSuites"> (optional)</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream ApiV2TestPlansIdExportTestResultHistoryXlsxPost(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?), int operationIndex = 0)
+        /// <returns>FileParameter</returns>
+        public FileParameter ApiV2TestPlansIdExportTestResultHistoryXlsxPost(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?))
         {
-            TestIt.Client.Client.ApiResponse<System.IO.Stream> localVarResponse = ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfo(id, mustReturnOnlyLastTestResult, includeSteps, includeDeletedTestSuites, timeZoneOffsetInMinutes);
+            TestIt.Client.Client.ApiResponse<FileParameter> localVarResponse = ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfo(id, mustReturnOnlyLastTestResult, includeSteps, includeDeletedTestSuites, timeZoneOffsetInMinutes);
             return localVarResponse.Data;
         }
 
@@ -2558,15 +2375,12 @@ namespace TestIt.Client.Api
         /// <param name="includeSteps"> (optional)</param>
         /// <param name="includeDeletedTestSuites"> (optional)</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of System.IO.Stream</returns>
-        public TestIt.Client.Client.ApiResponse<System.IO.Stream> ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfo(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?), int operationIndex = 0)
+        /// <returns>ApiResponse of FileParameter</returns>
+        public TestIt.Client.Client.ApiResponse<FileParameter> ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfo(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdExportTestResultHistoryXlsxPost");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -2580,16 +2394,10 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (mustReturnOnlyLastTestResult != null)
@@ -2609,9 +2417,6 @@ namespace TestIt.Client.Api
                 localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.Client.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
             }
 
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdExportTestResultHistoryXlsxPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -2619,14 +2424,12 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<System.IO.Stream>("/api/v2/testPlans/{id}/export/testResultHistory/xlsx", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<FileParameter>("/api/v2/testPlans/{id}/export/testResultHistory/xlsx", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdExportTestResultHistoryXlsxPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -2641,12 +2444,11 @@ namespace TestIt.Client.Api
         /// <param name="includeSteps"> (optional)</param>
         /// <param name="includeDeletedTestSuites"> (optional)</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> ApiV2TestPlansIdExportTestResultHistoryXlsxPostAsync(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of FileParameter</returns>
+        public async System.Threading.Tasks.Task<FileParameter> ApiV2TestPlansIdExportTestResultHistoryXlsxPostAsync(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<System.IO.Stream> localVarResponse = await ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfoAsync(id, mustReturnOnlyLastTestResult, includeSteps, includeDeletedTestSuites, timeZoneOffsetInMinutes, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<FileParameter> localVarResponse = await ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfoAsync(id, mustReturnOnlyLastTestResult, includeSteps, includeDeletedTestSuites, timeZoneOffsetInMinutes, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2659,16 +2461,13 @@ namespace TestIt.Client.Api
         /// <param name="includeSteps"> (optional)</param>
         /// <param name="includeDeletedTestSuites"> (optional)</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<System.IO.Stream>> ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfoAsync(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (FileParameter)</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<FileParameter>> ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfoAsync(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdExportTestResultHistoryXlsxPost");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -2682,17 +2481,12 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (mustReturnOnlyLastTestResult != null)
@@ -2712,9 +2506,6 @@ namespace TestIt.Client.Api
                 localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.Client.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
             }
 
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdExportTestResultHistoryXlsxPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -2722,15 +2513,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<System.IO.Stream>("/api/v2/testPlans/{id}/export/testResultHistory/xlsx", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<FileParameter>("/api/v2/testPlans/{id}/export/testResultHistory/xlsx", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdExportTestResultHistoryXlsxPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -2746,9 +2535,8 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TestPlanChangeModel&gt;</returns>
-        public List<TestPlanChangeModel> ApiV2TestPlansIdHistoryGet(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0)
+        public List<TestPlanChangeModel> ApiV2TestPlansIdHistoryGet(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
             TestIt.Client.Client.ApiResponse<List<TestPlanChangeModel>> localVarResponse = ApiV2TestPlansIdHistoryGetWithHttpInfo(id, skip, take, orderBy, searchField, searchValue);
             return localVarResponse.Data;
@@ -2764,15 +2552,12 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TestPlanChangeModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<TestPlanChangeModel>> ApiV2TestPlansIdHistoryGetWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<List<TestPlanChangeModel>> ApiV2TestPlansIdHistoryGetWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdHistoryGet");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -2785,16 +2570,10 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (skip != null)
@@ -2818,9 +2597,6 @@ namespace TestIt.Client.Api
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
 
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdHistoryGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -2829,13 +2605,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<List<TestPlanChangeModel>>("/api/v2/testPlans/{id}/history", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdHistoryGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -2851,12 +2625,11 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestPlanChangeModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestPlanChangeModel>> ApiV2TestPlansIdHistoryGetAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TestPlanChangeModel>> ApiV2TestPlansIdHistoryGetAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<TestPlanChangeModel>> localVarResponse = await ApiV2TestPlansIdHistoryGetWithHttpInfoAsync(id, skip, take, orderBy, searchField, searchValue, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<TestPlanChangeModel>> localVarResponse = await ApiV2TestPlansIdHistoryGetWithHttpInfoAsync(id, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2870,16 +2643,13 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPlanChangeModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestPlanChangeModel>>> ApiV2TestPlansIdHistoryGetWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestPlanChangeModel>>> ApiV2TestPlansIdHistoryGetWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdHistoryGet");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -2892,17 +2662,12 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (skip != null)
@@ -2926,9 +2691,6 @@ namespace TestIt.Client.Api
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
 
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdHistoryGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -2936,15 +2698,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.GetAsync<List<TestPlanChangeModel>>("/api/v2/testPlans/{id}/history", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdHistoryGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -2958,9 +2718,8 @@ namespace TestIt.Client.Api
         /// <param name="skip"> (optional)</param>
         /// <param name="take"> (optional)</param>
         /// <param name="orderBy"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TestPlanLink&gt;</returns>
-        public List<TestPlanLink> ApiV2TestPlansIdLinksGet(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), int operationIndex = 0)
+        public List<TestPlanLink> ApiV2TestPlansIdLinksGet(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string))
         {
             TestIt.Client.Client.ApiResponse<List<TestPlanLink>> localVarResponse = ApiV2TestPlansIdLinksGetWithHttpInfo(id, skip, take, orderBy);
             return localVarResponse.Data;
@@ -2974,15 +2733,12 @@ namespace TestIt.Client.Api
         /// <param name="skip"> (optional)</param>
         /// <param name="take"> (optional)</param>
         /// <param name="orderBy"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TestPlanLink&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<TestPlanLink>> ApiV2TestPlansIdLinksGetWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<List<TestPlanLink>> ApiV2TestPlansIdLinksGetWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdLinksGet");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -2995,16 +2751,10 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (skip != null)
@@ -3020,9 +2770,6 @@ namespace TestIt.Client.Api
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "orderBy", orderBy));
             }
 
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdLinksGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -3031,13 +2778,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<List<TestPlanLink>>("/api/v2/testPlans/{id}/links", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdLinksGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -3051,12 +2796,11 @@ namespace TestIt.Client.Api
         /// <param name="skip"> (optional)</param>
         /// <param name="take"> (optional)</param>
         /// <param name="orderBy"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestPlanLink&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestPlanLink>> ApiV2TestPlansIdLinksGetAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TestPlanLink>> ApiV2TestPlansIdLinksGetAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<TestPlanLink>> localVarResponse = await ApiV2TestPlansIdLinksGetWithHttpInfoAsync(id, skip, take, orderBy, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<TestPlanLink>> localVarResponse = await ApiV2TestPlansIdLinksGetWithHttpInfoAsync(id, skip, take, orderBy, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3068,16 +2812,13 @@ namespace TestIt.Client.Api
         /// <param name="skip"> (optional)</param>
         /// <param name="take"> (optional)</param>
         /// <param name="orderBy"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPlanLink&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestPlanLink>>> ApiV2TestPlansIdLinksGetWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestPlanLink>>> ApiV2TestPlansIdLinksGetWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdLinksGet");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -3090,17 +2831,12 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (skip != null)
@@ -3116,9 +2852,6 @@ namespace TestIt.Client.Api
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "orderBy", orderBy));
             }
 
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdLinksGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -3126,15 +2859,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.GetAsync<List<TestPlanLink>>("/api/v2/testPlans/{id}/links", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdLinksGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -3152,9 +2883,8 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TestPointWithLastResultModel&gt;</returns>
-        public List<TestPointWithLastResultModel> ApiV2TestPlansIdTestPointsLastResultsGet(string id, bool? mustAddGroupingElements = default(bool?), Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0)
+        public List<TestPointWithLastResultModel> ApiV2TestPlansIdTestPointsLastResultsGet(string id, bool? mustAddGroupingElements = default(bool?), Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
             TestIt.Client.Client.ApiResponse<List<TestPointWithLastResultModel>> localVarResponse = ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfo(id, mustAddGroupingElements, testerId, skip, take, orderBy, searchField, searchValue);
             return localVarResponse.Data;
@@ -3172,15 +2902,12 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TestPointWithLastResultModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<TestPointWithLastResultModel>> ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfo(string id, bool? mustAddGroupingElements = default(bool?), Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<List<TestPointWithLastResultModel>> ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfo(string id, bool? mustAddGroupingElements = default(bool?), Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdTestPointsLastResultsGet");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -3193,16 +2920,10 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (mustAddGroupingElements != null)
@@ -3234,9 +2955,6 @@ namespace TestIt.Client.Api
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
 
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdTestPointsLastResultsGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -3245,13 +2963,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<List<TestPointWithLastResultModel>>("/api/v2/testPlans/{id}/testPoints/lastResults", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdTestPointsLastResultsGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -3269,12 +2985,11 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestPointWithLastResultModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestPointWithLastResultModel>> ApiV2TestPlansIdTestPointsLastResultsGetAsync(string id, bool? mustAddGroupingElements = default(bool?), Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TestPointWithLastResultModel>> ApiV2TestPlansIdTestPointsLastResultsGetAsync(string id, bool? mustAddGroupingElements = default(bool?), Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<TestPointWithLastResultModel>> localVarResponse = await ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfoAsync(id, mustAddGroupingElements, testerId, skip, take, orderBy, searchField, searchValue, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<TestPointWithLastResultModel>> localVarResponse = await ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfoAsync(id, mustAddGroupingElements, testerId, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3290,16 +3005,13 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPointWithLastResultModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestPointWithLastResultModel>>> ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfoAsync(string id, bool? mustAddGroupingElements = default(bool?), Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestPointWithLastResultModel>>> ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfoAsync(string id, bool? mustAddGroupingElements = default(bool?), Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdTestPointsLastResultsGet");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -3312,17 +3024,12 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (mustAddGroupingElements != null)
@@ -3354,9 +3061,6 @@ namespace TestIt.Client.Api
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
 
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdTestPointsLastResultsGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -3364,15 +3068,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.GetAsync<List<TestPointWithLastResultModel>>("/api/v2/testPlans/{id}/testPoints/lastResults", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdTestPointsLastResultsGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -3384,9 +3086,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void ApiV2TestPlansIdTestPointsResetPost(string id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0)
+        public void ApiV2TestPlansIdTestPointsResetPost(string id, List<Guid> requestBody = default(List<Guid>))
         {
             ApiV2TestPlansIdTestPointsResetPostWithHttpInfo(id, requestBody);
         }
@@ -3397,15 +3098,12 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> ApiV2TestPlansIdTestPointsResetPostWithHttpInfo(string id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<Object> ApiV2TestPlansIdTestPointsResetPostWithHttpInfo(string id, List<Guid> requestBody = default(List<Guid>))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdTestPointsResetPost");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -3419,22 +3117,13 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = requestBody;
-
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdTestPointsResetPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3444,13 +3133,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/api/v2/testPlans/{id}/testPoints/reset", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdTestPointsResetPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -3462,12 +3149,11 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2TestPlansIdTestPointsResetPostAsync(string id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2TestPlansIdTestPointsResetPostAsync(string id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ApiV2TestPlansIdTestPointsResetPostWithHttpInfoAsync(id, requestBody, operationIndex, cancellationToken).ConfigureAwait(false);
+            await ApiV2TestPlansIdTestPointsResetPostWithHttpInfoAsync(id, requestBody, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -3476,16 +3162,13 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2TestPlansIdTestPointsResetPostWithHttpInfoAsync(string id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2TestPlansIdTestPointsResetPostWithHttpInfoAsync(string id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdTestPointsResetPost");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -3499,23 +3182,15 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = requestBody;
-
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdTestPointsResetPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3524,15 +3199,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/testPlans/{id}/testPoints/reset", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdTestPointsResetPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -3552,9 +3225,8 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TestRunModel&gt;</returns>
-        public List<TestRunModel> ApiV2TestPlansIdTestRunsGet(string id, bool? notStarted = default(bool?), bool? inProgress = default(bool?), bool? stopped = default(bool?), bool? completed = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0)
+        public List<TestRunModel> ApiV2TestPlansIdTestRunsGet(string id, bool? notStarted = default(bool?), bool? inProgress = default(bool?), bool? stopped = default(bool?), bool? completed = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
             TestIt.Client.Client.ApiResponse<List<TestRunModel>> localVarResponse = ApiV2TestPlansIdTestRunsGetWithHttpInfo(id, notStarted, inProgress, stopped, completed, skip, take, orderBy, searchField, searchValue);
             return localVarResponse.Data;
@@ -3574,15 +3246,12 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TestRunModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<TestRunModel>> ApiV2TestPlansIdTestRunsGetWithHttpInfo(string id, bool? notStarted = default(bool?), bool? inProgress = default(bool?), bool? stopped = default(bool?), bool? completed = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<List<TestRunModel>> ApiV2TestPlansIdTestRunsGetWithHttpInfo(string id, bool? notStarted = default(bool?), bool? inProgress = default(bool?), bool? stopped = default(bool?), bool? completed = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdTestRunsGet");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -3595,16 +3264,10 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (notStarted != null)
@@ -3644,9 +3307,6 @@ namespace TestIt.Client.Api
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
 
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdTestRunsGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -3655,13 +3315,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<List<TestRunModel>>("/api/v2/testPlans/{id}/testRuns", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdTestRunsGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -3681,12 +3339,11 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestRunModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestRunModel>> ApiV2TestPlansIdTestRunsGetAsync(string id, bool? notStarted = default(bool?), bool? inProgress = default(bool?), bool? stopped = default(bool?), bool? completed = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TestRunModel>> ApiV2TestPlansIdTestRunsGetAsync(string id, bool? notStarted = default(bool?), bool? inProgress = default(bool?), bool? stopped = default(bool?), bool? completed = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<TestRunModel>> localVarResponse = await ApiV2TestPlansIdTestRunsGetWithHttpInfoAsync(id, notStarted, inProgress, stopped, completed, skip, take, orderBy, searchField, searchValue, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<TestRunModel>> localVarResponse = await ApiV2TestPlansIdTestRunsGetWithHttpInfoAsync(id, notStarted, inProgress, stopped, completed, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3704,16 +3361,13 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestRunModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestRunModel>>> ApiV2TestPlansIdTestRunsGetWithHttpInfoAsync(string id, bool? notStarted = default(bool?), bool? inProgress = default(bool?), bool? stopped = default(bool?), bool? completed = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestRunModel>>> ApiV2TestPlansIdTestRunsGetWithHttpInfoAsync(string id, bool? notStarted = default(bool?), bool? inProgress = default(bool?), bool? stopped = default(bool?), bool? completed = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdTestRunsGet");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -3726,17 +3380,12 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (notStarted != null)
@@ -3776,9 +3425,6 @@ namespace TestIt.Client.Api
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
 
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdTestRunsGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -3786,15 +3432,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.GetAsync<List<TestRunModel>>("/api/v2/testPlans/{id}/testRuns", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdTestRunsGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -3811,9 +3455,8 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="testRunSearchQueryModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TestRunModel&gt;</returns>
-        public List<TestRunModel> ApiV2TestPlansIdTestRunsSearchPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestRunSearchQueryModel testRunSearchQueryModel = default(TestRunSearchQueryModel), int operationIndex = 0)
+        public List<TestRunModel> ApiV2TestPlansIdTestRunsSearchPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestRunSearchQueryModel testRunSearchQueryModel = default(TestRunSearchQueryModel))
         {
             TestIt.Client.Client.ApiResponse<List<TestRunModel>> localVarResponse = ApiV2TestPlansIdTestRunsSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, testRunSearchQueryModel);
             return localVarResponse.Data;
@@ -3830,15 +3473,12 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="testRunSearchQueryModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TestRunModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<TestRunModel>> ApiV2TestPlansIdTestRunsSearchPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestRunSearchQueryModel testRunSearchQueryModel = default(TestRunSearchQueryModel), int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<List<TestRunModel>> ApiV2TestPlansIdTestRunsSearchPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestRunSearchQueryModel testRunSearchQueryModel = default(TestRunSearchQueryModel))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdTestRunsSearchPost");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -3852,16 +3492,10 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (skip != null)
@@ -3886,9 +3520,6 @@ namespace TestIt.Client.Api
             }
             localVarRequestOptions.Data = testRunSearchQueryModel;
 
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdTestRunsSearchPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -3897,13 +3528,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<List<TestRunModel>>("/api/v2/testPlans/{id}/testRuns/search", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdTestRunsSearchPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -3920,12 +3549,11 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="testRunSearchQueryModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestRunModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestRunModel>> ApiV2TestPlansIdTestRunsSearchPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestRunSearchQueryModel testRunSearchQueryModel = default(TestRunSearchQueryModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TestRunModel>> ApiV2TestPlansIdTestRunsSearchPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestRunSearchQueryModel testRunSearchQueryModel = default(TestRunSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<TestRunModel>> localVarResponse = await ApiV2TestPlansIdTestRunsSearchPostWithHttpInfoAsync(id, skip, take, orderBy, searchField, searchValue, testRunSearchQueryModel, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<TestRunModel>> localVarResponse = await ApiV2TestPlansIdTestRunsSearchPostWithHttpInfoAsync(id, skip, take, orderBy, searchField, searchValue, testRunSearchQueryModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3940,16 +3568,13 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="testRunSearchQueryModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestRunModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestRunModel>>> ApiV2TestPlansIdTestRunsSearchPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestRunSearchQueryModel testRunSearchQueryModel = default(TestRunSearchQueryModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestRunModel>>> ApiV2TestPlansIdTestRunsSearchPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestRunSearchQueryModel testRunSearchQueryModel = default(TestRunSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdTestRunsSearchPost");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -3963,17 +3588,12 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (skip != null)
@@ -3998,9 +3618,6 @@ namespace TestIt.Client.Api
             }
             localVarRequestOptions.Data = testRunSearchQueryModel;
 
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdTestRunsSearchPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -4008,15 +3625,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.PostAsync<List<TestRunModel>>("/api/v2/testPlans/{id}/testRuns/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdTestRunsSearchPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -4027,9 +3642,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DateTime</returns>
-        public DateTime ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet(string id, int operationIndex = 0)
+        public DateTime ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet(string id)
         {
             TestIt.Client.Client.ApiResponse<DateTime> localVarResponse = ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfo(id);
             return localVarResponse.Data;
@@ -4040,15 +3654,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DateTime</returns>
-        public TestIt.Client.Client.ApiResponse<DateTime> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfo(string id, int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<DateTime> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -4061,21 +3672,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4085,13 +3687,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<DateTime>("/api/v2/testPlans/{id}/testRuns/testResults/lastModified/modifiedDate", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -4102,12 +3702,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DateTime</returns>
-        public async System.Threading.Tasks.Task<DateTime> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DateTime> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<DateTime> localVarResponse = await ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<DateTime> localVarResponse = await ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -4116,16 +3715,13 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DateTime)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<DateTime>> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<DateTime>> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -4138,22 +3734,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4162,15 +3750,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.GetAsync<DateTime>("/api/v2/testPlans/{id}/testRuns/testResults/lastModified/modifiedDate", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -4181,9 +3767,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void ApiV2TestPlansIdUnlockRequestPost(string id, int operationIndex = 0)
+        public void ApiV2TestPlansIdUnlockRequestPost(string id)
         {
             ApiV2TestPlansIdUnlockRequestPostWithHttpInfo(id);
         }
@@ -4193,15 +3778,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> ApiV2TestPlansIdUnlockRequestPostWithHttpInfo(string id, int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<Object> ApiV2TestPlansIdUnlockRequestPostWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdUnlockRequestPost");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -4214,21 +3796,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdUnlockRequestPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4238,13 +3811,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/api/v2/testPlans/{id}/unlock/request", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdUnlockRequestPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -4255,12 +3826,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2TestPlansIdUnlockRequestPostAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2TestPlansIdUnlockRequestPostAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ApiV2TestPlansIdUnlockRequestPostWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            await ApiV2TestPlansIdUnlockRequestPostWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -4268,16 +3838,13 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2TestPlansIdUnlockRequestPostWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2TestPlansIdUnlockRequestPostWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdUnlockRequestPost");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -4290,22 +3857,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansIdUnlockRequestPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4314,15 +3873,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/testPlans/{id}/unlock/request", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdUnlockRequestPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -4334,9 +3891,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TestPlanShortModel&gt;</returns>
-        public List<TestPlanShortModel> ApiV2TestPlansShortsPost(bool? isDeleted = default(bool?), List<Guid> requestBody = default(List<Guid>), int operationIndex = 0)
+        public List<TestPlanShortModel> ApiV2TestPlansShortsPost(bool? isDeleted = default(bool?), List<Guid> requestBody = default(List<Guid>))
         {
             TestIt.Client.Client.ApiResponse<List<TestPlanShortModel>> localVarResponse = ApiV2TestPlansShortsPostWithHttpInfo(isDeleted, requestBody);
             return localVarResponse.Data;
@@ -4348,9 +3904,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TestPlanShortModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<TestPlanShortModel>> ApiV2TestPlansShortsPostWithHttpInfo(bool? isDeleted = default(bool?), List<Guid> requestBody = default(List<Guid>), int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<List<TestPlanShortModel>> ApiV2TestPlansShortsPostWithHttpInfo(bool? isDeleted = default(bool?), List<Guid> requestBody = default(List<Guid>))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -4364,25 +3919,16 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (isDeleted != null)
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "isDeleted", isDeleted));
             }
             localVarRequestOptions.Data = requestBody;
-
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansShortsPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4392,13 +3938,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<List<TestPlanShortModel>>("/api/v2/testPlans/shorts", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansShortsPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -4410,12 +3954,11 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestPlanShortModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestPlanShortModel>> ApiV2TestPlansShortsPostAsync(bool? isDeleted = default(bool?), List<Guid> requestBody = default(List<Guid>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TestPlanShortModel>> ApiV2TestPlansShortsPostAsync(bool? isDeleted = default(bool?), List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<TestPlanShortModel>> localVarResponse = await ApiV2TestPlansShortsPostWithHttpInfoAsync(isDeleted, requestBody, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<TestPlanShortModel>> localVarResponse = await ApiV2TestPlansShortsPostWithHttpInfoAsync(isDeleted, requestBody, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -4425,10 +3968,9 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPlanShortModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestPlanShortModel>>> ApiV2TestPlansShortsPostWithHttpInfoAsync(bool? isDeleted = default(bool?), List<Guid> requestBody = default(List<Guid>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestPlanShortModel>>> ApiV2TestPlansShortsPostWithHttpInfoAsync(bool? isDeleted = default(bool?), List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -4442,26 +3984,18 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (isDeleted != null)
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "isDeleted", isDeleted));
             }
             localVarRequestOptions.Data = requestBody;
-
-            localVarRequestOptions.Operation = "TestPlansApi.ApiV2TestPlansShortsPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4470,15 +4004,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.PostAsync<List<TestPlanShortModel>>("/api/v2/testPlans/shorts", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansShortsPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -4489,9 +4021,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TestPlanModel</returns>
-        public TestPlanModel Clone(string id, int operationIndex = 0)
+        public TestPlanModel Clone(string id)
         {
             TestIt.Client.Client.ApiResponse<TestPlanModel> localVarResponse = CloneWithHttpInfo(id);
             return localVarResponse.Data;
@@ -4502,15 +4033,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TestPlanModel</returns>
-        public TestIt.Client.Client.ApiResponse<TestPlanModel> CloneWithHttpInfo(string id, int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<TestPlanModel> CloneWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->Clone");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -4523,21 +4051,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "TestPlansApi.Clone";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4547,13 +4066,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<TestPlanModel>("/api/v2/testPlans/{id}/clone", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("Clone", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -4564,12 +4081,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestPlanModel</returns>
-        public async System.Threading.Tasks.Task<TestPlanModel> CloneAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestPlanModel> CloneAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<TestPlanModel> localVarResponse = await CloneWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<TestPlanModel> localVarResponse = await CloneWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -4578,16 +4094,13 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestPlanModel)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<TestPlanModel>> CloneWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<TestPlanModel>> CloneWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->Clone");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -4600,22 +4113,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "TestPlansApi.Clone";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4624,15 +4129,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.PostAsync<TestPlanModel>("/api/v2/testPlans/{id}/clone", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("Clone", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -4643,9 +4146,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void Complete(string id, int operationIndex = 0)
+        public void Complete(string id)
         {
             CompleteWithHttpInfo(id);
         }
@@ -4655,15 +4157,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> CompleteWithHttpInfo(string id, int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<Object> CompleteWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->Complete");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -4676,21 +4175,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "TestPlansApi.Complete";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4700,13 +4190,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/api/v2/testPlans/{id}/complete", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("Complete", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -4717,12 +4205,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CompleteAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task CompleteAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await CompleteWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            await CompleteWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -4730,16 +4217,13 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> CompleteWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> CompleteWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->Complete");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -4752,22 +4236,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "TestPlansApi.Complete";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4776,15 +4252,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/testPlans/{id}/complete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("Complete", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -4795,9 +4269,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testPlanPostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TestPlanModel</returns>
-        public TestPlanModel CreateTestPlan(TestPlanPostModel testPlanPostModel = default(TestPlanPostModel), int operationIndex = 0)
+        public TestPlanModel CreateTestPlan(TestPlanPostModel testPlanPostModel = default(TestPlanPostModel))
         {
             TestIt.Client.Client.ApiResponse<TestPlanModel> localVarResponse = CreateTestPlanWithHttpInfo(testPlanPostModel);
             return localVarResponse.Data;
@@ -4808,9 +4281,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testPlanPostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TestPlanModel</returns>
-        public TestIt.Client.Client.ApiResponse<TestPlanModel> CreateTestPlanWithHttpInfo(TestPlanPostModel testPlanPostModel = default(TestPlanPostModel), int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<TestPlanModel> CreateTestPlanWithHttpInfo(TestPlanPostModel testPlanPostModel = default(TestPlanPostModel))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -4824,21 +4296,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = testPlanPostModel;
-
-            localVarRequestOptions.Operation = "TestPlansApi.CreateTestPlan";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4848,13 +4311,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<TestPlanModel>("/api/v2/testPlans", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateTestPlan", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -4865,12 +4326,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testPlanPostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestPlanModel</returns>
-        public async System.Threading.Tasks.Task<TestPlanModel> CreateTestPlanAsync(TestPlanPostModel testPlanPostModel = default(TestPlanPostModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestPlanModel> CreateTestPlanAsync(TestPlanPostModel testPlanPostModel = default(TestPlanPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<TestPlanModel> localVarResponse = await CreateTestPlanWithHttpInfoAsync(testPlanPostModel, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<TestPlanModel> localVarResponse = await CreateTestPlanWithHttpInfoAsync(testPlanPostModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -4879,10 +4339,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testPlanPostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestPlanModel)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<TestPlanModel>> CreateTestPlanWithHttpInfoAsync(TestPlanPostModel testPlanPostModel = default(TestPlanPostModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<TestPlanModel>> CreateTestPlanWithHttpInfoAsync(TestPlanPostModel testPlanPostModel = default(TestPlanPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -4896,22 +4355,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = testPlanPostModel;
-
-            localVarRequestOptions.Operation = "TestPlansApi.CreateTestPlan";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4920,15 +4371,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.PostAsync<TestPlanModel>("/api/v2/testPlans", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateTestPlan", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -4939,9 +4388,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void DeleteTestPlan(string id, int operationIndex = 0)
+        public void DeleteTestPlan(string id)
         {
             DeleteTestPlanWithHttpInfo(id);
         }
@@ -4951,15 +4399,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> DeleteTestPlanWithHttpInfo(string id, int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<Object> DeleteTestPlanWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->DeleteTestPlan");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -4972,21 +4417,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "TestPlansApi.DeleteTestPlan";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4996,13 +4432,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Delete<Object>("/api/v2/testPlans/{id}", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteTestPlan", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -5013,12 +4447,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteTestPlanAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteTestPlanAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DeleteTestPlanWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            await DeleteTestPlanWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -5026,16 +4459,13 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> DeleteTestPlanWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> DeleteTestPlanWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->DeleteTestPlan");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -5048,22 +4478,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "TestPlansApi.DeleteTestPlan";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -5072,15 +4494,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/v2/testPlans/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteTestPlan", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -5091,9 +4511,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TestPlanModel</returns>
-        public TestPlanModel GetTestPlanById(string id, int operationIndex = 0)
+        public TestPlanModel GetTestPlanById(string id)
         {
             TestIt.Client.Client.ApiResponse<TestPlanModel> localVarResponse = GetTestPlanByIdWithHttpInfo(id);
             return localVarResponse.Data;
@@ -5104,15 +4523,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TestPlanModel</returns>
-        public TestIt.Client.Client.ApiResponse<TestPlanModel> GetTestPlanByIdWithHttpInfo(string id, int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<TestPlanModel> GetTestPlanByIdWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->GetTestPlanById");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -5125,21 +4541,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "TestPlansApi.GetTestPlanById";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -5149,13 +4556,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<TestPlanModel>("/api/v2/testPlans/{id}", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetTestPlanById", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -5166,12 +4571,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestPlanModel</returns>
-        public async System.Threading.Tasks.Task<TestPlanModel> GetTestPlanByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestPlanModel> GetTestPlanByIdAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<TestPlanModel> localVarResponse = await GetTestPlanByIdWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<TestPlanModel> localVarResponse = await GetTestPlanByIdWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -5180,16 +4584,13 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestPlanModel)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<TestPlanModel>> GetTestPlanByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<TestPlanModel>> GetTestPlanByIdWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->GetTestPlanById");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -5202,22 +4603,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "TestPlansApi.GetTestPlanById";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -5226,15 +4619,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.GetAsync<TestPlanModel>("/api/v2/testPlans/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetTestPlanById", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -5245,9 +4636,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TestSuiteV2TreeModel&gt;</returns>
-        public List<TestSuiteV2TreeModel> GetTestSuitesById(string id, int operationIndex = 0)
+        public List<TestSuiteV2TreeModel> GetTestSuitesById(string id)
         {
             TestIt.Client.Client.ApiResponse<List<TestSuiteV2TreeModel>> localVarResponse = GetTestSuitesByIdWithHttpInfo(id);
             return localVarResponse.Data;
@@ -5258,15 +4648,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TestSuiteV2TreeModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<TestSuiteV2TreeModel>> GetTestSuitesByIdWithHttpInfo(string id, int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<List<TestSuiteV2TreeModel>> GetTestSuitesByIdWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->GetTestSuitesById");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -5279,21 +4666,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "TestPlansApi.GetTestSuitesById";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -5303,13 +4681,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<List<TestSuiteV2TreeModel>>("/api/v2/testPlans/{id}/testSuites", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetTestSuitesById", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -5320,12 +4696,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestSuiteV2TreeModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestSuiteV2TreeModel>> GetTestSuitesByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TestSuiteV2TreeModel>> GetTestSuitesByIdAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<TestSuiteV2TreeModel>> localVarResponse = await GetTestSuitesByIdWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<TestSuiteV2TreeModel>> localVarResponse = await GetTestSuitesByIdWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -5334,16 +4709,13 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestSuiteV2TreeModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestSuiteV2TreeModel>>> GetTestSuitesByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestSuiteV2TreeModel>>> GetTestSuitesByIdWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->GetTestSuitesById");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -5356,22 +4728,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "TestPlansApi.GetTestSuitesById";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -5380,15 +4744,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.GetAsync<List<TestSuiteV2TreeModel>>("/api/v2/testPlans/{id}/testSuites", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetTestSuitesById", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -5399,9 +4761,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void Pause(string id, int operationIndex = 0)
+        public void Pause(string id)
         {
             PauseWithHttpInfo(id);
         }
@@ -5411,15 +4772,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> PauseWithHttpInfo(string id, int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<Object> PauseWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->Pause");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -5432,21 +4790,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "TestPlansApi.Pause";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -5456,13 +4805,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/api/v2/testPlans/{id}/pause", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("Pause", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -5473,12 +4820,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task PauseAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task PauseAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await PauseWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            await PauseWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -5486,16 +4832,13 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> PauseWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> PauseWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->Pause");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -5508,22 +4851,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "TestPlansApi.Pause";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -5532,15 +4867,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/testPlans/{id}/pause", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("Pause", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -5551,9 +4884,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void RestoreTestPlan(string id, int operationIndex = 0)
+        public void RestoreTestPlan(string id)
         {
             RestoreTestPlanWithHttpInfo(id);
         }
@@ -5563,15 +4895,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> RestoreTestPlanWithHttpInfo(string id, int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<Object> RestoreTestPlanWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->RestoreTestPlan");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -5584,21 +4913,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "TestPlansApi.RestoreTestPlan";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -5608,13 +4928,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/api/v2/testPlans/{id}/restore", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("RestoreTestPlan", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -5625,12 +4943,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RestoreTestPlanAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task RestoreTestPlanAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await RestoreTestPlanWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            await RestoreTestPlanWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -5638,16 +4955,13 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> RestoreTestPlanWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> RestoreTestPlanWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->RestoreTestPlan");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -5660,22 +4974,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "TestPlansApi.RestoreTestPlan";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -5684,15 +4990,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/testPlans/{id}/restore", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("RestoreTestPlan", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -5703,9 +5007,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void Start(string id, int operationIndex = 0)
+        public void Start(string id)
         {
             StartWithHttpInfo(id);
         }
@@ -5715,15 +5018,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> StartWithHttpInfo(string id, int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<Object> StartWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->Start");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -5736,21 +5036,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "TestPlansApi.Start";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -5760,13 +5051,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/api/v2/testPlans/{id}/start", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("Start", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -5777,12 +5066,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task StartAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task StartAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await StartWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            await StartWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -5790,16 +5078,13 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> StartWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> StartWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->Start");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -5812,22 +5097,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "TestPlansApi.Start";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -5836,15 +5113,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/testPlans/{id}/start", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("Start", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -5855,9 +5130,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testPlanPutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void UpdateTestPlan(TestPlanPutModel testPlanPutModel = default(TestPlanPutModel), int operationIndex = 0)
+        public void UpdateTestPlan(TestPlanPutModel testPlanPutModel = default(TestPlanPutModel))
         {
             UpdateTestPlanWithHttpInfo(testPlanPutModel);
         }
@@ -5867,9 +5141,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testPlanPutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> UpdateTestPlanWithHttpInfo(TestPlanPutModel testPlanPutModel = default(TestPlanPutModel), int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<Object> UpdateTestPlanWithHttpInfo(TestPlanPutModel testPlanPutModel = default(TestPlanPutModel))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -5883,21 +5156,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = testPlanPutModel;
-
-            localVarRequestOptions.Operation = "TestPlansApi.UpdateTestPlan";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -5907,13 +5171,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Put<Object>("/api/v2/testPlans", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateTestPlan", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -5924,12 +5186,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testPlanPutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateTestPlanAsync(TestPlanPutModel testPlanPutModel = default(TestPlanPutModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task UpdateTestPlanAsync(TestPlanPutModel testPlanPutModel = default(TestPlanPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await UpdateTestPlanWithHttpInfoAsync(testPlanPutModel, operationIndex, cancellationToken).ConfigureAwait(false);
+            await UpdateTestPlanWithHttpInfoAsync(testPlanPutModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -5937,10 +5198,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testPlanPutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> UpdateTestPlanWithHttpInfoAsync(TestPlanPutModel testPlanPutModel = default(TestPlanPutModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> UpdateTestPlanWithHttpInfoAsync(TestPlanPutModel testPlanPutModel = default(TestPlanPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -5954,22 +5214,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = testPlanPutModel;
-
-            localVarRequestOptions.Operation = "TestPlansApi.UpdateTestPlan";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -5978,15 +5230,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/api/v2/testPlans", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateTestPlan", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;

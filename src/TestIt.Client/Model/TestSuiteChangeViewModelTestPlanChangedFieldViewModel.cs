@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
+using FileParameter = TestIt.Client.Client.FileParameter;
 using OpenAPIDateConverter = TestIt.Client.Client.OpenAPIDateConverter;
 
 namespace TestIt.Client.Model

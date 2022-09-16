@@ -4,7 +4,6 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>10</LangVersion>
     <Nullable>enable</Nullable>
-    <Version>2.0-preview</Version>
     <IsPackable>true</IsPackable>
     <Title>Test IT API client</Title>
     <PackageId>TestIt.ApiClient</PackageId>
@@ -19,11 +18,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="$(PackageReadmeFile)" />
+    <None Include="../../LICENSE.md" Pack="true" PackagePath="$(PackageLicenseFile)" />
+    <None Include="../../images/icon.png" Pack="true" PackagePath="$(PackageIcon)" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="JsonSubTypes" Version="1.8.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="RestSharp" Version="106.13.0" />
     <PackageReference Include="Polly" Version="7.2.3" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
+
+  <Choose>
+    <When Condition="$(VALIDATION) != '1'">
+      <ItemGroup>
+        <PackageReference Include="GitVersion.MsBuild" Version="5.8.1">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+      </ItemGroup>
+    </When>
+  </Choose>
 
 </Project>

@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Net.Mime;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -35,9 +36,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePost(Guid id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0);
+        void ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePost(Guid id, List<Guid> requestBody = default(List<Guid>));
 
         /// <summary>
         /// Exclude CustomAttributes from CustomAttributeTemplate
@@ -48,9 +48,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePostWithHttpInfo(Guid id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0);
+        ApiResponse<Object> ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePostWithHttpInfo(Guid id, List<Guid> requestBody = default(List<Guid>));
         /// <summary>
         /// Include CustomAttributes to CustomAttributeTemplate
         /// </summary>
@@ -60,9 +59,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePost(Guid id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0);
+        void ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePost(Guid id, List<Guid> requestBody = default(List<Guid>));
 
         /// <summary>
         /// Include CustomAttributes to CustomAttributeTemplate
@@ -73,9 +71,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePostWithHttpInfo(Guid id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0);
+        ApiResponse<Object> ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePostWithHttpInfo(Guid id, List<Guid> requestBody = default(List<Guid>));
         /// <summary>
         /// Delete CustomAttributeTemplate
         /// </summary>
@@ -84,9 +81,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>NoContentResult</returns>
-        NoContentResult ApiV2CustomAttributesTemplatesIdDelete(Guid id, int operationIndex = 0);
+        NoContentResult ApiV2CustomAttributesTemplatesIdDelete(Guid id);
 
         /// <summary>
         /// Delete CustomAttributeTemplate
@@ -96,9 +92,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of NoContentResult</returns>
-        ApiResponse<NoContentResult> ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfo(Guid id, int operationIndex = 0);
+        ApiResponse<NoContentResult> ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfo(Guid id);
         /// <summary>
         /// Get CustomAttributeTemplate by ID
         /// </summary>
@@ -107,9 +102,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomAttributeTemplateModel</returns>
-        CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesIdGet(Guid id, int operationIndex = 0);
+        CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesIdGet(Guid id);
 
         /// <summary>
         /// Get CustomAttributeTemplate by ID
@@ -119,9 +113,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomAttributeTemplateModel</returns>
-        ApiResponse<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesIdGetWithHttpInfo(Guid id, int operationIndex = 0);
+        ApiResponse<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesIdGetWithHttpInfo(Guid id);
         /// <summary>
         /// Get CustomAttributeTemplate by name
         /// </summary>
@@ -130,9 +123,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;CustomAttributeTemplateModel&gt;</returns>
-        List<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesNameGet(string name, int operationIndex = 0);
+        List<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesNameGet(string name);
 
         /// <summary>
         /// Get CustomAttributeTemplate by name
@@ -142,9 +134,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;CustomAttributeTemplateModel&gt;</returns>
-        ApiResponse<List<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesNameGetWithHttpInfo(string name, int operationIndex = 0);
+        ApiResponse<List<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesNameGetWithHttpInfo(string name);
         /// <summary>
         /// Create CustomAttributeTemplate
         /// </summary>
@@ -153,9 +144,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomAttributeTemplateModel</returns>
-        CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesPost(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel), int operationIndex = 0);
+        CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesPost(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel));
 
         /// <summary>
         /// Create CustomAttributeTemplate
@@ -165,9 +155,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomAttributeTemplateModel</returns>
-        ApiResponse<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesPostWithHttpInfo(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel), int operationIndex = 0);
+        ApiResponse<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesPostWithHttpInfo(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel));
         /// <summary>
         /// Update CustomAttributeTemplate
         /// </summary>
@@ -176,9 +165,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void ApiV2CustomAttributesTemplatesPut(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel), int operationIndex = 0);
+        void ApiV2CustomAttributesTemplatesPut(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel));
 
         /// <summary>
         /// Update CustomAttributeTemplate
@@ -188,9 +176,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2CustomAttributesTemplatesPutWithHttpInfo(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel), int operationIndex = 0);
+        ApiResponse<Object> ApiV2CustomAttributesTemplatesPutWithHttpInfo(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel));
         /// <summary>
         /// Search CustomAttributeTemplates
         /// </summary>
@@ -204,9 +191,8 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="customAttributeTemplateSearchQueryModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;SearchCustomAttributeTemplateGetModel&gt;</returns>
-        List<SearchCustomAttributeTemplateGetModel> ApiV2CustomAttributesTemplatesSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = default(CustomAttributeTemplateSearchQueryModel), int operationIndex = 0);
+        List<SearchCustomAttributeTemplateGetModel> ApiV2CustomAttributesTemplatesSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = default(CustomAttributeTemplateSearchQueryModel));
 
         /// <summary>
         /// Search CustomAttributeTemplates
@@ -221,9 +207,8 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="customAttributeTemplateSearchQueryModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;SearchCustomAttributeTemplateGetModel&gt;</returns>
-        ApiResponse<List<SearchCustomAttributeTemplateGetModel>> ApiV2CustomAttributesTemplatesSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = default(CustomAttributeTemplateSearchQueryModel), int operationIndex = 0);
+        ApiResponse<List<SearchCustomAttributeTemplateGetModel>> ApiV2CustomAttributesTemplatesSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = default(CustomAttributeTemplateSearchQueryModel));
         #endregion Synchronous Operations
     }
 
@@ -242,10 +227,9 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePostAsync(Guid id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePostAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Exclude CustomAttributes from CustomAttributeTemplate
@@ -256,10 +240,9 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePostWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePostWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Include CustomAttributes to CustomAttributeTemplate
         /// </summary>
@@ -269,10 +252,9 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePostAsync(Guid id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePostAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Include CustomAttributes to CustomAttributeTemplate
@@ -283,10 +265,9 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePostWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePostWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete CustomAttributeTemplate
         /// </summary>
@@ -295,10 +276,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of NoContentResult</returns>
-        System.Threading.Tasks.Task<NoContentResult> ApiV2CustomAttributesTemplatesIdDeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<NoContentResult> ApiV2CustomAttributesTemplatesIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete CustomAttributeTemplate
@@ -308,10 +288,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (NoContentResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<NoContentResult>> ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<NoContentResult>> ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get CustomAttributeTemplate by ID
         /// </summary>
@@ -320,10 +299,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomAttributeTemplateModel</returns>
-        System.Threading.Tasks.Task<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesIdGetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get CustomAttributeTemplate by ID
@@ -333,10 +311,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomAttributeTemplateModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get CustomAttributeTemplate by name
         /// </summary>
@@ -345,10 +322,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CustomAttributeTemplateModel&gt;</returns>
-        System.Threading.Tasks.Task<List<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesNameGetAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesNameGetAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get CustomAttributeTemplate by name
@@ -358,10 +334,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CustomAttributeTemplateModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<CustomAttributeTemplateModel>>> ApiV2CustomAttributesTemplatesNameGetWithHttpInfoAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<CustomAttributeTemplateModel>>> ApiV2CustomAttributesTemplatesNameGetWithHttpInfoAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create CustomAttributeTemplate
         /// </summary>
@@ -370,10 +345,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomAttributeTemplateModel</returns>
-        System.Threading.Tasks.Task<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesPostAsync(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesPostAsync(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create CustomAttributeTemplate
@@ -383,10 +357,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomAttributeTemplateModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesPostWithHttpInfoAsync(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesPostWithHttpInfoAsync(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update CustomAttributeTemplate
         /// </summary>
@@ -395,10 +368,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesPutAsync(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesPutAsync(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update CustomAttributeTemplate
@@ -408,10 +380,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2CustomAttributesTemplatesPutWithHttpInfoAsync(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2CustomAttributesTemplatesPutWithHttpInfoAsync(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Search CustomAttributeTemplates
         /// </summary>
@@ -425,10 +396,9 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="customAttributeTemplateSearchQueryModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;SearchCustomAttributeTemplateGetModel&gt;</returns>
-        System.Threading.Tasks.Task<List<SearchCustomAttributeTemplateGetModel>> ApiV2CustomAttributesTemplatesSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = default(CustomAttributeTemplateSearchQueryModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<SearchCustomAttributeTemplateGetModel>> ApiV2CustomAttributesTemplatesSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = default(CustomAttributeTemplateSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Search CustomAttributeTemplates
@@ -443,10 +413,9 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="customAttributeTemplateSearchQueryModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;SearchCustomAttributeTemplateGetModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<SearchCustomAttributeTemplateGetModel>>> ApiV2CustomAttributesTemplatesSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = default(CustomAttributeTemplateSearchQueryModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<SearchCustomAttributeTemplateGetModel>>> ApiV2CustomAttributesTemplatesSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = default(CustomAttributeTemplateSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -461,12 +430,14 @@ namespace TestIt.Client.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class CustomAttributeTemplatesApi : ICustomAttributeTemplatesApi
+    public partial class CustomAttributeTemplatesApi : IDisposable, ICustomAttributeTemplatesApi
     {
         private TestIt.Client.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomAttributeTemplatesApi"/> class.
+        /// **IMPORTANT** This will also create an instance of HttpClient, which is less than ideal.
+        /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHandler</see>.
         /// </summary>
         /// <returns></returns>
         public CustomAttributeTemplatesApi() : this((string)null)
@@ -475,7 +446,11 @@ namespace TestIt.Client.Api
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomAttributeTemplatesApi"/> class.
+        /// **IMPORTANT** This will also create an instance of HttpClient, which is less than ideal.
+        /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHandler</see>.
         /// </summary>
+        /// <param name="basePath">The target service's base path in URL format.</param>
+        /// <exception cref="ArgumentException"></exception>
         /// <returns></returns>
         public CustomAttributeTemplatesApi(string basePath)
         {
@@ -483,16 +458,19 @@ namespace TestIt.Client.Api
                 TestIt.Client.Client.GlobalConfiguration.Instance,
                 new TestIt.Client.Client.Configuration { BasePath = basePath }
             );
-            this.Client = new TestIt.Client.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new TestIt.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new TestIt.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.Client =  this.ApiClient;
+            this.AsynchronousClient = this.ApiClient;
             this.ExceptionFactory = TestIt.Client.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomAttributeTemplatesApi"/> class
-        /// using Configuration object
+        /// Initializes a new instance of the <see cref="CustomAttributeTemplatesApi"/> class using Configuration object.
+        /// **IMPORTANT** This will also create an instance of HttpClient, which is less than ideal.
+        /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHandler</see>.
         /// </summary>
-        /// <param name="configuration">An instance of Configuration</param>
+        /// <param name="configuration">An instance of Configuration.</param>
+        /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
         public CustomAttributeTemplatesApi(TestIt.Client.Client.Configuration configuration)
         {
@@ -502,8 +480,78 @@ namespace TestIt.Client.Api
                 TestIt.Client.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new TestIt.Client.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new TestIt.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new TestIt.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.Client = this.ApiClient;
+            this.AsynchronousClient = this.ApiClient;
+            ExceptionFactory = TestIt.Client.Client.Configuration.DefaultExceptionFactory;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomAttributeTemplatesApi"/> class.
+        /// </summary>
+        /// <param name="client">An instance of HttpClient.</param>
+        /// <param name="handler">An optional instance of HttpClientHandler that is used by HttpClient.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <returns></returns>
+        /// <remarks>
+        /// Some configuration settings will not be applied without passing an HttpClientHandler.
+        /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
+        /// </remarks>
+        public CustomAttributeTemplatesApi(HttpClient client, HttpClientHandler handler = null) : this(client, (string)null, handler)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomAttributeTemplatesApi"/> class.
+        /// </summary>
+        /// <param name="client">An instance of HttpClient.</param>
+        /// <param name="basePath">The target service's base path in URL format.</param>
+        /// <param name="handler">An optional instance of HttpClientHandler that is used by HttpClient.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="ArgumentException"></exception>
+        /// <returns></returns>
+        /// <remarks>
+        /// Some configuration settings will not be applied without passing an HttpClientHandler.
+        /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
+        /// </remarks>
+        public CustomAttributeTemplatesApi(HttpClient client, string basePath, HttpClientHandler handler = null)
+        {
+            if (client == null) throw new ArgumentNullException("client");
+
+            this.Configuration = TestIt.Client.Client.Configuration.MergeConfigurations(
+                TestIt.Client.Client.GlobalConfiguration.Instance,
+                new TestIt.Client.Client.Configuration { BasePath = basePath }
+            );
+            this.ApiClient = new TestIt.Client.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.Client =  this.ApiClient;
+            this.AsynchronousClient = this.ApiClient;
+            this.ExceptionFactory = TestIt.Client.Client.Configuration.DefaultExceptionFactory;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomAttributeTemplatesApi"/> class using Configuration object.
+        /// </summary>
+        /// <param name="client">An instance of HttpClient.</param>
+        /// <param name="configuration">An instance of Configuration.</param>
+        /// <param name="handler">An optional instance of HttpClientHandler that is used by HttpClient.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <returns></returns>
+        /// <remarks>
+        /// Some configuration settings will not be applied without passing an HttpClientHandler.
+        /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
+        /// </remarks>
+        public CustomAttributeTemplatesApi(HttpClient client, TestIt.Client.Client.Configuration configuration, HttpClientHandler handler = null)
+        {
+            if (configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+
+            this.Configuration = TestIt.Client.Client.Configuration.MergeConfigurations(
+                TestIt.Client.Client.GlobalConfiguration.Instance,
+                configuration
+            );
+            this.ApiClient = new TestIt.Client.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.Client = this.ApiClient;
+            this.AsynchronousClient = this.ApiClient;
             ExceptionFactory = TestIt.Client.Client.Configuration.DefaultExceptionFactory;
         }
 
@@ -514,6 +562,7 @@ namespace TestIt.Client.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
+        /// <exception cref="ArgumentNullException"></exception>
         public CustomAttributeTemplatesApi(TestIt.Client.Client.ISynchronousClient client, TestIt.Client.Client.IAsynchronousClient asyncClient, TestIt.Client.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
@@ -525,6 +574,19 @@ namespace TestIt.Client.Api
             this.Configuration = configuration;
             this.ExceptionFactory = TestIt.Client.Client.Configuration.DefaultExceptionFactory;
         }
+
+        /// <summary>
+        /// Disposes resources if they were created by us
+        /// </summary>
+        public void Dispose()
+        {
+            this.ApiClient?.Dispose();
+        }
+
+        /// <summary>
+        /// Holds the ApiClient if created
+        /// </summary>
+        public TestIt.Client.Client.ApiClient ApiClient { get; set; } = null;
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
@@ -573,9 +635,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePost(Guid id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0)
+        public void ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePost(Guid id, List<Guid> requestBody = default(List<Guid>))
         {
             ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePostWithHttpInfo(id, requestBody);
         }
@@ -586,9 +647,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePostWithHttpInfo(Guid id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<Object> ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePostWithHttpInfo(Guid id, List<Guid> requestBody = default(List<Guid>))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -602,22 +662,13 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = requestBody;
-
-            localVarRequestOptions.Operation = "CustomAttributeTemplatesApi.ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePost";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -627,13 +678,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/api/v2/customAttributes/templates/{id}/customAttributes/exclude", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -645,12 +694,11 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePostAsync(Guid id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePostAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePostWithHttpInfoAsync(id, requestBody, operationIndex, cancellationToken).ConfigureAwait(false);
+            await ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePostWithHttpInfoAsync(id, requestBody, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -659,10 +707,9 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePostWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePostWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -676,23 +723,15 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = requestBody;
-
-            localVarRequestOptions.Operation = "CustomAttributeTemplatesApi.ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePost";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -701,15 +740,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/customAttributes/templates/{id}/customAttributes/exclude", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -721,9 +758,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePost(Guid id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0)
+        public void ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePost(Guid id, List<Guid> requestBody = default(List<Guid>))
         {
             ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePostWithHttpInfo(id, requestBody);
         }
@@ -734,9 +770,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePostWithHttpInfo(Guid id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<Object> ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePostWithHttpInfo(Guid id, List<Guid> requestBody = default(List<Guid>))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -750,22 +785,13 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = requestBody;
-
-            localVarRequestOptions.Operation = "CustomAttributeTemplatesApi.ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePost";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -775,13 +801,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/api/v2/customAttributes/templates/{id}/customAttributes/include", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -793,12 +817,11 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePostAsync(Guid id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePostAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePostWithHttpInfoAsync(id, requestBody, operationIndex, cancellationToken).ConfigureAwait(false);
+            await ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePostWithHttpInfoAsync(id, requestBody, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -807,10 +830,9 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
         /// <param name="requestBody"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePostWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePostWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -824,23 +846,15 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = requestBody;
-
-            localVarRequestOptions.Operation = "CustomAttributeTemplatesApi.ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePost";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -849,15 +863,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/customAttributes/templates/{id}/customAttributes/include", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -868,9 +880,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>NoContentResult</returns>
-        public NoContentResult ApiV2CustomAttributesTemplatesIdDelete(Guid id, int operationIndex = 0)
+        public NoContentResult ApiV2CustomAttributesTemplatesIdDelete(Guid id)
         {
             TestIt.Client.Client.ApiResponse<NoContentResult> localVarResponse = ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfo(id);
             return localVarResponse.Data;
@@ -881,9 +892,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of NoContentResult</returns>
-        public TestIt.Client.Client.ApiResponse<NoContentResult> ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfo(Guid id, int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<NoContentResult> ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfo(Guid id)
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -896,21 +906,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "CustomAttributeTemplatesApi.ApiV2CustomAttributesTemplatesIdDelete";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -920,13 +921,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Delete<NoContentResult>("/api/v2/customAttributes/templates/{id}", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2CustomAttributesTemplatesIdDelete", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -937,12 +936,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of NoContentResult</returns>
-        public async System.Threading.Tasks.Task<NoContentResult> ApiV2CustomAttributesTemplatesIdDeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<NoContentResult> ApiV2CustomAttributesTemplatesIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<NoContentResult> localVarResponse = await ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<NoContentResult> localVarResponse = await ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -951,10 +949,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (NoContentResult)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<NoContentResult>> ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<NoContentResult>> ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -967,22 +964,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "CustomAttributeTemplatesApi.ApiV2CustomAttributesTemplatesIdDelete";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -991,15 +980,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.DeleteAsync<NoContentResult>("/api/v2/customAttributes/templates/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2CustomAttributesTemplatesIdDelete", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1010,9 +997,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomAttributeTemplateModel</returns>
-        public CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesIdGet(Guid id, int operationIndex = 0)
+        public CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesIdGet(Guid id)
         {
             TestIt.Client.Client.ApiResponse<CustomAttributeTemplateModel> localVarResponse = ApiV2CustomAttributesTemplatesIdGetWithHttpInfo(id);
             return localVarResponse.Data;
@@ -1023,9 +1009,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomAttributeTemplateModel</returns>
-        public TestIt.Client.Client.ApiResponse<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesIdGetWithHttpInfo(Guid id, int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesIdGetWithHttpInfo(Guid id)
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1038,21 +1023,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "CustomAttributeTemplatesApi.ApiV2CustomAttributesTemplatesIdGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1062,13 +1038,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<CustomAttributeTemplateModel>("/api/v2/customAttributes/templates/{id}", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2CustomAttributesTemplatesIdGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1079,12 +1053,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomAttributeTemplateModel</returns>
-        public async System.Threading.Tasks.Task<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesIdGetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<CustomAttributeTemplateModel> localVarResponse = await ApiV2CustomAttributesTemplatesIdGetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<CustomAttributeTemplateModel> localVarResponse = await ApiV2CustomAttributesTemplatesIdGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1093,10 +1066,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomAttributeTemplateModel)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1109,22 +1081,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "CustomAttributeTemplatesApi.ApiV2CustomAttributesTemplatesIdGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1133,15 +1097,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.GetAsync<CustomAttributeTemplateModel>("/api/v2/customAttributes/templates/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2CustomAttributesTemplatesIdGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1152,9 +1114,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;CustomAttributeTemplateModel&gt;</returns>
-        public List<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesNameGet(string name, int operationIndex = 0)
+        public List<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesNameGet(string name)
         {
             TestIt.Client.Client.ApiResponse<List<CustomAttributeTemplateModel>> localVarResponse = ApiV2CustomAttributesTemplatesNameGetWithHttpInfo(name);
             return localVarResponse.Data;
@@ -1165,15 +1126,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;CustomAttributeTemplateModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesNameGetWithHttpInfo(string name, int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<List<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesNameGetWithHttpInfo(string name)
         {
             // verify the required parameter 'name' is set
             if (name == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'name' when calling CustomAttributeTemplatesApi->ApiV2CustomAttributesTemplatesNameGet");
-            }
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1186,21 +1144,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("name", TestIt.Client.Client.ClientUtils.ParameterToString(name)); // path parameter
-
-            localVarRequestOptions.Operation = "CustomAttributeTemplatesApi.ApiV2CustomAttributesTemplatesNameGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1210,13 +1159,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<List<CustomAttributeTemplateModel>>("/api/v2/customAttributes/templates/{name}", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2CustomAttributesTemplatesNameGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1227,12 +1174,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CustomAttributeTemplateModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesNameGetAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesNameGetAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<CustomAttributeTemplateModel>> localVarResponse = await ApiV2CustomAttributesTemplatesNameGetWithHttpInfoAsync(name, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<CustomAttributeTemplateModel>> localVarResponse = await ApiV2CustomAttributesTemplatesNameGetWithHttpInfoAsync(name, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1241,16 +1187,13 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CustomAttributeTemplateModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<CustomAttributeTemplateModel>>> ApiV2CustomAttributesTemplatesNameGetWithHttpInfoAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<CustomAttributeTemplateModel>>> ApiV2CustomAttributesTemplatesNameGetWithHttpInfoAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'name' is set
             if (name == null)
-            {
                 throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'name' when calling CustomAttributeTemplatesApi->ApiV2CustomAttributesTemplatesNameGet");
-            }
 
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1263,22 +1206,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("name", TestIt.Client.Client.ClientUtils.ParameterToString(name)); // path parameter
-
-            localVarRequestOptions.Operation = "CustomAttributeTemplatesApi.ApiV2CustomAttributesTemplatesNameGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1287,15 +1222,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.GetAsync<List<CustomAttributeTemplateModel>>("/api/v2/customAttributes/templates/{name}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2CustomAttributesTemplatesNameGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1306,9 +1239,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomAttributeTemplateModel</returns>
-        public CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesPost(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel), int operationIndex = 0)
+        public CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesPost(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel))
         {
             TestIt.Client.Client.ApiResponse<CustomAttributeTemplateModel> localVarResponse = ApiV2CustomAttributesTemplatesPostWithHttpInfo(customAttributeTemplatePostModel);
             return localVarResponse.Data;
@@ -1319,9 +1251,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomAttributeTemplateModel</returns>
-        public TestIt.Client.Client.ApiResponse<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesPostWithHttpInfo(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel), int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesPostWithHttpInfo(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1335,21 +1266,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = customAttributeTemplatePostModel;
-
-            localVarRequestOptions.Operation = "CustomAttributeTemplatesApi.ApiV2CustomAttributesTemplatesPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1359,13 +1281,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<CustomAttributeTemplateModel>("/api/v2/customAttributes/templates", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2CustomAttributesTemplatesPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1376,12 +1296,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomAttributeTemplateModel</returns>
-        public async System.Threading.Tasks.Task<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesPostAsync(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesPostAsync(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<CustomAttributeTemplateModel> localVarResponse = await ApiV2CustomAttributesTemplatesPostWithHttpInfoAsync(customAttributeTemplatePostModel, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<CustomAttributeTemplateModel> localVarResponse = await ApiV2CustomAttributesTemplatesPostWithHttpInfoAsync(customAttributeTemplatePostModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1390,10 +1309,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePostModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomAttributeTemplateModel)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesPostWithHttpInfoAsync(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesPostWithHttpInfoAsync(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1407,22 +1325,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = customAttributeTemplatePostModel;
-
-            localVarRequestOptions.Operation = "CustomAttributeTemplatesApi.ApiV2CustomAttributesTemplatesPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1431,15 +1341,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.PostAsync<CustomAttributeTemplateModel>("/api/v2/customAttributes/templates", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2CustomAttributesTemplatesPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1450,9 +1358,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void ApiV2CustomAttributesTemplatesPut(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel), int operationIndex = 0)
+        public void ApiV2CustomAttributesTemplatesPut(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel))
         {
             ApiV2CustomAttributesTemplatesPutWithHttpInfo(customAttributeTemplatePutModel);
         }
@@ -1462,9 +1369,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> ApiV2CustomAttributesTemplatesPutWithHttpInfo(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel), int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<Object> ApiV2CustomAttributesTemplatesPutWithHttpInfo(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1478,21 +1384,12 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = customAttributeTemplatePutModel;
-
-            localVarRequestOptions.Operation = "CustomAttributeTemplatesApi.ApiV2CustomAttributesTemplatesPut";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1502,13 +1399,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Put<Object>("/api/v2/customAttributes/templates", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2CustomAttributesTemplatesPut", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1519,12 +1414,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesPutAsync(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesPutAsync(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ApiV2CustomAttributesTemplatesPutWithHttpInfoAsync(customAttributeTemplatePutModel, operationIndex, cancellationToken).ConfigureAwait(false);
+            await ApiV2CustomAttributesTemplatesPutWithHttpInfoAsync(customAttributeTemplatePutModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1532,10 +1426,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePutModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2CustomAttributesTemplatesPutWithHttpInfoAsync(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2CustomAttributesTemplatesPutWithHttpInfoAsync(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1549,22 +1442,14 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = customAttributeTemplatePutModel;
-
-            localVarRequestOptions.Operation = "CustomAttributeTemplatesApi.ApiV2CustomAttributesTemplatesPut";
-            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1573,15 +1458,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/api/v2/customAttributes/templates", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2CustomAttributesTemplatesPut", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1597,9 +1480,8 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="customAttributeTemplateSearchQueryModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;SearchCustomAttributeTemplateGetModel&gt;</returns>
-        public List<SearchCustomAttributeTemplateGetModel> ApiV2CustomAttributesTemplatesSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = default(CustomAttributeTemplateSearchQueryModel), int operationIndex = 0)
+        public List<SearchCustomAttributeTemplateGetModel> ApiV2CustomAttributesTemplatesSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = default(CustomAttributeTemplateSearchQueryModel))
         {
             TestIt.Client.Client.ApiResponse<List<SearchCustomAttributeTemplateGetModel>> localVarResponse = ApiV2CustomAttributesTemplatesSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, customAttributeTemplateSearchQueryModel);
             return localVarResponse.Data;
@@ -1615,9 +1497,8 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="customAttributeTemplateSearchQueryModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;SearchCustomAttributeTemplateGetModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<SearchCustomAttributeTemplateGetModel>> ApiV2CustomAttributesTemplatesSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = default(CustomAttributeTemplateSearchQueryModel), int operationIndex = 0)
+        public TestIt.Client.Client.ApiResponse<List<SearchCustomAttributeTemplateGetModel>> ApiV2CustomAttributesTemplatesSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = default(CustomAttributeTemplateSearchQueryModel))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1631,16 +1512,10 @@ namespace TestIt.Client.Api
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (skip != null)
             {
@@ -1664,9 +1539,6 @@ namespace TestIt.Client.Api
             }
             localVarRequestOptions.Data = customAttributeTemplateSearchQueryModel;
 
-            localVarRequestOptions.Operation = "CustomAttributeTemplatesApi.ApiV2CustomAttributesTemplatesSearchPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1675,13 +1547,11 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<List<SearchCustomAttributeTemplateGetModel>>("/api/v2/customAttributes/templates/search", localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2CustomAttributesTemplatesSearchPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;
@@ -1697,12 +1567,11 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="customAttributeTemplateSearchQueryModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;SearchCustomAttributeTemplateGetModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<SearchCustomAttributeTemplateGetModel>> ApiV2CustomAttributesTemplatesSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = default(CustomAttributeTemplateSearchQueryModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<SearchCustomAttributeTemplateGetModel>> ApiV2CustomAttributesTemplatesSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = default(CustomAttributeTemplateSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<SearchCustomAttributeTemplateGetModel>> localVarResponse = await ApiV2CustomAttributesTemplatesSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, customAttributeTemplateSearchQueryModel, operationIndex, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<SearchCustomAttributeTemplateGetModel>> localVarResponse = await ApiV2CustomAttributesTemplatesSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, customAttributeTemplateSearchQueryModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1716,10 +1585,9 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="customAttributeTemplateSearchQueryModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;SearchCustomAttributeTemplateGetModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<SearchCustomAttributeTemplateGetModel>>> ApiV2CustomAttributesTemplatesSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = default(CustomAttributeTemplateSearchQueryModel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<SearchCustomAttributeTemplateGetModel>>> ApiV2CustomAttributesTemplatesSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = default(CustomAttributeTemplateSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1733,17 +1601,12 @@ namespace TestIt.Client.Api
                 "application/json"
             };
 
+
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (skip != null)
             {
@@ -1767,9 +1630,6 @@ namespace TestIt.Client.Api
             }
             localVarRequestOptions.Data = customAttributeTemplateSearchQueryModel;
 
-            localVarRequestOptions.Operation = "CustomAttributeTemplatesApi.ApiV2CustomAttributesTemplatesSearchPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1777,15 +1637,13 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
+
             var localVarResponse = await this.AsynchronousClient.PostAsync<List<SearchCustomAttributeTemplateGetModel>>("/api/v2/customAttributes/templates/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2CustomAttributesTemplatesSearchPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
+                if (_exception != null) throw _exception;
             }
 
             return localVarResponse;

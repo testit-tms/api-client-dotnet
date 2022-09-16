@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
+using FileParameter = TestIt.Client.Client.FileParameter;
 using OpenAPIDateConverter = TestIt.Client.Client.OpenAPIDateConverter;
 
 namespace TestIt.Client.Model
@@ -55,7 +56,10 @@ namespace TestIt.Client.Model
         /// <param name="priority">priority.</param>
         /// <param name="isDeleted">isDeleted.</param>
         /// <param name="versionId">used for versioning changes in workitem.</param>
-        public SharedStepReferenceModel(Guid id = default(Guid), long globalId = default(long), string name = default(string), string entityTypeName = default(string), bool hasThisSharedStepAsStep = default(bool), bool hasThisSharedStepAsPrecondition = default(bool), bool hasThisSharedStepAsPostcondition = default(bool), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), string state = default(string), WorkItemPriorityModel? priority = default(WorkItemPriorityModel?), bool isDeleted = default(bool), Guid versionId = default(Guid))
+        /// <param name="isAutomated">isAutomated.</param>
+        /// <param name="sectionId">sectionId.</param>
+        /// <param name="tags">tags.</param>
+        public SharedStepReferenceModel(Guid id = default(Guid), long globalId = default(long), string name = default(string), string entityTypeName = default(string), bool hasThisSharedStepAsStep = default(bool), bool hasThisSharedStepAsPrecondition = default(bool), bool hasThisSharedStepAsPostcondition = default(bool), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), string state = default(string), WorkItemPriorityModel? priority = default(WorkItemPriorityModel?), bool isDeleted = default(bool), Guid versionId = default(Guid), bool isAutomated = default(bool), Guid sectionId = default(Guid), List<TagShortModel> tags = default(List<TagShortModel>))
         {
             this.Id = id;
             this.GlobalId = globalId;
@@ -72,6 +76,9 @@ namespace TestIt.Client.Model
             this.Priority = priority;
             this.IsDeleted = isDeleted;
             this.VersionId = versionId;
+            this.IsAutomated = isAutomated;
+            this.SectionId = sectionId;
+            this.Tags = tags;
         }
 
         /// <summary>
@@ -160,6 +167,24 @@ namespace TestIt.Client.Model
         public Guid VersionId { get; set; }
 
         /// <summary>
+        /// Gets or Sets IsAutomated
+        /// </summary>
+        [DataMember(Name = "isAutomated", EmitDefaultValue = true)]
+        public bool IsAutomated { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SectionId
+        /// </summary>
+        [DataMember(Name = "sectionId", EmitDefaultValue = false)]
+        public Guid SectionId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Tags
+        /// </summary>
+        [DataMember(Name = "tags", EmitDefaultValue = true)]
+        public List<TagShortModel> Tags { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -182,6 +207,9 @@ namespace TestIt.Client.Model
             sb.Append("  Priority: ").Append(Priority).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  VersionId: ").Append(VersionId).Append("\n");
+            sb.Append("  IsAutomated: ").Append(IsAutomated).Append("\n");
+            sb.Append("  SectionId: ").Append(SectionId).Append("\n");
+            sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -285,6 +313,21 @@ namespace TestIt.Client.Model
                     this.VersionId == input.VersionId ||
                     (this.VersionId != null &&
                     this.VersionId.Equals(input.VersionId))
+                ) && 
+                (
+                    this.IsAutomated == input.IsAutomated ||
+                    this.IsAutomated.Equals(input.IsAutomated)
+                ) && 
+                (
+                    this.SectionId == input.SectionId ||
+                    (this.SectionId != null &&
+                    this.SectionId.Equals(input.SectionId))
+                ) && 
+                (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
                 );
         }
 
@@ -338,6 +381,15 @@ namespace TestIt.Client.Model
                 if (this.VersionId != null)
                 {
                     hashCode = (hashCode * 59) + this.VersionId.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.IsAutomated.GetHashCode();
+                if (this.SectionId != null)
+                {
+                    hashCode = (hashCode * 59) + this.SectionId.GetHashCode();
+                }
+                if (this.Tags != null)
+                {
+                    hashCode = (hashCode * 59) + this.Tags.GetHashCode();
                 }
                 return hashCode;
             }

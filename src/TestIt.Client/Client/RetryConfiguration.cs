@@ -9,7 +9,7 @@
 
 
 using Polly;
-using RestSharp;
+using System.Net.Http;
 
 namespace TestIt.Client.Client
 {
@@ -21,11 +21,11 @@ namespace TestIt.Client.Client
         /// <summary>
         /// Retry policy
         /// </summary>
-        public static Policy<IRestResponse> RetryPolicy { get; set; }
+        public static Policy<HttpResponseMessage> RetryPolicy { get; set; }
 
         /// <summary>
         /// Async retry policy
         /// </summary>
-        public static AsyncPolicy<IRestResponse> AsyncRetryPolicy { get; set; }
+        public static AsyncPolicy<HttpResponseMessage> AsyncRetryPolicy { get; set; }
     }
 }

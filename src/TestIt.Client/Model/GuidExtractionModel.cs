@@ -21,38 +21,39 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
+using FileParameter = TestIt.Client.Client.FileParameter;
 using OpenAPIDateConverter = TestIt.Client.Client.OpenAPIDateConverter;
 
 namespace TestIt.Client.Model
 {
     /// <summary>
-    /// TimeSeriesPointModel
+    /// GuidExtractionModel
     /// </summary>
-    [DataContract(Name = "TimeSeriesPointModel")]
-    public partial class TimeSeriesPointModel : IEquatable<TimeSeriesPointModel>, IValidatableObject
+    [DataContract(Name = "GuidExtractionModel")]
+    public partial class GuidExtractionModel : IEquatable<GuidExtractionModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TimeSeriesPointModel" /> class.
+        /// Initializes a new instance of the <see cref="GuidExtractionModel" /> class.
         /// </summary>
-        /// <param name="date">date.</param>
-        /// <param name="count">count.</param>
-        public TimeSeriesPointModel(DateTime date = default(DateTime), int count = default(int))
+        /// <param name="include">include.</param>
+        /// <param name="exclude">exclude.</param>
+        public GuidExtractionModel(List<Guid> include = default(List<Guid>), List<Guid> exclude = default(List<Guid>))
         {
-            this.Date = date;
-            this.Count = count;
+            this.Include = include;
+            this.Exclude = exclude;
         }
 
         /// <summary>
-        /// Gets or Sets Date
+        /// Gets or Sets Include
         /// </summary>
-        [DataMember(Name = "date", EmitDefaultValue = false)]
-        public DateTime Date { get; set; }
+        [DataMember(Name = "include", EmitDefaultValue = true)]
+        public List<Guid> Include { get; set; }
 
         /// <summary>
-        /// Gets or Sets Count
+        /// Gets or Sets Exclude
         /// </summary>
-        [DataMember(Name = "count", EmitDefaultValue = false)]
-        public int Count { get; set; }
+        [DataMember(Name = "exclude", EmitDefaultValue = true)]
+        public List<Guid> Exclude { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -61,9 +62,9 @@ namespace TestIt.Client.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class TimeSeriesPointModel {\n");
-            sb.Append("  Date: ").Append(Date).Append("\n");
-            sb.Append("  Count: ").Append(Count).Append("\n");
+            sb.Append("class GuidExtractionModel {\n");
+            sb.Append("  Include: ").Append(Include).Append("\n");
+            sb.Append("  Exclude: ").Append(Exclude).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -84,15 +85,15 @@ namespace TestIt.Client.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TimeSeriesPointModel);
+            return this.Equals(input as GuidExtractionModel);
         }
 
         /// <summary>
-        /// Returns true if TimeSeriesPointModel instances are equal
+        /// Returns true if GuidExtractionModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of TimeSeriesPointModel to be compared</param>
+        /// <param name="input">Instance of GuidExtractionModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TimeSeriesPointModel input)
+        public bool Equals(GuidExtractionModel input)
         {
             if (input == null)
             {
@@ -100,13 +101,16 @@ namespace TestIt.Client.Model
             }
             return 
                 (
-                    this.Date == input.Date ||
-                    (this.Date != null &&
-                    this.Date.Equals(input.Date))
+                    this.Include == input.Include ||
+                    this.Include != null &&
+                    input.Include != null &&
+                    this.Include.SequenceEqual(input.Include)
                 ) && 
                 (
-                    this.Count == input.Count ||
-                    this.Count.Equals(input.Count)
+                    this.Exclude == input.Exclude ||
+                    this.Exclude != null &&
+                    input.Exclude != null &&
+                    this.Exclude.SequenceEqual(input.Exclude)
                 );
         }
 
@@ -119,11 +123,14 @@ namespace TestIt.Client.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Date != null)
+                if (this.Include != null)
                 {
-                    hashCode = (hashCode * 59) + this.Date.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Include.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Count.GetHashCode();
+                if (this.Exclude != null)
+                {
+                    hashCode = (hashCode * 59) + this.Exclude.GetHashCode();
+                }
                 return hashCode;
             }
         }

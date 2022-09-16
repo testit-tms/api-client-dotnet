@@ -21,38 +21,39 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
+using FileParameter = TestIt.Client.Client.FileParameter;
 using OpenAPIDateConverter = TestIt.Client.Client.OpenAPIDateConverter;
 
 namespace TestIt.Client.Model
 {
     /// <summary>
-    /// UseTestResultLinkRequestPostModel
+    /// TestRunTestResultsSelectModel
     /// </summary>
-    [DataContract(Name = "UseTestResultLinkRequestPostModel")]
-    public partial class UseTestResultLinkRequestPostModel : IEquatable<UseTestResultLinkRequestPostModel>, IValidatableObject
+    [DataContract(Name = "TestRunTestResultsSelectModel")]
+    public partial class TestRunTestResultsSelectModel : IEquatable<TestRunTestResultsSelectModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UseTestResultLinkRequestPostModel" /> class.
+        /// Initializes a new instance of the <see cref="TestRunTestResultsSelectModel" /> class.
         /// </summary>
-        /// <param name="title">title.</param>
-        /// <param name="url">url.</param>
-        public UseTestResultLinkRequestPostModel(string title = default(string), string url = default(string))
+        /// <param name="filter">filter.</param>
+        /// <param name="testResultIdsExtractionModel">testResultIdsExtractionModel.</param>
+        public TestRunTestResultsSelectModel(TestResultsLocalFilterModel filter = default(TestResultsLocalFilterModel), GuidExtractionModel testResultIdsExtractionModel = default(GuidExtractionModel))
         {
-            this.Title = title;
-            this.Url = url;
+            this.Filter = filter;
+            this.TestResultIdsExtractionModel = testResultIdsExtractionModel;
         }
 
         /// <summary>
-        /// Gets or Sets Title
+        /// Gets or Sets Filter
         /// </summary>
-        [DataMember(Name = "title", EmitDefaultValue = true)]
-        public string Title { get; set; }
+        [DataMember(Name = "filter", EmitDefaultValue = false)]
+        public TestResultsLocalFilterModel Filter { get; set; }
 
         /// <summary>
-        /// Gets or Sets Url
+        /// Gets or Sets TestResultIdsExtractionModel
         /// </summary>
-        [DataMember(Name = "url", EmitDefaultValue = true)]
-        public string Url { get; set; }
+        [DataMember(Name = "testResultIdsExtractionModel", EmitDefaultValue = false)]
+        public GuidExtractionModel TestResultIdsExtractionModel { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -61,9 +62,9 @@ namespace TestIt.Client.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class UseTestResultLinkRequestPostModel {\n");
-            sb.Append("  Title: ").Append(Title).Append("\n");
-            sb.Append("  Url: ").Append(Url).Append("\n");
+            sb.Append("class TestRunTestResultsSelectModel {\n");
+            sb.Append("  Filter: ").Append(Filter).Append("\n");
+            sb.Append("  TestResultIdsExtractionModel: ").Append(TestResultIdsExtractionModel).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -84,15 +85,15 @@ namespace TestIt.Client.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UseTestResultLinkRequestPostModel);
+            return this.Equals(input as TestRunTestResultsSelectModel);
         }
 
         /// <summary>
-        /// Returns true if UseTestResultLinkRequestPostModel instances are equal
+        /// Returns true if TestRunTestResultsSelectModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of UseTestResultLinkRequestPostModel to be compared</param>
+        /// <param name="input">Instance of TestRunTestResultsSelectModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UseTestResultLinkRequestPostModel input)
+        public bool Equals(TestRunTestResultsSelectModel input)
         {
             if (input == null)
             {
@@ -100,14 +101,14 @@ namespace TestIt.Client.Model
             }
             return 
                 (
-                    this.Title == input.Title ||
-                    (this.Title != null &&
-                    this.Title.Equals(input.Title))
+                    this.Filter == input.Filter ||
+                    (this.Filter != null &&
+                    this.Filter.Equals(input.Filter))
                 ) && 
                 (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
+                    this.TestResultIdsExtractionModel == input.TestResultIdsExtractionModel ||
+                    (this.TestResultIdsExtractionModel != null &&
+                    this.TestResultIdsExtractionModel.Equals(input.TestResultIdsExtractionModel))
                 );
         }
 
@@ -120,13 +121,13 @@ namespace TestIt.Client.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Title != null)
+                if (this.Filter != null)
                 {
-                    hashCode = (hashCode * 59) + this.Title.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Filter.GetHashCode();
                 }
-                if (this.Url != null)
+                if (this.TestResultIdsExtractionModel != null)
                 {
-                    hashCode = (hashCode * 59) + this.Url.GetHashCode();
+                    hashCode = (hashCode * 59) + this.TestResultIdsExtractionModel.GetHashCode();
                 }
                 return hashCode;
             }

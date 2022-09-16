@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
+using FileParameter = TestIt.Client.Client.FileParameter;
 using OpenAPIDateConverter = TestIt.Client.Client.OpenAPIDateConverter;
 
 namespace TestIt.Client.Model
@@ -55,7 +56,7 @@ namespace TestIt.Client.Model
         /// <param name="globalId">Used for search Test plan.</param>
         /// <param name="isDeleted">isDeleted.</param>
         /// <param name="lockedDate">lockedDate.</param>
-        /// <param name="id">id.</param>
+        /// <param name="id">id (required).</param>
         /// <param name="lockedById">lockedById.</param>
         /// <param name="tags">tags.</param>
         /// <param name="name">name (required).</param>
@@ -69,6 +70,7 @@ namespace TestIt.Client.Model
         /// <param name="attributes">attributes.</param>
         public TestPlanModel(TestPlanStatusModel? status = default(TestPlanStatusModel?), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), bool isDeleted = default(bool), DateTime? lockedDate = default(DateTime?), Guid id = default(Guid), Guid? lockedById = default(Guid?), List<TagShortModel> tags = default(List<TagShortModel>), string name = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string description = default(string), string build = default(string), Guid projectId = default(Guid), string productName = default(string), bool? hasAutomaticDurationTimer = default(bool?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>))
         {
+            this.Id = id;
             // to ensure "name" is required (not null)
             if (name == null)
             {
@@ -86,7 +88,6 @@ namespace TestIt.Client.Model
             this.GlobalId = globalId;
             this.IsDeleted = isDeleted;
             this.LockedDate = lockedDate;
-            this.Id = id;
             this.LockedById = lockedById;
             this.Tags = tags;
             this.StartDate = startDate;
@@ -158,7 +159,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>

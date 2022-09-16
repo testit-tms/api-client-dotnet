@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
+using FileParameter = TestIt.Client.Client.FileParameter;
 using OpenAPIDateConverter = TestIt.Client.Client.OpenAPIDateConverter;
 
 namespace TestIt.Client.Model
@@ -31,6 +32,12 @@ namespace TestIt.Client.Model
     [DataContract(Name = "AutotestFilterModel")]
     public partial class AutotestFilterModel : IEquatable<AutotestFilterModel>, IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets ResultOutcome
+        /// </summary>
+        [DataMember(Name = "resultOutcome", EmitDefaultValue = false)]
+        public AutotestResultOutcome? ResultOutcome { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AutotestFilterModel" /> class.
         /// </summary>
@@ -50,7 +57,8 @@ namespace TestIt.Client.Model
         /// <param name="includeEmptyNamespaces">includeEmptyNamespaces.</param>
         /// <param name="className">className.</param>
         /// <param name="includeEmptyClassNames">includeEmptyClassNames.</param>
-        public AutotestFilterModel(List<Guid> projectIds = default(List<Guid>), List<string> externalIds = default(List<string>), List<long> globalIds = default(List<long>), string name = default(string), bool? isFlaky = default(bool?), bool? mustBeApproved = default(bool?), Int64RangeSelectorModel stabilityPercentage = default(Int64RangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), bool? isDeleted = default(bool?), string _namespace = default(string), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? includeEmptyClassNames = default(bool?))
+        /// <param name="resultOutcome">resultOutcome.</param>
+        public AutotestFilterModel(List<Guid> projectIds = default(List<Guid>), List<string> externalIds = default(List<string>), List<long> globalIds = default(List<long>), string name = default(string), bool? isFlaky = default(bool?), bool? mustBeApproved = default(bool?), Int64RangeSelectorModel stabilityPercentage = default(Int64RangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), bool? isDeleted = default(bool?), string _namespace = default(string), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? includeEmptyClassNames = default(bool?), AutotestResultOutcome? resultOutcome = default(AutotestResultOutcome?))
         {
             this.ProjectIds = projectIds;
             this.ExternalIds = externalIds;
@@ -68,6 +76,7 @@ namespace TestIt.Client.Model
             this.IncludeEmptyNamespaces = includeEmptyNamespaces;
             this.ClassName = className;
             this.IncludeEmptyClassNames = includeEmptyClassNames;
+            this.ResultOutcome = resultOutcome;
         }
 
         /// <summary>
@@ -190,6 +199,7 @@ namespace TestIt.Client.Model
             sb.Append("  IncludeEmptyNamespaces: ").Append(IncludeEmptyNamespaces).Append("\n");
             sb.Append("  ClassName: ").Append(ClassName).Append("\n");
             sb.Append("  IncludeEmptyClassNames: ").Append(IncludeEmptyClassNames).Append("\n");
+            sb.Append("  ResultOutcome: ").Append(ResultOutcome).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -309,6 +319,10 @@ namespace TestIt.Client.Model
                     this.IncludeEmptyClassNames == input.IncludeEmptyClassNames ||
                     (this.IncludeEmptyClassNames != null &&
                     this.IncludeEmptyClassNames.Equals(input.IncludeEmptyClassNames))
+                ) && 
+                (
+                    this.ResultOutcome == input.ResultOutcome ||
+                    this.ResultOutcome.Equals(input.ResultOutcome)
                 );
         }
 
@@ -385,6 +399,7 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.IncludeEmptyClassNames.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.ResultOutcome.GetHashCode();
                 return hashCode;
             }
         }
