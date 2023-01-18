@@ -4,22 +4,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AttributesScheme** | [**List&lt;CustomAttributeModel&gt;**](CustomAttributeModel.md) |  | [optional] 
-**TestPlansAttributesScheme** | [**List&lt;CustomAttributeModel&gt;**](CustomAttributeModel.md) |  | [optional] 
-**TestCasesCount** | **int?** |  | [optional] 
-**SharedStepsCount** | **int?** |  | [optional] 
-**CheckListsCount** | **int?** |  | [optional] 
-**AutoTestsCount** | **int?** |  | [optional] 
-**IsFavorite** | **bool** | Property is used to filter favourite projects | [optional] 
-**IsDeleted** | **bool** |  | [optional] 
-**CreatedDate** | **DateTime** |  | [optional] 
-**ModifiedDate** | **DateTime?** |  | [optional] 
-**CreatedById** | **Guid** |  | [optional] 
-**ModifiedById** | **Guid?** |  | [optional] 
-**GlobalId** | **long** |  | [optional] 
-**Id** | **Guid** |  | [optional] 
-**Description** | **string** |  | [optional] 
-**Name** | **string** |  | 
+**AttributesScheme** | [**List&lt;CustomAttributeModel&gt;**](CustomAttributeModel.md) | Collection of the project attributes | [optional] 
+**TestPlansAttributesScheme** | [**List&lt;CustomAttributeModel&gt;**](CustomAttributeModel.md) | Collection of the project test plans attributes | [optional] 
+**TestCasesCount** | **int?** | Number of test cases in the project | [optional] 
+**SharedStepsCount** | **int?** | Number of shared steps in the project | [optional] 
+**CheckListsCount** | **int?** | Number of checklists in the project | [optional] 
+**AutoTestsCount** | **int?** | Number of autotests in the project | [optional] 
+**IsFavorite** | **bool** | Indicates if the project is marked as favorite | [optional] 
+**IsDeleted** | **bool** | Indicates if the project is deleted | [optional] 
+**CreatedDate** | **DateTime** | Creation date of the project | [optional] 
+**ModifiedDate** | **DateTime?** | Last modification date of the project | [optional] 
+**CreatedById** | **Guid** | Unique ID of the project creator | [optional] 
+**ModifiedById** | **Guid?** | Unique ID of the project last editor | [optional] 
+**GlobalId** | **long** | Global ID of the project | [optional] 
+**Id** | **Guid** | Unique ID of the project | 
+**Description** | **string** | Description of the project | [optional] 
+**Name** | **string** | Name of the project | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

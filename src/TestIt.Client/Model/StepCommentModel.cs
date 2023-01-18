@@ -79,7 +79,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets StepId
         /// </summary>
-        [DataMember(Name = "stepId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "stepId", IsRequired = true, EmitDefaultValue = true)]
         public Guid StepId { get; set; }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets TestResultId
         /// </summary>
-        [DataMember(Name = "testResultId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "testResultId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestResultId { get; set; }
 
         /// <summary>

@@ -46,8 +46,8 @@ namespace TestIt.Client.Model
         /// <param name="testPlanId">testPlanId.</param>
         /// <param name="name">name.</param>
         /// <param name="description">description.</param>
-        /// <param name="id">id.</param>
-        /// <param name="isDeleted">isDeleted.</param>
+        /// <param name="id">Unique ID of the entity.</param>
+        /// <param name="isDeleted">Indicates if the entity is deleted.</param>
         public TestRunShortModel(TestRunState? stateName = default(TestRunState?), Guid projectId = default(Guid), Guid? testPlanId = default(Guid?), string name = default(string), string description = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
         {
             this.StateName = stateName;
@@ -84,14 +84,16 @@ namespace TestIt.Client.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Unique ID of the entity
         /// </summary>
+        /// <value>Unique ID of the entity</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDeleted
+        /// Indicates if the entity is deleted
         /// </summary>
+        /// <value>Indicates if the entity is deleted</value>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 

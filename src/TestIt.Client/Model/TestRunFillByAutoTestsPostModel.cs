@@ -70,7 +70,7 @@ namespace TestIt.Client.Model
         /// Specifies the GUID of the project, in which a test run will be created.
         /// </summary>
         /// <value>Specifies the GUID of the project, in which a test run will be created.</value>
-        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
@@ -84,14 +84,14 @@ namespace TestIt.Client.Model
         /// Specifies the configuration GUIDs, from which test points are created. You can specify several GUIDs.
         /// </summary>
         /// <value>Specifies the configuration GUIDs, from which test points are created. You can specify several GUIDs.</value>
-        [DataMember(Name = "configurationIds", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "configurationIds", IsRequired = true, EmitDefaultValue = true)]
         public List<Guid> ConfigurationIds { get; set; }
 
         /// <summary>
         /// Specifies the external ID of the autotest. You can specify several IDs.
         /// </summary>
         /// <value>Specifies the external ID of the autotest. You can specify several IDs.</value>
-        [DataMember(Name = "autoTestExternalIds", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "autoTestExternalIds", IsRequired = true, EmitDefaultValue = true)]
         public List<string> AutoTestExternalIds { get; set; }
 
         /// <summary>

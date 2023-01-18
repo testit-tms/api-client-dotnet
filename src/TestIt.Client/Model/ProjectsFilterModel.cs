@@ -27,25 +27,25 @@ using OpenAPIDateConverter = TestIt.Client.Client.OpenAPIDateConverter;
 namespace TestIt.Client.Model
 {
     /// <summary>
-    /// ProjectSelectModel
+    /// ProjectsFilterModel
     /// </summary>
-    [DataContract(Name = "ProjectSelectModel")]
-    public partial class ProjectSelectModel : IEquatable<ProjectSelectModel>, IValidatableObject
+    [DataContract(Name = "ProjectsFilterModel")]
+    public partial class ProjectsFilterModel : IEquatable<ProjectsFilterModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProjectSelectModel" /> class.
+        /// Initializes a new instance of the <see cref="ProjectsFilterModel" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="isFavorite">isFavorite.</param>
-        /// <param name="isDeleted">isDeleted.</param>
+        /// <param name="name">Specifies a project name to search for.</param>
+        /// <param name="isFavorite">Specifies a project favorite status to search for.</param>
+        /// <param name="isDeleted">Specifies a project deleted status to search for.</param>
         /// <param name="testCasesCount">testCasesCount.</param>
         /// <param name="checklistsCount">checklistsCount.</param>
         /// <param name="sharedStepsCount">sharedStepsCount.</param>
         /// <param name="autotestsCount">autotestsCount.</param>
-        /// <param name="globalIds">globalIds.</param>
-        /// <param name="createdByIds">createdByIds.</param>
+        /// <param name="globalIds">Specifies a project global IDs to search for.</param>
         /// <param name="createdDate">createdDate.</param>
-        public ProjectSelectModel(string name = default(string), bool? isFavorite = default(bool?), bool? isDeleted = default(bool?), Int32RangeSelectorModel testCasesCount = default(Int32RangeSelectorModel), Int32RangeSelectorModel checklistsCount = default(Int32RangeSelectorModel), Int32RangeSelectorModel sharedStepsCount = default(Int32RangeSelectorModel), Int32RangeSelectorModel autotestsCount = default(Int32RangeSelectorModel), List<long> globalIds = default(List<long>), List<Guid> createdByIds = default(List<Guid>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel))
+        /// <param name="createdByIds">Specifies an autotest creator IDs to search for.</param>
+        public ProjectsFilterModel(string name = default(string), bool? isFavorite = default(bool?), bool? isDeleted = default(bool?), Int32RangeSelectorModel testCasesCount = default(Int32RangeSelectorModel), Int32RangeSelectorModel checklistsCount = default(Int32RangeSelectorModel), Int32RangeSelectorModel sharedStepsCount = default(Int32RangeSelectorModel), Int32RangeSelectorModel autotestsCount = default(Int32RangeSelectorModel), List<long> globalIds = default(List<long>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>))
         {
             this.Name = name;
             this.IsFavorite = isFavorite;
@@ -55,25 +55,28 @@ namespace TestIt.Client.Model
             this.SharedStepsCount = sharedStepsCount;
             this.AutotestsCount = autotestsCount;
             this.GlobalIds = globalIds;
-            this.CreatedByIds = createdByIds;
             this.CreatedDate = createdDate;
+            this.CreatedByIds = createdByIds;
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Specifies a project name to search for
         /// </summary>
+        /// <value>Specifies a project name to search for</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsFavorite
+        /// Specifies a project favorite status to search for
         /// </summary>
+        /// <value>Specifies a project favorite status to search for</value>
         [DataMember(Name = "isFavorite", EmitDefaultValue = true)]
         public bool? IsFavorite { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDeleted
+        /// Specifies a project deleted status to search for
         /// </summary>
+        /// <value>Specifies a project deleted status to search for</value>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
         public bool? IsDeleted { get; set; }
 
@@ -102,16 +105,11 @@ namespace TestIt.Client.Model
         public Int32RangeSelectorModel AutotestsCount { get; set; }
 
         /// <summary>
-        /// Gets or Sets GlobalIds
+        /// Specifies a project global IDs to search for
         /// </summary>
+        /// <value>Specifies a project global IDs to search for</value>
         [DataMember(Name = "globalIds", EmitDefaultValue = true)]
         public List<long> GlobalIds { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CreatedByIds
-        /// </summary>
-        [DataMember(Name = "createdByIds", EmitDefaultValue = true)]
-        public List<Guid> CreatedByIds { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
@@ -120,13 +118,20 @@ namespace TestIt.Client.Model
         public DateTimeRangeSelectorModel CreatedDate { get; set; }
 
         /// <summary>
+        /// Specifies an autotest creator IDs to search for
+        /// </summary>
+        /// <value>Specifies an autotest creator IDs to search for</value>
+        [DataMember(Name = "createdByIds", EmitDefaultValue = true)]
+        public List<Guid> CreatedByIds { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ProjectSelectModel {\n");
+            sb.Append("class ProjectsFilterModel {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  IsFavorite: ").Append(IsFavorite).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
@@ -135,8 +140,8 @@ namespace TestIt.Client.Model
             sb.Append("  SharedStepsCount: ").Append(SharedStepsCount).Append("\n");
             sb.Append("  AutotestsCount: ").Append(AutotestsCount).Append("\n");
             sb.Append("  GlobalIds: ").Append(GlobalIds).Append("\n");
-            sb.Append("  CreatedByIds: ").Append(CreatedByIds).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
+            sb.Append("  CreatedByIds: ").Append(CreatedByIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -157,15 +162,15 @@ namespace TestIt.Client.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ProjectSelectModel);
+            return this.Equals(input as ProjectsFilterModel);
         }
 
         /// <summary>
-        /// Returns true if ProjectSelectModel instances are equal
+        /// Returns true if ProjectsFilterModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of ProjectSelectModel to be compared</param>
+        /// <param name="input">Instance of ProjectsFilterModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ProjectSelectModel input)
+        public bool Equals(ProjectsFilterModel input)
         {
             if (input == null)
             {
@@ -214,15 +219,15 @@ namespace TestIt.Client.Model
                     this.GlobalIds.SequenceEqual(input.GlobalIds)
                 ) && 
                 (
+                    this.CreatedDate == input.CreatedDate ||
+                    (this.CreatedDate != null &&
+                    this.CreatedDate.Equals(input.CreatedDate))
+                ) && 
+                (
                     this.CreatedByIds == input.CreatedByIds ||
                     this.CreatedByIds != null &&
                     input.CreatedByIds != null &&
                     this.CreatedByIds.SequenceEqual(input.CreatedByIds)
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
                 );
         }
 
@@ -267,13 +272,13 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.GlobalIds.GetHashCode();
                 }
-                if (this.CreatedByIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedByIds.GetHashCode();
-                }
                 if (this.CreatedDate != null)
                 {
                     hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
+                }
+                if (this.CreatedByIds != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreatedByIds.GetHashCode();
                 }
                 return hashCode;
             }

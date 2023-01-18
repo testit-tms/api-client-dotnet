@@ -76,7 +76,7 @@ namespace TestIt.Client.Model
         /// Address can be specified without protocol, but necessarily with the domain.
         /// </summary>
         /// <value>Address can be specified without protocol, but necessarily with the domain.</value>
-        [DataMember(Name = "url", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "url", IsRequired = true, EmitDefaultValue = true)]
         public string Url { get; set; }
 
         /// <summary>

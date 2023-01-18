@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **ModifiedById** | **Guid?** |  | [optional] 
 **CreatedDate** | **DateTime?** |  | [optional] 
 **ModifiedDate** | **DateTime?** |  | [optional] 
-**State** | **string** | Property can have one of these values: NeedsWork, NotReady, Ready | 
+**State** | **WorkItemStates** |  | 
 **Priority** | **WorkItemPriorityModel** |  | 
 **IsDeleted** | **bool** |  | [optional] 
 **TagNames** | **List&lt;string&gt;** |  | [optional] 

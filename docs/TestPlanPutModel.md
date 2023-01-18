@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | [optional] 
+**Id** | **Guid** |  | 
 **LockedById** | **Guid?** |  | [optional] 
 **Tags** | [**List&lt;TagShortModel&gt;**](TagShortModel.md) |  | [optional] 
 **Name** | **string** |  | 

@@ -6,8 +6,8 @@ All URIs are relative to *http://localhost*
 |--------|--------------|-------------|
 | [**ApiV2WorkItemsCommentsCommentIdDelete**](WorkItemsCommentsApi.md#apiv2workitemscommentscommentiddelete) | **DELETE** /api/v2/workItems/comments/{commentId} | Delete WorkItem comment |
 | [**ApiV2WorkItemsCommentsPost**](WorkItemsCommentsApi.md#apiv2workitemscommentspost) | **POST** /api/v2/workItems/comments | Create WorkItem comment |
-| [**ApiV2WorkItemsCommentsPut**](WorkItemsCommentsApi.md#apiv2workitemscommentsput) | **PUT** /api/v2/workItems/comments | Update WorkItem comment |
-| [**ApiV2WorkItemsIdCommentsGet**](WorkItemsCommentsApi.md#apiv2workitemsidcommentsget) | **GET** /api/v2/workItems/{id}/comments | Get WorkItem comments by Id or GlobalId |
+| [**ApiV2WorkItemsCommentsPut**](WorkItemsCommentsApi.md#apiv2workitemscommentsput) | **PUT** /api/v2/workItems/comments | Update work item comment |
+| [**ApiV2WorkItemsIdCommentsGet**](WorkItemsCommentsApi.md#apiv2workitemsidcommentsget) | **GET** /api/v2/workItems/{id}/comments | Get work item comments |
 
 <a name="apiv2workitemscommentscommentiddelete"></a>
 # **ApiV2WorkItemsCommentsCommentIdDelete**
@@ -21,6 +21,7 @@ Delete WorkItem comment
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -38,7 +39,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new WorkItemsCommentsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WorkItemsCommentsApi(httpClient, config, httpClientHandler);
             var commentId = "commentId_example";  // Guid | 
 
             try
@@ -97,9 +101,9 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | System admin permission required |  -  |
-| **204** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
+| **204** | Successful operation |  -  |
+| **403** | System admin permission required |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | WorkItem is not found |  -  |
 
@@ -117,6 +121,7 @@ Create WorkItem comment
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -134,7 +139,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new WorkItemsCommentsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WorkItemsCommentsApi(httpClient, config, httpClientHandler);
             var workItemCommentPostModel = new WorkItemCommentPostModel(); // WorkItemCommentPostModel |  (optional) 
 
             try
@@ -209,14 +217,13 @@ catch (ApiException e)
 # **ApiV2WorkItemsCommentsPut**
 > void ApiV2WorkItemsCommentsPut (WorkItemCommentPutModel workItemCommentPutModel = null)
 
-Update WorkItem comment
-
-<br>Use case  <br>User sets comment properties (listed in request parameters)  <br>User runs method execution  <br>System updates comment   <br>System returns success status code
+Update work item comment
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -234,12 +241,15 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new WorkItemsCommentsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WorkItemsCommentsApi(httpClient, config, httpClientHandler);
             var workItemCommentPutModel = new WorkItemCommentPutModel(); // WorkItemCommentPutModel |  (optional) 
 
             try
             {
-                // Update WorkItem comment
+                // Update work item comment
                 apiInstance.ApiV2WorkItemsCommentsPut(workItemCommentPutModel);
             }
             catch (ApiException  e)
@@ -259,7 +269,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Update WorkItem comment
+    // Update work item comment
     apiInstance.ApiV2WorkItemsCommentsPutWithHttpInfo(workItemCommentPutModel);
 }
 catch (ApiException e)
@@ -293,11 +303,8 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | WorkItem is not found |  -  |
-| **204** | Successful operation |  -  |
-| **400** | Bad Request |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | System admin permission required |  -  |
+| **204** | Success |  -  |
+| **403** | System administrator role is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -305,14 +312,13 @@ void (empty response body)
 # **ApiV2WorkItemsIdCommentsGet**
 > List&lt;WorkItemCommentModel&gt; ApiV2WorkItemsIdCommentsGet (string id)
 
-Get WorkItem comments by Id or GlobalId
-
-<br>Use case  <br>User sets workitem identifier  <br>User runs method execution  <br>System search comments by workitem identifier  <br>System returns comments 
+Get work item comments
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -330,12 +336,15 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new WorkItemsCommentsApi(config);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or  global(integer format) identifier\"
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WorkItemsCommentsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Unique or global ID of the work item
 
             try
             {
-                // Get WorkItem comments by Id or GlobalId
+                // Get work item comments
                 List<WorkItemCommentModel> result = apiInstance.ApiV2WorkItemsIdCommentsGet(id);
                 Debug.WriteLine(result);
             }
@@ -356,7 +365,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get WorkItem comments by Id or GlobalId
+    // Get work item comments
     ApiResponse<List<WorkItemCommentModel>> response = apiInstance.ApiV2WorkItemsIdCommentsGetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -374,7 +383,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | WorkItem internal (guid format) or  global(integer format) identifier\&quot; |  |
+| **id** | **string** | Unique or global ID of the work item |  |
 
 ### Return type
 
@@ -393,9 +402,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for test library required |  -  |
-| **200** | Successful operation |  -  |
-| **401** | Unauthorized |  -  |
+| **200** | Success |  -  |
+| **403** | Read permission for test library is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

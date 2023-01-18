@@ -4,10 +4,10 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**AddTestPointsWithSections**](TestPlansApi.md#addtestpointswithsections) | **POST** /api/v2/testPlans/{id}/test-points/withSections | Add test-points to test suite with sections |
+| [**AddTestPointsWithSections**](TestPlansApi.md#addtestpointswithsections) | **POST** /api/v2/testPlans/{id}/test-points/withSections | Add test-points to TestPlan with sections |
 | [**AddWorkItemsWithSections**](TestPlansApi.md#addworkitemswithsections) | **POST** /api/v2/testPlans/{id}/workItems/withSections | Add WorkItems to TestPlan with Sections as TestSuites |
 | [**ApiV2TestPlansIdAnalyticsGet**](TestPlansApi.md#apiv2testplansidanalyticsget) | **GET** /api/v2/testPlans/{id}/analytics | Get analytics by TestPlan |
-| [**ApiV2TestPlansIdAutobalancePost**](TestPlansApi.md#apiv2testplansidautobalancepost) | **POST** /api/v2/testPlans/{id}/autobalance | Auto-balance for TestPlan with testers |
+| [**ApiV2TestPlansIdAutobalancePost**](TestPlansApi.md#apiv2testplansidautobalancepost) | **POST** /api/v2/testPlans/{id}/autobalance | Distribute test points between the users |
 | [**ApiV2TestPlansIdConfigurationsGet**](TestPlansApi.md#apiv2testplansidconfigurationsget) | **GET** /api/v2/testPlans/{id}/configurations | Get TestPlan configurations |
 | [**ApiV2TestPlansIdExportTestPointsXlsxPost**](TestPlansApi.md#apiv2testplansidexporttestpointsxlsxpost) | **POST** /api/v2/testPlans/{id}/export/testPoints/xlsx | Export TestPoints from TestPlan in xls format |
 | [**ApiV2TestPlansIdExportTestResultHistoryXlsxPost**](TestPlansApi.md#apiv2testplansidexporttestresulthistoryxlsxpost) | **POST** /api/v2/testPlans/{id}/export/testResultHistory/xlsx | Export TestResults history from TestPlan in xls format |
@@ -17,7 +17,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2TestPlansIdTestPointsResetPost**](TestPlansApi.md#apiv2testplansidtestpointsresetpost) | **POST** /api/v2/testPlans/{id}/testPoints/reset | Reset TestPoints status of TestPlan |
 | [**ApiV2TestPlansIdTestRunsGet**](TestPlansApi.md#apiv2testplansidtestrunsget) | **GET** /api/v2/testPlans/{id}/testRuns | Get TestRuns of TestPlan |
 | [**ApiV2TestPlansIdTestRunsSearchPost**](TestPlansApi.md#apiv2testplansidtestrunssearchpost) | **POST** /api/v2/testPlans/{id}/testRuns/search | Search TestRuns of TestPlan |
-| [**ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet**](TestPlansApi.md#apiv2testplansidtestrunstestresultslastmodifiedmodifieddateget) | **GET** /api/v2/testPlans/{id}/testRuns/testResults/lastModified/modifiedDate | Get max modified date in TestRun for TestPlan |
+| [**ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet**](TestPlansApi.md#apiv2testplansidtestrunstestresultslastmodifiedmodifieddateget) | **GET** /api/v2/testPlans/{id}/testRuns/testResults/lastModified/modifiedDate | Get last modification date of test plan&#39;s test results |
 | [**ApiV2TestPlansIdUnlockRequestPost**](TestPlansApi.md#apiv2testplansidunlockrequestpost) | **POST** /api/v2/testPlans/{id}/unlock/request | Send unlock TestPlan notification |
 | [**ApiV2TestPlansShortsPost**](TestPlansApi.md#apiv2testplansshortspost) | **POST** /api/v2/testPlans/shorts | Get TestPlans short models by Project identifiers |
 | [**Clone**](TestPlansApi.md#clone) | **POST** /api/v2/testPlans/{id}/clone | Clone TestPlan |
@@ -35,12 +35,13 @@ All URIs are relative to *http://localhost*
 # **AddTestPointsWithSections**
 > void AddTestPointsWithSections (string id, WorkItemSelectModel workItemSelectModel = null)
 
-Add test-points to test suite with sections
+Add test-points to TestPlan with sections
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -58,13 +59,16 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
-            var id = 1ed608bf-8ac9-4ffd-b91e-ebdbbdce6132;  // string | Test suite internal identifier
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
             var workItemSelectModel = new WorkItemSelectModel(); // WorkItemSelectModel | Filter object to retrieve work items for test-suite's project (optional) 
 
             try
             {
-                // Add test-points to test suite with sections
+                // Add test-points to TestPlan with sections
                 apiInstance.AddTestPointsWithSections(id, workItemSelectModel);
             }
             catch (ApiException  e)
@@ -84,7 +88,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Add test-points to test suite with sections
+    // Add test-points to TestPlan with sections
     apiInstance.AddTestPointsWithSectionsWithHttpInfo(id, workItemSelectModel);
 }
 catch (ApiException e)
@@ -99,7 +103,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test suite internal identifier |  |
+| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
 | **workItemSelectModel** | [**WorkItemSelectModel**](WorkItemSelectModel.md) | Filter object to retrieve work items for test-suite&#39;s project | [optional]  |
 
 ### Return type
@@ -113,17 +117,17 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **422** | Shared steps cannot be added to test suite |  -  |
 | **204** | Successful operation |  -  |
 | **401** | Unauthorized |  -  |
-| **403** | Update permission for test plan is required |  -  |
 | **404** | Test suite with provided ID was not found |  -  |
-| **422** | Shared steps cannot be added to test suite |  -  |
+| **403** | Update permission for test plan is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -139,6 +143,7 @@ Add WorkItems to TestPlan with Sections as TestSuites
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -156,7 +161,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
             var requestBody = new List<Guid>(); // List<Guid> |  (optional) 
 
@@ -217,12 +225,12 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Successful operation |  -  |
 | **400** | &lt;br&gt;TestPlan is locked  &lt;br&gt;Some of configurations do not exist in the project, or they are not active |  -  |
+| **422** | Can&#39;t put a SharedStep in the TestSuite |  -  |
+| **204** | Successful operation |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for TestPlan required |  -  |
 | **404** | &lt;br&gt;Can&#39;t find a TestPlan with id  &lt;br&gt;Some of workItems do not exist |  -  |
-| **422** | Can&#39;t put a SharedStep in the TestSuite |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -238,6 +246,7 @@ Get analytics by TestPlan
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -255,7 +264,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
 
             try
@@ -318,9 +330,9 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **400** | Bad Request |  -  |
 | **404** | Can&#39;t find a Project with id |  -  |
+| **400** | Bad Request |  -  |
+| **200** | Successful operation |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -329,14 +341,13 @@ catch (ApiException e)
 # **ApiV2TestPlansIdAutobalancePost**
 > TestPlanWithTestSuiteTreeModel ApiV2TestPlansIdAutobalancePost (string id, List<Guid> testers = null)
 
-Auto-balance for TestPlan with testers
-
-<br>Use case  <br>User sets TestPlan identifier  <br>User sets testers identifiers (listed in request example)  <br>User runs method execution  <br>System auto-balances TestPlan  <br>System returns test plan model (listed in response example)
+Distribute test points between the users
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -354,13 +365,16 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
-            var testers = new List<Guid>(); // List<Guid> | List of testers internal identifiers (optional) 
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Test plan unique or global ID
+            var testers = new List<Guid>(); // List<Guid> | Specifies a project user IDs to distribute (optional) 
 
             try
             {
-                // Auto-balance for TestPlan with testers
+                // Distribute test points between the users
                 TestPlanWithTestSuiteTreeModel result = apiInstance.ApiV2TestPlansIdAutobalancePost(id, testers);
                 Debug.WriteLine(result);
             }
@@ -381,7 +395,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Auto-balance for TestPlan with testers
+    // Distribute test points between the users
     ApiResponse<TestPlanWithTestSuiteTreeModel> response = apiInstance.ApiV2TestPlansIdAutobalancePostWithHttpInfo(id, testers);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -399,8 +413,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
-| **testers** | [**List&lt;Guid&gt;**](Guid.md) | List of testers internal identifiers | [optional]  |
+| **id** | **string** | Test plan unique or global ID |  |
+| **testers** | [**List&lt;Guid&gt;**](Guid.md) | Specifies a project user IDs to distribute | [optional]  |
 
 ### Return type
 
@@ -419,11 +433,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
-| **200** | Successful operation |  -  |
-| **404** | Test suite with provided ID was not found |  -  |
-| **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan is required |  -  |
+| **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -439,6 +450,7 @@ Get TestPlan configurations
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -456,7 +468,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
 
             try
@@ -519,17 +534,17 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for test plan required |  -  |
-| **404** | TestPlan not found |  -  |
 | **200** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **404** | TestPlan not found |  -  |
+| **403** | Read permission for test plan required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="apiv2testplansidexporttestpointsxlsxpost"></a>
 # **ApiV2TestPlansIdExportTestPointsXlsxPost**
-> System.IO.Stream ApiV2TestPlansIdExportTestPointsXlsxPost (string id, long? timeZoneOffsetInMinutes = null, GetXlsxTestPointsByTestPlanModel getXlsxTestPointsByTestPlanModel = null)
+> FileParameter ApiV2TestPlansIdExportTestPointsXlsxPost (string id, long? timeZoneOffsetInMinutes = null, GetXlsxTestPointsByTestPlanModel getXlsxTestPointsByTestPlanModel = null)
 
 Export TestPoints from TestPlan in xls format
 
@@ -539,6 +554,7 @@ Export TestPoints from TestPlan in xls format
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -556,7 +572,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
             var timeZoneOffsetInMinutes = 789L;  // long? |  (optional) 
             var getXlsxTestPointsByTestPlanModel = new GetXlsxTestPointsByTestPlanModel(); // GetXlsxTestPointsByTestPlanModel |  (optional) 
@@ -564,7 +583,7 @@ namespace Example
             try
             {
                 // Export TestPoints from TestPlan in xls format
-                System.IO.Stream result = apiInstance.ApiV2TestPlansIdExportTestPointsXlsxPost(id, timeZoneOffsetInMinutes, getXlsxTestPointsByTestPlanModel);
+                FileParameter result = apiInstance.ApiV2TestPlansIdExportTestPointsXlsxPost(id, timeZoneOffsetInMinutes, getXlsxTestPointsByTestPlanModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -585,7 +604,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Export TestPoints from TestPlan in xls format
-    ApiResponse<System.IO.Stream> response = apiInstance.ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(id, timeZoneOffsetInMinutes, getXlsxTestPointsByTestPlanModel);
+    ApiResponse<FileParameter> response = apiInstance.ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(id, timeZoneOffsetInMinutes, getXlsxTestPointsByTestPlanModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -608,7 +627,7 @@ catch (ApiException e)
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -623,17 +642,17 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for test plan required |  -  |
-| **404** | TestPlan not found |  -  |
 | **200** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Read permission for test plan required |  -  |
+| **404** | TestPlan not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="apiv2testplansidexporttestresulthistoryxlsxpost"></a>
 # **ApiV2TestPlansIdExportTestResultHistoryXlsxPost**
-> System.IO.Stream ApiV2TestPlansIdExportTestResultHistoryXlsxPost (string id, bool? mustReturnOnlyLastTestResult = null, bool? includeSteps = null, bool? includeDeletedTestSuites = null, long? timeZoneOffsetInMinutes = null)
+> FileParameter ApiV2TestPlansIdExportTestResultHistoryXlsxPost (string id, bool? mustReturnOnlyLastTestResult = null, bool? includeSteps = null, bool? includeDeletedTestSuites = null, long? timeZoneOffsetInMinutes = null)
 
 Export TestResults history from TestPlan in xls format
 
@@ -643,6 +662,7 @@ Export TestResults history from TestPlan in xls format
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -660,7 +680,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
             var mustReturnOnlyLastTestResult = true;  // bool? |  (optional) 
             var includeSteps = true;  // bool? |  (optional) 
@@ -670,7 +693,7 @@ namespace Example
             try
             {
                 // Export TestResults history from TestPlan in xls format
-                System.IO.Stream result = apiInstance.ApiV2TestPlansIdExportTestResultHistoryXlsxPost(id, mustReturnOnlyLastTestResult, includeSteps, includeDeletedTestSuites, timeZoneOffsetInMinutes);
+                FileParameter result = apiInstance.ApiV2TestPlansIdExportTestResultHistoryXlsxPost(id, mustReturnOnlyLastTestResult, includeSteps, includeDeletedTestSuites, timeZoneOffsetInMinutes);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -691,7 +714,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Export TestResults history from TestPlan in xls format
-    ApiResponse<System.IO.Stream> response = apiInstance.ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfo(id, mustReturnOnlyLastTestResult, includeSteps, includeDeletedTestSuites, timeZoneOffsetInMinutes);
+    ApiResponse<FileParameter> response = apiInstance.ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfo(id, mustReturnOnlyLastTestResult, includeSteps, includeDeletedTestSuites, timeZoneOffsetInMinutes);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -716,7 +739,7 @@ catch (ApiException e)
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -751,6 +774,7 @@ Get TestPlan history
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -768,7 +792,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
             var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
             var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
@@ -841,11 +868,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
-| **404** | TestPlan not found |  -  |
-| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **400** | Bad Request |  -  |
+| **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 | **403** | Read permission for test plan required |  -  |
+| **404** | TestPlan not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -861,6 +888,7 @@ Get Links of TestPlan
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -878,7 +906,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
             var skip = 56;  // int? |  (optional) 
             var take = 56;  // int? |  (optional) 
@@ -947,15 +978,15 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
 | **200** | Successful operation |  -  |
 | **403** | Read permission for test plan is required |  -  |
+| **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="apiv2testplansidtestpointslastresultsget"></a>
 # **ApiV2TestPlansIdTestPointsLastResultsGet**
-> List&lt;TestPointWithLastResultModel&gt; ApiV2TestPlansIdTestPointsLastResultsGet (string id, bool? mustAddGroupingElements = null, Guid? testerId = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
+> List&lt;TestPointWithLastResultModel&gt; ApiV2TestPlansIdTestPointsLastResultsGet (string id, Guid? testerId = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
 Get TestPoints with last result from TestPlan
 
@@ -965,6 +996,7 @@ Get TestPoints with last result from TestPlan
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -982,9 +1014,11 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
-            var mustAddGroupingElements = true;  // bool? |  (optional) 
             var testerId = "testerId_example";  // Guid? |  (optional) 
             var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
             var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
@@ -995,7 +1029,7 @@ namespace Example
             try
             {
                 // Get TestPoints with last result from TestPlan
-                List<TestPointWithLastResultModel> result = apiInstance.ApiV2TestPlansIdTestPointsLastResultsGet(id, mustAddGroupingElements, testerId, skip, take, orderBy, searchField, searchValue);
+                List<TestPointWithLastResultModel> result = apiInstance.ApiV2TestPlansIdTestPointsLastResultsGet(id, testerId, skip, take, orderBy, searchField, searchValue);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1016,7 +1050,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get TestPoints with last result from TestPlan
-    ApiResponse<List<TestPointWithLastResultModel>> response = apiInstance.ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfo(id, mustAddGroupingElements, testerId, skip, take, orderBy, searchField, searchValue);
+    ApiResponse<List<TestPointWithLastResultModel>> response = apiInstance.ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfo(id, testerId, skip, take, orderBy, searchField, searchValue);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1034,7 +1068,6 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
-| **mustAddGroupingElements** | **bool?** |  | [optional]  |
 | **testerId** | **Guid?** |  | [optional]  |
 | **skip** | **int?** | Amount of items to be skipped (offset) | [optional]  |
 | **take** | **int?** | Amount of items to be taken (limit) | [optional]  |
@@ -1059,11 +1092,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for test plan required |  -  |
-| **404** | TestPlan not found |  -  |
-| **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
-| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **400** | Bad Request |  -  |
+| **403** | Read permission for test plan required |  -  |
+| **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **404** | TestPlan not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1079,6 +1112,7 @@ Reset TestPoints status of TestPlan
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1096,7 +1130,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
             var requestBody = new List<Guid>(); // List<Guid> |  (optional) 
 
@@ -1158,8 +1195,8 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
-| **400** | Bad Request |  -  |
 | **422** | Client Error |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1176,6 +1213,7 @@ Get TestRuns of TestPlan
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1193,7 +1231,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
             var notStarted = true;  // bool? |  (optional) 
             var inProgress = true;  // bool? |  (optional) 
@@ -1274,9 +1315,9 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 | **403** | Read permission for test plan is required |  -  |
 | **401** | Unauthorized |  -  |
-| **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1292,6 +1333,7 @@ Search TestRuns of TestPlan
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1309,7 +1351,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
             var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
             var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
@@ -1384,9 +1429,9 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
-| **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan is required |  -  |
+| **401** | Unauthorized |  -  |
+| **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1394,14 +1439,13 @@ catch (ApiException e)
 # **ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet**
 > DateTime ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet (string id)
 
-Get max modified date in TestRun for TestPlan
-
-<br>Use case  <br>User sets test plan identifier  <br>User runs method execution  <br>System returns max modified date in TestRun for TestPlan
+Get last modification date of test plan's test results
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1419,12 +1463,15 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Test plan unique or global ID
 
             try
             {
-                // Get max modified date in TestRun for TestPlan
+                // Get last modification date of test plan's test results
                 DateTime result = apiInstance.ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet(id);
                 Debug.WriteLine(result);
             }
@@ -1445,7 +1492,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get max modified date in TestRun for TestPlan
+    // Get last modification date of test plan's test results
     ApiResponse<DateTime> response = apiInstance.ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -1463,7 +1510,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
+| **id** | **string** | Test plan unique or global ID |  |
 
 ### Return type
 
@@ -1482,9 +1529,9 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Update permission for test plan is required |  -  |
+| **200** | Last modification date exists |  -  |
+| **204** | Last modification date does not exist |  -  |
+| **403** | Read permission for test plan is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1500,6 +1547,7 @@ Send unlock TestPlan notification
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1517,7 +1565,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
 
             try
@@ -1576,11 +1627,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
 | **403** | Read permission for test plan required |  -  |
+| **401** | Unauthorized |  -  |
 | **404** | TestPlan not found |  -  |
 | **200** | Successful operation |  -  |
-| **401** | Unauthorized |  -  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1596,6 +1647,7 @@ Get TestPlans short models by Project identifiers
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1613,7 +1665,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var isDeleted = true;  // bool? |  (optional) 
             var requestBody = new List<Guid>(); // List<Guid> |  (optional) 
 
@@ -1678,9 +1733,9 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for project required |  -  |
 | **200** | Successful operation |  -  |
 | **404** | Project not found |  -  |
+| **403** | Read permission for project required |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1697,6 +1752,7 @@ Clone TestPlan
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1714,7 +1770,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
 
             try
@@ -1777,7 +1836,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
+| **201** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan required |  -  |
@@ -1797,6 +1856,7 @@ Complete TestPlan
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1814,7 +1874,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
 
             try
@@ -1873,11 +1936,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | &lt;br&gt;Change status from New to Completed forbidden  &lt;br&gt;Change status from Completed to Completed forbidden |  -  |
+| **204** | Successful operation |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan required |  -  |
+| **400** | &lt;br&gt;Change status from New to Completed forbidden  &lt;br&gt;Change status from Completed to Completed forbidden |  -  |
 | **404** | Can&#39;t find a TestPlan with id! |  -  |
-| **204** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1893,6 +1956,7 @@ Create TestPlan
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1910,7 +1974,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var testPlanPostModel = new TestPlanPostModel(); // TestPlanPostModel |  (optional) 
 
             try
@@ -1973,10 +2040,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **201** | Successful operation |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan required |  -  |
 | **409** | TestPlan with the same name already exists! |  -  |
-| **201** | Successful operation |  -  |
 | **400** | &lt;br&gt;Field is required  &lt;br&gt;Tags must be no more than 10! |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1993,6 +2060,7 @@ Delete TestPlan
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -2010,7 +2078,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
 
             try
@@ -2069,10 +2140,10 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Successful operation |  -  |
 | **403** | Delete permission for test plan required |  -  |
 | **404** | Can&#39;t find a TestPlan with id! |  -  |
 | **401** | Unauthorized |  -  |
+| **204** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2088,6 +2159,7 @@ Get TestPlan by Id
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -2105,7 +2177,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
 
             try
@@ -2168,10 +2243,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for test plan required |  -  |
 | **401** | Unauthorized |  -  |
-| **200** | Successful operation |  -  |
+| **403** | Read permission for test plan required |  -  |
 | **404** | Can&#39;t find a Project with id |  -  |
+| **200** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2187,6 +2262,7 @@ Get TestSuites Tree By Id
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -2204,7 +2280,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
 
             try
@@ -2268,9 +2347,9 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
+| **404** | Can&#39;t find a TestRun with id! |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
-| **404** | Can&#39;t find a TestRun with id! |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2286,6 +2365,7 @@ Pause TestPlan
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -2303,7 +2383,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
 
             try
@@ -2362,11 +2445,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **204** | Successful operation |  -  |
 | **400** | &lt;br&gt;Change status from New to Paused forbidden  &lt;br&gt;Change status from Paused to Paused forbidden  &lt;br&gt;Change status from Completed to Paused forbidden |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan required |  -  |
 | **404** | Can&#39;t find a TestPlan with id! |  -  |
-| **401** | Unauthorized |  -  |
-| **204** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2382,6 +2465,7 @@ Restore TestPlan
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -2399,7 +2483,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
 
             try
@@ -2458,10 +2545,10 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Update permission for test plan required |  -  |
-| **404** | Can&#39;t find a TestPlan with id! |  -  |
 | **401** | Unauthorized |  -  |
 | **204** | Successful operation |  -  |
+| **403** | Update permission for test plan required |  -  |
+| **404** | Can&#39;t find a TestPlan with id! |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2477,6 +2564,7 @@ Start TestPlan
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -2494,7 +2582,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
 
             try
@@ -2553,10 +2644,10 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Can&#39;t find a TestPlan with id! |  -  |
-| **403** | Update permission for test plan required |  -  |
 | **204** | Successful operation |  -  |
 | **401** | Unauthorized |  -  |
+| **404** | Can&#39;t find a TestPlan with id! |  -  |
+| **403** | Update permission for test plan required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2572,6 +2663,7 @@ Update TestPlan
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -2589,7 +2681,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestPlansApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var testPlanPutModel = new TestPlanPutModel(); // TestPlanPutModel |  (optional) 
 
             try
@@ -2648,13 +2743,13 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Can&#39;t find a TestPlan with id! |  -  |
-| **403** | Update permission for test plan required |  -  |
-| **400** | &lt;br&gt;Field is required  &lt;br&gt;Tags must be no more than 10!  &lt;br&gt;StartDate can&#39;t be more than EndDate! |  -  |
-| **409** | TestPlan with the same name already exists! |  -  |
-| **204** | Successful operation |  -  |
 | **401** | Unauthorized |  -  |
+| **409** | TestPlan with the same name already exists! |  -  |
 | **422** | Can&#39;t change ProjectId |  -  |
+| **403** | Update permission for test plan required |  -  |
+| **404** | Can&#39;t find a TestPlan with id! |  -  |
+| **204** | Successful operation |  -  |
+| **400** | &lt;br&gt;Field is required  &lt;br&gt;Tags must be no more than 10!  &lt;br&gt;StartDate can&#39;t be more than EndDate! |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

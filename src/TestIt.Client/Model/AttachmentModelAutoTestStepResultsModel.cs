@@ -32,6 +32,12 @@ namespace TestIt.Client.Model
     [DataContract(Name = "AttachmentModelAutoTestStepResultsModel")]
     public partial class AttachmentModelAutoTestStepResultsModel : IEquatable<AttachmentModelAutoTestStepResultsModel>, IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets Outcome
+        /// </summary>
+        [DataMember(Name = "outcome", EmitDefaultValue = false)]
+        public AvailableTestResultOutcome? Outcome { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AttachmentModelAutoTestStepResultsModel" /> class.
         /// </summary>
@@ -41,11 +47,11 @@ namespace TestIt.Client.Model
         /// <param name="startedOn">Step start date..</param>
         /// <param name="completedOn">Step end date..</param>
         /// <param name="duration">Expected or actual duration of the test run execution in seconds..</param>
-        /// <param name="outcome">Specifies the result of the autotest execution..</param>
+        /// <param name="outcome">outcome.</param>
         /// <param name="stepResults">Nested step results. The maximum nesting level is 15..</param>
         /// <param name="attachments">/// &lt;summary&gt;  Specifies an attachment GUID. Multiple values can be sent.  &lt;/summary&gt;.</param>
         /// <param name="parameters">\&quot;&lt;b&gt;parameter&lt;/b&gt;\&quot;: \&quot;&lt;b&gt;value&lt;/b&gt;\&quot; pair with arbitrary custom parameters. Multiple parameters can be sent..</param>
-        public AttachmentModelAutoTestStepResultsModel(string title = default(string), string description = default(string), string info = default(string), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? duration = default(long?), string outcome = default(string), List<AttachmentModelAutoTestStepResultsModel> stepResults = default(List<AttachmentModelAutoTestStepResultsModel>), List<AttachmentModel> attachments = default(List<AttachmentModel>), Dictionary<string, string> parameters = default(Dictionary<string, string>))
+        public AttachmentModelAutoTestStepResultsModel(string title = default(string), string description = default(string), string info = default(string), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? duration = default(long?), AvailableTestResultOutcome? outcome = default(AvailableTestResultOutcome?), List<AttachmentModelAutoTestStepResultsModel> stepResults = default(List<AttachmentModelAutoTestStepResultsModel>), List<AttachmentModel> attachments = default(List<AttachmentModel>), Dictionary<string, string> parameters = default(Dictionary<string, string>))
         {
             this.Title = title;
             this.Description = description;
@@ -100,13 +106,6 @@ namespace TestIt.Client.Model
         /// <value>Expected or actual duration of the test run execution in seconds.</value>
         [DataMember(Name = "duration", EmitDefaultValue = true)]
         public long? Duration { get; set; }
-
-        /// <summary>
-        /// Specifies the result of the autotest execution.
-        /// </summary>
-        /// <value>Specifies the result of the autotest execution.</value>
-        [DataMember(Name = "outcome", EmitDefaultValue = true)]
-        public string Outcome { get; set; }
 
         /// <summary>
         /// Nested step results. The maximum nesting level is 15.
@@ -214,8 +213,7 @@ namespace TestIt.Client.Model
                 ) && 
                 (
                     this.Outcome == input.Outcome ||
-                    (this.Outcome != null &&
-                    this.Outcome.Equals(input.Outcome))
+                    this.Outcome.Equals(input.Outcome)
                 ) && 
                 (
                     this.StepResults == input.StepResults ||
@@ -270,10 +268,7 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.Duration.GetHashCode();
                 }
-                if (this.Outcome != null)
-                {
-                    hashCode = (hashCode * 59) + this.Outcome.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.Outcome.GetHashCode();
                 if (this.StepResults != null)
                 {
                     hashCode = (hashCode * 59) + this.StepResults.GetHashCode();

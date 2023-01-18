@@ -4,17 +4,13 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ApiV2TestResultsIdAggregatedGet**](TestResultsApi.md#apiv2testresultsidaggregatedget) | **GET** /api/v2/testResults/{id}/aggregated |  |
-| [**ApiV2TestResultsIdAttachmentsAttachmentIdPut**](TestResultsApi.md#apiv2testresultsidattachmentsattachmentidput) | **PUT** /api/v2/testResults/{id}/attachments/{attachmentId} |  |
-| [**ApiV2TestResultsIdAttachmentsInfoGet**](TestResultsApi.md#apiv2testresultsidattachmentsinfoget) | **GET** /api/v2/testResults/{id}/attachments/info |  |
-| [**ApiV2TestResultsIdExternalProjectsExternalProjectIdDefectPost**](TestResultsApi.md#apiv2testresultsidexternalprojectsexternalprojectiddefectpost) | **POST** /api/v2/testResults/{id}/externalProjects/{externalProjectId}/defect |  |
-| [**ApiV2TestResultsIdExternalProjectsExternalProjectIdFormGet**](TestResultsApi.md#apiv2testresultsidexternalprojectsexternalprojectidformget) | **GET** /api/v2/testResults/{id}/externalProjects/{externalProjectId}/form |  |
-| [**ApiV2TestResultsIdGet**](TestResultsApi.md#apiv2testresultsidget) | **GET** /api/v2/testResults/{id} |  |
-| [**ApiV2TestResultsIdLinkRequestsPost**](TestResultsApi.md#apiv2testresultsidlinkrequestspost) | **POST** /api/v2/testResults/{id}/linkRequests |  |
-| [**ApiV2TestResultsIdPut**](TestResultsApi.md#apiv2testresultsidput) | **PUT** /api/v2/testResults/{id} |  |
-| [**ApiV2TestResultsLinkRequestsLinkRequestIdUsePost**](TestResultsApi.md#apiv2testresultslinkrequestslinkrequestidusepost) | **POST** /api/v2/testResults/linkRequests/{linkRequestId}/use |  |
-| [**ApiV2TestResultsSearchPost**](TestResultsApi.md#apiv2testresultssearchpost) | **POST** /api/v2/testResults/search |  |
-| [**ApiV2TestResultsStatisticsFilterPost**](TestResultsApi.md#apiv2testresultsstatisticsfilterpost) | **POST** /api/v2/testResults/statistics/filter |  |
+| [**ApiV2TestResultsIdAggregatedGet**](TestResultsApi.md#apiv2testresultsidaggregatedget) | **GET** /api/v2/testResults/{id}/aggregated | Get test result by ID aggregated with previous results |
+| [**ApiV2TestResultsIdAttachmentsAttachmentIdPut**](TestResultsApi.md#apiv2testresultsidattachmentsattachmentidput) | **PUT** /api/v2/testResults/{id}/attachments/{attachmentId} | Attach file to the test result |
+| [**ApiV2TestResultsIdAttachmentsInfoGet**](TestResultsApi.md#apiv2testresultsidattachmentsinfoget) | **GET** /api/v2/testResults/{id}/attachments/info | Get test result attachments meta-information |
+| [**ApiV2TestResultsIdGet**](TestResultsApi.md#apiv2testresultsidget) | **GET** /api/v2/testResults/{id} | Get test result by ID |
+| [**ApiV2TestResultsIdPut**](TestResultsApi.md#apiv2testresultsidput) | **PUT** /api/v2/testResults/{id} | Edit test result by ID |
+| [**ApiV2TestResultsSearchPost**](TestResultsApi.md#apiv2testresultssearchpost) | **POST** /api/v2/testResults/search | Search for test results |
+| [**ApiV2TestResultsStatisticsFilterPost**](TestResultsApi.md#apiv2testresultsstatisticsfilterpost) | **POST** /api/v2/testResults/statistics/filter | Search for test results and extract statistics |
 | [**CreateAttachment**](TestResultsApi.md#createattachment) | **POST** /api/v2/testResults/{id}/attachments | Upload and link attachment to TestResult |
 | [**DeleteAttachment**](TestResultsApi.md#deleteattachment) | **DELETE** /api/v2/testResults/{id}/attachments/{attachmentId} | Remove attachment and unlink from TestResult |
 | [**DownloadAttachment**](TestResultsApi.md#downloadattachment) | **GET** /api/v2/testResults/{id}/attachments/{attachmentId} | Get attachment of TestResult |
@@ -25,12 +21,13 @@ All URIs are relative to *http://localhost*
 # **ApiV2TestResultsIdAggregatedGet**
 > TestResultModel ApiV2TestResultsIdAggregatedGet (Guid id)
 
-
+Get test result by ID aggregated with previous results
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -48,11 +45,15 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestResultsApi(config);
-            var id = "id_example";  // Guid | 
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestResultsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Test result unique ID
 
             try
             {
+                // Get test result by ID aggregated with previous results
                 TestResultModel result = apiInstance.ApiV2TestResultsIdAggregatedGet(id);
                 Debug.WriteLine(result);
             }
@@ -73,6 +74,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Get test result by ID aggregated with previous results
     ApiResponse<TestResultModel> response = apiInstance.ApiV2TestResultsIdAggregatedGetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -90,7 +92,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
+| **id** | **Guid** | Test result unique ID |  |
 
 ### Return type
 
@@ -110,6 +112,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **403** | Read permission for the test result is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -117,12 +120,13 @@ catch (ApiException e)
 # **ApiV2TestResultsIdAttachmentsAttachmentIdPut**
 > void ApiV2TestResultsIdAttachmentsAttachmentIdPut (Guid id, Guid attachmentId)
 
-
+Attach file to the test result
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -140,12 +144,16 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestResultsApi(config);
-            var id = "id_example";  // Guid | 
-            var attachmentId = "attachmentId_example";  // Guid | 
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestResultsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Test result unique ID
+            var attachmentId = "attachmentId_example";  // Guid | Attachment unique ID
 
             try
             {
+                // Attach file to the test result
                 apiInstance.ApiV2TestResultsIdAttachmentsAttachmentIdPut(id, attachmentId);
             }
             catch (ApiException  e)
@@ -165,6 +173,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Attach file to the test result
     apiInstance.ApiV2TestResultsIdAttachmentsAttachmentIdPutWithHttpInfo(id, attachmentId);
 }
 catch (ApiException e)
@@ -179,8 +188,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
-| **attachmentId** | **Guid** |  |  |
+| **id** | **Guid** | Test result unique ID |  |
+| **attachmentId** | **Guid** | Attachment unique ID |  |
 
 ### Return type
 
@@ -193,13 +202,14 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **403** | Only edits from assigned user are allowed |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -207,12 +217,13 @@ void (empty response body)
 # **ApiV2TestResultsIdAttachmentsInfoGet**
 > List&lt;AttachmentModel&gt; ApiV2TestResultsIdAttachmentsInfoGet (Guid id)
 
-
+Get test result attachments meta-information
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -230,11 +241,15 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestResultsApi(config);
-            var id = "id_example";  // Guid | 
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestResultsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Test result unique ID
 
             try
             {
+                // Get test result attachments meta-information
                 List<AttachmentModel> result = apiInstance.ApiV2TestResultsIdAttachmentsInfoGet(id);
                 Debug.WriteLine(result);
             }
@@ -255,6 +270,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Get test result attachments meta-information
     ApiResponse<List<AttachmentModel>> response = apiInstance.ApiV2TestResultsIdAttachmentsInfoGetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -272,7 +288,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
+| **id** | **Guid** | Test result unique ID |  |
 
 ### Return type
 
@@ -292,196 +308,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="apiv2testresultsidexternalprojectsexternalprojectiddefectpost"></a>
-# **ApiV2TestResultsIdExternalProjectsExternalProjectIdDefectPost**
-> string ApiV2TestResultsIdExternalProjectsExternalProjectIdDefectPost (Guid id, Guid externalProjectId, Object body = null)
-
-
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
-
-namespace Example
-{
-    public class ApiV2TestResultsIdExternalProjectsExternalProjectIdDefectPostExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure API key authorization: Bearer or PrivateToken
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-
-            var apiInstance = new TestResultsApi(config);
-            var id = "id_example";  // Guid | 
-            var externalProjectId = "externalProjectId_example";  // Guid | 
-            var body = null;  // Object |  (optional) 
-
-            try
-            {
-                string result = apiInstance.ApiV2TestResultsIdExternalProjectsExternalProjectIdDefectPost(id, externalProjectId, body);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling TestResultsApi.ApiV2TestResultsIdExternalProjectsExternalProjectIdDefectPost: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the ApiV2TestResultsIdExternalProjectsExternalProjectIdDefectPostWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    ApiResponse<string> response = apiInstance.ApiV2TestResultsIdExternalProjectsExternalProjectIdDefectPostWithHttpInfo(id, externalProjectId, body);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling TestResultsApi.ApiV2TestResultsIdExternalProjectsExternalProjectIdDefectPostWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **id** | **Guid** |  |  |
-| **externalProjectId** | **Guid** |  |  |
-| **body** | **Object** |  | [optional]  |
-
-### Return type
-
-**string**
-
-### Authorization
-
-[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **201** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="apiv2testresultsidexternalprojectsexternalprojectidformget"></a>
-# **ApiV2TestResultsIdExternalProjectsExternalProjectIdFormGet**
-> Object ApiV2TestResultsIdExternalProjectsExternalProjectIdFormGet (Guid id, Guid externalProjectId)
-
-
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
-
-namespace Example
-{
-    public class ApiV2TestResultsIdExternalProjectsExternalProjectIdFormGetExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure API key authorization: Bearer or PrivateToken
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-
-            var apiInstance = new TestResultsApi(config);
-            var id = "id_example";  // Guid | 
-            var externalProjectId = "externalProjectId_example";  // Guid | 
-
-            try
-            {
-                Object result = apiInstance.ApiV2TestResultsIdExternalProjectsExternalProjectIdFormGet(id, externalProjectId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling TestResultsApi.ApiV2TestResultsIdExternalProjectsExternalProjectIdFormGet: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the ApiV2TestResultsIdExternalProjectsExternalProjectIdFormGetWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    ApiResponse<Object> response = apiInstance.ApiV2TestResultsIdExternalProjectsExternalProjectIdFormGetWithHttpInfo(id, externalProjectId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling TestResultsApi.ApiV2TestResultsIdExternalProjectsExternalProjectIdFormGetWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **id** | **Guid** |  |  |
-| **externalProjectId** | **Guid** |  |  |
-
-### Return type
-
-**Object**
-
-### Authorization
-
-[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **403** | Read permission for the test result is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -489,12 +316,13 @@ catch (ApiException e)
 # **ApiV2TestResultsIdGet**
 > TestResultModel ApiV2TestResultsIdGet (Guid id)
 
-
+Get test result by ID
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -512,11 +340,15 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestResultsApi(config);
-            var id = "id_example";  // Guid | 
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestResultsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Test result unique ID
 
             try
             {
+                // Get test result by ID
                 TestResultModel result = apiInstance.ApiV2TestResultsIdGet(id);
                 Debug.WriteLine(result);
             }
@@ -537,6 +369,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Get test result by ID
     ApiResponse<TestResultModel> response = apiInstance.ApiV2TestResultsIdGetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -554,7 +387,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
+| **id** | **Guid** | Test result unique ID |  |
 
 ### Return type
 
@@ -574,100 +407,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="apiv2testresultsidlinkrequestspost"></a>
-# **ApiV2TestResultsIdLinkRequestsPost**
-> Guid ApiV2TestResultsIdLinkRequestsPost (Guid id, TestResultLinkRequestPostModel testResultLinkRequestPostModel = null)
-
-
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
-
-namespace Example
-{
-    public class ApiV2TestResultsIdLinkRequestsPostExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure API key authorization: Bearer or PrivateToken
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-
-            var apiInstance = new TestResultsApi(config);
-            var id = "id_example";  // Guid | 
-            var testResultLinkRequestPostModel = new TestResultLinkRequestPostModel(); // TestResultLinkRequestPostModel |  (optional) 
-
-            try
-            {
-                Guid result = apiInstance.ApiV2TestResultsIdLinkRequestsPost(id, testResultLinkRequestPostModel);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling TestResultsApi.ApiV2TestResultsIdLinkRequestsPost: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the ApiV2TestResultsIdLinkRequestsPostWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    ApiResponse<Guid> response = apiInstance.ApiV2TestResultsIdLinkRequestsPostWithHttpInfo(id, testResultLinkRequestPostModel);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling TestResultsApi.ApiV2TestResultsIdLinkRequestsPostWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **id** | **Guid** |  |  |
-| **testResultLinkRequestPostModel** | [**TestResultLinkRequestPostModel**](TestResultLinkRequestPostModel.md) |  | [optional]  |
-
-### Return type
-
-**Guid**
-
-### Authorization
-
-[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **201** | Success |  -  |
+| **403** | Read permission for the test result is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -675,12 +415,13 @@ catch (ApiException e)
 # **ApiV2TestResultsIdPut**
 > void ApiV2TestResultsIdPut (Guid id, TestResultUpdateModel testResultUpdateModel = null)
 
-
+Edit test result by ID
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -698,12 +439,16 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestResultsApi(config);
-            var id = "id_example";  // Guid | 
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestResultsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Test result unique ID
             var testResultUpdateModel = new TestResultUpdateModel(); // TestResultUpdateModel |  (optional) 
 
             try
             {
+                // Edit test result by ID
                 apiInstance.ApiV2TestResultsIdPut(id, testResultUpdateModel);
             }
             catch (ApiException  e)
@@ -723,6 +468,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Edit test result by ID
     apiInstance.ApiV2TestResultsIdPutWithHttpInfo(id, testResultUpdateModel);
 }
 catch (ApiException e)
@@ -737,106 +483,12 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
+| **id** | **Guid** | Test result unique ID |  |
 | **testResultUpdateModel** | [**TestResultUpdateModel**](TestResultUpdateModel.md) |  | [optional]  |
 
 ### Return type
 
 void (empty response body)
-
-### Authorization
-
-[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="apiv2testresultslinkrequestslinkrequestidusepost"></a>
-# **ApiV2TestResultsLinkRequestsLinkRequestIdUsePost**
-> LinkModel ApiV2TestResultsLinkRequestsLinkRequestIdUsePost (Guid linkRequestId, UseTestResultLinkRequestPostModel useTestResultLinkRequestPostModel = null)
-
-
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
-
-namespace Example
-{
-    public class ApiV2TestResultsLinkRequestsLinkRequestIdUsePostExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure API key authorization: Bearer or PrivateToken
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-
-            var apiInstance = new TestResultsApi(config);
-            var linkRequestId = "linkRequestId_example";  // Guid | 
-            var useTestResultLinkRequestPostModel = new UseTestResultLinkRequestPostModel(); // UseTestResultLinkRequestPostModel |  (optional) 
-
-            try
-            {
-                LinkModel result = apiInstance.ApiV2TestResultsLinkRequestsLinkRequestIdUsePost(linkRequestId, useTestResultLinkRequestPostModel);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling TestResultsApi.ApiV2TestResultsLinkRequestsLinkRequestIdUsePost: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the ApiV2TestResultsLinkRequestsLinkRequestIdUsePostWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    ApiResponse<LinkModel> response = apiInstance.ApiV2TestResultsLinkRequestsLinkRequestIdUsePostWithHttpInfo(linkRequestId, useTestResultLinkRequestPostModel);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling TestResultsApi.ApiV2TestResultsLinkRequestsLinkRequestIdUsePostWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **linkRequestId** | **Guid** |  |  |
-| **useTestResultLinkRequestPostModel** | [**UseTestResultLinkRequestPostModel**](UseTestResultLinkRequestPostModel.md) |  | [optional]  |
-
-### Return type
-
-[**LinkModel**](LinkModel.md)
 
 ### Authorization
 
@@ -851,6 +503,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **403** | Only edits from assigned user are allowed |  -  |
 | **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -859,12 +512,13 @@ catch (ApiException e)
 # **ApiV2TestResultsSearchPost**
 > List&lt;TestResultShortGetModel&gt; ApiV2TestResultsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, TestResultsFilterModel testResultsFilterModel = null)
 
-
+Search for test results
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -882,7 +536,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestResultsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestResultsApi(httpClient, config, httpClientHandler);
             var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
             var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
@@ -892,6 +549,7 @@ namespace Example
 
             try
             {
+                // Search for test results
                 List<TestResultShortGetModel> result = apiInstance.ApiV2TestResultsSearchPost(skip, take, orderBy, searchField, searchValue, testResultsFilterModel);
                 Debug.WriteLine(result);
             }
@@ -912,6 +570,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Search for test results
     ApiResponse<List<TestResultShortGetModel>> response = apiInstance.ApiV2TestResultsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, testResultsFilterModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -953,6 +612,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **403** | Read permission for all requested test runs is required |  -  |
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -961,12 +621,13 @@ catch (ApiException e)
 # **ApiV2TestResultsStatisticsFilterPost**
 > TestResultsStatisticsGetModel ApiV2TestResultsStatisticsFilterPost (TestResultsFilterModel testResultsFilterModel = null)
 
-
+Search for test results and extract statistics
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -984,11 +645,15 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestResultsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestResultsApi(httpClient, config, httpClientHandler);
             var testResultsFilterModel = new TestResultsFilterModel(); // TestResultsFilterModel |  (optional) 
 
             try
             {
+                // Search for test results and extract statistics
                 TestResultsStatisticsGetModel result = apiInstance.ApiV2TestResultsStatisticsFilterPost(testResultsFilterModel);
                 Debug.WriteLine(result);
             }
@@ -1009,6 +674,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Search for test results and extract statistics
     ApiResponse<TestResultsStatisticsGetModel> response = apiInstance.ApiV2TestResultsStatisticsFilterPostWithHttpInfo(testResultsFilterModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -1045,13 +711,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **403** | Read permission for all requested test runs is required |  -  |
 | **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="createattachment"></a>
 # **CreateAttachment**
-> Guid CreateAttachment (Guid id, System.IO.Stream file = null)
+> Guid CreateAttachment (Guid id, FileParameter file = null)
 
 Upload and link attachment to TestResult
 
@@ -1061,6 +728,7 @@ Upload and link attachment to TestResult
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1078,9 +746,12 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestResultsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestResultsApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Test result internal identifier (guid format)
-            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | Select file (optional) 
+            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // FileParameter | Select file (optional) 
 
             try
             {
@@ -1124,7 +795,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid** | Test result internal identifier (guid format) |  |
-| **file** | **System.IO.Stream****System.IO.Stream** | Select file | [optional]  |
+| **file** | **FileParameter****FileParameter** | Select file | [optional]  |
 
 ### Return type
 
@@ -1143,11 +814,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **401** | Unauthorized |  -  |
-| **400** | Bad Request |  -  |
-| **403** | Update permission for test result required |  -  |
 | **404** |  |  -  |
+| **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Update permission for test result required |  -  |
 | **413** | Multipart body length limit exceeded (default constraint is one gigabyte) |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1164,6 +835,7 @@ Remove attachment and unlink from TestResult
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1181,7 +853,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestResultsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestResultsApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Test result internal identifier (guid format)
             var attachmentId = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Attachment internal identifier (guid format)
 
@@ -1242,10 +917,10 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
 | **403** | Update permission for test result required |  -  |
-| **204** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **204** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1261,6 +936,7 @@ Get attachment of TestResult
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1278,7 +954,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestResultsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestResultsApi(httpClient, config, httpClientHandler);
             var attachmentId = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Attachment internal identifier (guid format)
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Test result internal identifier (guid format)
             var width = 56;  // int? | Width of the result image (optional) 
@@ -1349,11 +1028,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
-| **404** | &lt;br&gt;File not found  &lt;br&gt;Attachment not found |  -  |
-| **403** | Read permission for test result required |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **200** | Success |  -  |
+| **403** | Read permission for test result required |  -  |
+| **404** | &lt;br&gt;File not found  &lt;br&gt;Attachment not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1369,6 +1048,7 @@ Get Metadata of TestResult's attachment
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1386,7 +1066,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestResultsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestResultsApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Test result internal identifier (guid format)
             var attachmentId = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Attachment internal identifier (guid format)
 
@@ -1451,11 +1134,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
-| **401** | Unauthorized |  -  |
 | **404** | File not found |  -  |
-| **403** | Read permission for test result required |  -  |
+| **401** | Unauthorized |  -  |
 | **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **403** | Read permission for test result required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1471,6 +1154,7 @@ Get all attachments of TestResult
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1488,7 +1172,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestResultsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestResultsApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Test result internal identifier (guid format)
 
             try
@@ -1552,10 +1239,10 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **400** | Bad Request |  -  |
-| **404** | TestResult not found |  -  |
-| **200** | Success |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test result required |  -  |
+| **200** | Success |  -  |
+| **404** | TestResult not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

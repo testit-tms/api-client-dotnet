@@ -19,6 +19,9 @@ Name | Type | Description | Notes
 **Priority** | **WorkItemPriorityModel** |  | [optional] 
 **IsDeleted** | **bool** |  | [optional] 
 **VersionId** | **Guid** | used for versioning changes in workitem | [optional] 
+**IsAutomated** | **bool** |  | [optional] 
+**SectionId** | **Guid** |  | [optional] 
+**Tags** | [**List&lt;TagShortModel&gt;**](TagShortModel.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

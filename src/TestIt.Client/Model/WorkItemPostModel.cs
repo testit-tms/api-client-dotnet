@@ -36,19 +36,19 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets EntityTypeName
         /// </summary>
-        [DataMember(Name = "entityTypeName", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "entityTypeName", IsRequired = true, EmitDefaultValue = true)]
         public WorkItemEntityTypes EntityTypeName { get; set; }
 
         /// <summary>
         /// Gets or Sets State
         /// </summary>
-        [DataMember(Name = "state", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "state", IsRequired = true, EmitDefaultValue = true)]
         public WorkItemStates State { get; set; }
 
         /// <summary>
         /// Gets or Sets Priority
         /// </summary>
-        [DataMember(Name = "priority", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "priority", IsRequired = true, EmitDefaultValue = true)]
         public WorkItemPriorityModel Priority { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemPostModel" /> class.
@@ -140,38 +140,38 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Steps
         /// </summary>
-        [DataMember(Name = "steps", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "steps", IsRequired = true, EmitDefaultValue = true)]
         public List<StepPutModel> Steps { get; set; }
 
         /// <summary>
         /// Gets or Sets PreconditionSteps
         /// </summary>
-        [DataMember(Name = "preconditionSteps", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "preconditionSteps", IsRequired = true, EmitDefaultValue = true)]
         public List<StepPutModel> PreconditionSteps { get; set; }
 
         /// <summary>
         /// Gets or Sets PostconditionSteps
         /// </summary>
-        [DataMember(Name = "postconditionSteps", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "postconditionSteps", IsRequired = true, EmitDefaultValue = true)]
         public List<StepPutModel> PostconditionSteps { get; set; }
 
         /// <summary>
         /// Must be 0 for shared steps and greater than 0 for the other types of work items
         /// </summary>
         /// <value>Must be 0 for shared steps and greater than 0 for the other types of work items</value>
-        [DataMember(Name = "duration", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "duration", IsRequired = true, EmitDefaultValue = true)]
         public int Duration { get; set; }
 
         /// <summary>
         /// Gets or Sets Attributes
         /// </summary>
-        [DataMember(Name = "attributes", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "attributes", IsRequired = true, EmitDefaultValue = true)]
         public Dictionary<string, Object> Attributes { get; set; }
 
         /// <summary>
         /// Gets or Sets Tags
         /// </summary>
-        [DataMember(Name = "tags", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "tags", IsRequired = true, EmitDefaultValue = true)]
         public List<TagShortModel> Tags { get; set; }
 
         /// <summary>
@@ -189,26 +189,26 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Links
         /// </summary>
-        [DataMember(Name = "links", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "links", IsRequired = true, EmitDefaultValue = true)]
         public List<LinkPostModel> Links { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// This property is used to link workitem with project
         /// </summary>
         /// <value>This property is used to link workitem with project</value>
-        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
         /// Gets or Sets SectionId
         /// </summary>
-        [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid SectionId { get; set; }
 
         /// <summary>

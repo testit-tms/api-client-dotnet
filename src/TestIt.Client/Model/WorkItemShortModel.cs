@@ -34,9 +34,15 @@ namespace TestIt.Client.Model
     {
 
         /// <summary>
+        /// Gets or Sets State
+        /// </summary>
+        [DataMember(Name = "state", IsRequired = true, EmitDefaultValue = true)]
+        public WorkItemStates State { get; set; }
+
+        /// <summary>
         /// Gets or Sets Priority
         /// </summary>
-        [DataMember(Name = "priority", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "priority", IsRequired = true, EmitDefaultValue = true)]
         public WorkItemPriorityModel Priority { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemShortModel" /> class.
@@ -60,12 +66,12 @@ namespace TestIt.Client.Model
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="state">Property can have one of these values: NeedsWork, NotReady, Ready (required).</param>
+        /// <param name="state">state (required).</param>
         /// <param name="priority">priority (required).</param>
         /// <param name="isDeleted">isDeleted.</param>
         /// <param name="tagNames">tagNames.</param>
         /// <param name="iterations">iterations.</param>
-        public WorkItemShortModel(Guid id = default(Guid), Guid versionId = default(Guid), string name = default(string), string entityTypeName = default(string), Guid projectId = default(Guid), Guid sectionId = default(Guid), bool isAutomated = default(bool), long globalId = default(long), int duration = default(int), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), string state = default(string), WorkItemPriorityModel priority = default(WorkItemPriorityModel), bool isDeleted = default(bool), List<string> tagNames = default(List<string>), List<IterationModel> iterations = default(List<IterationModel>))
+        public WorkItemShortModel(Guid id = default(Guid), Guid versionId = default(Guid), string name = default(string), string entityTypeName = default(string), Guid projectId = default(Guid), Guid sectionId = default(Guid), bool isAutomated = default(bool), long globalId = default(long), int duration = default(int), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), WorkItemStates state = default(WorkItemStates), WorkItemPriorityModel priority = default(WorkItemPriorityModel), bool isDeleted = default(bool), List<string> tagNames = default(List<string>), List<IterationModel> iterations = default(List<IterationModel>))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -81,11 +87,6 @@ namespace TestIt.Client.Model
             this.EntityTypeName = entityTypeName;
             this.ProjectId = projectId;
             this.SectionId = sectionId;
-            // to ensure "state" is required (not null)
-            if (state == null)
-            {
-                throw new ArgumentNullException("state is a required property for WorkItemShortModel and cannot be null");
-            }
             this.State = state;
             this.Priority = priority;
             this.Id = id;
@@ -119,28 +120,28 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Property can have one of these values: CheckLists, SharedSteps, TestCases
         /// </summary>
         /// <value>Property can have one of these values: CheckLists, SharedSteps, TestCases</value>
-        [DataMember(Name = "entityTypeName", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "entityTypeName", IsRequired = true, EmitDefaultValue = true)]
         public string EntityTypeName { get; set; }
 
         /// <summary>
         /// This property is used to link autotest with project
         /// </summary>
         /// <value>This property is used to link autotest with project</value>
-        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
         /// This property links workitem with section
         /// </summary>
         /// <value>This property links workitem with section</value>
-        [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid SectionId { get; set; }
 
         /// <summary>
@@ -190,13 +191,6 @@ namespace TestIt.Client.Model
         /// </summary>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
-
-        /// <summary>
-        /// Property can have one of these values: NeedsWork, NotReady, Ready
-        /// </summary>
-        /// <value>Property can have one of these values: NeedsWork, NotReady, Ready</value>
-        [DataMember(Name = "state", IsRequired = true, EmitDefaultValue = false)]
-        public string State { get; set; }
 
         /// <summary>
         /// Gets or Sets IsDeleted
@@ -348,8 +342,7 @@ namespace TestIt.Client.Model
                 ) && 
                 (
                     this.State == input.State ||
-                    (this.State != null &&
-                    this.State.Equals(input.State))
+                    this.State.Equals(input.State)
                 ) && 
                 (
                     this.Priority == input.Priority ||
@@ -429,10 +422,7 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
                 }
-                if (this.State != null)
-                {
-                    hashCode = (hashCode * 59) + this.State.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.State.GetHashCode();
                 hashCode = (hashCode * 59) + this.Priority.GetHashCode();
                 hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
                 if (this.TagNames != null)

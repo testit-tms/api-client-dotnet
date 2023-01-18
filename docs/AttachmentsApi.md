@@ -6,7 +6,7 @@ All URIs are relative to *http://localhost*
 |--------|--------------|-------------|
 | [**ApiV2AttachmentsIdDelete**](AttachmentsApi.md#apiv2attachmentsiddelete) | **DELETE** /api/v2/attachments/{id} | Delete attachment file |
 | [**ApiV2AttachmentsIdGet**](AttachmentsApi.md#apiv2attachmentsidget) | **GET** /api/v2/attachments/{id} | Download attachment file |
-| [**ApiV2AttachmentsOccupiedFileStorageSizeGet**](AttachmentsApi.md#apiv2attachmentsoccupiedfilestoragesizeget) | **GET** /api/v2/attachments/occupiedFileStorageSize |  |
+| [**ApiV2AttachmentsOccupiedFileStorageSizeGet**](AttachmentsApi.md#apiv2attachmentsoccupiedfilestoragesizeget) | **GET** /api/v2/attachments/occupiedFileStorageSize | Get size of attachments storage in bytes |
 | [**ApiV2AttachmentsPost**](AttachmentsApi.md#apiv2attachmentspost) | **POST** /api/v2/attachments | Upload new attachment file |
 
 <a name="apiv2attachmentsiddelete"></a>
@@ -19,6 +19,7 @@ Delete attachment file
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -36,7 +37,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new AttachmentsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new AttachmentsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // Guid | 
 
             try
@@ -102,7 +106,7 @@ void (empty response body)
 
 <a name="apiv2attachmentsidget"></a>
 # **ApiV2AttachmentsIdGet**
-> System.IO.Stream ApiV2AttachmentsIdGet (Guid id, int? width = null, int? height = null, ImageResizeType? resizeType = null, string backgroundColor = null, bool? preview = null)
+> FileParameter ApiV2AttachmentsIdGet (Guid id, int? width = null, int? height = null, ImageResizeType? resizeType = null, string backgroundColor = null, bool? preview = null)
 
 Download attachment file
 
@@ -110,6 +114,7 @@ Download attachment file
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -127,7 +132,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new AttachmentsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new AttachmentsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // Guid | 
             var width = 56;  // int? | Width of the result image (optional) 
             var height = 56;  // int? | Height of the result image (optional) 
@@ -138,7 +146,7 @@ namespace Example
             try
             {
                 // Download attachment file
-                System.IO.Stream result = apiInstance.ApiV2AttachmentsIdGet(id, width, height, resizeType, backgroundColor, preview);
+                FileParameter result = apiInstance.ApiV2AttachmentsIdGet(id, width, height, resizeType, backgroundColor, preview);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -159,7 +167,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Download attachment file
-    ApiResponse<System.IO.Stream> response = apiInstance.ApiV2AttachmentsIdGetWithHttpInfo(id, width, height, resizeType, backgroundColor, preview);
+    ApiResponse<FileParameter> response = apiInstance.ApiV2AttachmentsIdGetWithHttpInfo(id, width, height, resizeType, backgroundColor, preview);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -185,7 +193,7 @@ catch (ApiException e)
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -206,14 +214,15 @@ catch (ApiException e)
 
 <a name="apiv2attachmentsoccupiedfilestoragesizeget"></a>
 # **ApiV2AttachmentsOccupiedFileStorageSizeGet**
-> float ApiV2AttachmentsOccupiedFileStorageSizeGet ()
+> long ApiV2AttachmentsOccupiedFileStorageSizeGet ()
 
-
+Get size of attachments storage in bytes
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -231,11 +240,15 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new AttachmentsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new AttachmentsApi(httpClient, config, httpClientHandler);
 
             try
             {
-                float result = apiInstance.ApiV2AttachmentsOccupiedFileStorageSizeGet();
+                // Get size of attachments storage in bytes
+                long result = apiInstance.ApiV2AttachmentsOccupiedFileStorageSizeGet();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -255,7 +268,8 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<float> response = apiInstance.ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfo();
+    // Get size of attachments storage in bytes
+    ApiResponse<long> response = apiInstance.ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -272,7 +286,7 @@ catch (ApiException e)
 This endpoint does not need any parameter.
 ### Return type
 
-**float**
+**long**
 
 ### Authorization
 
@@ -293,7 +307,7 @@ This endpoint does not need any parameter.
 
 <a name="apiv2attachmentspost"></a>
 # **ApiV2AttachmentsPost**
-> AttachmentModel ApiV2AttachmentsPost (System.IO.Stream file = null)
+> AttachmentModel ApiV2AttachmentsPost (FileParameter file = null)
 
 Upload new attachment file
 
@@ -303,6 +317,7 @@ File size is restricted to 1 GB (1 073 741 824 bytes)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -320,8 +335,11 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new AttachmentsApi(config);
-            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new AttachmentsApi(httpClient, config, httpClientHandler);
+            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // FileParameter |  (optional) 
 
             try
             {
@@ -364,7 +382,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **file** | **System.IO.Stream****System.IO.Stream** |  | [optional]  |
+| **file** | **FileParameter****FileParameter** |  | [optional]  |
 
 ### Return type
 
@@ -383,10 +401,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
-| **400** | &lt;br&gt;- Invalid file contents  &lt;br&gt;- Invalid HTTP headers |  -  |
-| **201** | Success |  -  |
 | **403** | Forbidden |  -  |
+| **400** | &lt;br&gt;- Invalid file contents  &lt;br&gt;- Invalid HTTP headers |  -  |
+| **401** | Unauthorized |  -  |
+| **201** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

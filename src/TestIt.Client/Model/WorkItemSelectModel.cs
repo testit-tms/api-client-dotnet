@@ -37,7 +37,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="filter">filter.</param>
         /// <param name="extractionModel">extractionModel.</param>
-        public WorkItemSelectModel(WorkItemFilterModel filter = default(WorkItemFilterModel), WorkItemExtractionModel extractionModel = default(WorkItemExtractionModel))
+        public WorkItemSelectModel(WorkItemFilterModel filter = default(WorkItemFilterModel), WorkItemsExtractionModel extractionModel = default(WorkItemsExtractionModel))
         {
             this.Filter = filter;
             this.ExtractionModel = extractionModel;
@@ -53,7 +53,7 @@ namespace TestIt.Client.Model
         /// Gets or Sets ExtractionModel
         /// </summary>
         [DataMember(Name = "extractionModel", EmitDefaultValue = false)]
-        public WorkItemExtractionModel ExtractionModel { get; set; }
+        public WorkItemsExtractionModel ExtractionModel { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

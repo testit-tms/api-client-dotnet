@@ -80,19 +80,19 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets FileId
         /// </summary>
-        [DataMember(Name = "fileId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "fileId", IsRequired = true, EmitDefaultValue = true)]
         public string FileId { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Size
         /// </summary>
-        [DataMember(Name = "size", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "size", IsRequired = true, EmitDefaultValue = true)]
         public float Size { get; set; }
 
         /// <summary>
@@ -122,14 +122,14 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Specifies the GUID of the attachment.
         /// </summary>
         /// <value>Specifies the GUID of the attachment.</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>

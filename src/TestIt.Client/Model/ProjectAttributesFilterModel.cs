@@ -27,20 +27,20 @@ using OpenAPIDateConverter = TestIt.Client.Client.OpenAPIDateConverter;
 namespace TestIt.Client.Model
 {
     /// <summary>
-    /// SearchAttributesInProjectQueryModel
+    /// ProjectAttributesFilterModel
     /// </summary>
-    [DataContract(Name = "SearchAttributesInProjectQueryModel")]
-    public partial class SearchAttributesInProjectQueryModel : IEquatable<SearchAttributesInProjectQueryModel>, IValidatableObject
+    [DataContract(Name = "ProjectAttributesFilterModel")]
+    public partial class ProjectAttributesFilterModel : IEquatable<ProjectAttributesFilterModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SearchAttributesInProjectQueryModel" /> class.
+        /// Initializes a new instance of the <see cref="ProjectAttributesFilterModel" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="isRequired">isRequired.</param>
-        /// <param name="isGlobal">isGlobal.</param>
-        /// <param name="types">types.</param>
-        /// <param name="isEnabled">isEnabled.</param>
-        public SearchAttributesInProjectQueryModel(string name = default(string), bool? isRequired = default(bool?), bool? isGlobal = default(bool?), List<CustomAttributeTypesEnum> types = default(List<CustomAttributeTypesEnum>), bool? isEnabled = default(bool?))
+        /// <param name="name">Specifies an attribute name to search for.</param>
+        /// <param name="isRequired">Specifies an attribute mandatory status to search for.</param>
+        /// <param name="isGlobal">Specifies an attribute global status to search for.</param>
+        /// <param name="types">Specifies an attribute types to search for.</param>
+        /// <param name="isEnabled">Specifies an attribute enabled status to search for.</param>
+        public ProjectAttributesFilterModel(string name = default(string), bool? isRequired = default(bool?), bool? isGlobal = default(bool?), List<CustomAttributeTypesEnum> types = default(List<CustomAttributeTypesEnum>), bool? isEnabled = default(bool?))
         {
             this.Name = name;
             this.IsRequired = isRequired;
@@ -50,32 +50,37 @@ namespace TestIt.Client.Model
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Specifies an attribute name to search for
         /// </summary>
+        /// <value>Specifies an attribute name to search for</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsRequired
+        /// Specifies an attribute mandatory status to search for
         /// </summary>
+        /// <value>Specifies an attribute mandatory status to search for</value>
         [DataMember(Name = "isRequired", EmitDefaultValue = true)]
         public bool? IsRequired { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsGlobal
+        /// Specifies an attribute global status to search for
         /// </summary>
+        /// <value>Specifies an attribute global status to search for</value>
         [DataMember(Name = "isGlobal", EmitDefaultValue = true)]
         public bool? IsGlobal { get; set; }
 
         /// <summary>
-        /// Gets or Sets Types
+        /// Specifies an attribute types to search for
         /// </summary>
+        /// <value>Specifies an attribute types to search for</value>
         [DataMember(Name = "types", EmitDefaultValue = true)]
         public List<CustomAttributeTypesEnum> Types { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsEnabled
+        /// Specifies an attribute enabled status to search for
         /// </summary>
+        /// <value>Specifies an attribute enabled status to search for</value>
         [DataMember(Name = "isEnabled", EmitDefaultValue = true)]
         public bool? IsEnabled { get; set; }
 
@@ -86,7 +91,7 @@ namespace TestIt.Client.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class SearchAttributesInProjectQueryModel {\n");
+            sb.Append("class ProjectAttributesFilterModel {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  IsRequired: ").Append(IsRequired).Append("\n");
             sb.Append("  IsGlobal: ").Append(IsGlobal).Append("\n");
@@ -112,15 +117,15 @@ namespace TestIt.Client.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SearchAttributesInProjectQueryModel);
+            return this.Equals(input as ProjectAttributesFilterModel);
         }
 
         /// <summary>
-        /// Returns true if SearchAttributesInProjectQueryModel instances are equal
+        /// Returns true if ProjectAttributesFilterModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of SearchAttributesInProjectQueryModel to be compared</param>
+        /// <param name="input">Instance of ProjectAttributesFilterModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(SearchAttributesInProjectQueryModel input)
+        public bool Equals(ProjectAttributesFilterModel input)
         {
             if (input == null)
             {

@@ -43,8 +43,8 @@ namespace TestIt.Client.Model
         /// <param name="projectId">projectId.</param>
         /// <param name="fieldsToShow">fieldsToShow.</param>
         /// <param name="name">name.</param>
-        /// <param name="id">id.</param>
-        /// <param name="isDeleted">isDeleted.</param>
+        /// <param name="id">Unique ID of the entity.</param>
+        /// <param name="isDeleted">Indicates if the entity is deleted.</param>
         public FilterModel(DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), WorkItemSearchQueryModel data = default(WorkItemSearchQueryModel), Guid projectId = default(Guid), Object fieldsToShow = default(Object), string name = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
         {
             this.CreatedDate = createdDate;
@@ -108,14 +108,16 @@ namespace TestIt.Client.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Unique ID of the entity
         /// </summary>
+        /// <value>Unique ID of the entity</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDeleted
+        /// Indicates if the entity is deleted
         /// </summary>
+        /// <value>Indicates if the entity is deleted</value>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 

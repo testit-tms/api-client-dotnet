@@ -123,8 +123,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
-        /// <returns>List&lt;CustomAttributeTemplateModel&gt;</returns>
-        List<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesNameGet(string name);
+        /// <returns>CustomAttributeTemplateModel</returns>
+        CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesNameGet(string name);
 
         /// <summary>
         /// Get CustomAttributeTemplate by name
@@ -134,8 +134,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
-        /// <returns>ApiResponse of List&lt;CustomAttributeTemplateModel&gt;</returns>
-        ApiResponse<List<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesNameGetWithHttpInfo(string name);
+        /// <returns>ApiResponse of CustomAttributeTemplateModel</returns>
+        ApiResponse<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesNameGetWithHttpInfo(string name);
         /// <summary>
         /// Create CustomAttributeTemplate
         /// </summary>
@@ -158,21 +158,18 @@ namespace TestIt.Client.Api
         /// <returns>ApiResponse of CustomAttributeTemplateModel</returns>
         ApiResponse<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesPostWithHttpInfo(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel));
         /// <summary>
-        /// Update CustomAttributeTemplate
+        /// Update custom attributes template
         /// </summary>
-        /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template parameters (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates attribute template
-        /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePutModel"> (optional)</param>
         /// <returns></returns>
         void ApiV2CustomAttributesTemplatesPut(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel));
 
         /// <summary>
-        /// Update CustomAttributeTemplate
+        /// Update custom attributes template
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template parameters (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates attribute template
+        /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePutModel"> (optional)</param>
@@ -323,8 +320,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;CustomAttributeTemplateModel&gt;</returns>
-        System.Threading.Tasks.Task<List<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesNameGetAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of CustomAttributeTemplateModel</returns>
+        System.Threading.Tasks.Task<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesNameGetAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get CustomAttributeTemplate by name
@@ -335,8 +332,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;CustomAttributeTemplateModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<CustomAttributeTemplateModel>>> ApiV2CustomAttributesTemplatesNameGetWithHttpInfoAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (CustomAttributeTemplateModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesNameGetWithHttpInfoAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create CustomAttributeTemplate
         /// </summary>
@@ -361,10 +358,10 @@ namespace TestIt.Client.Api
         /// <returns>Task of ApiResponse (CustomAttributeTemplateModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesPostWithHttpInfoAsync(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Update CustomAttributeTemplate
+        /// Update custom attributes template
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template parameters (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates attribute template
+        /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePutModel"> (optional)</param>
@@ -373,10 +370,10 @@ namespace TestIt.Client.Api
         System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesPutAsync(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Update CustomAttributeTemplate
+        /// Update custom attributes template
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template parameters (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates attribute template
+        /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePutModel"> (optional)</param>
@@ -1114,10 +1111,10 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
-        /// <returns>List&lt;CustomAttributeTemplateModel&gt;</returns>
-        public List<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesNameGet(string name)
+        /// <returns>CustomAttributeTemplateModel</returns>
+        public CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesNameGet(string name)
         {
-            TestIt.Client.Client.ApiResponse<List<CustomAttributeTemplateModel>> localVarResponse = ApiV2CustomAttributesTemplatesNameGetWithHttpInfo(name);
+            TestIt.Client.Client.ApiResponse<CustomAttributeTemplateModel> localVarResponse = ApiV2CustomAttributesTemplatesNameGetWithHttpInfo(name);
             return localVarResponse.Data;
         }
 
@@ -1126,8 +1123,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
-        /// <returns>ApiResponse of List&lt;CustomAttributeTemplateModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesNameGetWithHttpInfo(string name)
+        /// <returns>ApiResponse of CustomAttributeTemplateModel</returns>
+        public TestIt.Client.Client.ApiResponse<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesNameGetWithHttpInfo(string name)
         {
             // verify the required parameter 'name' is set
             if (name == null)
@@ -1158,7 +1155,7 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<CustomAttributeTemplateModel>>("/api/v2/customAttributes/templates/{name}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<CustomAttributeTemplateModel>("/api/v2/customAttributes/templates/{name}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1175,10 +1172,10 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;CustomAttributeTemplateModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesNameGetAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of CustomAttributeTemplateModel</returns>
+        public async System.Threading.Tasks.Task<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesNameGetAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<CustomAttributeTemplateModel>> localVarResponse = await ApiV2CustomAttributesTemplatesNameGetWithHttpInfoAsync(name, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<CustomAttributeTemplateModel> localVarResponse = await ApiV2CustomAttributesTemplatesNameGetWithHttpInfoAsync(name, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1188,8 +1185,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;CustomAttributeTemplateModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<CustomAttributeTemplateModel>>> ApiV2CustomAttributesTemplatesNameGetWithHttpInfoAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (CustomAttributeTemplateModel)</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesNameGetWithHttpInfoAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'name' is set
             if (name == null)
@@ -1223,7 +1220,7 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<CustomAttributeTemplateModel>>("/api/v2/customAttributes/templates/{name}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<CustomAttributeTemplateModel>("/api/v2/customAttributes/templates/{name}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1354,7 +1351,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Update CustomAttributeTemplate &lt;br&gt;Use case  &lt;br&gt;User sets attribute template parameters (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates attribute template
+        /// Update custom attributes template 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePutModel"> (optional)</param>
@@ -1365,7 +1362,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Update CustomAttributeTemplate &lt;br&gt;Use case  &lt;br&gt;User sets attribute template parameters (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates attribute template
+        /// Update custom attributes template 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePutModel"> (optional)</param>
@@ -1410,7 +1407,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Update CustomAttributeTemplate &lt;br&gt;Use case  &lt;br&gt;User sets attribute template parameters (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates attribute template
+        /// Update custom attributes template 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePutModel"> (optional)</param>
@@ -1422,7 +1419,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Update CustomAttributeTemplate &lt;br&gt;Use case  &lt;br&gt;User sets attribute template parameters (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates attribute template
+        /// Update custom attributes template 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePutModel"> (optional)</param>

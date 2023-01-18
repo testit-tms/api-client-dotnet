@@ -36,6 +36,7 @@ namespace TestIt.Client.Model
         /// Initializes a new instance of the <see cref="WorkItemSearchQueryModel" /> class.
         /// </summary>
         /// <param name="name">Name of work item.</param>
+        /// <param name="ids">Specifies a work item unique IDs to search for.</param>
         /// <param name="globalIds">Collection of global (integer) identifiers.</param>
         /// <param name="attributes">Custom attributes of work item.</param>
         /// <param name="isDeleted">Is result must consist of only actual/deleted work items.</param>
@@ -45,20 +46,17 @@ namespace TestIt.Client.Model
         /// <param name="modifiedByIds">Collection of identifiers of users who applied last modification to work item.</param>
         /// <param name="states">Collection of states of work item.</param>
         /// <param name="priorities">Collection of priorities of work item.</param>
-        /// <param name="entityTypes">Collection of types of work item  &lt;br&gt;Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;.</param>
-        /// <param name="createdDateMinimal">Minimum date and time of work item creation.</param>
-        /// <param name="createdDateMaximal">Maximum date and time of work item creation.</param>
-        /// <param name="modifiedDateMinimal">Minimum date and time of work item last modification.</param>
-        /// <param name="modifiedDateMaximal">Maximum date and time of work item last modification.</param>
-        /// <param name="durationMinimal">Minimum completion time (seconds) of work item.</param>
-        /// <param name="durationMaximal">Maximum completion time (seconds) of work item.</param>
+        /// <param name="types">Collection of types of work item.</param>
+        /// <param name="createdDate">createdDate.</param>
+        /// <param name="modifiedDate">modifiedDate.</param>
+        /// <param name="duration">duration.</param>
         /// <param name="isAutomated">Is result must consist of only manual/automated work items.</param>
-        /// <param name="tagNames">Collection of tags.</param>
+        /// <param name="tags">Collection of tags.</param>
         /// <param name="autoTestIds">Collection of identifiers of linked autotests.</param>
-        /// <param name="exceptWorkItemIds">exceptWorkItemIds.</param>
-        public WorkItemSearchQueryModel(string name = default(string), List<long> globalIds = default(List<long>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?), List<Guid> projectIds = default(List<Guid>), List<Guid> sectionIds = default(List<Guid>), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), List<WorkItemStates> states = default(List<WorkItemStates>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<string> entityTypes = default(List<string>), DateTime? createdDateMinimal = default(DateTime?), DateTime? createdDateMaximal = default(DateTime?), DateTime? modifiedDateMinimal = default(DateTime?), DateTime? modifiedDateMaximal = default(DateTime?), int? durationMinimal = default(int?), int? durationMaximal = default(int?), bool? isAutomated = default(bool?), List<string> tagNames = default(List<string>), List<Guid> autoTestIds = default(List<Guid>), List<Guid> exceptWorkItemIds = default(List<Guid>))
+        public WorkItemSearchQueryModel(string name = default(string), List<Guid> ids = default(List<Guid>), List<long> globalIds = default(List<long>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?), List<Guid> projectIds = default(List<Guid>), List<Guid> sectionIds = default(List<Guid>), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), List<WorkItemStates> states = default(List<WorkItemStates>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<WorkItemEntityTypes> types = default(List<WorkItemEntityTypes>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), Int32RangeSelectorModel duration = default(Int32RangeSelectorModel), bool? isAutomated = default(bool?), List<string> tags = default(List<string>), List<Guid> autoTestIds = default(List<Guid>))
         {
             this.Name = name;
+            this.Ids = ids;
             this.GlobalIds = globalIds;
             this.Attributes = attributes;
             this.IsDeleted = isDeleted;
@@ -68,17 +66,13 @@ namespace TestIt.Client.Model
             this.ModifiedByIds = modifiedByIds;
             this.States = states;
             this.Priorities = priorities;
-            this.EntityTypes = entityTypes;
-            this.CreatedDateMinimal = createdDateMinimal;
-            this.CreatedDateMaximal = createdDateMaximal;
-            this.ModifiedDateMinimal = modifiedDateMinimal;
-            this.ModifiedDateMaximal = modifiedDateMaximal;
-            this.DurationMinimal = durationMinimal;
-            this.DurationMaximal = durationMaximal;
+            this.Types = types;
+            this.CreatedDate = createdDate;
+            this.ModifiedDate = modifiedDate;
+            this.Duration = duration;
             this.IsAutomated = isAutomated;
-            this.TagNames = tagNames;
+            this.Tags = tags;
             this.AutoTestIds = autoTestIds;
-            this.ExceptWorkItemIds = exceptWorkItemIds;
         }
 
         /// <summary>
@@ -87,6 +81,13 @@ namespace TestIt.Client.Model
         /// <value>Name of work item</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Specifies a work item unique IDs to search for
+        /// </summary>
+        /// <value>Specifies a work item unique IDs to search for</value>
+        [DataMember(Name = "ids", EmitDefaultValue = true)]
+        public List<Guid> Ids { get; set; }
 
         /// <summary>
         /// Collection of global (integer) identifiers
@@ -152,53 +153,29 @@ namespace TestIt.Client.Model
         public List<WorkItemPriorityModel> Priorities { get; set; }
 
         /// <summary>
-        /// Collection of types of work item  &lt;br&gt;Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;
+        /// Collection of types of work item
         /// </summary>
-        /// <value>Collection of types of work item  &lt;br&gt;Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;</value>
-        [DataMember(Name = "entityTypes", EmitDefaultValue = true)]
-        public List<string> EntityTypes { get; set; }
+        /// <value>Collection of types of work item</value>
+        [DataMember(Name = "types", EmitDefaultValue = true)]
+        public List<WorkItemEntityTypes> Types { get; set; }
 
         /// <summary>
-        /// Minimum date and time of work item creation
+        /// Gets or Sets CreatedDate
         /// </summary>
-        /// <value>Minimum date and time of work item creation</value>
-        [DataMember(Name = "createdDateMinimal", EmitDefaultValue = true)]
-        public DateTime? CreatedDateMinimal { get; set; }
+        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+        public DateTimeRangeSelectorModel CreatedDate { get; set; }
 
         /// <summary>
-        /// Maximum date and time of work item creation
+        /// Gets or Sets ModifiedDate
         /// </summary>
-        /// <value>Maximum date and time of work item creation</value>
-        [DataMember(Name = "createdDateMaximal", EmitDefaultValue = true)]
-        public DateTime? CreatedDateMaximal { get; set; }
+        [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+        public DateTimeRangeSelectorModel ModifiedDate { get; set; }
 
         /// <summary>
-        /// Minimum date and time of work item last modification
+        /// Gets or Sets Duration
         /// </summary>
-        /// <value>Minimum date and time of work item last modification</value>
-        [DataMember(Name = "modifiedDateMinimal", EmitDefaultValue = true)]
-        public DateTime? ModifiedDateMinimal { get; set; }
-
-        /// <summary>
-        /// Maximum date and time of work item last modification
-        /// </summary>
-        /// <value>Maximum date and time of work item last modification</value>
-        [DataMember(Name = "modifiedDateMaximal", EmitDefaultValue = true)]
-        public DateTime? ModifiedDateMaximal { get; set; }
-
-        /// <summary>
-        /// Minimum completion time (seconds) of work item
-        /// </summary>
-        /// <value>Minimum completion time (seconds) of work item</value>
-        [DataMember(Name = "durationMinimal", EmitDefaultValue = true)]
-        public int? DurationMinimal { get; set; }
-
-        /// <summary>
-        /// Maximum completion time (seconds) of work item
-        /// </summary>
-        /// <value>Maximum completion time (seconds) of work item</value>
-        [DataMember(Name = "durationMaximal", EmitDefaultValue = true)]
-        public int? DurationMaximal { get; set; }
+        [DataMember(Name = "duration", EmitDefaultValue = false)]
+        public Int32RangeSelectorModel Duration { get; set; }
 
         /// <summary>
         /// Is result must consist of only manual/automated work items
@@ -211,8 +188,8 @@ namespace TestIt.Client.Model
         /// Collection of tags
         /// </summary>
         /// <value>Collection of tags</value>
-        [DataMember(Name = "tagNames", EmitDefaultValue = true)]
-        public List<string> TagNames { get; set; }
+        [DataMember(Name = "tags", EmitDefaultValue = true)]
+        public List<string> Tags { get; set; }
 
         /// <summary>
         /// Collection of identifiers of linked autotests
@@ -220,13 +197,6 @@ namespace TestIt.Client.Model
         /// <value>Collection of identifiers of linked autotests</value>
         [DataMember(Name = "autoTestIds", EmitDefaultValue = true)]
         public List<Guid> AutoTestIds { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ExceptWorkItemIds
-        /// </summary>
-        [DataMember(Name = "exceptWorkItemIds", EmitDefaultValue = true)]
-        [Obsolete]
-        public List<Guid> ExceptWorkItemIds { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -237,6 +207,7 @@ namespace TestIt.Client.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class WorkItemSearchQueryModel {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Ids: ").Append(Ids).Append("\n");
             sb.Append("  GlobalIds: ").Append(GlobalIds).Append("\n");
             sb.Append("  Attributes: ").Append(Attributes).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
@@ -246,17 +217,13 @@ namespace TestIt.Client.Model
             sb.Append("  ModifiedByIds: ").Append(ModifiedByIds).Append("\n");
             sb.Append("  States: ").Append(States).Append("\n");
             sb.Append("  Priorities: ").Append(Priorities).Append("\n");
-            sb.Append("  EntityTypes: ").Append(EntityTypes).Append("\n");
-            sb.Append("  CreatedDateMinimal: ").Append(CreatedDateMinimal).Append("\n");
-            sb.Append("  CreatedDateMaximal: ").Append(CreatedDateMaximal).Append("\n");
-            sb.Append("  ModifiedDateMinimal: ").Append(ModifiedDateMinimal).Append("\n");
-            sb.Append("  ModifiedDateMaximal: ").Append(ModifiedDateMaximal).Append("\n");
-            sb.Append("  DurationMinimal: ").Append(DurationMinimal).Append("\n");
-            sb.Append("  DurationMaximal: ").Append(DurationMaximal).Append("\n");
+            sb.Append("  Types: ").Append(Types).Append("\n");
+            sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
+            sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
+            sb.Append("  Duration: ").Append(Duration).Append("\n");
             sb.Append("  IsAutomated: ").Append(IsAutomated).Append("\n");
-            sb.Append("  TagNames: ").Append(TagNames).Append("\n");
+            sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  AutoTestIds: ").Append(AutoTestIds).Append("\n");
-            sb.Append("  ExceptWorkItemIds: ").Append(ExceptWorkItemIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -296,6 +263,12 @@ namespace TestIt.Client.Model
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.Ids == input.Ids ||
+                    this.Ids != null &&
+                    input.Ids != null &&
+                    this.Ids.SequenceEqual(input.Ids)
                 ) && 
                 (
                     this.GlobalIds == input.GlobalIds ||
@@ -351,40 +324,25 @@ namespace TestIt.Client.Model
                     this.Priorities.SequenceEqual(input.Priorities)
                 ) && 
                 (
-                    this.EntityTypes == input.EntityTypes ||
-                    this.EntityTypes != null &&
-                    input.EntityTypes != null &&
-                    this.EntityTypes.SequenceEqual(input.EntityTypes)
+                    this.Types == input.Types ||
+                    this.Types != null &&
+                    input.Types != null &&
+                    this.Types.SequenceEqual(input.Types)
                 ) && 
                 (
-                    this.CreatedDateMinimal == input.CreatedDateMinimal ||
-                    (this.CreatedDateMinimal != null &&
-                    this.CreatedDateMinimal.Equals(input.CreatedDateMinimal))
+                    this.CreatedDate == input.CreatedDate ||
+                    (this.CreatedDate != null &&
+                    this.CreatedDate.Equals(input.CreatedDate))
                 ) && 
                 (
-                    this.CreatedDateMaximal == input.CreatedDateMaximal ||
-                    (this.CreatedDateMaximal != null &&
-                    this.CreatedDateMaximal.Equals(input.CreatedDateMaximal))
+                    this.ModifiedDate == input.ModifiedDate ||
+                    (this.ModifiedDate != null &&
+                    this.ModifiedDate.Equals(input.ModifiedDate))
                 ) && 
                 (
-                    this.ModifiedDateMinimal == input.ModifiedDateMinimal ||
-                    (this.ModifiedDateMinimal != null &&
-                    this.ModifiedDateMinimal.Equals(input.ModifiedDateMinimal))
-                ) && 
-                (
-                    this.ModifiedDateMaximal == input.ModifiedDateMaximal ||
-                    (this.ModifiedDateMaximal != null &&
-                    this.ModifiedDateMaximal.Equals(input.ModifiedDateMaximal))
-                ) && 
-                (
-                    this.DurationMinimal == input.DurationMinimal ||
-                    (this.DurationMinimal != null &&
-                    this.DurationMinimal.Equals(input.DurationMinimal))
-                ) && 
-                (
-                    this.DurationMaximal == input.DurationMaximal ||
-                    (this.DurationMaximal != null &&
-                    this.DurationMaximal.Equals(input.DurationMaximal))
+                    this.Duration == input.Duration ||
+                    (this.Duration != null &&
+                    this.Duration.Equals(input.Duration))
                 ) && 
                 (
                     this.IsAutomated == input.IsAutomated ||
@@ -392,22 +350,16 @@ namespace TestIt.Client.Model
                     this.IsAutomated.Equals(input.IsAutomated))
                 ) && 
                 (
-                    this.TagNames == input.TagNames ||
-                    this.TagNames != null &&
-                    input.TagNames != null &&
-                    this.TagNames.SequenceEqual(input.TagNames)
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
                 ) && 
                 (
                     this.AutoTestIds == input.AutoTestIds ||
                     this.AutoTestIds != null &&
                     input.AutoTestIds != null &&
                     this.AutoTestIds.SequenceEqual(input.AutoTestIds)
-                ) && 
-                (
-                    this.ExceptWorkItemIds == input.ExceptWorkItemIds ||
-                    this.ExceptWorkItemIds != null &&
-                    input.ExceptWorkItemIds != null &&
-                    this.ExceptWorkItemIds.SequenceEqual(input.ExceptWorkItemIds)
                 );
         }
 
@@ -423,6 +375,10 @@ namespace TestIt.Client.Model
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.Ids != null)
+                {
+                    hashCode = (hashCode * 59) + this.Ids.GetHashCode();
                 }
                 if (this.GlobalIds != null)
                 {
@@ -460,49 +416,33 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.Priorities.GetHashCode();
                 }
-                if (this.EntityTypes != null)
+                if (this.Types != null)
                 {
-                    hashCode = (hashCode * 59) + this.EntityTypes.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Types.GetHashCode();
                 }
-                if (this.CreatedDateMinimal != null)
+                if (this.CreatedDate != null)
                 {
-                    hashCode = (hashCode * 59) + this.CreatedDateMinimal.GetHashCode();
+                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
                 }
-                if (this.CreatedDateMaximal != null)
+                if (this.ModifiedDate != null)
                 {
-                    hashCode = (hashCode * 59) + this.CreatedDateMaximal.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
                 }
-                if (this.ModifiedDateMinimal != null)
+                if (this.Duration != null)
                 {
-                    hashCode = (hashCode * 59) + this.ModifiedDateMinimal.GetHashCode();
-                }
-                if (this.ModifiedDateMaximal != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDateMaximal.GetHashCode();
-                }
-                if (this.DurationMinimal != null)
-                {
-                    hashCode = (hashCode * 59) + this.DurationMinimal.GetHashCode();
-                }
-                if (this.DurationMaximal != null)
-                {
-                    hashCode = (hashCode * 59) + this.DurationMaximal.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Duration.GetHashCode();
                 }
                 if (this.IsAutomated != null)
                 {
                     hashCode = (hashCode * 59) + this.IsAutomated.GetHashCode();
                 }
-                if (this.TagNames != null)
+                if (this.Tags != null)
                 {
-                    hashCode = (hashCode * 59) + this.TagNames.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Tags.GetHashCode();
                 }
                 if (this.AutoTestIds != null)
                 {
                     hashCode = (hashCode * 59) + this.AutoTestIds.GetHashCode();
-                }
-                if (this.ExceptWorkItemIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.ExceptWorkItemIds.GetHashCode();
                 }
                 return hashCode;
             }
@@ -515,6 +455,18 @@ namespace TestIt.Client.Model
         /// <returns>Validation Result</returns>
         public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
+            // Name (string) maxLength
+            if (this.Name != null && this.Name.Length > 255)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+            }
+
+            // Name (string) minLength
+            if (this.Name != null && this.Name.Length < 0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
+            }
+
             yield break;
         }
     }

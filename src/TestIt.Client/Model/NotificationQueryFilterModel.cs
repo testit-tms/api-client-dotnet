@@ -27,33 +27,41 @@ using OpenAPIDateConverter = TestIt.Client.Client.OpenAPIDateConverter;
 namespace TestIt.Client.Model
 {
     /// <summary>
-    /// SearchAutotestsQueryModel
+    /// NotificationQueryFilterModel
     /// </summary>
-    [DataContract(Name = "SearchAutotestsQueryModel")]
-    public partial class SearchAutotestsQueryModel : IEquatable<SearchAutotestsQueryModel>, IValidatableObject
+    [DataContract(Name = "NotificationQueryFilterModel")]
+    public partial class NotificationQueryFilterModel : IEquatable<NotificationQueryFilterModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SearchAutotestsQueryModel" /> class.
+        /// Initializes a new instance of the <see cref="NotificationQueryFilterModel" /> class.
         /// </summary>
-        /// <param name="filter">filter.</param>
-        /// <param name="includes">includes.</param>
-        public SearchAutotestsQueryModel(AutotestFilterModel filter = default(AutotestFilterModel), SearchAutoTestsQueryIncludesModel includes = default(SearchAutoTestsQueryIncludesModel))
+        /// <param name="types">types.</param>
+        /// <param name="isRead">isRead.</param>
+        /// <param name="createdDate">createdDate.</param>
+        public NotificationQueryFilterModel(List<NotificationTypeModel> types = default(List<NotificationTypeModel>), bool? isRead = default(bool?), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel))
         {
-            this.Filter = filter;
-            this.Includes = includes;
+            this.Types = types;
+            this.IsRead = isRead;
+            this.CreatedDate = createdDate;
         }
 
         /// <summary>
-        /// Gets or Sets Filter
+        /// Gets or Sets Types
         /// </summary>
-        [DataMember(Name = "filter", EmitDefaultValue = false)]
-        public AutotestFilterModel Filter { get; set; }
+        [DataMember(Name = "types", EmitDefaultValue = true)]
+        public List<NotificationTypeModel> Types { get; set; }
 
         /// <summary>
-        /// Gets or Sets Includes
+        /// Gets or Sets IsRead
         /// </summary>
-        [DataMember(Name = "includes", EmitDefaultValue = false)]
-        public SearchAutoTestsQueryIncludesModel Includes { get; set; }
+        [DataMember(Name = "isRead", EmitDefaultValue = true)]
+        public bool? IsRead { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreatedDate
+        /// </summary>
+        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+        public DateTimeRangeSelectorModel CreatedDate { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -62,9 +70,10 @@ namespace TestIt.Client.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class SearchAutotestsQueryModel {\n");
-            sb.Append("  Filter: ").Append(Filter).Append("\n");
-            sb.Append("  Includes: ").Append(Includes).Append("\n");
+            sb.Append("class NotificationQueryFilterModel {\n");
+            sb.Append("  Types: ").Append(Types).Append("\n");
+            sb.Append("  IsRead: ").Append(IsRead).Append("\n");
+            sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -85,15 +94,15 @@ namespace TestIt.Client.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SearchAutotestsQueryModel);
+            return this.Equals(input as NotificationQueryFilterModel);
         }
 
         /// <summary>
-        /// Returns true if SearchAutotestsQueryModel instances are equal
+        /// Returns true if NotificationQueryFilterModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of SearchAutotestsQueryModel to be compared</param>
+        /// <param name="input">Instance of NotificationQueryFilterModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(SearchAutotestsQueryModel input)
+        public bool Equals(NotificationQueryFilterModel input)
         {
             if (input == null)
             {
@@ -101,14 +110,20 @@ namespace TestIt.Client.Model
             }
             return 
                 (
-                    this.Filter == input.Filter ||
-                    (this.Filter != null &&
-                    this.Filter.Equals(input.Filter))
+                    this.Types == input.Types ||
+                    this.Types != null &&
+                    input.Types != null &&
+                    this.Types.SequenceEqual(input.Types)
                 ) && 
                 (
-                    this.Includes == input.Includes ||
-                    (this.Includes != null &&
-                    this.Includes.Equals(input.Includes))
+                    this.IsRead == input.IsRead ||
+                    (this.IsRead != null &&
+                    this.IsRead.Equals(input.IsRead))
+                ) && 
+                (
+                    this.CreatedDate == input.CreatedDate ||
+                    (this.CreatedDate != null &&
+                    this.CreatedDate.Equals(input.CreatedDate))
                 );
         }
 
@@ -121,13 +136,17 @@ namespace TestIt.Client.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Filter != null)
+                if (this.Types != null)
                 {
-                    hashCode = (hashCode * 59) + this.Filter.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Types.GetHashCode();
                 }
-                if (this.Includes != null)
+                if (this.IsRead != null)
                 {
-                    hashCode = (hashCode * 59) + this.Includes.GetHashCode();
+                    hashCode = (hashCode * 59) + this.IsRead.GetHashCode();
+                }
+                if (this.CreatedDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
                 }
                 return hashCode;
             }

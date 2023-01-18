@@ -40,37 +40,40 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectPutModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="description">description.</param>
-        /// <param name="name">name (required).</param>
+        /// <param name="id">Unique ID of the project (required).</param>
+        /// <param name="description">Description of the project.</param>
+        /// <param name="name">Name of the project (required).</param>
         public ProjectPutModel(Guid id = default(Guid), string description = default(string), string name = default(string))
         {
+            this.Id = id;
             // to ensure "name" is required (not null)
             if (name == null)
             {
                 throw new ArgumentNullException("name is a required property for ProjectPutModel and cannot be null");
             }
             this.Name = name;
-            this.Id = id;
             this.Description = description;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Unique ID of the project
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        /// <value>Unique ID of the project</value>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Description of the project
         /// </summary>
+        /// <value>Description of the project</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name of the project
         /// </summary>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>Name of the project</value>
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>

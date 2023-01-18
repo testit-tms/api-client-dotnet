@@ -28,101 +28,101 @@ namespace TestIt.Client.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Get test result by ID aggregated with previous results
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <returns>TestResultModel</returns>
         TestResultModel ApiV2TestResultsIdAggregatedGet(Guid id);
 
         /// <summary>
-        /// 
+        /// Get test result by ID aggregated with previous results
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <returns>ApiResponse of TestResultModel</returns>
         ApiResponse<TestResultModel> ApiV2TestResultsIdAggregatedGetWithHttpInfo(Guid id);
         /// <summary>
-        /// 
+        /// Attach file to the test result
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="attachmentId"></param>
+        /// <param name="id">Test result unique ID</param>
+        /// <param name="attachmentId">Attachment unique ID</param>
         /// <returns></returns>
         void ApiV2TestResultsIdAttachmentsAttachmentIdPut(Guid id, Guid attachmentId);
 
         /// <summary>
-        /// 
+        /// Attach file to the test result
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="attachmentId"></param>
+        /// <param name="id">Test result unique ID</param>
+        /// <param name="attachmentId">Attachment unique ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ApiV2TestResultsIdAttachmentsAttachmentIdPutWithHttpInfo(Guid id, Guid attachmentId);
         /// <summary>
-        /// 
+        /// Get test result attachments meta-information
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <returns>List&lt;AttachmentModel&gt;</returns>
         List<AttachmentModel> ApiV2TestResultsIdAttachmentsInfoGet(Guid id);
 
         /// <summary>
-        /// 
+        /// Get test result attachments meta-information
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <returns>ApiResponse of List&lt;AttachmentModel&gt;</returns>
         ApiResponse<List<AttachmentModel>> ApiV2TestResultsIdAttachmentsInfoGetWithHttpInfo(Guid id);
         /// <summary>
-        /// 
+        /// Get test result by ID
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <returns>TestResultModel</returns>
         TestResultModel ApiV2TestResultsIdGet(Guid id);
 
         /// <summary>
-        /// 
+        /// Get test result by ID
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <returns>ApiResponse of TestResultModel</returns>
         ApiResponse<TestResultModel> ApiV2TestResultsIdGetWithHttpInfo(Guid id);
         /// <summary>
-        /// 
+        /// Edit test result by ID
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <param name="testResultUpdateModel"> (optional)</param>
         /// <returns></returns>
         void ApiV2TestResultsIdPut(Guid id, TestResultUpdateModel testResultUpdateModel = default(TestResultUpdateModel));
 
         /// <summary>
-        /// 
+        /// Edit test result by ID
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <param name="testResultUpdateModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ApiV2TestResultsIdPutWithHttpInfo(Guid id, TestResultUpdateModel testResultUpdateModel = default(TestResultUpdateModel));
         /// <summary>
-        /// 
+        /// Search for test results
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -135,7 +135,7 @@ namespace TestIt.Client.Api
         List<TestResultShortGetModel> ApiV2TestResultsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestResultsFilterModel testResultsFilterModel = default(TestResultsFilterModel));
 
         /// <summary>
-        /// 
+        /// Search for test results
         /// </summary>
         /// <remarks>
         /// 
@@ -150,7 +150,7 @@ namespace TestIt.Client.Api
         /// <returns>ApiResponse of List&lt;TestResultShortGetModel&gt;</returns>
         ApiResponse<List<TestResultShortGetModel>> ApiV2TestResultsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestResultsFilterModel testResultsFilterModel = default(TestResultsFilterModel));
         /// <summary>
-        /// 
+        /// Search for test results and extract statistics
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testResultsFilterModel"> (optional)</param>
@@ -158,7 +158,7 @@ namespace TestIt.Client.Api
         TestResultsStatisticsGetModel ApiV2TestResultsStatisticsFilterPost(TestResultsFilterModel testResultsFilterModel = default(TestResultsFilterModel));
 
         /// <summary>
-        /// 
+        /// Search for test results and extract statistics
         /// </summary>
         /// <remarks>
         /// 
@@ -300,126 +300,126 @@ namespace TestIt.Client.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Get test result by ID aggregated with previous results
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestResultModel</returns>
         System.Threading.Tasks.Task<TestResultModel> ApiV2TestResultsIdAggregatedGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Get test result by ID aggregated with previous results
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestResultModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<TestResultModel>> ApiV2TestResultsIdAggregatedGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Attach file to the test result
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="attachmentId"></param>
+        /// <param name="id">Test result unique ID</param>
+        /// <param name="attachmentId">Attachment unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task ApiV2TestResultsIdAttachmentsAttachmentIdPutAsync(Guid id, Guid attachmentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Attach file to the test result
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="attachmentId"></param>
+        /// <param name="id">Test result unique ID</param>
+        /// <param name="attachmentId">Attachment unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestResultsIdAttachmentsAttachmentIdPutWithHttpInfoAsync(Guid id, Guid attachmentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Get test result attachments meta-information
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AttachmentModel&gt;</returns>
         System.Threading.Tasks.Task<List<AttachmentModel>> ApiV2TestResultsIdAttachmentsInfoGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Get test result attachments meta-information
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AttachmentModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<AttachmentModel>>> ApiV2TestResultsIdAttachmentsInfoGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Get test result by ID
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestResultModel</returns>
         System.Threading.Tasks.Task<TestResultModel> ApiV2TestResultsIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Get test result by ID
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestResultModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<TestResultModel>> ApiV2TestResultsIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Edit test result by ID
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <param name="testResultUpdateModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task ApiV2TestResultsIdPutAsync(Guid id, TestResultUpdateModel testResultUpdateModel = default(TestResultUpdateModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Edit test result by ID
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <param name="testResultUpdateModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestResultsIdPutWithHttpInfoAsync(Guid id, TestResultUpdateModel testResultUpdateModel = default(TestResultUpdateModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Search for test results
         /// </summary>
         /// <remarks>
         /// 
@@ -436,7 +436,7 @@ namespace TestIt.Client.Api
         System.Threading.Tasks.Task<List<TestResultShortGetModel>> ApiV2TestResultsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestResultsFilterModel testResultsFilterModel = default(TestResultsFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Search for test results
         /// </summary>
         /// <remarks>
         /// 
@@ -452,7 +452,7 @@ namespace TestIt.Client.Api
         /// <returns>Task of ApiResponse (List&lt;TestResultShortGetModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<TestResultShortGetModel>>> ApiV2TestResultsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestResultsFilterModel testResultsFilterModel = default(TestResultsFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Search for test results and extract statistics
         /// </summary>
         /// <remarks>
         /// 
@@ -464,7 +464,7 @@ namespace TestIt.Client.Api
         System.Threading.Tasks.Task<TestResultsStatisticsGetModel> ApiV2TestResultsStatisticsFilterPostAsync(TestResultsFilterModel testResultsFilterModel = default(TestResultsFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Search for test results and extract statistics
         /// </summary>
         /// <remarks>
         /// 
@@ -821,10 +821,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get test result by ID aggregated with previous results 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <returns>TestResultModel</returns>
         public TestResultModel ApiV2TestResultsIdAggregatedGet(Guid id)
         {
@@ -833,10 +833,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get test result by ID aggregated with previous results 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <returns>ApiResponse of TestResultModel</returns>
         public TestIt.Client.Client.ApiResponse<TestResultModel> ApiV2TestResultsIdAggregatedGetWithHttpInfo(Guid id)
         {
@@ -877,10 +877,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get test result by ID aggregated with previous results 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestResultModel</returns>
         public async System.Threading.Tasks.Task<TestResultModel> ApiV2TestResultsIdAggregatedGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -890,10 +890,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get test result by ID aggregated with previous results 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestResultModel)</returns>
         public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<TestResultModel>> ApiV2TestResultsIdAggregatedGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -938,11 +938,11 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Attach file to the test result 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="attachmentId"></param>
+        /// <param name="id">Test result unique ID</param>
+        /// <param name="attachmentId">Attachment unique ID</param>
         /// <returns></returns>
         public void ApiV2TestResultsIdAttachmentsAttachmentIdPut(Guid id, Guid attachmentId)
         {
@@ -950,11 +950,11 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Attach file to the test result 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="attachmentId"></param>
+        /// <param name="id">Test result unique ID</param>
+        /// <param name="attachmentId">Attachment unique ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
         public TestIt.Client.Client.ApiResponse<Object> ApiV2TestResultsIdAttachmentsAttachmentIdPutWithHttpInfo(Guid id, Guid attachmentId)
         {
@@ -965,6 +965,7 @@ namespace TestIt.Client.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/json"
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -995,11 +996,11 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Attach file to the test result 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="attachmentId"></param>
+        /// <param name="id">Test result unique ID</param>
+        /// <param name="attachmentId">Attachment unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task ApiV2TestResultsIdAttachmentsAttachmentIdPutAsync(Guid id, Guid attachmentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1008,11 +1009,11 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Attach file to the test result 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="attachmentId"></param>
+        /// <param name="id">Test result unique ID</param>
+        /// <param name="attachmentId">Attachment unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2TestResultsIdAttachmentsAttachmentIdPutWithHttpInfoAsync(Guid id, Guid attachmentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1025,6 +1026,7 @@ namespace TestIt.Client.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/json"
             };
 
 
@@ -1057,10 +1059,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get test result attachments meta-information 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <returns>List&lt;AttachmentModel&gt;</returns>
         public List<AttachmentModel> ApiV2TestResultsIdAttachmentsInfoGet(Guid id)
         {
@@ -1069,10 +1071,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get test result attachments meta-information 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <returns>ApiResponse of List&lt;AttachmentModel&gt;</returns>
         public TestIt.Client.Client.ApiResponse<List<AttachmentModel>> ApiV2TestResultsIdAttachmentsInfoGetWithHttpInfo(Guid id)
         {
@@ -1113,10 +1115,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get test result attachments meta-information 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AttachmentModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<AttachmentModel>> ApiV2TestResultsIdAttachmentsInfoGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1126,10 +1128,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get test result attachments meta-information 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AttachmentModel&gt;)</returns>
         public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<AttachmentModel>>> ApiV2TestResultsIdAttachmentsInfoGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1174,10 +1176,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get test result by ID 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <returns>TestResultModel</returns>
         public TestResultModel ApiV2TestResultsIdGet(Guid id)
         {
@@ -1186,10 +1188,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get test result by ID 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <returns>ApiResponse of TestResultModel</returns>
         public TestIt.Client.Client.ApiResponse<TestResultModel> ApiV2TestResultsIdGetWithHttpInfo(Guid id)
         {
@@ -1230,10 +1232,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get test result by ID 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestResultModel</returns>
         public async System.Threading.Tasks.Task<TestResultModel> ApiV2TestResultsIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1243,10 +1245,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get test result by ID 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestResultModel)</returns>
         public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<TestResultModel>> ApiV2TestResultsIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1291,10 +1293,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Edit test result by ID 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <param name="testResultUpdateModel"> (optional)</param>
         /// <returns></returns>
         public void ApiV2TestResultsIdPut(Guid id, TestResultUpdateModel testResultUpdateModel = default(TestResultUpdateModel))
@@ -1303,10 +1305,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Edit test result by ID 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <param name="testResultUpdateModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
         public TestIt.Client.Client.ApiResponse<Object> ApiV2TestResultsIdPutWithHttpInfo(Guid id, TestResultUpdateModel testResultUpdateModel = default(TestResultUpdateModel))
@@ -1319,6 +1321,7 @@ namespace TestIt.Client.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/json"
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1349,10 +1352,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Edit test result by ID 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <param name="testResultUpdateModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -1362,10 +1365,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Edit test result by ID 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test result unique ID</param>
         /// <param name="testResultUpdateModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -1380,6 +1383,7 @@ namespace TestIt.Client.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/json"
             };
 
 
@@ -1412,7 +1416,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Search for test results 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1429,7 +1433,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Search for test results 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1499,7 +1503,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Search for test results 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1517,7 +1521,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Search for test results 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1591,7 +1595,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Search for test results and extract statistics 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testResultsFilterModel"> (optional)</param>
@@ -1603,7 +1607,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Search for test results and extract statistics 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testResultsFilterModel"> (optional)</param>
@@ -1648,7 +1652,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Search for test results and extract statistics 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testResultsFilterModel"> (optional)</param>
@@ -1661,7 +1665,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Search for test results and extract statistics 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testResultsFilterModel"> (optional)</param>

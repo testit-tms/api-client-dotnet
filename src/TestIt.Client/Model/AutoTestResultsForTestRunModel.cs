@@ -32,6 +32,12 @@ namespace TestIt.Client.Model
     [DataContract(Name = "AutoTestResultsForTestRunModel")]
     public partial class AutoTestResultsForTestRunModel : IEquatable<AutoTestResultsForTestRunModel>, IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets Outcome
+        /// </summary>
+        [DataMember(Name = "outcome", IsRequired = true, EmitDefaultValue = true)]
+        public AvailableTestResultOutcome Outcome { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestResultsForTestRunModel" /> class.
         /// </summary>
@@ -44,7 +50,7 @@ namespace TestIt.Client.Model
         /// <param name="links">Specifies the links in the autotest..</param>
         /// <param name="failureReasonNames">Specifies the cause of autotest failure..</param>
         /// <param name="autoTestExternalId">Specifies the external ID of the autotest, which was specified when the test run was created. (required).</param>
-        /// <param name="outcome">Specifies the result of the autotest execution. (required).</param>
+        /// <param name="outcome">outcome (required).</param>
         /// <param name="message">A comment for the result..</param>
         /// <param name="traces">An extended comment or a stack trace..</param>
         /// <param name="startedOn">Test run start date..</param>
@@ -56,7 +62,7 @@ namespace TestIt.Client.Model
         /// <param name="stepResults">Specifies the results of individual steps..</param>
         /// <param name="setupResults">Specifies the results of setup steps. For information on supported values, see the &#x60;stepResults&#x60; parameter above..</param>
         /// <param name="teardownResults">Specifies the results of the teardown steps. For information on supported values, see the &#x60;stepResults&#x60; parameter above..</param>
-        public AutoTestResultsForTestRunModel(Guid configurationId = default(Guid), List<LinkPostModel> links = default(List<LinkPostModel>), List<string> failureReasonNames = default(List<string>), string autoTestExternalId = default(string), string outcome = default(string), string message = default(string), string traces = default(string), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? duration = default(long?), List<AttachmentPutModel> attachments = default(List<AttachmentPutModel>), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, string> properties = default(Dictionary<string, string>), List<AttachmentPutModelAutoTestStepResultsModel> stepResults = default(List<AttachmentPutModelAutoTestStepResultsModel>), List<AttachmentPutModelAutoTestStepResultsModel> setupResults = default(List<AttachmentPutModelAutoTestStepResultsModel>), List<AttachmentPutModelAutoTestStepResultsModel> teardownResults = default(List<AttachmentPutModelAutoTestStepResultsModel>))
+        public AutoTestResultsForTestRunModel(Guid configurationId = default(Guid), List<LinkPostModel> links = default(List<LinkPostModel>), List<FailureCategoryModel> failureReasonNames = default(List<FailureCategoryModel>), string autoTestExternalId = default(string), AvailableTestResultOutcome outcome = default(AvailableTestResultOutcome), string message = default(string), string traces = default(string), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? duration = default(long?), List<AttachmentPutModel> attachments = default(List<AttachmentPutModel>), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, string> properties = default(Dictionary<string, string>), List<AttachmentPutModelAutoTestStepResultsModel> stepResults = default(List<AttachmentPutModelAutoTestStepResultsModel>), List<AttachmentPutModelAutoTestStepResultsModel> setupResults = default(List<AttachmentPutModelAutoTestStepResultsModel>), List<AttachmentPutModelAutoTestStepResultsModel> teardownResults = default(List<AttachmentPutModelAutoTestStepResultsModel>))
         {
             this.ConfigurationId = configurationId;
             // to ensure "autoTestExternalId" is required (not null)
@@ -65,11 +71,6 @@ namespace TestIt.Client.Model
                 throw new ArgumentNullException("autoTestExternalId is a required property for AutoTestResultsForTestRunModel and cannot be null");
             }
             this.AutoTestExternalId = autoTestExternalId;
-            // to ensure "outcome" is required (not null)
-            if (outcome == null)
-            {
-                throw new ArgumentNullException("outcome is a required property for AutoTestResultsForTestRunModel and cannot be null");
-            }
             this.Outcome = outcome;
             this.Links = links;
             this.FailureReasonNames = failureReasonNames;
@@ -90,7 +91,7 @@ namespace TestIt.Client.Model
         /// Specifies the GUID of the autotest configuration, which was specified when the test run was created.
         /// </summary>
         /// <value>Specifies the GUID of the autotest configuration, which was specified when the test run was created.</value>
-        [DataMember(Name = "configurationId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "configurationId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ConfigurationId { get; set; }
 
         /// <summary>
@@ -105,21 +106,14 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <value>Specifies the cause of autotest failure.</value>
         [DataMember(Name = "failureReasonNames", EmitDefaultValue = true)]
-        public List<string> FailureReasonNames { get; set; }
+        public List<FailureCategoryModel> FailureReasonNames { get; set; }
 
         /// <summary>
         /// Specifies the external ID of the autotest, which was specified when the test run was created.
         /// </summary>
         /// <value>Specifies the external ID of the autotest, which was specified when the test run was created.</value>
-        [DataMember(Name = "autoTestExternalId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "autoTestExternalId", IsRequired = true, EmitDefaultValue = true)]
         public string AutoTestExternalId { get; set; }
-
-        /// <summary>
-        /// Specifies the result of the autotest execution.
-        /// </summary>
-        /// <value>Specifies the result of the autotest execution.</value>
-        [DataMember(Name = "outcome", IsRequired = true, EmitDefaultValue = false)]
-        public string Outcome { get; set; }
 
         /// <summary>
         /// A comment for the result.
@@ -281,8 +275,7 @@ namespace TestIt.Client.Model
                 ) && 
                 (
                     this.Outcome == input.Outcome ||
-                    (this.Outcome != null &&
-                    this.Outcome.Equals(input.Outcome))
+                    this.Outcome.Equals(input.Outcome)
                 ) && 
                 (
                     this.Message == input.Message ||
@@ -372,10 +365,7 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.AutoTestExternalId.GetHashCode();
                 }
-                if (this.Outcome != null)
-                {
-                    hashCode = (hashCode * 59) + this.Outcome.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.Outcome.GetHashCode();
                 if (this.Message != null)
                 {
                     hashCode = (hashCode * 59) + this.Message.GetHashCode();

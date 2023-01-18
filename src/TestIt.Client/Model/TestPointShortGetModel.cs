@@ -47,29 +47,29 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPointShortGetModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="createdDate">createdDate.</param>
-        /// <param name="createdById">createdById.</param>
-        /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="modifiedById">modifiedById.</param>
-        /// <param name="testerId">testerId.</param>
-        /// <param name="parameters">parameters.</param>
-        /// <param name="attributes">attributes.</param>
-        /// <param name="tags">tags.</param>
-        /// <param name="links">links.</param>
-        /// <param name="testSuiteId">testSuiteId.</param>
-        /// <param name="workItemGlobalId">workItemGlobalId.</param>
-        /// <param name="workItemVersionId">workItemVersionId.</param>
+        /// <param name="id">Unique ID of the test point.</param>
+        /// <param name="createdDate">Creation date of the test point.</param>
+        /// <param name="createdById">Unique ID of the test point creator.</param>
+        /// <param name="modifiedDate">Last modification date of the test point.</param>
+        /// <param name="modifiedById">Unique ID of the test point last editor.</param>
+        /// <param name="testerId">Unique ID of the test point assigned user.</param>
+        /// <param name="parameters">Collection of the test point parameters.</param>
+        /// <param name="attributes">Collection of attributes of work item the test point represents.</param>
+        /// <param name="tags">Collection of the test point tags.</param>
+        /// <param name="links">Collection of the test point links.</param>
+        /// <param name="testSuiteId">Unique ID of test suite the test point assigned to.</param>
+        /// <param name="workItemGlobalId">Global ID of work item the test point represents.</param>
+        /// <param name="workItemVersionId">Unique ID of work item version the test point represents.</param>
         /// <param name="status">status.</param>
         /// <param name="priority">priority.</param>
-        /// <param name="isAutomated">isAutomated.</param>
-        /// <param name="name">name.</param>
-        /// <param name="configurationId">configurationId.</param>
-        /// <param name="duration">duration.</param>
-        /// <param name="sectionId">sectionId.</param>
-        /// <param name="projectId">projectId.</param>
+        /// <param name="isAutomated">Indicates if the test point represents an autotest.</param>
+        /// <param name="name">Name of the test point.</param>
+        /// <param name="configurationId">Unique ID of the test point configuration.</param>
+        /// <param name="duration">Duration of the test point.</param>
+        /// <param name="sectionId">Unique ID of section where work item the test point represents is located.</param>
+        /// <param name="projectId">Unique ID of the test point project.</param>
         /// <param name="lastTestResult">lastTestResult.</param>
-        /// <param name="iterationId">iterationId.</param>
+        /// <param name="iterationId">Unique ID of work item iteration the test point represents.</param>
         public TestPointShortGetModel(Guid id = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), Guid? testerId = default(Guid?), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<string> tags = default(List<string>), List<string> links = default(List<string>), Guid testSuiteId = default(Guid), long workItemGlobalId = default(long), Guid workItemVersionId = default(Guid), TestPointStatus? status = default(TestPointStatus?), WorkItemPriorityModel? priority = default(WorkItemPriorityModel?), bool isAutomated = default(bool), string name = default(string), Guid configurationId = default(Guid), int duration = default(int), Guid sectionId = default(Guid), Guid projectId = default(Guid), LastTestResultModel lastTestResult = default(LastTestResultModel), Guid iterationId = default(Guid))
         {
             this.Id = id;
@@ -98,116 +98,135 @@ namespace TestIt.Client.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Unique ID of the test point
         /// </summary>
+        /// <value>Unique ID of the test point</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedDate
+        /// Creation date of the test point
         /// </summary>
+        /// <value>Creation date of the test point</value>
         [DataMember(Name = "createdDate", EmitDefaultValue = false)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedById
+        /// Unique ID of the test point creator
         /// </summary>
+        /// <value>Unique ID of the test point creator</value>
         [DataMember(Name = "createdById", EmitDefaultValue = false)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
-        /// Gets or Sets ModifiedDate
+        /// Last modification date of the test point
         /// </summary>
+        /// <value>Last modification date of the test point</value>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets ModifiedById
+        /// Unique ID of the test point last editor
         /// </summary>
+        /// <value>Unique ID of the test point last editor</value>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
         /// <summary>
-        /// Gets or Sets TesterId
+        /// Unique ID of the test point assigned user
         /// </summary>
+        /// <value>Unique ID of the test point assigned user</value>
         [DataMember(Name = "testerId", EmitDefaultValue = true)]
         public Guid? TesterId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Parameters
+        /// Collection of the test point parameters
         /// </summary>
+        /// <value>Collection of the test point parameters</value>
         [DataMember(Name = "parameters", EmitDefaultValue = true)]
         public Dictionary<string, string> Parameters { get; set; }
 
         /// <summary>
-        /// Gets or Sets Attributes
+        /// Collection of attributes of work item the test point represents
         /// </summary>
+        /// <value>Collection of attributes of work item the test point represents</value>
         [DataMember(Name = "attributes", EmitDefaultValue = true)]
         public Dictionary<string, Object> Attributes { get; set; }
 
         /// <summary>
-        /// Gets or Sets Tags
+        /// Collection of the test point tags
         /// </summary>
+        /// <value>Collection of the test point tags</value>
         [DataMember(Name = "tags", EmitDefaultValue = true)]
         public List<string> Tags { get; set; }
 
         /// <summary>
-        /// Gets or Sets Links
+        /// Collection of the test point links
         /// </summary>
+        /// <value>Collection of the test point links</value>
         [DataMember(Name = "links", EmitDefaultValue = true)]
         public List<string> Links { get; set; }
 
         /// <summary>
-        /// Gets or Sets TestSuiteId
+        /// Unique ID of test suite the test point assigned to
         /// </summary>
+        /// <value>Unique ID of test suite the test point assigned to</value>
         [DataMember(Name = "testSuiteId", EmitDefaultValue = false)]
         public Guid TestSuiteId { get; set; }
 
         /// <summary>
-        /// Gets or Sets WorkItemGlobalId
+        /// Global ID of work item the test point represents
         /// </summary>
+        /// <value>Global ID of work item the test point represents</value>
         [DataMember(Name = "workItemGlobalId", EmitDefaultValue = false)]
         public long WorkItemGlobalId { get; set; }
 
         /// <summary>
-        /// Gets or Sets WorkItemVersionId
+        /// Unique ID of work item version the test point represents
         /// </summary>
+        /// <value>Unique ID of work item version the test point represents</value>
         [DataMember(Name = "workItemVersionId", EmitDefaultValue = false)]
         public Guid WorkItemVersionId { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsAutomated
+        /// Indicates if the test point represents an autotest
         /// </summary>
+        /// <value>Indicates if the test point represents an autotest</value>
         [DataMember(Name = "isAutomated", EmitDefaultValue = true)]
         public bool IsAutomated { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name of the test point
         /// </summary>
+        /// <value>Name of the test point</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets ConfigurationId
+        /// Unique ID of the test point configuration
         /// </summary>
+        /// <value>Unique ID of the test point configuration</value>
         [DataMember(Name = "configurationId", EmitDefaultValue = false)]
         public Guid ConfigurationId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Duration
+        /// Duration of the test point
         /// </summary>
+        /// <value>Duration of the test point</value>
         [DataMember(Name = "duration", EmitDefaultValue = false)]
         public int Duration { get; set; }
 
         /// <summary>
-        /// Gets or Sets SectionId
+        /// Unique ID of section where work item the test point represents is located
         /// </summary>
+        /// <value>Unique ID of section where work item the test point represents is located</value>
         [DataMember(Name = "sectionId", EmitDefaultValue = false)]
         public Guid SectionId { get; set; }
 
         /// <summary>
-        /// Gets or Sets ProjectId
+        /// Unique ID of the test point project
         /// </summary>
+        /// <value>Unique ID of the test point project</value>
         [DataMember(Name = "projectId", EmitDefaultValue = false)]
         public Guid ProjectId { get; set; }
 
@@ -218,8 +237,9 @@ namespace TestIt.Client.Model
         public LastTestResultModel LastTestResult { get; set; }
 
         /// <summary>
-        /// Gets or Sets IterationId
+        /// Unique ID of work item iteration the test point represents
         /// </summary>
+        /// <value>Unique ID of work item iteration the test point represents</value>
         [DataMember(Name = "iterationId", EmitDefaultValue = false)]
         public Guid IterationId { get; set; }
 

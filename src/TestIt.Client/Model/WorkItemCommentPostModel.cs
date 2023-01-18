@@ -41,7 +41,7 @@ namespace TestIt.Client.Model
         /// Initializes a new instance of the <see cref="WorkItemCommentPostModel" /> class.
         /// </summary>
         /// <param name="text">text (required).</param>
-        /// <param name="workItemId">workItemId.</param>
+        /// <param name="workItemId">workItemId (required).</param>
         public WorkItemCommentPostModel(string text = default(string), Guid workItemId = default(Guid))
         {
             // to ensure "text" is required (not null)
@@ -56,13 +56,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Text
         /// </summary>
-        [DataMember(Name = "text", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "text", IsRequired = true, EmitDefaultValue = true)]
         public string Text { get; set; }
 
         /// <summary>
         /// Gets or Sets WorkItemId
         /// </summary>
-        [DataMember(Name = "workItemId", EmitDefaultValue = false)]
+        [DataMember(Name = "workItemId", IsRequired = true, EmitDefaultValue = true)]
         public Guid WorkItemId { get; set; }
 
         /// <summary>

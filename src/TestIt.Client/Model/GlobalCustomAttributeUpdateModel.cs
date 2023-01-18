@@ -42,9 +42,9 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="name">Name of attribute (required).</param>
         /// <param name="options">Collection of attribute options  &lt;br /&gt;  Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only.</param>
-        /// <param name="enabled">Indicates whether the attribute is available.</param>
-        /// <param name="required">Indicates whether the attribute value is mandatory to specify.</param>
-        public GlobalCustomAttributeUpdateModel(string name = default(string), List<CustomAttributeOptionModel> options = default(List<CustomAttributeOptionModel>), bool? enabled = default(bool?), bool? required = default(bool?))
+        /// <param name="isEnabled">Indicates whether the attribute is available.</param>
+        /// <param name="isRequired">Indicates whether the attribute value is mandatory to specify.</param>
+        public GlobalCustomAttributeUpdateModel(string name = default(string), List<CustomAttributeOptionModel> options = default(List<CustomAttributeOptionModel>), bool? isEnabled = default(bool?), bool? isRequired = default(bool?))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -53,15 +53,15 @@ namespace TestIt.Client.Model
             }
             this.Name = name;
             this.Options = options;
-            this.Enabled = enabled;
-            this.Required = required;
+            this.IsEnabled = isEnabled;
+            this.IsRequired = isRequired;
         }
 
         /// <summary>
         /// Name of attribute
         /// </summary>
         /// <value>Name of attribute</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -75,15 +75,15 @@ namespace TestIt.Client.Model
         /// Indicates whether the attribute is available
         /// </summary>
         /// <value>Indicates whether the attribute is available</value>
-        [DataMember(Name = "enabled", EmitDefaultValue = true)]
-        public bool? Enabled { get; set; }
+        [DataMember(Name = "isEnabled", EmitDefaultValue = true)]
+        public bool? IsEnabled { get; set; }
 
         /// <summary>
         /// Indicates whether the attribute value is mandatory to specify
         /// </summary>
         /// <value>Indicates whether the attribute value is mandatory to specify</value>
-        [DataMember(Name = "required", EmitDefaultValue = true)]
-        public bool? Required { get; set; }
+        [DataMember(Name = "isRequired", EmitDefaultValue = true)]
+        public bool? IsRequired { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -95,8 +95,8 @@ namespace TestIt.Client.Model
             sb.Append("class GlobalCustomAttributeUpdateModel {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Options: ").Append(Options).Append("\n");
-            sb.Append("  Enabled: ").Append(Enabled).Append("\n");
-            sb.Append("  Required: ").Append(Required).Append("\n");
+            sb.Append("  IsEnabled: ").Append(IsEnabled).Append("\n");
+            sb.Append("  IsRequired: ").Append(IsRequired).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -144,14 +144,14 @@ namespace TestIt.Client.Model
                     this.Options.SequenceEqual(input.Options)
                 ) && 
                 (
-                    this.Enabled == input.Enabled ||
-                    (this.Enabled != null &&
-                    this.Enabled.Equals(input.Enabled))
+                    this.IsEnabled == input.IsEnabled ||
+                    (this.IsEnabled != null &&
+                    this.IsEnabled.Equals(input.IsEnabled))
                 ) && 
                 (
-                    this.Required == input.Required ||
-                    (this.Required != null &&
-                    this.Required.Equals(input.Required))
+                    this.IsRequired == input.IsRequired ||
+                    (this.IsRequired != null &&
+                    this.IsRequired.Equals(input.IsRequired))
                 );
         }
 
@@ -172,13 +172,13 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.Options.GetHashCode();
                 }
-                if (this.Enabled != null)
+                if (this.IsEnabled != null)
                 {
-                    hashCode = (hashCode * 59) + this.Enabled.GetHashCode();
+                    hashCode = (hashCode * 59) + this.IsEnabled.GetHashCode();
                 }
-                if (this.Required != null)
+                if (this.IsRequired != null)
                 {
-                    hashCode = (hashCode * 59) + this.Required.GetHashCode();
+                    hashCode = (hashCode * 59) + this.IsRequired.GetHashCode();
                 }
                 return hashCode;
             }

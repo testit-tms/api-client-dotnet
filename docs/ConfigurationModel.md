@@ -6,7 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | **string** |  | [optional] 
 **IsActive** | **bool** |  | [optional] 
-**Capabilities** | **Dictionary&lt;string, string&gt;** |  | 
+**Capabilities** | **Dictionary&lt;string, string&gt;** |  | [optional] 
+**Parameters** | **Dictionary&lt;string, string&gt;** |  | [optional] 
 **ProjectId** | **Guid** | This property is used to link configuration with project | [optional] 
 **IsDefault** | **bool** |  | [optional] 
 **Name** | **string** |  | [optional] 
@@ -15,8 +16,8 @@ Name | Type | Description | Notes
 **CreatedById** | **Guid** |  | [optional] 
 **ModifiedById** | **Guid?** |  | [optional] 
 **GlobalId** | **long** |  | [optional] 
-**Id** | **Guid** |  | [optional] 
-**IsDeleted** | **bool** |  | [optional] 
+**Id** | **Guid** | Unique ID of the entity | [optional] 
+**IsDeleted** | **bool** | Indicates if the entity is deleted | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

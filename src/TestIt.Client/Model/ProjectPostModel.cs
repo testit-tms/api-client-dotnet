@@ -40,8 +40,8 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectPostModel" /> class.
         /// </summary>
-        /// <param name="description">description.</param>
-        /// <param name="name">name (required).</param>
+        /// <param name="description">Description of the project.</param>
+        /// <param name="name">Name of the project (required).</param>
         public ProjectPostModel(string description = default(string), string name = default(string))
         {
             // to ensure "name" is required (not null)
@@ -54,15 +54,17 @@ namespace TestIt.Client.Model
         }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Description of the project
         /// </summary>
+        /// <value>Description of the project</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name of the project
         /// </summary>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>Name of the project</value>
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>

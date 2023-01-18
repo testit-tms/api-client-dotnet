@@ -136,7 +136,7 @@ namespace TestIt.Client.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ApiV2AutoTestsIdWorkItemsChangedWorkItemIdApprovePostWithHttpInfo(Guid id, Guid workItemId);
         /// <summary>
-        /// 
+        /// Search for autotests
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -144,12 +144,12 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchAutotestsQueryModel"> (optional)</param>
+        /// <param name="autotestsSelectModel"> (optional)</param>
         /// <returns>List&lt;AutoTestModel&gt;</returns>
-        List<AutoTestModel> ApiV2AutoTestsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAutotestsQueryModel searchAutotestsQueryModel = default(SearchAutotestsQueryModel));
+        List<AutoTestModel> ApiV2AutoTestsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestsSelectModel autotestsSelectModel = default(AutotestsSelectModel));
 
         /// <summary>
-        /// 
+        /// Search for autotests
         /// </summary>
         /// <remarks>
         /// 
@@ -160,9 +160,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchAutotestsQueryModel"> (optional)</param>
+        /// <param name="autotestsSelectModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;AutoTestModel&gt;</returns>
-        ApiResponse<List<AutoTestModel>> ApiV2AutoTestsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAutotestsQueryModel searchAutotestsQueryModel = default(SearchAutotestsQueryModel));
+        ApiResponse<List<AutoTestModel>> ApiV2AutoTestsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestsSelectModel autotestsSelectModel = default(AutotestsSelectModel));
         /// <summary>
         /// Create autotest
         /// </summary>
@@ -250,11 +250,8 @@ namespace TestIt.Client.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteAutoTestLinkFromWorkItemWithHttpInfo(string id, string workItemId = default(string));
         /// <summary>
-        /// Get all autotests
+        /// 
         /// </summary>
-        /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;[Optional] User sets search parameters (listed in request parameters) and runs method execution  &lt;br&gt;System returns all autotests, matching search criteria
-        /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal ID (optional)</param>
         /// <param name="externalId">Autotest external ID (optional)</param>
@@ -282,13 +279,14 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>List&lt;AutoTestModel&gt;</returns>
+        [Obsolete]
         List<AutoTestModel> GetAllAutoTests(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string _namespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
 
         /// <summary>
-        /// Get all autotests
+        /// 
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;[Optional] User sets search parameters (listed in request parameters) and runs method execution  &lt;br&gt;System returns all autotests, matching search criteria
+        /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal ID (optional)</param>
@@ -317,6 +315,7 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>ApiResponse of List&lt;AutoTestModel&gt;</returns>
+        [Obsolete]
         ApiResponse<List<AutoTestModel>> GetAllAutoTestsWithHttpInfo(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string _namespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
         /// <summary>
         /// Get average autotest duration
@@ -666,7 +665,7 @@ namespace TestIt.Client.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2AutoTestsIdWorkItemsChangedWorkItemIdApprovePostWithHttpInfoAsync(Guid id, Guid workItemId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Search for autotests
         /// </summary>
         /// <remarks>
         /// 
@@ -677,13 +676,13 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchAutotestsQueryModel"> (optional)</param>
+        /// <param name="autotestsSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AutoTestModel&gt;</returns>
-        System.Threading.Tasks.Task<List<AutoTestModel>> ApiV2AutoTestsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAutotestsQueryModel searchAutotestsQueryModel = default(SearchAutotestsQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<AutoTestModel>> ApiV2AutoTestsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestsSelectModel autotestsSelectModel = default(AutotestsSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Search for autotests
         /// </summary>
         /// <remarks>
         /// 
@@ -694,10 +693,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchAutotestsQueryModel"> (optional)</param>
+        /// <param name="autotestsSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AutoTestModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<AutoTestModel>>> ApiV2AutoTestsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAutotestsQueryModel searchAutotestsQueryModel = default(SearchAutotestsQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<AutoTestModel>>> ApiV2AutoTestsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestsSelectModel autotestsSelectModel = default(AutotestsSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create autotest
         /// </summary>
@@ -793,10 +792,10 @@ namespace TestIt.Client.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteAutoTestLinkFromWorkItemWithHttpInfoAsync(string id, string workItemId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Get all autotests
+        /// 
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;[Optional] User sets search parameters (listed in request parameters) and runs method execution  &lt;br&gt;System returns all autotests, matching search criteria
+        /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal ID (optional)</param>
@@ -826,13 +825,14 @@ namespace TestIt.Client.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AutoTestModel&gt;</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<List<AutoTestModel>> GetAllAutoTestsAsync(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string _namespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Get all autotests
+        /// 
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;[Optional] User sets search parameters (listed in request parameters) and runs method execution  &lt;br&gt;System returns all autotests, matching search criteria
+        /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal ID (optional)</param>
@@ -862,6 +862,7 @@ namespace TestIt.Client.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AutoTestModel&gt;)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<List<AutoTestModel>>> GetAllAutoTestsWithHttpInfoAsync(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string _namespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get average autotest duration
@@ -1928,7 +1929,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Search for autotests 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1936,16 +1937,16 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchAutotestsQueryModel"> (optional)</param>
+        /// <param name="autotestsSelectModel"> (optional)</param>
         /// <returns>List&lt;AutoTestModel&gt;</returns>
-        public List<AutoTestModel> ApiV2AutoTestsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAutotestsQueryModel searchAutotestsQueryModel = default(SearchAutotestsQueryModel))
+        public List<AutoTestModel> ApiV2AutoTestsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestsSelectModel autotestsSelectModel = default(AutotestsSelectModel))
         {
-            TestIt.Client.Client.ApiResponse<List<AutoTestModel>> localVarResponse = ApiV2AutoTestsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, searchAutotestsQueryModel);
+            TestIt.Client.Client.ApiResponse<List<AutoTestModel>> localVarResponse = ApiV2AutoTestsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, autotestsSelectModel);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        /// Search for autotests 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1953,9 +1954,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchAutotestsQueryModel"> (optional)</param>
+        /// <param name="autotestsSelectModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;AutoTestModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<AutoTestModel>> ApiV2AutoTestsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAutotestsQueryModel searchAutotestsQueryModel = default(SearchAutotestsQueryModel))
+        public TestIt.Client.Client.ApiResponse<List<AutoTestModel>> ApiV2AutoTestsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestsSelectModel autotestsSelectModel = default(AutotestsSelectModel))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1994,7 +1995,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = searchAutotestsQueryModel;
+            localVarRequestOptions.Data = autotestsSelectModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2015,7 +2016,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Search for autotests 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -2023,17 +2024,17 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchAutotestsQueryModel"> (optional)</param>
+        /// <param name="autotestsSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AutoTestModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<AutoTestModel>> ApiV2AutoTestsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAutotestsQueryModel searchAutotestsQueryModel = default(SearchAutotestsQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<AutoTestModel>> ApiV2AutoTestsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestsSelectModel autotestsSelectModel = default(AutotestsSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<AutoTestModel>> localVarResponse = await ApiV2AutoTestsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, searchAutotestsQueryModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<AutoTestModel>> localVarResponse = await ApiV2AutoTestsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, autotestsSelectModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        /// Search for autotests 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -2041,10 +2042,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchAutotestsQueryModel"> (optional)</param>
+        /// <param name="autotestsSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AutoTestModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<AutoTestModel>>> ApiV2AutoTestsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAutotestsQueryModel searchAutotestsQueryModel = default(SearchAutotestsQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<AutoTestModel>>> ApiV2AutoTestsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestsSelectModel autotestsSelectModel = default(AutotestsSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -2085,7 +2086,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = searchAutotestsQueryModel;
+            localVarRequestOptions.Data = autotestsSelectModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2603,7 +2604,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get all autotests &lt;br&gt;Use case  &lt;br&gt;[Optional] User sets search parameters (listed in request parameters) and runs method execution  &lt;br&gt;System returns all autotests, matching search criteria
+        ///  
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal ID (optional)</param>
@@ -2632,6 +2633,7 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>List&lt;AutoTestModel&gt;</returns>
+        [Obsolete]
         public List<AutoTestModel> GetAllAutoTests(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string _namespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
             TestIt.Client.Client.ApiResponse<List<AutoTestModel>> localVarResponse = GetAllAutoTestsWithHttpInfo(projectId, externalId, globalId, _namespace, isNamespaceNull, includeEmptyNamespaces, className, isClassnameNull, includeEmptyClassNames, isDeleted, deleted, labels, stabilityMinimal, minStability, stabilityMaximal, maxStability, isFlaky, flaky, includeSteps, includeLabels, skip, take, orderBy, searchField, searchValue);
@@ -2639,7 +2641,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get all autotests &lt;br&gt;Use case  &lt;br&gt;[Optional] User sets search parameters (listed in request parameters) and runs method execution  &lt;br&gt;System returns all autotests, matching search criteria
+        ///  
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal ID (optional)</param>
@@ -2668,6 +2670,7 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>ApiResponse of List&lt;AutoTestModel&gt;</returns>
+        [Obsolete]
         public TestIt.Client.Client.ApiResponse<List<AutoTestModel>> GetAllAutoTestsWithHttpInfo(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string _namespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -2806,7 +2809,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get all autotests &lt;br&gt;Use case  &lt;br&gt;[Optional] User sets search parameters (listed in request parameters) and runs method execution  &lt;br&gt;System returns all autotests, matching search criteria
+        ///  
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal ID (optional)</param>
@@ -2836,6 +2839,7 @@ namespace TestIt.Client.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AutoTestModel&gt;</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<List<AutoTestModel>> GetAllAutoTestsAsync(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string _namespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             TestIt.Client.Client.ApiResponse<List<AutoTestModel>> localVarResponse = await GetAllAutoTestsWithHttpInfoAsync(projectId, externalId, globalId, _namespace, isNamespaceNull, includeEmptyNamespaces, className, isClassnameNull, includeEmptyClassNames, isDeleted, deleted, labels, stabilityMinimal, minStability, stabilityMaximal, maxStability, isFlaky, flaky, includeSteps, includeLabels, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
@@ -2843,7 +2847,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get all autotests &lt;br&gt;Use case  &lt;br&gt;[Optional] User sets search parameters (listed in request parameters) and runs method execution  &lt;br&gt;System returns all autotests, matching search criteria
+        ///  
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal ID (optional)</param>
@@ -2873,6 +2877,7 @@ namespace TestIt.Client.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AutoTestModel&gt;)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<AutoTestModel>>> GetAllAutoTestsWithHttpInfoAsync(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string _namespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 

@@ -4,10 +4,11 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ApiV2TestRunsIdStatisticsFilterPost**](TestRunsApi.md#apiv2testrunsidstatisticsfilterpost) | **POST** /api/v2/testRuns/{id}/statistics/filter |  |
-| [**ApiV2TestRunsIdTestPointsResultsGet**](TestRunsApi.md#apiv2testrunsidtestpointsresultsget) | **GET** /api/v2/testRuns/{id}/testPoints/results |  |
-| [**ApiV2TestRunsIdTestResultsLastModifiedModificationDateGet**](TestRunsApi.md#apiv2testrunsidtestresultslastmodifiedmodificationdateget) | **GET** /api/v2/testRuns/{id}/testResults/lastModified/modificationDate |  |
-| [**ApiV2TestRunsSearchPost**](TestRunsApi.md#apiv2testrunssearchpost) | **POST** /api/v2/testRuns/search |  |
+| [**ApiV2TestRunsIdStatisticsFilterPost**](TestRunsApi.md#apiv2testrunsidstatisticsfilterpost) | **POST** /api/v2/testRuns/{id}/statistics/filter | Search for the test run test results and build statistics |
+| [**ApiV2TestRunsIdTestPointsResultsGet**](TestRunsApi.md#apiv2testrunsidtestpointsresultsget) | **GET** /api/v2/testRuns/{id}/testPoints/results | Get test results from the test run grouped by test points |
+| [**ApiV2TestRunsIdTestResultsBulkPut**](TestRunsApi.md#apiv2testrunsidtestresultsbulkput) | **PUT** /api/v2/testRuns/{id}/testResults/bulk | Partial edit of multiple test results in the test run |
+| [**ApiV2TestRunsIdTestResultsLastModifiedModificationDateGet**](TestRunsApi.md#apiv2testrunsidtestresultslastmodifiedmodificationdateget) | **GET** /api/v2/testRuns/{id}/testResults/lastModified/modificationDate | Get modification date of last test result of the test run |
+| [**ApiV2TestRunsSearchPost**](TestRunsApi.md#apiv2testrunssearchpost) | **POST** /api/v2/testRuns/search | Search for test runs |
 | [**CompleteTestRun**](TestRunsApi.md#completetestrun) | **POST** /api/v2/testRuns/{id}/complete | Complete TestRun |
 | [**CreateAndFillByAutoTests**](TestRunsApi.md#createandfillbyautotests) | **POST** /api/v2/testRuns/byAutoTests | Create test runs based on autotests and configurations |
 | [**CreateAndFillByConfigurations**](TestRunsApi.md#createandfillbyconfigurations) | **POST** /api/v2/testRuns/byConfigurations | Create test runs picking the needed test points |
@@ -23,12 +24,13 @@ All URIs are relative to *http://localhost*
 # **ApiV2TestRunsIdStatisticsFilterPost**
 > TestResultsStatisticsGetModel ApiV2TestRunsIdStatisticsFilterPost (Guid id, TestResultsLocalFilterModel testResultsLocalFilterModel = null)
 
-
+Search for the test run test results and build statistics
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -46,12 +48,16 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestRunsApi(config);
-            var id = "id_example";  // Guid | 
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Test run unique ID
             var testResultsLocalFilterModel = new TestResultsLocalFilterModel(); // TestResultsLocalFilterModel |  (optional) 
 
             try
             {
+                // Search for the test run test results and build statistics
                 TestResultsStatisticsGetModel result = apiInstance.ApiV2TestRunsIdStatisticsFilterPost(id, testResultsLocalFilterModel);
                 Debug.WriteLine(result);
             }
@@ -72,6 +78,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Search for the test run test results and build statistics
     ApiResponse<TestResultsStatisticsGetModel> response = apiInstance.ApiV2TestRunsIdStatisticsFilterPostWithHttpInfo(id, testResultsLocalFilterModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -89,7 +96,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
+| **id** | **Guid** | Test run unique ID |  |
 | **testResultsLocalFilterModel** | [**TestResultsLocalFilterModel**](TestResultsLocalFilterModel.md) |  | [optional]  |
 
 ### Return type
@@ -110,6 +117,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **403** | Read permission for test runs is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -117,12 +125,13 @@ catch (ApiException e)
 # **ApiV2TestRunsIdTestPointsResultsGet**
 > List&lt;TestPointResultModel&gt; ApiV2TestRunsIdTestPointsResultsGet (Guid id)
 
-
+Get test results from the test run grouped by test points
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -140,11 +149,15 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestRunsApi(config);
-            var id = "id_example";  // Guid | 
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Test run unique ID
 
             try
             {
+                // Get test results from the test run grouped by test points
                 List<TestPointResultModel> result = apiInstance.ApiV2TestRunsIdTestPointsResultsGet(id);
                 Debug.WriteLine(result);
             }
@@ -165,6 +178,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Get test results from the test run grouped by test points
     ApiResponse<List<TestPointResultModel>> response = apiInstance.ApiV2TestRunsIdTestPointsResultsGetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -182,7 +196,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
+| **id** | **Guid** | Test run unique ID |  |
 
 ### Return type
 
@@ -201,7 +215,105 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **403** | Read permission for test runs is required |  -  |
 | **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="apiv2testrunsidtestresultsbulkput"></a>
+# **ApiV2TestRunsIdTestResultsBulkPut**
+> void ApiV2TestRunsIdTestResultsBulkPut (Guid id, TestRunTestResultsPartialBulkSetModel testRunTestResultsPartialBulkSetModel = null)
+
+Partial edit of multiple test results in the test run
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2TestRunsIdTestResultsBulkPutExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Test run unique ID
+            var testRunTestResultsPartialBulkSetModel = new TestRunTestResultsPartialBulkSetModel(); // TestRunTestResultsPartialBulkSetModel |  (optional) 
+
+            try
+            {
+                // Partial edit of multiple test results in the test run
+                apiInstance.ApiV2TestRunsIdTestResultsBulkPut(id, testRunTestResultsPartialBulkSetModel);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TestRunsApi.ApiV2TestRunsIdTestResultsBulkPut: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2TestRunsIdTestResultsBulkPutWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Partial edit of multiple test results in the test run
+    apiInstance.ApiV2TestRunsIdTestResultsBulkPutWithHttpInfo(id, testRunTestResultsPartialBulkSetModel);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TestRunsApi.ApiV2TestRunsIdTestResultsBulkPutWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** | Test run unique ID |  |
+| **testRunTestResultsPartialBulkSetModel** | [**TestRunTestResultsPartialBulkSetModel**](TestRunTestResultsPartialBulkSetModel.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **403** | Update permission for test runs is required |  -  |
+| **204** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -209,12 +321,13 @@ catch (ApiException e)
 # **ApiV2TestRunsIdTestResultsLastModifiedModificationDateGet**
 > DateTime ApiV2TestRunsIdTestResultsLastModifiedModificationDateGet (Guid id)
 
-
+Get modification date of last test result of the test run
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -232,11 +345,15 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestRunsApi(config);
-            var id = "id_example";  // Guid | 
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Test run unique ID
 
             try
             {
+                // Get modification date of last test result of the test run
                 DateTime result = apiInstance.ApiV2TestRunsIdTestResultsLastModifiedModificationDateGet(id);
                 Debug.WriteLine(result);
             }
@@ -257,6 +374,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Get modification date of last test result of the test run
     ApiResponse<DateTime> response = apiInstance.ApiV2TestRunsIdTestResultsLastModifiedModificationDateGetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -274,7 +392,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
+| **id** | **Guid** | Test run unique ID |  |
 
 ### Return type
 
@@ -293,6 +411,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **403** | Read permission for test runs is required |  -  |
 | **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -301,12 +420,13 @@ catch (ApiException e)
 # **ApiV2TestRunsSearchPost**
 > List&lt;TestRunShortGetModel&gt; ApiV2TestRunsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, TestRunFilterModel testRunFilterModel = null)
 
-
+Search for test runs
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -324,7 +444,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestRunsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
             var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
             var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
@@ -334,6 +457,7 @@ namespace Example
 
             try
             {
+                // Search for test runs
                 List<TestRunShortGetModel> result = apiInstance.ApiV2TestRunsSearchPost(skip, take, orderBy, searchField, searchValue, testRunFilterModel);
                 Debug.WriteLine(result);
             }
@@ -354,6 +478,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Search for test runs
     ApiResponse<List<TestRunShortGetModel>> response = apiInstance.ApiV2TestRunsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, testRunFilterModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -395,6 +520,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **403** | Read permission for autotests library is required |  -  |
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -411,6 +537,7 @@ Complete TestRun
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -428,7 +555,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestRunsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Test Run internal identifier (GUID format)
 
             try
@@ -487,11 +617,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **400** | &lt;br&gt;Field is required  &lt;br&gt;the StateName is already Stopped  &lt;br&gt;the StateName is already Completed |  -  |
+| **204** | Successful operation |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Update permission for test result required |  -  |
 | **404** | &lt;br&gt;Can&#39;t find a TestRun with id! |  -  |
-| **204** | Successful operation |  -  |
-| **400** | &lt;br&gt;Field is required  &lt;br&gt;the StateName is already Stopped  &lt;br&gt;the StateName is already Completed |  -  |
-| **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -507,6 +637,7 @@ This method creates a test run based on an autotest and a configuration.  The di
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -524,7 +655,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestRunsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
             var testRunFillByAutoTestsPostModel = new TestRunFillByAutoTestsPostModel(); // TestRunFillByAutoTestsPostModel |  (optional) 
 
             try
@@ -587,11 +721,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
+| **404** | Some autotests do not exist |  -  |
 | **403** | Update permission for test results is required |  -  |
+| **401** | Unauthorized |  -  |
 | **201** | Success |  -  |
 | **400** | &lt;br&gt;- Field is required  &lt;br&gt;- Configuration does not exist in the project  &lt;br&gt;- Autotest does not exist in the project  &lt;br&gt;- Test run must be automated  &lt;br&gt;- Project ID is invalid  &lt;br&gt;- Autotest external IDs are required  &lt;br&gt;- Configuration IDs are required |  -  |
-| **404** | Some autotests do not exist |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -607,6 +741,7 @@ This method creates a test run based on a combination of a configuration and a w
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -624,7 +759,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestRunsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
             var testRunFillByConfigurationsPostModel = new TestRunFillByConfigurationsPostModel(); // TestRunFillByConfigurationsPostModel |  (optional) 
 
             try
@@ -707,6 +845,7 @@ This method creates a test run based on a combination of configuration and work 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -724,7 +863,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestRunsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
             var testRunFillByWorkItemsPostModel = new TestRunFillByWorkItemsPostModel(); // TestRunFillByWorkItemsPostModel |  (optional) 
 
             try
@@ -787,11 +929,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Update permission for test results is required |  -  |
-| **404** | Some test points, work items or configurations do not exist |  -  |
 | **201** | Success |  -  |
 | **400** | &lt;br&gt;- Field is required  &lt;br&gt;- Test run cannot be created with deleted test points  &lt;br&gt;- Test run cannot be created in deleted test suite  &lt;br&gt;- Test run cannot be created with non-automated test point  &lt;br&gt;- Some work items do not exist  &lt;br&gt;- Project ID is invalid |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Update permission for test results is required |  -  |
+| **404** | Some test points, work items or configurations do not exist |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -807,6 +949,7 @@ Create empty TestRun
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -824,7 +967,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestRunsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
             var testRunV2PostShortModel = new TestRunV2PostShortModel(); // TestRunV2PostShortModel |  (optional) 
 
             try
@@ -888,9 +1034,9 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **403** | Update permission for test result required |  -  |
-| **401** | TestRunTesterRequirement permission required |  -  |
-| **400** | &lt;br&gt;Field is required  &lt;br&gt;TestRun must be automated  &lt;br&gt;ProjectId is not a valid! |  -  |
 | **201** | Successful operation |  -  |
+| **400** | &lt;br&gt;Field is required  &lt;br&gt;TestRun must be automated  &lt;br&gt;ProjectId is not a valid! |  -  |
+| **401** | TestRunTesterRequirement permission required |  -  |
 | **404** | Can&#39;t find a TestRun with id &#x3D; testRunId |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -907,6 +1053,7 @@ Get TestRun by Id
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -924,7 +1071,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestRunsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Test Run internal identifier (GUID format)
 
             try
@@ -987,10 +1137,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **404** | &lt;br&gt;Can&#39;t find a TestRun with id! |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test result required |  -  |
+| **404** | &lt;br&gt;Can&#39;t find a TestRun with id! |  -  |
+| **200** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1006,6 +1156,7 @@ This method sends test results to the test management system.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1023,7 +1174,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestRunsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // Guid | Test Run internal identifier (GUID format)
             var autoTestResultsForTestRunModel = new List<AutoTestResultsForTestRunModel>(); // List<AutoTestResultsForTestRunModel> |  (optional) 
 
@@ -1088,12 +1242,12 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **422** | &lt;br&gt;- Configuration with provided ID was not found  &lt;br&gt;- Test points relevant to provided filters were not found |  -  |
-| **200** | Successful operation |  -  |
-| **401** | Unauthorized |  -  |
-| **400** | &lt;br&gt;- Field is required  &lt;br&gt;- Body is invalid  &lt;br&gt;- Test points are required  &lt;br&gt;- Duration must be a positive number  &lt;br&gt;- Outcome is not defined  &lt;br&gt;- Test run is stopped |  -  |
-| **403** | Update permission for test results is required |  -  |
 | **404** | &lt;br&gt;- Test run with provided ID was not found  &lt;br&gt;- Test point was not found  &lt;br&gt;- Autotest with provided external ID was not found |  -  |
+| **401** | Unauthorized |  -  |
+| **422** | &lt;br&gt;- Configuration with provided ID was not found  &lt;br&gt;- Test points relevant to provided filters were not found |  -  |
+| **400** | &lt;br&gt;- Field is required  &lt;br&gt;- Body is invalid  &lt;br&gt;- Test points are required  &lt;br&gt;- Duration must be a positive number  &lt;br&gt;- Outcome is not defined  &lt;br&gt;- Test run is stopped |  -  |
+| **200** | Successful operation |  -  |
+| **403** | Update permission for test results is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1109,6 +1263,7 @@ Start TestRun
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1126,7 +1281,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestRunsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Test Run internal identifier (GUID format)
 
             try
@@ -1185,11 +1343,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Successful operation |  -  |
-| **404** | &lt;br&gt;Can&#39;t find a TestRun with id! |  -  |
-| **400** | &lt;br&gt;Field is required  &lt;br&gt;the StateName is already InProgress  &lt;br&gt;the StateName is already Stopped  &lt;br&gt;the StateName is already Completed |  -  |
 | **401** | Unauthorized |  -  |
+| **204** | Successful operation |  -  |
+| **400** | &lt;br&gt;Field is required  &lt;br&gt;the StateName is already InProgress  &lt;br&gt;the StateName is already Stopped  &lt;br&gt;the StateName is already Completed |  -  |
 | **403** | Update permission for test result required |  -  |
+| **404** | &lt;br&gt;Can&#39;t find a TestRun with id! |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1205,6 +1363,7 @@ Stop TestRun
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1222,7 +1381,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestRunsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Test Run internal identifier (GUID format)
 
             try
@@ -1281,10 +1443,10 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | &lt;br&gt;Field is required  &lt;br&gt;the StateName is already Stopped  &lt;br&gt;the StateName is already Completed |  -  |
-| **403** | Update permission for test result required |  -  |
 | **204** | Successful operation |  -  |
+| **400** | &lt;br&gt;Field is required  &lt;br&gt;the StateName is already Stopped  &lt;br&gt;the StateName is already Completed |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Update permission for test result required |  -  |
 | **404** | &lt;br&gt;Can&#39;t find a TestRun with id! |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1301,6 +1463,7 @@ Update empty TestRun
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1318,7 +1481,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestRunsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
             var testRunV2PutModel = new TestRunV2PutModel(); // TestRunV2PutModel |  (optional) 
 
             try
@@ -1377,11 +1543,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **404** | &lt;br&gt;Can&#39;t find a TestRun with id! |  -  |
+| **204** | Successful operation |  -  |
 | **400** | &lt;br&gt;Field is required  &lt;br&gt;Name is not valid |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test result required |  -  |
-| **404** | &lt;br&gt;Can&#39;t find a TestRun with id! |  -  |
-| **204** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

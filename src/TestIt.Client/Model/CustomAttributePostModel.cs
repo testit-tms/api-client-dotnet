@@ -36,7 +36,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public CustomAttributeTypesEnum Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomAttributePostModel" /> class.
@@ -48,11 +48,11 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="options">Collection of attribute options  &lt;br /&gt;  Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only.</param>
         /// <param name="type">type (required).</param>
-        /// <param name="name">Name of attribute (required).</param>
-        /// <param name="enabled">Indicates whether the attribute is available.</param>
-        /// <param name="required">Indicates whether the attribute value is mandatory to specify.</param>
-        /// <param name="isGlobal">Indicates whether the attribute is available across all projects.</param>
-        public CustomAttributePostModel(List<CustomAttributeOptionPostModel> options = default(List<CustomAttributeOptionPostModel>), CustomAttributeTypesEnum type = default(CustomAttributeTypesEnum), string name = default(string), bool enabled = default(bool), bool required = default(bool), bool isGlobal = default(bool))
+        /// <param name="name">Name of the attribute (required).</param>
+        /// <param name="isEnabled">Indicates if the attribute is enabled.</param>
+        /// <param name="isRequired">Indicates if the attribute value is mandatory to specify.</param>
+        /// <param name="isGlobal">Indicates if the attribute is available across all projects.</param>
+        public CustomAttributePostModel(List<CustomAttributeOptionPostModel> options = default(List<CustomAttributeOptionPostModel>), CustomAttributeTypesEnum type = default(CustomAttributeTypesEnum), string name = default(string), bool isEnabled = default(bool), bool isRequired = default(bool), bool isGlobal = default(bool))
         {
             this.Type = type;
             // to ensure "name" is required (not null)
@@ -62,8 +62,8 @@ namespace TestIt.Client.Model
             }
             this.Name = name;
             this.Options = options;
-            this.Enabled = enabled;
-            this.Required = required;
+            this.IsEnabled = isEnabled;
+            this.IsRequired = isRequired;
             this.IsGlobal = isGlobal;
         }
 
@@ -75,30 +75,30 @@ namespace TestIt.Client.Model
         public List<CustomAttributeOptionPostModel> Options { get; set; }
 
         /// <summary>
-        /// Name of attribute
+        /// Name of the attribute
         /// </summary>
-        /// <value>Name of attribute</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>Name of the attribute</value>
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Indicates whether the attribute is available
+        /// Indicates if the attribute is enabled
         /// </summary>
-        /// <value>Indicates whether the attribute is available</value>
-        [DataMember(Name = "enabled", EmitDefaultValue = true)]
-        public bool Enabled { get; set; }
+        /// <value>Indicates if the attribute is enabled</value>
+        [DataMember(Name = "isEnabled", EmitDefaultValue = true)]
+        public bool IsEnabled { get; set; }
 
         /// <summary>
-        /// Indicates whether the attribute value is mandatory to specify
+        /// Indicates if the attribute value is mandatory to specify
         /// </summary>
-        /// <value>Indicates whether the attribute value is mandatory to specify</value>
-        [DataMember(Name = "required", EmitDefaultValue = true)]
-        public bool Required { get; set; }
+        /// <value>Indicates if the attribute value is mandatory to specify</value>
+        [DataMember(Name = "isRequired", EmitDefaultValue = true)]
+        public bool IsRequired { get; set; }
 
         /// <summary>
-        /// Indicates whether the attribute is available across all projects
+        /// Indicates if the attribute is available across all projects
         /// </summary>
-        /// <value>Indicates whether the attribute is available across all projects</value>
+        /// <value>Indicates if the attribute is available across all projects</value>
         [DataMember(Name = "isGlobal", EmitDefaultValue = true)]
         public bool IsGlobal { get; set; }
 
@@ -113,8 +113,8 @@ namespace TestIt.Client.Model
             sb.Append("  Options: ").Append(Options).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Enabled: ").Append(Enabled).Append("\n");
-            sb.Append("  Required: ").Append(Required).Append("\n");
+            sb.Append("  IsEnabled: ").Append(IsEnabled).Append("\n");
+            sb.Append("  IsRequired: ").Append(IsRequired).Append("\n");
             sb.Append("  IsGlobal: ").Append(IsGlobal).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -167,12 +167,12 @@ namespace TestIt.Client.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Enabled == input.Enabled ||
-                    this.Enabled.Equals(input.Enabled)
+                    this.IsEnabled == input.IsEnabled ||
+                    this.IsEnabled.Equals(input.IsEnabled)
                 ) && 
                 (
-                    this.Required == input.Required ||
-                    this.Required.Equals(input.Required)
+                    this.IsRequired == input.IsRequired ||
+                    this.IsRequired.Equals(input.IsRequired)
                 ) && 
                 (
                     this.IsGlobal == input.IsGlobal ||
@@ -198,8 +198,8 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Enabled.GetHashCode();
-                hashCode = (hashCode * 59) + this.Required.GetHashCode();
+                hashCode = (hashCode * 59) + this.IsEnabled.GetHashCode();
+                hashCode = (hashCode * 59) + this.IsRequired.GetHashCode();
                 hashCode = (hashCode * 59) + this.IsGlobal.GetHashCode();
                 return hashCode;
             }

@@ -40,8 +40,8 @@ namespace TestIt.Client.Model
         /// <param name="parentId">parentId.</param>
         /// <param name="testPlanId">testPlanId.</param>
         /// <param name="name">name.</param>
-        /// <param name="id">id.</param>
-        /// <param name="isDeleted">isDeleted.</param>
+        /// <param name="id">Unique ID of the entity.</param>
+        /// <param name="isDeleted">Indicates if the entity is deleted.</param>
         public TestSuiteWithChildrenModel(List<TestSuiteWithChildrenModel> children = default(List<TestSuiteWithChildrenModel>), Guid? testerId = default(Guid?), Guid? parentId = default(Guid?), Guid testPlanId = default(Guid), string name = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
         {
             this.Children = children;
@@ -84,14 +84,16 @@ namespace TestIt.Client.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Unique ID of the entity
         /// </summary>
+        /// <value>Unique ID of the entity</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDeleted
+        /// Indicates if the entity is deleted
         /// </summary>
+        /// <value>Indicates if the entity is deleted</value>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 

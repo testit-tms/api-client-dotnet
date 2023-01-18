@@ -55,7 +55,7 @@ namespace TestIt.Client.Model
         /// Label name.
         /// </summary>
         /// <value>Label name.</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>

@@ -70,45 +70,39 @@ namespace TestIt.Client.Api
         /// <returns>ApiResponse of WorkItemCommentModel</returns>
         ApiResponse<WorkItemCommentModel> ApiV2WorkItemsCommentsPostWithHttpInfo(WorkItemCommentPostModel workItemCommentPostModel = default(WorkItemCommentPostModel));
         /// <summary>
-        /// Update WorkItem comment
+        /// Update work item comment
         /// </summary>
-        /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets comment properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates comment   &lt;br&gt;System returns success status code
-        /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="workItemCommentPutModel"> (optional)</param>
         /// <returns></returns>
         void ApiV2WorkItemsCommentsPut(WorkItemCommentPutModel workItemCommentPutModel = default(WorkItemCommentPutModel));
 
         /// <summary>
-        /// Update WorkItem comment
+        /// Update work item comment
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets comment properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates comment   &lt;br&gt;System returns success status code
+        /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="workItemCommentPutModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ApiV2WorkItemsCommentsPutWithHttpInfo(WorkItemCommentPutModel workItemCommentPutModel = default(WorkItemCommentPutModel));
         /// <summary>
-        /// Get WorkItem comments by Id or GlobalId
+        /// Get work item comments
         /// </summary>
-        /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search comments by workitem identifier  &lt;br&gt;System returns comments 
-        /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
+        /// <param name="id">Unique or global ID of the work item</param>
         /// <returns>List&lt;WorkItemCommentModel&gt;</returns>
         List<WorkItemCommentModel> ApiV2WorkItemsIdCommentsGet(string id);
 
         /// <summary>
-        /// Get WorkItem comments by Id or GlobalId
+        /// Get work item comments
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search comments by workitem identifier  &lt;br&gt;System returns comments 
+        /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
+        /// <param name="id">Unique or global ID of the work item</param>
         /// <returns>ApiResponse of List&lt;WorkItemCommentModel&gt;</returns>
         ApiResponse<List<WorkItemCommentModel>> ApiV2WorkItemsIdCommentsGetWithHttpInfo(string id);
         #endregion Synchronous Operations
@@ -167,10 +161,10 @@ namespace TestIt.Client.Api
         /// <returns>Task of ApiResponse (WorkItemCommentModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<WorkItemCommentModel>> ApiV2WorkItemsCommentsPostWithHttpInfoAsync(WorkItemCommentPostModel workItemCommentPostModel = default(WorkItemCommentPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Update WorkItem comment
+        /// Update work item comment
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets comment properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates comment   &lt;br&gt;System returns success status code
+        /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="workItemCommentPutModel"> (optional)</param>
@@ -179,10 +173,10 @@ namespace TestIt.Client.Api
         System.Threading.Tasks.Task ApiV2WorkItemsCommentsPutAsync(WorkItemCommentPutModel workItemCommentPutModel = default(WorkItemCommentPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Update WorkItem comment
+        /// Update work item comment
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets comment properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates comment   &lt;br&gt;System returns success status code
+        /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="workItemCommentPutModel"> (optional)</param>
@@ -190,25 +184,25 @@ namespace TestIt.Client.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2WorkItemsCommentsPutWithHttpInfoAsync(WorkItemCommentPutModel workItemCommentPutModel = default(WorkItemCommentPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Get WorkItem comments by Id or GlobalId
+        /// Get work item comments
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search comments by workitem identifier  &lt;br&gt;System returns comments 
+        /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
+        /// <param name="id">Unique or global ID of the work item</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WorkItemCommentModel&gt;</returns>
         System.Threading.Tasks.Task<List<WorkItemCommentModel>> ApiV2WorkItemsIdCommentsGetAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Get WorkItem comments by Id or GlobalId
+        /// Get work item comments
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search comments by workitem identifier  &lt;br&gt;System returns comments 
+        /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
+        /// <param name="id">Unique or global ID of the work item</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WorkItemCommentModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<WorkItemCommentModel>>> ApiV2WorkItemsIdCommentsGetWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -660,7 +654,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Update WorkItem comment &lt;br&gt;Use case  &lt;br&gt;User sets comment properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates comment   &lt;br&gt;System returns success status code
+        /// Update work item comment 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="workItemCommentPutModel"> (optional)</param>
@@ -671,7 +665,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Update WorkItem comment &lt;br&gt;Use case  &lt;br&gt;User sets comment properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates comment   &lt;br&gt;System returns success status code
+        /// Update work item comment 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="workItemCommentPutModel"> (optional)</param>
@@ -716,7 +710,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Update WorkItem comment &lt;br&gt;Use case  &lt;br&gt;User sets comment properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates comment   &lt;br&gt;System returns success status code
+        /// Update work item comment 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="workItemCommentPutModel"> (optional)</param>
@@ -728,7 +722,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Update WorkItem comment &lt;br&gt;Use case  &lt;br&gt;User sets comment properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates comment   &lt;br&gt;System returns success status code
+        /// Update work item comment 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="workItemCommentPutModel"> (optional)</param>
@@ -777,10 +771,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get WorkItem comments by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search comments by workitem identifier  &lt;br&gt;System returns comments 
+        /// Get work item comments 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
+        /// <param name="id">Unique or global ID of the work item</param>
         /// <returns>List&lt;WorkItemCommentModel&gt;</returns>
         public List<WorkItemCommentModel> ApiV2WorkItemsIdCommentsGet(string id)
         {
@@ -789,10 +783,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get WorkItem comments by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search comments by workitem identifier  &lt;br&gt;System returns comments 
+        /// Get work item comments 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
+        /// <param name="id">Unique or global ID of the work item</param>
         /// <returns>ApiResponse of List&lt;WorkItemCommentModel&gt;</returns>
         public TestIt.Client.Client.ApiResponse<List<WorkItemCommentModel>> ApiV2WorkItemsIdCommentsGetWithHttpInfo(string id)
         {
@@ -837,10 +831,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get WorkItem comments by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search comments by workitem identifier  &lt;br&gt;System returns comments 
+        /// Get work item comments 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
+        /// <param name="id">Unique or global ID of the work item</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WorkItemCommentModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<WorkItemCommentModel>> ApiV2WorkItemsIdCommentsGetAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -850,10 +844,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get WorkItem comments by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search comments by workitem identifier  &lt;br&gt;System returns comments 
+        /// Get work item comments 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
+        /// <param name="id">Unique or global ID of the work item</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WorkItemCommentModel&gt;)</returns>
         public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<WorkItemCommentModel>>> ApiV2WorkItemsIdCommentsGetWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))

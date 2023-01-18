@@ -35,10 +35,10 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomAttributeOptionModel" /> class.
         /// </summary>
-        /// <param name="id">Unique ID of attribute option.</param>
-        /// <param name="isDeleted">Indicates whether the options is deleted.</param>
-        /// <param name="value">Value of attribute option.</param>
-        /// <param name="isDefault">Indicates whether the option is used by default.</param>
+        /// <param name="id">Unique ID of the attribute option.</param>
+        /// <param name="isDeleted">Indicates if the attributes option is deleted.</param>
+        /// <param name="value">Value of the attribute option.</param>
+        /// <param name="isDefault">Indicates if the attribute option is used by default.</param>
         public CustomAttributeOptionModel(Guid id = default(Guid), bool isDeleted = default(bool), string value = default(string), bool isDefault = default(bool))
         {
             this.Id = id;
@@ -48,30 +48,30 @@ namespace TestIt.Client.Model
         }
 
         /// <summary>
-        /// Unique ID of attribute option
+        /// Unique ID of the attribute option
         /// </summary>
-        /// <value>Unique ID of attribute option</value>
+        /// <value>Unique ID of the attribute option</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Indicates whether the options is deleted
+        /// Indicates if the attributes option is deleted
         /// </summary>
-        /// <value>Indicates whether the options is deleted</value>
+        /// <value>Indicates if the attributes option is deleted</value>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>
-        /// Value of attribute option
+        /// Value of the attribute option
         /// </summary>
-        /// <value>Value of attribute option</value>
+        /// <value>Value of the attribute option</value>
         [DataMember(Name = "value", EmitDefaultValue = true)]
         public string Value { get; set; }
 
         /// <summary>
-        /// Indicates whether the option is used by default
+        /// Indicates if the attribute option is used by default
         /// </summary>
-        /// <value>Indicates whether the option is used by default</value>
+        /// <value>Indicates if the attribute option is used by default</value>
         [DataMember(Name = "isDefault", EmitDefaultValue = true)]
         public bool IsDefault { get; set; }
 

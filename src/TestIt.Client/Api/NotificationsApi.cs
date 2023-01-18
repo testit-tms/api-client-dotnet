@@ -119,6 +119,37 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ApiV2NotificationsReadPostWithHttpInfo();
+        /// <summary>
+        /// Search Notifications for current User
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User set filter and runs method execution  &lt;br&gt;System returns notifications (listed in the response example)
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="notificationQueryFilterModel"> (optional)</param>
+        /// <returns>List&lt;NotificationModel&gt;</returns>
+        List<NotificationModel> ApiV2NotificationsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), NotificationQueryFilterModel notificationQueryFilterModel = default(NotificationQueryFilterModel));
+
+        /// <summary>
+        /// Search Notifications for current User
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User set filter and runs method execution  &lt;br&gt;System returns notifications (listed in the response example)
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="notificationQueryFilterModel"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;NotificationModel&gt;</returns>
+        ApiResponse<List<NotificationModel>> ApiV2NotificationsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), NotificationQueryFilterModel notificationQueryFilterModel = default(NotificationQueryFilterModel));
         #endregion Synchronous Operations
     }
 
@@ -228,6 +259,39 @@ namespace TestIt.Client.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2NotificationsReadPostWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Search Notifications for current User
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User set filter and runs method execution  &lt;br&gt;System returns notifications (listed in the response example)
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="notificationQueryFilterModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;NotificationModel&gt;</returns>
+        System.Threading.Tasks.Task<List<NotificationModel>> ApiV2NotificationsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), NotificationQueryFilterModel notificationQueryFilterModel = default(NotificationQueryFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Search Notifications for current User
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User set filter and runs method execution  &lt;br&gt;System returns notifications (listed in the response example)
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="notificationQueryFilterModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;NotificationModel&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<NotificationModel>>> ApiV2NotificationsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), NotificationQueryFilterModel notificationQueryFilterModel = default(NotificationQueryFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -965,6 +1029,185 @@ namespace TestIt.Client.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2NotificationsReadPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Search Notifications for current User &lt;br&gt;Use case  &lt;br&gt;User set filter and runs method execution  &lt;br&gt;System returns notifications (listed in the response example)
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="notificationQueryFilterModel"> (optional)</param>
+        /// <returns>List&lt;NotificationModel&gt;</returns>
+        public List<NotificationModel> ApiV2NotificationsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), NotificationQueryFilterModel notificationQueryFilterModel = default(NotificationQueryFilterModel))
+        {
+            TestIt.Client.Client.ApiResponse<List<NotificationModel>> localVarResponse = ApiV2NotificationsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, notificationQueryFilterModel);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Search Notifications for current User &lt;br&gt;Use case  &lt;br&gt;User set filter and runs method execution  &lt;br&gt;System returns notifications (listed in the response example)
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="notificationQueryFilterModel"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;NotificationModel&gt;</returns>
+        public TestIt.Client.Client.ApiResponse<List<NotificationModel>> ApiV2NotificationsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), NotificationQueryFilterModel notificationQueryFilterModel = default(NotificationQueryFilterModel))
+        {
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (skip != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
+            }
+            if (take != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
+            }
+            if (orderBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
+            }
+            if (searchField != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
+            }
+            if (searchValue != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
+            }
+            localVarRequestOptions.Data = notificationQueryFilterModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<NotificationModel>>("/api/v2/notifications/search", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2NotificationsSearchPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Search Notifications for current User &lt;br&gt;Use case  &lt;br&gt;User set filter and runs method execution  &lt;br&gt;System returns notifications (listed in the response example)
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="notificationQueryFilterModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;NotificationModel&gt;</returns>
+        public async System.Threading.Tasks.Task<List<NotificationModel>> ApiV2NotificationsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), NotificationQueryFilterModel notificationQueryFilterModel = default(NotificationQueryFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIt.Client.Client.ApiResponse<List<NotificationModel>> localVarResponse = await ApiV2NotificationsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, notificationQueryFilterModel, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Search Notifications for current User &lt;br&gt;Use case  &lt;br&gt;User set filter and runs method execution  &lt;br&gt;System returns notifications (listed in the response example)
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="notificationQueryFilterModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;NotificationModel&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<NotificationModel>>> ApiV2NotificationsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), NotificationQueryFilterModel notificationQueryFilterModel = default(NotificationQueryFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (skip != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
+            }
+            if (take != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
+            }
+            if (orderBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
+            }
+            if (searchField != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
+            }
+            if (searchValue != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
+            }
+            localVarRequestOptions.Data = notificationQueryFilterModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<NotificationModel>>("/api/v2/notifications/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2NotificationsSearchPost", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

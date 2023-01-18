@@ -35,14 +35,24 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomAttributeTemplateModel" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected CustomAttributeTemplateModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomAttributeTemplateModel" /> class.
+        /// </summary>
         /// <param name="id">id.</param>
         /// <param name="isDeleted">isDeleted.</param>
-        /// <param name="name">name.</param>
+        /// <param name="name">Custom attributes template name (required).</param>
         public CustomAttributeTemplateModel(Guid id = default(Guid), bool isDeleted = default(bool), string name = default(string))
         {
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for CustomAttributeTemplateModel and cannot be null");
+            }
+            this.Name = name;
             this.Id = id;
             this.IsDeleted = isDeleted;
-            this.Name = name;
         }
 
         /// <summary>
@@ -58,9 +68,10 @@ namespace TestIt.Client.Model
         public bool IsDeleted { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Custom attributes template name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        /// <value>Custom attributes template name</value>
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -154,6 +165,18 @@ namespace TestIt.Client.Model
         /// <returns>Validation Result</returns>
         public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
+            // Name (string) maxLength
+            if (this.Name != null && this.Name.Length > 255)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+            }
+
+            // Name (string) minLength
+            if (this.Name != null && this.Name.Length < 0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
+            }
+
             yield break;
         }
     }

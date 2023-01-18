@@ -35,11 +35,11 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestRunStatisticsErrorCategoriesGetModel" /> class.
         /// </summary>
-        /// <param name="noAnalytics">noAnalytics.</param>
-        /// <param name="noDefect">noDefect.</param>
-        /// <param name="infrastructureDefect">infrastructureDefect.</param>
-        /// <param name="productDefect">productDefect.</param>
-        /// <param name="testDefect">testDefect.</param>
+        /// <param name="noAnalytics">Number of test results which outcomes were not analyzed.</param>
+        /// <param name="noDefect">Number of test results which outcomes were not caused by any defect.</param>
+        /// <param name="infrastructureDefect">Number of test results which outcomes were caused by some infrastructure defect.</param>
+        /// <param name="productDefect">Number of test results which outcomes were caused by some tested product defect.</param>
+        /// <param name="testDefect">Number of test results which outcomes were caused by test itself.</param>
         public TestRunStatisticsErrorCategoriesGetModel(int noAnalytics = default(int), int noDefect = default(int), int infrastructureDefect = default(int), int productDefect = default(int), int testDefect = default(int))
         {
             this.NoAnalytics = noAnalytics;
@@ -50,32 +50,37 @@ namespace TestIt.Client.Model
         }
 
         /// <summary>
-        /// Gets or Sets NoAnalytics
+        /// Number of test results which outcomes were not analyzed
         /// </summary>
+        /// <value>Number of test results which outcomes were not analyzed</value>
         [DataMember(Name = "noAnalytics", EmitDefaultValue = false)]
         public int NoAnalytics { get; set; }
 
         /// <summary>
-        /// Gets or Sets NoDefect
+        /// Number of test results which outcomes were not caused by any defect
         /// </summary>
+        /// <value>Number of test results which outcomes were not caused by any defect</value>
         [DataMember(Name = "noDefect", EmitDefaultValue = false)]
         public int NoDefect { get; set; }
 
         /// <summary>
-        /// Gets or Sets InfrastructureDefect
+        /// Number of test results which outcomes were caused by some infrastructure defect
         /// </summary>
+        /// <value>Number of test results which outcomes were caused by some infrastructure defect</value>
         [DataMember(Name = "infrastructureDefect", EmitDefaultValue = false)]
         public int InfrastructureDefect { get; set; }
 
         /// <summary>
-        /// Gets or Sets ProductDefect
+        /// Number of test results which outcomes were caused by some tested product defect
         /// </summary>
+        /// <value>Number of test results which outcomes were caused by some tested product defect</value>
         [DataMember(Name = "productDefect", EmitDefaultValue = false)]
         public int ProductDefect { get; set; }
 
         /// <summary>
-        /// Gets or Sets TestDefect
+        /// Number of test results which outcomes were caused by test itself
         /// </summary>
+        /// <value>Number of test results which outcomes were caused by test itself</value>
         [DataMember(Name = "testDefect", EmitDefaultValue = false)]
         public int TestDefect { get; set; }
 

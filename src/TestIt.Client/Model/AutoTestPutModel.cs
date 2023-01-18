@@ -42,19 +42,19 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="id">Used for search autotest. If value equals Guid mask filled with zeros, search will be executed using ExternalId.</param>
         /// <param name="workItemIdsForLinkWithAutoTest">workItemIdsForLinkWithAutoTest.</param>
-        /// <param name="externalId">Specifies the ID of your autotest in the external system.&lt;br /&gt;  To test the method, you can use any ID. (required).</param>
-        /// <param name="links">Specifies the links in the autotest..</param>
-        /// <param name="projectId">Specifies the project GUID.&lt;br /&gt;  You can get it using the &#x60;GET /api/v2/projects&#x60; method. (required).</param>
-        /// <param name="name">Specifies autotest name in the test management system. (required).</param>
-        /// <param name="_namespace">Specifies the name of the namespace in the test management system..</param>
-        /// <param name="classname">Specifies the class name in the test management system..</param>
-        /// <param name="steps">Specifies the steps in the autotest..</param>
-        /// <param name="setup">Specifies the setup steps and relates them to the autotest. Supported values are the same as in the &#x60;steps&#x60; parameter..</param>
-        /// <param name="teardown">Specifies the teardown steps and relates them to the autotest. Supported values are the same as in the &#x60;steps&#x60; parameter..</param>
-        /// <param name="title">Specifies the name of the autotest in the autotest card.   The &#x60;Name&#x60; parameter is responsible for the name in the table..</param>
-        /// <param name="description">Specifies the autotest description in the test management system..</param>
-        /// <param name="labels">Specifies autotest labels..</param>
-        /// <param name="isFlaky">Marks the autotest as flaky..</param>
+        /// <param name="externalId">External ID of the autotest (required).</param>
+        /// <param name="links">Collection of the autotest links.</param>
+        /// <param name="projectId">Unique ID of the autotest project (required).</param>
+        /// <param name="name">Name of the autotest (required).</param>
+        /// <param name="_namespace">Name of the autotest namespace.</param>
+        /// <param name="classname">Name of the autotest class.</param>
+        /// <param name="steps">Collection of the autotest steps.</param>
+        /// <param name="setup">Collection of the autotest setup steps.</param>
+        /// <param name="teardown">Collection of the autotest teardown steps.</param>
+        /// <param name="title">Name of the autotest in autotest&#39;s card.</param>
+        /// <param name="description">Description of the autotest in autotest&#39;s card.</param>
+        /// <param name="labels">Collection of the autotest labels.</param>
+        /// <param name="isFlaky">Indicates if the autotest is marked as flaky.</param>
         public AutoTestPutModel(Guid id = default(Guid), List<Guid> workItemIdsForLinkWithAutoTest = default(List<Guid>), string externalId = default(string), List<LinkPutModel> links = default(List<LinkPutModel>), Guid projectId = default(Guid), string name = default(string), string _namespace = default(string), string classname = default(string), List<AutoTestStepModel> steps = default(List<AutoTestStepModel>), List<AutoTestStepModel> setup = default(List<AutoTestStepModel>), List<AutoTestStepModel> teardown = default(List<AutoTestStepModel>), string title = default(string), string description = default(string), List<LabelPostModel> labels = default(List<LabelPostModel>), bool? isFlaky = default(bool?))
         {
             // to ensure "externalId" is required (not null)
@@ -98,93 +98,93 @@ namespace TestIt.Client.Model
         public List<Guid> WorkItemIdsForLinkWithAutoTest { get; set; }
 
         /// <summary>
-        /// Specifies the ID of your autotest in the external system.&lt;br /&gt;  To test the method, you can use any ID.
+        /// External ID of the autotest
         /// </summary>
-        /// <value>Specifies the ID of your autotest in the external system.&lt;br /&gt;  To test the method, you can use any ID.</value>
-        [DataMember(Name = "externalId", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>External ID of the autotest</value>
+        [DataMember(Name = "externalId", IsRequired = true, EmitDefaultValue = true)]
         public string ExternalId { get; set; }
 
         /// <summary>
-        /// Specifies the links in the autotest.
+        /// Collection of the autotest links
         /// </summary>
-        /// <value>Specifies the links in the autotest.</value>
+        /// <value>Collection of the autotest links</value>
         [DataMember(Name = "links", EmitDefaultValue = true)]
         public List<LinkPutModel> Links { get; set; }
 
         /// <summary>
-        /// Specifies the project GUID.&lt;br /&gt;  You can get it using the &#x60;GET /api/v2/projects&#x60; method.
+        /// Unique ID of the autotest project
         /// </summary>
-        /// <value>Specifies the project GUID.&lt;br /&gt;  You can get it using the &#x60;GET /api/v2/projects&#x60; method.</value>
-        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>Unique ID of the autotest project</value>
+        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
-        /// Specifies autotest name in the test management system.
+        /// Name of the autotest
         /// </summary>
-        /// <value>Specifies autotest name in the test management system.</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>Name of the autotest</value>
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Specifies the name of the namespace in the test management system.
+        /// Name of the autotest namespace
         /// </summary>
-        /// <value>Specifies the name of the namespace in the test management system.</value>
+        /// <value>Name of the autotest namespace</value>
         [DataMember(Name = "namespace", EmitDefaultValue = true)]
         public string Namespace { get; set; }
 
         /// <summary>
-        /// Specifies the class name in the test management system.
+        /// Name of the autotest class
         /// </summary>
-        /// <value>Specifies the class name in the test management system.</value>
+        /// <value>Name of the autotest class</value>
         [DataMember(Name = "classname", EmitDefaultValue = true)]
         public string Classname { get; set; }
 
         /// <summary>
-        /// Specifies the steps in the autotest.
+        /// Collection of the autotest steps
         /// </summary>
-        /// <value>Specifies the steps in the autotest.</value>
+        /// <value>Collection of the autotest steps</value>
         [DataMember(Name = "steps", EmitDefaultValue = true)]
         public List<AutoTestStepModel> Steps { get; set; }
 
         /// <summary>
-        /// Specifies the setup steps and relates them to the autotest. Supported values are the same as in the &#x60;steps&#x60; parameter.
+        /// Collection of the autotest setup steps
         /// </summary>
-        /// <value>Specifies the setup steps and relates them to the autotest. Supported values are the same as in the &#x60;steps&#x60; parameter.</value>
+        /// <value>Collection of the autotest setup steps</value>
         [DataMember(Name = "setup", EmitDefaultValue = true)]
         public List<AutoTestStepModel> Setup { get; set; }
 
         /// <summary>
-        /// Specifies the teardown steps and relates them to the autotest. Supported values are the same as in the &#x60;steps&#x60; parameter.
+        /// Collection of the autotest teardown steps
         /// </summary>
-        /// <value>Specifies the teardown steps and relates them to the autotest. Supported values are the same as in the &#x60;steps&#x60; parameter.</value>
+        /// <value>Collection of the autotest teardown steps</value>
         [DataMember(Name = "teardown", EmitDefaultValue = true)]
         public List<AutoTestStepModel> Teardown { get; set; }
 
         /// <summary>
-        /// Specifies the name of the autotest in the autotest card.   The &#x60;Name&#x60; parameter is responsible for the name in the table.
+        /// Name of the autotest in autotest&#39;s card
         /// </summary>
-        /// <value>Specifies the name of the autotest in the autotest card.   The &#x60;Name&#x60; parameter is responsible for the name in the table.</value>
+        /// <value>Name of the autotest in autotest&#39;s card</value>
         [DataMember(Name = "title", EmitDefaultValue = true)]
         public string Title { get; set; }
 
         /// <summary>
-        /// Specifies the autotest description in the test management system.
+        /// Description of the autotest in autotest&#39;s card
         /// </summary>
-        /// <value>Specifies the autotest description in the test management system.</value>
+        /// <value>Description of the autotest in autotest&#39;s card</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
-        /// Specifies autotest labels.
+        /// Collection of the autotest labels
         /// </summary>
-        /// <value>Specifies autotest labels.</value>
+        /// <value>Collection of the autotest labels</value>
         [DataMember(Name = "labels", EmitDefaultValue = true)]
         public List<LabelPostModel> Labels { get; set; }
 
         /// <summary>
-        /// Marks the autotest as flaky.
+        /// Indicates if the autotest is marked as flaky
         /// </summary>
-        /// <value>Marks the autotest as flaky.</value>
+        /// <value>Indicates if the autotest is marked as flaky</value>
         [DataMember(Name = "isFlaky", EmitDefaultValue = true)]
         public bool? IsFlaky { get; set; }
 

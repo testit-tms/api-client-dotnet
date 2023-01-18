@@ -40,32 +40,32 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestModel" /> class.
         /// </summary>
-        /// <param name="globalId">globalId.</param>
-        /// <param name="isDeleted">isDeleted.</param>
-        /// <param name="mustBeApproved">mustBeApproved.</param>
-        /// <param name="id">id.</param>
-        /// <param name="createdDate">createdDate.</param>
-        /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="createdById">createdById.</param>
-        /// <param name="modifiedById">modifiedById.</param>
-        /// <param name="lastTestRunId">lastTestRunId.</param>
-        /// <param name="lastTestRunName">lastTestRunName.</param>
-        /// <param name="lastTestResultId">lastTestResultId.</param>
-        /// <param name="lastTestResultOutcome">Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped.</param>
-        /// <param name="stabilityPercentage">stabilityPercentage.</param>
-        /// <param name="externalId">Specifies the ID of your autotest in the external system.&lt;br /&gt;  To test the method, you can use any ID. (required).</param>
-        /// <param name="links">Specifies the links in the autotest..</param>
-        /// <param name="projectId">Specifies the project GUID.&lt;br /&gt;  You can get it using the &#x60;GET /api/v2/projects&#x60; method. (required).</param>
-        /// <param name="name">Specifies autotest name in the test management system. (required).</param>
-        /// <param name="_namespace">Specifies the name of the namespace in the test management system..</param>
-        /// <param name="classname">Specifies the class name in the test management system..</param>
-        /// <param name="steps">Specifies the steps in the autotest..</param>
-        /// <param name="setup">Specifies the setup steps and relates them to the autotest. Supported values are the same as in the &#x60;steps&#x60; parameter..</param>
-        /// <param name="teardown">Specifies the teardown steps and relates them to the autotest. Supported values are the same as in the &#x60;steps&#x60; parameter..</param>
-        /// <param name="title">Specifies the name of the autotest in the autotest card.   The &#x60;Name&#x60; parameter is responsible for the name in the table..</param>
-        /// <param name="description">Specifies the autotest description in the test management system..</param>
-        /// <param name="labels">Specifies autotest labels..</param>
-        /// <param name="isFlaky">Marks the autotest as flaky..</param>
+        /// <param name="globalId">Global ID of the autotest.</param>
+        /// <param name="isDeleted">Indicates if the autotest is deleted.</param>
+        /// <param name="mustBeApproved">Indicates if the autotest has unapproved changes from linked work items.</param>
+        /// <param name="id">Unique ID of the autotest.</param>
+        /// <param name="createdDate">Creation date of the autotest.</param>
+        /// <param name="modifiedDate">Last modification date of the project.</param>
+        /// <param name="createdById">Unique ID of the project creator.</param>
+        /// <param name="modifiedById">Unique ID of the project last editor.</param>
+        /// <param name="lastTestRunId">Unique ID of the autotest last test run.</param>
+        /// <param name="lastTestRunName">Name of the autotest last test run.</param>
+        /// <param name="lastTestResultId">Unique ID of the autotest last test result.</param>
+        /// <param name="lastTestResultOutcome">Outcome of the autotest last test result.</param>
+        /// <param name="stabilityPercentage">Stability percentage of the autotest.</param>
+        /// <param name="externalId">External ID of the autotest (required).</param>
+        /// <param name="links">Collection of the autotest links.</param>
+        /// <param name="projectId">Unique ID of the autotest project (required).</param>
+        /// <param name="name">Name of the autotest (required).</param>
+        /// <param name="_namespace">Name of the autotest namespace.</param>
+        /// <param name="classname">Name of the autotest class.</param>
+        /// <param name="steps">Collection of the autotest steps.</param>
+        /// <param name="setup">Collection of the autotest setup steps.</param>
+        /// <param name="teardown">Collection of the autotest teardown steps.</param>
+        /// <param name="title">Name of the autotest in autotest&#39;s card.</param>
+        /// <param name="description">Description of the autotest in autotest&#39;s card.</param>
+        /// <param name="labels">Collection of the autotest labels.</param>
+        /// <param name="isFlaky">Indicates if the autotest is marked as flaky.</param>
         public AutoTestModel(long globalId = default(long), bool isDeleted = default(bool), bool mustBeApproved = default(bool), Guid id = default(Guid), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), Guid? lastTestRunId = default(Guid?), string lastTestRunName = default(string), Guid? lastTestResultId = default(Guid?), string lastTestResultOutcome = default(string), int? stabilityPercentage = default(int?), string externalId = default(string), List<LinkPutModel> links = default(List<LinkPutModel>), Guid projectId = default(Guid), string name = default(string), string _namespace = default(string), string classname = default(string), List<AutoTestStepModel> steps = default(List<AutoTestStepModel>), List<AutoTestStepModel> setup = default(List<AutoTestStepModel>), List<AutoTestStepModel> teardown = default(List<AutoTestStepModel>), string title = default(string), string description = default(string), List<LabelShortModel> labels = default(List<LabelShortModel>), bool? isFlaky = default(bool?))
         {
             // to ensure "externalId" is required (not null)
@@ -107,172 +107,184 @@ namespace TestIt.Client.Model
         }
 
         /// <summary>
-        /// Gets or Sets GlobalId
+        /// Global ID of the autotest
         /// </summary>
+        /// <value>Global ID of the autotest</value>
         [DataMember(Name = "globalId", EmitDefaultValue = false)]
         public long GlobalId { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDeleted
+        /// Indicates if the autotest is deleted
         /// </summary>
+        /// <value>Indicates if the autotest is deleted</value>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>
-        /// Gets or Sets MustBeApproved
+        /// Indicates if the autotest has unapproved changes from linked work items
         /// </summary>
+        /// <value>Indicates if the autotest has unapproved changes from linked work items</value>
         [DataMember(Name = "mustBeApproved", EmitDefaultValue = true)]
-        public bool MustBeApproved { get; set; }
+        public bool? MustBeApproved { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Unique ID of the autotest
         /// </summary>
+        /// <value>Unique ID of the autotest</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedDate
+        /// Creation date of the autotest
         /// </summary>
+        /// <value>Creation date of the autotest</value>
         [DataMember(Name = "createdDate", EmitDefaultValue = false)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets ModifiedDate
+        /// Last modification date of the project
         /// </summary>
+        /// <value>Last modification date of the project</value>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedById
+        /// Unique ID of the project creator
         /// </summary>
+        /// <value>Unique ID of the project creator</value>
         [DataMember(Name = "createdById", EmitDefaultValue = false)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
-        /// Gets or Sets ModifiedById
+        /// Unique ID of the project last editor
         /// </summary>
+        /// <value>Unique ID of the project last editor</value>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
         /// <summary>
-        /// Gets or Sets LastTestRunId
+        /// Unique ID of the autotest last test run
         /// </summary>
+        /// <value>Unique ID of the autotest last test run</value>
         [DataMember(Name = "lastTestRunId", EmitDefaultValue = true)]
         public Guid? LastTestRunId { get; set; }
 
         /// <summary>
-        /// Gets or Sets LastTestRunName
+        /// Name of the autotest last test run
         /// </summary>
+        /// <value>Name of the autotest last test run</value>
         [DataMember(Name = "lastTestRunName", EmitDefaultValue = true)]
         public string LastTestRunName { get; set; }
 
         /// <summary>
-        /// Gets or Sets LastTestResultId
+        /// Unique ID of the autotest last test result
         /// </summary>
+        /// <value>Unique ID of the autotest last test result</value>
         [DataMember(Name = "lastTestResultId", EmitDefaultValue = true)]
         public Guid? LastTestResultId { get; set; }
 
         /// <summary>
-        /// Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped
+        /// Outcome of the autotest last test result
         /// </summary>
-        /// <value>Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped</value>
+        /// <value>Outcome of the autotest last test result</value>
         [DataMember(Name = "lastTestResultOutcome", EmitDefaultValue = true)]
         public string LastTestResultOutcome { get; set; }
 
         /// <summary>
-        /// Gets or Sets StabilityPercentage
+        /// Stability percentage of the autotest
         /// </summary>
+        /// <value>Stability percentage of the autotest</value>
         [DataMember(Name = "stabilityPercentage", EmitDefaultValue = true)]
         public int? StabilityPercentage { get; set; }
 
         /// <summary>
-        /// Specifies the ID of your autotest in the external system.&lt;br /&gt;  To test the method, you can use any ID.
+        /// External ID of the autotest
         /// </summary>
-        /// <value>Specifies the ID of your autotest in the external system.&lt;br /&gt;  To test the method, you can use any ID.</value>
-        [DataMember(Name = "externalId", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>External ID of the autotest</value>
+        [DataMember(Name = "externalId", IsRequired = true, EmitDefaultValue = true)]
         public string ExternalId { get; set; }
 
         /// <summary>
-        /// Specifies the links in the autotest.
+        /// Collection of the autotest links
         /// </summary>
-        /// <value>Specifies the links in the autotest.</value>
+        /// <value>Collection of the autotest links</value>
         [DataMember(Name = "links", EmitDefaultValue = true)]
         public List<LinkPutModel> Links { get; set; }
 
         /// <summary>
-        /// Specifies the project GUID.&lt;br /&gt;  You can get it using the &#x60;GET /api/v2/projects&#x60; method.
+        /// Unique ID of the autotest project
         /// </summary>
-        /// <value>Specifies the project GUID.&lt;br /&gt;  You can get it using the &#x60;GET /api/v2/projects&#x60; method.</value>
-        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>Unique ID of the autotest project</value>
+        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
-        /// Specifies autotest name in the test management system.
+        /// Name of the autotest
         /// </summary>
-        /// <value>Specifies autotest name in the test management system.</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>Name of the autotest</value>
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Specifies the name of the namespace in the test management system.
+        /// Name of the autotest namespace
         /// </summary>
-        /// <value>Specifies the name of the namespace in the test management system.</value>
+        /// <value>Name of the autotest namespace</value>
         [DataMember(Name = "namespace", EmitDefaultValue = true)]
         public string Namespace { get; set; }
 
         /// <summary>
-        /// Specifies the class name in the test management system.
+        /// Name of the autotest class
         /// </summary>
-        /// <value>Specifies the class name in the test management system.</value>
+        /// <value>Name of the autotest class</value>
         [DataMember(Name = "classname", EmitDefaultValue = true)]
         public string Classname { get; set; }
 
         /// <summary>
-        /// Specifies the steps in the autotest.
+        /// Collection of the autotest steps
         /// </summary>
-        /// <value>Specifies the steps in the autotest.</value>
+        /// <value>Collection of the autotest steps</value>
         [DataMember(Name = "steps", EmitDefaultValue = true)]
         public List<AutoTestStepModel> Steps { get; set; }
 
         /// <summary>
-        /// Specifies the setup steps and relates them to the autotest. Supported values are the same as in the &#x60;steps&#x60; parameter.
+        /// Collection of the autotest setup steps
         /// </summary>
-        /// <value>Specifies the setup steps and relates them to the autotest. Supported values are the same as in the &#x60;steps&#x60; parameter.</value>
+        /// <value>Collection of the autotest setup steps</value>
         [DataMember(Name = "setup", EmitDefaultValue = true)]
         public List<AutoTestStepModel> Setup { get; set; }
 
         /// <summary>
-        /// Specifies the teardown steps and relates them to the autotest. Supported values are the same as in the &#x60;steps&#x60; parameter.
+        /// Collection of the autotest teardown steps
         /// </summary>
-        /// <value>Specifies the teardown steps and relates them to the autotest. Supported values are the same as in the &#x60;steps&#x60; parameter.</value>
+        /// <value>Collection of the autotest teardown steps</value>
         [DataMember(Name = "teardown", EmitDefaultValue = true)]
         public List<AutoTestStepModel> Teardown { get; set; }
 
         /// <summary>
-        /// Specifies the name of the autotest in the autotest card.   The &#x60;Name&#x60; parameter is responsible for the name in the table.
+        /// Name of the autotest in autotest&#39;s card
         /// </summary>
-        /// <value>Specifies the name of the autotest in the autotest card.   The &#x60;Name&#x60; parameter is responsible for the name in the table.</value>
+        /// <value>Name of the autotest in autotest&#39;s card</value>
         [DataMember(Name = "title", EmitDefaultValue = true)]
         public string Title { get; set; }
 
         /// <summary>
-        /// Specifies the autotest description in the test management system.
+        /// Description of the autotest in autotest&#39;s card
         /// </summary>
-        /// <value>Specifies the autotest description in the test management system.</value>
+        /// <value>Description of the autotest in autotest&#39;s card</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
-        /// Specifies autotest labels.
+        /// Collection of the autotest labels
         /// </summary>
-        /// <value>Specifies autotest labels.</value>
+        /// <value>Collection of the autotest labels</value>
         [DataMember(Name = "labels", EmitDefaultValue = true)]
         public List<LabelShortModel> Labels { get; set; }
 
         /// <summary>
-        /// Marks the autotest as flaky.
+        /// Indicates if the autotest is marked as flaky
         /// </summary>
-        /// <value>Marks the autotest as flaky.</value>
+        /// <value>Indicates if the autotest is marked as flaky</value>
         [DataMember(Name = "isFlaky", EmitDefaultValue = true)]
         public bool? IsFlaky { get; set; }
 
@@ -344,134 +356,134 @@ namespace TestIt.Client.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.GlobalId == input.GlobalId ||
                     this.GlobalId.Equals(input.GlobalId)
-                ) && 
+                ) &&
                 (
                     this.IsDeleted == input.IsDeleted ||
                     this.IsDeleted.Equals(input.IsDeleted)
-                ) && 
+                ) &&
                 (
                     this.MustBeApproved == input.MustBeApproved ||
                     this.MustBeApproved.Equals(input.MustBeApproved)
-                ) && 
+                ) &&
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
+                ) &&
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
                     this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
+                ) &&
                 (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&
                     this.CreatedById.Equals(input.CreatedById))
-                ) && 
+                ) &&
                 (
                     this.ModifiedById == input.ModifiedById ||
                     (this.ModifiedById != null &&
                     this.ModifiedById.Equals(input.ModifiedById))
-                ) && 
+                ) &&
                 (
                     this.LastTestRunId == input.LastTestRunId ||
                     (this.LastTestRunId != null &&
                     this.LastTestRunId.Equals(input.LastTestRunId))
-                ) && 
+                ) &&
                 (
                     this.LastTestRunName == input.LastTestRunName ||
                     (this.LastTestRunName != null &&
                     this.LastTestRunName.Equals(input.LastTestRunName))
-                ) && 
+                ) &&
                 (
                     this.LastTestResultId == input.LastTestResultId ||
                     (this.LastTestResultId != null &&
                     this.LastTestResultId.Equals(input.LastTestResultId))
-                ) && 
+                ) &&
                 (
                     this.LastTestResultOutcome == input.LastTestResultOutcome ||
                     (this.LastTestResultOutcome != null &&
                     this.LastTestResultOutcome.Equals(input.LastTestResultOutcome))
-                ) && 
+                ) &&
                 (
                     this.StabilityPercentage == input.StabilityPercentage ||
                     (this.StabilityPercentage != null &&
                     this.StabilityPercentage.Equals(input.StabilityPercentage))
-                ) && 
+                ) &&
                 (
                     this.ExternalId == input.ExternalId ||
                     (this.ExternalId != null &&
                     this.ExternalId.Equals(input.ExternalId))
-                ) && 
+                ) &&
                 (
                     this.Links == input.Links ||
                     this.Links != null &&
                     input.Links != null &&
                     this.Links.SequenceEqual(input.Links)
-                ) && 
+                ) &&
                 (
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.Namespace == input.Namespace ||
                     (this.Namespace != null &&
                     this.Namespace.Equals(input.Namespace))
-                ) && 
+                ) &&
                 (
                     this.Classname == input.Classname ||
                     (this.Classname != null &&
                     this.Classname.Equals(input.Classname))
-                ) && 
+                ) &&
                 (
                     this.Steps == input.Steps ||
                     this.Steps != null &&
                     input.Steps != null &&
                     this.Steps.SequenceEqual(input.Steps)
-                ) && 
+                ) &&
                 (
                     this.Setup == input.Setup ||
                     this.Setup != null &&
                     input.Setup != null &&
                     this.Setup.SequenceEqual(input.Setup)
-                ) && 
+                ) &&
                 (
                     this.Teardown == input.Teardown ||
                     this.Teardown != null &&
                     input.Teardown != null &&
                     this.Teardown.SequenceEqual(input.Teardown)
-                ) && 
+                ) &&
                 (
                     this.Title == input.Title ||
                     (this.Title != null &&
                     this.Title.Equals(input.Title))
-                ) && 
+                ) &&
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
+                ) &&
                 (
                     this.Labels == input.Labels ||
                     this.Labels != null &&
                     input.Labels != null &&
                     this.Labels.SequenceEqual(input.Labels)
-                ) && 
+                ) &&
                 (
                     this.IsFlaky == input.IsFlaky ||
                     (this.IsFlaky != null &&

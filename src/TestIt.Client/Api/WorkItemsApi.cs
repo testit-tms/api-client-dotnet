@@ -257,6 +257,34 @@ namespace TestIt.Client.Api
         /// <returns>ApiResponse of WorkItemShortModel</returns>
         ApiResponse<WorkItemShortModel> ApiV2WorkItemsMovePostWithHttpInfo(WorkItemMovePostModel workItemMovePostModel = default(WorkItemMovePostModel));
         /// <summary>
+        /// Search for work items
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <returns>List&lt;WorkItemShortModel&gt;</returns>
+        List<WorkItemShortModel> ApiV2WorkItemsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel));
+
+        /// <summary>
+        /// Search for work items
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;WorkItemShortModel&gt;</returns>
+        ApiResponse<List<WorkItemShortModel>> ApiV2WorkItemsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel));
+        /// <summary>
         /// Get SharedStep references in sections
         /// </summary>
         /// <remarks>
@@ -799,6 +827,39 @@ namespace TestIt.Client.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkItemShortModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<WorkItemShortModel>> ApiV2WorkItemsMovePostWithHttpInfoAsync(WorkItemMovePostModel workItemMovePostModel = default(WorkItemMovePostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Search for work items
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;WorkItemShortModel&gt;</returns>
+        System.Threading.Tasks.Task<List<WorkItemShortModel>> ApiV2WorkItemsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Search for work items
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<WorkItemShortModel>>> ApiV2WorkItemsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get SharedStep references in sections
         /// </summary>
@@ -2605,6 +2666,185 @@ namespace TestIt.Client.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2WorkItemsMovePost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Search for work items 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <returns>List&lt;WorkItemShortModel&gt;</returns>
+        public List<WorkItemShortModel> ApiV2WorkItemsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel))
+        {
+            TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = ApiV2WorkItemsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, workItemSelectModel);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Search for work items 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;WorkItemShortModel&gt;</returns>
+        public TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>> ApiV2WorkItemsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel))
+        {
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (skip != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
+            }
+            if (take != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
+            }
+            if (orderBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
+            }
+            if (searchField != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
+            }
+            if (searchValue != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
+            }
+            localVarRequestOptions.Data = workItemSelectModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<WorkItemShortModel>>("/api/v2/workItems/search", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2WorkItemsSearchPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Search for work items 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;WorkItemShortModel&gt;</returns>
+        public async System.Threading.Tasks.Task<List<WorkItemShortModel>> ApiV2WorkItemsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = await ApiV2WorkItemsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, workItemSelectModel, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Search for work items 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>>> ApiV2WorkItemsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (skip != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
+            }
+            if (take != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
+            }
+            if (orderBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
+            }
+            if (searchField != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
+            }
+            if (searchValue != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
+            }
+            localVarRequestOptions.Data = workItemSelectModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<WorkItemShortModel>>("/api/v2/workItems/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2WorkItemsSearchPost", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

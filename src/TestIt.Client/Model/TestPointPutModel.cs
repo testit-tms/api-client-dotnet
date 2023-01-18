@@ -42,8 +42,8 @@ namespace TestIt.Client.Model
         /// <param name="testSuiteId">testSuiteId.</param>
         /// <param name="status">status.</param>
         /// <param name="lastTestResultId">lastTestResultId.</param>
-        /// <param name="id">id.</param>
-        /// <param name="isDeleted">isDeleted.</param>
+        /// <param name="id">Unique ID of the entity.</param>
+        /// <param name="isDeleted">Indicates if the entity is deleted.</param>
         public TestPointPutModel(Guid? testerId = default(Guid?), Guid iterationId = default(Guid), Guid? workItemId = default(Guid?), Guid? configurationId = default(Guid?), Guid testSuiteId = default(Guid), string status = default(string), Guid? lastTestResultId = default(Guid?), Guid id = default(Guid), bool isDeleted = default(bool))
         {
             this.TesterId = testerId;
@@ -100,14 +100,16 @@ namespace TestIt.Client.Model
         public Guid? LastTestResultId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Unique ID of the entity
         /// </summary>
+        /// <value>Unique ID of the entity</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDeleted
+        /// Indicates if the entity is deleted
         /// </summary>
+        /// <value>Indicates if the entity is deleted</value>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 

@@ -35,57 +35,54 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchWebhooksQueryModel" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="eventTypes">eventTypes.</param>
-        /// <param name="methods">methods.</param>
-        /// <param name="projectIds">projectIds.</param>
-        /// <param name="isEnabled">isEnabled.</param>
-        /// <param name="isDeleted">isDeleted.</param>
-        public SearchWebhooksQueryModel(string name = default(string), List<WebHookEventTypeModel> eventTypes = default(List<WebHookEventTypeModel>), List<RequestTypeModel> methods = default(List<RequestTypeModel>), List<Guid> projectIds = default(List<Guid>), bool? isEnabled = default(bool?), bool? isDeleted = default(bool?))
+        /// <param name="name">Specifies a webhook name to search for.</param>
+        /// <param name="eventTypes">Specifies a webhook event types to search for.</param>
+        /// <param name="methods">Specifies a webhook methods to search for.</param>
+        /// <param name="projectIds">Specifies a webhook project IDs to search for.</param>
+        /// <param name="isEnabled">Specifies a webhook deleted status to search for.</param>
+        public SearchWebhooksQueryModel(string name = default(string), List<WebHookEventTypeModel> eventTypes = default(List<WebHookEventTypeModel>), List<RequestTypeModel> methods = default(List<RequestTypeModel>), List<Guid> projectIds = default(List<Guid>), bool? isEnabled = default(bool?))
         {
             this.Name = name;
             this.EventTypes = eventTypes;
             this.Methods = methods;
             this.ProjectIds = projectIds;
             this.IsEnabled = isEnabled;
-            this.IsDeleted = isDeleted;
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Specifies a webhook name to search for
         /// </summary>
+        /// <value>Specifies a webhook name to search for</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets EventTypes
+        /// Specifies a webhook event types to search for
         /// </summary>
+        /// <value>Specifies a webhook event types to search for</value>
         [DataMember(Name = "eventTypes", EmitDefaultValue = true)]
         public List<WebHookEventTypeModel> EventTypes { get; set; }
 
         /// <summary>
-        /// Gets or Sets Methods
+        /// Specifies a webhook methods to search for
         /// </summary>
+        /// <value>Specifies a webhook methods to search for</value>
         [DataMember(Name = "methods", EmitDefaultValue = true)]
         public List<RequestTypeModel> Methods { get; set; }
 
         /// <summary>
-        /// Gets or Sets ProjectIds
+        /// Specifies a webhook project IDs to search for
         /// </summary>
+        /// <value>Specifies a webhook project IDs to search for</value>
         [DataMember(Name = "projectIds", EmitDefaultValue = true)]
         public List<Guid> ProjectIds { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsEnabled
+        /// Specifies a webhook deleted status to search for
         /// </summary>
+        /// <value>Specifies a webhook deleted status to search for</value>
         [DataMember(Name = "isEnabled", EmitDefaultValue = true)]
         public bool? IsEnabled { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IsDeleted
-        /// </summary>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
-        public bool? IsDeleted { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -100,7 +97,6 @@ namespace TestIt.Client.Model
             sb.Append("  Methods: ").Append(Methods).Append("\n");
             sb.Append("  ProjectIds: ").Append(ProjectIds).Append("\n");
             sb.Append("  IsEnabled: ").Append(IsEnabled).Append("\n");
-            sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -163,11 +159,6 @@ namespace TestIt.Client.Model
                     this.IsEnabled == input.IsEnabled ||
                     (this.IsEnabled != null &&
                     this.IsEnabled.Equals(input.IsEnabled))
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    (this.IsDeleted != null &&
-                    this.IsDeleted.Equals(input.IsDeleted))
                 );
         }
 
@@ -200,10 +191,6 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.IsEnabled.GetHashCode();
                 }
-                if (this.IsDeleted != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                }
                 return hashCode;
             }
         }
@@ -215,6 +202,18 @@ namespace TestIt.Client.Model
         /// <returns>Validation Result</returns>
         public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
+            // Name (string) maxLength
+            if (this.Name != null && this.Name.Length > 255)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+            }
+
+            // Name (string) minLength
+            if (this.Name != null && this.Name.Length < 0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
+            }
+
             yield break;
         }
     }

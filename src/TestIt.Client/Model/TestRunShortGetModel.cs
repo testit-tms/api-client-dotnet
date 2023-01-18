@@ -41,21 +41,23 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestRunShortGetModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
-        /// <param name="createdDate">createdDate.</param>
-        /// <param name="createdById">createdById.</param>
-        /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="modifiedById">modifiedById.</param>
-        /// <param name="isDeleted">isDeleted.</param>
+        /// <param name="id">Unique ID of the test run.</param>
+        /// <param name="name">Name of the test run.</param>
+        /// <param name="projectId">Unique ID of project where test run is located.</param>
+        /// <param name="createdDate">Date when the test run was created.</param>
+        /// <param name="createdById">Unique ID of user who created the test run.</param>
+        /// <param name="modifiedDate">Date when the test run was modified last time.</param>
+        /// <param name="modifiedById">Unique ID of user who modified the test run last time.</param>
+        /// <param name="isDeleted">Is the test run is deleted.</param>
         /// <param name="state">state.</param>
-        /// <param name="startedDate">startedDate.</param>
-        /// <param name="autotestsCount">autotestsCount.</param>
+        /// <param name="startedDate">Date when the test run was started.</param>
+        /// <param name="autotestsCount">Number of autotests run in the test run.</param>
         /// <param name="statistics">statistics.</param>
-        public TestRunShortGetModel(Guid id = default(Guid), string name = default(string), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), bool isDeleted = default(bool), TestRunState? state = default(TestRunState?), DateTime? startedDate = default(DateTime?), int autotestsCount = default(int), TestResultsStatisticsGetModel statistics = default(TestResultsStatisticsGetModel))
+        public TestRunShortGetModel(Guid id = default(Guid), string name = default(string), Guid projectId = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), bool isDeleted = default(bool), TestRunState? state = default(TestRunState?), DateTime? startedDate = default(DateTime?), int autotestsCount = default(int), TestResultsStatisticsGetModel statistics = default(TestResultsStatisticsGetModel))
         {
             this.Id = id;
             this.Name = name;
+            this.ProjectId = projectId;
             this.CreatedDate = createdDate;
             this.CreatedById = createdById;
             this.ModifiedDate = modifiedDate;
@@ -68,56 +70,72 @@ namespace TestIt.Client.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Unique ID of the test run
         /// </summary>
+        /// <value>Unique ID of the test run</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name of the test run
         /// </summary>
+        /// <value>Name of the test run</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedDate
+        /// Unique ID of project where test run is located
         /// </summary>
+        /// <value>Unique ID of project where test run is located</value>
+        [DataMember(Name = "projectId", EmitDefaultValue = false)]
+        public Guid ProjectId { get; set; }
+
+        /// <summary>
+        /// Date when the test run was created
+        /// </summary>
+        /// <value>Date when the test run was created</value>
         [DataMember(Name = "createdDate", EmitDefaultValue = false)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedById
+        /// Unique ID of user who created the test run
         /// </summary>
+        /// <value>Unique ID of user who created the test run</value>
         [DataMember(Name = "createdById", EmitDefaultValue = false)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
-        /// Gets or Sets ModifiedDate
+        /// Date when the test run was modified last time
         /// </summary>
+        /// <value>Date when the test run was modified last time</value>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets ModifiedById
+        /// Unique ID of user who modified the test run last time
         /// </summary>
+        /// <value>Unique ID of user who modified the test run last time</value>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDeleted
+        /// Is the test run is deleted
         /// </summary>
+        /// <value>Is the test run is deleted</value>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>
-        /// Gets or Sets StartedDate
+        /// Date when the test run was started
         /// </summary>
+        /// <value>Date when the test run was started</value>
         [DataMember(Name = "startedDate", EmitDefaultValue = true)]
         public DateTime? StartedDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets AutotestsCount
+        /// Number of autotests run in the test run
         /// </summary>
+        /// <value>Number of autotests run in the test run</value>
         [DataMember(Name = "autotestsCount", EmitDefaultValue = false)]
         public int AutotestsCount { get; set; }
 
@@ -137,6 +155,7 @@ namespace TestIt.Client.Model
             sb.Append("class TestRunShortGetModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
             sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
@@ -190,6 +209,11 @@ namespace TestIt.Client.Model
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.ProjectId == input.ProjectId ||
+                    (this.ProjectId != null &&
+                    this.ProjectId.Equals(input.ProjectId))
                 ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
@@ -251,6 +275,10 @@ namespace TestIt.Client.Model
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.ProjectId != null)
+                {
+                    hashCode = (hashCode * 59) + this.ProjectId.GetHashCode();
                 }
                 if (this.CreatedDate != null)
                 {

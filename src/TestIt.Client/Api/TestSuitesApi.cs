@@ -76,8 +76,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
-        /// <returns>string</returns>
-        string DeleteTestSuite(Guid id);
+        /// <returns></returns>
+        void DeleteTestSuite(Guid id);
 
         /// <summary>
         /// Delete TestSuite
@@ -87,8 +87,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
-        /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> DeleteTestSuiteWithHttpInfo(Guid id);
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeleteTestSuiteWithHttpInfo(Guid id);
         /// <summary>
         /// Get Configurations By Id
         /// </summary>
@@ -249,8 +249,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="requestBody">Collection of configuration identifiers\&quot; (optional)</param>
-        /// <returns>List&lt;ConfigurationModel&gt;</returns>
-        List<ConfigurationModel> SetConfigurationsByTestSuiteId(Guid id, List<Guid> requestBody = default(List<Guid>));
+        /// <returns></returns>
+        void SetConfigurationsByTestSuiteId(Guid id, List<Guid> requestBody = default(List<Guid>));
 
         /// <summary>
         /// Set Configurations By TestSuite Id
@@ -261,8 +261,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="requestBody">Collection of configuration identifiers\&quot; (optional)</param>
-        /// <returns>ApiResponse of List&lt;ConfigurationModel&gt;</returns>
-        ApiResponse<List<ConfigurationModel>> SetConfigurationsByTestSuiteIdWithHttpInfo(Guid id, List<Guid> requestBody = default(List<Guid>));
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> SetConfigurationsByTestSuiteIdWithHttpInfo(Guid id, List<Guid> requestBody = default(List<Guid>));
         /// <summary>
         /// Set WorkItems By TestSuite Id
         /// </summary>
@@ -272,8 +272,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="requestBody">Collection of workitem identifiers\&quot; (optional)</param>
-        /// <returns>List&lt;WorkItemShortModel&gt;</returns>
-        List<WorkItemShortModel> SetWorkItemsByTestSuiteId(Guid id, List<Guid> requestBody = default(List<Guid>));
+        /// <returns></returns>
+        void SetWorkItemsByTestSuiteId(Guid id, List<Guid> requestBody = default(List<Guid>));
 
         /// <summary>
         /// Set WorkItems By TestSuite Id
@@ -284,8 +284,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="requestBody">Collection of workitem identifiers\&quot; (optional)</param>
-        /// <returns>ApiResponse of List&lt;WorkItemShortModel&gt;</returns>
-        ApiResponse<List<WorkItemShortModel>> SetWorkItemsByTestSuiteIdWithHttpInfo(Guid id, List<Guid> requestBody = default(List<Guid>));
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> SetWorkItemsByTestSuiteIdWithHttpInfo(Guid id, List<Guid> requestBody = default(List<Guid>));
         /// <summary>
         /// Update TestSuite
         /// </summary>
@@ -294,8 +294,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testSuiteV2PutModel"> (optional)</param>
-        /// <returns>TestSuiteV2GetModel</returns>
-        TestSuiteV2GetModel UpdateTestSuite(TestSuiteV2PutModel testSuiteV2PutModel = default(TestSuiteV2PutModel));
+        /// <returns></returns>
+        void UpdateTestSuite(TestSuiteV2PutModel testSuiteV2PutModel = default(TestSuiteV2PutModel));
 
         /// <summary>
         /// Update TestSuite
@@ -305,8 +305,8 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testSuiteV2PutModel"> (optional)</param>
-        /// <returns>ApiResponse of TestSuiteV2GetModel</returns>
-        ApiResponse<TestSuiteV2GetModel> UpdateTestSuiteWithHttpInfo(TestSuiteV2PutModel testSuiteV2PutModel = default(TestSuiteV2PutModel));
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> UpdateTestSuiteWithHttpInfo(TestSuiteV2PutModel testSuiteV2PutModel = default(TestSuiteV2PutModel));
         #endregion Synchronous Operations
     }
 
@@ -373,8 +373,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> DeleteTestSuiteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DeleteTestSuiteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete TestSuite
@@ -385,8 +385,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> DeleteTestSuiteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteTestSuiteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get Configurations By Id
         /// </summary>
@@ -563,8 +563,8 @@ namespace TestIt.Client.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="requestBody">Collection of configuration identifiers\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;ConfigurationModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ConfigurationModel>> SetConfigurationsByTestSuiteIdAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task SetConfigurationsByTestSuiteIdAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Set Configurations By TestSuite Id
@@ -576,8 +576,8 @@ namespace TestIt.Client.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="requestBody">Collection of configuration identifiers\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;ConfigurationModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ConfigurationModel>>> SetConfigurationsByTestSuiteIdWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> SetConfigurationsByTestSuiteIdWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Set WorkItems By TestSuite Id
         /// </summary>
@@ -588,8 +588,8 @@ namespace TestIt.Client.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="requestBody">Collection of workitem identifiers\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;WorkItemShortModel&gt;</returns>
-        System.Threading.Tasks.Task<List<WorkItemShortModel>> SetWorkItemsByTestSuiteIdAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task SetWorkItemsByTestSuiteIdAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Set WorkItems By TestSuite Id
@@ -601,8 +601,8 @@ namespace TestIt.Client.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="requestBody">Collection of workitem identifiers\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<WorkItemShortModel>>> SetWorkItemsByTestSuiteIdWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> SetWorkItemsByTestSuiteIdWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update TestSuite
         /// </summary>
@@ -612,8 +612,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testSuiteV2PutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TestSuiteV2GetModel</returns>
-        System.Threading.Tasks.Task<TestSuiteV2GetModel> UpdateTestSuiteAsync(TestSuiteV2PutModel testSuiteV2PutModel = default(TestSuiteV2PutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task UpdateTestSuiteAsync(TestSuiteV2PutModel testSuiteV2PutModel = default(TestSuiteV2PutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update TestSuite
@@ -624,8 +624,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testSuiteV2PutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TestSuiteV2GetModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TestSuiteV2GetModel>> UpdateTestSuiteWithHttpInfoAsync(TestSuiteV2PutModel testSuiteV2PutModel = default(TestSuiteV2PutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateTestSuiteWithHttpInfoAsync(TestSuiteV2PutModel testSuiteV2PutModel = default(TestSuiteV2PutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1086,11 +1086,10 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
-        /// <returns>string</returns>
-        public string DeleteTestSuite(Guid id)
+        /// <returns></returns>
+        public void DeleteTestSuite(Guid id)
         {
-            TestIt.Client.Client.ApiResponse<string> localVarResponse = DeleteTestSuiteWithHttpInfo(id);
-            return localVarResponse.Data;
+            DeleteTestSuiteWithHttpInfo(id);
         }
 
         /// <summary>
@@ -1098,8 +1097,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
-        /// <returns>ApiResponse of string</returns>
-        public TestIt.Client.Client.ApiResponse<string> DeleteTestSuiteWithHttpInfo(Guid id)
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIt.Client.Client.ApiResponse<Object> DeleteTestSuiteWithHttpInfo(Guid id)
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1126,7 +1125,7 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<string>("/api/v2/testSuites/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<Object>("/api/v2/testSuites/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1143,11 +1142,10 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> DeleteTestSuiteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DeleteTestSuiteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<string> localVarResponse = await DeleteTestSuiteWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await DeleteTestSuiteWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1156,8 +1154,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<string>> DeleteTestSuiteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> DeleteTestSuiteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1187,7 +1185,7 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<string>("/api/v2/testSuites/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/v2/testSuites/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2062,11 +2060,10 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="requestBody">Collection of configuration identifiers\&quot; (optional)</param>
-        /// <returns>List&lt;ConfigurationModel&gt;</returns>
-        public List<ConfigurationModel> SetConfigurationsByTestSuiteId(Guid id, List<Guid> requestBody = default(List<Guid>))
+        /// <returns></returns>
+        public void SetConfigurationsByTestSuiteId(Guid id, List<Guid> requestBody = default(List<Guid>))
         {
-            TestIt.Client.Client.ApiResponse<List<ConfigurationModel>> localVarResponse = SetConfigurationsByTestSuiteIdWithHttpInfo(id, requestBody);
-            return localVarResponse.Data;
+            SetConfigurationsByTestSuiteIdWithHttpInfo(id, requestBody);
         }
 
         /// <summary>
@@ -2075,8 +2072,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="requestBody">Collection of configuration identifiers\&quot; (optional)</param>
-        /// <returns>ApiResponse of List&lt;ConfigurationModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<ConfigurationModel>> SetConfigurationsByTestSuiteIdWithHttpInfo(Guid id, List<Guid> requestBody = default(List<Guid>))
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIt.Client.Client.ApiResponse<Object> SetConfigurationsByTestSuiteIdWithHttpInfo(Guid id, List<Guid> requestBody = default(List<Guid>))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -2105,7 +2102,7 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<List<ConfigurationModel>>("/api/v2/testSuites/{id}/configurations", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<Object>("/api/v2/testSuites/{id}/configurations", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2123,11 +2120,10 @@ namespace TestIt.Client.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="requestBody">Collection of configuration identifiers\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;ConfigurationModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ConfigurationModel>> SetConfigurationsByTestSuiteIdAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task SetConfigurationsByTestSuiteIdAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<ConfigurationModel>> localVarResponse = await SetConfigurationsByTestSuiteIdWithHttpInfoAsync(id, requestBody, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await SetConfigurationsByTestSuiteIdWithHttpInfoAsync(id, requestBody, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -2137,8 +2133,8 @@ namespace TestIt.Client.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="requestBody">Collection of configuration identifiers\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;ConfigurationModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<ConfigurationModel>>> SetConfigurationsByTestSuiteIdWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> SetConfigurationsByTestSuiteIdWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -2170,7 +2166,7 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<ConfigurationModel>>("/api/v2/testSuites/{id}/configurations", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/testSuites/{id}/configurations", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2187,11 +2183,10 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="requestBody">Collection of workitem identifiers\&quot; (optional)</param>
-        /// <returns>List&lt;WorkItemShortModel&gt;</returns>
-        public List<WorkItemShortModel> SetWorkItemsByTestSuiteId(Guid id, List<Guid> requestBody = default(List<Guid>))
+        /// <returns></returns>
+        public void SetWorkItemsByTestSuiteId(Guid id, List<Guid> requestBody = default(List<Guid>))
         {
-            TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = SetWorkItemsByTestSuiteIdWithHttpInfo(id, requestBody);
-            return localVarResponse.Data;
+            SetWorkItemsByTestSuiteIdWithHttpInfo(id, requestBody);
         }
 
         /// <summary>
@@ -2200,8 +2195,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="requestBody">Collection of workitem identifiers\&quot; (optional)</param>
-        /// <returns>ApiResponse of List&lt;WorkItemShortModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>> SetWorkItemsByTestSuiteIdWithHttpInfo(Guid id, List<Guid> requestBody = default(List<Guid>))
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIt.Client.Client.ApiResponse<Object> SetWorkItemsByTestSuiteIdWithHttpInfo(Guid id, List<Guid> requestBody = default(List<Guid>))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -2230,7 +2225,7 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<List<WorkItemShortModel>>("/api/v2/testSuites/{id}/workItems", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<Object>("/api/v2/testSuites/{id}/workItems", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2248,11 +2243,10 @@ namespace TestIt.Client.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="requestBody">Collection of workitem identifiers\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;WorkItemShortModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<WorkItemShortModel>> SetWorkItemsByTestSuiteIdAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task SetWorkItemsByTestSuiteIdAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = await SetWorkItemsByTestSuiteIdWithHttpInfoAsync(id, requestBody, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await SetWorkItemsByTestSuiteIdWithHttpInfoAsync(id, requestBody, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -2262,8 +2256,8 @@ namespace TestIt.Client.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="requestBody">Collection of workitem identifiers\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>>> SetWorkItemsByTestSuiteIdWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> SetWorkItemsByTestSuiteIdWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -2295,7 +2289,7 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<WorkItemShortModel>>("/api/v2/testSuites/{id}/workItems", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/testSuites/{id}/workItems", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2311,11 +2305,10 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testSuiteV2PutModel"> (optional)</param>
-        /// <returns>TestSuiteV2GetModel</returns>
-        public TestSuiteV2GetModel UpdateTestSuite(TestSuiteV2PutModel testSuiteV2PutModel = default(TestSuiteV2PutModel))
+        /// <returns></returns>
+        public void UpdateTestSuite(TestSuiteV2PutModel testSuiteV2PutModel = default(TestSuiteV2PutModel))
         {
-            TestIt.Client.Client.ApiResponse<TestSuiteV2GetModel> localVarResponse = UpdateTestSuiteWithHttpInfo(testSuiteV2PutModel);
-            return localVarResponse.Data;
+            UpdateTestSuiteWithHttpInfo(testSuiteV2PutModel);
         }
 
         /// <summary>
@@ -2323,8 +2316,8 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testSuiteV2PutModel"> (optional)</param>
-        /// <returns>ApiResponse of TestSuiteV2GetModel</returns>
-        public TestIt.Client.Client.ApiResponse<TestSuiteV2GetModel> UpdateTestSuiteWithHttpInfo(TestSuiteV2PutModel testSuiteV2PutModel = default(TestSuiteV2PutModel))
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIt.Client.Client.ApiResponse<Object> UpdateTestSuiteWithHttpInfo(TestSuiteV2PutModel testSuiteV2PutModel = default(TestSuiteV2PutModel))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -2352,7 +2345,7 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<TestSuiteV2GetModel>("/api/v2/testSuites", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<Object>("/api/v2/testSuites", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2369,11 +2362,10 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testSuiteV2PutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TestSuiteV2GetModel</returns>
-        public async System.Threading.Tasks.Task<TestSuiteV2GetModel> UpdateTestSuiteAsync(TestSuiteV2PutModel testSuiteV2PutModel = default(TestSuiteV2PutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task UpdateTestSuiteAsync(TestSuiteV2PutModel testSuiteV2PutModel = default(TestSuiteV2PutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<TestSuiteV2GetModel> localVarResponse = await UpdateTestSuiteWithHttpInfoAsync(testSuiteV2PutModel, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await UpdateTestSuiteWithHttpInfoAsync(testSuiteV2PutModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -2382,8 +2374,8 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testSuiteV2PutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TestSuiteV2GetModel)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<TestSuiteV2GetModel>> UpdateTestSuiteWithHttpInfoAsync(TestSuiteV2PutModel testSuiteV2PutModel = default(TestSuiteV2PutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> UpdateTestSuiteWithHttpInfoAsync(TestSuiteV2PutModel testSuiteV2PutModel = default(TestSuiteV2PutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -2414,7 +2406,7 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PutAsync<TestSuiteV2GetModel>("/api/v2/testSuites", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/api/v2/testSuites", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

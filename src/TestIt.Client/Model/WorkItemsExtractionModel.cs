@@ -27,35 +27,41 @@ using OpenAPIDateConverter = TestIt.Client.Client.OpenAPIDateConverter;
 namespace TestIt.Client.Model
 {
     /// <summary>
-    /// AutotestExtractionModel
+    /// Rules for different level entities inclusion/exclusion
     /// </summary>
-    [DataContract(Name = "AutotestExtractionModel")]
-    public partial class AutotestExtractionModel : IEquatable<AutotestExtractionModel>, IValidatableObject
+    [DataContract(Name = "WorkItemsExtractionModel")]
+    public partial class WorkItemsExtractionModel : IEquatable<WorkItemsExtractionModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AutotestExtractionModel" /> class.
+        /// Initializes a new instance of the <see cref="WorkItemsExtractionModel" /> class.
         /// </summary>
-        /// <param name="includeAutotests">Identifiers of autotests to be included.</param>
-        /// <param name="excludeAutotests">Identifiers of autotests to be excluded.</param>
-        public AutotestExtractionModel(List<Guid> includeAutotests = default(List<Guid>), List<Guid> excludeAutotests = default(List<Guid>))
+        /// <param name="ids">ids.</param>
+        /// <param name="sectionIds">sectionIds.</param>
+        /// <param name="projectIds">projectIds.</param>
+        public WorkItemsExtractionModel(GuidExtractionModel ids = default(GuidExtractionModel), GuidExtractionModel sectionIds = default(GuidExtractionModel), GuidExtractionModel projectIds = default(GuidExtractionModel))
         {
-            this.IncludeAutotests = includeAutotests;
-            this.ExcludeAutotests = excludeAutotests;
+            this.Ids = ids;
+            this.SectionIds = sectionIds;
+            this.ProjectIds = projectIds;
         }
 
         /// <summary>
-        /// Identifiers of autotests to be included
+        /// Gets or Sets Ids
         /// </summary>
-        /// <value>Identifiers of autotests to be included</value>
-        [DataMember(Name = "includeAutotests", EmitDefaultValue = true)]
-        public List<Guid> IncludeAutotests { get; set; }
+        [DataMember(Name = "ids", EmitDefaultValue = false)]
+        public GuidExtractionModel Ids { get; set; }
 
         /// <summary>
-        /// Identifiers of autotests to be excluded
+        /// Gets or Sets SectionIds
         /// </summary>
-        /// <value>Identifiers of autotests to be excluded</value>
-        [DataMember(Name = "excludeAutotests", EmitDefaultValue = true)]
-        public List<Guid> ExcludeAutotests { get; set; }
+        [DataMember(Name = "sectionIds", EmitDefaultValue = false)]
+        public GuidExtractionModel SectionIds { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ProjectIds
+        /// </summary>
+        [DataMember(Name = "projectIds", EmitDefaultValue = false)]
+        public GuidExtractionModel ProjectIds { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -64,9 +70,10 @@ namespace TestIt.Client.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AutotestExtractionModel {\n");
-            sb.Append("  IncludeAutotests: ").Append(IncludeAutotests).Append("\n");
-            sb.Append("  ExcludeAutotests: ").Append(ExcludeAutotests).Append("\n");
+            sb.Append("class WorkItemsExtractionModel {\n");
+            sb.Append("  Ids: ").Append(Ids).Append("\n");
+            sb.Append("  SectionIds: ").Append(SectionIds).Append("\n");
+            sb.Append("  ProjectIds: ").Append(ProjectIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -87,15 +94,15 @@ namespace TestIt.Client.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AutotestExtractionModel);
+            return this.Equals(input as WorkItemsExtractionModel);
         }
 
         /// <summary>
-        /// Returns true if AutotestExtractionModel instances are equal
+        /// Returns true if WorkItemsExtractionModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of AutotestExtractionModel to be compared</param>
+        /// <param name="input">Instance of WorkItemsExtractionModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AutotestExtractionModel input)
+        public bool Equals(WorkItemsExtractionModel input)
         {
             if (input == null)
             {
@@ -103,16 +110,19 @@ namespace TestIt.Client.Model
             }
             return 
                 (
-                    this.IncludeAutotests == input.IncludeAutotests ||
-                    this.IncludeAutotests != null &&
-                    input.IncludeAutotests != null &&
-                    this.IncludeAutotests.SequenceEqual(input.IncludeAutotests)
+                    this.Ids == input.Ids ||
+                    (this.Ids != null &&
+                    this.Ids.Equals(input.Ids))
                 ) && 
                 (
-                    this.ExcludeAutotests == input.ExcludeAutotests ||
-                    this.ExcludeAutotests != null &&
-                    input.ExcludeAutotests != null &&
-                    this.ExcludeAutotests.SequenceEqual(input.ExcludeAutotests)
+                    this.SectionIds == input.SectionIds ||
+                    (this.SectionIds != null &&
+                    this.SectionIds.Equals(input.SectionIds))
+                ) && 
+                (
+                    this.ProjectIds == input.ProjectIds ||
+                    (this.ProjectIds != null &&
+                    this.ProjectIds.Equals(input.ProjectIds))
                 );
         }
 
@@ -125,13 +135,17 @@ namespace TestIt.Client.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.IncludeAutotests != null)
+                if (this.Ids != null)
                 {
-                    hashCode = (hashCode * 59) + this.IncludeAutotests.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Ids.GetHashCode();
                 }
-                if (this.ExcludeAutotests != null)
+                if (this.SectionIds != null)
                 {
-                    hashCode = (hashCode * 59) + this.ExcludeAutotests.GetHashCode();
+                    hashCode = (hashCode * 59) + this.SectionIds.GetHashCode();
+                }
+                if (this.ProjectIds != null)
+                {
+                    hashCode = (hashCode * 59) + this.ProjectIds.GetHashCode();
                 }
                 return hashCode;
             }

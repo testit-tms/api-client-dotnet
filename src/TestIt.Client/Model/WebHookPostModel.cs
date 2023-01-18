@@ -36,13 +36,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets EventType
         /// </summary>
-        [DataMember(Name = "eventType", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "eventType", IsRequired = true, EmitDefaultValue = true)]
         public WebHookEventTypeModel EventType { get; set; }
 
         /// <summary>
         /// Gets or Sets RequestType
         /// </summary>
-        [DataMember(Name = "requestType", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "requestType", IsRequired = true, EmitDefaultValue = true)]
         public RequestTypeModel RequestType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="WebHookPostModel" /> class.
@@ -52,20 +52,20 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WebHookPostModel" /> class.
         /// </summary>
-        /// <param name="projectId">projectId (required).</param>
+        /// <param name="projectId">Unique ID of the webhook project (required).</param>
         /// <param name="eventType">eventType (required).</param>
-        /// <param name="description">description.</param>
-        /// <param name="url">url (required).</param>
+        /// <param name="description">Description of the webhook.</param>
+        /// <param name="url">Request URL of the webhook (required).</param>
         /// <param name="requestType">requestType (required).</param>
-        /// <param name="shouldSendBody">shouldSendBody.</param>
-        /// <param name="headers">headers (required).</param>
-        /// <param name="queryParameters">queryParameters (required).</param>
-        /// <param name="isEnabled">isEnabled.</param>
-        /// <param name="shouldSendCustomBody">shouldSendCustomBody.</param>
-        /// <param name="customBody">customBody.</param>
-        /// <param name="shouldReplaceParameters">shouldReplaceParameters.</param>
-        /// <param name="shouldEscapeParameters">shouldEscapeParameters.</param>
-        /// <param name="name">name (required).</param>
+        /// <param name="shouldSendBody">Indicates if the webhook sends body.</param>
+        /// <param name="headers">Collection of the webhook headers.</param>
+        /// <param name="queryParameters">Collection of the webhook query parameters.</param>
+        /// <param name="isEnabled">Indicates if the webhook is active.</param>
+        /// <param name="shouldSendCustomBody">Indicates if the webhook sends custom body.</param>
+        /// <param name="customBody">Custom body of the webhook.</param>
+        /// <param name="shouldReplaceParameters">Indicates if the webhook injects parameters.</param>
+        /// <param name="shouldEscapeParameters">Indicates if the webhook escapes invalid characters in parameters.</param>
+        /// <param name="name">Name of the webhook (required).</param>
         public WebHookPostModel(Guid projectId = default(Guid), WebHookEventTypeModel eventType = default(WebHookEventTypeModel), string description = default(string), string url = default(string), RequestTypeModel requestType = default(RequestTypeModel), bool shouldSendBody = default(bool), Dictionary<string, string> headers = default(Dictionary<string, string>), Dictionary<string, string> queryParameters = default(Dictionary<string, string>), bool isEnabled = default(bool), bool shouldSendCustomBody = default(bool), string customBody = default(string), bool shouldReplaceParameters = default(bool), bool shouldEscapeParameters = default(bool), string name = default(string))
         {
             this.ProjectId = projectId;
@@ -77,18 +77,6 @@ namespace TestIt.Client.Model
             }
             this.Url = url;
             this.RequestType = requestType;
-            // to ensure "headers" is required (not null)
-            if (headers == null)
-            {
-                throw new ArgumentNullException("headers is a required property for WebHookPostModel and cannot be null");
-            }
-            this.Headers = headers;
-            // to ensure "queryParameters" is required (not null)
-            if (queryParameters == null)
-            {
-                throw new ArgumentNullException("queryParameters is a required property for WebHookPostModel and cannot be null");
-            }
-            this.QueryParameters = queryParameters;
             // to ensure "name" is required (not null)
             if (name == null)
             {
@@ -97,6 +85,8 @@ namespace TestIt.Client.Model
             this.Name = name;
             this.Description = description;
             this.ShouldSendBody = shouldSendBody;
+            this.Headers = headers;
+            this.QueryParameters = queryParameters;
             this.IsEnabled = isEnabled;
             this.ShouldSendCustomBody = shouldSendCustomBody;
             this.CustomBody = customBody;
@@ -105,75 +95,87 @@ namespace TestIt.Client.Model
         }
 
         /// <summary>
-        /// Gets or Sets ProjectId
+        /// Unique ID of the webhook project
         /// </summary>
-        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>Unique ID of the webhook project</value>
+        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Description of the webhook
         /// </summary>
+        /// <value>Description of the webhook</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or Sets Url
+        /// Request URL of the webhook
         /// </summary>
-        [DataMember(Name = "url", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>Request URL of the webhook</value>
+        [DataMember(Name = "url", IsRequired = true, EmitDefaultValue = true)]
         public string Url { get; set; }
 
         /// <summary>
-        /// Gets or Sets ShouldSendBody
+        /// Indicates if the webhook sends body
         /// </summary>
+        /// <value>Indicates if the webhook sends body</value>
         [DataMember(Name = "shouldSendBody", EmitDefaultValue = true)]
         public bool ShouldSendBody { get; set; }
 
         /// <summary>
-        /// Gets or Sets Headers
+        /// Collection of the webhook headers
         /// </summary>
-        [DataMember(Name = "headers", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>Collection of the webhook headers</value>
+        [DataMember(Name = "headers", EmitDefaultValue = true)]
         public Dictionary<string, string> Headers { get; set; }
 
         /// <summary>
-        /// Gets or Sets QueryParameters
+        /// Collection of the webhook query parameters
         /// </summary>
-        [DataMember(Name = "queryParameters", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>Collection of the webhook query parameters</value>
+        [DataMember(Name = "queryParameters", EmitDefaultValue = true)]
         public Dictionary<string, string> QueryParameters { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsEnabled
+        /// Indicates if the webhook is active
         /// </summary>
+        /// <value>Indicates if the webhook is active</value>
         [DataMember(Name = "isEnabled", EmitDefaultValue = true)]
         public bool IsEnabled { get; set; }
 
         /// <summary>
-        /// Gets or Sets ShouldSendCustomBody
+        /// Indicates if the webhook sends custom body
         /// </summary>
+        /// <value>Indicates if the webhook sends custom body</value>
         [DataMember(Name = "shouldSendCustomBody", EmitDefaultValue = true)]
         public bool ShouldSendCustomBody { get; set; }
 
         /// <summary>
-        /// Gets or Sets CustomBody
+        /// Custom body of the webhook
         /// </summary>
+        /// <value>Custom body of the webhook</value>
         [DataMember(Name = "customBody", EmitDefaultValue = true)]
         public string CustomBody { get; set; }
 
         /// <summary>
-        /// Gets or Sets ShouldReplaceParameters
+        /// Indicates if the webhook injects parameters
         /// </summary>
+        /// <value>Indicates if the webhook injects parameters</value>
         [DataMember(Name = "shouldReplaceParameters", EmitDefaultValue = true)]
         public bool ShouldReplaceParameters { get; set; }
 
         /// <summary>
-        /// Gets or Sets ShouldEscapeParameters
+        /// Indicates if the webhook escapes invalid characters in parameters
         /// </summary>
+        /// <value>Indicates if the webhook escapes invalid characters in parameters</value>
         [DataMember(Name = "shouldEscapeParameters", EmitDefaultValue = true)]
         public bool ShouldEscapeParameters { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name of the webhook
         /// </summary>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>Name of the webhook</value>
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -355,6 +357,18 @@ namespace TestIt.Client.Model
         /// <returns>Validation Result</returns>
         public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
+            // Name (string) maxLength
+            if (this.Name != null && this.Name.Length > 255)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+            }
+
+            // Name (string) minLength
+            if (this.Name != null && this.Name.Length < 0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
+            }
+
             yield break;
         }
     }

@@ -48,8 +48,8 @@ namespace TestIt.Client.Model
         /// <param name="createdById">createdById.</param>
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="failureClassRegexes">failureClassRegexes.</param>
-        /// <param name="id">id.</param>
-        /// <param name="isDeleted">isDeleted.</param>
+        /// <param name="id">Unique ID of the entity.</param>
+        /// <param name="isDeleted">Indicates if the entity is deleted.</param>
         public FailureClassModel(string name = default(string), FailureCategoryModel? failureCategory = default(FailureCategoryModel?), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), List<FailureClassRegexModel> failureClassRegexes = default(List<FailureClassRegexModel>), Guid id = default(Guid), bool isDeleted = default(bool))
         {
             this.Name = name;
@@ -100,14 +100,16 @@ namespace TestIt.Client.Model
         public List<FailureClassRegexModel> FailureClassRegexes { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Unique ID of the entity
         /// </summary>
+        /// <value>Unique ID of the entity</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDeleted
+        /// Indicates if the entity is deleted
         /// </summary>
+        /// <value>Indicates if the entity is deleted</value>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 

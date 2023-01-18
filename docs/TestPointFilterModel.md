@@ -4,22 +4,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TestSuiteIds** | **List&lt;Guid&gt;** |  | [optional] 
-**WorkItemGlobalIds** | **List&lt;long&gt;** |  | [optional] 
-**Statuses** | [**List&lt;TestPointStatus&gt;**](TestPointStatus.md) |  | [optional] 
-**Priorities** | [**List&lt;WorkItemPriorityModel&gt;**](WorkItemPriorityModel.md) |  | [optional] 
-**IsAutomated** | **bool?** |  | [optional] 
-**Name** | **string** |  | [optional] 
-**ConfigurationIds** | **List&lt;Guid&gt;** |  | [optional] 
-**TesterIds** | **List&lt;Guid&gt;** |  | [optional] 
+**TestSuiteIds** | **List&lt;Guid&gt;** | Specifies a test point test suite IDs to search for | [optional] 
+**WorkItemGlobalIds** | **List&lt;long&gt;** | Specifies a test point work item global IDs to search for | [optional] 
+**Statuses** | [**List&lt;TestPointStatus&gt;**](TestPointStatus.md) | Specifies a test point statuses to search for | [optional] 
+**Priorities** | [**List&lt;WorkItemPriorityModel&gt;**](WorkItemPriorityModel.md) | Specifies a test point priorities to search for | [optional] 
+**IsAutomated** | **bool?** | Specifies a test point automation status to search for | [optional] 
+**Name** | **string** | Specifies a test point name to search for | [optional] 
+**ConfigurationIds** | **List&lt;Guid&gt;** | Specifies a test point configuration IDs to search for | [optional] 
+**TesterIds** | **List&lt;Guid&gt;** | Specifies a test point assigned user IDs to search for | [optional] 
 **Duration** | [**Int64RangeSelectorModel**](Int64RangeSelectorModel.md) |  | [optional] 
-**SectionIds** | **List&lt;Guid&gt;** |  | [optional] 
+**SectionIds** | **List&lt;Guid&gt;** | Specifies a test point work item section IDs to search for | [optional] 
 **CreatedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) |  | [optional] 
-**CreatedByIds** | **List&lt;Guid&gt;** |  | [optional] 
+**CreatedByIds** | **List&lt;Guid&gt;** | Specifies a test point creator IDs to search for | [optional] 
 **ModifiedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) |  | [optional] 
-**ModifiedByIds** | **List&lt;Guid&gt;** |  | [optional] 
-**Tags** | **List&lt;string&gt;** |  | [optional] 
-**Attributes** | [**Dictionary&lt;string, List&lt;string&gt;&gt;**](Set.md) |  | [optional] 
+**ModifiedByIds** | **List&lt;Guid&gt;** | Specifies a test point last editor IDs to search for | [optional] 
+**Tags** | **List&lt;string&gt;** | Specifies a test point tags to search for | [optional] 
+**Attributes** | [**Dictionary&lt;string, List&lt;string&gt;&gt;**](Set.md) | Specifies a test point attributes to search for | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2CustomAttributesTemplatesIdGet**](CustomAttributeTemplatesApi.md#apiv2customattributestemplatesidget) | **GET** /api/v2/customAttributes/templates/{id} | Get CustomAttributeTemplate by ID |
 | [**ApiV2CustomAttributesTemplatesNameGet**](CustomAttributeTemplatesApi.md#apiv2customattributestemplatesnameget) | **GET** /api/v2/customAttributes/templates/{name} | Get CustomAttributeTemplate by name |
 | [**ApiV2CustomAttributesTemplatesPost**](CustomAttributeTemplatesApi.md#apiv2customattributestemplatespost) | **POST** /api/v2/customAttributes/templates | Create CustomAttributeTemplate |
-| [**ApiV2CustomAttributesTemplatesPut**](CustomAttributeTemplatesApi.md#apiv2customattributestemplatesput) | **PUT** /api/v2/customAttributes/templates | Update CustomAttributeTemplate |
+| [**ApiV2CustomAttributesTemplatesPut**](CustomAttributeTemplatesApi.md#apiv2customattributestemplatesput) | **PUT** /api/v2/customAttributes/templates | Update custom attributes template |
 | [**ApiV2CustomAttributesTemplatesSearchPost**](CustomAttributeTemplatesApi.md#apiv2customattributestemplatessearchpost) | **POST** /api/v2/customAttributes/templates/search | Search CustomAttributeTemplates |
 
 <a name="apiv2customattributestemplatesidcustomattributesexcludepost"></a>
@@ -25,6 +25,7 @@ Exclude CustomAttributes from CustomAttributeTemplate
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -42,7 +43,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new CustomAttributeTemplatesApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new CustomAttributeTemplatesApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // Guid | Attribute template internal (UUID) identifier
             var requestBody = new List<Guid>(); // List<Guid> |  (optional) 
 
@@ -103,9 +107,9 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **200** | Success |  -  |
 | **400** | Bad Request |  -  |
 | **404** | Not Found |  -  |
-| **200** | Success |  -  |
 | **403** | Admin system role is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -122,6 +126,7 @@ Include CustomAttributes to CustomAttributeTemplate
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -139,7 +144,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new CustomAttributeTemplatesApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new CustomAttributeTemplatesApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // Guid | Attribute template internal (UUID) identifier
             var requestBody = new List<Guid>(); // List<Guid> |  (optional) 
 
@@ -219,6 +227,7 @@ Delete CustomAttributeTemplate
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -236,7 +245,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new CustomAttributeTemplatesApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new CustomAttributeTemplatesApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // Guid | Attribute template internal (UUID) identifier
 
             try
@@ -317,6 +329,7 @@ Get CustomAttributeTemplate by ID
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -334,7 +347,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new CustomAttributeTemplatesApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new CustomAttributeTemplatesApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // Guid | CustomAttributeTemplate internal (UUID) identifier
 
             try
@@ -397,15 +413,15 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
 | **404** | Can&#39;t find a CustomAttributeTemplate with identifier |  -  |
+| **200** | Success |  -  |
 | **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="apiv2customattributestemplatesnameget"></a>
 # **ApiV2CustomAttributesTemplatesNameGet**
-> List&lt;CustomAttributeTemplateModel&gt; ApiV2CustomAttributesTemplatesNameGet (string name)
+> CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesNameGet (string name)
 
 Get CustomAttributeTemplate by name
 
@@ -415,6 +431,7 @@ Get CustomAttributeTemplate by name
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -432,13 +449,16 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new CustomAttributeTemplatesApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new CustomAttributeTemplatesApi(httpClient, config, httpClientHandler);
             var name = "name_example";  // string | CustomAttributeTemplate name for search
 
             try
             {
                 // Get CustomAttributeTemplate by name
-                List<CustomAttributeTemplateModel> result = apiInstance.ApiV2CustomAttributesTemplatesNameGet(name);
+                CustomAttributeTemplateModel result = apiInstance.ApiV2CustomAttributesTemplatesNameGet(name);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -459,7 +479,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get CustomAttributeTemplate by name
-    ApiResponse<List<CustomAttributeTemplateModel>> response = apiInstance.ApiV2CustomAttributesTemplatesNameGetWithHttpInfo(name);
+    ApiResponse<CustomAttributeTemplateModel> response = apiInstance.ApiV2CustomAttributesTemplatesNameGetWithHttpInfo(name);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -480,7 +500,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;CustomAttributeTemplateModel&gt;**](CustomAttributeTemplateModel.md)
+[**CustomAttributeTemplateModel**](CustomAttributeTemplateModel.md)
 
 ### Authorization
 
@@ -496,8 +516,6 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
-| **404** | Not Found |  -  |
-| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -513,6 +531,7 @@ Create CustomAttributeTemplate
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -530,7 +549,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new CustomAttributeTemplatesApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new CustomAttributeTemplatesApi(httpClient, config, httpClientHandler);
             var customAttributeTemplatePostModel = new CustomAttributeTemplatePostModel(); // CustomAttributeTemplatePostModel |  (optional) 
 
             try
@@ -593,9 +615,9 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Admin system role is required |  -  |
 | **201** | Success |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Admin system role is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -603,14 +625,13 @@ catch (ApiException e)
 # **ApiV2CustomAttributesTemplatesPut**
 > void ApiV2CustomAttributesTemplatesPut (CustomAttributeTemplatePutModel customAttributeTemplatePutModel = null)
 
-Update CustomAttributeTemplate
-
-<br>Use case  <br>User sets attribute template parameters (listed in request example)  <br>User runs method execution  <br>System updates attribute template
+Update custom attributes template
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -628,12 +649,15 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new CustomAttributeTemplatesApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new CustomAttributeTemplatesApi(httpClient, config, httpClientHandler);
             var customAttributeTemplatePutModel = new CustomAttributeTemplatePutModel(); // CustomAttributeTemplatePutModel |  (optional) 
 
             try
             {
-                // Update CustomAttributeTemplate
+                // Update custom attributes template
                 apiInstance.ApiV2CustomAttributesTemplatesPut(customAttributeTemplatePutModel);
             }
             catch (ApiException  e)
@@ -653,7 +677,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Update CustomAttributeTemplate
+    // Update custom attributes template
     apiInstance.ApiV2CustomAttributesTemplatesPutWithHttpInfo(customAttributeTemplatePutModel);
 }
 catch (ApiException e)
@@ -687,10 +711,8 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **403** | System administrator role is required |  -  |
 | **200** | Success |  -  |
-| **400** | Bad Request |  -  |
-| **403** | Admin system role is required |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -706,6 +728,7 @@ Search CustomAttributeTemplates
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -723,7 +746,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new CustomAttributeTemplatesApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new CustomAttributeTemplatesApi(httpClient, config, httpClientHandler);
             var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
             var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 

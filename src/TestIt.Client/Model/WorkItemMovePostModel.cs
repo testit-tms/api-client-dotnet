@@ -55,13 +55,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets NewSectionId
         /// </summary>
-        [DataMember(Name = "newSectionId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "newSectionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid NewSectionId { get; set; }
 
         /// <summary>

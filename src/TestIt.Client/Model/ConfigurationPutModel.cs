@@ -43,19 +43,14 @@ namespace TestIt.Client.Model
         /// <param name="id">id (required).</param>
         /// <param name="description">description.</param>
         /// <param name="isActive">isActive.</param>
-        /// <param name="capabilities">capabilities (required).</param>
+        /// <param name="capabilities">capabilities.</param>
+        /// <param name="parameters">parameters.</param>
         /// <param name="projectId">This property is used to link configuration with project (required).</param>
         /// <param name="isDefault">isDefault.</param>
         /// <param name="name">name (required).</param>
-        public ConfigurationPutModel(Guid id = default(Guid), string description = default(string), bool isActive = default(bool), Dictionary<string, string> capabilities = default(Dictionary<string, string>), Guid projectId = default(Guid), bool isDefault = default(bool), string name = default(string))
+        public ConfigurationPutModel(Guid id = default(Guid), string description = default(string), bool isActive = default(bool), Dictionary<string, string> capabilities = default(Dictionary<string, string>), Dictionary<string, string> parameters = default(Dictionary<string, string>), Guid projectId = default(Guid), bool isDefault = default(bool), string name = default(string))
         {
             this.Id = id;
-            // to ensure "capabilities" is required (not null)
-            if (capabilities == null)
-            {
-                throw new ArgumentNullException("capabilities is a required property for ConfigurationPutModel and cannot be null");
-            }
-            this.Capabilities = capabilities;
             this.ProjectId = projectId;
             // to ensure "name" is required (not null)
             if (name == null)
@@ -65,13 +60,15 @@ namespace TestIt.Client.Model
             this.Name = name;
             this.Description = description;
             this.IsActive = isActive;
+            this.Capabilities = capabilities;
+            this.Parameters = parameters;
             this.IsDefault = isDefault;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
@@ -89,14 +86,21 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Capabilities
         /// </summary>
-        [DataMember(Name = "capabilities", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "capabilities", EmitDefaultValue = true)]
+        [Obsolete]
         public Dictionary<string, string> Capabilities { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Parameters
+        /// </summary>
+        [DataMember(Name = "parameters", EmitDefaultValue = true)]
+        public Dictionary<string, string> Parameters { get; set; }
 
         /// <summary>
         /// This property is used to link configuration with project
         /// </summary>
         /// <value>This property is used to link configuration with project</value>
-        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
@@ -108,7 +112,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -123,6 +127,7 @@ namespace TestIt.Client.Model
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  IsActive: ").Append(IsActive).Append("\n");
             sb.Append("  Capabilities: ").Append(Capabilities).Append("\n");
+            sb.Append("  Parameters: ").Append(Parameters).Append("\n");
             sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
             sb.Append("  IsDefault: ").Append(IsDefault).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
@@ -182,6 +187,12 @@ namespace TestIt.Client.Model
                     this.Capabilities.SequenceEqual(input.Capabilities)
                 ) && 
                 (
+                    this.Parameters == input.Parameters ||
+                    this.Parameters != null &&
+                    input.Parameters != null &&
+                    this.Parameters.SequenceEqual(input.Parameters)
+                ) && 
+                (
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
@@ -218,6 +229,10 @@ namespace TestIt.Client.Model
                 if (this.Capabilities != null)
                 {
                     hashCode = (hashCode * 59) + this.Capabilities.GetHashCode();
+                }
+                if (this.Parameters != null)
+                {
+                    hashCode = (hashCode * 59) + this.Parameters.GetHashCode();
                 }
                 if (this.ProjectId != null)
                 {
