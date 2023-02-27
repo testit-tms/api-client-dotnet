@@ -35,8 +35,8 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomAttributeOptionPostModel" /> class.
         /// </summary>
-        /// <param name="value">Value of attribute option.</param>
-        /// <param name="isDefault">Indicates whether the option is used by default.</param>
+        /// <param name="value">Value of the attribute option.</param>
+        /// <param name="isDefault">Indicates if the attribute option is used by default.</param>
         public CustomAttributeOptionPostModel(string value = default(string), bool isDefault = default(bool))
         {
             this.Value = value;
@@ -44,16 +44,16 @@ namespace TestIt.Client.Model
         }
 
         /// <summary>
-        /// Value of attribute option
+        /// Value of the attribute option
         /// </summary>
-        /// <value>Value of attribute option</value>
+        /// <value>Value of the attribute option</value>
         [DataMember(Name = "value", EmitDefaultValue = true)]
         public string Value { get; set; }
 
         /// <summary>
-        /// Indicates whether the option is used by default
+        /// Indicates if the attribute option is used by default
         /// </summary>
-        /// <value>Indicates whether the option is used by default</value>
+        /// <value>Indicates if the attribute option is used by default</value>
         [DataMember(Name = "isDefault", EmitDefaultValue = true)]
         public bool IsDefault { get; set; }
 

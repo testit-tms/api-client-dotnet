@@ -64,8 +64,8 @@ namespace TestIt.Client.Model
         /// <param name="stoppedByUserId">stoppedByUserId.</param>
         /// <param name="name">name.</param>
         /// <param name="launchSource">launchSource.</param>
-        /// <param name="id">id.</param>
-        /// <param name="isDeleted">isDeleted.</param>
+        /// <param name="id">Unique ID of the entity.</param>
+        /// <param name="isDeleted">Indicates if the entity is deleted.</param>
         public TestRunModel(List<AutoTestModel> autoTests = default(List<AutoTestModel>), int autoTestsCount = default(int), List<Guid> testSuiteIds = default(List<Guid>), bool isAutomated = default(bool), TestRunAnalyticResultModel analytic = default(TestRunAnalyticResultModel), List<TestResultModel> testResults = default(List<TestResultModel>), TestPlanModel testPlan = default(TestPlanModel), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string createdByUserName = default(string), DateTime? startedDate = default(DateTime?), DateTime? completedDate = default(DateTime?), string build = default(string), string description = default(string), TestRunState? stateName = default(TestRunState?), Guid projectId = default(Guid), Guid? testPlanId = default(Guid?), Guid? runByUserId = default(Guid?), Guid? stoppedByUserId = default(Guid?), string name = default(string), string launchSource = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
         {
             this.AutoTests = autoTests;
@@ -228,14 +228,16 @@ namespace TestIt.Client.Model
         public string LaunchSource { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Unique ID of the entity
         /// </summary>
+        /// <value>Unique ID of the entity</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDeleted
+        /// Indicates if the entity is deleted
         /// </summary>
+        /// <value>Indicates if the entity is deleted</value>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 

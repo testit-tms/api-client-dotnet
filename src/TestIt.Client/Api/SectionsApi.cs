@@ -130,21 +130,18 @@ namespace TestIt.Client.Api
         /// <returns>ApiResponse of List&lt;WorkItemShortModel&gt;</returns>
         ApiResponse<List<WorkItemShortModel>> GetWorkItemsBySectionIdWithHttpInfo(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
         /// <summary>
-        /// Move section
+        /// Move section with all work items into another section
         /// </summary>
-        /// <remarks>
-        /// &lt;br&gt;Can be moved inside another section. It is possible to indicate a project  &lt;br&gt;Use case  &lt;br&gt;User sets section identifier, old parent identifier, parent identifier and  next section identifier (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System search section by the identifier  &lt;br&gt;System unlink section from the old parent and links to the new one  &lt;br&gt;System updates section rank using the next section identifier  &lt;br&gt;System returns no content response
-        /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionMoveModel"> (optional)</param>
         /// <returns></returns>
         void Move(SectionMoveModel sectionMoveModel = default(SectionMoveModel));
 
         /// <summary>
-        /// Move section
+        /// Move section with all work items into another section
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Can be moved inside another section. It is possible to indicate a project  &lt;br&gt;Use case  &lt;br&gt;User sets section identifier, old parent identifier, parent identifier and  next section identifier (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System search section by the identifier  &lt;br&gt;System unlink section from the old parent and links to the new one  &lt;br&gt;System updates section rank using the next section identifier  &lt;br&gt;System returns no content response
+        /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionMoveModel"> (optional)</param>
@@ -312,10 +309,10 @@ namespace TestIt.Client.Api
         /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<WorkItemShortModel>>> GetWorkItemsBySectionIdWithHttpInfoAsync(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Move section
+        /// Move section with all work items into another section
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Can be moved inside another section. It is possible to indicate a project  &lt;br&gt;Use case  &lt;br&gt;User sets section identifier, old parent identifier, parent identifier and  next section identifier (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System search section by the identifier  &lt;br&gt;System unlink section from the old parent and links to the new one  &lt;br&gt;System updates section rank using the next section identifier  &lt;br&gt;System returns no content response
+        /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionMoveModel"> (optional)</param>
@@ -324,10 +321,10 @@ namespace TestIt.Client.Api
         System.Threading.Tasks.Task MoveAsync(SectionMoveModel sectionMoveModel = default(SectionMoveModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Move section
+        /// Move section with all work items into another section
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Can be moved inside another section. It is possible to indicate a project  &lt;br&gt;Use case  &lt;br&gt;User sets section identifier, old parent identifier, parent identifier and  next section identifier (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System search section by the identifier  &lt;br&gt;System unlink section from the old parent and links to the new one  &lt;br&gt;System updates section rank using the next section identifier  &lt;br&gt;System returns no content response
+        /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionMoveModel"> (optional)</param>
@@ -1170,7 +1167,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Move section &lt;br&gt;Can be moved inside another section. It is possible to indicate a project  &lt;br&gt;Use case  &lt;br&gt;User sets section identifier, old parent identifier, parent identifier and  next section identifier (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System search section by the identifier  &lt;br&gt;System unlink section from the old parent and links to the new one  &lt;br&gt;System updates section rank using the next section identifier  &lt;br&gt;System returns no content response
+        /// Move section with all work items into another section 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionMoveModel"> (optional)</param>
@@ -1181,7 +1178,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Move section &lt;br&gt;Can be moved inside another section. It is possible to indicate a project  &lt;br&gt;Use case  &lt;br&gt;User sets section identifier, old parent identifier, parent identifier and  next section identifier (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System search section by the identifier  &lt;br&gt;System unlink section from the old parent and links to the new one  &lt;br&gt;System updates section rank using the next section identifier  &lt;br&gt;System returns no content response
+        /// Move section with all work items into another section 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionMoveModel"> (optional)</param>
@@ -1226,7 +1223,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Move section &lt;br&gt;Can be moved inside another section. It is possible to indicate a project  &lt;br&gt;Use case  &lt;br&gt;User sets section identifier, old parent identifier, parent identifier and  next section identifier (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System search section by the identifier  &lt;br&gt;System unlink section from the old parent and links to the new one  &lt;br&gt;System updates section rank using the next section identifier  &lt;br&gt;System returns no content response
+        /// Move section with all work items into another section 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionMoveModel"> (optional)</param>
@@ -1238,7 +1235,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Move section &lt;br&gt;Can be moved inside another section. It is possible to indicate a project  &lt;br&gt;Use case  &lt;br&gt;User sets section identifier, old parent identifier, parent identifier and  next section identifier (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System search section by the identifier  &lt;br&gt;System unlink section from the old parent and links to the new one  &lt;br&gt;System updates section rank using the next section identifier  &lt;br&gt;System returns no content response
+        /// Move section with all work items into another section 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionMoveModel"> (optional)</param>

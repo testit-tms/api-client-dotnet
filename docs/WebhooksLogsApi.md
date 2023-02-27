@@ -4,20 +4,21 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ApiV2WebhooksLogsGet**](WebhooksLogsApi.md#apiv2webhookslogsget) | **GET** /api/v2/webhooks/logs |  |
-| [**ApiV2WebhooksLogsIdDelete**](WebhooksLogsApi.md#apiv2webhookslogsiddelete) | **DELETE** /api/v2/webhooks/logs/{id} |  |
-| [**ApiV2WebhooksLogsIdGet**](WebhooksLogsApi.md#apiv2webhookslogsidget) | **GET** /api/v2/webhooks/logs/{id} |  |
+| [**ApiV2WebhooksLogsGet**](WebhooksLogsApi.md#apiv2webhookslogsget) | **GET** /api/v2/webhooks/logs | Get all webhook logs |
+| [**ApiV2WebhooksLogsIdDelete**](WebhooksLogsApi.md#apiv2webhookslogsiddelete) | **DELETE** /api/v2/webhooks/logs/{id} | Delete webhook log by ID |
+| [**ApiV2WebhooksLogsIdGet**](WebhooksLogsApi.md#apiv2webhookslogsidget) | **GET** /api/v2/webhooks/logs/{id} | Get webhook log by ID |
 
 <a name="apiv2webhookslogsget"></a>
 # **ApiV2WebhooksLogsGet**
 > List&lt;WebHookLogModel&gt; ApiV2WebhooksLogsGet (Guid? projectId = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
-
+Get all webhook logs
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -35,8 +36,11 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new WebhooksLogsApi(config);
-            var projectId = "projectId_example";  // Guid? |  (optional) 
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WebhooksLogsApi(httpClient, config, httpClientHandler);
+            var projectId = "projectId_example";  // Guid? | Project unique ID (optional) 
             var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
             var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
@@ -45,6 +49,7 @@ namespace Example
 
             try
             {
+                // Get all webhook logs
                 List<WebHookLogModel> result = apiInstance.ApiV2WebhooksLogsGet(projectId, skip, take, orderBy, searchField, searchValue);
                 Debug.WriteLine(result);
             }
@@ -65,6 +70,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Get all webhook logs
     ApiResponse<List<WebHookLogModel>> response = apiInstance.ApiV2WebhooksLogsGetWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -82,7 +88,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **projectId** | **Guid?** |  | [optional]  |
+| **projectId** | **Guid?** | Project unique ID | [optional]  |
 | **skip** | **int?** | Amount of items to be skipped (offset) | [optional]  |
 | **take** | **int?** | Amount of items to be taken (limit) | [optional]  |
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
@@ -114,12 +120,13 @@ catch (ApiException e)
 # **ApiV2WebhooksLogsIdDelete**
 > void ApiV2WebhooksLogsIdDelete (Guid id)
 
-
+Delete webhook log by ID
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -137,11 +144,15 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new WebhooksLogsApi(config);
-            var id = "id_example";  // Guid | 
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WebhooksLogsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Webhook log unique ID
 
             try
             {
+                // Delete webhook log by ID
                 apiInstance.ApiV2WebhooksLogsIdDelete(id);
             }
             catch (ApiException  e)
@@ -161,6 +172,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Delete webhook log by ID
     apiInstance.ApiV2WebhooksLogsIdDeleteWithHttpInfo(id);
 }
 catch (ApiException e)
@@ -175,7 +187,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
+| **id** | **Guid** | Webhook log unique ID |  |
 
 ### Return type
 
@@ -188,12 +200,13 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **403** | System administrator permissions are required |  -  |
 | **204** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -202,12 +215,13 @@ void (empty response body)
 # **ApiV2WebhooksLogsIdGet**
 > WebHookLogModel ApiV2WebhooksLogsIdGet (Guid id)
 
-
+Get webhook log by ID
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -225,11 +239,15 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new WebhooksLogsApi(config);
-            var id = "id_example";  // Guid | 
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WebhooksLogsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Webhook log unique ID
 
             try
             {
+                // Get webhook log by ID
                 WebHookLogModel result = apiInstance.ApiV2WebhooksLogsIdGet(id);
                 Debug.WriteLine(result);
             }
@@ -250,6 +268,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Get webhook log by ID
     ApiResponse<WebHookLogModel> response = apiInstance.ApiV2WebhooksLogsIdGetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -267,7 +286,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
+| **id** | **Guid** | Webhook log unique ID |  |
 
 ### Return type
 

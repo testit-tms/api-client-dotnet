@@ -35,33 +35,35 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemCommentModel" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected WorkItemCommentModel() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WorkItemCommentModel" /> class.
-        /// </summary>
+        /// <param name="id">id.</param>
+        /// <param name="text">text.</param>
         /// <param name="user">user.</param>
         /// <param name="createdById">createdById.</param>
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="text">text (required).</param>
-        /// <param name="id">id.</param>
-        public WorkItemCommentModel(UserWithRankModel user = default(UserWithRankModel), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), string text = default(string), Guid id = default(Guid))
+        public WorkItemCommentModel(Guid id = default(Guid), string text = default(string), UserWithRankModel user = default(UserWithRankModel), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?))
         {
-            // to ensure "text" is required (not null)
-            if (text == null)
-            {
-                throw new ArgumentNullException("text is a required property for WorkItemCommentModel and cannot be null");
-            }
+            this.Id = id;
             this.Text = text;
             this.User = user;
             this.CreatedById = createdById;
             this.ModifiedById = modifiedById;
             this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
-            this.Id = id;
         }
+
+        /// <summary>
+        /// Gets or Sets Id
+        /// </summary>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public Guid Id { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Text
+        /// </summary>
+        [DataMember(Name = "text", EmitDefaultValue = true)]
+        public string Text { get; set; }
 
         /// <summary>
         /// Gets or Sets User
@@ -94,18 +96,6 @@ namespace TestIt.Client.Model
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets Text
-        /// </summary>
-        [DataMember(Name = "text", IsRequired = true, EmitDefaultValue = false)]
-        public string Text { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Id
-        /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public Guid Id { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -113,13 +103,13 @@ namespace TestIt.Client.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class WorkItemCommentModel {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("  User: ").Append(User).Append("\n");
             sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
             sb.Append("  ModifiedById: ").Append(ModifiedById).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
-            sb.Append("  Text: ").Append(Text).Append("\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -156,6 +146,16 @@ namespace TestIt.Client.Model
             }
             return 
                 (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.Text == input.Text ||
+                    (this.Text != null &&
+                    this.Text.Equals(input.Text))
+                ) && 
+                (
                     this.User == input.User ||
                     (this.User != null &&
                     this.User.Equals(input.User))
@@ -179,16 +179,6 @@ namespace TestIt.Client.Model
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
                     this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.Text == input.Text ||
-                    (this.Text != null &&
-                    this.Text.Equals(input.Text))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
                 );
         }
 
@@ -201,6 +191,14 @@ namespace TestIt.Client.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
+                if (this.Text != null)
+                {
+                    hashCode = (hashCode * 59) + this.Text.GetHashCode();
+                }
                 if (this.User != null)
                 {
                     hashCode = (hashCode * 59) + this.User.GetHashCode();
@@ -221,14 +219,6 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
                 }
-                if (this.Text != null)
-                {
-                    hashCode = (hashCode * 59) + this.Text.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
                 return hashCode;
             }
         }
@@ -240,18 +230,6 @@ namespace TestIt.Client.Model
         /// <returns>Validation Result</returns>
         public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
-            // Text (string) maxLength
-            if (this.Text != null && this.Text.Length > 1024)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Text, length must be less than 1024.", new [] { "Text" });
-            }
-
-            // Text (string) minLength
-            if (this.Text != null && this.Text.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Text, length must be greater than 1.", new [] { "Text" });
-            }
-
             yield break;
         }
     }

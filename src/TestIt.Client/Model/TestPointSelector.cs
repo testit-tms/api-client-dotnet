@@ -57,14 +57,14 @@ namespace TestIt.Client.Model
         /// Specifies the configuration GUIDs, from which test points are created. You can specify several GUIDs.
         /// </summary>
         /// <value>Specifies the configuration GUIDs, from which test points are created. You can specify several GUIDs.</value>
-        [DataMember(Name = "configurationId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "configurationId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ConfigurationId { get; set; }
 
         /// <summary>
         /// Specifies the work item GUIDs, from which test points are created. You can specify several GUIDs.
         /// </summary>
         /// <value>Specifies the work item GUIDs, from which test points are created. You can specify several GUIDs.</value>
-        [DataMember(Name = "workitemIds", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "workitemIds", IsRequired = true, EmitDefaultValue = true)]
         public List<Guid> WorkitemIds { get; set; }
 
         /// <summary>

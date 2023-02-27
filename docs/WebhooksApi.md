@@ -4,24 +4,25 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ApiV2WebhooksGet**](WebhooksApi.md#apiv2webhooksget) | **GET** /api/v2/webhooks |  |
-| [**ApiV2WebhooksIdDelete**](WebhooksApi.md#apiv2webhooksiddelete) | **DELETE** /api/v2/webhooks/{id} |  |
-| [**ApiV2WebhooksIdGet**](WebhooksApi.md#apiv2webhooksidget) | **GET** /api/v2/webhooks/{id} |  |
-| [**ApiV2WebhooksIdPut**](WebhooksApi.md#apiv2webhooksidput) | **PUT** /api/v2/webhooks/{id} |  |
-| [**ApiV2WebhooksPost**](WebhooksApi.md#apiv2webhookspost) | **POST** /api/v2/webhooks |  |
-| [**ApiV2WebhooksSearchPost**](WebhooksApi.md#apiv2webhookssearchpost) | **POST** /api/v2/webhooks/search |  |
-| [**ApiV2WebhooksSpecialVariablesGet**](WebhooksApi.md#apiv2webhooksspecialvariablesget) | **GET** /api/v2/webhooks/specialVariables |  |
+| [**ApiV2WebhooksGet**](WebhooksApi.md#apiv2webhooksget) | **GET** /api/v2/webhooks | Get all webhooks |
+| [**ApiV2WebhooksIdDelete**](WebhooksApi.md#apiv2webhooksiddelete) | **DELETE** /api/v2/webhooks/{id} | Delete webhook by ID |
+| [**ApiV2WebhooksIdGet**](WebhooksApi.md#apiv2webhooksidget) | **GET** /api/v2/webhooks/{id} | Get webhook by ID |
+| [**ApiV2WebhooksIdPut**](WebhooksApi.md#apiv2webhooksidput) | **PUT** /api/v2/webhooks/{id} | Edit webhook by ID |
+| [**ApiV2WebhooksPost**](WebhooksApi.md#apiv2webhookspost) | **POST** /api/v2/webhooks | Create webhook |
+| [**ApiV2WebhooksSearchPost**](WebhooksApi.md#apiv2webhookssearchpost) | **POST** /api/v2/webhooks/search | Search for webhooks |
+| [**ApiV2WebhooksSpecialVariablesGet**](WebhooksApi.md#apiv2webhooksspecialvariablesget) | **GET** /api/v2/webhooks/specialVariables | Get special variables for webhook event type |
 
 <a name="apiv2webhooksget"></a>
 # **ApiV2WebhooksGet**
 > List&lt;WebHookModel&gt; ApiV2WebhooksGet (Guid? projectId = null)
 
-
+Get all webhooks
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -39,11 +40,15 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new WebhooksApi(config);
-            var projectId = "projectId_example";  // Guid? |  (optional) 
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WebhooksApi(httpClient, config, httpClientHandler);
+            var projectId = "projectId_example";  // Guid? | Project unique ID (optional) 
 
             try
             {
+                // Get all webhooks
                 List<WebHookModel> result = apiInstance.ApiV2WebhooksGet(projectId);
                 Debug.WriteLine(result);
             }
@@ -64,6 +69,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Get all webhooks
     ApiResponse<List<WebHookModel>> response = apiInstance.ApiV2WebhooksGetWithHttpInfo(projectId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -81,7 +87,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **projectId** | **Guid?** |  | [optional]  |
+| **projectId** | **Guid?** | Project unique ID | [optional]  |
 
 ### Return type
 
@@ -101,6 +107,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **403** | Read permission for requested project is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -108,12 +115,13 @@ catch (ApiException e)
 # **ApiV2WebhooksIdDelete**
 > void ApiV2WebhooksIdDelete (Guid id)
 
-
+Delete webhook by ID
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -131,11 +139,15 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new WebhooksApi(config);
-            var id = "id_example";  // Guid | 
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WebhooksApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Webhook unique ID
 
             try
             {
+                // Delete webhook by ID
                 apiInstance.ApiV2WebhooksIdDelete(id);
             }
             catch (ApiException  e)
@@ -155,6 +167,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Delete webhook by ID
     apiInstance.ApiV2WebhooksIdDeleteWithHttpInfo(id);
 }
 catch (ApiException e)
@@ -169,7 +182,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
+| **id** | **Guid** | Webhook unique ID |  |
 
 ### Return type
 
@@ -182,12 +195,13 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **403** | Delete permission for webhooks is required |  -  |
 | **204** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -196,12 +210,13 @@ void (empty response body)
 # **ApiV2WebhooksIdGet**
 > WebHookModel ApiV2WebhooksIdGet (Guid id)
 
-
+Get webhook by ID
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -219,11 +234,15 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new WebhooksApi(config);
-            var id = "id_example";  // Guid | 
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WebhooksApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Webhook unique ID
 
             try
             {
+                // Get webhook by ID
                 WebHookModel result = apiInstance.ApiV2WebhooksIdGet(id);
                 Debug.WriteLine(result);
             }
@@ -244,6 +263,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Get webhook by ID
     ApiResponse<WebHookModel> response = apiInstance.ApiV2WebhooksIdGetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -261,7 +281,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
+| **id** | **Guid** | Webhook unique ID |  |
 
 ### Return type
 
@@ -281,19 +301,21 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **403** | Update permission for webhooks is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="apiv2webhooksidput"></a>
 # **ApiV2WebhooksIdPut**
-> void ApiV2WebhooksIdPut (Guid id, WebHookPostModel webHookPostModel = null)
+> WebHookModel ApiV2WebhooksIdPut (Guid id, WebHookPostModel webHookPostModel = null)
 
-
+Edit webhook by ID
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -311,13 +333,18 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new WebhooksApi(config);
-            var id = "id_example";  // Guid | 
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WebhooksApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Webhook unique ID
             var webHookPostModel = new WebHookPostModel(); // WebHookPostModel |  (optional) 
 
             try
             {
-                apiInstance.ApiV2WebhooksIdPut(id, webHookPostModel);
+                // Edit webhook by ID
+                WebHookModel result = apiInstance.ApiV2WebhooksIdPut(id, webHookPostModel);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -336,7 +363,11 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    apiInstance.ApiV2WebhooksIdPutWithHttpInfo(id, webHookPostModel);
+    // Edit webhook by ID
+    ApiResponse<WebHookModel> response = apiInstance.ApiV2WebhooksIdPutWithHttpInfo(id, webHookPostModel);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -350,12 +381,12 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
+| **id** | **Guid** | Webhook unique ID |  |
 | **webHookPostModel** | [**WebHookPostModel**](WebHookPostModel.md) |  | [optional]  |
 
 ### Return type
 
-void (empty response body)
+[**WebHookModel**](WebHookModel.md)
 
 ### Authorization
 
@@ -364,13 +395,14 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **403** | Update permission for webhooks is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -378,12 +410,13 @@ void (empty response body)
 # **ApiV2WebhooksPost**
 > WebHookModel ApiV2WebhooksPost (WebHookPostModel webHookPostModel = null)
 
-
+Create webhook
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -401,11 +434,15 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new WebhooksApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WebhooksApi(httpClient, config, httpClientHandler);
             var webHookPostModel = new WebHookPostModel(); // WebHookPostModel |  (optional) 
 
             try
             {
+                // Create webhook
                 WebHookModel result = apiInstance.ApiV2WebhooksPost(webHookPostModel);
                 Debug.WriteLine(result);
             }
@@ -426,6 +463,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Create webhook
     ApiResponse<WebHookModel> response = apiInstance.ApiV2WebhooksPostWithHttpInfo(webHookPostModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -463,6 +501,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Success |  -  |
+| **403** | Update permission for webhooks is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -470,12 +509,13 @@ catch (ApiException e)
 # **ApiV2WebhooksSearchPost**
 > List&lt;WebHookModel&gt; ApiV2WebhooksSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, SearchWebhooksQueryModel searchWebhooksQueryModel = null)
 
-
+Search for webhooks
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -493,7 +533,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new WebhooksApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WebhooksApi(httpClient, config, httpClientHandler);
             var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
             var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
@@ -503,6 +546,7 @@ namespace Example
 
             try
             {
+                // Search for webhooks
                 List<WebHookModel> result = apiInstance.ApiV2WebhooksSearchPost(skip, take, orderBy, searchField, searchValue, searchWebhooksQueryModel);
                 Debug.WriteLine(result);
             }
@@ -523,6 +567,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Search for webhooks
     ApiResponse<List<WebHookModel>> response = apiInstance.ApiV2WebhooksSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, searchWebhooksQueryModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -565,6 +610,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **403** | Read permission for all requested projects is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -572,12 +618,13 @@ catch (ApiException e)
 # **ApiV2WebhooksSpecialVariablesGet**
 > List&lt;string&gt; ApiV2WebhooksSpecialVariablesGet (WebHookEventType? eventType = null)
 
-
+Get special variables for webhook event type
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -595,11 +642,15 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new WebhooksApi(config);
-            var eventType = (WebHookEventType) "AutomatedTestRunCreated";  // WebHookEventType? |  (optional) 
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WebhooksApi(httpClient, config, httpClientHandler);
+            var eventType = (WebHookEventType) "AutomatedTestRunCreated";  // WebHookEventType? | Webhook event type (optional) 
 
             try
             {
+                // Get special variables for webhook event type
                 List<string> result = apiInstance.ApiV2WebhooksSpecialVariablesGet(eventType);
                 Debug.WriteLine(result);
             }
@@ -620,6 +671,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Get special variables for webhook event type
     ApiResponse<List<string>> response = apiInstance.ApiV2WebhooksSpecialVariablesGetWithHttpInfo(eventType);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -637,7 +689,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **eventType** | **WebHookEventType?** |  | [optional]  |
+| **eventType** | **WebHookEventType?** | Webhook event type | [optional]  |
 
 ### Return type
 

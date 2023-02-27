@@ -72,28 +72,28 @@ namespace TestIt.Client.Model
         /// Specifies the configuration GUIDs, from which test points are created. You can specify several GUIDs.
         /// </summary>
         /// <value>Specifies the configuration GUIDs, from which test points are created. You can specify several GUIDs.</value>
-        [DataMember(Name = "configurationIds", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "configurationIds", IsRequired = true, EmitDefaultValue = true)]
         public List<Guid> ConfigurationIds { get; set; }
 
         /// <summary>
         /// Specifies the work item GUIDs, from which test points are created. You can specify several GUIDs.
         /// </summary>
         /// <value>Specifies the work item GUIDs, from which test points are created. You can specify several GUIDs.</value>
-        [DataMember(Name = "workitemIds", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "workitemIds", IsRequired = true, EmitDefaultValue = true)]
         public List<Guid> WorkitemIds { get; set; }
 
         /// <summary>
         /// Specifies the GUID of the project, in which a test run will be created.
         /// </summary>
         /// <value>Specifies the GUID of the project, in which a test run will be created.</value>
-        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
         /// Specifies the GUID of the test plan, within which the test run will be created.
         /// </summary>
         /// <value>Specifies the GUID of the test plan, within which the test run will be created.</value>
-        [DataMember(Name = "testPlanId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "testPlanId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestPlanId { get; set; }
 
         /// <summary>

@@ -40,33 +40,36 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomAttributeTestPlanProjectRelationPutModel" /> class.
         /// </summary>
-        /// <param name="id">id (required).</param>
-        /// <param name="enabled">enabled (required).</param>
-        /// <param name="required">required (required).</param>
-        public CustomAttributeTestPlanProjectRelationPutModel(Guid id = default(Guid), bool enabled = default(bool), bool required = default(bool))
+        /// <param name="id">Custom attribute internal unique identifier (required).</param>
+        /// <param name="isEnabled">Flag that defines if custom attribute is enabled (required).</param>
+        /// <param name="isRequired">Flag that defines if custom attribute is required (required).</param>
+        public CustomAttributeTestPlanProjectRelationPutModel(Guid id = default(Guid), bool isEnabled = default(bool), bool isRequired = default(bool))
         {
             this.Id = id;
-            this.Enabled = enabled;
-            this.Required = required;
+            this.IsEnabled = isEnabled;
+            this.IsRequired = isRequired;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Custom attribute internal unique identifier
         /// </summary>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>Custom attribute internal unique identifier</value>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Enabled
+        /// Flag that defines if custom attribute is enabled
         /// </summary>
-        [DataMember(Name = "enabled", IsRequired = true, EmitDefaultValue = true)]
-        public bool Enabled { get; set; }
+        /// <value>Flag that defines if custom attribute is enabled</value>
+        [DataMember(Name = "isEnabled", IsRequired = true, EmitDefaultValue = true)]
+        public bool IsEnabled { get; set; }
 
         /// <summary>
-        /// Gets or Sets Required
+        /// Flag that defines if custom attribute is required
         /// </summary>
-        [DataMember(Name = "required", IsRequired = true, EmitDefaultValue = true)]
-        public bool Required { get; set; }
+        /// <value>Flag that defines if custom attribute is required</value>
+        [DataMember(Name = "isRequired", IsRequired = true, EmitDefaultValue = true)]
+        public bool IsRequired { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -77,8 +80,8 @@ namespace TestIt.Client.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class CustomAttributeTestPlanProjectRelationPutModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Enabled: ").Append(Enabled).Append("\n");
-            sb.Append("  Required: ").Append(Required).Append("\n");
+            sb.Append("  IsEnabled: ").Append(IsEnabled).Append("\n");
+            sb.Append("  IsRequired: ").Append(IsRequired).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -120,12 +123,12 @@ namespace TestIt.Client.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Enabled == input.Enabled ||
-                    this.Enabled.Equals(input.Enabled)
+                    this.IsEnabled == input.IsEnabled ||
+                    this.IsEnabled.Equals(input.IsEnabled)
                 ) && 
                 (
-                    this.Required == input.Required ||
-                    this.Required.Equals(input.Required)
+                    this.IsRequired == input.IsRequired ||
+                    this.IsRequired.Equals(input.IsRequired)
                 );
         }
 
@@ -142,8 +145,8 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Enabled.GetHashCode();
-                hashCode = (hashCode * 59) + this.Required.GetHashCode();
+                hashCode = (hashCode * 59) + this.IsEnabled.GetHashCode();
+                hashCode = (hashCode * 59) + this.IsRequired.GetHashCode();
                 return hashCode;
             }
         }

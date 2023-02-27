@@ -65,21 +65,21 @@ namespace TestIt.Client.Model
         /// Specifies an array of work items and configuration to create a test run for.
         /// </summary>
         /// <value>Specifies an array of work items and configuration to create a test run for.</value>
-        [DataMember(Name = "testPointSelectors", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "testPointSelectors", IsRequired = true, EmitDefaultValue = true)]
         public List<TestPointSelector> TestPointSelectors { get; set; }
 
         /// <summary>
         /// Specifies the GUID of the project, in which a test run will be created.
         /// </summary>
         /// <value>Specifies the GUID of the project, in which a test run will be created.</value>
-        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
         /// Specifies the GUID of the test plan, within which the test run will be created.
         /// </summary>
         /// <value>Specifies the GUID of the test plan, within which the test run will be created.</value>
-        [DataMember(Name = "testPlanId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "testPlanId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestPlanId { get; set; }
 
         /// <summary>

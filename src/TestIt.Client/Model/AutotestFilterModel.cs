@@ -34,31 +34,31 @@ namespace TestIt.Client.Model
     {
 
         /// <summary>
-        /// Gets or Sets ResultOutcome
+        /// Gets or Sets LastTestResultOutcome
         /// </summary>
-        [DataMember(Name = "resultOutcome", EmitDefaultValue = false)]
-        public AutotestResultOutcome? ResultOutcome { get; set; }
+        [DataMember(Name = "lastTestResultOutcome", EmitDefaultValue = false)]
+        public AutotestResultOutcome? LastTestResultOutcome { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AutotestFilterModel" /> class.
         /// </summary>
-        /// <param name="projectIds">projectIds.</param>
-        /// <param name="externalIds">externalIds.</param>
-        /// <param name="globalIds">globalIds.</param>
-        /// <param name="name">name.</param>
-        /// <param name="isFlaky">isFlaky.</param>
-        /// <param name="mustBeApproved">mustBeApproved.</param>
+        /// <param name="projectIds">Specifies an autotest projects IDs to search for.</param>
+        /// <param name="externalIds">Specifies an autotest external IDs to search for.</param>
+        /// <param name="globalIds">Specifies an autotest global IDs to search for.</param>
+        /// <param name="name">Specifies an autotest name to search for.</param>
+        /// <param name="isFlaky">Specifies an autotest flaky status to search for.</param>
+        /// <param name="mustBeApproved">Specifies an autotest unapproved changes status to search for.</param>
         /// <param name="stabilityPercentage">stabilityPercentage.</param>
-        /// <param name="createdByIds">createdByIds.</param>
-        /// <param name="modifiedByIds">modifiedByIds.</param>
         /// <param name="createdDate">createdDate.</param>
+        /// <param name="createdByIds">Specifies an autotest creator IDs to search for.</param>
         /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="isDeleted">isDeleted.</param>
-        /// <param name="_namespace">_namespace.</param>
-        /// <param name="includeEmptyNamespaces">includeEmptyNamespaces.</param>
-        /// <param name="className">className.</param>
-        /// <param name="includeEmptyClassNames">includeEmptyClassNames.</param>
-        /// <param name="resultOutcome">resultOutcome.</param>
-        public AutotestFilterModel(List<Guid> projectIds = default(List<Guid>), List<string> externalIds = default(List<string>), List<long> globalIds = default(List<long>), string name = default(string), bool? isFlaky = default(bool?), bool? mustBeApproved = default(bool?), Int64RangeSelectorModel stabilityPercentage = default(Int64RangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), bool? isDeleted = default(bool?), string _namespace = default(string), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? includeEmptyClassNames = default(bool?), AutotestResultOutcome? resultOutcome = default(AutotestResultOutcome?))
+        /// <param name="modifiedByIds">Specifies an autotest last editor IDs to search for.</param>
+        /// <param name="isDeleted">Specifies an autotest deleted status to search for.</param>
+        /// <param name="_namespace">Specifies an autotest namespace to search for.</param>
+        /// <param name="isEmptyNamespace">Specifies an autotest namespace name presence status to search for.</param>
+        /// <param name="className">Specifies an autotest class name to search for.</param>
+        /// <param name="isEmptyClassName">Specifies an autotest class name presence status to search for.</param>
+        /// <param name="lastTestResultOutcome">lastTestResultOutcome.</param>
+        public AutotestFilterModel(List<Guid> projectIds = default(List<Guid>), List<string> externalIds = default(List<string>), List<long> globalIds = default(List<long>), string name = default(string), bool? isFlaky = default(bool?), bool? mustBeApproved = default(bool?), Int64RangeSelectorModel stabilityPercentage = default(Int64RangeSelectorModel), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?), string _namespace = default(string), bool? isEmptyNamespace = default(bool?), string className = default(string), bool? isEmptyClassName = default(bool?), AutotestResultOutcome? lastTestResultOutcome = default(AutotestResultOutcome?))
         {
             this.ProjectIds = projectIds;
             this.ExternalIds = externalIds;
@@ -67,51 +67,57 @@ namespace TestIt.Client.Model
             this.IsFlaky = isFlaky;
             this.MustBeApproved = mustBeApproved;
             this.StabilityPercentage = stabilityPercentage;
-            this.CreatedByIds = createdByIds;
-            this.ModifiedByIds = modifiedByIds;
             this.CreatedDate = createdDate;
+            this.CreatedByIds = createdByIds;
             this.ModifiedDate = modifiedDate;
+            this.ModifiedByIds = modifiedByIds;
             this.IsDeleted = isDeleted;
             this.Namespace = _namespace;
-            this.IncludeEmptyNamespaces = includeEmptyNamespaces;
+            this.IsEmptyNamespace = isEmptyNamespace;
             this.ClassName = className;
-            this.IncludeEmptyClassNames = includeEmptyClassNames;
-            this.ResultOutcome = resultOutcome;
+            this.IsEmptyClassName = isEmptyClassName;
+            this.LastTestResultOutcome = lastTestResultOutcome;
         }
 
         /// <summary>
-        /// Gets or Sets ProjectIds
+        /// Specifies an autotest projects IDs to search for
         /// </summary>
+        /// <value>Specifies an autotest projects IDs to search for</value>
         [DataMember(Name = "projectIds", EmitDefaultValue = true)]
         public List<Guid> ProjectIds { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExternalIds
+        /// Specifies an autotest external IDs to search for
         /// </summary>
+        /// <value>Specifies an autotest external IDs to search for</value>
         [DataMember(Name = "externalIds", EmitDefaultValue = true)]
         public List<string> ExternalIds { get; set; }
 
         /// <summary>
-        /// Gets or Sets GlobalIds
+        /// Specifies an autotest global IDs to search for
         /// </summary>
+        /// <value>Specifies an autotest global IDs to search for</value>
         [DataMember(Name = "globalIds", EmitDefaultValue = true)]
         public List<long> GlobalIds { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Specifies an autotest name to search for
         /// </summary>
+        /// <value>Specifies an autotest name to search for</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsFlaky
+        /// Specifies an autotest flaky status to search for
         /// </summary>
+        /// <value>Specifies an autotest flaky status to search for</value>
         [DataMember(Name = "isFlaky", EmitDefaultValue = true)]
         public bool? IsFlaky { get; set; }
 
         /// <summary>
-        /// Gets or Sets MustBeApproved
+        /// Specifies an autotest unapproved changes status to search for
         /// </summary>
+        /// <value>Specifies an autotest unapproved changes status to search for</value>
         [DataMember(Name = "mustBeApproved", EmitDefaultValue = true)]
         public bool? MustBeApproved { get; set; }
 
@@ -122,22 +128,17 @@ namespace TestIt.Client.Model
         public Int64RangeSelectorModel StabilityPercentage { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedByIds
-        /// </summary>
-        [DataMember(Name = "createdByIds", EmitDefaultValue = true)]
-        public List<Guid> CreatedByIds { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ModifiedByIds
-        /// </summary>
-        [DataMember(Name = "modifiedByIds", EmitDefaultValue = true)]
-        public List<Guid> ModifiedByIds { get; set; }
-
-        /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
         [DataMember(Name = "createdDate", EmitDefaultValue = false)]
         public DateTimeRangeSelectorModel CreatedDate { get; set; }
+
+        /// <summary>
+        /// Specifies an autotest creator IDs to search for
+        /// </summary>
+        /// <value>Specifies an autotest creator IDs to search for</value>
+        [DataMember(Name = "createdByIds", EmitDefaultValue = true)]
+        public List<Guid> CreatedByIds { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
@@ -146,34 +147,46 @@ namespace TestIt.Client.Model
         public DateTimeRangeSelectorModel ModifiedDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDeleted
+        /// Specifies an autotest last editor IDs to search for
         /// </summary>
+        /// <value>Specifies an autotest last editor IDs to search for</value>
+        [DataMember(Name = "modifiedByIds", EmitDefaultValue = true)]
+        public List<Guid> ModifiedByIds { get; set; }
+
+        /// <summary>
+        /// Specifies an autotest deleted status to search for
+        /// </summary>
+        /// <value>Specifies an autotest deleted status to search for</value>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
         public bool? IsDeleted { get; set; }
 
         /// <summary>
-        /// Gets or Sets Namespace
+        /// Specifies an autotest namespace to search for
         /// </summary>
+        /// <value>Specifies an autotest namespace to search for</value>
         [DataMember(Name = "namespace", EmitDefaultValue = true)]
         public string Namespace { get; set; }
 
         /// <summary>
-        /// Gets or Sets IncludeEmptyNamespaces
+        /// Specifies an autotest namespace name presence status to search for
         /// </summary>
-        [DataMember(Name = "includeEmptyNamespaces", EmitDefaultValue = true)]
-        public bool? IncludeEmptyNamespaces { get; set; }
+        /// <value>Specifies an autotest namespace name presence status to search for</value>
+        [DataMember(Name = "isEmptyNamespace", EmitDefaultValue = true)]
+        public bool? IsEmptyNamespace { get; set; }
 
         /// <summary>
-        /// Gets or Sets ClassName
+        /// Specifies an autotest class name to search for
         /// </summary>
+        /// <value>Specifies an autotest class name to search for</value>
         [DataMember(Name = "className", EmitDefaultValue = true)]
         public string ClassName { get; set; }
 
         /// <summary>
-        /// Gets or Sets IncludeEmptyClassNames
+        /// Specifies an autotest class name presence status to search for
         /// </summary>
-        [DataMember(Name = "includeEmptyClassNames", EmitDefaultValue = true)]
-        public bool? IncludeEmptyClassNames { get; set; }
+        /// <value>Specifies an autotest class name presence status to search for</value>
+        [DataMember(Name = "isEmptyClassName", EmitDefaultValue = true)]
+        public bool? IsEmptyClassName { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -190,16 +203,16 @@ namespace TestIt.Client.Model
             sb.Append("  IsFlaky: ").Append(IsFlaky).Append("\n");
             sb.Append("  MustBeApproved: ").Append(MustBeApproved).Append("\n");
             sb.Append("  StabilityPercentage: ").Append(StabilityPercentage).Append("\n");
-            sb.Append("  CreatedByIds: ").Append(CreatedByIds).Append("\n");
-            sb.Append("  ModifiedByIds: ").Append(ModifiedByIds).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
+            sb.Append("  CreatedByIds: ").Append(CreatedByIds).Append("\n");
             sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
+            sb.Append("  ModifiedByIds: ").Append(ModifiedByIds).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  Namespace: ").Append(Namespace).Append("\n");
-            sb.Append("  IncludeEmptyNamespaces: ").Append(IncludeEmptyNamespaces).Append("\n");
+            sb.Append("  IsEmptyNamespace: ").Append(IsEmptyNamespace).Append("\n");
             sb.Append("  ClassName: ").Append(ClassName).Append("\n");
-            sb.Append("  IncludeEmptyClassNames: ").Append(IncludeEmptyClassNames).Append("\n");
-            sb.Append("  ResultOutcome: ").Append(ResultOutcome).Append("\n");
+            sb.Append("  IsEmptyClassName: ").Append(IsEmptyClassName).Append("\n");
+            sb.Append("  LastTestResultOutcome: ").Append(LastTestResultOutcome).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -274,26 +287,26 @@ namespace TestIt.Client.Model
                     this.StabilityPercentage.Equals(input.StabilityPercentage))
                 ) && 
                 (
+                    this.CreatedDate == input.CreatedDate ||
+                    (this.CreatedDate != null &&
+                    this.CreatedDate.Equals(input.CreatedDate))
+                ) && 
+                (
                     this.CreatedByIds == input.CreatedByIds ||
                     this.CreatedByIds != null &&
                     input.CreatedByIds != null &&
                     this.CreatedByIds.SequenceEqual(input.CreatedByIds)
                 ) && 
                 (
+                    this.ModifiedDate == input.ModifiedDate ||
+                    (this.ModifiedDate != null &&
+                    this.ModifiedDate.Equals(input.ModifiedDate))
+                ) && 
+                (
                     this.ModifiedByIds == input.ModifiedByIds ||
                     this.ModifiedByIds != null &&
                     input.ModifiedByIds != null &&
                     this.ModifiedByIds.SequenceEqual(input.ModifiedByIds)
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
                 ) && 
                 (
                     this.IsDeleted == input.IsDeleted ||
@@ -306,9 +319,9 @@ namespace TestIt.Client.Model
                     this.Namespace.Equals(input.Namespace))
                 ) && 
                 (
-                    this.IncludeEmptyNamespaces == input.IncludeEmptyNamespaces ||
-                    (this.IncludeEmptyNamespaces != null &&
-                    this.IncludeEmptyNamespaces.Equals(input.IncludeEmptyNamespaces))
+                    this.IsEmptyNamespace == input.IsEmptyNamespace ||
+                    (this.IsEmptyNamespace != null &&
+                    this.IsEmptyNamespace.Equals(input.IsEmptyNamespace))
                 ) && 
                 (
                     this.ClassName == input.ClassName ||
@@ -316,13 +329,13 @@ namespace TestIt.Client.Model
                     this.ClassName.Equals(input.ClassName))
                 ) && 
                 (
-                    this.IncludeEmptyClassNames == input.IncludeEmptyClassNames ||
-                    (this.IncludeEmptyClassNames != null &&
-                    this.IncludeEmptyClassNames.Equals(input.IncludeEmptyClassNames))
+                    this.IsEmptyClassName == input.IsEmptyClassName ||
+                    (this.IsEmptyClassName != null &&
+                    this.IsEmptyClassName.Equals(input.IsEmptyClassName))
                 ) && 
                 (
-                    this.ResultOutcome == input.ResultOutcome ||
-                    this.ResultOutcome.Equals(input.ResultOutcome)
+                    this.LastTestResultOutcome == input.LastTestResultOutcome ||
+                    this.LastTestResultOutcome.Equals(input.LastTestResultOutcome)
                 );
         }
 
@@ -363,21 +376,21 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.StabilityPercentage.GetHashCode();
                 }
-                if (this.CreatedByIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedByIds.GetHashCode();
-                }
-                if (this.ModifiedByIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedByIds.GetHashCode();
-                }
                 if (this.CreatedDate != null)
                 {
                     hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
                 }
+                if (this.CreatedByIds != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreatedByIds.GetHashCode();
+                }
                 if (this.ModifiedDate != null)
                 {
                     hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
+                }
+                if (this.ModifiedByIds != null)
+                {
+                    hashCode = (hashCode * 59) + this.ModifiedByIds.GetHashCode();
                 }
                 if (this.IsDeleted != null)
                 {
@@ -387,19 +400,19 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.Namespace.GetHashCode();
                 }
-                if (this.IncludeEmptyNamespaces != null)
+                if (this.IsEmptyNamespace != null)
                 {
-                    hashCode = (hashCode * 59) + this.IncludeEmptyNamespaces.GetHashCode();
+                    hashCode = (hashCode * 59) + this.IsEmptyNamespace.GetHashCode();
                 }
                 if (this.ClassName != null)
                 {
                     hashCode = (hashCode * 59) + this.ClassName.GetHashCode();
                 }
-                if (this.IncludeEmptyClassNames != null)
+                if (this.IsEmptyClassName != null)
                 {
-                    hashCode = (hashCode * 59) + this.IncludeEmptyClassNames.GetHashCode();
+                    hashCode = (hashCode * 59) + this.IsEmptyClassName.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.ResultOutcome.GetHashCode();
+                hashCode = (hashCode * 59) + this.LastTestResultOutcome.GetHashCode();
                 return hashCode;
             }
         }
@@ -411,6 +424,18 @@ namespace TestIt.Client.Model
         /// <returns>Validation Result</returns>
         public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
+            // Name (string) maxLength
+            if (this.Name != null && this.Name.Length > 255)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+            }
+
+            // Name (string) minLength
+            if (this.Name != null && this.Name.Length < 0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
+            }
+
             yield break;
         }
     }

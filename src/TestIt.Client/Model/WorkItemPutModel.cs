@@ -36,13 +36,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets State
         /// </summary>
-        [DataMember(Name = "state", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "state", IsRequired = true, EmitDefaultValue = true)]
         public WorkItemStates State { get; set; }
 
         /// <summary>
         /// Gets or Sets Priority
         /// </summary>
-        [DataMember(Name = "priority", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "priority", IsRequired = true, EmitDefaultValue = true)]
         public WorkItemPriorityModel Priority { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemPutModel" /> class.
@@ -131,7 +131,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Attachments
         /// </summary>
-        [DataMember(Name = "attachments", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "attachments", IsRequired = true, EmitDefaultValue = true)]
         public List<AttachmentPutModel> Attachments { get; set; }
 
         /// <summary>
@@ -167,19 +167,19 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Steps
         /// </summary>
-        [DataMember(Name = "steps", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "steps", IsRequired = true, EmitDefaultValue = true)]
         public List<StepPutModel> Steps { get; set; }
 
         /// <summary>
         /// Gets or Sets PreconditionSteps
         /// </summary>
-        [DataMember(Name = "preconditionSteps", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "preconditionSteps", IsRequired = true, EmitDefaultValue = true)]
         public List<StepPutModel> PreconditionSteps { get; set; }
 
         /// <summary>
         /// Gets or Sets PostconditionSteps
         /// </summary>
-        [DataMember(Name = "postconditionSteps", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "postconditionSteps", IsRequired = true, EmitDefaultValue = true)]
         public List<StepPutModel> PostconditionSteps { get; set; }
 
         /// <summary>
@@ -191,25 +191,25 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Attributes
         /// </summary>
-        [DataMember(Name = "attributes", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "attributes", IsRequired = true, EmitDefaultValue = true)]
         public Dictionary<string, Object> Attributes { get; set; }
 
         /// <summary>
         /// Gets or Sets Tags
         /// </summary>
-        [DataMember(Name = "tags", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "tags", IsRequired = true, EmitDefaultValue = true)]
         public List<TagShortModel> Tags { get; set; }
 
         /// <summary>
         /// Gets or Sets Links
         /// </summary>
-        [DataMember(Name = "links", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "links", IsRequired = true, EmitDefaultValue = true)]
         public List<LinkPutModel> Links { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>

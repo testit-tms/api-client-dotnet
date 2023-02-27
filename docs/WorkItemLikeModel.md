@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **ModifiedDate** | **DateTime?** |  | [optional] 
 **CreatedById** | **Guid** |  | [optional] 
 **ModifiedById** | **Guid?** |  | [optional] 
-**Id** | **Guid** |  | [optional] 
-**IsDeleted** | **bool** |  | [optional] 
+**Id** | **Guid** | Unique ID of the entity | [optional] 
+**IsDeleted** | **bool** | Indicates if the entity is deleted | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -37,7 +37,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="filter">filter.</param>
         /// <param name="extractionModel">extractionModel.</param>
-        public AutotestSelectModel(AutotestFilterModel filter = default(AutotestFilterModel), AutotestExtractionModel extractionModel = default(AutotestExtractionModel))
+        public AutotestSelectModel(AutotestFilterModel filter = default(AutotestFilterModel), AutotestsExtractionModel extractionModel = default(AutotestsExtractionModel))
         {
             this.Filter = filter;
             this.ExtractionModel = extractionModel;
@@ -53,7 +53,7 @@ namespace TestIt.Client.Model
         /// Gets or Sets ExtractionModel
         /// </summary>
         [DataMember(Name = "extractionModel", EmitDefaultValue = false)]
-        public AutotestExtractionModel ExtractionModel { get; set; }
+        public AutotestsExtractionModel ExtractionModel { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

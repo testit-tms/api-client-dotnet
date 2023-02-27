@@ -50,7 +50,7 @@ namespace TestIt.Client.Model
         /// Specifies the GUID of the attachment.
         /// </summary>
         /// <value>Specifies the GUID of the attachment.</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>

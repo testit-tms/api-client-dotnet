@@ -36,10 +36,10 @@ namespace TestIt.Client.Model
         /// Initializes a new instance of the <see cref="TestRunTestResultsPartialBulkSetModel" /> class.
         /// </summary>
         /// <param name="selector">selector.</param>
-        /// <param name="resultReasonIds">resultReasonIds.</param>
-        /// <param name="links">links.</param>
-        /// <param name="comment">comment.</param>
-        /// <param name="attachmentIds">attachmentIds.</param>
+        /// <param name="resultReasonIds">Unique IDs of result reasons to be assigned to test results.</param>
+        /// <param name="links">Collection of links to be assigned to test results.</param>
+        /// <param name="comment">Comment to be added to test results.</param>
+        /// <param name="attachmentIds">Unique IDs of files to be attached to test results.</param>
         public TestRunTestResultsPartialBulkSetModel(TestRunTestResultsSelectModel selector = default(TestRunTestResultsSelectModel), List<Guid> resultReasonIds = default(List<Guid>), List<LinkPostModel> links = default(List<LinkPostModel>), string comment = default(string), List<Guid> attachmentIds = default(List<Guid>))
         {
             this.Selector = selector;
@@ -56,26 +56,30 @@ namespace TestIt.Client.Model
         public TestRunTestResultsSelectModel Selector { get; set; }
 
         /// <summary>
-        /// Gets or Sets ResultReasonIds
+        /// Unique IDs of result reasons to be assigned to test results
         /// </summary>
+        /// <value>Unique IDs of result reasons to be assigned to test results</value>
         [DataMember(Name = "resultReasonIds", EmitDefaultValue = true)]
         public List<Guid> ResultReasonIds { get; set; }
 
         /// <summary>
-        /// Gets or Sets Links
+        /// Collection of links to be assigned to test results
         /// </summary>
+        /// <value>Collection of links to be assigned to test results</value>
         [DataMember(Name = "links", EmitDefaultValue = true)]
         public List<LinkPostModel> Links { get; set; }
 
         /// <summary>
-        /// Gets or Sets Comment
+        /// Comment to be added to test results
         /// </summary>
+        /// <value>Comment to be added to test results</value>
         [DataMember(Name = "comment", EmitDefaultValue = true)]
         public string Comment { get; set; }
 
         /// <summary>
-        /// Gets or Sets AttachmentIds
+        /// Unique IDs of files to be attached to test results
         /// </summary>
+        /// <value>Unique IDs of files to be attached to test results</value>
         [DataMember(Name = "attachmentIds", EmitDefaultValue = true)]
         public List<Guid> AttachmentIds { get; set; }
 

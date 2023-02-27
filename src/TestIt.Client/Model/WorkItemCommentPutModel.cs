@@ -40,8 +40,8 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemCommentPutModel" /> class.
         /// </summary>
-        /// <param name="text">text (required).</param>
-        /// <param name="id">id.</param>
+        /// <param name="text">Text of the comment (required).</param>
+        /// <param name="id">Unique ID of the comment (required).</param>
         public WorkItemCommentPutModel(string text = default(string), Guid id = default(Guid))
         {
             // to ensure "text" is required (not null)
@@ -54,15 +54,17 @@ namespace TestIt.Client.Model
         }
 
         /// <summary>
-        /// Gets or Sets Text
+        /// Text of the comment
         /// </summary>
-        [DataMember(Name = "text", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>Text of the comment</value>
+        [DataMember(Name = "text", IsRequired = true, EmitDefaultValue = true)]
         public string Text { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Unique ID of the comment
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        /// <value>Unique ID of the comment</value>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>

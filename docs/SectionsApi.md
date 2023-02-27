@@ -8,7 +8,7 @@ All URIs are relative to *http://localhost*
 | [**DeleteSection**](SectionsApi.md#deletesection) | **DELETE** /api/v2/sections/{id} | Delete section |
 | [**GetSectionById**](SectionsApi.md#getsectionbyid) | **GET** /api/v2/sections/{id} | Get section |
 | [**GetWorkItemsBySectionId**](SectionsApi.md#getworkitemsbysectionid) | **GET** /api/v2/sections/{id}/workItems | Get section work items |
-| [**Move**](SectionsApi.md#move) | **POST** /api/v2/sections/move | Move section |
+| [**Move**](SectionsApi.md#move) | **POST** /api/v2/sections/move | Move section with all work items into another section |
 | [**Rename**](SectionsApi.md#rename) | **POST** /api/v2/sections/rename | Rename section |
 | [**UpdateSection**](SectionsApi.md#updatesection) | **PUT** /api/v2/sections | Update section |
 
@@ -24,6 +24,7 @@ Create section
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -41,7 +42,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new SectionsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new SectionsApi(httpClient, config, httpClientHandler);
             var sectionPostModel = new SectionPostModel(); // SectionPostModel |  (optional) 
 
             try
@@ -104,12 +108,12 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
+| **400** | Cannot create section without parent ID |  -  |
+| **201** | Success |  -  |
 | **403** | Update permission for test library is required |  -  |
+| **401** | Unauthorized |  -  |
 | **404** | Parent section with provided ID was not found |  -  |
 | **409** | Section with the same name already exists in the parent section |  -  |
-| **201** | Success |  -  |
-| **400** | Cannot create section without parent ID |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -125,6 +129,7 @@ Delete section
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -142,7 +147,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new SectionsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new SectionsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // Guid | Section internal (UUID) identifier
 
             try
@@ -201,11 +209,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Delete permission for test library is required |  -  |
-| **409** | Conflict |  -  |
 | **204** | Success |  -  |
 | **400** | Bad Request |  -  |
+| **409** | Conflict |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Delete permission for test library is required |  -  |
 | **404** | Section with provided ID was not found |  -  |
 | **422** | Cannot delete root section |  -  |
 
@@ -223,6 +231,7 @@ Get section
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -240,7 +249,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new SectionsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new SectionsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // Guid | Section internal (UUID) identifier
             var isDeleted = false;  // bool? | Requested section is deleted (optional)  (default to false)
 
@@ -305,11 +317,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
-| **404** | Section with provided ID was not found |  -  |
-| **403** | Read permission for test library is required |  -  |
-| **200** | Success |  -  |
 | **400** | Bad Request |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Read permission for test library is required |  -  |
+| **404** | Section with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -325,6 +337,7 @@ Get section work items
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -342,7 +355,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new SectionsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new SectionsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // Guid | Section internal (UUID) identifier
             var isDeleted = false;  // bool? | Requested section is deleted (optional)  (default to false)
             var tagNames = new List<string>(); // List<string> | List of work item tags (optional) 
@@ -421,11 +437,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **404** | Section with provided ID was not found |  -  |
 | **400** | &lt;br&gt;- &#x60;orderBy&#x60; statement must have one &#x60;.&#x60; and no &#x60;,&#x60; symbols  &lt;br&gt;- &#x60;orderBy&#x60; statement has invalid length  &lt;br&gt;- &#x60;orderBy&#x60; statement must have UUID as attribute key  &lt;br&gt;- Search field was not found |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library is required |  -  |
-| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
-| **404** | Section with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -433,14 +449,13 @@ catch (ApiException e)
 # **Move**
 > void Move (SectionMoveModel sectionMoveModel = null)
 
-Move section
-
-<br>Can be moved inside another section. It is possible to indicate a project  <br>Use case  <br>User sets section identifier, old parent identifier, parent identifier and  next section identifier (listed in request example)  <br>User runs method execution  <br>System search section by the identifier  <br>System unlink section from the old parent and links to the new one  <br>System updates section rank using the next section identifier  <br>System returns no content response
+Move section with all work items into another section
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -458,12 +473,15 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new SectionsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new SectionsApi(httpClient, config, httpClientHandler);
             var sectionMoveModel = new SectionMoveModel(); // SectionMoveModel |  (optional) 
 
             try
             {
-                // Move section
+                // Move section with all work items into another section
                 apiInstance.Move(sectionMoveModel);
             }
             catch (ApiException  e)
@@ -483,7 +501,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Move section
+    // Move section with all work items into another section
     apiInstance.MoveWithHttpInfo(sectionMoveModel);
 }
 catch (ApiException e)
@@ -517,13 +535,8 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Action leads to section loop |  -  |
 | **403** | Update permission for test library is required |  -  |
-| **404** | &lt;br&gt;- Section with provided ID was not found  &lt;br&gt;- Parent section with provided ID was not found |  -  |
-| **409** | Section was modified |  -  |
-| **401** | Unauthorized |  -  |
 | **204** | Success |  -  |
-| **422** | Cannot move root section |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -539,6 +552,7 @@ Rename section
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -556,7 +570,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new SectionsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new SectionsApi(httpClient, config, httpClientHandler);
             var sectionRenameModel = new SectionRenameModel(); // SectionRenameModel |  (optional) 
 
             try
@@ -615,11 +632,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Section with provided ID was not found |  -  |
 | **403** | Update permission for test library is required |  -  |
+| **401** | Unauthorized |  -  |
+| **404** | Section with provided ID was not found |  -  |
 | **409** | Section with the same name already exists in the parent section |  -  |
 | **204** | Success |  -  |
-| **401** | Unauthorized |  -  |
 | **422** | Root section cannot be renamed |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -636,6 +653,7 @@ Update section
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -653,7 +671,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new SectionsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new SectionsApi(httpClient, config, httpClientHandler);
             var sectionPutModel = new SectionPutModel(); // SectionPutModel |  (optional) 
 
             try
@@ -712,13 +733,13 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | &lt;br&gt;- Section cannot be found  &lt;br&gt;- Parent section cannot be found  &lt;br&gt;- Project cannot be found |  -  |
+| **400** | &lt;br&gt;- ID is invalid  &lt;br&gt;- Root section cannot be create |  -  |
 | **409** | Section with the same name already exists in the parent section |  -  |
 | **422** | &lt;br&gt;- Root section cannot be edited  &lt;br&gt;- Parent ID cannot be changed  &lt;br&gt;- Project ID cannot be changed |  -  |
 | **204** | Success |  -  |
-| **403** | Update permission for test library is required |  -  |
-| **400** | &lt;br&gt;- ID is invalid  &lt;br&gt;- Root section cannot be create |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Update permission for test library is required |  -  |
+| **404** | &lt;br&gt;- Section cannot be found  &lt;br&gt;- Parent section cannot be found  &lt;br&gt;- Project cannot be found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

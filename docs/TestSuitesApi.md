@@ -27,6 +27,7 @@ Add test-points to test suite
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -44,7 +45,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestSuitesApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
             var id = 1ed608bf-8ac9-4ffd-b91e-ebdbbdce6132;  // Guid | Test suite internal identifier
             var workItemSelectModel = new WorkItemSelectModel(); // WorkItemSelectModel | Filter object to retrieve work items for test-suite's project (optional) 
 
@@ -105,12 +109,12 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **422** | Shared steps cannot be added to test suite |  -  |
-| **403** | Update permission for test plan is required |  -  |
 | **404** | Test suite with provided ID was not found |  -  |
 | **204** | Successful operation |  -  |
+| **422** | Shared steps cannot be added to test suite |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Update permission for test plan is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -126,6 +130,7 @@ Create TestSuite
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -143,7 +148,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestSuitesApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
             var testSuiteV2PostModel = new TestSuiteV2PostModel(); // TestSuiteV2PostModel |  (optional) 
 
             try
@@ -216,7 +224,7 @@ catch (ApiException e)
 
 <a name="deletetestsuite"></a>
 # **DeleteTestSuite**
-> string DeleteTestSuite (Guid id)
+> void DeleteTestSuite (Guid id)
 
 Delete TestSuite
 
@@ -226,6 +234,7 @@ Delete TestSuite
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -243,14 +252,16 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestSuitesApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Test suite internal (guid format) identifier\"
 
             try
             {
                 // Delete TestSuite
-                string result = apiInstance.DeleteTestSuite(id);
-                Debug.WriteLine(result);
+                apiInstance.DeleteTestSuite(id);
             }
             catch (ApiException  e)
             {
@@ -270,10 +281,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete TestSuite
-    ApiResponse<string> response = apiInstance.DeleteTestSuiteWithHttpInfo(id);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.DeleteTestSuiteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
@@ -291,7 +299,7 @@ catch (ApiException e)
 
 ### Return type
 
-**string**
+void (empty response body)
 
 ### Authorization
 
@@ -307,9 +315,9 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
-| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id |  -  |
 | **403** | Delete permission for test plan required |  -  |
 | **401** | Unauthorized |  -  |
+| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -325,6 +333,7 @@ Get Configurations By Id
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -342,7 +351,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestSuitesApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Test suite internal (guid format) identifier\"
 
             try
@@ -405,10 +417,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
-| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
 | **200** | Successful operation |  -  |
+| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
+| **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -424,6 +436,7 @@ Get TestPoints By Id
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -441,7 +454,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestSuitesApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Test suite internal (guid format) identifier\"
 
             try
@@ -504,10 +520,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
-| **200** | Successful operation |  -  |
 | **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
+| **200** | Successful operation |  -  |
 | **403** | Read permission for test plan required |  -  |
+| **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -523,6 +539,7 @@ Get TestResults By Id
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -540,7 +557,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestSuitesApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Test suite internal (guid format) identifier\"
 
             try
@@ -603,10 +623,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
-| **200** | Successful operation |  -  |
-| **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
+| **401** | Unauthorized |  -  |
+| **200** | Successful operation |  -  |
+| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -622,6 +642,7 @@ Get TestSuite by Id
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -639,7 +660,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestSuitesApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Test suite internal (guid format) identifier\"
 
             try
@@ -702,10 +726,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
-| **200** | Successful operation |  -  |
 | **401** | Unauthorized |  -  |
+| **200** | Successful operation |  -  |
 | **403** | Read permission for test plan required |  -  |
+| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -719,6 +743,7 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -736,7 +761,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestSuitesApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // Guid | 
             var isDeleted = false;  // bool? |  (optional)  (default to false)
             var tagNames = new List<string>(); // List<string> |  (optional) 
@@ -811,10 +839,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
-| **404** | Not Found |  -  |
 | **401** | Unauthorized |  -  |
+| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 | **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -830,6 +858,7 @@ Search WorkItems
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -847,7 +876,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestSuitesApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Test suite internal (guid format) identifier\"
             var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
             var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
@@ -932,7 +964,7 @@ catch (ApiException e)
 
 <a name="setconfigurationsbytestsuiteid"></a>
 # **SetConfigurationsByTestSuiteId**
-> List&lt;ConfigurationModel&gt; SetConfigurationsByTestSuiteId (Guid id, List<Guid> requestBody = null)
+> void SetConfigurationsByTestSuiteId (Guid id, List<Guid> requestBody = null)
 
 Set Configurations By TestSuite Id
 
@@ -942,6 +974,7 @@ Set Configurations By TestSuite Id
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -959,15 +992,17 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestSuitesApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Test suite internal (guid format) identifier\"
             var requestBody = new List<Guid>(); // List<Guid> | Collection of configuration identifiers\" (optional) 
 
             try
             {
                 // Set Configurations By TestSuite Id
-                List<ConfigurationModel> result = apiInstance.SetConfigurationsByTestSuiteId(id, requestBody);
-                Debug.WriteLine(result);
+                apiInstance.SetConfigurationsByTestSuiteId(id, requestBody);
             }
             catch (ApiException  e)
             {
@@ -987,10 +1022,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Set Configurations By TestSuite Id
-    ApiResponse<List<ConfigurationModel>> response = apiInstance.SetConfigurationsByTestSuiteIdWithHttpInfo(id, requestBody);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.SetConfigurationsByTestSuiteIdWithHttpInfo(id, requestBody);
 }
 catch (ApiException e)
 {
@@ -1009,7 +1041,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;ConfigurationModel&gt;**](ConfigurationModel.md)
+void (empty response body)
 
 ### Authorization
 
@@ -1024,17 +1056,17 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id |  -  |
 | **204** | Successful operation |  -  |
-| **401** | Unauthorized |  -  |
+| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id |  -  |
 | **403** | Update permission for test plan required |  -  |
 | **400** | &lt;br&gt;Some of Configurations do not exist in the project, or they are not active |  -  |
+| **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="setworkitemsbytestsuiteid"></a>
 # **SetWorkItemsByTestSuiteId**
-> List&lt;WorkItemShortModel&gt; SetWorkItemsByTestSuiteId (Guid id, List<Guid> requestBody = null)
+> void SetWorkItemsByTestSuiteId (Guid id, List<Guid> requestBody = null)
 
 Set WorkItems By TestSuite Id
 
@@ -1044,6 +1076,7 @@ Set WorkItems By TestSuite Id
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1061,15 +1094,17 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestSuitesApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Test suite internal (guid format) identifier\"
             var requestBody = new List<Guid>(); // List<Guid> | Collection of workitem identifiers\" (optional) 
 
             try
             {
                 // Set WorkItems By TestSuite Id
-                List<WorkItemShortModel> result = apiInstance.SetWorkItemsByTestSuiteId(id, requestBody);
-                Debug.WriteLine(result);
+                apiInstance.SetWorkItemsByTestSuiteId(id, requestBody);
             }
             catch (ApiException  e)
             {
@@ -1089,10 +1124,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Set WorkItems By TestSuite Id
-    ApiResponse<List<WorkItemShortModel>> response = apiInstance.SetWorkItemsByTestSuiteIdWithHttpInfo(id, requestBody);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.SetWorkItemsByTestSuiteIdWithHttpInfo(id, requestBody);
 }
 catch (ApiException e)
 {
@@ -1111,7 +1143,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;WorkItemShortModel&gt;**](WorkItemShortModel.md)
+void (empty response body)
 
 ### Authorization
 
@@ -1126,18 +1158,18 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **422** | &lt;br&gt;can&#39;t put a SharedStep in the TestSuite  &lt;br&gt;ProjectId must be the same for TestSuites |  -  |
-| **401** | Unauthorized |  -  |
-| **204** | Successful operation |  -  |
 | **403** | Update permission for test plan required |  -  |
-| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id  &lt;br&gt;Some of WorkItems does not exist or deleted |  -  |
+| **204** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id  &lt;br&gt;Some of WorkItems does not exist or deleted |  -  |
+| **422** | &lt;br&gt;can&#39;t put a SharedStep in the TestSuite  &lt;br&gt;ProjectId must be the same for TestSuites |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="updatetestsuite"></a>
 # **UpdateTestSuite**
-> TestSuiteV2GetModel UpdateTestSuite (TestSuiteV2PutModel testSuiteV2PutModel = null)
+> void UpdateTestSuite (TestSuiteV2PutModel testSuiteV2PutModel = null)
 
 Update TestSuite
 
@@ -1147,6 +1179,7 @@ Update TestSuite
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1164,14 +1197,16 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new TestSuitesApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
             var testSuiteV2PutModel = new TestSuiteV2PutModel(); // TestSuiteV2PutModel |  (optional) 
 
             try
             {
                 // Update TestSuite
-                TestSuiteV2GetModel result = apiInstance.UpdateTestSuite(testSuiteV2PutModel);
-                Debug.WriteLine(result);
+                apiInstance.UpdateTestSuite(testSuiteV2PutModel);
             }
             catch (ApiException  e)
             {
@@ -1191,10 +1226,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update TestSuite
-    ApiResponse<TestSuiteV2GetModel> response = apiInstance.UpdateTestSuiteWithHttpInfo(testSuiteV2PutModel);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.UpdateTestSuiteWithHttpInfo(testSuiteV2PutModel);
 }
 catch (ApiException e)
 {
@@ -1212,7 +1244,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**TestSuiteV2GetModel**](TestSuiteV2GetModel.md)
+void (empty response body)
 
 ### Authorization
 
@@ -1227,11 +1259,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | &lt;br&gt;Can&#39;t find a TestPlan with id  &lt;br&gt;Can&#39;t find a TestSuite with id |  -  |
-| **204** | Successful operation |  -  |
-| **400** | &lt;br&gt;Field is required  &lt;br&gt;Suite with Id creates loop! |  -  |
 | **401** | Unauthorized |  -  |
+| **400** | &lt;br&gt;Field is required  &lt;br&gt;Suite with Id creates loop! |  -  |
+| **404** | &lt;br&gt;Can&#39;t find a TestPlan with id  &lt;br&gt;Can&#39;t find a TestSuite with id |  -  |
 | **403** | Update permission for test plan required |  -  |
+| **204** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -28,83 +28,83 @@ namespace TestIt.Client.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Search for the test run test results and build statistics
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <param name="testResultsLocalFilterModel"> (optional)</param>
         /// <returns>TestResultsStatisticsGetModel</returns>
         TestResultsStatisticsGetModel ApiV2TestRunsIdStatisticsFilterPost(Guid id, TestResultsLocalFilterModel testResultsLocalFilterModel = default(TestResultsLocalFilterModel));
 
         /// <summary>
-        /// 
+        /// Search for the test run test results and build statistics
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <param name="testResultsLocalFilterModel"> (optional)</param>
         /// <returns>ApiResponse of TestResultsStatisticsGetModel</returns>
         ApiResponse<TestResultsStatisticsGetModel> ApiV2TestRunsIdStatisticsFilterPostWithHttpInfo(Guid id, TestResultsLocalFilterModel testResultsLocalFilterModel = default(TestResultsLocalFilterModel));
         /// <summary>
-        /// 
+        /// Get test results from the test run grouped by test points
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <returns>List&lt;TestPointResultModel&gt;</returns>
         List<TestPointResultModel> ApiV2TestRunsIdTestPointsResultsGet(Guid id);
 
         /// <summary>
-        /// 
+        /// Get test results from the test run grouped by test points
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <returns>ApiResponse of List&lt;TestPointResultModel&gt;</returns>
         ApiResponse<List<TestPointResultModel>> ApiV2TestRunsIdTestPointsResultsGetWithHttpInfo(Guid id);
         /// <summary>
-        /// 
+        /// Partial edit of multiple test results in the test run
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <param name="testRunTestResultsPartialBulkSetModel"> (optional)</param>
         /// <returns></returns>
         void ApiV2TestRunsIdTestResultsBulkPut(Guid id, TestRunTestResultsPartialBulkSetModel testRunTestResultsPartialBulkSetModel = default(TestRunTestResultsPartialBulkSetModel));
 
         /// <summary>
-        /// 
+        /// Partial edit of multiple test results in the test run
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <param name="testRunTestResultsPartialBulkSetModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ApiV2TestRunsIdTestResultsBulkPutWithHttpInfo(Guid id, TestRunTestResultsPartialBulkSetModel testRunTestResultsPartialBulkSetModel = default(TestRunTestResultsPartialBulkSetModel));
         /// <summary>
-        /// 
+        /// Get modification date of last test result of the test run
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <returns>DateTime</returns>
         DateTime ApiV2TestRunsIdTestResultsLastModifiedModificationDateGet(Guid id);
 
         /// <summary>
-        /// 
+        /// Get modification date of last test result of the test run
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <returns>ApiResponse of DateTime</returns>
         ApiResponse<DateTime> ApiV2TestRunsIdTestResultsLastModifiedModificationDateGetWithHttpInfo(Guid id);
         /// <summary>
-        /// 
+        /// Search for test runs
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -117,7 +117,7 @@ namespace TestIt.Client.Api
         List<TestRunShortGetModel> ApiV2TestRunsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestRunFilterModel testRunFilterModel = default(TestRunFilterModel));
 
         /// <summary>
-        /// 
+        /// Search for test runs
         /// </summary>
         /// <remarks>
         /// 
@@ -353,103 +353,103 @@ namespace TestIt.Client.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Search for the test run test results and build statistics
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <param name="testResultsLocalFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestResultsStatisticsGetModel</returns>
         System.Threading.Tasks.Task<TestResultsStatisticsGetModel> ApiV2TestRunsIdStatisticsFilterPostAsync(Guid id, TestResultsLocalFilterModel testResultsLocalFilterModel = default(TestResultsLocalFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Search for the test run test results and build statistics
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <param name="testResultsLocalFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestResultsStatisticsGetModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<TestResultsStatisticsGetModel>> ApiV2TestRunsIdStatisticsFilterPostWithHttpInfoAsync(Guid id, TestResultsLocalFilterModel testResultsLocalFilterModel = default(TestResultsLocalFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Get test results from the test run grouped by test points
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestPointResultModel&gt;</returns>
         System.Threading.Tasks.Task<List<TestPointResultModel>> ApiV2TestRunsIdTestPointsResultsGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Get test results from the test run grouped by test points
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPointResultModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<TestPointResultModel>>> ApiV2TestRunsIdTestPointsResultsGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Partial edit of multiple test results in the test run
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <param name="testRunTestResultsPartialBulkSetModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task ApiV2TestRunsIdTestResultsBulkPutAsync(Guid id, TestRunTestResultsPartialBulkSetModel testRunTestResultsPartialBulkSetModel = default(TestRunTestResultsPartialBulkSetModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Partial edit of multiple test results in the test run
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <param name="testRunTestResultsPartialBulkSetModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestRunsIdTestResultsBulkPutWithHttpInfoAsync(Guid id, TestRunTestResultsPartialBulkSetModel testRunTestResultsPartialBulkSetModel = default(TestRunTestResultsPartialBulkSetModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Get modification date of last test result of the test run
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DateTime</returns>
         System.Threading.Tasks.Task<DateTime> ApiV2TestRunsIdTestResultsLastModifiedModificationDateGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Get modification date of last test result of the test run
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DateTime)</returns>
         System.Threading.Tasks.Task<ApiResponse<DateTime>> ApiV2TestRunsIdTestResultsLastModifiedModificationDateGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Search for test runs
         /// </summary>
         /// <remarks>
         /// 
@@ -466,7 +466,7 @@ namespace TestIt.Client.Api
         System.Threading.Tasks.Task<List<TestRunShortGetModel>> ApiV2TestRunsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestRunFilterModel testRunFilterModel = default(TestRunFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Search for test runs
         /// </summary>
         /// <remarks>
         /// 
@@ -927,10 +927,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Search for the test run test results and build statistics 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <param name="testResultsLocalFilterModel"> (optional)</param>
         /// <returns>TestResultsStatisticsGetModel</returns>
         public TestResultsStatisticsGetModel ApiV2TestRunsIdStatisticsFilterPost(Guid id, TestResultsLocalFilterModel testResultsLocalFilterModel = default(TestResultsLocalFilterModel))
@@ -940,10 +940,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Search for the test run test results and build statistics 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <param name="testResultsLocalFilterModel"> (optional)</param>
         /// <returns>ApiResponse of TestResultsStatisticsGetModel</returns>
         public TestIt.Client.Client.ApiResponse<TestResultsStatisticsGetModel> ApiV2TestRunsIdStatisticsFilterPostWithHttpInfo(Guid id, TestResultsLocalFilterModel testResultsLocalFilterModel = default(TestResultsLocalFilterModel))
@@ -987,10 +987,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Search for the test run test results and build statistics 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <param name="testResultsLocalFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestResultsStatisticsGetModel</returns>
@@ -1001,10 +1001,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Search for the test run test results and build statistics 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <param name="testResultsLocalFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestResultsStatisticsGetModel)</returns>
@@ -1052,10 +1052,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get test results from the test run grouped by test points 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <returns>List&lt;TestPointResultModel&gt;</returns>
         public List<TestPointResultModel> ApiV2TestRunsIdTestPointsResultsGet(Guid id)
         {
@@ -1064,10 +1064,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get test results from the test run grouped by test points 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <returns>ApiResponse of List&lt;TestPointResultModel&gt;</returns>
         public TestIt.Client.Client.ApiResponse<List<TestPointResultModel>> ApiV2TestRunsIdTestPointsResultsGetWithHttpInfo(Guid id)
         {
@@ -1108,10 +1108,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get test results from the test run grouped by test points 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestPointResultModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<TestPointResultModel>> ApiV2TestRunsIdTestPointsResultsGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1121,10 +1121,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get test results from the test run grouped by test points 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPointResultModel&gt;)</returns>
         public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestPointResultModel>>> ApiV2TestRunsIdTestPointsResultsGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1169,10 +1169,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Partial edit of multiple test results in the test run 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <param name="testRunTestResultsPartialBulkSetModel"> (optional)</param>
         /// <returns></returns>
         public void ApiV2TestRunsIdTestResultsBulkPut(Guid id, TestRunTestResultsPartialBulkSetModel testRunTestResultsPartialBulkSetModel = default(TestRunTestResultsPartialBulkSetModel))
@@ -1181,10 +1181,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Partial edit of multiple test results in the test run 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <param name="testRunTestResultsPartialBulkSetModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
         public TestIt.Client.Client.ApiResponse<Object> ApiV2TestRunsIdTestResultsBulkPutWithHttpInfo(Guid id, TestRunTestResultsPartialBulkSetModel testRunTestResultsPartialBulkSetModel = default(TestRunTestResultsPartialBulkSetModel))
@@ -1197,6 +1197,7 @@ namespace TestIt.Client.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/json"
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1227,10 +1228,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Partial edit of multiple test results in the test run 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <param name="testRunTestResultsPartialBulkSetModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -1240,10 +1241,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Partial edit of multiple test results in the test run 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <param name="testRunTestResultsPartialBulkSetModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -1258,6 +1259,7 @@ namespace TestIt.Client.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/json"
             };
 
 
@@ -1290,10 +1292,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get modification date of last test result of the test run 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <returns>DateTime</returns>
         public DateTime ApiV2TestRunsIdTestResultsLastModifiedModificationDateGet(Guid id)
         {
@@ -1302,10 +1304,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get modification date of last test result of the test run 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <returns>ApiResponse of DateTime</returns>
         public TestIt.Client.Client.ApiResponse<DateTime> ApiV2TestRunsIdTestResultsLastModifiedModificationDateGetWithHttpInfo(Guid id)
         {
@@ -1346,10 +1348,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get modification date of last test result of the test run 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DateTime</returns>
         public async System.Threading.Tasks.Task<DateTime> ApiV2TestRunsIdTestResultsLastModifiedModificationDateGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1359,10 +1361,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get modification date of last test result of the test run 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test run unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DateTime)</returns>
         public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<DateTime>> ApiV2TestRunsIdTestResultsLastModifiedModificationDateGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1407,7 +1409,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Search for test runs 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1424,7 +1426,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Search for test runs 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1494,7 +1496,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Search for test runs 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1512,7 +1514,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Search for test runs 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>

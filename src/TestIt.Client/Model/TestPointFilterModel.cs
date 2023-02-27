@@ -35,22 +35,22 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPointFilterModel" /> class.
         /// </summary>
-        /// <param name="testSuiteIds">testSuiteIds.</param>
-        /// <param name="workItemGlobalIds">workItemGlobalIds.</param>
-        /// <param name="statuses">statuses.</param>
-        /// <param name="priorities">priorities.</param>
-        /// <param name="isAutomated">isAutomated.</param>
-        /// <param name="name">name.</param>
-        /// <param name="configurationIds">configurationIds.</param>
-        /// <param name="testerIds">testerIds.</param>
+        /// <param name="testSuiteIds">Specifies a test point test suite IDs to search for.</param>
+        /// <param name="workItemGlobalIds">Specifies a test point work item global IDs to search for.</param>
+        /// <param name="statuses">Specifies a test point statuses to search for.</param>
+        /// <param name="priorities">Specifies a test point priorities to search for.</param>
+        /// <param name="isAutomated">Specifies a test point automation status to search for.</param>
+        /// <param name="name">Specifies a test point name to search for.</param>
+        /// <param name="configurationIds">Specifies a test point configuration IDs to search for.</param>
+        /// <param name="testerIds">Specifies a test point assigned user IDs to search for.</param>
         /// <param name="duration">duration.</param>
-        /// <param name="sectionIds">sectionIds.</param>
+        /// <param name="sectionIds">Specifies a test point work item section IDs to search for.</param>
         /// <param name="createdDate">createdDate.</param>
-        /// <param name="createdByIds">createdByIds.</param>
+        /// <param name="createdByIds">Specifies a test point creator IDs to search for.</param>
         /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="modifiedByIds">modifiedByIds.</param>
-        /// <param name="tags">tags.</param>
-        /// <param name="attributes">attributes.</param>
+        /// <param name="modifiedByIds">Specifies a test point last editor IDs to search for.</param>
+        /// <param name="tags">Specifies a test point tags to search for.</param>
+        /// <param name="attributes">Specifies a test point attributes to search for.</param>
         public TestPointFilterModel(List<Guid> testSuiteIds = default(List<Guid>), List<long> workItemGlobalIds = default(List<long>), List<TestPointStatus> statuses = default(List<TestPointStatus>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), bool? isAutomated = default(bool?), string name = default(string), List<Guid> configurationIds = default(List<Guid>), List<Guid> testerIds = default(List<Guid>), Int64RangeSelectorModel duration = default(Int64RangeSelectorModel), List<Guid> sectionIds = default(List<Guid>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), List<Guid> modifiedByIds = default(List<Guid>), List<string> tags = default(List<string>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>))
         {
             this.TestSuiteIds = testSuiteIds;
@@ -72,50 +72,58 @@ namespace TestIt.Client.Model
         }
 
         /// <summary>
-        /// Gets or Sets TestSuiteIds
+        /// Specifies a test point test suite IDs to search for
         /// </summary>
+        /// <value>Specifies a test point test suite IDs to search for</value>
         [DataMember(Name = "testSuiteIds", EmitDefaultValue = true)]
         public List<Guid> TestSuiteIds { get; set; }
 
         /// <summary>
-        /// Gets or Sets WorkItemGlobalIds
+        /// Specifies a test point work item global IDs to search for
         /// </summary>
+        /// <value>Specifies a test point work item global IDs to search for</value>
         [DataMember(Name = "workItemGlobalIds", EmitDefaultValue = true)]
         public List<long> WorkItemGlobalIds { get; set; }
 
         /// <summary>
-        /// Gets or Sets Statuses
+        /// Specifies a test point statuses to search for
         /// </summary>
+        /// <value>Specifies a test point statuses to search for</value>
         [DataMember(Name = "statuses", EmitDefaultValue = true)]
         public List<TestPointStatus> Statuses { get; set; }
 
         /// <summary>
-        /// Gets or Sets Priorities
+        /// Specifies a test point priorities to search for
         /// </summary>
+        /// <value>Specifies a test point priorities to search for</value>
         [DataMember(Name = "priorities", EmitDefaultValue = true)]
         public List<WorkItemPriorityModel> Priorities { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsAutomated
+        /// Specifies a test point automation status to search for
         /// </summary>
+        /// <value>Specifies a test point automation status to search for</value>
         [DataMember(Name = "isAutomated", EmitDefaultValue = true)]
         public bool? IsAutomated { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Specifies a test point name to search for
         /// </summary>
+        /// <value>Specifies a test point name to search for</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets ConfigurationIds
+        /// Specifies a test point configuration IDs to search for
         /// </summary>
+        /// <value>Specifies a test point configuration IDs to search for</value>
         [DataMember(Name = "configurationIds", EmitDefaultValue = true)]
         public List<Guid> ConfigurationIds { get; set; }
 
         /// <summary>
-        /// Gets or Sets TesterIds
+        /// Specifies a test point assigned user IDs to search for
         /// </summary>
+        /// <value>Specifies a test point assigned user IDs to search for</value>
         [DataMember(Name = "testerIds", EmitDefaultValue = true)]
         public List<Guid> TesterIds { get; set; }
 
@@ -126,8 +134,9 @@ namespace TestIt.Client.Model
         public Int64RangeSelectorModel Duration { get; set; }
 
         /// <summary>
-        /// Gets or Sets SectionIds
+        /// Specifies a test point work item section IDs to search for
         /// </summary>
+        /// <value>Specifies a test point work item section IDs to search for</value>
         [DataMember(Name = "sectionIds", EmitDefaultValue = true)]
         public List<Guid> SectionIds { get; set; }
 
@@ -138,8 +147,9 @@ namespace TestIt.Client.Model
         public DateTimeRangeSelectorModel CreatedDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedByIds
+        /// Specifies a test point creator IDs to search for
         /// </summary>
+        /// <value>Specifies a test point creator IDs to search for</value>
         [DataMember(Name = "createdByIds", EmitDefaultValue = true)]
         public List<Guid> CreatedByIds { get; set; }
 
@@ -150,20 +160,23 @@ namespace TestIt.Client.Model
         public DateTimeRangeSelectorModel ModifiedDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets ModifiedByIds
+        /// Specifies a test point last editor IDs to search for
         /// </summary>
+        /// <value>Specifies a test point last editor IDs to search for</value>
         [DataMember(Name = "modifiedByIds", EmitDefaultValue = true)]
         public List<Guid> ModifiedByIds { get; set; }
 
         /// <summary>
-        /// Gets or Sets Tags
+        /// Specifies a test point tags to search for
         /// </summary>
+        /// <value>Specifies a test point tags to search for</value>
         [DataMember(Name = "tags", EmitDefaultValue = true)]
         public List<string> Tags { get; set; }
 
         /// <summary>
-        /// Gets or Sets Attributes
+        /// Specifies a test point attributes to search for
         /// </summary>
+        /// <value>Specifies a test point attributes to search for</value>
         [DataMember(Name = "attributes", EmitDefaultValue = true)]
         public Dictionary<string, List<string>> Attributes { get; set; }
 

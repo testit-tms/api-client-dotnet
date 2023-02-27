@@ -92,26 +92,23 @@ namespace TestIt.Client.Api
         /// <returns>ApiResponse of TestPointAnalyticResult</returns>
         ApiResponse<TestPointAnalyticResult> ApiV2TestPlansIdAnalyticsGetWithHttpInfo(string id);
         /// <summary>
-        /// Auto-balance for TestPlan with testers
+        /// Distribute test points between the users
         /// </summary>
-        /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets TestPlan identifier  &lt;br&gt;User sets testers identifiers (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System auto-balances TestPlan  &lt;br&gt;System returns test plan model (listed in response example)
-        /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="testers">List of testers internal identifiers (optional)</param>
+        /// <param name="id">Test plan unique or global ID</param>
+        /// <param name="testers">Specifies a project user IDs to distribute (optional)</param>
         /// <returns>TestPlanWithTestSuiteTreeModel</returns>
         TestPlanWithTestSuiteTreeModel ApiV2TestPlansIdAutobalancePost(string id, List<Guid> testers = default(List<Guid>));
 
         /// <summary>
-        /// Auto-balance for TestPlan with testers
+        /// Distribute test points between the users
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets TestPlan identifier  &lt;br&gt;User sets testers identifiers (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System auto-balances TestPlan  &lt;br&gt;System returns test plan model (listed in response example)
+        /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="testers">List of testers internal identifiers (optional)</param>
+        /// <param name="id">Test plan unique or global ID</param>
+        /// <param name="testers">Specifies a project user IDs to distribute (optional)</param>
         /// <returns>ApiResponse of TestPlanWithTestSuiteTreeModel</returns>
         ApiResponse<TestPlanWithTestSuiteTreeModel> ApiV2TestPlansIdAutobalancePostWithHttpInfo(string id, List<Guid> testers = default(List<Guid>));
         /// <summary>
@@ -255,7 +252,6 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="mustAddGroupingElements"> (optional)</param>
         /// <param name="testerId"> (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
@@ -263,7 +259,7 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>List&lt;TestPointWithLastResultModel&gt;</returns>
-        List<TestPointWithLastResultModel> ApiV2TestPlansIdTestPointsLastResultsGet(string id, bool? mustAddGroupingElements = default(bool?), Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
+        List<TestPointWithLastResultModel> ApiV2TestPlansIdTestPointsLastResultsGet(string id, Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
 
         /// <summary>
         /// Get TestPoints with last result from TestPlan
@@ -273,7 +269,6 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="mustAddGroupingElements"> (optional)</param>
         /// <param name="testerId"> (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
@@ -281,7 +276,7 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>ApiResponse of List&lt;TestPointWithLastResultModel&gt;</returns>
-        ApiResponse<List<TestPointWithLastResultModel>> ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfo(string id, bool? mustAddGroupingElements = default(bool?), Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
+        ApiResponse<List<TestPointWithLastResultModel>> ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfo(string id, Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
         /// <summary>
         /// Reset TestPoints status of TestPlan
         /// </summary>
@@ -378,24 +373,21 @@ namespace TestIt.Client.Api
         /// <returns>ApiResponse of List&lt;TestRunModel&gt;</returns>
         ApiResponse<List<TestRunModel>> ApiV2TestPlansIdTestRunsSearchPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestRunSearchQueryModel testRunSearchQueryModel = default(TestRunSearchQueryModel));
         /// <summary>
-        /// Get max modified date in TestRun for TestPlan
+        /// Get last modification date of test plan&#39;s test results
         /// </summary>
-        /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System returns max modified date in TestRun for TestPlan
-        /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
+        /// <param name="id">Test plan unique or global ID</param>
         /// <returns>DateTime</returns>
         DateTime ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet(string id);
 
         /// <summary>
-        /// Get max modified date in TestRun for TestPlan
+        /// Get last modification date of test plan&#39;s test results
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System returns max modified date in TestRun for TestPlan
+        /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
+        /// <param name="id">Test plan unique or global ID</param>
         /// <returns>ApiResponse of DateTime</returns>
         ApiResponse<DateTime> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfo(string id);
         /// <summary>
@@ -735,27 +727,27 @@ namespace TestIt.Client.Api
         /// <returns>Task of ApiResponse (TestPointAnalyticResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<TestPointAnalyticResult>> ApiV2TestPlansIdAnalyticsGetWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Auto-balance for TestPlan with testers
+        /// Distribute test points between the users
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets TestPlan identifier  &lt;br&gt;User sets testers identifiers (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System auto-balances TestPlan  &lt;br&gt;System returns test plan model (listed in response example)
+        /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="testers">List of testers internal identifiers (optional)</param>
+        /// <param name="id">Test plan unique or global ID</param>
+        /// <param name="testers">Specifies a project user IDs to distribute (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestPlanWithTestSuiteTreeModel</returns>
         System.Threading.Tasks.Task<TestPlanWithTestSuiteTreeModel> ApiV2TestPlansIdAutobalancePostAsync(string id, List<Guid> testers = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Auto-balance for TestPlan with testers
+        /// Distribute test points between the users
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets TestPlan identifier  &lt;br&gt;User sets testers identifiers (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System auto-balances TestPlan  &lt;br&gt;System returns test plan model (listed in response example)
+        /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="testers">List of testers internal identifiers (optional)</param>
+        /// <param name="id">Test plan unique or global ID</param>
+        /// <param name="testers">Specifies a project user IDs to distribute (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestPlanWithTestSuiteTreeModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<TestPlanWithTestSuiteTreeModel>> ApiV2TestPlansIdAutobalancePostWithHttpInfoAsync(string id, List<Guid> testers = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -910,7 +902,6 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="mustAddGroupingElements"> (optional)</param>
         /// <param name="testerId"> (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
@@ -919,7 +910,7 @@ namespace TestIt.Client.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestPointWithLastResultModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TestPointWithLastResultModel>> ApiV2TestPlansIdTestPointsLastResultsGetAsync(string id, bool? mustAddGroupingElements = default(bool?), Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TestPointWithLastResultModel>> ApiV2TestPlansIdTestPointsLastResultsGetAsync(string id, Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get TestPoints with last result from TestPlan
@@ -929,7 +920,6 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="mustAddGroupingElements"> (optional)</param>
         /// <param name="testerId"> (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
@@ -938,7 +928,7 @@ namespace TestIt.Client.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPointWithLastResultModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestPointWithLastResultModel>>> ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfoAsync(string id, bool? mustAddGroupingElements = default(bool?), Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TestPointWithLastResultModel>>> ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfoAsync(string id, Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Reset TestPoints status of TestPlan
         /// </summary>
@@ -1041,25 +1031,25 @@ namespace TestIt.Client.Api
         /// <returns>Task of ApiResponse (List&lt;TestRunModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<TestRunModel>>> ApiV2TestPlansIdTestRunsSearchPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestRunSearchQueryModel testRunSearchQueryModel = default(TestRunSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Get max modified date in TestRun for TestPlan
+        /// Get last modification date of test plan&#39;s test results
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System returns max modified date in TestRun for TestPlan
+        /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
+        /// <param name="id">Test plan unique or global ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DateTime</returns>
         System.Threading.Tasks.Task<DateTime> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Get max modified date in TestRun for TestPlan
+        /// Get last modification date of test plan&#39;s test results
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System returns max modified date in TestRun for TestPlan
+        /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
+        /// <param name="id">Test plan unique or global ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DateTime)</returns>
         System.Threading.Tasks.Task<ApiResponse<DateTime>> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1942,11 +1932,11 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Auto-balance for TestPlan with testers &lt;br&gt;Use case  &lt;br&gt;User sets TestPlan identifier  &lt;br&gt;User sets testers identifiers (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System auto-balances TestPlan  &lt;br&gt;System returns test plan model (listed in response example)
+        /// Distribute test points between the users 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="testers">List of testers internal identifiers (optional)</param>
+        /// <param name="id">Test plan unique or global ID</param>
+        /// <param name="testers">Specifies a project user IDs to distribute (optional)</param>
         /// <returns>TestPlanWithTestSuiteTreeModel</returns>
         public TestPlanWithTestSuiteTreeModel ApiV2TestPlansIdAutobalancePost(string id, List<Guid> testers = default(List<Guid>))
         {
@@ -1955,11 +1945,11 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Auto-balance for TestPlan with testers &lt;br&gt;Use case  &lt;br&gt;User sets TestPlan identifier  &lt;br&gt;User sets testers identifiers (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System auto-balances TestPlan  &lt;br&gt;System returns test plan model (listed in response example)
+        /// Distribute test points between the users 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="testers">List of testers internal identifiers (optional)</param>
+        /// <param name="id">Test plan unique or global ID</param>
+        /// <param name="testers">Specifies a project user IDs to distribute (optional)</param>
         /// <returns>ApiResponse of TestPlanWithTestSuiteTreeModel</returns>
         public TestIt.Client.Client.ApiResponse<TestPlanWithTestSuiteTreeModel> ApiV2TestPlansIdAutobalancePostWithHttpInfo(string id, List<Guid> testers = default(List<Guid>))
         {
@@ -2008,11 +1998,11 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Auto-balance for TestPlan with testers &lt;br&gt;Use case  &lt;br&gt;User sets TestPlan identifier  &lt;br&gt;User sets testers identifiers (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System auto-balances TestPlan  &lt;br&gt;System returns test plan model (listed in response example)
+        /// Distribute test points between the users 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="testers">List of testers internal identifiers (optional)</param>
+        /// <param name="id">Test plan unique or global ID</param>
+        /// <param name="testers">Specifies a project user IDs to distribute (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestPlanWithTestSuiteTreeModel</returns>
         public async System.Threading.Tasks.Task<TestPlanWithTestSuiteTreeModel> ApiV2TestPlansIdAutobalancePostAsync(string id, List<Guid> testers = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2022,11 +2012,11 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Auto-balance for TestPlan with testers &lt;br&gt;Use case  &lt;br&gt;User sets TestPlan identifier  &lt;br&gt;User sets testers identifiers (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System auto-balances TestPlan  &lt;br&gt;System returns test plan model (listed in response example)
+        /// Distribute test points between the users 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="testers">List of testers internal identifiers (optional)</param>
+        /// <param name="id">Test plan unique or global ID</param>
+        /// <param name="testers">Specifies a project user IDs to distribute (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestPlanWithTestSuiteTreeModel)</returns>
         public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<TestPlanWithTestSuiteTreeModel>> ApiV2TestPlansIdAutobalancePostWithHttpInfoAsync(string id, List<Guid> testers = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2876,7 +2866,6 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="mustAddGroupingElements"> (optional)</param>
         /// <param name="testerId"> (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
@@ -2884,9 +2873,9 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>List&lt;TestPointWithLastResultModel&gt;</returns>
-        public List<TestPointWithLastResultModel> ApiV2TestPlansIdTestPointsLastResultsGet(string id, bool? mustAddGroupingElements = default(bool?), Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
+        public List<TestPointWithLastResultModel> ApiV2TestPlansIdTestPointsLastResultsGet(string id, Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
-            TestIt.Client.Client.ApiResponse<List<TestPointWithLastResultModel>> localVarResponse = ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfo(id, mustAddGroupingElements, testerId, skip, take, orderBy, searchField, searchValue);
+            TestIt.Client.Client.ApiResponse<List<TestPointWithLastResultModel>> localVarResponse = ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfo(id, testerId, skip, take, orderBy, searchField, searchValue);
             return localVarResponse.Data;
         }
 
@@ -2895,7 +2884,6 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="mustAddGroupingElements"> (optional)</param>
         /// <param name="testerId"> (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
@@ -2903,7 +2891,7 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>ApiResponse of List&lt;TestPointWithLastResultModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<TestPointWithLastResultModel>> ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfo(string id, bool? mustAddGroupingElements = default(bool?), Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
+        public TestIt.Client.Client.ApiResponse<List<TestPointWithLastResultModel>> ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfo(string id, Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -2926,10 +2914,6 @@ namespace TestIt.Client.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-            if (mustAddGroupingElements != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "mustAddGroupingElements", mustAddGroupingElements));
-            }
             if (testerId != null)
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "testerId", testerId));
@@ -2978,7 +2962,6 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="mustAddGroupingElements"> (optional)</param>
         /// <param name="testerId"> (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
@@ -2987,9 +2970,9 @@ namespace TestIt.Client.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestPointWithLastResultModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestPointWithLastResultModel>> ApiV2TestPlansIdTestPointsLastResultsGetAsync(string id, bool? mustAddGroupingElements = default(bool?), Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TestPointWithLastResultModel>> ApiV2TestPlansIdTestPointsLastResultsGetAsync(string id, Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<TestPointWithLastResultModel>> localVarResponse = await ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfoAsync(id, mustAddGroupingElements, testerId, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<TestPointWithLastResultModel>> localVarResponse = await ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfoAsync(id, testerId, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2998,7 +2981,6 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="mustAddGroupingElements"> (optional)</param>
         /// <param name="testerId"> (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
@@ -3007,7 +2989,7 @@ namespace TestIt.Client.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPointWithLastResultModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestPointWithLastResultModel>>> ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfoAsync(string id, bool? mustAddGroupingElements = default(bool?), Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestPointWithLastResultModel>>> ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfoAsync(string id, Guid? testerId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3032,10 +3014,6 @@ namespace TestIt.Client.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-            if (mustAddGroupingElements != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "mustAddGroupingElements", mustAddGroupingElements));
-            }
             if (testerId != null)
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "testerId", testerId));
@@ -3638,10 +3616,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get max modified date in TestRun for TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System returns max modified date in TestRun for TestPlan
+        /// Get last modification date of test plan&#39;s test results 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
+        /// <param name="id">Test plan unique or global ID</param>
         /// <returns>DateTime</returns>
         public DateTime ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet(string id)
         {
@@ -3650,10 +3628,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get max modified date in TestRun for TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System returns max modified date in TestRun for TestPlan
+        /// Get last modification date of test plan&#39;s test results 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
+        /// <param name="id">Test plan unique or global ID</param>
         /// <returns>ApiResponse of DateTime</returns>
         public TestIt.Client.Client.ApiResponse<DateTime> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfo(string id)
         {
@@ -3698,10 +3676,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get max modified date in TestRun for TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System returns max modified date in TestRun for TestPlan
+        /// Get last modification date of test plan&#39;s test results 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
+        /// <param name="id">Test plan unique or global ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DateTime</returns>
         public async System.Threading.Tasks.Task<DateTime> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3711,10 +3689,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get max modified date in TestRun for TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System returns max modified date in TestRun for TestPlan
+        /// Get last modification date of test plan&#39;s test results 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
+        /// <param name="id">Test plan unique or global ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DateTime)</returns>
         public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<DateTime>> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))

@@ -35,11 +35,11 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestRunFilterModel" /> class.
         /// </summary>
-        /// <param name="projectIds">projectIds.</param>
-        /// <param name="states">states.</param>
+        /// <param name="projectIds">Specifies a test run project IDs to search for.</param>
+        /// <param name="states">Specifies a test run states to search for.</param>
         /// <param name="createdDate">createdDate.</param>
-        /// <param name="modifiedByIds">modifiedByIds.</param>
-        /// <param name="isDeleted">isDeleted.</param>
+        /// <param name="modifiedByIds">Specifies a test run last editor IDs to search for.</param>
+        /// <param name="isDeleted">Specifies a test run deleted status to search for.</param>
         public TestRunFilterModel(List<Guid> projectIds = default(List<Guid>), List<TestRunState> states = default(List<TestRunState>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?))
         {
             this.ProjectIds = projectIds;
@@ -50,14 +50,16 @@ namespace TestIt.Client.Model
         }
 
         /// <summary>
-        /// Gets or Sets ProjectIds
+        /// Specifies a test run project IDs to search for
         /// </summary>
+        /// <value>Specifies a test run project IDs to search for</value>
         [DataMember(Name = "projectIds", EmitDefaultValue = true)]
         public List<Guid> ProjectIds { get; set; }
 
         /// <summary>
-        /// Gets or Sets States
+        /// Specifies a test run states to search for
         /// </summary>
+        /// <value>Specifies a test run states to search for</value>
         [DataMember(Name = "states", EmitDefaultValue = true)]
         public List<TestRunState> States { get; set; }
 
@@ -68,14 +70,16 @@ namespace TestIt.Client.Model
         public DateTimeRangeSelectorModel CreatedDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets ModifiedByIds
+        /// Specifies a test run last editor IDs to search for
         /// </summary>
+        /// <value>Specifies a test run last editor IDs to search for</value>
         [DataMember(Name = "modifiedByIds", EmitDefaultValue = true)]
         public List<Guid> ModifiedByIds { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDeleted
+        /// Specifies a test run deleted status to search for
         /// </summary>
+        /// <value>Specifies a test run deleted status to search for</value>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
         public bool? IsDeleted { get; set; }
 

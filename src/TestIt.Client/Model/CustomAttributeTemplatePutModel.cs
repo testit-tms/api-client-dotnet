@@ -35,32 +35,45 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomAttributeTemplatePutModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="customAttributeIds">customAttributeIds.</param>
-        /// <param name="name">name.</param>
+        [JsonConstructorAttribute]
+        protected CustomAttributeTemplatePutModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomAttributeTemplatePutModel" /> class.
+        /// </summary>
+        /// <param name="id">Unique ID of the attribute template (required).</param>
+        /// <param name="customAttributeIds">Collection of attribute IDs.</param>
+        /// <param name="name">Custom attributes template name (required).</param>
         public CustomAttributeTemplatePutModel(Guid id = default(Guid), List<Guid> customAttributeIds = default(List<Guid>), string name = default(string))
         {
             this.Id = id;
-            this.CustomAttributeIds = customAttributeIds;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for CustomAttributeTemplatePutModel and cannot be null");
+            }
             this.Name = name;
+            this.CustomAttributeIds = customAttributeIds;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Unique ID of the attribute template
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        /// <value>Unique ID of the attribute template</value>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets CustomAttributeIds
+        /// Collection of attribute IDs
         /// </summary>
+        /// <value>Collection of attribute IDs</value>
         [DataMember(Name = "customAttributeIds", EmitDefaultValue = true)]
         public List<Guid> CustomAttributeIds { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Custom attributes template name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        /// <value>Custom attributes template name</value>
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -159,6 +172,18 @@ namespace TestIt.Client.Model
         /// <returns>Validation Result</returns>
         public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
+            // Name (string) maxLength
+            if (this.Name != null && this.Name.Length > 255)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+            }
+
+            // Name (string) minLength
+            if (this.Name != null && this.Name.Length < 0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
+            }
+
             yield break;
         }
     }

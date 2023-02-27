@@ -28,61 +28,71 @@ namespace TestIt.Client.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Get all test runs which use test point
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test point unique ID</param>
         /// <returns>List&lt;TestRunModel&gt;</returns>
         List<TestRunModel> ApiV2TestPointsIdTestRunsGet(Guid id);
 
         /// <summary>
-        /// 
+        /// Get all test runs which use test point
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test point unique ID</param>
         /// <returns>ApiResponse of List&lt;TestRunModel&gt;</returns>
         ApiResponse<List<TestRunModel>> ApiV2TestPointsIdTestRunsGetWithHttpInfo(Guid id);
         /// <summary>
-        /// 
+        /// Get work item represented by test point
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test point unique ID</param>
         /// <returns>WorkItemModel</returns>
         WorkItemModel ApiV2TestPointsIdWorkItemGet(Guid id);
 
         /// <summary>
-        /// 
+        /// Get work item represented by test point
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test point unique ID</param>
         /// <returns>ApiResponse of WorkItemModel</returns>
         ApiResponse<WorkItemModel> ApiV2TestPointsIdWorkItemGetWithHttpInfo(Guid id);
         /// <summary>
-        /// 
+        /// Search for test points and extract IDs only
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="testPointFilterModel"> (optional)</param>
         /// <returns>List&lt;Guid&gt;</returns>
-        List<Guid> ApiV2TestPointsSearchIdPost(TestPointFilterModel testPointFilterModel = default(TestPointFilterModel));
+        List<Guid> ApiV2TestPointsSearchIdPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel));
 
         /// <summary>
-        /// 
+        /// Search for test points and extract IDs only
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="testPointFilterModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
-        ApiResponse<List<Guid>> ApiV2TestPointsSearchIdPostWithHttpInfo(TestPointFilterModel testPointFilterModel = default(TestPointFilterModel));
+        ApiResponse<List<Guid>> ApiV2TestPointsSearchIdPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel));
         /// <summary>
-        /// 
+        /// Search for test points
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -95,7 +105,7 @@ namespace TestIt.Client.Api
         List<TestPointShortGetModel> ApiV2TestPointsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel));
 
         /// <summary>
-        /// 
+        /// Search for test points
         /// </summary>
         /// <remarks>
         /// 
@@ -119,76 +129,86 @@ namespace TestIt.Client.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Get all test runs which use test point
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test point unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestRunModel&gt;</returns>
         System.Threading.Tasks.Task<List<TestRunModel>> ApiV2TestPointsIdTestRunsGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Get all test runs which use test point
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test point unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestRunModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<TestRunModel>>> ApiV2TestPointsIdTestRunsGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Get work item represented by test point
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test point unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkItemModel</returns>
         System.Threading.Tasks.Task<WorkItemModel> ApiV2TestPointsIdWorkItemGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Get work item represented by test point
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test point unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkItemModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<WorkItemModel>> ApiV2TestPointsIdWorkItemGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Search for test points and extract IDs only
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="testPointFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Guid&gt;</returns>
-        System.Threading.Tasks.Task<List<Guid>> ApiV2TestPointsSearchIdPostAsync(TestPointFilterModel testPointFilterModel = default(TestPointFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<Guid>> ApiV2TestPointsSearchIdPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Search for test points and extract IDs only
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="testPointFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Guid>>> ApiV2TestPointsSearchIdPostWithHttpInfoAsync(TestPointFilterModel testPointFilterModel = default(TestPointFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Guid>>> ApiV2TestPointsSearchIdPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Search for test points
         /// </summary>
         /// <remarks>
         /// 
@@ -205,7 +225,7 @@ namespace TestIt.Client.Api
         System.Threading.Tasks.Task<List<TestPointShortGetModel>> ApiV2TestPointsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Search for test points
         /// </summary>
         /// <remarks>
         /// 
@@ -434,10 +454,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get all test runs which use test point 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test point unique ID</param>
         /// <returns>List&lt;TestRunModel&gt;</returns>
         public List<TestRunModel> ApiV2TestPointsIdTestRunsGet(Guid id)
         {
@@ -446,10 +466,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get all test runs which use test point 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test point unique ID</param>
         /// <returns>ApiResponse of List&lt;TestRunModel&gt;</returns>
         public TestIt.Client.Client.ApiResponse<List<TestRunModel>> ApiV2TestPointsIdTestRunsGetWithHttpInfo(Guid id)
         {
@@ -490,10 +510,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get all test runs which use test point 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test point unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestRunModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<TestRunModel>> ApiV2TestPointsIdTestRunsGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -503,10 +523,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get all test runs which use test point 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test point unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestRunModel&gt;)</returns>
         public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestRunModel>>> ApiV2TestPointsIdTestRunsGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -551,10 +571,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get work item represented by test point 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test point unique ID</param>
         /// <returns>WorkItemModel</returns>
         public WorkItemModel ApiV2TestPointsIdWorkItemGet(Guid id)
         {
@@ -563,10 +583,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get work item represented by test point 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test point unique ID</param>
         /// <returns>ApiResponse of WorkItemModel</returns>
         public TestIt.Client.Client.ApiResponse<WorkItemModel> ApiV2TestPointsIdWorkItemGetWithHttpInfo(Guid id)
         {
@@ -607,10 +627,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get work item represented by test point 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test point unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkItemModel</returns>
         public async System.Threading.Tasks.Task<WorkItemModel> ApiV2TestPointsIdWorkItemGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -620,10 +640,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get work item represented by test point 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Test point unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkItemModel)</returns>
         public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<WorkItemModel>> ApiV2TestPointsIdWorkItemGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -668,24 +688,34 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Search for test points and extract IDs only 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="testPointFilterModel"> (optional)</param>
         /// <returns>List&lt;Guid&gt;</returns>
-        public List<Guid> ApiV2TestPointsSearchIdPost(TestPointFilterModel testPointFilterModel = default(TestPointFilterModel))
+        public List<Guid> ApiV2TestPointsSearchIdPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel))
         {
-            TestIt.Client.Client.ApiResponse<List<Guid>> localVarResponse = ApiV2TestPointsSearchIdPostWithHttpInfo(testPointFilterModel);
+            TestIt.Client.Client.ApiResponse<List<Guid>> localVarResponse = ApiV2TestPointsSearchIdPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, testPointFilterModel);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        /// Search for test points and extract IDs only 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="testPointFilterModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<Guid>> ApiV2TestPointsSearchIdPostWithHttpInfo(TestPointFilterModel testPointFilterModel = default(TestPointFilterModel))
+        public TestIt.Client.Client.ApiResponse<List<Guid>> ApiV2TestPointsSearchIdPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -704,6 +734,26 @@ namespace TestIt.Client.Api
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
+            if (skip != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
+            }
+            if (take != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
+            }
+            if (orderBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
+            }
+            if (searchField != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
+            }
+            if (searchValue != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
+            }
             localVarRequestOptions.Data = testPointFilterModel;
 
             // authentication (Bearer or PrivateToken) required
@@ -725,26 +775,36 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Search for test points and extract IDs only 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="testPointFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Guid&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Guid>> ApiV2TestPointsSearchIdPostAsync(TestPointFilterModel testPointFilterModel = default(TestPointFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<Guid>> ApiV2TestPointsSearchIdPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<Guid>> localVarResponse = await ApiV2TestPointsSearchIdPostWithHttpInfoAsync(testPointFilterModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<Guid>> localVarResponse = await ApiV2TestPointsSearchIdPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, testPointFilterModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        /// Search for test points and extract IDs only 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="testPointFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<Guid>>> ApiV2TestPointsSearchIdPostWithHttpInfoAsync(TestPointFilterModel testPointFilterModel = default(TestPointFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<Guid>>> ApiV2TestPointsSearchIdPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -765,6 +825,26 @@ namespace TestIt.Client.Api
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
+            if (skip != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
+            }
+            if (take != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
+            }
+            if (orderBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
+            }
+            if (searchField != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
+            }
+            if (searchValue != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
+            }
             localVarRequestOptions.Data = testPointFilterModel;
 
             // authentication (Bearer or PrivateToken) required
@@ -787,7 +867,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Search for test points 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -804,7 +884,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Search for test points 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -874,7 +954,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Search for test points 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -892,7 +972,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Search for test points 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>

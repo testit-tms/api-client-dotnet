@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **GlobalId** | **long** | Used for search Test plan | [optional] 
 **IsDeleted** | **bool** |  | [optional] 
 **LockedDate** | **DateTime?** |  | [optional] 
-**Id** | **Guid** |  | [optional] 
+**Id** | **Guid** |  | 
 **LockedById** | **Guid?** |  | [optional] 
 **Tags** | [**List&lt;TagShortModel&gt;**](TagShortModel.md) |  | [optional] 
 **Name** | **string** |  | 

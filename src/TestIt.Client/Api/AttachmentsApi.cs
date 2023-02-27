@@ -74,21 +74,21 @@ namespace TestIt.Client.Api
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> ApiV2AttachmentsIdGetWithHttpInfo(Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?));
         /// <summary>
-        /// 
+        /// Get size of attachments storage in bytes
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>float</returns>
-        float ApiV2AttachmentsOccupiedFileStorageSizeGet();
+        /// <returns>long</returns>
+        long ApiV2AttachmentsOccupiedFileStorageSizeGet();
 
         /// <summary>
-        /// 
+        /// Get size of attachments storage in bytes
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of float</returns>
-        ApiResponse<float> ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfo();
+        /// <returns>ApiResponse of long</returns>
+        ApiResponse<long> ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfo();
         /// <summary>
         /// Upload new attachment file
         /// </summary>
@@ -176,26 +176,26 @@ namespace TestIt.Client.Api
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> ApiV2AttachmentsIdGetWithHttpInfoAsync(Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Get size of attachments storage in bytes
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of float</returns>
-        System.Threading.Tasks.Task<float> ApiV2AttachmentsOccupiedFileStorageSizeGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of long</returns>
+        System.Threading.Tasks.Task<long> ApiV2AttachmentsOccupiedFileStorageSizeGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Get size of attachments storage in bytes
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (float)</returns>
-        System.Threading.Tasks.Task<ApiResponse<float>> ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (long)</returns>
+        System.Threading.Tasks.Task<ApiResponse<long>> ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Upload new attachment file
         /// </summary>
@@ -729,22 +729,22 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get size of attachments storage in bytes 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>float</returns>
-        public float ApiV2AttachmentsOccupiedFileStorageSizeGet()
+        /// <returns>long</returns>
+        public long ApiV2AttachmentsOccupiedFileStorageSizeGet()
         {
-            TestIt.Client.Client.ApiResponse<float> localVarResponse = ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfo();
+            TestIt.Client.Client.ApiResponse<long> localVarResponse = ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        /// Get size of attachments storage in bytes 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of float</returns>
-        public TestIt.Client.Client.ApiResponse<float> ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfo()
+        /// <returns>ApiResponse of long</returns>
+        public TestIt.Client.Client.ApiResponse<long> ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfo()
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -770,7 +770,7 @@ namespace TestIt.Client.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<float>("/api/v2/attachments/occupiedFileStorageSize", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<long>("/api/v2/attachments/occupiedFileStorageSize", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -782,24 +782,24 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get size of attachments storage in bytes 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of float</returns>
-        public async System.Threading.Tasks.Task<float> ApiV2AttachmentsOccupiedFileStorageSizeGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of long</returns>
+        public async System.Threading.Tasks.Task<long> ApiV2AttachmentsOccupiedFileStorageSizeGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<float> localVarResponse = await ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<long> localVarResponse = await ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        /// Get size of attachments storage in bytes 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (float)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<float>> ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (long)</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<long>> ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -828,7 +828,7 @@ namespace TestIt.Client.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<float>("/api/v2/attachments/occupiedFileStorageSize", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<long>("/api/v2/attachments/occupiedFileStorageSize", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

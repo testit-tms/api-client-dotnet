@@ -37,8 +37,8 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="regexText">regexText.</param>
         /// <param name="failureClassId">failureClassId.</param>
-        /// <param name="id">id.</param>
-        /// <param name="isDeleted">isDeleted.</param>
+        /// <param name="id">Unique ID of the entity.</param>
+        /// <param name="isDeleted">Indicates if the entity is deleted.</param>
         public FailureClassRegexModel(string regexText = default(string), Guid? failureClassId = default(Guid?), Guid id = default(Guid), bool isDeleted = default(bool))
         {
             this.RegexText = regexText;
@@ -60,14 +60,16 @@ namespace TestIt.Client.Model
         public Guid? FailureClassId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Unique ID of the entity
         /// </summary>
+        /// <value>Unique ID of the entity</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDeleted
+        /// Indicates if the entity is deleted
         /// </summary>
+        /// <value>Indicates if the entity is deleted</value>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 

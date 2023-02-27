@@ -35,12 +35,12 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestResultsFilterModel" /> class.
         /// </summary>
-        /// <param name="testRunIds">testRunIds.</param>
-        /// <param name="configurationIds">configurationIds.</param>
-        /// <param name="outcomes">outcomes.</param>
-        /// <param name="failureCategories">failureCategories.</param>
-        /// <param name="_namespace">_namespace.</param>
-        /// <param name="className">className.</param>
+        /// <param name="testRunIds">Specifies a test result test run IDs to search for.</param>
+        /// <param name="configurationIds">Specifies a test result configuration IDs to search for.</param>
+        /// <param name="outcomes">Specifies a test result outcomes to search for.</param>
+        /// <param name="failureCategories">Specifies a test result failure categories to search for.</param>
+        /// <param name="_namespace">Specifies a test result namespace to search for.</param>
+        /// <param name="className">Specifies a test result class name to search for.</param>
         public TestResultsFilterModel(List<Guid> testRunIds = default(List<Guid>), List<Guid> configurationIds = default(List<Guid>), List<TestResultOutcome> outcomes = default(List<TestResultOutcome>), List<FailureCategoryModel> failureCategories = default(List<FailureCategoryModel>), string _namespace = default(string), string className = default(string))
         {
             this.TestRunIds = testRunIds;
@@ -52,38 +52,44 @@ namespace TestIt.Client.Model
         }
 
         /// <summary>
-        /// Gets or Sets TestRunIds
+        /// Specifies a test result test run IDs to search for
         /// </summary>
+        /// <value>Specifies a test result test run IDs to search for</value>
         [DataMember(Name = "testRunIds", EmitDefaultValue = true)]
         public List<Guid> TestRunIds { get; set; }
 
         /// <summary>
-        /// Gets or Sets ConfigurationIds
+        /// Specifies a test result configuration IDs to search for
         /// </summary>
+        /// <value>Specifies a test result configuration IDs to search for</value>
         [DataMember(Name = "configurationIds", EmitDefaultValue = true)]
         public List<Guid> ConfigurationIds { get; set; }
 
         /// <summary>
-        /// Gets or Sets Outcomes
+        /// Specifies a test result outcomes to search for
         /// </summary>
+        /// <value>Specifies a test result outcomes to search for</value>
         [DataMember(Name = "outcomes", EmitDefaultValue = true)]
         public List<TestResultOutcome> Outcomes { get; set; }
 
         /// <summary>
-        /// Gets or Sets FailureCategories
+        /// Specifies a test result failure categories to search for
         /// </summary>
+        /// <value>Specifies a test result failure categories to search for</value>
         [DataMember(Name = "failureCategories", EmitDefaultValue = true)]
         public List<FailureCategoryModel> FailureCategories { get; set; }
 
         /// <summary>
-        /// Gets or Sets Namespace
+        /// Specifies a test result namespace to search for
         /// </summary>
+        /// <value>Specifies a test result namespace to search for</value>
         [DataMember(Name = "namespace", EmitDefaultValue = true)]
         public string Namespace { get; set; }
 
         /// <summary>
-        /// Gets or Sets ClassName
+        /// Specifies a test result class name to search for
         /// </summary>
+        /// <value>Specifies a test result class name to search for</value>
         [DataMember(Name = "className", EmitDefaultValue = true)]
         public string ClassName { get; set; }
 

@@ -5,17 +5,22 @@ All URIs are relative to *http://localhost*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**AddGlobaAttributesToProject**](ProjectsApi.md#addglobaattributestoproject) | **POST** /api/v2/projects/{id}/globalAttributes | Add global attributes to project |
-| [**ApiV2ProjectsIdCustomAttributeTemplatesTemplateIdDelete**](ProjectsApi.md#apiv2projectsidcustomattributetemplatestemplateiddelete) | **DELETE** /api/v2/projects/{id}/customAttributeTemplates/{templateId} | Delete CustomAttributeTemplate from Project |
-| [**ApiV2ProjectsIdCustomAttributeTemplatesTemplateIdPost**](ProjectsApi.md#apiv2projectsidcustomattributetemplatestemplateidpost) | **POST** /api/v2/projects/{id}/customAttributeTemplates/{templateId} | Add CustomAttributeTemplate to Project |
+| [**ApiV2ProjectsIdAttributesTemplatesSearchPost**](ProjectsApi.md#apiv2projectsidattributestemplatessearchpost) | **POST** /api/v2/projects/{id}/attributes/templates/search | Search for custom attributes templates |
+| [**ApiV2ProjectsIdAttributesTemplatesTemplateIdDelete**](ProjectsApi.md#apiv2projectsidattributestemplatestemplateiddelete) | **DELETE** /api/v2/projects/{id}/attributes/templates/{templateId} | Delete CustomAttributeTemplate from Project |
+| [**ApiV2ProjectsIdAttributesTemplatesTemplateIdPost**](ProjectsApi.md#apiv2projectsidattributestemplatestemplateidpost) | **POST** /api/v2/projects/{id}/attributes/templates/{templateId} | Add CustomAttributeTemplate to Project |
 | [**ApiV2ProjectsIdFailureClassesGet**](ProjectsApi.md#apiv2projectsidfailureclassesget) | **GET** /api/v2/projects/{id}/failureClasses | Get Project FailureClasses |
 | [**ApiV2ProjectsIdFavoritePut**](ProjectsApi.md#apiv2projectsidfavoriteput) | **PUT** /api/v2/projects/{id}/favorite | Mark Project as favorite |
 | [**ApiV2ProjectsIdFiltersGet**](ProjectsApi.md#apiv2projectsidfiltersget) | **GET** /api/v2/projects/{id}/filters | Get Project filters |
 | [**ApiV2ProjectsIdTestPlansAnalyticsGet**](ProjectsApi.md#apiv2projectsidtestplansanalyticsget) | **GET** /api/v2/projects/{id}/testPlans/analytics | Get TestPlans analytics |
+| [**ApiV2ProjectsIdTestPlansNameExistsGet**](ProjectsApi.md#apiv2projectsidtestplansnameexistsget) | **GET** /api/v2/projects/{id}/testPlans/{name}/exists | Checks if TestPlan exists with the specified name exists for the project |
 | [**ApiV2ProjectsIdTestPlansSearchPost**](ProjectsApi.md#apiv2projectsidtestplanssearchpost) | **POST** /api/v2/projects/{id}/testPlans/search | Get Project TestPlans with analytics |
 | [**ApiV2ProjectsIdTestRunsActiveGet**](ProjectsApi.md#apiv2projectsidtestrunsactiveget) | **GET** /api/v2/projects/{id}/testRuns/active | Get active Project TestRuns |
 | [**ApiV2ProjectsIdTestRunsFullGet**](ProjectsApi.md#apiv2projectsidtestrunsfullget) | **GET** /api/v2/projects/{id}/testRuns/full | Get Project TestRuns full models |
+| [**ApiV2ProjectsIdWorkItemsSearchIdPost**](ProjectsApi.md#apiv2projectsidworkitemssearchidpost) | **POST** /api/v2/projects/{id}/workItems/search/id | Search for work items and extract IDs only |
+| [**ApiV2ProjectsIdWorkItemsSearchPost**](ProjectsApi.md#apiv2projectsidworkitemssearchpost) | **POST** /api/v2/projects/{id}/workItems/search | Search for work items |
 | [**ApiV2ProjectsIdWorkItemsTagsGet**](ProjectsApi.md#apiv2projectsidworkitemstagsget) | **GET** /api/v2/projects/{id}/workItems/tags | Get WorkItems Tags |
-| [**ApiV2ProjectsSearchPost**](ProjectsApi.md#apiv2projectssearchpost) | **POST** /api/v2/projects/search |  |
+| [**ApiV2ProjectsNameNameExistsGet**](ProjectsApi.md#apiv2projectsnamenameexistsget) | **GET** /api/v2/projects/name/{name}/exists |  |
+| [**ApiV2ProjectsSearchPost**](ProjectsApi.md#apiv2projectssearchpost) | **POST** /api/v2/projects/search | Search for projects |
 | [**CreateCustomAttributeTestPlanProjectRelations**](ProjectsApi.md#createcustomattributetestplanprojectrelations) | **POST** /api/v2/projects/{id}/testPlans/attributes | Add attributes to project&#39;s test plans |
 | [**CreateProject**](ProjectsApi.md#createproject) | **POST** /api/v2/projects | Create project |
 | [**CreateProjectsAttribute**](ProjectsApi.md#createprojectsattribute) | **POST** /api/v2/projects/{id}/attributes | Create project attribute |
@@ -39,24 +44,25 @@ All URIs are relative to *http://localhost*
 | [**Import**](ProjectsApi.md#import) | **POST** /api/v2/projects/import | Import project from JSON file |
 | [**ImportToExistingProject**](ProjectsApi.md#importtoexistingproject) | **POST** /api/v2/projects/{id}/import | Import project from JSON file into existing project |
 | [**RestoreProject**](ProjectsApi.md#restoreproject) | **POST** /api/v2/projects/{id}/restore | Restore project |
-| [**SearchAttributesInProject**](ProjectsApi.md#searchattributesinproject) | **POST** /api/v2/projects/{id}/attributes/search |  |
-| [**SearchTestPlanAttributesInProject**](ProjectsApi.md#searchtestplanattributesinproject) | **POST** /api/v2/projects/{id}/testPlans/attributes/search |  |
+| [**SearchAttributesInProject**](ProjectsApi.md#searchattributesinproject) | **POST** /api/v2/projects/{id}/attributes/search | Search for attributes used in the project |
+| [**SearchTestPlanAttributesInProject**](ProjectsApi.md#searchtestplanattributesinproject) | **POST** /api/v2/projects/{id}/testPlans/attributes/search | Search for attributes used in the project test plans |
 | [**UpdateCustomAttributeTestPlanProjectRelations**](ProjectsApi.md#updatecustomattributetestplanprojectrelations) | **PUT** /api/v2/projects/{id}/testPlans/attribute | Update attribute of project&#39;s test plans |
 | [**UpdateProject**](ProjectsApi.md#updateproject) | **PUT** /api/v2/projects | Update project |
-| [**UpdateProjectsAttribute**](ProjectsApi.md#updateprojectsattribute) | **PUT** /api/v2/projects/{id}/attributes | Update project attribute |
+| [**UpdateProjectsAttribute**](ProjectsApi.md#updateprojectsattribute) | **PUT** /api/v2/projects/{id}/attributes | Edit attribute of the project |
 
 <a name="addglobaattributestoproject"></a>
 # **AddGlobaAttributesToProject**
-> CustomAttributeModel AddGlobaAttributesToProject (string id, List<Guid> requestBody = null)
+> void AddGlobaAttributesToProject (string id, List<Guid> requestBody = null)
 
 Add global attributes to project
 
-<br>Use case  <br>User sets parameters (listed in request example) and runs method execution  <br>System search project  <br>System relates global attributes with project  <br>System returns ok response
+<br>Use case  <br>User sets project internal or global identifier and attributes identifiers  <br>System search project  <br>System relates global attributes with project  <br>System returns no content response
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -74,15 +80,17 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
             var requestBody = new List<Guid>(); // List<Guid> |  (optional) 
 
             try
             {
                 // Add global attributes to project
-                CustomAttributeModel result = apiInstance.AddGlobaAttributesToProject(id, requestBody);
-                Debug.WriteLine(result);
+                apiInstance.AddGlobaAttributesToProject(id, requestBody);
             }
             catch (ApiException  e)
             {
@@ -102,10 +110,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Add global attributes to project
-    ApiResponse<CustomAttributeModel> response = apiInstance.AddGlobaAttributesToProjectWithHttpInfo(id, requestBody);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.AddGlobaAttributesToProjectWithHttpInfo(id, requestBody);
 }
 catch (ApiException e)
 {
@@ -124,7 +129,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**CustomAttributeModel**](CustomAttributeModel.md)
+void (empty response body)
 
 ### Authorization
 
@@ -140,33 +145,32 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **422** | Client Error |  -  |
-| **404** | Not Found |  -  |
-| **403** | Project admin permission for project settings is required |  -  |
-| **409** | Conflict |  -  |
-| **200** | Successful operation |  -  |
 | **400** | &lt;br&gt; Attributes must be global  |  -  |
+| **200** | Success |  -  |
+| **403** | Project admin permission for project settings is required |  -  |
+| **404** | Project with provided ID was not found |  -  |
+| **409** | Conflict |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsidcustomattributetemplatestemplateiddelete"></a>
-# **ApiV2ProjectsIdCustomAttributeTemplatesTemplateIdDelete**
-> void ApiV2ProjectsIdCustomAttributeTemplatesTemplateIdDelete (string id, Guid templateId)
+<a name="apiv2projectsidattributestemplatessearchpost"></a>
+# **ApiV2ProjectsIdAttributesTemplatesSearchPost**
+> List&lt;ProjectCustomAttributeTemplateGetModel&gt; ApiV2ProjectsIdAttributesTemplatesSearchPost (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = null)
 
-Delete CustomAttributeTemplate from Project
-
-<br>Use case  <br>User sets project internal or global identifier   <br>User sets attribute template internal identifier   <br>User runs method execution  <br>System delete attribute template from project
+Search for custom attributes templates
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
 
 namespace Example
 {
-    public class ApiV2ProjectsIdCustomAttributeTemplatesTemplateIdDeleteExample
+    public class ApiV2ProjectsIdAttributesTemplatesSearchPostExample
     {
         public static void Main()
         {
@@ -177,18 +181,27 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
-            var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
-            var templateId = "templateId_example";  // Guid | CustomAttributeTemplate internal (UUID) identifier
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | 
+            var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
+            var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
+            var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
+            var searchField = "searchField_example";  // string | Property name for searching (optional) 
+            var searchValue = "searchValue_example";  // string | Value for searching (optional) 
+            var projectCustomAttributesTemplatesFilterModel = new ProjectCustomAttributesTemplatesFilterModel(); // ProjectCustomAttributesTemplatesFilterModel |  (optional) 
 
             try
             {
-                // Delete CustomAttributeTemplate from Project
-                apiInstance.ApiV2ProjectsIdCustomAttributeTemplatesTemplateIdDelete(id, templateId);
+                // Search for custom attributes templates
+                List<ProjectCustomAttributeTemplateGetModel> result = apiInstance.ApiV2ProjectsIdAttributesTemplatesSearchPost(id, skip, take, orderBy, searchField, searchValue, projectCustomAttributesTemplatesFilterModel);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsIdCustomAttributeTemplatesTemplateIdDelete: " + e.Message);
+                Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsIdAttributesTemplatesSearchPost: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -197,18 +210,125 @@ namespace Example
 }
 ```
 
-#### Using the ApiV2ProjectsIdCustomAttributeTemplatesTemplateIdDeleteWithHttpInfo variant
+#### Using the ApiV2ProjectsIdAttributesTemplatesSearchPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Search for custom attributes templates
+    ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> response = apiInstance.ApiV2ProjectsIdAttributesTemplatesSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, projectCustomAttributesTemplatesFilterModel);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsIdAttributesTemplatesSearchPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** |  |  |
+| **skip** | **int?** | Amount of items to be skipped (offset) | [optional]  |
+| **take** | **int?** | Amount of items to be taken (limit) | [optional]  |
+| **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
+| **searchField** | **string** | Property name for searching | [optional]  |
+| **searchValue** | **string** | Value for searching | [optional]  |
+| **projectCustomAttributesTemplatesFilterModel** | [**ProjectCustomAttributesTemplatesFilterModel**](ProjectCustomAttributesTemplatesFilterModel.md) |  | [optional]  |
+
+### Return type
+
+[**List&lt;ProjectCustomAttributeTemplateGetModel&gt;**](ProjectCustomAttributeTemplateGetModel.md)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **403** | Project admin permission for project settings is required |  -  |
+| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="apiv2projectsidattributestemplatestemplateiddelete"></a>
+# **ApiV2ProjectsIdAttributesTemplatesTemplateIdDelete**
+> void ApiV2ProjectsIdAttributesTemplatesTemplateIdDelete (string id, Guid templateId)
+
+Delete CustomAttributeTemplate from Project
+
+<br>Use case  <br>User sets project internal or global identifier   <br>User sets attribute template internal identifier   <br>User runs method execution  <br>System delete attribute template from project
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2ProjectsIdAttributesTemplatesTemplateIdDeleteExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
+            var templateId = "templateId_example";  // Guid | CustomAttributeTemplate internal (UUID) identifier
+
+            try
+            {
+                // Delete CustomAttributeTemplate from Project
+                apiInstance.ApiV2ProjectsIdAttributesTemplatesTemplateIdDelete(id, templateId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsIdAttributesTemplatesTemplateIdDelete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2ProjectsIdAttributesTemplatesTemplateIdDeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Delete CustomAttributeTemplate from Project
-    apiInstance.ApiV2ProjectsIdCustomAttributeTemplatesTemplateIdDeleteWithHttpInfo(id, templateId);
+    apiInstance.ApiV2ProjectsIdAttributesTemplatesTemplateIdDeleteWithHttpInfo(id, templateId);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsIdCustomAttributeTemplatesTemplateIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsIdAttributesTemplatesTemplateIdDeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -238,16 +358,16 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
-| **204** | Success |  -  |
 | **404** | Can&#39;t find a Project with identifier |  -  |
+| **204** | Success |  -  |
+| **400** | Bad Request |  -  |
 | **403** | Update project settings permission for project required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsidcustomattributetemplatestemplateidpost"></a>
-# **ApiV2ProjectsIdCustomAttributeTemplatesTemplateIdPost**
-> void ApiV2ProjectsIdCustomAttributeTemplatesTemplateIdPost (string id, Guid templateId)
+<a name="apiv2projectsidattributestemplatestemplateidpost"></a>
+# **ApiV2ProjectsIdAttributesTemplatesTemplateIdPost**
+> void ApiV2ProjectsIdAttributesTemplatesTemplateIdPost (string id, Guid templateId)
 
 Add CustomAttributeTemplate to Project
 
@@ -257,13 +377,14 @@ Add CustomAttributeTemplate to Project
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
 
 namespace Example
 {
-    public class ApiV2ProjectsIdCustomAttributeTemplatesTemplateIdPostExample
+    public class ApiV2ProjectsIdAttributesTemplatesTemplateIdPostExample
     {
         public static void Main()
         {
@@ -274,18 +395,21 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
             var templateId = "templateId_example";  // Guid | CustomAttributeTemplate internal (UUID) identifier
 
             try
             {
                 // Add CustomAttributeTemplate to Project
-                apiInstance.ApiV2ProjectsIdCustomAttributeTemplatesTemplateIdPost(id, templateId);
+                apiInstance.ApiV2ProjectsIdAttributesTemplatesTemplateIdPost(id, templateId);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsIdCustomAttributeTemplatesTemplateIdPost: " + e.Message);
+                Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsIdAttributesTemplatesTemplateIdPost: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -294,18 +418,18 @@ namespace Example
 }
 ```
 
-#### Using the ApiV2ProjectsIdCustomAttributeTemplatesTemplateIdPostWithHttpInfo variant
+#### Using the ApiV2ProjectsIdAttributesTemplatesTemplateIdPostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Add CustomAttributeTemplate to Project
-    apiInstance.ApiV2ProjectsIdCustomAttributeTemplatesTemplateIdPostWithHttpInfo(id, templateId);
+    apiInstance.ApiV2ProjectsIdAttributesTemplatesTemplateIdPostWithHttpInfo(id, templateId);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsIdCustomAttributeTemplatesTemplateIdPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsIdAttributesTemplatesTemplateIdPostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -354,6 +478,7 @@ Get Project FailureClasses
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -371,7 +496,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
             var isDeleted = true;  // bool? |  (optional) 
 
@@ -447,12 +575,11 @@ catch (ApiException e)
 
 Mark Project as favorite
 
-User permissions for project:  {Read only}  {Execute}  {Write}  {Full control}
-
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -470,8 +597,11 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
-            var id = "id_example";  // string | 
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
 
             try
             {
@@ -510,7 +640,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** |  |  |
+| **id** | **string** | Project internal (UUID) or global (integer) identifier |  |
 
 ### Return type
 
@@ -529,10 +659,10 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Can&#39;t find a Project with id |  -  |
-| **200** | Successful operation |  -  |
-| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **404** | Not Found |  -  |
+| **204** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -548,6 +678,7 @@ Get Project filters
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -565,7 +696,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
 
             try
@@ -628,8 +762,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
 | **200** | Success |  -  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -645,6 +779,7 @@ Get TestPlans analytics
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -662,7 +797,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // Guid | Project internal (UUID) identifier
             var isDeleted = true;  // bool? |  (optional) 
             var mustUpdateCache = false;  // bool? |  (optional)  (default to false)
@@ -739,8 +877,110 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | Bad Request |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="apiv2projectsidtestplansnameexistsget"></a>
+# **ApiV2ProjectsIdTestPlansNameExistsGet**
+> bool ApiV2ProjectsIdTestPlansNameExistsGet (Guid id, string name)
+
+Checks if TestPlan exists with the specified name exists for the project
+
+<br>Use case  <br>User sets project internal or global identifier   <br>User runs method execution  <br>System purge delete project workitems
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2ProjectsIdTestPlansNameExistsGetExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Project internal (UUID) or global (integer) identifier
+            var name = "name_example";  // string | TestPlan name to check
+
+            try
+            {
+                // Checks if TestPlan exists with the specified name exists for the project
+                bool result = apiInstance.ApiV2ProjectsIdTestPlansNameExistsGet(id, name);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsIdTestPlansNameExistsGet: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2ProjectsIdTestPlansNameExistsGetWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Checks if TestPlan exists with the specified name exists for the project
+    ApiResponse<bool> response = apiInstance.ApiV2ProjectsIdTestPlansNameExistsGetWithHttpInfo(id, name);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsIdTestPlansNameExistsGetWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** | Project internal (UUID) or global (integer) identifier |  |
+| **name** | **string** | TestPlan name to check |  |
+
+### Return type
+
+**bool**
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -756,6 +996,7 @@ Get Project TestPlans with analytics
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -773,7 +1014,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
             var mustUpdateCache = false;  // bool? |  (optional)  (default to false)
             var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
@@ -850,8 +1094,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -867,6 +1111,7 @@ Get active Project TestRuns
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -884,7 +1129,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
 
             try
@@ -947,10 +1195,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Not Found |  -  |
 | **200** | Success |  -  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -966,6 +1214,7 @@ Get Project TestRuns full models
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -983,7 +1232,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
             var includeTestResults = false;  // bool? |  (optional)  (default to false)
             var mustAggregateTestResults = true;  // bool? |  (optional)  (default to true)
@@ -1078,6 +1330,228 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="apiv2projectsidworkitemssearchidpost"></a>
+# **ApiV2ProjectsIdWorkItemsSearchIdPost**
+> List&lt;Guid&gt; ApiV2ProjectsIdWorkItemsSearchIdPost (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, WorkItemSelectModel workItemSelectModel = null)
+
+Search for work items and extract IDs only
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2ProjectsIdWorkItemsSearchIdPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Unique or global ID of the project
+            var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
+            var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
+            var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
+            var searchField = "searchField_example";  // string | Property name for searching (optional) 
+            var searchValue = "searchValue_example";  // string | Value for searching (optional) 
+            var workItemSelectModel = new WorkItemSelectModel(); // WorkItemSelectModel |  (optional) 
+
+            try
+            {
+                // Search for work items and extract IDs only
+                List<Guid> result = apiInstance.ApiV2ProjectsIdWorkItemsSearchIdPost(id, skip, take, orderBy, searchField, searchValue, workItemSelectModel);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsIdWorkItemsSearchIdPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2ProjectsIdWorkItemsSearchIdPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Search for work items and extract IDs only
+    ApiResponse<List<Guid>> response = apiInstance.ApiV2ProjectsIdWorkItemsSearchIdPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, workItemSelectModel);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsIdWorkItemsSearchIdPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Unique or global ID of the project |  |
+| **skip** | **int?** | Amount of items to be skipped (offset) | [optional]  |
+| **take** | **int?** | Amount of items to be taken (limit) | [optional]  |
+| **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
+| **searchField** | **string** | Property name for searching | [optional]  |
+| **searchValue** | **string** | Value for searching | [optional]  |
+| **workItemSelectModel** | [**WorkItemSelectModel**](WorkItemSelectModel.md) |  | [optional]  |
+
+### Return type
+
+**List<Guid>**
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **403** | Read permission for test library is required |  -  |
+| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="apiv2projectsidworkitemssearchpost"></a>
+# **ApiV2ProjectsIdWorkItemsSearchPost**
+> List&lt;WorkItemShortModel&gt; ApiV2ProjectsIdWorkItemsSearchPost (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, WorkItemSelectModel workItemSelectModel = null)
+
+Search for work items
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2ProjectsIdWorkItemsSearchPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Unique or global ID of the project
+            var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
+            var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
+            var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
+            var searchField = "searchField_example";  // string | Property name for searching (optional) 
+            var searchValue = "searchValue_example";  // string | Value for searching (optional) 
+            var workItemSelectModel = new WorkItemSelectModel(); // WorkItemSelectModel |  (optional) 
+
+            try
+            {
+                // Search for work items
+                List<WorkItemShortModel> result = apiInstance.ApiV2ProjectsIdWorkItemsSearchPost(id, skip, take, orderBy, searchField, searchValue, workItemSelectModel);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsIdWorkItemsSearchPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2ProjectsIdWorkItemsSearchPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Search for work items
+    ApiResponse<List<WorkItemShortModel>> response = apiInstance.ApiV2ProjectsIdWorkItemsSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, workItemSelectModel);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsIdWorkItemsSearchPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Unique or global ID of the project |  |
+| **skip** | **int?** | Amount of items to be skipped (offset) | [optional]  |
+| **take** | **int?** | Amount of items to be taken (limit) | [optional]  |
+| **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
+| **searchField** | **string** | Property name for searching | [optional]  |
+| **searchValue** | **string** | Value for searching | [optional]  |
+| **workItemSelectModel** | [**WorkItemSelectModel**](WorkItemSelectModel.md) |  | [optional]  |
+
+### Return type
+
+[**List&lt;WorkItemShortModel&gt;**](WorkItemShortModel.md)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **403** | Read permission for test library is required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="apiv2projectsidworkitemstagsget"></a>
 # **ApiV2ProjectsIdWorkItemsTagsGet**
 > List&lt;TagShortModel&gt; ApiV2ProjectsIdWorkItemsTagsGet (Guid id, bool? isDeleted = null)
@@ -1090,6 +1564,7 @@ Get WorkItems Tags
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1107,7 +1582,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // Guid | Project internal (UUID) identifier
             var isDeleted = true;  // bool? |  (optional) 
 
@@ -1172,14 +1650,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
 | **200** | Success |  -  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectssearchpost"></a>
-# **ApiV2ProjectsSearchPost**
-> List&lt;ProjectModel&gt; ApiV2ProjectsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ProjectSelectModel projectSelectModel = null)
+<a name="apiv2projectsnamenameexistsget"></a>
+# **ApiV2ProjectsNameNameExistsGet**
+> bool ApiV2ProjectsNameNameExistsGet (string name)
 
 
 
@@ -1187,6 +1665,103 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2ProjectsNameNameExistsGetExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
+            var name = "name_example";  // string | 
+
+            try
+            {
+                bool result = apiInstance.ApiV2ProjectsNameNameExistsGet(name);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsNameNameExistsGet: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2ProjectsNameNameExistsGetWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<bool> response = apiInstance.ApiV2ProjectsNameNameExistsGetWithHttpInfo(name);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsNameNameExistsGetWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **name** | **string** |  |  |
+
+### Return type
+
+**bool**
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="apiv2projectssearchpost"></a>
+# **ApiV2ProjectsSearchPost**
+> List&lt;ProjectModel&gt; ApiV2ProjectsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ProjectsFilterModel projectsFilterModel = null)
+
+Search for projects
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1204,17 +1779,21 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
             var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var projectSelectModel = new ProjectSelectModel(); // ProjectSelectModel |  (optional) 
+            var projectsFilterModel = new ProjectsFilterModel(); // ProjectsFilterModel |  (optional) 
 
             try
             {
-                List<ProjectModel> result = apiInstance.ApiV2ProjectsSearchPost(skip, take, orderBy, searchField, searchValue, projectSelectModel);
+                // Search for projects
+                List<ProjectModel> result = apiInstance.ApiV2ProjectsSearchPost(skip, take, orderBy, searchField, searchValue, projectsFilterModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1234,7 +1813,8 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<ProjectModel>> response = apiInstance.ApiV2ProjectsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, projectSelectModel);
+    // Search for projects
+    ApiResponse<List<ProjectModel>> response = apiInstance.ApiV2ProjectsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, projectsFilterModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1256,7 +1836,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **projectSelectModel** | [**ProjectSelectModel**](ProjectSelectModel.md) |  | [optional]  |
+| **projectsFilterModel** | [**ProjectsFilterModel**](ProjectsFilterModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -1291,6 +1871,7 @@ Add attributes to project's test plans
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1308,7 +1889,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
             var requestBody = new List<Guid>(); // List<Guid> |  (optional) 
 
@@ -1369,8 +1953,8 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Success |  -  |
 | **403** | Update permission for project settings is required |  -  |
+| **204** | Success |  -  |
 | **400** | &lt;br&gt; Attributes must be global  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1387,6 +1971,7 @@ Create project
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1404,7 +1989,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var projectPostModel = new ProjectPostModel(); // ProjectPostModel |  (optional) 
 
             try
@@ -1467,11 +2055,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **409** | Project with the same name already exists |  -  |
-| **400** | Bad Request |  -  |
-| **404** | Project with provided ID was not found |  -  |
 | **403** | Project creator or admin system role is required |  -  |
 | **201** | Success |  -  |
+| **400** | Bad Request |  -  |
+| **409** | Project with the same name already exists |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1487,6 +2074,7 @@ Create project attribute
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1504,7 +2092,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
             var customAttributePostModel = new CustomAttributePostModel(); // CustomAttributePostModel |  (optional) 
 
@@ -1569,12 +2160,12 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **409** | &lt;br&gt;&#x60;CustomAttribute.Name&#x60; or &#x60;CustomAttribute.Id&#x60; are not unique in attributes schemes  &lt;br&gt;&#x60;CustomAttributeOptionModel.Id&#x60; or &#x60;CustomAttributeOptionModel.Value&#x60; are not unique in &#x60;attributesScheme.Options&#x60; |  -  |
 | **400** | &lt;br&gt;- Attribute is &#x60;null&#x60;  &lt;br&gt;- Priority is invalid  &lt;br&gt;- Attribute with &#x60;Options&#x60; type must have an options  &lt;br&gt;- ID is not &#x60;null&#x60;  &lt;br&gt;- Option ID is not &#x60;null&#x60; |  -  |
-| **422** | Cannot add new attribute from template which is in use |  -  |
-| **201** | Success |  -  |
 | **403** | Update permission for project settings is required |  -  |
 | **404** | Project with provided ID was not found |  -  |
-| **409** | &lt;br&gt;&#x60;CustomAttribute.Name&#x60; or &#x60;CustomAttribute.Id&#x60; are not unique in attributes schemes  &lt;br&gt;&#x60;CustomAttributeOptionModel.Id&#x60; or &#x60;CustomAttributeOptionModel.Value&#x60; are not unique in &#x60;attributesScheme.Options&#x60; |  -  |
+| **422** | Cannot add new attribute from template which is in use |  -  |
+| **201** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1590,6 +2181,7 @@ Delete attribute from project's test plans
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1607,7 +2199,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
             var attributeId = "attributeId_example";  // Guid | 
 
@@ -1685,6 +2280,7 @@ Delete project
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1702,7 +2298,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
 
             try
@@ -1761,9 +2360,9 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Delete permission for projects is required |  -  |
-| **404** | Project with provided ID does not exists |  -  |
 | **204** | Success |  -  |
+| **404** | Project with provided ID does not exists |  -  |
+| **403** | Delete permission for projects is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1779,6 +2378,7 @@ Delete project
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1796,7 +2396,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
 
             try
@@ -1856,8 +2459,8 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Success |  -  |
-| **404** | Can&#39;t find a Project with identifier |  -  |
 | **403** | Delete permission for AutoTest required |  -  |
+| **404** | Can&#39;t find a Project with identifier |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1873,6 +2476,7 @@ Delete project attribute
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1890,9 +2494,12 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
-            var attributeId = "attributeId_example";  // Guid | Project attribute internal (UUID) or global (integer) identifier
+            var attributeId = "attributeId_example";  // Guid | Project attribute internal (UUID)
 
             try
             {
@@ -1932,7 +2539,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Project internal (UUID) or global (integer) identifier |  |
-| **attributeId** | **Guid** | Project attribute internal (UUID) or global (integer) identifier |  |
+| **attributeId** | **Guid** | Project attribute internal (UUID) |  |
 
 ### Return type
 
@@ -1951,16 +2558,16 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **204** | Successful operation |  -  |
 | **400** | &lt;br&gt;- Project ID is invalid  &lt;br&gt;- Project attribute ID is invalid  &lt;br&gt;- Attribute is empty |  -  |
 | **403** | Update permission for project settings is required |  -  |
 | **404** | Project with provided ID was not found |  -  |
-| **204** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="export"></a>
 # **Export**
-> System.IO.Stream Export (string id, bool? includeAttachments = null, ProjectExportQueryModel projectExportQueryModel = null)
+> FileParameter Export (string id, bool? includeAttachments = null, ProjectExportQueryModel projectExportQueryModel = null)
 
 Export project as JSON file
 
@@ -1970,6 +2577,7 @@ Export project as JSON file
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -1987,7 +2595,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Specifies the ID of the project you want to export.
             var includeAttachments = false;  // bool? | Enables attachment export. (optional)  (default to false)
             var projectExportQueryModel = new ProjectExportQueryModel(); // ProjectExportQueryModel |  (optional) 
@@ -1995,7 +2606,7 @@ namespace Example
             try
             {
                 // Export project as JSON file
-                System.IO.Stream result = apiInstance.Export(id, includeAttachments, projectExportQueryModel);
+                FileParameter result = apiInstance.Export(id, includeAttachments, projectExportQueryModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2016,7 +2627,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Export project as JSON file
-    ApiResponse<System.IO.Stream> response = apiInstance.ExportWithHttpInfo(id, includeAttachments, projectExportQueryModel);
+    ApiResponse<FileParameter> response = apiInstance.ExportWithHttpInfo(id, includeAttachments, projectExportQueryModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -2039,7 +2650,7 @@ catch (ApiException e)
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -2054,16 +2665,16 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Update permission for project settings is required |  -  |
-| **200** | Success |  -  |
-| **400** | Root section was not found |  -  |
 | **404** | Project with provided ID was not found |  -  |
+| **200** | Success |  -  |
+| **403** | Update permission for project settings is required |  -  |
+| **400** | Root section was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="exportwithtestplansandconfigurations"></a>
 # **ExportWithTestPlansAndConfigurations**
-> System.IO.Stream ExportWithTestPlansAndConfigurations (string id, bool? includeAttachments = null, ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = null)
+> FileParameter ExportWithTestPlansAndConfigurations (string id, bool? includeAttachments = null, ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = null)
 
 Export project with test plans, test suites and test points as JSON file
 
@@ -2073,6 +2684,7 @@ Export project with test plans, test suites and test points as JSON file
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -2090,7 +2702,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Specifies the ID of the project you want to export.
             var includeAttachments = false;  // bool? | Enables attachment export. (optional)  (default to false)
             var projectExportWithTestPlansPostModel = new ProjectExportWithTestPlansPostModel(); // ProjectExportWithTestPlansPostModel |  (optional) 
@@ -2098,7 +2713,7 @@ namespace Example
             try
             {
                 // Export project with test plans, test suites and test points as JSON file
-                System.IO.Stream result = apiInstance.ExportWithTestPlansAndConfigurations(id, includeAttachments, projectExportWithTestPlansPostModel);
+                FileParameter result = apiInstance.ExportWithTestPlansAndConfigurations(id, includeAttachments, projectExportWithTestPlansPostModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2119,7 +2734,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Export project with test plans, test suites and test points as JSON file
-    ApiResponse<System.IO.Stream> response = apiInstance.ExportWithTestPlansAndConfigurationsWithHttpInfo(id, includeAttachments, projectExportWithTestPlansPostModel);
+    ApiResponse<FileParameter> response = apiInstance.ExportWithTestPlansAndConfigurationsWithHttpInfo(id, includeAttachments, projectExportWithTestPlansPostModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -2142,7 +2757,7 @@ catch (ApiException e)
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -2157,10 +2772,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
-| **404** | Project with provided ID was not found |  -  |
-| **403** | Update permission for project settings is required |  -  |
 | **400** | Root section was not found |  -  |
+| **403** | Update permission for project settings is required |  -  |
+| **404** | Project with provided ID was not found |  -  |
+| **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2176,6 +2791,7 @@ Get all projects
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -2193,7 +2809,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var isDeleted = true;  // bool? | If result must consist of only actual/deleted parameters (optional) 
             var projectName = "projectName_example";  // string |  (optional) 
             var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
@@ -2285,6 +2904,7 @@ Get project attribute
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -2302,7 +2922,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
             var attributeId = "attributeId_example";  // Guid | Project attribute internal (UUID) or global (integer) identifier
 
@@ -2367,10 +2990,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | &lt;br&gt;- Project with provided ID was not found  &lt;br&gt;- Project attribute with provided ID was not found |  -  |
-| **200** | Success |  -  |
 | **400** | Bad Request |  -  |
 | **403** | Read permission for test library is required |  -  |
+| **200** | Success |  -  |
+| **404** | &lt;br&gt;- Project with provided ID was not found  &lt;br&gt;- Project attribute with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2386,6 +3009,7 @@ Get project attributes
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -2403,7 +3027,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
             var isDeleted = false;  // bool? | If result must consist of only actual/deleted work items (optional)  (default to false)
 
@@ -2469,9 +3096,9 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **400** | Bad Request |  -  |
+| **200** | Success |  -  |
 | **404** | Project with provided ID was not found |  -  |
 | **403** | Read permission for test library is required |  -  |
-| **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2487,6 +3114,7 @@ Get namespaces of autotests in project
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -2504,7 +3132,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
 
             try
@@ -2567,8 +3198,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for test library is required |  -  |
 | **404** | Project with provided ID was not found |  -  |
+| **403** | Read permission for test library is required |  -  |
 | **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2585,6 +3216,7 @@ Get project configurations
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -2602,7 +3234,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
 
             try
@@ -2665,10 +3300,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Project with provided ID was not found |  -  |
-| **200** | Success |  -  |
-| **400** | Bad Request |  -  |
 | **403** | Read permission for configurations required |  -  |
+| **404** | Project with provided ID was not found |  -  |
+| **400** | Bad Request |  -  |
+| **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2684,6 +3319,7 @@ Get project's test plan attributes
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -2701,7 +3337,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
 
             try
@@ -2781,6 +3420,7 @@ Get project by ID
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -2798,7 +3438,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
 
             try
@@ -2861,10 +3504,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
 | **400** | ID is invalid |  -  |
-| **403** | Read permission for projects is required |  -  |
 | **404** | Project with provided ID was not found |  -  |
+| **200** | Success |  -  |
+| **403** | Read permission for projects is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2880,6 +3523,7 @@ Get project sections
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -2897,7 +3541,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
             var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
             var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
@@ -2970,10 +3617,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for test library is required |  -  |
-| **400** | Bad Request |  -  |
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **403** | Read permission for test library is required |  -  |
 | **404** | Project with provided ID was not found |  -  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2989,6 +3636,7 @@ Get project test plans
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -3006,7 +3654,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
             var isDeleted = true;  // bool? | If result must consist of only actual/archived test plans (optional) 
 
@@ -3071,9 +3722,9 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **404** | Project with provided ID was not found |  -  |
 | **200** | Success |  -  |
 | **403** | Read permission for test library is required |  -  |
-| **404** | Project with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3089,6 +3740,7 @@ Get project test runs
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -3106,7 +3758,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
             var notStarted = true;  // bool? |  (optional) 
             var inProgress = true;  // bool? |  (optional) 
@@ -3194,8 +3849,8 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
-| **403** | Read permission for test result is required |  -  |
 | **404** | Project with provided ID was not found |  -  |
+| **403** | Read permission for test result is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3211,6 +3866,7 @@ Get project work items
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -3228,7 +3884,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
             var isDeleted = false;  // bool? | If result must consist of only actual/deleted work items (optional)  (default to false)
             var tagNames = new List<string>(); // List<string> | List of tags to filter by (optional) 
@@ -3307,8 +3966,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Project with provided ID was not found |  -  |
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **404** | Project with provided ID was not found |  -  |
 | **400** | &lt;br&gt;- &#x60;orderBy&#x60; statement must have one &#x60;.&#x60; and no &#x60;,&#x60; characters  &lt;br&gt;- &#x60;orderBy&#x60; statement has invalid length  &lt;br&gt;- &#x60;orderBy&#x60; statement must have UUID as attribute key  &lt;br&gt;- Search field was not found |  -  |
 | **403** | Read permission for test library is required |  -  |
 
@@ -3316,7 +3975,7 @@ catch (ApiException e)
 
 <a name="import"></a>
 # **Import**
-> void Import (bool? includeAttachments = null, System.IO.Stream file = null)
+> void Import (bool? includeAttachments = null, FileParameter file = null)
 
 Import project from JSON file
 
@@ -3326,6 +3985,7 @@ Import project from JSON file
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -3343,9 +4003,12 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var includeAttachments = false;  // bool? | Enables attachment import. (optional)  (default to false)
-            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | Select file (optional) 
+            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // FileParameter | Select file (optional) 
 
             try
             {
@@ -3385,7 +4048,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **includeAttachments** | **bool?** | Enables attachment import. | [optional] [default to false] |
-| **file** | **System.IO.Stream****System.IO.Stream** | Select file | [optional]  |
+| **file** | **FileParameter****FileParameter** | Select file | [optional]  |
 
 ### Return type
 
@@ -3404,17 +4067,17 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Success |  -  |
 | **400** | Bad Request |  -  |
-| **403** | Project creator or admin system role is required |  -  |
+| **204** | Success |  -  |
 | **409** | Entity with the same ID was already imported in other project |  -  |
+| **403** | Project creator or admin system role is required |  -  |
 | **413** | Multipart body length limit exceeded |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="importtoexistingproject"></a>
 # **ImportToExistingProject**
-> void ImportToExistingProject (string id, bool? includeAttachments = null, System.IO.Stream file = null)
+> void ImportToExistingProject (string id, bool? includeAttachments = null, FileParameter file = null)
 
 Import project from JSON file into existing project
 
@@ -3424,6 +4087,7 @@ Import project from JSON file into existing project
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -3441,10 +4105,13 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
             var includeAttachments = true;  // bool? |  (optional) 
-            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | Select file (optional) 
+            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // FileParameter | Select file (optional) 
 
             try
             {
@@ -3485,7 +4152,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Project internal (UUID) or global (integer) identifier |  |
 | **includeAttachments** | **bool?** |  | [optional]  |
-| **file** | **System.IO.Stream****System.IO.Stream** | Select file | [optional]  |
+| **file** | **FileParameter****FileParameter** | Select file | [optional]  |
 
 ### Return type
 
@@ -3504,10 +4171,10 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Update permission for project settings required |  -  |
+| **413** | Multipart body length limit exceeded |  -  |
 | **409** | Entity with same id already imported in other project |  -  |
 | **204** | Success |  -  |
-| **413** | Multipart body length limit exceeded |  -  |
+| **403** | Update permission for project settings required |  -  |
 | **404** | File not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -3524,6 +4191,7 @@ Restore project
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -3541,7 +4209,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
 
             try
@@ -3608,14 +4279,15 @@ void (empty response body)
 
 <a name="searchattributesinproject"></a>
 # **SearchAttributesInProject**
-> List&lt;CustomAttributeGetModel&gt; SearchAttributesInProject (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, SearchAttributesInProjectQueryModel searchAttributesInProjectQueryModel = null)
+> List&lt;CustomAttributeGetModel&gt; SearchAttributesInProject (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ProjectAttributesFilterModel projectAttributesFilterModel = null)
 
-
+Search for attributes used in the project
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -3633,18 +4305,22 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
-            var id = "id_example";  // string | 
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Unique or global project ID
             var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
             var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var searchAttributesInProjectQueryModel = new SearchAttributesInProjectQueryModel(); // SearchAttributesInProjectQueryModel |  (optional) 
+            var projectAttributesFilterModel = new ProjectAttributesFilterModel(); // ProjectAttributesFilterModel |  (optional) 
 
             try
             {
-                List<CustomAttributeGetModel> result = apiInstance.SearchAttributesInProject(id, skip, take, orderBy, searchField, searchValue, searchAttributesInProjectQueryModel);
+                // Search for attributes used in the project
+                List<CustomAttributeGetModel> result = apiInstance.SearchAttributesInProject(id, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3664,7 +4340,8 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<CustomAttributeGetModel>> response = apiInstance.SearchAttributesInProjectWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, searchAttributesInProjectQueryModel);
+    // Search for attributes used in the project
+    ApiResponse<List<CustomAttributeGetModel>> response = apiInstance.SearchAttributesInProjectWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -3681,13 +4358,13 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** |  |  |
+| **id** | **string** | Unique or global project ID |  |
 | **skip** | **int?** | Amount of items to be skipped (offset) | [optional]  |
 | **take** | **int?** | Amount of items to be taken (limit) | [optional]  |
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **searchAttributesInProjectQueryModel** | [**SearchAttributesInProjectQueryModel**](SearchAttributesInProjectQueryModel.md) |  | [optional]  |
+| **projectAttributesFilterModel** | [**ProjectAttributesFilterModel**](ProjectAttributesFilterModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -3706,23 +4383,22 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Not Found |  -  |
-| **400** | Bad Request |  -  |
-| **403** | Forbidden |  -  |
+| **403** | Read permission for project is required |  -  |
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="searchtestplanattributesinproject"></a>
 # **SearchTestPlanAttributesInProject**
-> List&lt;CustomAttributeGetModel&gt; SearchTestPlanAttributesInProject (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, SearchAttributesInProjectQueryModel searchAttributesInProjectQueryModel = null)
+> List&lt;CustomAttributeGetModel&gt; SearchTestPlanAttributesInProject (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ProjectAttributesFilterModel projectAttributesFilterModel = null)
 
-
+Search for attributes used in the project test plans
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -3740,18 +4416,22 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
-            var id = "id_example";  // string | 
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Unique or global project ID
             var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
             var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var searchAttributesInProjectQueryModel = new SearchAttributesInProjectQueryModel(); // SearchAttributesInProjectQueryModel |  (optional) 
+            var projectAttributesFilterModel = new ProjectAttributesFilterModel(); // ProjectAttributesFilterModel |  (optional) 
 
             try
             {
-                List<CustomAttributeGetModel> result = apiInstance.SearchTestPlanAttributesInProject(id, skip, take, orderBy, searchField, searchValue, searchAttributesInProjectQueryModel);
+                // Search for attributes used in the project test plans
+                List<CustomAttributeGetModel> result = apiInstance.SearchTestPlanAttributesInProject(id, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3771,7 +4451,8 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<CustomAttributeGetModel>> response = apiInstance.SearchTestPlanAttributesInProjectWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, searchAttributesInProjectQueryModel);
+    // Search for attributes used in the project test plans
+    ApiResponse<List<CustomAttributeGetModel>> response = apiInstance.SearchTestPlanAttributesInProjectWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -3788,13 +4469,13 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** |  |  |
+| **id** | **string** | Unique or global project ID |  |
 | **skip** | **int?** | Amount of items to be skipped (offset) | [optional]  |
 | **take** | **int?** | Amount of items to be taken (limit) | [optional]  |
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **searchAttributesInProjectQueryModel** | [**SearchAttributesInProjectQueryModel**](SearchAttributesInProjectQueryModel.md) |  | [optional]  |
+| **projectAttributesFilterModel** | [**ProjectAttributesFilterModel**](ProjectAttributesFilterModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -3813,10 +4494,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
-| **404** | Not Found |  -  |
+| **403** | Read permission for project is required |  -  |
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
-| **403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3832,6 +4511,7 @@ Update attribute of project's test plans
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -3849,7 +4529,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
             var customAttributeTestPlanProjectRelationPutModel = new CustomAttributeTestPlanProjectRelationPutModel(); // CustomAttributeTestPlanProjectRelationPutModel |  (optional) 
 
@@ -3910,8 +4593,8 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Update permission for project settings is required |  -  |
 | **204** | Success |  -  |
+| **403** | Update permission for project settings is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3927,6 +4610,7 @@ Update project
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -3944,7 +4628,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var projectPutModel = new ProjectPutModel(); // ProjectPutModel |  (optional) 
 
             try
@@ -4003,11 +4690,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **403** | Update permission for projects is required |  -  |
 | **204** | Success |  -  |
 | **400** | &lt;br&gt;- ID is invalid  &lt;br&gt;- Field is required |  -  |
-| **403** | Update permission for projects is required |  -  |
-| **404** | Project with provided ID was not found |  -  |
 | **409** | Project with the same name already exists |  -  |
+| **404** | Project with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4015,14 +4702,13 @@ void (empty response body)
 # **UpdateProjectsAttribute**
 > void UpdateProjectsAttribute (string id, CustomAttributePutModel customAttributePutModel = null)
 
-Update project attribute
-
-<br>Use case  <br>User sets project parameters (listed in request example) and runs method execution  <br>System updates project  <br>System updates attribute related to the project  <br>System returns no content response
+Edit attribute of the project
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -4040,13 +4726,16 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectsApi(config);
-            var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Unique or global project ID
             var customAttributePutModel = new CustomAttributePutModel(); // CustomAttributePutModel |  (optional) 
 
             try
             {
-                // Update project attribute
+                // Edit attribute of the project
                 apiInstance.UpdateProjectsAttribute(id, customAttributePutModel);
             }
             catch (ApiException  e)
@@ -4066,7 +4755,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Update project attribute
+    // Edit attribute of the project
     apiInstance.UpdateProjectsAttributeWithHttpInfo(id, customAttributePutModel);
 }
 catch (ApiException e)
@@ -4081,7 +4770,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Project internal (UUID) or global (integer) identifier |  |
+| **id** | **string** | Unique or global project ID |  |
 | **customAttributePutModel** | [**CustomAttributePutModel**](CustomAttributePutModel.md) |  | [optional]  |
 
 ### Return type
@@ -4101,12 +4790,8 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Project with provided ID was not found |  -  |
 | **204** | Success |  -  |
 | **403** | Update permission for project settings is required |  -  |
-| **422** | Cannot add new attribute from template which is in use |  -  |
-| **400** | &lt;br&gt;- Attribute is &#x60;null&#x60;  &lt;br&gt;- Priority is invalid  &lt;br&gt;- Attribute with &#x60;Options&#x60; type must have an options  &lt;br&gt;- ID is not &#x60;null&#x60;  &lt;br&gt;- Option ID is not &#x60;null&#x60; |  -  |
-| **409** | &lt;br&gt;&#x60;CustomAttribute.Name&#x60; or &#x60;CustomAttribute.Id&#x60; are not unique in attributes schemes  &lt;br&gt;&#x60;CustomAttributeOptionModel.Id&#x60; or &#x60;CustomAttributeOptionModel.Value&#x60; are not unique in &#x60;attributesScheme.Options&#x60; |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

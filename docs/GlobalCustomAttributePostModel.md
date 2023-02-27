@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | Name of attribute | 
-**Enabled** | **bool?** | Indicates whether the attribute is available | [optional] 
-**Required** | **bool?** | Indicates whether the attribute value is mandatory to specify | [optional] 
+**IsEnabled** | **bool?** | Indicates whether the attribute is available | [optional] 
+**IsRequired** | **bool?** | Indicates whether the attribute value is mandatory to specify | [optional] 
 **Options** | [**List&lt;CustomAttributeOptionPostModel&gt;**](CustomAttributeOptionPostModel.md) | Collection of attribute options  &lt;br /&gt;  Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only | [optional] 
 **Type** | **CustomAttributeTypesEnum** |  | 
 

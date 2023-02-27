@@ -42,10 +42,11 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="parentId">parentId.</param>
-        /// <param name="testPlanId">testPlanId.</param>
+        /// <param name="testPlanId">testPlanId (required).</param>
         /// <param name="name">name (required).</param>
         public TestSuiteV2GetModel(Guid id = default(Guid), Guid? parentId = default(Guid?), Guid testPlanId = default(Guid), string name = default(string))
         {
+            this.TestPlanId = testPlanId;
             // to ensure "name" is required (not null)
             if (name == null)
             {
@@ -54,7 +55,6 @@ namespace TestIt.Client.Model
             this.Name = name;
             this.Id = id;
             this.ParentId = parentId;
-            this.TestPlanId = testPlanId;
         }
 
         /// <summary>
@@ -72,13 +72,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets TestPlanId
         /// </summary>
-        [DataMember(Name = "testPlanId", EmitDefaultValue = false)]
+        [DataMember(Name = "testPlanId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestPlanId { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -186,6 +186,18 @@ namespace TestIt.Client.Model
         /// <returns>Validation Result</returns>
         public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
+            // Name (string) maxLength
+            if (this.Name != null && this.Name.Length > 255)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+            }
+
+            // Name (string) minLength
+            if (this.Name != null && this.Name.Length < 0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
+            }
+
             yield break;
         }
     }

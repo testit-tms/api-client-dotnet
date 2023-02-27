@@ -35,14 +35,10 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConfigurationModel" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected ConfigurationModel() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConfigurationModel" /> class.
-        /// </summary>
         /// <param name="description">description.</param>
         /// <param name="isActive">isActive.</param>
-        /// <param name="capabilities">capabilities (required).</param>
+        /// <param name="capabilities">capabilities.</param>
+        /// <param name="parameters">parameters.</param>
         /// <param name="projectId">This property is used to link configuration with project.</param>
         /// <param name="isDefault">isDefault.</param>
         /// <param name="name">name.</param>
@@ -51,18 +47,14 @@ namespace TestIt.Client.Model
         /// <param name="createdById">createdById.</param>
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="globalId">globalId.</param>
-        /// <param name="id">id.</param>
-        /// <param name="isDeleted">isDeleted.</param>
-        public ConfigurationModel(string description = default(string), bool isActive = default(bool), Dictionary<string, string> capabilities = default(Dictionary<string, string>), Guid projectId = default(Guid), bool isDefault = default(bool), string name = default(string), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), Guid id = default(Guid), bool isDeleted = default(bool))
+        /// <param name="id">Unique ID of the entity.</param>
+        /// <param name="isDeleted">Indicates if the entity is deleted.</param>
+        public ConfigurationModel(string description = default(string), bool isActive = default(bool), Dictionary<string, string> capabilities = default(Dictionary<string, string>), Dictionary<string, string> parameters = default(Dictionary<string, string>), Guid projectId = default(Guid), bool isDefault = default(bool), string name = default(string), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), Guid id = default(Guid), bool isDeleted = default(bool))
         {
-            // to ensure "capabilities" is required (not null)
-            if (capabilities == null)
-            {
-                throw new ArgumentNullException("capabilities is a required property for ConfigurationModel and cannot be null");
-            }
-            this.Capabilities = capabilities;
             this.Description = description;
             this.IsActive = isActive;
+            this.Capabilities = capabilities;
+            this.Parameters = parameters;
             this.ProjectId = projectId;
             this.IsDefault = isDefault;
             this.Name = name;
@@ -90,8 +82,15 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Capabilities
         /// </summary>
-        [DataMember(Name = "capabilities", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "capabilities", EmitDefaultValue = true)]
+        [Obsolete]
         public Dictionary<string, string> Capabilities { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Parameters
+        /// </summary>
+        [DataMember(Name = "parameters", EmitDefaultValue = true)]
+        public Dictionary<string, string> Parameters { get; set; }
 
         /// <summary>
         /// This property is used to link configuration with project
@@ -143,14 +142,16 @@ namespace TestIt.Client.Model
         public long GlobalId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Unique ID of the entity
         /// </summary>
+        /// <value>Unique ID of the entity</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDeleted
+        /// Indicates if the entity is deleted
         /// </summary>
+        /// <value>Indicates if the entity is deleted</value>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
@@ -165,6 +166,7 @@ namespace TestIt.Client.Model
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  IsActive: ").Append(IsActive).Append("\n");
             sb.Append("  Capabilities: ").Append(Capabilities).Append("\n");
+            sb.Append("  Parameters: ").Append(Parameters).Append("\n");
             sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
             sb.Append("  IsDefault: ").Append(IsDefault).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
@@ -224,6 +226,12 @@ namespace TestIt.Client.Model
                     this.Capabilities != null &&
                     input.Capabilities != null &&
                     this.Capabilities.SequenceEqual(input.Capabilities)
+                ) && 
+                (
+                    this.Parameters == input.Parameters ||
+                    this.Parameters != null &&
+                    input.Parameters != null &&
+                    this.Parameters.SequenceEqual(input.Parameters)
                 ) && 
                 (
                     this.ProjectId == input.ProjectId ||
@@ -291,6 +299,10 @@ namespace TestIt.Client.Model
                 if (this.Capabilities != null)
                 {
                     hashCode = (hashCode * 59) + this.Capabilities.GetHashCode();
+                }
+                if (this.Parameters != null)
+                {
+                    hashCode = (hashCode * 59) + this.Parameters.GetHashCode();
                 }
                 if (this.ProjectId != null)
                 {

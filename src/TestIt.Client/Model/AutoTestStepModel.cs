@@ -59,7 +59,7 @@ namespace TestIt.Client.Model
         /// Step name.
         /// </summary>
         /// <value>Step name.</value>
-        [DataMember(Name = "title", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "title", IsRequired = true, EmitDefaultValue = true)]
         public string Title { get; set; }
 
         /// <summary>

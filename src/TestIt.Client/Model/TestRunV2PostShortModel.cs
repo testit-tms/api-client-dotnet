@@ -56,7 +56,7 @@ namespace TestIt.Client.Model
         /// This property is to link test run with a project
         /// </summary>
         /// <value>This property is to link test run with a project</value>
-        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>

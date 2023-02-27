@@ -12,7 +12,7 @@ All URIs are relative to *http://localhost*
 
 <a name="apiv2configurationscreatebyparameterspost"></a>
 # **ApiV2ConfigurationsCreateByParametersPost**
-> List&lt;Guid&gt; ApiV2ConfigurationsCreateByParametersPost (ConfigurationByParametersModel configurationByParametersModel = null)
+> void ApiV2ConfigurationsCreateByParametersPost (ConfigurationByParametersModel configurationByParametersModel = null)
 
 Create Configurations by parameters
 
@@ -22,6 +22,7 @@ Create Configurations by parameters
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -39,14 +40,16 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ConfigurationsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ConfigurationsApi(httpClient, config, httpClientHandler);
             var configurationByParametersModel = new ConfigurationByParametersModel(); // ConfigurationByParametersModel |  (optional) 
 
             try
             {
                 // Create Configurations by parameters
-                List<Guid> result = apiInstance.ApiV2ConfigurationsCreateByParametersPost(configurationByParametersModel);
-                Debug.WriteLine(result);
+                apiInstance.ApiV2ConfigurationsCreateByParametersPost(configurationByParametersModel);
             }
             catch (ApiException  e)
             {
@@ -66,10 +69,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create Configurations by parameters
-    ApiResponse<List<Guid>> response = apiInstance.ApiV2ConfigurationsCreateByParametersPostWithHttpInfo(configurationByParametersModel);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.ApiV2ConfigurationsCreateByParametersPostWithHttpInfo(configurationByParametersModel);
 }
 catch (ApiException e)
 {
@@ -87,7 +87,7 @@ catch (ApiException e)
 
 ### Return type
 
-**List<Guid>**
+void (empty response body)
 
 ### Authorization
 
@@ -102,9 +102,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **400** | &lt;br&gt;Project identifier is empty  &lt;br&gt;List of parameters identifiers is empty |  -  |
 | **404** | &lt;br&gt;Project by identifier not found  &lt;br&gt;Parameters by identifies not found |  -  |
+| **400** | &lt;br&gt;Project identifier is empty  &lt;br&gt;List of parameters identifiers is empty |  -  |
+| **201** | Success |  -  |
+| **200** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -118,6 +119,7 @@ Search for configurations
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -135,7 +137,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ConfigurationsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ConfigurationsApi(httpClient, config, httpClientHandler);
             var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
             var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
@@ -224,6 +229,7 @@ Create Configuration
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -241,7 +247,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ConfigurationsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ConfigurationsApi(httpClient, config, httpClientHandler);
             var configurationPostModel = new ConfigurationPostModel(); // ConfigurationPostModel |  (optional) 
 
             try
@@ -304,12 +313,12 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Update permission for configuration required |  -  |
-| **404** | Can&#39;t find project |  -  |
-| **201** | Successful operation |  -  |
-| **400** | &lt;br&gt;Capabilities are invalid  &lt;br&gt;- Capability keys must be unique  &lt;br&gt;- Capability keys must not be empty  &lt;br&gt;- Capability values must not be empty |  -  |
 | **401** | Unauthorized |  -  |
 | **409** | Configuration with the same name already exists! |  -  |
+| **201** | Successful operation |  -  |
+| **404** | Can&#39;t find project |  -  |
+| **400** | Bad Request |  -  |
+| **403** | Update permission for configuration required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -325,6 +334,7 @@ Get configuration by internal or global ID
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -342,7 +352,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ConfigurationsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ConfigurationsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | 
 
             try
@@ -405,10 +418,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **401** | Unauthorized |  -  |
+| **404** | Can&#39;t find configuration with id |  -  |
 | **200** | Successful operation |  -  |
 | **403** | Read permission for configuration required |  -  |
-| **404** | Can&#39;t find configuration with id |  -  |
-| **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -424,6 +437,7 @@ Update Configuration
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using TestIt.Client.Api;
 using TestIt.Client.Client;
 using TestIt.Client.Model;
@@ -441,7 +455,10 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ConfigurationsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ConfigurationsApi(httpClient, config, httpClientHandler);
             var configurationPutModel = new ConfigurationPutModel(); // ConfigurationPutModel |  (optional) 
 
             try
@@ -500,13 +517,13 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **409** | Configuration with the same name already exists! |  -  |
-| **422** | Can&#39;t change projectId |  -  |
-| **404** | Can&#39;t find a Configuration with id |  -  |
-| **403** |  |  -  |
-| **204** | Successful operation |  -  |
-| **400** | &lt;br&gt;- Capabilities are invalid  &lt;br&gt;- Capability keys must be unique  &lt;br&gt;- Capability keys must not be empty  &lt;br&gt;- Capability values must not be empty |  -  |
 | **401** | Unauthorized |  -  |
+| **204** | Successful operation |  -  |
+| **422** | Can&#39;t change projectId |  -  |
+| **400** | Bad Request |  -  |
+| **403** |  |  -  |
+| **404** | Can&#39;t find a Configuration with id |  -  |
+| **409** | Configuration with the same name already exists! |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -56,7 +56,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Parameters
         /// </summary>
-        [DataMember(Name = "parameters", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "parameters", IsRequired = true, EmitDefaultValue = true)]
         public List<ParameterIterationModel> Parameters { get; set; }
 
         /// <summary>

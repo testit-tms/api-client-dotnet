@@ -35,11 +35,11 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestRunStatisticsStatusesGetModel" /> class.
         /// </summary>
-        /// <param name="inProgress">inProgress.</param>
-        /// <param name="passed">passed.</param>
-        /// <param name="failed">failed.</param>
-        /// <param name="skipped">skipped.</param>
-        /// <param name="blocked">blocked.</param>
+        /// <param name="inProgress">Number of test results which is running currently.</param>
+        /// <param name="passed">Number of test results which successfully passed.</param>
+        /// <param name="failed">Number of test results which failed with an error.</param>
+        /// <param name="skipped">Number of test results which did not run and were skipped.</param>
+        /// <param name="blocked">Number of test results which cannot be launched.</param>
         public TestRunStatisticsStatusesGetModel(int inProgress = default(int), int passed = default(int), int failed = default(int), int skipped = default(int), int blocked = default(int))
         {
             this.InProgress = inProgress;
@@ -50,32 +50,37 @@ namespace TestIt.Client.Model
         }
 
         /// <summary>
-        /// Gets or Sets InProgress
+        /// Number of test results which is running currently
         /// </summary>
+        /// <value>Number of test results which is running currently</value>
         [DataMember(Name = "inProgress", EmitDefaultValue = false)]
         public int InProgress { get; set; }
 
         /// <summary>
-        /// Gets or Sets Passed
+        /// Number of test results which successfully passed
         /// </summary>
+        /// <value>Number of test results which successfully passed</value>
         [DataMember(Name = "passed", EmitDefaultValue = false)]
         public int Passed { get; set; }
 
         /// <summary>
-        /// Gets or Sets Failed
+        /// Number of test results which failed with an error
         /// </summary>
+        /// <value>Number of test results which failed with an error</value>
         [DataMember(Name = "failed", EmitDefaultValue = false)]
         public int Failed { get; set; }
 
         /// <summary>
-        /// Gets or Sets Skipped
+        /// Number of test results which did not run and were skipped
         /// </summary>
+        /// <value>Number of test results which did not run and were skipped</value>
         [DataMember(Name = "skipped", EmitDefaultValue = false)]
         public int Skipped { get; set; }
 
         /// <summary>
-        /// Gets or Sets Blocked
+        /// Number of test results which cannot be launched
         /// </summary>
+        /// <value>Number of test results which cannot be launched</value>
         [DataMember(Name = "blocked", EmitDefaultValue = false)]
         public int Blocked { get; set; }
 

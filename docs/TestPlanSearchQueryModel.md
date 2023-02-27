@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **StartDate** | [**DateRangeModel**](DateRangeModel.md) |  | [optional] 
 **EndDate** | [**DateRangeModel**](DateRangeModel.md) |  | [optional] 
 **TagNames** | **List&lt;string&gt;** |  | [optional] 
-**Attributes** | **Dictionary&lt;string, List&lt;string&gt;&gt;** |  | [optional] 
+**Attributes** | [**Dictionary&lt;string, List&lt;string&gt;&gt;**](Set.md) |  | [optional] 
 **IsDeleted** | **bool?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

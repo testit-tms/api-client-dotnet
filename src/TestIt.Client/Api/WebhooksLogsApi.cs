@@ -28,10 +28,10 @@ namespace TestIt.Client.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Get all webhook logs
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"> (optional)</param>
+        /// <param name="projectId">Project unique ID (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -41,13 +41,13 @@ namespace TestIt.Client.Api
         List<WebHookLogModel> ApiV2WebhooksLogsGet(Guid? projectId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
 
         /// <summary>
-        /// 
+        /// Get all webhook logs
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"> (optional)</param>
+        /// <param name="projectId">Project unique ID (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -56,39 +56,39 @@ namespace TestIt.Client.Api
         /// <returns>ApiResponse of List&lt;WebHookLogModel&gt;</returns>
         ApiResponse<List<WebHookLogModel>> ApiV2WebhooksLogsGetWithHttpInfo(Guid? projectId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
         /// <summary>
-        /// 
+        /// Delete webhook log by ID
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Webhook log unique ID</param>
         /// <returns></returns>
         void ApiV2WebhooksLogsIdDelete(Guid id);
 
         /// <summary>
-        /// 
+        /// Delete webhook log by ID
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Webhook log unique ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ApiV2WebhooksLogsIdDeleteWithHttpInfo(Guid id);
         /// <summary>
-        /// 
+        /// Get webhook log by ID
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Webhook log unique ID</param>
         /// <returns>WebHookLogModel</returns>
         WebHookLogModel ApiV2WebhooksLogsIdGet(Guid id);
 
         /// <summary>
-        /// 
+        /// Get webhook log by ID
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Webhook log unique ID</param>
         /// <returns>ApiResponse of WebHookLogModel</returns>
         ApiResponse<WebHookLogModel> ApiV2WebhooksLogsIdGetWithHttpInfo(Guid id);
         #endregion Synchronous Operations
@@ -101,13 +101,13 @@ namespace TestIt.Client.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Get all webhook logs
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"> (optional)</param>
+        /// <param name="projectId">Project unique ID (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -118,13 +118,13 @@ namespace TestIt.Client.Api
         System.Threading.Tasks.Task<List<WebHookLogModel>> ApiV2WebhooksLogsGetAsync(Guid? projectId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Get all webhook logs
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"> (optional)</param>
+        /// <param name="projectId">Project unique ID (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -134,48 +134,48 @@ namespace TestIt.Client.Api
         /// <returns>Task of ApiResponse (List&lt;WebHookLogModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<WebHookLogModel>>> ApiV2WebhooksLogsGetWithHttpInfoAsync(Guid? projectId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Delete webhook log by ID
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Webhook log unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task ApiV2WebhooksLogsIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Delete webhook log by ID
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Webhook log unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2WebhooksLogsIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Get webhook log by ID
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Webhook log unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebHookLogModel</returns>
         System.Threading.Tasks.Task<WebHookLogModel> ApiV2WebhooksLogsIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Get webhook log by ID
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Webhook log unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebHookLogModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<WebHookLogModel>> ApiV2WebhooksLogsIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -393,10 +393,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get all webhook logs 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"> (optional)</param>
+        /// <param name="projectId">Project unique ID (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -410,10 +410,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get all webhook logs 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"> (optional)</param>
+        /// <param name="projectId">Project unique ID (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -482,10 +482,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get all webhook logs 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"> (optional)</param>
+        /// <param name="projectId">Project unique ID (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -500,10 +500,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get all webhook logs 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"> (optional)</param>
+        /// <param name="projectId">Project unique ID (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -576,10 +576,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Delete webhook log by ID 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Webhook log unique ID</param>
         /// <returns></returns>
         public void ApiV2WebhooksLogsIdDelete(Guid id)
         {
@@ -587,10 +587,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Delete webhook log by ID 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Webhook log unique ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
         public TestIt.Client.Client.ApiResponse<Object> ApiV2WebhooksLogsIdDeleteWithHttpInfo(Guid id)
         {
@@ -601,6 +601,7 @@ namespace TestIt.Client.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/json"
             };
 
             var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -630,10 +631,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Delete webhook log by ID 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Webhook log unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task ApiV2WebhooksLogsIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -642,10 +643,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Delete webhook log by ID 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Webhook log unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2WebhooksLogsIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -658,6 +659,7 @@ namespace TestIt.Client.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/json"
             };
 
 
@@ -689,10 +691,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get webhook log by ID 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Webhook log unique ID</param>
         /// <returns>WebHookLogModel</returns>
         public WebHookLogModel ApiV2WebhooksLogsIdGet(Guid id)
         {
@@ -701,10 +703,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get webhook log by ID 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Webhook log unique ID</param>
         /// <returns>ApiResponse of WebHookLogModel</returns>
         public TestIt.Client.Client.ApiResponse<WebHookLogModel> ApiV2WebhooksLogsIdGetWithHttpInfo(Guid id)
         {
@@ -745,10 +747,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get webhook log by ID 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Webhook log unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebHookLogModel</returns>
         public async System.Threading.Tasks.Task<WebHookLogModel> ApiV2WebhooksLogsIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -758,10 +760,10 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// Get webhook log by ID 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Webhook log unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebHookLogModel)</returns>
         public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<WebHookLogModel>> ApiV2WebhooksLogsIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))

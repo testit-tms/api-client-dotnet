@@ -41,14 +41,14 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomAttributeGetModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="options">options.</param>
+        /// <param name="id">Unique ID of the attribute.</param>
+        /// <param name="options">Collection of the attribute options.</param>
         /// <param name="type">type.</param>
-        /// <param name="isDeleted">isDeleted.</param>
-        /// <param name="name">name.</param>
-        /// <param name="isEnabled">isEnabled.</param>
-        /// <param name="isRequired">isRequired.</param>
-        /// <param name="isGlobal">isGlobal.</param>
+        /// <param name="isDeleted">Indicates if the attribute is deleted.</param>
+        /// <param name="name">Name of the attribute.</param>
+        /// <param name="isEnabled">Indicates if the attribute is enabled.</param>
+        /// <param name="isRequired">Indicates if the attribute is mandatory to specify.</param>
+        /// <param name="isGlobal">Indicates if the attribute is available across all projects.</param>
         public CustomAttributeGetModel(Guid id = default(Guid), List<CustomAttributeOptionModel> options = default(List<CustomAttributeOptionModel>), CustomAttributeTypesEnum? type = default(CustomAttributeTypesEnum?), bool isDeleted = default(bool), string name = default(string), bool isEnabled = default(bool), bool isRequired = default(bool), bool isGlobal = default(bool))
         {
             this.Id = id;
@@ -62,44 +62,51 @@ namespace TestIt.Client.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Unique ID of the attribute
         /// </summary>
+        /// <value>Unique ID of the attribute</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Options
+        /// Collection of the attribute options
         /// </summary>
+        /// <value>Collection of the attribute options</value>
         [DataMember(Name = "options", EmitDefaultValue = true)]
         public List<CustomAttributeOptionModel> Options { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDeleted
+        /// Indicates if the attribute is deleted
         /// </summary>
+        /// <value>Indicates if the attribute is deleted</value>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name of the attribute
         /// </summary>
+        /// <value>Name of the attribute</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsEnabled
+        /// Indicates if the attribute is enabled
         /// </summary>
+        /// <value>Indicates if the attribute is enabled</value>
         [DataMember(Name = "isEnabled", EmitDefaultValue = true)]
         public bool IsEnabled { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsRequired
+        /// Indicates if the attribute is mandatory to specify
         /// </summary>
+        /// <value>Indicates if the attribute is mandatory to specify</value>
         [DataMember(Name = "isRequired", EmitDefaultValue = true)]
         public bool IsRequired { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsGlobal
+        /// Indicates if the attribute is available across all projects
         /// </summary>
+        /// <value>Indicates if the attribute is available across all projects</value>
         [DataMember(Name = "isGlobal", EmitDefaultValue = true)]
         public bool IsGlobal { get; set; }
 
