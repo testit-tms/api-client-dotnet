@@ -2,8 +2,8 @@ name: Validate
 
 on:
   pull_request:
-    paths:
-      - "src/**"
+    # paths:
+    #   - "src/**"
 
 env:
   PROJECT_DIR: ./src/TestIt.Client
