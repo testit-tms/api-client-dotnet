@@ -1,10 +1,7 @@
 name: Validate
 
 on:
-  pull_request:
-    branches: [master]
-    paths:
-      - "src/**"
+  pull_request
 
 env:
   PROJECT_DIR: ./src/TestIt.Client
@@ -16,10 +13,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 6.0.x
 
