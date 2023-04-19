@@ -4,6 +4,7 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
+| [**ApiV2SectionsIdPatch**](SectionsApi.md#apiv2sectionsidpatch) | **PATCH** /api/v2/sections/{id} | Patch section |
 | [**CreateSection**](SectionsApi.md#createsection) | **POST** /api/v2/sections | Create section |
 | [**DeleteSection**](SectionsApi.md#deletesection) | **DELETE** /api/v2/sections/{id} | Delete section |
 | [**GetSectionById**](SectionsApi.md#getsectionbyid) | **GET** /api/v2/sections/{id} | Get section |
@@ -11,6 +12,105 @@ All URIs are relative to *http://localhost*
 | [**Move**](SectionsApi.md#move) | **POST** /api/v2/sections/move | Move section with all work items into another section |
 | [**Rename**](SectionsApi.md#rename) | **POST** /api/v2/sections/rename | Rename section |
 | [**UpdateSection**](SectionsApi.md#updatesection) | **PUT** /api/v2/sections | Update section |
+
+<a name="apiv2sectionsidpatch"></a>
+# **ApiV2SectionsIdPatch**
+> void ApiV2SectionsIdPatch (Guid id, List<Operation> operation = null)
+
+Patch section
+
+See <a href=\"https://www.rfc-editor.org/rfc/rfc6902\" target=\"_blank\">RFC 6902: JavaScript Object Notation (JSON) Patch</a> for details
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2SectionsIdPatchExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new SectionsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Section internal (UUID) identifier
+            var operation = new List<Operation>(); // List<Operation> |  (optional) 
+
+            try
+            {
+                // Patch section
+                apiInstance.ApiV2SectionsIdPatch(id, operation);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SectionsApi.ApiV2SectionsIdPatch: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2SectionsIdPatchWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Patch section
+    apiInstance.ApiV2SectionsIdPatchWithHttpInfo(id, operation);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling SectionsApi.ApiV2SectionsIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** | Section internal (UUID) identifier |  |
+| **operation** | [**List&lt;Operation&gt;**](Operation.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **403** | Update permission for section is required |  -  |
+| **204** | No Content |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="createsection"></a>
 # **CreateSection**
@@ -108,10 +208,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Cannot create section without parent ID |  -  |
-| **201** | Success |  -  |
-| **403** | Update permission for test library is required |  -  |
+| **201** | Created |  -  |
 | **401** | Unauthorized |  -  |
+| **400** | Cannot create section without parent ID |  -  |
+| **403** | Update permission for test library is required |  -  |
 | **404** | Parent section with provided ID was not found |  -  |
 | **409** | Section with the same name already exists in the parent section |  -  |
 
@@ -209,11 +309,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Success |  -  |
-| **400** | Bad Request |  -  |
 | **409** | Conflict |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Delete permission for test library is required |  -  |
+| **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
 | **404** | Section with provided ID was not found |  -  |
 | **422** | Cannot delete root section |  -  |
 
@@ -221,7 +321,7 @@ void (empty response body)
 
 <a name="getsectionbyid"></a>
 # **GetSectionById**
-> SectionWithStepsModel GetSectionById (Guid id, bool? isDeleted = null)
+> SectionWithStepsModel GetSectionById (Guid id, DeletionState? isDeleted = null)
 
 Get section
 
@@ -254,7 +354,7 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new SectionsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // Guid | Section internal (UUID) identifier
-            var isDeleted = false;  // bool? | Requested section is deleted (optional)  (default to false)
+            var isDeleted = (DeletionState) "Any";  // DeletionState? |  (optional) 
 
             try
             {
@@ -298,7 +398,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid** | Section internal (UUID) identifier |  |
-| **isDeleted** | **bool?** | Requested section is deleted | [optional] [default to false] |
+| **isDeleted** | **DeletionState?** |  | [optional]  |
 
 ### Return type
 
@@ -317,11 +417,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
-| **200** | Success |  -  |
 | **401** | Unauthorized |  -  |
-| **403** | Read permission for test library is required |  -  |
+| **400** | Bad Request |  -  |
 | **404** | Section with provided ID was not found |  -  |
+| **200** | Success |  -  |
+| **403** | Read permission for test library is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -437,11 +537,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
-| **404** | Section with provided ID was not found |  -  |
-| **400** | &lt;br&gt;- &#x60;orderBy&#x60; statement must have one &#x60;.&#x60; and no &#x60;,&#x60; symbols  &lt;br&gt;- &#x60;orderBy&#x60; statement has invalid length  &lt;br&gt;- &#x60;orderBy&#x60; statement must have UUID as attribute key  &lt;br&gt;- Search field was not found |  -  |
-| **401** | Unauthorized |  -  |
 | **403** | Read permission for test library is required |  -  |
+| **404** | Section with provided ID was not found |  -  |
+| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **401** | Unauthorized |  -  |
+| **400** | &lt;br&gt;- &#x60;orderBy&#x60; statement must have one &#x60;.&#x60; and no &#x60;,&#x60; symbols  &lt;br&gt;- &#x60;orderBy&#x60; statement has invalid length  &lt;br&gt;- &#x60;orderBy&#x60; statement must have UUID as attribute key  &lt;br&gt;- Search field was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -535,8 +635,8 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **204** | No Content |  -  |
 | **403** | Update permission for test library is required |  -  |
-| **204** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -633,10 +733,10 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **403** | Update permission for test library is required |  -  |
+| **204** | No Content |  -  |
+| **409** | Section with the same name already exists in the parent section |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Section with provided ID was not found |  -  |
-| **409** | Section with the same name already exists in the parent section |  -  |
-| **204** | Success |  -  |
 | **422** | Root section cannot be renamed |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -733,12 +833,12 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | &lt;br&gt;- ID is invalid  &lt;br&gt;- Root section cannot be create |  -  |
+| **204** | No Content |  -  |
 | **409** | Section with the same name already exists in the parent section |  -  |
-| **422** | &lt;br&gt;- Root section cannot be edited  &lt;br&gt;- Parent ID cannot be changed  &lt;br&gt;- Project ID cannot be changed |  -  |
-| **204** | Success |  -  |
-| **401** | Unauthorized |  -  |
+| **400** | &lt;br&gt;- ID is invalid  &lt;br&gt;- Root section cannot be create |  -  |
 | **403** | Update permission for test library is required |  -  |
+| **422** | &lt;br&gt;- Root section cannot be edited  &lt;br&gt;- Parent ID cannot be changed  &lt;br&gt;- Project ID cannot be changed |  -  |
+| **401** | Unauthorized |  -  |
 | **404** | &lt;br&gt;- Section cannot be found  &lt;br&gt;- Parent section cannot be found  &lt;br&gt;- Project cannot be found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

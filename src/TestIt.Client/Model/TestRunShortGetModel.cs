@@ -36,8 +36,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets State
         /// </summary>
-        [DataMember(Name = "state", EmitDefaultValue = false)]
-        public TestRunState? State { get; set; }
+        [DataMember(Name = "state", IsRequired = true, EmitDefaultValue = true)]
+        public TestRunState State { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestRunShortGetModel" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected TestRunShortGetModel() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="TestRunShortGetModel" /> class.
         /// </summary>
@@ -49,12 +54,19 @@ namespace TestIt.Client.Model
         /// <param name="modifiedDate">Date when the test run was modified last time.</param>
         /// <param name="modifiedById">Unique ID of user who modified the test run last time.</param>
         /// <param name="isDeleted">Is the test run is deleted.</param>
-        /// <param name="state">state.</param>
+        /// <param name="state">state (required).</param>
         /// <param name="startedDate">Date when the test run was started.</param>
         /// <param name="autotestsCount">Number of autotests run in the test run.</param>
-        /// <param name="statistics">statistics.</param>
-        public TestRunShortGetModel(Guid id = default(Guid), string name = default(string), Guid projectId = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), bool isDeleted = default(bool), TestRunState? state = default(TestRunState?), DateTime? startedDate = default(DateTime?), int autotestsCount = default(int), TestResultsStatisticsGetModel statistics = default(TestResultsStatisticsGetModel))
+        /// <param name="statistics">statistics (required).</param>
+        public TestRunShortGetModel(Guid id = default(Guid), string name = default(string), Guid projectId = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), bool isDeleted = default(bool), TestRunState state = default(TestRunState), DateTime? startedDate = default(DateTime?), int autotestsCount = default(int), TestResultsStatisticsGetModel statistics = default(TestResultsStatisticsGetModel))
         {
+            this.State = state;
+            // to ensure "statistics" is required (not null)
+            if (statistics == null)
+            {
+                throw new ArgumentNullException("statistics is a required property for TestRunShortGetModel and cannot be null");
+            }
+            this.Statistics = statistics;
             this.Id = id;
             this.Name = name;
             this.ProjectId = projectId;
@@ -63,10 +75,8 @@ namespace TestIt.Client.Model
             this.ModifiedDate = modifiedDate;
             this.ModifiedById = modifiedById;
             this.IsDeleted = isDeleted;
-            this.State = state;
             this.StartedDate = startedDate;
             this.AutotestsCount = autotestsCount;
-            this.Statistics = statistics;
         }
 
         /// <summary>
@@ -142,7 +152,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Statistics
         /// </summary>
-        [DataMember(Name = "statistics", EmitDefaultValue = false)]
+        [DataMember(Name = "statistics", IsRequired = true, EmitDefaultValue = true)]
         public TestResultsStatisticsGetModel Statistics { get; set; }
 
         /// <summary>

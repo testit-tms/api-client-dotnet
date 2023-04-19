@@ -11,8 +11,11 @@ All URIs are relative to *http://localhost*
 | [**ApiV2ProjectsIdFailureClassesGet**](ProjectsApi.md#apiv2projectsidfailureclassesget) | **GET** /api/v2/projects/{id}/failureClasses | Get Project FailureClasses |
 | [**ApiV2ProjectsIdFavoritePut**](ProjectsApi.md#apiv2projectsidfavoriteput) | **PUT** /api/v2/projects/{id}/favorite | Mark Project as favorite |
 | [**ApiV2ProjectsIdFiltersGet**](ProjectsApi.md#apiv2projectsidfiltersget) | **GET** /api/v2/projects/{id}/filters | Get Project filters |
+| [**ApiV2ProjectsIdPatch**](ProjectsApi.md#apiv2projectsidpatch) | **PATCH** /api/v2/projects/{id} | Patch project |
 | [**ApiV2ProjectsIdTestPlansAnalyticsGet**](ProjectsApi.md#apiv2projectsidtestplansanalyticsget) | **GET** /api/v2/projects/{id}/testPlans/analytics | Get TestPlans analytics |
+| [**ApiV2ProjectsIdTestPlansDeleteBulkPost**](ProjectsApi.md#apiv2projectsidtestplansdeletebulkpost) | **POST** /api/v2/projects/{id}/testPlans/delete/bulk | Delete multiple test plans |
 | [**ApiV2ProjectsIdTestPlansNameExistsGet**](ProjectsApi.md#apiv2projectsidtestplansnameexistsget) | **GET** /api/v2/projects/{id}/testPlans/{name}/exists | Checks if TestPlan exists with the specified name exists for the project |
+| [**ApiV2ProjectsIdTestPlansRestoreBulkPost**](ProjectsApi.md#apiv2projectsidtestplansrestorebulkpost) | **POST** /api/v2/projects/{id}/testPlans/restore/bulk | Restore multiple test plans |
 | [**ApiV2ProjectsIdTestPlansSearchPost**](ProjectsApi.md#apiv2projectsidtestplanssearchpost) | **POST** /api/v2/projects/{id}/testPlans/search | Get Project TestPlans with analytics |
 | [**ApiV2ProjectsIdTestRunsActiveGet**](ProjectsApi.md#apiv2projectsidtestrunsactiveget) | **GET** /api/v2/projects/{id}/testRuns/active | Get active Project TestRuns |
 | [**ApiV2ProjectsIdTestRunsFullGet**](ProjectsApi.md#apiv2projectsidtestrunsfullget) | **GET** /api/v2/projects/{id}/testRuns/full | Get Project TestRuns full models |
@@ -21,6 +24,10 @@ All URIs are relative to *http://localhost*
 | [**ApiV2ProjectsIdWorkItemsTagsGet**](ProjectsApi.md#apiv2projectsidworkitemstagsget) | **GET** /api/v2/projects/{id}/workItems/tags | Get WorkItems Tags |
 | [**ApiV2ProjectsNameNameExistsGet**](ProjectsApi.md#apiv2projectsnamenameexistsget) | **GET** /api/v2/projects/name/{name}/exists |  |
 | [**ApiV2ProjectsSearchPost**](ProjectsApi.md#apiv2projectssearchpost) | **POST** /api/v2/projects/search | Search for projects |
+| [**BackgroundImportProject**](ProjectsApi.md#backgroundimportproject) | **POST** /api/v2/projects/import/json | Import project from JSON file in background job |
+| [**BackgroundImportToExistingProject**](ProjectsApi.md#backgroundimporttoexistingproject) | **POST** /api/v2/projects/{id}/import/json | Import project from JSON file into existing project in background job |
+| [**BackgroundImportZipProject**](ProjectsApi.md#backgroundimportzipproject) | **POST** /api/v2/projects/import/zip | Import project from Zip file in background job |
+| [**BackgroundImportZipToExistingProject**](ProjectsApi.md#backgroundimportziptoexistingproject) | **POST** /api/v2/projects/{id}/import/zip | Import project from Zip file into existing project in background job |
 | [**CreateCustomAttributeTestPlanProjectRelations**](ProjectsApi.md#createcustomattributetestplanprojectrelations) | **POST** /api/v2/projects/{id}/testPlans/attributes | Add attributes to project&#39;s test plans |
 | [**CreateProject**](ProjectsApi.md#createproject) | **POST** /api/v2/projects | Create project |
 | [**CreateProjectsAttribute**](ProjectsApi.md#createprojectsattribute) | **POST** /api/v2/projects/{id}/attributes | Create project attribute |
@@ -29,6 +36,10 @@ All URIs are relative to *http://localhost*
 | [**DeleteProjectAutoTests**](ProjectsApi.md#deleteprojectautotests) | **DELETE** /api/v2/projects/{id}/autoTests | Delete project |
 | [**DeleteProjectsAttribute**](ProjectsApi.md#deleteprojectsattribute) | **DELETE** /api/v2/projects/{id}/attributes/{attributeId} | Delete project attribute |
 | [**Export**](ProjectsApi.md#export) | **POST** /api/v2/projects/{id}/export | Export project as JSON file |
+| [**ExportProjectJson**](ProjectsApi.md#exportprojectjson) | **POST** /api/v2/projects/{id}/export/json | Export project as JSON file in background job |
+| [**ExportProjectWithTestPlansJson**](ProjectsApi.md#exportprojectwithtestplansjson) | **POST** /api/v2/projects/{id}/export/testPlans/json | Export project as JSON file with test plans in background job |
+| [**ExportProjectWithTestPlansZip**](ProjectsApi.md#exportprojectwithtestplanszip) | **POST** /api/v2/projects/{id}/export/testPlans/zip | Export project as Zip file with test plans in background job |
+| [**ExportProjectZip**](ProjectsApi.md#exportprojectzip) | **POST** /api/v2/projects/{id}/export/zip | Export project as Zip file in background job |
 | [**ExportWithTestPlansAndConfigurations**](ProjectsApi.md#exportwithtestplansandconfigurations) | **POST** /api/v2/projects/{id}/export-by-testPlans | Export project with test plans, test suites and test points as JSON file |
 | [**GetAllProjects**](ProjectsApi.md#getallprojects) | **GET** /api/v2/projects | Get all projects |
 | [**GetAttributeByProjectId**](ProjectsApi.md#getattributebyprojectid) | **GET** /api/v2/projects/{id}/attributes/{attributeId} | Get project attribute |
@@ -144,12 +155,12 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **422** | Client Error |  -  |
-| **400** | &lt;br&gt; Attributes must be global  |  -  |
-| **200** | Success |  -  |
-| **403** | Project admin permission for project settings is required |  -  |
 | **404** | Project with provided ID was not found |  -  |
 | **409** | Conflict |  -  |
+| **422** | Client Error |  -  |
+| **200** | Success |  -  |
+| **400** | &lt;br&gt; Attributes must be global  |  -  |
+| **403** | Project admin permission for project settings is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -359,8 +370,8 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **404** | Can&#39;t find a Project with identifier |  -  |
-| **204** | Success |  -  |
 | **400** | Bad Request |  -  |
+| **204** | No Content |  -  |
 | **403** | Update project settings permission for project required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -459,9 +470,9 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
-| **400** | Bad Request |  -  |
 | **404** | Can&#39;t find a Project with identifier |  -  |
+| **400** | Bad Request |  -  |
+| **200** | Success |  -  |
 | **403** | Update project settings permission for project required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -564,8 +575,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
 | **400** | Bad Request |  -  |
+| **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -661,8 +672,8 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **401** | Unauthorized |  -  |
 | **404** | Not Found |  -  |
-| **204** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
+| **204** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -762,8 +773,107 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
 | **400** | Bad Request |  -  |
+| **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="apiv2projectsidpatch"></a>
+# **ApiV2ProjectsIdPatch**
+> void ApiV2ProjectsIdPatch (Guid id, List<Operation> operation = null)
+
+Patch project
+
+See <a href=\"https://www.rfc-editor.org/rfc/rfc6902\" target=\"_blank\">RFC 6902: JavaScript Object Notation (JSON) Patch</a> for details
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2ProjectsIdPatchExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Unique or global Id of project
+            var operation = new List<Operation>(); // List<Operation> |  (optional) 
+
+            try
+            {
+                // Patch project
+                apiInstance.ApiV2ProjectsIdPatch(id, operation);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsIdPatch: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2ProjectsIdPatchWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Patch project
+    apiInstance.ApiV2ProjectsIdPatchWithHttpInfo(id, operation);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** | Unique or global Id of project |  |
+| **operation** | [**List&lt;Operation&gt;**](Operation.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **403** | Update permission for projects is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -877,8 +987,109 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 | **400** | Bad Request |  -  |
+| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="apiv2projectsidtestplansdeletebulkpost"></a>
+# **ApiV2ProjectsIdTestPlansDeleteBulkPost**
+> List&lt;Guid&gt; ApiV2ProjectsIdTestPlansDeleteBulkPost (string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = null)
+
+Delete multiple test plans
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2ProjectsIdTestPlansDeleteBulkPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Unique or global ID of the project
+            var projectTestPlansFilterModel = new ProjectTestPlansFilterModel(); // ProjectTestPlansFilterModel |  (optional) 
+
+            try
+            {
+                // Delete multiple test plans
+                List<Guid> result = apiInstance.ApiV2ProjectsIdTestPlansDeleteBulkPost(id, projectTestPlansFilterModel);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsIdTestPlansDeleteBulkPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2ProjectsIdTestPlansDeleteBulkPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete multiple test plans
+    ApiResponse<List<Guid>> response = apiInstance.ApiV2ProjectsIdTestPlansDeleteBulkPostWithHttpInfo(id, projectTestPlansFilterModel);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsIdTestPlansDeleteBulkPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Unique or global ID of the project |  |
+| **projectTestPlansFilterModel** | [**ProjectTestPlansFilterModel**](ProjectTestPlansFilterModel.md) |  | [optional]  |
+
+### Return type
+
+**List<Guid>**
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **403** | - Read permission for the project is required  - Delete permission for test plans is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -984,9 +1195,106 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="apiv2projectsidtestplansrestorebulkpost"></a>
+# **ApiV2ProjectsIdTestPlansRestoreBulkPost**
+> void ApiV2ProjectsIdTestPlansRestoreBulkPost (string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = null)
+
+Restore multiple test plans
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2ProjectsIdTestPlansRestoreBulkPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Unique or global ID of the project
+            var projectTestPlansFilterModel = new ProjectTestPlansFilterModel(); // ProjectTestPlansFilterModel |  (optional) 
+
+            try
+            {
+                // Restore multiple test plans
+                apiInstance.ApiV2ProjectsIdTestPlansRestoreBulkPost(id, projectTestPlansFilterModel);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsIdTestPlansRestoreBulkPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2ProjectsIdTestPlansRestoreBulkPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Restore multiple test plans
+    apiInstance.ApiV2ProjectsIdTestPlansRestoreBulkPostWithHttpInfo(id, projectTestPlansFilterModel);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsIdTestPlansRestoreBulkPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Unique or global ID of the project |  |
+| **projectTestPlansFilterModel** | [**ProjectTestPlansFilterModel**](ProjectTestPlansFilterModel.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **403** | - Read permission for the project is required  - Edit permission for test plans is required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="apiv2projectsidtestplanssearchpost"></a>
 # **ApiV2ProjectsIdTestPlansSearchPost**
-> List&lt;TestPlanWithAnalyticModel&gt; ApiV2ProjectsIdTestPlansSearchPost (string id, bool? mustUpdateCache = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, TestPlanSearchQueryModel testPlanSearchQueryModel = null)
+> List&lt;TestPlanWithAnalyticModel&gt; ApiV2ProjectsIdTestPlansSearchPost (string id, bool? mustUpdateCache = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ProjectTestPlansFilterModel projectTestPlansFilterModel = null)
 
 Get Project TestPlans with analytics
 
@@ -1025,12 +1333,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var testPlanSearchQueryModel = new TestPlanSearchQueryModel(); // TestPlanSearchQueryModel |  (optional) 
+            var projectTestPlansFilterModel = new ProjectTestPlansFilterModel(); // ProjectTestPlansFilterModel |  (optional) 
 
             try
             {
                 // Get Project TestPlans with analytics
-                List<TestPlanWithAnalyticModel> result = apiInstance.ApiV2ProjectsIdTestPlansSearchPost(id, mustUpdateCache, skip, take, orderBy, searchField, searchValue, testPlanSearchQueryModel);
+                List<TestPlanWithAnalyticModel> result = apiInstance.ApiV2ProjectsIdTestPlansSearchPost(id, mustUpdateCache, skip, take, orderBy, searchField, searchValue, projectTestPlansFilterModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1051,7 +1359,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get Project TestPlans with analytics
-    ApiResponse<List<TestPlanWithAnalyticModel>> response = apiInstance.ApiV2ProjectsIdTestPlansSearchPostWithHttpInfo(id, mustUpdateCache, skip, take, orderBy, searchField, searchValue, testPlanSearchQueryModel);
+    ApiResponse<List<TestPlanWithAnalyticModel>> response = apiInstance.ApiV2ProjectsIdTestPlansSearchPostWithHttpInfo(id, mustUpdateCache, skip, take, orderBy, searchField, searchValue, projectTestPlansFilterModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1075,7 +1383,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **testPlanSearchQueryModel** | [**TestPlanSearchQueryModel**](TestPlanSearchQueryModel.md) |  | [optional]  |
+| **projectTestPlansFilterModel** | [**ProjectTestPlansFilterModel**](ProjectTestPlansFilterModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -1195,10 +1503,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
-| **404** | Not Found |  -  |
 | **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
 | **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1547,8 +1855,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 | **403** | Read permission for test library is required |  -  |
+| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1859,6 +2167,406 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="backgroundimportproject"></a>
+# **BackgroundImportProject**
+> Guid BackgroundImportProject (FileParameter file = null)
+
+Import project from JSON file in background job
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class BackgroundImportProjectExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
+            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // FileParameter |  (optional) 
+
+            try
+            {
+                // Import project from JSON file in background job
+                Guid result = apiInstance.BackgroundImportProject(file);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ProjectsApi.BackgroundImportProject: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the BackgroundImportProjectWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Import project from JSON file in background job
+    ApiResponse<Guid> response = apiInstance.BackgroundImportProjectWithHttpInfo(file);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectsApi.BackgroundImportProjectWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **file** | **FileParameter****FileParameter** |  | [optional]  |
+
+### Return type
+
+**Guid**
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data, application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **403** | Update permission for project settings required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="backgroundimporttoexistingproject"></a>
+# **BackgroundImportToExistingProject**
+> Guid BackgroundImportToExistingProject (string id, FileParameter file = null)
+
+Import project from JSON file into existing project in background job
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class BackgroundImportToExistingProjectExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
+            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // FileParameter | Select file (optional) 
+
+            try
+            {
+                // Import project from JSON file into existing project in background job
+                Guid result = apiInstance.BackgroundImportToExistingProject(id, file);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ProjectsApi.BackgroundImportToExistingProject: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the BackgroundImportToExistingProjectWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Import project from JSON file into existing project in background job
+    ApiResponse<Guid> response = apiInstance.BackgroundImportToExistingProjectWithHttpInfo(id, file);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectsApi.BackgroundImportToExistingProjectWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Project internal (UUID) or global (integer) identifier |  |
+| **file** | **FileParameter****FileParameter** | Select file | [optional]  |
+
+### Return type
+
+**Guid**
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **403** | Update permission for project settings required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="backgroundimportzipproject"></a>
+# **BackgroundImportZipProject**
+> Guid BackgroundImportZipProject (FileParameter file = null)
+
+Import project from Zip file in background job
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class BackgroundImportZipProjectExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
+            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // FileParameter |  (optional) 
+
+            try
+            {
+                // Import project from Zip file in background job
+                Guid result = apiInstance.BackgroundImportZipProject(file);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ProjectsApi.BackgroundImportZipProject: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the BackgroundImportZipProjectWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Import project from Zip file in background job
+    ApiResponse<Guid> response = apiInstance.BackgroundImportZipProjectWithHttpInfo(file);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectsApi.BackgroundImportZipProjectWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **file** | **FileParameter****FileParameter** |  | [optional]  |
+
+### Return type
+
+**Guid**
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data, application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **403** | Update permission for project settings required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="backgroundimportziptoexistingproject"></a>
+# **BackgroundImportZipToExistingProject**
+> Guid BackgroundImportZipToExistingProject (string id, FileParameter file = null)
+
+Import project from Zip file into existing project in background job
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class BackgroundImportZipToExistingProjectExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
+            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // FileParameter | Select file (optional) 
+
+            try
+            {
+                // Import project from Zip file into existing project in background job
+                Guid result = apiInstance.BackgroundImportZipToExistingProject(id, file);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ProjectsApi.BackgroundImportZipToExistingProject: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the BackgroundImportZipToExistingProjectWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Import project from Zip file into existing project in background job
+    ApiResponse<Guid> response = apiInstance.BackgroundImportZipToExistingProjectWithHttpInfo(id, file);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectsApi.BackgroundImportZipToExistingProjectWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Project internal (UUID) or global (integer) identifier |  |
+| **file** | **FileParameter****FileParameter** | Select file | [optional]  |
+
+### Return type
+
+**Guid**
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **403** | Update permission for project settings required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="createcustomattributetestplanprojectrelations"></a>
 # **CreateCustomAttributeTestPlanProjectRelations**
 > void CreateCustomAttributeTestPlanProjectRelations (string id, List<Guid> requestBody = null)
@@ -1954,7 +2662,7 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **403** | Update permission for project settings is required |  -  |
-| **204** | Success |  -  |
+| **204** | No Content |  -  |
 | **400** | &lt;br&gt; Attributes must be global  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2056,7 +2764,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **403** | Project creator or admin system role is required |  -  |
-| **201** | Success |  -  |
+| **201** | Created |  -  |
 | **400** | Bad Request |  -  |
 | **409** | Project with the same name already exists |  -  |
 
@@ -2160,12 +2868,12 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **409** | &lt;br&gt;&#x60;CustomAttribute.Name&#x60; or &#x60;CustomAttribute.Id&#x60; are not unique in attributes schemes  &lt;br&gt;&#x60;CustomAttributeOptionModel.Id&#x60; or &#x60;CustomAttributeOptionModel.Value&#x60; are not unique in &#x60;attributesScheme.Options&#x60; |  -  |
-| **400** | &lt;br&gt;- Attribute is &#x60;null&#x60;  &lt;br&gt;- Priority is invalid  &lt;br&gt;- Attribute with &#x60;Options&#x60; type must have an options  &lt;br&gt;- ID is not &#x60;null&#x60;  &lt;br&gt;- Option ID is not &#x60;null&#x60; |  -  |
+| **422** | Cannot add new attribute from template which is in use |  -  |
 | **403** | Update permission for project settings is required |  -  |
 | **404** | Project with provided ID was not found |  -  |
-| **422** | Cannot add new attribute from template which is in use |  -  |
-| **201** | Success |  -  |
+| **400** | &lt;br&gt;- Attribute is &#x60;null&#x60;  &lt;br&gt;- Priority is invalid  &lt;br&gt;- Attribute with &#x60;Options&#x60; type must have an options  &lt;br&gt;- ID is not &#x60;null&#x60;  &lt;br&gt;- Option ID is not &#x60;null&#x60; |  -  |
+| **409** | &lt;br&gt;&#x60;CustomAttribute.Name&#x60; or &#x60;CustomAttribute.Id&#x60; are not unique in attributes schemes  &lt;br&gt;&#x60;CustomAttributeOptionModel.Id&#x60; or &#x60;CustomAttributeOptionModel.Value&#x60; are not unique in &#x60;attributesScheme.Options&#x60; |  -  |
+| **201** | Created |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2263,8 +2971,8 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **204** | No Content |  -  |
 | **403** | Update permission for project settings is required |  -  |
-| **204** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2360,8 +3068,8 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Success |  -  |
 | **404** | Project with provided ID does not exists |  -  |
+| **204** | No Content |  -  |
 | **403** | Delete permission for projects is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2458,7 +3166,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Success |  -  |
+| **204** | No Content |  -  |
 | **403** | Delete permission for AutoTest required |  -  |
 | **404** | Can&#39;t find a Project with identifier |  -  |
 
@@ -2559,9 +3267,9 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
+| **404** | Project with provided ID was not found |  -  |
 | **400** | &lt;br&gt;- Project ID is invalid  &lt;br&gt;- Project attribute ID is invalid  &lt;br&gt;- Attribute is empty |  -  |
 | **403** | Update permission for project settings is required |  -  |
-| **404** | Project with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2571,7 +3279,7 @@ void (empty response body)
 
 Export project as JSON file
 
-<br>This method exports the selected project or its part (sections, work items) to a `.json` file.  <br>In the request body, you can specify sections and test cases to be exported.  <br>Example of a request to export two sections and two test cases:  <br>    <code>              curl -X POST \"http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\" \\              -H \"accept: application/json\" -H \"Authorization: PrivateToken {token}\" -H \"Content-Type: application/json-patch+json\" \\              -d \"{\\\"sectionIds\\\":[\\\"3fa85f64-5717-4562-b3fc-2c963f66afa6\\\",\\\"9fa85f64-5717-4562-b3fc-2c963f66a000\\\"],\\\"workItemIds\\\":[\\\"3fa85f64-5717-4562-b3fc-2c963f66afa6\\\",\\\"90085f64-5717-4562-b3fc-2c963f66a000\\\"]}\"              </code>    <br>In the response, you get:  <br>              - A `.zip` file with attachments and a.json file if you enable attachments export.<br />              - A `.json` file with the project if you do not enable attachments export.              
+<br>This method exports the selected project or its part (sections, work items) to a `.json` file.  <br>In the request body, you can specify sections and test cases to be exported.  <br>Example of a request to export two sections and two test cases:  <br>    ```              curl -X POST \"http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\" \\              -H \"accept: application/json\" -H \"Authorization: PrivateToken {token}\" -H \"Content-Type: application/json-patch+json\" \\              -d \"{\\\"sectionIds\\\":[\\\"3fa85f64-5717-4562-b3fc-2c963f66afa6\\\",\\\"9fa85f64-5717-4562-b3fc-2c963f66a000\\\"],\\\"workItemIds\\\":[\\\"3fa85f64-5717-4562-b3fc-2c963f66afa6\\\",\\\"90085f64-5717-4562-b3fc-2c963f66a000\\\"]}\"              ```    <br>In the response, you get:  <br>              - A `.zip` file with attachments and a.json file if you enable attachments export.<br />              - A `.json` file with the project if you do not enable attachments export.              
 
 ### Example
 ```csharp
@@ -2665,10 +3373,422 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Project with provided ID was not found |  -  |
+| **404** | Not Found |  -  |
 | **200** | Success |  -  |
 | **403** | Update permission for project settings is required |  -  |
 | **400** | Root section was not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="exportprojectjson"></a>
+# **ExportProjectJson**
+> Guid ExportProjectJson (string id, long? timeZoneOffsetInMinutes = null, ProjectExportQueryModel projectExportQueryModel = null)
+
+Export project as JSON file in background job
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ExportProjectJsonExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
+            var timeZoneOffsetInMinutes = 789L;  // long? |  (optional) 
+            var projectExportQueryModel = new ProjectExportQueryModel(); // ProjectExportQueryModel |  (optional) 
+
+            try
+            {
+                // Export project as JSON file in background job
+                Guid result = apiInstance.ExportProjectJson(id, timeZoneOffsetInMinutes, projectExportQueryModel);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ProjectsApi.ExportProjectJson: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ExportProjectJsonWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Export project as JSON file in background job
+    ApiResponse<Guid> response = apiInstance.ExportProjectJsonWithHttpInfo(id, timeZoneOffsetInMinutes, projectExportQueryModel);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectsApi.ExportProjectJsonWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Project internal (UUID) or global (integer) identifier |  |
+| **timeZoneOffsetInMinutes** | **long?** |  | [optional]  |
+| **projectExportQueryModel** | [**ProjectExportQueryModel**](ProjectExportQueryModel.md) |  | [optional]  |
+
+### Return type
+
+**Guid**
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **403** | Update permission for project settings is required |  -  |
+| **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="exportprojectwithtestplansjson"></a>
+# **ExportProjectWithTestPlansJson**
+> Guid ExportProjectWithTestPlansJson (string id, long? timeZoneOffsetInMinutes = null, ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = null)
+
+Export project as JSON file with test plans in background job
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ExportProjectWithTestPlansJsonExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
+            var timeZoneOffsetInMinutes = 789L;  // long? |  (optional) 
+            var projectExportWithTestPlansPostModel = new ProjectExportWithTestPlansPostModel(); // ProjectExportWithTestPlansPostModel |  (optional) 
+
+            try
+            {
+                // Export project as JSON file with test plans in background job
+                Guid result = apiInstance.ExportProjectWithTestPlansJson(id, timeZoneOffsetInMinutes, projectExportWithTestPlansPostModel);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ProjectsApi.ExportProjectWithTestPlansJson: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ExportProjectWithTestPlansJsonWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Export project as JSON file with test plans in background job
+    ApiResponse<Guid> response = apiInstance.ExportProjectWithTestPlansJsonWithHttpInfo(id, timeZoneOffsetInMinutes, projectExportWithTestPlansPostModel);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectsApi.ExportProjectWithTestPlansJsonWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Project internal (UUID) or global (integer) identifier |  |
+| **timeZoneOffsetInMinutes** | **long?** |  | [optional]  |
+| **projectExportWithTestPlansPostModel** | [**ProjectExportWithTestPlansPostModel**](ProjectExportWithTestPlansPostModel.md) |  | [optional]  |
+
+### Return type
+
+**Guid**
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **403** | Update permission for project settings is required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="exportprojectwithtestplanszip"></a>
+# **ExportProjectWithTestPlansZip**
+> Guid ExportProjectWithTestPlansZip (string id, long? timeZoneOffsetInMinutes = null, ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = null)
+
+Export project as Zip file with test plans in background job
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ExportProjectWithTestPlansZipExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
+            var timeZoneOffsetInMinutes = 789L;  // long? |  (optional) 
+            var projectExportWithTestPlansPostModel = new ProjectExportWithTestPlansPostModel(); // ProjectExportWithTestPlansPostModel |  (optional) 
+
+            try
+            {
+                // Export project as Zip file with test plans in background job
+                Guid result = apiInstance.ExportProjectWithTestPlansZip(id, timeZoneOffsetInMinutes, projectExportWithTestPlansPostModel);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ProjectsApi.ExportProjectWithTestPlansZip: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ExportProjectWithTestPlansZipWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Export project as Zip file with test plans in background job
+    ApiResponse<Guid> response = apiInstance.ExportProjectWithTestPlansZipWithHttpInfo(id, timeZoneOffsetInMinutes, projectExportWithTestPlansPostModel);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectsApi.ExportProjectWithTestPlansZipWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Project internal (UUID) or global (integer) identifier |  |
+| **timeZoneOffsetInMinutes** | **long?** |  | [optional]  |
+| **projectExportWithTestPlansPostModel** | [**ProjectExportWithTestPlansPostModel**](ProjectExportWithTestPlansPostModel.md) |  | [optional]  |
+
+### Return type
+
+**Guid**
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **403** | Update permission for project settings is required |  -  |
+| **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="exportprojectzip"></a>
+# **ExportProjectZip**
+> Guid ExportProjectZip (string id, long? timeZoneOffsetInMinutes = null, ProjectExportQueryModel projectExportQueryModel = null)
+
+Export project as Zip file in background job
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ExportProjectZipExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
+            var timeZoneOffsetInMinutes = 789L;  // long? |  (optional) 
+            var projectExportQueryModel = new ProjectExportQueryModel(); // ProjectExportQueryModel |  (optional) 
+
+            try
+            {
+                // Export project as Zip file in background job
+                Guid result = apiInstance.ExportProjectZip(id, timeZoneOffsetInMinutes, projectExportQueryModel);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ProjectsApi.ExportProjectZip: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ExportProjectZipWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Export project as Zip file in background job
+    ApiResponse<Guid> response = apiInstance.ExportProjectZipWithHttpInfo(id, timeZoneOffsetInMinutes, projectExportQueryModel);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectsApi.ExportProjectZipWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Project internal (UUID) or global (integer) identifier |  |
+| **timeZoneOffsetInMinutes** | **long?** |  | [optional]  |
+| **projectExportQueryModel** | [**ProjectExportQueryModel**](ProjectExportQueryModel.md) |  | [optional]  |
+
+### Return type
+
+**Guid**
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **403** | Update permission for project settings is required |  -  |
+| **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2772,9 +3892,9 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **404** | Project with provided ID was not found |  -  |
 | **400** | Root section was not found |  -  |
 | **403** | Update permission for project settings is required |  -  |
-| **404** | Project with provided ID was not found |  -  |
 | **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2990,16 +4110,16 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
+| **404** | &lt;br&gt;- Project with provided ID was not found  &lt;br&gt;- Project attribute with provided ID was not found |  -  |
 | **403** | Read permission for test library is required |  -  |
 | **200** | Success |  -  |
-| **404** | &lt;br&gt;- Project with provided ID was not found  &lt;br&gt;- Project attribute with provided ID was not found |  -  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getattributesbyprojectid"></a>
 # **GetAttributesByProjectId**
-> List&lt;CustomAttributeModel&gt; GetAttributesByProjectId (string id, bool? isDeleted = null)
+> List&lt;CustomAttributeModel&gt; GetAttributesByProjectId (string id, DeletionState? isDeleted = null)
 
 Get project attributes
 
@@ -3032,7 +4152,7 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
-            var isDeleted = false;  // bool? | If result must consist of only actual/deleted work items (optional)  (default to false)
+            var isDeleted = (DeletionState) "Any";  // DeletionState? |  (optional) 
 
             try
             {
@@ -3076,7 +4196,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Project internal (UUID) or global (integer) identifier |  |
-| **isDeleted** | **bool?** | If result must consist of only actual/deleted work items | [optional] [default to false] |
+| **isDeleted** | **DeletionState?** |  | [optional]  |
 
 ### Return type
 
@@ -3095,10 +4215,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **403** | Read permission for test library is required |  -  |
+| **404** | Project with provided ID was not found |  -  |
 | **400** | Bad Request |  -  |
 | **200** | Success |  -  |
-| **404** | Project with provided ID was not found |  -  |
-| **403** | Read permission for test library is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3198,9 +4318,9 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Project with provided ID was not found |  -  |
-| **403** | Read permission for test library is required |  -  |
 | **200** | Success |  -  |
+| **403** | Read permission for test library is required |  -  |
+| **404** | Project with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3300,10 +4420,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for configurations required |  -  |
+| **200** | Success |  -  |
 | **404** | Project with provided ID was not found |  -  |
 | **400** | Bad Request |  -  |
-| **200** | Success |  -  |
+| **403** | Read permission for configurations required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3403,8 +4523,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
 | **403** | Read permission for project settings is required |  -  |
+| **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3504,10 +4624,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | ID is invalid |  -  |
+| **403** | Read permission for projects is required |  -  |
 | **404** | Project with provided ID was not found |  -  |
 | **200** | Success |  -  |
-| **403** | Read permission for projects is required |  -  |
+| **400** | ID is invalid |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3618,9 +4738,9 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | Bad Request |  -  |
 | **403** | Read permission for test library is required |  -  |
 | **404** | Project with provided ID was not found |  -  |
-| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3722,9 +4842,9 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Project with provided ID was not found |  -  |
-| **200** | Success |  -  |
 | **403** | Read permission for test library is required |  -  |
+| **200** | Success |  -  |
+| **404** | Project with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3848,9 +4968,9 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 | **404** | Project with provided ID was not found |  -  |
 | **403** | Read permission for test result is required |  -  |
+| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3967,9 +5087,9 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
-| **404** | Project with provided ID was not found |  -  |
 | **400** | &lt;br&gt;- &#x60;orderBy&#x60; statement must have one &#x60;.&#x60; and no &#x60;,&#x60; characters  &lt;br&gt;- &#x60;orderBy&#x60; statement has invalid length  &lt;br&gt;- &#x60;orderBy&#x60; statement must have UUID as attribute key  &lt;br&gt;- Search field was not found |  -  |
 | **403** | Read permission for test library is required |  -  |
+| **404** | Project with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3979,7 +5099,7 @@ catch (ApiException e)
 
 Import project from JSON file
 
-<br>    <b>A project can only be exported to another TMS instance, different from the one it was imported from.</b>    <br>This method imports a `.json` file with a project to the test management system.  <br>In the body of the request, send the `.json` file received by the `POST /api/v2/projects/export` method:  <br>    <code>              curl -X POST \"http://{domain.com}/api/v2/projects/import\" \\              -H \"accept: /\" -H \"Authorization: PrivateToken {token}\" -H \"Content-Type: multipart/form-data\" \\              -F \"file=@import.txt;type=text/plain\"              </code>    <br>              In the second instance, a project with the name of the imported one is created.              User attributes and the test library (along with content and structure) are imported.                <br>Test plan execution history from the first instance of TMS cannot be transferred.
+<br>    <b>A project can only be exported to another TMS instance, different from the one it was imported from.</b>    <br>This method imports a `.json` file with a project to the test management system.  <br>In the body of the request, send the `.json` file received by the `POST /api/v2/projects/export` method:  <br>    ```              curl -X POST \"http://{domain.com}/api/v2/projects/import\" \\              -H \"accept: /\" -H \"Authorization: PrivateToken {token}\" -H \"Content-Type: multipart/form-data\" \\              -F \"file=@import.txt;type=text/plain\"              ```    <br>              In the second instance, a project with the name of the imported one is created.              User attributes and the test library (along with content and structure) are imported.                <br>Test plan execution history from the first instance of TMS cannot be transferred.
 
 ### Example
 ```csharp
@@ -4067,11 +5187,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
-| **204** | Success |  -  |
-| **409** | Entity with the same ID was already imported in other project |  -  |
+| **204** | No Content |  -  |
 | **403** | Project creator or admin system role is required |  -  |
 | **413** | Multipart body length limit exceeded |  -  |
+| **400** | Bad Request |  -  |
+| **409** | Entity with the same ID was already imported in other project |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4172,9 +5292,9 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **413** | Multipart body length limit exceeded |  -  |
-| **409** | Entity with same id already imported in other project |  -  |
-| **204** | Success |  -  |
+| **204** | No Content |  -  |
 | **403** | Update permission for project settings required |  -  |
+| **409** | Entity with same id already imported in other project |  -  |
 | **404** | File not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -4271,7 +5391,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Success |  -  |
+| **204** | No Content |  -  |
 | **403** | Update permission for projects is required |  -  |
 | **404** | Project with provided ID was not found |  -  |
 
@@ -4494,8 +5614,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for project is required |  -  |
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **403** | Read permission for project is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4593,7 +5713,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Success |  -  |
+| **204** | No Content |  -  |
 | **403** | Update permission for project settings is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -4690,11 +5810,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Update permission for projects is required |  -  |
-| **204** | Success |  -  |
+| **204** | No Content |  -  |
 | **400** | &lt;br&gt;- ID is invalid  &lt;br&gt;- Field is required |  -  |
-| **409** | Project with the same name already exists |  -  |
+| **403** | Update permission for projects is required |  -  |
 | **404** | Project with provided ID was not found |  -  |
+| **409** | Project with the same name already exists |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4790,7 +5910,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Success |  -  |
+| **204** | No Content |  -  |
 | **403** | Update permission for project settings is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

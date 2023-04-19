@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Attachments** | [**List&lt;AttachmentPutModel&gt;**](AttachmentPutModel.md) |  | 
 **Iterations** | [**List&lt;IterationPutModel&gt;**](IterationPutModel.md) |  | [optional] 
 **AutoTests** | [**List&lt;AutoTestIdModel&gt;**](AutoTestIdModel.md) |  | [optional] 
-**Id** | **Guid** |  | [optional] 
+**Id** | **Guid** |  | 
 **SectionId** | **Guid** |  | [optional] 
 **Description** | **string** |  | [optional] 
 **State** | **WorkItemStates** |  | 

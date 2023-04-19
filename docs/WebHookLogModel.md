@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **WebHookName** | **string** |  | [optional] 
-**EventType** | **WebHookEventTypeModel** |  | [optional] 
+**EventType** | **WebHookEventTypeModel** |  | 
 **WebHookId** | **Guid** |  | [optional] 
 **RequestBody** | **string** |  | [optional] 
 **RequestMeta** | **string** |  | [optional] 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **ResponseMeta** | **string** |  | [optional] 
 **ProjectId** | **Guid** |  | [optional] 
 **Url** | **string** |  | [optional] 
-**RequestType** | **RequestTypeModel** |  | [optional] 
+**RequestType** | **RequestTypeModel** |  | 
 **CreatedDate** | **DateTime?** |  | [optional] 
 **ModifiedDate** | **DateTime?** |  | [optional] 
 **CreatedById** | **Guid** |  | [optional] 

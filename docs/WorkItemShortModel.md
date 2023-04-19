@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **EntityTypeName** | **string** | Property can have one of these values: CheckLists, SharedSteps, TestCases | 
 **ProjectId** | **Guid** | This property is used to link autotest with project | 
 **SectionId** | **Guid** | This property links workitem with section | 
+**SectionName** | **string** | Name of the section where work item is located | 
 **IsAutomated** | **bool** |  | [optional] 
 **GlobalId** | **long** |  | [optional] 
 **Duration** | **int** |  | [optional] 

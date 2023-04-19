@@ -35,9 +35,19 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemIdModel" /> class.
         /// </summary>
-        /// <param name="id">Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format.</param>
+        [JsonConstructorAttribute]
+        protected WorkItemIdModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkItemIdModel" /> class.
+        /// </summary>
+        /// <param name="id">Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format (required).</param>
         public WorkItemIdModel(string id = default(string))
         {
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for WorkItemIdModel and cannot be null");
+            }
             this.Id = id;
         }
 
@@ -45,7 +55,7 @@ namespace TestIt.Client.Model
         /// Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format
         /// </summary>
         /// <value>Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format</value>
-        [DataMember(Name = "id", EmitDefaultValue = true)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
@@ -123,6 +133,12 @@ namespace TestIt.Client.Model
         /// <returns>Validation Result</returns>
         public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
+            // Id (string) minLength
+            if (this.Id != null && this.Id.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Id, length must be greater than 1.", new [] { "Id" });
+            }
+
             yield break;
         }
     }

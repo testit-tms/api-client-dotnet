@@ -36,8 +36,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets StateName
         /// </summary>
-        [DataMember(Name = "stateName", EmitDefaultValue = false)]
-        public TestRunState? StateName { get; set; }
+        [DataMember(Name = "stateName", IsRequired = true, EmitDefaultValue = true)]
+        public TestRunState StateName { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestRunModel" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected TestRunModel() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="TestRunModel" /> class.
         /// </summary>
@@ -57,7 +62,7 @@ namespace TestIt.Client.Model
         /// <param name="completedDate">completedDate.</param>
         /// <param name="build">build.</param>
         /// <param name="description">description.</param>
-        /// <param name="stateName">stateName.</param>
+        /// <param name="stateName">stateName (required).</param>
         /// <param name="projectId">projectId.</param>
         /// <param name="testPlanId">testPlanId.</param>
         /// <param name="runByUserId">runByUserId.</param>
@@ -66,8 +71,9 @@ namespace TestIt.Client.Model
         /// <param name="launchSource">launchSource.</param>
         /// <param name="id">Unique ID of the entity.</param>
         /// <param name="isDeleted">Indicates if the entity is deleted.</param>
-        public TestRunModel(List<AutoTestModel> autoTests = default(List<AutoTestModel>), int autoTestsCount = default(int), List<Guid> testSuiteIds = default(List<Guid>), bool isAutomated = default(bool), TestRunAnalyticResultModel analytic = default(TestRunAnalyticResultModel), List<TestResultModel> testResults = default(List<TestResultModel>), TestPlanModel testPlan = default(TestPlanModel), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string createdByUserName = default(string), DateTime? startedDate = default(DateTime?), DateTime? completedDate = default(DateTime?), string build = default(string), string description = default(string), TestRunState? stateName = default(TestRunState?), Guid projectId = default(Guid), Guid? testPlanId = default(Guid?), Guid? runByUserId = default(Guid?), Guid? stoppedByUserId = default(Guid?), string name = default(string), string launchSource = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
+        public TestRunModel(List<AutoTestModel> autoTests = default(List<AutoTestModel>), int autoTestsCount = default(int), List<Guid> testSuiteIds = default(List<Guid>), bool isAutomated = default(bool), TestRunAnalyticResultModel analytic = default(TestRunAnalyticResultModel), List<TestResultModel> testResults = default(List<TestResultModel>), TestPlanModel testPlan = default(TestPlanModel), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string createdByUserName = default(string), DateTime? startedDate = default(DateTime?), DateTime? completedDate = default(DateTime?), string build = default(string), string description = default(string), TestRunState stateName = default(TestRunState), Guid projectId = default(Guid), Guid? testPlanId = default(Guid?), Guid? runByUserId = default(Guid?), Guid? stoppedByUserId = default(Guid?), string name = default(string), string launchSource = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
         {
+            this.StateName = stateName;
             this.AutoTests = autoTests;
             this.AutoTestsCount = autoTestsCount;
             this.TestSuiteIds = testSuiteIds;
@@ -84,7 +90,6 @@ namespace TestIt.Client.Model
             this.CompletedDate = completedDate;
             this.Build = build;
             this.Description = description;
-            this.StateName = stateName;
             this.ProjectId = projectId;
             this.TestPlanId = testPlanId;
             this.RunByUserId = runByUserId;

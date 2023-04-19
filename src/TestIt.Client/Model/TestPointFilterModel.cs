@@ -35,6 +35,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPointFilterModel" /> class.
         /// </summary>
+        /// <param name="testPlanIds">Specifies a test point test plan IDS to search for.</param>
         /// <param name="testSuiteIds">Specifies a test point test suite IDs to search for.</param>
         /// <param name="workItemGlobalIds">Specifies a test point work item global IDs to search for.</param>
         /// <param name="statuses">Specifies a test point statuses to search for.</param>
@@ -51,8 +52,9 @@ namespace TestIt.Client.Model
         /// <param name="modifiedByIds">Specifies a test point last editor IDs to search for.</param>
         /// <param name="tags">Specifies a test point tags to search for.</param>
         /// <param name="attributes">Specifies a test point attributes to search for.</param>
-        public TestPointFilterModel(List<Guid> testSuiteIds = default(List<Guid>), List<long> workItemGlobalIds = default(List<long>), List<TestPointStatus> statuses = default(List<TestPointStatus>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), bool? isAutomated = default(bool?), string name = default(string), List<Guid> configurationIds = default(List<Guid>), List<Guid> testerIds = default(List<Guid>), Int64RangeSelectorModel duration = default(Int64RangeSelectorModel), List<Guid> sectionIds = default(List<Guid>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), List<Guid> modifiedByIds = default(List<Guid>), List<string> tags = default(List<string>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>))
+        public TestPointFilterModel(List<Guid> testPlanIds = default(List<Guid>), List<Guid> testSuiteIds = default(List<Guid>), List<long> workItemGlobalIds = default(List<long>), List<TestPointStatus> statuses = default(List<TestPointStatus>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), bool? isAutomated = default(bool?), string name = default(string), List<Guid> configurationIds = default(List<Guid>), List<Guid> testerIds = default(List<Guid>), Int64RangeSelectorModel duration = default(Int64RangeSelectorModel), List<Guid> sectionIds = default(List<Guid>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), List<Guid> modifiedByIds = default(List<Guid>), List<string> tags = default(List<string>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>))
         {
+            this.TestPlanIds = testPlanIds;
             this.TestSuiteIds = testSuiteIds;
             this.WorkItemGlobalIds = workItemGlobalIds;
             this.Statuses = statuses;
@@ -70,6 +72,13 @@ namespace TestIt.Client.Model
             this.Tags = tags;
             this.Attributes = attributes;
         }
+
+        /// <summary>
+        /// Specifies a test point test plan IDS to search for
+        /// </summary>
+        /// <value>Specifies a test point test plan IDS to search for</value>
+        [DataMember(Name = "testPlanIds", EmitDefaultValue = true)]
+        public List<Guid> TestPlanIds { get; set; }
 
         /// <summary>
         /// Specifies a test point test suite IDs to search for
@@ -188,6 +197,7 @@ namespace TestIt.Client.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class TestPointFilterModel {\n");
+            sb.Append("  TestPlanIds: ").Append(TestPlanIds).Append("\n");
             sb.Append("  TestSuiteIds: ").Append(TestSuiteIds).Append("\n");
             sb.Append("  WorkItemGlobalIds: ").Append(WorkItemGlobalIds).Append("\n");
             sb.Append("  Statuses: ").Append(Statuses).Append("\n");
@@ -239,6 +249,12 @@ namespace TestIt.Client.Model
                 return false;
             }
             return 
+                (
+                    this.TestPlanIds == input.TestPlanIds ||
+                    this.TestPlanIds != null &&
+                    input.TestPlanIds != null &&
+                    this.TestPlanIds.SequenceEqual(input.TestPlanIds)
+                ) && 
                 (
                     this.TestSuiteIds == input.TestSuiteIds ||
                     this.TestSuiteIds != null &&
@@ -341,6 +357,10 @@ namespace TestIt.Client.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.TestPlanIds != null)
+                {
+                    hashCode = (hashCode * 59) + this.TestPlanIds.GetHashCode();
+                }
                 if (this.TestSuiteIds != null)
                 {
                     hashCode = (hashCode * 59) + this.TestSuiteIds.GetHashCode();

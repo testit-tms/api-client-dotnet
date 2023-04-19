@@ -36,8 +36,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Outcome
         /// </summary>
-        [DataMember(Name = "outcome", EmitDefaultValue = false)]
-        public TestResultOutcome? Outcome { get; set; }
+        [DataMember(Name = "outcome", IsRequired = true, EmitDefaultValue = true)]
+        public TestResultOutcome Outcome { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestResultShortGetModel" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected TestResultShortGetModel() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="TestResultShortGetModel" /> class.
         /// </summary>
@@ -47,22 +52,22 @@ namespace TestIt.Client.Model
         /// <param name="testRunId">Unique ID of test run where test result is located.</param>
         /// <param name="configurationId">Unique ID of configuration which test result uses.</param>
         /// <param name="configurationName">Name of configuration which test result uses.</param>
-        /// <param name="outcome">outcome.</param>
+        /// <param name="outcome">outcome (required).</param>
         /// <param name="resultReasons">Collection of result reasons which test result have.</param>
         /// <param name="comment">Comment to test result.</param>
         /// <param name="date">Date when test result has been set.</param>
         /// <param name="duration">Time which it took to run the test.</param>
         /// <param name="links">Collection of links attached to test result.</param>
         /// <param name="attachments">Collection of files attached to test result.</param>
-        public TestResultShortGetModel(Guid id = default(Guid), string name = default(string), long autotestGlobalId = default(long), Guid testRunId = default(Guid), Guid configurationId = default(Guid), string configurationName = default(string), TestResultOutcome? outcome = default(TestResultOutcome?), List<AutotestResultReasonSubGetModel> resultReasons = default(List<AutotestResultReasonSubGetModel>), string comment = default(string), DateTime date = default(DateTime), long? duration = default(long?), List<LinkSubGetModel> links = default(List<LinkSubGetModel>), List<AttachmentSubGetModel> attachments = default(List<AttachmentSubGetModel>))
+        public TestResultShortGetModel(Guid id = default(Guid), string name = default(string), long autotestGlobalId = default(long), Guid testRunId = default(Guid), Guid configurationId = default(Guid), string configurationName = default(string), TestResultOutcome outcome = default(TestResultOutcome), List<AutotestResultReasonSubGetModel> resultReasons = default(List<AutotestResultReasonSubGetModel>), string comment = default(string), DateTime date = default(DateTime), long? duration = default(long?), List<LinkSubGetModel> links = default(List<LinkSubGetModel>), List<AttachmentSubGetModel> attachments = default(List<AttachmentSubGetModel>))
         {
+            this.Outcome = outcome;
             this.Id = id;
             this.Name = name;
             this.AutotestGlobalId = autotestGlobalId;
             this.TestRunId = testRunId;
             this.ConfigurationId = configurationId;
             this.ConfigurationName = configurationName;
-            this.Outcome = outcome;
             this.ResultReasons = resultReasons;
             this.Comment = comment;
             this.Date = date;

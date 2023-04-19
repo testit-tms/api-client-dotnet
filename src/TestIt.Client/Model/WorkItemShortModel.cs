@@ -58,6 +58,7 @@ namespace TestIt.Client.Model
         /// <param name="entityTypeName">Property can have one of these values: CheckLists, SharedSteps, TestCases (required).</param>
         /// <param name="projectId">This property is used to link autotest with project (required).</param>
         /// <param name="sectionId">This property links workitem with section (required).</param>
+        /// <param name="sectionName">Name of the section where work item is located (required).</param>
         /// <param name="isAutomated">isAutomated.</param>
         /// <param name="globalId">globalId.</param>
         /// <param name="duration">duration.</param>
@@ -71,7 +72,7 @@ namespace TestIt.Client.Model
         /// <param name="isDeleted">isDeleted.</param>
         /// <param name="tagNames">tagNames.</param>
         /// <param name="iterations">iterations.</param>
-        public WorkItemShortModel(Guid id = default(Guid), Guid versionId = default(Guid), string name = default(string), string entityTypeName = default(string), Guid projectId = default(Guid), Guid sectionId = default(Guid), bool isAutomated = default(bool), long globalId = default(long), int duration = default(int), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), WorkItemStates state = default(WorkItemStates), WorkItemPriorityModel priority = default(WorkItemPriorityModel), bool isDeleted = default(bool), List<string> tagNames = default(List<string>), List<IterationModel> iterations = default(List<IterationModel>))
+        public WorkItemShortModel(Guid id = default(Guid), Guid versionId = default(Guid), string name = default(string), string entityTypeName = default(string), Guid projectId = default(Guid), Guid sectionId = default(Guid), string sectionName = default(string), bool isAutomated = default(bool), long globalId = default(long), int duration = default(int), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), WorkItemStates state = default(WorkItemStates), WorkItemPriorityModel priority = default(WorkItemPriorityModel), bool isDeleted = default(bool), List<string> tagNames = default(List<string>), List<IterationModel> iterations = default(List<IterationModel>))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -87,6 +88,12 @@ namespace TestIt.Client.Model
             this.EntityTypeName = entityTypeName;
             this.ProjectId = projectId;
             this.SectionId = sectionId;
+            // to ensure "sectionName" is required (not null)
+            if (sectionName == null)
+            {
+                throw new ArgumentNullException("sectionName is a required property for WorkItemShortModel and cannot be null");
+            }
+            this.SectionName = sectionName;
             this.State = state;
             this.Priority = priority;
             this.Id = id;
@@ -143,6 +150,13 @@ namespace TestIt.Client.Model
         /// <value>This property links workitem with section</value>
         [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid SectionId { get; set; }
+
+        /// <summary>
+        /// Name of the section where work item is located
+        /// </summary>
+        /// <value>Name of the section where work item is located</value>
+        [DataMember(Name = "sectionName", IsRequired = true, EmitDefaultValue = true)]
+        public string SectionName { get; set; }
 
         /// <summary>
         /// Gets or Sets IsAutomated
@@ -224,6 +238,7 @@ namespace TestIt.Client.Model
             sb.Append("  EntityTypeName: ").Append(EntityTypeName).Append("\n");
             sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
             sb.Append("  SectionId: ").Append(SectionId).Append("\n");
+            sb.Append("  SectionName: ").Append(SectionName).Append("\n");
             sb.Append("  IsAutomated: ").Append(IsAutomated).Append("\n");
             sb.Append("  GlobalId: ").Append(GlobalId).Append("\n");
             sb.Append("  Duration: ").Append(Duration).Append("\n");
@@ -301,6 +316,11 @@ namespace TestIt.Client.Model
                     this.SectionId == input.SectionId ||
                     (this.SectionId != null &&
                     this.SectionId.Equals(input.SectionId))
+                ) && 
+                (
+                    this.SectionName == input.SectionName ||
+                    (this.SectionName != null &&
+                    this.SectionName.Equals(input.SectionName))
                 ) && 
                 (
                     this.IsAutomated == input.IsAutomated ||
@@ -399,6 +419,10 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.SectionId.GetHashCode();
                 }
+                if (this.SectionName != null)
+                {
+                    hashCode = (hashCode * 59) + this.SectionName.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.IsAutomated.GetHashCode();
                 hashCode = (hashCode * 59) + this.GlobalId.GetHashCode();
                 hashCode = (hashCode * 59) + this.Duration.GetHashCode();
@@ -444,6 +468,24 @@ namespace TestIt.Client.Model
         /// <returns>Validation Result</returns>
         public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
+            // Name (string) minLength
+            if (this.Name != null && this.Name.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+            }
+
+            // EntityTypeName (string) minLength
+            if (this.EntityTypeName != null && this.EntityTypeName.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EntityTypeName, length must be greater than 1.", new [] { "EntityTypeName" });
+            }
+
+            // SectionName (string) minLength
+            if (this.SectionName != null && this.SectionName.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SectionName, length must be greater than 1.", new [] { "SectionName" });
+            }
+
             yield break;
         }
     }

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Traces** | **string** | An extended comment or a stack trace. | [optional] 
 **StartedOn** | **DateTime?** | Test run start date. | [optional] 
 **CompletedOn** | **DateTime?** | Test run end date. | [optional] 
-**Duration** | **long?** | Expected or actual duration of the test run execution in seconds. | [optional] 
+**Duration** | **long?** | Expected or actual duration of the test run execution in milliseconds. | [optional] 
 **Attachments** | [**List&lt;AttachmentPutModel&gt;**](AttachmentPutModel.md) | Specifies an attachment GUID. Multiple values can be sent. | [optional] 
 **Parameters** | **Dictionary&lt;string, string&gt;** | \&quot;&lt;b&gt;parameter&lt;/b&gt;\&quot;: \&quot;&lt;b&gt;value&lt;/b&gt;\&quot; pair with arbitrary custom parameters. Multiple parameters can be sent. | [optional] 
 **Properties** | **Dictionary&lt;string, string&gt;** | \&quot;&lt;b&gt;property&lt;/b&gt;\&quot;: \&quot;&lt;b&gt;value&lt;/b&gt;\&quot; pair with arbitrary custom properties. Multiple properties can be sent. | [optional] 

@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **CreatedDate** | **DateTime?** |  | [optional] 
 **ModifiedDate** | **DateTime?** |  | [optional] 
 **State** | **string** |  | [optional] 
-**Priority** | **WorkItemPriorityModel** |  | [optional] 
+**Priority** | **WorkItemPriorityModel** |  | 
 **IsDeleted** | **bool** |  | [optional] 
 **VersionId** | **Guid** | used for versioning changes in workitem | [optional] 
 **IsAutomated** | **bool** |  | [optional] 

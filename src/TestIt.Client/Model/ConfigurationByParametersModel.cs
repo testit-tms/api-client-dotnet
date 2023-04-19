@@ -35,12 +35,22 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConfigurationByParametersModel" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected ConfigurationByParametersModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConfigurationByParametersModel" /> class.
+        /// </summary>
         /// <param name="projectId">This property is used to link configuration with project.</param>
-        /// <param name="parameterIds">parameterIds.</param>
+        /// <param name="parameterIds">parameterIds (required).</param>
         public ConfigurationByParametersModel(Guid projectId = default(Guid), List<Guid> parameterIds = default(List<Guid>))
         {
-            this.ProjectId = projectId;
+            // to ensure "parameterIds" is required (not null)
+            if (parameterIds == null)
+            {
+                throw new ArgumentNullException("parameterIds is a required property for ConfigurationByParametersModel and cannot be null");
+            }
             this.ParameterIds = parameterIds;
+            this.ProjectId = projectId;
         }
 
         /// <summary>
@@ -53,7 +63,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets ParameterIds
         /// </summary>
-        [DataMember(Name = "parameterIds", EmitDefaultValue = true)]
+        [DataMember(Name = "parameterIds", IsRequired = true, EmitDefaultValue = true)]
         public List<Guid> ParameterIds { get; set; }
 
         /// <summary>

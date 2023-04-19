@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestPlanSearchQueryModel
+# TestIt.Client.Model.ProjectTestPlansFilterModel
 
 ## Properties
 
@@ -11,12 +11,12 @@ Name | Type | Description | Notes
 **Status** | [**List&lt;TestPlanStatusModel&gt;**](TestPlanStatusModel.md) |  | [optional] 
 **GlobalIds** | **List&lt;long&gt;** |  | [optional] 
 **IsLocked** | **bool?** |  | [optional] 
-**LockedDate** | [**DateRangeModel**](DateRangeModel.md) |  | [optional] 
+**LockedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) |  | [optional] 
 **AutomaticDurationTimer** | **List&lt;bool&gt;** |  | [optional] 
 **CreatedByIds** | **List&lt;Guid&gt;** |  | [optional] 
-**CreatedDate** | [**DateRangeModel**](DateRangeModel.md) |  | [optional] 
-**StartDate** | [**DateRangeModel**](DateRangeModel.md) |  | [optional] 
-**EndDate** | [**DateRangeModel**](DateRangeModel.md) |  | [optional] 
+**CreatedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) |  | [optional] 
+**StartDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) |  | [optional] 
+**EndDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) |  | [optional] 
 **TagNames** | **List&lt;string&gt;** |  | [optional] 
 **Attributes** | [**Dictionary&lt;string, List&lt;string&gt;&gt;**](Set.md) |  | [optional] 
 **IsDeleted** | **bool?** |  | [optional] 

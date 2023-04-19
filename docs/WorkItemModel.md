@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **CreatedById** | **Guid** |  | [optional] 
 **ModifiedById** | **Guid?** |  | [optional] 
 **GlobalId** | **long** |  | [optional] 
-**Id** | **Guid** |  | [optional] 
+**Id** | **Guid** |  | 
 **SectionId** | **Guid** |  | [optional] 
 **Description** | **string** |  | [optional] 
 **State** | **WorkItemStates** |  | 

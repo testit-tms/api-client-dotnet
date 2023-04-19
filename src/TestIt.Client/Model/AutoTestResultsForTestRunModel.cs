@@ -55,7 +55,7 @@ namespace TestIt.Client.Model
         /// <param name="traces">An extended comment or a stack trace..</param>
         /// <param name="startedOn">Test run start date..</param>
         /// <param name="completedOn">Test run end date..</param>
-        /// <param name="duration">Expected or actual duration of the test run execution in seconds..</param>
+        /// <param name="duration">Expected or actual duration of the test run execution in milliseconds..</param>
         /// <param name="attachments">Specifies an attachment GUID. Multiple values can be sent..</param>
         /// <param name="parameters">\&quot;&lt;b&gt;parameter&lt;/b&gt;\&quot;: \&quot;&lt;b&gt;value&lt;/b&gt;\&quot; pair with arbitrary custom parameters. Multiple parameters can be sent..</param>
         /// <param name="properties">\&quot;&lt;b&gt;property&lt;/b&gt;\&quot;: \&quot;&lt;b&gt;value&lt;/b&gt;\&quot; pair with arbitrary custom properties. Multiple properties can be sent..</param>
@@ -144,9 +144,9 @@ namespace TestIt.Client.Model
         public DateTime? CompletedOn { get; set; }
 
         /// <summary>
-        /// Expected or actual duration of the test run execution in seconds.
+        /// Expected or actual duration of the test run execution in milliseconds.
         /// </summary>
-        /// <value>Expected or actual duration of the test run execution in seconds.</value>
+        /// <value>Expected or actual duration of the test run execution in milliseconds.</value>
         [DataMember(Name = "duration", EmitDefaultValue = true)]
         public long? Duration { get; set; }
 
@@ -421,6 +421,12 @@ namespace TestIt.Client.Model
         /// <returns>Validation Result</returns>
         public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
+            // AutoTestExternalId (string) minLength
+            if (this.AutoTestExternalId != null && this.AutoTestExternalId.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AutoTestExternalId, length must be greater than 1.", new [] { "AutoTestExternalId" });
+            }
+
             // Duration (long?) minimum
             if (this.Duration < (long?)0)
             {

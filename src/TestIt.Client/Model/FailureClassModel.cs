@@ -36,13 +36,18 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets FailureCategory
         /// </summary>
-        [DataMember(Name = "failureCategory", EmitDefaultValue = false)]
-        public FailureCategoryModel? FailureCategory { get; set; }
+        [DataMember(Name = "failureCategory", IsRequired = true, EmitDefaultValue = true)]
+        public FailureCategoryModel FailureCategory { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FailureClassModel" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected FailureClassModel() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FailureClassModel" /> class.
         /// </summary>
         /// <param name="name">name.</param>
-        /// <param name="failureCategory">failureCategory.</param>
+        /// <param name="failureCategory">failureCategory (required).</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="modifiedDate">modifiedDate.</param>
         /// <param name="createdById">createdById.</param>
@@ -50,10 +55,10 @@ namespace TestIt.Client.Model
         /// <param name="failureClassRegexes">failureClassRegexes.</param>
         /// <param name="id">Unique ID of the entity.</param>
         /// <param name="isDeleted">Indicates if the entity is deleted.</param>
-        public FailureClassModel(string name = default(string), FailureCategoryModel? failureCategory = default(FailureCategoryModel?), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), List<FailureClassRegexModel> failureClassRegexes = default(List<FailureClassRegexModel>), Guid id = default(Guid), bool isDeleted = default(bool))
+        public FailureClassModel(string name = default(string), FailureCategoryModel failureCategory = default(FailureCategoryModel), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), List<FailureClassRegexModel> failureClassRegexes = default(List<FailureClassRegexModel>), Guid id = default(Guid), bool isDeleted = default(bool))
         {
-            this.Name = name;
             this.FailureCategory = failureCategory;
+            this.Name = name;
             this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
             this.CreatedById = createdById;

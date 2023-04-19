@@ -36,8 +36,8 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
-        public TestPlanStatusModel? Status { get; set; }
+        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
+        public TestPlanStatusModel Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPlanWithAnalyticModel" /> class.
         /// </summary>
@@ -47,7 +47,7 @@ namespace TestIt.Client.Model
         /// Initializes a new instance of the <see cref="TestPlanWithAnalyticModel" /> class.
         /// </summary>
         /// <param name="analytic">analytic.</param>
-        /// <param name="status">status.</param>
+        /// <param name="status">status (required).</param>
         /// <param name="startedOn">Set when test plan is starter (status changed to: In Progress).</param>
         /// <param name="completedOn">set when test plan status is completed (status changed to: Completed).</param>
         /// <param name="createdDate">createdDate.</param>
@@ -69,8 +69,9 @@ namespace TestIt.Client.Model
         /// <param name="productName">productName.</param>
         /// <param name="hasAutomaticDurationTimer">hasAutomaticDurationTimer.</param>
         /// <param name="attributes">attributes.</param>
-        public TestPlanWithAnalyticModel(TestPointAnalyticResult analytic = default(TestPointAnalyticResult), TestPlanStatusModel? status = default(TestPlanStatusModel?), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), bool isDeleted = default(bool), DateTime? lockedDate = default(DateTime?), Guid id = default(Guid), Guid? lockedById = default(Guid?), List<TagShortModel> tags = default(List<TagShortModel>), string name = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string description = default(string), string build = default(string), Guid projectId = default(Guid), string productName = default(string), bool? hasAutomaticDurationTimer = default(bool?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>))
+        public TestPlanWithAnalyticModel(TestPointAnalyticResult analytic = default(TestPointAnalyticResult), TestPlanStatusModel status = default(TestPlanStatusModel), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), bool isDeleted = default(bool), DateTime? lockedDate = default(DateTime?), Guid id = default(Guid), Guid? lockedById = default(Guid?), List<TagShortModel> tags = default(List<TagShortModel>), string name = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string description = default(string), string build = default(string), Guid projectId = default(Guid), string productName = default(string), bool? hasAutomaticDurationTimer = default(bool?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>))
         {
+            this.Status = status;
             this.Id = id;
             // to ensure "name" is required (not null)
             if (name == null)
@@ -80,7 +81,6 @@ namespace TestIt.Client.Model
             this.Name = name;
             this.ProjectId = projectId;
             this.Analytic = analytic;
-            this.Status = status;
             this.StartedOn = startedOn;
             this.CompletedOn = completedOn;
             this.CreatedDate = createdDate;
@@ -536,9 +536,9 @@ namespace TestIt.Client.Model
             }
 
             // Description (string) maxLength
-            if (this.Description != null && this.Description.Length > 999)
+            if (this.Description != null && this.Description.Length > 100000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Description, length must be less than 999.", new [] { "Description" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Description, length must be less than 100000.", new [] { "Description" });
             }
 
             // Description (string) minLength

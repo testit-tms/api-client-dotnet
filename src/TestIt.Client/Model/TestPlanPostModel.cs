@@ -311,9 +311,9 @@ namespace TestIt.Client.Model
             }
 
             // Description (string) maxLength
-            if (this.Description != null && this.Description.Length > 999)
+            if (this.Description != null && this.Description.Length > 100000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Description, length must be less than 999.", new [] { "Description" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Description, length must be less than 100000.", new [] { "Description" });
             }
 
             // Description (string) minLength

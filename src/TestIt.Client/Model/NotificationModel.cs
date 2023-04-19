@@ -36,8 +36,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets NotificationType
         /// </summary>
-        [DataMember(Name = "notificationType", EmitDefaultValue = false)]
-        public NotificationTypeModel? NotificationType { get; set; }
+        [DataMember(Name = "notificationType", IsRequired = true, EmitDefaultValue = true)]
+        public NotificationTypeModel NotificationType { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NotificationModel" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected NotificationModel() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="NotificationModel" /> class.
         /// </summary>
@@ -45,7 +50,7 @@ namespace TestIt.Client.Model
         /// <param name="createdDate">createdDate.</param>
         /// <param name="isRead">isRead.</param>
         /// <param name="entityId">entityId.</param>
-        /// <param name="notificationType">notificationType.</param>
+        /// <param name="notificationType">notificationType (required).</param>
         /// <param name="projectGlobalId">projectGlobalId.</param>
         /// <param name="projectName">projectName.</param>
         /// <param name="testPlanGlobalId">testPlanGlobalId.</param>
@@ -55,13 +60,13 @@ namespace TestIt.Client.Model
         /// <param name="workItemName">workItemName.</param>
         /// <param name="attributeName">attributeName.</param>
         /// <param name="createdById">createdById.</param>
-        public NotificationModel(Guid id = default(Guid), DateTime? createdDate = default(DateTime?), bool isRead = default(bool), Guid entityId = default(Guid), NotificationTypeModel? notificationType = default(NotificationTypeModel?), long? projectGlobalId = default(long?), string projectName = default(string), long testPlanGlobalId = default(long), string testPlanName = default(string), long? workitemGlobalId = default(long?), string comment = default(string), string workItemName = default(string), string attributeName = default(string), Guid createdById = default(Guid))
+        public NotificationModel(Guid id = default(Guid), DateTime? createdDate = default(DateTime?), bool isRead = default(bool), Guid entityId = default(Guid), NotificationTypeModel notificationType = default(NotificationTypeModel), long? projectGlobalId = default(long?), string projectName = default(string), long testPlanGlobalId = default(long), string testPlanName = default(string), long? workitemGlobalId = default(long?), string comment = default(string), string workItemName = default(string), string attributeName = default(string), Guid createdById = default(Guid))
         {
+            this.NotificationType = notificationType;
             this.Id = id;
             this.CreatedDate = createdDate;
             this.IsRead = isRead;
             this.EntityId = entityId;
-            this.NotificationType = notificationType;
             this.ProjectGlobalId = projectGlobalId;
             this.ProjectName = projectName;
             this.TestPlanGlobalId = testPlanGlobalId;

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **StartedOn** | **DateTime?** |  | [optional] 
 **CompletedOn** | **DateTime?** |  | [optional] 
-**StateName** | **TestRunState** |  | [optional] 
+**StateName** | **TestRunState** |  | 
 **ProjectId** | **Guid** | This property is used to link test run with project | [optional] 
 **TestPlanId** | **Guid?** | This property is used to link test run with test plan | [optional] 
 **TestResults** | [**List&lt;TestResultV2GetModel&gt;**](TestResultV2GetModel.md) |  | [optional] 

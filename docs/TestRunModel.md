@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **CompletedDate** | **DateTime?** |  | [optional] 
 **Build** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 
-**StateName** | **TestRunState** |  | [optional] 
+**StateName** | **TestRunState** |  | 
 **ProjectId** | **Guid** |  | [optional] 
 **TestPlanId** | **Guid?** |  | [optional] 
 **RunByUserId** | **Guid?** |  | [optional] 

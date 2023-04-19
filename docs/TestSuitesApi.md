@@ -5,6 +5,8 @@ All URIs are relative to *http://localhost*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**AddTestPointsToTestSuite**](TestSuitesApi.md#addtestpointstotestsuite) | **POST** /api/v2/testSuites/{id}/test-points | Add test-points to test suite |
+| [**ApiV2TestSuitesIdPatch**](TestSuitesApi.md#apiv2testsuitesidpatch) | **PATCH** /api/v2/testSuites/{id} | Patch test suite |
+| [**ApiV2TestSuitesIdRefreshPost**](TestSuitesApi.md#apiv2testsuitesidrefreshpost) | **POST** /api/v2/testSuites/{id}/refresh | Refresh test suite. Only dynamic test suites are supported by this method |
 | [**CreateTestSuite**](TestSuitesApi.md#createtestsuite) | **POST** /api/v2/testSuites | Create TestSuite |
 | [**DeleteTestSuite**](TestSuitesApi.md#deletetestsuite) | **DELETE** /api/v2/testSuites/{id} | Delete TestSuite |
 | [**GetConfigurationsByTestSuiteId**](TestSuitesApi.md#getconfigurationsbytestsuiteid) | **GET** /api/v2/testSuites/{id}/configurations | Get Configurations By Id |
@@ -109,12 +111,206 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Test suite with provided ID was not found |  -  |
 | **204** | Successful operation |  -  |
-| **422** | Shared steps cannot be added to test suite |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan is required |  -  |
+| **404** | Test suite with provided ID was not found |  -  |
+| **422** | Shared steps cannot be added to test suite |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="apiv2testsuitesidpatch"></a>
+# **ApiV2TestSuitesIdPatch**
+> void ApiV2TestSuitesIdPatch (Guid id, List<Operation> operation = null)
+
+Patch test suite
+
+See <a href=\"https://www.rfc-editor.org/rfc/rfc6902\" target=\"_blank\">RFC 6902: JavaScript Object Notation (JSON) Patch</a> for details
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2TestSuitesIdPatchExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Test Suite internal (UUID) identifier
+            var operation = new List<Operation>(); // List<Operation> |  (optional) 
+
+            try
+            {
+                // Patch test suite
+                apiInstance.ApiV2TestSuitesIdPatch(id, operation);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TestSuitesApi.ApiV2TestSuitesIdPatch: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2TestSuitesIdPatchWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Patch test suite
+    apiInstance.ApiV2TestSuitesIdPatchWithHttpInfo(id, operation);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TestSuitesApi.ApiV2TestSuitesIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** | Test Suite internal (UUID) identifier |  |
+| **operation** | [**List&lt;Operation&gt;**](Operation.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **403** | Update permission for test suite is required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="apiv2testsuitesidrefreshpost"></a>
+# **ApiV2TestSuitesIdRefreshPost**
+> void ApiV2TestSuitesIdRefreshPost (Guid id)
+
+Refresh test suite. Only dynamic test suites are supported by this method
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2TestSuitesIdRefreshPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Test Suite internal (UUID) identifier
+
+            try
+            {
+                // Refresh test suite. Only dynamic test suites are supported by this method
+                apiInstance.ApiV2TestSuitesIdRefreshPost(id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TestSuitesApi.ApiV2TestSuitesIdRefreshPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2TestSuitesIdRefreshPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Refresh test suite. Only dynamic test suites are supported by this method
+    apiInstance.ApiV2TestSuitesIdRefreshPostWithHttpInfo(id);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TestSuitesApi.ApiV2TestSuitesIdRefreshPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** | Test Suite internal (UUID) identifier |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **403** | Update permission for test suite is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -214,11 +410,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **401** | Unauthorized |  -  |
 | **404** | &lt;br&gt;Can&#39;t find a TestPlan with id  &lt;br&gt;Can&#39;t find a TestSuite with id |  -  |
+| **403** | Update permission for test plan required |  -  |
 | **201** | Successful operation |  -  |
 | **400** | &lt;br&gt;Field is required  &lt;br&gt;Suite with Id creates loop! |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Update permission for test plan required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -314,10 +510,10 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Successful operation |  -  |
-| **403** | Delete permission for test plan required |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Delete permission for test plan required |  -  |
 | **404** | &lt;br&gt;Can&#39;t find a TestSuite with id |  -  |
+| **204** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -417,10 +613,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for test plan required |  -  |
-| **200** | Successful operation |  -  |
 | **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
+| **403** | Read permission for test plan required |  -  |
 | **401** | Unauthorized |  -  |
+| **200** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -520,10 +716,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **401** | Unauthorized |  -  |
+| **403** | Read permission for test plan required |  -  |
 | **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
 | **200** | Successful operation |  -  |
-| **403** | Read permission for test plan required |  -  |
-| **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -726,10 +922,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
+| **403** | Read permission for test plan required |  -  |
 | **401** | Unauthorized |  -  |
 | **200** | Successful operation |  -  |
-| **403** | Read permission for test plan required |  -  |
-| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -839,10 +1035,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
-| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
-| **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
+| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -852,7 +1048,7 @@ catch (ApiException e)
 
 Search WorkItems
 
-<br>Use case  <br>User sets test suite identifier  <br>[Optional] User sets filter  <br>User runs method execution  <br>System search test suite by identifier  <br>System search test points related to the test suite  <br>System search workitems related to the test points  <br>                      [Optional] User sets filter, system applies filter                     <br>System returns workitems array
+<br>Use case  <br>User sets test suite identifier  <br>[Optional] User sets filter  <br>User runs method execution  <br>System search test suite by identifier  <br>System search test points related to the test suite  <br>System search work items related to the test points  <br>                      [Optional] User sets filter, system applies filter                     <br>System returns work items array
 
 ### Example
 ```csharp
@@ -954,11 +1150,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 | **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
-| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
+| **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1056,11 +1252,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Successful operation |  -  |
 | **404** | &lt;br&gt;Can&#39;t find a TestSuite with id |  -  |
+| **204** | Successful operation |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan required |  -  |
 | **400** | &lt;br&gt;Some of Configurations do not exist in the project, or they are not active |  -  |
-| **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1070,7 +1266,7 @@ void (empty response body)
 
 Set WorkItems By TestSuite Id
 
-<br>Use case  <br>User sets test suite identifier  <br>User sets collection of workitems identifiers  <br>User runs method execution  <br>System search test suite by identifier  <br>System search test points related to the test suite  <br>System search workitems  <br>System restores(if exist) or creates test points with listed workitems  <br>System returns no content response
+<br>Use case  <br>User sets test suite identifier  <br>User sets collection of work items identifiers  <br>User runs method execution  <br>System search test suite by identifier  <br>System search test points related to the test suite  <br>System search work items  <br>System restores(if exist) or creates test points with listed work items  <br>System returns no content response
 
 ### Example
 ```csharp
@@ -1099,7 +1295,7 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Test suite internal (guid format) identifier\"
-            var requestBody = new List<Guid>(); // List<Guid> | Collection of workitem identifiers\" (optional) 
+            var requestBody = new List<Guid>(); // List<Guid> | Collection of work item identifiers\" (optional) 
 
             try
             {
@@ -1139,7 +1335,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid** | Test suite internal (guid format) identifier\&quot; |  |
-| **requestBody** | [**List&lt;Guid&gt;**](Guid.md) | Collection of workitem identifiers\&quot; | [optional]  |
+| **requestBody** | [**List&lt;Guid&gt;**](Guid.md) | Collection of work item identifiers\&quot; | [optional]  |
 
 ### Return type
 
@@ -1159,11 +1355,11 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **403** | Update permission for test plan required |  -  |
-| **204** | Successful operation |  -  |
-| **400** | Bad Request |  -  |
-| **401** | Unauthorized |  -  |
 | **404** | &lt;br&gt;Can&#39;t find a TestSuite with id  &lt;br&gt;Some of WorkItems does not exist or deleted |  -  |
 | **422** | &lt;br&gt;can&#39;t put a SharedStep in the TestSuite  &lt;br&gt;ProjectId must be the same for TestSuites |  -  |
+| **400** | Bad Request |  -  |
+| **204** | Successful operation |  -  |
+| **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1259,11 +1455,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
-| **400** | &lt;br&gt;Field is required  &lt;br&gt;Suite with Id creates loop! |  -  |
-| **404** | &lt;br&gt;Can&#39;t find a TestPlan with id  &lt;br&gt;Can&#39;t find a TestSuite with id |  -  |
 | **403** | Update permission for test plan required |  -  |
 | **204** | Successful operation |  -  |
+| **400** | &lt;br&gt;Field is required  &lt;br&gt;Suite with Id creates loop! |  -  |
+| **401** | Unauthorized |  -  |
+| **404** | &lt;br&gt;Can&#39;t find a TestPlan with id  &lt;br&gt;Can&#39;t find a TestSuite with id |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

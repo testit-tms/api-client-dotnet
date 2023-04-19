@@ -46,7 +46,7 @@ namespace TestIt.Client.Model
         /// <param name="info">Extended description of the step result..</param>
         /// <param name="startedOn">Step start date..</param>
         /// <param name="completedOn">Step end date..</param>
-        /// <param name="duration">Expected or actual duration of the test run execution in seconds..</param>
+        /// <param name="duration">Expected or actual duration of the test run execution in milliseconds..</param>
         /// <param name="outcome">outcome.</param>
         /// <param name="stepResults">Nested step results. The maximum nesting level is 15..</param>
         /// <param name="attachments">/// &lt;summary&gt;  Specifies an attachment GUID. Multiple values can be sent.  &lt;/summary&gt;.</param>
@@ -101,9 +101,9 @@ namespace TestIt.Client.Model
         public DateTime? CompletedOn { get; set; }
 
         /// <summary>
-        /// Expected or actual duration of the test run execution in seconds.
+        /// Expected or actual duration of the test run execution in milliseconds.
         /// </summary>
-        /// <value>Expected or actual duration of the test run execution in seconds.</value>
+        /// <value>Expected or actual duration of the test run execution in milliseconds.</value>
         [DataMember(Name = "duration", EmitDefaultValue = true)]
         public long? Duration { get; set; }
 

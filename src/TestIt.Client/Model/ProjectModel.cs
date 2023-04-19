@@ -35,51 +35,69 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectModel" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected ProjectModel() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ProjectModel" /> class.
-        /// </summary>
+        /// <param name="id">Unique ID of the project.</param>
+        /// <param name="description">Description of the project.</param>
+        /// <param name="name">Name of the project.</param>
+        /// <param name="isFavorite">Indicates if the project is marked as favorite.</param>
         /// <param name="attributesScheme">Collection of the project attributes.</param>
         /// <param name="testPlansAttributesScheme">Collection of the project test plans attributes.</param>
         /// <param name="testCasesCount">Number of test cases in the project.</param>
         /// <param name="sharedStepsCount">Number of shared steps in the project.</param>
         /// <param name="checkListsCount">Number of checklists in the project.</param>
         /// <param name="autoTestsCount">Number of autotests in the project.</param>
-        /// <param name="isFavorite">Indicates if the project is marked as favorite.</param>
         /// <param name="isDeleted">Indicates if the project is deleted.</param>
         /// <param name="createdDate">Creation date of the project.</param>
         /// <param name="modifiedDate">Last modification date of the project.</param>
         /// <param name="createdById">Unique ID of the project creator.</param>
         /// <param name="modifiedById">Unique ID of the project last editor.</param>
         /// <param name="globalId">Global ID of the project.</param>
-        /// <param name="id">Unique ID of the project (required).</param>
-        /// <param name="description">Description of the project.</param>
-        /// <param name="name">Name of the project (required).</param>
-        public ProjectModel(List<CustomAttributeModel> attributesScheme = default(List<CustomAttributeModel>), List<CustomAttributeModel> testPlansAttributesScheme = default(List<CustomAttributeModel>), int? testCasesCount = default(int?), int? sharedStepsCount = default(int?), int? checkListsCount = default(int?), int? autoTestsCount = default(int?), bool isFavorite = default(bool), bool isDeleted = default(bool), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), Guid id = default(Guid), string description = default(string), string name = default(string))
+        public ProjectModel(Guid id = default(Guid), string description = default(string), string name = default(string), bool isFavorite = default(bool), List<CustomAttributeModel> attributesScheme = default(List<CustomAttributeModel>), List<CustomAttributeModel> testPlansAttributesScheme = default(List<CustomAttributeModel>), int? testCasesCount = default(int?), int? sharedStepsCount = default(int?), int? checkListsCount = default(int?), int? autoTestsCount = default(int?), bool isDeleted = default(bool), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long))
         {
             this.Id = id;
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for ProjectModel and cannot be null");
-            }
+            this.Description = description;
             this.Name = name;
+            this.IsFavorite = isFavorite;
             this.AttributesScheme = attributesScheme;
             this.TestPlansAttributesScheme = testPlansAttributesScheme;
             this.TestCasesCount = testCasesCount;
             this.SharedStepsCount = sharedStepsCount;
             this.CheckListsCount = checkListsCount;
             this.AutoTestsCount = autoTestsCount;
-            this.IsFavorite = isFavorite;
             this.IsDeleted = isDeleted;
             this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
             this.CreatedById = createdById;
             this.ModifiedById = modifiedById;
             this.GlobalId = globalId;
-            this.Description = description;
         }
+
+        /// <summary>
+        /// Unique ID of the project
+        /// </summary>
+        /// <value>Unique ID of the project</value>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public Guid Id { get; set; }
+
+        /// <summary>
+        /// Description of the project
+        /// </summary>
+        /// <value>Description of the project</value>
+        [DataMember(Name = "description", EmitDefaultValue = true)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Name of the project
+        /// </summary>
+        /// <value>Name of the project</value>
+        [DataMember(Name = "name", EmitDefaultValue = true)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Indicates if the project is marked as favorite
+        /// </summary>
+        /// <value>Indicates if the project is marked as favorite</value>
+        [DataMember(Name = "isFavorite", EmitDefaultValue = true)]
+        public bool IsFavorite { get; set; }
 
         /// <summary>
         /// Collection of the project attributes
@@ -124,13 +142,6 @@ namespace TestIt.Client.Model
         public int? AutoTestsCount { get; set; }
 
         /// <summary>
-        /// Indicates if the project is marked as favorite
-        /// </summary>
-        /// <value>Indicates if the project is marked as favorite</value>
-        [DataMember(Name = "isFavorite", EmitDefaultValue = true)]
-        public bool IsFavorite { get; set; }
-
-        /// <summary>
         /// Indicates if the project is deleted
         /// </summary>
         /// <value>Indicates if the project is deleted</value>
@@ -173,27 +184,6 @@ namespace TestIt.Client.Model
         public long GlobalId { get; set; }
 
         /// <summary>
-        /// Unique ID of the project
-        /// </summary>
-        /// <value>Unique ID of the project</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
-        public Guid Id { get; set; }
-
-        /// <summary>
-        /// Description of the project
-        /// </summary>
-        /// <value>Description of the project</value>
-        [DataMember(Name = "description", EmitDefaultValue = true)]
-        public string Description { get; set; }
-
-        /// <summary>
-        /// Name of the project
-        /// </summary>
-        /// <value>Name of the project</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
-        public string Name { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -201,22 +191,22 @@ namespace TestIt.Client.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class ProjectModel {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  IsFavorite: ").Append(IsFavorite).Append("\n");
             sb.Append("  AttributesScheme: ").Append(AttributesScheme).Append("\n");
             sb.Append("  TestPlansAttributesScheme: ").Append(TestPlansAttributesScheme).Append("\n");
             sb.Append("  TestCasesCount: ").Append(TestCasesCount).Append("\n");
             sb.Append("  SharedStepsCount: ").Append(SharedStepsCount).Append("\n");
             sb.Append("  CheckListsCount: ").Append(CheckListsCount).Append("\n");
             sb.Append("  AutoTestsCount: ").Append(AutoTestsCount).Append("\n");
-            sb.Append("  IsFavorite: ").Append(IsFavorite).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
             sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
             sb.Append("  ModifiedById: ").Append(ModifiedById).Append("\n");
             sb.Append("  GlobalId: ").Append(GlobalId).Append("\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -253,6 +243,25 @@ namespace TestIt.Client.Model
             }
             return 
                 (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.IsFavorite == input.IsFavorite ||
+                    this.IsFavorite.Equals(input.IsFavorite)
+                ) && 
+                (
                     this.AttributesScheme == input.AttributesScheme ||
                     this.AttributesScheme != null &&
                     input.AttributesScheme != null &&
@@ -285,10 +294,6 @@ namespace TestIt.Client.Model
                     this.AutoTestsCount.Equals(input.AutoTestsCount))
                 ) && 
                 (
-                    this.IsFavorite == input.IsFavorite ||
-                    this.IsFavorite.Equals(input.IsFavorite)
-                ) && 
-                (
                     this.IsDeleted == input.IsDeleted ||
                     this.IsDeleted.Equals(input.IsDeleted)
                 ) && 
@@ -315,21 +320,6 @@ namespace TestIt.Client.Model
                 (
                     this.GlobalId == input.GlobalId ||
                     this.GlobalId.Equals(input.GlobalId)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
                 );
         }
 
@@ -342,6 +332,19 @@ namespace TestIt.Client.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
+                if (this.Description != null)
+                {
+                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
+                }
+                if (this.Name != null)
+                {
+                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.IsFavorite.GetHashCode();
                 if (this.AttributesScheme != null)
                 {
                     hashCode = (hashCode * 59) + this.AttributesScheme.GetHashCode();
@@ -366,7 +369,6 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.AutoTestsCount.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.IsFavorite.GetHashCode();
                 hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
                 if (this.CreatedDate != null)
                 {
@@ -385,18 +387,6 @@ namespace TestIt.Client.Model
                     hashCode = (hashCode * 59) + this.ModifiedById.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.GlobalId.GetHashCode();
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
                 return hashCode;
             }
         }

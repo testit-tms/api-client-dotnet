@@ -4,6 +4,7 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
+| [**ApiV2WorkItemsIdAttachmentsPost**](WorkItemsApi.md#apiv2workitemsidattachmentspost) | **POST** /api/v2/workItems/{id}/attachments | Upload and link attachment to WorkItem |
 | [**ApiV2WorkItemsIdCheckListTransformToTestCasePost**](WorkItemsApi.md#apiv2workitemsidchecklisttransformtotestcasepost) | **POST** /api/v2/workItems/{id}/checkList/transformTo/testCase | Transform CheckList to TestCase |
 | [**ApiV2WorkItemsIdHistoryGet**](WorkItemsApi.md#apiv2workitemsidhistoryget) | **GET** /api/v2/workItems/{id}/history | Get change history of WorkItem |
 | [**ApiV2WorkItemsIdLikeDelete**](WorkItemsApi.md#apiv2workitemsidlikedelete) | **DELETE** /api/v2/workItems/{id}/like | Delete like from WorkItem |
@@ -25,7 +26,116 @@ All URIs are relative to *http://localhost*
 | [**GetWorkItemById**](WorkItemsApi.md#getworkitembyid) | **GET** /api/v2/workItems/{id} | Get Test Case, Checklist or Shared Step by Id or GlobalId |
 | [**GetWorkItemChronology**](WorkItemsApi.md#getworkitemchronology) | **GET** /api/v2/workItems/{id}/chronology | Get WorkItem chronology by Id or GlobalId |
 | [**GetWorkItemVersions**](WorkItemsApi.md#getworkitemversions) | **GET** /api/v2/workItems/{id}/versions | Get WorkItem versions |
+| [**PurgeWorkItem**](WorkItemsApi.md#purgeworkitem) | **POST** /api/v2/workItems/{id}/purge | Permanently delete test case, checklist or shared steps from archive |
+| [**RestoreWorkItem**](WorkItemsApi.md#restoreworkitem) | **POST** /api/v2/workItems/{id}/restore | Restore test case, checklist or shared steps from archive |
 | [**UpdateWorkItem**](WorkItemsApi.md#updateworkitem) | **PUT** /api/v2/workItems | Update Test Case, Checklist or Shared Step |
+
+<a name="apiv2workitemsidattachmentspost"></a>
+# **ApiV2WorkItemsIdAttachmentsPost**
+> Guid ApiV2WorkItemsIdAttachmentsPost (Guid id, FileParameter file = null)
+
+Upload and link attachment to WorkItem
+
+<br>Use case  <br>User sets workItemId  <br>User attaches a file  <br>System creates attachment and links it to the work item  <br>System returns attachment identifier
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2WorkItemsIdAttachmentsPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Work item internal identifier (guid format)
+            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // FileParameter | Select file (optional) 
+
+            try
+            {
+                // Upload and link attachment to WorkItem
+                Guid result = apiInstance.ApiV2WorkItemsIdAttachmentsPost(id, file);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WorkItemsApi.ApiV2WorkItemsIdAttachmentsPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2WorkItemsIdAttachmentsPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Upload and link attachment to WorkItem
+    ApiResponse<Guid> response = apiInstance.ApiV2WorkItemsIdAttachmentsPostWithHttpInfo(id, file);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkItemsApi.ApiV2WorkItemsIdAttachmentsPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** | Work item internal identifier (guid format) |  |
+| **file** | **FileParameter****FileParameter** | Select file | [optional]  |
+
+### Return type
+
+**Guid**
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **413** | Multipart body length limit exceeded (default constraint is one gigabyte) |  -  |
+| **200** | Successful operation |  -  |
+| **403** | Update permission for test result required |  -  |
+| **400** | Bad Request |  -  |
+| **404** |  |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="apiv2workitemsidchecklisttransformtotestcasepost"></a>
 # **ApiV2WorkItemsIdCheckListTransformToTestCasePost**
@@ -124,11 +234,11 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **422** | Client Error |  -  |
+| **403** | Update permission for test library required |  -  |
+| **404** | Can&#39;t find CheckList with id |  -  |
 | **200** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
-| **403** | Update permission for test library required |  -  |
-| **404** | Can&#39;t find CheckList with id |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -338,8 +448,8 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
+| **204** | Successful operation |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -641,8 +751,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
+| **200** | Successful operation |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
 
@@ -772,8 +882,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
 | **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
 
@@ -877,8 +987,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
+| **200** | Successful operation |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test library required |  -  |
 | **404** | Can&#39;t find WorkItem with id |  -  |
@@ -1524,11 +1634,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **401** | Unauthorized |  -  |
+| **403** | Update permission for test library required |  -  |
 | **201** | Successful operation |  -  |
 | **400** | &lt;br&gt;Field is required  &lt;br&gt;Priority is not a valid  &lt;br&gt;Tags must be set  &lt;br&gt;Duration should be a positive number  &lt;br&gt;Should be empty for CheckList  &lt;br&gt;Attribute value must be a valid guid for user scheme  &lt;br&gt;There is no option in ProjectAttributesScheme with such Id  &lt;br&gt;Attribute value must be a valid guid for options scheme |  -  |
 | **404** | &lt;br&gt;Can&#39;t find section  &lt;br&gt;Can&#39;t find project  &lt;br&gt;Can&#39;t find attachmentIds  &lt;br&gt;Project not found  &lt;br&gt;Can&#39;t attributesScheme  &lt;br&gt;Can&#39;t attribute  &lt;br&gt;AutoTestIds not exist in project |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Update permission for test library required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1624,11 +1734,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
-| **404** | Can&#39;t find a WorkItem with workItemId |  -  |
 | **401** | Unauthorized |  -  |
+| **400** | Bad Request |  -  |
+| **204** | No Content |  -  |
 | **403** | Update permission for test library required |  -  |
-| **204** | Success |  -  |
+| **404** | Can&#39;t find a WorkItem with workItemId |  -  |
 | **200** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1725,12 +1835,12 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Successful operation |  -  |
-| **401** | Unauthorized |  -  |
-| **404** | Can&#39;t find a WorkItem with id |  -  |
-| **422** | Could not delete Shared Step that has references |  -  |
-| **400** | Bad Request |  -  |
 | **403** | Delete permission for test library required |  -  |
+| **404** | Can&#39;t find a WorkItem with id |  -  |
+| **401** | Unauthorized |  -  |
+| **400** | Bad Request |  -  |
+| **422** | Could not delete Shared Step that has references |  -  |
+| **204** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1830,11 +1940,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Can&#39;t find WorkItem with workItemId |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Read permission for test library required |  -  |
 | **200** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Read permission for test library required |  -  |
+| **404** | Can&#39;t find WorkItem with workItemId |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2044,11 +2154,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for test library required |  -  |
+| **400** | Bad Request |  -  |
 | **404** | Can&#39;t find workItem with id |  -  |
 | **200** | Successful operation |  -  |
-| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Read permission for test library required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2148,10 +2258,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
+| **400** | Not valid workItemId |  -  |
 | **404** | Can&#39;t find WorkItem with workItemId |  -  |
 | **200** | Successful operation |  -  |
-| **400** | Not valid workItemId |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2256,11 +2366,201 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
-| **403** | Read permission for test library required |  -  |
-| **404** | Can&#39;t find WorkItem with workItemId |  -  |
 | **200** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
+| **404** | Can&#39;t find WorkItem with workItemId |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Read permission for test library required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="purgeworkitem"></a>
+# **PurgeWorkItem**
+> void PurgeWorkItem (string id)
+
+Permanently delete test case, checklist or shared steps from archive
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class PurgeWorkItemExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Unique or global ID of the work item
+
+            try
+            {
+                // Permanently delete test case, checklist or shared steps from archive
+                apiInstance.PurgeWorkItem(id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WorkItemsApi.PurgeWorkItem: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the PurgeWorkItemWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Permanently delete test case, checklist or shared steps from archive
+    apiInstance.PurgeWorkItemWithHttpInfo(id);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkItemsApi.PurgeWorkItemWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Unique or global ID of the work item |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **403** | Delete permission for test library is required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="restoreworkitem"></a>
+# **RestoreWorkItem**
+> void RestoreWorkItem (string id)
+
+Restore test case, checklist or shared steps from archive
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class RestoreWorkItemExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Unique or global ID of the work item
+
+            try
+            {
+                // Restore test case, checklist or shared steps from archive
+                apiInstance.RestoreWorkItem(id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WorkItemsApi.RestoreWorkItem: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RestoreWorkItemWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Restore test case, checklist or shared steps from archive
+    apiInstance.RestoreWorkItemWithHttpInfo(id);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkItemsApi.RestoreWorkItemWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Unique or global ID of the work item |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **403** | Update permission for test library is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2356,11 +2656,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Update permission for test library required |  -  |
 | **400** | &lt;br&gt;Field is required  &lt;br&gt;Priority is not a valid  &lt;br&gt;duration should be a positive number  &lt;br&gt;should be empty for CheckList  &lt;br&gt;There is no option in ProjectAttributesScheme with such Id  &lt;br&gt;Attribute value must be a valid guid for options scheme |  -  |
-| **401** | Unauthorized |  -  |
-| **404** | &lt;br&gt;WorkItem not found  &lt;br&gt;Can&#39;t find section  &lt;br&gt;Can&#39;t attributesScheme  &lt;br&gt;Can&#39;t attribute  &lt;br&gt;AutoTestIds not exist in project |  -  |
 | **204** | Successful operation |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Update permission for test library required |  -  |
+| **404** | &lt;br&gt;WorkItem not found  &lt;br&gt;Can&#39;t find section  &lt;br&gt;Can&#39;t attributesScheme  &lt;br&gt;Can&#39;t attribute  &lt;br&gt;AutoTestIds not exist in project |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

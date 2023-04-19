@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StateName** | **TestRunState** |  | [optional] 
+**StateName** | **TestRunState** |  | 
 **ProjectId** | **Guid** |  | [optional] 
 **TestPlanId** | **Guid?** |  | [optional] 
 **Name** | **string** |  | [optional] 

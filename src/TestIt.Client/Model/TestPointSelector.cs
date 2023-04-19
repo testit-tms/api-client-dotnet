@@ -41,16 +41,16 @@ namespace TestIt.Client.Model
         /// Initializes a new instance of the <see cref="TestPointSelector" /> class.
         /// </summary>
         /// <param name="configurationId">Specifies the configuration GUIDs, from which test points are created. You can specify several GUIDs. (required).</param>
-        /// <param name="workitemIds">Specifies the work item GUIDs, from which test points are created. You can specify several GUIDs. (required).</param>
-        public TestPointSelector(Guid configurationId = default(Guid), List<Guid> workitemIds = default(List<Guid>))
+        /// <param name="workItemIds">Specifies the work item GUIDs, from which test points are created. You can specify several GUIDs. (required).</param>
+        public TestPointSelector(Guid configurationId = default(Guid), List<Guid> workItemIds = default(List<Guid>))
         {
             this.ConfigurationId = configurationId;
-            // to ensure "workitemIds" is required (not null)
-            if (workitemIds == null)
+            // to ensure "workItemIds" is required (not null)
+            if (workItemIds == null)
             {
-                throw new ArgumentNullException("workitemIds is a required property for TestPointSelector and cannot be null");
+                throw new ArgumentNullException("workItemIds is a required property for TestPointSelector and cannot be null");
             }
-            this.WorkitemIds = workitemIds;
+            this.WorkItemIds = workItemIds;
         }
 
         /// <summary>
@@ -64,8 +64,8 @@ namespace TestIt.Client.Model
         /// Specifies the work item GUIDs, from which test points are created. You can specify several GUIDs.
         /// </summary>
         /// <value>Specifies the work item GUIDs, from which test points are created. You can specify several GUIDs.</value>
-        [DataMember(Name = "workitemIds", IsRequired = true, EmitDefaultValue = true)]
-        public List<Guid> WorkitemIds { get; set; }
+        [DataMember(Name = "workItemIds", IsRequired = true, EmitDefaultValue = true)]
+        public List<Guid> WorkItemIds { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -76,7 +76,7 @@ namespace TestIt.Client.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class TestPointSelector {\n");
             sb.Append("  ConfigurationId: ").Append(ConfigurationId).Append("\n");
-            sb.Append("  WorkitemIds: ").Append(WorkitemIds).Append("\n");
+            sb.Append("  WorkItemIds: ").Append(WorkItemIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -118,10 +118,10 @@ namespace TestIt.Client.Model
                     this.ConfigurationId.Equals(input.ConfigurationId))
                 ) && 
                 (
-                    this.WorkitemIds == input.WorkitemIds ||
-                    this.WorkitemIds != null &&
-                    input.WorkitemIds != null &&
-                    this.WorkitemIds.SequenceEqual(input.WorkitemIds)
+                    this.WorkItemIds == input.WorkItemIds ||
+                    this.WorkItemIds != null &&
+                    input.WorkItemIds != null &&
+                    this.WorkItemIds.SequenceEqual(input.WorkItemIds)
                 );
         }
 
@@ -138,9 +138,9 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.ConfigurationId.GetHashCode();
                 }
-                if (this.WorkitemIds != null)
+                if (this.WorkItemIds != null)
                 {
-                    hashCode = (hashCode * 59) + this.WorkitemIds.GetHashCode();
+                    hashCode = (hashCode * 59) + this.WorkItemIds.GetHashCode();
                 }
                 return hashCode;
             }

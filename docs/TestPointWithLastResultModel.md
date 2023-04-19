@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **Attributes** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **TagNames** | **List&lt;string&gt;** |  | [optional] 
 **Duration** | **int** |  | [optional] 
-**Priority** | **WorkItemPriorityModel** |  | [optional] 
+**Priority** | **WorkItemPriorityModel** |  | 
 **TestSuiteNameBreadCrumbs** | **List&lt;string&gt;** |  | [optional] 
 **GroupCount** | **int?** |  | [optional] 
 **Iteration** | [**IterationModel**](IterationModel.md) |  | [optional] 

@@ -27,35 +27,33 @@ using OpenAPIDateConverter = TestIt.Client.Client.OpenAPIDateConverter;
 namespace TestIt.Client.Model
 {
     /// <summary>
-    /// DateRangeModel
+    /// TestPointSelectModel
     /// </summary>
-    [DataContract(Name = "DateRangeModel")]
-    public partial class DateRangeModel : IEquatable<DateRangeModel>, IValidatableObject
+    [DataContract(Name = "TestPointSelectModel")]
+    public partial class TestPointSelectModel : IEquatable<TestPointSelectModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="DateRangeModel" /> class.
+        /// Initializes a new instance of the <see cref="TestPointSelectModel" /> class.
         /// </summary>
-        /// <param name="from">Minimum date and time.</param>
-        /// <param name="to">Maximum date and time.</param>
-        public DateRangeModel(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?))
+        /// <param name="filter">filter.</param>
+        /// <param name="extractionModel">extractionModel.</param>
+        public TestPointSelectModel(TestPointFilterModel filter = default(TestPointFilterModel), TestPointsExtractionModel extractionModel = default(TestPointsExtractionModel))
         {
-            this.From = from;
-            this.To = to;
+            this.Filter = filter;
+            this.ExtractionModel = extractionModel;
         }
 
         /// <summary>
-        /// Minimum date and time
+        /// Gets or Sets Filter
         /// </summary>
-        /// <value>Minimum date and time</value>
-        [DataMember(Name = "from", EmitDefaultValue = true)]
-        public DateTime? From { get; set; }
+        [DataMember(Name = "filter", EmitDefaultValue = false)]
+        public TestPointFilterModel Filter { get; set; }
 
         /// <summary>
-        /// Maximum date and time
+        /// Gets or Sets ExtractionModel
         /// </summary>
-        /// <value>Maximum date and time</value>
-        [DataMember(Name = "to", EmitDefaultValue = true)]
-        public DateTime? To { get; set; }
+        [DataMember(Name = "extractionModel", EmitDefaultValue = false)]
+        public TestPointsExtractionModel ExtractionModel { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -64,9 +62,9 @@ namespace TestIt.Client.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class DateRangeModel {\n");
-            sb.Append("  From: ").Append(From).Append("\n");
-            sb.Append("  To: ").Append(To).Append("\n");
+            sb.Append("class TestPointSelectModel {\n");
+            sb.Append("  Filter: ").Append(Filter).Append("\n");
+            sb.Append("  ExtractionModel: ").Append(ExtractionModel).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -87,15 +85,15 @@ namespace TestIt.Client.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DateRangeModel);
+            return this.Equals(input as TestPointSelectModel);
         }
 
         /// <summary>
-        /// Returns true if DateRangeModel instances are equal
+        /// Returns true if TestPointSelectModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of DateRangeModel to be compared</param>
+        /// <param name="input">Instance of TestPointSelectModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(DateRangeModel input)
+        public bool Equals(TestPointSelectModel input)
         {
             if (input == null)
             {
@@ -103,14 +101,14 @@ namespace TestIt.Client.Model
             }
             return 
                 (
-                    this.From == input.From ||
-                    (this.From != null &&
-                    this.From.Equals(input.From))
+                    this.Filter == input.Filter ||
+                    (this.Filter != null &&
+                    this.Filter.Equals(input.Filter))
                 ) && 
                 (
-                    this.To == input.To ||
-                    (this.To != null &&
-                    this.To.Equals(input.To))
+                    this.ExtractionModel == input.ExtractionModel ||
+                    (this.ExtractionModel != null &&
+                    this.ExtractionModel.Equals(input.ExtractionModel))
                 );
         }
 
@@ -123,13 +121,13 @@ namespace TestIt.Client.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.From != null)
+                if (this.Filter != null)
                 {
-                    hashCode = (hashCode * 59) + this.From.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Filter.GetHashCode();
                 }
-                if (this.To != null)
+                if (this.ExtractionModel != null)
                 {
-                    hashCode = (hashCode * 59) + this.To.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ExtractionModel.GetHashCode();
                 }
                 return hashCode;
             }

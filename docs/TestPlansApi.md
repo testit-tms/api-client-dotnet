@@ -13,8 +13,11 @@ All URIs are relative to *http://localhost*
 | [**ApiV2TestPlansIdExportTestResultHistoryXlsxPost**](TestPlansApi.md#apiv2testplansidexporttestresulthistoryxlsxpost) | **POST** /api/v2/testPlans/{id}/export/testResultHistory/xlsx | Export TestResults history from TestPlan in xls format |
 | [**ApiV2TestPlansIdHistoryGet**](TestPlansApi.md#apiv2testplansidhistoryget) | **GET** /api/v2/testPlans/{id}/history | Get TestPlan history |
 | [**ApiV2TestPlansIdLinksGet**](TestPlansApi.md#apiv2testplansidlinksget) | **GET** /api/v2/testPlans/{id}/links | Get Links of TestPlan |
+| [**ApiV2TestPlansIdPatch**](TestPlansApi.md#apiv2testplansidpatch) | **PATCH** /api/v2/testPlans/{id} | Patch test plan |
 | [**ApiV2TestPlansIdTestPointsLastResultsGet**](TestPlansApi.md#apiv2testplansidtestpointslastresultsget) | **GET** /api/v2/testPlans/{id}/testPoints/lastResults | Get TestPoints with last result from TestPlan |
 | [**ApiV2TestPlansIdTestPointsResetPost**](TestPlansApi.md#apiv2testplansidtestpointsresetpost) | **POST** /api/v2/testPlans/{id}/testPoints/reset | Reset TestPoints status of TestPlan |
+| [**ApiV2TestPlansIdTestPointsTesterDelete**](TestPlansApi.md#apiv2testplansidtestpointstesterdelete) | **DELETE** /api/v2/testPlans/{id}/testPoints/tester | Unassign users from multiple test points |
+| [**ApiV2TestPlansIdTestPointsTesterUserIdPost**](TestPlansApi.md#apiv2testplansidtestpointstesteruseridpost) | **POST** /api/v2/testPlans/{id}/testPoints/tester/{userId} | Assign user as a tester to multiple test points |
 | [**ApiV2TestPlansIdTestRunsGet**](TestPlansApi.md#apiv2testplansidtestrunsget) | **GET** /api/v2/testPlans/{id}/testRuns | Get TestRuns of TestPlan |
 | [**ApiV2TestPlansIdTestRunsSearchPost**](TestPlansApi.md#apiv2testplansidtestrunssearchpost) | **POST** /api/v2/testPlans/{id}/testRuns/search | Search TestRuns of TestPlan |
 | [**ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet**](TestPlansApi.md#apiv2testplansidtestrunstestresultslastmodifiedmodifieddateget) | **GET** /api/v2/testPlans/{id}/testRuns/testResults/lastModified/modifiedDate | Get last modification date of test plan&#39;s test results |
@@ -123,11 +126,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **422** | Shared steps cannot be added to test suite |  -  |
 | **204** | Successful operation |  -  |
-| **401** | Unauthorized |  -  |
 | **404** | Test suite with provided ID was not found |  -  |
+| **422** | Shared steps cannot be added to test suite |  -  |
 | **403** | Update permission for test plan is required |  -  |
+| **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -225,12 +228,12 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | &lt;br&gt;TestPlan is locked  &lt;br&gt;Some of configurations do not exist in the project, or they are not active |  -  |
-| **422** | Can&#39;t put a SharedStep in the TestSuite |  -  |
+| **404** | &lt;br&gt;Can&#39;t find a TestPlan with id  &lt;br&gt;Some of workItems do not exist |  -  |
 | **204** | Successful operation |  -  |
+| **422** | Can&#39;t put a SharedStep in the TestSuite |  -  |
+| **400** | &lt;br&gt;TestPlan is locked  &lt;br&gt;Some of configurations do not exist in the project, or they are not active |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for TestPlan required |  -  |
-| **404** | &lt;br&gt;Can&#39;t find a TestPlan with id  &lt;br&gt;Some of workItems do not exist |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -331,8 +334,8 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **404** | Can&#39;t find a Project with id |  -  |
-| **400** | Bad Request |  -  |
 | **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -433,8 +436,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Update permission for test plan is required |  -  |
 | **200** | Success |  -  |
+| **403** | Update permission for test plan is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -535,10 +538,10 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
+| **403** | Read permission for test plan required |  -  |
+| **404** | TestPlan not found |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
-| **404** | TestPlan not found |  -  |
-| **403** | Read permission for test plan required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -642,11 +645,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **400** | Bad Request |  -  |
 | **403** | Read permission for test plan required |  -  |
 | **404** | TestPlan not found |  -  |
+| **200** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -754,11 +757,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **404** | TestPlan not found |  -  |
 | **200** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
-| **404** | TestPlan not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -868,11 +871,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
-| **400** | Bad Request |  -  |
-| **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
-| **403** | Read permission for test plan required |  -  |
 | **404** | TestPlan not found |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Read permission for test plan required |  -  |
+| **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -979,8 +982,107 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
-| **403** | Read permission for test plan is required |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Read permission for test plan is required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="apiv2testplansidpatch"></a>
+# **ApiV2TestPlansIdPatch**
+> void ApiV2TestPlansIdPatch (Guid id, List<Operation> operation = null)
+
+Patch test plan
+
+See <a href=\"https://www.rfc-editor.org/rfc/rfc6902\" target=\"_blank\">RFC 6902: JavaScript Object Notation (JSON) Patch</a> for details
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2TestPlansIdPatchExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Unique ID of the test plan
+            var operation = new List<Operation>(); // List<Operation> |  (optional) 
+
+            try
+            {
+                // Patch test plan
+                apiInstance.ApiV2TestPlansIdPatch(id, operation);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TestPlansApi.ApiV2TestPlansIdPatch: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2TestPlansIdPatchWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Patch test plan
+    apiInstance.ApiV2TestPlansIdPatchWithHttpInfo(id, operation);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TestPlansApi.ApiV2TestPlansIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** | Unique ID of the test plan |  |
+| **operation** | [**List&lt;Operation&gt;**](Operation.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **403** | Update permission for test plan is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1092,11 +1194,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
-| **400** | Bad Request |  -  |
+| **404** | TestPlan not found |  -  |
 | **403** | Read permission for test plan required |  -  |
 | **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
-| **404** | TestPlan not found |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1198,6 +1300,210 @@ void (empty response body)
 | **422** | Client Error |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="apiv2testplansidtestpointstesterdelete"></a>
+# **ApiV2TestPlansIdTestPointsTesterDelete**
+> List&lt;Guid&gt; ApiV2TestPlansIdTestPointsTesterDelete (string id, TestPointSelectModel testPointSelectModel = null)
+
+Unassign users from multiple test points
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2TestPlansIdTestPointsTesterDeleteExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Unique or global ID of the test plan
+            var testPointSelectModel = new TestPointSelectModel(); // TestPointSelectModel |  (optional) 
+
+            try
+            {
+                // Unassign users from multiple test points
+                List<Guid> result = apiInstance.ApiV2TestPlansIdTestPointsTesterDelete(id, testPointSelectModel);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TestPlansApi.ApiV2TestPlansIdTestPointsTesterDelete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2TestPlansIdTestPointsTesterDeleteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Unassign users from multiple test points
+    ApiResponse<List<Guid>> response = apiInstance.ApiV2TestPlansIdTestPointsTesterDeleteWithHttpInfo(id, testPointSelectModel);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TestPlansApi.ApiV2TestPlansIdTestPointsTesterDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Unique or global ID of the test plan |  |
+| **testPointSelectModel** | [**TestPointSelectModel**](TestPointSelectModel.md) |  | [optional]  |
+
+### Return type
+
+**List<Guid>**
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **403** | Update permission for test plans is required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="apiv2testplansidtestpointstesteruseridpost"></a>
+# **ApiV2TestPlansIdTestPointsTesterUserIdPost**
+> List&lt;Guid&gt; ApiV2TestPlansIdTestPointsTesterUserIdPost (string id, Guid userId, TestPointSelectModel testPointSelectModel = null)
+
+Assign user as a tester to multiple test points
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2TestPlansIdTestPointsTesterUserIdPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Unique or global ID of the test plan
+            var userId = "userId_example";  // Guid | Unique ID of the user
+            var testPointSelectModel = new TestPointSelectModel(); // TestPointSelectModel |  (optional) 
+
+            try
+            {
+                // Assign user as a tester to multiple test points
+                List<Guid> result = apiInstance.ApiV2TestPlansIdTestPointsTesterUserIdPost(id, userId, testPointSelectModel);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TestPlansApi.ApiV2TestPlansIdTestPointsTesterUserIdPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2TestPlansIdTestPointsTesterUserIdPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Assign user as a tester to multiple test points
+    ApiResponse<List<Guid>> response = apiInstance.ApiV2TestPlansIdTestPointsTesterUserIdPostWithHttpInfo(id, userId, testPointSelectModel);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TestPlansApi.ApiV2TestPlansIdTestPointsTesterUserIdPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Unique or global ID of the test plan |  |
+| **userId** | **Guid** | Unique ID of the user |  |
+| **testPointSelectModel** | [**TestPointSelectModel**](TestPointSelectModel.md) |  | [optional]  |
+
+### Return type
+
+**List<Guid>**
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **403** | Update permission for test plans is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1316,8 +1622,8 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
-| **403** | Read permission for test plan is required |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Read permission for test plan is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1430,8 +1736,8 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **403** | Read permission for test plan is required |  -  |
-| **401** | Unauthorized |  -  |
 | **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1529,9 +1835,9 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Last modification date exists |  -  |
-| **204** | Last modification date does not exist |  -  |
 | **403** | Read permission for test plan is required |  -  |
+| **204** | Last modification date does not exist |  -  |
+| **200** | Last modification date exists |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1627,11 +1933,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for test plan required |  -  |
-| **401** | Unauthorized |  -  |
-| **404** | TestPlan not found |  -  |
 | **200** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Read permission for test plan required |  -  |
+| **404** | TestPlan not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1734,8 +2040,8 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
-| **404** | Project not found |  -  |
 | **403** | Read permission for project required |  -  |
+| **404** | Project not found |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1937,9 +2243,9 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
+| **400** | &lt;br&gt;Change status from New to Completed forbidden  &lt;br&gt;Change status from Completed to Completed forbidden |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan required |  -  |
-| **400** | &lt;br&gt;Change status from New to Completed forbidden  &lt;br&gt;Change status from Completed to Completed forbidden |  -  |
 | **404** | Can&#39;t find a TestPlan with id! |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2040,11 +2346,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Successful operation |  -  |
-| **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan required |  -  |
-| **409** | TestPlan with the same name already exists! |  -  |
+| **201** | Successful operation |  -  |
 | **400** | &lt;br&gt;Field is required  &lt;br&gt;Tags must be no more than 10! |  -  |
+| **401** | Unauthorized |  -  |
+| **409** | TestPlan with the same name already exists! |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2140,10 +2446,10 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Delete permission for test plan required |  -  |
-| **404** | Can&#39;t find a TestPlan with id! |  -  |
-| **401** | Unauthorized |  -  |
 | **204** | Successful operation |  -  |
+| **401** | Unauthorized |  -  |
+| **404** | Can&#39;t find a TestPlan with id! |  -  |
+| **403** | Delete permission for test plan required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2243,10 +2549,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
-| **403** | Read permission for test plan required |  -  |
 | **404** | Can&#39;t find a Project with id |  -  |
 | **200** | Successful operation |  -  |
+| **403** | Read permission for test plan required |  -  |
+| **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2346,10 +2652,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **404** | Can&#39;t find a TestRun with id! |  -  |
-| **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
+| **404** | Can&#39;t find a TestRun with id! |  -  |
+| **200** | Successful operation |  -  |
+| **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2445,10 +2751,10 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Successful operation |  -  |
 | **400** | &lt;br&gt;Change status from New to Paused forbidden  &lt;br&gt;Change status from Paused to Paused forbidden  &lt;br&gt;Change status from Completed to Paused forbidden |  -  |
-| **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan required |  -  |
+| **401** | Unauthorized |  -  |
+| **204** | Successful operation |  -  |
 | **404** | Can&#39;t find a TestPlan with id! |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2545,8 +2851,8 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
 | **204** | Successful operation |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan required |  -  |
 | **404** | Can&#39;t find a TestPlan with id! |  -  |
 
@@ -2644,10 +2950,10 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Successful operation |  -  |
-| **401** | Unauthorized |  -  |
 | **404** | Can&#39;t find a TestPlan with id! |  -  |
 | **403** | Update permission for test plan required |  -  |
+| **204** | Successful operation |  -  |
+| **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2743,13 +3049,13 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
-| **409** | TestPlan with the same name already exists! |  -  |
-| **422** | Can&#39;t change ProjectId |  -  |
 | **403** | Update permission for test plan required |  -  |
-| **404** | Can&#39;t find a TestPlan with id! |  -  |
 | **204** | Successful operation |  -  |
 | **400** | &lt;br&gt;Field is required  &lt;br&gt;Tags must be no more than 10!  &lt;br&gt;StartDate can&#39;t be more than EndDate! |  -  |
+| **401** | Unauthorized |  -  |
+| **404** | Can&#39;t find a TestPlan with id! |  -  |
+| **409** | TestPlan with the same name already exists! |  -  |
+| **422** | Can&#39;t change ProjectId |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

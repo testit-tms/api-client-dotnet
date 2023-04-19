@@ -36,19 +36,24 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets StateName
         /// </summary>
-        [DataMember(Name = "stateName", EmitDefaultValue = false)]
-        public TestRunState? StateName { get; set; }
+        [DataMember(Name = "stateName", IsRequired = true, EmitDefaultValue = true)]
+        public TestRunState StateName { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TestRunShortModel" /> class.
         /// </summary>
-        /// <param name="stateName">stateName.</param>
+        [JsonConstructorAttribute]
+        protected TestRunShortModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestRunShortModel" /> class.
+        /// </summary>
+        /// <param name="stateName">stateName (required).</param>
         /// <param name="projectId">projectId.</param>
         /// <param name="testPlanId">testPlanId.</param>
         /// <param name="name">name.</param>
         /// <param name="description">description.</param>
         /// <param name="id">Unique ID of the entity.</param>
         /// <param name="isDeleted">Indicates if the entity is deleted.</param>
-        public TestRunShortModel(TestRunState? stateName = default(TestRunState?), Guid projectId = default(Guid), Guid? testPlanId = default(Guid?), string name = default(string), string description = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
+        public TestRunShortModel(TestRunState stateName = default(TestRunState), Guid projectId = default(Guid), Guid? testPlanId = default(Guid?), string name = default(string), string description = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
         {
             this.StateName = stateName;
             this.ProjectId = projectId;
