@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **CreatedDate** | **DateTime?** |  | [optional] 
 **IsRead** | **bool** |  | [optional] 
 **EntityId** | **Guid** |  | [optional] 
-**NotificationType** | **NotificationTypeModel** |  | [optional] 
+**NotificationType** | **NotificationTypeModel** |  | 
 **ProjectGlobalId** | **long?** |  | [optional] 
 **ProjectName** | **string** |  | [optional] 
 **TestPlanGlobalId** | **long** |  | [optional] 

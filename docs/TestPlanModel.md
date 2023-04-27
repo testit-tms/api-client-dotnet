@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Status** | **TestPlanStatusModel** |  | [optional] 
+**Status** | **TestPlanStatusModel** |  | 
 **StartedOn** | **DateTime?** | Set when test plan is starter (status changed to: In Progress) | [optional] 
 **CompletedOn** | **DateTime?** | set when test plan status is completed (status changed to: Completed) | [optional] 
 **CreatedDate** | **DateTime?** |  | [optional] 

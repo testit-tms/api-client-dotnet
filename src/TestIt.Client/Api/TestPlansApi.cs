@@ -245,6 +245,29 @@ namespace TestIt.Client.Api
         /// <returns>ApiResponse of List&lt;TestPlanLink&gt;</returns>
         ApiResponse<List<TestPlanLink>> ApiV2TestPlansIdLinksGetWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string));
         /// <summary>
+        /// Patch test plan
+        /// </summary>
+        /// <remarks>
+        /// See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the test plan</param>
+        /// <param name="operation"> (optional)</param>
+        /// <returns></returns>
+        void ApiV2TestPlansIdPatch(Guid id, List<Operation> operation = default(List<Operation>));
+
+        /// <summary>
+        /// Patch test plan
+        /// </summary>
+        /// <remarks>
+        /// See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the test plan</param>
+        /// <param name="operation"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ApiV2TestPlansIdPatchWithHttpInfo(Guid id, List<Operation> operation = default(List<Operation>));
+        /// <summary>
         /// Get TestPoints with last result from TestPlan
         /// </summary>
         /// <remarks>
@@ -300,6 +323,48 @@ namespace TestIt.Client.Api
         /// <param name="requestBody"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ApiV2TestPlansIdTestPointsResetPostWithHttpInfo(string id, List<Guid> requestBody = default(List<Guid>));
+        /// <summary>
+        /// Unassign users from multiple test points
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the test plan</param>
+        /// <param name="testPointSelectModel"> (optional)</param>
+        /// <returns>List&lt;Guid&gt;</returns>
+        List<Guid> ApiV2TestPlansIdTestPointsTesterDelete(string id, TestPointSelectModel testPointSelectModel = default(TestPointSelectModel));
+
+        /// <summary>
+        /// Unassign users from multiple test points
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the test plan</param>
+        /// <param name="testPointSelectModel"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
+        ApiResponse<List<Guid>> ApiV2TestPlansIdTestPointsTesterDeleteWithHttpInfo(string id, TestPointSelectModel testPointSelectModel = default(TestPointSelectModel));
+        /// <summary>
+        /// Assign user as a tester to multiple test points
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the test plan</param>
+        /// <param name="userId">Unique ID of the user</param>
+        /// <param name="testPointSelectModel"> (optional)</param>
+        /// <returns>List&lt;Guid&gt;</returns>
+        List<Guid> ApiV2TestPlansIdTestPointsTesterUserIdPost(string id, Guid userId, TestPointSelectModel testPointSelectModel = default(TestPointSelectModel));
+
+        /// <summary>
+        /// Assign user as a tester to multiple test points
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the test plan</param>
+        /// <param name="userId">Unique ID of the user</param>
+        /// <param name="testPointSelectModel"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
+        ApiResponse<List<Guid>> ApiV2TestPlansIdTestPointsTesterUserIdPostWithHttpInfo(string id, Guid userId, TestPointSelectModel testPointSelectModel = default(TestPointSelectModel));
         /// <summary>
         /// Get TestRuns of TestPlan
         /// </summary>
@@ -895,6 +960,31 @@ namespace TestIt.Client.Api
         /// <returns>Task of ApiResponse (List&lt;TestPlanLink&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<TestPlanLink>>> ApiV2TestPlansIdLinksGetWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
+        /// Patch test plan
+        /// </summary>
+        /// <remarks>
+        /// See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the test plan</param>
+        /// <param name="operation"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ApiV2TestPlansIdPatchAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Patch test plan
+        /// </summary>
+        /// <remarks>
+        /// See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the test plan</param>
+        /// <param name="operation"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestPlansIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
         /// Get TestPoints with last result from TestPlan
         /// </summary>
         /// <remarks>
@@ -954,6 +1044,58 @@ namespace TestIt.Client.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestPlansIdTestPointsResetPostWithHttpInfoAsync(string id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Unassign users from multiple test points
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the test plan</param>
+        /// <param name="testPointSelectModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;Guid&gt;</returns>
+        System.Threading.Tasks.Task<List<Guid>> ApiV2TestPlansIdTestPointsTesterDeleteAsync(string id, TestPointSelectModel testPointSelectModel = default(TestPointSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Unassign users from multiple test points
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the test plan</param>
+        /// <param name="testPointSelectModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Guid>>> ApiV2TestPlansIdTestPointsTesterDeleteWithHttpInfoAsync(string id, TestPointSelectModel testPointSelectModel = default(TestPointSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Assign user as a tester to multiple test points
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the test plan</param>
+        /// <param name="userId">Unique ID of the user</param>
+        /// <param name="testPointSelectModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;Guid&gt;</returns>
+        System.Threading.Tasks.Task<List<Guid>> ApiV2TestPlansIdTestPointsTesterUserIdPostAsync(string id, Guid userId, TestPointSelectModel testPointSelectModel = default(TestPointSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Assign user as a tester to multiple test points
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the test plan</param>
+        /// <param name="userId">Unique ID of the user</param>
+        /// <param name="testPointSelectModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Guid>>> ApiV2TestPlansIdTestPointsTesterUserIdPostWithHttpInfoAsync(string id, Guid userId, TestPointSelectModel testPointSelectModel = default(TestPointSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get TestRuns of TestPlan
         /// </summary>
@@ -2862,6 +3004,129 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
+        /// Patch test plan See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the test plan</param>
+        /// <param name="operation"> (optional)</param>
+        /// <returns></returns>
+        public void ApiV2TestPlansIdPatch(Guid id, List<Operation> operation = default(List<Operation>))
+        {
+            ApiV2TestPlansIdPatchWithHttpInfo(id, operation);
+        }
+
+        /// <summary>
+        /// Patch test plan See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the test plan</param>
+        /// <param name="operation"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIt.Client.Client.ApiResponse<Object> ApiV2TestPlansIdPatchWithHttpInfo(Guid id, List<Operation> operation = default(List<Operation>))
+        {
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = operation;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Patch<Object>("/api/v2/testPlans/{id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdPatch", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Patch test plan See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the test plan</param>
+        /// <param name="operation"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ApiV2TestPlansIdPatchAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await ApiV2TestPlansIdPatchWithHttpInfoAsync(id, operation, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Patch test plan See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the test plan</param>
+        /// <param name="operation"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2TestPlansIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = operation;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<Object>("/api/v2/testPlans/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdPatch", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Get TestPoints with last result from TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return test points with last result from test plan
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
@@ -3183,6 +3448,278 @@ namespace TestIt.Client.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdTestPointsResetPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Unassign users from multiple test points 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the test plan</param>
+        /// <param name="testPointSelectModel"> (optional)</param>
+        /// <returns>List&lt;Guid&gt;</returns>
+        public List<Guid> ApiV2TestPlansIdTestPointsTesterDelete(string id, TestPointSelectModel testPointSelectModel = default(TestPointSelectModel))
+        {
+            TestIt.Client.Client.ApiResponse<List<Guid>> localVarResponse = ApiV2TestPlansIdTestPointsTesterDeleteWithHttpInfo(id, testPointSelectModel);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Unassign users from multiple test points 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the test plan</param>
+        /// <param name="testPointSelectModel"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
+        public TestIt.Client.Client.ApiResponse<List<Guid>> ApiV2TestPlansIdTestPointsTesterDeleteWithHttpInfo(string id, TestPointSelectModel testPointSelectModel = default(TestPointSelectModel))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdTestPointsTesterDelete");
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = testPointSelectModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<List<Guid>>("/api/v2/testPlans/{id}/testPoints/tester", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdTestPointsTesterDelete", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Unassign users from multiple test points 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the test plan</param>
+        /// <param name="testPointSelectModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;Guid&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Guid>> ApiV2TestPlansIdTestPointsTesterDeleteAsync(string id, TestPointSelectModel testPointSelectModel = default(TestPointSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIt.Client.Client.ApiResponse<List<Guid>> localVarResponse = await ApiV2TestPlansIdTestPointsTesterDeleteWithHttpInfoAsync(id, testPointSelectModel, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Unassign users from multiple test points 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the test plan</param>
+        /// <param name="testPointSelectModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<Guid>>> ApiV2TestPlansIdTestPointsTesterDeleteWithHttpInfoAsync(string id, TestPointSelectModel testPointSelectModel = default(TestPointSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdTestPointsTesterDelete");
+
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = testPointSelectModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<List<Guid>>("/api/v2/testPlans/{id}/testPoints/tester", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdTestPointsTesterDelete", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Assign user as a tester to multiple test points 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the test plan</param>
+        /// <param name="userId">Unique ID of the user</param>
+        /// <param name="testPointSelectModel"> (optional)</param>
+        /// <returns>List&lt;Guid&gt;</returns>
+        public List<Guid> ApiV2TestPlansIdTestPointsTesterUserIdPost(string id, Guid userId, TestPointSelectModel testPointSelectModel = default(TestPointSelectModel))
+        {
+            TestIt.Client.Client.ApiResponse<List<Guid>> localVarResponse = ApiV2TestPlansIdTestPointsTesterUserIdPostWithHttpInfo(id, userId, testPointSelectModel);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Assign user as a tester to multiple test points 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the test plan</param>
+        /// <param name="userId">Unique ID of the user</param>
+        /// <param name="testPointSelectModel"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
+        public TestIt.Client.Client.ApiResponse<List<Guid>> ApiV2TestPlansIdTestPointsTesterUserIdPostWithHttpInfo(string id, Guid userId, TestPointSelectModel testPointSelectModel = default(TestPointSelectModel))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdTestPointsTesterUserIdPost");
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("userId", TestIt.Client.Client.ClientUtils.ParameterToString(userId)); // path parameter
+            localVarRequestOptions.Data = testPointSelectModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<Guid>>("/api/v2/testPlans/{id}/testPoints/tester/{userId}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdTestPointsTesterUserIdPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Assign user as a tester to multiple test points 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the test plan</param>
+        /// <param name="userId">Unique ID of the user</param>
+        /// <param name="testPointSelectModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;Guid&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Guid>> ApiV2TestPlansIdTestPointsTesterUserIdPostAsync(string id, Guid userId, TestPointSelectModel testPointSelectModel = default(TestPointSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIt.Client.Client.ApiResponse<List<Guid>> localVarResponse = await ApiV2TestPlansIdTestPointsTesterUserIdPostWithHttpInfoAsync(id, userId, testPointSelectModel, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Assign user as a tester to multiple test points 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the test plan</param>
+        /// <param name="userId">Unique ID of the user</param>
+        /// <param name="testPointSelectModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<Guid>>> ApiV2TestPlansIdTestPointsTesterUserIdPostWithHttpInfoAsync(string id, Guid userId, TestPointSelectModel testPointSelectModel = default(TestPointSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdTestPointsTesterUserIdPost");
+
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("userId", TestIt.Client.Client.ClientUtils.ParameterToString(userId)); // path parameter
+            localVarRequestOptions.Data = testPointSelectModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<Guid>>("/api/v2/testPlans/{id}/testPoints/tester/{userId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdTestPointsTesterUserIdPost", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

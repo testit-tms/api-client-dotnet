@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **TestRunId** | **Guid** | Unique ID of test run where test result is located | [optional] 
 **ConfigurationId** | **Guid** | Unique ID of configuration which test result uses | [optional] 
 **ConfigurationName** | **string** | Name of configuration which test result uses | [optional] 
-**Outcome** | **TestResultOutcome** |  | [optional] 
+**Outcome** | **TestResultOutcome** |  | 
 **ResultReasons** | [**List&lt;AutotestResultReasonSubGetModel&gt;**](AutotestResultReasonSubGetModel.md) | Collection of result reasons which test result have | [optional] 
 **Comment** | **string** | Comment to test result | [optional] 
 **Date** | **DateTime** | Date when test result has been set | [optional] 

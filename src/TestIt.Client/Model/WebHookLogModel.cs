@@ -36,19 +36,24 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets EventType
         /// </summary>
-        [DataMember(Name = "eventType", EmitDefaultValue = false)]
-        public WebHookEventTypeModel? EventType { get; set; }
+        [DataMember(Name = "eventType", IsRequired = true, EmitDefaultValue = true)]
+        public WebHookEventTypeModel EventType { get; set; }
 
         /// <summary>
         /// Gets or Sets RequestType
         /// </summary>
-        [DataMember(Name = "requestType", EmitDefaultValue = false)]
-        public RequestTypeModel? RequestType { get; set; }
+        [DataMember(Name = "requestType", IsRequired = true, EmitDefaultValue = true)]
+        public RequestTypeModel RequestType { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebHookLogModel" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected WebHookLogModel() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="WebHookLogModel" /> class.
         /// </summary>
         /// <param name="webHookName">webHookName.</param>
-        /// <param name="eventType">eventType.</param>
+        /// <param name="eventType">eventType (required).</param>
         /// <param name="webHookId">webHookId.</param>
         /// <param name="requestBody">requestBody.</param>
         /// <param name="requestMeta">requestMeta.</param>
@@ -57,17 +62,18 @@ namespace TestIt.Client.Model
         /// <param name="responseMeta">responseMeta.</param>
         /// <param name="projectId">projectId.</param>
         /// <param name="url">url.</param>
-        /// <param name="requestType">requestType.</param>
+        /// <param name="requestType">requestType (required).</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="modifiedDate">modifiedDate.</param>
         /// <param name="createdById">createdById.</param>
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="id">Unique ID of the entity.</param>
         /// <param name="isDeleted">Indicates if the entity is deleted.</param>
-        public WebHookLogModel(string webHookName = default(string), WebHookEventTypeModel? eventType = default(WebHookEventTypeModel?), Guid webHookId = default(Guid), string requestBody = default(string), string requestMeta = default(string), int responseStatusCode = default(int), string responseBody = default(string), string responseMeta = default(string), Guid projectId = default(Guid), string url = default(string), RequestTypeModel? requestType = default(RequestTypeModel?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), Guid id = default(Guid), bool isDeleted = default(bool))
+        public WebHookLogModel(string webHookName = default(string), WebHookEventTypeModel eventType = default(WebHookEventTypeModel), Guid webHookId = default(Guid), string requestBody = default(string), string requestMeta = default(string), int responseStatusCode = default(int), string responseBody = default(string), string responseMeta = default(string), Guid projectId = default(Guid), string url = default(string), RequestTypeModel requestType = default(RequestTypeModel), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), Guid id = default(Guid), bool isDeleted = default(bool))
         {
-            this.WebHookName = webHookName;
             this.EventType = eventType;
+            this.RequestType = requestType;
+            this.WebHookName = webHookName;
             this.WebHookId = webHookId;
             this.RequestBody = requestBody;
             this.RequestMeta = requestMeta;
@@ -76,7 +82,6 @@ namespace TestIt.Client.Model
             this.ResponseMeta = responseMeta;
             this.ProjectId = projectId;
             this.Url = url;
-            this.RequestType = requestType;
             this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
             this.CreatedById = createdById;

@@ -102,9 +102,9 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **204** | Successful operation |  -  |
 | **403** | System admin permission required |  -  |
-| **401** | Unauthorized |  -  |
 | **404** | WorkItem is not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -303,8 +303,8 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Success |  -  |
 | **403** | System administrator role is required |  -  |
+| **204** | No Content |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

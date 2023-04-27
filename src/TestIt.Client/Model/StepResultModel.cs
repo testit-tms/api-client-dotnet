@@ -39,12 +39,14 @@ namespace TestIt.Client.Model
         /// <param name="outcome">outcome.</param>
         /// <param name="sharedStepVersionId">sharedStepVersionId.</param>
         /// <param name="sharedStepResults">sharedStepResults.</param>
-        public StepResultModel(Guid stepId = default(Guid), string outcome = default(string), Guid? sharedStepVersionId = default(Guid?), List<SharedStepResultModel> sharedStepResults = default(List<SharedStepResultModel>))
+        /// <param name="comment">comment.</param>
+        public StepResultModel(Guid stepId = default(Guid), string outcome = default(string), Guid? sharedStepVersionId = default(Guid?), List<SharedStepResultModel> sharedStepResults = default(List<SharedStepResultModel>), StepCommentModel comment = default(StepCommentModel))
         {
             this.StepId = stepId;
             this.Outcome = outcome;
             this.SharedStepVersionId = sharedStepVersionId;
             this.SharedStepResults = sharedStepResults;
+            this.Comment = comment;
         }
 
         /// <summary>
@@ -72,6 +74,12 @@ namespace TestIt.Client.Model
         public List<SharedStepResultModel> SharedStepResults { get; set; }
 
         /// <summary>
+        /// Gets or Sets Comment
+        /// </summary>
+        [DataMember(Name = "comment", EmitDefaultValue = false)]
+        public StepCommentModel Comment { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -83,6 +91,7 @@ namespace TestIt.Client.Model
             sb.Append("  Outcome: ").Append(Outcome).Append("\n");
             sb.Append("  SharedStepVersionId: ").Append(SharedStepVersionId).Append("\n");
             sb.Append("  SharedStepResults: ").Append(SharedStepResults).Append("\n");
+            sb.Append("  Comment: ").Append(Comment).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -138,6 +147,11 @@ namespace TestIt.Client.Model
                     this.SharedStepResults != null &&
                     input.SharedStepResults != null &&
                     this.SharedStepResults.SequenceEqual(input.SharedStepResults)
+                ) && 
+                (
+                    this.Comment == input.Comment ||
+                    (this.Comment != null &&
+                    this.Comment.Equals(input.Comment))
                 );
         }
 
@@ -165,6 +179,10 @@ namespace TestIt.Client.Model
                 if (this.SharedStepResults != null)
                 {
                     hashCode = (hashCode * 59) + this.SharedStepResults.GetHashCode();
+                }
+                if (this.Comment != null)
+                {
+                    hashCode = (hashCode * 59) + this.Comment.GetHashCode();
                 }
                 return hashCode;
             }

@@ -55,7 +55,7 @@ namespace TestIt.Client.Model
         /// <param name="attachments">attachments (required).</param>
         /// <param name="iterations">iterations.</param>
         /// <param name="autoTests">autoTests.</param>
-        /// <param name="id">id.</param>
+        /// <param name="id">id (required).</param>
         /// <param name="sectionId">sectionId.</param>
         /// <param name="description">description.</param>
         /// <param name="state">state (required).</param>
@@ -76,6 +76,7 @@ namespace TestIt.Client.Model
                 throw new ArgumentNullException("attachments is a required property for WorkItemPutModel and cannot be null");
             }
             this.Attachments = attachments;
+            this.Id = id;
             this.State = state;
             this.Priority = priority;
             // to ensure "steps" is required (not null)
@@ -122,7 +123,6 @@ namespace TestIt.Client.Model
             this.Name = name;
             this.Iterations = iterations;
             this.AutoTests = autoTests;
-            this.Id = id;
             this.SectionId = sectionId;
             this.Description = description;
             this.Duration = duration;
@@ -149,7 +149,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
@@ -444,6 +444,12 @@ namespace TestIt.Client.Model
             if (this.Duration < (int)0)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Duration, must be a value greater than or equal to 0.", new [] { "Duration" });
+            }
+
+            // Name (string) minLength
+            if (this.Name != null && this.Name.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
             }
 
             yield break;

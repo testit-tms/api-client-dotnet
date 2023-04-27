@@ -32,6 +32,12 @@ namespace TestIt.Client.Model
     [DataContract(Name = "TestSuiteV2GetModel")]
     public partial class TestSuiteV2GetModel : IEquatable<TestSuiteV2GetModel>, IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets Type
+        /// </summary>
+        [DataMember(Name = "type", EmitDefaultValue = false)]
+        public TestSuiteType? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TestSuiteV2GetModel" /> class.
         /// </summary>
@@ -44,7 +50,9 @@ namespace TestIt.Client.Model
         /// <param name="parentId">parentId.</param>
         /// <param name="testPlanId">testPlanId (required).</param>
         /// <param name="name">name (required).</param>
-        public TestSuiteV2GetModel(Guid id = default(Guid), Guid? parentId = default(Guid?), Guid testPlanId = default(Guid), string name = default(string))
+        /// <param name="type">type.</param>
+        /// <param name="saveStructure">saveStructure.</param>
+        public TestSuiteV2GetModel(Guid id = default(Guid), Guid? parentId = default(Guid?), Guid testPlanId = default(Guid), string name = default(string), TestSuiteType? type = default(TestSuiteType?), bool? saveStructure = default(bool?))
         {
             this.TestPlanId = testPlanId;
             // to ensure "name" is required (not null)
@@ -55,6 +63,8 @@ namespace TestIt.Client.Model
             this.Name = name;
             this.Id = id;
             this.ParentId = parentId;
+            this.Type = type;
+            this.SaveStructure = saveStructure;
         }
 
         /// <summary>
@@ -82,6 +92,12 @@ namespace TestIt.Client.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or Sets SaveStructure
+        /// </summary>
+        [DataMember(Name = "saveStructure", EmitDefaultValue = true)]
+        public bool? SaveStructure { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -93,6 +109,8 @@ namespace TestIt.Client.Model
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("  TestPlanId: ").Append(TestPlanId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  SaveStructure: ").Append(SaveStructure).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -147,6 +165,15 @@ namespace TestIt.Client.Model
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    this.Type.Equals(input.Type)
+                ) && 
+                (
+                    this.SaveStructure == input.SaveStructure ||
+                    (this.SaveStructure != null &&
+                    this.SaveStructure.Equals(input.SaveStructure))
                 );
         }
 
@@ -174,6 +201,11 @@ namespace TestIt.Client.Model
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.Type.GetHashCode();
+                if (this.SaveStructure != null)
+                {
+                    hashCode = (hashCode * 59) + this.SaveStructure.GetHashCode();
                 }
                 return hashCode;
             }

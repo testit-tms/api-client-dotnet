@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**TestPlanIds** | **List&lt;Guid&gt;** | Specifies a test point test plan IDS to search for | [optional] 
 **TestSuiteIds** | **List&lt;Guid&gt;** | Specifies a test point test suite IDs to search for | [optional] 
 **WorkItemGlobalIds** | **List&lt;long&gt;** | Specifies a test point work item global IDs to search for | [optional] 
 **Statuses** | [**List&lt;TestPointStatus&gt;**](TestPointStatus.md) | Specifies a test point statuses to search for | [optional] 

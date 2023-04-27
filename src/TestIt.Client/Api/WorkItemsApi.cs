@@ -28,6 +28,29 @@ namespace TestIt.Client.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// Upload and link attachment to WorkItem
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets workItemId  &lt;br&gt;User attaches a file  &lt;br&gt;System creates attachment and links it to the work item  &lt;br&gt;System returns attachment identifier
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Work item internal identifier (guid format)</param>
+        /// <param name="file">Select file (optional)</param>
+        /// <returns>Guid</returns>
+        Guid ApiV2WorkItemsIdAttachmentsPost(Guid id, FileParameter file = default(FileParameter));
+
+        /// <summary>
+        /// Upload and link attachment to WorkItem
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets workItemId  &lt;br&gt;User attaches a file  &lt;br&gt;System creates attachment and links it to the work item  &lt;br&gt;System returns attachment identifier
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Work item internal identifier (guid format)</param>
+        /// <param name="file">Select file (optional)</param>
+        /// <returns>ApiResponse of Guid</returns>
+        ApiResponse<Guid> ApiV2WorkItemsIdAttachmentsPostWithHttpInfo(Guid id, FileParameter file = default(FileParameter));
+        /// <summary>
         /// Transform CheckList to TestCase
         /// </summary>
         /// <remarks>
@@ -551,6 +574,42 @@ namespace TestIt.Client.Api
         /// <returns>ApiResponse of List&lt;WorkItemVersionModel&gt;</returns>
         ApiResponse<List<WorkItemVersionModel>> GetWorkItemVersionsWithHttpInfo(string id, Guid? workItemVersionId = default(Guid?), int? versionNumber = default(int?));
         /// <summary>
+        /// Permanently delete test case, checklist or shared steps from archive
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the work item</param>
+        /// <returns></returns>
+        void PurgeWorkItem(string id);
+
+        /// <summary>
+        /// Permanently delete test case, checklist or shared steps from archive
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the work item</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> PurgeWorkItemWithHttpInfo(string id);
+        /// <summary>
+        /// Restore test case, checklist or shared steps from archive
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the work item</param>
+        /// <returns></returns>
+        void RestoreWorkItem(string id);
+
+        /// <summary>
+        /// Restore test case, checklist or shared steps from archive
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the work item</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> RestoreWorkItemWithHttpInfo(string id);
+        /// <summary>
         /// Update Test Case, Checklist or Shared Step
         /// </summary>
         /// <remarks>
@@ -580,6 +639,31 @@ namespace TestIt.Client.Api
     public interface IWorkItemsApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// Upload and link attachment to WorkItem
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets workItemId  &lt;br&gt;User attaches a file  &lt;br&gt;System creates attachment and links it to the work item  &lt;br&gt;System returns attachment identifier
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Work item internal identifier (guid format)</param>
+        /// <param name="file">Select file (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Guid</returns>
+        System.Threading.Tasks.Task<Guid> ApiV2WorkItemsIdAttachmentsPostAsync(Guid id, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Upload and link attachment to WorkItem
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets workItemId  &lt;br&gt;User attaches a file  &lt;br&gt;System creates attachment and links it to the work item  &lt;br&gt;System returns attachment identifier
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Work item internal identifier (guid format)</param>
+        /// <param name="file">Select file (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Guid)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Guid>> ApiV2WorkItemsIdAttachmentsPostWithHttpInfoAsync(Guid id, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Transform CheckList to TestCase
         /// </summary>
@@ -1152,6 +1236,52 @@ namespace TestIt.Client.Api
         /// <returns>Task of ApiResponse (List&lt;WorkItemVersionModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<WorkItemVersionModel>>> GetWorkItemVersionsWithHttpInfoAsync(string id, Guid? workItemVersionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
+        /// Permanently delete test case, checklist or shared steps from archive
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the work item</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task PurgeWorkItemAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Permanently delete test case, checklist or shared steps from archive
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the work item</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> PurgeWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Restore test case, checklist or shared steps from archive
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the work item</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task RestoreWorkItemAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Restore test case, checklist or shared steps from archive
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the work item</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> RestoreWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
         /// Update Test Case, Checklist or Shared Step
         /// </summary>
         /// <remarks>
@@ -1385,6 +1515,137 @@ namespace TestIt.Client.Api
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        /// Upload and link attachment to WorkItem &lt;br&gt;Use case  &lt;br&gt;User sets workItemId  &lt;br&gt;User attaches a file  &lt;br&gt;System creates attachment and links it to the work item  &lt;br&gt;System returns attachment identifier
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Work item internal identifier (guid format)</param>
+        /// <param name="file">Select file (optional)</param>
+        /// <returns>Guid</returns>
+        public Guid ApiV2WorkItemsIdAttachmentsPost(Guid id, FileParameter file = default(FileParameter))
+        {
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = ApiV2WorkItemsIdAttachmentsPostWithHttpInfo(id, file);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Upload and link attachment to WorkItem &lt;br&gt;Use case  &lt;br&gt;User sets workItemId  &lt;br&gt;User attaches a file  &lt;br&gt;System creates attachment and links it to the work item  &lt;br&gt;System returns attachment identifier
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Work item internal identifier (guid format)</param>
+        /// <param name="file">Select file (optional)</param>
+        /// <returns>ApiResponse of Guid</returns>
+        public TestIt.Client.Client.ApiResponse<Guid> ApiV2WorkItemsIdAttachmentsPostWithHttpInfo(Guid id, FileParameter file = default(FileParameter))
+        {
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (file != null)
+            {
+                localVarRequestOptions.FileParameters.Add("file", file);
+            }
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Guid>("/api/v2/workItems/{id}/attachments", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2WorkItemsIdAttachmentsPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Upload and link attachment to WorkItem &lt;br&gt;Use case  &lt;br&gt;User sets workItemId  &lt;br&gt;User attaches a file  &lt;br&gt;System creates attachment and links it to the work item  &lt;br&gt;System returns attachment identifier
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Work item internal identifier (guid format)</param>
+        /// <param name="file">Select file (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Guid</returns>
+        public async System.Threading.Tasks.Task<Guid> ApiV2WorkItemsIdAttachmentsPostAsync(Guid id, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = await ApiV2WorkItemsIdAttachmentsPostWithHttpInfoAsync(id, file, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Upload and link attachment to WorkItem &lt;br&gt;Use case  &lt;br&gt;User sets workItemId  &lt;br&gt;User attaches a file  &lt;br&gt;System creates attachment and links it to the work item  &lt;br&gt;System returns attachment identifier
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Work item internal identifier (guid format)</param>
+        /// <param name="file">Select file (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Guid)</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Guid>> ApiV2WorkItemsIdAttachmentsPostWithHttpInfoAsync(Guid id, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (file != null)
+            {
+                localVarRequestOptions.FileParameters.Add("file", file);
+            }
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Guid>("/api/v2/workItems/{id}/attachments", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2WorkItemsIdAttachmentsPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>
@@ -4398,6 +4659,252 @@ namespace TestIt.Client.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetWorkItemVersions", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Permanently delete test case, checklist or shared steps from archive 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the work item</param>
+        /// <returns></returns>
+        public void PurgeWorkItem(string id)
+        {
+            PurgeWorkItemWithHttpInfo(id);
+        }
+
+        /// <summary>
+        /// Permanently delete test case, checklist or shared steps from archive 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the work item</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIt.Client.Client.ApiResponse<Object> PurgeWorkItemWithHttpInfo(string id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling WorkItemsApi->PurgeWorkItem");
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/api/v2/workItems/{id}/purge", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PurgeWorkItem", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Permanently delete test case, checklist or shared steps from archive 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the work item</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task PurgeWorkItemAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await PurgeWorkItemWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Permanently delete test case, checklist or shared steps from archive 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the work item</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> PurgeWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling WorkItemsApi->PurgeWorkItem");
+
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/workItems/{id}/purge", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PurgeWorkItem", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Restore test case, checklist or shared steps from archive 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the work item</param>
+        /// <returns></returns>
+        public void RestoreWorkItem(string id)
+        {
+            RestoreWorkItemWithHttpInfo(id);
+        }
+
+        /// <summary>
+        /// Restore test case, checklist or shared steps from archive 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the work item</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIt.Client.Client.ApiResponse<Object> RestoreWorkItemWithHttpInfo(string id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling WorkItemsApi->RestoreWorkItem");
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/api/v2/workItems/{id}/restore", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("RestoreWorkItem", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Restore test case, checklist or shared steps from archive 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the work item</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task RestoreWorkItemAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await RestoreWorkItemWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Restore test case, checklist or shared steps from archive 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the work item</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> RestoreWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling WorkItemsApi->RestoreWorkItem");
+
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/workItems/{id}/restore", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("RestoreWorkItem", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

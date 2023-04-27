@@ -36,8 +36,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Priority
         /// </summary>
-        [DataMember(Name = "priority", EmitDefaultValue = false)]
-        public WorkItemPriorityModel? Priority { get; set; }
+        [DataMember(Name = "priority", IsRequired = true, EmitDefaultValue = true)]
+        public WorkItemPriorityModel Priority { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SharedStepReferenceModel" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected SharedStepReferenceModel() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="SharedStepReferenceModel" /> class.
         /// </summary>
@@ -53,14 +58,15 @@ namespace TestIt.Client.Model
         /// <param name="createdDate">createdDate.</param>
         /// <param name="modifiedDate">modifiedDate.</param>
         /// <param name="state">state.</param>
-        /// <param name="priority">priority.</param>
+        /// <param name="priority">priority (required).</param>
         /// <param name="isDeleted">isDeleted.</param>
         /// <param name="versionId">used for versioning changes in workitem.</param>
         /// <param name="isAutomated">isAutomated.</param>
         /// <param name="sectionId">sectionId.</param>
         /// <param name="tags">tags.</param>
-        public SharedStepReferenceModel(Guid id = default(Guid), long globalId = default(long), string name = default(string), string entityTypeName = default(string), bool hasThisSharedStepAsStep = default(bool), bool hasThisSharedStepAsPrecondition = default(bool), bool hasThisSharedStepAsPostcondition = default(bool), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), string state = default(string), WorkItemPriorityModel? priority = default(WorkItemPriorityModel?), bool isDeleted = default(bool), Guid versionId = default(Guid), bool isAutomated = default(bool), Guid sectionId = default(Guid), List<TagShortModel> tags = default(List<TagShortModel>))
+        public SharedStepReferenceModel(Guid id = default(Guid), long globalId = default(long), string name = default(string), string entityTypeName = default(string), bool hasThisSharedStepAsStep = default(bool), bool hasThisSharedStepAsPrecondition = default(bool), bool hasThisSharedStepAsPostcondition = default(bool), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), string state = default(string), WorkItemPriorityModel priority = default(WorkItemPriorityModel), bool isDeleted = default(bool), Guid versionId = default(Guid), bool isAutomated = default(bool), Guid sectionId = default(Guid), List<TagShortModel> tags = default(List<TagShortModel>))
         {
+            this.Priority = priority;
             this.Id = id;
             this.GlobalId = globalId;
             this.Name = name;
@@ -73,7 +79,6 @@ namespace TestIt.Client.Model
             this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
             this.State = state;
-            this.Priority = priority;
             this.IsDeleted = isDeleted;
             this.VersionId = versionId;
             this.IsAutomated = isAutomated;

@@ -189,6 +189,29 @@ namespace TestIt.Client.Api
         /// <returns>ApiResponse of List&lt;FilterModel&gt;</returns>
         ApiResponse<List<FilterModel>> ApiV2ProjectsIdFiltersGetWithHttpInfo(string id);
         /// <summary>
+        /// Patch project
+        /// </summary>
+        /// <remarks>
+        /// See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global Id of project</param>
+        /// <param name="operation"> (optional)</param>
+        /// <returns></returns>
+        void ApiV2ProjectsIdPatch(Guid id, List<Operation> operation = default(List<Operation>));
+
+        /// <summary>
+        /// Patch project
+        /// </summary>
+        /// <remarks>
+        /// See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global Id of project</param>
+        /// <param name="operation"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ApiV2ProjectsIdPatchWithHttpInfo(Guid id, List<Operation> operation = default(List<Operation>));
+        /// <summary>
         /// Get TestPlans analytics
         /// </summary>
         /// <remarks>
@@ -224,6 +247,26 @@ namespace TestIt.Client.Api
         /// <returns>ApiResponse of List&lt;TestPlanWithAnalyticModel&gt;</returns>
         ApiResponse<List<TestPlanWithAnalyticModel>> ApiV2ProjectsIdTestPlansAnalyticsGetWithHttpInfo(Guid id, bool? isDeleted = default(bool?), bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
         /// <summary>
+        /// Delete multiple test plans
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the project</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <returns>List&lt;Guid&gt;</returns>
+        List<Guid> ApiV2ProjectsIdTestPlansDeleteBulkPost(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel));
+
+        /// <summary>
+        /// Delete multiple test plans
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the project</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
+        ApiResponse<List<Guid>> ApiV2ProjectsIdTestPlansDeleteBulkPostWithHttpInfo(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel));
+        /// <summary>
         /// Checks if TestPlan exists with the specified name exists for the project
         /// </summary>
         /// <remarks>
@@ -247,6 +290,26 @@ namespace TestIt.Client.Api
         /// <returns>ApiResponse of bool</returns>
         ApiResponse<bool> ApiV2ProjectsIdTestPlansNameExistsGetWithHttpInfo(Guid id, string name);
         /// <summary>
+        /// Restore multiple test plans
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the project</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <returns></returns>
+        void ApiV2ProjectsIdTestPlansRestoreBulkPost(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel));
+
+        /// <summary>
+        /// Restore multiple test plans
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the project</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ApiV2ProjectsIdTestPlansRestoreBulkPostWithHttpInfo(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel));
+        /// <summary>
         /// Get Project TestPlans with analytics
         /// </summary>
         /// <remarks>
@@ -260,9 +323,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testPlanSearchQueryModel"> (optional)</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
         /// <returns>List&lt;TestPlanWithAnalyticModel&gt;</returns>
-        List<TestPlanWithAnalyticModel> ApiV2ProjectsIdTestPlansSearchPost(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPlanSearchQueryModel testPlanSearchQueryModel = default(TestPlanSearchQueryModel));
+        List<TestPlanWithAnalyticModel> ApiV2ProjectsIdTestPlansSearchPost(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel));
 
         /// <summary>
         /// Get Project TestPlans with analytics
@@ -278,9 +341,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testPlanSearchQueryModel"> (optional)</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;TestPlanWithAnalyticModel&gt;</returns>
-        ApiResponse<List<TestPlanWithAnalyticModel>> ApiV2ProjectsIdTestPlansSearchPostWithHttpInfo(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPlanSearchQueryModel testPlanSearchQueryModel = default(TestPlanSearchQueryModel));
+        ApiResponse<List<TestPlanWithAnalyticModel>> ApiV2ProjectsIdTestPlansSearchPostWithHttpInfo(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel));
         /// <summary>
         /// Get active Project TestRuns
         /// </summary>
@@ -481,6 +544,82 @@ namespace TestIt.Client.Api
         /// <returns>ApiResponse of List&lt;ProjectModel&gt;</returns>
         ApiResponse<List<ProjectModel>> ApiV2ProjectsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectsFilterModel projectsFilterModel = default(ProjectsFilterModel));
         /// <summary>
+        /// Import project from JSON file in background job
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="file"> (optional)</param>
+        /// <returns>Guid</returns>
+        Guid BackgroundImportProject(FileParameter file = default(FileParameter));
+
+        /// <summary>
+        /// Import project from JSON file in background job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="file"> (optional)</param>
+        /// <returns>ApiResponse of Guid</returns>
+        ApiResponse<Guid> BackgroundImportProjectWithHttpInfo(FileParameter file = default(FileParameter));
+        /// <summary>
+        /// Import project from JSON file into existing project in background job
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="file">Select file (optional)</param>
+        /// <returns>Guid</returns>
+        Guid BackgroundImportToExistingProject(string id, FileParameter file = default(FileParameter));
+
+        /// <summary>
+        /// Import project from JSON file into existing project in background job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="file">Select file (optional)</param>
+        /// <returns>ApiResponse of Guid</returns>
+        ApiResponse<Guid> BackgroundImportToExistingProjectWithHttpInfo(string id, FileParameter file = default(FileParameter));
+        /// <summary>
+        /// Import project from Zip file in background job
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="file"> (optional)</param>
+        /// <returns>Guid</returns>
+        Guid BackgroundImportZipProject(FileParameter file = default(FileParameter));
+
+        /// <summary>
+        /// Import project from Zip file in background job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="file"> (optional)</param>
+        /// <returns>ApiResponse of Guid</returns>
+        ApiResponse<Guid> BackgroundImportZipProjectWithHttpInfo(FileParameter file = default(FileParameter));
+        /// <summary>
+        /// Import project from Zip file into existing project in background job
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="file">Select file (optional)</param>
+        /// <returns>Guid</returns>
+        Guid BackgroundImportZipToExistingProject(string id, FileParameter file = default(FileParameter));
+
+        /// <summary>
+        /// Import project from Zip file into existing project in background job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="file">Select file (optional)</param>
+        /// <returns>ApiResponse of Guid</returns>
+        ApiResponse<Guid> BackgroundImportZipToExistingProjectWithHttpInfo(string id, FileParameter file = default(FileParameter));
+        /// <summary>
         /// Add attributes to project&#39;s test plans
         /// </summary>
         /// <remarks>
@@ -639,27 +778,117 @@ namespace TestIt.Client.Api
         /// Export project as JSON file
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;This method exports the selected project or its part (sections, work items) to a &#x60;.json&#x60; file.  &lt;br&gt;In the request body, you can specify sections and test cases to be exported.  &lt;br&gt;Example of a request to export two sections and two test cases:  &lt;br&gt;    &lt;code&gt;              curl -X POST \&quot;http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\&quot; \\              -H \&quot;accept: application/json\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: application/json-patch+json\&quot; \\              -d \&quot;{\\\&quot;sectionIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;9fa85f64-5717-4562-b3fc-2c963f66a000\\\&quot;],\\\&quot;workItemIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;90085f64-5717-4562-b3fc-2c963f66a000\\\&quot;]}\&quot;              &lt;/code&gt;    &lt;br&gt;In the response, you get:  &lt;br&gt;              - A &#x60;.zip&#x60; file with attachments and a.json file if you enable attachments export.&lt;br /&gt;              - A &#x60;.json&#x60; file with the project if you do not enable attachments export.              
+        /// &lt;br&gt;This method exports the selected project or its part (sections, work items) to a &#x60;.json&#x60; file.  &lt;br&gt;In the request body, you can specify sections and test cases to be exported.  &lt;br&gt;Example of a request to export two sections and two test cases:  &lt;br&gt;    &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\&quot; \\              -H \&quot;accept: application/json\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: application/json-patch+json\&quot; \\              -d \&quot;{\\\&quot;sectionIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;9fa85f64-5717-4562-b3fc-2c963f66a000\\\&quot;],\\\&quot;workItemIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;90085f64-5717-4562-b3fc-2c963f66a000\\\&quot;]}\&quot;              &#x60;&#x60;&#x60;    &lt;br&gt;In the response, you get:  &lt;br&gt;              - A &#x60;.zip&#x60; file with attachments and a.json file if you enable attachments export.&lt;br /&gt;              - A &#x60;.json&#x60; file with the project if you do not enable attachments export.              
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
         /// <param name="projectExportQueryModel"> (optional)</param>
         /// <returns>FileParameter</returns>
+        [Obsolete]
         FileParameter Export(string id, bool? includeAttachments = default(bool?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel));
 
         /// <summary>
         /// Export project as JSON file
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;This method exports the selected project or its part (sections, work items) to a &#x60;.json&#x60; file.  &lt;br&gt;In the request body, you can specify sections and test cases to be exported.  &lt;br&gt;Example of a request to export two sections and two test cases:  &lt;br&gt;    &lt;code&gt;              curl -X POST \&quot;http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\&quot; \\              -H \&quot;accept: application/json\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: application/json-patch+json\&quot; \\              -d \&quot;{\\\&quot;sectionIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;9fa85f64-5717-4562-b3fc-2c963f66a000\\\&quot;],\\\&quot;workItemIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;90085f64-5717-4562-b3fc-2c963f66a000\\\&quot;]}\&quot;              &lt;/code&gt;    &lt;br&gt;In the response, you get:  &lt;br&gt;              - A &#x60;.zip&#x60; file with attachments and a.json file if you enable attachments export.&lt;br /&gt;              - A &#x60;.json&#x60; file with the project if you do not enable attachments export.              
+        /// &lt;br&gt;This method exports the selected project or its part (sections, work items) to a &#x60;.json&#x60; file.  &lt;br&gt;In the request body, you can specify sections and test cases to be exported.  &lt;br&gt;Example of a request to export two sections and two test cases:  &lt;br&gt;    &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\&quot; \\              -H \&quot;accept: application/json\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: application/json-patch+json\&quot; \\              -d \&quot;{\\\&quot;sectionIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;9fa85f64-5717-4562-b3fc-2c963f66a000\\\&quot;],\\\&quot;workItemIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;90085f64-5717-4562-b3fc-2c963f66a000\\\&quot;]}\&quot;              &#x60;&#x60;&#x60;    &lt;br&gt;In the response, you get:  &lt;br&gt;              - A &#x60;.zip&#x60; file with attachments and a.json file if you enable attachments export.&lt;br /&gt;              - A &#x60;.json&#x60; file with the project if you do not enable attachments export.              
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
         /// <param name="projectExportQueryModel"> (optional)</param>
         /// <returns>ApiResponse of FileParameter</returns>
+        [Obsolete]
         ApiResponse<FileParameter> ExportWithHttpInfo(string id, bool? includeAttachments = default(bool?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel));
+        /// <summary>
+        /// Export project as JSON file in background job
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <returns>Guid</returns>
+        Guid ExportProjectJson(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel));
+
+        /// <summary>
+        /// Export project as JSON file in background job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <returns>ApiResponse of Guid</returns>
+        ApiResponse<Guid> ExportProjectJsonWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel));
+        /// <summary>
+        /// Export project as JSON file with test plans in background job
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <returns>Guid</returns>
+        Guid ExportProjectWithTestPlansJson(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel));
+
+        /// <summary>
+        /// Export project as JSON file with test plans in background job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <returns>ApiResponse of Guid</returns>
+        ApiResponse<Guid> ExportProjectWithTestPlansJsonWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel));
+        /// <summary>
+        /// Export project as Zip file with test plans in background job
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <returns>Guid</returns>
+        Guid ExportProjectWithTestPlansZip(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel));
+
+        /// <summary>
+        /// Export project as Zip file with test plans in background job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <returns>ApiResponse of Guid</returns>
+        ApiResponse<Guid> ExportProjectWithTestPlansZipWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel));
+        /// <summary>
+        /// Export project as Zip file in background job
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <returns>Guid</returns>
+        Guid ExportProjectZip(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel));
+
+        /// <summary>
+        /// Export project as Zip file in background job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <returns>ApiResponse of Guid</returns>
+        ApiResponse<Guid> ExportProjectZipWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel));
         /// <summary>
         /// Export project with test plans, test suites and test points as JSON file
         /// </summary>
@@ -671,6 +900,7 @@ namespace TestIt.Client.Api
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
         /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
         /// <returns>FileParameter</returns>
+        [Obsolete]
         FileParameter ExportWithTestPlansAndConfigurations(string id, bool? includeAttachments = default(bool?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel));
 
         /// <summary>
@@ -684,6 +914,7 @@ namespace TestIt.Client.Api
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
         /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
         /// <returns>ApiResponse of FileParameter</returns>
+        [Obsolete]
         ApiResponse<FileParameter> ExportWithTestPlansAndConfigurationsWithHttpInfo(string id, bool? includeAttachments = default(bool?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel));
         /// <summary>
         /// Get all projects
@@ -751,9 +982,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="isDeleted">If result must consist of only actual/deleted work items (optional, default to false)</param>
+        /// <param name="isDeleted"> (optional)</param>
         /// <returns>List&lt;CustomAttributeModel&gt;</returns>
-        List<CustomAttributeModel> GetAttributesByProjectId(string id, bool? isDeleted = default(bool?));
+        List<CustomAttributeModel> GetAttributesByProjectId(string id, DeletionState? isDeleted = default(DeletionState?));
 
         /// <summary>
         /// Get project attributes
@@ -763,9 +994,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="isDeleted">If result must consist of only actual/deleted work items (optional, default to false)</param>
+        /// <param name="isDeleted"> (optional)</param>
         /// <returns>ApiResponse of List&lt;CustomAttributeModel&gt;</returns>
-        ApiResponse<List<CustomAttributeModel>> GetAttributesByProjectIdWithHttpInfo(string id, bool? isDeleted = default(bool?));
+        ApiResponse<List<CustomAttributeModel>> GetAttributesByProjectIdWithHttpInfo(string id, DeletionState? isDeleted = default(DeletionState?));
         /// <summary>
         /// Get namespaces of autotests in project
         /// </summary>
@@ -990,24 +1221,26 @@ namespace TestIt.Client.Api
         /// Import project from JSON file
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;    &lt;b&gt;A project can only be exported to another TMS instance, different from the one it was imported from.&lt;/b&gt;    &lt;br&gt;This method imports a &#x60;.json&#x60; file with a project to the test management system.  &lt;br&gt;In the body of the request, send the &#x60;.json&#x60; file received by the &#x60;POST /api/v2/projects/export&#x60; method:  &lt;br&gt;    &lt;code&gt;              curl -X POST \&quot;http://{domain.com}/api/v2/projects/import\&quot; \\              -H \&quot;accept: /\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: multipart/form-data\&quot; \\              -F \&quot;file&#x3D;@import.txt;type&#x3D;text/plain\&quot;              &lt;/code&gt;    &lt;br&gt;              In the second instance, a project with the name of the imported one is created.              User attributes and the test library (along with content and structure) are imported.                &lt;br&gt;Test plan execution history from the first instance of TMS cannot be transferred.
+        /// &lt;br&gt;    &lt;b&gt;A project can only be exported to another TMS instance, different from the one it was imported from.&lt;/b&gt;    &lt;br&gt;This method imports a &#x60;.json&#x60; file with a project to the test management system.  &lt;br&gt;In the body of the request, send the &#x60;.json&#x60; file received by the &#x60;POST /api/v2/projects/export&#x60; method:  &lt;br&gt;    &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain.com}/api/v2/projects/import\&quot; \\              -H \&quot;accept: /\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: multipart/form-data\&quot; \\              -F \&quot;file&#x3D;@import.txt;type&#x3D;text/plain\&quot;              &#x60;&#x60;&#x60;    &lt;br&gt;              In the second instance, a project with the name of the imported one is created.              User attributes and the test library (along with content and structure) are imported.                &lt;br&gt;Test plan execution history from the first instance of TMS cannot be transferred.
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeAttachments">Enables attachment import. (optional, default to false)</param>
         /// <param name="file">Select file (optional)</param>
         /// <returns></returns>
+        [Obsolete]
         void Import(bool? includeAttachments = default(bool?), FileParameter file = default(FileParameter));
 
         /// <summary>
         /// Import project from JSON file
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;    &lt;b&gt;A project can only be exported to another TMS instance, different from the one it was imported from.&lt;/b&gt;    &lt;br&gt;This method imports a &#x60;.json&#x60; file with a project to the test management system.  &lt;br&gt;In the body of the request, send the &#x60;.json&#x60; file received by the &#x60;POST /api/v2/projects/export&#x60; method:  &lt;br&gt;    &lt;code&gt;              curl -X POST \&quot;http://{domain.com}/api/v2/projects/import\&quot; \\              -H \&quot;accept: /\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: multipart/form-data\&quot; \\              -F \&quot;file&#x3D;@import.txt;type&#x3D;text/plain\&quot;              &lt;/code&gt;    &lt;br&gt;              In the second instance, a project with the name of the imported one is created.              User attributes and the test library (along with content and structure) are imported.                &lt;br&gt;Test plan execution history from the first instance of TMS cannot be transferred.
+        /// &lt;br&gt;    &lt;b&gt;A project can only be exported to another TMS instance, different from the one it was imported from.&lt;/b&gt;    &lt;br&gt;This method imports a &#x60;.json&#x60; file with a project to the test management system.  &lt;br&gt;In the body of the request, send the &#x60;.json&#x60; file received by the &#x60;POST /api/v2/projects/export&#x60; method:  &lt;br&gt;    &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain.com}/api/v2/projects/import\&quot; \\              -H \&quot;accept: /\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: multipart/form-data\&quot; \\              -F \&quot;file&#x3D;@import.txt;type&#x3D;text/plain\&quot;              &#x60;&#x60;&#x60;    &lt;br&gt;              In the second instance, a project with the name of the imported one is created.              User attributes and the test library (along with content and structure) are imported.                &lt;br&gt;Test plan execution history from the first instance of TMS cannot be transferred.
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeAttachments">Enables attachment import. (optional, default to false)</param>
         /// <param name="file">Select file (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
+        [Obsolete]
         ApiResponse<Object> ImportWithHttpInfo(bool? includeAttachments = default(bool?), FileParameter file = default(FileParameter));
         /// <summary>
         /// Import project from JSON file into existing project
@@ -1020,6 +1253,7 @@ namespace TestIt.Client.Api
         /// <param name="includeAttachments"> (optional)</param>
         /// <param name="file">Select file (optional)</param>
         /// <returns></returns>
+        [Obsolete]
         void ImportToExistingProject(string id, bool? includeAttachments = default(bool?), FileParameter file = default(FileParameter));
 
         /// <summary>
@@ -1033,6 +1267,7 @@ namespace TestIt.Client.Api
         /// <param name="includeAttachments"> (optional)</param>
         /// <param name="file">Select file (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
+        [Obsolete]
         ApiResponse<Object> ImportToExistingProjectWithHttpInfo(string id, bool? includeAttachments = default(bool?), FileParameter file = default(FileParameter));
         /// <summary>
         /// Restore project
@@ -1370,6 +1605,31 @@ namespace TestIt.Client.Api
         /// <returns>Task of ApiResponse (List&lt;FilterModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<FilterModel>>> ApiV2ProjectsIdFiltersGetWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
+        /// Patch project
+        /// </summary>
+        /// <remarks>
+        /// See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global Id of project</param>
+        /// <param name="operation"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ApiV2ProjectsIdPatchAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Patch project
+        /// </summary>
+        /// <remarks>
+        /// See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global Id of project</param>
+        /// <param name="operation"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
         /// Get TestPlans analytics
         /// </summary>
         /// <remarks>
@@ -1407,6 +1667,31 @@ namespace TestIt.Client.Api
         /// <returns>Task of ApiResponse (List&lt;TestPlanWithAnalyticModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<TestPlanWithAnalyticModel>>> ApiV2ProjectsIdTestPlansAnalyticsGetWithHttpInfoAsync(Guid id, bool? isDeleted = default(bool?), bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
+        /// Delete multiple test plans
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the project</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;Guid&gt;</returns>
+        System.Threading.Tasks.Task<List<Guid>> ApiV2ProjectsIdTestPlansDeleteBulkPostAsync(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Delete multiple test plans
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the project</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Guid>>> ApiV2ProjectsIdTestPlansDeleteBulkPostWithHttpInfoAsync(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
         /// Checks if TestPlan exists with the specified name exists for the project
         /// </summary>
         /// <remarks>
@@ -1432,6 +1717,31 @@ namespace TestIt.Client.Api
         /// <returns>Task of ApiResponse (bool)</returns>
         System.Threading.Tasks.Task<ApiResponse<bool>> ApiV2ProjectsIdTestPlansNameExistsGetWithHttpInfoAsync(Guid id, string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
+        /// Restore multiple test plans
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the project</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ApiV2ProjectsIdTestPlansRestoreBulkPostAsync(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Restore multiple test plans
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the project</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsIdTestPlansRestoreBulkPostWithHttpInfoAsync(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
         /// Get Project TestPlans with analytics
         /// </summary>
         /// <remarks>
@@ -1445,10 +1755,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testPlanSearchQueryModel"> (optional)</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestPlanWithAnalyticModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TestPlanWithAnalyticModel>> ApiV2ProjectsIdTestPlansSearchPostAsync(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPlanSearchQueryModel testPlanSearchQueryModel = default(TestPlanSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TestPlanWithAnalyticModel>> ApiV2ProjectsIdTestPlansSearchPostAsync(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Project TestPlans with analytics
@@ -1464,10 +1774,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testPlanSearchQueryModel"> (optional)</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPlanWithAnalyticModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestPlanWithAnalyticModel>>> ApiV2ProjectsIdTestPlansSearchPostWithHttpInfoAsync(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPlanSearchQueryModel testPlanSearchQueryModel = default(TestPlanSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TestPlanWithAnalyticModel>>> ApiV2ProjectsIdTestPlansSearchPostWithHttpInfoAsync(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get active Project TestRuns
         /// </summary>
@@ -1694,6 +2004,102 @@ namespace TestIt.Client.Api
         /// <returns>Task of ApiResponse (List&lt;ProjectModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<ProjectModel>>> ApiV2ProjectsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectsFilterModel projectsFilterModel = default(ProjectsFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
+        /// Import project from JSON file in background job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="file"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Guid</returns>
+        System.Threading.Tasks.Task<Guid> BackgroundImportProjectAsync(FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Import project from JSON file in background job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="file"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Guid)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Guid>> BackgroundImportProjectWithHttpInfoAsync(FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Import project from JSON file into existing project in background job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="file">Select file (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Guid</returns>
+        System.Threading.Tasks.Task<Guid> BackgroundImportToExistingProjectAsync(string id, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Import project from JSON file into existing project in background job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="file">Select file (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Guid)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Guid>> BackgroundImportToExistingProjectWithHttpInfoAsync(string id, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Import project from Zip file in background job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="file"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Guid</returns>
+        System.Threading.Tasks.Task<Guid> BackgroundImportZipProjectAsync(FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Import project from Zip file in background job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="file"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Guid)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Guid>> BackgroundImportZipProjectWithHttpInfoAsync(FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Import project from Zip file into existing project in background job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="file">Select file (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Guid</returns>
+        System.Threading.Tasks.Task<Guid> BackgroundImportZipToExistingProjectAsync(string id, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Import project from Zip file into existing project in background job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="file">Select file (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Guid)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Guid>> BackgroundImportZipToExistingProjectWithHttpInfoAsync(string id, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
         /// Add attributes to project&#39;s test plans
         /// </summary>
         /// <remarks>
@@ -1866,7 +2272,7 @@ namespace TestIt.Client.Api
         /// Export project as JSON file
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;This method exports the selected project or its part (sections, work items) to a &#x60;.json&#x60; file.  &lt;br&gt;In the request body, you can specify sections and test cases to be exported.  &lt;br&gt;Example of a request to export two sections and two test cases:  &lt;br&gt;    &lt;code&gt;              curl -X POST \&quot;http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\&quot; \\              -H \&quot;accept: application/json\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: application/json-patch+json\&quot; \\              -d \&quot;{\\\&quot;sectionIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;9fa85f64-5717-4562-b3fc-2c963f66a000\\\&quot;],\\\&quot;workItemIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;90085f64-5717-4562-b3fc-2c963f66a000\\\&quot;]}\&quot;              &lt;/code&gt;    &lt;br&gt;In the response, you get:  &lt;br&gt;              - A &#x60;.zip&#x60; file with attachments and a.json file if you enable attachments export.&lt;br /&gt;              - A &#x60;.json&#x60; file with the project if you do not enable attachments export.              
+        /// &lt;br&gt;This method exports the selected project or its part (sections, work items) to a &#x60;.json&#x60; file.  &lt;br&gt;In the request body, you can specify sections and test cases to be exported.  &lt;br&gt;Example of a request to export two sections and two test cases:  &lt;br&gt;    &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\&quot; \\              -H \&quot;accept: application/json\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: application/json-patch+json\&quot; \\              -d \&quot;{\\\&quot;sectionIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;9fa85f64-5717-4562-b3fc-2c963f66a000\\\&quot;],\\\&quot;workItemIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;90085f64-5717-4562-b3fc-2c963f66a000\\\&quot;]}\&quot;              &#x60;&#x60;&#x60;    &lt;br&gt;In the response, you get:  &lt;br&gt;              - A &#x60;.zip&#x60; file with attachments and a.json file if you enable attachments export.&lt;br /&gt;              - A &#x60;.json&#x60; file with the project if you do not enable attachments export.              
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Specifies the ID of the project you want to export.</param>
@@ -1874,13 +2280,14 @@ namespace TestIt.Client.Api
         /// <param name="projectExportQueryModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<FileParameter> ExportAsync(string id, bool? includeAttachments = default(bool?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Export project as JSON file
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;This method exports the selected project or its part (sections, work items) to a &#x60;.json&#x60; file.  &lt;br&gt;In the request body, you can specify sections and test cases to be exported.  &lt;br&gt;Example of a request to export two sections and two test cases:  &lt;br&gt;    &lt;code&gt;              curl -X POST \&quot;http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\&quot; \\              -H \&quot;accept: application/json\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: application/json-patch+json\&quot; \\              -d \&quot;{\\\&quot;sectionIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;9fa85f64-5717-4562-b3fc-2c963f66a000\\\&quot;],\\\&quot;workItemIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;90085f64-5717-4562-b3fc-2c963f66a000\\\&quot;]}\&quot;              &lt;/code&gt;    &lt;br&gt;In the response, you get:  &lt;br&gt;              - A &#x60;.zip&#x60; file with attachments and a.json file if you enable attachments export.&lt;br /&gt;              - A &#x60;.json&#x60; file with the project if you do not enable attachments export.              
+        /// &lt;br&gt;This method exports the selected project or its part (sections, work items) to a &#x60;.json&#x60; file.  &lt;br&gt;In the request body, you can specify sections and test cases to be exported.  &lt;br&gt;Example of a request to export two sections and two test cases:  &lt;br&gt;    &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\&quot; \\              -H \&quot;accept: application/json\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: application/json-patch+json\&quot; \\              -d \&quot;{\\\&quot;sectionIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;9fa85f64-5717-4562-b3fc-2c963f66a000\\\&quot;],\\\&quot;workItemIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;90085f64-5717-4562-b3fc-2c963f66a000\\\&quot;]}\&quot;              &#x60;&#x60;&#x60;    &lt;br&gt;In the response, you get:  &lt;br&gt;              - A &#x60;.zip&#x60; file with attachments and a.json file if you enable attachments export.&lt;br /&gt;              - A &#x60;.json&#x60; file with the project if you do not enable attachments export.              
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Specifies the ID of the project you want to export.</param>
@@ -1888,7 +2295,116 @@ namespace TestIt.Client.Api
         /// <param name="projectExportQueryModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> ExportWithHttpInfoAsync(string id, bool? includeAttachments = default(bool?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Export project as JSON file in background job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Guid</returns>
+        System.Threading.Tasks.Task<Guid> ExportProjectJsonAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Export project as JSON file in background job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Guid)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Guid>> ExportProjectJsonWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Export project as JSON file with test plans in background job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Guid</returns>
+        System.Threading.Tasks.Task<Guid> ExportProjectWithTestPlansJsonAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Export project as JSON file with test plans in background job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Guid)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Guid>> ExportProjectWithTestPlansJsonWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Export project as Zip file with test plans in background job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Guid</returns>
+        System.Threading.Tasks.Task<Guid> ExportProjectWithTestPlansZipAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Export project as Zip file with test plans in background job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Guid)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Guid>> ExportProjectWithTestPlansZipWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Export project as Zip file in background job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Guid</returns>
+        System.Threading.Tasks.Task<Guid> ExportProjectZipAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Export project as Zip file in background job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Guid)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Guid>> ExportProjectZipWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Export project with test plans, test suites and test points as JSON file
         /// </summary>
@@ -1901,6 +2417,7 @@ namespace TestIt.Client.Api
         /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<FileParameter> ExportWithTestPlansAndConfigurationsAsync(string id, bool? includeAttachments = default(bool?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -1915,6 +2432,7 @@ namespace TestIt.Client.Api
         /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> ExportWithTestPlansAndConfigurationsWithHttpInfoAsync(string id, bool? includeAttachments = default(bool?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get all projects
@@ -1986,10 +2504,10 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="isDeleted">If result must consist of only actual/deleted work items (optional, default to false)</param>
+        /// <param name="isDeleted"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CustomAttributeModel&gt;</returns>
-        System.Threading.Tasks.Task<List<CustomAttributeModel>> GetAttributesByProjectIdAsync(string id, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<CustomAttributeModel>> GetAttributesByProjectIdAsync(string id, DeletionState? isDeleted = default(DeletionState?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get project attributes
@@ -1999,10 +2517,10 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="isDeleted">If result must consist of only actual/deleted work items (optional, default to false)</param>
+        /// <param name="isDeleted"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CustomAttributeModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<CustomAttributeModel>>> GetAttributesByProjectIdWithHttpInfoAsync(string id, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<CustomAttributeModel>>> GetAttributesByProjectIdWithHttpInfoAsync(string id, DeletionState? isDeleted = default(DeletionState?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get namespaces of autotests in project
         /// </summary>
@@ -2243,26 +2761,28 @@ namespace TestIt.Client.Api
         /// Import project from JSON file
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;    &lt;b&gt;A project can only be exported to another TMS instance, different from the one it was imported from.&lt;/b&gt;    &lt;br&gt;This method imports a &#x60;.json&#x60; file with a project to the test management system.  &lt;br&gt;In the body of the request, send the &#x60;.json&#x60; file received by the &#x60;POST /api/v2/projects/export&#x60; method:  &lt;br&gt;    &lt;code&gt;              curl -X POST \&quot;http://{domain.com}/api/v2/projects/import\&quot; \\              -H \&quot;accept: /\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: multipart/form-data\&quot; \\              -F \&quot;file&#x3D;@import.txt;type&#x3D;text/plain\&quot;              &lt;/code&gt;    &lt;br&gt;              In the second instance, a project with the name of the imported one is created.              User attributes and the test library (along with content and structure) are imported.                &lt;br&gt;Test plan execution history from the first instance of TMS cannot be transferred.
+        /// &lt;br&gt;    &lt;b&gt;A project can only be exported to another TMS instance, different from the one it was imported from.&lt;/b&gt;    &lt;br&gt;This method imports a &#x60;.json&#x60; file with a project to the test management system.  &lt;br&gt;In the body of the request, send the &#x60;.json&#x60; file received by the &#x60;POST /api/v2/projects/export&#x60; method:  &lt;br&gt;    &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain.com}/api/v2/projects/import\&quot; \\              -H \&quot;accept: /\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: multipart/form-data\&quot; \\              -F \&quot;file&#x3D;@import.txt;type&#x3D;text/plain\&quot;              &#x60;&#x60;&#x60;    &lt;br&gt;              In the second instance, a project with the name of the imported one is created.              User attributes and the test library (along with content and structure) are imported.                &lt;br&gt;Test plan execution history from the first instance of TMS cannot be transferred.
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeAttachments">Enables attachment import. (optional, default to false)</param>
         /// <param name="file">Select file (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
+        [Obsolete]
         System.Threading.Tasks.Task ImportAsync(bool? includeAttachments = default(bool?), FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Import project from JSON file
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;    &lt;b&gt;A project can only be exported to another TMS instance, different from the one it was imported from.&lt;/b&gt;    &lt;br&gt;This method imports a &#x60;.json&#x60; file with a project to the test management system.  &lt;br&gt;In the body of the request, send the &#x60;.json&#x60; file received by the &#x60;POST /api/v2/projects/export&#x60; method:  &lt;br&gt;    &lt;code&gt;              curl -X POST \&quot;http://{domain.com}/api/v2/projects/import\&quot; \\              -H \&quot;accept: /\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: multipart/form-data\&quot; \\              -F \&quot;file&#x3D;@import.txt;type&#x3D;text/plain\&quot;              &lt;/code&gt;    &lt;br&gt;              In the second instance, a project with the name of the imported one is created.              User attributes and the test library (along with content and structure) are imported.                &lt;br&gt;Test plan execution history from the first instance of TMS cannot be transferred.
+        /// &lt;br&gt;    &lt;b&gt;A project can only be exported to another TMS instance, different from the one it was imported from.&lt;/b&gt;    &lt;br&gt;This method imports a &#x60;.json&#x60; file with a project to the test management system.  &lt;br&gt;In the body of the request, send the &#x60;.json&#x60; file received by the &#x60;POST /api/v2/projects/export&#x60; method:  &lt;br&gt;    &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain.com}/api/v2/projects/import\&quot; \\              -H \&quot;accept: /\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: multipart/form-data\&quot; \\              -F \&quot;file&#x3D;@import.txt;type&#x3D;text/plain\&quot;              &#x60;&#x60;&#x60;    &lt;br&gt;              In the second instance, a project with the name of the imported one is created.              User attributes and the test library (along with content and structure) are imported.                &lt;br&gt;Test plan execution history from the first instance of TMS cannot be transferred.
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeAttachments">Enables attachment import. (optional, default to false)</param>
         /// <param name="file">Select file (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<Object>> ImportWithHttpInfoAsync(bool? includeAttachments = default(bool?), FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Import project from JSON file into existing project
@@ -2276,6 +2796,7 @@ namespace TestIt.Client.Api
         /// <param name="file">Select file (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
+        [Obsolete]
         System.Threading.Tasks.Task ImportToExistingProjectAsync(string id, bool? includeAttachments = default(bool?), FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -2290,6 +2811,7 @@ namespace TestIt.Client.Api
         /// <param name="file">Select file (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<Object>> ImportToExistingProjectWithHttpInfoAsync(string id, bool? includeAttachments = default(bool?), FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Restore project
@@ -3638,6 +4160,129 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
+        /// Patch project See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global Id of project</param>
+        /// <param name="operation"> (optional)</param>
+        /// <returns></returns>
+        public void ApiV2ProjectsIdPatch(Guid id, List<Operation> operation = default(List<Operation>))
+        {
+            ApiV2ProjectsIdPatchWithHttpInfo(id, operation);
+        }
+
+        /// <summary>
+        /// Patch project See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global Id of project</param>
+        /// <param name="operation"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIt.Client.Client.ApiResponse<Object> ApiV2ProjectsIdPatchWithHttpInfo(Guid id, List<Operation> operation = default(List<Operation>))
+        {
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = operation;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Patch<Object>("/api/v2/projects/{id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ProjectsIdPatch", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Patch project See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global Id of project</param>
+        /// <param name="operation"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ApiV2ProjectsIdPatchAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await ApiV2ProjectsIdPatchWithHttpInfoAsync(id, operation, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Patch project See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global Id of project</param>
+        /// <param name="operation"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2ProjectsIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = operation;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<Object>("/api/v2/projects/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ProjectsIdPatch", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Get TestPlans analytics &lt;br&gt;Use case  &lt;br&gt;User sets project internal identifier  &lt;br&gt;User sets query params  &lt;br&gt;User runs method execution  &lt;br&gt;System return analytics
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
@@ -3839,6 +4484,139 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
+        /// Delete multiple test plans 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the project</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <returns>List&lt;Guid&gt;</returns>
+        public List<Guid> ApiV2ProjectsIdTestPlansDeleteBulkPost(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel))
+        {
+            TestIt.Client.Client.ApiResponse<List<Guid>> localVarResponse = ApiV2ProjectsIdTestPlansDeleteBulkPostWithHttpInfo(id, projectTestPlansFilterModel);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Delete multiple test plans 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the project</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
+        public TestIt.Client.Client.ApiResponse<List<Guid>> ApiV2ProjectsIdTestPlansDeleteBulkPostWithHttpInfo(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling ProjectsApi->ApiV2ProjectsIdTestPlansDeleteBulkPost");
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = projectTestPlansFilterModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<Guid>>("/api/v2/projects/{id}/testPlans/delete/bulk", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ProjectsIdTestPlansDeleteBulkPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete multiple test plans 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the project</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;Guid&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Guid>> ApiV2ProjectsIdTestPlansDeleteBulkPostAsync(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIt.Client.Client.ApiResponse<List<Guid>> localVarResponse = await ApiV2ProjectsIdTestPlansDeleteBulkPostWithHttpInfoAsync(id, projectTestPlansFilterModel, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Delete multiple test plans 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the project</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<Guid>>> ApiV2ProjectsIdTestPlansDeleteBulkPostWithHttpInfoAsync(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling ProjectsApi->ApiV2ProjectsIdTestPlansDeleteBulkPost");
+
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = projectTestPlansFilterModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<Guid>>("/api/v2/projects/{id}/testPlans/delete/bulk", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ProjectsIdTestPlansDeleteBulkPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Checks if TestPlan exists with the specified name exists for the project &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System purge delete project workitems
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
@@ -3970,6 +4748,137 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
+        /// Restore multiple test plans 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the project</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <returns></returns>
+        public void ApiV2ProjectsIdTestPlansRestoreBulkPost(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel))
+        {
+            ApiV2ProjectsIdTestPlansRestoreBulkPostWithHttpInfo(id, projectTestPlansFilterModel);
+        }
+
+        /// <summary>
+        /// Restore multiple test plans 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the project</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIt.Client.Client.ApiResponse<Object> ApiV2ProjectsIdTestPlansRestoreBulkPostWithHttpInfo(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling ProjectsApi->ApiV2ProjectsIdTestPlansRestoreBulkPost");
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = projectTestPlansFilterModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/api/v2/projects/{id}/testPlans/restore/bulk", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ProjectsIdTestPlansRestoreBulkPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Restore multiple test plans 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the project</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ApiV2ProjectsIdTestPlansRestoreBulkPostAsync(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await ApiV2ProjectsIdTestPlansRestoreBulkPostWithHttpInfoAsync(id, projectTestPlansFilterModel, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Restore multiple test plans 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the project</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2ProjectsIdTestPlansRestoreBulkPostWithHttpInfoAsync(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling ProjectsApi->ApiV2ProjectsIdTestPlansRestoreBulkPost");
+
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = projectTestPlansFilterModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/projects/{id}/testPlans/restore/bulk", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ProjectsIdTestPlansRestoreBulkPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Get Project TestPlans with analytics &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets request body   &lt;br&gt;User runs method execution  &lt;br&gt;System returns project testplans with analytics
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
@@ -3980,11 +4889,11 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testPlanSearchQueryModel"> (optional)</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
         /// <returns>List&lt;TestPlanWithAnalyticModel&gt;</returns>
-        public List<TestPlanWithAnalyticModel> ApiV2ProjectsIdTestPlansSearchPost(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPlanSearchQueryModel testPlanSearchQueryModel = default(TestPlanSearchQueryModel))
+        public List<TestPlanWithAnalyticModel> ApiV2ProjectsIdTestPlansSearchPost(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel))
         {
-            TestIt.Client.Client.ApiResponse<List<TestPlanWithAnalyticModel>> localVarResponse = ApiV2ProjectsIdTestPlansSearchPostWithHttpInfo(id, mustUpdateCache, skip, take, orderBy, searchField, searchValue, testPlanSearchQueryModel);
+            TestIt.Client.Client.ApiResponse<List<TestPlanWithAnalyticModel>> localVarResponse = ApiV2ProjectsIdTestPlansSearchPostWithHttpInfo(id, mustUpdateCache, skip, take, orderBy, searchField, searchValue, projectTestPlansFilterModel);
             return localVarResponse.Data;
         }
 
@@ -3999,9 +4908,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testPlanSearchQueryModel"> (optional)</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;TestPlanWithAnalyticModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<TestPlanWithAnalyticModel>> ApiV2ProjectsIdTestPlansSearchPostWithHttpInfo(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPlanSearchQueryModel testPlanSearchQueryModel = default(TestPlanSearchQueryModel))
+        public TestIt.Client.Client.ApiResponse<List<TestPlanWithAnalyticModel>> ApiV2ProjectsIdTestPlansSearchPostWithHttpInfo(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4049,7 +4958,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = testPlanSearchQueryModel;
+            localVarRequestOptions.Data = projectTestPlansFilterModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4080,12 +4989,12 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testPlanSearchQueryModel"> (optional)</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestPlanWithAnalyticModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestPlanWithAnalyticModel>> ApiV2ProjectsIdTestPlansSearchPostAsync(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPlanSearchQueryModel testPlanSearchQueryModel = default(TestPlanSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TestPlanWithAnalyticModel>> ApiV2ProjectsIdTestPlansSearchPostAsync(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<TestPlanWithAnalyticModel>> localVarResponse = await ApiV2ProjectsIdTestPlansSearchPostWithHttpInfoAsync(id, mustUpdateCache, skip, take, orderBy, searchField, searchValue, testPlanSearchQueryModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<TestPlanWithAnalyticModel>> localVarResponse = await ApiV2ProjectsIdTestPlansSearchPostWithHttpInfoAsync(id, mustUpdateCache, skip, take, orderBy, searchField, searchValue, projectTestPlansFilterModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -4100,10 +5009,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testPlanSearchQueryModel"> (optional)</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPlanWithAnalyticModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestPlanWithAnalyticModel>>> ApiV2ProjectsIdTestPlansSearchPostWithHttpInfoAsync(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPlanSearchQueryModel testPlanSearchQueryModel = default(TestPlanSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestPlanWithAnalyticModel>>> ApiV2ProjectsIdTestPlansSearchPostWithHttpInfoAsync(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4153,7 +5062,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = testPlanSearchQueryModel;
+            localVarRequestOptions.Data = projectTestPlansFilterModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -5412,6 +6321,538 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
+        /// Import project from JSON file in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="file"> (optional)</param>
+        /// <returns>Guid</returns>
+        public Guid BackgroundImportProject(FileParameter file = default(FileParameter))
+        {
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = BackgroundImportProjectWithHttpInfo(file);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Import project from JSON file in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="file"> (optional)</param>
+        /// <returns>ApiResponse of Guid</returns>
+        public TestIt.Client.Client.ApiResponse<Guid> BackgroundImportProjectWithHttpInfo(FileParameter file = default(FileParameter))
+        {
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "multipart/form-data",
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (file != null)
+            {
+                localVarRequestOptions.FileParameters.Add("file", file);
+            }
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Guid>("/api/v2/projects/import/json", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("BackgroundImportProject", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Import project from JSON file in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="file"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Guid</returns>
+        public async System.Threading.Tasks.Task<Guid> BackgroundImportProjectAsync(FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = await BackgroundImportProjectWithHttpInfoAsync(file, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Import project from JSON file in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="file"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Guid)</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Guid>> BackgroundImportProjectWithHttpInfoAsync(FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "multipart/form-data", 
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (file != null)
+            {
+                localVarRequestOptions.FileParameters.Add("file", file);
+            }
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Guid>("/api/v2/projects/import/json", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("BackgroundImportProject", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Import project from JSON file into existing project in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="file">Select file (optional)</param>
+        /// <returns>Guid</returns>
+        public Guid BackgroundImportToExistingProject(string id, FileParameter file = default(FileParameter))
+        {
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = BackgroundImportToExistingProjectWithHttpInfo(id, file);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Import project from JSON file into existing project in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="file">Select file (optional)</param>
+        /// <returns>ApiResponse of Guid</returns>
+        public TestIt.Client.Client.ApiResponse<Guid> BackgroundImportToExistingProjectWithHttpInfo(string id, FileParameter file = default(FileParameter))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling ProjectsApi->BackgroundImportToExistingProject");
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (file != null)
+            {
+                localVarRequestOptions.FileParameters.Add("file", file);
+            }
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Guid>("/api/v2/projects/{id}/import/json", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("BackgroundImportToExistingProject", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Import project from JSON file into existing project in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="file">Select file (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Guid</returns>
+        public async System.Threading.Tasks.Task<Guid> BackgroundImportToExistingProjectAsync(string id, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = await BackgroundImportToExistingProjectWithHttpInfoAsync(id, file, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Import project from JSON file into existing project in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="file">Select file (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Guid)</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Guid>> BackgroundImportToExistingProjectWithHttpInfoAsync(string id, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling ProjectsApi->BackgroundImportToExistingProject");
+
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (file != null)
+            {
+                localVarRequestOptions.FileParameters.Add("file", file);
+            }
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Guid>("/api/v2/projects/{id}/import/json", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("BackgroundImportToExistingProject", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Import project from Zip file in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="file"> (optional)</param>
+        /// <returns>Guid</returns>
+        public Guid BackgroundImportZipProject(FileParameter file = default(FileParameter))
+        {
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = BackgroundImportZipProjectWithHttpInfo(file);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Import project from Zip file in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="file"> (optional)</param>
+        /// <returns>ApiResponse of Guid</returns>
+        public TestIt.Client.Client.ApiResponse<Guid> BackgroundImportZipProjectWithHttpInfo(FileParameter file = default(FileParameter))
+        {
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "multipart/form-data",
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (file != null)
+            {
+                localVarRequestOptions.FileParameters.Add("file", file);
+            }
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Guid>("/api/v2/projects/import/zip", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("BackgroundImportZipProject", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Import project from Zip file in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="file"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Guid</returns>
+        public async System.Threading.Tasks.Task<Guid> BackgroundImportZipProjectAsync(FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = await BackgroundImportZipProjectWithHttpInfoAsync(file, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Import project from Zip file in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="file"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Guid)</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Guid>> BackgroundImportZipProjectWithHttpInfoAsync(FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "multipart/form-data", 
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (file != null)
+            {
+                localVarRequestOptions.FileParameters.Add("file", file);
+            }
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Guid>("/api/v2/projects/import/zip", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("BackgroundImportZipProject", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Import project from Zip file into existing project in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="file">Select file (optional)</param>
+        /// <returns>Guid</returns>
+        public Guid BackgroundImportZipToExistingProject(string id, FileParameter file = default(FileParameter))
+        {
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = BackgroundImportZipToExistingProjectWithHttpInfo(id, file);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Import project from Zip file into existing project in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="file">Select file (optional)</param>
+        /// <returns>ApiResponse of Guid</returns>
+        public TestIt.Client.Client.ApiResponse<Guid> BackgroundImportZipToExistingProjectWithHttpInfo(string id, FileParameter file = default(FileParameter))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling ProjectsApi->BackgroundImportZipToExistingProject");
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (file != null)
+            {
+                localVarRequestOptions.FileParameters.Add("file", file);
+            }
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Guid>("/api/v2/projects/{id}/import/zip", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("BackgroundImportZipToExistingProject", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Import project from Zip file into existing project in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="file">Select file (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Guid</returns>
+        public async System.Threading.Tasks.Task<Guid> BackgroundImportZipToExistingProjectAsync(string id, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = await BackgroundImportZipToExistingProjectWithHttpInfoAsync(id, file, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Import project from Zip file into existing project in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="file">Select file (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Guid)</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Guid>> BackgroundImportZipToExistingProjectWithHttpInfoAsync(string id, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling ProjectsApi->BackgroundImportZipToExistingProject");
+
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (file != null)
+            {
+                localVarRequestOptions.FileParameters.Add("file", file);
+            }
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Guid>("/api/v2/projects/{id}/import/zip", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("BackgroundImportZipToExistingProject", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Add attributes to project&#39;s test plans &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier and attributes identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System updates project and add attributes to project for test plans  &lt;br&gt;System returns no content response
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
@@ -6299,13 +7740,14 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Export project as JSON file &lt;br&gt;This method exports the selected project or its part (sections, work items) to a &#x60;.json&#x60; file.  &lt;br&gt;In the request body, you can specify sections and test cases to be exported.  &lt;br&gt;Example of a request to export two sections and two test cases:  &lt;br&gt;    &lt;code&gt;              curl -X POST \&quot;http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\&quot; \\              -H \&quot;accept: application/json\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: application/json-patch+json\&quot; \\              -d \&quot;{\\\&quot;sectionIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;9fa85f64-5717-4562-b3fc-2c963f66a000\\\&quot;],\\\&quot;workItemIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;90085f64-5717-4562-b3fc-2c963f66a000\\\&quot;]}\&quot;              &lt;/code&gt;    &lt;br&gt;In the response, you get:  &lt;br&gt;              - A &#x60;.zip&#x60; file with attachments and a.json file if you enable attachments export.&lt;br /&gt;              - A &#x60;.json&#x60; file with the project if you do not enable attachments export.              
+        /// Export project as JSON file &lt;br&gt;This method exports the selected project or its part (sections, work items) to a &#x60;.json&#x60; file.  &lt;br&gt;In the request body, you can specify sections and test cases to be exported.  &lt;br&gt;Example of a request to export two sections and two test cases:  &lt;br&gt;    &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\&quot; \\              -H \&quot;accept: application/json\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: application/json-patch+json\&quot; \\              -d \&quot;{\\\&quot;sectionIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;9fa85f64-5717-4562-b3fc-2c963f66a000\\\&quot;],\\\&quot;workItemIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;90085f64-5717-4562-b3fc-2c963f66a000\\\&quot;]}\&quot;              &#x60;&#x60;&#x60;    &lt;br&gt;In the response, you get:  &lt;br&gt;              - A &#x60;.zip&#x60; file with attachments and a.json file if you enable attachments export.&lt;br /&gt;              - A &#x60;.json&#x60; file with the project if you do not enable attachments export.              
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
         /// <param name="projectExportQueryModel"> (optional)</param>
         /// <returns>FileParameter</returns>
+        [Obsolete]
         public FileParameter Export(string id, bool? includeAttachments = default(bool?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel))
         {
             TestIt.Client.Client.ApiResponse<FileParameter> localVarResponse = ExportWithHttpInfo(id, includeAttachments, projectExportQueryModel);
@@ -6313,13 +7755,14 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Export project as JSON file &lt;br&gt;This method exports the selected project or its part (sections, work items) to a &#x60;.json&#x60; file.  &lt;br&gt;In the request body, you can specify sections and test cases to be exported.  &lt;br&gt;Example of a request to export two sections and two test cases:  &lt;br&gt;    &lt;code&gt;              curl -X POST \&quot;http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\&quot; \\              -H \&quot;accept: application/json\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: application/json-patch+json\&quot; \\              -d \&quot;{\\\&quot;sectionIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;9fa85f64-5717-4562-b3fc-2c963f66a000\\\&quot;],\\\&quot;workItemIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;90085f64-5717-4562-b3fc-2c963f66a000\\\&quot;]}\&quot;              &lt;/code&gt;    &lt;br&gt;In the response, you get:  &lt;br&gt;              - A &#x60;.zip&#x60; file with attachments and a.json file if you enable attachments export.&lt;br /&gt;              - A &#x60;.json&#x60; file with the project if you do not enable attachments export.              
+        /// Export project as JSON file &lt;br&gt;This method exports the selected project or its part (sections, work items) to a &#x60;.json&#x60; file.  &lt;br&gt;In the request body, you can specify sections and test cases to be exported.  &lt;br&gt;Example of a request to export two sections and two test cases:  &lt;br&gt;    &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\&quot; \\              -H \&quot;accept: application/json\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: application/json-patch+json\&quot; \\              -d \&quot;{\\\&quot;sectionIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;9fa85f64-5717-4562-b3fc-2c963f66a000\\\&quot;],\\\&quot;workItemIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;90085f64-5717-4562-b3fc-2c963f66a000\\\&quot;]}\&quot;              &#x60;&#x60;&#x60;    &lt;br&gt;In the response, you get:  &lt;br&gt;              - A &#x60;.zip&#x60; file with attachments and a.json file if you enable attachments export.&lt;br /&gt;              - A &#x60;.json&#x60; file with the project if you do not enable attachments export.              
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
         /// <param name="projectExportQueryModel"> (optional)</param>
         /// <returns>ApiResponse of FileParameter</returns>
+        [Obsolete]
         public TestIt.Client.Client.ApiResponse<FileParameter> ExportWithHttpInfo(string id, bool? includeAttachments = default(bool?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel))
         {
             // verify the required parameter 'id' is set
@@ -6369,7 +7812,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Export project as JSON file &lt;br&gt;This method exports the selected project or its part (sections, work items) to a &#x60;.json&#x60; file.  &lt;br&gt;In the request body, you can specify sections and test cases to be exported.  &lt;br&gt;Example of a request to export two sections and two test cases:  &lt;br&gt;    &lt;code&gt;              curl -X POST \&quot;http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\&quot; \\              -H \&quot;accept: application/json\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: application/json-patch+json\&quot; \\              -d \&quot;{\\\&quot;sectionIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;9fa85f64-5717-4562-b3fc-2c963f66a000\\\&quot;],\\\&quot;workItemIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;90085f64-5717-4562-b3fc-2c963f66a000\\\&quot;]}\&quot;              &lt;/code&gt;    &lt;br&gt;In the response, you get:  &lt;br&gt;              - A &#x60;.zip&#x60; file with attachments and a.json file if you enable attachments export.&lt;br /&gt;              - A &#x60;.json&#x60; file with the project if you do not enable attachments export.              
+        /// Export project as JSON file &lt;br&gt;This method exports the selected project or its part (sections, work items) to a &#x60;.json&#x60; file.  &lt;br&gt;In the request body, you can specify sections and test cases to be exported.  &lt;br&gt;Example of a request to export two sections and two test cases:  &lt;br&gt;    &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\&quot; \\              -H \&quot;accept: application/json\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: application/json-patch+json\&quot; \\              -d \&quot;{\\\&quot;sectionIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;9fa85f64-5717-4562-b3fc-2c963f66a000\\\&quot;],\\\&quot;workItemIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;90085f64-5717-4562-b3fc-2c963f66a000\\\&quot;]}\&quot;              &#x60;&#x60;&#x60;    &lt;br&gt;In the response, you get:  &lt;br&gt;              - A &#x60;.zip&#x60; file with attachments and a.json file if you enable attachments export.&lt;br /&gt;              - A &#x60;.json&#x60; file with the project if you do not enable attachments export.              
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Specifies the ID of the project you want to export.</param>
@@ -6377,6 +7820,7 @@ namespace TestIt.Client.Api
         /// <param name="projectExportQueryModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<FileParameter> ExportAsync(string id, bool? includeAttachments = default(bool?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             TestIt.Client.Client.ApiResponse<FileParameter> localVarResponse = await ExportWithHttpInfoAsync(id, includeAttachments, projectExportQueryModel, cancellationToken).ConfigureAwait(false);
@@ -6384,7 +7828,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Export project as JSON file &lt;br&gt;This method exports the selected project or its part (sections, work items) to a &#x60;.json&#x60; file.  &lt;br&gt;In the request body, you can specify sections and test cases to be exported.  &lt;br&gt;Example of a request to export two sections and two test cases:  &lt;br&gt;    &lt;code&gt;              curl -X POST \&quot;http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\&quot; \\              -H \&quot;accept: application/json\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: application/json-patch+json\&quot; \\              -d \&quot;{\\\&quot;sectionIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;9fa85f64-5717-4562-b3fc-2c963f66a000\\\&quot;],\\\&quot;workItemIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;90085f64-5717-4562-b3fc-2c963f66a000\\\&quot;]}\&quot;              &lt;/code&gt;    &lt;br&gt;In the response, you get:  &lt;br&gt;              - A &#x60;.zip&#x60; file with attachments and a.json file if you enable attachments export.&lt;br /&gt;              - A &#x60;.json&#x60; file with the project if you do not enable attachments export.              
+        /// Export project as JSON file &lt;br&gt;This method exports the selected project or its part (sections, work items) to a &#x60;.json&#x60; file.  &lt;br&gt;In the request body, you can specify sections and test cases to be exported.  &lt;br&gt;Example of a request to export two sections and two test cases:  &lt;br&gt;    &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\&quot; \\              -H \&quot;accept: application/json\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: application/json-patch+json\&quot; \\              -d \&quot;{\\\&quot;sectionIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;9fa85f64-5717-4562-b3fc-2c963f66a000\\\&quot;],\\\&quot;workItemIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;90085f64-5717-4562-b3fc-2c963f66a000\\\&quot;]}\&quot;              &#x60;&#x60;&#x60;    &lt;br&gt;In the response, you get:  &lt;br&gt;              - A &#x60;.zip&#x60; file with attachments and a.json file if you enable attachments export.&lt;br /&gt;              - A &#x60;.json&#x60; file with the project if you do not enable attachments export.              
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Specifies the ID of the project you want to export.</param>
@@ -6392,6 +7836,7 @@ namespace TestIt.Client.Api
         /// <param name="projectExportQueryModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<FileParameter>> ExportWithHttpInfoAsync(string id, bool? includeAttachments = default(bool?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
@@ -6444,6 +7889,586 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
+        /// Export project as JSON file in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <returns>Guid</returns>
+        public Guid ExportProjectJson(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel))
+        {
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = ExportProjectJsonWithHttpInfo(id, timeZoneOffsetInMinutes, projectExportQueryModel);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Export project as JSON file in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <returns>ApiResponse of Guid</returns>
+        public TestIt.Client.Client.ApiResponse<Guid> ExportProjectJsonWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling ProjectsApi->ExportProjectJson");
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (timeZoneOffsetInMinutes != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.Client.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
+            }
+            localVarRequestOptions.Data = projectExportQueryModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Guid>("/api/v2/projects/{id}/export/json", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ExportProjectJson", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Export project as JSON file in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Guid</returns>
+        public async System.Threading.Tasks.Task<Guid> ExportProjectJsonAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = await ExportProjectJsonWithHttpInfoAsync(id, timeZoneOffsetInMinutes, projectExportQueryModel, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Export project as JSON file in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Guid)</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Guid>> ExportProjectJsonWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling ProjectsApi->ExportProjectJson");
+
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (timeZoneOffsetInMinutes != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.Client.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
+            }
+            localVarRequestOptions.Data = projectExportQueryModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Guid>("/api/v2/projects/{id}/export/json", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ExportProjectJson", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Export project as JSON file with test plans in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <returns>Guid</returns>
+        public Guid ExportProjectWithTestPlansJson(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel))
+        {
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = ExportProjectWithTestPlansJsonWithHttpInfo(id, timeZoneOffsetInMinutes, projectExportWithTestPlansPostModel);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Export project as JSON file with test plans in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <returns>ApiResponse of Guid</returns>
+        public TestIt.Client.Client.ApiResponse<Guid> ExportProjectWithTestPlansJsonWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling ProjectsApi->ExportProjectWithTestPlansJson");
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (timeZoneOffsetInMinutes != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.Client.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
+            }
+            localVarRequestOptions.Data = projectExportWithTestPlansPostModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Guid>("/api/v2/projects/{id}/export/testPlans/json", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ExportProjectWithTestPlansJson", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Export project as JSON file with test plans in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Guid</returns>
+        public async System.Threading.Tasks.Task<Guid> ExportProjectWithTestPlansJsonAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = await ExportProjectWithTestPlansJsonWithHttpInfoAsync(id, timeZoneOffsetInMinutes, projectExportWithTestPlansPostModel, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Export project as JSON file with test plans in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Guid)</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Guid>> ExportProjectWithTestPlansJsonWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling ProjectsApi->ExportProjectWithTestPlansJson");
+
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (timeZoneOffsetInMinutes != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.Client.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
+            }
+            localVarRequestOptions.Data = projectExportWithTestPlansPostModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Guid>("/api/v2/projects/{id}/export/testPlans/json", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ExportProjectWithTestPlansJson", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Export project as Zip file with test plans in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <returns>Guid</returns>
+        public Guid ExportProjectWithTestPlansZip(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel))
+        {
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = ExportProjectWithTestPlansZipWithHttpInfo(id, timeZoneOffsetInMinutes, projectExportWithTestPlansPostModel);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Export project as Zip file with test plans in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <returns>ApiResponse of Guid</returns>
+        public TestIt.Client.Client.ApiResponse<Guid> ExportProjectWithTestPlansZipWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling ProjectsApi->ExportProjectWithTestPlansZip");
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (timeZoneOffsetInMinutes != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.Client.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
+            }
+            localVarRequestOptions.Data = projectExportWithTestPlansPostModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Guid>("/api/v2/projects/{id}/export/testPlans/zip", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ExportProjectWithTestPlansZip", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Export project as Zip file with test plans in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Guid</returns>
+        public async System.Threading.Tasks.Task<Guid> ExportProjectWithTestPlansZipAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = await ExportProjectWithTestPlansZipWithHttpInfoAsync(id, timeZoneOffsetInMinutes, projectExportWithTestPlansPostModel, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Export project as Zip file with test plans in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Guid)</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Guid>> ExportProjectWithTestPlansZipWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling ProjectsApi->ExportProjectWithTestPlansZip");
+
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (timeZoneOffsetInMinutes != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.Client.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
+            }
+            localVarRequestOptions.Data = projectExportWithTestPlansPostModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Guid>("/api/v2/projects/{id}/export/testPlans/zip", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ExportProjectWithTestPlansZip", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Export project as Zip file in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <returns>Guid</returns>
+        public Guid ExportProjectZip(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel))
+        {
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = ExportProjectZipWithHttpInfo(id, timeZoneOffsetInMinutes, projectExportQueryModel);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Export project as Zip file in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <returns>ApiResponse of Guid</returns>
+        public TestIt.Client.Client.ApiResponse<Guid> ExportProjectZipWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling ProjectsApi->ExportProjectZip");
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (timeZoneOffsetInMinutes != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.Client.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
+            }
+            localVarRequestOptions.Data = projectExportQueryModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Guid>("/api/v2/projects/{id}/export/zip", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ExportProjectZip", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Export project as Zip file in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Guid</returns>
+        public async System.Threading.Tasks.Task<Guid> ExportProjectZipAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = await ExportProjectZipWithHttpInfoAsync(id, timeZoneOffsetInMinutes, projectExportQueryModel, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Export project as Zip file in background job 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
+        /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
+        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Guid)</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Guid>> ExportProjectZipWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling ProjectsApi->ExportProjectZip");
+
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (timeZoneOffsetInMinutes != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.Client.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
+            }
+            localVarRequestOptions.Data = projectExportQueryModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Guid>("/api/v2/projects/{id}/export/zip", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ExportProjectZip", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Export project with test plans, test suites and test points as JSON file &lt;br&gt;    &lt;b&gt;You cannot export test cases execution history.&lt;/b&gt;    &lt;br&gt;This method exports the project with the test library and specified test plans to another TMS instance.  &lt;br&gt;              After sending a correct request, the project is exported to a &#x60;.json&#x60; file.              If you enable attachment export, the &#x60;.json&#x60; file and the attachments are placed in a &#x60;.zip&#x60; file.              You can import such a project by using the &#x60;POST /api/v2/projects/import&#x60; method.              
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
@@ -6451,6 +8476,7 @@ namespace TestIt.Client.Api
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
         /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
         /// <returns>FileParameter</returns>
+        [Obsolete]
         public FileParameter ExportWithTestPlansAndConfigurations(string id, bool? includeAttachments = default(bool?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel))
         {
             TestIt.Client.Client.ApiResponse<FileParameter> localVarResponse = ExportWithTestPlansAndConfigurationsWithHttpInfo(id, includeAttachments, projectExportWithTestPlansPostModel);
@@ -6465,6 +8491,7 @@ namespace TestIt.Client.Api
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
         /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
         /// <returns>ApiResponse of FileParameter</returns>
+        [Obsolete]
         public TestIt.Client.Client.ApiResponse<FileParameter> ExportWithTestPlansAndConfigurationsWithHttpInfo(string id, bool? includeAttachments = default(bool?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel))
         {
             // verify the required parameter 'id' is set
@@ -6522,6 +8549,7 @@ namespace TestIt.Client.Api
         /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<FileParameter> ExportWithTestPlansAndConfigurationsAsync(string id, bool? includeAttachments = default(bool?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             TestIt.Client.Client.ApiResponse<FileParameter> localVarResponse = await ExportWithTestPlansAndConfigurationsWithHttpInfoAsync(id, includeAttachments, projectExportWithTestPlansPostModel, cancellationToken).ConfigureAwait(false);
@@ -6537,6 +8565,7 @@ namespace TestIt.Client.Api
         /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<FileParameter>> ExportWithTestPlansAndConfigurationsWithHttpInfoAsync(string id, bool? includeAttachments = default(bool?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
@@ -6923,9 +8952,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="isDeleted">If result must consist of only actual/deleted work items (optional, default to false)</param>
+        /// <param name="isDeleted"> (optional)</param>
         /// <returns>List&lt;CustomAttributeModel&gt;</returns>
-        public List<CustomAttributeModel> GetAttributesByProjectId(string id, bool? isDeleted = default(bool?))
+        public List<CustomAttributeModel> GetAttributesByProjectId(string id, DeletionState? isDeleted = default(DeletionState?))
         {
             TestIt.Client.Client.ApiResponse<List<CustomAttributeModel>> localVarResponse = GetAttributesByProjectIdWithHttpInfo(id, isDeleted);
             return localVarResponse.Data;
@@ -6936,9 +8965,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="isDeleted">If result must consist of only actual/deleted work items (optional, default to false)</param>
+        /// <param name="isDeleted"> (optional)</param>
         /// <returns>ApiResponse of List&lt;CustomAttributeModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<CustomAttributeModel>> GetAttributesByProjectIdWithHttpInfo(string id, bool? isDeleted = default(bool?))
+        public TestIt.Client.Client.ApiResponse<List<CustomAttributeModel>> GetAttributesByProjectIdWithHttpInfo(string id, DeletionState? isDeleted = default(DeletionState?))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -6989,10 +9018,10 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="isDeleted">If result must consist of only actual/deleted work items (optional, default to false)</param>
+        /// <param name="isDeleted"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CustomAttributeModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<CustomAttributeModel>> GetAttributesByProjectIdAsync(string id, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<CustomAttributeModel>> GetAttributesByProjectIdAsync(string id, DeletionState? isDeleted = default(DeletionState?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             TestIt.Client.Client.ApiResponse<List<CustomAttributeModel>> localVarResponse = await GetAttributesByProjectIdWithHttpInfoAsync(id, isDeleted, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -7003,10 +9032,10 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="isDeleted">If result must consist of only actual/deleted work items (optional, default to false)</param>
+        /// <param name="isDeleted"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CustomAttributeModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<CustomAttributeModel>>> GetAttributesByProjectIdWithHttpInfoAsync(string id, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<CustomAttributeModel>>> GetAttributesByProjectIdWithHttpInfoAsync(string id, DeletionState? isDeleted = default(DeletionState?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -8368,24 +10397,26 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Import project from JSON file &lt;br&gt;    &lt;b&gt;A project can only be exported to another TMS instance, different from the one it was imported from.&lt;/b&gt;    &lt;br&gt;This method imports a &#x60;.json&#x60; file with a project to the test management system.  &lt;br&gt;In the body of the request, send the &#x60;.json&#x60; file received by the &#x60;POST /api/v2/projects/export&#x60; method:  &lt;br&gt;    &lt;code&gt;              curl -X POST \&quot;http://{domain.com}/api/v2/projects/import\&quot; \\              -H \&quot;accept: /\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: multipart/form-data\&quot; \\              -F \&quot;file&#x3D;@import.txt;type&#x3D;text/plain\&quot;              &lt;/code&gt;    &lt;br&gt;              In the second instance, a project with the name of the imported one is created.              User attributes and the test library (along with content and structure) are imported.                &lt;br&gt;Test plan execution history from the first instance of TMS cannot be transferred.
+        /// Import project from JSON file &lt;br&gt;    &lt;b&gt;A project can only be exported to another TMS instance, different from the one it was imported from.&lt;/b&gt;    &lt;br&gt;This method imports a &#x60;.json&#x60; file with a project to the test management system.  &lt;br&gt;In the body of the request, send the &#x60;.json&#x60; file received by the &#x60;POST /api/v2/projects/export&#x60; method:  &lt;br&gt;    &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain.com}/api/v2/projects/import\&quot; \\              -H \&quot;accept: /\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: multipart/form-data\&quot; \\              -F \&quot;file&#x3D;@import.txt;type&#x3D;text/plain\&quot;              &#x60;&#x60;&#x60;    &lt;br&gt;              In the second instance, a project with the name of the imported one is created.              User attributes and the test library (along with content and structure) are imported.                &lt;br&gt;Test plan execution history from the first instance of TMS cannot be transferred.
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeAttachments">Enables attachment import. (optional, default to false)</param>
         /// <param name="file">Select file (optional)</param>
         /// <returns></returns>
+        [Obsolete]
         public void Import(bool? includeAttachments = default(bool?), FileParameter file = default(FileParameter))
         {
             ImportWithHttpInfo(includeAttachments, file);
         }
 
         /// <summary>
-        /// Import project from JSON file &lt;br&gt;    &lt;b&gt;A project can only be exported to another TMS instance, different from the one it was imported from.&lt;/b&gt;    &lt;br&gt;This method imports a &#x60;.json&#x60; file with a project to the test management system.  &lt;br&gt;In the body of the request, send the &#x60;.json&#x60; file received by the &#x60;POST /api/v2/projects/export&#x60; method:  &lt;br&gt;    &lt;code&gt;              curl -X POST \&quot;http://{domain.com}/api/v2/projects/import\&quot; \\              -H \&quot;accept: /\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: multipart/form-data\&quot; \\              -F \&quot;file&#x3D;@import.txt;type&#x3D;text/plain\&quot;              &lt;/code&gt;    &lt;br&gt;              In the second instance, a project with the name of the imported one is created.              User attributes and the test library (along with content and structure) are imported.                &lt;br&gt;Test plan execution history from the first instance of TMS cannot be transferred.
+        /// Import project from JSON file &lt;br&gt;    &lt;b&gt;A project can only be exported to another TMS instance, different from the one it was imported from.&lt;/b&gt;    &lt;br&gt;This method imports a &#x60;.json&#x60; file with a project to the test management system.  &lt;br&gt;In the body of the request, send the &#x60;.json&#x60; file received by the &#x60;POST /api/v2/projects/export&#x60; method:  &lt;br&gt;    &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain.com}/api/v2/projects/import\&quot; \\              -H \&quot;accept: /\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: multipart/form-data\&quot; \\              -F \&quot;file&#x3D;@import.txt;type&#x3D;text/plain\&quot;              &#x60;&#x60;&#x60;    &lt;br&gt;              In the second instance, a project with the name of the imported one is created.              User attributes and the test library (along with content and structure) are imported.                &lt;br&gt;Test plan execution history from the first instance of TMS cannot be transferred.
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeAttachments">Enables attachment import. (optional, default to false)</param>
         /// <param name="file">Select file (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
+        [Obsolete]
         public TestIt.Client.Client.ApiResponse<Object> ImportWithHttpInfo(bool? includeAttachments = default(bool?), FileParameter file = default(FileParameter))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -8433,26 +10464,28 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Import project from JSON file &lt;br&gt;    &lt;b&gt;A project can only be exported to another TMS instance, different from the one it was imported from.&lt;/b&gt;    &lt;br&gt;This method imports a &#x60;.json&#x60; file with a project to the test management system.  &lt;br&gt;In the body of the request, send the &#x60;.json&#x60; file received by the &#x60;POST /api/v2/projects/export&#x60; method:  &lt;br&gt;    &lt;code&gt;              curl -X POST \&quot;http://{domain.com}/api/v2/projects/import\&quot; \\              -H \&quot;accept: /\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: multipart/form-data\&quot; \\              -F \&quot;file&#x3D;@import.txt;type&#x3D;text/plain\&quot;              &lt;/code&gt;    &lt;br&gt;              In the second instance, a project with the name of the imported one is created.              User attributes and the test library (along with content and structure) are imported.                &lt;br&gt;Test plan execution history from the first instance of TMS cannot be transferred.
+        /// Import project from JSON file &lt;br&gt;    &lt;b&gt;A project can only be exported to another TMS instance, different from the one it was imported from.&lt;/b&gt;    &lt;br&gt;This method imports a &#x60;.json&#x60; file with a project to the test management system.  &lt;br&gt;In the body of the request, send the &#x60;.json&#x60; file received by the &#x60;POST /api/v2/projects/export&#x60; method:  &lt;br&gt;    &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain.com}/api/v2/projects/import\&quot; \\              -H \&quot;accept: /\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: multipart/form-data\&quot; \\              -F \&quot;file&#x3D;@import.txt;type&#x3D;text/plain\&quot;              &#x60;&#x60;&#x60;    &lt;br&gt;              In the second instance, a project with the name of the imported one is created.              User attributes and the test library (along with content and structure) are imported.                &lt;br&gt;Test plan execution history from the first instance of TMS cannot be transferred.
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeAttachments">Enables attachment import. (optional, default to false)</param>
         /// <param name="file">Select file (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task ImportAsync(bool? includeAttachments = default(bool?), FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             await ImportWithHttpInfoAsync(includeAttachments, file, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Import project from JSON file &lt;br&gt;    &lt;b&gt;A project can only be exported to another TMS instance, different from the one it was imported from.&lt;/b&gt;    &lt;br&gt;This method imports a &#x60;.json&#x60; file with a project to the test management system.  &lt;br&gt;In the body of the request, send the &#x60;.json&#x60; file received by the &#x60;POST /api/v2/projects/export&#x60; method:  &lt;br&gt;    &lt;code&gt;              curl -X POST \&quot;http://{domain.com}/api/v2/projects/import\&quot; \\              -H \&quot;accept: /\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: multipart/form-data\&quot; \\              -F \&quot;file&#x3D;@import.txt;type&#x3D;text/plain\&quot;              &lt;/code&gt;    &lt;br&gt;              In the second instance, a project with the name of the imported one is created.              User attributes and the test library (along with content and structure) are imported.                &lt;br&gt;Test plan execution history from the first instance of TMS cannot be transferred.
+        /// Import project from JSON file &lt;br&gt;    &lt;b&gt;A project can only be exported to another TMS instance, different from the one it was imported from.&lt;/b&gt;    &lt;br&gt;This method imports a &#x60;.json&#x60; file with a project to the test management system.  &lt;br&gt;In the body of the request, send the &#x60;.json&#x60; file received by the &#x60;POST /api/v2/projects/export&#x60; method:  &lt;br&gt;    &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain.com}/api/v2/projects/import\&quot; \\              -H \&quot;accept: /\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: multipart/form-data\&quot; \\              -F \&quot;file&#x3D;@import.txt;type&#x3D;text/plain\&quot;              &#x60;&#x60;&#x60;    &lt;br&gt;              In the second instance, a project with the name of the imported one is created.              User attributes and the test library (along with content and structure) are imported.                &lt;br&gt;Test plan execution history from the first instance of TMS cannot be transferred.
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeAttachments">Enables attachment import. (optional, default to false)</param>
         /// <param name="file">Select file (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ImportWithHttpInfoAsync(bool? includeAttachments = default(bool?), FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
@@ -8510,6 +10543,7 @@ namespace TestIt.Client.Api
         /// <param name="includeAttachments"> (optional)</param>
         /// <param name="file">Select file (optional)</param>
         /// <returns></returns>
+        [Obsolete]
         public void ImportToExistingProject(string id, bool? includeAttachments = default(bool?), FileParameter file = default(FileParameter))
         {
             ImportToExistingProjectWithHttpInfo(id, includeAttachments, file);
@@ -8523,6 +10557,7 @@ namespace TestIt.Client.Api
         /// <param name="includeAttachments"> (optional)</param>
         /// <param name="file">Select file (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
+        [Obsolete]
         public TestIt.Client.Client.ApiResponse<Object> ImportToExistingProjectWithHttpInfo(string id, bool? includeAttachments = default(bool?), FileParameter file = default(FileParameter))
         {
             // verify the required parameter 'id' is set
@@ -8583,6 +10618,7 @@ namespace TestIt.Client.Api
         /// <param name="file">Select file (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task ImportToExistingProjectAsync(string id, bool? includeAttachments = default(bool?), FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             await ImportToExistingProjectWithHttpInfoAsync(id, includeAttachments, file, cancellationToken).ConfigureAwait(false);
@@ -8597,6 +10633,7 @@ namespace TestIt.Client.Api
         /// <param name="file">Select file (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ImportToExistingProjectWithHttpInfoAsync(string id, bool? includeAttachments = default(bool?), FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set

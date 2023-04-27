@@ -36,8 +36,8 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets StateName
         /// </summary>
-        [DataMember(Name = "stateName", EmitDefaultValue = false)]
-        public TestRunState? StateName { get; set; }
+        [DataMember(Name = "stateName", IsRequired = true, EmitDefaultValue = true)]
+        public TestRunState StateName { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TestRunV2GetModel" /> class.
         /// </summary>
@@ -48,7 +48,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="startedOn">startedOn.</param>
         /// <param name="completedOn">completedOn.</param>
-        /// <param name="stateName">stateName.</param>
+        /// <param name="stateName">stateName (required).</param>
         /// <param name="projectId">This property is used to link test run with project.</param>
         /// <param name="testPlanId">This property is used to link test run with test plan.</param>
         /// <param name="testResults">testResults.</param>
@@ -61,8 +61,9 @@ namespace TestIt.Client.Model
         /// <param name="name">name (required).</param>
         /// <param name="description">description.</param>
         /// <param name="launchSource">Once launch source is specified it cannot be updated.</param>
-        public TestRunV2GetModel(DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), TestRunState? stateName = default(TestRunState?), Guid projectId = default(Guid), Guid? testPlanId = default(Guid?), List<TestResultV2GetModel> testResults = default(List<TestResultV2GetModel>), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string createdByUserName = default(string), Guid id = default(Guid), string name = default(string), string description = default(string), string launchSource = default(string))
+        public TestRunV2GetModel(DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), TestRunState stateName = default(TestRunState), Guid projectId = default(Guid), Guid? testPlanId = default(Guid?), List<TestResultV2GetModel> testResults = default(List<TestResultV2GetModel>), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string createdByUserName = default(string), Guid id = default(Guid), string name = default(string), string description = default(string), string launchSource = default(string))
         {
+            this.StateName = stateName;
             this.Id = id;
             // to ensure "name" is required (not null)
             if (name == null)
@@ -72,7 +73,6 @@ namespace TestIt.Client.Model
             this.Name = name;
             this.StartedOn = startedOn;
             this.CompletedOn = completedOn;
-            this.StateName = stateName;
             this.ProjectId = projectId;
             this.TestPlanId = testPlanId;
             this.TestResults = testResults;
@@ -384,6 +384,12 @@ namespace TestIt.Client.Model
         /// <returns>Validation Result</returns>
         public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
+            // Name (string) minLength
+            if (this.Name != null && this.Name.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+            }
+
             yield break;
         }
     }

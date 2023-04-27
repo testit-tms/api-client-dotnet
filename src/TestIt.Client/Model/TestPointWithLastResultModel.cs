@@ -36,8 +36,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Priority
         /// </summary>
-        [DataMember(Name = "priority", EmitDefaultValue = false)]
-        public WorkItemPriorityModel? Priority { get; set; }
+        [DataMember(Name = "priority", IsRequired = true, EmitDefaultValue = true)]
+        public WorkItemPriorityModel Priority { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestPointWithLastResultModel" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected TestPointWithLastResultModel() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPointWithLastResultModel" /> class.
         /// </summary>
@@ -61,12 +66,13 @@ namespace TestIt.Client.Model
         /// <param name="attributes">attributes.</param>
         /// <param name="tagNames">tagNames.</param>
         /// <param name="duration">duration.</param>
-        /// <param name="priority">priority.</param>
+        /// <param name="priority">priority (required).</param>
         /// <param name="testSuiteNameBreadCrumbs">testSuiteNameBreadCrumbs.</param>
         /// <param name="groupCount">groupCount.</param>
         /// <param name="iteration">iteration.</param>
-        public TestPointWithLastResultModel(Guid id = default(Guid), string workItemName = default(string), bool isAutomated = default(bool), Guid? testerId = default(Guid?), Guid workItemId = default(Guid), Guid? configurationId = default(Guid?), Guid testSuiteId = default(Guid), LastTestResultModel lastTestResult = default(LastTestResultModel), string status = default(string), long? workItemGlobalId = default(long?), string workItemEntityTypeName = default(string), Guid sectionId = default(Guid), string sectionName = default(string), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<string> tagNames = default(List<string>), int duration = default(int), WorkItemPriorityModel? priority = default(WorkItemPriorityModel?), List<string> testSuiteNameBreadCrumbs = default(List<string>), int? groupCount = default(int?), IterationModel iteration = default(IterationModel))
+        public TestPointWithLastResultModel(Guid id = default(Guid), string workItemName = default(string), bool isAutomated = default(bool), Guid? testerId = default(Guid?), Guid workItemId = default(Guid), Guid? configurationId = default(Guid?), Guid testSuiteId = default(Guid), LastTestResultModel lastTestResult = default(LastTestResultModel), string status = default(string), long? workItemGlobalId = default(long?), string workItemEntityTypeName = default(string), Guid sectionId = default(Guid), string sectionName = default(string), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<string> tagNames = default(List<string>), int duration = default(int), WorkItemPriorityModel priority = default(WorkItemPriorityModel), List<string> testSuiteNameBreadCrumbs = default(List<string>), int? groupCount = default(int?), IterationModel iteration = default(IterationModel))
         {
+            this.Priority = priority;
             this.Id = id;
             this.WorkItemName = workItemName;
             this.IsAutomated = isAutomated;
@@ -87,7 +93,6 @@ namespace TestIt.Client.Model
             this.Attributes = attributes;
             this.TagNames = tagNames;
             this.Duration = duration;
-            this.Priority = priority;
             this.TestSuiteNameBreadCrumbs = testSuiteNameBreadCrumbs;
             this.GroupCount = groupCount;
             this.Iteration = iteration;

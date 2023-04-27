@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | [optional] 
-**FailureCategory** | **FailureCategoryModel** |  | [optional] 
+**FailureCategory** | **FailureCategoryModel** |  | 
 **CreatedDate** | **DateTime** |  | [optional] 
 **ModifiedDate** | **DateTime?** |  | [optional] 
 **CreatedById** | **Guid** |  | [optional] 

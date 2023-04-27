@@ -36,22 +36,27 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets EventType
         /// </summary>
-        [DataMember(Name = "eventType", EmitDefaultValue = false)]
-        public WebHookEventTypeModel? EventType { get; set; }
+        [DataMember(Name = "eventType", IsRequired = true, EmitDefaultValue = true)]
+        public WebHookEventTypeModel EventType { get; set; }
 
         /// <summary>
         /// Gets or Sets RequestType
         /// </summary>
-        [DataMember(Name = "requestType", EmitDefaultValue = false)]
-        public RequestTypeModel? RequestType { get; set; }
+        [DataMember(Name = "requestType", IsRequired = true, EmitDefaultValue = true)]
+        public RequestTypeModel RequestType { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebHookModel" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected WebHookModel() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="WebHookModel" /> class.
         /// </summary>
         /// <param name="name">Name of the webhook.</param>
-        /// <param name="eventType">eventType.</param>
+        /// <param name="eventType">eventType (required).</param>
         /// <param name="description">Description of the webhook.</param>
         /// <param name="url">Url to which the webhook sends request.</param>
-        /// <param name="requestType">requestType.</param>
+        /// <param name="requestType">requestType (required).</param>
         /// <param name="shouldSendBody">Indicates if the webhook sends body.</param>
         /// <param name="headers">Collection of headers which the webhook sends.</param>
         /// <param name="queryParameters">Collection of query parameters which the webhook sends.</param>
@@ -68,13 +73,13 @@ namespace TestIt.Client.Model
         /// <param name="projectId">Unique ID of project where the webhook is located.</param>
         /// <param name="id">Unique ID of the entity.</param>
         /// <param name="isDeleted">Indicates if the entity is deleted.</param>
-        public WebHookModel(string name = default(string), WebHookEventTypeModel? eventType = default(WebHookEventTypeModel?), string description = default(string), string url = default(string), RequestTypeModel? requestType = default(RequestTypeModel?), bool shouldSendBody = default(bool), Dictionary<string, string> headers = default(Dictionary<string, string>), Dictionary<string, string> queryParameters = default(Dictionary<string, string>), bool isEnabled = default(bool), bool shouldSendCustomBody = default(bool), string customBody = default(string), string customBodyMediaType = default(string), bool shouldReplaceParameters = default(bool), bool shouldEscapeParameters = default(bool), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), Guid projectId = default(Guid), Guid id = default(Guid), bool isDeleted = default(bool))
+        public WebHookModel(string name = default(string), WebHookEventTypeModel eventType = default(WebHookEventTypeModel), string description = default(string), string url = default(string), RequestTypeModel requestType = default(RequestTypeModel), bool shouldSendBody = default(bool), Dictionary<string, string> headers = default(Dictionary<string, string>), Dictionary<string, string> queryParameters = default(Dictionary<string, string>), bool isEnabled = default(bool), bool shouldSendCustomBody = default(bool), string customBody = default(string), string customBodyMediaType = default(string), bool shouldReplaceParameters = default(bool), bool shouldEscapeParameters = default(bool), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), Guid projectId = default(Guid), Guid id = default(Guid), bool isDeleted = default(bool))
         {
-            this.Name = name;
             this.EventType = eventType;
+            this.RequestType = requestType;
+            this.Name = name;
             this.Description = description;
             this.Url = url;
-            this.RequestType = requestType;
             this.ShouldSendBody = shouldSendBody;
             this.Headers = headers;
             this.QueryParameters = queryParameters;

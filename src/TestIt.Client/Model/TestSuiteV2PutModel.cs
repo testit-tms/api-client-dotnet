@@ -43,7 +43,8 @@ namespace TestIt.Client.Model
         /// <param name="id">id (required).</param>
         /// <param name="parentId">parentId.</param>
         /// <param name="name">name (required).</param>
-        public TestSuiteV2PutModel(Guid id = default(Guid), Guid? parentId = default(Guid?), string name = default(string))
+        /// <param name="isDeleted">isDeleted.</param>
+        public TestSuiteV2PutModel(Guid id = default(Guid), Guid? parentId = default(Guid?), string name = default(string), bool isDeleted = default(bool))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -53,6 +54,7 @@ namespace TestIt.Client.Model
             }
             this.Name = name;
             this.ParentId = parentId;
+            this.IsDeleted = isDeleted;
         }
 
         /// <summary>
@@ -74,6 +76,12 @@ namespace TestIt.Client.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or Sets IsDeleted
+        /// </summary>
+        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        public bool IsDeleted { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -84,6 +92,7 @@ namespace TestIt.Client.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -133,6 +142,10 @@ namespace TestIt.Client.Model
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.IsDeleted == input.IsDeleted ||
+                    this.IsDeleted.Equals(input.IsDeleted)
                 );
         }
 
@@ -157,6 +170,7 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
                 return hashCode;
             }
         }

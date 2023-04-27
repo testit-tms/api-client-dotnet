@@ -36,8 +36,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Outcome
         /// </summary>
-        [DataMember(Name = "outcome", EmitDefaultValue = false)]
-        public AutotestResultOutcome? Outcome { get; set; }
+        [DataMember(Name = "outcome", IsRequired = true, EmitDefaultValue = true)]
+        public AutotestResultOutcome Outcome { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AutotestResultHistoricalGetModel" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected AutotestResultHistoricalGetModel() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="AutotestResultHistoricalGetModel" /> class.
         /// </summary>
@@ -46,27 +51,27 @@ namespace TestIt.Client.Model
         /// <param name="createdById">createdById.</param>
         /// <param name="testRunId">testRunId.</param>
         /// <param name="testRunName">testRunName.</param>
+        /// <param name="configurationId">configurationId.</param>
+        /// <param name="outcome">outcome (required).</param>
+        /// <param name="launchSource">launchSource.</param>
         /// <param name="testPlanId">testPlanId.</param>
         /// <param name="testPlanGlobalId">testPlanGlobalId.</param>
         /// <param name="testPlanName">testPlanName.</param>
-        /// <param name="configurationId">configurationId.</param>
-        /// <param name="outcome">outcome.</param>
         /// <param name="duration">duration.</param>
-        /// <param name="launchSource">launchSource.</param>
-        public AutotestResultHistoricalGetModel(Guid id = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), Guid testRunId = default(Guid), string testRunName = default(string), Guid? testPlanId = default(Guid?), long? testPlanGlobalId = default(long?), string testPlanName = default(string), Guid configurationId = default(Guid), AutotestResultOutcome? outcome = default(AutotestResultOutcome?), long? duration = default(long?), string launchSource = default(string))
+        public AutotestResultHistoricalGetModel(Guid id = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), Guid testRunId = default(Guid), string testRunName = default(string), Guid configurationId = default(Guid), AutotestResultOutcome outcome = default(AutotestResultOutcome), string launchSource = default(string), Guid? testPlanId = default(Guid?), long? testPlanGlobalId = default(long?), string testPlanName = default(string), long? duration = default(long?))
         {
+            this.Outcome = outcome;
             this.Id = id;
             this.CreatedDate = createdDate;
             this.CreatedById = createdById;
             this.TestRunId = testRunId;
             this.TestRunName = testRunName;
+            this.ConfigurationId = configurationId;
+            this.LaunchSource = launchSource;
             this.TestPlanId = testPlanId;
             this.TestPlanGlobalId = testPlanGlobalId;
             this.TestPlanName = testPlanName;
-            this.ConfigurationId = configurationId;
-            this.Outcome = outcome;
             this.Duration = duration;
-            this.LaunchSource = launchSource;
         }
 
         /// <summary>
@@ -86,6 +91,30 @@ namespace TestIt.Client.Model
         /// </summary>
         [DataMember(Name = "createdById", EmitDefaultValue = false)]
         public Guid CreatedById { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TestRunId
+        /// </summary>
+        [DataMember(Name = "testRunId", EmitDefaultValue = false)]
+        public Guid TestRunId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TestRunName
+        /// </summary>
+        [DataMember(Name = "testRunName", EmitDefaultValue = true)]
+        public string TestRunName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ConfigurationId
+        /// </summary>
+        [DataMember(Name = "configurationId", EmitDefaultValue = false)]
+        public Guid ConfigurationId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets LaunchSource
+        /// </summary>
+        [DataMember(Name = "launchSource", EmitDefaultValue = true)]
+        public string LaunchSource { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
@@ -116,18 +145,6 @@ namespace TestIt.Client.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets TestRunId
-        /// </summary>
-        [DataMember(Name = "testRunId", EmitDefaultValue = false)]
-        public Guid TestRunId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TestRunName
-        /// </summary>
-        [DataMember(Name = "testRunName", EmitDefaultValue = true)]
-        public string TestRunName { get; set; }
-
-        /// <summary>
         /// Gets or Sets TestPlanId
         /// </summary>
         [DataMember(Name = "testPlanId", EmitDefaultValue = true)]
@@ -146,22 +163,10 @@ namespace TestIt.Client.Model
         public string TestPlanName { get; set; }
 
         /// <summary>
-        /// Gets or Sets ConfigurationId
-        /// </summary>
-        [DataMember(Name = "configurationId", EmitDefaultValue = false)]
-        public Guid ConfigurationId { get; set; }
-
-        /// <summary>
         /// Gets or Sets Duration
         /// </summary>
         [DataMember(Name = "duration", EmitDefaultValue = true)]
         public long? Duration { get; set; }
-
-        /// <summary>
-        /// Gets or Sets LaunchSource
-        /// </summary>
-        [DataMember(Name = "launchSource", EmitDefaultValue = true)]
-        public string LaunchSource { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -174,17 +179,17 @@ namespace TestIt.Client.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
-            sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
-            sb.Append("  ModifiedById: ").Append(ModifiedById).Append("\n");
             sb.Append("  TestRunId: ").Append(TestRunId).Append("\n");
             sb.Append("  TestRunName: ").Append(TestRunName).Append("\n");
+            sb.Append("  ConfigurationId: ").Append(ConfigurationId).Append("\n");
+            sb.Append("  Outcome: ").Append(Outcome).Append("\n");
+            sb.Append("  LaunchSource: ").Append(LaunchSource).Append("\n");
+            sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
+            sb.Append("  ModifiedById: ").Append(ModifiedById).Append("\n");
             sb.Append("  TestPlanId: ").Append(TestPlanId).Append("\n");
             sb.Append("  TestPlanGlobalId: ").Append(TestPlanGlobalId).Append("\n");
             sb.Append("  TestPlanName: ").Append(TestPlanName).Append("\n");
-            sb.Append("  ConfigurationId: ").Append(ConfigurationId).Append("\n");
-            sb.Append("  Outcome: ").Append(Outcome).Append("\n");
             sb.Append("  Duration: ").Append(Duration).Append("\n");
-            sb.Append("  LaunchSource: ").Append(LaunchSource).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -236,16 +241,6 @@ namespace TestIt.Client.Model
                     this.CreatedById.Equals(input.CreatedById))
                 ) && 
                 (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.ModifiedById == input.ModifiedById ||
-                    (this.ModifiedById != null &&
-                    this.ModifiedById.Equals(input.ModifiedById))
-                ) && 
-                (
                     this.TestRunId == input.TestRunId ||
                     (this.TestRunId != null &&
                     this.TestRunId.Equals(input.TestRunId))
@@ -254,6 +249,30 @@ namespace TestIt.Client.Model
                     this.TestRunName == input.TestRunName ||
                     (this.TestRunName != null &&
                     this.TestRunName.Equals(input.TestRunName))
+                ) && 
+                (
+                    this.ConfigurationId == input.ConfigurationId ||
+                    (this.ConfigurationId != null &&
+                    this.ConfigurationId.Equals(input.ConfigurationId))
+                ) && 
+                (
+                    this.Outcome == input.Outcome ||
+                    this.Outcome.Equals(input.Outcome)
+                ) && 
+                (
+                    this.LaunchSource == input.LaunchSource ||
+                    (this.LaunchSource != null &&
+                    this.LaunchSource.Equals(input.LaunchSource))
+                ) && 
+                (
+                    this.ModifiedDate == input.ModifiedDate ||
+                    (this.ModifiedDate != null &&
+                    this.ModifiedDate.Equals(input.ModifiedDate))
+                ) && 
+                (
+                    this.ModifiedById == input.ModifiedById ||
+                    (this.ModifiedById != null &&
+                    this.ModifiedById.Equals(input.ModifiedById))
                 ) && 
                 (
                     this.TestPlanId == input.TestPlanId ||
@@ -271,23 +290,9 @@ namespace TestIt.Client.Model
                     this.TestPlanName.Equals(input.TestPlanName))
                 ) && 
                 (
-                    this.ConfigurationId == input.ConfigurationId ||
-                    (this.ConfigurationId != null &&
-                    this.ConfigurationId.Equals(input.ConfigurationId))
-                ) && 
-                (
-                    this.Outcome == input.Outcome ||
-                    this.Outcome.Equals(input.Outcome)
-                ) && 
-                (
                     this.Duration == input.Duration ||
                     (this.Duration != null &&
                     this.Duration.Equals(input.Duration))
-                ) && 
-                (
-                    this.LaunchSource == input.LaunchSource ||
-                    (this.LaunchSource != null &&
-                    this.LaunchSource.Equals(input.LaunchSource))
                 );
         }
 
@@ -312,14 +317,6 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.CreatedById.GetHashCode();
                 }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                if (this.ModifiedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedById.GetHashCode();
-                }
                 if (this.TestRunId != null)
                 {
                     hashCode = (hashCode * 59) + this.TestRunId.GetHashCode();
@@ -327,6 +324,23 @@ namespace TestIt.Client.Model
                 if (this.TestRunName != null)
                 {
                     hashCode = (hashCode * 59) + this.TestRunName.GetHashCode();
+                }
+                if (this.ConfigurationId != null)
+                {
+                    hashCode = (hashCode * 59) + this.ConfigurationId.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.Outcome.GetHashCode();
+                if (this.LaunchSource != null)
+                {
+                    hashCode = (hashCode * 59) + this.LaunchSource.GetHashCode();
+                }
+                if (this.ModifiedDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
+                }
+                if (this.ModifiedById != null)
+                {
+                    hashCode = (hashCode * 59) + this.ModifiedById.GetHashCode();
                 }
                 if (this.TestPlanId != null)
                 {
@@ -340,18 +354,9 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.TestPlanName.GetHashCode();
                 }
-                if (this.ConfigurationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ConfigurationId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Outcome.GetHashCode();
                 if (this.Duration != null)
                 {
                     hashCode = (hashCode * 59) + this.Duration.GetHashCode();
-                }
-                if (this.LaunchSource != null)
-                {
-                    hashCode = (hashCode * 59) + this.LaunchSource.GetHashCode();
                 }
                 return hashCode;
             }

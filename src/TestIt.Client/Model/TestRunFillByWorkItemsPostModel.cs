@@ -41,13 +41,13 @@ namespace TestIt.Client.Model
         /// Initializes a new instance of the <see cref="TestRunFillByWorkItemsPostModel" /> class.
         /// </summary>
         /// <param name="configurationIds">Specifies the configuration GUIDs, from which test points are created. You can specify several GUIDs. (required).</param>
-        /// <param name="workitemIds">Specifies the work item GUIDs, from which test points are created. You can specify several GUIDs. (required).</param>
+        /// <param name="workItemIds">Specifies the work item GUIDs, from which test points are created. You can specify several GUIDs. (required).</param>
         /// <param name="projectId">Specifies the GUID of the project, in which a test run will be created. (required).</param>
         /// <param name="testPlanId">Specifies the GUID of the test plan, within which the test run will be created. (required).</param>
         /// <param name="name">Specifies the name of the test run..</param>
         /// <param name="description">Specifies the test run description..</param>
         /// <param name="launchSource">Specifies the test run launch source..</param>
-        public TestRunFillByWorkItemsPostModel(List<Guid> configurationIds = default(List<Guid>), List<Guid> workitemIds = default(List<Guid>), Guid projectId = default(Guid), Guid testPlanId = default(Guid), string name = default(string), string description = default(string), string launchSource = default(string))
+        public TestRunFillByWorkItemsPostModel(List<Guid> configurationIds = default(List<Guid>), List<Guid> workItemIds = default(List<Guid>), Guid projectId = default(Guid), Guid testPlanId = default(Guid), string name = default(string), string description = default(string), string launchSource = default(string))
         {
             // to ensure "configurationIds" is required (not null)
             if (configurationIds == null)
@@ -55,12 +55,12 @@ namespace TestIt.Client.Model
                 throw new ArgumentNullException("configurationIds is a required property for TestRunFillByWorkItemsPostModel and cannot be null");
             }
             this.ConfigurationIds = configurationIds;
-            // to ensure "workitemIds" is required (not null)
-            if (workitemIds == null)
+            // to ensure "workItemIds" is required (not null)
+            if (workItemIds == null)
             {
-                throw new ArgumentNullException("workitemIds is a required property for TestRunFillByWorkItemsPostModel and cannot be null");
+                throw new ArgumentNullException("workItemIds is a required property for TestRunFillByWorkItemsPostModel and cannot be null");
             }
-            this.WorkitemIds = workitemIds;
+            this.WorkItemIds = workItemIds;
             this.ProjectId = projectId;
             this.TestPlanId = testPlanId;
             this.Name = name;
@@ -79,8 +79,8 @@ namespace TestIt.Client.Model
         /// Specifies the work item GUIDs, from which test points are created. You can specify several GUIDs.
         /// </summary>
         /// <value>Specifies the work item GUIDs, from which test points are created. You can specify several GUIDs.</value>
-        [DataMember(Name = "workitemIds", IsRequired = true, EmitDefaultValue = true)]
-        public List<Guid> WorkitemIds { get; set; }
+        [DataMember(Name = "workItemIds", IsRequired = true, EmitDefaultValue = true)]
+        public List<Guid> WorkItemIds { get; set; }
 
         /// <summary>
         /// Specifies the GUID of the project, in which a test run will be created.
@@ -126,7 +126,7 @@ namespace TestIt.Client.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class TestRunFillByWorkItemsPostModel {\n");
             sb.Append("  ConfigurationIds: ").Append(ConfigurationIds).Append("\n");
-            sb.Append("  WorkitemIds: ").Append(WorkitemIds).Append("\n");
+            sb.Append("  WorkItemIds: ").Append(WorkItemIds).Append("\n");
             sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
             sb.Append("  TestPlanId: ").Append(TestPlanId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
@@ -174,10 +174,10 @@ namespace TestIt.Client.Model
                     this.ConfigurationIds.SequenceEqual(input.ConfigurationIds)
                 ) && 
                 (
-                    this.WorkitemIds == input.WorkitemIds ||
-                    this.WorkitemIds != null &&
-                    input.WorkitemIds != null &&
-                    this.WorkitemIds.SequenceEqual(input.WorkitemIds)
+                    this.WorkItemIds == input.WorkItemIds ||
+                    this.WorkItemIds != null &&
+                    input.WorkItemIds != null &&
+                    this.WorkItemIds.SequenceEqual(input.WorkItemIds)
                 ) && 
                 (
                     this.ProjectId == input.ProjectId ||
@@ -219,9 +219,9 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.ConfigurationIds.GetHashCode();
                 }
-                if (this.WorkitemIds != null)
+                if (this.WorkItemIds != null)
                 {
-                    hashCode = (hashCode * 59) + this.WorkitemIds.GetHashCode();
+                    hashCode = (hashCode * 59) + this.WorkItemIds.GetHashCode();
                 }
                 if (this.ProjectId != null)
                 {

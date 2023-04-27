@@ -27,13 +27,13 @@ using OpenAPIDateConverter = TestIt.Client.Client.OpenAPIDateConverter;
 namespace TestIt.Client.Model
 {
     /// <summary>
-    /// TestPlanSearchQueryModel
+    /// ProjectTestPlansFilterModel
     /// </summary>
-    [DataContract(Name = "TestPlanSearchQueryModel")]
-    public partial class TestPlanSearchQueryModel : IEquatable<TestPlanSearchQueryModel>, IValidatableObject
+    [DataContract(Name = "ProjectTestPlansFilterModel")]
+    public partial class ProjectTestPlansFilterModel : IEquatable<ProjectTestPlansFilterModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TestPlanSearchQueryModel" /> class.
+        /// Initializes a new instance of the <see cref="ProjectTestPlansFilterModel" /> class.
         /// </summary>
         /// <param name="name">name.</param>
         /// <param name="description">description.</param>
@@ -51,7 +51,7 @@ namespace TestIt.Client.Model
         /// <param name="tagNames">tagNames.</param>
         /// <param name="attributes">attributes.</param>
         /// <param name="isDeleted">isDeleted.</param>
-        public TestPlanSearchQueryModel(string name = default(string), string description = default(string), string build = default(string), string productName = default(string), List<TestPlanStatusModel> status = default(List<TestPlanStatusModel>), List<long> globalIds = default(List<long>), bool? isLocked = default(bool?), DateRangeModel lockedDate = default(DateRangeModel), List<bool> automaticDurationTimer = default(List<bool>), List<Guid> createdByIds = default(List<Guid>), DateRangeModel createdDate = default(DateRangeModel), DateRangeModel startDate = default(DateRangeModel), DateRangeModel endDate = default(DateRangeModel), List<string> tagNames = default(List<string>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?))
+        public ProjectTestPlansFilterModel(string name = default(string), string description = default(string), string build = default(string), string productName = default(string), List<TestPlanStatusModel> status = default(List<TestPlanStatusModel>), List<long> globalIds = default(List<long>), bool? isLocked = default(bool?), DateTimeRangeSelectorModel lockedDate = default(DateTimeRangeSelectorModel), List<bool> automaticDurationTimer = default(List<bool>), List<Guid> createdByIds = default(List<Guid>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel startDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel endDate = default(DateTimeRangeSelectorModel), List<string> tagNames = default(List<string>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?))
         {
             this.Name = name;
             this.Description = description;
@@ -117,7 +117,7 @@ namespace TestIt.Client.Model
         /// Gets or Sets LockedDate
         /// </summary>
         [DataMember(Name = "lockedDate", EmitDefaultValue = false)]
-        public DateRangeModel LockedDate { get; set; }
+        public DateTimeRangeSelectorModel LockedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets AutomaticDurationTimer
@@ -135,19 +135,19 @@ namespace TestIt.Client.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         [DataMember(Name = "createdDate", EmitDefaultValue = false)]
-        public DateRangeModel CreatedDate { get; set; }
+        public DateTimeRangeSelectorModel CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets StartDate
         /// </summary>
         [DataMember(Name = "startDate", EmitDefaultValue = false)]
-        public DateRangeModel StartDate { get; set; }
+        public DateTimeRangeSelectorModel StartDate { get; set; }
 
         /// <summary>
         /// Gets or Sets EndDate
         /// </summary>
         [DataMember(Name = "endDate", EmitDefaultValue = false)]
-        public DateRangeModel EndDate { get; set; }
+        public DateTimeRangeSelectorModel EndDate { get; set; }
 
         /// <summary>
         /// Gets or Sets TagNames
@@ -174,7 +174,7 @@ namespace TestIt.Client.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class TestPlanSearchQueryModel {\n");
+            sb.Append("class ProjectTestPlansFilterModel {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Build: ").Append(Build).Append("\n");
@@ -211,15 +211,15 @@ namespace TestIt.Client.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TestPlanSearchQueryModel);
+            return this.Equals(input as ProjectTestPlansFilterModel);
         }
 
         /// <summary>
-        /// Returns true if TestPlanSearchQueryModel instances are equal
+        /// Returns true if ProjectTestPlansFilterModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of TestPlanSearchQueryModel to be compared</param>
+        /// <param name="input">Instance of ProjectTestPlansFilterModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TestPlanSearchQueryModel input)
+        public bool Equals(ProjectTestPlansFilterModel input)
         {
             if (input == null)
             {
@@ -404,10 +404,22 @@ namespace TestIt.Client.Model
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
             }
 
+            // Name (string) minLength
+            if (this.Name != null && this.Name.Length < 0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
+            }
+
             // Description (string) maxLength
             if (this.Description != null && this.Description.Length > 255)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Description, length must be less than 255.", new [] { "Description" });
+            }
+
+            // Description (string) minLength
+            if (this.Description != null && this.Description.Length < 0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Description, length must be greater than 0.", new [] { "Description" });
             }
 
             // Build (string) maxLength
@@ -416,10 +428,22 @@ namespace TestIt.Client.Model
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Build, length must be less than 255.", new [] { "Build" });
             }
 
+            // Build (string) minLength
+            if (this.Build != null && this.Build.Length < 0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Build, length must be greater than 0.", new [] { "Build" });
+            }
+
             // ProductName (string) maxLength
             if (this.ProductName != null && this.ProductName.Length > 255)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ProductName, length must be less than 255.", new [] { "ProductName" });
+            }
+
+            // ProductName (string) minLength
+            if (this.ProductName != null && this.ProductName.Length < 0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ProductName, length must be greater than 0.", new [] { "ProductName" });
             }
 
             yield break;

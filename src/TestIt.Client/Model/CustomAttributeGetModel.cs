@@ -36,24 +36,29 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
-        public CustomAttributeTypesEnum? Type { get; set; }
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
+        public CustomAttributeTypesEnum Type { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomAttributeGetModel" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected CustomAttributeGetModel() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomAttributeGetModel" /> class.
         /// </summary>
         /// <param name="id">Unique ID of the attribute.</param>
         /// <param name="options">Collection of the attribute options.</param>
-        /// <param name="type">type.</param>
+        /// <param name="type">type (required).</param>
         /// <param name="isDeleted">Indicates if the attribute is deleted.</param>
         /// <param name="name">Name of the attribute.</param>
         /// <param name="isEnabled">Indicates if the attribute is enabled.</param>
         /// <param name="isRequired">Indicates if the attribute is mandatory to specify.</param>
         /// <param name="isGlobal">Indicates if the attribute is available across all projects.</param>
-        public CustomAttributeGetModel(Guid id = default(Guid), List<CustomAttributeOptionModel> options = default(List<CustomAttributeOptionModel>), CustomAttributeTypesEnum? type = default(CustomAttributeTypesEnum?), bool isDeleted = default(bool), string name = default(string), bool isEnabled = default(bool), bool isRequired = default(bool), bool isGlobal = default(bool))
+        public CustomAttributeGetModel(Guid id = default(Guid), List<CustomAttributeOptionModel> options = default(List<CustomAttributeOptionModel>), CustomAttributeTypesEnum type = default(CustomAttributeTypesEnum), bool isDeleted = default(bool), string name = default(string), bool isEnabled = default(bool), bool isRequired = default(bool), bool isGlobal = default(bool))
         {
+            this.Type = type;
             this.Id = id;
             this.Options = options;
-            this.Type = type;
             this.IsDeleted = isDeleted;
             this.Name = name;
             this.IsEnabled = isEnabled;
