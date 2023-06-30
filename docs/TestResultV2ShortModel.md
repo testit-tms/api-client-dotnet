@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **RunByUserId** | **Guid?** |  | [optional] 
 **StoppedByUserId** | **Guid?** |  | [optional] 
 **TestPointId** | **Guid?** |  | [optional] 
-**TestPoint** | [**TestPointShortModel**](TestPointShortModel.md) |  | [optional] 
+**TestPoint** | [**TestPointRelatedToTestResult**](TestPointRelatedToTestResult.md) |  | [optional] 
 **TestRunId** | **Guid** |  | [optional] 
 **Outcome** | **string** | Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped | [optional] 
 **Comment** | **string** |  | [optional] 

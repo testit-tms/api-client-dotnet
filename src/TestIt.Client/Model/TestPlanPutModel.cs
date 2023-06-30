@@ -76,6 +76,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
@@ -94,6 +95,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
+        /// <example>&quot;Base test plan&quot;</example>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -101,6 +103,7 @@ namespace TestIt.Client.Model
         /// Used for analytics
         /// </summary>
         /// <value>Used for analytics</value>
+        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
         [DataMember(Name = "startDate", EmitDefaultValue = true)]
         public DateTime? StartDate { get; set; }
 
@@ -108,43 +111,49 @@ namespace TestIt.Client.Model
         /// Used for analytics
         /// </summary>
         /// <value>Used for analytics</value>
+        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
         [DataMember(Name = "endDate", EmitDefaultValue = true)]
         public DateTime? EndDate { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
+        /// <example>&quot;This is a base test plan&quot;</example>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets Build
         /// </summary>
+        /// <example>&quot;v.3.0.0-b94f3055&quot;</example>
         [DataMember(Name = "build", EmitDefaultValue = true)]
         public string Build { get; set; }
 
         /// <summary>
         /// Gets or Sets ProjectId
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
         /// Gets or Sets ProductName
         /// </summary>
+        /// <example>&quot;Billing service&quot;</example>
         [DataMember(Name = "productName", EmitDefaultValue = true)]
         public string ProductName { get; set; }
 
         /// <summary>
         /// Gets or Sets HasAutomaticDurationTimer
         /// </summary>
+        /// <example>true</example>
         [DataMember(Name = "hasAutomaticDurationTimer", EmitDefaultValue = true)]
         public bool? HasAutomaticDurationTimer { get; set; }
 
         /// <summary>
         /// Gets or Sets Attributes
         /// </summary>
-        [DataMember(Name = "attributes", EmitDefaultValue = true)]
+        [DataMember(Name = "attributes", EmitDefaultValue = false)]
         public Dictionary<string, Object> Attributes { get; set; }
 
         /// <summary>
@@ -332,7 +341,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 450)

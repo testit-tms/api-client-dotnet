@@ -54,7 +54,7 @@ namespace TestIt.Client.Model
         /// <param name="attachments">attachments.</param>
         /// <param name="parameters">parameters.</param>
         /// <param name="properties">properties.</param>
-        public TestResultV2ShortModel(Guid id = default(Guid), Guid configurationId = default(Guid), Guid workItemVersionId = default(Guid), Guid? autoTestId = default(Guid?), string message = default(string), string traces = default(string), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), Guid? runByUserId = default(Guid?), Guid? stoppedByUserId = default(Guid?), Guid? testPointId = default(Guid?), TestPointShortModel testPoint = default(TestPointShortModel), Guid testRunId = default(Guid), string outcome = default(string), string comment = default(string), List<LinkModel> links = default(List<LinkModel>), List<AttachmentModel> attachments = default(List<AttachmentModel>), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, string> properties = default(Dictionary<string, string>))
+        public TestResultV2ShortModel(Guid id = default(Guid), Guid configurationId = default(Guid), Guid workItemVersionId = default(Guid), Guid? autoTestId = default(Guid?), string message = default(string), string traces = default(string), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), Guid? runByUserId = default(Guid?), Guid? stoppedByUserId = default(Guid?), Guid? testPointId = default(Guid?), TestPointRelatedToTestResult testPoint = default(TestPointRelatedToTestResult), Guid testRunId = default(Guid), string outcome = default(string), string comment = default(string), List<LinkModel> links = default(List<LinkModel>), List<AttachmentModel> attachments = default(List<AttachmentModel>), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, string> properties = default(Dictionary<string, string>))
         {
             this.Id = id;
             this.ConfigurationId = configurationId;
@@ -80,78 +80,90 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets ConfigurationId
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "configurationId", EmitDefaultValue = false)]
         public Guid ConfigurationId { get; set; }
 
         /// <summary>
         /// Gets or Sets WorkItemVersionId
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "workItemVersionId", EmitDefaultValue = false)]
         public Guid WorkItemVersionId { get; set; }
 
         /// <summary>
         /// Gets or Sets AutoTestId
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "autoTestId", EmitDefaultValue = true)]
         public Guid? AutoTestId { get; set; }
 
         /// <summary>
         /// Gets or Sets Message
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "message", EmitDefaultValue = true)]
         public string Message { get; set; }
 
         /// <summary>
         /// Gets or Sets Traces
         /// </summary>
+        /// <example>&quot;Exception in thread main java.lang.NullPointerException at com.example.myproject.MyTest.HealtCheck()&quot;</example>
         [DataMember(Name = "traces", EmitDefaultValue = true)]
         public string Traces { get; set; }
 
         /// <summary>
         /// Gets or Sets StartedOn
         /// </summary>
+        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
         [DataMember(Name = "startedOn", EmitDefaultValue = true)]
         public DateTime? StartedOn { get; set; }
 
         /// <summary>
         /// Gets or Sets CompletedOn
         /// </summary>
+        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
         [DataMember(Name = "completedOn", EmitDefaultValue = true)]
         public DateTime? CompletedOn { get; set; }
 
         /// <summary>
         /// Gets or Sets RunByUserId
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "runByUserId", EmitDefaultValue = true)]
         public Guid? RunByUserId { get; set; }
 
         /// <summary>
         /// Gets or Sets StoppedByUserId
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "stoppedByUserId", EmitDefaultValue = true)]
         public Guid? StoppedByUserId { get; set; }
 
         /// <summary>
         /// Gets or Sets TestPointId
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "testPointId", EmitDefaultValue = true)]
         public Guid? TestPointId { get; set; }
 
         /// <summary>
         /// Gets or Sets TestPoint
         /// </summary>
-        [DataMember(Name = "testPoint", EmitDefaultValue = false)]
-        public TestPointShortModel TestPoint { get; set; }
+        [DataMember(Name = "testPoint", EmitDefaultValue = true)]
+        public TestPointRelatedToTestResult TestPoint { get; set; }
 
         /// <summary>
         /// Gets or Sets TestRunId
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "testRunId", EmitDefaultValue = false)]
         public Guid TestRunId { get; set; }
 
@@ -159,12 +171,14 @@ namespace TestIt.Client.Model
         /// Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped
         /// </summary>
         /// <value>Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped</value>
-        [DataMember(Name = "outcome", EmitDefaultValue = true)]
+        /// <example>&quot;Passed&quot;</example>
+        [DataMember(Name = "outcome", EmitDefaultValue = false)]
         public string Outcome { get; set; }
 
         /// <summary>
         /// Gets or Sets Comment
         /// </summary>
+        /// <example>&quot;my first comment&quot;</example>
         [DataMember(Name = "comment", EmitDefaultValue = true)]
         public string Comment { get; set; }
 
@@ -449,7 +463,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -42,7 +42,85 @@ namespace TestIt.Client.Model
         /// Enum TestPlansStatusChanged for value: TestPlansStatusChanged
         /// </summary>
         [EnumMember(Value = "TestPlansStatusChanged")]
-        TestPlansStatusChanged = 2
+        TestPlansStatusChanged = 2,
+
+        /// <summary>
+        /// Enum TestRunStopped for value: TestRunStopped
+        /// </summary>
+        [EnumMember(Value = "TestRunStopped")]
+        TestRunStopped = 3,
+
+        /// <summary>
+        /// Enum TestPointAssigned for value: TestPointAssigned
+        /// </summary>
+        [EnumMember(Value = "TestPointAssigned")]
+        TestPointAssigned = 4,
+
+        /// <summary>
+        /// Enum TestResultJiraIssueCreated for value: TestResultJiraIssueCreated
+        /// </summary>
+        [EnumMember(Value = "TestResultJiraIssueCreated")]
+        TestResultJiraIssueCreated = 5,
+
+        /// <summary>
+        /// Enum AutoTestFinished for value: AutoTestFinished
+        /// </summary>
+        [EnumMember(Value = "AutoTestFinished")]
+        AutoTestFinished = 6,
+
+        /// <summary>
+        /// Enum UserMentionedInComment for value: UserMentionedInComment
+        /// </summary>
+        [EnumMember(Value = "UserMentionedInComment")]
+        UserMentionedInComment = 7,
+
+        /// <summary>
+        /// Enum UserSelectedInWorkItemAttribute for value: UserSelectedInWorkItemAttribute
+        /// </summary>
+        [EnumMember(Value = "UserSelectedInWorkItemAttribute")]
+        UserSelectedInWorkItemAttribute = 8,
+
+        /// <summary>
+        /// Enum AllTestPointsFinished for value: AllTestPointsFinished
+        /// </summary>
+        [EnumMember(Value = "AllTestPointsFinished")]
+        AllTestPointsFinished = 9,
+
+        /// <summary>
+        /// Enum AllAutoTestsFinished for value: AllAutoTestsFinished
+        /// </summary>
+        [EnumMember(Value = "AllAutoTestsFinished")]
+        AllAutoTestsFinished = 10,
+
+        /// <summary>
+        /// Enum AutoTestChanged for value: AutoTestChanged
+        /// </summary>
+        [EnumMember(Value = "AutoTestChanged")]
+        AutoTestChanged = 11,
+
+        /// <summary>
+        /// Enum WorkItemAutoTestRelationChanged for value: WorkItemAutoTestRelationChanged
+        /// </summary>
+        [EnumMember(Value = "WorkItemAutoTestRelationChanged")]
+        WorkItemAutoTestRelationChanged = 12,
+
+        /// <summary>
+        /// Enum WorkItemAttributeChanged for value: WorkItemAttributeChanged
+        /// </summary>
+        [EnumMember(Value = "WorkItemAttributeChanged")]
+        WorkItemAttributeChanged = 13,
+
+        /// <summary>
+        /// Enum WorkItemChanged for value: WorkItemChanged
+        /// </summary>
+        [EnumMember(Value = "WorkItemChanged")]
+        WorkItemChanged = 14,
+
+        /// <summary>
+        /// Enum ConfigurationChanged for value: ConfigurationChanged
+        /// </summary>
+        [EnumMember(Value = "ConfigurationChanged")]
+        ConfigurationChanged = 15
 
     }
 

@@ -36,7 +36,7 @@ namespace TestIt.Client.Model
         /// Initializes a new instance of the <see cref="TestPointsExtractionModel" /> class.
         /// </summary>
         /// <param name="ids">ids.</param>
-        public TestPointsExtractionModel(GuidExtractionModel ids = default(GuidExtractionModel))
+        public TestPointsExtractionModel(TestPointsExtractionModelIds ids = default(TestPointsExtractionModelIds))
         {
             this.Ids = ids;
         }
@@ -44,8 +44,8 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Ids
         /// </summary>
-        [DataMember(Name = "ids", EmitDefaultValue = false)]
-        public GuidExtractionModel Ids { get; set; }
+        [DataMember(Name = "ids", EmitDefaultValue = true)]
+        public TestPointsExtractionModelIds Ids { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -120,7 +120,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

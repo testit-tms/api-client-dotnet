@@ -38,7 +38,7 @@ namespace TestIt.Client.Model
         /// <param name="ids">ids.</param>
         /// <param name="sectionIds">sectionIds.</param>
         /// <param name="projectIds">projectIds.</param>
-        public WorkItemsExtractionModel(GuidExtractionModel ids = default(GuidExtractionModel), GuidExtractionModel sectionIds = default(GuidExtractionModel), GuidExtractionModel projectIds = default(GuidExtractionModel))
+        public WorkItemsExtractionModel(WorkItemsExtractionModelIds ids = default(WorkItemsExtractionModelIds), WorkItemsExtractionModelSectionIds sectionIds = default(WorkItemsExtractionModelSectionIds), ConfigurationExtractionModelProjectIds projectIds = default(ConfigurationExtractionModelProjectIds))
         {
             this.Ids = ids;
             this.SectionIds = sectionIds;
@@ -48,20 +48,20 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Ids
         /// </summary>
-        [DataMember(Name = "ids", EmitDefaultValue = false)]
-        public GuidExtractionModel Ids { get; set; }
+        [DataMember(Name = "ids", EmitDefaultValue = true)]
+        public WorkItemsExtractionModelIds Ids { get; set; }
 
         /// <summary>
         /// Gets or Sets SectionIds
         /// </summary>
-        [DataMember(Name = "sectionIds", EmitDefaultValue = false)]
-        public GuidExtractionModel SectionIds { get; set; }
+        [DataMember(Name = "sectionIds", EmitDefaultValue = true)]
+        public WorkItemsExtractionModelSectionIds SectionIds { get; set; }
 
         /// <summary>
         /// Gets or Sets ProjectIds
         /// </summary>
-        [DataMember(Name = "projectIds", EmitDefaultValue = false)]
-        public GuidExtractionModel ProjectIds { get; set; }
+        [DataMember(Name = "projectIds", EmitDefaultValue = true)]
+        public ConfigurationExtractionModelProjectIds ProjectIds { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -156,7 +156,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

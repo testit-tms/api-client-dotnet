@@ -42,7 +42,7 @@ namespace TestIt.Client.Model
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="modifiedDate">modifiedDate.</param>
-        public WorkItemCommentModel(Guid id = default(Guid), string text = default(string), UserWithRankModel user = default(UserWithRankModel), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?))
+        public WorkItemCommentModel(Guid id = default(Guid), string text = default(string), WorkItemCommentModelUser user = default(WorkItemCommentModelUser), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?))
         {
             this.Id = id;
             this.Text = text;
@@ -62,14 +62,14 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Text
         /// </summary>
-        [DataMember(Name = "text", EmitDefaultValue = true)]
+        [DataMember(Name = "text", EmitDefaultValue = false)]
         public string Text { get; set; }
 
         /// <summary>
         /// Gets or Sets User
         /// </summary>
         [DataMember(Name = "user", EmitDefaultValue = false)]
-        public UserWithRankModel User { get; set; }
+        public WorkItemCommentModelUser User { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
@@ -228,7 +228,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

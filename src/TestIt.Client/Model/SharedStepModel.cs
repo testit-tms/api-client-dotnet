@@ -52,31 +52,35 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets VersionId
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "versionId", EmitDefaultValue = false)]
         public Guid VersionId { get; set; }
 
         /// <summary>
         /// Gets or Sets GlobalId
         /// </summary>
+        /// <example>1000</example>
         [DataMember(Name = "globalId", EmitDefaultValue = false)]
         public long GlobalId { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        /// <example>&quot;First step&quot;</example>
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Steps
         /// </summary>
-        [DataMember(Name = "steps", EmitDefaultValue = true)]
+        [DataMember(Name = "steps", EmitDefaultValue = false)]
         [Obsolete]
         public List<StepModel> Steps { get; set; }
 
         /// <summary>
         /// Gets or Sets IsDeleted
         /// </summary>
+        /// <example>true</example>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
@@ -186,7 +190,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

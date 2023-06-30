@@ -42,7 +42,7 @@ namespace TestIt.Client.Model
         /// <param name="index">index.</param>
         /// <param name="workItemId">workItemId.</param>
         /// <param name="workItem">workItem.</param>
-        public WorkItemStepChangeViewModel(string action = default(string), string expected = default(string), string comments = default(string), string testData = default(string), int index = default(int), Guid? workItemId = default(Guid?), SharedStepChangeViewModel workItem = default(SharedStepChangeViewModel))
+        public WorkItemStepChangeViewModel(string action = default(string), string expected = default(string), string comments = default(string), string testData = default(string), int index = default(int), Guid? workItemId = default(Guid?), WorkItemStepChangeViewModelWorkItem workItem = default(WorkItemStepChangeViewModelWorkItem))
         {
             this.Action = action;
             this.Expected = expected;
@@ -56,25 +56,25 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Action
         /// </summary>
-        [DataMember(Name = "action", EmitDefaultValue = true)]
+        [DataMember(Name = "action", EmitDefaultValue = false)]
         public string Action { get; set; }
 
         /// <summary>
         /// Gets or Sets Expected
         /// </summary>
-        [DataMember(Name = "expected", EmitDefaultValue = true)]
+        [DataMember(Name = "expected", EmitDefaultValue = false)]
         public string Expected { get; set; }
 
         /// <summary>
         /// Gets or Sets Comments
         /// </summary>
-        [DataMember(Name = "comments", EmitDefaultValue = true)]
+        [DataMember(Name = "comments", EmitDefaultValue = false)]
         public string Comments { get; set; }
 
         /// <summary>
         /// Gets or Sets TestData
         /// </summary>
-        [DataMember(Name = "testData", EmitDefaultValue = true)]
+        [DataMember(Name = "testData", EmitDefaultValue = false)]
         public string TestData { get; set; }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace TestIt.Client.Model
         /// Gets or Sets WorkItem
         /// </summary>
         [DataMember(Name = "workItem", EmitDefaultValue = false)]
-        public SharedStepChangeViewModel WorkItem { get; set; }
+        public WorkItemStepChangeViewModelWorkItem WorkItem { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -224,7 +224,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2AttachmentsOccupiedFileStorageSizeGet**](AttachmentsApi.md#apiv2attachmentsoccupiedfilestoragesizeget) | **GET** /api/v2/attachments/occupiedFileStorageSize | Get size of attachments storage in bytes |
 | [**ApiV2AttachmentsPost**](AttachmentsApi.md#apiv2attachmentspost) | **POST** /api/v2/attachments | Upload new attachment file |
 
-<a name="apiv2attachmentsiddelete"></a>
+<a id="apiv2attachmentsiddelete"></a>
 # **ApiV2AttachmentsIdDelete**
 > void ApiV2AttachmentsIdDelete (Guid id)
 
@@ -99,12 +99,12 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **422** | Attachment file is already in use |  -  |
 | **204** | Attachment file was deleted successfully |  -  |
+| **422** | Attachment file is already in use |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2attachmentsidget"></a>
+<a id="apiv2attachmentsidget"></a>
 # **ApiV2AttachmentsIdGet**
 > FileParameter ApiV2AttachmentsIdGet (Guid id, int? width = null, int? height = null, ImageResizeType? resizeType = null, string backgroundColor = null, bool? preview = null)
 
@@ -212,7 +212,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2attachmentsoccupiedfilestoragesizeget"></a>
+<a id="apiv2attachmentsoccupiedfilestoragesizeget"></a>
 # **ApiV2AttachmentsOccupiedFileStorageSizeGet**
 > long ApiV2AttachmentsOccupiedFileStorageSizeGet ()
 
@@ -305,7 +305,7 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2attachmentspost"></a>
+<a id="apiv2attachmentspost"></a>
 # **ApiV2AttachmentsPost**
 > AttachmentModel ApiV2AttachmentsPost (FileParameter file = null)
 
@@ -401,10 +401,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | &lt;br&gt;- Invalid file contents  &lt;br&gt;- Invalid HTTP headers |  -  |
 | **201** | Created |  -  |
-| **403** | Forbidden |  -  |
+| **400** | &lt;br&gt;- Invalid file contents  &lt;br&gt;- Invalid HTTP headers |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

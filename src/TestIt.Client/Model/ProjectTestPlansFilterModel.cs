@@ -116,7 +116,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets LockedDate
         /// </summary>
-        [DataMember(Name = "lockedDate", EmitDefaultValue = false)]
+        [DataMember(Name = "lockedDate", EmitDefaultValue = true)]
         public DateTimeRangeSelectorModel LockedDate { get; set; }
 
         /// <summary>
@@ -134,19 +134,19 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+        [DataMember(Name = "createdDate", EmitDefaultValue = true)]
         public DateTimeRangeSelectorModel CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets StartDate
         /// </summary>
-        [DataMember(Name = "startDate", EmitDefaultValue = false)]
+        [DataMember(Name = "startDate", EmitDefaultValue = true)]
         public DateTimeRangeSelectorModel StartDate { get; set; }
 
         /// <summary>
         /// Gets or Sets EndDate
         /// </summary>
-        [DataMember(Name = "endDate", EmitDefaultValue = false)]
+        [DataMember(Name = "endDate", EmitDefaultValue = true)]
         public DateTimeRangeSelectorModel EndDate { get; set; }
 
         /// <summary>
@@ -396,7 +396,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)

@@ -42,7 +42,13 @@ namespace TestIt.Client.Model
         /// Enum Dynamic for value: Dynamic
         /// </summary>
         [EnumMember(Value = "Dynamic")]
-        Dynamic = 2
+        Dynamic = 2,
+
+        /// <summary>
+        /// Enum Tree for value: Tree
+        /// </summary>
+        [EnumMember(Value = "Tree")]
+        Tree = 3
 
     }
 

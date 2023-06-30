@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2NotificationsReadPost**](NotificationsApi.md#apiv2notificationsreadpost) | **POST** /api/v2/notifications/read | Set all Notifications as read |
 | [**ApiV2NotificationsSearchPost**](NotificationsApi.md#apiv2notificationssearchpost) | **POST** /api/v2/notifications/search | Search Notifications for current User |
 
-<a name="apiv2notificationscountget"></a>
+<a id="apiv2notificationscountget"></a>
 # **ApiV2NotificationsCountGet**
 > int ApiV2NotificationsCountGet (bool? isRead = null)
 
@@ -111,7 +111,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2notificationsget"></a>
+<a id="apiv2notificationsget"></a>
 # **ApiV2NotificationsGet**
 > List&lt;NotificationModel&gt; ApiV2NotificationsGet (NotificationTypeModel? notificationType = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -217,13 +217,13 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 | **400** | &lt;br&gt;orderByStatement must have one &#39;.&#39; and no &#39;,&#39; symbols  &lt;br&gt;orderByStatement has invalid length  &lt;br&gt;orderByStatement must have uuid as attribute key  &lt;br&gt;Search field not found |  -  |
 | **401** | Unauthorized |  -  |
-| **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2notificationsidreadpost"></a>
+<a id="apiv2notificationsidreadpost"></a>
 # **ApiV2NotificationsIdReadPost**
 > void ApiV2NotificationsIdReadPost (Guid id)
 
@@ -315,13 +315,13 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **204** | Successful operation |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Can&#39;t find notification with notificationId |  -  |
-| **204** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2notificationsreadpost"></a>
+<a id="apiv2notificationsreadpost"></a>
 # **ApiV2NotificationsReadPost**
 > void ApiV2NotificationsReadPost ()
 
@@ -408,14 +408,14 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
 | **204** | Successful operation |  -  |
+| **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2notificationssearchpost"></a>
+<a id="apiv2notificationssearchpost"></a>
 # **ApiV2NotificationsSearchPost**
-> List&lt;NotificationModel&gt; ApiV2NotificationsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, NotificationQueryFilterModel notificationQueryFilterModel = null)
+> List&lt;NotificationModel&gt; ApiV2NotificationsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2NotificationsSearchPostRequest apiV2NotificationsSearchPostRequest = null)
 
 Search Notifications for current User
 
@@ -452,12 +452,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var notificationQueryFilterModel = new NotificationQueryFilterModel(); // NotificationQueryFilterModel |  (optional) 
+            var apiV2NotificationsSearchPostRequest = new ApiV2NotificationsSearchPostRequest(); // ApiV2NotificationsSearchPostRequest |  (optional) 
 
             try
             {
                 // Search Notifications for current User
-                List<NotificationModel> result = apiInstance.ApiV2NotificationsSearchPost(skip, take, orderBy, searchField, searchValue, notificationQueryFilterModel);
+                List<NotificationModel> result = apiInstance.ApiV2NotificationsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2NotificationsSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -478,7 +478,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search Notifications for current User
-    ApiResponse<List<NotificationModel>> response = apiInstance.ApiV2NotificationsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, notificationQueryFilterModel);
+    ApiResponse<List<NotificationModel>> response = apiInstance.ApiV2NotificationsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2NotificationsSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -500,7 +500,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **notificationQueryFilterModel** | [**NotificationQueryFilterModel**](NotificationQueryFilterModel.md) |  | [optional]  |
+| **apiV2NotificationsSearchPostRequest** | [**ApiV2NotificationsSearchPostRequest**](ApiV2NotificationsSearchPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -519,9 +519,9 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
 | **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 | **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

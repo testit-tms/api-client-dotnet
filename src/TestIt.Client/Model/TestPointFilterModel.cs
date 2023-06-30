@@ -52,7 +52,11 @@ namespace TestIt.Client.Model
         /// <param name="modifiedByIds">Specifies a test point last editor IDs to search for.</param>
         /// <param name="tags">Specifies a test point tags to search for.</param>
         /// <param name="attributes">Specifies a test point attributes to search for.</param>
-        public TestPointFilterModel(List<Guid> testPlanIds = default(List<Guid>), List<Guid> testSuiteIds = default(List<Guid>), List<long> workItemGlobalIds = default(List<long>), List<TestPointStatus> statuses = default(List<TestPointStatus>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), bool? isAutomated = default(bool?), string name = default(string), List<Guid> configurationIds = default(List<Guid>), List<Guid> testerIds = default(List<Guid>), Int64RangeSelectorModel duration = default(Int64RangeSelectorModel), List<Guid> sectionIds = default(List<Guid>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), List<Guid> modifiedByIds = default(List<Guid>), List<string> tags = default(List<string>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>))
+        /// <param name="workItemCreatedDate">workItemCreatedDate.</param>
+        /// <param name="workItemCreatedByIds">Specifies a work item creator IDs to search for.</param>
+        /// <param name="workItemModifiedDate">workItemModifiedDate.</param>
+        /// <param name="workItemModifiedByIds">Specifies a work item last editor IDs to search for.</param>
+        public TestPointFilterModel(List<Guid> testPlanIds = default(List<Guid>), List<Guid> testSuiteIds = default(List<Guid>), List<long> workItemGlobalIds = default(List<long>), List<TestPointStatus> statuses = default(List<TestPointStatus>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), bool? isAutomated = default(bool?), string name = default(string), List<Guid> configurationIds = default(List<Guid>), List<Guid> testerIds = default(List<Guid>), TestPointFilterModelDuration duration = default(TestPointFilterModelDuration), List<Guid> sectionIds = default(List<Guid>), TestPointFilterModelCreatedDate createdDate = default(TestPointFilterModelCreatedDate), List<Guid> createdByIds = default(List<Guid>), TestPointFilterModelModifiedDate modifiedDate = default(TestPointFilterModelModifiedDate), List<Guid> modifiedByIds = default(List<Guid>), List<string> tags = default(List<string>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), TestPointFilterModelWorkItemCreatedDate workItemCreatedDate = default(TestPointFilterModelWorkItemCreatedDate), List<Guid> workItemCreatedByIds = default(List<Guid>), TestPointFilterModelWorkItemModifiedDate workItemModifiedDate = default(TestPointFilterModelWorkItemModifiedDate), List<Guid> workItemModifiedByIds = default(List<Guid>))
         {
             this.TestPlanIds = testPlanIds;
             this.TestSuiteIds = testSuiteIds;
@@ -71,6 +75,10 @@ namespace TestIt.Client.Model
             this.ModifiedByIds = modifiedByIds;
             this.Tags = tags;
             this.Attributes = attributes;
+            this.WorkItemCreatedDate = workItemCreatedDate;
+            this.WorkItemCreatedByIds = workItemCreatedByIds;
+            this.WorkItemModifiedDate = workItemModifiedDate;
+            this.WorkItemModifiedByIds = workItemModifiedByIds;
         }
 
         /// <summary>
@@ -139,8 +147,8 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Duration
         /// </summary>
-        [DataMember(Name = "duration", EmitDefaultValue = false)]
-        public Int64RangeSelectorModel Duration { get; set; }
+        [DataMember(Name = "duration", EmitDefaultValue = true)]
+        public TestPointFilterModelDuration Duration { get; set; }
 
         /// <summary>
         /// Specifies a test point work item section IDs to search for
@@ -152,8 +160,8 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
-        public DateTimeRangeSelectorModel CreatedDate { get; set; }
+        [DataMember(Name = "createdDate", EmitDefaultValue = true)]
+        public TestPointFilterModelCreatedDate CreatedDate { get; set; }
 
         /// <summary>
         /// Specifies a test point creator IDs to search for
@@ -165,8 +173,8 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
-        public DateTimeRangeSelectorModel ModifiedDate { get; set; }
+        [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
+        public TestPointFilterModelModifiedDate ModifiedDate { get; set; }
 
         /// <summary>
         /// Specifies a test point last editor IDs to search for
@@ -188,6 +196,32 @@ namespace TestIt.Client.Model
         /// <value>Specifies a test point attributes to search for</value>
         [DataMember(Name = "attributes", EmitDefaultValue = true)]
         public Dictionary<string, List<string>> Attributes { get; set; }
+
+        /// <summary>
+        /// Gets or Sets WorkItemCreatedDate
+        /// </summary>
+        [DataMember(Name = "workItemCreatedDate", EmitDefaultValue = true)]
+        public TestPointFilterModelWorkItemCreatedDate WorkItemCreatedDate { get; set; }
+
+        /// <summary>
+        /// Specifies a work item creator IDs to search for
+        /// </summary>
+        /// <value>Specifies a work item creator IDs to search for</value>
+        [DataMember(Name = "workItemCreatedByIds", EmitDefaultValue = true)]
+        public List<Guid> WorkItemCreatedByIds { get; set; }
+
+        /// <summary>
+        /// Gets or Sets WorkItemModifiedDate
+        /// </summary>
+        [DataMember(Name = "workItemModifiedDate", EmitDefaultValue = true)]
+        public TestPointFilterModelWorkItemModifiedDate WorkItemModifiedDate { get; set; }
+
+        /// <summary>
+        /// Specifies a work item last editor IDs to search for
+        /// </summary>
+        /// <value>Specifies a work item last editor IDs to search for</value>
+        [DataMember(Name = "workItemModifiedByIds", EmitDefaultValue = true)]
+        public List<Guid> WorkItemModifiedByIds { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -214,6 +248,10 @@ namespace TestIt.Client.Model
             sb.Append("  ModifiedByIds: ").Append(ModifiedByIds).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  Attributes: ").Append(Attributes).Append("\n");
+            sb.Append("  WorkItemCreatedDate: ").Append(WorkItemCreatedDate).Append("\n");
+            sb.Append("  WorkItemCreatedByIds: ").Append(WorkItemCreatedByIds).Append("\n");
+            sb.Append("  WorkItemModifiedDate: ").Append(WorkItemModifiedDate).Append("\n");
+            sb.Append("  WorkItemModifiedByIds: ").Append(WorkItemModifiedByIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -345,6 +383,28 @@ namespace TestIt.Client.Model
                     this.Attributes != null &&
                     input.Attributes != null &&
                     this.Attributes.SequenceEqual(input.Attributes)
+                ) && 
+                (
+                    this.WorkItemCreatedDate == input.WorkItemCreatedDate ||
+                    (this.WorkItemCreatedDate != null &&
+                    this.WorkItemCreatedDate.Equals(input.WorkItemCreatedDate))
+                ) && 
+                (
+                    this.WorkItemCreatedByIds == input.WorkItemCreatedByIds ||
+                    this.WorkItemCreatedByIds != null &&
+                    input.WorkItemCreatedByIds != null &&
+                    this.WorkItemCreatedByIds.SequenceEqual(input.WorkItemCreatedByIds)
+                ) && 
+                (
+                    this.WorkItemModifiedDate == input.WorkItemModifiedDate ||
+                    (this.WorkItemModifiedDate != null &&
+                    this.WorkItemModifiedDate.Equals(input.WorkItemModifiedDate))
+                ) && 
+                (
+                    this.WorkItemModifiedByIds == input.WorkItemModifiedByIds ||
+                    this.WorkItemModifiedByIds != null &&
+                    input.WorkItemModifiedByIds != null &&
+                    this.WorkItemModifiedByIds.SequenceEqual(input.WorkItemModifiedByIds)
                 );
         }
 
@@ -425,6 +485,22 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.Attributes.GetHashCode();
                 }
+                if (this.WorkItemCreatedDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.WorkItemCreatedDate.GetHashCode();
+                }
+                if (this.WorkItemCreatedByIds != null)
+                {
+                    hashCode = (hashCode * 59) + this.WorkItemCreatedByIds.GetHashCode();
+                }
+                if (this.WorkItemModifiedDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.WorkItemModifiedDate.GetHashCode();
+                }
+                if (this.WorkItemModifiedByIds != null)
+                {
+                    hashCode = (hashCode * 59) + this.WorkItemModifiedByIds.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -434,7 +510,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)

@@ -80,48 +80,56 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets FileId
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "fileId", IsRequired = true, EmitDefaultValue = true)]
         public string FileId { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
+        /// <example>&quot;image/jpeg&quot;</example>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Size
         /// </summary>
+        /// <example>5.555</example>
         [DataMember(Name = "size", IsRequired = true, EmitDefaultValue = true)]
         public float Size { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
+        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
         [DataMember(Name = "createdDate", EmitDefaultValue = false)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
+        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "createdById", EmitDefaultValue = false)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
+        /// <example>&quot;example&quot;</example>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -281,7 +289,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // FileId (string) minLength
             if (this.FileId != null && this.FileId.Length < 1)

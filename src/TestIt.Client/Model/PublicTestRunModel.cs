@@ -80,7 +80,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
@@ -98,25 +98,25 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Configurations
         /// </summary>
-        [DataMember(Name = "configurations", EmitDefaultValue = true)]
+        [DataMember(Name = "configurations", EmitDefaultValue = false)]
         public List<ConfigurationModel> Configurations { get; set; }
 
         /// <summary>
         /// Gets or Sets AutoTests
         /// </summary>
-        [DataMember(Name = "autoTests", EmitDefaultValue = true)]
+        [DataMember(Name = "autoTests", EmitDefaultValue = false)]
         public List<AutoTestModel> AutoTests { get; set; }
 
         /// <summary>
         /// Gets or Sets TestPoints
         /// </summary>
-        [DataMember(Name = "testPoints", EmitDefaultValue = true)]
+        [DataMember(Name = "testPoints", EmitDefaultValue = false)]
         public List<PublicTestPointModel> TestPoints { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = true)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
         /// <summary>
@@ -281,7 +281,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -27,8 +27,13 @@ Name | Type | Description | Notes
 **SectionId** | **Guid** | Unique ID of section where work item the test point represents is located | [optional] 
 **SectionName** | **string** | Name of section where work item the test point represents is located | [optional] 
 **ProjectId** | **Guid** | Unique ID of the test point project | [optional] 
-**LastTestResult** | [**LastTestResultModel**](LastTestResultModel.md) |  | 
+**LastTestResult** | [**TestPointShortGetModelLastTestResult**](TestPointShortGetModelLastTestResult.md) |  | 
 **IterationId** | **Guid** | Unique ID of work item iteration the test point represents | [optional] 
+**WorkItemState** | **WorkItemState** |  | [optional] 
+**WorkItemCreatedById** | **Guid** | Unique ID of the work item creator | [optional] 
+**WorkItemCreatedDate** | **DateTime** | Creation date of work item | [optional] 
+**WorkItemModifiedById** | **Guid?** | Unique ID of the work item last editor | [optional] 
+**WorkItemModifiedDate** | **DateTime?** | Modified date of work item | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

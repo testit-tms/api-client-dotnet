@@ -37,7 +37,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="filter">filter.</param>
         /// <param name="extractionModel">extractionModel.</param>
-        public AutotestSelectModel(AutotestFilterModel filter = default(AutotestFilterModel), AutotestsExtractionModel extractionModel = default(AutotestsExtractionModel))
+        public AutotestSelectModel(AutotestSelectModelFilter filter = default(AutotestSelectModelFilter), AutotestSelectModelExtractionModel extractionModel = default(AutotestSelectModelExtractionModel))
         {
             this.Filter = filter;
             this.ExtractionModel = extractionModel;
@@ -47,13 +47,13 @@ namespace TestIt.Client.Model
         /// Gets or Sets Filter
         /// </summary>
         [DataMember(Name = "filter", EmitDefaultValue = false)]
-        public AutotestFilterModel Filter { get; set; }
+        public AutotestSelectModelFilter Filter { get; set; }
 
         /// <summary>
         /// Gets or Sets ExtractionModel
         /// </summary>
         [DataMember(Name = "extractionModel", EmitDefaultValue = false)]
-        public AutotestsExtractionModel ExtractionModel { get; set; }
+        public AutotestSelectModelExtractionModel ExtractionModel { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -138,7 +138,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

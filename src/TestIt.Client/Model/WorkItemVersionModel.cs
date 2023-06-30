@@ -51,6 +51,7 @@ namespace TestIt.Client.Model
         /// used for versioning changes in workitem
         /// </summary>
         /// <value>used for versioning changes in workitem</value>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "versionId", EmitDefaultValue = false)]
         public Guid VersionId { get; set; }
 
@@ -58,18 +59,21 @@ namespace TestIt.Client.Model
         /// used for define chronology of workitem state in each version
         /// </summary>
         /// <value>used for define chronology of workitem state in each version</value>
+        /// <example>10</example>
         [DataMember(Name = "versionNumber", EmitDefaultValue = false)]
         public int VersionNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
+        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
@@ -172,7 +176,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

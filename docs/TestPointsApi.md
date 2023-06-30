@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2TestPointsSearchIdPost**](TestPointsApi.md#apiv2testpointssearchidpost) | **POST** /api/v2/testPoints/search/id | Search for test points and extract IDs only |
 | [**ApiV2TestPointsSearchPost**](TestPointsApi.md#apiv2testpointssearchpost) | **POST** /api/v2/testPoints/search | Search for test points |
 
-<a name="apiv2testpointsidtestrunsget"></a>
+<a id="apiv2testpointsidtestrunsget"></a>
 # **ApiV2TestPointsIdTestRunsGet**
 > List&lt;TestRunModel&gt; ApiV2TestPointsIdTestRunsGet (Guid id)
 
@@ -103,12 +103,12 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for test points is required |  -  |
 | **200** | Success |  -  |
+| **403** | Read permission for test points is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testpointsidworkitemget"></a>
+<a id="apiv2testpointsidworkitemget"></a>
 # **ApiV2TestPointsIdWorkItemGet**
 > WorkItemModel ApiV2TestPointsIdWorkItemGet (Guid id)
 
@@ -202,14 +202,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for test points is required |  -  |
 | **200** | Success |  -  |
+| **403** | Read permission for test points is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testpointssearchidpost"></a>
+<a id="apiv2testpointssearchidpost"></a>
 # **ApiV2TestPointsSearchIdPost**
-> List&lt;Guid&gt; ApiV2TestPointsSearchIdPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, TestPointFilterModel testPointFilterModel = null)
+> List&lt;Guid&gt; ApiV2TestPointsSearchIdPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = null)
 
 Search for test points and extract IDs only
 
@@ -244,12 +244,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var testPointFilterModel = new TestPointFilterModel(); // TestPointFilterModel |  (optional) 
+            var apiV2TestPointsSearchPostRequest = new ApiV2TestPointsSearchPostRequest(); // ApiV2TestPointsSearchPostRequest |  (optional) 
 
             try
             {
                 // Search for test points and extract IDs only
-                List<Guid> result = apiInstance.ApiV2TestPointsSearchIdPost(skip, take, orderBy, searchField, searchValue, testPointFilterModel);
+                List<Guid> result = apiInstance.ApiV2TestPointsSearchIdPost(skip, take, orderBy, searchField, searchValue, apiV2TestPointsSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -270,7 +270,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for test points and extract IDs only
-    ApiResponse<List<Guid>> response = apiInstance.ApiV2TestPointsSearchIdPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, testPointFilterModel);
+    ApiResponse<List<Guid>> response = apiInstance.ApiV2TestPointsSearchIdPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2TestPointsSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -292,7 +292,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **testPointFilterModel** | [**TestPointFilterModel**](TestPointFilterModel.md) |  | [optional]  |
+| **apiV2TestPointsSearchPostRequest** | [**ApiV2TestPointsSearchPostRequest**](ApiV2TestPointsSearchPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -311,14 +311,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for all requested test plans is required |  -  |
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **403** | Read permission for all requested test plans is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testpointssearchpost"></a>
+<a id="apiv2testpointssearchpost"></a>
 # **ApiV2TestPointsSearchPost**
-> List&lt;TestPointShortGetModel&gt; ApiV2TestPointsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, TestPointFilterModel testPointFilterModel = null)
+> List&lt;TestPointShortGetModel&gt; ApiV2TestPointsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = null)
 
 Search for test points
 
@@ -353,12 +353,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var testPointFilterModel = new TestPointFilterModel(); // TestPointFilterModel |  (optional) 
+            var apiV2TestPointsSearchPostRequest = new ApiV2TestPointsSearchPostRequest(); // ApiV2TestPointsSearchPostRequest |  (optional) 
 
             try
             {
                 // Search for test points
-                List<TestPointShortGetModel> result = apiInstance.ApiV2TestPointsSearchPost(skip, take, orderBy, searchField, searchValue, testPointFilterModel);
+                List<TestPointShortGetModel> result = apiInstance.ApiV2TestPointsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2TestPointsSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -379,7 +379,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for test points
-    ApiResponse<List<TestPointShortGetModel>> response = apiInstance.ApiV2TestPointsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, testPointFilterModel);
+    ApiResponse<List<TestPointShortGetModel>> response = apiInstance.ApiV2TestPointsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2TestPointsSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -401,7 +401,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **testPointFilterModel** | [**TestPointFilterModel**](TestPointFilterModel.md) |  | [optional]  |
+| **apiV2TestPointsSearchPostRequest** | [**ApiV2TestPointsSearchPostRequest**](ApiV2TestPointsSearchPostRequest.md) |  | [optional]  |
 
 ### Return type
 

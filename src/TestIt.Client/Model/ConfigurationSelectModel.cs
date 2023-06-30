@@ -35,45 +35,25 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConfigurationSelectModel" /> class.
         /// </summary>
-        /// <param name="projectIds">Collection of identifiers of projects from which configurations will be taken.</param>
-        /// <param name="name">Filter to search by name (case-insensitive, partial match).</param>
-        /// <param name="isDeleted">Is configurations deleted or existing.</param>
-        /// <param name="globalIds">Collection of global (integer) identifiers to filter configurations.</param>
-        public ConfigurationSelectModel(List<Guid> projectIds = default(List<Guid>), string name = default(string), bool? isDeleted = default(bool?), List<long> globalIds = default(List<long>))
+        /// <param name="filter">filter.</param>
+        /// <param name="extractionModel">extractionModel.</param>
+        public ConfigurationSelectModel(ConfigurationSelectModelFilter filter = default(ConfigurationSelectModelFilter), ConfigurationSelectModelExtractionModel extractionModel = default(ConfigurationSelectModelExtractionModel))
         {
-            this.ProjectIds = projectIds;
-            this.Name = name;
-            this.IsDeleted = isDeleted;
-            this.GlobalIds = globalIds;
+            this.Filter = filter;
+            this.ExtractionModel = extractionModel;
         }
 
         /// <summary>
-        /// Collection of identifiers of projects from which configurations will be taken
+        /// Gets or Sets Filter
         /// </summary>
-        /// <value>Collection of identifiers of projects from which configurations will be taken</value>
-        [DataMember(Name = "projectIds", EmitDefaultValue = true)]
-        public List<Guid> ProjectIds { get; set; }
+        [DataMember(Name = "filter", EmitDefaultValue = true)]
+        public ConfigurationSelectModelFilter Filter { get; set; }
 
         /// <summary>
-        /// Filter to search by name (case-insensitive, partial match)
+        /// Gets or Sets ExtractionModel
         /// </summary>
-        /// <value>Filter to search by name (case-insensitive, partial match)</value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Is configurations deleted or existing
-        /// </summary>
-        /// <value>Is configurations deleted or existing</value>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
-        public bool? IsDeleted { get; set; }
-
-        /// <summary>
-        /// Collection of global (integer) identifiers to filter configurations
-        /// </summary>
-        /// <value>Collection of global (integer) identifiers to filter configurations</value>
-        [DataMember(Name = "globalIds", EmitDefaultValue = true)]
-        public List<long> GlobalIds { get; set; }
+        [DataMember(Name = "extractionModel", EmitDefaultValue = true)]
+        public ConfigurationSelectModelExtractionModel ExtractionModel { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -83,10 +63,8 @@ namespace TestIt.Client.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class ConfigurationSelectModel {\n");
-            sb.Append("  ProjectIds: ").Append(ProjectIds).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
-            sb.Append("  GlobalIds: ").Append(GlobalIds).Append("\n");
+            sb.Append("  Filter: ").Append(Filter).Append("\n");
+            sb.Append("  ExtractionModel: ").Append(ExtractionModel).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -123,26 +101,14 @@ namespace TestIt.Client.Model
             }
             return 
                 (
-                    this.ProjectIds == input.ProjectIds ||
-                    this.ProjectIds != null &&
-                    input.ProjectIds != null &&
-                    this.ProjectIds.SequenceEqual(input.ProjectIds)
+                    this.Filter == input.Filter ||
+                    (this.Filter != null &&
+                    this.Filter.Equals(input.Filter))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    (this.IsDeleted != null &&
-                    this.IsDeleted.Equals(input.IsDeleted))
-                ) && 
-                (
-                    this.GlobalIds == input.GlobalIds ||
-                    this.GlobalIds != null &&
-                    input.GlobalIds != null &&
-                    this.GlobalIds.SequenceEqual(input.GlobalIds)
+                    this.ExtractionModel == input.ExtractionModel ||
+                    (this.ExtractionModel != null &&
+                    this.ExtractionModel.Equals(input.ExtractionModel))
                 );
         }
 
@@ -155,21 +121,13 @@ namespace TestIt.Client.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ProjectIds != null)
+                if (this.Filter != null)
                 {
-                    hashCode = (hashCode * 59) + this.ProjectIds.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Filter.GetHashCode();
                 }
-                if (this.Name != null)
+                if (this.ExtractionModel != null)
                 {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.IsDeleted != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                }
-                if (this.GlobalIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.GlobalIds.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ExtractionModel.GetHashCode();
                 }
                 return hashCode;
             }
@@ -180,20 +138,8 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // Name (string) maxLength
-            if (this.Name != null && this.Name.Length > 255)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
-            }
-
-            // Name (string) minLength
-            if (this.Name != null && this.Name.Length < 0)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
-            }
-
             yield break;
         }
     }

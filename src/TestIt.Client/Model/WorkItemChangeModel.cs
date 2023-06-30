@@ -42,7 +42,7 @@ namespace TestIt.Client.Model
         /// <param name="workItemChangedFields">workItemChangedFields.</param>
         /// <param name="createdById">createdById.</param>
         /// <param name="createdDate">createdDate.</param>
-        public WorkItemChangeModel(Guid id = default(Guid), Guid workItemId = default(Guid), Guid oldVersionId = default(Guid), Guid newVersionId = default(Guid), WorkItemChangedFieldsViewModel workItemChangedFields = default(WorkItemChangedFieldsViewModel), Guid createdById = default(Guid), DateTime? createdDate = default(DateTime?))
+        public WorkItemChangeModel(Guid id = default(Guid), Guid workItemId = default(Guid), Guid oldVersionId = default(Guid), Guid newVersionId = default(Guid), WorkItemChangeModelWorkItemChangedFields workItemChangedFields = default(WorkItemChangeModelWorkItemChangedFields), Guid createdById = default(Guid), DateTime? createdDate = default(DateTime?))
         {
             this.Id = id;
             this.WorkItemId = workItemId;
@@ -81,7 +81,7 @@ namespace TestIt.Client.Model
         /// Gets or Sets WorkItemChangedFields
         /// </summary>
         [DataMember(Name = "workItemChangedFields", EmitDefaultValue = false)]
-        public WorkItemChangedFieldsViewModel WorkItemChangedFields { get; set; }
+        public WorkItemChangeModelWorkItemChangedFields WorkItemChangedFields { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
@@ -228,7 +228,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

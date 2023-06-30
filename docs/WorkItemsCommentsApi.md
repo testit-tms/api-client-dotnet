@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2WorkItemsCommentsPut**](WorkItemsCommentsApi.md#apiv2workitemscommentsput) | **PUT** /api/v2/workItems/comments | Update work item comment |
 | [**ApiV2WorkItemsIdCommentsGet**](WorkItemsCommentsApi.md#apiv2workitemsidcommentsget) | **GET** /api/v2/workItems/{id}/comments | Get work item comments |
 
-<a name="apiv2workitemscommentscommentiddelete"></a>
+<a id="apiv2workitemscommentscommentiddelete"></a>
 # **ApiV2WorkItemsCommentsCommentIdDelete**
 > void ApiV2WorkItemsCommentsCommentIdDelete (Guid commentId)
 
@@ -43,7 +43,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsCommentsApi(httpClient, config, httpClientHandler);
-            var commentId = "commentId_example";  // Guid | 
+            var commentId = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Comment internal (guid format) identifier
 
             try
             {
@@ -82,7 +82,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **commentId** | **Guid** |  |  |
+| **commentId** | **Guid** | Comment internal (guid format) identifier |  |
 
 ### Return type
 
@@ -101,17 +101,17 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **204** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
-| **204** | Successful operation |  -  |
 | **403** | System admin permission required |  -  |
 | **404** | WorkItem is not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemscommentspost"></a>
+<a id="apiv2workitemscommentspost"></a>
 # **ApiV2WorkItemsCommentsPost**
-> WorkItemCommentModel ApiV2WorkItemsCommentsPost (WorkItemCommentPostModel workItemCommentPostModel = null)
+> WorkItemCommentModel ApiV2WorkItemsCommentsPost (ApiV2WorkItemsCommentsPostRequest apiV2WorkItemsCommentsPostRequest = null)
 
 Create WorkItem comment
 
@@ -143,12 +143,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsCommentsApi(httpClient, config, httpClientHandler);
-            var workItemCommentPostModel = new WorkItemCommentPostModel(); // WorkItemCommentPostModel |  (optional) 
+            var apiV2WorkItemsCommentsPostRequest = new ApiV2WorkItemsCommentsPostRequest(); // ApiV2WorkItemsCommentsPostRequest |  (optional) 
 
             try
             {
                 // Create WorkItem comment
-                WorkItemCommentModel result = apiInstance.ApiV2WorkItemsCommentsPost(workItemCommentPostModel);
+                WorkItemCommentModel result = apiInstance.ApiV2WorkItemsCommentsPost(apiV2WorkItemsCommentsPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -169,7 +169,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create WorkItem comment
-    ApiResponse<WorkItemCommentModel> response = apiInstance.ApiV2WorkItemsCommentsPostWithHttpInfo(workItemCommentPostModel);
+    ApiResponse<WorkItemCommentModel> response = apiInstance.ApiV2WorkItemsCommentsPostWithHttpInfo(apiV2WorkItemsCommentsPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -186,7 +186,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **workItemCommentPostModel** | [**WorkItemCommentPostModel**](WorkItemCommentPostModel.md) |  | [optional]  |
+| **apiV2WorkItemsCommentsPostRequest** | [**ApiV2WorkItemsCommentsPostRequest**](ApiV2WorkItemsCommentsPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -213,9 +213,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemscommentsput"></a>
+<a id="apiv2workitemscommentsput"></a>
 # **ApiV2WorkItemsCommentsPut**
-> void ApiV2WorkItemsCommentsPut (WorkItemCommentPutModel workItemCommentPutModel = null)
+> void ApiV2WorkItemsCommentsPut (ApiV2WorkItemsCommentsPutRequest apiV2WorkItemsCommentsPutRequest = null)
 
 Update work item comment
 
@@ -245,12 +245,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsCommentsApi(httpClient, config, httpClientHandler);
-            var workItemCommentPutModel = new WorkItemCommentPutModel(); // WorkItemCommentPutModel |  (optional) 
+            var apiV2WorkItemsCommentsPutRequest = new ApiV2WorkItemsCommentsPutRequest(); // ApiV2WorkItemsCommentsPutRequest |  (optional) 
 
             try
             {
                 // Update work item comment
-                apiInstance.ApiV2WorkItemsCommentsPut(workItemCommentPutModel);
+                apiInstance.ApiV2WorkItemsCommentsPut(apiV2WorkItemsCommentsPutRequest);
             }
             catch (ApiException  e)
             {
@@ -270,7 +270,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update work item comment
-    apiInstance.ApiV2WorkItemsCommentsPutWithHttpInfo(workItemCommentPutModel);
+    apiInstance.ApiV2WorkItemsCommentsPutWithHttpInfo(apiV2WorkItemsCommentsPutRequest);
 }
 catch (ApiException e)
 {
@@ -284,7 +284,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **workItemCommentPutModel** | [**WorkItemCommentPutModel**](WorkItemCommentPutModel.md) |  | [optional]  |
+| **apiV2WorkItemsCommentsPutRequest** | [**ApiV2WorkItemsCommentsPutRequest**](ApiV2WorkItemsCommentsPutRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -303,12 +303,12 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | System administrator role is required |  -  |
 | **204** | No Content |  -  |
+| **403** | System administrator role is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemsidcommentsget"></a>
+<a id="apiv2workitemsidcommentsget"></a>
 # **ApiV2WorkItemsIdCommentsGet**
 > List&lt;WorkItemCommentModel&gt; ApiV2WorkItemsIdCommentsGet (string id)
 

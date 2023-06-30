@@ -49,7 +49,7 @@ namespace TestIt.Client.Model
         /// <param name="providerId">providerId.</param>
         /// <param name="isActiveStatusByEntity">isActiveStatusByEntity.</param>
         /// <param name="userRank">userRank.</param>
-        public UserWithRankModel(Guid id = default(Guid), string firstName = default(string), string lastName = default(string), string middleName = default(string), string userName = default(string), string displayName = default(string), string userType = default(string), string avatarUrl = default(string), string avatarMetadata = default(string), bool isDeleted = default(bool), bool isDisabled = default(bool), Guid? providerId = default(Guid?), bool isActiveStatusByEntity = default(bool), UserRankModel userRank = default(UserRankModel))
+        public UserWithRankModel(Guid id = default(Guid), string firstName = default(string), string lastName = default(string), string middleName = default(string), string userName = default(string), string displayName = default(string), string userType = default(string), string avatarUrl = default(string), string avatarMetadata = default(string), bool isDeleted = default(bool), bool isDisabled = default(bool), Guid? providerId = default(Guid?), bool isActiveStatusByEntity = default(bool), UserWithRankModelUserRank userRank = default(UserWithRankModelUserRank))
         {
             this.Id = id;
             this.FirstName = firstName;
@@ -76,49 +76,49 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets FirstName
         /// </summary>
-        [DataMember(Name = "firstName", EmitDefaultValue = true)]
+        [DataMember(Name = "firstName", EmitDefaultValue = false)]
         public string FirstName { get; set; }
 
         /// <summary>
         /// Gets or Sets LastName
         /// </summary>
-        [DataMember(Name = "lastName", EmitDefaultValue = true)]
+        [DataMember(Name = "lastName", EmitDefaultValue = false)]
         public string LastName { get; set; }
 
         /// <summary>
         /// Gets or Sets MiddleName
         /// </summary>
-        [DataMember(Name = "middleName", EmitDefaultValue = true)]
+        [DataMember(Name = "middleName", EmitDefaultValue = false)]
         public string MiddleName { get; set; }
 
         /// <summary>
         /// Gets or Sets UserName
         /// </summary>
-        [DataMember(Name = "userName", EmitDefaultValue = true)]
+        [DataMember(Name = "userName", EmitDefaultValue = false)]
         public string UserName { get; set; }
 
         /// <summary>
         /// Gets or Sets DisplayName
         /// </summary>
-        [DataMember(Name = "displayName", EmitDefaultValue = true)]
+        [DataMember(Name = "displayName", EmitDefaultValue = false)]
         public string DisplayName { get; set; }
 
         /// <summary>
         /// Gets or Sets UserType
         /// </summary>
-        [DataMember(Name = "userType", EmitDefaultValue = true)]
+        [DataMember(Name = "userType", EmitDefaultValue = false)]
         public string UserType { get; set; }
 
         /// <summary>
         /// Gets or Sets AvatarUrl
         /// </summary>
-        [DataMember(Name = "avatarUrl", EmitDefaultValue = true)]
+        [DataMember(Name = "avatarUrl", EmitDefaultValue = false)]
         public string AvatarUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets AvatarMetadata
         /// </summary>
-        [DataMember(Name = "avatarMetadata", EmitDefaultValue = true)]
+        [DataMember(Name = "avatarMetadata", EmitDefaultValue = false)]
         public string AvatarMetadata { get; set; }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace TestIt.Client.Model
         /// Gets or Sets UserRank
         /// </summary>
         [DataMember(Name = "userRank", EmitDefaultValue = false)]
-        public UserRankModel UserRank { get; set; }
+        public UserWithRankModelUserRank UserRank { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -342,7 +342,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

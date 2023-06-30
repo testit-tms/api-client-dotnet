@@ -126,14 +126,14 @@ namespace TestIt.Client.Model
         /// Collection of the webhook headers
         /// </summary>
         /// <value>Collection of the webhook headers</value>
-        [DataMember(Name = "headers", EmitDefaultValue = true)]
+        [DataMember(Name = "headers", EmitDefaultValue = false)]
         public Dictionary<string, string> Headers { get; set; }
 
         /// <summary>
         /// Collection of the webhook query parameters
         /// </summary>
         /// <value>Collection of the webhook query parameters</value>
-        [DataMember(Name = "queryParameters", EmitDefaultValue = true)]
+        [DataMember(Name = "queryParameters", EmitDefaultValue = false)]
         public Dictionary<string, string> QueryParameters { get; set; }
 
         /// <summary>
@@ -355,7 +355,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Url (string) minLength
             if (this.Url != null && this.Url.Length < 1)

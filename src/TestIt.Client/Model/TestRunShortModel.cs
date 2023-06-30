@@ -67,18 +67,21 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets ProjectId
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "projectId", EmitDefaultValue = false)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
         /// Gets or Sets TestPlanId
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "testPlanId", EmitDefaultValue = true)]
         public Guid? TestPlanId { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
+        /// <example>&quot;Core tests&quot;</example>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -227,7 +230,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

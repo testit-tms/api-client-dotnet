@@ -54,19 +54,19 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = true)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
-        [DataMember(Name = "url", EmitDefaultValue = true)]
+        [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
         /// <summary>
         /// Gets or Sets Title
         /// </summary>
-        [DataMember(Name = "title", EmitDefaultValue = true)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = true)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
         /// <summary>
@@ -206,7 +206,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

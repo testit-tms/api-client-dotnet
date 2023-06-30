@@ -54,7 +54,13 @@ namespace TestIt.Client.Model
         /// Enum Failed for value: Failed
         /// </summary>
         [EnumMember(Value = "Failed")]
-        Failed = 4
+        Failed = 4,
+
+        /// <summary>
+        /// Enum Canceled for value: Canceled
+        /// </summary>
+        [EnumMember(Value = "Canceled")]
+        Canceled = 5
 
     }
 

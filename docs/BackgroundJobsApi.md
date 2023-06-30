@@ -5,8 +5,9 @@ All URIs are relative to *http://localhost*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**ApiV2BackgroundJobsGet**](BackgroundJobsApi.md#apiv2backgroundjobsget) | **GET** /api/v2/backgroundJobs | Get current user background jobs |
+| [**ApiV2BackgroundJobsIdCancelPost**](BackgroundJobsApi.md#apiv2backgroundjobsidcancelpost) | **POST** /api/v2/backgroundJobs/{id}/cancel | Cancel current user background job |
 
-<a name="apiv2backgroundjobsget"></a>
+<a id="apiv2backgroundjobsget"></a>
 # **ApiV2BackgroundJobsGet**
 > List&lt;BackgroundJobModel&gt; ApiV2BackgroundJobsGet (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -109,6 +110,100 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="apiv2backgroundjobsidcancelpost"></a>
+# **ApiV2BackgroundJobsIdCancelPost**
+> void ApiV2BackgroundJobsIdCancelPost (Guid id)
+
+Cancel current user background job
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2BackgroundJobsIdCancelPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new BackgroundJobsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | 
+
+            try
+            {
+                // Cancel current user background job
+                apiInstance.ApiV2BackgroundJobsIdCancelPost(id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling BackgroundJobsApi.ApiV2BackgroundJobsIdCancelPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2BackgroundJobsIdCancelPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Cancel current user background job
+    apiInstance.ApiV2BackgroundJobsIdCancelPostWithHttpInfo(id);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling BackgroundJobsApi.ApiV2BackgroundJobsIdCancelPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** |  |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -71,7 +71,7 @@ namespace TestIt.Client.Model
         /// <param name="launchSource">launchSource.</param>
         /// <param name="id">Unique ID of the entity.</param>
         /// <param name="isDeleted">Indicates if the entity is deleted.</param>
-        public TestRunModel(List<AutoTestModel> autoTests = default(List<AutoTestModel>), int autoTestsCount = default(int), List<Guid> testSuiteIds = default(List<Guid>), bool isAutomated = default(bool), TestRunAnalyticResultModel analytic = default(TestRunAnalyticResultModel), List<TestResultModel> testResults = default(List<TestResultModel>), TestPlanModel testPlan = default(TestPlanModel), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string createdByUserName = default(string), DateTime? startedDate = default(DateTime?), DateTime? completedDate = default(DateTime?), string build = default(string), string description = default(string), TestRunState stateName = default(TestRunState), Guid projectId = default(Guid), Guid? testPlanId = default(Guid?), Guid? runByUserId = default(Guid?), Guid? stoppedByUserId = default(Guid?), string name = default(string), string launchSource = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
+        public TestRunModel(List<AutoTestModel> autoTests = default(List<AutoTestModel>), int autoTestsCount = default(int), List<Guid> testSuiteIds = default(List<Guid>), bool isAutomated = default(bool), TestRunModelAnalytic analytic = default(TestRunModelAnalytic), List<TestResultModel> testResults = default(List<TestResultModel>), TestPlanModel testPlan = default(TestPlanModel), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string createdByUserName = default(string), DateTime? startedDate = default(DateTime?), DateTime? completedDate = default(DateTime?), string build = default(string), string description = default(string), TestRunState stateName = default(TestRunState), Guid projectId = default(Guid), Guid? testPlanId = default(Guid?), Guid? runByUserId = default(Guid?), Guid? stoppedByUserId = default(Guid?), string name = default(string), string launchSource = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
         {
             this.StateName = stateName;
             this.AutoTests = autoTests;
@@ -128,7 +128,7 @@ namespace TestIt.Client.Model
         /// Gets or Sets Analytic
         /// </summary>
         [DataMember(Name = "analytic", EmitDefaultValue = false)]
-        public TestRunAnalyticResultModel Analytic { get; set; }
+        public TestRunModelAnalytic Analytic { get; set; }
 
         /// <summary>
         /// Gets or Sets TestResults
@@ -139,7 +139,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets TestPlan
         /// </summary>
-        [DataMember(Name = "testPlan", EmitDefaultValue = false)]
+        [DataMember(Name = "testPlan", EmitDefaultValue = true)]
         public TestPlanModel TestPlan { get; set; }
 
         /// <summary>
@@ -187,13 +187,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Build
         /// </summary>
-        [DataMember(Name = "build", EmitDefaultValue = true)]
+        [DataMember(Name = "build", EmitDefaultValue = false)]
         public string Build { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = true)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
@@ -223,13 +223,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets LaunchSource
         /// </summary>
-        [DataMember(Name = "launchSource", EmitDefaultValue = true)]
+        [DataMember(Name = "launchSource", EmitDefaultValue = false)]
         public string LaunchSource { get; set; }
 
         /// <summary>
@@ -546,7 +546,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Build (string) maxLength
             if (this.Build != null && this.Build.Length > 450)

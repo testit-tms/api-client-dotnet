@@ -77,7 +77,8 @@ namespace TestIt.Client.Model
         /// This property is used to set autotest identifier from client system
         /// </summary>
         /// <value>This property is used to set autotest identifier from client system</value>
-        [DataMember(Name = "externalId", EmitDefaultValue = true)]
+        /// <example>&quot;10001&quot;</example>
+        [DataMember(Name = "externalId", EmitDefaultValue = false)]
         public string ExternalId { get; set; }
 
         /// <summary>
@@ -90,24 +91,28 @@ namespace TestIt.Client.Model
         /// This property is used to link autotest with project
         /// </summary>
         /// <value>This property is used to link autotest with project</value>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "projectId", EmitDefaultValue = false)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        /// <example>&quot;WorkItem valid creation test&quot;</example>
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Namespace
         /// </summary>
+        /// <example>&quot;UnitTest.Core&quot;</example>
         [DataMember(Name = "namespace", EmitDefaultValue = true)]
         public string Namespace { get; set; }
 
         /// <summary>
         /// Gets or Sets Classname
         /// </summary>
+        /// <example>&quot;WorkItemServiceTest.cs&quot;</example>
         [DataMember(Name = "classname", EmitDefaultValue = true)]
         public string Classname { get; set; }
 
@@ -132,30 +137,35 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets GlobalId
         /// </summary>
+        /// <example>1000</example>
         [DataMember(Name = "globalId", EmitDefaultValue = false)]
         public long GlobalId { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
+        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
         public DateTime? CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
+        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "createdById", EmitDefaultValue = false)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
@@ -409,7 +419,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

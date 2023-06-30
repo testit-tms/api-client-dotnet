@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **State** | **TestRunState** |  | 
 **StartedDate** | **DateTime?** | Date when the test run was started | [optional] 
 **AutotestsCount** | **int** | Number of autotests run in the test run | [optional] 
-**Statistics** | [**TestResultsStatisticsGetModel**](TestResultsStatisticsGetModel.md) |  | 
+**Statistics** | [**TestRunShortGetModelStatistics**](TestRunShortGetModelStatistics.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

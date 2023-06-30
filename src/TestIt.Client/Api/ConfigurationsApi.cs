@@ -34,9 +34,9 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets request model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates configurations  &lt;br&gt;System returns created configuration ids (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="configurationByParametersModel"> (optional)</param>
+        /// <param name="apiV2ConfigurationsCreateByParametersPostRequest"> (optional)</param>
         /// <returns></returns>
-        void ApiV2ConfigurationsCreateByParametersPost(ConfigurationByParametersModel configurationByParametersModel = default(ConfigurationByParametersModel));
+        void ApiV2ConfigurationsCreateByParametersPost(ApiV2ConfigurationsCreateByParametersPostRequest apiV2ConfigurationsCreateByParametersPostRequest = default(ApiV2ConfigurationsCreateByParametersPostRequest));
 
         /// <summary>
         /// Create Configurations by parameters
@@ -45,9 +45,45 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets request model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates configurations  &lt;br&gt;System returns created configuration ids (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="configurationByParametersModel"> (optional)</param>
+        /// <param name="apiV2ConfigurationsCreateByParametersPostRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2ConfigurationsCreateByParametersPostWithHttpInfo(ConfigurationByParametersModel configurationByParametersModel = default(ConfigurationByParametersModel));
+        ApiResponse<Object> ApiV2ConfigurationsCreateByParametersPostWithHttpInfo(ApiV2ConfigurationsCreateByParametersPostRequest apiV2ConfigurationsCreateByParametersPostRequest = default(ApiV2ConfigurationsCreateByParametersPostRequest));
+        /// <summary>
+        /// Delete multiple configurations
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <returns>int</returns>
+        int ApiV2ConfigurationsDeleteBulkPost(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest));
+
+        /// <summary>
+        /// Delete multiple configurations
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <returns>ApiResponse of int</returns>
+        ApiResponse<int> ApiV2ConfigurationsDeleteBulkPostWithHttpInfo(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest));
+        /// <summary>
+        /// Delete configuration
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the configuration</param>
+        /// <returns></returns>
+        void ApiV2ConfigurationsIdDelete(string id);
+
+        /// <summary>
+        /// Delete configuration
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the configuration</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ApiV2ConfigurationsIdDeleteWithHttpInfo(string id);
         /// <summary>
         /// Patch configuration
         /// </summary>
@@ -72,6 +108,96 @@ namespace TestIt.Client.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ApiV2ConfigurationsIdPatchWithHttpInfo(Guid id, List<Operation> operation = default(List<Operation>));
         /// <summary>
+        /// Permanently delete configuration from archive
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the configuration</param>
+        /// <returns></returns>
+        void ApiV2ConfigurationsIdPurgePost(string id);
+
+        /// <summary>
+        /// Permanently delete configuration from archive
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the configuration</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ApiV2ConfigurationsIdPurgePostWithHttpInfo(string id);
+        /// <summary>
+        /// Restore configuration from the archive
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the configuration</param>
+        /// <returns></returns>
+        void ApiV2ConfigurationsIdRestorePost(string id);
+
+        /// <summary>
+        /// Restore configuration from the archive
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the configuration</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ApiV2ConfigurationsIdRestorePostWithHttpInfo(string id);
+        /// <summary>
+        /// Permanently delete multiple archived configurations
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <returns></returns>
+        void ApiV2ConfigurationsPurgeBulkPost(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest));
+
+        /// <summary>
+        /// Permanently delete multiple archived configurations
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ApiV2ConfigurationsPurgeBulkPostWithHttpInfo(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest));
+        /// <summary>
+        /// Edit configuration
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPutRequest"> (optional)</param>
+        /// <returns></returns>
+        void ApiV2ConfigurationsPut(ApiV2ConfigurationsPutRequest apiV2ConfigurationsPutRequest = default(ApiV2ConfigurationsPutRequest));
+
+        /// <summary>
+        /// Edit configuration
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPutRequest"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ApiV2ConfigurationsPutWithHttpInfo(ApiV2ConfigurationsPutRequest apiV2ConfigurationsPutRequest = default(ApiV2ConfigurationsPutRequest));
+        /// <summary>
+        /// Restore multiple configurations from the archive
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <returns>int</returns>
+        int ApiV2ConfigurationsRestoreBulkPost(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest));
+
+        /// <summary>
+        /// Restore multiple configurations from the archive
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <returns>ApiResponse of int</returns>
+        ApiResponse<int> ApiV2ConfigurationsRestoreBulkPostWithHttpInfo(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest));
+        /// <summary>
         /// Search for configurations
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
@@ -80,9 +206,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="configurationSelectModel">Model containing all the filters (optional)</param>
+        /// <param name="apiV2ConfigurationsSearchPostRequest">Model containing all the filters (optional)</param>
         /// <returns>List&lt;ConfigurationModel&gt;</returns>
-        List<ConfigurationModel> ApiV2ConfigurationsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel));
+        List<ConfigurationModel> ApiV2ConfigurationsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ConfigurationsSearchPostRequest apiV2ConfigurationsSearchPostRequest = default(ApiV2ConfigurationsSearchPostRequest));
 
         /// <summary>
         /// Search for configurations
@@ -96,9 +222,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="configurationSelectModel">Model containing all the filters (optional)</param>
+        /// <param name="apiV2ConfigurationsSearchPostRequest">Model containing all the filters (optional)</param>
         /// <returns>ApiResponse of List&lt;ConfigurationModel&gt;</returns>
-        ApiResponse<List<ConfigurationModel>> ApiV2ConfigurationsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel));
+        ApiResponse<List<ConfigurationModel>> ApiV2ConfigurationsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ConfigurationsSearchPostRequest apiV2ConfigurationsSearchPostRequest = default(ApiV2ConfigurationsSearchPostRequest));
         /// <summary>
         /// Create Configuration
         /// </summary>
@@ -106,9 +232,9 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets configuration model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates configuration  &lt;br&gt;System returns created configuration (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="configurationPostModel"> (optional)</param>
+        /// <param name="createConfigurationRequest"> (optional)</param>
         /// <returns>ConfigurationModel</returns>
-        ConfigurationModel CreateConfiguration(ConfigurationPostModel configurationPostModel = default(ConfigurationPostModel));
+        ConfigurationModel CreateConfiguration(CreateConfigurationRequest createConfigurationRequest = default(CreateConfigurationRequest));
 
         /// <summary>
         /// Create Configuration
@@ -117,9 +243,9 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets configuration model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates configuration  &lt;br&gt;System returns created configuration (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="configurationPostModel"> (optional)</param>
+        /// <param name="createConfigurationRequest"> (optional)</param>
         /// <returns>ApiResponse of ConfigurationModel</returns>
-        ApiResponse<ConfigurationModel> CreateConfigurationWithHttpInfo(ConfigurationPostModel configurationPostModel = default(ConfigurationPostModel));
+        ApiResponse<ConfigurationModel> CreateConfigurationWithHttpInfo(CreateConfigurationRequest createConfigurationRequest = default(CreateConfigurationRequest));
         /// <summary>
         /// Get configuration by internal or global ID
         /// </summary>
@@ -141,27 +267,6 @@ namespace TestIt.Client.Api
         /// <param name="id">Configuration internal (guid format) or global (integer format) identifier</param>
         /// <returns>ApiResponse of ConfigurationModel</returns>
         ApiResponse<ConfigurationModel> GetConfigurationByIdWithHttpInfo(string id);
-        /// <summary>
-        /// Update Configuration
-        /// </summary>
-        /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets configuration updated properties(listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updated configuration using updated properties  &lt;br&gt;System returns no content response
-        /// </remarks>
-        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="configurationPutModel"> (optional)</param>
-        /// <returns></returns>
-        void UpdateConfiguration(ConfigurationPutModel configurationPutModel = default(ConfigurationPutModel));
-
-        /// <summary>
-        /// Update Configuration
-        /// </summary>
-        /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets configuration updated properties(listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updated configuration using updated properties  &lt;br&gt;System returns no content response
-        /// </remarks>
-        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="configurationPutModel"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateConfigurationWithHttpInfo(ConfigurationPutModel configurationPutModel = default(ConfigurationPutModel));
         #endregion Synchronous Operations
     }
 
@@ -178,10 +283,10 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets request model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates configurations  &lt;br&gt;System returns created configuration ids (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="configurationByParametersModel"> (optional)</param>
+        /// <param name="apiV2ConfigurationsCreateByParametersPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2ConfigurationsCreateByParametersPostAsync(ConfigurationByParametersModel configurationByParametersModel = default(ConfigurationByParametersModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2ConfigurationsCreateByParametersPostAsync(ApiV2ConfigurationsCreateByParametersPostRequest apiV2ConfigurationsCreateByParametersPostRequest = default(ApiV2ConfigurationsCreateByParametersPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Configurations by parameters
@@ -190,10 +295,56 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets request model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates configurations  &lt;br&gt;System returns created configuration ids (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="configurationByParametersModel"> (optional)</param>
+        /// <param name="apiV2ConfigurationsCreateByParametersPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ConfigurationsCreateByParametersPostWithHttpInfoAsync(ConfigurationByParametersModel configurationByParametersModel = default(ConfigurationByParametersModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ConfigurationsCreateByParametersPostWithHttpInfoAsync(ApiV2ConfigurationsCreateByParametersPostRequest apiV2ConfigurationsCreateByParametersPostRequest = default(ApiV2ConfigurationsCreateByParametersPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Delete multiple configurations
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of int</returns>
+        System.Threading.Tasks.Task<int> ApiV2ConfigurationsDeleteBulkPostAsync(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Delete multiple configurations
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (int)</returns>
+        System.Threading.Tasks.Task<ApiResponse<int>> ApiV2ConfigurationsDeleteBulkPostWithHttpInfoAsync(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Delete configuration
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the configuration</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ApiV2ConfigurationsIdDeleteAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Delete configuration
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the configuration</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ConfigurationsIdDeleteWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Patch configuration
         /// </summary>
@@ -220,6 +371,121 @@ namespace TestIt.Client.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ConfigurationsIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
+        /// Permanently delete configuration from archive
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the configuration</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ApiV2ConfigurationsIdPurgePostAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Permanently delete configuration from archive
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the configuration</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ConfigurationsIdPurgePostWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Restore configuration from the archive
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the configuration</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ApiV2ConfigurationsIdRestorePostAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Restore configuration from the archive
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the configuration</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ConfigurationsIdRestorePostWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Permanently delete multiple archived configurations
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ApiV2ConfigurationsPurgeBulkPostAsync(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Permanently delete multiple archived configurations
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ConfigurationsPurgeBulkPostWithHttpInfoAsync(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Edit configuration
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPutRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ApiV2ConfigurationsPutAsync(ApiV2ConfigurationsPutRequest apiV2ConfigurationsPutRequest = default(ApiV2ConfigurationsPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Edit configuration
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPutRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ConfigurationsPutWithHttpInfoAsync(ApiV2ConfigurationsPutRequest apiV2ConfigurationsPutRequest = default(ApiV2ConfigurationsPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Restore multiple configurations from the archive
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of int</returns>
+        System.Threading.Tasks.Task<int> ApiV2ConfigurationsRestoreBulkPostAsync(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Restore multiple configurations from the archive
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (int)</returns>
+        System.Threading.Tasks.Task<ApiResponse<int>> ApiV2ConfigurationsRestoreBulkPostWithHttpInfoAsync(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
         /// Search for configurations
         /// </summary>
         /// <remarks>
@@ -231,10 +497,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="configurationSelectModel">Model containing all the filters (optional)</param>
+        /// <param name="apiV2ConfigurationsSearchPostRequest">Model containing all the filters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ConfigurationModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ConfigurationModel>> ApiV2ConfigurationsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ConfigurationModel>> ApiV2ConfigurationsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ConfigurationsSearchPostRequest apiV2ConfigurationsSearchPostRequest = default(ApiV2ConfigurationsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Search for configurations
@@ -248,10 +514,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="configurationSelectModel">Model containing all the filters (optional)</param>
+        /// <param name="apiV2ConfigurationsSearchPostRequest">Model containing all the filters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ConfigurationModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ConfigurationModel>>> ApiV2ConfigurationsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ConfigurationModel>>> ApiV2ConfigurationsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ConfigurationsSearchPostRequest apiV2ConfigurationsSearchPostRequest = default(ApiV2ConfigurationsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create Configuration
         /// </summary>
@@ -259,10 +525,10 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets configuration model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates configuration  &lt;br&gt;System returns created configuration (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="configurationPostModel"> (optional)</param>
+        /// <param name="createConfigurationRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConfigurationModel</returns>
-        System.Threading.Tasks.Task<ConfigurationModel> CreateConfigurationAsync(ConfigurationPostModel configurationPostModel = default(ConfigurationPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ConfigurationModel> CreateConfigurationAsync(CreateConfigurationRequest createConfigurationRequest = default(CreateConfigurationRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Configuration
@@ -271,10 +537,10 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets configuration model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates configuration  &lt;br&gt;System returns created configuration (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="configurationPostModel"> (optional)</param>
+        /// <param name="createConfigurationRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConfigurationModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConfigurationModel>> CreateConfigurationWithHttpInfoAsync(ConfigurationPostModel configurationPostModel = default(ConfigurationPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ConfigurationModel>> CreateConfigurationWithHttpInfoAsync(CreateConfigurationRequest createConfigurationRequest = default(CreateConfigurationRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get configuration by internal or global ID
         /// </summary>
@@ -298,29 +564,6 @@ namespace TestIt.Client.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConfigurationModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<ConfigurationModel>> GetConfigurationByIdWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// Update Configuration
-        /// </summary>
-        /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets configuration updated properties(listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updated configuration using updated properties  &lt;br&gt;System returns no content response
-        /// </remarks>
-        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="configurationPutModel"> (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateConfigurationAsync(ConfigurationPutModel configurationPutModel = default(ConfigurationPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Update Configuration
-        /// </summary>
-        /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets configuration updated properties(listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updated configuration using updated properties  &lt;br&gt;System returns no content response
-        /// </remarks>
-        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="configurationPutModel"> (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateConfigurationWithHttpInfoAsync(ConfigurationPutModel configurationPutModel = default(ConfigurationPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -538,20 +781,20 @@ namespace TestIt.Client.Api
         /// Create Configurations by parameters &lt;br&gt;Use case  &lt;br&gt;User sets request model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates configurations  &lt;br&gt;System returns created configuration ids (listed in the response example)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="configurationByParametersModel"> (optional)</param>
+        /// <param name="apiV2ConfigurationsCreateByParametersPostRequest"> (optional)</param>
         /// <returns></returns>
-        public void ApiV2ConfigurationsCreateByParametersPost(ConfigurationByParametersModel configurationByParametersModel = default(ConfigurationByParametersModel))
+        public void ApiV2ConfigurationsCreateByParametersPost(ApiV2ConfigurationsCreateByParametersPostRequest apiV2ConfigurationsCreateByParametersPostRequest = default(ApiV2ConfigurationsCreateByParametersPostRequest))
         {
-            ApiV2ConfigurationsCreateByParametersPostWithHttpInfo(configurationByParametersModel);
+            ApiV2ConfigurationsCreateByParametersPostWithHttpInfo(apiV2ConfigurationsCreateByParametersPostRequest);
         }
 
         /// <summary>
         /// Create Configurations by parameters &lt;br&gt;Use case  &lt;br&gt;User sets request model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates configurations  &lt;br&gt;System returns created configuration ids (listed in the response example)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="configurationByParametersModel"> (optional)</param>
+        /// <param name="apiV2ConfigurationsCreateByParametersPostRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> ApiV2ConfigurationsCreateByParametersPostWithHttpInfo(ConfigurationByParametersModel configurationByParametersModel = default(ConfigurationByParametersModel))
+        public TestIt.Client.Client.ApiResponse<Object> ApiV2ConfigurationsCreateByParametersPostWithHttpInfo(ApiV2ConfigurationsCreateByParametersPostRequest apiV2ConfigurationsCreateByParametersPostRequest = default(ApiV2ConfigurationsCreateByParametersPostRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -570,7 +813,7 @@ namespace TestIt.Client.Api
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = configurationByParametersModel;
+            localVarRequestOptions.Data = apiV2ConfigurationsCreateByParametersPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -594,22 +837,22 @@ namespace TestIt.Client.Api
         /// Create Configurations by parameters &lt;br&gt;Use case  &lt;br&gt;User sets request model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates configurations  &lt;br&gt;System returns created configuration ids (listed in the response example)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="configurationByParametersModel"> (optional)</param>
+        /// <param name="apiV2ConfigurationsCreateByParametersPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2ConfigurationsCreateByParametersPostAsync(ConfigurationByParametersModel configurationByParametersModel = default(ConfigurationByParametersModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2ConfigurationsCreateByParametersPostAsync(ApiV2ConfigurationsCreateByParametersPostRequest apiV2ConfigurationsCreateByParametersPostRequest = default(ApiV2ConfigurationsCreateByParametersPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ApiV2ConfigurationsCreateByParametersPostWithHttpInfoAsync(configurationByParametersModel, cancellationToken).ConfigureAwait(false);
+            await ApiV2ConfigurationsCreateByParametersPostWithHttpInfoAsync(apiV2ConfigurationsCreateByParametersPostRequest, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Create Configurations by parameters &lt;br&gt;Use case  &lt;br&gt;User sets request model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates configurations  &lt;br&gt;System returns created configuration ids (listed in the response example)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="configurationByParametersModel"> (optional)</param>
+        /// <param name="apiV2ConfigurationsCreateByParametersPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2ConfigurationsCreateByParametersPostWithHttpInfoAsync(ConfigurationByParametersModel configurationByParametersModel = default(ConfigurationByParametersModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2ConfigurationsCreateByParametersPostWithHttpInfoAsync(ApiV2ConfigurationsCreateByParametersPostRequest apiV2ConfigurationsCreateByParametersPostRequest = default(ApiV2ConfigurationsCreateByParametersPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -630,7 +873,7 @@ namespace TestIt.Client.Api
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = configurationByParametersModel;
+            localVarRequestOptions.Data = apiV2ConfigurationsCreateByParametersPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -645,6 +888,248 @@ namespace TestIt.Client.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2ConfigurationsCreateByParametersPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete multiple configurations 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <returns>int</returns>
+        public int ApiV2ConfigurationsDeleteBulkPost(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest))
+        {
+            TestIt.Client.Client.ApiResponse<int> localVarResponse = ApiV2ConfigurationsDeleteBulkPostWithHttpInfo(apiV2ConfigurationsPurgeBulkPostRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Delete multiple configurations 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <returns>ApiResponse of int</returns>
+        public TestIt.Client.Client.ApiResponse<int> ApiV2ConfigurationsDeleteBulkPostWithHttpInfo(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest))
+        {
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = apiV2ConfigurationsPurgeBulkPostRequest;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<int>("/api/v2/configurations/delete/bulk", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ConfigurationsDeleteBulkPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete multiple configurations 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of int</returns>
+        public async System.Threading.Tasks.Task<int> ApiV2ConfigurationsDeleteBulkPostAsync(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIt.Client.Client.ApiResponse<int> localVarResponse = await ApiV2ConfigurationsDeleteBulkPostWithHttpInfoAsync(apiV2ConfigurationsPurgeBulkPostRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Delete multiple configurations 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (int)</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<int>> ApiV2ConfigurationsDeleteBulkPostWithHttpInfoAsync(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = apiV2ConfigurationsPurgeBulkPostRequest;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<int>("/api/v2/configurations/delete/bulk", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ConfigurationsDeleteBulkPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete configuration 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the configuration</param>
+        /// <returns></returns>
+        public void ApiV2ConfigurationsIdDelete(string id)
+        {
+            ApiV2ConfigurationsIdDeleteWithHttpInfo(id);
+        }
+
+        /// <summary>
+        /// Delete configuration 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the configuration</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIt.Client.Client.ApiResponse<Object> ApiV2ConfigurationsIdDeleteWithHttpInfo(string id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling ConfigurationsApi->ApiV2ConfigurationsIdDelete");
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>("/api/v2/configurations/{id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ConfigurationsIdDelete", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete configuration 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the configuration</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ApiV2ConfigurationsIdDeleteAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await ApiV2ConfigurationsIdDeleteWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Delete configuration 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the configuration</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2ConfigurationsIdDeleteWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling ConfigurationsApi->ApiV2ConfigurationsIdDelete");
+
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/v2/configurations/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ConfigurationsIdDelete", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -775,6 +1260,605 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
+        /// Permanently delete configuration from archive 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the configuration</param>
+        /// <returns></returns>
+        public void ApiV2ConfigurationsIdPurgePost(string id)
+        {
+            ApiV2ConfigurationsIdPurgePostWithHttpInfo(id);
+        }
+
+        /// <summary>
+        /// Permanently delete configuration from archive 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the configuration</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIt.Client.Client.ApiResponse<Object> ApiV2ConfigurationsIdPurgePostWithHttpInfo(string id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling ConfigurationsApi->ApiV2ConfigurationsIdPurgePost");
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/api/v2/configurations/{id}/purge", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ConfigurationsIdPurgePost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Permanently delete configuration from archive 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the configuration</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ApiV2ConfigurationsIdPurgePostAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await ApiV2ConfigurationsIdPurgePostWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Permanently delete configuration from archive 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the configuration</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2ConfigurationsIdPurgePostWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling ConfigurationsApi->ApiV2ConfigurationsIdPurgePost");
+
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/configurations/{id}/purge", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ConfigurationsIdPurgePost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Restore configuration from the archive 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the configuration</param>
+        /// <returns></returns>
+        public void ApiV2ConfigurationsIdRestorePost(string id)
+        {
+            ApiV2ConfigurationsIdRestorePostWithHttpInfo(id);
+        }
+
+        /// <summary>
+        /// Restore configuration from the archive 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the configuration</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIt.Client.Client.ApiResponse<Object> ApiV2ConfigurationsIdRestorePostWithHttpInfo(string id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling ConfigurationsApi->ApiV2ConfigurationsIdRestorePost");
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/api/v2/configurations/{id}/restore", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ConfigurationsIdRestorePost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Restore configuration from the archive 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the configuration</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ApiV2ConfigurationsIdRestorePostAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await ApiV2ConfigurationsIdRestorePostWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Restore configuration from the archive 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the configuration</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2ConfigurationsIdRestorePostWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling ConfigurationsApi->ApiV2ConfigurationsIdRestorePost");
+
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/configurations/{id}/restore", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ConfigurationsIdRestorePost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Permanently delete multiple archived configurations 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <returns></returns>
+        public void ApiV2ConfigurationsPurgeBulkPost(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest))
+        {
+            ApiV2ConfigurationsPurgeBulkPostWithHttpInfo(apiV2ConfigurationsPurgeBulkPostRequest);
+        }
+
+        /// <summary>
+        /// Permanently delete multiple archived configurations 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIt.Client.Client.ApiResponse<Object> ApiV2ConfigurationsPurgeBulkPostWithHttpInfo(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest))
+        {
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = apiV2ConfigurationsPurgeBulkPostRequest;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/api/v2/configurations/purge/bulk", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ConfigurationsPurgeBulkPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Permanently delete multiple archived configurations 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ApiV2ConfigurationsPurgeBulkPostAsync(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await ApiV2ConfigurationsPurgeBulkPostWithHttpInfoAsync(apiV2ConfigurationsPurgeBulkPostRequest, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Permanently delete multiple archived configurations 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2ConfigurationsPurgeBulkPostWithHttpInfoAsync(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = apiV2ConfigurationsPurgeBulkPostRequest;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/configurations/purge/bulk", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ConfigurationsPurgeBulkPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Edit configuration 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPutRequest"> (optional)</param>
+        /// <returns></returns>
+        public void ApiV2ConfigurationsPut(ApiV2ConfigurationsPutRequest apiV2ConfigurationsPutRequest = default(ApiV2ConfigurationsPutRequest))
+        {
+            ApiV2ConfigurationsPutWithHttpInfo(apiV2ConfigurationsPutRequest);
+        }
+
+        /// <summary>
+        /// Edit configuration 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPutRequest"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIt.Client.Client.ApiResponse<Object> ApiV2ConfigurationsPutWithHttpInfo(ApiV2ConfigurationsPutRequest apiV2ConfigurationsPutRequest = default(ApiV2ConfigurationsPutRequest))
+        {
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = apiV2ConfigurationsPutRequest;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Put<Object>("/api/v2/configurations", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ConfigurationsPut", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Edit configuration 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPutRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ApiV2ConfigurationsPutAsync(ApiV2ConfigurationsPutRequest apiV2ConfigurationsPutRequest = default(ApiV2ConfigurationsPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await ApiV2ConfigurationsPutWithHttpInfoAsync(apiV2ConfigurationsPutRequest, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Edit configuration 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPutRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2ConfigurationsPutWithHttpInfoAsync(ApiV2ConfigurationsPutRequest apiV2ConfigurationsPutRequest = default(ApiV2ConfigurationsPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = apiV2ConfigurationsPutRequest;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/api/v2/configurations", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ConfigurationsPut", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Restore multiple configurations from the archive 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <returns>int</returns>
+        public int ApiV2ConfigurationsRestoreBulkPost(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest))
+        {
+            TestIt.Client.Client.ApiResponse<int> localVarResponse = ApiV2ConfigurationsRestoreBulkPostWithHttpInfo(apiV2ConfigurationsPurgeBulkPostRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Restore multiple configurations from the archive 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <returns>ApiResponse of int</returns>
+        public TestIt.Client.Client.ApiResponse<int> ApiV2ConfigurationsRestoreBulkPostWithHttpInfo(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest))
+        {
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = apiV2ConfigurationsPurgeBulkPostRequest;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<int>("/api/v2/configurations/restore/bulk", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ConfigurationsRestoreBulkPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Restore multiple configurations from the archive 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of int</returns>
+        public async System.Threading.Tasks.Task<int> ApiV2ConfigurationsRestoreBulkPostAsync(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIt.Client.Client.ApiResponse<int> localVarResponse = await ApiV2ConfigurationsRestoreBulkPostWithHttpInfoAsync(apiV2ConfigurationsPurgeBulkPostRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Restore multiple configurations from the archive 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (int)</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<int>> ApiV2ConfigurationsRestoreBulkPostWithHttpInfoAsync(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = apiV2ConfigurationsPurgeBulkPostRequest;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<int>("/api/v2/configurations/restore/bulk", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ConfigurationsRestoreBulkPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Search for configurations 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
@@ -783,11 +1867,11 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="configurationSelectModel">Model containing all the filters (optional)</param>
+        /// <param name="apiV2ConfigurationsSearchPostRequest">Model containing all the filters (optional)</param>
         /// <returns>List&lt;ConfigurationModel&gt;</returns>
-        public List<ConfigurationModel> ApiV2ConfigurationsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel))
+        public List<ConfigurationModel> ApiV2ConfigurationsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ConfigurationsSearchPostRequest apiV2ConfigurationsSearchPostRequest = default(ApiV2ConfigurationsSearchPostRequest))
         {
-            TestIt.Client.Client.ApiResponse<List<ConfigurationModel>> localVarResponse = ApiV2ConfigurationsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, configurationSelectModel);
+            TestIt.Client.Client.ApiResponse<List<ConfigurationModel>> localVarResponse = ApiV2ConfigurationsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2ConfigurationsSearchPostRequest);
             return localVarResponse.Data;
         }
 
@@ -800,9 +1884,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="configurationSelectModel">Model containing all the filters (optional)</param>
+        /// <param name="apiV2ConfigurationsSearchPostRequest">Model containing all the filters (optional)</param>
         /// <returns>ApiResponse of List&lt;ConfigurationModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<ConfigurationModel>> ApiV2ConfigurationsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel))
+        public TestIt.Client.Client.ApiResponse<List<ConfigurationModel>> ApiV2ConfigurationsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ConfigurationsSearchPostRequest apiV2ConfigurationsSearchPostRequest = default(ApiV2ConfigurationsSearchPostRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -841,7 +1925,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = configurationSelectModel;
+            localVarRequestOptions.Data = apiV2ConfigurationsSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -870,12 +1954,12 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="configurationSelectModel">Model containing all the filters (optional)</param>
+        /// <param name="apiV2ConfigurationsSearchPostRequest">Model containing all the filters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ConfigurationModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ConfigurationModel>> ApiV2ConfigurationsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ConfigurationModel>> ApiV2ConfigurationsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ConfigurationsSearchPostRequest apiV2ConfigurationsSearchPostRequest = default(ApiV2ConfigurationsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<ConfigurationModel>> localVarResponse = await ApiV2ConfigurationsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, configurationSelectModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<ConfigurationModel>> localVarResponse = await ApiV2ConfigurationsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, apiV2ConfigurationsSearchPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -888,10 +1972,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="configurationSelectModel">Model containing all the filters (optional)</param>
+        /// <param name="apiV2ConfigurationsSearchPostRequest">Model containing all the filters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ConfigurationModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<ConfigurationModel>>> ApiV2ConfigurationsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<ConfigurationModel>>> ApiV2ConfigurationsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ConfigurationsSearchPostRequest apiV2ConfigurationsSearchPostRequest = default(ApiV2ConfigurationsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -932,7 +2016,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = configurationSelectModel;
+            localVarRequestOptions.Data = apiV2ConfigurationsSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -957,11 +2041,11 @@ namespace TestIt.Client.Api
         /// Create Configuration &lt;br&gt;Use case  &lt;br&gt;User sets configuration model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates configuration  &lt;br&gt;System returns created configuration (listed in the response example)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="configurationPostModel"> (optional)</param>
+        /// <param name="createConfigurationRequest"> (optional)</param>
         /// <returns>ConfigurationModel</returns>
-        public ConfigurationModel CreateConfiguration(ConfigurationPostModel configurationPostModel = default(ConfigurationPostModel))
+        public ConfigurationModel CreateConfiguration(CreateConfigurationRequest createConfigurationRequest = default(CreateConfigurationRequest))
         {
-            TestIt.Client.Client.ApiResponse<ConfigurationModel> localVarResponse = CreateConfigurationWithHttpInfo(configurationPostModel);
+            TestIt.Client.Client.ApiResponse<ConfigurationModel> localVarResponse = CreateConfigurationWithHttpInfo(createConfigurationRequest);
             return localVarResponse.Data;
         }
 
@@ -969,9 +2053,9 @@ namespace TestIt.Client.Api
         /// Create Configuration &lt;br&gt;Use case  &lt;br&gt;User sets configuration model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates configuration  &lt;br&gt;System returns created configuration (listed in the response example)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="configurationPostModel"> (optional)</param>
+        /// <param name="createConfigurationRequest"> (optional)</param>
         /// <returns>ApiResponse of ConfigurationModel</returns>
-        public TestIt.Client.Client.ApiResponse<ConfigurationModel> CreateConfigurationWithHttpInfo(ConfigurationPostModel configurationPostModel = default(ConfigurationPostModel))
+        public TestIt.Client.Client.ApiResponse<ConfigurationModel> CreateConfigurationWithHttpInfo(CreateConfigurationRequest createConfigurationRequest = default(CreateConfigurationRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -990,7 +2074,7 @@ namespace TestIt.Client.Api
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = configurationPostModel;
+            localVarRequestOptions.Data = createConfigurationRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1014,12 +2098,12 @@ namespace TestIt.Client.Api
         /// Create Configuration &lt;br&gt;Use case  &lt;br&gt;User sets configuration model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates configuration  &lt;br&gt;System returns created configuration (listed in the response example)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="configurationPostModel"> (optional)</param>
+        /// <param name="createConfigurationRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConfigurationModel</returns>
-        public async System.Threading.Tasks.Task<ConfigurationModel> CreateConfigurationAsync(ConfigurationPostModel configurationPostModel = default(ConfigurationPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ConfigurationModel> CreateConfigurationAsync(CreateConfigurationRequest createConfigurationRequest = default(CreateConfigurationRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<ConfigurationModel> localVarResponse = await CreateConfigurationWithHttpInfoAsync(configurationPostModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<ConfigurationModel> localVarResponse = await CreateConfigurationWithHttpInfoAsync(createConfigurationRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1027,10 +2111,10 @@ namespace TestIt.Client.Api
         /// Create Configuration &lt;br&gt;Use case  &lt;br&gt;User sets configuration model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates configuration  &lt;br&gt;System returns created configuration (listed in the response example)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="configurationPostModel"> (optional)</param>
+        /// <param name="createConfigurationRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConfigurationModel)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<ConfigurationModel>> CreateConfigurationWithHttpInfoAsync(ConfigurationPostModel configurationPostModel = default(ConfigurationPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<ConfigurationModel>> CreateConfigurationWithHttpInfoAsync(CreateConfigurationRequest createConfigurationRequest = default(CreateConfigurationRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1051,7 +2135,7 @@ namespace TestIt.Client.Api
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = configurationPostModel;
+            localVarRequestOptions.Data = createConfigurationRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1191,123 +2275,6 @@ namespace TestIt.Client.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetConfigurationById", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Update Configuration &lt;br&gt;Use case  &lt;br&gt;User sets configuration updated properties(listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updated configuration using updated properties  &lt;br&gt;System returns no content response
-        /// </summary>
-        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="configurationPutModel"> (optional)</param>
-        /// <returns></returns>
-        public void UpdateConfiguration(ConfigurationPutModel configurationPutModel = default(ConfigurationPutModel))
-        {
-            UpdateConfigurationWithHttpInfo(configurationPutModel);
-        }
-
-        /// <summary>
-        /// Update Configuration &lt;br&gt;Use case  &lt;br&gt;User sets configuration updated properties(listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updated configuration using updated properties  &lt;br&gt;System returns no content response
-        /// </summary>
-        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="configurationPutModel"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> UpdateConfigurationWithHttpInfo(ConfigurationPutModel configurationPutModel = default(ConfigurationPutModel))
-        {
-            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = configurationPutModel;
-
-            // authentication (Bearer or PrivateToken) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Put<Object>("/api/v2/configurations", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("UpdateConfiguration", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Update Configuration &lt;br&gt;Use case  &lt;br&gt;User sets configuration updated properties(listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updated configuration using updated properties  &lt;br&gt;System returns no content response
-        /// </summary>
-        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="configurationPutModel"> (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateConfigurationAsync(ConfigurationPutModel configurationPutModel = default(ConfigurationPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            await UpdateConfigurationWithHttpInfoAsync(configurationPutModel, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// Update Configuration &lt;br&gt;Use case  &lt;br&gt;User sets configuration updated properties(listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updated configuration using updated properties  &lt;br&gt;System returns no content response
-        /// </summary>
-        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="configurationPutModel"> (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> UpdateConfigurationWithHttpInfoAsync(ConfigurationPutModel configurationPutModel = default(ConfigurationPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-
-            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-
-            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = configurationPutModel;
-
-            // authentication (Bearer or PrivateToken) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/api/v2/configurations", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("UpdateConfiguration", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

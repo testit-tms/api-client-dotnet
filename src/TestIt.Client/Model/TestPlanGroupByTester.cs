@@ -37,7 +37,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="userId">userId.</param>
         /// <param name="value">value.</param>
-        public TestPlanGroupByTester(Guid? userId = default(Guid?), int value = default(int))
+        public TestPlanGroupByTester(Guid? userId = default(Guid?), long value = default(long))
         {
             this.UserId = userId;
             this.Value = value;
@@ -53,7 +53,7 @@ namespace TestIt.Client.Model
         /// Gets or Sets Value
         /// </summary>
         [DataMember(Name = "value", EmitDefaultValue = false)]
-        public int Value { get; set; }
+        public long Value { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -134,7 +134,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

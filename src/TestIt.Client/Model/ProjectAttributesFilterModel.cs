@@ -53,7 +53,7 @@ namespace TestIt.Client.Model
         /// Specifies an attribute name to search for
         /// </summary>
         /// <value>Specifies an attribute name to search for</value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace TestIt.Client.Model
         /// Specifies an attribute types to search for
         /// </summary>
         /// <value>Specifies an attribute types to search for</value>
-        [DataMember(Name = "types", EmitDefaultValue = true)]
+        [DataMember(Name = "types", EmitDefaultValue = false)]
         public List<CustomAttributeTypesEnum> Types { get; set; }
 
         /// <summary>
@@ -198,7 +198,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

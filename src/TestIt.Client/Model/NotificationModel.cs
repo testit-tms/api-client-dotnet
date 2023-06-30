@@ -123,7 +123,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets TestPlanName
         /// </summary>
-        [DataMember(Name = "testPlanName", EmitDefaultValue = true)]
+        [DataMember(Name = "testPlanName", EmitDefaultValue = false)]
         public string TestPlanName { get; set; }
 
         /// <summary>
@@ -135,13 +135,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Comment
         /// </summary>
-        [DataMember(Name = "comment", EmitDefaultValue = true)]
+        [DataMember(Name = "comment", EmitDefaultValue = false)]
         public string Comment { get; set; }
 
         /// <summary>
         /// Gets or Sets WorkItemName
         /// </summary>
-        [DataMember(Name = "workItemName", EmitDefaultValue = true)]
+        [DataMember(Name = "workItemName", EmitDefaultValue = false)]
         public string WorkItemName { get; set; }
 
         /// <summary>
@@ -347,7 +347,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

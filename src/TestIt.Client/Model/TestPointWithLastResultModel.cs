@@ -143,7 +143,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets LastTestResult
         /// </summary>
-        [DataMember(Name = "lastTestResult", EmitDefaultValue = false)]
+        [DataMember(Name = "lastTestResult", EmitDefaultValue = true)]
         public LastTestResultModel LastTestResult { get; set; }
 
         /// <summary>
@@ -233,7 +233,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Iteration
         /// </summary>
-        [DataMember(Name = "iteration", EmitDefaultValue = false)]
+        [DataMember(Name = "iteration", EmitDefaultValue = true)]
         public IterationModel Iteration { get; set; }
 
         /// <summary>
@@ -530,7 +530,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

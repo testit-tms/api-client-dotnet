@@ -44,6 +44,12 @@ namespace TestIt.Client.Model
         /// </summary>
         [DataMember(Name = "priority", IsRequired = true, EmitDefaultValue = true)]
         public WorkItemPriorityModel Priority { get; set; }
+
+        /// <summary>
+        /// Gets or Sets WorkItemState
+        /// </summary>
+        [DataMember(Name = "workItemState", EmitDefaultValue = false)]
+        public WorkItemState? WorkItemState { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPointShortGetModel" /> class.
         /// </summary>
@@ -77,7 +83,12 @@ namespace TestIt.Client.Model
         /// <param name="projectId">Unique ID of the test point project.</param>
         /// <param name="lastTestResult">lastTestResult (required).</param>
         /// <param name="iterationId">Unique ID of work item iteration the test point represents.</param>
-        public TestPointShortGetModel(Guid id = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), Guid? testerId = default(Guid?), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<string> tags = default(List<string>), List<string> links = default(List<string>), Guid testSuiteId = default(Guid), Guid workItemId = default(Guid), long workItemGlobalId = default(long), Guid workItemVersionId = default(Guid), TestPointStatus status = default(TestPointStatus), WorkItemPriorityModel priority = default(WorkItemPriorityModel), bool isAutomated = default(bool), string name = default(string), Guid configurationId = default(Guid), int duration = default(int), Guid sectionId = default(Guid), string sectionName = default(string), Guid projectId = default(Guid), LastTestResultModel lastTestResult = default(LastTestResultModel), Guid iterationId = default(Guid))
+        /// <param name="workItemState">workItemState.</param>
+        /// <param name="workItemCreatedById">Unique ID of the work item creator.</param>
+        /// <param name="workItemCreatedDate">Creation date of work item.</param>
+        /// <param name="workItemModifiedById">Unique ID of the work item last editor.</param>
+        /// <param name="workItemModifiedDate">Modified date of work item.</param>
+        public TestPointShortGetModel(Guid id = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), Guid? testerId = default(Guid?), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<string> tags = default(List<string>), List<string> links = default(List<string>), Guid testSuiteId = default(Guid), Guid workItemId = default(Guid), long workItemGlobalId = default(long), Guid workItemVersionId = default(Guid), TestPointStatus status = default(TestPointStatus), WorkItemPriorityModel priority = default(WorkItemPriorityModel), bool isAutomated = default(bool), string name = default(string), Guid configurationId = default(Guid), int duration = default(int), Guid sectionId = default(Guid), string sectionName = default(string), Guid projectId = default(Guid), TestPointShortGetModelLastTestResult lastTestResult = default(TestPointShortGetModelLastTestResult), Guid iterationId = default(Guid), WorkItemState? workItemState = default(WorkItemState?), Guid workItemCreatedById = default(Guid), DateTime workItemCreatedDate = default(DateTime), Guid? workItemModifiedById = default(Guid?), DateTime? workItemModifiedDate = default(DateTime?))
         {
             this.Status = status;
             this.Priority = priority;
@@ -109,6 +120,11 @@ namespace TestIt.Client.Model
             this.SectionName = sectionName;
             this.ProjectId = projectId;
             this.IterationId = iterationId;
+            this.WorkItemState = workItemState;
+            this.WorkItemCreatedById = workItemCreatedById;
+            this.WorkItemCreatedDate = workItemCreatedDate;
+            this.WorkItemModifiedById = workItemModifiedById;
+            this.WorkItemModifiedDate = workItemModifiedDate;
         }
 
         /// <summary>
@@ -164,21 +180,21 @@ namespace TestIt.Client.Model
         /// Collection of attributes of work item the test point represents
         /// </summary>
         /// <value>Collection of attributes of work item the test point represents</value>
-        [DataMember(Name = "attributes", EmitDefaultValue = true)]
+        [DataMember(Name = "attributes", EmitDefaultValue = false)]
         public Dictionary<string, Object> Attributes { get; set; }
 
         /// <summary>
         /// Collection of the test point tags
         /// </summary>
         /// <value>Collection of the test point tags</value>
-        [DataMember(Name = "tags", EmitDefaultValue = true)]
+        [DataMember(Name = "tags", EmitDefaultValue = false)]
         public List<string> Tags { get; set; }
 
         /// <summary>
         /// Collection of the test point links
         /// </summary>
         /// <value>Collection of the test point links</value>
-        [DataMember(Name = "links", EmitDefaultValue = true)]
+        [DataMember(Name = "links", EmitDefaultValue = false)]
         public List<string> Links { get; set; }
 
         /// <summary>
@@ -220,7 +236,7 @@ namespace TestIt.Client.Model
         /// Name of the test point
         /// </summary>
         /// <value>Name of the test point</value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
@@ -262,7 +278,7 @@ namespace TestIt.Client.Model
         /// Gets or Sets LastTestResult
         /// </summary>
         [DataMember(Name = "lastTestResult", IsRequired = true, EmitDefaultValue = true)]
-        public LastTestResultModel LastTestResult { get; set; }
+        public TestPointShortGetModelLastTestResult LastTestResult { get; set; }
 
         /// <summary>
         /// Unique ID of work item iteration the test point represents
@@ -270,6 +286,34 @@ namespace TestIt.Client.Model
         /// <value>Unique ID of work item iteration the test point represents</value>
         [DataMember(Name = "iterationId", EmitDefaultValue = false)]
         public Guid IterationId { get; set; }
+
+        /// <summary>
+        /// Unique ID of the work item creator
+        /// </summary>
+        /// <value>Unique ID of the work item creator</value>
+        [DataMember(Name = "workItemCreatedById", EmitDefaultValue = false)]
+        public Guid WorkItemCreatedById { get; set; }
+
+        /// <summary>
+        /// Creation date of work item
+        /// </summary>
+        /// <value>Creation date of work item</value>
+        [DataMember(Name = "workItemCreatedDate", EmitDefaultValue = false)]
+        public DateTime WorkItemCreatedDate { get; set; }
+
+        /// <summary>
+        /// Unique ID of the work item last editor
+        /// </summary>
+        /// <value>Unique ID of the work item last editor</value>
+        [DataMember(Name = "workItemModifiedById", EmitDefaultValue = true)]
+        public Guid? WorkItemModifiedById { get; set; }
+
+        /// <summary>
+        /// Modified date of work item
+        /// </summary>
+        /// <value>Modified date of work item</value>
+        [DataMember(Name = "workItemModifiedDate", EmitDefaultValue = true)]
+        public DateTime? WorkItemModifiedDate { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -304,6 +348,11 @@ namespace TestIt.Client.Model
             sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
             sb.Append("  LastTestResult: ").Append(LastTestResult).Append("\n");
             sb.Append("  IterationId: ").Append(IterationId).Append("\n");
+            sb.Append("  WorkItemState: ").Append(WorkItemState).Append("\n");
+            sb.Append("  WorkItemCreatedById: ").Append(WorkItemCreatedById).Append("\n");
+            sb.Append("  WorkItemCreatedDate: ").Append(WorkItemCreatedDate).Append("\n");
+            sb.Append("  WorkItemModifiedById: ").Append(WorkItemModifiedById).Append("\n");
+            sb.Append("  WorkItemModifiedDate: ").Append(WorkItemModifiedDate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -462,6 +511,30 @@ namespace TestIt.Client.Model
                     this.IterationId == input.IterationId ||
                     (this.IterationId != null &&
                     this.IterationId.Equals(input.IterationId))
+                ) && 
+                (
+                    this.WorkItemState == input.WorkItemState ||
+                    this.WorkItemState.Equals(input.WorkItemState)
+                ) && 
+                (
+                    this.WorkItemCreatedById == input.WorkItemCreatedById ||
+                    (this.WorkItemCreatedById != null &&
+                    this.WorkItemCreatedById.Equals(input.WorkItemCreatedById))
+                ) && 
+                (
+                    this.WorkItemCreatedDate == input.WorkItemCreatedDate ||
+                    (this.WorkItemCreatedDate != null &&
+                    this.WorkItemCreatedDate.Equals(input.WorkItemCreatedDate))
+                ) && 
+                (
+                    this.WorkItemModifiedById == input.WorkItemModifiedById ||
+                    (this.WorkItemModifiedById != null &&
+                    this.WorkItemModifiedById.Equals(input.WorkItemModifiedById))
+                ) && 
+                (
+                    this.WorkItemModifiedDate == input.WorkItemModifiedDate ||
+                    (this.WorkItemModifiedDate != null &&
+                    this.WorkItemModifiedDate.Equals(input.WorkItemModifiedDate))
                 );
         }
 
@@ -559,6 +632,23 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.IterationId.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.WorkItemState.GetHashCode();
+                if (this.WorkItemCreatedById != null)
+                {
+                    hashCode = (hashCode * 59) + this.WorkItemCreatedById.GetHashCode();
+                }
+                if (this.WorkItemCreatedDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.WorkItemCreatedDate.GetHashCode();
+                }
+                if (this.WorkItemModifiedById != null)
+                {
+                    hashCode = (hashCode * 59) + this.WorkItemModifiedById.GetHashCode();
+                }
+                if (this.WorkItemModifiedDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.WorkItemModifiedDate.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -568,7 +658,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

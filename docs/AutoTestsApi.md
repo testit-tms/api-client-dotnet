@@ -25,9 +25,9 @@ All URIs are relative to *http://localhost*
 | [**UpdateAutoTest**](AutoTestsApi.md#updateautotest) | **PUT** /api/v2/autoTests | Update autotest |
 | [**UpdateMultiple**](AutoTestsApi.md#updatemultiple) | **PUT** /api/v2/autoTests/bulk | Update multiple autotests |
 
-<a name="apiv2autotestsflakybulkpost"></a>
+<a id="apiv2autotestsflakybulkpost"></a>
 # **ApiV2AutoTestsFlakyBulkPost**
-> void ApiV2AutoTestsFlakyBulkPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, FlakyBulkModel flakyBulkModel = null)
+> void ApiV2AutoTestsFlakyBulkPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2AutoTestsFlakyBulkPostRequest apiV2AutoTestsFlakyBulkPostRequest = null)
 
 Set \"Flaky\" status for multiple autotests
 
@@ -64,12 +64,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var flakyBulkModel = new FlakyBulkModel(); // FlakyBulkModel |  (optional) 
+            var apiV2AutoTestsFlakyBulkPostRequest = new ApiV2AutoTestsFlakyBulkPostRequest(); // ApiV2AutoTestsFlakyBulkPostRequest |  (optional) 
 
             try
             {
                 // Set \"Flaky\" status for multiple autotests
-                apiInstance.ApiV2AutoTestsFlakyBulkPost(skip, take, orderBy, searchField, searchValue, flakyBulkModel);
+                apiInstance.ApiV2AutoTestsFlakyBulkPost(skip, take, orderBy, searchField, searchValue, apiV2AutoTestsFlakyBulkPostRequest);
             }
             catch (ApiException  e)
             {
@@ -89,7 +89,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Set \"Flaky\" status for multiple autotests
-    apiInstance.ApiV2AutoTestsFlakyBulkPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, flakyBulkModel);
+    apiInstance.ApiV2AutoTestsFlakyBulkPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2AutoTestsFlakyBulkPostRequest);
 }
 catch (ApiException e)
 {
@@ -108,7 +108,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **flakyBulkModel** | [**FlakyBulkModel**](FlakyBulkModel.md) |  | [optional]  |
+| **apiV2AutoTestsFlakyBulkPostRequest** | [**ApiV2AutoTestsFlakyBulkPostRequest**](ApiV2AutoTestsFlakyBulkPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -127,13 +127,13 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Invalid user permissions |  -  |
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **403** | Invalid user permissions |  -  |
 | **422** | Autotests with provided identifiers do not belong to the same project |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2autotestsidpatch"></a>
+<a id="apiv2autotestsidpatch"></a>
 # **ApiV2AutoTestsIdPatch**
 > void ApiV2AutoTestsIdPatch (Guid id, List<Operation> operation = null)
 
@@ -232,9 +232,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2autotestsidtestresultssearchpost"></a>
+<a id="apiv2autotestsidtestresultssearchpost"></a>
 # **ApiV2AutoTestsIdTestResultsSearchPost**
-> List&lt;AutotestResultHistoricalGetModel&gt; ApiV2AutoTestsIdTestResultsSearchPost (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, AutotestHistoricalResultSelectModel autotestHistoricalResultSelectModel = null)
+> List&lt;AutotestResultHistoricalGetModel&gt; ApiV2AutoTestsIdTestResultsSearchPost (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2AutoTestsIdTestResultsSearchPostRequest apiV2AutoTestsIdTestResultsSearchPostRequest = null)
 
 Get test results history for autotest
 
@@ -272,12 +272,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var autotestHistoricalResultSelectModel = new AutotestHistoricalResultSelectModel(); // AutotestHistoricalResultSelectModel |  (optional) 
+            var apiV2AutoTestsIdTestResultsSearchPostRequest = new ApiV2AutoTestsIdTestResultsSearchPostRequest(); // ApiV2AutoTestsIdTestResultsSearchPostRequest |  (optional) 
 
             try
             {
                 // Get test results history for autotest
-                List<AutotestResultHistoricalGetModel> result = apiInstance.ApiV2AutoTestsIdTestResultsSearchPost(id, skip, take, orderBy, searchField, searchValue, autotestHistoricalResultSelectModel);
+                List<AutotestResultHistoricalGetModel> result = apiInstance.ApiV2AutoTestsIdTestResultsSearchPost(id, skip, take, orderBy, searchField, searchValue, apiV2AutoTestsIdTestResultsSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -298,7 +298,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get test results history for autotest
-    ApiResponse<List<AutotestResultHistoricalGetModel>> response = apiInstance.ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, autotestHistoricalResultSelectModel);
+    ApiResponse<List<AutotestResultHistoricalGetModel>> response = apiInstance.ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, apiV2AutoTestsIdTestResultsSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -321,7 +321,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **autotestHistoricalResultSelectModel** | [**AutotestHistoricalResultSelectModel**](AutotestHistoricalResultSelectModel.md) |  | [optional]  |
+| **apiV2AutoTestsIdTestResultsSearchPostRequest** | [**ApiV2AutoTestsIdTestResultsSearchPostRequest**](ApiV2AutoTestsIdTestResultsSearchPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -340,15 +340,15 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Autotest with provided ID was not found |  -  |
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
-| **401** | Unauthorized |  -  |
 | **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for autotests required |  -  |
+| **404** | Autotest with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2autotestsidworkitemschangedidget"></a>
+<a id="apiv2autotestsidworkitemschangedidget"></a>
 # **ApiV2AutoTestsIdWorkItemsChangedIdGet**
 > List&lt;Guid&gt; ApiV2AutoTestsIdWorkItemsChangedIdGet (Guid id)
 
@@ -450,7 +450,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2autotestsidworkitemschangedworkitemidapprovepost"></a>
+<a id="apiv2autotestsidworkitemschangedworkitemidapprovepost"></a>
 # **ApiV2AutoTestsIdWorkItemsChangedWorkItemIdApprovePost**
 > void ApiV2AutoTestsIdWorkItemsChangedWorkItemIdApprovePost (Guid id, Guid workItemId)
 
@@ -550,9 +550,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2autotestssearchpost"></a>
+<a id="apiv2autotestssearchpost"></a>
 # **ApiV2AutoTestsSearchPost**
-> List&lt;AutoTestModel&gt; ApiV2AutoTestsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, AutotestsSelectModel autotestsSelectModel = null)
+> List&lt;AutoTestModel&gt; ApiV2AutoTestsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2AutoTestsSearchPostRequest apiV2AutoTestsSearchPostRequest = null)
 
 Search for autotests
 
@@ -587,12 +587,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var autotestsSelectModel = new AutotestsSelectModel(); // AutotestsSelectModel |  (optional) 
+            var apiV2AutoTestsSearchPostRequest = new ApiV2AutoTestsSearchPostRequest(); // ApiV2AutoTestsSearchPostRequest |  (optional) 
 
             try
             {
                 // Search for autotests
-                List<AutoTestModel> result = apiInstance.ApiV2AutoTestsSearchPost(skip, take, orderBy, searchField, searchValue, autotestsSelectModel);
+                List<AutoTestModel> result = apiInstance.ApiV2AutoTestsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2AutoTestsSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -613,7 +613,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for autotests
-    ApiResponse<List<AutoTestModel>> response = apiInstance.ApiV2AutoTestsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, autotestsSelectModel);
+    ApiResponse<List<AutoTestModel>> response = apiInstance.ApiV2AutoTestsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2AutoTestsSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -635,7 +635,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **autotestsSelectModel** | [**AutotestsSelectModel**](AutotestsSelectModel.md) |  | [optional]  |
+| **apiV2AutoTestsSearchPostRequest** | [**ApiV2AutoTestsSearchPostRequest**](ApiV2AutoTestsSearchPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -654,14 +654,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for autotests library is required |  -  |
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **403** | Read permission for autotests library is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createautotest"></a>
+<a id="createautotest"></a>
 # **CreateAutoTest**
-> AutoTestModel CreateAutoTest (AutoTestPostModel autoTestPostModel = null)
+> AutoTestModel CreateAutoTest (CreateAutoTestRequest createAutoTestRequest = null)
 
 Create autotest
 
@@ -693,12 +693,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new AutoTestsApi(httpClient, config, httpClientHandler);
-            var autoTestPostModel = new AutoTestPostModel(); // AutoTestPostModel |  (optional) 
+            var createAutoTestRequest = new CreateAutoTestRequest(); // CreateAutoTestRequest |  (optional) 
 
             try
             {
                 // Create autotest
-                AutoTestModel result = apiInstance.CreateAutoTest(autoTestPostModel);
+                AutoTestModel result = apiInstance.CreateAutoTest(createAutoTestRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -719,7 +719,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create autotest
-    ApiResponse<AutoTestModel> response = apiInstance.CreateAutoTestWithHttpInfo(autoTestPostModel);
+    ApiResponse<AutoTestModel> response = apiInstance.CreateAutoTestWithHttpInfo(createAutoTestRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -736,7 +736,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **autoTestPostModel** | [**AutoTestPostModel**](AutoTestPostModel.md) |  | [optional]  |
+| **createAutoTestRequest** | [**CreateAutoTestRequest**](CreateAutoTestRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -756,16 +756,16 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
-| **404** | Project with provided ID cannot be found |  -  |
 | **400** | &lt;br&gt;- Name cannot be empty or contain only white space characters  &lt;br&gt;- External ID cannot be empty or contain only white space characters  &lt;br&gt;- Namespace cannot be empty or contain only white space characters  &lt;br&gt;- Classname cannot be empty or contain only white space characters  &lt;br&gt;- Steps cannot be &#x60;null&#x60;  &lt;br&gt;- Steps nesting level is more than 15  &lt;br&gt;- Invalid URI |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for autotests is required |  -  |
-| **422** | &lt;br&gt;- Labels have duplicates  &lt;br&gt;- Labels begin with &#x60;::&#x60;  &lt;br&gt;- Labels with the same base have different values |  -  |
+| **404** | Project with provided ID cannot be found |  -  |
 | **409** | Autotest with the same external ID already exists is the project |  -  |
+| **422** | &lt;br&gt;- Labels have duplicates  &lt;br&gt;- Labels begin with &#x60;::&#x60;  &lt;br&gt;- Labels with the same base have different values |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createmultiple"></a>
+<a id="createmultiple"></a>
 # **CreateMultiple**
 > List&lt;AutoTestModel&gt; CreateMultiple (List<AutoTestPostModel> autoTestPostModel = null)
 
@@ -861,17 +861,17 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **422** | &lt;br&gt;- Labels have duplicates  &lt;br&gt;- Labels begin with &#x60;::&#x60;  &lt;br&gt;- Labels with the same base have different values |  -  |
-| **400** | &lt;br&gt;- Name cannot be empty or contain only white space characters  &lt;br&gt;- External ID cannot be empty or contain only white space characters  &lt;br&gt;- Namespace cannot be empty or contain only white space characters  &lt;br&gt;- Classname cannot be empty or contain only white space characters  &lt;br&gt;- Steps cannot be &#x60;null&#x60;  &lt;br&gt;- Steps nesting level is more than 15  &lt;br&gt;- Invalid URI |  -  |
 | **201** | Created |  -  |
-| **403** | Update permission for autotests is required |  -  |
+| **400** | &lt;br&gt;- Name cannot be empty or contain only white space characters  &lt;br&gt;- External ID cannot be empty or contain only white space characters  &lt;br&gt;- Namespace cannot be empty or contain only white space characters  &lt;br&gt;- Classname cannot be empty or contain only white space characters  &lt;br&gt;- Steps cannot be &#x60;null&#x60;  &lt;br&gt;- Steps nesting level is more than 15  &lt;br&gt;- Invalid URI |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Update permission for autotests is required |  -  |
 | **404** | Project with provided ID cannot be found |  -  |
 | **409** | Autotest with the same external ID already exists is the project |  -  |
+| **422** | &lt;br&gt;- Labels have duplicates  &lt;br&gt;- Labels begin with &#x60;::&#x60;  &lt;br&gt;- Labels with the same base have different values |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleteautotest"></a>
+<a id="deleteautotest"></a>
 # **DeleteAutoTest**
 > void DeleteAutoTest (string id)
 
@@ -965,12 +965,12 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
 | **401** | Unauthorized |  -  |
-| **404** | Autotest with provided ID cannot be found |  -  |
 | **403** | Delete permission for autotests is required |  -  |
+| **404** | Autotest with provided ID cannot be found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleteautotestlinkfromworkitem"></a>
+<a id="deleteautotestlinkfromworkitem"></a>
 # **DeleteAutoTestLinkFromWorkItem**
 > void DeleteAutoTestLinkFromWorkItem (string id, string workItemId = null)
 
@@ -1064,15 +1064,15 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Update permission for autotests is required |  -  |
-| **401** | Unauthorized |  -  |
-| **404** | &lt;br&gt;- Autotest with provided ID cannot be found  &lt;br&gt;- Work item with provided ID cannot be found |  -  |
 | **204** | No Content |  -  |
 | **400** | Work item ID is invalid |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Update permission for autotests is required |  -  |
+| **404** | &lt;br&gt;- Autotest with provided ID cannot be found  &lt;br&gt;- Work item with provided ID cannot be found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getallautotests"></a>
+<a id="getallautotests"></a>
 # **GetAllAutoTests**
 > List&lt;AutoTestModel&gt; GetAllAutoTests (Guid? projectId = null, string externalId = null, long? globalId = null, string _namespace = null, bool? isNamespaceNull = null, bool? includeEmptyNamespaces = null, string className = null, bool? isClassnameNull = null, bool? includeEmptyClassNames = null, bool? isDeleted = null, bool? deleted = null, List<string> labels = null, int? stabilityMinimal = null, int? minStability = null, int? stabilityMaximal = null, int? maxStability = null, bool? isFlaky = null, bool? flaky = null, bool? includeSteps = null, bool? includeLabels = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -1212,14 +1212,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Not Found |  -  |
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
-| **403** | Forbidden |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getautotestaverageduration"></a>
+<a id="getautotestaverageduration"></a>
 # **GetAutoTestAverageDuration**
 > AutoTestAverageDurationModel GetAutoTestAverageDuration (string id)
 
@@ -1315,14 +1315,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Autotest with provided ID was not found |  -  |
 | **200** | Success |  -  |
-| **403** | Read permission for autotests is required |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Read permission for autotests is required |  -  |
+| **404** | Autotest with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getautotestbyid"></a>
+<a id="getautotestbyid"></a>
 # **GetAutoTestById**
 > AutoTestModel GetAutoTestById (string id)
 
@@ -1418,15 +1418,15 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for autotests is required |  -  |
-| **401** | Unauthorized |  -  |
-| **400** | Autotest ID is invalid |  -  |
 | **200** | Success |  -  |
+| **400** | Autotest ID is invalid |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Read permission for autotests is required |  -  |
 | **404** | Autotest with provided ID cannot be found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getautotestchronology"></a>
+<a id="getautotestchronology"></a>
 # **GetAutoTestChronology**
 > List&lt;TestResultChronologyModel&gt; GetAutoTestChronology (string id)
 
@@ -1522,14 +1522,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for autotests is required |  -  |
-| **401** | Unauthorized |  -  |
-| **404** | Autotest with provided ID was not found |  -  |
 | **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Read permission for autotests is required |  -  |
+| **404** | Autotest with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="gettestruns"></a>
+<a id="gettestruns"></a>
 # **GetTestRuns**
 > List&lt;TestRunShortModel&gt; GetTestRuns (string id)
 
@@ -1625,14 +1625,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for autotests is required |  -  |
 | **200** | Success |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Read permission for autotests is required |  -  |
 | **404** | Autotest with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getworkitemresults"></a>
+<a id="getworkitemresults"></a>
 # **GetWorkItemResults**
 > List&lt;TestResultHistoryReportModel&gt; GetWorkItemResults (string id, DateTime? from = null, DateTime? to = null, List<Guid> configurationIds = null, List<Guid> testPlanIds = null, List<Guid> userIds = null, List<string> outcomes = null, bool? isAutomated = null, bool? automated = null, List<Guid> testRunIds = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -1752,14 +1752,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Not Found |  -  |
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getworkitemslinkedtoautotest"></a>
+<a id="getworkitemslinkedtoautotest"></a>
 # **GetWorkItemsLinkedToAutoTest**
 > List&lt;WorkItemIdentifierModel&gt; GetWorkItemsLinkedToAutoTest (string id, bool? isDeleted = null, bool? isWorkItemDeleted = null)
 
@@ -1859,16 +1859,16 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
 | **200** | Success |  -  |
-| **404** | Autotest with provided ID cannot be found |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for autotests is required |  -  |
+| **404** | Autotest with provided ID cannot be found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="linkautotesttoworkitem"></a>
+<a id="linkautotesttoworkitem"></a>
 # **LinkAutoTestToWorkItem**
-> void LinkAutoTestToWorkItem (string id, WorkItemIdModel workItemIdModel = null)
+> void LinkAutoTestToWorkItem (string id, LinkAutoTestToWorkItemRequest linkAutoTestToWorkItemRequest = null)
 
 Link autotest with work items
 
@@ -1901,12 +1901,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new AutoTestsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Autotest internal (UUID) or global (integer) identifier
-            var workItemIdModel = new WorkItemIdModel(); // WorkItemIdModel |  (optional) 
+            var linkAutoTestToWorkItemRequest = new LinkAutoTestToWorkItemRequest(); // LinkAutoTestToWorkItemRequest |  (optional) 
 
             try
             {
                 // Link autotest with work items
-                apiInstance.LinkAutoTestToWorkItem(id, workItemIdModel);
+                apiInstance.LinkAutoTestToWorkItem(id, linkAutoTestToWorkItemRequest);
             }
             catch (ApiException  e)
             {
@@ -1926,7 +1926,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Link autotest with work items
-    apiInstance.LinkAutoTestToWorkItemWithHttpInfo(id, workItemIdModel);
+    apiInstance.LinkAutoTestToWorkItemWithHttpInfo(id, linkAutoTestToWorkItemRequest);
 }
 catch (ApiException e)
 {
@@ -1941,7 +1941,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Autotest internal (UUID) or global (integer) identifier |  |
-| **workItemIdModel** | [**WorkItemIdModel**](WorkItemIdModel.md) |  | [optional]  |
+| **linkAutoTestToWorkItemRequest** | [**LinkAutoTestToWorkItemRequest**](LinkAutoTestToWorkItemRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -1960,17 +1960,17 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **400** | &lt;br&gt;- Autotest cannot be linked to shared steps  &lt;br&gt;- Autotest cannot be linked to work item from other project  &lt;br&gt;- Work item ID is invalid |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for autotests is required |  -  |
 | **404** | &lt;br&gt;- Autotest with provided ID cannot be found  &lt;br&gt;- Work item with provided ID cannot be found |  -  |
-| **400** | &lt;br&gt;- Autotest cannot be linked to shared steps  &lt;br&gt;- Autotest cannot be linked to work item from other project  &lt;br&gt;- Work item ID is invalid |  -  |
-| **204** | No Content |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updateautotest"></a>
+<a id="updateautotest"></a>
 # **UpdateAutoTest**
-> void UpdateAutoTest (AutoTestPutModel autoTestPutModel = null)
+> void UpdateAutoTest (UpdateAutoTestRequest updateAutoTestRequest = null)
 
 Update autotest
 
@@ -2002,12 +2002,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new AutoTestsApi(httpClient, config, httpClientHandler);
-            var autoTestPutModel = new AutoTestPutModel(); // AutoTestPutModel |  (optional) 
+            var updateAutoTestRequest = new UpdateAutoTestRequest(); // UpdateAutoTestRequest |  (optional) 
 
             try
             {
                 // Update autotest
-                apiInstance.UpdateAutoTest(autoTestPutModel);
+                apiInstance.UpdateAutoTest(updateAutoTestRequest);
             }
             catch (ApiException  e)
             {
@@ -2027,7 +2027,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update autotest
-    apiInstance.UpdateAutoTestWithHttpInfo(autoTestPutModel);
+    apiInstance.UpdateAutoTestWithHttpInfo(updateAutoTestRequest);
 }
 catch (ApiException e)
 {
@@ -2041,7 +2041,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **autoTestPutModel** | [**AutoTestPutModel**](AutoTestPutModel.md) |  | [optional]  |
+| **updateAutoTestRequest** | [**UpdateAutoTestRequest**](UpdateAutoTestRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -2070,7 +2070,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updatemultiple"></a>
+<a id="updatemultiple"></a>
 # **UpdateMultiple**
 > void UpdateMultiple (List<AutoTestPutModel> autoTestPutModel = null)
 
@@ -2162,13 +2162,13 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
-| **422** | &lt;br&gt;- Project ID cannot be changed  &lt;br&gt;- Labels have duplicates  &lt;br&gt;- Labels begin with &#x60;::&#x60;  &lt;br&gt;- Labels with the same base have different values |  -  |
-| **400** | &lt;br&gt;- Name cannot be empty or contain only white space characters  &lt;br&gt;- External ID cannot be empty or contain only white space characters  &lt;br&gt;- Namespace cannot be empty or contain only white space characters  &lt;br&gt;- Classname cannot be empty or contain only white space characters  &lt;br&gt;- Steps cannot be &#x60;null&#x60;  &lt;br&gt;- Steps nesting level is more than 15  &lt;br&gt;- Invalid URI |  -  |
 | **204** | No Content |  -  |
+| **400** | &lt;br&gt;- Name cannot be empty or contain only white space characters  &lt;br&gt;- External ID cannot be empty or contain only white space characters  &lt;br&gt;- Namespace cannot be empty or contain only white space characters  &lt;br&gt;- Classname cannot be empty or contain only white space characters  &lt;br&gt;- Steps cannot be &#x60;null&#x60;  &lt;br&gt;- Steps nesting level is more than 15  &lt;br&gt;- Invalid URI |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Update permission for autotests is required |  -  |
 | **404** | &lt;br&gt;- Autotests with provided ID cannot be found  &lt;br&gt;- Project with provided ID cannot be found  &lt;br&gt;- Link with provided ID cannot be found  &lt;br&gt;- Label with provided ID cannot be found |  -  |
 | **409** | Autotest with the same external ID already exists is the project |  -  |
+| **422** | &lt;br&gt;- Project ID cannot be changed  &lt;br&gt;- Labels have duplicates  &lt;br&gt;- Labels begin with &#x60;::&#x60;  &lt;br&gt;- Labels with the same base have different values |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

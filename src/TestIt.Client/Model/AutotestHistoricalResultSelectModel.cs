@@ -92,7 +92,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Duration
         /// </summary>
-        [DataMember(Name = "duration", EmitDefaultValue = false)]
+        [DataMember(Name = "duration", EmitDefaultValue = true)]
         public Int64RangeSelectorModel Duration { get; set; }
 
         /// <summary>
@@ -233,7 +233,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // LaunchSource (string) maxLength
             if (this.LaunchSource != null && this.LaunchSource.Length > 255)

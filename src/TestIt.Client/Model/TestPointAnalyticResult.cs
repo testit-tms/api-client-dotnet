@@ -52,31 +52,31 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CountGroupByStatus
         /// </summary>
-        [DataMember(Name = "countGroupByStatus", EmitDefaultValue = true)]
+        [DataMember(Name = "countGroupByStatus", EmitDefaultValue = false)]
         public List<TestPlanGroupByStatus> CountGroupByStatus { get; set; }
 
         /// <summary>
         /// Gets or Sets SumGroupByTester
         /// </summary>
-        [DataMember(Name = "sumGroupByTester", EmitDefaultValue = true)]
+        [DataMember(Name = "sumGroupByTester", EmitDefaultValue = false)]
         public List<TestPlanGroupByTester> SumGroupByTester { get; set; }
 
         /// <summary>
         /// Gets or Sets CountGroupByTester
         /// </summary>
-        [DataMember(Name = "countGroupByTester", EmitDefaultValue = true)]
+        [DataMember(Name = "countGroupByTester", EmitDefaultValue = false)]
         public List<TestPlanGroupByTester> CountGroupByTester { get; set; }
 
         /// <summary>
         /// Gets or Sets CountGroupByTestSuite
         /// </summary>
-        [DataMember(Name = "countGroupByTestSuite", EmitDefaultValue = true)]
+        [DataMember(Name = "countGroupByTestSuite", EmitDefaultValue = false)]
         public List<TestPlanGroupByTestSuite> CountGroupByTestSuite { get; set; }
 
         /// <summary>
         /// Gets or Sets CountGroupByTesterAndStatus
         /// </summary>
-        [DataMember(Name = "countGroupByTesterAndStatus", EmitDefaultValue = true)]
+        [DataMember(Name = "countGroupByTesterAndStatus", EmitDefaultValue = false)]
         public List<TestPlanGroupByTesterAndStatus> CountGroupByTesterAndStatus { get; set; }
 
         /// <summary>
@@ -197,7 +197,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

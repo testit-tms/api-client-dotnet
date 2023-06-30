@@ -8,7 +8,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2WebhooksLogsIdDelete**](WebhooksLogsApi.md#apiv2webhookslogsiddelete) | **DELETE** /api/v2/webhooks/logs/{id} | Delete webhook log by ID |
 | [**ApiV2WebhooksLogsIdGet**](WebhooksLogsApi.md#apiv2webhookslogsidget) | **GET** /api/v2/webhooks/logs/{id} | Get webhook log by ID |
 
-<a name="apiv2webhookslogsget"></a>
+<a id="apiv2webhookslogsget"></a>
 # **ApiV2WebhooksLogsGet**
 > List&lt;WebHookLogModel&gt; ApiV2WebhooksLogsGet (Guid? projectId = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -116,7 +116,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2webhookslogsiddelete"></a>
+<a id="apiv2webhookslogsiddelete"></a>
 # **ApiV2WebhooksLogsIdDelete**
 > void ApiV2WebhooksLogsIdDelete (Guid id)
 
@@ -211,7 +211,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2webhookslogsidget"></a>
+<a id="apiv2webhookslogsidget"></a>
 # **ApiV2WebhooksLogsIdGet**
 > WebHookLogModel ApiV2WebhooksLogsIdGet (Guid id)
 

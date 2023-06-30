@@ -80,19 +80,19 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets StepComments
         /// </summary>
-        [DataMember(Name = "stepComments", EmitDefaultValue = true)]
+        [DataMember(Name = "stepComments", EmitDefaultValue = false)]
         public List<TestResultStepCommentPutModel> StepComments { get; set; }
 
         /// <summary>
         /// Gets or Sets FailureClassIds
         /// </summary>
-        [DataMember(Name = "failureClassIds", EmitDefaultValue = true)]
+        [DataMember(Name = "failureClassIds", EmitDefaultValue = false)]
         public List<Guid> FailureClassIds { get; set; }
 
         /// <summary>
         /// Gets or Sets Outcome
         /// </summary>
-        [DataMember(Name = "outcome", EmitDefaultValue = true)]
+        [DataMember(Name = "outcome", EmitDefaultValue = false)]
         public string Outcome { get; set; }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets StepResults
         /// </summary>
-        [DataMember(Name = "stepResults", EmitDefaultValue = true)]
+        [DataMember(Name = "stepResults", EmitDefaultValue = false)]
         public List<StepResultModel> StepResults { get; set; }
 
         /// <summary>
@@ -289,7 +289,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // DurationInMs (long?) minimum
             if (this.DurationInMs < (long?)0)

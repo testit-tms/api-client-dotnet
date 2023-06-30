@@ -50,7 +50,7 @@ namespace TestIt.Client.Model
         /// <param name="isDeleted">Is result must consist of only actual/deleted work items.</param>
         /// <param name="tagNames">Collection of tags.</param>
         /// <param name="entityTypes">Collection of types of work item  &lt;br&gt;Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;.</param>
-        public TestSuiteWorkItemsSearchModel(string name = default(string), List<long> globalIds = default(List<long>), List<Guid> sectionIds = default(List<Guid>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), bool? isAutomated = default(bool?), List<WorkItemStates> states = default(List<WorkItemStates>), Int32RangeSelectorModel duration = default(Int32RangeSelectorModel), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), List<string> entityTypes = default(List<string>))
+        public TestSuiteWorkItemsSearchModel(string name = default(string), List<long> globalIds = default(List<long>), List<Guid> sectionIds = default(List<Guid>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), bool? isAutomated = default(bool?), List<WorkItemStates> states = default(List<WorkItemStates>), TestSuiteWorkItemsSearchModelDuration duration = default(TestSuiteWorkItemsSearchModelDuration), TestSuiteWorkItemsSearchModelCreatedDate createdDate = default(TestSuiteWorkItemsSearchModelCreatedDate), TestSuiteWorkItemsSearchModelModifiedDate modifiedDate = default(TestSuiteWorkItemsSearchModelModifiedDate), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), List<string> entityTypes = default(List<string>))
         {
             this.Name = name;
             this.GlobalIds = globalIds;
@@ -114,20 +114,20 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Duration
         /// </summary>
-        [DataMember(Name = "duration", EmitDefaultValue = false)]
-        public Int32RangeSelectorModel Duration { get; set; }
+        [DataMember(Name = "duration", EmitDefaultValue = true)]
+        public TestSuiteWorkItemsSearchModelDuration Duration { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
-        public DateTimeRangeSelectorModel CreatedDate { get; set; }
+        [DataMember(Name = "createdDate", EmitDefaultValue = true)]
+        public TestSuiteWorkItemsSearchModelCreatedDate CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
-        public DateTimeRangeSelectorModel ModifiedDate { get; set; }
+        [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
+        public TestSuiteWorkItemsSearchModelModifiedDate ModifiedDate { get; set; }
 
         /// <summary>
         /// Collection of identifiers of users who created work item
@@ -393,7 +393,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)

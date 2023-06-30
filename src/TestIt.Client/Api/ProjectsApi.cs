@@ -60,9 +60,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectCustomAttributesTemplatesFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdAttributesTemplatesSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;ProjectCustomAttributeTemplateGetModel&gt;</returns>
-        List<ProjectCustomAttributeTemplateGetModel> ApiV2ProjectsIdAttributesTemplatesSearchPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default(ProjectCustomAttributesTemplatesFilterModel));
+        List<ProjectCustomAttributeTemplateGetModel> ApiV2ProjectsIdAttributesTemplatesSearchPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdAttributesTemplatesSearchPostRequest apiV2ProjectsIdAttributesTemplatesSearchPostRequest = default(ApiV2ProjectsIdAttributesTemplatesSearchPostRequest));
 
         /// <summary>
         /// Search for custom attributes templates
@@ -77,9 +77,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectCustomAttributesTemplatesFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdAttributesTemplatesSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;ProjectCustomAttributeTemplateGetModel&gt;</returns>
-        ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsIdAttributesTemplatesSearchPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default(ProjectCustomAttributesTemplatesFilterModel));
+        ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsIdAttributesTemplatesSearchPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdAttributesTemplatesSearchPostRequest apiV2ProjectsIdAttributesTemplatesSearchPostRequest = default(ApiV2ProjectsIdAttributesTemplatesSearchPostRequest));
         /// <summary>
         /// Delete CustomAttributeTemplate from Project
         /// </summary>
@@ -251,9 +251,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global ID of the project</param>
-        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <returns>List&lt;Guid&gt;</returns>
-        List<Guid> ApiV2ProjectsIdTestPlansDeleteBulkPost(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel));
+        List<Guid> ApiV2ProjectsIdTestPlansDeleteBulkPost(string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest));
 
         /// <summary>
         /// Delete multiple test plans
@@ -263,9 +263,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global ID of the project</param>
-        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
-        ApiResponse<List<Guid>> ApiV2ProjectsIdTestPlansDeleteBulkPostWithHttpInfo(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel));
+        ApiResponse<List<Guid>> ApiV2ProjectsIdTestPlansDeleteBulkPostWithHttpInfo(string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest));
         /// <summary>
         /// Checks if TestPlan exists with the specified name exists for the project
         /// </summary>
@@ -290,13 +290,33 @@ namespace TestIt.Client.Api
         /// <returns>ApiResponse of bool</returns>
         ApiResponse<bool> ApiV2ProjectsIdTestPlansNameExistsGetWithHttpInfo(Guid id, string name);
         /// <summary>
+        /// Permanently delete multiple archived test plans
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the project</param>
+        /// <param name="apiV2ProjectsIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <returns></returns>
+        void ApiV2ProjectsIdTestPlansPurgeBulkPost(string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest));
+
+        /// <summary>
+        /// Permanently delete multiple archived test plans
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the project</param>
+        /// <param name="apiV2ProjectsIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ApiV2ProjectsIdTestPlansPurgeBulkPostWithHttpInfo(string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest));
+        /// <summary>
         /// Restore multiple test plans
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global ID of the project</param>
-        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <returns></returns>
-        void ApiV2ProjectsIdTestPlansRestoreBulkPost(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel));
+        void ApiV2ProjectsIdTestPlansRestoreBulkPost(string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest));
 
         /// <summary>
         /// Restore multiple test plans
@@ -306,9 +326,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global ID of the project</param>
-        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2ProjectsIdTestPlansRestoreBulkPostWithHttpInfo(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel));
+        ApiResponse<Object> ApiV2ProjectsIdTestPlansRestoreBulkPostWithHttpInfo(string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest));
         /// <summary>
         /// Get Project TestPlans with analytics
         /// </summary>
@@ -323,9 +343,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdTestPlansSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;TestPlanWithAnalyticModel&gt;</returns>
-        List<TestPlanWithAnalyticModel> ApiV2ProjectsIdTestPlansSearchPost(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel));
+        List<TestPlanWithAnalyticModel> ApiV2ProjectsIdTestPlansSearchPost(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdTestPlansSearchPostRequest apiV2ProjectsIdTestPlansSearchPostRequest = default(ApiV2ProjectsIdTestPlansSearchPostRequest));
 
         /// <summary>
         /// Get Project TestPlans with analytics
@@ -341,9 +361,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdTestPlansSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;TestPlanWithAnalyticModel&gt;</returns>
-        ApiResponse<List<TestPlanWithAnalyticModel>> ApiV2ProjectsIdTestPlansSearchPostWithHttpInfo(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel));
+        ApiResponse<List<TestPlanWithAnalyticModel>> ApiV2ProjectsIdTestPlansSearchPostWithHttpInfo(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdTestPlansSearchPostRequest apiV2ProjectsIdTestPlansSearchPostRequest = default(ApiV2ProjectsIdTestPlansSearchPostRequest));
         /// <summary>
         /// Get active Project TestRuns
         /// </summary>
@@ -424,9 +444,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdWorkItemsSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;Guid&gt;</returns>
-        List<Guid> ApiV2ProjectsIdWorkItemsSearchIdPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel));
+        List<Guid> ApiV2ProjectsIdWorkItemsSearchIdPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdWorkItemsSearchPostRequest apiV2ProjectsIdWorkItemsSearchPostRequest = default(ApiV2ProjectsIdWorkItemsSearchPostRequest));
 
         /// <summary>
         /// Search for work items and extract IDs only
@@ -441,9 +461,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdWorkItemsSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
-        ApiResponse<List<Guid>> ApiV2ProjectsIdWorkItemsSearchIdPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel));
+        ApiResponse<List<Guid>> ApiV2ProjectsIdWorkItemsSearchIdPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdWorkItemsSearchPostRequest apiV2ProjectsIdWorkItemsSearchPostRequest = default(ApiV2ProjectsIdWorkItemsSearchPostRequest));
         /// <summary>
         /// Search for work items
         /// </summary>
@@ -454,9 +474,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdWorkItemsSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;WorkItemShortModel&gt;</returns>
-        List<WorkItemShortModel> ApiV2ProjectsIdWorkItemsSearchPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel));
+        List<WorkItemShortModel> ApiV2ProjectsIdWorkItemsSearchPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdWorkItemsSearchPostRequest apiV2ProjectsIdWorkItemsSearchPostRequest = default(ApiV2ProjectsIdWorkItemsSearchPostRequest));
 
         /// <summary>
         /// Search for work items
@@ -471,9 +491,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdWorkItemsSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;WorkItemShortModel&gt;</returns>
-        ApiResponse<List<WorkItemShortModel>> ApiV2ProjectsIdWorkItemsSearchPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel));
+        ApiResponse<List<WorkItemShortModel>> ApiV2ProjectsIdWorkItemsSearchPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdWorkItemsSearchPostRequest apiV2ProjectsIdWorkItemsSearchPostRequest = default(ApiV2ProjectsIdWorkItemsSearchPostRequest));
         /// <summary>
         /// Get WorkItems Tags
         /// </summary>
@@ -524,9 +544,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectsFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;ProjectModel&gt;</returns>
-        List<ProjectModel> ApiV2ProjectsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectsFilterModel projectsFilterModel = default(ProjectsFilterModel));
+        List<ProjectModel> ApiV2ProjectsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsSearchPostRequest apiV2ProjectsSearchPostRequest = default(ApiV2ProjectsSearchPostRequest));
 
         /// <summary>
         /// Search for projects
@@ -540,9 +560,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectsFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;ProjectModel&gt;</returns>
-        ApiResponse<List<ProjectModel>> ApiV2ProjectsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectsFilterModel projectsFilterModel = default(ProjectsFilterModel));
+        ApiResponse<List<ProjectModel>> ApiV2ProjectsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsSearchPostRequest apiV2ProjectsSearchPostRequest = default(ApiV2ProjectsSearchPostRequest));
         /// <summary>
         /// Import project from JSON file in background job
         /// </summary>
@@ -649,9 +669,9 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project parameters (listed in request example) and runs method execution  &lt;br&gt;System creates project  &lt;br&gt;System returns project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPostModel"> (optional)</param>
+        /// <param name="createProjectRequest"> (optional)</param>
         /// <returns>ProjectModel</returns>
-        ProjectModel CreateProject(ProjectPostModel projectPostModel = default(ProjectPostModel));
+        ProjectModel CreateProject(CreateProjectRequest createProjectRequest = default(CreateProjectRequest));
 
         /// <summary>
         /// Create project
@@ -660,9 +680,9 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project parameters (listed in request example) and runs method execution  &lt;br&gt;System creates project  &lt;br&gt;System returns project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPostModel"> (optional)</param>
+        /// <param name="createProjectRequest"> (optional)</param>
         /// <returns>ApiResponse of ProjectModel</returns>
-        ApiResponse<ProjectModel> CreateProjectWithHttpInfo(ProjectPostModel projectPostModel = default(ProjectPostModel));
+        ApiResponse<ProjectModel> CreateProjectWithHttpInfo(CreateProjectRequest createProjectRequest = default(CreateProjectRequest));
         /// <summary>
         /// Create project attribute
         /// </summary>
@@ -671,9 +691,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="customAttributePostModel"> (optional)</param>
+        /// <param name="createProjectsAttributeRequest"> (optional)</param>
         /// <returns>CustomAttributeModel</returns>
-        CustomAttributeModel CreateProjectsAttribute(string id, CustomAttributePostModel customAttributePostModel = default(CustomAttributePostModel));
+        CustomAttributeModel CreateProjectsAttribute(string id, CreateProjectsAttributeRequest createProjectsAttributeRequest = default(CreateProjectsAttributeRequest));
 
         /// <summary>
         /// Create project attribute
@@ -683,9 +703,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="customAttributePostModel"> (optional)</param>
+        /// <param name="createProjectsAttributeRequest"> (optional)</param>
         /// <returns>ApiResponse of CustomAttributeModel</returns>
-        ApiResponse<CustomAttributeModel> CreateProjectsAttributeWithHttpInfo(string id, CustomAttributePostModel customAttributePostModel = default(CustomAttributePostModel));
+        ApiResponse<CustomAttributeModel> CreateProjectsAttributeWithHttpInfo(string id, CreateProjectsAttributeRequest createProjectsAttributeRequest = default(CreateProjectsAttributeRequest));
         /// <summary>
         /// Delete attribute from project&#39;s test plans
         /// </summary>
@@ -783,10 +803,10 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
-        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <returns>FileParameter</returns>
         [Obsolete]
-        FileParameter Export(string id, bool? includeAttachments = default(bool?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel));
+        FileParameter Export(string id, bool? includeAttachments = default(bool?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest));
 
         /// <summary>
         /// Export project as JSON file
@@ -797,19 +817,19 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
-        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <returns>ApiResponse of FileParameter</returns>
         [Obsolete]
-        ApiResponse<FileParameter> ExportWithHttpInfo(string id, bool? includeAttachments = default(bool?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel));
+        ApiResponse<FileParameter> ExportWithHttpInfo(string id, bool? includeAttachments = default(bool?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest));
         /// <summary>
         /// Export project as JSON file in background job
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <returns>Guid</returns>
-        Guid ExportProjectJson(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel));
+        Guid ExportProjectJson(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest));
 
         /// <summary>
         /// Export project as JSON file in background job
@@ -820,18 +840,18 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <returns>ApiResponse of Guid</returns>
-        ApiResponse<Guid> ExportProjectJsonWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel));
+        ApiResponse<Guid> ExportProjectJsonWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest));
         /// <summary>
         /// Export project as JSON file with test plans in background job
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <returns>Guid</returns>
-        Guid ExportProjectWithTestPlansJson(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel));
+        Guid ExportProjectWithTestPlansJson(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest));
 
         /// <summary>
         /// Export project as JSON file with test plans in background job
@@ -842,18 +862,18 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <returns>ApiResponse of Guid</returns>
-        ApiResponse<Guid> ExportProjectWithTestPlansJsonWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel));
+        ApiResponse<Guid> ExportProjectWithTestPlansJsonWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest));
         /// <summary>
         /// Export project as Zip file with test plans in background job
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <returns>Guid</returns>
-        Guid ExportProjectWithTestPlansZip(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel));
+        Guid ExportProjectWithTestPlansZip(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest));
 
         /// <summary>
         /// Export project as Zip file with test plans in background job
@@ -864,18 +884,18 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <returns>ApiResponse of Guid</returns>
-        ApiResponse<Guid> ExportProjectWithTestPlansZipWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel));
+        ApiResponse<Guid> ExportProjectWithTestPlansZipWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest));
         /// <summary>
         /// Export project as Zip file in background job
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <returns>Guid</returns>
-        Guid ExportProjectZip(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel));
+        Guid ExportProjectZip(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest));
 
         /// <summary>
         /// Export project as Zip file in background job
@@ -886,9 +906,9 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <returns>ApiResponse of Guid</returns>
-        ApiResponse<Guid> ExportProjectZipWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel));
+        ApiResponse<Guid> ExportProjectZipWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest));
         /// <summary>
         /// Export project with test plans, test suites and test points as JSON file
         /// </summary>
@@ -898,10 +918,10 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
-        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <returns>FileParameter</returns>
         [Obsolete]
-        FileParameter ExportWithTestPlansAndConfigurations(string id, bool? includeAttachments = default(bool?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel));
+        FileParameter ExportWithTestPlansAndConfigurations(string id, bool? includeAttachments = default(bool?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest));
 
         /// <summary>
         /// Export project with test plans, test suites and test points as JSON file
@@ -912,10 +932,10 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
-        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <returns>ApiResponse of FileParameter</returns>
         [Obsolete]
-        ApiResponse<FileParameter> ExportWithTestPlansAndConfigurationsWithHttpInfo(string id, bool? includeAttachments = default(bool?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel));
+        ApiResponse<FileParameter> ExportWithTestPlansAndConfigurationsWithHttpInfo(string id, bool? includeAttachments = default(bool?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest));
         /// <summary>
         /// Get all projects
         /// </summary>
@@ -1300,9 +1320,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectAttributesFilterModel"> (optional)</param>
+        /// <param name="searchAttributesInProjectRequest"> (optional)</param>
         /// <returns>List&lt;CustomAttributeGetModel&gt;</returns>
-        List<CustomAttributeGetModel> SearchAttributesInProject(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectAttributesFilterModel projectAttributesFilterModel = default(ProjectAttributesFilterModel));
+        List<CustomAttributeGetModel> SearchAttributesInProject(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAttributesInProjectRequest searchAttributesInProjectRequest = default(SearchAttributesInProjectRequest));
 
         /// <summary>
         /// Search for attributes used in the project
@@ -1317,9 +1337,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectAttributesFilterModel"> (optional)</param>
+        /// <param name="searchAttributesInProjectRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;CustomAttributeGetModel&gt;</returns>
-        ApiResponse<List<CustomAttributeGetModel>> SearchAttributesInProjectWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectAttributesFilterModel projectAttributesFilterModel = default(ProjectAttributesFilterModel));
+        ApiResponse<List<CustomAttributeGetModel>> SearchAttributesInProjectWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAttributesInProjectRequest searchAttributesInProjectRequest = default(SearchAttributesInProjectRequest));
         /// <summary>
         /// Search for attributes used in the project test plans
         /// </summary>
@@ -1330,9 +1350,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectAttributesFilterModel"> (optional)</param>
+        /// <param name="searchAttributesInProjectRequest"> (optional)</param>
         /// <returns>List&lt;CustomAttributeGetModel&gt;</returns>
-        List<CustomAttributeGetModel> SearchTestPlanAttributesInProject(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectAttributesFilterModel projectAttributesFilterModel = default(ProjectAttributesFilterModel));
+        List<CustomAttributeGetModel> SearchTestPlanAttributesInProject(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAttributesInProjectRequest searchAttributesInProjectRequest = default(SearchAttributesInProjectRequest));
 
         /// <summary>
         /// Search for attributes used in the project test plans
@@ -1347,9 +1367,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectAttributesFilterModel"> (optional)</param>
+        /// <param name="searchAttributesInProjectRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;CustomAttributeGetModel&gt;</returns>
-        ApiResponse<List<CustomAttributeGetModel>> SearchTestPlanAttributesInProjectWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectAttributesFilterModel projectAttributesFilterModel = default(ProjectAttributesFilterModel));
+        ApiResponse<List<CustomAttributeGetModel>> SearchTestPlanAttributesInProjectWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAttributesInProjectRequest searchAttributesInProjectRequest = default(SearchAttributesInProjectRequest));
         /// <summary>
         /// Update attribute of project&#39;s test plans
         /// </summary>
@@ -1358,9 +1378,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="customAttributeTestPlanProjectRelationPutModel"> (optional)</param>
+        /// <param name="updateCustomAttributeTestPlanProjectRelationsRequest"> (optional)</param>
         /// <returns></returns>
-        void UpdateCustomAttributeTestPlanProjectRelations(string id, CustomAttributeTestPlanProjectRelationPutModel customAttributeTestPlanProjectRelationPutModel = default(CustomAttributeTestPlanProjectRelationPutModel));
+        void UpdateCustomAttributeTestPlanProjectRelations(string id, UpdateCustomAttributeTestPlanProjectRelationsRequest updateCustomAttributeTestPlanProjectRelationsRequest = default(UpdateCustomAttributeTestPlanProjectRelationsRequest));
 
         /// <summary>
         /// Update attribute of project&#39;s test plans
@@ -1370,9 +1390,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="customAttributeTestPlanProjectRelationPutModel"> (optional)</param>
+        /// <param name="updateCustomAttributeTestPlanProjectRelationsRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfo(string id, CustomAttributeTestPlanProjectRelationPutModel customAttributeTestPlanProjectRelationPutModel = default(CustomAttributeTestPlanProjectRelationPutModel));
+        ApiResponse<Object> UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfo(string id, UpdateCustomAttributeTestPlanProjectRelationsRequest updateCustomAttributeTestPlanProjectRelationsRequest = default(UpdateCustomAttributeTestPlanProjectRelationsRequest));
         /// <summary>
         /// Update project
         /// </summary>
@@ -1380,9 +1400,9 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project parameters (listed in request example) and runs method execution  &lt;br&gt;System updates project  &lt;br&gt;System returns updated project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPutModel"> (optional)</param>
+        /// <param name="updateProjectRequest"> (optional)</param>
         /// <returns></returns>
-        void UpdateProject(ProjectPutModel projectPutModel = default(ProjectPutModel));
+        void UpdateProject(UpdateProjectRequest updateProjectRequest = default(UpdateProjectRequest));
 
         /// <summary>
         /// Update project
@@ -1391,17 +1411,17 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project parameters (listed in request example) and runs method execution  &lt;br&gt;System updates project  &lt;br&gt;System returns updated project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPutModel"> (optional)</param>
+        /// <param name="updateProjectRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateProjectWithHttpInfo(ProjectPutModel projectPutModel = default(ProjectPutModel));
+        ApiResponse<Object> UpdateProjectWithHttpInfo(UpdateProjectRequest updateProjectRequest = default(UpdateProjectRequest));
         /// <summary>
         /// Edit attribute of the project
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global project ID</param>
-        /// <param name="customAttributePutModel"> (optional)</param>
+        /// <param name="updateProjectsAttributeRequest"> (optional)</param>
         /// <returns></returns>
-        void UpdateProjectsAttribute(string id, CustomAttributePutModel customAttributePutModel = default(CustomAttributePutModel));
+        void UpdateProjectsAttribute(string id, UpdateProjectsAttributeRequest updateProjectsAttributeRequest = default(UpdateProjectsAttributeRequest));
 
         /// <summary>
         /// Edit attribute of the project
@@ -1411,9 +1431,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global project ID</param>
-        /// <param name="customAttributePutModel"> (optional)</param>
+        /// <param name="updateProjectsAttributeRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateProjectsAttributeWithHttpInfo(string id, CustomAttributePutModel customAttributePutModel = default(CustomAttributePutModel));
+        ApiResponse<Object> UpdateProjectsAttributeWithHttpInfo(string id, UpdateProjectsAttributeRequest updateProjectsAttributeRequest = default(UpdateProjectsAttributeRequest));
         #endregion Synchronous Operations
     }
 
@@ -1461,10 +1481,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectCustomAttributesTemplatesFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdAttributesTemplatesSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ProjectCustomAttributeTemplateGetModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsIdAttributesTemplatesSearchPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default(ProjectCustomAttributesTemplatesFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsIdAttributesTemplatesSearchPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdAttributesTemplatesSearchPostRequest apiV2ProjectsIdAttributesTemplatesSearchPostRequest = default(ApiV2ProjectsIdAttributesTemplatesSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Search for custom attributes templates
@@ -1479,10 +1499,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectCustomAttributesTemplatesFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdAttributesTemplatesSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ProjectCustomAttributeTemplateGetModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ProjectCustomAttributeTemplateGetModel>>> ApiV2ProjectsIdAttributesTemplatesSearchPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default(ProjectCustomAttributesTemplatesFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ProjectCustomAttributeTemplateGetModel>>> ApiV2ProjectsIdAttributesTemplatesSearchPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdAttributesTemplatesSearchPostRequest apiV2ProjectsIdAttributesTemplatesSearchPostRequest = default(ApiV2ProjectsIdAttributesTemplatesSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete CustomAttributeTemplate from Project
         /// </summary>
@@ -1674,10 +1694,10 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global ID of the project</param>
-        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Guid&gt;</returns>
-        System.Threading.Tasks.Task<List<Guid>> ApiV2ProjectsIdTestPlansDeleteBulkPostAsync(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<Guid>> ApiV2ProjectsIdTestPlansDeleteBulkPostAsync(string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete multiple test plans
@@ -1687,10 +1707,10 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global ID of the project</param>
-        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Guid>>> ApiV2ProjectsIdTestPlansDeleteBulkPostWithHttpInfoAsync(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Guid>>> ApiV2ProjectsIdTestPlansDeleteBulkPostWithHttpInfoAsync(string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Checks if TestPlan exists with the specified name exists for the project
         /// </summary>
@@ -1717,17 +1737,42 @@ namespace TestIt.Client.Api
         /// <returns>Task of ApiResponse (bool)</returns>
         System.Threading.Tasks.Task<ApiResponse<bool>> ApiV2ProjectsIdTestPlansNameExistsGetWithHttpInfoAsync(Guid id, string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Restore multiple test plans
+        /// Permanently delete multiple archived test plans
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global ID of the project</param>
-        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2ProjectsIdTestPlansRestoreBulkPostAsync(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2ProjectsIdTestPlansPurgeBulkPostAsync(string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Permanently delete multiple archived test plans
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the project</param>
+        /// <param name="apiV2ProjectsIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsIdTestPlansPurgeBulkPostWithHttpInfoAsync(string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Restore multiple test plans
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the project</param>
+        /// <param name="apiV2ProjectsIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ApiV2ProjectsIdTestPlansRestoreBulkPostAsync(string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Restore multiple test plans
@@ -1737,10 +1782,10 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global ID of the project</param>
-        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsIdTestPlansRestoreBulkPostWithHttpInfoAsync(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsIdTestPlansRestoreBulkPostWithHttpInfoAsync(string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get Project TestPlans with analytics
         /// </summary>
@@ -1755,10 +1800,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdTestPlansSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestPlanWithAnalyticModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TestPlanWithAnalyticModel>> ApiV2ProjectsIdTestPlansSearchPostAsync(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TestPlanWithAnalyticModel>> ApiV2ProjectsIdTestPlansSearchPostAsync(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdTestPlansSearchPostRequest apiV2ProjectsIdTestPlansSearchPostRequest = default(ApiV2ProjectsIdTestPlansSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Project TestPlans with analytics
@@ -1774,10 +1819,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdTestPlansSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPlanWithAnalyticModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestPlanWithAnalyticModel>>> ApiV2ProjectsIdTestPlansSearchPostWithHttpInfoAsync(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TestPlanWithAnalyticModel>>> ApiV2ProjectsIdTestPlansSearchPostWithHttpInfoAsync(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdTestPlansSearchPostRequest apiV2ProjectsIdTestPlansSearchPostRequest = default(ApiV2ProjectsIdTestPlansSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get active Project TestRuns
         /// </summary>
@@ -1865,10 +1910,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdWorkItemsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Guid&gt;</returns>
-        System.Threading.Tasks.Task<List<Guid>> ApiV2ProjectsIdWorkItemsSearchIdPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<Guid>> ApiV2ProjectsIdWorkItemsSearchIdPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdWorkItemsSearchPostRequest apiV2ProjectsIdWorkItemsSearchPostRequest = default(ApiV2ProjectsIdWorkItemsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Search for work items and extract IDs only
@@ -1883,10 +1928,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdWorkItemsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Guid>>> ApiV2ProjectsIdWorkItemsSearchIdPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Guid>>> ApiV2ProjectsIdWorkItemsSearchIdPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdWorkItemsSearchPostRequest apiV2ProjectsIdWorkItemsSearchPostRequest = default(ApiV2ProjectsIdWorkItemsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Search for work items
         /// </summary>
@@ -1900,10 +1945,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdWorkItemsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WorkItemShortModel&gt;</returns>
-        System.Threading.Tasks.Task<List<WorkItemShortModel>> ApiV2ProjectsIdWorkItemsSearchPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<WorkItemShortModel>> ApiV2ProjectsIdWorkItemsSearchPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdWorkItemsSearchPostRequest apiV2ProjectsIdWorkItemsSearchPostRequest = default(ApiV2ProjectsIdWorkItemsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Search for work items
@@ -1918,10 +1963,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdWorkItemsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<WorkItemShortModel>>> ApiV2ProjectsIdWorkItemsSearchPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<WorkItemShortModel>>> ApiV2ProjectsIdWorkItemsSearchPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdWorkItemsSearchPostRequest apiV2ProjectsIdWorkItemsSearchPostRequest = default(ApiV2ProjectsIdWorkItemsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get WorkItems Tags
         /// </summary>
@@ -1982,10 +2027,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectsFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ProjectModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ProjectModel>> ApiV2ProjectsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectsFilterModel projectsFilterModel = default(ProjectsFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ProjectModel>> ApiV2ProjectsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsSearchPostRequest apiV2ProjectsSearchPostRequest = default(ApiV2ProjectsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Search for projects
@@ -1999,10 +2044,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectsFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ProjectModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ProjectModel>>> ApiV2ProjectsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectsFilterModel projectsFilterModel = default(ProjectsFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ProjectModel>>> ApiV2ProjectsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsSearchPostRequest apiV2ProjectsSearchPostRequest = default(ApiV2ProjectsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Import project from JSON file in background job
         /// </summary>
@@ -2131,10 +2176,10 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project parameters (listed in request example) and runs method execution  &lt;br&gt;System creates project  &lt;br&gt;System returns project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPostModel"> (optional)</param>
+        /// <param name="createProjectRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ProjectModel</returns>
-        System.Threading.Tasks.Task<ProjectModel> CreateProjectAsync(ProjectPostModel projectPostModel = default(ProjectPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ProjectModel> CreateProjectAsync(CreateProjectRequest createProjectRequest = default(CreateProjectRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create project
@@ -2143,10 +2188,10 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project parameters (listed in request example) and runs method execution  &lt;br&gt;System creates project  &lt;br&gt;System returns project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPostModel"> (optional)</param>
+        /// <param name="createProjectRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ProjectModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ProjectModel>> CreateProjectWithHttpInfoAsync(ProjectPostModel projectPostModel = default(ProjectPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ProjectModel>> CreateProjectWithHttpInfoAsync(CreateProjectRequest createProjectRequest = default(CreateProjectRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create project attribute
         /// </summary>
@@ -2155,10 +2200,10 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="customAttributePostModel"> (optional)</param>
+        /// <param name="createProjectsAttributeRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomAttributeModel</returns>
-        System.Threading.Tasks.Task<CustomAttributeModel> CreateProjectsAttributeAsync(string id, CustomAttributePostModel customAttributePostModel = default(CustomAttributePostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CustomAttributeModel> CreateProjectsAttributeAsync(string id, CreateProjectsAttributeRequest createProjectsAttributeRequest = default(CreateProjectsAttributeRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create project attribute
@@ -2168,10 +2213,10 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="customAttributePostModel"> (optional)</param>
+        /// <param name="createProjectsAttributeRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomAttributeModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomAttributeModel>> CreateProjectsAttributeWithHttpInfoAsync(string id, CustomAttributePostModel customAttributePostModel = default(CustomAttributePostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CustomAttributeModel>> CreateProjectsAttributeWithHttpInfoAsync(string id, CreateProjectsAttributeRequest createProjectsAttributeRequest = default(CreateProjectsAttributeRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete attribute from project&#39;s test plans
         /// </summary>
@@ -2277,11 +2322,11 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
-        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<FileParameter> ExportAsync(string id, bool? includeAttachments = default(bool?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<FileParameter> ExportAsync(string id, bool? includeAttachments = default(bool?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Export project as JSON file
@@ -2292,11 +2337,11 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
-        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<FileParameter>> ExportWithHttpInfoAsync(string id, bool? includeAttachments = default(bool?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<FileParameter>> ExportWithHttpInfoAsync(string id, bool? includeAttachments = default(bool?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Export project as JSON file in background job
         /// </summary>
@@ -2306,10 +2351,10 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Guid</returns>
-        System.Threading.Tasks.Task<Guid> ExportProjectJsonAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Guid> ExportProjectJsonAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Export project as JSON file in background job
@@ -2320,10 +2365,10 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Guid)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Guid>> ExportProjectJsonWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Guid>> ExportProjectJsonWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Export project as JSON file with test plans in background job
         /// </summary>
@@ -2333,10 +2378,10 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Guid</returns>
-        System.Threading.Tasks.Task<Guid> ExportProjectWithTestPlansJsonAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Guid> ExportProjectWithTestPlansJsonAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Export project as JSON file with test plans in background job
@@ -2347,10 +2392,10 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Guid)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Guid>> ExportProjectWithTestPlansJsonWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Guid>> ExportProjectWithTestPlansJsonWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Export project as Zip file with test plans in background job
         /// </summary>
@@ -2360,10 +2405,10 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Guid</returns>
-        System.Threading.Tasks.Task<Guid> ExportProjectWithTestPlansZipAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Guid> ExportProjectWithTestPlansZipAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Export project as Zip file with test plans in background job
@@ -2374,10 +2419,10 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Guid)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Guid>> ExportProjectWithTestPlansZipWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Guid>> ExportProjectWithTestPlansZipWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Export project as Zip file in background job
         /// </summary>
@@ -2387,10 +2432,10 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Guid</returns>
-        System.Threading.Tasks.Task<Guid> ExportProjectZipAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Guid> ExportProjectZipAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Export project as Zip file in background job
@@ -2401,10 +2446,10 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Guid)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Guid>> ExportProjectZipWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Guid>> ExportProjectZipWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Export project with test plans, test suites and test points as JSON file
         /// </summary>
@@ -2414,11 +2459,11 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
-        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<FileParameter> ExportWithTestPlansAndConfigurationsAsync(string id, bool? includeAttachments = default(bool?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<FileParameter> ExportWithTestPlansAndConfigurationsAsync(string id, bool? includeAttachments = default(bool?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Export project with test plans, test suites and test points as JSON file
@@ -2429,11 +2474,11 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
-        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<FileParameter>> ExportWithTestPlansAndConfigurationsWithHttpInfoAsync(string id, bool? includeAttachments = default(bool?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<FileParameter>> ExportWithTestPlansAndConfigurationsWithHttpInfoAsync(string id, bool? includeAttachments = default(bool?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get all projects
         /// </summary>
@@ -2849,10 +2894,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectAttributesFilterModel"> (optional)</param>
+        /// <param name="searchAttributesInProjectRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CustomAttributeGetModel&gt;</returns>
-        System.Threading.Tasks.Task<List<CustomAttributeGetModel>> SearchAttributesInProjectAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectAttributesFilterModel projectAttributesFilterModel = default(ProjectAttributesFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<CustomAttributeGetModel>> SearchAttributesInProjectAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAttributesInProjectRequest searchAttributesInProjectRequest = default(SearchAttributesInProjectRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Search for attributes used in the project
@@ -2867,10 +2912,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectAttributesFilterModel"> (optional)</param>
+        /// <param name="searchAttributesInProjectRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CustomAttributeGetModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<CustomAttributeGetModel>>> SearchAttributesInProjectWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectAttributesFilterModel projectAttributesFilterModel = default(ProjectAttributesFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<CustomAttributeGetModel>>> SearchAttributesInProjectWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAttributesInProjectRequest searchAttributesInProjectRequest = default(SearchAttributesInProjectRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Search for attributes used in the project test plans
         /// </summary>
@@ -2884,10 +2929,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectAttributesFilterModel"> (optional)</param>
+        /// <param name="searchAttributesInProjectRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CustomAttributeGetModel&gt;</returns>
-        System.Threading.Tasks.Task<List<CustomAttributeGetModel>> SearchTestPlanAttributesInProjectAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectAttributesFilterModel projectAttributesFilterModel = default(ProjectAttributesFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<CustomAttributeGetModel>> SearchTestPlanAttributesInProjectAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAttributesInProjectRequest searchAttributesInProjectRequest = default(SearchAttributesInProjectRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Search for attributes used in the project test plans
@@ -2902,10 +2947,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectAttributesFilterModel"> (optional)</param>
+        /// <param name="searchAttributesInProjectRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CustomAttributeGetModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<CustomAttributeGetModel>>> SearchTestPlanAttributesInProjectWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectAttributesFilterModel projectAttributesFilterModel = default(ProjectAttributesFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<CustomAttributeGetModel>>> SearchTestPlanAttributesInProjectWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAttributesInProjectRequest searchAttributesInProjectRequest = default(SearchAttributesInProjectRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update attribute of project&#39;s test plans
         /// </summary>
@@ -2914,10 +2959,10 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="customAttributeTestPlanProjectRelationPutModel"> (optional)</param>
+        /// <param name="updateCustomAttributeTestPlanProjectRelationsRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateCustomAttributeTestPlanProjectRelationsAsync(string id, CustomAttributeTestPlanProjectRelationPutModel customAttributeTestPlanProjectRelationPutModel = default(CustomAttributeTestPlanProjectRelationPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task UpdateCustomAttributeTestPlanProjectRelationsAsync(string id, UpdateCustomAttributeTestPlanProjectRelationsRequest updateCustomAttributeTestPlanProjectRelationsRequest = default(UpdateCustomAttributeTestPlanProjectRelationsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update attribute of project&#39;s test plans
@@ -2927,10 +2972,10 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="customAttributeTestPlanProjectRelationPutModel"> (optional)</param>
+        /// <param name="updateCustomAttributeTestPlanProjectRelationsRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(string id, CustomAttributeTestPlanProjectRelationPutModel customAttributeTestPlanProjectRelationPutModel = default(CustomAttributeTestPlanProjectRelationPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(string id, UpdateCustomAttributeTestPlanProjectRelationsRequest updateCustomAttributeTestPlanProjectRelationsRequest = default(UpdateCustomAttributeTestPlanProjectRelationsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update project
         /// </summary>
@@ -2938,10 +2983,10 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project parameters (listed in request example) and runs method execution  &lt;br&gt;System updates project  &lt;br&gt;System returns updated project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPutModel"> (optional)</param>
+        /// <param name="updateProjectRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateProjectAsync(ProjectPutModel projectPutModel = default(ProjectPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task UpdateProjectAsync(UpdateProjectRequest updateProjectRequest = default(UpdateProjectRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update project
@@ -2950,10 +2995,10 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project parameters (listed in request example) and runs method execution  &lt;br&gt;System updates project  &lt;br&gt;System returns updated project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPutModel"> (optional)</param>
+        /// <param name="updateProjectRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateProjectWithHttpInfoAsync(ProjectPutModel projectPutModel = default(ProjectPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateProjectWithHttpInfoAsync(UpdateProjectRequest updateProjectRequest = default(UpdateProjectRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Edit attribute of the project
         /// </summary>
@@ -2962,10 +3007,10 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global project ID</param>
-        /// <param name="customAttributePutModel"> (optional)</param>
+        /// <param name="updateProjectsAttributeRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateProjectsAttributeAsync(string id, CustomAttributePutModel customAttributePutModel = default(CustomAttributePutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task UpdateProjectsAttributeAsync(string id, UpdateProjectsAttributeRequest updateProjectsAttributeRequest = default(UpdateProjectsAttributeRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Edit attribute of the project
@@ -2975,10 +3020,10 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global project ID</param>
-        /// <param name="customAttributePutModel"> (optional)</param>
+        /// <param name="updateProjectsAttributeRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateProjectsAttributeWithHttpInfoAsync(string id, CustomAttributePutModel customAttributePutModel = default(CustomAttributePutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateProjectsAttributeWithHttpInfoAsync(string id, UpdateProjectsAttributeRequest updateProjectsAttributeRequest = default(UpdateProjectsAttributeRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -3333,11 +3378,11 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectCustomAttributesTemplatesFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdAttributesTemplatesSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;ProjectCustomAttributeTemplateGetModel&gt;</returns>
-        public List<ProjectCustomAttributeTemplateGetModel> ApiV2ProjectsIdAttributesTemplatesSearchPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default(ProjectCustomAttributesTemplatesFilterModel))
+        public List<ProjectCustomAttributeTemplateGetModel> ApiV2ProjectsIdAttributesTemplatesSearchPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdAttributesTemplatesSearchPostRequest apiV2ProjectsIdAttributesTemplatesSearchPostRequest = default(ApiV2ProjectsIdAttributesTemplatesSearchPostRequest))
         {
-            TestIt.Client.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> localVarResponse = ApiV2ProjectsIdAttributesTemplatesSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, projectCustomAttributesTemplatesFilterModel);
+            TestIt.Client.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> localVarResponse = ApiV2ProjectsIdAttributesTemplatesSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, apiV2ProjectsIdAttributesTemplatesSearchPostRequest);
             return localVarResponse.Data;
         }
 
@@ -3351,9 +3396,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectCustomAttributesTemplatesFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdAttributesTemplatesSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;ProjectCustomAttributeTemplateGetModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsIdAttributesTemplatesSearchPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default(ProjectCustomAttributesTemplatesFilterModel))
+        public TestIt.Client.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsIdAttributesTemplatesSearchPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdAttributesTemplatesSearchPostRequest apiV2ProjectsIdAttributesTemplatesSearchPostRequest = default(ApiV2ProjectsIdAttributesTemplatesSearchPostRequest))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3397,7 +3442,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = projectCustomAttributesTemplatesFilterModel;
+            localVarRequestOptions.Data = apiV2ProjectsIdAttributesTemplatesSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3427,12 +3472,12 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectCustomAttributesTemplatesFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdAttributesTemplatesSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ProjectCustomAttributeTemplateGetModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsIdAttributesTemplatesSearchPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default(ProjectCustomAttributesTemplatesFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsIdAttributesTemplatesSearchPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdAttributesTemplatesSearchPostRequest apiV2ProjectsIdAttributesTemplatesSearchPostRequest = default(ApiV2ProjectsIdAttributesTemplatesSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> localVarResponse = await ApiV2ProjectsIdAttributesTemplatesSearchPostWithHttpInfoAsync(id, skip, take, orderBy, searchField, searchValue, projectCustomAttributesTemplatesFilterModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> localVarResponse = await ApiV2ProjectsIdAttributesTemplatesSearchPostWithHttpInfoAsync(id, skip, take, orderBy, searchField, searchValue, apiV2ProjectsIdAttributesTemplatesSearchPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3446,10 +3491,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectCustomAttributesTemplatesFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdAttributesTemplatesSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ProjectCustomAttributeTemplateGetModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>>> ApiV2ProjectsIdAttributesTemplatesSearchPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default(ProjectCustomAttributesTemplatesFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>>> ApiV2ProjectsIdAttributesTemplatesSearchPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdAttributesTemplatesSearchPostRequest apiV2ProjectsIdAttributesTemplatesSearchPostRequest = default(ApiV2ProjectsIdAttributesTemplatesSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3495,7 +3540,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = projectCustomAttributesTemplatesFilterModel;
+            localVarRequestOptions.Data = apiV2ProjectsIdAttributesTemplatesSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4488,11 +4533,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global ID of the project</param>
-        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <returns>List&lt;Guid&gt;</returns>
-        public List<Guid> ApiV2ProjectsIdTestPlansDeleteBulkPost(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel))
+        public List<Guid> ApiV2ProjectsIdTestPlansDeleteBulkPost(string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest))
         {
-            TestIt.Client.Client.ApiResponse<List<Guid>> localVarResponse = ApiV2ProjectsIdTestPlansDeleteBulkPostWithHttpInfo(id, projectTestPlansFilterModel);
+            TestIt.Client.Client.ApiResponse<List<Guid>> localVarResponse = ApiV2ProjectsIdTestPlansDeleteBulkPostWithHttpInfo(id, apiV2ProjectsIdTestPlansDeleteBulkPostRequest);
             return localVarResponse.Data;
         }
 
@@ -4501,9 +4546,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global ID of the project</param>
-        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<Guid>> ApiV2ProjectsIdTestPlansDeleteBulkPostWithHttpInfo(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel))
+        public TestIt.Client.Client.ApiResponse<List<Guid>> ApiV2ProjectsIdTestPlansDeleteBulkPostWithHttpInfo(string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4527,7 +4572,7 @@ namespace TestIt.Client.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = projectTestPlansFilterModel;
+            localVarRequestOptions.Data = apiV2ProjectsIdTestPlansDeleteBulkPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4552,12 +4597,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global ID of the project</param>
-        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Guid&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Guid>> ApiV2ProjectsIdTestPlansDeleteBulkPostAsync(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<Guid>> ApiV2ProjectsIdTestPlansDeleteBulkPostAsync(string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<Guid>> localVarResponse = await ApiV2ProjectsIdTestPlansDeleteBulkPostWithHttpInfoAsync(id, projectTestPlansFilterModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<Guid>> localVarResponse = await ApiV2ProjectsIdTestPlansDeleteBulkPostWithHttpInfoAsync(id, apiV2ProjectsIdTestPlansDeleteBulkPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -4566,10 +4611,10 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global ID of the project</param>
-        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<Guid>>> ApiV2ProjectsIdTestPlansDeleteBulkPostWithHttpInfoAsync(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<Guid>>> ApiV2ProjectsIdTestPlansDeleteBulkPostWithHttpInfoAsync(string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4595,7 +4640,7 @@ namespace TestIt.Client.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = projectTestPlansFilterModel;
+            localVarRequestOptions.Data = apiV2ProjectsIdTestPlansDeleteBulkPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4748,15 +4793,134 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Restore multiple test plans 
+        /// Permanently delete multiple archived test plans 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global ID of the project</param>
-        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <returns></returns>
-        public void ApiV2ProjectsIdTestPlansRestoreBulkPost(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel))
+        public void ApiV2ProjectsIdTestPlansPurgeBulkPost(string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest))
         {
-            ApiV2ProjectsIdTestPlansRestoreBulkPostWithHttpInfo(id, projectTestPlansFilterModel);
+            ApiV2ProjectsIdTestPlansPurgeBulkPostWithHttpInfo(id, apiV2ProjectsIdTestPlansDeleteBulkPostRequest);
+        }
+
+        /// <summary>
+        /// Permanently delete multiple archived test plans 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the project</param>
+        /// <param name="apiV2ProjectsIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIt.Client.Client.ApiResponse<Object> ApiV2ProjectsIdTestPlansPurgeBulkPostWithHttpInfo(string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling ProjectsApi->ApiV2ProjectsIdTestPlansPurgeBulkPost");
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = apiV2ProjectsIdTestPlansDeleteBulkPostRequest;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/api/v2/projects/{id}/testPlans/purge/bulk", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ProjectsIdTestPlansPurgeBulkPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Permanently delete multiple archived test plans 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the project</param>
+        /// <param name="apiV2ProjectsIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ApiV2ProjectsIdTestPlansPurgeBulkPostAsync(string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await ApiV2ProjectsIdTestPlansPurgeBulkPostWithHttpInfoAsync(id, apiV2ProjectsIdTestPlansDeleteBulkPostRequest, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Permanently delete multiple archived test plans 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the project</param>
+        /// <param name="apiV2ProjectsIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2ProjectsIdTestPlansPurgeBulkPostWithHttpInfoAsync(string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIt.Client.Client.ApiException(400, "Missing required parameter 'id' when calling ProjectsApi->ApiV2ProjectsIdTestPlansPurgeBulkPost");
+
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = apiV2ProjectsIdTestPlansDeleteBulkPostRequest;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/projects/{id}/testPlans/purge/bulk", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ProjectsIdTestPlansPurgeBulkPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>
@@ -4764,9 +4928,21 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global ID of the project</param>
-        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <returns></returns>
+        public void ApiV2ProjectsIdTestPlansRestoreBulkPost(string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest))
+        {
+            ApiV2ProjectsIdTestPlansRestoreBulkPostWithHttpInfo(id, apiV2ProjectsIdTestPlansDeleteBulkPostRequest);
+        }
+
+        /// <summary>
+        /// Restore multiple test plans 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique or global ID of the project</param>
+        /// <param name="apiV2ProjectsIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> ApiV2ProjectsIdTestPlansRestoreBulkPostWithHttpInfo(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel))
+        public TestIt.Client.Client.ApiResponse<Object> ApiV2ProjectsIdTestPlansRestoreBulkPostWithHttpInfo(string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4790,7 +4966,7 @@ namespace TestIt.Client.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = projectTestPlansFilterModel;
+            localVarRequestOptions.Data = apiV2ProjectsIdTestPlansDeleteBulkPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4815,12 +4991,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global ID of the project</param>
-        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2ProjectsIdTestPlansRestoreBulkPostAsync(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2ProjectsIdTestPlansRestoreBulkPostAsync(string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ApiV2ProjectsIdTestPlansRestoreBulkPostWithHttpInfoAsync(id, projectTestPlansFilterModel, cancellationToken).ConfigureAwait(false);
+            await ApiV2ProjectsIdTestPlansRestoreBulkPostWithHttpInfoAsync(id, apiV2ProjectsIdTestPlansDeleteBulkPostRequest, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -4828,10 +5004,10 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global ID of the project</param>
-        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2ProjectsIdTestPlansRestoreBulkPostWithHttpInfoAsync(string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2ProjectsIdTestPlansRestoreBulkPostWithHttpInfoAsync(string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4857,7 +5033,7 @@ namespace TestIt.Client.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = projectTestPlansFilterModel;
+            localVarRequestOptions.Data = apiV2ProjectsIdTestPlansDeleteBulkPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4889,11 +5065,11 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdTestPlansSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;TestPlanWithAnalyticModel&gt;</returns>
-        public List<TestPlanWithAnalyticModel> ApiV2ProjectsIdTestPlansSearchPost(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel))
+        public List<TestPlanWithAnalyticModel> ApiV2ProjectsIdTestPlansSearchPost(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdTestPlansSearchPostRequest apiV2ProjectsIdTestPlansSearchPostRequest = default(ApiV2ProjectsIdTestPlansSearchPostRequest))
         {
-            TestIt.Client.Client.ApiResponse<List<TestPlanWithAnalyticModel>> localVarResponse = ApiV2ProjectsIdTestPlansSearchPostWithHttpInfo(id, mustUpdateCache, skip, take, orderBy, searchField, searchValue, projectTestPlansFilterModel);
+            TestIt.Client.Client.ApiResponse<List<TestPlanWithAnalyticModel>> localVarResponse = ApiV2ProjectsIdTestPlansSearchPostWithHttpInfo(id, mustUpdateCache, skip, take, orderBy, searchField, searchValue, apiV2ProjectsIdTestPlansSearchPostRequest);
             return localVarResponse.Data;
         }
 
@@ -4908,9 +5084,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdTestPlansSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;TestPlanWithAnalyticModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<TestPlanWithAnalyticModel>> ApiV2ProjectsIdTestPlansSearchPostWithHttpInfo(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel))
+        public TestIt.Client.Client.ApiResponse<List<TestPlanWithAnalyticModel>> ApiV2ProjectsIdTestPlansSearchPostWithHttpInfo(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdTestPlansSearchPostRequest apiV2ProjectsIdTestPlansSearchPostRequest = default(ApiV2ProjectsIdTestPlansSearchPostRequest))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4958,7 +5134,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = projectTestPlansFilterModel;
+            localVarRequestOptions.Data = apiV2ProjectsIdTestPlansSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4989,12 +5165,12 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdTestPlansSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestPlanWithAnalyticModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestPlanWithAnalyticModel>> ApiV2ProjectsIdTestPlansSearchPostAsync(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TestPlanWithAnalyticModel>> ApiV2ProjectsIdTestPlansSearchPostAsync(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdTestPlansSearchPostRequest apiV2ProjectsIdTestPlansSearchPostRequest = default(ApiV2ProjectsIdTestPlansSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<TestPlanWithAnalyticModel>> localVarResponse = await ApiV2ProjectsIdTestPlansSearchPostWithHttpInfoAsync(id, mustUpdateCache, skip, take, orderBy, searchField, searchValue, projectTestPlansFilterModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<TestPlanWithAnalyticModel>> localVarResponse = await ApiV2ProjectsIdTestPlansSearchPostWithHttpInfoAsync(id, mustUpdateCache, skip, take, orderBy, searchField, searchValue, apiV2ProjectsIdTestPlansSearchPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -5009,10 +5185,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectTestPlansFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdTestPlansSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPlanWithAnalyticModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestPlanWithAnalyticModel>>> ApiV2ProjectsIdTestPlansSearchPostWithHttpInfoAsync(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestPlanWithAnalyticModel>>> ApiV2ProjectsIdTestPlansSearchPostWithHttpInfoAsync(string id, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdTestPlansSearchPostRequest apiV2ProjectsIdTestPlansSearchPostRequest = default(ApiV2ProjectsIdTestPlansSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -5062,7 +5238,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = projectTestPlansFilterModel;
+            localVarRequestOptions.Data = apiV2ProjectsIdTestPlansSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -5511,11 +5687,11 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdWorkItemsSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;Guid&gt;</returns>
-        public List<Guid> ApiV2ProjectsIdWorkItemsSearchIdPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel))
+        public List<Guid> ApiV2ProjectsIdWorkItemsSearchIdPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdWorkItemsSearchPostRequest apiV2ProjectsIdWorkItemsSearchPostRequest = default(ApiV2ProjectsIdWorkItemsSearchPostRequest))
         {
-            TestIt.Client.Client.ApiResponse<List<Guid>> localVarResponse = ApiV2ProjectsIdWorkItemsSearchIdPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, workItemSelectModel);
+            TestIt.Client.Client.ApiResponse<List<Guid>> localVarResponse = ApiV2ProjectsIdWorkItemsSearchIdPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, apiV2ProjectsIdWorkItemsSearchPostRequest);
             return localVarResponse.Data;
         }
 
@@ -5529,9 +5705,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdWorkItemsSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<Guid>> ApiV2ProjectsIdWorkItemsSearchIdPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel))
+        public TestIt.Client.Client.ApiResponse<List<Guid>> ApiV2ProjectsIdWorkItemsSearchIdPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdWorkItemsSearchPostRequest apiV2ProjectsIdWorkItemsSearchPostRequest = default(ApiV2ProjectsIdWorkItemsSearchPostRequest))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -5575,7 +5751,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = workItemSelectModel;
+            localVarRequestOptions.Data = apiV2ProjectsIdWorkItemsSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -5605,12 +5781,12 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdWorkItemsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Guid&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Guid>> ApiV2ProjectsIdWorkItemsSearchIdPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<Guid>> ApiV2ProjectsIdWorkItemsSearchIdPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdWorkItemsSearchPostRequest apiV2ProjectsIdWorkItemsSearchPostRequest = default(ApiV2ProjectsIdWorkItemsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<Guid>> localVarResponse = await ApiV2ProjectsIdWorkItemsSearchIdPostWithHttpInfoAsync(id, skip, take, orderBy, searchField, searchValue, workItemSelectModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<Guid>> localVarResponse = await ApiV2ProjectsIdWorkItemsSearchIdPostWithHttpInfoAsync(id, skip, take, orderBy, searchField, searchValue, apiV2ProjectsIdWorkItemsSearchPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -5624,10 +5800,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdWorkItemsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<Guid>>> ApiV2ProjectsIdWorkItemsSearchIdPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<Guid>>> ApiV2ProjectsIdWorkItemsSearchIdPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdWorkItemsSearchPostRequest apiV2ProjectsIdWorkItemsSearchPostRequest = default(ApiV2ProjectsIdWorkItemsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -5673,7 +5849,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = workItemSelectModel;
+            localVarRequestOptions.Data = apiV2ProjectsIdWorkItemsSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -5704,11 +5880,11 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdWorkItemsSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;WorkItemShortModel&gt;</returns>
-        public List<WorkItemShortModel> ApiV2ProjectsIdWorkItemsSearchPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel))
+        public List<WorkItemShortModel> ApiV2ProjectsIdWorkItemsSearchPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdWorkItemsSearchPostRequest apiV2ProjectsIdWorkItemsSearchPostRequest = default(ApiV2ProjectsIdWorkItemsSearchPostRequest))
         {
-            TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = ApiV2ProjectsIdWorkItemsSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, workItemSelectModel);
+            TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = ApiV2ProjectsIdWorkItemsSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, apiV2ProjectsIdWorkItemsSearchPostRequest);
             return localVarResponse.Data;
         }
 
@@ -5722,9 +5898,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdWorkItemsSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;WorkItemShortModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>> ApiV2ProjectsIdWorkItemsSearchPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel))
+        public TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>> ApiV2ProjectsIdWorkItemsSearchPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdWorkItemsSearchPostRequest apiV2ProjectsIdWorkItemsSearchPostRequest = default(ApiV2ProjectsIdWorkItemsSearchPostRequest))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -5768,7 +5944,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = workItemSelectModel;
+            localVarRequestOptions.Data = apiV2ProjectsIdWorkItemsSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -5798,12 +5974,12 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdWorkItemsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WorkItemShortModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<WorkItemShortModel>> ApiV2ProjectsIdWorkItemsSearchPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<WorkItemShortModel>> ApiV2ProjectsIdWorkItemsSearchPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdWorkItemsSearchPostRequest apiV2ProjectsIdWorkItemsSearchPostRequest = default(ApiV2ProjectsIdWorkItemsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = await ApiV2ProjectsIdWorkItemsSearchPostWithHttpInfoAsync(id, skip, take, orderBy, searchField, searchValue, workItemSelectModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = await ApiV2ProjectsIdWorkItemsSearchPostWithHttpInfoAsync(id, skip, take, orderBy, searchField, searchValue, apiV2ProjectsIdWorkItemsSearchPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -5817,10 +5993,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="apiV2ProjectsIdWorkItemsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>>> ApiV2ProjectsIdWorkItemsSearchPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>>> ApiV2ProjectsIdWorkItemsSearchPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsIdWorkItemsSearchPostRequest apiV2ProjectsIdWorkItemsSearchPostRequest = default(ApiV2ProjectsIdWorkItemsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -5866,7 +6042,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = workItemSelectModel;
+            localVarRequestOptions.Data = apiV2ProjectsIdWorkItemsSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -6150,11 +6326,11 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectsFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;ProjectModel&gt;</returns>
-        public List<ProjectModel> ApiV2ProjectsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectsFilterModel projectsFilterModel = default(ProjectsFilterModel))
+        public List<ProjectModel> ApiV2ProjectsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsSearchPostRequest apiV2ProjectsSearchPostRequest = default(ApiV2ProjectsSearchPostRequest))
         {
-            TestIt.Client.Client.ApiResponse<List<ProjectModel>> localVarResponse = ApiV2ProjectsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, projectsFilterModel);
+            TestIt.Client.Client.ApiResponse<List<ProjectModel>> localVarResponse = ApiV2ProjectsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2ProjectsSearchPostRequest);
             return localVarResponse.Data;
         }
 
@@ -6167,9 +6343,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectsFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;ProjectModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<ProjectModel>> ApiV2ProjectsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectsFilterModel projectsFilterModel = default(ProjectsFilterModel))
+        public TestIt.Client.Client.ApiResponse<List<ProjectModel>> ApiV2ProjectsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsSearchPostRequest apiV2ProjectsSearchPostRequest = default(ApiV2ProjectsSearchPostRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -6208,7 +6384,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = projectsFilterModel;
+            localVarRequestOptions.Data = apiV2ProjectsSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -6237,12 +6413,12 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectsFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ProjectModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ProjectModel>> ApiV2ProjectsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectsFilterModel projectsFilterModel = default(ProjectsFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ProjectModel>> ApiV2ProjectsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsSearchPostRequest apiV2ProjectsSearchPostRequest = default(ApiV2ProjectsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<ProjectModel>> localVarResponse = await ApiV2ProjectsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, projectsFilterModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<ProjectModel>> localVarResponse = await ApiV2ProjectsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, apiV2ProjectsSearchPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -6255,10 +6431,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectsFilterModel"> (optional)</param>
+        /// <param name="apiV2ProjectsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ProjectModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<ProjectModel>>> ApiV2ProjectsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectsFilterModel projectsFilterModel = default(ProjectsFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<ProjectModel>>> ApiV2ProjectsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsSearchPostRequest apiV2ProjectsSearchPostRequest = default(ApiV2ProjectsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -6299,7 +6475,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = projectsFilterModel;
+            localVarRequestOptions.Data = apiV2ProjectsSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -6987,11 +7163,11 @@ namespace TestIt.Client.Api
         /// Create project &lt;br&gt;Use case  &lt;br&gt;User sets project parameters (listed in request example) and runs method execution  &lt;br&gt;System creates project  &lt;br&gt;System returns project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPostModel"> (optional)</param>
+        /// <param name="createProjectRequest"> (optional)</param>
         /// <returns>ProjectModel</returns>
-        public ProjectModel CreateProject(ProjectPostModel projectPostModel = default(ProjectPostModel))
+        public ProjectModel CreateProject(CreateProjectRequest createProjectRequest = default(CreateProjectRequest))
         {
-            TestIt.Client.Client.ApiResponse<ProjectModel> localVarResponse = CreateProjectWithHttpInfo(projectPostModel);
+            TestIt.Client.Client.ApiResponse<ProjectModel> localVarResponse = CreateProjectWithHttpInfo(createProjectRequest);
             return localVarResponse.Data;
         }
 
@@ -6999,9 +7175,9 @@ namespace TestIt.Client.Api
         /// Create project &lt;br&gt;Use case  &lt;br&gt;User sets project parameters (listed in request example) and runs method execution  &lt;br&gt;System creates project  &lt;br&gt;System returns project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPostModel"> (optional)</param>
+        /// <param name="createProjectRequest"> (optional)</param>
         /// <returns>ApiResponse of ProjectModel</returns>
-        public TestIt.Client.Client.ApiResponse<ProjectModel> CreateProjectWithHttpInfo(ProjectPostModel projectPostModel = default(ProjectPostModel))
+        public TestIt.Client.Client.ApiResponse<ProjectModel> CreateProjectWithHttpInfo(CreateProjectRequest createProjectRequest = default(CreateProjectRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -7020,7 +7196,7 @@ namespace TestIt.Client.Api
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = projectPostModel;
+            localVarRequestOptions.Data = createProjectRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -7044,12 +7220,12 @@ namespace TestIt.Client.Api
         /// Create project &lt;br&gt;Use case  &lt;br&gt;User sets project parameters (listed in request example) and runs method execution  &lt;br&gt;System creates project  &lt;br&gt;System returns project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPostModel"> (optional)</param>
+        /// <param name="createProjectRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ProjectModel</returns>
-        public async System.Threading.Tasks.Task<ProjectModel> CreateProjectAsync(ProjectPostModel projectPostModel = default(ProjectPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ProjectModel> CreateProjectAsync(CreateProjectRequest createProjectRequest = default(CreateProjectRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<ProjectModel> localVarResponse = await CreateProjectWithHttpInfoAsync(projectPostModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<ProjectModel> localVarResponse = await CreateProjectWithHttpInfoAsync(createProjectRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -7057,10 +7233,10 @@ namespace TestIt.Client.Api
         /// Create project &lt;br&gt;Use case  &lt;br&gt;User sets project parameters (listed in request example) and runs method execution  &lt;br&gt;System creates project  &lt;br&gt;System returns project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPostModel"> (optional)</param>
+        /// <param name="createProjectRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ProjectModel)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<ProjectModel>> CreateProjectWithHttpInfoAsync(ProjectPostModel projectPostModel = default(ProjectPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<ProjectModel>> CreateProjectWithHttpInfoAsync(CreateProjectRequest createProjectRequest = default(CreateProjectRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -7081,7 +7257,7 @@ namespace TestIt.Client.Api
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = projectPostModel;
+            localVarRequestOptions.Data = createProjectRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -7107,11 +7283,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="customAttributePostModel"> (optional)</param>
+        /// <param name="createProjectsAttributeRequest"> (optional)</param>
         /// <returns>CustomAttributeModel</returns>
-        public CustomAttributeModel CreateProjectsAttribute(string id, CustomAttributePostModel customAttributePostModel = default(CustomAttributePostModel))
+        public CustomAttributeModel CreateProjectsAttribute(string id, CreateProjectsAttributeRequest createProjectsAttributeRequest = default(CreateProjectsAttributeRequest))
         {
-            TestIt.Client.Client.ApiResponse<CustomAttributeModel> localVarResponse = CreateProjectsAttributeWithHttpInfo(id, customAttributePostModel);
+            TestIt.Client.Client.ApiResponse<CustomAttributeModel> localVarResponse = CreateProjectsAttributeWithHttpInfo(id, createProjectsAttributeRequest);
             return localVarResponse.Data;
         }
 
@@ -7120,9 +7296,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="customAttributePostModel"> (optional)</param>
+        /// <param name="createProjectsAttributeRequest"> (optional)</param>
         /// <returns>ApiResponse of CustomAttributeModel</returns>
-        public TestIt.Client.Client.ApiResponse<CustomAttributeModel> CreateProjectsAttributeWithHttpInfo(string id, CustomAttributePostModel customAttributePostModel = default(CustomAttributePostModel))
+        public TestIt.Client.Client.ApiResponse<CustomAttributeModel> CreateProjectsAttributeWithHttpInfo(string id, CreateProjectsAttributeRequest createProjectsAttributeRequest = default(CreateProjectsAttributeRequest))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -7146,7 +7322,7 @@ namespace TestIt.Client.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = customAttributePostModel;
+            localVarRequestOptions.Data = createProjectsAttributeRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -7171,12 +7347,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="customAttributePostModel"> (optional)</param>
+        /// <param name="createProjectsAttributeRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomAttributeModel</returns>
-        public async System.Threading.Tasks.Task<CustomAttributeModel> CreateProjectsAttributeAsync(string id, CustomAttributePostModel customAttributePostModel = default(CustomAttributePostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CustomAttributeModel> CreateProjectsAttributeAsync(string id, CreateProjectsAttributeRequest createProjectsAttributeRequest = default(CreateProjectsAttributeRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<CustomAttributeModel> localVarResponse = await CreateProjectsAttributeWithHttpInfoAsync(id, customAttributePostModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<CustomAttributeModel> localVarResponse = await CreateProjectsAttributeWithHttpInfoAsync(id, createProjectsAttributeRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -7185,10 +7361,10 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="customAttributePostModel"> (optional)</param>
+        /// <param name="createProjectsAttributeRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomAttributeModel)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<CustomAttributeModel>> CreateProjectsAttributeWithHttpInfoAsync(string id, CustomAttributePostModel customAttributePostModel = default(CustomAttributePostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<CustomAttributeModel>> CreateProjectsAttributeWithHttpInfoAsync(string id, CreateProjectsAttributeRequest createProjectsAttributeRequest = default(CreateProjectsAttributeRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -7214,7 +7390,7 @@ namespace TestIt.Client.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = customAttributePostModel;
+            localVarRequestOptions.Data = createProjectsAttributeRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -7745,12 +7921,12 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
-        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <returns>FileParameter</returns>
         [Obsolete]
-        public FileParameter Export(string id, bool? includeAttachments = default(bool?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel))
+        public FileParameter Export(string id, bool? includeAttachments = default(bool?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest))
         {
-            TestIt.Client.Client.ApiResponse<FileParameter> localVarResponse = ExportWithHttpInfo(id, includeAttachments, projectExportQueryModel);
+            TestIt.Client.Client.ApiResponse<FileParameter> localVarResponse = ExportWithHttpInfo(id, includeAttachments, exportProjectJsonRequest);
             return localVarResponse.Data;
         }
 
@@ -7760,10 +7936,10 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
-        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <returns>ApiResponse of FileParameter</returns>
         [Obsolete]
-        public TestIt.Client.Client.ApiResponse<FileParameter> ExportWithHttpInfo(string id, bool? includeAttachments = default(bool?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel))
+        public TestIt.Client.Client.ApiResponse<FileParameter> ExportWithHttpInfo(string id, bool? includeAttachments = default(bool?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -7791,7 +7967,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "includeAttachments", includeAttachments));
             }
-            localVarRequestOptions.Data = projectExportQueryModel;
+            localVarRequestOptions.Data = exportProjectJsonRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -7817,13 +7993,13 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
-        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<FileParameter> ExportAsync(string id, bool? includeAttachments = default(bool?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<FileParameter> ExportAsync(string id, bool? includeAttachments = default(bool?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<FileParameter> localVarResponse = await ExportWithHttpInfoAsync(id, includeAttachments, projectExportQueryModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<FileParameter> localVarResponse = await ExportWithHttpInfoAsync(id, includeAttachments, exportProjectJsonRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -7833,11 +8009,11 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
-        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<FileParameter>> ExportWithHttpInfoAsync(string id, bool? includeAttachments = default(bool?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<FileParameter>> ExportWithHttpInfoAsync(string id, bool? includeAttachments = default(bool?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -7867,7 +8043,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "includeAttachments", includeAttachments));
             }
-            localVarRequestOptions.Data = projectExportQueryModel;
+            localVarRequestOptions.Data = exportProjectJsonRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -7894,11 +8070,11 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <returns>Guid</returns>
-        public Guid ExportProjectJson(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel))
+        public Guid ExportProjectJson(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest))
         {
-            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = ExportProjectJsonWithHttpInfo(id, timeZoneOffsetInMinutes, projectExportQueryModel);
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = ExportProjectJsonWithHttpInfo(id, timeZoneOffsetInMinutes, exportProjectJsonRequest);
             return localVarResponse.Data;
         }
 
@@ -7908,9 +8084,9 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <returns>ApiResponse of Guid</returns>
-        public TestIt.Client.Client.ApiResponse<Guid> ExportProjectJsonWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel))
+        public TestIt.Client.Client.ApiResponse<Guid> ExportProjectJsonWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -7938,7 +8114,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.Client.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
             }
-            localVarRequestOptions.Data = projectExportQueryModel;
+            localVarRequestOptions.Data = exportProjectJsonRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -7964,12 +8140,12 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Guid</returns>
-        public async System.Threading.Tasks.Task<Guid> ExportProjectJsonAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Guid> ExportProjectJsonAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = await ExportProjectJsonWithHttpInfoAsync(id, timeZoneOffsetInMinutes, projectExportQueryModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = await ExportProjectJsonWithHttpInfoAsync(id, timeZoneOffsetInMinutes, exportProjectJsonRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -7979,10 +8155,10 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Guid)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Guid>> ExportProjectJsonWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Guid>> ExportProjectJsonWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -8012,7 +8188,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.Client.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
             }
-            localVarRequestOptions.Data = projectExportQueryModel;
+            localVarRequestOptions.Data = exportProjectJsonRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -8039,11 +8215,11 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <returns>Guid</returns>
-        public Guid ExportProjectWithTestPlansJson(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel))
+        public Guid ExportProjectWithTestPlansJson(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest))
         {
-            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = ExportProjectWithTestPlansJsonWithHttpInfo(id, timeZoneOffsetInMinutes, projectExportWithTestPlansPostModel);
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = ExportProjectWithTestPlansJsonWithHttpInfo(id, timeZoneOffsetInMinutes, exportProjectWithTestPlansJsonRequest);
             return localVarResponse.Data;
         }
 
@@ -8053,9 +8229,9 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <returns>ApiResponse of Guid</returns>
-        public TestIt.Client.Client.ApiResponse<Guid> ExportProjectWithTestPlansJsonWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel))
+        public TestIt.Client.Client.ApiResponse<Guid> ExportProjectWithTestPlansJsonWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -8083,7 +8259,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.Client.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
             }
-            localVarRequestOptions.Data = projectExportWithTestPlansPostModel;
+            localVarRequestOptions.Data = exportProjectWithTestPlansJsonRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -8109,12 +8285,12 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Guid</returns>
-        public async System.Threading.Tasks.Task<Guid> ExportProjectWithTestPlansJsonAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Guid> ExportProjectWithTestPlansJsonAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = await ExportProjectWithTestPlansJsonWithHttpInfoAsync(id, timeZoneOffsetInMinutes, projectExportWithTestPlansPostModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = await ExportProjectWithTestPlansJsonWithHttpInfoAsync(id, timeZoneOffsetInMinutes, exportProjectWithTestPlansJsonRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -8124,10 +8300,10 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Guid)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Guid>> ExportProjectWithTestPlansJsonWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Guid>> ExportProjectWithTestPlansJsonWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -8157,7 +8333,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.Client.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
             }
-            localVarRequestOptions.Data = projectExportWithTestPlansPostModel;
+            localVarRequestOptions.Data = exportProjectWithTestPlansJsonRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -8184,11 +8360,11 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <returns>Guid</returns>
-        public Guid ExportProjectWithTestPlansZip(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel))
+        public Guid ExportProjectWithTestPlansZip(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest))
         {
-            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = ExportProjectWithTestPlansZipWithHttpInfo(id, timeZoneOffsetInMinutes, projectExportWithTestPlansPostModel);
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = ExportProjectWithTestPlansZipWithHttpInfo(id, timeZoneOffsetInMinutes, exportProjectWithTestPlansJsonRequest);
             return localVarResponse.Data;
         }
 
@@ -8198,9 +8374,9 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <returns>ApiResponse of Guid</returns>
-        public TestIt.Client.Client.ApiResponse<Guid> ExportProjectWithTestPlansZipWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel))
+        public TestIt.Client.Client.ApiResponse<Guid> ExportProjectWithTestPlansZipWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -8228,7 +8404,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.Client.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
             }
-            localVarRequestOptions.Data = projectExportWithTestPlansPostModel;
+            localVarRequestOptions.Data = exportProjectWithTestPlansJsonRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -8254,12 +8430,12 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Guid</returns>
-        public async System.Threading.Tasks.Task<Guid> ExportProjectWithTestPlansZipAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Guid> ExportProjectWithTestPlansZipAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = await ExportProjectWithTestPlansZipWithHttpInfoAsync(id, timeZoneOffsetInMinutes, projectExportWithTestPlansPostModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = await ExportProjectWithTestPlansZipWithHttpInfoAsync(id, timeZoneOffsetInMinutes, exportProjectWithTestPlansJsonRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -8269,10 +8445,10 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Guid)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Guid>> ExportProjectWithTestPlansZipWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Guid>> ExportProjectWithTestPlansZipWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -8302,7 +8478,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.Client.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
             }
-            localVarRequestOptions.Data = projectExportWithTestPlansPostModel;
+            localVarRequestOptions.Data = exportProjectWithTestPlansJsonRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -8329,11 +8505,11 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <returns>Guid</returns>
-        public Guid ExportProjectZip(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel))
+        public Guid ExportProjectZip(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest))
         {
-            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = ExportProjectZipWithHttpInfo(id, timeZoneOffsetInMinutes, projectExportQueryModel);
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = ExportProjectZipWithHttpInfo(id, timeZoneOffsetInMinutes, exportProjectJsonRequest);
             return localVarResponse.Data;
         }
 
@@ -8343,9 +8519,9 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <returns>ApiResponse of Guid</returns>
-        public TestIt.Client.Client.ApiResponse<Guid> ExportProjectZipWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel))
+        public TestIt.Client.Client.ApiResponse<Guid> ExportProjectZipWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -8373,7 +8549,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.Client.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
             }
-            localVarRequestOptions.Data = projectExportQueryModel;
+            localVarRequestOptions.Data = exportProjectJsonRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -8399,12 +8575,12 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Guid</returns>
-        public async System.Threading.Tasks.Task<Guid> ExportProjectZipAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Guid> ExportProjectZipAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = await ExportProjectZipWithHttpInfoAsync(id, timeZoneOffsetInMinutes, projectExportQueryModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<Guid> localVarResponse = await ExportProjectZipWithHttpInfoAsync(id, timeZoneOffsetInMinutes, exportProjectJsonRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -8414,10 +8590,10 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <param name="projectExportQueryModel"> (optional)</param>
+        /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Guid)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Guid>> ExportProjectZipWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ProjectExportQueryModel projectExportQueryModel = default(ProjectExportQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Guid>> ExportProjectZipWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -8447,7 +8623,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.Client.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
             }
-            localVarRequestOptions.Data = projectExportQueryModel;
+            localVarRequestOptions.Data = exportProjectJsonRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -8474,12 +8650,12 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
-        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <returns>FileParameter</returns>
         [Obsolete]
-        public FileParameter ExportWithTestPlansAndConfigurations(string id, bool? includeAttachments = default(bool?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel))
+        public FileParameter ExportWithTestPlansAndConfigurations(string id, bool? includeAttachments = default(bool?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest))
         {
-            TestIt.Client.Client.ApiResponse<FileParameter> localVarResponse = ExportWithTestPlansAndConfigurationsWithHttpInfo(id, includeAttachments, projectExportWithTestPlansPostModel);
+            TestIt.Client.Client.ApiResponse<FileParameter> localVarResponse = ExportWithTestPlansAndConfigurationsWithHttpInfo(id, includeAttachments, exportProjectWithTestPlansJsonRequest);
             return localVarResponse.Data;
         }
 
@@ -8489,10 +8665,10 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
-        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <returns>ApiResponse of FileParameter</returns>
         [Obsolete]
-        public TestIt.Client.Client.ApiResponse<FileParameter> ExportWithTestPlansAndConfigurationsWithHttpInfo(string id, bool? includeAttachments = default(bool?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel))
+        public TestIt.Client.Client.ApiResponse<FileParameter> ExportWithTestPlansAndConfigurationsWithHttpInfo(string id, bool? includeAttachments = default(bool?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -8520,7 +8696,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "includeAttachments", includeAttachments));
             }
-            localVarRequestOptions.Data = projectExportWithTestPlansPostModel;
+            localVarRequestOptions.Data = exportProjectWithTestPlansJsonRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -8546,13 +8722,13 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
-        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<FileParameter> ExportWithTestPlansAndConfigurationsAsync(string id, bool? includeAttachments = default(bool?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<FileParameter> ExportWithTestPlansAndConfigurationsAsync(string id, bool? includeAttachments = default(bool?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<FileParameter> localVarResponse = await ExportWithTestPlansAndConfigurationsWithHttpInfoAsync(id, includeAttachments, projectExportWithTestPlansPostModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<FileParameter> localVarResponse = await ExportWithTestPlansAndConfigurationsWithHttpInfoAsync(id, includeAttachments, exportProjectWithTestPlansJsonRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -8562,11 +8738,11 @@ namespace TestIt.Client.Api
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
-        /// <param name="projectExportWithTestPlansPostModel"> (optional)</param>
+        /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<FileParameter>> ExportWithTestPlansAndConfigurationsWithHttpInfoAsync(string id, bool? includeAttachments = default(bool?), ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = default(ProjectExportWithTestPlansPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<FileParameter>> ExportWithTestPlansAndConfigurationsWithHttpInfoAsync(string id, bool? includeAttachments = default(bool?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -8596,7 +8772,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "includeAttachments", includeAttachments));
             }
-            localVarRequestOptions.Data = projectExportWithTestPlansPostModel;
+            localVarRequestOptions.Data = exportProjectWithTestPlansJsonRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -10821,11 +10997,11 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectAttributesFilterModel"> (optional)</param>
+        /// <param name="searchAttributesInProjectRequest"> (optional)</param>
         /// <returns>List&lt;CustomAttributeGetModel&gt;</returns>
-        public List<CustomAttributeGetModel> SearchAttributesInProject(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectAttributesFilterModel projectAttributesFilterModel = default(ProjectAttributesFilterModel))
+        public List<CustomAttributeGetModel> SearchAttributesInProject(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAttributesInProjectRequest searchAttributesInProjectRequest = default(SearchAttributesInProjectRequest))
         {
-            TestIt.Client.Client.ApiResponse<List<CustomAttributeGetModel>> localVarResponse = SearchAttributesInProjectWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
+            TestIt.Client.Client.ApiResponse<List<CustomAttributeGetModel>> localVarResponse = SearchAttributesInProjectWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, searchAttributesInProjectRequest);
             return localVarResponse.Data;
         }
 
@@ -10839,9 +11015,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectAttributesFilterModel"> (optional)</param>
+        /// <param name="searchAttributesInProjectRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;CustomAttributeGetModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<CustomAttributeGetModel>> SearchAttributesInProjectWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectAttributesFilterModel projectAttributesFilterModel = default(ProjectAttributesFilterModel))
+        public TestIt.Client.Client.ApiResponse<List<CustomAttributeGetModel>> SearchAttributesInProjectWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAttributesInProjectRequest searchAttributesInProjectRequest = default(SearchAttributesInProjectRequest))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -10885,7 +11061,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = projectAttributesFilterModel;
+            localVarRequestOptions.Data = searchAttributesInProjectRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -10915,12 +11091,12 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectAttributesFilterModel"> (optional)</param>
+        /// <param name="searchAttributesInProjectRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CustomAttributeGetModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<CustomAttributeGetModel>> SearchAttributesInProjectAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectAttributesFilterModel projectAttributesFilterModel = default(ProjectAttributesFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<CustomAttributeGetModel>> SearchAttributesInProjectAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAttributesInProjectRequest searchAttributesInProjectRequest = default(SearchAttributesInProjectRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<CustomAttributeGetModel>> localVarResponse = await SearchAttributesInProjectWithHttpInfoAsync(id, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<CustomAttributeGetModel>> localVarResponse = await SearchAttributesInProjectWithHttpInfoAsync(id, skip, take, orderBy, searchField, searchValue, searchAttributesInProjectRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -10934,10 +11110,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectAttributesFilterModel"> (optional)</param>
+        /// <param name="searchAttributesInProjectRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CustomAttributeGetModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<CustomAttributeGetModel>>> SearchAttributesInProjectWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectAttributesFilterModel projectAttributesFilterModel = default(ProjectAttributesFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<CustomAttributeGetModel>>> SearchAttributesInProjectWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAttributesInProjectRequest searchAttributesInProjectRequest = default(SearchAttributesInProjectRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -10983,7 +11159,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = projectAttributesFilterModel;
+            localVarRequestOptions.Data = searchAttributesInProjectRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -11014,11 +11190,11 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectAttributesFilterModel"> (optional)</param>
+        /// <param name="searchAttributesInProjectRequest"> (optional)</param>
         /// <returns>List&lt;CustomAttributeGetModel&gt;</returns>
-        public List<CustomAttributeGetModel> SearchTestPlanAttributesInProject(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectAttributesFilterModel projectAttributesFilterModel = default(ProjectAttributesFilterModel))
+        public List<CustomAttributeGetModel> SearchTestPlanAttributesInProject(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAttributesInProjectRequest searchAttributesInProjectRequest = default(SearchAttributesInProjectRequest))
         {
-            TestIt.Client.Client.ApiResponse<List<CustomAttributeGetModel>> localVarResponse = SearchTestPlanAttributesInProjectWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
+            TestIt.Client.Client.ApiResponse<List<CustomAttributeGetModel>> localVarResponse = SearchTestPlanAttributesInProjectWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, searchAttributesInProjectRequest);
             return localVarResponse.Data;
         }
 
@@ -11032,9 +11208,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectAttributesFilterModel"> (optional)</param>
+        /// <param name="searchAttributesInProjectRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;CustomAttributeGetModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<CustomAttributeGetModel>> SearchTestPlanAttributesInProjectWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectAttributesFilterModel projectAttributesFilterModel = default(ProjectAttributesFilterModel))
+        public TestIt.Client.Client.ApiResponse<List<CustomAttributeGetModel>> SearchTestPlanAttributesInProjectWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAttributesInProjectRequest searchAttributesInProjectRequest = default(SearchAttributesInProjectRequest))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -11078,7 +11254,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = projectAttributesFilterModel;
+            localVarRequestOptions.Data = searchAttributesInProjectRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -11108,12 +11284,12 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectAttributesFilterModel"> (optional)</param>
+        /// <param name="searchAttributesInProjectRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CustomAttributeGetModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<CustomAttributeGetModel>> SearchTestPlanAttributesInProjectAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectAttributesFilterModel projectAttributesFilterModel = default(ProjectAttributesFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<CustomAttributeGetModel>> SearchTestPlanAttributesInProjectAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAttributesInProjectRequest searchAttributesInProjectRequest = default(SearchAttributesInProjectRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<CustomAttributeGetModel>> localVarResponse = await SearchTestPlanAttributesInProjectWithHttpInfoAsync(id, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<CustomAttributeGetModel>> localVarResponse = await SearchTestPlanAttributesInProjectWithHttpInfoAsync(id, skip, take, orderBy, searchField, searchValue, searchAttributesInProjectRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -11127,10 +11303,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="projectAttributesFilterModel"> (optional)</param>
+        /// <param name="searchAttributesInProjectRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CustomAttributeGetModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<CustomAttributeGetModel>>> SearchTestPlanAttributesInProjectWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectAttributesFilterModel projectAttributesFilterModel = default(ProjectAttributesFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<CustomAttributeGetModel>>> SearchTestPlanAttributesInProjectWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAttributesInProjectRequest searchAttributesInProjectRequest = default(SearchAttributesInProjectRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -11176,7 +11352,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = projectAttributesFilterModel;
+            localVarRequestOptions.Data = searchAttributesInProjectRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -11202,11 +11378,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="customAttributeTestPlanProjectRelationPutModel"> (optional)</param>
+        /// <param name="updateCustomAttributeTestPlanProjectRelationsRequest"> (optional)</param>
         /// <returns></returns>
-        public void UpdateCustomAttributeTestPlanProjectRelations(string id, CustomAttributeTestPlanProjectRelationPutModel customAttributeTestPlanProjectRelationPutModel = default(CustomAttributeTestPlanProjectRelationPutModel))
+        public void UpdateCustomAttributeTestPlanProjectRelations(string id, UpdateCustomAttributeTestPlanProjectRelationsRequest updateCustomAttributeTestPlanProjectRelationsRequest = default(UpdateCustomAttributeTestPlanProjectRelationsRequest))
         {
-            UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfo(id, customAttributeTestPlanProjectRelationPutModel);
+            UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfo(id, updateCustomAttributeTestPlanProjectRelationsRequest);
         }
 
         /// <summary>
@@ -11214,9 +11390,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="customAttributeTestPlanProjectRelationPutModel"> (optional)</param>
+        /// <param name="updateCustomAttributeTestPlanProjectRelationsRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfo(string id, CustomAttributeTestPlanProjectRelationPutModel customAttributeTestPlanProjectRelationPutModel = default(CustomAttributeTestPlanProjectRelationPutModel))
+        public TestIt.Client.Client.ApiResponse<Object> UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfo(string id, UpdateCustomAttributeTestPlanProjectRelationsRequest updateCustomAttributeTestPlanProjectRelationsRequest = default(UpdateCustomAttributeTestPlanProjectRelationsRequest))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -11240,7 +11416,7 @@ namespace TestIt.Client.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = customAttributeTestPlanProjectRelationPutModel;
+            localVarRequestOptions.Data = updateCustomAttributeTestPlanProjectRelationsRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -11265,12 +11441,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="customAttributeTestPlanProjectRelationPutModel"> (optional)</param>
+        /// <param name="updateCustomAttributeTestPlanProjectRelationsRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateCustomAttributeTestPlanProjectRelationsAsync(string id, CustomAttributeTestPlanProjectRelationPutModel customAttributeTestPlanProjectRelationPutModel = default(CustomAttributeTestPlanProjectRelationPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task UpdateCustomAttributeTestPlanProjectRelationsAsync(string id, UpdateCustomAttributeTestPlanProjectRelationsRequest updateCustomAttributeTestPlanProjectRelationsRequest = default(UpdateCustomAttributeTestPlanProjectRelationsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(id, customAttributeTestPlanProjectRelationPutModel, cancellationToken).ConfigureAwait(false);
+            await UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(id, updateCustomAttributeTestPlanProjectRelationsRequest, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -11278,10 +11454,10 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="customAttributeTestPlanProjectRelationPutModel"> (optional)</param>
+        /// <param name="updateCustomAttributeTestPlanProjectRelationsRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(string id, CustomAttributeTestPlanProjectRelationPutModel customAttributeTestPlanProjectRelationPutModel = default(CustomAttributeTestPlanProjectRelationPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(string id, UpdateCustomAttributeTestPlanProjectRelationsRequest updateCustomAttributeTestPlanProjectRelationsRequest = default(UpdateCustomAttributeTestPlanProjectRelationsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -11307,7 +11483,7 @@ namespace TestIt.Client.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = customAttributeTestPlanProjectRelationPutModel;
+            localVarRequestOptions.Data = updateCustomAttributeTestPlanProjectRelationsRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -11332,20 +11508,20 @@ namespace TestIt.Client.Api
         /// Update project &lt;br&gt;Use case  &lt;br&gt;User sets project parameters (listed in request example) and runs method execution  &lt;br&gt;System updates project  &lt;br&gt;System returns updated project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPutModel"> (optional)</param>
+        /// <param name="updateProjectRequest"> (optional)</param>
         /// <returns></returns>
-        public void UpdateProject(ProjectPutModel projectPutModel = default(ProjectPutModel))
+        public void UpdateProject(UpdateProjectRequest updateProjectRequest = default(UpdateProjectRequest))
         {
-            UpdateProjectWithHttpInfo(projectPutModel);
+            UpdateProjectWithHttpInfo(updateProjectRequest);
         }
 
         /// <summary>
         /// Update project &lt;br&gt;Use case  &lt;br&gt;User sets project parameters (listed in request example) and runs method execution  &lt;br&gt;System updates project  &lt;br&gt;System returns updated project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPutModel"> (optional)</param>
+        /// <param name="updateProjectRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> UpdateProjectWithHttpInfo(ProjectPutModel projectPutModel = default(ProjectPutModel))
+        public TestIt.Client.Client.ApiResponse<Object> UpdateProjectWithHttpInfo(UpdateProjectRequest updateProjectRequest = default(UpdateProjectRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -11364,7 +11540,7 @@ namespace TestIt.Client.Api
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = projectPutModel;
+            localVarRequestOptions.Data = updateProjectRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -11388,22 +11564,22 @@ namespace TestIt.Client.Api
         /// Update project &lt;br&gt;Use case  &lt;br&gt;User sets project parameters (listed in request example) and runs method execution  &lt;br&gt;System updates project  &lt;br&gt;System returns updated project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPutModel"> (optional)</param>
+        /// <param name="updateProjectRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateProjectAsync(ProjectPutModel projectPutModel = default(ProjectPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task UpdateProjectAsync(UpdateProjectRequest updateProjectRequest = default(UpdateProjectRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await UpdateProjectWithHttpInfoAsync(projectPutModel, cancellationToken).ConfigureAwait(false);
+            await UpdateProjectWithHttpInfoAsync(updateProjectRequest, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Update project &lt;br&gt;Use case  &lt;br&gt;User sets project parameters (listed in request example) and runs method execution  &lt;br&gt;System updates project  &lt;br&gt;System returns updated project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPutModel"> (optional)</param>
+        /// <param name="updateProjectRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> UpdateProjectWithHttpInfoAsync(ProjectPutModel projectPutModel = default(ProjectPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> UpdateProjectWithHttpInfoAsync(UpdateProjectRequest updateProjectRequest = default(UpdateProjectRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -11424,7 +11600,7 @@ namespace TestIt.Client.Api
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = projectPutModel;
+            localVarRequestOptions.Data = updateProjectRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -11450,11 +11626,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global project ID</param>
-        /// <param name="customAttributePutModel"> (optional)</param>
+        /// <param name="updateProjectsAttributeRequest"> (optional)</param>
         /// <returns></returns>
-        public void UpdateProjectsAttribute(string id, CustomAttributePutModel customAttributePutModel = default(CustomAttributePutModel))
+        public void UpdateProjectsAttribute(string id, UpdateProjectsAttributeRequest updateProjectsAttributeRequest = default(UpdateProjectsAttributeRequest))
         {
-            UpdateProjectsAttributeWithHttpInfo(id, customAttributePutModel);
+            UpdateProjectsAttributeWithHttpInfo(id, updateProjectsAttributeRequest);
         }
 
         /// <summary>
@@ -11462,9 +11638,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global project ID</param>
-        /// <param name="customAttributePutModel"> (optional)</param>
+        /// <param name="updateProjectsAttributeRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> UpdateProjectsAttributeWithHttpInfo(string id, CustomAttributePutModel customAttributePutModel = default(CustomAttributePutModel))
+        public TestIt.Client.Client.ApiResponse<Object> UpdateProjectsAttributeWithHttpInfo(string id, UpdateProjectsAttributeRequest updateProjectsAttributeRequest = default(UpdateProjectsAttributeRequest))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -11488,7 +11664,7 @@ namespace TestIt.Client.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = customAttributePutModel;
+            localVarRequestOptions.Data = updateProjectsAttributeRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -11513,12 +11689,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global project ID</param>
-        /// <param name="customAttributePutModel"> (optional)</param>
+        /// <param name="updateProjectsAttributeRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateProjectsAttributeAsync(string id, CustomAttributePutModel customAttributePutModel = default(CustomAttributePutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task UpdateProjectsAttributeAsync(string id, UpdateProjectsAttributeRequest updateProjectsAttributeRequest = default(UpdateProjectsAttributeRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await UpdateProjectsAttributeWithHttpInfoAsync(id, customAttributePutModel, cancellationToken).ConfigureAwait(false);
+            await UpdateProjectsAttributeWithHttpInfoAsync(id, updateProjectsAttributeRequest, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -11526,10 +11702,10 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global project ID</param>
-        /// <param name="customAttributePutModel"> (optional)</param>
+        /// <param name="updateProjectsAttributeRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> UpdateProjectsAttributeWithHttpInfoAsync(string id, CustomAttributePutModel customAttributePutModel = default(CustomAttributePutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> UpdateProjectsAttributeWithHttpInfoAsync(string id, UpdateProjectsAttributeRequest updateProjectsAttributeRequest = default(UpdateProjectsAttributeRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -11555,7 +11731,7 @@ namespace TestIt.Client.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = customAttributePutModel;
+            localVarRequestOptions.Data = updateProjectsAttributeRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))

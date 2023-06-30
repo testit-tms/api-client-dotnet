@@ -5,15 +5,21 @@ All URIs are relative to *http://localhost*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**ApiV2ConfigurationsCreateByParametersPost**](ConfigurationsApi.md#apiv2configurationscreatebyparameterspost) | **POST** /api/v2/configurations/createByParameters | Create Configurations by parameters |
+| [**ApiV2ConfigurationsDeleteBulkPost**](ConfigurationsApi.md#apiv2configurationsdeletebulkpost) | **POST** /api/v2/configurations/delete/bulk | Delete multiple configurations |
+| [**ApiV2ConfigurationsIdDelete**](ConfigurationsApi.md#apiv2configurationsiddelete) | **DELETE** /api/v2/configurations/{id} | Delete configuration |
 | [**ApiV2ConfigurationsIdPatch**](ConfigurationsApi.md#apiv2configurationsidpatch) | **PATCH** /api/v2/configurations/{id} | Patch configuration |
+| [**ApiV2ConfigurationsIdPurgePost**](ConfigurationsApi.md#apiv2configurationsidpurgepost) | **POST** /api/v2/configurations/{id}/purge | Permanently delete configuration from archive |
+| [**ApiV2ConfigurationsIdRestorePost**](ConfigurationsApi.md#apiv2configurationsidrestorepost) | **POST** /api/v2/configurations/{id}/restore | Restore configuration from the archive |
+| [**ApiV2ConfigurationsPurgeBulkPost**](ConfigurationsApi.md#apiv2configurationspurgebulkpost) | **POST** /api/v2/configurations/purge/bulk | Permanently delete multiple archived configurations |
+| [**ApiV2ConfigurationsPut**](ConfigurationsApi.md#apiv2configurationsput) | **PUT** /api/v2/configurations | Edit configuration |
+| [**ApiV2ConfigurationsRestoreBulkPost**](ConfigurationsApi.md#apiv2configurationsrestorebulkpost) | **POST** /api/v2/configurations/restore/bulk | Restore multiple configurations from the archive |
 | [**ApiV2ConfigurationsSearchPost**](ConfigurationsApi.md#apiv2configurationssearchpost) | **POST** /api/v2/configurations/search | Search for configurations |
 | [**CreateConfiguration**](ConfigurationsApi.md#createconfiguration) | **POST** /api/v2/configurations | Create Configuration |
 | [**GetConfigurationById**](ConfigurationsApi.md#getconfigurationbyid) | **GET** /api/v2/configurations/{id} | Get configuration by internal or global ID |
-| [**UpdateConfiguration**](ConfigurationsApi.md#updateconfiguration) | **PUT** /api/v2/configurations | Update Configuration |
 
-<a name="apiv2configurationscreatebyparameterspost"></a>
+<a id="apiv2configurationscreatebyparameterspost"></a>
 # **ApiV2ConfigurationsCreateByParametersPost**
-> void ApiV2ConfigurationsCreateByParametersPost (ConfigurationByParametersModel configurationByParametersModel = null)
+> void ApiV2ConfigurationsCreateByParametersPost (ApiV2ConfigurationsCreateByParametersPostRequest apiV2ConfigurationsCreateByParametersPostRequest = null)
 
 Create Configurations by parameters
 
@@ -45,12 +51,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ConfigurationsApi(httpClient, config, httpClientHandler);
-            var configurationByParametersModel = new ConfigurationByParametersModel(); // ConfigurationByParametersModel |  (optional) 
+            var apiV2ConfigurationsCreateByParametersPostRequest = new ApiV2ConfigurationsCreateByParametersPostRequest(); // ApiV2ConfigurationsCreateByParametersPostRequest |  (optional) 
 
             try
             {
                 // Create Configurations by parameters
-                apiInstance.ApiV2ConfigurationsCreateByParametersPost(configurationByParametersModel);
+                apiInstance.ApiV2ConfigurationsCreateByParametersPost(apiV2ConfigurationsCreateByParametersPostRequest);
             }
             catch (ApiException  e)
             {
@@ -70,7 +76,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create Configurations by parameters
-    apiInstance.ApiV2ConfigurationsCreateByParametersPostWithHttpInfo(configurationByParametersModel);
+    apiInstance.ApiV2ConfigurationsCreateByParametersPostWithHttpInfo(apiV2ConfigurationsCreateByParametersPostRequest);
 }
 catch (ApiException e)
 {
@@ -84,7 +90,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **configurationByParametersModel** | [**ConfigurationByParametersModel**](ConfigurationByParametersModel.md) |  | [optional]  |
+| **apiV2ConfigurationsCreateByParametersPostRequest** | [**ApiV2ConfigurationsCreateByParametersPostRequest**](ApiV2ConfigurationsCreateByParametersPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -103,14 +109,207 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | &lt;br&gt;Project by identifier not found  &lt;br&gt;Parameters by identifies not found |  -  |
 | **201** | Created |  -  |
 | **400** | &lt;br&gt;Project identifier is empty  &lt;br&gt;List of parameters identifiers is empty |  -  |
+| **404** | &lt;br&gt;Project by identifier not found  &lt;br&gt;Parameters by identifies not found |  -  |
 | **200** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2configurationsidpatch"></a>
+<a id="apiv2configurationsdeletebulkpost"></a>
+# **ApiV2ConfigurationsDeleteBulkPost**
+> int ApiV2ConfigurationsDeleteBulkPost (ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = null)
+
+Delete multiple configurations
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2ConfigurationsDeleteBulkPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ConfigurationsApi(httpClient, config, httpClientHandler);
+            var apiV2ConfigurationsPurgeBulkPostRequest = new ApiV2ConfigurationsPurgeBulkPostRequest(); // ApiV2ConfigurationsPurgeBulkPostRequest |  (optional) 
+
+            try
+            {
+                // Delete multiple configurations
+                int result = apiInstance.ApiV2ConfigurationsDeleteBulkPost(apiV2ConfigurationsPurgeBulkPostRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ConfigurationsApi.ApiV2ConfigurationsDeleteBulkPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2ConfigurationsDeleteBulkPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete multiple configurations
+    ApiResponse<int> response = apiInstance.ApiV2ConfigurationsDeleteBulkPostWithHttpInfo(apiV2ConfigurationsPurgeBulkPostRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ConfigurationsApi.ApiV2ConfigurationsDeleteBulkPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **apiV2ConfigurationsPurgeBulkPostRequest** | [**ApiV2ConfigurationsPurgeBulkPostRequest**](ApiV2ConfigurationsPurgeBulkPostRequest.md) |  | [optional]  |
+
+### Return type
+
+**int**
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="apiv2configurationsiddelete"></a>
+# **ApiV2ConfigurationsIdDelete**
+> void ApiV2ConfigurationsIdDelete (string id)
+
+Delete configuration
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2ConfigurationsIdDeleteExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ConfigurationsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Unique or global ID of the configuration
+
+            try
+            {
+                // Delete configuration
+                apiInstance.ApiV2ConfigurationsIdDelete(id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ConfigurationsApi.ApiV2ConfigurationsIdDelete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2ConfigurationsIdDeleteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete configuration
+    apiInstance.ApiV2ConfigurationsIdDeleteWithHttpInfo(id);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ConfigurationsApi.ApiV2ConfigurationsIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Unique or global ID of the configuration |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **403** | Delete permission for configurations is required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="apiv2configurationsidpatch"></a>
 # **ApiV2ConfigurationsIdPatch**
 > void ApiV2ConfigurationsIdPatch (Guid id, List<Operation> operation = null)
 
@@ -209,9 +408,486 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2configurationssearchpost"></a>
+<a id="apiv2configurationsidpurgepost"></a>
+# **ApiV2ConfigurationsIdPurgePost**
+> void ApiV2ConfigurationsIdPurgePost (string id)
+
+Permanently delete configuration from archive
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2ConfigurationsIdPurgePostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ConfigurationsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Unique or global ID of the configuration
+
+            try
+            {
+                // Permanently delete configuration from archive
+                apiInstance.ApiV2ConfigurationsIdPurgePost(id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ConfigurationsApi.ApiV2ConfigurationsIdPurgePost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2ConfigurationsIdPurgePostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Permanently delete configuration from archive
+    apiInstance.ApiV2ConfigurationsIdPurgePostWithHttpInfo(id);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ConfigurationsApi.ApiV2ConfigurationsIdPurgePostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Unique or global ID of the configuration |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **403** | Full access permission for the archive is required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="apiv2configurationsidrestorepost"></a>
+# **ApiV2ConfigurationsIdRestorePost**
+> void ApiV2ConfigurationsIdRestorePost (string id)
+
+Restore configuration from the archive
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2ConfigurationsIdRestorePostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ConfigurationsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Unique or global ID of the configuration
+
+            try
+            {
+                // Restore configuration from the archive
+                apiInstance.ApiV2ConfigurationsIdRestorePost(id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ConfigurationsApi.ApiV2ConfigurationsIdRestorePost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2ConfigurationsIdRestorePostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Restore configuration from the archive
+    apiInstance.ApiV2ConfigurationsIdRestorePostWithHttpInfo(id);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ConfigurationsApi.ApiV2ConfigurationsIdRestorePostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Unique or global ID of the configuration |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **403** | Read permission for archive is required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="apiv2configurationspurgebulkpost"></a>
+# **ApiV2ConfigurationsPurgeBulkPost**
+> void ApiV2ConfigurationsPurgeBulkPost (ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = null)
+
+Permanently delete multiple archived configurations
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2ConfigurationsPurgeBulkPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ConfigurationsApi(httpClient, config, httpClientHandler);
+            var apiV2ConfigurationsPurgeBulkPostRequest = new ApiV2ConfigurationsPurgeBulkPostRequest(); // ApiV2ConfigurationsPurgeBulkPostRequest |  (optional) 
+
+            try
+            {
+                // Permanently delete multiple archived configurations
+                apiInstance.ApiV2ConfigurationsPurgeBulkPost(apiV2ConfigurationsPurgeBulkPostRequest);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ConfigurationsApi.ApiV2ConfigurationsPurgeBulkPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2ConfigurationsPurgeBulkPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Permanently delete multiple archived configurations
+    apiInstance.ApiV2ConfigurationsPurgeBulkPostWithHttpInfo(apiV2ConfigurationsPurgeBulkPostRequest);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ConfigurationsApi.ApiV2ConfigurationsPurgeBulkPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **apiV2ConfigurationsPurgeBulkPostRequest** | [**ApiV2ConfigurationsPurgeBulkPostRequest**](ApiV2ConfigurationsPurgeBulkPostRequest.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **403** | Full access permission for the archive is required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="apiv2configurationsput"></a>
+# **ApiV2ConfigurationsPut**
+> void ApiV2ConfigurationsPut (ApiV2ConfigurationsPutRequest apiV2ConfigurationsPutRequest = null)
+
+Edit configuration
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2ConfigurationsPutExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ConfigurationsApi(httpClient, config, httpClientHandler);
+            var apiV2ConfigurationsPutRequest = new ApiV2ConfigurationsPutRequest(); // ApiV2ConfigurationsPutRequest |  (optional) 
+
+            try
+            {
+                // Edit configuration
+                apiInstance.ApiV2ConfigurationsPut(apiV2ConfigurationsPutRequest);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ConfigurationsApi.ApiV2ConfigurationsPut: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2ConfigurationsPutWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Edit configuration
+    apiInstance.ApiV2ConfigurationsPutWithHttpInfo(apiV2ConfigurationsPutRequest);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ConfigurationsApi.ApiV2ConfigurationsPutWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **apiV2ConfigurationsPutRequest** | [**ApiV2ConfigurationsPutRequest**](ApiV2ConfigurationsPutRequest.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **403** | Update permission for configurations is required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="apiv2configurationsrestorebulkpost"></a>
+# **ApiV2ConfigurationsRestoreBulkPost**
+> int ApiV2ConfigurationsRestoreBulkPost (ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = null)
+
+Restore multiple configurations from the archive
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2ConfigurationsRestoreBulkPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ConfigurationsApi(httpClient, config, httpClientHandler);
+            var apiV2ConfigurationsPurgeBulkPostRequest = new ApiV2ConfigurationsPurgeBulkPostRequest(); // ApiV2ConfigurationsPurgeBulkPostRequest |  (optional) 
+
+            try
+            {
+                // Restore multiple configurations from the archive
+                int result = apiInstance.ApiV2ConfigurationsRestoreBulkPost(apiV2ConfigurationsPurgeBulkPostRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ConfigurationsApi.ApiV2ConfigurationsRestoreBulkPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2ConfigurationsRestoreBulkPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Restore multiple configurations from the archive
+    ApiResponse<int> response = apiInstance.ApiV2ConfigurationsRestoreBulkPostWithHttpInfo(apiV2ConfigurationsPurgeBulkPostRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ConfigurationsApi.ApiV2ConfigurationsRestoreBulkPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **apiV2ConfigurationsPurgeBulkPostRequest** | [**ApiV2ConfigurationsPurgeBulkPostRequest**](ApiV2ConfigurationsPurgeBulkPostRequest.md) |  | [optional]  |
+
+### Return type
+
+**int**
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="apiv2configurationssearchpost"></a>
 # **ApiV2ConfigurationsSearchPost**
-> List&lt;ConfigurationModel&gt; ApiV2ConfigurationsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ConfigurationSelectModel configurationSelectModel = null)
+> List&lt;ConfigurationModel&gt; ApiV2ConfigurationsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ConfigurationsSearchPostRequest apiV2ConfigurationsSearchPostRequest = null)
 
 Search for configurations
 
@@ -246,12 +922,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var configurationSelectModel = new ConfigurationSelectModel(); // ConfigurationSelectModel | Model containing all the filters (optional) 
+            var apiV2ConfigurationsSearchPostRequest = new ApiV2ConfigurationsSearchPostRequest(); // ApiV2ConfigurationsSearchPostRequest | Model containing all the filters (optional) 
 
             try
             {
                 // Search for configurations
-                List<ConfigurationModel> result = apiInstance.ApiV2ConfigurationsSearchPost(skip, take, orderBy, searchField, searchValue, configurationSelectModel);
+                List<ConfigurationModel> result = apiInstance.ApiV2ConfigurationsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2ConfigurationsSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -272,7 +948,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for configurations
-    ApiResponse<List<ConfigurationModel>> response = apiInstance.ApiV2ConfigurationsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, configurationSelectModel);
+    ApiResponse<List<ConfigurationModel>> response = apiInstance.ApiV2ConfigurationsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2ConfigurationsSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -294,7 +970,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **configurationSelectModel** | [**ConfigurationSelectModel**](ConfigurationSelectModel.md) | Model containing all the filters | [optional]  |
+| **apiV2ConfigurationsSearchPostRequest** | [**ApiV2ConfigurationsSearchPostRequest**](ApiV2ConfigurationsSearchPostRequest.md) | Model containing all the filters | [optional]  |
 
 ### Return type
 
@@ -317,9 +993,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createconfiguration"></a>
+<a id="createconfiguration"></a>
 # **CreateConfiguration**
-> ConfigurationModel CreateConfiguration (ConfigurationPostModel configurationPostModel = null)
+> ConfigurationModel CreateConfiguration (CreateConfigurationRequest createConfigurationRequest = null)
 
 Create Configuration
 
@@ -351,12 +1027,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ConfigurationsApi(httpClient, config, httpClientHandler);
-            var configurationPostModel = new ConfigurationPostModel(); // ConfigurationPostModel |  (optional) 
+            var createConfigurationRequest = new CreateConfigurationRequest(); // CreateConfigurationRequest |  (optional) 
 
             try
             {
                 // Create Configuration
-                ConfigurationModel result = apiInstance.CreateConfiguration(configurationPostModel);
+                ConfigurationModel result = apiInstance.CreateConfiguration(createConfigurationRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -377,7 +1053,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create Configuration
-    ApiResponse<ConfigurationModel> response = apiInstance.CreateConfigurationWithHttpInfo(configurationPostModel);
+    ApiResponse<ConfigurationModel> response = apiInstance.CreateConfigurationWithHttpInfo(createConfigurationRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -394,7 +1070,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **configurationPostModel** | [**ConfigurationPostModel**](ConfigurationPostModel.md) |  | [optional]  |
+| **createConfigurationRequest** | [**CreateConfigurationRequest**](CreateConfigurationRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -413,16 +1089,16 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Update permission for configuration required |  -  |
-| **401** | Unauthorized |  -  |
-| **409** | Configuration with the same name already exists! |  -  |
-| **404** | Can&#39;t find project |  -  |
-| **400** | Bad Request |  -  |
 | **201** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Update permission for configuration required |  -  |
+| **404** | Can&#39;t find project |  -  |
+| **409** | Configuration with the same name already exists! |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getconfigurationbyid"></a>
+<a id="getconfigurationbyid"></a>
 # **GetConfigurationById**
 > ConfigurationModel GetConfigurationById (string id)
 
@@ -518,112 +1194,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for configuration required |  -  |
 | **404** | Can&#39;t find configuration with id |  -  |
-| **200** | Successful operation |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="updateconfiguration"></a>
-# **UpdateConfiguration**
-> void UpdateConfiguration (ConfigurationPutModel configurationPutModel = null)
-
-Update Configuration
-
-<br>Use case  <br>User sets configuration updated properties(listed in the request example)  <br>User runs method execution  <br>System updated configuration using updated properties  <br>System returns no content response
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
-
-namespace Example
-{
-    public class UpdateConfigurationExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure API key authorization: Bearer or PrivateToken
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new ConfigurationsApi(httpClient, config, httpClientHandler);
-            var configurationPutModel = new ConfigurationPutModel(); // ConfigurationPutModel |  (optional) 
-
-            try
-            {
-                // Update Configuration
-                apiInstance.UpdateConfiguration(configurationPutModel);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ConfigurationsApi.UpdateConfiguration: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the UpdateConfigurationWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Update Configuration
-    apiInstance.UpdateConfigurationWithHttpInfo(configurationPutModel);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ConfigurationsApi.UpdateConfigurationWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **configurationPutModel** | [**ConfigurationPutModel**](ConfigurationPutModel.md) |  | [optional]  |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **409** | Configuration with the same name already exists! |  -  |
-| **401** | Unauthorized |  -  |
-| **422** | Can&#39;t change projectId |  -  |
-| **400** | Bad Request |  -  |
-| **403** |  |  -  |
-| **404** | Can&#39;t find a Configuration with id |  -  |
-| **204** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

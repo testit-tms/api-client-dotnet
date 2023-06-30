@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **WorkItemId** | **Guid** |  | [optional] 
 **OldVersionId** | **Guid** |  | [optional] 
 **NewVersionId** | **Guid** |  | [optional] 
-**WorkItemChangedFields** | [**WorkItemChangedFieldsViewModel**](WorkItemChangedFieldsViewModel.md) |  | [optional] 
+**WorkItemChangedFields** | [**WorkItemChangeModelWorkItemChangedFields**](WorkItemChangeModelWorkItemChangedFields.md) |  | [optional] 
 **CreatedById** | **Guid** |  | [optional] 
 **CreatedDate** | **DateTime?** |  | [optional] 
 

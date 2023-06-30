@@ -36,7 +36,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
+        [DataMember(Name = "type", EmitDefaultValue = true)]
         public TestSuiteType? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TestSuiteV2PostModel" /> class.
@@ -46,12 +46,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestSuiteV2PostModel" /> class.
         /// </summary>
-        /// <param name="parentId">parentId.</param>
-        /// <param name="testPlanId">testPlanId (required).</param>
-        /// <param name="name">name (required).</param>
+        /// <param name="parentId">Unique ID of the parent test suite in hierarchy.</param>
+        /// <param name="testPlanId">Unique ID of test plan to which the test suite belongs (required).</param>
+        /// <param name="name">Name of the test suite (required).</param>
         /// <param name="type">type.</param>
-        /// <param name="saveStructure">saveStructure.</param>
-        public TestSuiteV2PostModel(Guid? parentId = default(Guid?), Guid testPlanId = default(Guid), string name = default(string), TestSuiteType? type = default(TestSuiteType?), bool? saveStructure = default(bool?))
+        /// <param name="saveStructure">Indicates if the test suite retains section tree structure.</param>
+        /// <param name="autoRefresh">Indicates if scheduled auto refresh is enabled for the test suite.</param>
+        public TestSuiteV2PostModel(Guid? parentId = default(Guid?), Guid testPlanId = default(Guid), string name = default(string), TestSuiteType? type = default(TestSuiteType?), bool? saveStructure = default(bool?), bool? autoRefresh = default(bool?))
         {
             this.TestPlanId = testPlanId;
             // to ensure "name" is required (not null)
@@ -63,31 +64,43 @@ namespace TestIt.Client.Model
             this.ParentId = parentId;
             this.Type = type;
             this.SaveStructure = saveStructure;
+            this.AutoRefresh = autoRefresh;
         }
 
         /// <summary>
-        /// Gets or Sets ParentId
+        /// Unique ID of the parent test suite in hierarchy
         /// </summary>
+        /// <value>Unique ID of the parent test suite in hierarchy</value>
         [DataMember(Name = "parentId", EmitDefaultValue = true)]
         public Guid? ParentId { get; set; }
 
         /// <summary>
-        /// Gets or Sets TestPlanId
+        /// Unique ID of test plan to which the test suite belongs
         /// </summary>
+        /// <value>Unique ID of test plan to which the test suite belongs</value>
         [DataMember(Name = "testPlanId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestPlanId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name of the test suite
         /// </summary>
+        /// <value>Name of the test suite</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets SaveStructure
+        /// Indicates if the test suite retains section tree structure
         /// </summary>
+        /// <value>Indicates if the test suite retains section tree structure</value>
         [DataMember(Name = "saveStructure", EmitDefaultValue = true)]
         public bool? SaveStructure { get; set; }
+
+        /// <summary>
+        /// Indicates if scheduled auto refresh is enabled for the test suite
+        /// </summary>
+        /// <value>Indicates if scheduled auto refresh is enabled for the test suite</value>
+        [DataMember(Name = "autoRefresh", EmitDefaultValue = true)]
+        public bool? AutoRefresh { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -102,6 +115,7 @@ namespace TestIt.Client.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  SaveStructure: ").Append(SaveStructure).Append("\n");
+            sb.Append("  AutoRefresh: ").Append(AutoRefresh).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -160,6 +174,11 @@ namespace TestIt.Client.Model
                     this.SaveStructure == input.SaveStructure ||
                     (this.SaveStructure != null &&
                     this.SaveStructure.Equals(input.SaveStructure))
+                ) && 
+                (
+                    this.AutoRefresh == input.AutoRefresh ||
+                    (this.AutoRefresh != null &&
+                    this.AutoRefresh.Equals(input.AutoRefresh))
                 );
         }
 
@@ -189,6 +208,10 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.SaveStructure.GetHashCode();
                 }
+                if (this.AutoRefresh != null)
+                {
+                    hashCode = (hashCode * 59) + this.AutoRefresh.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -198,7 +221,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)

@@ -39,9 +39,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="flakyBulkModel"> (optional)</param>
+        /// <param name="apiV2AutoTestsFlakyBulkPostRequest"> (optional)</param>
         /// <returns></returns>
-        void ApiV2AutoTestsFlakyBulkPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), FlakyBulkModel flakyBulkModel = default(FlakyBulkModel));
+        void ApiV2AutoTestsFlakyBulkPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2AutoTestsFlakyBulkPostRequest apiV2AutoTestsFlakyBulkPostRequest = default(ApiV2AutoTestsFlakyBulkPostRequest));
 
         /// <summary>
         /// Set \&quot;Flaky\&quot; status for multiple autotests
@@ -55,9 +55,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="flakyBulkModel"> (optional)</param>
+        /// <param name="apiV2AutoTestsFlakyBulkPostRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2AutoTestsFlakyBulkPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), FlakyBulkModel flakyBulkModel = default(FlakyBulkModel));
+        ApiResponse<Object> ApiV2AutoTestsFlakyBulkPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2AutoTestsFlakyBulkPostRequest apiV2AutoTestsFlakyBulkPostRequest = default(ApiV2AutoTestsFlakyBulkPostRequest));
         /// <summary>
         /// Patch auto test
         /// </summary>
@@ -94,9 +94,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="autotestHistoricalResultSelectModel"> (optional)</param>
+        /// <param name="apiV2AutoTestsIdTestResultsSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;AutotestResultHistoricalGetModel&gt;</returns>
-        List<AutotestResultHistoricalGetModel> ApiV2AutoTestsIdTestResultsSearchPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestHistoricalResultSelectModel autotestHistoricalResultSelectModel = default(AutotestHistoricalResultSelectModel));
+        List<AutotestResultHistoricalGetModel> ApiV2AutoTestsIdTestResultsSearchPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2AutoTestsIdTestResultsSearchPostRequest apiV2AutoTestsIdTestResultsSearchPostRequest = default(ApiV2AutoTestsIdTestResultsSearchPostRequest));
 
         /// <summary>
         /// Get test results history for autotest
@@ -111,9 +111,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="autotestHistoricalResultSelectModel"> (optional)</param>
+        /// <param name="apiV2AutoTestsIdTestResultsSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;AutotestResultHistoricalGetModel&gt;</returns>
-        ApiResponse<List<AutotestResultHistoricalGetModel>> ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestHistoricalResultSelectModel autotestHistoricalResultSelectModel = default(AutotestHistoricalResultSelectModel));
+        ApiResponse<List<AutotestResultHistoricalGetModel>> ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2AutoTestsIdTestResultsSearchPostRequest apiV2AutoTestsIdTestResultsSearchPostRequest = default(ApiV2AutoTestsIdTestResultsSearchPostRequest));
         /// <summary>
         /// Get identifiers of changed linked work items
         /// </summary>
@@ -167,9 +167,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="autotestsSelectModel"> (optional)</param>
+        /// <param name="apiV2AutoTestsSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;AutoTestModel&gt;</returns>
-        List<AutoTestModel> ApiV2AutoTestsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestsSelectModel autotestsSelectModel = default(AutotestsSelectModel));
+        List<AutoTestModel> ApiV2AutoTestsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2AutoTestsSearchPostRequest apiV2AutoTestsSearchPostRequest = default(ApiV2AutoTestsSearchPostRequest));
 
         /// <summary>
         /// Search for autotests
@@ -183,9 +183,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="autotestsSelectModel"> (optional)</param>
+        /// <param name="apiV2AutoTestsSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;AutoTestModel&gt;</returns>
-        ApiResponse<List<AutoTestModel>> ApiV2AutoTestsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestsSelectModel autotestsSelectModel = default(AutotestsSelectModel));
+        ApiResponse<List<AutoTestModel>> ApiV2AutoTestsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2AutoTestsSearchPostRequest apiV2AutoTestsSearchPostRequest = default(ApiV2AutoTestsSearchPostRequest));
         /// <summary>
         /// Create autotest
         /// </summary>
@@ -193,9 +193,9 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;This method creates a new autotest.  &lt;br&gt;To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.  &lt;br&gt;Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPostModel"> (optional)</param>
+        /// <param name="createAutoTestRequest"> (optional)</param>
         /// <returns>AutoTestModel</returns>
-        AutoTestModel CreateAutoTest(AutoTestPostModel autoTestPostModel = default(AutoTestPostModel));
+        AutoTestModel CreateAutoTest(CreateAutoTestRequest createAutoTestRequest = default(CreateAutoTestRequest));
 
         /// <summary>
         /// Create autotest
@@ -204,9 +204,9 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;This method creates a new autotest.  &lt;br&gt;To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.  &lt;br&gt;Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPostModel"> (optional)</param>
+        /// <param name="createAutoTestRequest"> (optional)</param>
         /// <returns>ApiResponse of AutoTestModel</returns>
-        ApiResponse<AutoTestModel> CreateAutoTestWithHttpInfo(AutoTestPostModel autoTestPostModel = default(AutoTestPostModel));
+        ApiResponse<AutoTestModel> CreateAutoTestWithHttpInfo(CreateAutoTestRequest createAutoTestRequest = default(CreateAutoTestRequest));
         /// <summary>
         /// Create multiple autotests
         /// </summary>
@@ -505,9 +505,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
-        /// <param name="workItemIdModel"> (optional)</param>
+        /// <param name="linkAutoTestToWorkItemRequest"> (optional)</param>
         /// <returns></returns>
-        void LinkAutoTestToWorkItem(string id, WorkItemIdModel workItemIdModel = default(WorkItemIdModel));
+        void LinkAutoTestToWorkItem(string id, LinkAutoTestToWorkItemRequest linkAutoTestToWorkItemRequest = default(LinkAutoTestToWorkItemRequest));
 
         /// <summary>
         /// Link autotest with work items
@@ -517,9 +517,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
-        /// <param name="workItemIdModel"> (optional)</param>
+        /// <param name="linkAutoTestToWorkItemRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> LinkAutoTestToWorkItemWithHttpInfo(string id, WorkItemIdModel workItemIdModel = default(WorkItemIdModel));
+        ApiResponse<Object> LinkAutoTestToWorkItemWithHttpInfo(string id, LinkAutoTestToWorkItemRequest linkAutoTestToWorkItemRequest = default(LinkAutoTestToWorkItemRequest));
         /// <summary>
         /// Update autotest
         /// </summary>
@@ -527,9 +527,9 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets autotest updated parameters values (listed in the example) and runs method execution  &lt;br&gt;System finds the autotest by the identifier  &lt;br&gt;System updates autotest parameters   &lt;br&gt;              [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)                &lt;br&gt;              [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)                &lt;br&gt;              [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)                &lt;br&gt;              [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)                &lt;br&gt;              [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)                &lt;br&gt;System updates autotest and returns no content response
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPutModel"> (optional)</param>
+        /// <param name="updateAutoTestRequest"> (optional)</param>
         /// <returns></returns>
-        void UpdateAutoTest(AutoTestPutModel autoTestPutModel = default(AutoTestPutModel));
+        void UpdateAutoTest(UpdateAutoTestRequest updateAutoTestRequest = default(UpdateAutoTestRequest));
 
         /// <summary>
         /// Update autotest
@@ -538,9 +538,9 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets autotest updated parameters values (listed in the example) and runs method execution  &lt;br&gt;System finds the autotest by the identifier  &lt;br&gt;System updates autotest parameters   &lt;br&gt;              [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)                &lt;br&gt;              [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)                &lt;br&gt;              [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)                &lt;br&gt;              [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)                &lt;br&gt;              [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)                &lt;br&gt;System updates autotest and returns no content response
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPutModel"> (optional)</param>
+        /// <param name="updateAutoTestRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateAutoTestWithHttpInfo(AutoTestPutModel autoTestPutModel = default(AutoTestPutModel));
+        ApiResponse<Object> UpdateAutoTestWithHttpInfo(UpdateAutoTestRequest updateAutoTestRequest = default(UpdateAutoTestRequest));
         /// <summary>
         /// Update multiple autotests
         /// </summary>
@@ -583,10 +583,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="flakyBulkModel"> (optional)</param>
+        /// <param name="apiV2AutoTestsFlakyBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2AutoTestsFlakyBulkPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), FlakyBulkModel flakyBulkModel = default(FlakyBulkModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2AutoTestsFlakyBulkPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2AutoTestsFlakyBulkPostRequest apiV2AutoTestsFlakyBulkPostRequest = default(ApiV2AutoTestsFlakyBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Set \&quot;Flaky\&quot; status for multiple autotests
@@ -600,10 +600,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="flakyBulkModel"> (optional)</param>
+        /// <param name="apiV2AutoTestsFlakyBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2AutoTestsFlakyBulkPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), FlakyBulkModel flakyBulkModel = default(FlakyBulkModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2AutoTestsFlakyBulkPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2AutoTestsFlakyBulkPostRequest apiV2AutoTestsFlakyBulkPostRequest = default(ApiV2AutoTestsFlakyBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Patch auto test
         /// </summary>
@@ -642,10 +642,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="autotestHistoricalResultSelectModel"> (optional)</param>
+        /// <param name="apiV2AutoTestsIdTestResultsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AutotestResultHistoricalGetModel&gt;</returns>
-        System.Threading.Tasks.Task<List<AutotestResultHistoricalGetModel>> ApiV2AutoTestsIdTestResultsSearchPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestHistoricalResultSelectModel autotestHistoricalResultSelectModel = default(AutotestHistoricalResultSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<AutotestResultHistoricalGetModel>> ApiV2AutoTestsIdTestResultsSearchPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2AutoTestsIdTestResultsSearchPostRequest apiV2AutoTestsIdTestResultsSearchPostRequest = default(ApiV2AutoTestsIdTestResultsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get test results history for autotest
@@ -660,10 +660,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="autotestHistoricalResultSelectModel"> (optional)</param>
+        /// <param name="apiV2AutoTestsIdTestResultsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AutotestResultHistoricalGetModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<AutotestResultHistoricalGetModel>>> ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestHistoricalResultSelectModel autotestHistoricalResultSelectModel = default(AutotestHistoricalResultSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<AutotestResultHistoricalGetModel>>> ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2AutoTestsIdTestResultsSearchPostRequest apiV2AutoTestsIdTestResultsSearchPostRequest = default(ApiV2AutoTestsIdTestResultsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get identifiers of changed linked work items
         /// </summary>
@@ -724,10 +724,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="autotestsSelectModel"> (optional)</param>
+        /// <param name="apiV2AutoTestsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AutoTestModel&gt;</returns>
-        System.Threading.Tasks.Task<List<AutoTestModel>> ApiV2AutoTestsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestsSelectModel autotestsSelectModel = default(AutotestsSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<AutoTestModel>> ApiV2AutoTestsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2AutoTestsSearchPostRequest apiV2AutoTestsSearchPostRequest = default(ApiV2AutoTestsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Search for autotests
@@ -741,10 +741,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="autotestsSelectModel"> (optional)</param>
+        /// <param name="apiV2AutoTestsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AutoTestModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<AutoTestModel>>> ApiV2AutoTestsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestsSelectModel autotestsSelectModel = default(AutotestsSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<AutoTestModel>>> ApiV2AutoTestsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2AutoTestsSearchPostRequest apiV2AutoTestsSearchPostRequest = default(ApiV2AutoTestsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create autotest
         /// </summary>
@@ -752,10 +752,10 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;This method creates a new autotest.  &lt;br&gt;To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.  &lt;br&gt;Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPostModel"> (optional)</param>
+        /// <param name="createAutoTestRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AutoTestModel</returns>
-        System.Threading.Tasks.Task<AutoTestModel> CreateAutoTestAsync(AutoTestPostModel autoTestPostModel = default(AutoTestPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AutoTestModel> CreateAutoTestAsync(CreateAutoTestRequest createAutoTestRequest = default(CreateAutoTestRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create autotest
@@ -764,10 +764,10 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;This method creates a new autotest.  &lt;br&gt;To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.  &lt;br&gt;Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPostModel"> (optional)</param>
+        /// <param name="createAutoTestRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AutoTestModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AutoTestModel>> CreateAutoTestWithHttpInfoAsync(AutoTestPostModel autoTestPostModel = default(AutoTestPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AutoTestModel>> CreateAutoTestWithHttpInfoAsync(CreateAutoTestRequest createAutoTestRequest = default(CreateAutoTestRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create multiple autotests
         /// </summary>
@@ -1092,10 +1092,10 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
-        /// <param name="workItemIdModel"> (optional)</param>
+        /// <param name="linkAutoTestToWorkItemRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task LinkAutoTestToWorkItemAsync(string id, WorkItemIdModel workItemIdModel = default(WorkItemIdModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task LinkAutoTestToWorkItemAsync(string id, LinkAutoTestToWorkItemRequest linkAutoTestToWorkItemRequest = default(LinkAutoTestToWorkItemRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Link autotest with work items
@@ -1105,10 +1105,10 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
-        /// <param name="workItemIdModel"> (optional)</param>
+        /// <param name="linkAutoTestToWorkItemRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> LinkAutoTestToWorkItemWithHttpInfoAsync(string id, WorkItemIdModel workItemIdModel = default(WorkItemIdModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> LinkAutoTestToWorkItemWithHttpInfoAsync(string id, LinkAutoTestToWorkItemRequest linkAutoTestToWorkItemRequest = default(LinkAutoTestToWorkItemRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update autotest
         /// </summary>
@@ -1116,10 +1116,10 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets autotest updated parameters values (listed in the example) and runs method execution  &lt;br&gt;System finds the autotest by the identifier  &lt;br&gt;System updates autotest parameters   &lt;br&gt;              [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)                &lt;br&gt;              [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)                &lt;br&gt;              [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)                &lt;br&gt;              [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)                &lt;br&gt;              [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)                &lt;br&gt;System updates autotest and returns no content response
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPutModel"> (optional)</param>
+        /// <param name="updateAutoTestRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateAutoTestAsync(AutoTestPutModel autoTestPutModel = default(AutoTestPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task UpdateAutoTestAsync(UpdateAutoTestRequest updateAutoTestRequest = default(UpdateAutoTestRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update autotest
@@ -1128,10 +1128,10 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets autotest updated parameters values (listed in the example) and runs method execution  &lt;br&gt;System finds the autotest by the identifier  &lt;br&gt;System updates autotest parameters   &lt;br&gt;              [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)                &lt;br&gt;              [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)                &lt;br&gt;              [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)                &lt;br&gt;              [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)                &lt;br&gt;              [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)                &lt;br&gt;System updates autotest and returns no content response
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPutModel"> (optional)</param>
+        /// <param name="updateAutoTestRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateAutoTestWithHttpInfoAsync(AutoTestPutModel autoTestPutModel = default(AutoTestPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateAutoTestWithHttpInfoAsync(UpdateAutoTestRequest updateAutoTestRequest = default(UpdateAutoTestRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update multiple autotests
         /// </summary>
@@ -1377,11 +1377,11 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="flakyBulkModel"> (optional)</param>
+        /// <param name="apiV2AutoTestsFlakyBulkPostRequest"> (optional)</param>
         /// <returns></returns>
-        public void ApiV2AutoTestsFlakyBulkPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), FlakyBulkModel flakyBulkModel = default(FlakyBulkModel))
+        public void ApiV2AutoTestsFlakyBulkPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2AutoTestsFlakyBulkPostRequest apiV2AutoTestsFlakyBulkPostRequest = default(ApiV2AutoTestsFlakyBulkPostRequest))
         {
-            ApiV2AutoTestsFlakyBulkPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, flakyBulkModel);
+            ApiV2AutoTestsFlakyBulkPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2AutoTestsFlakyBulkPostRequest);
         }
 
         /// <summary>
@@ -1393,9 +1393,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="flakyBulkModel"> (optional)</param>
+        /// <param name="apiV2AutoTestsFlakyBulkPostRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> ApiV2AutoTestsFlakyBulkPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), FlakyBulkModel flakyBulkModel = default(FlakyBulkModel))
+        public TestIt.Client.Client.ApiResponse<Object> ApiV2AutoTestsFlakyBulkPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2AutoTestsFlakyBulkPostRequest apiV2AutoTestsFlakyBulkPostRequest = default(ApiV2AutoTestsFlakyBulkPostRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1434,7 +1434,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = flakyBulkModel;
+            localVarRequestOptions.Data = apiV2AutoTestsFlakyBulkPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1463,12 +1463,12 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="flakyBulkModel"> (optional)</param>
+        /// <param name="apiV2AutoTestsFlakyBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2AutoTestsFlakyBulkPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), FlakyBulkModel flakyBulkModel = default(FlakyBulkModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2AutoTestsFlakyBulkPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2AutoTestsFlakyBulkPostRequest apiV2AutoTestsFlakyBulkPostRequest = default(ApiV2AutoTestsFlakyBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ApiV2AutoTestsFlakyBulkPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, flakyBulkModel, cancellationToken).ConfigureAwait(false);
+            await ApiV2AutoTestsFlakyBulkPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, apiV2AutoTestsFlakyBulkPostRequest, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1480,10 +1480,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="flakyBulkModel"> (optional)</param>
+        /// <param name="apiV2AutoTestsFlakyBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2AutoTestsFlakyBulkPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), FlakyBulkModel flakyBulkModel = default(FlakyBulkModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2AutoTestsFlakyBulkPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2AutoTestsFlakyBulkPostRequest apiV2AutoTestsFlakyBulkPostRequest = default(ApiV2AutoTestsFlakyBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1524,7 +1524,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = flakyBulkModel;
+            localVarRequestOptions.Data = apiV2AutoTestsFlakyBulkPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1678,11 +1678,11 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="autotestHistoricalResultSelectModel"> (optional)</param>
+        /// <param name="apiV2AutoTestsIdTestResultsSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;AutotestResultHistoricalGetModel&gt;</returns>
-        public List<AutotestResultHistoricalGetModel> ApiV2AutoTestsIdTestResultsSearchPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestHistoricalResultSelectModel autotestHistoricalResultSelectModel = default(AutotestHistoricalResultSelectModel))
+        public List<AutotestResultHistoricalGetModel> ApiV2AutoTestsIdTestResultsSearchPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2AutoTestsIdTestResultsSearchPostRequest apiV2AutoTestsIdTestResultsSearchPostRequest = default(ApiV2AutoTestsIdTestResultsSearchPostRequest))
         {
-            TestIt.Client.Client.ApiResponse<List<AutotestResultHistoricalGetModel>> localVarResponse = ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, autotestHistoricalResultSelectModel);
+            TestIt.Client.Client.ApiResponse<List<AutotestResultHistoricalGetModel>> localVarResponse = ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, apiV2AutoTestsIdTestResultsSearchPostRequest);
             return localVarResponse.Data;
         }
 
@@ -1696,9 +1696,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="autotestHistoricalResultSelectModel"> (optional)</param>
+        /// <param name="apiV2AutoTestsIdTestResultsSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;AutotestResultHistoricalGetModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<AutotestResultHistoricalGetModel>> ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestHistoricalResultSelectModel autotestHistoricalResultSelectModel = default(AutotestHistoricalResultSelectModel))
+        public TestIt.Client.Client.ApiResponse<List<AutotestResultHistoricalGetModel>> ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2AutoTestsIdTestResultsSearchPostRequest apiV2AutoTestsIdTestResultsSearchPostRequest = default(ApiV2AutoTestsIdTestResultsSearchPostRequest))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1742,7 +1742,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = autotestHistoricalResultSelectModel;
+            localVarRequestOptions.Data = apiV2AutoTestsIdTestResultsSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1772,12 +1772,12 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="autotestHistoricalResultSelectModel"> (optional)</param>
+        /// <param name="apiV2AutoTestsIdTestResultsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AutotestResultHistoricalGetModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<AutotestResultHistoricalGetModel>> ApiV2AutoTestsIdTestResultsSearchPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestHistoricalResultSelectModel autotestHistoricalResultSelectModel = default(AutotestHistoricalResultSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<AutotestResultHistoricalGetModel>> ApiV2AutoTestsIdTestResultsSearchPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2AutoTestsIdTestResultsSearchPostRequest apiV2AutoTestsIdTestResultsSearchPostRequest = default(ApiV2AutoTestsIdTestResultsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<AutotestResultHistoricalGetModel>> localVarResponse = await ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfoAsync(id, skip, take, orderBy, searchField, searchValue, autotestHistoricalResultSelectModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<AutotestResultHistoricalGetModel>> localVarResponse = await ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfoAsync(id, skip, take, orderBy, searchField, searchValue, apiV2AutoTestsIdTestResultsSearchPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1791,10 +1791,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="autotestHistoricalResultSelectModel"> (optional)</param>
+        /// <param name="apiV2AutoTestsIdTestResultsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AutotestResultHistoricalGetModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<AutotestResultHistoricalGetModel>>> ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestHistoricalResultSelectModel autotestHistoricalResultSelectModel = default(AutotestHistoricalResultSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<AutotestResultHistoricalGetModel>>> ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2AutoTestsIdTestResultsSearchPostRequest apiV2AutoTestsIdTestResultsSearchPostRequest = default(ApiV2AutoTestsIdTestResultsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1840,7 +1840,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = autotestHistoricalResultSelectModel;
+            localVarRequestOptions.Data = apiV2AutoTestsIdTestResultsSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2108,11 +2108,11 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="autotestsSelectModel"> (optional)</param>
+        /// <param name="apiV2AutoTestsSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;AutoTestModel&gt;</returns>
-        public List<AutoTestModel> ApiV2AutoTestsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestsSelectModel autotestsSelectModel = default(AutotestsSelectModel))
+        public List<AutoTestModel> ApiV2AutoTestsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2AutoTestsSearchPostRequest apiV2AutoTestsSearchPostRequest = default(ApiV2AutoTestsSearchPostRequest))
         {
-            TestIt.Client.Client.ApiResponse<List<AutoTestModel>> localVarResponse = ApiV2AutoTestsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, autotestsSelectModel);
+            TestIt.Client.Client.ApiResponse<List<AutoTestModel>> localVarResponse = ApiV2AutoTestsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2AutoTestsSearchPostRequest);
             return localVarResponse.Data;
         }
 
@@ -2125,9 +2125,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="autotestsSelectModel"> (optional)</param>
+        /// <param name="apiV2AutoTestsSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;AutoTestModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<AutoTestModel>> ApiV2AutoTestsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestsSelectModel autotestsSelectModel = default(AutotestsSelectModel))
+        public TestIt.Client.Client.ApiResponse<List<AutoTestModel>> ApiV2AutoTestsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2AutoTestsSearchPostRequest apiV2AutoTestsSearchPostRequest = default(ApiV2AutoTestsSearchPostRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -2166,7 +2166,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = autotestsSelectModel;
+            localVarRequestOptions.Data = apiV2AutoTestsSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2195,12 +2195,12 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="autotestsSelectModel"> (optional)</param>
+        /// <param name="apiV2AutoTestsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AutoTestModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<AutoTestModel>> ApiV2AutoTestsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestsSelectModel autotestsSelectModel = default(AutotestsSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<AutoTestModel>> ApiV2AutoTestsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2AutoTestsSearchPostRequest apiV2AutoTestsSearchPostRequest = default(ApiV2AutoTestsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<AutoTestModel>> localVarResponse = await ApiV2AutoTestsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, autotestsSelectModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<AutoTestModel>> localVarResponse = await ApiV2AutoTestsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, apiV2AutoTestsSearchPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2213,10 +2213,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="autotestsSelectModel"> (optional)</param>
+        /// <param name="apiV2AutoTestsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AutoTestModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<AutoTestModel>>> ApiV2AutoTestsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestsSelectModel autotestsSelectModel = default(AutotestsSelectModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<AutoTestModel>>> ApiV2AutoTestsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2AutoTestsSearchPostRequest apiV2AutoTestsSearchPostRequest = default(ApiV2AutoTestsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -2257,7 +2257,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = autotestsSelectModel;
+            localVarRequestOptions.Data = apiV2AutoTestsSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2282,11 +2282,11 @@ namespace TestIt.Client.Api
         /// Create autotest &lt;br&gt;This method creates a new autotest.  &lt;br&gt;To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.  &lt;br&gt;Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPostModel"> (optional)</param>
+        /// <param name="createAutoTestRequest"> (optional)</param>
         /// <returns>AutoTestModel</returns>
-        public AutoTestModel CreateAutoTest(AutoTestPostModel autoTestPostModel = default(AutoTestPostModel))
+        public AutoTestModel CreateAutoTest(CreateAutoTestRequest createAutoTestRequest = default(CreateAutoTestRequest))
         {
-            TestIt.Client.Client.ApiResponse<AutoTestModel> localVarResponse = CreateAutoTestWithHttpInfo(autoTestPostModel);
+            TestIt.Client.Client.ApiResponse<AutoTestModel> localVarResponse = CreateAutoTestWithHttpInfo(createAutoTestRequest);
             return localVarResponse.Data;
         }
 
@@ -2294,9 +2294,9 @@ namespace TestIt.Client.Api
         /// Create autotest &lt;br&gt;This method creates a new autotest.  &lt;br&gt;To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.  &lt;br&gt;Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPostModel"> (optional)</param>
+        /// <param name="createAutoTestRequest"> (optional)</param>
         /// <returns>ApiResponse of AutoTestModel</returns>
-        public TestIt.Client.Client.ApiResponse<AutoTestModel> CreateAutoTestWithHttpInfo(AutoTestPostModel autoTestPostModel = default(AutoTestPostModel))
+        public TestIt.Client.Client.ApiResponse<AutoTestModel> CreateAutoTestWithHttpInfo(CreateAutoTestRequest createAutoTestRequest = default(CreateAutoTestRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -2315,7 +2315,7 @@ namespace TestIt.Client.Api
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = autoTestPostModel;
+            localVarRequestOptions.Data = createAutoTestRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2339,12 +2339,12 @@ namespace TestIt.Client.Api
         /// Create autotest &lt;br&gt;This method creates a new autotest.  &lt;br&gt;To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.  &lt;br&gt;Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPostModel"> (optional)</param>
+        /// <param name="createAutoTestRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AutoTestModel</returns>
-        public async System.Threading.Tasks.Task<AutoTestModel> CreateAutoTestAsync(AutoTestPostModel autoTestPostModel = default(AutoTestPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AutoTestModel> CreateAutoTestAsync(CreateAutoTestRequest createAutoTestRequest = default(CreateAutoTestRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<AutoTestModel> localVarResponse = await CreateAutoTestWithHttpInfoAsync(autoTestPostModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<AutoTestModel> localVarResponse = await CreateAutoTestWithHttpInfoAsync(createAutoTestRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2352,10 +2352,10 @@ namespace TestIt.Client.Api
         /// Create autotest &lt;br&gt;This method creates a new autotest.  &lt;br&gt;To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.  &lt;br&gt;Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPostModel"> (optional)</param>
+        /// <param name="createAutoTestRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AutoTestModel)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<AutoTestModel>> CreateAutoTestWithHttpInfoAsync(AutoTestPostModel autoTestPostModel = default(AutoTestPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<AutoTestModel>> CreateAutoTestWithHttpInfoAsync(CreateAutoTestRequest createAutoTestRequest = default(CreateAutoTestRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -2376,7 +2376,7 @@ namespace TestIt.Client.Api
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = autoTestPostModel;
+            localVarRequestOptions.Data = createAutoTestRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4140,11 +4140,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
-        /// <param name="workItemIdModel"> (optional)</param>
+        /// <param name="linkAutoTestToWorkItemRequest"> (optional)</param>
         /// <returns></returns>
-        public void LinkAutoTestToWorkItem(string id, WorkItemIdModel workItemIdModel = default(WorkItemIdModel))
+        public void LinkAutoTestToWorkItem(string id, LinkAutoTestToWorkItemRequest linkAutoTestToWorkItemRequest = default(LinkAutoTestToWorkItemRequest))
         {
-            LinkAutoTestToWorkItemWithHttpInfo(id, workItemIdModel);
+            LinkAutoTestToWorkItemWithHttpInfo(id, linkAutoTestToWorkItemRequest);
         }
 
         /// <summary>
@@ -4152,9 +4152,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
-        /// <param name="workItemIdModel"> (optional)</param>
+        /// <param name="linkAutoTestToWorkItemRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> LinkAutoTestToWorkItemWithHttpInfo(string id, WorkItemIdModel workItemIdModel = default(WorkItemIdModel))
+        public TestIt.Client.Client.ApiResponse<Object> LinkAutoTestToWorkItemWithHttpInfo(string id, LinkAutoTestToWorkItemRequest linkAutoTestToWorkItemRequest = default(LinkAutoTestToWorkItemRequest))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4178,7 +4178,7 @@ namespace TestIt.Client.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = workItemIdModel;
+            localVarRequestOptions.Data = linkAutoTestToWorkItemRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4203,12 +4203,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
-        /// <param name="workItemIdModel"> (optional)</param>
+        /// <param name="linkAutoTestToWorkItemRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task LinkAutoTestToWorkItemAsync(string id, WorkItemIdModel workItemIdModel = default(WorkItemIdModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task LinkAutoTestToWorkItemAsync(string id, LinkAutoTestToWorkItemRequest linkAutoTestToWorkItemRequest = default(LinkAutoTestToWorkItemRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await LinkAutoTestToWorkItemWithHttpInfoAsync(id, workItemIdModel, cancellationToken).ConfigureAwait(false);
+            await LinkAutoTestToWorkItemWithHttpInfoAsync(id, linkAutoTestToWorkItemRequest, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -4216,10 +4216,10 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
-        /// <param name="workItemIdModel"> (optional)</param>
+        /// <param name="linkAutoTestToWorkItemRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> LinkAutoTestToWorkItemWithHttpInfoAsync(string id, WorkItemIdModel workItemIdModel = default(WorkItemIdModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> LinkAutoTestToWorkItemWithHttpInfoAsync(string id, LinkAutoTestToWorkItemRequest linkAutoTestToWorkItemRequest = default(LinkAutoTestToWorkItemRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4245,7 +4245,7 @@ namespace TestIt.Client.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = workItemIdModel;
+            localVarRequestOptions.Data = linkAutoTestToWorkItemRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4270,20 +4270,20 @@ namespace TestIt.Client.Api
         /// Update autotest &lt;br&gt;Use case  &lt;br&gt;User sets autotest updated parameters values (listed in the example) and runs method execution  &lt;br&gt;System finds the autotest by the identifier  &lt;br&gt;System updates autotest parameters   &lt;br&gt;              [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)                &lt;br&gt;              [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)                &lt;br&gt;              [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)                &lt;br&gt;              [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)                &lt;br&gt;              [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)                &lt;br&gt;System updates autotest and returns no content response
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPutModel"> (optional)</param>
+        /// <param name="updateAutoTestRequest"> (optional)</param>
         /// <returns></returns>
-        public void UpdateAutoTest(AutoTestPutModel autoTestPutModel = default(AutoTestPutModel))
+        public void UpdateAutoTest(UpdateAutoTestRequest updateAutoTestRequest = default(UpdateAutoTestRequest))
         {
-            UpdateAutoTestWithHttpInfo(autoTestPutModel);
+            UpdateAutoTestWithHttpInfo(updateAutoTestRequest);
         }
 
         /// <summary>
         /// Update autotest &lt;br&gt;Use case  &lt;br&gt;User sets autotest updated parameters values (listed in the example) and runs method execution  &lt;br&gt;System finds the autotest by the identifier  &lt;br&gt;System updates autotest parameters   &lt;br&gt;              [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)                &lt;br&gt;              [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)                &lt;br&gt;              [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)                &lt;br&gt;              [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)                &lt;br&gt;              [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)                &lt;br&gt;System updates autotest and returns no content response
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPutModel"> (optional)</param>
+        /// <param name="updateAutoTestRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> UpdateAutoTestWithHttpInfo(AutoTestPutModel autoTestPutModel = default(AutoTestPutModel))
+        public TestIt.Client.Client.ApiResponse<Object> UpdateAutoTestWithHttpInfo(UpdateAutoTestRequest updateAutoTestRequest = default(UpdateAutoTestRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -4302,7 +4302,7 @@ namespace TestIt.Client.Api
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = autoTestPutModel;
+            localVarRequestOptions.Data = updateAutoTestRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4326,22 +4326,22 @@ namespace TestIt.Client.Api
         /// Update autotest &lt;br&gt;Use case  &lt;br&gt;User sets autotest updated parameters values (listed in the example) and runs method execution  &lt;br&gt;System finds the autotest by the identifier  &lt;br&gt;System updates autotest parameters   &lt;br&gt;              [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)                &lt;br&gt;              [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)                &lt;br&gt;              [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)                &lt;br&gt;              [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)                &lt;br&gt;              [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)                &lt;br&gt;System updates autotest and returns no content response
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPutModel"> (optional)</param>
+        /// <param name="updateAutoTestRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateAutoTestAsync(AutoTestPutModel autoTestPutModel = default(AutoTestPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task UpdateAutoTestAsync(UpdateAutoTestRequest updateAutoTestRequest = default(UpdateAutoTestRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await UpdateAutoTestWithHttpInfoAsync(autoTestPutModel, cancellationToken).ConfigureAwait(false);
+            await UpdateAutoTestWithHttpInfoAsync(updateAutoTestRequest, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Update autotest &lt;br&gt;Use case  &lt;br&gt;User sets autotest updated parameters values (listed in the example) and runs method execution  &lt;br&gt;System finds the autotest by the identifier  &lt;br&gt;System updates autotest parameters   &lt;br&gt;              [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)                &lt;br&gt;              [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)                &lt;br&gt;              [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)                &lt;br&gt;              [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)                &lt;br&gt;              [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)                &lt;br&gt;System updates autotest and returns no content response
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPutModel"> (optional)</param>
+        /// <param name="updateAutoTestRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> UpdateAutoTestWithHttpInfoAsync(AutoTestPutModel autoTestPutModel = default(AutoTestPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> UpdateAutoTestWithHttpInfoAsync(UpdateAutoTestRequest updateAutoTestRequest = default(UpdateAutoTestRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -4362,7 +4362,7 @@ namespace TestIt.Client.Api
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = autoTestPutModel;
+            localVarRequestOptions.Data = updateAutoTestRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))

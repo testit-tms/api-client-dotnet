@@ -131,9 +131,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="notificationQueryFilterModel"> (optional)</param>
+        /// <param name="apiV2NotificationsSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;NotificationModel&gt;</returns>
-        List<NotificationModel> ApiV2NotificationsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), NotificationQueryFilterModel notificationQueryFilterModel = default(NotificationQueryFilterModel));
+        List<NotificationModel> ApiV2NotificationsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2NotificationsSearchPostRequest apiV2NotificationsSearchPostRequest = default(ApiV2NotificationsSearchPostRequest));
 
         /// <summary>
         /// Search Notifications for current User
@@ -147,9 +147,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="notificationQueryFilterModel"> (optional)</param>
+        /// <param name="apiV2NotificationsSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;NotificationModel&gt;</returns>
-        ApiResponse<List<NotificationModel>> ApiV2NotificationsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), NotificationQueryFilterModel notificationQueryFilterModel = default(NotificationQueryFilterModel));
+        ApiResponse<List<NotificationModel>> ApiV2NotificationsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2NotificationsSearchPostRequest apiV2NotificationsSearchPostRequest = default(ApiV2NotificationsSearchPostRequest));
         #endregion Synchronous Operations
     }
 
@@ -271,10 +271,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="notificationQueryFilterModel"> (optional)</param>
+        /// <param name="apiV2NotificationsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;NotificationModel&gt;</returns>
-        System.Threading.Tasks.Task<List<NotificationModel>> ApiV2NotificationsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), NotificationQueryFilterModel notificationQueryFilterModel = default(NotificationQueryFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<NotificationModel>> ApiV2NotificationsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2NotificationsSearchPostRequest apiV2NotificationsSearchPostRequest = default(ApiV2NotificationsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Search Notifications for current User
@@ -288,10 +288,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="notificationQueryFilterModel"> (optional)</param>
+        /// <param name="apiV2NotificationsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;NotificationModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<NotificationModel>>> ApiV2NotificationsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), NotificationQueryFilterModel notificationQueryFilterModel = default(NotificationQueryFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<NotificationModel>>> ApiV2NotificationsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2NotificationsSearchPostRequest apiV2NotificationsSearchPostRequest = default(ApiV2NotificationsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1044,11 +1044,11 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="notificationQueryFilterModel"> (optional)</param>
+        /// <param name="apiV2NotificationsSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;NotificationModel&gt;</returns>
-        public List<NotificationModel> ApiV2NotificationsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), NotificationQueryFilterModel notificationQueryFilterModel = default(NotificationQueryFilterModel))
+        public List<NotificationModel> ApiV2NotificationsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2NotificationsSearchPostRequest apiV2NotificationsSearchPostRequest = default(ApiV2NotificationsSearchPostRequest))
         {
-            TestIt.Client.Client.ApiResponse<List<NotificationModel>> localVarResponse = ApiV2NotificationsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, notificationQueryFilterModel);
+            TestIt.Client.Client.ApiResponse<List<NotificationModel>> localVarResponse = ApiV2NotificationsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2NotificationsSearchPostRequest);
             return localVarResponse.Data;
         }
 
@@ -1061,9 +1061,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="notificationQueryFilterModel"> (optional)</param>
+        /// <param name="apiV2NotificationsSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;NotificationModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<NotificationModel>> ApiV2NotificationsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), NotificationQueryFilterModel notificationQueryFilterModel = default(NotificationQueryFilterModel))
+        public TestIt.Client.Client.ApiResponse<List<NotificationModel>> ApiV2NotificationsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2NotificationsSearchPostRequest apiV2NotificationsSearchPostRequest = default(ApiV2NotificationsSearchPostRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1102,7 +1102,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = notificationQueryFilterModel;
+            localVarRequestOptions.Data = apiV2NotificationsSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1131,12 +1131,12 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="notificationQueryFilterModel"> (optional)</param>
+        /// <param name="apiV2NotificationsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;NotificationModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<NotificationModel>> ApiV2NotificationsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), NotificationQueryFilterModel notificationQueryFilterModel = default(NotificationQueryFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<NotificationModel>> ApiV2NotificationsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2NotificationsSearchPostRequest apiV2NotificationsSearchPostRequest = default(ApiV2NotificationsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<NotificationModel>> localVarResponse = await ApiV2NotificationsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, notificationQueryFilterModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<NotificationModel>> localVarResponse = await ApiV2NotificationsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, apiV2NotificationsSearchPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1149,10 +1149,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="notificationQueryFilterModel"> (optional)</param>
+        /// <param name="apiV2NotificationsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;NotificationModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<NotificationModel>>> ApiV2NotificationsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), NotificationQueryFilterModel notificationQueryFilterModel = default(NotificationQueryFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<NotificationModel>>> ApiV2NotificationsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2NotificationsSearchPostRequest apiV2NotificationsSearchPostRequest = default(ApiV2NotificationsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1193,7 +1193,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = notificationQueryFilterModel;
+            localVarRequestOptions.Data = apiV2NotificationsSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))

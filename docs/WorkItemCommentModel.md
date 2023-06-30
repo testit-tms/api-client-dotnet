@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** |  | [optional] 
 **Text** | **string** |  | [optional] 
-**User** | [**UserWithRankModel**](UserWithRankModel.md) |  | [optional] 
+**User** | [**WorkItemCommentModelUser**](WorkItemCommentModelUser.md) |  | [optional] 
 **CreatedById** | **Guid** |  | [optional] 
 **ModifiedById** | **Guid?** |  | [optional] 
 **CreatedDate** | **DateTime** |  | [optional] 

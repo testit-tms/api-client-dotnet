@@ -36,7 +36,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
+        [DataMember(Name = "type", EmitDefaultValue = true)]
         public LinkType? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="LinkPostModel" /> class.
@@ -197,7 +197,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Url (string) minLength
             if (this.Url != null && this.Url.Length < 1)

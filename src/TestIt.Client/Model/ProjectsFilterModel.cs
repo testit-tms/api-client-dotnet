@@ -45,7 +45,7 @@ namespace TestIt.Client.Model
         /// <param name="globalIds">Specifies a project global IDs to search for.</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="createdByIds">Specifies an autotest creator IDs to search for.</param>
-        public ProjectsFilterModel(string name = default(string), bool? isFavorite = default(bool?), bool? isDeleted = default(bool?), Int32RangeSelectorModel testCasesCount = default(Int32RangeSelectorModel), Int32RangeSelectorModel checklistsCount = default(Int32RangeSelectorModel), Int32RangeSelectorModel sharedStepsCount = default(Int32RangeSelectorModel), Int32RangeSelectorModel autotestsCount = default(Int32RangeSelectorModel), List<long> globalIds = default(List<long>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>))
+        public ProjectsFilterModel(string name = default(string), bool? isFavorite = default(bool?), bool? isDeleted = default(bool?), ProjectsFilterModelTestCasesCount testCasesCount = default(ProjectsFilterModelTestCasesCount), ProjectsFilterModelChecklistsCount checklistsCount = default(ProjectsFilterModelChecklistsCount), ProjectsFilterModelSharedStepsCount sharedStepsCount = default(ProjectsFilterModelSharedStepsCount), ProjectsFilterModelAutotestsCount autotestsCount = default(ProjectsFilterModelAutotestsCount), List<long> globalIds = default(List<long>), ProjectsFilterModelCreatedDate createdDate = default(ProjectsFilterModelCreatedDate), List<Guid> createdByIds = default(List<Guid>))
         {
             this.Name = name;
             this.IsFavorite = isFavorite;
@@ -83,26 +83,26 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets TestCasesCount
         /// </summary>
-        [DataMember(Name = "testCasesCount", EmitDefaultValue = false)]
-        public Int32RangeSelectorModel TestCasesCount { get; set; }
+        [DataMember(Name = "testCasesCount", EmitDefaultValue = true)]
+        public ProjectsFilterModelTestCasesCount TestCasesCount { get; set; }
 
         /// <summary>
         /// Gets or Sets ChecklistsCount
         /// </summary>
-        [DataMember(Name = "checklistsCount", EmitDefaultValue = false)]
-        public Int32RangeSelectorModel ChecklistsCount { get; set; }
+        [DataMember(Name = "checklistsCount", EmitDefaultValue = true)]
+        public ProjectsFilterModelChecklistsCount ChecklistsCount { get; set; }
 
         /// <summary>
         /// Gets or Sets SharedStepsCount
         /// </summary>
-        [DataMember(Name = "sharedStepsCount", EmitDefaultValue = false)]
-        public Int32RangeSelectorModel SharedStepsCount { get; set; }
+        [DataMember(Name = "sharedStepsCount", EmitDefaultValue = true)]
+        public ProjectsFilterModelSharedStepsCount SharedStepsCount { get; set; }
 
         /// <summary>
         /// Gets or Sets AutotestsCount
         /// </summary>
-        [DataMember(Name = "autotestsCount", EmitDefaultValue = false)]
-        public Int32RangeSelectorModel AutotestsCount { get; set; }
+        [DataMember(Name = "autotestsCount", EmitDefaultValue = true)]
+        public ProjectsFilterModelAutotestsCount AutotestsCount { get; set; }
 
         /// <summary>
         /// Specifies a project global IDs to search for
@@ -114,8 +114,8 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
-        public DateTimeRangeSelectorModel CreatedDate { get; set; }
+        [DataMember(Name = "createdDate", EmitDefaultValue = true)]
+        public ProjectsFilterModelCreatedDate CreatedDate { get; set; }
 
         /// <summary>
         /// Specifies an autotest creator IDs to search for
@@ -289,7 +289,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)

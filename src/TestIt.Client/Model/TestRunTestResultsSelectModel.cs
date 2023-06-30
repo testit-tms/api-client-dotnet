@@ -37,7 +37,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="filter">filter.</param>
         /// <param name="testResultIdsExtractionModel">testResultIdsExtractionModel.</param>
-        public TestRunTestResultsSelectModel(TestResultsLocalFilterModel filter = default(TestResultsLocalFilterModel), GuidExtractionModel testResultIdsExtractionModel = default(GuidExtractionModel))
+        public TestRunTestResultsSelectModel(TestRunTestResultsSelectModelFilter filter = default(TestRunTestResultsSelectModelFilter), TestRunTestResultsSelectModelTestResultIdsExtractionModel testResultIdsExtractionModel = default(TestRunTestResultsSelectModelTestResultIdsExtractionModel))
         {
             this.Filter = filter;
             this.TestResultIdsExtractionModel = testResultIdsExtractionModel;
@@ -46,14 +46,14 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Filter
         /// </summary>
-        [DataMember(Name = "filter", EmitDefaultValue = false)]
-        public TestResultsLocalFilterModel Filter { get; set; }
+        [DataMember(Name = "filter", EmitDefaultValue = true)]
+        public TestRunTestResultsSelectModelFilter Filter { get; set; }
 
         /// <summary>
         /// Gets or Sets TestResultIdsExtractionModel
         /// </summary>
-        [DataMember(Name = "testResultIdsExtractionModel", EmitDefaultValue = false)]
-        public GuidExtractionModel TestResultIdsExtractionModel { get; set; }
+        [DataMember(Name = "testResultIdsExtractionModel", EmitDefaultValue = true)]
+        public TestRunTestResultsSelectModelTestResultIdsExtractionModel TestResultIdsExtractionModel { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -138,7 +138,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

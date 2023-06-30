@@ -44,7 +44,8 @@ namespace TestIt.Client.Model
         /// <param name="parentId">parentId.</param>
         /// <param name="name">name (required).</param>
         /// <param name="isDeleted">isDeleted.</param>
-        public TestSuiteV2PutModel(Guid id = default(Guid), Guid? parentId = default(Guid?), string name = default(string), bool isDeleted = default(bool))
+        /// <param name="autoRefresh">autoRefresh.</param>
+        public TestSuiteV2PutModel(Guid id = default(Guid), Guid? parentId = default(Guid?), string name = default(string), bool isDeleted = default(bool), bool? autoRefresh = default(bool?))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -55,6 +56,7 @@ namespace TestIt.Client.Model
             this.Name = name;
             this.ParentId = parentId;
             this.IsDeleted = isDeleted;
+            this.AutoRefresh = autoRefresh;
         }
 
         /// <summary>
@@ -82,6 +84,12 @@ namespace TestIt.Client.Model
         public bool IsDeleted { get; set; }
 
         /// <summary>
+        /// Gets or Sets AutoRefresh
+        /// </summary>
+        [DataMember(Name = "autoRefresh", EmitDefaultValue = true)]
+        public bool? AutoRefresh { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -93,6 +101,7 @@ namespace TestIt.Client.Model
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
+            sb.Append("  AutoRefresh: ").Append(AutoRefresh).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -146,6 +155,11 @@ namespace TestIt.Client.Model
                 (
                     this.IsDeleted == input.IsDeleted ||
                     this.IsDeleted.Equals(input.IsDeleted)
+                ) && 
+                (
+                    this.AutoRefresh == input.AutoRefresh ||
+                    (this.AutoRefresh != null &&
+                    this.AutoRefresh.Equals(input.AutoRefresh))
                 );
         }
 
@@ -171,6 +185,10 @@ namespace TestIt.Client.Model
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
+                if (this.AutoRefresh != null)
+                {
+                    hashCode = (hashCode * 59) + this.AutoRefresh.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -180,7 +198,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)

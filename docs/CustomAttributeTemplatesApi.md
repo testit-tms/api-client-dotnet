@@ -13,7 +13,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2CustomAttributesTemplatesPut**](CustomAttributeTemplatesApi.md#apiv2customattributestemplatesput) | **PUT** /api/v2/customAttributes/templates | Update custom attributes template |
 | [**ApiV2CustomAttributesTemplatesSearchPost**](CustomAttributeTemplatesApi.md#apiv2customattributestemplatessearchpost) | **POST** /api/v2/customAttributes/templates/search | Search CustomAttributeTemplates |
 
-<a name="apiv2customattributestemplatesidcustomattributesexcludepost"></a>
+<a id="apiv2customattributestemplatesidcustomattributesexcludepost"></a>
 # **ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePost**
 > void ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePost (Guid id, List<Guid> requestBody = null)
 
@@ -107,14 +107,14 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Not Found |  -  |
 | **200** | Success |  -  |
 | **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
 | **403** | Admin system role is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2customattributestemplatesidcustomattributesincludepost"></a>
+<a id="apiv2customattributestemplatesidcustomattributesincludepost"></a>
 # **ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePost**
 > void ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePost (Guid id, List<Guid> requestBody = null)
 
@@ -208,14 +208,14 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Not Found |  -  |
 | **200** | Success |  -  |
 | **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
 | **403** | Admin system role is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2customattributestemplatesiddelete"></a>
+<a id="apiv2customattributestemplatesiddelete"></a>
 # **ApiV2CustomAttributesTemplatesIdDelete**
 > NoContentResult ApiV2CustomAttributesTemplatesIdDelete (Guid id)
 
@@ -311,13 +311,13 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
 | **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
 | **403** | Admin system role is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2customattributestemplatesidget"></a>
+<a id="apiv2customattributestemplatesidget"></a>
 # **ApiV2CustomAttributesTemplatesIdGet**
 > CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesIdGet (Guid id)
 
@@ -413,13 +413,13 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **200** | Success |  -  |
 | **400** | Bad Request |  -  |
 | **404** | Can&#39;t find a CustomAttributeTemplate with identifier |  -  |
-| **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2customattributestemplatesnameget"></a>
+<a id="apiv2customattributestemplatesnameget"></a>
 # **ApiV2CustomAttributesTemplatesNameGet**
 > CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesNameGet (string name)
 
@@ -519,9 +519,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2customattributestemplatespost"></a>
+<a id="apiv2customattributestemplatespost"></a>
 # **ApiV2CustomAttributesTemplatesPost**
-> CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesPost (CustomAttributeTemplatePostModel customAttributeTemplatePostModel = null)
+> CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesPost (ApiV2CustomAttributesTemplatesPostRequest apiV2CustomAttributesTemplatesPostRequest = null)
 
 Create CustomAttributeTemplate
 
@@ -553,12 +553,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CustomAttributeTemplatesApi(httpClient, config, httpClientHandler);
-            var customAttributeTemplatePostModel = new CustomAttributeTemplatePostModel(); // CustomAttributeTemplatePostModel |  (optional) 
+            var apiV2CustomAttributesTemplatesPostRequest = new ApiV2CustomAttributesTemplatesPostRequest(); // ApiV2CustomAttributesTemplatesPostRequest |  (optional) 
 
             try
             {
                 // Create CustomAttributeTemplate
-                CustomAttributeTemplateModel result = apiInstance.ApiV2CustomAttributesTemplatesPost(customAttributeTemplatePostModel);
+                CustomAttributeTemplateModel result = apiInstance.ApiV2CustomAttributesTemplatesPost(apiV2CustomAttributesTemplatesPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -579,7 +579,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create CustomAttributeTemplate
-    ApiResponse<CustomAttributeTemplateModel> response = apiInstance.ApiV2CustomAttributesTemplatesPostWithHttpInfo(customAttributeTemplatePostModel);
+    ApiResponse<CustomAttributeTemplateModel> response = apiInstance.ApiV2CustomAttributesTemplatesPostWithHttpInfo(apiV2CustomAttributesTemplatesPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -596,7 +596,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **customAttributeTemplatePostModel** | [**CustomAttributeTemplatePostModel**](CustomAttributeTemplatePostModel.md) |  | [optional]  |
+| **apiV2CustomAttributesTemplatesPostRequest** | [**ApiV2CustomAttributesTemplatesPostRequest**](ApiV2CustomAttributesTemplatesPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -615,15 +615,15 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **201** | Created |  -  |
 | **400** | Bad Request |  -  |
 | **403** | Admin system role is required |  -  |
-| **201** | Created |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2customattributestemplatesput"></a>
+<a id="apiv2customattributestemplatesput"></a>
 # **ApiV2CustomAttributesTemplatesPut**
-> void ApiV2CustomAttributesTemplatesPut (CustomAttributeTemplatePutModel customAttributeTemplatePutModel = null)
+> void ApiV2CustomAttributesTemplatesPut (ApiV2CustomAttributesTemplatesPutRequest apiV2CustomAttributesTemplatesPutRequest = null)
 
 Update custom attributes template
 
@@ -653,12 +653,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CustomAttributeTemplatesApi(httpClient, config, httpClientHandler);
-            var customAttributeTemplatePutModel = new CustomAttributeTemplatePutModel(); // CustomAttributeTemplatePutModel |  (optional) 
+            var apiV2CustomAttributesTemplatesPutRequest = new ApiV2CustomAttributesTemplatesPutRequest(); // ApiV2CustomAttributesTemplatesPutRequest |  (optional) 
 
             try
             {
                 // Update custom attributes template
-                apiInstance.ApiV2CustomAttributesTemplatesPut(customAttributeTemplatePutModel);
+                apiInstance.ApiV2CustomAttributesTemplatesPut(apiV2CustomAttributesTemplatesPutRequest);
             }
             catch (ApiException  e)
             {
@@ -678,7 +678,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update custom attributes template
-    apiInstance.ApiV2CustomAttributesTemplatesPutWithHttpInfo(customAttributeTemplatePutModel);
+    apiInstance.ApiV2CustomAttributesTemplatesPutWithHttpInfo(apiV2CustomAttributesTemplatesPutRequest);
 }
 catch (ApiException e)
 {
@@ -692,7 +692,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **customAttributeTemplatePutModel** | [**CustomAttributeTemplatePutModel**](CustomAttributeTemplatePutModel.md) |  | [optional]  |
+| **apiV2CustomAttributesTemplatesPutRequest** | [**ApiV2CustomAttributesTemplatesPutRequest**](ApiV2CustomAttributesTemplatesPutRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -711,14 +711,14 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | System administrator role is required |  -  |
 | **200** | Success |  -  |
+| **403** | System administrator role is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2customattributestemplatessearchpost"></a>
+<a id="apiv2customattributestemplatessearchpost"></a>
 # **ApiV2CustomAttributesTemplatesSearchPost**
-> List&lt;SearchCustomAttributeTemplateGetModel&gt; ApiV2CustomAttributesTemplatesSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = null)
+> List&lt;SearchCustomAttributeTemplateGetModel&gt; ApiV2CustomAttributesTemplatesSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2CustomAttributesTemplatesSearchPostRequest apiV2CustomAttributesTemplatesSearchPostRequest = null)
 
 Search CustomAttributeTemplates
 
@@ -755,12 +755,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var customAttributeTemplateSearchQueryModel = new CustomAttributeTemplateSearchQueryModel(); // CustomAttributeTemplateSearchQueryModel |  (optional) 
+            var apiV2CustomAttributesTemplatesSearchPostRequest = new ApiV2CustomAttributesTemplatesSearchPostRequest(); // ApiV2CustomAttributesTemplatesSearchPostRequest |  (optional) 
 
             try
             {
                 // Search CustomAttributeTemplates
-                List<SearchCustomAttributeTemplateGetModel> result = apiInstance.ApiV2CustomAttributesTemplatesSearchPost(skip, take, orderBy, searchField, searchValue, customAttributeTemplateSearchQueryModel);
+                List<SearchCustomAttributeTemplateGetModel> result = apiInstance.ApiV2CustomAttributesTemplatesSearchPost(skip, take, orderBy, searchField, searchValue, apiV2CustomAttributesTemplatesSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -781,7 +781,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search CustomAttributeTemplates
-    ApiResponse<List<SearchCustomAttributeTemplateGetModel>> response = apiInstance.ApiV2CustomAttributesTemplatesSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, customAttributeTemplateSearchQueryModel);
+    ApiResponse<List<SearchCustomAttributeTemplateGetModel>> response = apiInstance.ApiV2CustomAttributesTemplatesSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2CustomAttributesTemplatesSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -803,7 +803,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **customAttributeTemplateSearchQueryModel** | [**CustomAttributeTemplateSearchQueryModel**](CustomAttributeTemplateSearchQueryModel.md) |  | [optional]  |
+| **apiV2CustomAttributesTemplatesSearchPostRequest** | [**ApiV2CustomAttributesTemplatesSearchPostRequest**](ApiV2CustomAttributesTemplatesSearchPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -822,8 +822,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

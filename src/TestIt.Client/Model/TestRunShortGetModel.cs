@@ -58,7 +58,7 @@ namespace TestIt.Client.Model
         /// <param name="startedDate">Date when the test run was started.</param>
         /// <param name="autotestsCount">Number of autotests run in the test run.</param>
         /// <param name="statistics">statistics (required).</param>
-        public TestRunShortGetModel(Guid id = default(Guid), string name = default(string), Guid projectId = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), bool isDeleted = default(bool), TestRunState state = default(TestRunState), DateTime? startedDate = default(DateTime?), int autotestsCount = default(int), TestResultsStatisticsGetModel statistics = default(TestResultsStatisticsGetModel))
+        public TestRunShortGetModel(Guid id = default(Guid), string name = default(string), Guid projectId = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), bool isDeleted = default(bool), TestRunState state = default(TestRunState), DateTime? startedDate = default(DateTime?), int autotestsCount = default(int), TestRunShortGetModelStatistics statistics = default(TestRunShortGetModelStatistics))
         {
             this.State = state;
             // to ensure "statistics" is required (not null)
@@ -90,7 +90,7 @@ namespace TestIt.Client.Model
         /// Name of the test run
         /// </summary>
         /// <value>Name of the test run</value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace TestIt.Client.Model
         /// Gets or Sets Statistics
         /// </summary>
         [DataMember(Name = "statistics", IsRequired = true, EmitDefaultValue = true)]
-        public TestResultsStatisticsGetModel Statistics { get; set; }
+        public TestRunShortGetModelStatistics Statistics { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -326,7 +326,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

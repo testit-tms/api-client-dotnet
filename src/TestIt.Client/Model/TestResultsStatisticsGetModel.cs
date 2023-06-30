@@ -37,7 +37,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="statuses">statuses.</param>
         /// <param name="failureCategories">failureCategories.</param>
-        public TestResultsStatisticsGetModel(TestRunStatisticsStatusesGetModel statuses = default(TestRunStatisticsStatusesGetModel), TestRunStatisticsErrorCategoriesGetModel failureCategories = default(TestRunStatisticsErrorCategoriesGetModel))
+        public TestResultsStatisticsGetModel(TestResultsStatisticsGetModelStatuses statuses = default(TestResultsStatisticsGetModelStatuses), TestResultsStatisticsGetModelFailureCategories failureCategories = default(TestResultsStatisticsGetModelFailureCategories))
         {
             this.Statuses = statuses;
             this.FailureCategories = failureCategories;
@@ -47,13 +47,13 @@ namespace TestIt.Client.Model
         /// Gets or Sets Statuses
         /// </summary>
         [DataMember(Name = "statuses", EmitDefaultValue = false)]
-        public TestRunStatisticsStatusesGetModel Statuses { get; set; }
+        public TestResultsStatisticsGetModelStatuses Statuses { get; set; }
 
         /// <summary>
         /// Gets or Sets FailureCategories
         /// </summary>
         [DataMember(Name = "failureCategories", EmitDefaultValue = false)]
-        public TestRunStatisticsErrorCategoriesGetModel FailureCategories { get; set; }
+        public TestResultsStatisticsGetModelFailureCategories FailureCategories { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -138,7 +138,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

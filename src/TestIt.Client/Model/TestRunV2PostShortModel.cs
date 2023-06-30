@@ -56,12 +56,14 @@ namespace TestIt.Client.Model
         /// This property is to link test run with a project
         /// </summary>
         /// <value>This property is to link test run with a project</value>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
+        /// <example>&quot;First run&quot;</example>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -74,6 +76,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets LaunchSource
         /// </summary>
+        /// <example>&quot;By user via API&quot;</example>
         [DataMember(Name = "launchSource", EmitDefaultValue = true)]
         public string LaunchSource { get; set; }
 
@@ -180,7 +183,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

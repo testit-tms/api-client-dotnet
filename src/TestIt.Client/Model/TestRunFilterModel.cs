@@ -40,7 +40,7 @@ namespace TestIt.Client.Model
         /// <param name="createdDate">createdDate.</param>
         /// <param name="modifiedByIds">Specifies a test run last editor IDs to search for.</param>
         /// <param name="isDeleted">Specifies a test run deleted status to search for.</param>
-        public TestRunFilterModel(List<Guid> projectIds = default(List<Guid>), List<TestRunState> states = default(List<TestRunState>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?))
+        public TestRunFilterModel(List<Guid> projectIds = default(List<Guid>), List<TestRunState> states = default(List<TestRunState>), TestRunFilterModelCreatedDate createdDate = default(TestRunFilterModelCreatedDate), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?))
         {
             this.ProjectIds = projectIds;
             this.States = states;
@@ -66,8 +66,8 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
-        public DateTimeRangeSelectorModel CreatedDate { get; set; }
+        [DataMember(Name = "createdDate", EmitDefaultValue = true)]
+        public TestRunFilterModelCreatedDate CreatedDate { get; set; }
 
         /// <summary>
         /// Specifies a test run last editor IDs to search for
@@ -199,7 +199,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

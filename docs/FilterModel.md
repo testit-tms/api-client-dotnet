@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **ModifiedDate** | **DateTime?** |  | [optional] 
 **CreatedById** | **Guid** |  | [optional] 
 **ModifiedById** | **Guid?** |  | [optional] 
-**Data** | [**WorkItemSearchQueryModel**](WorkItemSearchQueryModel.md) |  | [optional] 
+**Data** | [**FilterModelData**](FilterModelData.md) |  | [optional] 
 **ProjectId** | **Guid** |  | [optional] 
 **FieldsToShow** | **Object** |  | [optional] 
 **Name** | **string** |  | [optional] 

@@ -56,24 +56,28 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets TesterId
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "testerId", EmitDefaultValue = true)]
         public Guid? TesterId { get; set; }
 
         /// <summary>
         /// Gets or Sets WorkItemId
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "workItemId", EmitDefaultValue = true)]
         public Guid? WorkItemId { get; set; }
 
         /// <summary>
         /// Gets or Sets ConfigurationId
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "configurationId", EmitDefaultValue = true)]
         public Guid? ConfigurationId { get; set; }
 
@@ -81,18 +85,21 @@ namespace TestIt.Client.Model
         /// Applies one of these values: Blocked, NoResults, Failed, Passed
         /// </summary>
         /// <value>Applies one of these values: Blocked, NoResults, Failed, Passed</value>
+        /// <example>&quot;NoResult&quot;</example>
         [DataMember(Name = "status", EmitDefaultValue = true)]
         public string Status { get; set; }
 
         /// <summary>
         /// Gets or Sets LastTestResultId
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "lastTestResultId", EmitDefaultValue = true)]
         public Guid? LastTestResultId { get; set; }
 
         /// <summary>
         /// Gets or Sets IterationId
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "iterationId", EmitDefaultValue = false)]
         public Guid IterationId { get; set; }
 
@@ -229,7 +236,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

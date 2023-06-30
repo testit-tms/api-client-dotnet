@@ -89,78 +89,91 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets GlobalId
         /// </summary>
+        /// <example>1000</example>
         [DataMember(Name = "globalId", EmitDefaultValue = false)]
         public long GlobalId { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        /// <example>&quot;Basic template&quot;</example>
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets EntityTypeName
         /// </summary>
-        [DataMember(Name = "entityTypeName", EmitDefaultValue = true)]
+        /// <example>&quot;TestCase&quot;</example>
+        [DataMember(Name = "entityTypeName", EmitDefaultValue = false)]
         public string EntityTypeName { get; set; }
 
         /// <summary>
         /// Gets or Sets HasThisSharedStepAsStep
         /// </summary>
+        /// <example>true</example>
         [DataMember(Name = "hasThisSharedStepAsStep", EmitDefaultValue = true)]
         public bool HasThisSharedStepAsStep { get; set; }
 
         /// <summary>
         /// Gets or Sets HasThisSharedStepAsPrecondition
         /// </summary>
+        /// <example>true</example>
         [DataMember(Name = "hasThisSharedStepAsPrecondition", EmitDefaultValue = true)]
         public bool HasThisSharedStepAsPrecondition { get; set; }
 
         /// <summary>
         /// Gets or Sets HasThisSharedStepAsPostcondition
         /// </summary>
+        /// <example>true</example>
         [DataMember(Name = "hasThisSharedStepAsPostcondition", EmitDefaultValue = true)]
         public bool HasThisSharedStepAsPostcondition { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "createdById", EmitDefaultValue = false)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
+        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
         public DateTime? CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
+        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets State
         /// </summary>
-        [DataMember(Name = "state", EmitDefaultValue = true)]
+        /// <example>&quot;Ready&quot;</example>
+        [DataMember(Name = "state", EmitDefaultValue = false)]
         public string State { get; set; }
 
         /// <summary>
         /// Gets or Sets IsDeleted
         /// </summary>
+        /// <example>true</example>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
@@ -168,18 +181,21 @@ namespace TestIt.Client.Model
         /// used for versioning changes in workitem
         /// </summary>
         /// <value>used for versioning changes in workitem</value>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "versionId", EmitDefaultValue = false)]
         public Guid VersionId { get; set; }
 
         /// <summary>
         /// Gets or Sets IsAutomated
         /// </summary>
+        /// <example>true</example>
         [DataMember(Name = "isAutomated", EmitDefaultValue = true)]
         public bool IsAutomated { get; set; }
 
         /// <summary>
         /// Gets or Sets SectionId
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "sectionId", EmitDefaultValue = false)]
         public Guid SectionId { get; set; }
 
@@ -405,7 +421,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }
