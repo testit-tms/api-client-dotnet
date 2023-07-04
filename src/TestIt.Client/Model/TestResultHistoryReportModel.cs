@@ -94,18 +94,21 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
+        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
         [DataMember(Name = "createdDate", EmitDefaultValue = false)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
+        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
         public DateTime ModifiedDate { get; set; }
 
@@ -113,42 +116,49 @@ namespace TestIt.Client.Model
         /// If test run was stopped, this property equals identifier of user who stopped it.Otherwise, the property equals identifier of user who created the test result
         /// </summary>
         /// <value>If test run was stopped, this property equals identifier of user who stopped it.Otherwise, the property equals identifier of user who created the test result</value>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "userId", EmitDefaultValue = false)]
         public Guid UserId { get; set; }
 
         /// <summary>
         /// Gets or Sets TestRunId
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "testRunId", EmitDefaultValue = true)]
         public Guid? TestRunId { get; set; }
 
         /// <summary>
         /// Gets or Sets TestRunName
         /// </summary>
+        /// <example>&quot;Core tests&quot;</example>
         [DataMember(Name = "testRunName", EmitDefaultValue = true)]
         public string TestRunName { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedByUserName
         /// </summary>
+        /// <example>&quot;example&quot;</example>
         [DataMember(Name = "createdByUserName", EmitDefaultValue = true)]
         public string CreatedByUserName { get; set; }
 
         /// <summary>
         /// Gets or Sets TestPlanId
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "testPlanId", EmitDefaultValue = true)]
         public Guid? TestPlanId { get; set; }
 
         /// <summary>
         /// Gets or Sets TestPlanGlobalId
         /// </summary>
+        /// <example>100000</example>
         [DataMember(Name = "testPlanGlobalId", EmitDefaultValue = true)]
         public long? TestPlanGlobalId { get; set; }
 
         /// <summary>
         /// Gets or Sets TestPlanName
         /// </summary>
+        /// <example>&quot;Release 7.13&quot;</example>
         [DataMember(Name = "testPlanName", EmitDefaultValue = true)]
         public string TestPlanName { get; set; }
 
@@ -156,12 +166,14 @@ namespace TestIt.Client.Model
         /// If test point related to the test result has configuration, this property will be equal to the test point configuration name. Otherwise, this property will be equal to the test result configuration name
         /// </summary>
         /// <value>If test point related to the test result has configuration, this property will be equal to the test point configuration name. Otherwise, this property will be equal to the test result configuration name</value>
+        /// <example>&quot;Default&quot;</example>
         [DataMember(Name = "configurationName", EmitDefaultValue = true)]
         public string ConfigurationName { get; set; }
 
         /// <summary>
         /// Gets or Sets IsAutomated
         /// </summary>
+        /// <example>true</example>
         [DataMember(Name = "isAutomated", EmitDefaultValue = true)]
         public bool IsAutomated { get; set; }
 
@@ -169,6 +181,7 @@ namespace TestIt.Client.Model
         /// If any test result related to the test run is linked with autotest and the run has an outcome, the outcome value equalsto the worst outcome of the last modified test result.Otherwise, the outcome equals to the outcome of first created test result in the test run
         /// </summary>
         /// <value>If any test result related to the test run is linked with autotest and the run has an outcome, the outcome value equalsto the worst outcome of the last modified test result.Otherwise, the outcome equals to the outcome of first created test result in the test run</value>
+        /// <example>&quot;Failed&quot;</example>
         [DataMember(Name = "outcome", EmitDefaultValue = true)]
         public string Outcome { get; set; }
 
@@ -176,6 +189,7 @@ namespace TestIt.Client.Model
         /// If any test result related to the test run is linked with autotest, comment will have default valueOtherwise, the comment equals to the comment of first created test result in the test run
         /// </summary>
         /// <value>If any test result related to the test run is linked with autotest, comment will have default valueOtherwise, the comment equals to the comment of first created test result in the test run</value>
+        /// <example>&quot;my first comment&quot;</example>
         [DataMember(Name = "comment", EmitDefaultValue = true)]
         public string Comment { get; set; }
 
@@ -189,30 +203,35 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets StartedOn
         /// </summary>
+        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
         [DataMember(Name = "startedOn", EmitDefaultValue = true)]
         public DateTime? StartedOn { get; set; }
 
         /// <summary>
         /// Gets or Sets CompletedOn
         /// </summary>
+        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
         [DataMember(Name = "completedOn", EmitDefaultValue = true)]
         public DateTime? CompletedOn { get; set; }
 
         /// <summary>
         /// Gets or Sets Duration
         /// </summary>
+        /// <example>100000</example>
         [DataMember(Name = "duration", EmitDefaultValue = true)]
         public long? Duration { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "createdById", EmitDefaultValue = false)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
@@ -226,6 +245,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets WorkItemVersionId
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "workItemVersionId", EmitDefaultValue = true)]
         public Guid? WorkItemVersionId { get; set; }
 
@@ -244,7 +264,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets FailureClassIds
         /// </summary>
-        [DataMember(Name = "failureClassIds", EmitDefaultValue = true)]
+        [DataMember(Name = "failureClassIds", EmitDefaultValue = false)]
         public List<Guid> FailureClassIds { get; set; }
 
         /// <summary>
@@ -576,7 +596,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

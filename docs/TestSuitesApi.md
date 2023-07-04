@@ -7,7 +7,9 @@ All URIs are relative to *http://localhost*
 | [**AddTestPointsToTestSuite**](TestSuitesApi.md#addtestpointstotestsuite) | **POST** /api/v2/testSuites/{id}/test-points | Add test-points to test suite |
 | [**ApiV2TestSuitesIdPatch**](TestSuitesApi.md#apiv2testsuitesidpatch) | **PATCH** /api/v2/testSuites/{id} | Patch test suite |
 | [**ApiV2TestSuitesIdRefreshPost**](TestSuitesApi.md#apiv2testsuitesidrefreshpost) | **POST** /api/v2/testSuites/{id}/refresh | Refresh test suite. Only dynamic test suites are supported by this method |
-| [**CreateTestSuite**](TestSuitesApi.md#createtestsuite) | **POST** /api/v2/testSuites | Create TestSuite |
+| [**ApiV2TestSuitesIdWorkItemsPost**](TestSuitesApi.md#apiv2testsuitesidworkitemspost) | **POST** /api/v2/testSuites/{id}/workItems | Set work items for test suite |
+| [**ApiV2TestSuitesPost**](TestSuitesApi.md#apiv2testsuitespost) | **POST** /api/v2/testSuites | Create test suite |
+| [**ApiV2TestSuitesPut**](TestSuitesApi.md#apiv2testsuitesput) | **PUT** /api/v2/testSuites | Edit test suite |
 | [**DeleteTestSuite**](TestSuitesApi.md#deletetestsuite) | **DELETE** /api/v2/testSuites/{id} | Delete TestSuite |
 | [**GetConfigurationsByTestSuiteId**](TestSuitesApi.md#getconfigurationsbytestsuiteid) | **GET** /api/v2/testSuites/{id}/configurations | Get Configurations By Id |
 | [**GetTestPointsById**](TestSuitesApi.md#gettestpointsbyid) | **GET** /api/v2/testSuites/{id}/testPoints | Get TestPoints By Id |
@@ -16,12 +18,10 @@ All URIs are relative to *http://localhost*
 | [**GetWorkItemsById**](TestSuitesApi.md#getworkitemsbyid) | **GET** /api/v2/testSuites/{id}/workItems |  |
 | [**SearchWorkItems**](TestSuitesApi.md#searchworkitems) | **POST** /api/v2/testSuites/{id}/workItems/search | Search WorkItems |
 | [**SetConfigurationsByTestSuiteId**](TestSuitesApi.md#setconfigurationsbytestsuiteid) | **POST** /api/v2/testSuites/{id}/configurations | Set Configurations By TestSuite Id |
-| [**SetWorkItemsByTestSuiteId**](TestSuitesApi.md#setworkitemsbytestsuiteid) | **POST** /api/v2/testSuites/{id}/workItems | Set WorkItems By TestSuite Id |
-| [**UpdateTestSuite**](TestSuitesApi.md#updatetestsuite) | **PUT** /api/v2/testSuites | Update TestSuite |
 
-<a name="addtestpointstotestsuite"></a>
+<a id="addtestpointstotestsuite"></a>
 # **AddTestPointsToTestSuite**
-> void AddTestPointsToTestSuite (Guid id, WorkItemSelectModel workItemSelectModel = null)
+> void AddTestPointsToTestSuite (Guid id, ApiV2ProjectsIdWorkItemsSearchPostRequest apiV2ProjectsIdWorkItemsSearchPostRequest = null)
 
 Add test-points to test suite
 
@@ -52,12 +52,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
             var id = 1ed608bf-8ac9-4ffd-b91e-ebdbbdce6132;  // Guid | Test suite internal identifier
-            var workItemSelectModel = new WorkItemSelectModel(); // WorkItemSelectModel | Filter object to retrieve work items for test-suite's project (optional) 
+            var apiV2ProjectsIdWorkItemsSearchPostRequest = new ApiV2ProjectsIdWorkItemsSearchPostRequest(); // ApiV2ProjectsIdWorkItemsSearchPostRequest | Filter object to retrieve work items for test-suite's project (optional) 
 
             try
             {
                 // Add test-points to test suite
-                apiInstance.AddTestPointsToTestSuite(id, workItemSelectModel);
+                apiInstance.AddTestPointsToTestSuite(id, apiV2ProjectsIdWorkItemsSearchPostRequest);
             }
             catch (ApiException  e)
             {
@@ -77,7 +77,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Add test-points to test suite
-    apiInstance.AddTestPointsToTestSuiteWithHttpInfo(id, workItemSelectModel);
+    apiInstance.AddTestPointsToTestSuiteWithHttpInfo(id, apiV2ProjectsIdWorkItemsSearchPostRequest);
 }
 catch (ApiException e)
 {
@@ -92,7 +92,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid** | Test suite internal identifier |  |
-| **workItemSelectModel** | [**WorkItemSelectModel**](WorkItemSelectModel.md) | Filter object to retrieve work items for test-suite&#39;s project | [optional]  |
+| **apiV2ProjectsIdWorkItemsSearchPostRequest** | [**ApiV2ProjectsIdWorkItemsSearchPostRequest**](ApiV2ProjectsIdWorkItemsSearchPostRequest.md) | Filter object to retrieve work items for test-suite&#39;s project | [optional]  |
 
 ### Return type
 
@@ -120,7 +120,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testsuitesidpatch"></a>
+<a id="apiv2testsuitesidpatch"></a>
 # **ApiV2TestSuitesIdPatch**
 > void ApiV2TestSuitesIdPatch (Guid id, List<Operation> operation = null)
 
@@ -219,7 +219,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testsuitesidrefreshpost"></a>
+<a id="apiv2testsuitesidrefreshpost"></a>
 # **ApiV2TestSuitesIdRefreshPost**
 > void ApiV2TestSuitesIdRefreshPost (Guid id)
 
@@ -314,13 +314,11 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createtestsuite"></a>
-# **CreateTestSuite**
-> TestSuiteV2GetModel CreateTestSuite (TestSuiteV2PostModel testSuiteV2PostModel = null)
+<a id="apiv2testsuitesidworkitemspost"></a>
+# **ApiV2TestSuitesIdWorkItemsPost**
+> void ApiV2TestSuitesIdWorkItemsPost (Guid id, List<Guid> requestBody = null)
 
-Create TestSuite
-
-<br>Use case  <br>User sets test suite model (listed in request parameters)  <br>User runs method execution  <br>System creates test suite  <br>System returns test suite
+Set work items for test suite
 
 ### Example
 ```csharp
@@ -333,7 +331,7 @@ using TestIt.Client.Model;
 
 namespace Example
 {
-    public class CreateTestSuiteExample
+    public class ApiV2TestSuitesIdWorkItemsPostExample
     {
         public static void Main()
         {
@@ -348,17 +346,17 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
-            var testSuiteV2PostModel = new TestSuiteV2PostModel(); // TestSuiteV2PostModel |  (optional) 
+            var id = "id_example";  // Guid | Unique ID of the test suite
+            var requestBody = new List<Guid>(); // List<Guid> |  (optional) 
 
             try
             {
-                // Create TestSuite
-                TestSuiteV2GetModel result = apiInstance.CreateTestSuite(testSuiteV2PostModel);
-                Debug.WriteLine(result);
+                // Set work items for test suite
+                apiInstance.ApiV2TestSuitesIdWorkItemsPost(id, requestBody);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TestSuitesApi.CreateTestSuite: " + e.Message);
+                Debug.Print("Exception when calling TestSuitesApi.ApiV2TestSuitesIdWorkItemsPost: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -367,21 +365,18 @@ namespace Example
 }
 ```
 
-#### Using the CreateTestSuiteWithHttpInfo variant
+#### Using the ApiV2TestSuitesIdWorkItemsPostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Create TestSuite
-    ApiResponse<TestSuiteV2GetModel> response = apiInstance.CreateTestSuiteWithHttpInfo(testSuiteV2PostModel);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    // Set work items for test suite
+    apiInstance.ApiV2TestSuitesIdWorkItemsPostWithHttpInfo(id, requestBody);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TestSuitesApi.CreateTestSuiteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TestSuitesApi.ApiV2TestSuitesIdWorkItemsPostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -391,7 +386,107 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **testSuiteV2PostModel** | [**TestSuiteV2PostModel**](TestSuiteV2PostModel.md) |  | [optional]  |
+| **id** | **Guid** | Unique ID of the test suite |  |
+| **requestBody** | [**List&lt;Guid&gt;**](Guid.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **403** | Update permission for test plan is required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="apiv2testsuitespost"></a>
+# **ApiV2TestSuitesPost**
+> TestSuiteV2GetModel ApiV2TestSuitesPost (ApiV2TestSuitesPostRequest apiV2TestSuitesPostRequest = null)
+
+Create test suite
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2TestSuitesPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
+            var apiV2TestSuitesPostRequest = new ApiV2TestSuitesPostRequest(); // ApiV2TestSuitesPostRequest |  (optional) 
+
+            try
+            {
+                // Create test suite
+                TestSuiteV2GetModel result = apiInstance.ApiV2TestSuitesPost(apiV2TestSuitesPostRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TestSuitesApi.ApiV2TestSuitesPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2TestSuitesPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create test suite
+    ApiResponse<TestSuiteV2GetModel> response = apiInstance.ApiV2TestSuitesPostWithHttpInfo(apiV2TestSuitesPostRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TestSuitesApi.ApiV2TestSuitesPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **apiV2TestSuitesPostRequest** | [**ApiV2TestSuitesPostRequest**](ApiV2TestSuitesPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -410,15 +505,107 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
-| **404** | &lt;br&gt;Can&#39;t find a TestPlan with id  &lt;br&gt;Can&#39;t find a TestSuite with id |  -  |
-| **403** | Update permission for test plan required |  -  |
-| **201** | Successful operation |  -  |
-| **400** | &lt;br&gt;Field is required  &lt;br&gt;Suite with Id creates loop! |  -  |
+| **201** | Created |  -  |
+| **403** | Update permission for test plan is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deletetestsuite"></a>
+<a id="apiv2testsuitesput"></a>
+# **ApiV2TestSuitesPut**
+> void ApiV2TestSuitesPut (ApiV2TestSuitesPutRequest apiV2TestSuitesPutRequest = null)
+
+Edit test suite
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2TestSuitesPutExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
+            var apiV2TestSuitesPutRequest = new ApiV2TestSuitesPutRequest(); // ApiV2TestSuitesPutRequest |  (optional) 
+
+            try
+            {
+                // Edit test suite
+                apiInstance.ApiV2TestSuitesPut(apiV2TestSuitesPutRequest);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TestSuitesApi.ApiV2TestSuitesPut: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2TestSuitesPutWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Edit test suite
+    apiInstance.ApiV2TestSuitesPutWithHttpInfo(apiV2TestSuitesPutRequest);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TestSuitesApi.ApiV2TestSuitesPutWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **apiV2TestSuitesPutRequest** | [**ApiV2TestSuitesPutRequest**](ApiV2TestSuitesPutRequest.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **403** | Update permission for test plan is required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="deletetestsuite"></a>
 # **DeleteTestSuite**
 > void DeleteTestSuite (Guid id)
 
@@ -510,14 +697,14 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **204** | Successful operation |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Delete permission for test plan required |  -  |
 | **404** | &lt;br&gt;Can&#39;t find a TestSuite with id |  -  |
-| **204** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getconfigurationsbytestsuiteid"></a>
+<a id="getconfigurationsbytestsuiteid"></a>
 # **GetConfigurationsByTestSuiteId**
 > List&lt;ConfigurationModel&gt; GetConfigurationsByTestSuiteId (Guid id)
 
@@ -613,14 +800,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
-| **403** | Read permission for test plan required |  -  |
-| **401** | Unauthorized |  -  |
 | **200** | Successful operation |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Read permission for test plan required |  -  |
+| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="gettestpointsbyid"></a>
+<a id="gettestpointsbyid"></a>
 # **GetTestPointsById**
 > List&lt;TestPointByTestSuiteModel&gt; GetTestPointsById (Guid id)
 
@@ -716,14 +903,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
 | **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
-| **200** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="gettestresultsbyid"></a>
+<a id="gettestresultsbyid"></a>
 # **GetTestResultsById**
 > List&lt;TestResultV2ShortModel&gt; GetTestResultsById (Guid id)
 
@@ -819,14 +1006,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for test plan required |  -  |
-| **401** | Unauthorized |  -  |
 | **200** | Successful operation |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Read permission for test plan required |  -  |
 | **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="gettestsuitebyid"></a>
+<a id="gettestsuitebyid"></a>
 # **GetTestSuiteById**
 > TestSuiteV2GetModel GetTestSuiteById (Guid id)
 
@@ -922,14 +1109,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
-| **403** | Read permission for test plan required |  -  |
-| **401** | Unauthorized |  -  |
 | **200** | Successful operation |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Read permission for test plan required |  -  |
+| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getworkitemsbyid"></a>
+<a id="getworkitemsbyid"></a>
 # **GetWorkItemsById**
 > List&lt;WorkItemShortModel&gt; GetWorkItemsById (Guid id, bool? isDeleted = null, List<string> tagNames = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -1035,16 +1222,16 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Not Found |  -  |
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="searchworkitems"></a>
+<a id="searchworkitems"></a>
 # **SearchWorkItems**
-> List&lt;WorkItemShortModel&gt; SearchWorkItems (Guid id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, TestSuiteWorkItemsSearchModel testSuiteWorkItemsSearchModel = null)
+> List&lt;WorkItemShortModel&gt; SearchWorkItems (Guid id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, SearchWorkItemsRequest searchWorkItemsRequest = null)
 
 Search WorkItems
 
@@ -1082,12 +1269,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var testSuiteWorkItemsSearchModel = new TestSuiteWorkItemsSearchModel(); // TestSuiteWorkItemsSearchModel |  (optional) 
+            var searchWorkItemsRequest = new SearchWorkItemsRequest(); // SearchWorkItemsRequest |  (optional) 
 
             try
             {
                 // Search WorkItems
-                List<WorkItemShortModel> result = apiInstance.SearchWorkItems(id, skip, take, orderBy, searchField, searchValue, testSuiteWorkItemsSearchModel);
+                List<WorkItemShortModel> result = apiInstance.SearchWorkItems(id, skip, take, orderBy, searchField, searchValue, searchWorkItemsRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1108,7 +1295,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search WorkItems
-    ApiResponse<List<WorkItemShortModel>> response = apiInstance.SearchWorkItemsWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, testSuiteWorkItemsSearchModel);
+    ApiResponse<List<WorkItemShortModel>> response = apiInstance.SearchWorkItemsWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, searchWorkItemsRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1131,7 +1318,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **testSuiteWorkItemsSearchModel** | [**TestSuiteWorkItemsSearchModel**](TestSuiteWorkItemsSearchModel.md) |  | [optional]  |
+| **searchWorkItemsRequest** | [**SearchWorkItemsRequest**](SearchWorkItemsRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -1150,15 +1337,15 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Read permission for test plan required |  -  |
 | **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 | **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Read permission for test plan required |  -  |
+| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="setconfigurationsbytestsuiteid"></a>
+<a id="setconfigurationsbytestsuiteid"></a>
 # **SetConfigurationsByTestSuiteId**
 > void SetConfigurationsByTestSuiteId (Guid id, List<Guid> requestBody = null)
 
@@ -1252,214 +1439,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id |  -  |
 | **204** | Successful operation |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Update permission for test plan required |  -  |
 | **400** | &lt;br&gt;Some of Configurations do not exist in the project, or they are not active |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="setworkitemsbytestsuiteid"></a>
-# **SetWorkItemsByTestSuiteId**
-> void SetWorkItemsByTestSuiteId (Guid id, List<Guid> requestBody = null)
-
-Set WorkItems By TestSuite Id
-
-<br>Use case  <br>User sets test suite identifier  <br>User sets collection of work items identifiers  <br>User runs method execution  <br>System search test suite by identifier  <br>System search test points related to the test suite  <br>System search work items  <br>System restores(if exist) or creates test points with listed work items  <br>System returns no content response
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
-
-namespace Example
-{
-    public class SetWorkItemsByTestSuiteIdExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure API key authorization: Bearer or PrivateToken
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Test suite internal (guid format) identifier\"
-            var requestBody = new List<Guid>(); // List<Guid> | Collection of work item identifiers\" (optional) 
-
-            try
-            {
-                // Set WorkItems By TestSuite Id
-                apiInstance.SetWorkItemsByTestSuiteId(id, requestBody);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling TestSuitesApi.SetWorkItemsByTestSuiteId: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the SetWorkItemsByTestSuiteIdWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Set WorkItems By TestSuite Id
-    apiInstance.SetWorkItemsByTestSuiteIdWithHttpInfo(id, requestBody);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling TestSuitesApi.SetWorkItemsByTestSuiteIdWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **id** | **Guid** | Test suite internal (guid format) identifier\&quot; |  |
-| **requestBody** | [**List&lt;Guid&gt;**](Guid.md) | Collection of work item identifiers\&quot; | [optional]  |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **403** | Update permission for test plan required |  -  |
-| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id  &lt;br&gt;Some of WorkItems does not exist or deleted |  -  |
-| **422** | &lt;br&gt;can&#39;t put a SharedStep in the TestSuite  &lt;br&gt;ProjectId must be the same for TestSuites |  -  |
-| **400** | Bad Request |  -  |
-| **204** | Successful operation |  -  |
 | **401** | Unauthorized |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="updatetestsuite"></a>
-# **UpdateTestSuite**
-> void UpdateTestSuite (TestSuiteV2PutModel testSuiteV2PutModel = null)
-
-Update TestSuite
-
-<br>Use case  <br>User sets test suite model (listed in request parameters)  <br>User runs method execution  <br>System updates test suite  <br>System returns test suite
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
-
-namespace Example
-{
-    public class UpdateTestSuiteExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure API key authorization: Bearer or PrivateToken
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
-            var testSuiteV2PutModel = new TestSuiteV2PutModel(); // TestSuiteV2PutModel |  (optional) 
-
-            try
-            {
-                // Update TestSuite
-                apiInstance.UpdateTestSuite(testSuiteV2PutModel);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling TestSuitesApi.UpdateTestSuite: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the UpdateTestSuiteWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Update TestSuite
-    apiInstance.UpdateTestSuiteWithHttpInfo(testSuiteV2PutModel);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling TestSuitesApi.UpdateTestSuiteWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **testSuiteV2PutModel** | [**TestSuiteV2PutModel**](TestSuiteV2PutModel.md) |  | [optional]  |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
 | **403** | Update permission for test plan required |  -  |
-| **204** | Successful operation |  -  |
-| **400** | &lt;br&gt;Field is required  &lt;br&gt;Suite with Id creates loop! |  -  |
-| **401** | Unauthorized |  -  |
-| **404** | &lt;br&gt;Can&#39;t find a TestPlan with id  &lt;br&gt;Can&#39;t find a TestSuite with id |  -  |
+| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

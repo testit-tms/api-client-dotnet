@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**WorkItem** | [**SharedStepModel**](SharedStepModel.md) |  | [optional] 
+**WorkItem** | [**SectionSharedStep**](SectionSharedStep.md) |  | [optional] 
 **Id** | **Guid** |  | [optional] 
 **Action** | **string** |  | [optional] 
 **Expected** | **string** |  | [optional] 

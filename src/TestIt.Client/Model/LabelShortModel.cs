@@ -56,6 +56,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets GlobalId
         /// </summary>
+        /// <example>100</example>
         [DataMember(Name = "globalId", EmitDefaultValue = false)]
         public long GlobalId { get; set; }
 
@@ -145,7 +146,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) minLength
             if (this.Name != null && this.Name.Length < 1)

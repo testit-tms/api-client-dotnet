@@ -30,7 +30,7 @@ All URIs are relative to *http://localhost*
 | [**RestoreWorkItem**](WorkItemsApi.md#restoreworkitem) | **POST** /api/v2/workItems/{id}/restore | Restore test case, checklist or shared steps from archive |
 | [**UpdateWorkItem**](WorkItemsApi.md#updateworkitem) | **PUT** /api/v2/workItems | Update Test Case, Checklist or Shared Step |
 
-<a name="apiv2workitemsidattachmentspost"></a>
+<a id="apiv2workitemsidattachmentspost"></a>
 # **ApiV2WorkItemsIdAttachmentsPost**
 > Guid ApiV2WorkItemsIdAttachmentsPost (Guid id, FileParameter file = null)
 
@@ -128,16 +128,16 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **413** | Multipart body length limit exceeded (default constraint is one gigabyte) |  -  |
 | **200** | Successful operation |  -  |
-| **403** | Update permission for test result required |  -  |
 | **400** | Bad Request |  -  |
-| **404** |  |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Update permission for test result required |  -  |
+| **404** |  |  -  |
+| **413** | Multipart body length limit exceeded (default constraint is one gigabyte) |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemsidchecklisttransformtotestcasepost"></a>
+<a id="apiv2workitemsidchecklisttransformtotestcasepost"></a>
 # **ApiV2WorkItemsIdCheckListTransformToTestCasePost**
 > WorkItemModel ApiV2WorkItemsIdCheckListTransformToTestCasePost (Guid id)
 
@@ -233,16 +233,16 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **422** | Client Error |  -  |
-| **403** | Update permission for test library required |  -  |
-| **404** | Can&#39;t find CheckList with id |  -  |
 | **200** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Update permission for test library required |  -  |
+| **404** | Can&#39;t find CheckList with id |  -  |
+| **422** | Client Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemsidhistoryget"></a>
+<a id="apiv2workitemsidhistoryget"></a>
 # **ApiV2WorkItemsIdHistoryGet**
 > List&lt;WorkItemChangeModel&gt; ApiV2WorkItemsIdHistoryGet (Guid id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -356,7 +356,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemsidlikedelete"></a>
+<a id="apiv2workitemsidlikedelete"></a>
 # **ApiV2WorkItemsIdLikeDelete**
 > void ApiV2WorkItemsIdLikeDelete (Guid id)
 
@@ -448,13 +448,13 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
 | **204** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemsidlikepost"></a>
+<a id="apiv2workitemsidlikepost"></a>
 # **ApiV2WorkItemsIdLikePost**
 > void ApiV2WorkItemsIdLikePost (Guid id)
 
@@ -546,13 +546,13 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
 | **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemsidlikescountget"></a>
+<a id="apiv2workitemsidlikescountget"></a>
 # **ApiV2WorkItemsIdLikesCountGet**
 > int ApiV2WorkItemsIdLikesCountGet (Guid id)
 
@@ -655,7 +655,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemsidlikesget"></a>
+<a id="apiv2workitemsidlikesget"></a>
 # **ApiV2WorkItemsIdLikesGet**
 > List&lt;WorkItemLikeModel&gt; ApiV2WorkItemsIdLikesGet (Guid id)
 
@@ -751,14 +751,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
 | **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemsidtestresultshistoryget"></a>
+<a id="apiv2workitemsidtestresultshistoryget"></a>
 # **ApiV2WorkItemsIdTestResultsHistoryGet**
 > List&lt;TestResultHistoryReportModel&gt; ApiV2WorkItemsIdTestResultsHistoryGet (Guid id, DateTime? from = null, DateTime? to = null, List<Guid> configurationIds = null, List<Guid> testPlanIds = null, List<Guid> userIds = null, List<string> outcomes = null, bool? isAutomated = null, bool? automated = null, List<Guid> testRunIds = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -889,7 +889,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemsidversionversionidactualpost"></a>
+<a id="apiv2workitemsidversionversionidactualpost"></a>
 # **ApiV2WorkItemsIdVersionVersionIdActualPost**
 > WorkItemModel ApiV2WorkItemsIdVersionVersionIdActualPost (Guid id, Guid versionId)
 
@@ -987,17 +987,17 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
 | **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test library required |  -  |
 | **404** | Can&#39;t find WorkItem with id |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemsmovepost"></a>
+<a id="apiv2workitemsmovepost"></a>
 # **ApiV2WorkItemsMovePost**
-> WorkItemShortModel ApiV2WorkItemsMovePost (WorkItemMovePostModel workItemMovePostModel = null)
+> WorkItemShortModel ApiV2WorkItemsMovePost (ApiV2WorkItemsMovePostRequest apiV2WorkItemsMovePostRequest = null)
 
 Move WorkItem to another section
 
@@ -1029,12 +1029,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
-            var workItemMovePostModel = new WorkItemMovePostModel(); // WorkItemMovePostModel |  (optional) 
+            var apiV2WorkItemsMovePostRequest = new ApiV2WorkItemsMovePostRequest(); // ApiV2WorkItemsMovePostRequest |  (optional) 
 
             try
             {
                 // Move WorkItem to another section
-                WorkItemShortModel result = apiInstance.ApiV2WorkItemsMovePost(workItemMovePostModel);
+                WorkItemShortModel result = apiInstance.ApiV2WorkItemsMovePost(apiV2WorkItemsMovePostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1055,7 +1055,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Move WorkItem to another section
-    ApiResponse<WorkItemShortModel> response = apiInstance.ApiV2WorkItemsMovePostWithHttpInfo(workItemMovePostModel);
+    ApiResponse<WorkItemShortModel> response = apiInstance.ApiV2WorkItemsMovePostWithHttpInfo(apiV2WorkItemsMovePostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1072,7 +1072,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **workItemMovePostModel** | [**WorkItemMovePostModel**](WorkItemMovePostModel.md) |  | [optional]  |
+| **apiV2WorkItemsMovePostRequest** | [**ApiV2WorkItemsMovePostRequest**](ApiV2WorkItemsMovePostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -1091,16 +1091,16 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
 | **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test library required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemssearchpost"></a>
+<a id="apiv2workitemssearchpost"></a>
 # **ApiV2WorkItemsSearchPost**
-> List&lt;WorkItemShortModel&gt; ApiV2WorkItemsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, WorkItemSelectModel workItemSelectModel = null)
+> List&lt;WorkItemShortModel&gt; ApiV2WorkItemsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ProjectsIdWorkItemsSearchPostRequest apiV2ProjectsIdWorkItemsSearchPostRequest = null)
 
 Search for work items
 
@@ -1135,12 +1135,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var workItemSelectModel = new WorkItemSelectModel(); // WorkItemSelectModel |  (optional) 
+            var apiV2ProjectsIdWorkItemsSearchPostRequest = new ApiV2ProjectsIdWorkItemsSearchPostRequest(); // ApiV2ProjectsIdWorkItemsSearchPostRequest |  (optional) 
 
             try
             {
                 // Search for work items
-                List<WorkItemShortModel> result = apiInstance.ApiV2WorkItemsSearchPost(skip, take, orderBy, searchField, searchValue, workItemSelectModel);
+                List<WorkItemShortModel> result = apiInstance.ApiV2WorkItemsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2ProjectsIdWorkItemsSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1161,7 +1161,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for work items
-    ApiResponse<List<WorkItemShortModel>> response = apiInstance.ApiV2WorkItemsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, workItemSelectModel);
+    ApiResponse<List<WorkItemShortModel>> response = apiInstance.ApiV2WorkItemsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2ProjectsIdWorkItemsSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1183,7 +1183,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **workItemSelectModel** | [**WorkItemSelectModel**](WorkItemSelectModel.md) |  | [optional]  |
+| **apiV2ProjectsIdWorkItemsSearchPostRequest** | [**ApiV2ProjectsIdWorkItemsSearchPostRequest**](ApiV2ProjectsIdWorkItemsSearchPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -1207,9 +1207,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemssharedstepidreferencessectionspost"></a>
+<a id="apiv2workitemssharedstepidreferencessectionspost"></a>
 # **ApiV2WorkItemsSharedStepIdReferencesSectionsPost**
-> List&lt;SharedStepReferenceSectionModel&gt; ApiV2WorkItemsSharedStepIdReferencesSectionsPost (Guid sharedStepId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, SharedStepReferenceSectionsQueryFilterModel sharedStepReferenceSectionsQueryFilterModel = null)
+> List&lt;SharedStepReferenceSectionModel&gt; ApiV2WorkItemsSharedStepIdReferencesSectionsPost (Guid sharedStepId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest = null)
 
 Get SharedStep references in sections
 
@@ -1247,12 +1247,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var sharedStepReferenceSectionsQueryFilterModel = new SharedStepReferenceSectionsQueryFilterModel(); // SharedStepReferenceSectionsQueryFilterModel |  (optional) 
+            var apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest = new ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest(); // ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest |  (optional) 
 
             try
             {
                 // Get SharedStep references in sections
-                List<SharedStepReferenceSectionModel> result = apiInstance.ApiV2WorkItemsSharedStepIdReferencesSectionsPost(sharedStepId, skip, take, orderBy, searchField, searchValue, sharedStepReferenceSectionsQueryFilterModel);
+                List<SharedStepReferenceSectionModel> result = apiInstance.ApiV2WorkItemsSharedStepIdReferencesSectionsPost(sharedStepId, skip, take, orderBy, searchField, searchValue, apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1273,7 +1273,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get SharedStep references in sections
-    ApiResponse<List<SharedStepReferenceSectionModel>> response = apiInstance.ApiV2WorkItemsSharedStepIdReferencesSectionsPostWithHttpInfo(sharedStepId, skip, take, orderBy, searchField, searchValue, sharedStepReferenceSectionsQueryFilterModel);
+    ApiResponse<List<SharedStepReferenceSectionModel>> response = apiInstance.ApiV2WorkItemsSharedStepIdReferencesSectionsPostWithHttpInfo(sharedStepId, skip, take, orderBy, searchField, searchValue, apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1296,7 +1296,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **sharedStepReferenceSectionsQueryFilterModel** | [**SharedStepReferenceSectionsQueryFilterModel**](SharedStepReferenceSectionsQueryFilterModel.md) |  | [optional]  |
+| **apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest** | [**ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest**](ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -1321,9 +1321,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemssharedstepidreferencesworkitemspost"></a>
+<a id="apiv2workitemssharedstepidreferencesworkitemspost"></a>
 # **ApiV2WorkItemsSharedStepIdReferencesWorkItemsPost**
-> List&lt;SharedStepReferenceModel&gt; ApiV2WorkItemsSharedStepIdReferencesWorkItemsPost (Guid sharedStepId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, SharedStepReferencesQueryFilterModel sharedStepReferencesQueryFilterModel = null)
+> List&lt;SharedStepReferenceModel&gt; ApiV2WorkItemsSharedStepIdReferencesWorkItemsPost (Guid sharedStepId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest = null)
 
 Get SharedStep references in workitems
 
@@ -1361,12 +1361,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var sharedStepReferencesQueryFilterModel = new SharedStepReferencesQueryFilterModel(); // SharedStepReferencesQueryFilterModel |  (optional) 
+            var apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest = new ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest(); // ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest |  (optional) 
 
             try
             {
                 // Get SharedStep references in workitems
-                List<SharedStepReferenceModel> result = apiInstance.ApiV2WorkItemsSharedStepIdReferencesWorkItemsPost(sharedStepId, skip, take, orderBy, searchField, searchValue, sharedStepReferencesQueryFilterModel);
+                List<SharedStepReferenceModel> result = apiInstance.ApiV2WorkItemsSharedStepIdReferencesWorkItemsPost(sharedStepId, skip, take, orderBy, searchField, searchValue, apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1387,7 +1387,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get SharedStep references in workitems
-    ApiResponse<List<SharedStepReferenceModel>> response = apiInstance.ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostWithHttpInfo(sharedStepId, skip, take, orderBy, searchField, searchValue, sharedStepReferencesQueryFilterModel);
+    ApiResponse<List<SharedStepReferenceModel>> response = apiInstance.ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostWithHttpInfo(sharedStepId, skip, take, orderBy, searchField, searchValue, apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1410,7 +1410,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **sharedStepReferencesQueryFilterModel** | [**SharedStepReferencesQueryFilterModel**](SharedStepReferencesQueryFilterModel.md) |  | [optional]  |
+| **apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest** | [**ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest**](ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -1435,7 +1435,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemssharedstepssharedstepidreferencesget"></a>
+<a id="apiv2workitemssharedstepssharedstepidreferencesget"></a>
 # **ApiV2WorkItemsSharedStepsSharedStepIdReferencesGet**
 > List&lt;SharedStepReferenceModel&gt; ApiV2WorkItemsSharedStepsSharedStepIdReferencesGet (Guid sharedStepId)
 
@@ -1531,16 +1531,16 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
 | **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Can&#39;t find SharedStep with id |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createworkitem"></a>
+<a id="createworkitem"></a>
 # **CreateWorkItem**
-> WorkItemModel CreateWorkItem (WorkItemPostModel workItemPostModel = null)
+> WorkItemModel CreateWorkItem (CreateWorkItemRequest createWorkItemRequest = null)
 
 Create Test Case, Checklist or Shared Step
 
@@ -1572,12 +1572,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
-            var workItemPostModel = new WorkItemPostModel(); // WorkItemPostModel |  (optional) 
+            var createWorkItemRequest = new CreateWorkItemRequest(); // CreateWorkItemRequest |  (optional) 
 
             try
             {
                 // Create Test Case, Checklist or Shared Step
-                WorkItemModel result = apiInstance.CreateWorkItem(workItemPostModel);
+                WorkItemModel result = apiInstance.CreateWorkItem(createWorkItemRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1598,7 +1598,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create Test Case, Checklist or Shared Step
-    ApiResponse<WorkItemModel> response = apiInstance.CreateWorkItemWithHttpInfo(workItemPostModel);
+    ApiResponse<WorkItemModel> response = apiInstance.CreateWorkItemWithHttpInfo(createWorkItemRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1615,7 +1615,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **workItemPostModel** | [**WorkItemPostModel**](WorkItemPostModel.md) |  | [optional]  |
+| **createWorkItemRequest** | [**CreateWorkItemRequest**](CreateWorkItemRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -1634,15 +1634,15 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
-| **403** | Update permission for test library required |  -  |
 | **201** | Successful operation |  -  |
 | **400** | &lt;br&gt;Field is required  &lt;br&gt;Priority is not a valid  &lt;br&gt;Tags must be set  &lt;br&gt;Duration should be a positive number  &lt;br&gt;Should be empty for CheckList  &lt;br&gt;Attribute value must be a valid guid for user scheme  &lt;br&gt;There is no option in ProjectAttributesScheme with such Id  &lt;br&gt;Attribute value must be a valid guid for options scheme |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Update permission for test library required |  -  |
 | **404** | &lt;br&gt;Can&#39;t find section  &lt;br&gt;Can&#39;t find project  &lt;br&gt;Can&#39;t find attachmentIds  &lt;br&gt;Project not found  &lt;br&gt;Can&#39;t attributesScheme  &lt;br&gt;Can&#39;t attribute  &lt;br&gt;AutoTestIds not exist in project |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleteallworkitemsfromautotest"></a>
+<a id="deleteallworkitemsfromautotest"></a>
 # **DeleteAllWorkItemsFromAutoTest**
 > void DeleteAllWorkItemsFromAutoTest (string id)
 
@@ -1734,16 +1734,16 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
-| **400** | Bad Request |  -  |
 | **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Update permission for test library required |  -  |
 | **404** | Can&#39;t find a WorkItem with workItemId |  -  |
 | **200** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleteworkitem"></a>
+<a id="deleteworkitem"></a>
 # **DeleteWorkItem**
 > void DeleteWorkItem (string id)
 
@@ -1835,16 +1835,16 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **204** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Delete permission for test library required |  -  |
 | **404** | Can&#39;t find a WorkItem with id |  -  |
-| **401** | Unauthorized |  -  |
-| **400** | Bad Request |  -  |
 | **422** | Could not delete Shared Step that has references |  -  |
-| **204** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getautotestsforworkitem"></a>
+<a id="getautotestsforworkitem"></a>
 # **GetAutoTestsForWorkItem**
 > List&lt;AutoTestModel&gt; GetAutoTestsForWorkItem (string id)
 
@@ -1948,7 +1948,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getiterations"></a>
+<a id="getiterations"></a>
 # **GetIterations**
 > List&lt;IterationModel&gt; GetIterations (string id, Guid? versionId = null, int? versionNumber = null)
 
@@ -2046,15 +2046,15 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
-| **404** | Can&#39;t find workItem with id |  -  |
 | **200** | Successful operation |  -  |
+| **404** | Can&#39;t find workItem with id |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getworkitembyid"></a>
+<a id="getworkitembyid"></a>
 # **GetWorkItemById**
 > WorkItemModel GetWorkItemById (string id, Guid? versionId = null, int? versionNumber = null)
 
@@ -2154,15 +2154,15 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
-| **404** | Can&#39;t find workItem with id |  -  |
 | **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
+| **404** | Can&#39;t find workItem with id |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getworkitemchronology"></a>
+<a id="getworkitemchronology"></a>
 # **GetWorkItemChronology**
 > List&lt;TestResultChronologyModel&gt; GetWorkItemChronology (string id)
 
@@ -2258,15 +2258,15 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Not valid workItemId |  -  |
-| **404** | Can&#39;t find WorkItem with workItemId |  -  |
 | **200** | Successful operation |  -  |
+| **400** | Not valid workItemId |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
+| **404** | Can&#39;t find WorkItem with workItemId |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getworkitemversions"></a>
+<a id="getworkitemversions"></a>
 # **GetWorkItemVersions**
 > List&lt;WorkItemVersionModel&gt; GetWorkItemVersions (string id, Guid? workItemVersionId = null, int? versionNumber = null)
 
@@ -2368,13 +2368,13 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
-| **404** | Can&#39;t find WorkItem with workItemId |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
+| **404** | Can&#39;t find WorkItem with workItemId |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="purgeworkitem"></a>
+<a id="purgeworkitem"></a>
 # **PurgeWorkItem**
 > void PurgeWorkItem (string id)
 
@@ -2469,7 +2469,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="restoreworkitem"></a>
+<a id="restoreworkitem"></a>
 # **RestoreWorkItem**
 > void RestoreWorkItem (string id)
 
@@ -2564,9 +2564,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updateworkitem"></a>
+<a id="updateworkitem"></a>
 # **UpdateWorkItem**
-> void UpdateWorkItem (WorkItemPutModel workItemPutModel = null)
+> void UpdateWorkItem (UpdateWorkItemRequest updateWorkItemRequest = null)
 
 Update Test Case, Checklist or Shared Step
 
@@ -2598,12 +2598,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
-            var workItemPutModel = new WorkItemPutModel(); // WorkItemPutModel |  (optional) 
+            var updateWorkItemRequest = new UpdateWorkItemRequest(); // UpdateWorkItemRequest |  (optional) 
 
             try
             {
                 // Update Test Case, Checklist or Shared Step
-                apiInstance.UpdateWorkItem(workItemPutModel);
+                apiInstance.UpdateWorkItem(updateWorkItemRequest);
             }
             catch (ApiException  e)
             {
@@ -2623,7 +2623,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update Test Case, Checklist or Shared Step
-    apiInstance.UpdateWorkItemWithHttpInfo(workItemPutModel);
+    apiInstance.UpdateWorkItemWithHttpInfo(updateWorkItemRequest);
 }
 catch (ApiException e)
 {
@@ -2637,7 +2637,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **workItemPutModel** | [**WorkItemPutModel**](WorkItemPutModel.md) |  | [optional]  |
+| **updateWorkItemRequest** | [**UpdateWorkItemRequest**](UpdateWorkItemRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -2656,8 +2656,8 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | &lt;br&gt;Field is required  &lt;br&gt;Priority is not a valid  &lt;br&gt;duration should be a positive number  &lt;br&gt;should be empty for CheckList  &lt;br&gt;There is no option in ProjectAttributesScheme with such Id  &lt;br&gt;Attribute value must be a valid guid for options scheme |  -  |
 | **204** | Successful operation |  -  |
+| **400** | &lt;br&gt;Field is required  &lt;br&gt;Priority is not a valid  &lt;br&gt;duration should be a positive number  &lt;br&gt;should be empty for CheckList  &lt;br&gt;There is no option in ProjectAttributesScheme with such Id  &lt;br&gt;Attribute value must be a valid guid for options scheme |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test library required |  -  |
 | **404** | &lt;br&gt;WorkItem not found  &lt;br&gt;Can&#39;t find section  &lt;br&gt;Can&#39;t attributesScheme  &lt;br&gt;Can&#39;t attribute  &lt;br&gt;AutoTestIds not exist in project |  -  |

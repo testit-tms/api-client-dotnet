@@ -40,7 +40,7 @@ namespace TestIt.Client.Model
         /// <param name="testPlanChangedFields">testPlanChangedFields.</param>
         /// <param name="createdById">createdById.</param>
         /// <param name="createdDate">createdDate.</param>
-        public TestPlanChangeModel(Guid id = default(Guid), Guid testPlanId = default(Guid), TestPlanChangedFieldsViewModel testPlanChangedFields = default(TestPlanChangedFieldsViewModel), Guid createdById = default(Guid), DateTime? createdDate = default(DateTime?))
+        public TestPlanChangeModel(Guid id = default(Guid), Guid testPlanId = default(Guid), TestPlanChangeModelTestPlanChangedFields testPlanChangedFields = default(TestPlanChangeModelTestPlanChangedFields), Guid createdById = default(Guid), DateTime? createdDate = default(DateTime?))
         {
             this.Id = id;
             this.TestPlanId = testPlanId;
@@ -65,7 +65,7 @@ namespace TestIt.Client.Model
         /// Gets or Sets TestPlanChangedFields
         /// </summary>
         [DataMember(Name = "testPlanChangedFields", EmitDefaultValue = false)]
-        public TestPlanChangedFieldsViewModel TestPlanChangedFields { get; set; }
+        public TestPlanChangeModelTestPlanChangedFields TestPlanChangedFields { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
@@ -192,7 +192,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

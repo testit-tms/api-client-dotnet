@@ -106,9 +106,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
-        /// <param name="testResultUpdateModel"> (optional)</param>
+        /// <param name="apiV2TestResultsIdPutRequest"> (optional)</param>
         /// <returns></returns>
-        void ApiV2TestResultsIdPut(Guid id, TestResultUpdateModel testResultUpdateModel = default(TestResultUpdateModel));
+        void ApiV2TestResultsIdPut(Guid id, ApiV2TestResultsIdPutRequest apiV2TestResultsIdPutRequest = default(ApiV2TestResultsIdPutRequest));
 
         /// <summary>
         /// Edit test result by ID
@@ -118,9 +118,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
-        /// <param name="testResultUpdateModel"> (optional)</param>
+        /// <param name="apiV2TestResultsIdPutRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2TestResultsIdPutWithHttpInfo(Guid id, TestResultUpdateModel testResultUpdateModel = default(TestResultUpdateModel));
+        ApiResponse<Object> ApiV2TestResultsIdPutWithHttpInfo(Guid id, ApiV2TestResultsIdPutRequest apiV2TestResultsIdPutRequest = default(ApiV2TestResultsIdPutRequest));
         /// <summary>
         /// Search for test results
         /// </summary>
@@ -130,9 +130,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testResultsFilterModel"> (optional)</param>
+        /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;TestResultShortGetModel&gt;</returns>
-        List<TestResultShortGetModel> ApiV2TestResultsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestResultsFilterModel testResultsFilterModel = default(TestResultsFilterModel));
+        List<TestResultShortGetModel> ApiV2TestResultsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest));
 
         /// <summary>
         /// Search for test results
@@ -146,16 +146,16 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testResultsFilterModel"> (optional)</param>
+        /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;TestResultShortGetModel&gt;</returns>
-        ApiResponse<List<TestResultShortGetModel>> ApiV2TestResultsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestResultsFilterModel testResultsFilterModel = default(TestResultsFilterModel));
+        ApiResponse<List<TestResultShortGetModel>> ApiV2TestResultsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest));
         /// <summary>
         /// Search for test results and extract statistics
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="testResultsFilterModel"> (optional)</param>
+        /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <returns>TestResultsStatisticsGetModel</returns>
-        TestResultsStatisticsGetModel ApiV2TestResultsStatisticsFilterPost(TestResultsFilterModel testResultsFilterModel = default(TestResultsFilterModel));
+        TestResultsStatisticsGetModel ApiV2TestResultsStatisticsFilterPost(ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest));
 
         /// <summary>
         /// Search for test results and extract statistics
@@ -164,9 +164,9 @@ namespace TestIt.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="testResultsFilterModel"> (optional)</param>
+        /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of TestResultsStatisticsGetModel</returns>
-        ApiResponse<TestResultsStatisticsGetModel> ApiV2TestResultsStatisticsFilterPostWithHttpInfo(TestResultsFilterModel testResultsFilterModel = default(TestResultsFilterModel));
+        ApiResponse<TestResultsStatisticsGetModel> ApiV2TestResultsStatisticsFilterPostWithHttpInfo(ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest));
         /// <summary>
         /// Upload and link attachment to TestResult
         /// </summary>
@@ -401,10 +401,10 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
-        /// <param name="testResultUpdateModel"> (optional)</param>
+        /// <param name="apiV2TestResultsIdPutRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2TestResultsIdPutAsync(Guid id, TestResultUpdateModel testResultUpdateModel = default(TestResultUpdateModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2TestResultsIdPutAsync(Guid id, ApiV2TestResultsIdPutRequest apiV2TestResultsIdPutRequest = default(ApiV2TestResultsIdPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Edit test result by ID
@@ -414,10 +414,10 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
-        /// <param name="testResultUpdateModel"> (optional)</param>
+        /// <param name="apiV2TestResultsIdPutRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestResultsIdPutWithHttpInfoAsync(Guid id, TestResultUpdateModel testResultUpdateModel = default(TestResultUpdateModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestResultsIdPutWithHttpInfoAsync(Guid id, ApiV2TestResultsIdPutRequest apiV2TestResultsIdPutRequest = default(ApiV2TestResultsIdPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Search for test results
         /// </summary>
@@ -430,10 +430,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testResultsFilterModel"> (optional)</param>
+        /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestResultShortGetModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TestResultShortGetModel>> ApiV2TestResultsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestResultsFilterModel testResultsFilterModel = default(TestResultsFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TestResultShortGetModel>> ApiV2TestResultsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Search for test results
@@ -447,10 +447,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testResultsFilterModel"> (optional)</param>
+        /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestResultShortGetModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestResultShortGetModel>>> ApiV2TestResultsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestResultsFilterModel testResultsFilterModel = default(TestResultsFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TestResultShortGetModel>>> ApiV2TestResultsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Search for test results and extract statistics
         /// </summary>
@@ -458,10 +458,10 @@ namespace TestIt.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="testResultsFilterModel"> (optional)</param>
+        /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestResultsStatisticsGetModel</returns>
-        System.Threading.Tasks.Task<TestResultsStatisticsGetModel> ApiV2TestResultsStatisticsFilterPostAsync(TestResultsFilterModel testResultsFilterModel = default(TestResultsFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TestResultsStatisticsGetModel> ApiV2TestResultsStatisticsFilterPostAsync(ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Search for test results and extract statistics
@@ -470,10 +470,10 @@ namespace TestIt.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="testResultsFilterModel"> (optional)</param>
+        /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestResultsStatisticsGetModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TestResultsStatisticsGetModel>> ApiV2TestResultsStatisticsFilterPostWithHttpInfoAsync(TestResultsFilterModel testResultsFilterModel = default(TestResultsFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TestResultsStatisticsGetModel>> ApiV2TestResultsStatisticsFilterPostWithHttpInfoAsync(ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Upload and link attachment to TestResult
         /// </summary>
@@ -1297,11 +1297,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
-        /// <param name="testResultUpdateModel"> (optional)</param>
+        /// <param name="apiV2TestResultsIdPutRequest"> (optional)</param>
         /// <returns></returns>
-        public void ApiV2TestResultsIdPut(Guid id, TestResultUpdateModel testResultUpdateModel = default(TestResultUpdateModel))
+        public void ApiV2TestResultsIdPut(Guid id, ApiV2TestResultsIdPutRequest apiV2TestResultsIdPutRequest = default(ApiV2TestResultsIdPutRequest))
         {
-            ApiV2TestResultsIdPutWithHttpInfo(id, testResultUpdateModel);
+            ApiV2TestResultsIdPutWithHttpInfo(id, apiV2TestResultsIdPutRequest);
         }
 
         /// <summary>
@@ -1309,9 +1309,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
-        /// <param name="testResultUpdateModel"> (optional)</param>
+        /// <param name="apiV2TestResultsIdPutRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> ApiV2TestResultsIdPutWithHttpInfo(Guid id, TestResultUpdateModel testResultUpdateModel = default(TestResultUpdateModel))
+        public TestIt.Client.Client.ApiResponse<Object> ApiV2TestResultsIdPutWithHttpInfo(Guid id, ApiV2TestResultsIdPutRequest apiV2TestResultsIdPutRequest = default(ApiV2TestResultsIdPutRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1331,7 +1331,7 @@ namespace TestIt.Client.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = testResultUpdateModel;
+            localVarRequestOptions.Data = apiV2TestResultsIdPutRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1356,12 +1356,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
-        /// <param name="testResultUpdateModel"> (optional)</param>
+        /// <param name="apiV2TestResultsIdPutRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2TestResultsIdPutAsync(Guid id, TestResultUpdateModel testResultUpdateModel = default(TestResultUpdateModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2TestResultsIdPutAsync(Guid id, ApiV2TestResultsIdPutRequest apiV2TestResultsIdPutRequest = default(ApiV2TestResultsIdPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ApiV2TestResultsIdPutWithHttpInfoAsync(id, testResultUpdateModel, cancellationToken).ConfigureAwait(false);
+            await ApiV2TestResultsIdPutWithHttpInfoAsync(id, apiV2TestResultsIdPutRequest, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1369,10 +1369,10 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
-        /// <param name="testResultUpdateModel"> (optional)</param>
+        /// <param name="apiV2TestResultsIdPutRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2TestResultsIdPutWithHttpInfoAsync(Guid id, TestResultUpdateModel testResultUpdateModel = default(TestResultUpdateModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2TestResultsIdPutWithHttpInfoAsync(Guid id, ApiV2TestResultsIdPutRequest apiV2TestResultsIdPutRequest = default(ApiV2TestResultsIdPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1394,7 +1394,7 @@ namespace TestIt.Client.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = testResultUpdateModel;
+            localVarRequestOptions.Data = apiV2TestResultsIdPutRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1424,11 +1424,11 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testResultsFilterModel"> (optional)</param>
+        /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;TestResultShortGetModel&gt;</returns>
-        public List<TestResultShortGetModel> ApiV2TestResultsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestResultsFilterModel testResultsFilterModel = default(TestResultsFilterModel))
+        public List<TestResultShortGetModel> ApiV2TestResultsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest))
         {
-            TestIt.Client.Client.ApiResponse<List<TestResultShortGetModel>> localVarResponse = ApiV2TestResultsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, testResultsFilterModel);
+            TestIt.Client.Client.ApiResponse<List<TestResultShortGetModel>> localVarResponse = ApiV2TestResultsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2TestResultsSearchPostRequest);
             return localVarResponse.Data;
         }
 
@@ -1441,9 +1441,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testResultsFilterModel"> (optional)</param>
+        /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;TestResultShortGetModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<TestResultShortGetModel>> ApiV2TestResultsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestResultsFilterModel testResultsFilterModel = default(TestResultsFilterModel))
+        public TestIt.Client.Client.ApiResponse<List<TestResultShortGetModel>> ApiV2TestResultsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1482,7 +1482,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = testResultsFilterModel;
+            localVarRequestOptions.Data = apiV2TestResultsSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1511,12 +1511,12 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testResultsFilterModel"> (optional)</param>
+        /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestResultShortGetModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestResultShortGetModel>> ApiV2TestResultsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestResultsFilterModel testResultsFilterModel = default(TestResultsFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TestResultShortGetModel>> ApiV2TestResultsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<TestResultShortGetModel>> localVarResponse = await ApiV2TestResultsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, testResultsFilterModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<TestResultShortGetModel>> localVarResponse = await ApiV2TestResultsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, apiV2TestResultsSearchPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1529,10 +1529,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testResultsFilterModel"> (optional)</param>
+        /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestResultShortGetModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestResultShortGetModel>>> ApiV2TestResultsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestResultsFilterModel testResultsFilterModel = default(TestResultsFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestResultShortGetModel>>> ApiV2TestResultsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1573,7 +1573,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = testResultsFilterModel;
+            localVarRequestOptions.Data = apiV2TestResultsSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1598,11 +1598,11 @@ namespace TestIt.Client.Api
         /// Search for test results and extract statistics 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="testResultsFilterModel"> (optional)</param>
+        /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <returns>TestResultsStatisticsGetModel</returns>
-        public TestResultsStatisticsGetModel ApiV2TestResultsStatisticsFilterPost(TestResultsFilterModel testResultsFilterModel = default(TestResultsFilterModel))
+        public TestResultsStatisticsGetModel ApiV2TestResultsStatisticsFilterPost(ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest))
         {
-            TestIt.Client.Client.ApiResponse<TestResultsStatisticsGetModel> localVarResponse = ApiV2TestResultsStatisticsFilterPostWithHttpInfo(testResultsFilterModel);
+            TestIt.Client.Client.ApiResponse<TestResultsStatisticsGetModel> localVarResponse = ApiV2TestResultsStatisticsFilterPostWithHttpInfo(apiV2TestResultsSearchPostRequest);
             return localVarResponse.Data;
         }
 
@@ -1610,9 +1610,9 @@ namespace TestIt.Client.Api
         /// Search for test results and extract statistics 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="testResultsFilterModel"> (optional)</param>
+        /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of TestResultsStatisticsGetModel</returns>
-        public TestIt.Client.Client.ApiResponse<TestResultsStatisticsGetModel> ApiV2TestResultsStatisticsFilterPostWithHttpInfo(TestResultsFilterModel testResultsFilterModel = default(TestResultsFilterModel))
+        public TestIt.Client.Client.ApiResponse<TestResultsStatisticsGetModel> ApiV2TestResultsStatisticsFilterPostWithHttpInfo(ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1631,7 +1631,7 @@ namespace TestIt.Client.Api
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = testResultsFilterModel;
+            localVarRequestOptions.Data = apiV2TestResultsSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1655,12 +1655,12 @@ namespace TestIt.Client.Api
         /// Search for test results and extract statistics 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="testResultsFilterModel"> (optional)</param>
+        /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestResultsStatisticsGetModel</returns>
-        public async System.Threading.Tasks.Task<TestResultsStatisticsGetModel> ApiV2TestResultsStatisticsFilterPostAsync(TestResultsFilterModel testResultsFilterModel = default(TestResultsFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestResultsStatisticsGetModel> ApiV2TestResultsStatisticsFilterPostAsync(ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<TestResultsStatisticsGetModel> localVarResponse = await ApiV2TestResultsStatisticsFilterPostWithHttpInfoAsync(testResultsFilterModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<TestResultsStatisticsGetModel> localVarResponse = await ApiV2TestResultsStatisticsFilterPostWithHttpInfoAsync(apiV2TestResultsSearchPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1668,10 +1668,10 @@ namespace TestIt.Client.Api
         /// Search for test results and extract statistics 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="testResultsFilterModel"> (optional)</param>
+        /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestResultsStatisticsGetModel)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<TestResultsStatisticsGetModel>> ApiV2TestResultsStatisticsFilterPostWithHttpInfoAsync(TestResultsFilterModel testResultsFilterModel = default(TestResultsFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<TestResultsStatisticsGetModel>> ApiV2TestResultsStatisticsFilterPostWithHttpInfoAsync(ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1692,7 +1692,7 @@ namespace TestIt.Client.Api
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = testResultsFilterModel;
+            localVarRequestOptions.Data = apiV2TestResultsSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))

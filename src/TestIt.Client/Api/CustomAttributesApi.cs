@@ -50,9 +50,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of attribute</param>
-        /// <param name="globalCustomAttributeUpdateModel"> (optional)</param>
+        /// <param name="apiV2CustomAttributesGlobalIdPutRequest"> (optional)</param>
         /// <returns>CustomAttributeModel</returns>
-        CustomAttributeModel ApiV2CustomAttributesGlobalIdPut(Guid id, GlobalCustomAttributeUpdateModel globalCustomAttributeUpdateModel = default(GlobalCustomAttributeUpdateModel));
+        CustomAttributeModel ApiV2CustomAttributesGlobalIdPut(Guid id, ApiV2CustomAttributesGlobalIdPutRequest apiV2CustomAttributesGlobalIdPutRequest = default(ApiV2CustomAttributesGlobalIdPutRequest));
 
         /// <summary>
         /// Edit global attribute
@@ -62,16 +62,16 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of attribute</param>
-        /// <param name="globalCustomAttributeUpdateModel"> (optional)</param>
+        /// <param name="apiV2CustomAttributesGlobalIdPutRequest"> (optional)</param>
         /// <returns>ApiResponse of CustomAttributeModel</returns>
-        ApiResponse<CustomAttributeModel> ApiV2CustomAttributesGlobalIdPutWithHttpInfo(Guid id, GlobalCustomAttributeUpdateModel globalCustomAttributeUpdateModel = default(GlobalCustomAttributeUpdateModel));
+        ApiResponse<CustomAttributeModel> ApiV2CustomAttributesGlobalIdPutWithHttpInfo(Guid id, ApiV2CustomAttributesGlobalIdPutRequest apiV2CustomAttributesGlobalIdPutRequest = default(ApiV2CustomAttributesGlobalIdPutRequest));
         /// <summary>
         /// Create global attribute
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="globalCustomAttributePostModel"> (optional)</param>
+        /// <param name="apiV2CustomAttributesGlobalPostRequest"> (optional)</param>
         /// <returns>CustomAttributeModel</returns>
-        CustomAttributeModel ApiV2CustomAttributesGlobalPost(GlobalCustomAttributePostModel globalCustomAttributePostModel = default(GlobalCustomAttributePostModel));
+        CustomAttributeModel ApiV2CustomAttributesGlobalPost(ApiV2CustomAttributesGlobalPostRequest apiV2CustomAttributesGlobalPostRequest = default(ApiV2CustomAttributesGlobalPostRequest));
 
         /// <summary>
         /// Create global attribute
@@ -80,9 +80,9 @@ namespace TestIt.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="globalCustomAttributePostModel"> (optional)</param>
+        /// <param name="apiV2CustomAttributesGlobalPostRequest"> (optional)</param>
         /// <returns>ApiResponse of CustomAttributeModel</returns>
-        ApiResponse<CustomAttributeModel> ApiV2CustomAttributesGlobalPostWithHttpInfo(GlobalCustomAttributePostModel globalCustomAttributePostModel = default(GlobalCustomAttributePostModel));
+        ApiResponse<CustomAttributeModel> ApiV2CustomAttributesGlobalPostWithHttpInfo(ApiV2CustomAttributesGlobalPostRequest apiV2CustomAttributesGlobalPostRequest = default(ApiV2CustomAttributesGlobalPostRequest));
         /// <summary>
         /// Get attribute
         /// </summary>
@@ -110,9 +110,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="customAttributeSearchQueryModel"> (optional)</param>
+        /// <param name="apiV2CustomAttributesSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;CustomAttributeModel&gt;</returns>
-        List<CustomAttributeModel> ApiV2CustomAttributesSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeSearchQueryModel customAttributeSearchQueryModel = default(CustomAttributeSearchQueryModel));
+        List<CustomAttributeModel> ApiV2CustomAttributesSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2CustomAttributesSearchPostRequest apiV2CustomAttributesSearchPostRequest = default(ApiV2CustomAttributesSearchPostRequest));
 
         /// <summary>
         /// Search for attributes
@@ -126,9 +126,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="customAttributeSearchQueryModel"> (optional)</param>
+        /// <param name="apiV2CustomAttributesSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;CustomAttributeModel&gt;</returns>
-        ApiResponse<List<CustomAttributeModel>> ApiV2CustomAttributesSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeSearchQueryModel customAttributeSearchQueryModel = default(CustomAttributeSearchQueryModel));
+        ApiResponse<List<CustomAttributeModel>> ApiV2CustomAttributesSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2CustomAttributesSearchPostRequest apiV2CustomAttributesSearchPostRequest = default(ApiV2CustomAttributesSearchPostRequest));
         #endregion Synchronous Operations
     }
 
@@ -169,10 +169,10 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of attribute</param>
-        /// <param name="globalCustomAttributeUpdateModel"> (optional)</param>
+        /// <param name="apiV2CustomAttributesGlobalIdPutRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomAttributeModel</returns>
-        System.Threading.Tasks.Task<CustomAttributeModel> ApiV2CustomAttributesGlobalIdPutAsync(Guid id, GlobalCustomAttributeUpdateModel globalCustomAttributeUpdateModel = default(GlobalCustomAttributeUpdateModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CustomAttributeModel> ApiV2CustomAttributesGlobalIdPutAsync(Guid id, ApiV2CustomAttributesGlobalIdPutRequest apiV2CustomAttributesGlobalIdPutRequest = default(ApiV2CustomAttributesGlobalIdPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Edit global attribute
@@ -182,10 +182,10 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of attribute</param>
-        /// <param name="globalCustomAttributeUpdateModel"> (optional)</param>
+        /// <param name="apiV2CustomAttributesGlobalIdPutRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomAttributeModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomAttributeModel>> ApiV2CustomAttributesGlobalIdPutWithHttpInfoAsync(Guid id, GlobalCustomAttributeUpdateModel globalCustomAttributeUpdateModel = default(GlobalCustomAttributeUpdateModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CustomAttributeModel>> ApiV2CustomAttributesGlobalIdPutWithHttpInfoAsync(Guid id, ApiV2CustomAttributesGlobalIdPutRequest apiV2CustomAttributesGlobalIdPutRequest = default(ApiV2CustomAttributesGlobalIdPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create global attribute
         /// </summary>
@@ -193,10 +193,10 @@ namespace TestIt.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="globalCustomAttributePostModel"> (optional)</param>
+        /// <param name="apiV2CustomAttributesGlobalPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomAttributeModel</returns>
-        System.Threading.Tasks.Task<CustomAttributeModel> ApiV2CustomAttributesGlobalPostAsync(GlobalCustomAttributePostModel globalCustomAttributePostModel = default(GlobalCustomAttributePostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CustomAttributeModel> ApiV2CustomAttributesGlobalPostAsync(ApiV2CustomAttributesGlobalPostRequest apiV2CustomAttributesGlobalPostRequest = default(ApiV2CustomAttributesGlobalPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create global attribute
@@ -205,10 +205,10 @@ namespace TestIt.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="globalCustomAttributePostModel"> (optional)</param>
+        /// <param name="apiV2CustomAttributesGlobalPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomAttributeModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomAttributeModel>> ApiV2CustomAttributesGlobalPostWithHttpInfoAsync(GlobalCustomAttributePostModel globalCustomAttributePostModel = default(GlobalCustomAttributePostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CustomAttributeModel>> ApiV2CustomAttributesGlobalPostWithHttpInfoAsync(ApiV2CustomAttributesGlobalPostRequest apiV2CustomAttributesGlobalPostRequest = default(ApiV2CustomAttributesGlobalPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get attribute
         /// </summary>
@@ -244,10 +244,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="customAttributeSearchQueryModel"> (optional)</param>
+        /// <param name="apiV2CustomAttributesSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CustomAttributeModel&gt;</returns>
-        System.Threading.Tasks.Task<List<CustomAttributeModel>> ApiV2CustomAttributesSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeSearchQueryModel customAttributeSearchQueryModel = default(CustomAttributeSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<CustomAttributeModel>> ApiV2CustomAttributesSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2CustomAttributesSearchPostRequest apiV2CustomAttributesSearchPostRequest = default(ApiV2CustomAttributesSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Search for attributes
@@ -261,10 +261,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="customAttributeSearchQueryModel"> (optional)</param>
+        /// <param name="apiV2CustomAttributesSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CustomAttributeModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<CustomAttributeModel>>> ApiV2CustomAttributesSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeSearchQueryModel customAttributeSearchQueryModel = default(CustomAttributeSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<CustomAttributeModel>>> ApiV2CustomAttributesSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2CustomAttributesSearchPostRequest apiV2CustomAttributesSearchPostRequest = default(ApiV2CustomAttributesSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -598,11 +598,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of attribute</param>
-        /// <param name="globalCustomAttributeUpdateModel"> (optional)</param>
+        /// <param name="apiV2CustomAttributesGlobalIdPutRequest"> (optional)</param>
         /// <returns>CustomAttributeModel</returns>
-        public CustomAttributeModel ApiV2CustomAttributesGlobalIdPut(Guid id, GlobalCustomAttributeUpdateModel globalCustomAttributeUpdateModel = default(GlobalCustomAttributeUpdateModel))
+        public CustomAttributeModel ApiV2CustomAttributesGlobalIdPut(Guid id, ApiV2CustomAttributesGlobalIdPutRequest apiV2CustomAttributesGlobalIdPutRequest = default(ApiV2CustomAttributesGlobalIdPutRequest))
         {
-            TestIt.Client.Client.ApiResponse<CustomAttributeModel> localVarResponse = ApiV2CustomAttributesGlobalIdPutWithHttpInfo(id, globalCustomAttributeUpdateModel);
+            TestIt.Client.Client.ApiResponse<CustomAttributeModel> localVarResponse = ApiV2CustomAttributesGlobalIdPutWithHttpInfo(id, apiV2CustomAttributesGlobalIdPutRequest);
             return localVarResponse.Data;
         }
 
@@ -611,9 +611,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of attribute</param>
-        /// <param name="globalCustomAttributeUpdateModel"> (optional)</param>
+        /// <param name="apiV2CustomAttributesGlobalIdPutRequest"> (optional)</param>
         /// <returns>ApiResponse of CustomAttributeModel</returns>
-        public TestIt.Client.Client.ApiResponse<CustomAttributeModel> ApiV2CustomAttributesGlobalIdPutWithHttpInfo(Guid id, GlobalCustomAttributeUpdateModel globalCustomAttributeUpdateModel = default(GlobalCustomAttributeUpdateModel))
+        public TestIt.Client.Client.ApiResponse<CustomAttributeModel> ApiV2CustomAttributesGlobalIdPutWithHttpInfo(Guid id, ApiV2CustomAttributesGlobalIdPutRequest apiV2CustomAttributesGlobalIdPutRequest = default(ApiV2CustomAttributesGlobalIdPutRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -633,7 +633,7 @@ namespace TestIt.Client.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = globalCustomAttributeUpdateModel;
+            localVarRequestOptions.Data = apiV2CustomAttributesGlobalIdPutRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -658,12 +658,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of attribute</param>
-        /// <param name="globalCustomAttributeUpdateModel"> (optional)</param>
+        /// <param name="apiV2CustomAttributesGlobalIdPutRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomAttributeModel</returns>
-        public async System.Threading.Tasks.Task<CustomAttributeModel> ApiV2CustomAttributesGlobalIdPutAsync(Guid id, GlobalCustomAttributeUpdateModel globalCustomAttributeUpdateModel = default(GlobalCustomAttributeUpdateModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CustomAttributeModel> ApiV2CustomAttributesGlobalIdPutAsync(Guid id, ApiV2CustomAttributesGlobalIdPutRequest apiV2CustomAttributesGlobalIdPutRequest = default(ApiV2CustomAttributesGlobalIdPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<CustomAttributeModel> localVarResponse = await ApiV2CustomAttributesGlobalIdPutWithHttpInfoAsync(id, globalCustomAttributeUpdateModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<CustomAttributeModel> localVarResponse = await ApiV2CustomAttributesGlobalIdPutWithHttpInfoAsync(id, apiV2CustomAttributesGlobalIdPutRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -672,10 +672,10 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of attribute</param>
-        /// <param name="globalCustomAttributeUpdateModel"> (optional)</param>
+        /// <param name="apiV2CustomAttributesGlobalIdPutRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomAttributeModel)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<CustomAttributeModel>> ApiV2CustomAttributesGlobalIdPutWithHttpInfoAsync(Guid id, GlobalCustomAttributeUpdateModel globalCustomAttributeUpdateModel = default(GlobalCustomAttributeUpdateModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<CustomAttributeModel>> ApiV2CustomAttributesGlobalIdPutWithHttpInfoAsync(Guid id, ApiV2CustomAttributesGlobalIdPutRequest apiV2CustomAttributesGlobalIdPutRequest = default(ApiV2CustomAttributesGlobalIdPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -697,7 +697,7 @@ namespace TestIt.Client.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = globalCustomAttributeUpdateModel;
+            localVarRequestOptions.Data = apiV2CustomAttributesGlobalIdPutRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -722,11 +722,11 @@ namespace TestIt.Client.Api
         /// Create global attribute 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="globalCustomAttributePostModel"> (optional)</param>
+        /// <param name="apiV2CustomAttributesGlobalPostRequest"> (optional)</param>
         /// <returns>CustomAttributeModel</returns>
-        public CustomAttributeModel ApiV2CustomAttributesGlobalPost(GlobalCustomAttributePostModel globalCustomAttributePostModel = default(GlobalCustomAttributePostModel))
+        public CustomAttributeModel ApiV2CustomAttributesGlobalPost(ApiV2CustomAttributesGlobalPostRequest apiV2CustomAttributesGlobalPostRequest = default(ApiV2CustomAttributesGlobalPostRequest))
         {
-            TestIt.Client.Client.ApiResponse<CustomAttributeModel> localVarResponse = ApiV2CustomAttributesGlobalPostWithHttpInfo(globalCustomAttributePostModel);
+            TestIt.Client.Client.ApiResponse<CustomAttributeModel> localVarResponse = ApiV2CustomAttributesGlobalPostWithHttpInfo(apiV2CustomAttributesGlobalPostRequest);
             return localVarResponse.Data;
         }
 
@@ -734,9 +734,9 @@ namespace TestIt.Client.Api
         /// Create global attribute 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="globalCustomAttributePostModel"> (optional)</param>
+        /// <param name="apiV2CustomAttributesGlobalPostRequest"> (optional)</param>
         /// <returns>ApiResponse of CustomAttributeModel</returns>
-        public TestIt.Client.Client.ApiResponse<CustomAttributeModel> ApiV2CustomAttributesGlobalPostWithHttpInfo(GlobalCustomAttributePostModel globalCustomAttributePostModel = default(GlobalCustomAttributePostModel))
+        public TestIt.Client.Client.ApiResponse<CustomAttributeModel> ApiV2CustomAttributesGlobalPostWithHttpInfo(ApiV2CustomAttributesGlobalPostRequest apiV2CustomAttributesGlobalPostRequest = default(ApiV2CustomAttributesGlobalPostRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -755,7 +755,7 @@ namespace TestIt.Client.Api
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = globalCustomAttributePostModel;
+            localVarRequestOptions.Data = apiV2CustomAttributesGlobalPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -779,12 +779,12 @@ namespace TestIt.Client.Api
         /// Create global attribute 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="globalCustomAttributePostModel"> (optional)</param>
+        /// <param name="apiV2CustomAttributesGlobalPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomAttributeModel</returns>
-        public async System.Threading.Tasks.Task<CustomAttributeModel> ApiV2CustomAttributesGlobalPostAsync(GlobalCustomAttributePostModel globalCustomAttributePostModel = default(GlobalCustomAttributePostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CustomAttributeModel> ApiV2CustomAttributesGlobalPostAsync(ApiV2CustomAttributesGlobalPostRequest apiV2CustomAttributesGlobalPostRequest = default(ApiV2CustomAttributesGlobalPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<CustomAttributeModel> localVarResponse = await ApiV2CustomAttributesGlobalPostWithHttpInfoAsync(globalCustomAttributePostModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<CustomAttributeModel> localVarResponse = await ApiV2CustomAttributesGlobalPostWithHttpInfoAsync(apiV2CustomAttributesGlobalPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -792,10 +792,10 @@ namespace TestIt.Client.Api
         /// Create global attribute 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="globalCustomAttributePostModel"> (optional)</param>
+        /// <param name="apiV2CustomAttributesGlobalPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomAttributeModel)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<CustomAttributeModel>> ApiV2CustomAttributesGlobalPostWithHttpInfoAsync(GlobalCustomAttributePostModel globalCustomAttributePostModel = default(GlobalCustomAttributePostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<CustomAttributeModel>> ApiV2CustomAttributesGlobalPostWithHttpInfoAsync(ApiV2CustomAttributesGlobalPostRequest apiV2CustomAttributesGlobalPostRequest = default(ApiV2CustomAttributesGlobalPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -816,7 +816,7 @@ namespace TestIt.Client.Api
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = globalCustomAttributePostModel;
+            localVarRequestOptions.Data = apiV2CustomAttributesGlobalPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -963,11 +963,11 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="customAttributeSearchQueryModel"> (optional)</param>
+        /// <param name="apiV2CustomAttributesSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;CustomAttributeModel&gt;</returns>
-        public List<CustomAttributeModel> ApiV2CustomAttributesSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeSearchQueryModel customAttributeSearchQueryModel = default(CustomAttributeSearchQueryModel))
+        public List<CustomAttributeModel> ApiV2CustomAttributesSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2CustomAttributesSearchPostRequest apiV2CustomAttributesSearchPostRequest = default(ApiV2CustomAttributesSearchPostRequest))
         {
-            TestIt.Client.Client.ApiResponse<List<CustomAttributeModel>> localVarResponse = ApiV2CustomAttributesSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, customAttributeSearchQueryModel);
+            TestIt.Client.Client.ApiResponse<List<CustomAttributeModel>> localVarResponse = ApiV2CustomAttributesSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2CustomAttributesSearchPostRequest);
             return localVarResponse.Data;
         }
 
@@ -980,9 +980,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="customAttributeSearchQueryModel"> (optional)</param>
+        /// <param name="apiV2CustomAttributesSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;CustomAttributeModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<CustomAttributeModel>> ApiV2CustomAttributesSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeSearchQueryModel customAttributeSearchQueryModel = default(CustomAttributeSearchQueryModel))
+        public TestIt.Client.Client.ApiResponse<List<CustomAttributeModel>> ApiV2CustomAttributesSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2CustomAttributesSearchPostRequest apiV2CustomAttributesSearchPostRequest = default(ApiV2CustomAttributesSearchPostRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1021,7 +1021,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = customAttributeSearchQueryModel;
+            localVarRequestOptions.Data = apiV2CustomAttributesSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1050,12 +1050,12 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="customAttributeSearchQueryModel"> (optional)</param>
+        /// <param name="apiV2CustomAttributesSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CustomAttributeModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<CustomAttributeModel>> ApiV2CustomAttributesSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeSearchQueryModel customAttributeSearchQueryModel = default(CustomAttributeSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<CustomAttributeModel>> ApiV2CustomAttributesSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2CustomAttributesSearchPostRequest apiV2CustomAttributesSearchPostRequest = default(ApiV2CustomAttributesSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<CustomAttributeModel>> localVarResponse = await ApiV2CustomAttributesSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, customAttributeSearchQueryModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<CustomAttributeModel>> localVarResponse = await ApiV2CustomAttributesSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, apiV2CustomAttributesSearchPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1068,10 +1068,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="customAttributeSearchQueryModel"> (optional)</param>
+        /// <param name="apiV2CustomAttributesSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CustomAttributeModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<CustomAttributeModel>>> ApiV2CustomAttributesSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeSearchQueryModel customAttributeSearchQueryModel = default(CustomAttributeSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<CustomAttributeModel>>> ApiV2CustomAttributesSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2CustomAttributesSearchPostRequest apiV2CustomAttributesSearchPostRequest = default(ApiV2CustomAttributesSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1112,7 +1112,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = customAttributeSearchQueryModel;
+            localVarRequestOptions.Data = apiV2CustomAttributesSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))

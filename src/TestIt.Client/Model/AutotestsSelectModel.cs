@@ -37,7 +37,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="filter">filter.</param>
         /// <param name="includes">includes.</param>
-        public AutotestsSelectModel(AutotestFilterModel filter = default(AutotestFilterModel), SearchAutoTestsQueryIncludesModel includes = default(SearchAutoTestsQueryIncludesModel))
+        public AutotestsSelectModel(AutotestsSelectModelFilter filter = default(AutotestsSelectModelFilter), AutotestsSelectModelIncludes includes = default(AutotestsSelectModelIncludes))
         {
             this.Filter = filter;
             this.Includes = includes;
@@ -47,13 +47,13 @@ namespace TestIt.Client.Model
         /// Gets or Sets Filter
         /// </summary>
         [DataMember(Name = "filter", EmitDefaultValue = false)]
-        public AutotestFilterModel Filter { get; set; }
+        public AutotestsSelectModelFilter Filter { get; set; }
 
         /// <summary>
         /// Gets or Sets Includes
         /// </summary>
         [DataMember(Name = "includes", EmitDefaultValue = false)]
-        public SearchAutoTestsQueryIncludesModel Includes { get; set; }
+        public AutotestsSelectModelIncludes Includes { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -138,7 +138,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

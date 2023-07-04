@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **AutoTestsCount** | **int** |  | [optional] 
 **TestSuiteIds** | **List&lt;Guid&gt;** |  | [optional] 
 **IsAutomated** | **bool** |  | [optional] 
-**Analytic** | [**TestRunAnalyticResultModel**](TestRunAnalyticResultModel.md) |  | [optional] 
+**Analytic** | [**TestRunModelAnalytic**](TestRunModelAnalytic.md) |  | [optional] 
 **TestResults** | [**List&lt;TestResultModel&gt;**](TestResultModel.md) |  | [optional] 
 **TestPlan** | [**TestPlanModel**](TestPlanModel.md) |  | [optional] 
 **CreatedDate** | **DateTime** |  | [optional] 

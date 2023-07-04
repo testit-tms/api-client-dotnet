@@ -13,14 +13,18 @@ Name | Type | Description | Notes
 **Name** | **string** | Specifies a test point name to search for | [optional] 
 **ConfigurationIds** | **List&lt;Guid&gt;** | Specifies a test point configuration IDs to search for | [optional] 
 **TesterIds** | **List&lt;Guid&gt;** | Specifies a test point assigned user IDs to search for | [optional] 
-**Duration** | [**Int64RangeSelectorModel**](Int64RangeSelectorModel.md) |  | [optional] 
+**Duration** | [**TestPointFilterModelDuration**](TestPointFilterModelDuration.md) |  | [optional] 
 **SectionIds** | **List&lt;Guid&gt;** | Specifies a test point work item section IDs to search for | [optional] 
-**CreatedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) |  | [optional] 
+**CreatedDate** | [**TestPointFilterModelCreatedDate**](TestPointFilterModelCreatedDate.md) |  | [optional] 
 **CreatedByIds** | **List&lt;Guid&gt;** | Specifies a test point creator IDs to search for | [optional] 
-**ModifiedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) |  | [optional] 
+**ModifiedDate** | [**TestPointFilterModelModifiedDate**](TestPointFilterModelModifiedDate.md) |  | [optional] 
 **ModifiedByIds** | **List&lt;Guid&gt;** | Specifies a test point last editor IDs to search for | [optional] 
 **Tags** | **List&lt;string&gt;** | Specifies a test point tags to search for | [optional] 
 **Attributes** | [**Dictionary&lt;string, List&lt;string&gt;&gt;**](Set.md) | Specifies a test point attributes to search for | [optional] 
+**WorkItemCreatedDate** | [**TestPointFilterModelWorkItemCreatedDate**](TestPointFilterModelWorkItemCreatedDate.md) |  | [optional] 
+**WorkItemCreatedByIds** | **List&lt;Guid&gt;** | Specifies a work item creator IDs to search for | [optional] 
+**WorkItemModifiedDate** | [**TestPointFilterModelWorkItemModifiedDate**](TestPointFilterModelWorkItemModifiedDate.md) |  | [optional] 
+**WorkItemModifiedByIds** | **List&lt;Guid&gt;** | Specifies a work item last editor IDs to search for | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

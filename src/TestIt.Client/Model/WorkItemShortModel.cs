@@ -114,6 +114,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
@@ -121,12 +122,14 @@ namespace TestIt.Client.Model
         /// used for versioning changes in workitem
         /// </summary>
         /// <value>used for versioning changes in workitem</value>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "versionId", EmitDefaultValue = false)]
         public Guid VersionId { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
+        /// <example>&quot;Performance test&quot;</example>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -134,6 +137,7 @@ namespace TestIt.Client.Model
         /// Property can have one of these values: CheckLists, SharedSteps, TestCases
         /// </summary>
         /// <value>Property can have one of these values: CheckLists, SharedSteps, TestCases</value>
+        /// <example>&quot;SharedSteps&quot;</example>
         [DataMember(Name = "entityTypeName", IsRequired = true, EmitDefaultValue = true)]
         public string EntityTypeName { get; set; }
 
@@ -141,6 +145,7 @@ namespace TestIt.Client.Model
         /// This property is used to link autotest with project
         /// </summary>
         /// <value>This property is used to link autotest with project</value>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
@@ -148,6 +153,7 @@ namespace TestIt.Client.Model
         /// This property links workitem with section
         /// </summary>
         /// <value>This property links workitem with section</value>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid SectionId { get; set; }
 
@@ -161,18 +167,21 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets IsAutomated
         /// </summary>
+        /// <example>true</example>
         [DataMember(Name = "isAutomated", EmitDefaultValue = true)]
         public bool IsAutomated { get; set; }
 
         /// <summary>
         /// Gets or Sets GlobalId
         /// </summary>
+        /// <example>1000</example>
         [DataMember(Name = "globalId", EmitDefaultValue = false)]
         public long GlobalId { get; set; }
 
         /// <summary>
         /// Gets or Sets Duration
         /// </summary>
+        /// <example>1000</example>
         [DataMember(Name = "duration", EmitDefaultValue = false)]
         public int Duration { get; set; }
 
@@ -185,43 +194,48 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "createdById", EmitDefaultValue = false)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
+        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
         public DateTime? CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
+        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets IsDeleted
         /// </summary>
+        /// <example>true</example>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>
         /// Gets or Sets TagNames
         /// </summary>
-        [DataMember(Name = "tagNames", EmitDefaultValue = true)]
+        [DataMember(Name = "tagNames", EmitDefaultValue = false)]
         public List<string> TagNames { get; set; }
 
         /// <summary>
         /// Gets or Sets Iterations
         /// </summary>
-        [DataMember(Name = "iterations", EmitDefaultValue = true)]
+        [DataMember(Name = "iterations", EmitDefaultValue = false)]
         public List<IterationModel> Iterations { get; set; }
 
         /// <summary>
@@ -466,7 +480,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) minLength
             if (this.Name != null && this.Name.Length < 1)

@@ -72,9 +72,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testPointFilterModel"> (optional)</param>
+        /// <param name="apiV2TestPointsSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;Guid&gt;</returns>
-        List<Guid> ApiV2TestPointsSearchIdPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel));
+        List<Guid> ApiV2TestPointsSearchIdPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest));
 
         /// <summary>
         /// Search for test points and extract IDs only
@@ -88,9 +88,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testPointFilterModel"> (optional)</param>
+        /// <param name="apiV2TestPointsSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
-        ApiResponse<List<Guid>> ApiV2TestPointsSearchIdPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel));
+        ApiResponse<List<Guid>> ApiV2TestPointsSearchIdPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest));
         /// <summary>
         /// Search for test points
         /// </summary>
@@ -100,9 +100,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testPointFilterModel"> (optional)</param>
+        /// <param name="apiV2TestPointsSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;TestPointShortGetModel&gt;</returns>
-        List<TestPointShortGetModel> ApiV2TestPointsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel));
+        List<TestPointShortGetModel> ApiV2TestPointsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest));
 
         /// <summary>
         /// Search for test points
@@ -116,9 +116,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testPointFilterModel"> (optional)</param>
+        /// <param name="apiV2TestPointsSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;TestPointShortGetModel&gt;</returns>
-        ApiResponse<List<TestPointShortGetModel>> ApiV2TestPointsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel));
+        ApiResponse<List<TestPointShortGetModel>> ApiV2TestPointsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest));
         #endregion Synchronous Operations
     }
 
@@ -186,10 +186,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testPointFilterModel"> (optional)</param>
+        /// <param name="apiV2TestPointsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Guid&gt;</returns>
-        System.Threading.Tasks.Task<List<Guid>> ApiV2TestPointsSearchIdPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<Guid>> ApiV2TestPointsSearchIdPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Search for test points and extract IDs only
@@ -203,10 +203,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testPointFilterModel"> (optional)</param>
+        /// <param name="apiV2TestPointsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Guid>>> ApiV2TestPointsSearchIdPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Guid>>> ApiV2TestPointsSearchIdPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Search for test points
         /// </summary>
@@ -219,10 +219,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testPointFilterModel"> (optional)</param>
+        /// <param name="apiV2TestPointsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestPointShortGetModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TestPointShortGetModel>> ApiV2TestPointsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TestPointShortGetModel>> ApiV2TestPointsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Search for test points
@@ -236,10 +236,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testPointFilterModel"> (optional)</param>
+        /// <param name="apiV2TestPointsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPointShortGetModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestPointShortGetModel>>> ApiV2TestPointsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TestPointShortGetModel>>> ApiV2TestPointsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -696,11 +696,11 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testPointFilterModel"> (optional)</param>
+        /// <param name="apiV2TestPointsSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;Guid&gt;</returns>
-        public List<Guid> ApiV2TestPointsSearchIdPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel))
+        public List<Guid> ApiV2TestPointsSearchIdPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest))
         {
-            TestIt.Client.Client.ApiResponse<List<Guid>> localVarResponse = ApiV2TestPointsSearchIdPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, testPointFilterModel);
+            TestIt.Client.Client.ApiResponse<List<Guid>> localVarResponse = ApiV2TestPointsSearchIdPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2TestPointsSearchPostRequest);
             return localVarResponse.Data;
         }
 
@@ -713,9 +713,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testPointFilterModel"> (optional)</param>
+        /// <param name="apiV2TestPointsSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<Guid>> ApiV2TestPointsSearchIdPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel))
+        public TestIt.Client.Client.ApiResponse<List<Guid>> ApiV2TestPointsSearchIdPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -754,7 +754,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = testPointFilterModel;
+            localVarRequestOptions.Data = apiV2TestPointsSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -783,12 +783,12 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testPointFilterModel"> (optional)</param>
+        /// <param name="apiV2TestPointsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Guid&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Guid>> ApiV2TestPointsSearchIdPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<Guid>> ApiV2TestPointsSearchIdPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<Guid>> localVarResponse = await ApiV2TestPointsSearchIdPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, testPointFilterModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<Guid>> localVarResponse = await ApiV2TestPointsSearchIdPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, apiV2TestPointsSearchPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -801,10 +801,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testPointFilterModel"> (optional)</param>
+        /// <param name="apiV2TestPointsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<Guid>>> ApiV2TestPointsSearchIdPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<Guid>>> ApiV2TestPointsSearchIdPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -845,7 +845,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = testPointFilterModel;
+            localVarRequestOptions.Data = apiV2TestPointsSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -875,11 +875,11 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testPointFilterModel"> (optional)</param>
+        /// <param name="apiV2TestPointsSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;TestPointShortGetModel&gt;</returns>
-        public List<TestPointShortGetModel> ApiV2TestPointsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel))
+        public List<TestPointShortGetModel> ApiV2TestPointsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest))
         {
-            TestIt.Client.Client.ApiResponse<List<TestPointShortGetModel>> localVarResponse = ApiV2TestPointsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, testPointFilterModel);
+            TestIt.Client.Client.ApiResponse<List<TestPointShortGetModel>> localVarResponse = ApiV2TestPointsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2TestPointsSearchPostRequest);
             return localVarResponse.Data;
         }
 
@@ -892,9 +892,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testPointFilterModel"> (optional)</param>
+        /// <param name="apiV2TestPointsSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;TestPointShortGetModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<TestPointShortGetModel>> ApiV2TestPointsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel))
+        public TestIt.Client.Client.ApiResponse<List<TestPointShortGetModel>> ApiV2TestPointsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -933,7 +933,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = testPointFilterModel;
+            localVarRequestOptions.Data = apiV2TestPointsSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -962,12 +962,12 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testPointFilterModel"> (optional)</param>
+        /// <param name="apiV2TestPointsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestPointShortGetModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestPointShortGetModel>> ApiV2TestPointsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TestPointShortGetModel>> ApiV2TestPointsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<TestPointShortGetModel>> localVarResponse = await ApiV2TestPointsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, testPointFilterModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<TestPointShortGetModel>> localVarResponse = await ApiV2TestPointsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, apiV2TestPointsSearchPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -980,10 +980,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="testPointFilterModel"> (optional)</param>
+        /// <param name="apiV2TestPointsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPointShortGetModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestPointShortGetModel>>> ApiV2TestPointsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestPointFilterModel testPointFilterModel = default(TestPointFilterModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<TestPointShortGetModel>>> ApiV2TestPointsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1024,7 +1024,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = testPointFilterModel;
+            localVarRequestOptions.Data = apiV2TestPointsSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))

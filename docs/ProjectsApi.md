@@ -15,6 +15,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2ProjectsIdTestPlansAnalyticsGet**](ProjectsApi.md#apiv2projectsidtestplansanalyticsget) | **GET** /api/v2/projects/{id}/testPlans/analytics | Get TestPlans analytics |
 | [**ApiV2ProjectsIdTestPlansDeleteBulkPost**](ProjectsApi.md#apiv2projectsidtestplansdeletebulkpost) | **POST** /api/v2/projects/{id}/testPlans/delete/bulk | Delete multiple test plans |
 | [**ApiV2ProjectsIdTestPlansNameExistsGet**](ProjectsApi.md#apiv2projectsidtestplansnameexistsget) | **GET** /api/v2/projects/{id}/testPlans/{name}/exists | Checks if TestPlan exists with the specified name exists for the project |
+| [**ApiV2ProjectsIdTestPlansPurgeBulkPost**](ProjectsApi.md#apiv2projectsidtestplanspurgebulkpost) | **POST** /api/v2/projects/{id}/testPlans/purge/bulk | Permanently delete multiple archived test plans |
 | [**ApiV2ProjectsIdTestPlansRestoreBulkPost**](ProjectsApi.md#apiv2projectsidtestplansrestorebulkpost) | **POST** /api/v2/projects/{id}/testPlans/restore/bulk | Restore multiple test plans |
 | [**ApiV2ProjectsIdTestPlansSearchPost**](ProjectsApi.md#apiv2projectsidtestplanssearchpost) | **POST** /api/v2/projects/{id}/testPlans/search | Get Project TestPlans with analytics |
 | [**ApiV2ProjectsIdTestRunsActiveGet**](ProjectsApi.md#apiv2projectsidtestrunsactiveget) | **GET** /api/v2/projects/{id}/testRuns/active | Get active Project TestRuns |
@@ -61,7 +62,7 @@ All URIs are relative to *http://localhost*
 | [**UpdateProject**](ProjectsApi.md#updateproject) | **PUT** /api/v2/projects | Update project |
 | [**UpdateProjectsAttribute**](ProjectsApi.md#updateprojectsattribute) | **PUT** /api/v2/projects/{id}/attributes | Edit attribute of the project |
 
-<a name="addglobaattributestoproject"></a>
+<a id="addglobaattributestoproject"></a>
 # **AddGlobaAttributesToProject**
 > void AddGlobaAttributesToProject (string id, List<Guid> requestBody = null)
 
@@ -155,18 +156,18 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Project with provided ID was not found |  -  |
-| **409** | Conflict |  -  |
-| **422** | Client Error |  -  |
 | **200** | Success |  -  |
 | **400** | &lt;br&gt; Attributes must be global  |  -  |
 | **403** | Project admin permission for project settings is required |  -  |
+| **404** | Project with provided ID was not found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Client Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsidattributestemplatessearchpost"></a>
+<a id="apiv2projectsidattributestemplatessearchpost"></a>
 # **ApiV2ProjectsIdAttributesTemplatesSearchPost**
-> List&lt;ProjectCustomAttributeTemplateGetModel&gt; ApiV2ProjectsIdAttributesTemplatesSearchPost (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = null)
+> List&lt;ProjectCustomAttributeTemplateGetModel&gt; ApiV2ProjectsIdAttributesTemplatesSearchPost (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ProjectsIdAttributesTemplatesSearchPostRequest apiV2ProjectsIdAttributesTemplatesSearchPostRequest = null)
 
 Search for custom attributes templates
 
@@ -202,12 +203,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var projectCustomAttributesTemplatesFilterModel = new ProjectCustomAttributesTemplatesFilterModel(); // ProjectCustomAttributesTemplatesFilterModel |  (optional) 
+            var apiV2ProjectsIdAttributesTemplatesSearchPostRequest = new ApiV2ProjectsIdAttributesTemplatesSearchPostRequest(); // ApiV2ProjectsIdAttributesTemplatesSearchPostRequest |  (optional) 
 
             try
             {
                 // Search for custom attributes templates
-                List<ProjectCustomAttributeTemplateGetModel> result = apiInstance.ApiV2ProjectsIdAttributesTemplatesSearchPost(id, skip, take, orderBy, searchField, searchValue, projectCustomAttributesTemplatesFilterModel);
+                List<ProjectCustomAttributeTemplateGetModel> result = apiInstance.ApiV2ProjectsIdAttributesTemplatesSearchPost(id, skip, take, orderBy, searchField, searchValue, apiV2ProjectsIdAttributesTemplatesSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -228,7 +229,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for custom attributes templates
-    ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> response = apiInstance.ApiV2ProjectsIdAttributesTemplatesSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, projectCustomAttributesTemplatesFilterModel);
+    ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> response = apiInstance.ApiV2ProjectsIdAttributesTemplatesSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, apiV2ProjectsIdAttributesTemplatesSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -251,7 +252,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **projectCustomAttributesTemplatesFilterModel** | [**ProjectCustomAttributesTemplatesFilterModel**](ProjectCustomAttributesTemplatesFilterModel.md) |  | [optional]  |
+| **apiV2ProjectsIdAttributesTemplatesSearchPostRequest** | [**ApiV2ProjectsIdAttributesTemplatesSearchPostRequest**](ApiV2ProjectsIdAttributesTemplatesSearchPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -270,12 +271,12 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Project admin permission for project settings is required |  -  |
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **403** | Project admin permission for project settings is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsidattributestemplatestemplateiddelete"></a>
+<a id="apiv2projectsidattributestemplatestemplateiddelete"></a>
 # **ApiV2ProjectsIdAttributesTemplatesTemplateIdDelete**
 > void ApiV2ProjectsIdAttributesTemplatesTemplateIdDelete (string id, Guid templateId)
 
@@ -369,14 +370,14 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Can&#39;t find a Project with identifier |  -  |
-| **400** | Bad Request |  -  |
 | **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Can&#39;t find a Project with identifier |  -  |
 | **403** | Update project settings permission for project required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsidattributestemplatestemplateidpost"></a>
+<a id="apiv2projectsidattributestemplatestemplateidpost"></a>
 # **ApiV2ProjectsIdAttributesTemplatesTemplateIdPost**
 > void ApiV2ProjectsIdAttributesTemplatesTemplateIdPost (string id, Guid templateId)
 
@@ -470,14 +471,14 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Can&#39;t find a Project with identifier |  -  |
-| **400** | Bad Request |  -  |
 | **200** | Success |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Can&#39;t find a Project with identifier |  -  |
 | **403** | Update project settings permission for project required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsidfailureclassesget"></a>
+<a id="apiv2projectsidfailureclassesget"></a>
 # **ApiV2ProjectsIdFailureClassesGet**
 > List&lt;FailureClassModel&gt; ApiV2ProjectsIdFailureClassesGet (string id, bool? isDeleted = null)
 
@@ -575,12 +576,12 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
 | **200** | Success |  -  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsidfavoriteput"></a>
+<a id="apiv2projectsidfavoriteput"></a>
 # **ApiV2ProjectsIdFavoritePut**
 > void ApiV2ProjectsIdFavoritePut (string id)
 
@@ -670,14 +671,14 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **204** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Not Found |  -  |
-| **400** | Bad Request |  -  |
-| **204** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsidfiltersget"></a>
+<a id="apiv2projectsidfiltersget"></a>
 # **ApiV2ProjectsIdFiltersGet**
 > List&lt;FilterModel&gt; ApiV2ProjectsIdFiltersGet (string id)
 
@@ -773,12 +774,12 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
 | **200** | Success |  -  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsidpatch"></a>
+<a id="apiv2projectsidpatch"></a>
 # **ApiV2ProjectsIdPatch**
 > void ApiV2ProjectsIdPatch (Guid id, List<Operation> operation = null)
 
@@ -877,7 +878,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsidtestplansanalyticsget"></a>
+<a id="apiv2projectsidtestplansanalyticsget"></a>
 # **ApiV2ProjectsIdTestPlansAnalyticsGet**
 > List&lt;TestPlanWithAnalyticModel&gt; ApiV2ProjectsIdTestPlansAnalyticsGet (Guid id, bool? isDeleted = null, bool? mustUpdateCache = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -987,14 +988,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsidtestplansdeletebulkpost"></a>
+<a id="apiv2projectsidtestplansdeletebulkpost"></a>
 # **ApiV2ProjectsIdTestPlansDeleteBulkPost**
-> List&lt;Guid&gt; ApiV2ProjectsIdTestPlansDeleteBulkPost (string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = null)
+> List&lt;Guid&gt; ApiV2ProjectsIdTestPlansDeleteBulkPost (string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = null)
 
 Delete multiple test plans
 
@@ -1025,12 +1026,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Unique or global ID of the project
-            var projectTestPlansFilterModel = new ProjectTestPlansFilterModel(); // ProjectTestPlansFilterModel |  (optional) 
+            var apiV2ProjectsIdTestPlansDeleteBulkPostRequest = new ApiV2ProjectsIdTestPlansDeleteBulkPostRequest(); // ApiV2ProjectsIdTestPlansDeleteBulkPostRequest |  (optional) 
 
             try
             {
                 // Delete multiple test plans
-                List<Guid> result = apiInstance.ApiV2ProjectsIdTestPlansDeleteBulkPost(id, projectTestPlansFilterModel);
+                List<Guid> result = apiInstance.ApiV2ProjectsIdTestPlansDeleteBulkPost(id, apiV2ProjectsIdTestPlansDeleteBulkPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1051,7 +1052,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete multiple test plans
-    ApiResponse<List<Guid>> response = apiInstance.ApiV2ProjectsIdTestPlansDeleteBulkPostWithHttpInfo(id, projectTestPlansFilterModel);
+    ApiResponse<List<Guid>> response = apiInstance.ApiV2ProjectsIdTestPlansDeleteBulkPostWithHttpInfo(id, apiV2ProjectsIdTestPlansDeleteBulkPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1069,7 +1070,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Unique or global ID of the project |  |
-| **projectTestPlansFilterModel** | [**ProjectTestPlansFilterModel**](ProjectTestPlansFilterModel.md) |  | [optional]  |
+| **apiV2ProjectsIdTestPlansDeleteBulkPostRequest** | [**ApiV2ProjectsIdTestPlansDeleteBulkPostRequest**](ApiV2ProjectsIdTestPlansDeleteBulkPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -1093,7 +1094,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsidtestplansnameexistsget"></a>
+<a id="apiv2projectsidtestplansnameexistsget"></a>
 # **ApiV2ProjectsIdTestPlansNameExistsGet**
 > bool ApiV2ProjectsIdTestPlansNameExistsGet (Guid id, string name)
 
@@ -1195,9 +1196,106 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsidtestplansrestorebulkpost"></a>
+<a id="apiv2projectsidtestplanspurgebulkpost"></a>
+# **ApiV2ProjectsIdTestPlansPurgeBulkPost**
+> void ApiV2ProjectsIdTestPlansPurgeBulkPost (string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = null)
+
+Permanently delete multiple archived test plans
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.Client.Api;
+using TestIt.Client.Client;
+using TestIt.Client.Model;
+
+namespace Example
+{
+    public class ApiV2ProjectsIdTestPlansPurgeBulkPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Unique or global ID of the project
+            var apiV2ProjectsIdTestPlansDeleteBulkPostRequest = new ApiV2ProjectsIdTestPlansDeleteBulkPostRequest(); // ApiV2ProjectsIdTestPlansDeleteBulkPostRequest |  (optional) 
+
+            try
+            {
+                // Permanently delete multiple archived test plans
+                apiInstance.ApiV2ProjectsIdTestPlansPurgeBulkPost(id, apiV2ProjectsIdTestPlansDeleteBulkPostRequest);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsIdTestPlansPurgeBulkPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2ProjectsIdTestPlansPurgeBulkPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Permanently delete multiple archived test plans
+    apiInstance.ApiV2ProjectsIdTestPlansPurgeBulkPostWithHttpInfo(id, apiV2ProjectsIdTestPlansDeleteBulkPostRequest);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsIdTestPlansPurgeBulkPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Unique or global ID of the project |  |
+| **apiV2ProjectsIdTestPlansDeleteBulkPostRequest** | [**ApiV2ProjectsIdTestPlansDeleteBulkPostRequest**](ApiV2ProjectsIdTestPlansDeleteBulkPostRequest.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **403** | Full access permission for the archive is required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="apiv2projectsidtestplansrestorebulkpost"></a>
 # **ApiV2ProjectsIdTestPlansRestoreBulkPost**
-> void ApiV2ProjectsIdTestPlansRestoreBulkPost (string id, ProjectTestPlansFilterModel projectTestPlansFilterModel = null)
+> void ApiV2ProjectsIdTestPlansRestoreBulkPost (string id, ApiV2ProjectsIdTestPlansDeleteBulkPostRequest apiV2ProjectsIdTestPlansDeleteBulkPostRequest = null)
 
 Restore multiple test plans
 
@@ -1228,12 +1326,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Unique or global ID of the project
-            var projectTestPlansFilterModel = new ProjectTestPlansFilterModel(); // ProjectTestPlansFilterModel |  (optional) 
+            var apiV2ProjectsIdTestPlansDeleteBulkPostRequest = new ApiV2ProjectsIdTestPlansDeleteBulkPostRequest(); // ApiV2ProjectsIdTestPlansDeleteBulkPostRequest |  (optional) 
 
             try
             {
                 // Restore multiple test plans
-                apiInstance.ApiV2ProjectsIdTestPlansRestoreBulkPost(id, projectTestPlansFilterModel);
+                apiInstance.ApiV2ProjectsIdTestPlansRestoreBulkPost(id, apiV2ProjectsIdTestPlansDeleteBulkPostRequest);
             }
             catch (ApiException  e)
             {
@@ -1253,7 +1351,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Restore multiple test plans
-    apiInstance.ApiV2ProjectsIdTestPlansRestoreBulkPostWithHttpInfo(id, projectTestPlansFilterModel);
+    apiInstance.ApiV2ProjectsIdTestPlansRestoreBulkPostWithHttpInfo(id, apiV2ProjectsIdTestPlansDeleteBulkPostRequest);
 }
 catch (ApiException e)
 {
@@ -1268,7 +1366,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Unique or global ID of the project |  |
-| **projectTestPlansFilterModel** | [**ProjectTestPlansFilterModel**](ProjectTestPlansFilterModel.md) |  | [optional]  |
+| **apiV2ProjectsIdTestPlansDeleteBulkPostRequest** | [**ApiV2ProjectsIdTestPlansDeleteBulkPostRequest**](ApiV2ProjectsIdTestPlansDeleteBulkPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -1288,13 +1386,13 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
-| **403** | - Read permission for the project is required  - Edit permission for test plans is required |  -  |
+| **403** | Read permission for the archive is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsidtestplanssearchpost"></a>
+<a id="apiv2projectsidtestplanssearchpost"></a>
 # **ApiV2ProjectsIdTestPlansSearchPost**
-> List&lt;TestPlanWithAnalyticModel&gt; ApiV2ProjectsIdTestPlansSearchPost (string id, bool? mustUpdateCache = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ProjectTestPlansFilterModel projectTestPlansFilterModel = null)
+> List&lt;TestPlanWithAnalyticModel&gt; ApiV2ProjectsIdTestPlansSearchPost (string id, bool? mustUpdateCache = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ProjectsIdTestPlansSearchPostRequest apiV2ProjectsIdTestPlansSearchPostRequest = null)
 
 Get Project TestPlans with analytics
 
@@ -1333,12 +1431,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var projectTestPlansFilterModel = new ProjectTestPlansFilterModel(); // ProjectTestPlansFilterModel |  (optional) 
+            var apiV2ProjectsIdTestPlansSearchPostRequest = new ApiV2ProjectsIdTestPlansSearchPostRequest(); // ApiV2ProjectsIdTestPlansSearchPostRequest |  (optional) 
 
             try
             {
                 // Get Project TestPlans with analytics
-                List<TestPlanWithAnalyticModel> result = apiInstance.ApiV2ProjectsIdTestPlansSearchPost(id, mustUpdateCache, skip, take, orderBy, searchField, searchValue, projectTestPlansFilterModel);
+                List<TestPlanWithAnalyticModel> result = apiInstance.ApiV2ProjectsIdTestPlansSearchPost(id, mustUpdateCache, skip, take, orderBy, searchField, searchValue, apiV2ProjectsIdTestPlansSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1359,7 +1457,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get Project TestPlans with analytics
-    ApiResponse<List<TestPlanWithAnalyticModel>> response = apiInstance.ApiV2ProjectsIdTestPlansSearchPostWithHttpInfo(id, mustUpdateCache, skip, take, orderBy, searchField, searchValue, projectTestPlansFilterModel);
+    ApiResponse<List<TestPlanWithAnalyticModel>> response = apiInstance.ApiV2ProjectsIdTestPlansSearchPostWithHttpInfo(id, mustUpdateCache, skip, take, orderBy, searchField, searchValue, apiV2ProjectsIdTestPlansSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1383,7 +1481,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **projectTestPlansFilterModel** | [**ProjectTestPlansFilterModel**](ProjectTestPlansFilterModel.md) |  | [optional]  |
+| **apiV2ProjectsIdTestPlansSearchPostRequest** | [**ApiV2ProjectsIdTestPlansSearchPostRequest**](ApiV2ProjectsIdTestPlansSearchPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -1407,7 +1505,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsidtestrunsactiveget"></a>
+<a id="apiv2projectsidtestrunsactiveget"></a>
 # **ApiV2ProjectsIdTestRunsActiveGet**
 > List&lt;PublicTestRunModel&gt; ApiV2ProjectsIdTestRunsActiveGet (string id)
 
@@ -1504,13 +1602,13 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
-| **401** | Unauthorized |  -  |
 | **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsidtestrunsfullget"></a>
+<a id="apiv2projectsidtestrunsfullget"></a>
 # **ApiV2ProjectsIdTestRunsFullGet**
 > List&lt;TestRunModel&gt; ApiV2ProjectsIdTestRunsFullGet (string id, bool? includeTestResults = null, bool? mustAggregateTestResults = null, bool? notStarted = null, bool? inProgress = null, bool? stopped = null, bool? completed = null, DateTime? createdDateFrom = null, DateTime? createdDateTo = null, Guid? testPlanId = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -1638,9 +1736,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsidworkitemssearchidpost"></a>
+<a id="apiv2projectsidworkitemssearchidpost"></a>
 # **ApiV2ProjectsIdWorkItemsSearchIdPost**
-> List&lt;Guid&gt; ApiV2ProjectsIdWorkItemsSearchIdPost (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, WorkItemSelectModel workItemSelectModel = null)
+> List&lt;Guid&gt; ApiV2ProjectsIdWorkItemsSearchIdPost (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ProjectsIdWorkItemsSearchPostRequest apiV2ProjectsIdWorkItemsSearchPostRequest = null)
 
 Search for work items and extract IDs only
 
@@ -1676,12 +1774,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var workItemSelectModel = new WorkItemSelectModel(); // WorkItemSelectModel |  (optional) 
+            var apiV2ProjectsIdWorkItemsSearchPostRequest = new ApiV2ProjectsIdWorkItemsSearchPostRequest(); // ApiV2ProjectsIdWorkItemsSearchPostRequest |  (optional) 
 
             try
             {
                 // Search for work items and extract IDs only
-                List<Guid> result = apiInstance.ApiV2ProjectsIdWorkItemsSearchIdPost(id, skip, take, orderBy, searchField, searchValue, workItemSelectModel);
+                List<Guid> result = apiInstance.ApiV2ProjectsIdWorkItemsSearchIdPost(id, skip, take, orderBy, searchField, searchValue, apiV2ProjectsIdWorkItemsSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1702,7 +1800,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for work items and extract IDs only
-    ApiResponse<List<Guid>> response = apiInstance.ApiV2ProjectsIdWorkItemsSearchIdPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, workItemSelectModel);
+    ApiResponse<List<Guid>> response = apiInstance.ApiV2ProjectsIdWorkItemsSearchIdPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, apiV2ProjectsIdWorkItemsSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1725,7 +1823,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **workItemSelectModel** | [**WorkItemSelectModel**](WorkItemSelectModel.md) |  | [optional]  |
+| **apiV2ProjectsIdWorkItemsSearchPostRequest** | [**ApiV2ProjectsIdWorkItemsSearchPostRequest**](ApiV2ProjectsIdWorkItemsSearchPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -1744,14 +1842,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for test library is required |  -  |
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **403** | Read permission for test library is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsidworkitemssearchpost"></a>
+<a id="apiv2projectsidworkitemssearchpost"></a>
 # **ApiV2ProjectsIdWorkItemsSearchPost**
-> List&lt;WorkItemShortModel&gt; ApiV2ProjectsIdWorkItemsSearchPost (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, WorkItemSelectModel workItemSelectModel = null)
+> List&lt;WorkItemShortModel&gt; ApiV2ProjectsIdWorkItemsSearchPost (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ProjectsIdWorkItemsSearchPostRequest apiV2ProjectsIdWorkItemsSearchPostRequest = null)
 
 Search for work items
 
@@ -1787,12 +1885,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var workItemSelectModel = new WorkItemSelectModel(); // WorkItemSelectModel |  (optional) 
+            var apiV2ProjectsIdWorkItemsSearchPostRequest = new ApiV2ProjectsIdWorkItemsSearchPostRequest(); // ApiV2ProjectsIdWorkItemsSearchPostRequest |  (optional) 
 
             try
             {
                 // Search for work items
-                List<WorkItemShortModel> result = apiInstance.ApiV2ProjectsIdWorkItemsSearchPost(id, skip, take, orderBy, searchField, searchValue, workItemSelectModel);
+                List<WorkItemShortModel> result = apiInstance.ApiV2ProjectsIdWorkItemsSearchPost(id, skip, take, orderBy, searchField, searchValue, apiV2ProjectsIdWorkItemsSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1813,7 +1911,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for work items
-    ApiResponse<List<WorkItemShortModel>> response = apiInstance.ApiV2ProjectsIdWorkItemsSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, workItemSelectModel);
+    ApiResponse<List<WorkItemShortModel>> response = apiInstance.ApiV2ProjectsIdWorkItemsSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, apiV2ProjectsIdWorkItemsSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1836,7 +1934,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **workItemSelectModel** | [**WorkItemSelectModel**](WorkItemSelectModel.md) |  | [optional]  |
+| **apiV2ProjectsIdWorkItemsSearchPostRequest** | [**ApiV2ProjectsIdWorkItemsSearchPostRequest**](ApiV2ProjectsIdWorkItemsSearchPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -1855,12 +1953,12 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for test library is required |  -  |
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **403** | Read permission for test library is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsidworkitemstagsget"></a>
+<a id="apiv2projectsidworkitemstagsget"></a>
 # **ApiV2ProjectsIdWorkItemsTagsGet**
 > List&lt;TagShortModel&gt; ApiV2ProjectsIdWorkItemsTagsGet (Guid id, bool? isDeleted = null)
 
@@ -1963,7 +2061,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsnamenameexistsget"></a>
+<a id="apiv2projectsnamenameexistsget"></a>
 # **ApiV2ProjectsNameNameExistsGet**
 > bool ApiV2ProjectsNameNameExistsGet (string name)
 
@@ -2059,9 +2157,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectssearchpost"></a>
+<a id="apiv2projectssearchpost"></a>
 # **ApiV2ProjectsSearchPost**
-> List&lt;ProjectModel&gt; ApiV2ProjectsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ProjectsFilterModel projectsFilterModel = null)
+> List&lt;ProjectModel&gt; ApiV2ProjectsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ProjectsSearchPostRequest apiV2ProjectsSearchPostRequest = null)
 
 Search for projects
 
@@ -2096,12 +2194,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var projectsFilterModel = new ProjectsFilterModel(); // ProjectsFilterModel |  (optional) 
+            var apiV2ProjectsSearchPostRequest = new ApiV2ProjectsSearchPostRequest(); // ApiV2ProjectsSearchPostRequest |  (optional) 
 
             try
             {
                 // Search for projects
-                List<ProjectModel> result = apiInstance.ApiV2ProjectsSearchPost(skip, take, orderBy, searchField, searchValue, projectsFilterModel);
+                List<ProjectModel> result = apiInstance.ApiV2ProjectsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2ProjectsSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2122,7 +2220,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for projects
-    ApiResponse<List<ProjectModel>> response = apiInstance.ApiV2ProjectsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, projectsFilterModel);
+    ApiResponse<List<ProjectModel>> response = apiInstance.ApiV2ProjectsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2ProjectsSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -2144,7 +2242,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **projectsFilterModel** | [**ProjectsFilterModel**](ProjectsFilterModel.md) |  | [optional]  |
+| **apiV2ProjectsSearchPostRequest** | [**ApiV2ProjectsSearchPostRequest**](ApiV2ProjectsSearchPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -2167,7 +2265,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="backgroundimportproject"></a>
+<a id="backgroundimportproject"></a>
 # **BackgroundImportProject**
 > Guid BackgroundImportProject (FileParameter file = null)
 
@@ -2266,7 +2364,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="backgroundimporttoexistingproject"></a>
+<a id="backgroundimporttoexistingproject"></a>
 # **BackgroundImportToExistingProject**
 > Guid BackgroundImportToExistingProject (string id, FileParameter file = null)
 
@@ -2367,7 +2465,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="backgroundimportzipproject"></a>
+<a id="backgroundimportzipproject"></a>
 # **BackgroundImportZipProject**
 > Guid BackgroundImportZipProject (FileParameter file = null)
 
@@ -2466,7 +2564,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="backgroundimportziptoexistingproject"></a>
+<a id="backgroundimportziptoexistingproject"></a>
 # **BackgroundImportZipToExistingProject**
 > Guid BackgroundImportZipToExistingProject (string id, FileParameter file = null)
 
@@ -2567,7 +2665,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createcustomattributetestplanprojectrelations"></a>
+<a id="createcustomattributetestplanprojectrelations"></a>
 # **CreateCustomAttributeTestPlanProjectRelations**
 > void CreateCustomAttributeTestPlanProjectRelations (string id, List<Guid> requestBody = null)
 
@@ -2661,15 +2759,15 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Update permission for project settings is required |  -  |
 | **204** | No Content |  -  |
+| **403** | Update permission for project settings is required |  -  |
 | **400** | &lt;br&gt; Attributes must be global  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createproject"></a>
+<a id="createproject"></a>
 # **CreateProject**
-> ProjectModel CreateProject (ProjectPostModel projectPostModel = null)
+> ProjectModel CreateProject (CreateProjectRequest createProjectRequest = null)
 
 Create project
 
@@ -2701,12 +2799,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
-            var projectPostModel = new ProjectPostModel(); // ProjectPostModel |  (optional) 
+            var createProjectRequest = new CreateProjectRequest(); // CreateProjectRequest |  (optional) 
 
             try
             {
                 // Create project
-                ProjectModel result = apiInstance.CreateProject(projectPostModel);
+                ProjectModel result = apiInstance.CreateProject(createProjectRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2727,7 +2825,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create project
-    ApiResponse<ProjectModel> response = apiInstance.CreateProjectWithHttpInfo(projectPostModel);
+    ApiResponse<ProjectModel> response = apiInstance.CreateProjectWithHttpInfo(createProjectRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -2744,7 +2842,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **projectPostModel** | [**ProjectPostModel**](ProjectPostModel.md) |  | [optional]  |
+| **createProjectRequest** | [**CreateProjectRequest**](CreateProjectRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -2763,16 +2861,16 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Project creator or admin system role is required |  -  |
 | **201** | Created |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Project creator or admin system role is required |  -  |
 | **409** | Project with the same name already exists |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createprojectsattribute"></a>
+<a id="createprojectsattribute"></a>
 # **CreateProjectsAttribute**
-> CustomAttributeModel CreateProjectsAttribute (string id, CustomAttributePostModel customAttributePostModel = null)
+> CustomAttributeModel CreateProjectsAttribute (string id, CreateProjectsAttributeRequest createProjectsAttributeRequest = null)
 
 Create project attribute
 
@@ -2805,12 +2903,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
-            var customAttributePostModel = new CustomAttributePostModel(); // CustomAttributePostModel |  (optional) 
+            var createProjectsAttributeRequest = new CreateProjectsAttributeRequest(); // CreateProjectsAttributeRequest |  (optional) 
 
             try
             {
                 // Create project attribute
-                CustomAttributeModel result = apiInstance.CreateProjectsAttribute(id, customAttributePostModel);
+                CustomAttributeModel result = apiInstance.CreateProjectsAttribute(id, createProjectsAttributeRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2831,7 +2929,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create project attribute
-    ApiResponse<CustomAttributeModel> response = apiInstance.CreateProjectsAttributeWithHttpInfo(id, customAttributePostModel);
+    ApiResponse<CustomAttributeModel> response = apiInstance.CreateProjectsAttributeWithHttpInfo(id, createProjectsAttributeRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -2849,7 +2947,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Project internal (UUID) or global (integer) identifier |  |
-| **customAttributePostModel** | [**CustomAttributePostModel**](CustomAttributePostModel.md) |  | [optional]  |
+| **createProjectsAttributeRequest** | [**CreateProjectsAttributeRequest**](CreateProjectsAttributeRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -2868,16 +2966,16 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **422** | Cannot add new attribute from template which is in use |  -  |
+| **201** | Created |  -  |
+| **400** | &lt;br&gt;- Attribute is &#x60;null&#x60;  &lt;br&gt;- Priority is invalid  &lt;br&gt;- Attribute with &#x60;Options&#x60; type must have an options  &lt;br&gt;- ID is not &#x60;null&#x60;  &lt;br&gt;- Option ID is not &#x60;null&#x60; |  -  |
 | **403** | Update permission for project settings is required |  -  |
 | **404** | Project with provided ID was not found |  -  |
-| **400** | &lt;br&gt;- Attribute is &#x60;null&#x60;  &lt;br&gt;- Priority is invalid  &lt;br&gt;- Attribute with &#x60;Options&#x60; type must have an options  &lt;br&gt;- ID is not &#x60;null&#x60;  &lt;br&gt;- Option ID is not &#x60;null&#x60; |  -  |
 | **409** | &lt;br&gt;&#x60;CustomAttribute.Name&#x60; or &#x60;CustomAttribute.Id&#x60; are not unique in attributes schemes  &lt;br&gt;&#x60;CustomAttributeOptionModel.Id&#x60; or &#x60;CustomAttributeOptionModel.Value&#x60; are not unique in &#x60;attributesScheme.Options&#x60; |  -  |
-| **201** | Created |  -  |
+| **422** | Cannot add new attribute from template which is in use |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deletecustomattributetestplanprojectrelations"></a>
+<a id="deletecustomattributetestplanprojectrelations"></a>
 # **DeleteCustomAttributeTestPlanProjectRelations**
 > void DeleteCustomAttributeTestPlanProjectRelations (string id, Guid attributeId)
 
@@ -2976,7 +3074,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleteproject"></a>
+<a id="deleteproject"></a>
 # **DeleteProject**
 > void DeleteProject (string id)
 
@@ -3068,13 +3166,13 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Project with provided ID does not exists |  -  |
 | **204** | No Content |  -  |
 | **403** | Delete permission for projects is required |  -  |
+| **404** | Project with provided ID does not exists |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleteprojectautotests"></a>
+<a id="deleteprojectautotests"></a>
 # **DeleteProjectAutoTests**
 > void DeleteProjectAutoTests (string id)
 
@@ -3172,7 +3270,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleteprojectsattribute"></a>
+<a id="deleteprojectsattribute"></a>
 # **DeleteProjectsAttribute**
 > void DeleteProjectsAttribute (string id, Guid attributeId)
 
@@ -3267,15 +3365,15 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
-| **404** | Project with provided ID was not found |  -  |
 | **400** | &lt;br&gt;- Project ID is invalid  &lt;br&gt;- Project attribute ID is invalid  &lt;br&gt;- Attribute is empty |  -  |
 | **403** | Update permission for project settings is required |  -  |
+| **404** | Project with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="export"></a>
+<a id="export"></a>
 # **Export**
-> FileParameter Export (string id, bool? includeAttachments = null, ProjectExportQueryModel projectExportQueryModel = null)
+> FileParameter Export (string id, bool? includeAttachments = null, ExportProjectJsonRequest exportProjectJsonRequest = null)
 
 Export project as JSON file
 
@@ -3309,12 +3407,12 @@ namespace Example
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Specifies the ID of the project you want to export.
             var includeAttachments = false;  // bool? | Enables attachment export. (optional)  (default to false)
-            var projectExportQueryModel = new ProjectExportQueryModel(); // ProjectExportQueryModel |  (optional) 
+            var exportProjectJsonRequest = new ExportProjectJsonRequest(); // ExportProjectJsonRequest |  (optional) 
 
             try
             {
                 // Export project as JSON file
-                FileParameter result = apiInstance.Export(id, includeAttachments, projectExportQueryModel);
+                FileParameter result = apiInstance.Export(id, includeAttachments, exportProjectJsonRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3335,7 +3433,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Export project as JSON file
-    ApiResponse<FileParameter> response = apiInstance.ExportWithHttpInfo(id, includeAttachments, projectExportQueryModel);
+    ApiResponse<FileParameter> response = apiInstance.ExportWithHttpInfo(id, includeAttachments, exportProjectJsonRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -3354,7 +3452,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Specifies the ID of the project you want to export. |  |
 | **includeAttachments** | **bool?** | Enables attachment export. | [optional] [default to false] |
-| **projectExportQueryModel** | [**ProjectExportQueryModel**](ProjectExportQueryModel.md) |  | [optional]  |
+| **exportProjectJsonRequest** | [**ExportProjectJsonRequest**](ExportProjectJsonRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -3373,16 +3471,16 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Not Found |  -  |
 | **200** | Success |  -  |
-| **403** | Update permission for project settings is required |  -  |
 | **400** | Root section was not found |  -  |
+| **403** | Update permission for project settings is required |  -  |
+| **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="exportprojectjson"></a>
+<a id="exportprojectjson"></a>
 # **ExportProjectJson**
-> Guid ExportProjectJson (string id, long? timeZoneOffsetInMinutes = null, ProjectExportQueryModel projectExportQueryModel = null)
+> Guid ExportProjectJson (string id, long? timeZoneOffsetInMinutes = null, ExportProjectJsonRequest exportProjectJsonRequest = null)
 
 Export project as JSON file in background job
 
@@ -3414,12 +3512,12 @@ namespace Example
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
             var timeZoneOffsetInMinutes = 789L;  // long? |  (optional) 
-            var projectExportQueryModel = new ProjectExportQueryModel(); // ProjectExportQueryModel |  (optional) 
+            var exportProjectJsonRequest = new ExportProjectJsonRequest(); // ExportProjectJsonRequest |  (optional) 
 
             try
             {
                 // Export project as JSON file in background job
-                Guid result = apiInstance.ExportProjectJson(id, timeZoneOffsetInMinutes, projectExportQueryModel);
+                Guid result = apiInstance.ExportProjectJson(id, timeZoneOffsetInMinutes, exportProjectJsonRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3440,7 +3538,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Export project as JSON file in background job
-    ApiResponse<Guid> response = apiInstance.ExportProjectJsonWithHttpInfo(id, timeZoneOffsetInMinutes, projectExportQueryModel);
+    ApiResponse<Guid> response = apiInstance.ExportProjectJsonWithHttpInfo(id, timeZoneOffsetInMinutes, exportProjectJsonRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -3459,7 +3557,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Project internal (UUID) or global (integer) identifier |  |
 | **timeZoneOffsetInMinutes** | **long?** |  | [optional]  |
-| **projectExportQueryModel** | [**ProjectExportQueryModel**](ProjectExportQueryModel.md) |  | [optional]  |
+| **exportProjectJsonRequest** | [**ExportProjectJsonRequest**](ExportProjectJsonRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -3478,14 +3576,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Update permission for project settings is required |  -  |
 | **200** | Success |  -  |
+| **403** | Update permission for project settings is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="exportprojectwithtestplansjson"></a>
+<a id="exportprojectwithtestplansjson"></a>
 # **ExportProjectWithTestPlansJson**
-> Guid ExportProjectWithTestPlansJson (string id, long? timeZoneOffsetInMinutes = null, ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = null)
+> Guid ExportProjectWithTestPlansJson (string id, long? timeZoneOffsetInMinutes = null, ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = null)
 
 Export project as JSON file with test plans in background job
 
@@ -3517,12 +3615,12 @@ namespace Example
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
             var timeZoneOffsetInMinutes = 789L;  // long? |  (optional) 
-            var projectExportWithTestPlansPostModel = new ProjectExportWithTestPlansPostModel(); // ProjectExportWithTestPlansPostModel |  (optional) 
+            var exportProjectWithTestPlansJsonRequest = new ExportProjectWithTestPlansJsonRequest(); // ExportProjectWithTestPlansJsonRequest |  (optional) 
 
             try
             {
                 // Export project as JSON file with test plans in background job
-                Guid result = apiInstance.ExportProjectWithTestPlansJson(id, timeZoneOffsetInMinutes, projectExportWithTestPlansPostModel);
+                Guid result = apiInstance.ExportProjectWithTestPlansJson(id, timeZoneOffsetInMinutes, exportProjectWithTestPlansJsonRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3543,7 +3641,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Export project as JSON file with test plans in background job
-    ApiResponse<Guid> response = apiInstance.ExportProjectWithTestPlansJsonWithHttpInfo(id, timeZoneOffsetInMinutes, projectExportWithTestPlansPostModel);
+    ApiResponse<Guid> response = apiInstance.ExportProjectWithTestPlansJsonWithHttpInfo(id, timeZoneOffsetInMinutes, exportProjectWithTestPlansJsonRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -3562,7 +3660,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Project internal (UUID) or global (integer) identifier |  |
 | **timeZoneOffsetInMinutes** | **long?** |  | [optional]  |
-| **projectExportWithTestPlansPostModel** | [**ProjectExportWithTestPlansPostModel**](ProjectExportWithTestPlansPostModel.md) |  | [optional]  |
+| **exportProjectWithTestPlansJsonRequest** | [**ExportProjectWithTestPlansJsonRequest**](ExportProjectWithTestPlansJsonRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -3586,9 +3684,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="exportprojectwithtestplanszip"></a>
+<a id="exportprojectwithtestplanszip"></a>
 # **ExportProjectWithTestPlansZip**
-> Guid ExportProjectWithTestPlansZip (string id, long? timeZoneOffsetInMinutes = null, ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = null)
+> Guid ExportProjectWithTestPlansZip (string id, long? timeZoneOffsetInMinutes = null, ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = null)
 
 Export project as Zip file with test plans in background job
 
@@ -3620,12 +3718,12 @@ namespace Example
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
             var timeZoneOffsetInMinutes = 789L;  // long? |  (optional) 
-            var projectExportWithTestPlansPostModel = new ProjectExportWithTestPlansPostModel(); // ProjectExportWithTestPlansPostModel |  (optional) 
+            var exportProjectWithTestPlansJsonRequest = new ExportProjectWithTestPlansJsonRequest(); // ExportProjectWithTestPlansJsonRequest |  (optional) 
 
             try
             {
                 // Export project as Zip file with test plans in background job
-                Guid result = apiInstance.ExportProjectWithTestPlansZip(id, timeZoneOffsetInMinutes, projectExportWithTestPlansPostModel);
+                Guid result = apiInstance.ExportProjectWithTestPlansZip(id, timeZoneOffsetInMinutes, exportProjectWithTestPlansJsonRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3646,7 +3744,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Export project as Zip file with test plans in background job
-    ApiResponse<Guid> response = apiInstance.ExportProjectWithTestPlansZipWithHttpInfo(id, timeZoneOffsetInMinutes, projectExportWithTestPlansPostModel);
+    ApiResponse<Guid> response = apiInstance.ExportProjectWithTestPlansZipWithHttpInfo(id, timeZoneOffsetInMinutes, exportProjectWithTestPlansJsonRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -3665,7 +3763,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Project internal (UUID) or global (integer) identifier |  |
 | **timeZoneOffsetInMinutes** | **long?** |  | [optional]  |
-| **projectExportWithTestPlansPostModel** | [**ProjectExportWithTestPlansPostModel**](ProjectExportWithTestPlansPostModel.md) |  | [optional]  |
+| **exportProjectWithTestPlansJsonRequest** | [**ExportProjectWithTestPlansJsonRequest**](ExportProjectWithTestPlansJsonRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -3684,14 +3782,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Update permission for project settings is required |  -  |
 | **200** | Success |  -  |
+| **403** | Update permission for project settings is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="exportprojectzip"></a>
+<a id="exportprojectzip"></a>
 # **ExportProjectZip**
-> Guid ExportProjectZip (string id, long? timeZoneOffsetInMinutes = null, ProjectExportQueryModel projectExportQueryModel = null)
+> Guid ExportProjectZip (string id, long? timeZoneOffsetInMinutes = null, ExportProjectJsonRequest exportProjectJsonRequest = null)
 
 Export project as Zip file in background job
 
@@ -3723,12 +3821,12 @@ namespace Example
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
             var timeZoneOffsetInMinutes = 789L;  // long? |  (optional) 
-            var projectExportQueryModel = new ProjectExportQueryModel(); // ProjectExportQueryModel |  (optional) 
+            var exportProjectJsonRequest = new ExportProjectJsonRequest(); // ExportProjectJsonRequest |  (optional) 
 
             try
             {
                 // Export project as Zip file in background job
-                Guid result = apiInstance.ExportProjectZip(id, timeZoneOffsetInMinutes, projectExportQueryModel);
+                Guid result = apiInstance.ExportProjectZip(id, timeZoneOffsetInMinutes, exportProjectJsonRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3749,7 +3847,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Export project as Zip file in background job
-    ApiResponse<Guid> response = apiInstance.ExportProjectZipWithHttpInfo(id, timeZoneOffsetInMinutes, projectExportQueryModel);
+    ApiResponse<Guid> response = apiInstance.ExportProjectZipWithHttpInfo(id, timeZoneOffsetInMinutes, exportProjectJsonRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -3768,7 +3866,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Project internal (UUID) or global (integer) identifier |  |
 | **timeZoneOffsetInMinutes** | **long?** |  | [optional]  |
-| **projectExportQueryModel** | [**ProjectExportQueryModel**](ProjectExportQueryModel.md) |  | [optional]  |
+| **exportProjectJsonRequest** | [**ExportProjectJsonRequest**](ExportProjectJsonRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -3787,14 +3885,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Update permission for project settings is required |  -  |
 | **200** | Success |  -  |
+| **403** | Update permission for project settings is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="exportwithtestplansandconfigurations"></a>
+<a id="exportwithtestplansandconfigurations"></a>
 # **ExportWithTestPlansAndConfigurations**
-> FileParameter ExportWithTestPlansAndConfigurations (string id, bool? includeAttachments = null, ProjectExportWithTestPlansPostModel projectExportWithTestPlansPostModel = null)
+> FileParameter ExportWithTestPlansAndConfigurations (string id, bool? includeAttachments = null, ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = null)
 
 Export project with test plans, test suites and test points as JSON file
 
@@ -3828,12 +3926,12 @@ namespace Example
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Specifies the ID of the project you want to export.
             var includeAttachments = false;  // bool? | Enables attachment export. (optional)  (default to false)
-            var projectExportWithTestPlansPostModel = new ProjectExportWithTestPlansPostModel(); // ProjectExportWithTestPlansPostModel |  (optional) 
+            var exportProjectWithTestPlansJsonRequest = new ExportProjectWithTestPlansJsonRequest(); // ExportProjectWithTestPlansJsonRequest |  (optional) 
 
             try
             {
                 // Export project with test plans, test suites and test points as JSON file
-                FileParameter result = apiInstance.ExportWithTestPlansAndConfigurations(id, includeAttachments, projectExportWithTestPlansPostModel);
+                FileParameter result = apiInstance.ExportWithTestPlansAndConfigurations(id, includeAttachments, exportProjectWithTestPlansJsonRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3854,7 +3952,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Export project with test plans, test suites and test points as JSON file
-    ApiResponse<FileParameter> response = apiInstance.ExportWithTestPlansAndConfigurationsWithHttpInfo(id, includeAttachments, projectExportWithTestPlansPostModel);
+    ApiResponse<FileParameter> response = apiInstance.ExportWithTestPlansAndConfigurationsWithHttpInfo(id, includeAttachments, exportProjectWithTestPlansJsonRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -3873,7 +3971,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Specifies the ID of the project you want to export. |  |
 | **includeAttachments** | **bool?** | Enables attachment export. | [optional] [default to false] |
-| **projectExportWithTestPlansPostModel** | [**ProjectExportWithTestPlansPostModel**](ProjectExportWithTestPlansPostModel.md) |  | [optional]  |
+| **exportProjectWithTestPlansJsonRequest** | [**ExportProjectWithTestPlansJsonRequest**](ExportProjectWithTestPlansJsonRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -3892,14 +3990,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Project with provided ID was not found |  -  |
+| **200** | Success |  -  |
 | **400** | Root section was not found |  -  |
 | **403** | Update permission for project settings is required |  -  |
-| **200** | Success |  -  |
+| **404** | Project with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getallprojects"></a>
+<a id="getallprojects"></a>
 # **GetAllProjects**
 > List&lt;ProjectModel&gt; GetAllProjects (bool? isDeleted = null, string projectName = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -4012,7 +4110,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getattributebyprojectid"></a>
+<a id="getattributebyprojectid"></a>
 # **GetAttributeByProjectId**
 > CustomAttributeModel GetAttributeByProjectId (string id, Guid attributeId)
 
@@ -4110,14 +4208,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | &lt;br&gt;- Project with provided ID was not found  &lt;br&gt;- Project attribute with provided ID was not found |  -  |
-| **403** | Read permission for test library is required |  -  |
 | **200** | Success |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Read permission for test library is required |  -  |
+| **404** | &lt;br&gt;- Project with provided ID was not found  &lt;br&gt;- Project attribute with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getattributesbyprojectid"></a>
+<a id="getattributesbyprojectid"></a>
 # **GetAttributesByProjectId**
 > List&lt;CustomAttributeModel&gt; GetAttributesByProjectId (string id, DeletionState? isDeleted = null)
 
@@ -4215,14 +4313,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **400** | Bad Request |  -  |
 | **403** | Read permission for test library is required |  -  |
 | **404** | Project with provided ID was not found |  -  |
-| **400** | Bad Request |  -  |
-| **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getautotestsnamespaces"></a>
+<a id="getautotestsnamespaces"></a>
 # **GetAutoTestsNamespaces**
 > List&lt;AutoTestNamespaceModel&gt; GetAutoTestsNamespaces (string id)
 
@@ -4324,7 +4422,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getconfigurationsbyprojectid"></a>
+<a id="getconfigurationsbyprojectid"></a>
 # **GetConfigurationsByProjectId**
 > List&lt;ConfigurationModel&gt; GetConfigurationsByProjectId (string id)
 
@@ -4421,13 +4519,13 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
-| **404** | Project with provided ID was not found |  -  |
 | **400** | Bad Request |  -  |
 | **403** | Read permission for configurations required |  -  |
+| **404** | Project with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getcustomattributetestplanprojectrelations"></a>
+<a id="getcustomattributetestplanprojectrelations"></a>
 # **GetCustomAttributeTestPlanProjectRelations**
 > List&lt;CustomAttributeModel&gt; GetCustomAttributeTestPlanProjectRelations (string id)
 
@@ -4523,12 +4621,12 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for project settings is required |  -  |
 | **200** | Success |  -  |
+| **403** | Read permission for project settings is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getprojectbyid"></a>
+<a id="getprojectbyid"></a>
 # **GetProjectById**
 > ProjectModel GetProjectById (string id)
 
@@ -4624,14 +4722,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for projects is required |  -  |
-| **404** | Project with provided ID was not found |  -  |
 | **200** | Success |  -  |
 | **400** | ID is invalid |  -  |
+| **403** | Read permission for projects is required |  -  |
+| **404** | Project with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getsectionsbyprojectid"></a>
+<a id="getsectionsbyprojectid"></a>
 # **GetSectionsByProjectId**
 > List&lt;SectionModel&gt; GetSectionsByProjectId (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -4744,7 +4842,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="gettestplansbyprojectid"></a>
+<a id="gettestplansbyprojectid"></a>
 # **GetTestPlansByProjectId**
 > List&lt;TestPlanModel&gt; GetTestPlansByProjectId (string id, bool? isDeleted = null)
 
@@ -4842,13 +4940,13 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for test library is required |  -  |
 | **200** | Success |  -  |
+| **403** | Read permission for test library is required |  -  |
 | **404** | Project with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="gettestrunsbyprojectid"></a>
+<a id="gettestrunsbyprojectid"></a>
 # **GetTestRunsByProjectId**
 > List&lt;TestRunV2GetModel&gt; GetTestRunsByProjectId (string id, bool? notStarted = null, bool? inProgress = null, bool? stopped = null, bool? completed = null, DateTime? createdDateFrom = null, DateTime? createdDateTo = null, Guid? testPlanId = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -4968,13 +5066,13 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Project with provided ID was not found |  -  |
-| **403** | Read permission for test result is required |  -  |
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **403** | Read permission for test result is required |  -  |
+| **404** | Project with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getworkitemsbyprojectid"></a>
+<a id="getworkitemsbyprojectid"></a>
 # **GetWorkItemsByProjectId**
 > List&lt;WorkItemShortModel&gt; GetWorkItemsByProjectId (string id, bool? isDeleted = null, List<string> tagNames = null, bool? includeIterations = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -5093,7 +5191,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="import"></a>
+<a id="import"></a>
 # **Import**
 > void Import (bool? includeAttachments = null, FileParameter file = null)
 
@@ -5188,14 +5286,14 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
-| **403** | Project creator or admin system role is required |  -  |
-| **413** | Multipart body length limit exceeded |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Project creator or admin system role is required |  -  |
 | **409** | Entity with the same ID was already imported in other project |  -  |
+| **413** | Multipart body length limit exceeded |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="importtoexistingproject"></a>
+<a id="importtoexistingproject"></a>
 # **ImportToExistingProject**
 > void ImportToExistingProject (string id, bool? includeAttachments = null, FileParameter file = null)
 
@@ -5291,15 +5389,15 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **413** | Multipart body length limit exceeded |  -  |
 | **204** | No Content |  -  |
 | **403** | Update permission for project settings required |  -  |
-| **409** | Entity with same id already imported in other project |  -  |
 | **404** | File not found |  -  |
+| **409** | Entity with same id already imported in other project |  -  |
+| **413** | Multipart body length limit exceeded |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="restoreproject"></a>
+<a id="restoreproject"></a>
 # **RestoreProject**
 > void RestoreProject (string id)
 
@@ -5397,9 +5495,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="searchattributesinproject"></a>
+<a id="searchattributesinproject"></a>
 # **SearchAttributesInProject**
-> List&lt;CustomAttributeGetModel&gt; SearchAttributesInProject (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ProjectAttributesFilterModel projectAttributesFilterModel = null)
+> List&lt;CustomAttributeGetModel&gt; SearchAttributesInProject (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, SearchAttributesInProjectRequest searchAttributesInProjectRequest = null)
 
 Search for attributes used in the project
 
@@ -5435,12 +5533,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var projectAttributesFilterModel = new ProjectAttributesFilterModel(); // ProjectAttributesFilterModel |  (optional) 
+            var searchAttributesInProjectRequest = new SearchAttributesInProjectRequest(); // SearchAttributesInProjectRequest |  (optional) 
 
             try
             {
                 // Search for attributes used in the project
-                List<CustomAttributeGetModel> result = apiInstance.SearchAttributesInProject(id, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
+                List<CustomAttributeGetModel> result = apiInstance.SearchAttributesInProject(id, skip, take, orderBy, searchField, searchValue, searchAttributesInProjectRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -5461,7 +5559,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for attributes used in the project
-    ApiResponse<List<CustomAttributeGetModel>> response = apiInstance.SearchAttributesInProjectWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
+    ApiResponse<List<CustomAttributeGetModel>> response = apiInstance.SearchAttributesInProjectWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, searchAttributesInProjectRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -5484,7 +5582,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **projectAttributesFilterModel** | [**ProjectAttributesFilterModel**](ProjectAttributesFilterModel.md) |  | [optional]  |
+| **searchAttributesInProjectRequest** | [**SearchAttributesInProjectRequest**](SearchAttributesInProjectRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -5503,14 +5601,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for project is required |  -  |
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **403** | Read permission for project is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="searchtestplanattributesinproject"></a>
+<a id="searchtestplanattributesinproject"></a>
 # **SearchTestPlanAttributesInProject**
-> List&lt;CustomAttributeGetModel&gt; SearchTestPlanAttributesInProject (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ProjectAttributesFilterModel projectAttributesFilterModel = null)
+> List&lt;CustomAttributeGetModel&gt; SearchTestPlanAttributesInProject (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, SearchAttributesInProjectRequest searchAttributesInProjectRequest = null)
 
 Search for attributes used in the project test plans
 
@@ -5546,12 +5644,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var projectAttributesFilterModel = new ProjectAttributesFilterModel(); // ProjectAttributesFilterModel |  (optional) 
+            var searchAttributesInProjectRequest = new SearchAttributesInProjectRequest(); // SearchAttributesInProjectRequest |  (optional) 
 
             try
             {
                 // Search for attributes used in the project test plans
-                List<CustomAttributeGetModel> result = apiInstance.SearchTestPlanAttributesInProject(id, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
+                List<CustomAttributeGetModel> result = apiInstance.SearchTestPlanAttributesInProject(id, skip, take, orderBy, searchField, searchValue, searchAttributesInProjectRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -5572,7 +5670,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for attributes used in the project test plans
-    ApiResponse<List<CustomAttributeGetModel>> response = apiInstance.SearchTestPlanAttributesInProjectWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
+    ApiResponse<List<CustomAttributeGetModel>> response = apiInstance.SearchTestPlanAttributesInProjectWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, searchAttributesInProjectRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -5595,7 +5693,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **projectAttributesFilterModel** | [**ProjectAttributesFilterModel**](ProjectAttributesFilterModel.md) |  | [optional]  |
+| **searchAttributesInProjectRequest** | [**SearchAttributesInProjectRequest**](SearchAttributesInProjectRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -5619,9 +5717,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updatecustomattributetestplanprojectrelations"></a>
+<a id="updatecustomattributetestplanprojectrelations"></a>
 # **UpdateCustomAttributeTestPlanProjectRelations**
-> void UpdateCustomAttributeTestPlanProjectRelations (string id, CustomAttributeTestPlanProjectRelationPutModel customAttributeTestPlanProjectRelationPutModel = null)
+> void UpdateCustomAttributeTestPlanProjectRelations (string id, UpdateCustomAttributeTestPlanProjectRelationsRequest updateCustomAttributeTestPlanProjectRelationsRequest = null)
 
 Update attribute of project's test plans
 
@@ -5654,12 +5752,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
-            var customAttributeTestPlanProjectRelationPutModel = new CustomAttributeTestPlanProjectRelationPutModel(); // CustomAttributeTestPlanProjectRelationPutModel |  (optional) 
+            var updateCustomAttributeTestPlanProjectRelationsRequest = new UpdateCustomAttributeTestPlanProjectRelationsRequest(); // UpdateCustomAttributeTestPlanProjectRelationsRequest |  (optional) 
 
             try
             {
                 // Update attribute of project's test plans
-                apiInstance.UpdateCustomAttributeTestPlanProjectRelations(id, customAttributeTestPlanProjectRelationPutModel);
+                apiInstance.UpdateCustomAttributeTestPlanProjectRelations(id, updateCustomAttributeTestPlanProjectRelationsRequest);
             }
             catch (ApiException  e)
             {
@@ -5679,7 +5777,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update attribute of project's test plans
-    apiInstance.UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfo(id, customAttributeTestPlanProjectRelationPutModel);
+    apiInstance.UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfo(id, updateCustomAttributeTestPlanProjectRelationsRequest);
 }
 catch (ApiException e)
 {
@@ -5694,7 +5792,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Project internal (UUID) or global (integer) identifier |  |
-| **customAttributeTestPlanProjectRelationPutModel** | [**CustomAttributeTestPlanProjectRelationPutModel**](CustomAttributeTestPlanProjectRelationPutModel.md) |  | [optional]  |
+| **updateCustomAttributeTestPlanProjectRelationsRequest** | [**UpdateCustomAttributeTestPlanProjectRelationsRequest**](UpdateCustomAttributeTestPlanProjectRelationsRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -5718,9 +5816,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updateproject"></a>
+<a id="updateproject"></a>
 # **UpdateProject**
-> void UpdateProject (ProjectPutModel projectPutModel = null)
+> void UpdateProject (UpdateProjectRequest updateProjectRequest = null)
 
 Update project
 
@@ -5752,12 +5850,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
-            var projectPutModel = new ProjectPutModel(); // ProjectPutModel |  (optional) 
+            var updateProjectRequest = new UpdateProjectRequest(); // UpdateProjectRequest |  (optional) 
 
             try
             {
                 // Update project
-                apiInstance.UpdateProject(projectPutModel);
+                apiInstance.UpdateProject(updateProjectRequest);
             }
             catch (ApiException  e)
             {
@@ -5777,7 +5875,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update project
-    apiInstance.UpdateProjectWithHttpInfo(projectPutModel);
+    apiInstance.UpdateProjectWithHttpInfo(updateProjectRequest);
 }
 catch (ApiException e)
 {
@@ -5791,7 +5889,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **projectPutModel** | [**ProjectPutModel**](ProjectPutModel.md) |  | [optional]  |
+| **updateProjectRequest** | [**UpdateProjectRequest**](UpdateProjectRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -5818,9 +5916,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updateprojectsattribute"></a>
+<a id="updateprojectsattribute"></a>
 # **UpdateProjectsAttribute**
-> void UpdateProjectsAttribute (string id, CustomAttributePutModel customAttributePutModel = null)
+> void UpdateProjectsAttribute (string id, UpdateProjectsAttributeRequest updateProjectsAttributeRequest = null)
 
 Edit attribute of the project
 
@@ -5851,12 +5949,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Unique or global project ID
-            var customAttributePutModel = new CustomAttributePutModel(); // CustomAttributePutModel |  (optional) 
+            var updateProjectsAttributeRequest = new UpdateProjectsAttributeRequest(); // UpdateProjectsAttributeRequest |  (optional) 
 
             try
             {
                 // Edit attribute of the project
-                apiInstance.UpdateProjectsAttribute(id, customAttributePutModel);
+                apiInstance.UpdateProjectsAttribute(id, updateProjectsAttributeRequest);
             }
             catch (ApiException  e)
             {
@@ -5876,7 +5974,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Edit attribute of the project
-    apiInstance.UpdateProjectsAttributeWithHttpInfo(id, customAttributePutModel);
+    apiInstance.UpdateProjectsAttributeWithHttpInfo(id, updateProjectsAttributeRequest);
 }
 catch (ApiException e)
 {
@@ -5891,7 +5989,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Unique or global project ID |  |
-| **customAttributePutModel** | [**CustomAttributePutModel**](CustomAttributePutModel.md) |  | [optional]  |
+| **updateProjectsAttributeRequest** | [**UpdateProjectsAttributeRequest**](UpdateProjectsAttributeRequest.md) |  | [optional]  |
 
 ### Return type
 

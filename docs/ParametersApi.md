@@ -17,10 +17,9 @@ All URIs are relative to *http://localhost*
 | [**DeleteParameter**](ParametersApi.md#deleteparameter) | **DELETE** /api/v2/parameters/{id} | Delete parameter |
 | [**GetAllParameters**](ParametersApi.md#getallparameters) | **GET** /api/v2/parameters | Get all parameters |
 | [**GetParameterById**](ParametersApi.md#getparameterbyid) | **GET** /api/v2/parameters/{id} | Get parameter by ID |
-| [**ObsoleteDeleteByName**](ParametersApi.md#obsoletedeletebyname) | **POST** /api/v2/parameters/deleteByName |  |
 | [**UpdateParameter**](ParametersApi.md#updateparameter) | **PUT** /api/v2/parameters | Update parameter |
 
-<a name="apiv2parametersbulkpost"></a>
+<a id="apiv2parametersbulkpost"></a>
 # **ApiV2ParametersBulkPost**
 > List&lt;ParameterModel&gt; ApiV2ParametersBulkPost (List<ParameterPostModel> parameterPostModel = null)
 
@@ -121,7 +120,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2parametersbulkput"></a>
+<a id="apiv2parametersbulkput"></a>
 # **ApiV2ParametersBulkPut**
 > void ApiV2ParametersBulkPut (List<ParameterPutModel> parameterPutModel = null)
 
@@ -213,14 +212,14 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | &lt;br&gt;- Parameter model is not valid |  -  |
 | **204** | No Content |  -  |
+| **400** | &lt;br&gt;- Parameter model is not valid |  -  |
 | **403** | Invalid user permissions |  -  |
 | **422** | Client Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2parametersgroupsget"></a>
+<a id="apiv2parametersgroupsget"></a>
 # **ApiV2ParametersGroupsGet**
 > List&lt;ParameterGroupModel&gt; ApiV2ParametersGroupsGet (bool? isDeleted = null, List<Guid> parameterKeyIds = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -333,7 +332,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2parameterskeynamenameexistsget"></a>
+<a id="apiv2parameterskeynamenameexistsget"></a>
 # **ApiV2ParametersKeyNameNameExistsGet**
 > bool ApiV2ParametersKeyNameNameExistsGet (string name)
 
@@ -434,7 +433,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2parameterskeyvaluesget"></a>
+<a id="apiv2parameterskeyvaluesget"></a>
 # **ApiV2ParametersKeyValuesGet**
 > List&lt;string&gt; ApiV2ParametersKeyValuesGet (string key)
 
@@ -534,7 +533,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2parameterskeysget"></a>
+<a id="apiv2parameterskeysget"></a>
 # **ApiV2ParametersKeysGet**
 > List&lt;string&gt; ApiV2ParametersKeysGet ()
 
@@ -629,9 +628,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2parameterssearchpost"></a>
+<a id="apiv2parameterssearchpost"></a>
 # **ApiV2ParametersSearchPost**
-> List&lt;ParameterModel&gt; ApiV2ParametersSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ParameterFilterModel parameterFilterModel = null)
+> List&lt;ParameterModel&gt; ApiV2ParametersSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ParametersSearchPostRequest apiV2ParametersSearchPostRequest = null)
 
 Search for parameters
 
@@ -666,12 +665,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var parameterFilterModel = new ParameterFilterModel(); // ParameterFilterModel |  (optional) 
+            var apiV2ParametersSearchPostRequest = new ApiV2ParametersSearchPostRequest(); // ApiV2ParametersSearchPostRequest |  (optional) 
 
             try
             {
                 // Search for parameters
-                List<ParameterModel> result = apiInstance.ApiV2ParametersSearchPost(skip, take, orderBy, searchField, searchValue, parameterFilterModel);
+                List<ParameterModel> result = apiInstance.ApiV2ParametersSearchPost(skip, take, orderBy, searchField, searchValue, apiV2ParametersSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -692,7 +691,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for parameters
-    ApiResponse<List<ParameterModel>> response = apiInstance.ApiV2ParametersSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, parameterFilterModel);
+    ApiResponse<List<ParameterModel>> response = apiInstance.ApiV2ParametersSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2ParametersSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -714,7 +713,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **parameterFilterModel** | [**ParameterFilterModel**](ParameterFilterModel.md) |  | [optional]  |
+| **apiV2ParametersSearchPostRequest** | [**ApiV2ParametersSearchPostRequest**](ApiV2ParametersSearchPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -737,9 +736,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createparameter"></a>
+<a id="createparameter"></a>
 # **CreateParameter**
-> ParameterModel CreateParameter (ParameterPostModel parameterPostModel = null)
+> ParameterModel CreateParameter (CreateParameterRequest createParameterRequest = null)
 
 Create parameter
 
@@ -771,12 +770,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ParametersApi(httpClient, config, httpClientHandler);
-            var parameterPostModel = new ParameterPostModel(); // ParameterPostModel |  (optional) 
+            var createParameterRequest = new CreateParameterRequest(); // CreateParameterRequest |  (optional) 
 
             try
             {
                 // Create parameter
-                ParameterModel result = apiInstance.CreateParameter(parameterPostModel);
+                ParameterModel result = apiInstance.CreateParameter(createParameterRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -797,7 +796,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create parameter
-    ApiResponse<ParameterModel> response = apiInstance.CreateParameterWithHttpInfo(parameterPostModel);
+    ApiResponse<ParameterModel> response = apiInstance.CreateParameterWithHttpInfo(createParameterRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -814,7 +813,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **parameterPostModel** | [**ParameterPostModel**](ParameterPostModel.md) |  | [optional]  |
+| **createParameterRequest** | [**CreateParameterRequest**](CreateParameterRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -838,7 +837,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deletebyname"></a>
+<a id="deletebyname"></a>
 # **DeleteByName**
 > void DeleteByName (string name)
 
@@ -936,7 +935,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deletebyparameterkeyid"></a>
+<a id="deletebyparameterkeyid"></a>
 # **DeleteByParameterKeyId**
 > void DeleteByParameterKeyId (Guid keyId)
 
@@ -1028,13 +1027,13 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Invalid user permissions |  -  |
 | **204** | No Content |  -  |
+| **403** | Invalid user permissions |  -  |
 | **422** | Parameter is in use in iterations |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleteparameter"></a>
+<a id="deleteparameter"></a>
 # **DeleteParameter**
 > void DeleteParameter (Guid id)
 
@@ -1132,7 +1131,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getallparameters"></a>
+<a id="getallparameters"></a>
 # **GetAllParameters**
 > ParameterModel GetAllParameters (bool? isDeleted = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -1243,7 +1242,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getparameterbyid"></a>
+<a id="getparameterbyid"></a>
 # **GetParameterById**
 > ParameterModel GetParameterById (Guid id)
 
@@ -1339,106 +1338,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **200** | Success |  -  |
 | **404** | Parameter with provided ID was not found |  -  |
-| **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="obsoletedeletebyname"></a>
-# **ObsoleteDeleteByName**
-> void ObsoleteDeleteByName (string name = null)
-
-
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
-
-namespace Example
-{
-    public class ObsoleteDeleteByNameExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure API key authorization: Bearer or PrivateToken
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new ParametersApi(httpClient, config, httpClientHandler);
-            var name = "name_example";  // string |  (optional) 
-
-            try
-            {
-                apiInstance.ObsoleteDeleteByName(name);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ParametersApi.ObsoleteDeleteByName: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the ObsoleteDeleteByNameWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    apiInstance.ObsoleteDeleteByNameWithHttpInfo(name);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ParametersApi.ObsoleteDeleteByNameWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **name** | **string** |  | [optional]  |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="updateparameter"></a>
+<a id="updateparameter"></a>
 # **UpdateParameter**
-> void UpdateParameter (ParameterPutModel parameterPutModel = null)
+> void UpdateParameter (UpdateParameterRequest updateParameterRequest = null)
 
 Update parameter
 
@@ -1470,12 +1377,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ParametersApi(httpClient, config, httpClientHandler);
-            var parameterPutModel = new ParameterPutModel(); // ParameterPutModel |  (optional) 
+            var updateParameterRequest = new UpdateParameterRequest(); // UpdateParameterRequest |  (optional) 
 
             try
             {
                 // Update parameter
-                apiInstance.UpdateParameter(parameterPutModel);
+                apiInstance.UpdateParameter(updateParameterRequest);
             }
             catch (ApiException  e)
             {
@@ -1495,7 +1402,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update parameter
-    apiInstance.UpdateParameterWithHttpInfo(parameterPutModel);
+    apiInstance.UpdateParameterWithHttpInfo(updateParameterRequest);
 }
 catch (ApiException e)
 {
@@ -1509,7 +1416,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **parameterPutModel** | [**ParameterPutModel**](ParameterPutModel.md) |  | [optional]  |
+| **updateParameterRequest** | [**UpdateParameterRequest**](UpdateParameterRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -1528,8 +1435,8 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | &lt;br&gt;- ID is not valid  &lt;br&gt;- DTO is not valid |  -  |
 | **204** | No Content |  -  |
+| **400** | &lt;br&gt;- ID is not valid  &lt;br&gt;- DTO is not valid |  -  |
 | **404** | Parameter with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -419,12 +419,18 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // AutoTestExternalId (string) minLength
             if (this.AutoTestExternalId != null && this.AutoTestExternalId.Length < 1)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AutoTestExternalId, length must be greater than 1.", new [] { "AutoTestExternalId" });
+            }
+
+            // Duration (long?) maximum
+            if (this.Duration > (long?)43200000000)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Duration, must be a value less than or equal to 43200000000.", new [] { "Duration" });
             }
 
             // Duration (long?) minimum

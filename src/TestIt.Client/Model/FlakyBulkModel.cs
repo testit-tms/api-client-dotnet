@@ -42,7 +42,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="autotestSelect">autotestSelect.</param>
         /// <param name="value">Are autotests flaky (required).</param>
-        public FlakyBulkModel(AutotestSelectModel autotestSelect = default(AutotestSelectModel), bool value = default(bool))
+        public FlakyBulkModel(FlakyBulkModelAutotestSelect autotestSelect = default(FlakyBulkModelAutotestSelect), bool value = default(bool))
         {
             this.Value = value;
             this.AutotestSelect = autotestSelect;
@@ -52,7 +52,7 @@ namespace TestIt.Client.Model
         /// Gets or Sets AutotestSelect
         /// </summary>
         [DataMember(Name = "autotestSelect", EmitDefaultValue = false)]
-        public AutotestSelectModel AutotestSelect { get; set; }
+        public FlakyBulkModelAutotestSelect AutotestSelect { get; set; }
 
         /// <summary>
         /// Are autotests flaky
@@ -140,7 +140,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -102,7 +102,7 @@ namespace TestIt.Client.Model
         /// Name of the webhook
         /// </summary>
         /// <value>Name of the webhook</value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace TestIt.Client.Model
         /// Url to which the webhook sends request
         /// </summary>
         /// <value>Url to which the webhook sends request</value>
-        [DataMember(Name = "url", EmitDefaultValue = true)]
+        [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
         /// <summary>
@@ -474,7 +474,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

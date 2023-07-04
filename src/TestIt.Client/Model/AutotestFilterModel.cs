@@ -36,7 +36,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets LastTestResultOutcome
         /// </summary>
-        [DataMember(Name = "lastTestResultOutcome", EmitDefaultValue = false)]
+        [DataMember(Name = "lastTestResultOutcome", EmitDefaultValue = true)]
         public AutotestResultOutcome? LastTestResultOutcome { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AutotestFilterModel" /> class.
@@ -58,7 +58,7 @@ namespace TestIt.Client.Model
         /// <param name="className">Specifies an autotest class name to search for.</param>
         /// <param name="isEmptyClassName">Specifies an autotest class name presence status to search for.</param>
         /// <param name="lastTestResultOutcome">lastTestResultOutcome.</param>
-        public AutotestFilterModel(List<Guid> projectIds = default(List<Guid>), List<string> externalIds = default(List<string>), List<long> globalIds = default(List<long>), string name = default(string), bool? isFlaky = default(bool?), bool? mustBeApproved = default(bool?), Int64RangeSelectorModel stabilityPercentage = default(Int64RangeSelectorModel), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?), string _namespace = default(string), bool? isEmptyNamespace = default(bool?), string className = default(string), bool? isEmptyClassName = default(bool?), AutotestResultOutcome? lastTestResultOutcome = default(AutotestResultOutcome?))
+        public AutotestFilterModel(List<Guid> projectIds = default(List<Guid>), List<string> externalIds = default(List<string>), List<long> globalIds = default(List<long>), string name = default(string), bool? isFlaky = default(bool?), bool? mustBeApproved = default(bool?), AutotestFilterModelStabilityPercentage stabilityPercentage = default(AutotestFilterModelStabilityPercentage), AutotestFilterModelCreatedDate createdDate = default(AutotestFilterModelCreatedDate), List<Guid> createdByIds = default(List<Guid>), AutotestFilterModelModifiedDate modifiedDate = default(AutotestFilterModelModifiedDate), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?), string _namespace = default(string), bool? isEmptyNamespace = default(bool?), string className = default(string), bool? isEmptyClassName = default(bool?), AutotestResultOutcome? lastTestResultOutcome = default(AutotestResultOutcome?))
         {
             this.ProjectIds = projectIds;
             this.ExternalIds = externalIds;
@@ -124,14 +124,14 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets StabilityPercentage
         /// </summary>
-        [DataMember(Name = "stabilityPercentage", EmitDefaultValue = false)]
-        public Int64RangeSelectorModel StabilityPercentage { get; set; }
+        [DataMember(Name = "stabilityPercentage", EmitDefaultValue = true)]
+        public AutotestFilterModelStabilityPercentage StabilityPercentage { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
-        public DateTimeRangeSelectorModel CreatedDate { get; set; }
+        [DataMember(Name = "createdDate", EmitDefaultValue = true)]
+        public AutotestFilterModelCreatedDate CreatedDate { get; set; }
 
         /// <summary>
         /// Specifies an autotest creator IDs to search for
@@ -143,8 +143,8 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
-        public DateTimeRangeSelectorModel ModifiedDate { get; set; }
+        [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
+        public AutotestFilterModelModifiedDate ModifiedDate { get; set; }
 
         /// <summary>
         /// Specifies an autotest last editor IDs to search for
@@ -422,7 +422,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)

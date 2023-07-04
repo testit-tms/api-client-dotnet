@@ -36,8 +36,6 @@ namespace TestIt.Client.Model
         /// Initializes a new instance of the <see cref="ConfigurationModel" /> class.
         /// </summary>
         /// <param name="description">description.</param>
-        /// <param name="isActive">isActive.</param>
-        /// <param name="capabilities">capabilities.</param>
         /// <param name="parameters">parameters.</param>
         /// <param name="projectId">This property is used to link configuration with project.</param>
         /// <param name="isDefault">isDefault.</param>
@@ -49,11 +47,9 @@ namespace TestIt.Client.Model
         /// <param name="globalId">globalId.</param>
         /// <param name="id">Unique ID of the entity.</param>
         /// <param name="isDeleted">Indicates if the entity is deleted.</param>
-        public ConfigurationModel(string description = default(string), bool isActive = default(bool), Dictionary<string, string> capabilities = default(Dictionary<string, string>), Dictionary<string, string> parameters = default(Dictionary<string, string>), Guid projectId = default(Guid), bool isDefault = default(bool), string name = default(string), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), Guid id = default(Guid), bool isDeleted = default(bool))
+        public ConfigurationModel(string description = default(string), Dictionary<string, string> parameters = default(Dictionary<string, string>), Guid projectId = default(Guid), bool isDefault = default(bool), string name = default(string), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), Guid id = default(Guid), bool isDeleted = default(bool))
         {
             this.Description = description;
-            this.IsActive = isActive;
-            this.Capabilities = capabilities;
             this.Parameters = parameters;
             this.ProjectId = projectId;
             this.IsDefault = isDefault;
@@ -70,21 +66,9 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
+        /// <example>&quot;Default configuration&quot;</example>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IsActive
-        /// </summary>
-        [DataMember(Name = "isActive", EmitDefaultValue = true)]
-        public bool IsActive { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Capabilities
-        /// </summary>
-        [DataMember(Name = "capabilities", EmitDefaultValue = true)]
-        [Obsolete]
-        public Dictionary<string, string> Capabilities { get; set; }
 
         /// <summary>
         /// Gets or Sets Parameters
@@ -96,48 +80,56 @@ namespace TestIt.Client.Model
         /// This property is used to link configuration with project
         /// </summary>
         /// <value>This property is used to link configuration with project</value>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "projectId", EmitDefaultValue = false)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
         /// Gets or Sets IsDefault
         /// </summary>
+        /// <example>true</example>
         [DataMember(Name = "isDefault", EmitDefaultValue = true)]
         public bool IsDefault { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
+        /// <example>&quot;Default&quot;</example>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
+        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
         [DataMember(Name = "createdDate", EmitDefaultValue = false)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
+        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "createdById", EmitDefaultValue = false)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
         /// <summary>
         /// Gets or Sets GlobalId
         /// </summary>
+        /// <example>1000</example>
         [DataMember(Name = "globalId", EmitDefaultValue = false)]
         public long GlobalId { get; set; }
 
@@ -164,8 +156,6 @@ namespace TestIt.Client.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class ConfigurationModel {\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  IsActive: ").Append(IsActive).Append("\n");
-            sb.Append("  Capabilities: ").Append(Capabilities).Append("\n");
             sb.Append("  Parameters: ").Append(Parameters).Append("\n");
             sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
             sb.Append("  IsDefault: ").Append(IsDefault).Append("\n");
@@ -216,16 +206,6 @@ namespace TestIt.Client.Model
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.IsActive == input.IsActive ||
-                    this.IsActive.Equals(input.IsActive)
-                ) && 
-                (
-                    this.Capabilities == input.Capabilities ||
-                    this.Capabilities != null &&
-                    input.Capabilities != null &&
-                    this.Capabilities.SequenceEqual(input.Capabilities)
                 ) && 
                 (
                     this.Parameters == input.Parameters ||
@@ -295,11 +275,6 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.IsActive.GetHashCode();
-                if (this.Capabilities != null)
-                {
-                    hashCode = (hashCode * 59) + this.Capabilities.GetHashCode();
-                }
                 if (this.Parameters != null)
                 {
                     hashCode = (hashCode * 59) + this.Parameters.GetHashCode();
@@ -344,7 +319,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

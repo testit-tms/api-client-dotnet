@@ -20,9 +20,9 @@ All URIs are relative to *http://localhost*
 | [**StopTestRun**](TestRunsApi.md#stoptestrun) | **POST** /api/v2/testRuns/{id}/stop | Stop TestRun |
 | [**UpdateEmpty**](TestRunsApi.md#updateempty) | **PUT** /api/v2/testRuns | Update empty TestRun |
 
-<a name="apiv2testrunsidstatisticsfilterpost"></a>
+<a id="apiv2testrunsidstatisticsfilterpost"></a>
 # **ApiV2TestRunsIdStatisticsFilterPost**
-> TestResultsStatisticsGetModel ApiV2TestRunsIdStatisticsFilterPost (Guid id, TestResultsLocalFilterModel testResultsLocalFilterModel = null)
+> TestResultsStatisticsGetModel ApiV2TestRunsIdStatisticsFilterPost (Guid id, ApiV2TestRunsIdStatisticsFilterPostRequest apiV2TestRunsIdStatisticsFilterPostRequest = null)
 
 Search for the test run test results and build statistics
 
@@ -53,12 +53,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // Guid | Test run unique ID
-            var testResultsLocalFilterModel = new TestResultsLocalFilterModel(); // TestResultsLocalFilterModel |  (optional) 
+            var apiV2TestRunsIdStatisticsFilterPostRequest = new ApiV2TestRunsIdStatisticsFilterPostRequest(); // ApiV2TestRunsIdStatisticsFilterPostRequest |  (optional) 
 
             try
             {
                 // Search for the test run test results and build statistics
-                TestResultsStatisticsGetModel result = apiInstance.ApiV2TestRunsIdStatisticsFilterPost(id, testResultsLocalFilterModel);
+                TestResultsStatisticsGetModel result = apiInstance.ApiV2TestRunsIdStatisticsFilterPost(id, apiV2TestRunsIdStatisticsFilterPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -79,7 +79,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for the test run test results and build statistics
-    ApiResponse<TestResultsStatisticsGetModel> response = apiInstance.ApiV2TestRunsIdStatisticsFilterPostWithHttpInfo(id, testResultsLocalFilterModel);
+    ApiResponse<TestResultsStatisticsGetModel> response = apiInstance.ApiV2TestRunsIdStatisticsFilterPostWithHttpInfo(id, apiV2TestRunsIdStatisticsFilterPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -97,7 +97,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid** | Test run unique ID |  |
-| **testResultsLocalFilterModel** | [**TestResultsLocalFilterModel**](TestResultsLocalFilterModel.md) |  | [optional]  |
+| **apiV2TestRunsIdStatisticsFilterPostRequest** | [**ApiV2TestRunsIdStatisticsFilterPostRequest**](ApiV2TestRunsIdStatisticsFilterPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -116,12 +116,12 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for test runs is required |  -  |
 | **200** | Success |  -  |
+| **403** | Read permission for test runs is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testrunsidtestpointsresultsget"></a>
+<a id="apiv2testrunsidtestpointsresultsget"></a>
 # **ApiV2TestRunsIdTestPointsResultsGet**
 > List&lt;TestPointResultModel&gt; ApiV2TestRunsIdTestPointsResultsGet (Guid id)
 
@@ -220,9 +220,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testrunsidtestresultsbulkput"></a>
+<a id="apiv2testrunsidtestresultsbulkput"></a>
 # **ApiV2TestRunsIdTestResultsBulkPut**
-> void ApiV2TestRunsIdTestResultsBulkPut (Guid id, TestRunTestResultsPartialBulkSetModel testRunTestResultsPartialBulkSetModel = null)
+> void ApiV2TestRunsIdTestResultsBulkPut (Guid id, ApiV2TestRunsIdTestResultsBulkPutRequest apiV2TestRunsIdTestResultsBulkPutRequest = null)
 
 Partial edit of multiple test results in the test run
 
@@ -253,12 +253,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // Guid | Test run unique ID
-            var testRunTestResultsPartialBulkSetModel = new TestRunTestResultsPartialBulkSetModel(); // TestRunTestResultsPartialBulkSetModel |  (optional) 
+            var apiV2TestRunsIdTestResultsBulkPutRequest = new ApiV2TestRunsIdTestResultsBulkPutRequest(); // ApiV2TestRunsIdTestResultsBulkPutRequest |  (optional) 
 
             try
             {
                 // Partial edit of multiple test results in the test run
-                apiInstance.ApiV2TestRunsIdTestResultsBulkPut(id, testRunTestResultsPartialBulkSetModel);
+                apiInstance.ApiV2TestRunsIdTestResultsBulkPut(id, apiV2TestRunsIdTestResultsBulkPutRequest);
             }
             catch (ApiException  e)
             {
@@ -278,7 +278,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Partial edit of multiple test results in the test run
-    apiInstance.ApiV2TestRunsIdTestResultsBulkPutWithHttpInfo(id, testRunTestResultsPartialBulkSetModel);
+    apiInstance.ApiV2TestRunsIdTestResultsBulkPutWithHttpInfo(id, apiV2TestRunsIdTestResultsBulkPutRequest);
 }
 catch (ApiException e)
 {
@@ -293,7 +293,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid** | Test run unique ID |  |
-| **testRunTestResultsPartialBulkSetModel** | [**TestRunTestResultsPartialBulkSetModel**](TestRunTestResultsPartialBulkSetModel.md) |  | [optional]  |
+| **apiV2TestRunsIdTestResultsBulkPutRequest** | [**ApiV2TestRunsIdTestResultsBulkPutRequest**](ApiV2TestRunsIdTestResultsBulkPutRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -312,12 +312,12 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Update permission for test runs is required |  -  |
 | **204** | No Content |  -  |
+| **403** | Update permission for test runs is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testrunsidtestresultslastmodifiedmodificationdateget"></a>
+<a id="apiv2testrunsidtestresultslastmodifiedmodificationdateget"></a>
 # **ApiV2TestRunsIdTestResultsLastModifiedModificationDateGet**
 > DateTime ApiV2TestRunsIdTestResultsLastModifiedModificationDateGet (Guid id)
 
@@ -416,9 +416,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testrunssearchpost"></a>
+<a id="apiv2testrunssearchpost"></a>
 # **ApiV2TestRunsSearchPost**
-> List&lt;TestRunShortGetModel&gt; ApiV2TestRunsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, TestRunFilterModel testRunFilterModel = null)
+> List&lt;TestRunShortGetModel&gt; ApiV2TestRunsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2TestRunsSearchPostRequest apiV2TestRunsSearchPostRequest = null)
 
 Search for test runs
 
@@ -453,12 +453,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var testRunFilterModel = new TestRunFilterModel(); // TestRunFilterModel |  (optional) 
+            var apiV2TestRunsSearchPostRequest = new ApiV2TestRunsSearchPostRequest(); // ApiV2TestRunsSearchPostRequest |  (optional) 
 
             try
             {
                 // Search for test runs
-                List<TestRunShortGetModel> result = apiInstance.ApiV2TestRunsSearchPost(skip, take, orderBy, searchField, searchValue, testRunFilterModel);
+                List<TestRunShortGetModel> result = apiInstance.ApiV2TestRunsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2TestRunsSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -479,7 +479,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for test runs
-    ApiResponse<List<TestRunShortGetModel>> response = apiInstance.ApiV2TestRunsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, testRunFilterModel);
+    ApiResponse<List<TestRunShortGetModel>> response = apiInstance.ApiV2TestRunsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2TestRunsSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -501,7 +501,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **testRunFilterModel** | [**TestRunFilterModel**](TestRunFilterModel.md) |  | [optional]  |
+| **apiV2TestRunsSearchPostRequest** | [**ApiV2TestRunsSearchPostRequest**](ApiV2TestRunsSearchPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -525,7 +525,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="completetestrun"></a>
+<a id="completetestrun"></a>
 # **CompleteTestRun**
 > void CompleteTestRun (Guid id)
 
@@ -617,17 +617,17 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Update permission for test result required |  -  |
-| **404** | &lt;br&gt;Can&#39;t find a TestRun with id! |  -  |
 | **204** | Successful operation |  -  |
 | **400** | &lt;br&gt;Field is required  &lt;br&gt;the StateName is already Stopped  &lt;br&gt;the StateName is already Completed |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Update permission for test result required |  -  |
+| **404** | &lt;br&gt;Can&#39;t find a TestRun with id! |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createandfillbyautotests"></a>
+<a id="createandfillbyautotests"></a>
 # **CreateAndFillByAutoTests**
-> TestRunV2GetModel CreateAndFillByAutoTests (TestRunFillByAutoTestsPostModel testRunFillByAutoTestsPostModel = null)
+> TestRunV2GetModel CreateAndFillByAutoTests (CreateAndFillByAutoTestsRequest createAndFillByAutoTestsRequest = null)
 
 Create test runs based on autotests and configurations
 
@@ -659,12 +659,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
-            var testRunFillByAutoTestsPostModel = new TestRunFillByAutoTestsPostModel(); // TestRunFillByAutoTestsPostModel |  (optional) 
+            var createAndFillByAutoTestsRequest = new CreateAndFillByAutoTestsRequest(); // CreateAndFillByAutoTestsRequest |  (optional) 
 
             try
             {
                 // Create test runs based on autotests and configurations
-                TestRunV2GetModel result = apiInstance.CreateAndFillByAutoTests(testRunFillByAutoTestsPostModel);
+                TestRunV2GetModel result = apiInstance.CreateAndFillByAutoTests(createAndFillByAutoTestsRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -685,7 +685,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create test runs based on autotests and configurations
-    ApiResponse<TestRunV2GetModel> response = apiInstance.CreateAndFillByAutoTestsWithHttpInfo(testRunFillByAutoTestsPostModel);
+    ApiResponse<TestRunV2GetModel> response = apiInstance.CreateAndFillByAutoTestsWithHttpInfo(createAndFillByAutoTestsRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -702,7 +702,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **testRunFillByAutoTestsPostModel** | [**TestRunFillByAutoTestsPostModel**](TestRunFillByAutoTestsPostModel.md) |  | [optional]  |
+| **createAndFillByAutoTestsRequest** | [**CreateAndFillByAutoTestsRequest**](CreateAndFillByAutoTestsRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -721,17 +721,17 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Some autotests do not exist |  -  |
 | **201** | Created |  -  |
 | **400** | &lt;br&gt;- Field is required  &lt;br&gt;- Configuration does not exist in the project  &lt;br&gt;- Autotest does not exist in the project  &lt;br&gt;- Test run must be automated  &lt;br&gt;- Project ID is invalid  &lt;br&gt;- Autotest external IDs are required  &lt;br&gt;- Configuration IDs are required |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test results is required |  -  |
+| **404** | Some autotests do not exist |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createandfillbyconfigurations"></a>
+<a id="createandfillbyconfigurations"></a>
 # **CreateAndFillByConfigurations**
-> TestRunV2GetModel CreateAndFillByConfigurations (TestRunFillByConfigurationsPostModel testRunFillByConfigurationsPostModel = null)
+> TestRunV2GetModel CreateAndFillByConfigurations (CreateAndFillByConfigurationsRequest createAndFillByConfigurationsRequest = null)
 
 Create test runs picking the needed test points
 
@@ -763,12 +763,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
-            var testRunFillByConfigurationsPostModel = new TestRunFillByConfigurationsPostModel(); // TestRunFillByConfigurationsPostModel |  (optional) 
+            var createAndFillByConfigurationsRequest = new CreateAndFillByConfigurationsRequest(); // CreateAndFillByConfigurationsRequest |  (optional) 
 
             try
             {
                 // Create test runs picking the needed test points
-                TestRunV2GetModel result = apiInstance.CreateAndFillByConfigurations(testRunFillByConfigurationsPostModel);
+                TestRunV2GetModel result = apiInstance.CreateAndFillByConfigurations(createAndFillByConfigurationsRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -789,7 +789,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create test runs picking the needed test points
-    ApiResponse<TestRunV2GetModel> response = apiInstance.CreateAndFillByConfigurationsWithHttpInfo(testRunFillByConfigurationsPostModel);
+    ApiResponse<TestRunV2GetModel> response = apiInstance.CreateAndFillByConfigurationsWithHttpInfo(createAndFillByConfigurationsRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -806,7 +806,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **testRunFillByConfigurationsPostModel** | [**TestRunFillByConfigurationsPostModel**](TestRunFillByConfigurationsPostModel.md) |  | [optional]  |
+| **createAndFillByConfigurationsRequest** | [**CreateAndFillByConfigurationsRequest**](CreateAndFillByConfigurationsRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -826,16 +826,16 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
-| **403** | Update permission for test results is required |  -  |
 | **400** | &lt;br&gt;- Field is required  &lt;br&gt;- Test run cannot be created with deleted test points  &lt;br&gt;- Test run cannot be created in deleted test suite  &lt;br&gt;- Test run cannot be created with non-automated test point  &lt;br&gt;- Test run must be automated  &lt;br&gt;- Some work items do not exist  &lt;br&gt;- Project ID is invalid  &lt;br&gt;- Test point selectors are required  &lt;br&gt;- Some work item IDs are invalid  &lt;br&gt;- Some configuration IDs are invalid |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Update permission for test results is required |  -  |
 | **404** | Some test points do not exists |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createandfillbyworkitems"></a>
+<a id="createandfillbyworkitems"></a>
 # **CreateAndFillByWorkItems**
-> TestRunV2GetModel CreateAndFillByWorkItems (TestRunFillByWorkItemsPostModel testRunFillByWorkItemsPostModel = null)
+> TestRunV2GetModel CreateAndFillByWorkItems (CreateAndFillByWorkItemsRequest createAndFillByWorkItemsRequest = null)
 
 Create test run based on configurations and work items
 
@@ -867,12 +867,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
-            var testRunFillByWorkItemsPostModel = new TestRunFillByWorkItemsPostModel(); // TestRunFillByWorkItemsPostModel |  (optional) 
+            var createAndFillByWorkItemsRequest = new CreateAndFillByWorkItemsRequest(); // CreateAndFillByWorkItemsRequest |  (optional) 
 
             try
             {
                 // Create test run based on configurations and work items
-                TestRunV2GetModel result = apiInstance.CreateAndFillByWorkItems(testRunFillByWorkItemsPostModel);
+                TestRunV2GetModel result = apiInstance.CreateAndFillByWorkItems(createAndFillByWorkItemsRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -893,7 +893,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create test run based on configurations and work items
-    ApiResponse<TestRunV2GetModel> response = apiInstance.CreateAndFillByWorkItemsWithHttpInfo(testRunFillByWorkItemsPostModel);
+    ApiResponse<TestRunV2GetModel> response = apiInstance.CreateAndFillByWorkItemsWithHttpInfo(createAndFillByWorkItemsRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -910,7 +910,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **testRunFillByWorkItemsPostModel** | [**TestRunFillByWorkItemsPostModel**](TestRunFillByWorkItemsPostModel.md) |  | [optional]  |
+| **createAndFillByWorkItemsRequest** | [**CreateAndFillByWorkItemsRequest**](CreateAndFillByWorkItemsRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -937,9 +937,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createempty"></a>
+<a id="createempty"></a>
 # **CreateEmpty**
-> TestRunV2GetModel CreateEmpty (TestRunV2PostShortModel testRunV2PostShortModel = null)
+> TestRunV2GetModel CreateEmpty (CreateEmptyRequest createEmptyRequest = null)
 
 Create empty TestRun
 
@@ -971,12 +971,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
-            var testRunV2PostShortModel = new TestRunV2PostShortModel(); // TestRunV2PostShortModel |  (optional) 
+            var createEmptyRequest = new CreateEmptyRequest(); // CreateEmptyRequest |  (optional) 
 
             try
             {
                 // Create empty TestRun
-                TestRunV2GetModel result = apiInstance.CreateEmpty(testRunV2PostShortModel);
+                TestRunV2GetModel result = apiInstance.CreateEmpty(createEmptyRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -997,7 +997,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create empty TestRun
-    ApiResponse<TestRunV2GetModel> response = apiInstance.CreateEmptyWithHttpInfo(testRunV2PostShortModel);
+    ApiResponse<TestRunV2GetModel> response = apiInstance.CreateEmptyWithHttpInfo(createEmptyRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1014,7 +1014,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **testRunV2PostShortModel** | [**TestRunV2PostShortModel**](TestRunV2PostShortModel.md) |  | [optional]  |
+| **createEmptyRequest** | [**CreateEmptyRequest**](CreateEmptyRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -1033,15 +1033,15 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Update permission for test result required |  -  |
-| **401** | TestRunTesterRequirement permission required |  -  |
 | **201** | Successful operation |  -  |
 | **400** | &lt;br&gt;Field is required  &lt;br&gt;TestRun must be automated  &lt;br&gt;ProjectId is not a valid! |  -  |
+| **401** | TestRunTesterRequirement permission required |  -  |
+| **403** | Update permission for test result required |  -  |
 | **404** | Can&#39;t find a TestRun with id &#x3D; testRunId |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="gettestrunbyid"></a>
+<a id="gettestrunbyid"></a>
 # **GetTestRunById**
 > TestRunV2GetModel GetTestRunById (Guid id)
 
@@ -1137,14 +1137,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for test result required |  -  |
 | **404** | &lt;br&gt;Can&#39;t find a TestRun with id! |  -  |
-| **401** | Unauthorized |  -  |
-| **200** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="setautotestresultsfortestrun"></a>
+<a id="setautotestresultsfortestrun"></a>
 # **SetAutoTestResultsForTestRun**
 > List&lt;Guid&gt; SetAutoTestResultsForTestRun (Guid id, List<AutoTestResultsForTestRunModel> autoTestResultsForTestRunModel = null)
 
@@ -1242,16 +1242,16 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | &lt;br&gt;- Test run with provided ID was not found  &lt;br&gt;- Test point was not found  &lt;br&gt;- Autotest with provided external ID was not found |  -  |
 | **200** | Successful operation |  -  |
-| **422** | &lt;br&gt;- Configuration with provided ID was not found  &lt;br&gt;- Test points relevant to provided filters were not found |  -  |
 | **400** | &lt;br&gt;- Field is required  &lt;br&gt;- Body is invalid  &lt;br&gt;- Test points are required  &lt;br&gt;- Duration must be a positive number  &lt;br&gt;- Outcome is not defined  &lt;br&gt;- Test run is stopped |  -  |
-| **403** | Update permission for test results is required |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Update permission for test results is required |  -  |
+| **404** | &lt;br&gt;- Test run with provided ID was not found  &lt;br&gt;- Test point was not found  &lt;br&gt;- Autotest with provided external ID was not found |  -  |
+| **422** | &lt;br&gt;- Configuration with provided ID was not found  &lt;br&gt;- Test points relevant to provided filters were not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="starttestrun"></a>
+<a id="starttestrun"></a>
 # **StartTestRun**
 > void StartTestRun (Guid id)
 
@@ -1343,15 +1343,15 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Update permission for test result required |  -  |
-| **400** | &lt;br&gt;Field is required  &lt;br&gt;the StateName is already InProgress  &lt;br&gt;the StateName is already Stopped  &lt;br&gt;the StateName is already Completed |  -  |
-| **404** | &lt;br&gt;Can&#39;t find a TestRun with id! |  -  |
 | **204** | Successful operation |  -  |
+| **400** | &lt;br&gt;Field is required  &lt;br&gt;the StateName is already InProgress  &lt;br&gt;the StateName is already Stopped  &lt;br&gt;the StateName is already Completed |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Update permission for test result required |  -  |
+| **404** | &lt;br&gt;Can&#39;t find a TestRun with id! |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="stoptestrun"></a>
+<a id="stoptestrun"></a>
 # **StopTestRun**
 > void StopTestRun (Guid id)
 
@@ -1443,17 +1443,17 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | &lt;br&gt;Can&#39;t find a TestRun with id! |  -  |
 | **204** | Successful operation |  -  |
 | **400** | &lt;br&gt;Field is required  &lt;br&gt;the StateName is already Stopped  &lt;br&gt;the StateName is already Completed |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test result required |  -  |
+| **404** | &lt;br&gt;Can&#39;t find a TestRun with id! |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updateempty"></a>
+<a id="updateempty"></a>
 # **UpdateEmpty**
-> void UpdateEmpty (TestRunV2PutModel testRunV2PutModel = null)
+> void UpdateEmpty (UpdateEmptyRequest updateEmptyRequest = null)
 
 Update empty TestRun
 
@@ -1485,12 +1485,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
-            var testRunV2PutModel = new TestRunV2PutModel(); // TestRunV2PutModel |  (optional) 
+            var updateEmptyRequest = new UpdateEmptyRequest(); // UpdateEmptyRequest |  (optional) 
 
             try
             {
                 // Update empty TestRun
-                apiInstance.UpdateEmpty(testRunV2PutModel);
+                apiInstance.UpdateEmpty(updateEmptyRequest);
             }
             catch (ApiException  e)
             {
@@ -1510,7 +1510,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update empty TestRun
-    apiInstance.UpdateEmptyWithHttpInfo(testRunV2PutModel);
+    apiInstance.UpdateEmptyWithHttpInfo(updateEmptyRequest);
 }
 catch (ApiException e)
 {
@@ -1524,7 +1524,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **testRunV2PutModel** | [**TestRunV2PutModel**](TestRunV2PutModel.md) |  | [optional]  |
+| **updateEmptyRequest** | [**UpdateEmptyRequest**](UpdateEmptyRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -1543,11 +1543,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **204** | Successful operation |  -  |
+| **400** | &lt;br&gt;Field is required  &lt;br&gt;Name is not valid |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test result required |  -  |
-| **400** | &lt;br&gt;Field is required  &lt;br&gt;Name is not valid |  -  |
 | **404** | &lt;br&gt;Can&#39;t find a TestRun with id! |  -  |
-| **204** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

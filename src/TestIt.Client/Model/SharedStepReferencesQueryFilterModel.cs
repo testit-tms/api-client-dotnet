@@ -47,7 +47,7 @@ namespace TestIt.Client.Model
         /// <param name="modifiedDate">modifiedDate.</param>
         /// <param name="isAutomated">Is result must consist of only manual/automated work items.</param>
         /// <param name="tags">Collection of tags.</param>
-        public SharedStepReferencesQueryFilterModel(string name = default(string), List<long> globalIds = default(List<long>), List<Guid> sectionIds = default(List<Guid>), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), List<WorkItemStates> states = default(List<WorkItemStates>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<string> entityTypes = default(List<string>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), bool? isAutomated = default(bool?), List<string> tags = default(List<string>))
+        public SharedStepReferencesQueryFilterModel(string name = default(string), List<long> globalIds = default(List<long>), List<Guid> sectionIds = default(List<Guid>), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), List<WorkItemStates> states = default(List<WorkItemStates>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<string> entityTypes = default(List<string>), SharedStepReferenceSectionsQueryFilterModelCreatedDate createdDate = default(SharedStepReferenceSectionsQueryFilterModelCreatedDate), SharedStepReferenceSectionsQueryFilterModelModifiedDate modifiedDate = default(SharedStepReferenceSectionsQueryFilterModelModifiedDate), bool? isAutomated = default(bool?), List<string> tags = default(List<string>))
         {
             this.Name = name;
             this.GlobalIds = globalIds;
@@ -122,14 +122,14 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
-        public DateTimeRangeSelectorModel CreatedDate { get; set; }
+        [DataMember(Name = "createdDate", EmitDefaultValue = true)]
+        public SharedStepReferenceSectionsQueryFilterModelCreatedDate CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
-        public DateTimeRangeSelectorModel ModifiedDate { get; set; }
+        [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
+        public SharedStepReferenceSectionsQueryFilterModelModifiedDate ModifiedDate { get; set; }
 
         /// <summary>
         /// Is result must consist of only manual/automated work items
@@ -336,7 +336,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

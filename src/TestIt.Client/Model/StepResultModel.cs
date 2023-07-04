@@ -58,7 +58,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Outcome
         /// </summary>
-        [DataMember(Name = "outcome", EmitDefaultValue = true)]
+        [DataMember(Name = "outcome", EmitDefaultValue = false)]
         public string Outcome { get; set; }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Comment
         /// </summary>
-        [DataMember(Name = "comment", EmitDefaultValue = false)]
+        [DataMember(Name = "comment", EmitDefaultValue = true)]
         public StepCommentModel Comment { get; set; }
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

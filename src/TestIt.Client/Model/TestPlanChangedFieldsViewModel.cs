@@ -48,7 +48,7 @@ namespace TestIt.Client.Model
         /// <param name="locking">locking.</param>
         /// <param name="hasAutomaticDurationTimer">hasAutomaticDurationTimer.</param>
         /// <param name="attributes">attributes.</param>
-        public TestPlanChangedFieldsViewModel(StringTestPlanChangedFieldViewModel name = default(StringTestPlanChangedFieldViewModel), StringTestPlanChangedFieldViewModel description = default(StringTestPlanChangedFieldViewModel), StringTestPlanChangedFieldViewModel productName = default(StringTestPlanChangedFieldViewModel), StringTestPlanChangedFieldViewModel build = default(StringTestPlanChangedFieldViewModel), PeriodViewModelTestPlanChangedFieldViewModel period = default(PeriodViewModelTestPlanChangedFieldViewModel), StringTestPlanChangedFieldViewModel status = default(StringTestPlanChangedFieldViewModel), StringArrayTestPlanChangedFieldViewModel tags = default(StringArrayTestPlanChangedFieldViewModel), TestSuiteChangeViewModelTestPlanChangedFieldViewModel testSuite = default(TestSuiteChangeViewModelTestPlanChangedFieldViewModel), TestPointChangeViewModelTestPlanChangedFieldViewModel testPoints = default(TestPointChangeViewModelTestPlanChangedFieldViewModel), TestResultChangeViewModelTestPlanChangedFieldViewModel testResults = default(TestResultChangeViewModelTestPlanChangedFieldViewModel), BooleanTestPlanChangedFieldViewModel locking = default(BooleanTestPlanChangedFieldViewModel), BooleanNullableTestPlanChangedFieldViewModel hasAutomaticDurationTimer = default(BooleanNullableTestPlanChangedFieldViewModel), Dictionary<string, CustomAttributeChangeModel> attributes = default(Dictionary<string, CustomAttributeChangeModel>))
+        public TestPlanChangedFieldsViewModel(StringChangedFieldWithDiffsViewModel name = default(StringChangedFieldWithDiffsViewModel), StringChangedFieldWithDiffsViewModel description = default(StringChangedFieldWithDiffsViewModel), StringChangedFieldViewModel productName = default(StringChangedFieldViewModel), StringChangedFieldViewModel build = default(StringChangedFieldViewModel), PeriodViewModelChangedFieldViewModel period = default(PeriodViewModelChangedFieldViewModel), StringChangedFieldViewModel status = default(StringChangedFieldViewModel), StringArrayChangedFieldViewModel tags = default(StringArrayChangedFieldViewModel), TestSuiteChangeViewModelChangedFieldViewModel testSuite = default(TestSuiteChangeViewModelChangedFieldViewModel), TestPointChangeViewModelChangedFieldViewModel testPoints = default(TestPointChangeViewModelChangedFieldViewModel), TestResultChangeViewModelChangedFieldViewModel testResults = default(TestResultChangeViewModelChangedFieldViewModel), BooleanChangedFieldViewModel locking = default(BooleanChangedFieldViewModel), BooleanNullableChangedFieldViewModel hasAutomaticDurationTimer = default(BooleanNullableChangedFieldViewModel), Dictionary<string, CustomAttributeChangeModel> attributes = default(Dictionary<string, CustomAttributeChangeModel>))
         {
             this.Name = name;
             this.Description = description;
@@ -68,74 +68,74 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
-        public StringTestPlanChangedFieldViewModel Name { get; set; }
+        [DataMember(Name = "name", EmitDefaultValue = true)]
+        public StringChangedFieldWithDiffsViewModel Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
-        public StringTestPlanChangedFieldViewModel Description { get; set; }
+        [DataMember(Name = "description", EmitDefaultValue = true)]
+        public StringChangedFieldWithDiffsViewModel Description { get; set; }
 
         /// <summary>
         /// Gets or Sets ProductName
         /// </summary>
-        [DataMember(Name = "productName", EmitDefaultValue = false)]
-        public StringTestPlanChangedFieldViewModel ProductName { get; set; }
+        [DataMember(Name = "productName", EmitDefaultValue = true)]
+        public StringChangedFieldViewModel ProductName { get; set; }
 
         /// <summary>
         /// Gets or Sets Build
         /// </summary>
-        [DataMember(Name = "build", EmitDefaultValue = false)]
-        public StringTestPlanChangedFieldViewModel Build { get; set; }
+        [DataMember(Name = "build", EmitDefaultValue = true)]
+        public StringChangedFieldViewModel Build { get; set; }
 
         /// <summary>
         /// Gets or Sets Period
         /// </summary>
-        [DataMember(Name = "period", EmitDefaultValue = false)]
-        public PeriodViewModelTestPlanChangedFieldViewModel Period { get; set; }
+        [DataMember(Name = "period", EmitDefaultValue = true)]
+        public PeriodViewModelChangedFieldViewModel Period { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
-        public StringTestPlanChangedFieldViewModel Status { get; set; }
+        [DataMember(Name = "status", EmitDefaultValue = true)]
+        public StringChangedFieldViewModel Status { get; set; }
 
         /// <summary>
         /// Gets or Sets Tags
         /// </summary>
-        [DataMember(Name = "tags", EmitDefaultValue = false)]
-        public StringArrayTestPlanChangedFieldViewModel Tags { get; set; }
+        [DataMember(Name = "tags", EmitDefaultValue = true)]
+        public StringArrayChangedFieldViewModel Tags { get; set; }
 
         /// <summary>
         /// Gets or Sets TestSuite
         /// </summary>
-        [DataMember(Name = "testSuite", EmitDefaultValue = false)]
-        public TestSuiteChangeViewModelTestPlanChangedFieldViewModel TestSuite { get; set; }
+        [DataMember(Name = "testSuite", EmitDefaultValue = true)]
+        public TestSuiteChangeViewModelChangedFieldViewModel TestSuite { get; set; }
 
         /// <summary>
         /// Gets or Sets TestPoints
         /// </summary>
-        [DataMember(Name = "testPoints", EmitDefaultValue = false)]
-        public TestPointChangeViewModelTestPlanChangedFieldViewModel TestPoints { get; set; }
+        [DataMember(Name = "testPoints", EmitDefaultValue = true)]
+        public TestPointChangeViewModelChangedFieldViewModel TestPoints { get; set; }
 
         /// <summary>
         /// Gets or Sets TestResults
         /// </summary>
-        [DataMember(Name = "testResults", EmitDefaultValue = false)]
-        public TestResultChangeViewModelTestPlanChangedFieldViewModel TestResults { get; set; }
+        [DataMember(Name = "testResults", EmitDefaultValue = true)]
+        public TestResultChangeViewModelChangedFieldViewModel TestResults { get; set; }
 
         /// <summary>
         /// Gets or Sets Locking
         /// </summary>
-        [DataMember(Name = "locking", EmitDefaultValue = false)]
-        public BooleanTestPlanChangedFieldViewModel Locking { get; set; }
+        [DataMember(Name = "locking", EmitDefaultValue = true)]
+        public BooleanChangedFieldViewModel Locking { get; set; }
 
         /// <summary>
         /// Gets or Sets HasAutomaticDurationTimer
         /// </summary>
-        [DataMember(Name = "hasAutomaticDurationTimer", EmitDefaultValue = false)]
-        public BooleanNullableTestPlanChangedFieldViewModel HasAutomaticDurationTimer { get; set; }
+        [DataMember(Name = "hasAutomaticDurationTimer", EmitDefaultValue = true)]
+        public BooleanNullableChangedFieldViewModel HasAutomaticDurationTimer { get; set; }
 
         /// <summary>
         /// Gets or Sets Attributes
@@ -337,7 +337,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

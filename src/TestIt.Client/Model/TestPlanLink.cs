@@ -56,7 +56,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets BugLink
         /// </summary>
-        [DataMember(Name = "bugLink", EmitDefaultValue = false)]
+        [DataMember(Name = "bugLink", EmitDefaultValue = true)]
         public LinkModel BugLink { get; set; }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Info
         /// </summary>
-        [DataMember(Name = "info", EmitDefaultValue = false)]
+        [DataMember(Name = "info", EmitDefaultValue = true)]
         public ExternalLinkModel Info { get; set; }
 
         /// <summary>
@@ -228,7 +228,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -52,19 +52,19 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = true)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets OldAttributeName
         /// </summary>
-        [DataMember(Name = "oldAttributeName", EmitDefaultValue = true)]
+        [DataMember(Name = "oldAttributeName", EmitDefaultValue = false)]
         public string OldAttributeName { get; set; }
 
         /// <summary>
         /// Gets or Sets NewAttributeName
         /// </summary>
-        [DataMember(Name = "newAttributeName", EmitDefaultValue = true)]
+        [DataMember(Name = "newAttributeName", EmitDefaultValue = false)]
         public string NewAttributeName { get; set; }
 
         /// <summary>
@@ -192,7 +192,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

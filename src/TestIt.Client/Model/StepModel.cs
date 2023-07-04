@@ -42,7 +42,7 @@ namespace TestIt.Client.Model
         /// <param name="testData">testData.</param>
         /// <param name="comments">comments.</param>
         /// <param name="workItemId">workItemId.</param>
-        public StepModel(SharedStepModel workItem = default(SharedStepModel), Guid id = default(Guid), string action = default(string), string expected = default(string), string testData = default(string), string comments = default(string), Guid? workItemId = default(Guid?))
+        public StepModel(SectionSharedStep workItem = default(SectionSharedStep), Guid id = default(Guid), string action = default(string), string expected = default(string), string testData = default(string), string comments = default(string), Guid? workItemId = default(Guid?))
         {
             this.WorkItem = workItem;
             this.Id = id;
@@ -56,42 +56,48 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets WorkItem
         /// </summary>
-        [DataMember(Name = "workItem", EmitDefaultValue = false)]
-        public SharedStepModel WorkItem { get; set; }
+        [DataMember(Name = "workItem", EmitDefaultValue = true)]
+        public SectionSharedStep WorkItem { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Action
         /// </summary>
+        /// <example>&quot;User press the button&quot;</example>
         [DataMember(Name = "action", EmitDefaultValue = true)]
         public string Action { get; set; }
 
         /// <summary>
         /// Gets or Sets Expected
         /// </summary>
+        /// <example>&quot;System makes a beeeep sound&quot;</example>
         [DataMember(Name = "expected", EmitDefaultValue = true)]
         public string Expected { get; set; }
 
         /// <summary>
         /// Gets or Sets TestData
         /// </summary>
+        /// <example>&quot;Some variables values&quot;</example>
         [DataMember(Name = "testData", EmitDefaultValue = true)]
         public string TestData { get; set; }
 
         /// <summary>
         /// Gets or Sets Comments
         /// </summary>
+        /// <example>&quot;Comment on what to look for&quot;</example>
         [DataMember(Name = "comments", EmitDefaultValue = true)]
         public string Comments { get; set; }
 
         /// <summary>
         /// Gets or Sets WorkItemId
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "workItemId", EmitDefaultValue = true)]
         public Guid? WorkItemId { get; set; }
 
@@ -228,7 +234,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

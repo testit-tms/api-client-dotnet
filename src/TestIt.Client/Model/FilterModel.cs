@@ -45,7 +45,7 @@ namespace TestIt.Client.Model
         /// <param name="name">name.</param>
         /// <param name="id">Unique ID of the entity.</param>
         /// <param name="isDeleted">Indicates if the entity is deleted.</param>
-        public FilterModel(DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), WorkItemSearchQueryModel data = default(WorkItemSearchQueryModel), Guid projectId = default(Guid), Object fieldsToShow = default(Object), string name = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
+        public FilterModel(DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), FilterModelData data = default(FilterModelData), Guid projectId = default(Guid), Object fieldsToShow = default(Object), string name = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
         {
             this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
@@ -87,7 +87,7 @@ namespace TestIt.Client.Model
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name = "data", EmitDefaultValue = false)]
-        public WorkItemSearchQueryModel Data { get; set; }
+        public FilterModelData Data { get; set; }
 
         /// <summary>
         /// Gets or Sets ProjectId
@@ -104,7 +104,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
@@ -280,7 +280,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

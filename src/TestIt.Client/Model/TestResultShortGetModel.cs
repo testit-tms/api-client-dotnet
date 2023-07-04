@@ -87,7 +87,7 @@ namespace TestIt.Client.Model
         /// Name of autotest represented by the test result
         /// </summary>
         /// <value>Name of autotest represented by the test result</value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
@@ -115,21 +115,21 @@ namespace TestIt.Client.Model
         /// Name of configuration which test result uses
         /// </summary>
         /// <value>Name of configuration which test result uses</value>
-        [DataMember(Name = "configurationName", EmitDefaultValue = true)]
+        [DataMember(Name = "configurationName", EmitDefaultValue = false)]
         public string ConfigurationName { get; set; }
 
         /// <summary>
         /// Collection of result reasons which test result have
         /// </summary>
         /// <value>Collection of result reasons which test result have</value>
-        [DataMember(Name = "resultReasons", EmitDefaultValue = true)]
+        [DataMember(Name = "resultReasons", EmitDefaultValue = false)]
         public List<AutotestResultReasonSubGetModel> ResultReasons { get; set; }
 
         /// <summary>
         /// Comment to test result
         /// </summary>
         /// <value>Comment to test result</value>
-        [DataMember(Name = "comment", EmitDefaultValue = true)]
+        [DataMember(Name = "comment", EmitDefaultValue = false)]
         public string Comment { get; set; }
 
         /// <summary>
@@ -150,14 +150,14 @@ namespace TestIt.Client.Model
         /// Collection of links attached to test result
         /// </summary>
         /// <value>Collection of links attached to test result</value>
-        [DataMember(Name = "links", EmitDefaultValue = true)]
+        [DataMember(Name = "links", EmitDefaultValue = false)]
         public List<LinkSubGetModel> Links { get; set; }
 
         /// <summary>
         /// Collection of files attached to test result
         /// </summary>
         /// <value>Collection of files attached to test result</value>
-        [DataMember(Name = "attachments", EmitDefaultValue = true)]
+        [DataMember(Name = "attachments", EmitDefaultValue = false)]
         public List<AttachmentSubGetModel> Attachments { get; set; }
 
         /// <summary>
@@ -348,7 +348,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

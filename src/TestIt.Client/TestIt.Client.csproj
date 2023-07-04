@@ -1,44 +1,35 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo><!-- setting GenerateAssemblyInfo to false causes this bug https://github.com/dotnet/project-system/issues/3934 -->
     <TargetFramework>netstandard2.0</TargetFramework>
-    <LangVersion>10</LangVersion>
-    <Nullable>enable</Nullable>
-    <IsPackable>true</IsPackable>
-    <Title>Test IT API client</Title>
-    <PackageId>TestIt.ApiClient</PackageId>
-    <Authors>Test IT</Authors>
-    <Description>Test IT TMS API client for .NET</Description>
-    <Copyright>Copyright (c) 2019 - 2022 Test IT</Copyright>
-    <RepositoryUrl>https://github.com/testit-tms/api-client-dotnet</RepositoryUrl>
-    <PackageProjectUrl>https://testit.software</PackageProjectUrl>
-    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
-    <PackageIcon>icon.png</PackageIcon>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <AssemblyName>TestIt.Client</AssemblyName>
+    <PackageId>TestIt.Client</PackageId>
+    <OutputType>Library</OutputType>
+    <Authors>OpenAPI</Authors>
+    <Company>OpenAPI</Company>
+    <AssemblyTitle>OpenAPI Library</AssemblyTitle>
+    <Description>A library generated from a OpenAPI doc</Description>
+    <Copyright>No Copyright</Copyright>
+    <RootNamespace>TestIt.Client</RootNamespace>
+    <Version>2.3.0</Version>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\TestIt.Client.xml</DocumentationFile>
+    <RepositoryUrl>https://github.com/GIT_USER_ID/GIT_REPO_ID.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>Minor update</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="../../README.md" Pack="true" PackagePath="$(PackageReadmeFile)" />
-    <None Include="../../LICENSE.md" Pack="true" PackagePath="$(PackageLicenseFile)" />
-    <None Include="../../images/icon.png" Pack="true" PackagePath="$(PackageIcon)" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="JsonSubTypes" Version="1.9.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="JsonSubTypes" Version="2.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Polly" Version="7.2.3" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 
-  <Choose>
-    <When Condition="$(VALIDATION) != '1'">
-      <ItemGroup>
-        <PackageReference Include="GitVersion.MsBuild" Version="5.8.1">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
-      </ItemGroup>
-    </When>
-  </Choose>
-
+  <ItemGroup>
+    <None Remove="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web" />
+  </ItemGroup>
 </Project>

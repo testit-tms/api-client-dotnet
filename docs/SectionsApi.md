@@ -13,7 +13,7 @@ All URIs are relative to *http://localhost*
 | [**Rename**](SectionsApi.md#rename) | **POST** /api/v2/sections/rename | Rename section |
 | [**UpdateSection**](SectionsApi.md#updatesection) | **PUT** /api/v2/sections | Update section |
 
-<a name="apiv2sectionsidpatch"></a>
+<a id="apiv2sectionsidpatch"></a>
 # **ApiV2SectionsIdPatch**
 > void ApiV2SectionsIdPatch (Guid id, List<Operation> operation = null)
 
@@ -107,14 +107,14 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Update permission for section is required |  -  |
 | **204** | No Content |  -  |
+| **403** | Update permission for section is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createsection"></a>
+<a id="createsection"></a>
 # **CreateSection**
-> SectionWithStepsModel CreateSection (SectionPostModel sectionPostModel = null)
+> SectionWithStepsModel CreateSection (CreateSectionRequest createSectionRequest = null)
 
 Create section
 
@@ -146,12 +146,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new SectionsApi(httpClient, config, httpClientHandler);
-            var sectionPostModel = new SectionPostModel(); // SectionPostModel |  (optional) 
+            var createSectionRequest = new CreateSectionRequest(); // CreateSectionRequest |  (optional) 
 
             try
             {
                 // Create section
-                SectionWithStepsModel result = apiInstance.CreateSection(sectionPostModel);
+                SectionWithStepsModel result = apiInstance.CreateSection(createSectionRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -172,7 +172,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create section
-    ApiResponse<SectionWithStepsModel> response = apiInstance.CreateSectionWithHttpInfo(sectionPostModel);
+    ApiResponse<SectionWithStepsModel> response = apiInstance.CreateSectionWithHttpInfo(createSectionRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -189,7 +189,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **sectionPostModel** | [**SectionPostModel**](SectionPostModel.md) |  | [optional]  |
+| **createSectionRequest** | [**CreateSectionRequest**](CreateSectionRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -209,15 +209,15 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
-| **401** | Unauthorized |  -  |
 | **400** | Cannot create section without parent ID |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Update permission for test library is required |  -  |
 | **404** | Parent section with provided ID was not found |  -  |
 | **409** | Section with the same name already exists in the parent section |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deletesection"></a>
+<a id="deletesection"></a>
 # **DeleteSection**
 > void DeleteSection (Guid id)
 
@@ -309,17 +309,17 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **409** | Conflict |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Delete permission for test library is required |  -  |
 | **204** | No Content |  -  |
 | **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Delete permission for test library is required |  -  |
+| **409** | Conflict |  -  |
 | **404** | Section with provided ID was not found |  -  |
 | **422** | Cannot delete root section |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getsectionbyid"></a>
+<a id="getsectionbyid"></a>
 # **GetSectionById**
 > SectionWithStepsModel GetSectionById (Guid id, DeletionState? isDeleted = null)
 
@@ -417,15 +417,15 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
-| **400** | Bad Request |  -  |
-| **404** | Section with provided ID was not found |  -  |
 | **200** | Success |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for test library is required |  -  |
+| **404** | Section with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getworkitemsbysectionid"></a>
+<a id="getworkitemsbysectionid"></a>
 # **GetWorkItemsBySectionId**
 > List&lt;WorkItemShortModel&gt; GetWorkItemsBySectionId (Guid id, bool? isDeleted = null, List<string> tagNames = null, bool? includeIterations = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -537,17 +537,17 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | &lt;br&gt;- &#x60;orderBy&#x60; statement must have one &#x60;.&#x60; and no &#x60;,&#x60; symbols  &lt;br&gt;- &#x60;orderBy&#x60; statement has invalid length  &lt;br&gt;- &#x60;orderBy&#x60; statement must have UUID as attribute key  &lt;br&gt;- Search field was not found |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for test library is required |  -  |
 | **404** | Section with provided ID was not found |  -  |
-| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
-| **401** | Unauthorized |  -  |
-| **400** | &lt;br&gt;- &#x60;orderBy&#x60; statement must have one &#x60;.&#x60; and no &#x60;,&#x60; symbols  &lt;br&gt;- &#x60;orderBy&#x60; statement has invalid length  &lt;br&gt;- &#x60;orderBy&#x60; statement must have UUID as attribute key  &lt;br&gt;- Search field was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="move"></a>
+<a id="move"></a>
 # **Move**
-> void Move (SectionMoveModel sectionMoveModel = null)
+> void Move (MoveRequest moveRequest = null)
 
 Move section with all work items into another section
 
@@ -577,12 +577,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new SectionsApi(httpClient, config, httpClientHandler);
-            var sectionMoveModel = new SectionMoveModel(); // SectionMoveModel |  (optional) 
+            var moveRequest = new MoveRequest(); // MoveRequest |  (optional) 
 
             try
             {
                 // Move section with all work items into another section
-                apiInstance.Move(sectionMoveModel);
+                apiInstance.Move(moveRequest);
             }
             catch (ApiException  e)
             {
@@ -602,7 +602,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Move section with all work items into another section
-    apiInstance.MoveWithHttpInfo(sectionMoveModel);
+    apiInstance.MoveWithHttpInfo(moveRequest);
 }
 catch (ApiException e)
 {
@@ -616,7 +616,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **sectionMoveModel** | [**SectionMoveModel**](SectionMoveModel.md) |  | [optional]  |
+| **moveRequest** | [**MoveRequest**](MoveRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -640,9 +640,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="rename"></a>
+<a id="rename"></a>
 # **Rename**
-> void Rename (SectionRenameModel sectionRenameModel = null)
+> void Rename (RenameRequest renameRequest = null)
 
 Rename section
 
@@ -674,12 +674,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new SectionsApi(httpClient, config, httpClientHandler);
-            var sectionRenameModel = new SectionRenameModel(); // SectionRenameModel |  (optional) 
+            var renameRequest = new RenameRequest(); // RenameRequest |  (optional) 
 
             try
             {
                 // Rename section
-                apiInstance.Rename(sectionRenameModel);
+                apiInstance.Rename(renameRequest);
             }
             catch (ApiException  e)
             {
@@ -699,7 +699,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Rename section
-    apiInstance.RenameWithHttpInfo(sectionRenameModel);
+    apiInstance.RenameWithHttpInfo(renameRequest);
 }
 catch (ApiException e)
 {
@@ -713,7 +713,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **sectionRenameModel** | [**SectionRenameModel**](SectionRenameModel.md) |  | [optional]  |
+| **renameRequest** | [**RenameRequest**](RenameRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -732,18 +732,18 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Update permission for test library is required |  -  |
 | **204** | No Content |  -  |
-| **409** | Section with the same name already exists in the parent section |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Update permission for test library is required |  -  |
 | **404** | Section with provided ID was not found |  -  |
+| **409** | Section with the same name already exists in the parent section |  -  |
 | **422** | Root section cannot be renamed |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updatesection"></a>
+<a id="updatesection"></a>
 # **UpdateSection**
-> void UpdateSection (SectionPutModel sectionPutModel = null)
+> void UpdateSection (UpdateSectionRequest updateSectionRequest = null)
 
 Update section
 
@@ -775,12 +775,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new SectionsApi(httpClient, config, httpClientHandler);
-            var sectionPutModel = new SectionPutModel(); // SectionPutModel |  (optional) 
+            var updateSectionRequest = new UpdateSectionRequest(); // UpdateSectionRequest |  (optional) 
 
             try
             {
                 // Update section
-                apiInstance.UpdateSection(sectionPutModel);
+                apiInstance.UpdateSection(updateSectionRequest);
             }
             catch (ApiException  e)
             {
@@ -800,7 +800,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update section
-    apiInstance.UpdateSectionWithHttpInfo(sectionPutModel);
+    apiInstance.UpdateSectionWithHttpInfo(updateSectionRequest);
 }
 catch (ApiException e)
 {
@@ -814,7 +814,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **sectionPutModel** | [**SectionPutModel**](SectionPutModel.md) |  | [optional]  |
+| **updateSectionRequest** | [**UpdateSectionRequest**](UpdateSectionRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -834,12 +834,12 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
-| **409** | Section with the same name already exists in the parent section |  -  |
 | **400** | &lt;br&gt;- ID is invalid  &lt;br&gt;- Root section cannot be create |  -  |
-| **403** | Update permission for test library is required |  -  |
-| **422** | &lt;br&gt;- Root section cannot be edited  &lt;br&gt;- Parent ID cannot be changed  &lt;br&gt;- Project ID cannot be changed |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Update permission for test library is required |  -  |
 | **404** | &lt;br&gt;- Section cannot be found  &lt;br&gt;- Parent section cannot be found  &lt;br&gt;- Project cannot be found |  -  |
+| **409** | Section with the same name already exists in the parent section |  -  |
+| **422** | &lt;br&gt;- Root section cannot be edited  &lt;br&gt;- Parent ID cannot be changed  &lt;br&gt;- Project ID cannot be changed |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

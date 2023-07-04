@@ -34,7 +34,7 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets comment identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System delete comment   &lt;br&gt;System returns success status code
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="commentId"></param>
+        /// <param name="commentId">Comment internal (guid format) identifier</param>
         /// <returns></returns>
         void ApiV2WorkItemsCommentsCommentIdDelete(Guid commentId);
 
@@ -45,7 +45,7 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets comment identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System delete comment   &lt;br&gt;System returns success status code
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="commentId"></param>
+        /// <param name="commentId">Comment internal (guid format) identifier</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ApiV2WorkItemsCommentsCommentIdDeleteWithHttpInfo(Guid commentId);
         /// <summary>
@@ -55,9 +55,9 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets comment properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates comment   &lt;br&gt;System returns comment model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="workItemCommentPostModel"> (optional)</param>
+        /// <param name="apiV2WorkItemsCommentsPostRequest"> (optional)</param>
         /// <returns>WorkItemCommentModel</returns>
-        WorkItemCommentModel ApiV2WorkItemsCommentsPost(WorkItemCommentPostModel workItemCommentPostModel = default(WorkItemCommentPostModel));
+        WorkItemCommentModel ApiV2WorkItemsCommentsPost(ApiV2WorkItemsCommentsPostRequest apiV2WorkItemsCommentsPostRequest = default(ApiV2WorkItemsCommentsPostRequest));
 
         /// <summary>
         /// Create WorkItem comment
@@ -66,16 +66,16 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets comment properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates comment   &lt;br&gt;System returns comment model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="workItemCommentPostModel"> (optional)</param>
+        /// <param name="apiV2WorkItemsCommentsPostRequest"> (optional)</param>
         /// <returns>ApiResponse of WorkItemCommentModel</returns>
-        ApiResponse<WorkItemCommentModel> ApiV2WorkItemsCommentsPostWithHttpInfo(WorkItemCommentPostModel workItemCommentPostModel = default(WorkItemCommentPostModel));
+        ApiResponse<WorkItemCommentModel> ApiV2WorkItemsCommentsPostWithHttpInfo(ApiV2WorkItemsCommentsPostRequest apiV2WorkItemsCommentsPostRequest = default(ApiV2WorkItemsCommentsPostRequest));
         /// <summary>
         /// Update work item comment
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="workItemCommentPutModel"> (optional)</param>
+        /// <param name="apiV2WorkItemsCommentsPutRequest"> (optional)</param>
         /// <returns></returns>
-        void ApiV2WorkItemsCommentsPut(WorkItemCommentPutModel workItemCommentPutModel = default(WorkItemCommentPutModel));
+        void ApiV2WorkItemsCommentsPut(ApiV2WorkItemsCommentsPutRequest apiV2WorkItemsCommentsPutRequest = default(ApiV2WorkItemsCommentsPutRequest));
 
         /// <summary>
         /// Update work item comment
@@ -84,9 +84,9 @@ namespace TestIt.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="workItemCommentPutModel"> (optional)</param>
+        /// <param name="apiV2WorkItemsCommentsPutRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2WorkItemsCommentsPutWithHttpInfo(WorkItemCommentPutModel workItemCommentPutModel = default(WorkItemCommentPutModel));
+        ApiResponse<Object> ApiV2WorkItemsCommentsPutWithHttpInfo(ApiV2WorkItemsCommentsPutRequest apiV2WorkItemsCommentsPutRequest = default(ApiV2WorkItemsCommentsPutRequest));
         /// <summary>
         /// Get work item comments
         /// </summary>
@@ -121,7 +121,7 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets comment identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System delete comment   &lt;br&gt;System returns success status code
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="commentId"></param>
+        /// <param name="commentId">Comment internal (guid format) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task ApiV2WorkItemsCommentsCommentIdDeleteAsync(Guid commentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -133,7 +133,7 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets comment identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System delete comment   &lt;br&gt;System returns success status code
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="commentId"></param>
+        /// <param name="commentId">Comment internal (guid format) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2WorkItemsCommentsCommentIdDeleteWithHttpInfoAsync(Guid commentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -144,10 +144,10 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets comment properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates comment   &lt;br&gt;System returns comment model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="workItemCommentPostModel"> (optional)</param>
+        /// <param name="apiV2WorkItemsCommentsPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkItemCommentModel</returns>
-        System.Threading.Tasks.Task<WorkItemCommentModel> ApiV2WorkItemsCommentsPostAsync(WorkItemCommentPostModel workItemCommentPostModel = default(WorkItemCommentPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WorkItemCommentModel> ApiV2WorkItemsCommentsPostAsync(ApiV2WorkItemsCommentsPostRequest apiV2WorkItemsCommentsPostRequest = default(ApiV2WorkItemsCommentsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create WorkItem comment
@@ -156,10 +156,10 @@ namespace TestIt.Client.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User sets comment properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates comment   &lt;br&gt;System returns comment model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="workItemCommentPostModel"> (optional)</param>
+        /// <param name="apiV2WorkItemsCommentsPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkItemCommentModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkItemCommentModel>> ApiV2WorkItemsCommentsPostWithHttpInfoAsync(WorkItemCommentPostModel workItemCommentPostModel = default(WorkItemCommentPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WorkItemCommentModel>> ApiV2WorkItemsCommentsPostWithHttpInfoAsync(ApiV2WorkItemsCommentsPostRequest apiV2WorkItemsCommentsPostRequest = default(ApiV2WorkItemsCommentsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update work item comment
         /// </summary>
@@ -167,10 +167,10 @@ namespace TestIt.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="workItemCommentPutModel"> (optional)</param>
+        /// <param name="apiV2WorkItemsCommentsPutRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2WorkItemsCommentsPutAsync(WorkItemCommentPutModel workItemCommentPutModel = default(WorkItemCommentPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2WorkItemsCommentsPutAsync(ApiV2WorkItemsCommentsPutRequest apiV2WorkItemsCommentsPutRequest = default(ApiV2WorkItemsCommentsPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update work item comment
@@ -179,10 +179,10 @@ namespace TestIt.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="workItemCommentPutModel"> (optional)</param>
+        /// <param name="apiV2WorkItemsCommentsPutRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2WorkItemsCommentsPutWithHttpInfoAsync(WorkItemCommentPutModel workItemCommentPutModel = default(WorkItemCommentPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2WorkItemsCommentsPutWithHttpInfoAsync(ApiV2WorkItemsCommentsPutRequest apiV2WorkItemsCommentsPutRequest = default(ApiV2WorkItemsCommentsPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get work item comments
         /// </summary>
@@ -423,7 +423,7 @@ namespace TestIt.Client.Api
         /// Delete WorkItem comment &lt;br&gt;Use case  &lt;br&gt;User sets comment identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System delete comment   &lt;br&gt;System returns success status code
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="commentId"></param>
+        /// <param name="commentId">Comment internal (guid format) identifier</param>
         /// <returns></returns>
         public void ApiV2WorkItemsCommentsCommentIdDelete(Guid commentId)
         {
@@ -434,7 +434,7 @@ namespace TestIt.Client.Api
         /// Delete WorkItem comment &lt;br&gt;Use case  &lt;br&gt;User sets comment identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System delete comment   &lt;br&gt;System returns success status code
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="commentId"></param>
+        /// <param name="commentId">Comment internal (guid format) identifier</param>
         /// <returns>ApiResponse of Object(void)</returns>
         public TestIt.Client.Client.ApiResponse<Object> ApiV2WorkItemsCommentsCommentIdDeleteWithHttpInfo(Guid commentId)
         {
@@ -478,7 +478,7 @@ namespace TestIt.Client.Api
         /// Delete WorkItem comment &lt;br&gt;Use case  &lt;br&gt;User sets comment identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System delete comment   &lt;br&gt;System returns success status code
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="commentId"></param>
+        /// <param name="commentId">Comment internal (guid format) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task ApiV2WorkItemsCommentsCommentIdDeleteAsync(Guid commentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -490,7 +490,7 @@ namespace TestIt.Client.Api
         /// Delete WorkItem comment &lt;br&gt;Use case  &lt;br&gt;User sets comment identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System delete comment   &lt;br&gt;System returns success status code
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="commentId"></param>
+        /// <param name="commentId">Comment internal (guid format) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2WorkItemsCommentsCommentIdDeleteWithHttpInfoAsync(Guid commentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -538,11 +538,11 @@ namespace TestIt.Client.Api
         /// Create WorkItem comment &lt;br&gt;Use case  &lt;br&gt;User sets comment properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates comment   &lt;br&gt;System returns comment model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="workItemCommentPostModel"> (optional)</param>
+        /// <param name="apiV2WorkItemsCommentsPostRequest"> (optional)</param>
         /// <returns>WorkItemCommentModel</returns>
-        public WorkItemCommentModel ApiV2WorkItemsCommentsPost(WorkItemCommentPostModel workItemCommentPostModel = default(WorkItemCommentPostModel))
+        public WorkItemCommentModel ApiV2WorkItemsCommentsPost(ApiV2WorkItemsCommentsPostRequest apiV2WorkItemsCommentsPostRequest = default(ApiV2WorkItemsCommentsPostRequest))
         {
-            TestIt.Client.Client.ApiResponse<WorkItemCommentModel> localVarResponse = ApiV2WorkItemsCommentsPostWithHttpInfo(workItemCommentPostModel);
+            TestIt.Client.Client.ApiResponse<WorkItemCommentModel> localVarResponse = ApiV2WorkItemsCommentsPostWithHttpInfo(apiV2WorkItemsCommentsPostRequest);
             return localVarResponse.Data;
         }
 
@@ -550,9 +550,9 @@ namespace TestIt.Client.Api
         /// Create WorkItem comment &lt;br&gt;Use case  &lt;br&gt;User sets comment properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates comment   &lt;br&gt;System returns comment model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="workItemCommentPostModel"> (optional)</param>
+        /// <param name="apiV2WorkItemsCommentsPostRequest"> (optional)</param>
         /// <returns>ApiResponse of WorkItemCommentModel</returns>
-        public TestIt.Client.Client.ApiResponse<WorkItemCommentModel> ApiV2WorkItemsCommentsPostWithHttpInfo(WorkItemCommentPostModel workItemCommentPostModel = default(WorkItemCommentPostModel))
+        public TestIt.Client.Client.ApiResponse<WorkItemCommentModel> ApiV2WorkItemsCommentsPostWithHttpInfo(ApiV2WorkItemsCommentsPostRequest apiV2WorkItemsCommentsPostRequest = default(ApiV2WorkItemsCommentsPostRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -571,7 +571,7 @@ namespace TestIt.Client.Api
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = workItemCommentPostModel;
+            localVarRequestOptions.Data = apiV2WorkItemsCommentsPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -595,12 +595,12 @@ namespace TestIt.Client.Api
         /// Create WorkItem comment &lt;br&gt;Use case  &lt;br&gt;User sets comment properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates comment   &lt;br&gt;System returns comment model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="workItemCommentPostModel"> (optional)</param>
+        /// <param name="apiV2WorkItemsCommentsPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkItemCommentModel</returns>
-        public async System.Threading.Tasks.Task<WorkItemCommentModel> ApiV2WorkItemsCommentsPostAsync(WorkItemCommentPostModel workItemCommentPostModel = default(WorkItemCommentPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WorkItemCommentModel> ApiV2WorkItemsCommentsPostAsync(ApiV2WorkItemsCommentsPostRequest apiV2WorkItemsCommentsPostRequest = default(ApiV2WorkItemsCommentsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<WorkItemCommentModel> localVarResponse = await ApiV2WorkItemsCommentsPostWithHttpInfoAsync(workItemCommentPostModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<WorkItemCommentModel> localVarResponse = await ApiV2WorkItemsCommentsPostWithHttpInfoAsync(apiV2WorkItemsCommentsPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -608,10 +608,10 @@ namespace TestIt.Client.Api
         /// Create WorkItem comment &lt;br&gt;Use case  &lt;br&gt;User sets comment properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates comment   &lt;br&gt;System returns comment model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="workItemCommentPostModel"> (optional)</param>
+        /// <param name="apiV2WorkItemsCommentsPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkItemCommentModel)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<WorkItemCommentModel>> ApiV2WorkItemsCommentsPostWithHttpInfoAsync(WorkItemCommentPostModel workItemCommentPostModel = default(WorkItemCommentPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<WorkItemCommentModel>> ApiV2WorkItemsCommentsPostWithHttpInfoAsync(ApiV2WorkItemsCommentsPostRequest apiV2WorkItemsCommentsPostRequest = default(ApiV2WorkItemsCommentsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -632,7 +632,7 @@ namespace TestIt.Client.Api
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = workItemCommentPostModel;
+            localVarRequestOptions.Data = apiV2WorkItemsCommentsPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -657,20 +657,20 @@ namespace TestIt.Client.Api
         /// Update work item comment 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="workItemCommentPutModel"> (optional)</param>
+        /// <param name="apiV2WorkItemsCommentsPutRequest"> (optional)</param>
         /// <returns></returns>
-        public void ApiV2WorkItemsCommentsPut(WorkItemCommentPutModel workItemCommentPutModel = default(WorkItemCommentPutModel))
+        public void ApiV2WorkItemsCommentsPut(ApiV2WorkItemsCommentsPutRequest apiV2WorkItemsCommentsPutRequest = default(ApiV2WorkItemsCommentsPutRequest))
         {
-            ApiV2WorkItemsCommentsPutWithHttpInfo(workItemCommentPutModel);
+            ApiV2WorkItemsCommentsPutWithHttpInfo(apiV2WorkItemsCommentsPutRequest);
         }
 
         /// <summary>
         /// Update work item comment 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="workItemCommentPutModel"> (optional)</param>
+        /// <param name="apiV2WorkItemsCommentsPutRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.Client.Client.ApiResponse<Object> ApiV2WorkItemsCommentsPutWithHttpInfo(WorkItemCommentPutModel workItemCommentPutModel = default(WorkItemCommentPutModel))
+        public TestIt.Client.Client.ApiResponse<Object> ApiV2WorkItemsCommentsPutWithHttpInfo(ApiV2WorkItemsCommentsPutRequest apiV2WorkItemsCommentsPutRequest = default(ApiV2WorkItemsCommentsPutRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -689,7 +689,7 @@ namespace TestIt.Client.Api
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = workItemCommentPutModel;
+            localVarRequestOptions.Data = apiV2WorkItemsCommentsPutRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -713,22 +713,22 @@ namespace TestIt.Client.Api
         /// Update work item comment 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="workItemCommentPutModel"> (optional)</param>
+        /// <param name="apiV2WorkItemsCommentsPutRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2WorkItemsCommentsPutAsync(WorkItemCommentPutModel workItemCommentPutModel = default(WorkItemCommentPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2WorkItemsCommentsPutAsync(ApiV2WorkItemsCommentsPutRequest apiV2WorkItemsCommentsPutRequest = default(ApiV2WorkItemsCommentsPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ApiV2WorkItemsCommentsPutWithHttpInfoAsync(workItemCommentPutModel, cancellationToken).ConfigureAwait(false);
+            await ApiV2WorkItemsCommentsPutWithHttpInfoAsync(apiV2WorkItemsCommentsPutRequest, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Update work item comment 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="workItemCommentPutModel"> (optional)</param>
+        /// <param name="apiV2WorkItemsCommentsPutRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2WorkItemsCommentsPutWithHttpInfoAsync(WorkItemCommentPutModel workItemCommentPutModel = default(WorkItemCommentPutModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<Object>> ApiV2WorkItemsCommentsPutWithHttpInfoAsync(ApiV2WorkItemsCommentsPutRequest apiV2WorkItemsCommentsPutRequest = default(ApiV2WorkItemsCommentsPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -749,7 +749,7 @@ namespace TestIt.Client.Api
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = workItemCommentPutModel;
+            localVarRequestOptions.Data = apiV2WorkItemsCommentsPutRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))

@@ -40,7 +40,7 @@ namespace TestIt.Client.Model
         /// <param name="modifiedByIds">Collection of identifiers of users who applied last modification to work item.</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="modifiedDate">modifiedDate.</param>
-        public SharedStepReferenceSectionsQueryFilterModel(string name = default(string), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel))
+        public SharedStepReferenceSectionsQueryFilterModel(string name = default(string), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), SharedStepReferenceSectionsQueryFilterModelCreatedDate createdDate = default(SharedStepReferenceSectionsQueryFilterModelCreatedDate), SharedStepReferenceSectionsQueryFilterModelModifiedDate modifiedDate = default(SharedStepReferenceSectionsQueryFilterModelModifiedDate))
         {
             this.Name = name;
             this.CreatedByIds = createdByIds;
@@ -73,14 +73,14 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
-        public DateTimeRangeSelectorModel CreatedDate { get; set; }
+        [DataMember(Name = "createdDate", EmitDefaultValue = true)]
+        public SharedStepReferenceSectionsQueryFilterModelCreatedDate CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
-        public DateTimeRangeSelectorModel ModifiedDate { get; set; }
+        [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
+        public SharedStepReferenceSectionsQueryFilterModelModifiedDate ModifiedDate { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -197,7 +197,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

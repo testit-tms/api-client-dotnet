@@ -17,7 +17,7 @@ All URIs are relative to *http://localhost*
 | [**GetAttachment**](TestResultsApi.md#getattachment) | **GET** /api/v2/testResults/{id}/attachments/{attachmentId}/info | Get Metadata of TestResult&#39;s attachment |
 | [**GetAttachments**](TestResultsApi.md#getattachments) | **GET** /api/v2/testResults/{id}/attachments | Get all attachments of TestResult |
 
-<a name="apiv2testresultsidaggregatedget"></a>
+<a id="apiv2testresultsidaggregatedget"></a>
 # **ApiV2TestResultsIdAggregatedGet**
 > TestResultModel ApiV2TestResultsIdAggregatedGet (Guid id)
 
@@ -111,12 +111,12 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for the test result is required |  -  |
 | **200** | Success |  -  |
+| **403** | Read permission for the test result is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testresultsidattachmentsattachmentidput"></a>
+<a id="apiv2testresultsidattachmentsattachmentidput"></a>
 # **ApiV2TestResultsIdAttachmentsAttachmentIdPut**
 > void ApiV2TestResultsIdAttachmentsAttachmentIdPut (Guid id, Guid attachmentId)
 
@@ -213,7 +213,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testresultsidattachmentsinfoget"></a>
+<a id="apiv2testresultsidattachmentsinfoget"></a>
 # **ApiV2TestResultsIdAttachmentsInfoGet**
 > List&lt;AttachmentModel&gt; ApiV2TestResultsIdAttachmentsInfoGet (Guid id)
 
@@ -312,7 +312,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testresultsidget"></a>
+<a id="apiv2testresultsidget"></a>
 # **ApiV2TestResultsIdGet**
 > TestResultModel ApiV2TestResultsIdGet (Guid id)
 
@@ -411,9 +411,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testresultsidput"></a>
+<a id="apiv2testresultsidput"></a>
 # **ApiV2TestResultsIdPut**
-> void ApiV2TestResultsIdPut (Guid id, TestResultUpdateModel testResultUpdateModel = null)
+> void ApiV2TestResultsIdPut (Guid id, ApiV2TestResultsIdPutRequest apiV2TestResultsIdPutRequest = null)
 
 Edit test result by ID
 
@@ -444,12 +444,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestResultsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // Guid | Test result unique ID
-            var testResultUpdateModel = new TestResultUpdateModel(); // TestResultUpdateModel |  (optional) 
+            var apiV2TestResultsIdPutRequest = new ApiV2TestResultsIdPutRequest(); // ApiV2TestResultsIdPutRequest |  (optional) 
 
             try
             {
                 // Edit test result by ID
-                apiInstance.ApiV2TestResultsIdPut(id, testResultUpdateModel);
+                apiInstance.ApiV2TestResultsIdPut(id, apiV2TestResultsIdPutRequest);
             }
             catch (ApiException  e)
             {
@@ -469,7 +469,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Edit test result by ID
-    apiInstance.ApiV2TestResultsIdPutWithHttpInfo(id, testResultUpdateModel);
+    apiInstance.ApiV2TestResultsIdPutWithHttpInfo(id, apiV2TestResultsIdPutRequest);
 }
 catch (ApiException e)
 {
@@ -484,7 +484,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid** | Test result unique ID |  |
-| **testResultUpdateModel** | [**TestResultUpdateModel**](TestResultUpdateModel.md) |  | [optional]  |
+| **apiV2TestResultsIdPutRequest** | [**ApiV2TestResultsIdPutRequest**](ApiV2TestResultsIdPutRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -508,9 +508,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testresultssearchpost"></a>
+<a id="apiv2testresultssearchpost"></a>
 # **ApiV2TestResultsSearchPost**
-> List&lt;TestResultShortGetModel&gt; ApiV2TestResultsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, TestResultsFilterModel testResultsFilterModel = null)
+> List&lt;TestResultShortGetModel&gt; ApiV2TestResultsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = null)
 
 Search for test results
 
@@ -545,12 +545,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var testResultsFilterModel = new TestResultsFilterModel(); // TestResultsFilterModel |  (optional) 
+            var apiV2TestResultsSearchPostRequest = new ApiV2TestResultsSearchPostRequest(); // ApiV2TestResultsSearchPostRequest |  (optional) 
 
             try
             {
                 // Search for test results
-                List<TestResultShortGetModel> result = apiInstance.ApiV2TestResultsSearchPost(skip, take, orderBy, searchField, searchValue, testResultsFilterModel);
+                List<TestResultShortGetModel> result = apiInstance.ApiV2TestResultsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2TestResultsSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -571,7 +571,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for test results
-    ApiResponse<List<TestResultShortGetModel>> response = apiInstance.ApiV2TestResultsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, testResultsFilterModel);
+    ApiResponse<List<TestResultShortGetModel>> response = apiInstance.ApiV2TestResultsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2TestResultsSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -593,7 +593,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **testResultsFilterModel** | [**TestResultsFilterModel**](TestResultsFilterModel.md) |  | [optional]  |
+| **apiV2TestResultsSearchPostRequest** | [**ApiV2TestResultsSearchPostRequest**](ApiV2TestResultsSearchPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -617,9 +617,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testresultsstatisticsfilterpost"></a>
+<a id="apiv2testresultsstatisticsfilterpost"></a>
 # **ApiV2TestResultsStatisticsFilterPost**
-> TestResultsStatisticsGetModel ApiV2TestResultsStatisticsFilterPost (TestResultsFilterModel testResultsFilterModel = null)
+> TestResultsStatisticsGetModel ApiV2TestResultsStatisticsFilterPost (ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = null)
 
 Search for test results and extract statistics
 
@@ -649,12 +649,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestResultsApi(httpClient, config, httpClientHandler);
-            var testResultsFilterModel = new TestResultsFilterModel(); // TestResultsFilterModel |  (optional) 
+            var apiV2TestResultsSearchPostRequest = new ApiV2TestResultsSearchPostRequest(); // ApiV2TestResultsSearchPostRequest |  (optional) 
 
             try
             {
                 // Search for test results and extract statistics
-                TestResultsStatisticsGetModel result = apiInstance.ApiV2TestResultsStatisticsFilterPost(testResultsFilterModel);
+                TestResultsStatisticsGetModel result = apiInstance.ApiV2TestResultsStatisticsFilterPost(apiV2TestResultsSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -675,7 +675,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for test results and extract statistics
-    ApiResponse<TestResultsStatisticsGetModel> response = apiInstance.ApiV2TestResultsStatisticsFilterPostWithHttpInfo(testResultsFilterModel);
+    ApiResponse<TestResultsStatisticsGetModel> response = apiInstance.ApiV2TestResultsStatisticsFilterPostWithHttpInfo(apiV2TestResultsSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -692,7 +692,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **testResultsFilterModel** | [**TestResultsFilterModel**](TestResultsFilterModel.md) |  | [optional]  |
+| **apiV2TestResultsSearchPostRequest** | [**ApiV2TestResultsSearchPostRequest**](ApiV2TestResultsSearchPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -716,7 +716,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createattachment"></a>
+<a id="createattachment"></a>
 # **CreateAttachment**
 > Guid CreateAttachment (Guid id, FileParameter file = null)
 
@@ -814,16 +814,16 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
-| **403** | Update permission for test result required |  -  |
 | **200** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Update permission for test result required |  -  |
 | **404** |  |  -  |
 | **413** | Multipart body length limit exceeded (default constraint is one gigabyte) |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleteattachment"></a>
+<a id="deleteattachment"></a>
 # **DeleteAttachment**
 > void DeleteAttachment (Guid id, Guid attachmentId)
 
@@ -917,14 +917,14 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Update permission for test result required |  -  |
 | **204** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Update permission for test result required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="downloadattachment"></a>
+<a id="downloadattachment"></a>
 # **DownloadAttachment**
 > void DownloadAttachment (Guid attachmentId, Guid id, int? width = null, int? height = null, ImageResizeType? resizeType = null, string backgroundColor = null, bool? preview = null)
 
@@ -1031,12 +1031,12 @@ void (empty response body)
 | **200** | Success |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
-| **404** | &lt;br&gt;File not found  &lt;br&gt;Attachment not found |  -  |
 | **403** | Read permission for test result required |  -  |
+| **404** | &lt;br&gt;File not found  &lt;br&gt;Attachment not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getattachment"></a>
+<a id="getattachment"></a>
 # **GetAttachment**
 > AttachmentModel GetAttachment (Guid id, Guid attachmentId)
 
@@ -1134,15 +1134,15 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
-| **400** | Bad Request |  -  |
 | **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for test result required |  -  |
 | **404** | File not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getattachments"></a>
+<a id="getattachments"></a>
 # **GetAttachments**
 > List&lt;AttachmentModel&gt; GetAttachments (Guid id)
 
@@ -1238,10 +1238,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for test result required |  -  |
 | **200** | Success |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Read permission for test result required |  -  |
 | **404** | TestResult not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

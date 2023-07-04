@@ -86,9 +86,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Webhook unique ID</param>
-        /// <param name="webHookPostModel"> (optional)</param>
+        /// <param name="apiV2WebhooksPostRequest"> (optional)</param>
         /// <returns>WebHookModel</returns>
-        WebHookModel ApiV2WebhooksIdPut(Guid id, WebHookPostModel webHookPostModel = default(WebHookPostModel));
+        WebHookModel ApiV2WebhooksIdPut(Guid id, ApiV2WebhooksPostRequest apiV2WebhooksPostRequest = default(ApiV2WebhooksPostRequest));
 
         /// <summary>
         /// Edit webhook by ID
@@ -98,16 +98,16 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Webhook unique ID</param>
-        /// <param name="webHookPostModel"> (optional)</param>
+        /// <param name="apiV2WebhooksPostRequest"> (optional)</param>
         /// <returns>ApiResponse of WebHookModel</returns>
-        ApiResponse<WebHookModel> ApiV2WebhooksIdPutWithHttpInfo(Guid id, WebHookPostModel webHookPostModel = default(WebHookPostModel));
+        ApiResponse<WebHookModel> ApiV2WebhooksIdPutWithHttpInfo(Guid id, ApiV2WebhooksPostRequest apiV2WebhooksPostRequest = default(ApiV2WebhooksPostRequest));
         /// <summary>
         /// Create webhook
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webHookPostModel"> (optional)</param>
+        /// <param name="apiV2WebhooksPostRequest"> (optional)</param>
         /// <returns>WebHookModel</returns>
-        WebHookModel ApiV2WebhooksPost(WebHookPostModel webHookPostModel = default(WebHookPostModel));
+        WebHookModel ApiV2WebhooksPost(ApiV2WebhooksPostRequest apiV2WebhooksPostRequest = default(ApiV2WebhooksPostRequest));
 
         /// <summary>
         /// Create webhook
@@ -116,9 +116,9 @@ namespace TestIt.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webHookPostModel"> (optional)</param>
+        /// <param name="apiV2WebhooksPostRequest"> (optional)</param>
         /// <returns>ApiResponse of WebHookModel</returns>
-        ApiResponse<WebHookModel> ApiV2WebhooksPostWithHttpInfo(WebHookPostModel webHookPostModel = default(WebHookPostModel));
+        ApiResponse<WebHookModel> ApiV2WebhooksPostWithHttpInfo(ApiV2WebhooksPostRequest apiV2WebhooksPostRequest = default(ApiV2WebhooksPostRequest));
         /// <summary>
         /// Search for webhooks
         /// </summary>
@@ -128,9 +128,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchWebhooksQueryModel"> (optional)</param>
+        /// <param name="apiV2WebhooksSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;WebHookModel&gt;</returns>
-        List<WebHookModel> ApiV2WebhooksSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchWebhooksQueryModel searchWebhooksQueryModel = default(SearchWebhooksQueryModel));
+        List<WebHookModel> ApiV2WebhooksSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WebhooksSearchPostRequest apiV2WebhooksSearchPostRequest = default(ApiV2WebhooksSearchPostRequest));
 
         /// <summary>
         /// Search for webhooks
@@ -144,9 +144,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchWebhooksQueryModel"> (optional)</param>
+        /// <param name="apiV2WebhooksSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;WebHookModel&gt;</returns>
-        ApiResponse<List<WebHookModel>> ApiV2WebhooksSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchWebhooksQueryModel searchWebhooksQueryModel = default(SearchWebhooksQueryModel));
+        ApiResponse<List<WebHookModel>> ApiV2WebhooksSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WebhooksSearchPostRequest apiV2WebhooksSearchPostRequest = default(ApiV2WebhooksSearchPostRequest));
         /// <summary>
         /// Get special variables for webhook event type
         /// </summary>
@@ -165,6 +165,24 @@ namespace TestIt.Client.Api
         /// <param name="eventType">Webhook event type (optional)</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
         ApiResponse<List<string>> ApiV2WebhooksSpecialVariablesGetWithHttpInfo(WebHookEventType? eventType = default(WebHookEventType?));
+        /// <summary>
+        /// Test webhook&#39;s url
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2WebhooksTestPostRequest"> (optional)</param>
+        /// <returns>RequestData</returns>
+        RequestData ApiV2WebhooksTestPost(ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = default(ApiV2WebhooksTestPostRequest));
+
+        /// <summary>
+        /// Test webhook&#39;s url
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2WebhooksTestPostRequest"> (optional)</param>
+        /// <returns>ApiResponse of RequestData</returns>
+        ApiResponse<RequestData> ApiV2WebhooksTestPostWithHttpInfo(ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = default(ApiV2WebhooksTestPostRequest));
         #endregion Synchronous Operations
     }
 
@@ -251,10 +269,10 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Webhook unique ID</param>
-        /// <param name="webHookPostModel"> (optional)</param>
+        /// <param name="apiV2WebhooksPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebHookModel</returns>
-        System.Threading.Tasks.Task<WebHookModel> ApiV2WebhooksIdPutAsync(Guid id, WebHookPostModel webHookPostModel = default(WebHookPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WebHookModel> ApiV2WebhooksIdPutAsync(Guid id, ApiV2WebhooksPostRequest apiV2WebhooksPostRequest = default(ApiV2WebhooksPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Edit webhook by ID
@@ -264,10 +282,10 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Webhook unique ID</param>
-        /// <param name="webHookPostModel"> (optional)</param>
+        /// <param name="apiV2WebhooksPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebHookModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WebHookModel>> ApiV2WebhooksIdPutWithHttpInfoAsync(Guid id, WebHookPostModel webHookPostModel = default(WebHookPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WebHookModel>> ApiV2WebhooksIdPutWithHttpInfoAsync(Guid id, ApiV2WebhooksPostRequest apiV2WebhooksPostRequest = default(ApiV2WebhooksPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create webhook
         /// </summary>
@@ -275,10 +293,10 @@ namespace TestIt.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webHookPostModel"> (optional)</param>
+        /// <param name="apiV2WebhooksPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebHookModel</returns>
-        System.Threading.Tasks.Task<WebHookModel> ApiV2WebhooksPostAsync(WebHookPostModel webHookPostModel = default(WebHookPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WebHookModel> ApiV2WebhooksPostAsync(ApiV2WebhooksPostRequest apiV2WebhooksPostRequest = default(ApiV2WebhooksPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create webhook
@@ -287,10 +305,10 @@ namespace TestIt.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webHookPostModel"> (optional)</param>
+        /// <param name="apiV2WebhooksPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebHookModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WebHookModel>> ApiV2WebhooksPostWithHttpInfoAsync(WebHookPostModel webHookPostModel = default(WebHookPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WebHookModel>> ApiV2WebhooksPostWithHttpInfoAsync(ApiV2WebhooksPostRequest apiV2WebhooksPostRequest = default(ApiV2WebhooksPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Search for webhooks
         /// </summary>
@@ -303,10 +321,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchWebhooksQueryModel"> (optional)</param>
+        /// <param name="apiV2WebhooksSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WebHookModel&gt;</returns>
-        System.Threading.Tasks.Task<List<WebHookModel>> ApiV2WebhooksSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchWebhooksQueryModel searchWebhooksQueryModel = default(SearchWebhooksQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<WebHookModel>> ApiV2WebhooksSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WebhooksSearchPostRequest apiV2WebhooksSearchPostRequest = default(ApiV2WebhooksSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Search for webhooks
@@ -320,10 +338,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchWebhooksQueryModel"> (optional)</param>
+        /// <param name="apiV2WebhooksSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WebHookModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<WebHookModel>>> ApiV2WebhooksSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchWebhooksQueryModel searchWebhooksQueryModel = default(SearchWebhooksQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<WebHookModel>>> ApiV2WebhooksSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WebhooksSearchPostRequest apiV2WebhooksSearchPostRequest = default(ApiV2WebhooksSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get special variables for webhook event type
         /// </summary>
@@ -347,6 +365,29 @@ namespace TestIt.Client.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<string>>> ApiV2WebhooksSpecialVariablesGetWithHttpInfoAsync(WebHookEventType? eventType = default(WebHookEventType?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Test webhook&#39;s url
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2WebhooksTestPostRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of RequestData</returns>
+        System.Threading.Tasks.Task<RequestData> ApiV2WebhooksTestPostAsync(ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = default(ApiV2WebhooksTestPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Test webhook&#39;s url
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2WebhooksTestPostRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (RequestData)</returns>
+        System.Threading.Tasks.Task<ApiResponse<RequestData>> ApiV2WebhooksTestPostWithHttpInfoAsync(ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = default(ApiV2WebhooksTestPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -920,11 +961,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Webhook unique ID</param>
-        /// <param name="webHookPostModel"> (optional)</param>
+        /// <param name="apiV2WebhooksPostRequest"> (optional)</param>
         /// <returns>WebHookModel</returns>
-        public WebHookModel ApiV2WebhooksIdPut(Guid id, WebHookPostModel webHookPostModel = default(WebHookPostModel))
+        public WebHookModel ApiV2WebhooksIdPut(Guid id, ApiV2WebhooksPostRequest apiV2WebhooksPostRequest = default(ApiV2WebhooksPostRequest))
         {
-            TestIt.Client.Client.ApiResponse<WebHookModel> localVarResponse = ApiV2WebhooksIdPutWithHttpInfo(id, webHookPostModel);
+            TestIt.Client.Client.ApiResponse<WebHookModel> localVarResponse = ApiV2WebhooksIdPutWithHttpInfo(id, apiV2WebhooksPostRequest);
             return localVarResponse.Data;
         }
 
@@ -933,9 +974,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Webhook unique ID</param>
-        /// <param name="webHookPostModel"> (optional)</param>
+        /// <param name="apiV2WebhooksPostRequest"> (optional)</param>
         /// <returns>ApiResponse of WebHookModel</returns>
-        public TestIt.Client.Client.ApiResponse<WebHookModel> ApiV2WebhooksIdPutWithHttpInfo(Guid id, WebHookPostModel webHookPostModel = default(WebHookPostModel))
+        public TestIt.Client.Client.ApiResponse<WebHookModel> ApiV2WebhooksIdPutWithHttpInfo(Guid id, ApiV2WebhooksPostRequest apiV2WebhooksPostRequest = default(ApiV2WebhooksPostRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -955,7 +996,7 @@ namespace TestIt.Client.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = webHookPostModel;
+            localVarRequestOptions.Data = apiV2WebhooksPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -980,12 +1021,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Webhook unique ID</param>
-        /// <param name="webHookPostModel"> (optional)</param>
+        /// <param name="apiV2WebhooksPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebHookModel</returns>
-        public async System.Threading.Tasks.Task<WebHookModel> ApiV2WebhooksIdPutAsync(Guid id, WebHookPostModel webHookPostModel = default(WebHookPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WebHookModel> ApiV2WebhooksIdPutAsync(Guid id, ApiV2WebhooksPostRequest apiV2WebhooksPostRequest = default(ApiV2WebhooksPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<WebHookModel> localVarResponse = await ApiV2WebhooksIdPutWithHttpInfoAsync(id, webHookPostModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<WebHookModel> localVarResponse = await ApiV2WebhooksIdPutWithHttpInfoAsync(id, apiV2WebhooksPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -994,10 +1035,10 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Webhook unique ID</param>
-        /// <param name="webHookPostModel"> (optional)</param>
+        /// <param name="apiV2WebhooksPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebHookModel)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<WebHookModel>> ApiV2WebhooksIdPutWithHttpInfoAsync(Guid id, WebHookPostModel webHookPostModel = default(WebHookPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<WebHookModel>> ApiV2WebhooksIdPutWithHttpInfoAsync(Guid id, ApiV2WebhooksPostRequest apiV2WebhooksPostRequest = default(ApiV2WebhooksPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1019,7 +1060,7 @@ namespace TestIt.Client.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = webHookPostModel;
+            localVarRequestOptions.Data = apiV2WebhooksPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1044,11 +1085,11 @@ namespace TestIt.Client.Api
         /// Create webhook 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webHookPostModel"> (optional)</param>
+        /// <param name="apiV2WebhooksPostRequest"> (optional)</param>
         /// <returns>WebHookModel</returns>
-        public WebHookModel ApiV2WebhooksPost(WebHookPostModel webHookPostModel = default(WebHookPostModel))
+        public WebHookModel ApiV2WebhooksPost(ApiV2WebhooksPostRequest apiV2WebhooksPostRequest = default(ApiV2WebhooksPostRequest))
         {
-            TestIt.Client.Client.ApiResponse<WebHookModel> localVarResponse = ApiV2WebhooksPostWithHttpInfo(webHookPostModel);
+            TestIt.Client.Client.ApiResponse<WebHookModel> localVarResponse = ApiV2WebhooksPostWithHttpInfo(apiV2WebhooksPostRequest);
             return localVarResponse.Data;
         }
 
@@ -1056,9 +1097,9 @@ namespace TestIt.Client.Api
         /// Create webhook 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webHookPostModel"> (optional)</param>
+        /// <param name="apiV2WebhooksPostRequest"> (optional)</param>
         /// <returns>ApiResponse of WebHookModel</returns>
-        public TestIt.Client.Client.ApiResponse<WebHookModel> ApiV2WebhooksPostWithHttpInfo(WebHookPostModel webHookPostModel = default(WebHookPostModel))
+        public TestIt.Client.Client.ApiResponse<WebHookModel> ApiV2WebhooksPostWithHttpInfo(ApiV2WebhooksPostRequest apiV2WebhooksPostRequest = default(ApiV2WebhooksPostRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1077,7 +1118,7 @@ namespace TestIt.Client.Api
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = webHookPostModel;
+            localVarRequestOptions.Data = apiV2WebhooksPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1101,12 +1142,12 @@ namespace TestIt.Client.Api
         /// Create webhook 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webHookPostModel"> (optional)</param>
+        /// <param name="apiV2WebhooksPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebHookModel</returns>
-        public async System.Threading.Tasks.Task<WebHookModel> ApiV2WebhooksPostAsync(WebHookPostModel webHookPostModel = default(WebHookPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WebHookModel> ApiV2WebhooksPostAsync(ApiV2WebhooksPostRequest apiV2WebhooksPostRequest = default(ApiV2WebhooksPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<WebHookModel> localVarResponse = await ApiV2WebhooksPostWithHttpInfoAsync(webHookPostModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<WebHookModel> localVarResponse = await ApiV2WebhooksPostWithHttpInfoAsync(apiV2WebhooksPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1114,10 +1155,10 @@ namespace TestIt.Client.Api
         /// Create webhook 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webHookPostModel"> (optional)</param>
+        /// <param name="apiV2WebhooksPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebHookModel)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<WebHookModel>> ApiV2WebhooksPostWithHttpInfoAsync(WebHookPostModel webHookPostModel = default(WebHookPostModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<WebHookModel>> ApiV2WebhooksPostWithHttpInfoAsync(ApiV2WebhooksPostRequest apiV2WebhooksPostRequest = default(ApiV2WebhooksPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1138,7 +1179,7 @@ namespace TestIt.Client.Api
             var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = webHookPostModel;
+            localVarRequestOptions.Data = apiV2WebhooksPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1168,11 +1209,11 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchWebhooksQueryModel"> (optional)</param>
+        /// <param name="apiV2WebhooksSearchPostRequest"> (optional)</param>
         /// <returns>List&lt;WebHookModel&gt;</returns>
-        public List<WebHookModel> ApiV2WebhooksSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchWebhooksQueryModel searchWebhooksQueryModel = default(SearchWebhooksQueryModel))
+        public List<WebHookModel> ApiV2WebhooksSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WebhooksSearchPostRequest apiV2WebhooksSearchPostRequest = default(ApiV2WebhooksSearchPostRequest))
         {
-            TestIt.Client.Client.ApiResponse<List<WebHookModel>> localVarResponse = ApiV2WebhooksSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, searchWebhooksQueryModel);
+            TestIt.Client.Client.ApiResponse<List<WebHookModel>> localVarResponse = ApiV2WebhooksSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2WebhooksSearchPostRequest);
             return localVarResponse.Data;
         }
 
@@ -1185,9 +1226,9 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchWebhooksQueryModel"> (optional)</param>
+        /// <param name="apiV2WebhooksSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;WebHookModel&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<WebHookModel>> ApiV2WebhooksSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchWebhooksQueryModel searchWebhooksQueryModel = default(SearchWebhooksQueryModel))
+        public TestIt.Client.Client.ApiResponse<List<WebHookModel>> ApiV2WebhooksSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WebhooksSearchPostRequest apiV2WebhooksSearchPostRequest = default(ApiV2WebhooksSearchPostRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1226,7 +1267,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = searchWebhooksQueryModel;
+            localVarRequestOptions.Data = apiV2WebhooksSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1255,12 +1296,12 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchWebhooksQueryModel"> (optional)</param>
+        /// <param name="apiV2WebhooksSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WebHookModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<WebHookModel>> ApiV2WebhooksSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchWebhooksQueryModel searchWebhooksQueryModel = default(SearchWebhooksQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<WebHookModel>> ApiV2WebhooksSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WebhooksSearchPostRequest apiV2WebhooksSearchPostRequest = default(ApiV2WebhooksSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<WebHookModel>> localVarResponse = await ApiV2WebhooksSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, searchWebhooksQueryModel, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<WebHookModel>> localVarResponse = await ApiV2WebhooksSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, apiV2WebhooksSearchPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1273,10 +1314,10 @@ namespace TestIt.Client.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchWebhooksQueryModel"> (optional)</param>
+        /// <param name="apiV2WebhooksSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WebHookModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<WebHookModel>>> ApiV2WebhooksSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchWebhooksQueryModel searchWebhooksQueryModel = default(SearchWebhooksQueryModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<WebHookModel>>> ApiV2WebhooksSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WebhooksSearchPostRequest apiV2WebhooksSearchPostRequest = default(ApiV2WebhooksSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1317,7 +1358,7 @@ namespace TestIt.Client.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = searchWebhooksQueryModel;
+            localVarRequestOptions.Data = apiV2WebhooksSearchPostRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1455,6 +1496,125 @@ namespace TestIt.Client.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2WebhooksSpecialVariablesGet", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Test webhook&#39;s url 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2WebhooksTestPostRequest"> (optional)</param>
+        /// <returns>RequestData</returns>
+        public RequestData ApiV2WebhooksTestPost(ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = default(ApiV2WebhooksTestPostRequest))
+        {
+            TestIt.Client.Client.ApiResponse<RequestData> localVarResponse = ApiV2WebhooksTestPostWithHttpInfo(apiV2WebhooksTestPostRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Test webhook&#39;s url 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2WebhooksTestPostRequest"> (optional)</param>
+        /// <returns>ApiResponse of RequestData</returns>
+        public TestIt.Client.Client.ApiResponse<RequestData> ApiV2WebhooksTestPostWithHttpInfo(ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = default(ApiV2WebhooksTestPostRequest))
+        {
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = apiV2WebhooksTestPostRequest;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<RequestData>("/api/v2/webhooks/test", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2WebhooksTestPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Test webhook&#39;s url 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2WebhooksTestPostRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of RequestData</returns>
+        public async System.Threading.Tasks.Task<RequestData> ApiV2WebhooksTestPostAsync(ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = default(ApiV2WebhooksTestPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIt.Client.Client.ApiResponse<RequestData> localVarResponse = await ApiV2WebhooksTestPostWithHttpInfoAsync(apiV2WebhooksTestPostRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Test webhook&#39;s url 
+        /// </summary>
+        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2WebhooksTestPostRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (RequestData)</returns>
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<RequestData>> ApiV2WebhooksTestPostWithHttpInfoAsync(ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = default(ApiV2WebhooksTestPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = apiV2WebhooksTestPostRequest;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<RequestData>("/api/v2/webhooks/test", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2WebhooksTestPost", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

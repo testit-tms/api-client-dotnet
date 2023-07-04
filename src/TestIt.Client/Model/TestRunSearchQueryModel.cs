@@ -66,13 +66,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets StartedDate
         /// </summary>
-        [DataMember(Name = "startedDate", EmitDefaultValue = false)]
+        [DataMember(Name = "startedDate", EmitDefaultValue = true)]
         public DateTimeRangeSelectorModel StartedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets CompletedDate
         /// </summary>
-        [DataMember(Name = "completedDate", EmitDefaultValue = false)]
+        [DataMember(Name = "completedDate", EmitDefaultValue = true)]
         public DateTimeRangeSelectorModel CompletedDate { get; set; }
 
         /// <summary>
@@ -213,7 +213,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)

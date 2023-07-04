@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2CustomAttributesIdGet**](CustomAttributesApi.md#apiv2customattributesidget) | **GET** /api/v2/customAttributes/{id} | Get attribute |
 | [**ApiV2CustomAttributesSearchPost**](CustomAttributesApi.md#apiv2customattributessearchpost) | **POST** /api/v2/customAttributes/search | Search for attributes |
 
-<a name="apiv2customattributesglobaliddelete"></a>
+<a id="apiv2customattributesglobaliddelete"></a>
 # **ApiV2CustomAttributesGlobalIdDelete**
 > void ApiV2CustomAttributesGlobalIdDelete (Guid id)
 
@@ -105,9 +105,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2customattributesglobalidput"></a>
+<a id="apiv2customattributesglobalidput"></a>
 # **ApiV2CustomAttributesGlobalIdPut**
-> CustomAttributeModel ApiV2CustomAttributesGlobalIdPut (Guid id, GlobalCustomAttributeUpdateModel globalCustomAttributeUpdateModel = null)
+> CustomAttributeModel ApiV2CustomAttributesGlobalIdPut (Guid id, ApiV2CustomAttributesGlobalIdPutRequest apiV2CustomAttributesGlobalIdPutRequest = null)
 
 Edit global attribute
 
@@ -138,12 +138,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CustomAttributesApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // Guid | Unique ID of attribute
-            var globalCustomAttributeUpdateModel = new GlobalCustomAttributeUpdateModel(); // GlobalCustomAttributeUpdateModel |  (optional) 
+            var apiV2CustomAttributesGlobalIdPutRequest = new ApiV2CustomAttributesGlobalIdPutRequest(); // ApiV2CustomAttributesGlobalIdPutRequest |  (optional) 
 
             try
             {
                 // Edit global attribute
-                CustomAttributeModel result = apiInstance.ApiV2CustomAttributesGlobalIdPut(id, globalCustomAttributeUpdateModel);
+                CustomAttributeModel result = apiInstance.ApiV2CustomAttributesGlobalIdPut(id, apiV2CustomAttributesGlobalIdPutRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -164,7 +164,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Edit global attribute
-    ApiResponse<CustomAttributeModel> response = apiInstance.ApiV2CustomAttributesGlobalIdPutWithHttpInfo(id, globalCustomAttributeUpdateModel);
+    ApiResponse<CustomAttributeModel> response = apiInstance.ApiV2CustomAttributesGlobalIdPutWithHttpInfo(id, apiV2CustomAttributesGlobalIdPutRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -182,7 +182,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid** | Unique ID of attribute |  |
-| **globalCustomAttributeUpdateModel** | [**GlobalCustomAttributeUpdateModel**](GlobalCustomAttributeUpdateModel.md) |  | [optional]  |
+| **apiV2CustomAttributesGlobalIdPutRequest** | [**ApiV2CustomAttributesGlobalIdPutRequest**](ApiV2CustomAttributesGlobalIdPutRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -206,9 +206,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2customattributesglobalpost"></a>
+<a id="apiv2customattributesglobalpost"></a>
 # **ApiV2CustomAttributesGlobalPost**
-> CustomAttributeModel ApiV2CustomAttributesGlobalPost (GlobalCustomAttributePostModel globalCustomAttributePostModel = null)
+> CustomAttributeModel ApiV2CustomAttributesGlobalPost (ApiV2CustomAttributesGlobalPostRequest apiV2CustomAttributesGlobalPostRequest = null)
 
 Create global attribute
 
@@ -238,12 +238,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CustomAttributesApi(httpClient, config, httpClientHandler);
-            var globalCustomAttributePostModel = new GlobalCustomAttributePostModel(); // GlobalCustomAttributePostModel |  (optional) 
+            var apiV2CustomAttributesGlobalPostRequest = new ApiV2CustomAttributesGlobalPostRequest(); // ApiV2CustomAttributesGlobalPostRequest |  (optional) 
 
             try
             {
                 // Create global attribute
-                CustomAttributeModel result = apiInstance.ApiV2CustomAttributesGlobalPost(globalCustomAttributePostModel);
+                CustomAttributeModel result = apiInstance.ApiV2CustomAttributesGlobalPost(apiV2CustomAttributesGlobalPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -264,7 +264,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create global attribute
-    ApiResponse<CustomAttributeModel> response = apiInstance.ApiV2CustomAttributesGlobalPostWithHttpInfo(globalCustomAttributePostModel);
+    ApiResponse<CustomAttributeModel> response = apiInstance.ApiV2CustomAttributesGlobalPostWithHttpInfo(apiV2CustomAttributesGlobalPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -281,7 +281,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **globalCustomAttributePostModel** | [**GlobalCustomAttributePostModel**](GlobalCustomAttributePostModel.md) |  | [optional]  |
+| **apiV2CustomAttributesGlobalPostRequest** | [**ApiV2CustomAttributesGlobalPostRequest**](ApiV2CustomAttributesGlobalPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -300,12 +300,12 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | System administrator role is required |  -  |
 | **201** | Created |  -  |
+| **403** | System administrator role is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2customattributesidget"></a>
+<a id="apiv2customattributesidget"></a>
 # **ApiV2CustomAttributesIdGet**
 > CustomAttributeModel ApiV2CustomAttributesIdGet (Guid id)
 
@@ -403,9 +403,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2customattributessearchpost"></a>
+<a id="apiv2customattributessearchpost"></a>
 # **ApiV2CustomAttributesSearchPost**
-> List&lt;CustomAttributeModel&gt; ApiV2CustomAttributesSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, CustomAttributeSearchQueryModel customAttributeSearchQueryModel = null)
+> List&lt;CustomAttributeModel&gt; ApiV2CustomAttributesSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2CustomAttributesSearchPostRequest apiV2CustomAttributesSearchPostRequest = null)
 
 Search for attributes
 
@@ -440,12 +440,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var customAttributeSearchQueryModel = new CustomAttributeSearchQueryModel(); // CustomAttributeSearchQueryModel |  (optional) 
+            var apiV2CustomAttributesSearchPostRequest = new ApiV2CustomAttributesSearchPostRequest(); // ApiV2CustomAttributesSearchPostRequest |  (optional) 
 
             try
             {
                 // Search for attributes
-                List<CustomAttributeModel> result = apiInstance.ApiV2CustomAttributesSearchPost(skip, take, orderBy, searchField, searchValue, customAttributeSearchQueryModel);
+                List<CustomAttributeModel> result = apiInstance.ApiV2CustomAttributesSearchPost(skip, take, orderBy, searchField, searchValue, apiV2CustomAttributesSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -466,7 +466,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for attributes
-    ApiResponse<List<CustomAttributeModel>> response = apiInstance.ApiV2CustomAttributesSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, customAttributeSearchQueryModel);
+    ApiResponse<List<CustomAttributeModel>> response = apiInstance.ApiV2CustomAttributesSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2CustomAttributesSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -488,7 +488,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **customAttributeSearchQueryModel** | [**CustomAttributeSearchQueryModel**](CustomAttributeSearchQueryModel.md) |  | [optional]  |
+| **apiV2CustomAttributesSearchPostRequest** | [**ApiV2CustomAttributesSearchPostRequest**](ApiV2CustomAttributesSearchPostRequest.md) |  | [optional]  |
 
 ### Return type
 

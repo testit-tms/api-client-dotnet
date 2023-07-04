@@ -46,12 +46,14 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets PassedAverageDuration
         /// </summary>
+        /// <example>2.5555</example>
         [DataMember(Name = "passedAverageDuration", EmitDefaultValue = false)]
         public double PassedAverageDuration { get; set; }
 
         /// <summary>
         /// Gets or Sets FailedAverageDuration
         /// </summary>
+        /// <example>2.5555</example>
         [DataMember(Name = "failedAverageDuration", EmitDefaultValue = false)]
         public double FailedAverageDuration { get; set; }
 
@@ -130,7 +132,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

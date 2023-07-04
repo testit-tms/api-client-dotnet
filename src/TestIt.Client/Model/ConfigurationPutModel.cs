@@ -42,15 +42,19 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="id">id (required).</param>
         /// <param name="description">description.</param>
-        /// <param name="isActive">isActive.</param>
-        /// <param name="capabilities">capabilities.</param>
-        /// <param name="parameters">parameters.</param>
+        /// <param name="parameters">parameters (required).</param>
         /// <param name="projectId">This property is used to link configuration with project (required).</param>
         /// <param name="isDefault">isDefault.</param>
         /// <param name="name">name (required).</param>
-        public ConfigurationPutModel(Guid id = default(Guid), string description = default(string), bool isActive = default(bool), Dictionary<string, string> capabilities = default(Dictionary<string, string>), Dictionary<string, string> parameters = default(Dictionary<string, string>), Guid projectId = default(Guid), bool isDefault = default(bool), string name = default(string))
+        public ConfigurationPutModel(Guid id = default(Guid), string description = default(string), Dictionary<string, string> parameters = default(Dictionary<string, string>), Guid projectId = default(Guid), bool isDefault = default(bool), string name = default(string))
         {
             this.Id = id;
+            // to ensure "parameters" is required (not null)
+            if (parameters == null)
+            {
+                throw new ArgumentNullException("parameters is a required property for ConfigurationPutModel and cannot be null");
+            }
+            this.Parameters = parameters;
             this.ProjectId = projectId;
             // to ensure "name" is required (not null)
             if (name == null)
@@ -59,41 +63,27 @@ namespace TestIt.Client.Model
             }
             this.Name = name;
             this.Description = description;
-            this.IsActive = isActive;
-            this.Capabilities = capabilities;
-            this.Parameters = parameters;
             this.IsDefault = isDefault;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
+        /// <example>&quot;Default configuration&quot;</example>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsActive
-        /// </summary>
-        [DataMember(Name = "isActive", EmitDefaultValue = true)]
-        public bool IsActive { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Capabilities
-        /// </summary>
-        [DataMember(Name = "capabilities", EmitDefaultValue = true)]
-        [Obsolete]
-        public Dictionary<string, string> Capabilities { get; set; }
-
-        /// <summary>
         /// Gets or Sets Parameters
         /// </summary>
-        [DataMember(Name = "parameters", EmitDefaultValue = true)]
+        [DataMember(Name = "parameters", IsRequired = true, EmitDefaultValue = true)]
         public Dictionary<string, string> Parameters { get; set; }
 
         /// <summary>
@@ -106,12 +96,14 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets IsDefault
         /// </summary>
+        /// <example>true</example>
         [DataMember(Name = "isDefault", EmitDefaultValue = true)]
         public bool IsDefault { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
+        /// <example>&quot;Default&quot;</example>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -125,8 +117,6 @@ namespace TestIt.Client.Model
             sb.Append("class ConfigurationPutModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  IsActive: ").Append(IsActive).Append("\n");
-            sb.Append("  Capabilities: ").Append(Capabilities).Append("\n");
             sb.Append("  Parameters: ").Append(Parameters).Append("\n");
             sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
             sb.Append("  IsDefault: ").Append(IsDefault).Append("\n");
@@ -177,16 +167,6 @@ namespace TestIt.Client.Model
                     this.Description.Equals(input.Description))
                 ) && 
                 (
-                    this.IsActive == input.IsActive ||
-                    this.IsActive.Equals(input.IsActive)
-                ) && 
-                (
-                    this.Capabilities == input.Capabilities ||
-                    this.Capabilities != null &&
-                    input.Capabilities != null &&
-                    this.Capabilities.SequenceEqual(input.Capabilities)
-                ) && 
-                (
                     this.Parameters == input.Parameters ||
                     this.Parameters != null &&
                     input.Parameters != null &&
@@ -225,11 +205,6 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.IsActive.GetHashCode();
-                if (this.Capabilities != null)
-                {
-                    hashCode = (hashCode * 59) + this.Capabilities.GetHashCode();
-                }
                 if (this.Parameters != null)
                 {
                     hashCode = (hashCode * 59) + this.Parameters.GetHashCode();
@@ -252,7 +227,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) minLength
             if (this.Name != null && this.Name.Length < 1)

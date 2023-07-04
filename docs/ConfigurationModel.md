@@ -5,8 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | **string** |  | [optional] 
-**IsActive** | **bool** |  | [optional] 
-**Capabilities** | **Dictionary&lt;string, string&gt;** |  | [optional] 
 **Parameters** | **Dictionary&lt;string, string&gt;** |  | [optional] 
 **ProjectId** | **Guid** | This property is used to link configuration with project | [optional] 
 **IsDefault** | **bool** |  | [optional] 

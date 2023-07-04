@@ -65,14 +65,14 @@ namespace TestIt.Client.Model
         /// Name of the custom attribute template
         /// </summary>
         /// <value>Name of the custom attribute template</value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Attributes of the template
         /// </summary>
         /// <value>Attributes of the template</value>
-        [DataMember(Name = "customAttributeModels", EmitDefaultValue = true)]
+        [DataMember(Name = "customAttributeModels", EmitDefaultValue = false)]
         public List<CustomAttributeModel> CustomAttributeModels { get; set; }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

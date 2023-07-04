@@ -7,7 +7,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2TagsGet**](TagsApi.md#apiv2tagsget) | **GET** /api/v2/tags | Get all Tags |
 | [**ApiV2TagsTestPlansTagsGet**](TagsApi.md#apiv2tagstestplanstagsget) | **GET** /api/v2/tags/testPlansTags | Get all Tags that are used in TestPlans |
 
-<a name="apiv2tagsget"></a>
+<a id="apiv2tagsget"></a>
 # **ApiV2TagsGet**
 > List&lt;TagShortModel&gt; ApiV2TagsGet ()
 
@@ -103,7 +103,7 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2tagstestplanstagsget"></a>
+<a id="apiv2tagstestplanstagsget"></a>
 # **ApiV2TagsTestPlansTagsGet**
 > List&lt;TagShortModel&gt; ApiV2TagsTestPlansTagsGet (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -207,9 +207,9 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
 | **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 | **400** | &lt;br&gt;orderByStatement must have one &#39;.&#39; and no &#39;,&#39; symbols  &lt;br&gt;orderByStatement has invalid length  &lt;br&gt;orderByStatement must have uuid as attribute key  &lt;br&gt;Search field not found |  -  |
+| **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
