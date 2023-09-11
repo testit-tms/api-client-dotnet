@@ -132,6 +132,7 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>List&lt;WorkItemShortModel&gt;</returns>
+        [Obsolete]
         List<WorkItemShortModel> GetWorkItemsBySectionId(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
 
         /// <summary>
@@ -151,6 +152,7 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>ApiResponse of List&lt;WorkItemShortModel&gt;</returns>
+        [Obsolete]
         ApiResponse<List<WorkItemShortModel>> GetWorkItemsBySectionIdWithHttpInfo(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
         /// <summary>
         /// Move section with all work items into another section
@@ -335,6 +337,7 @@ namespace TestIt.Client.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WorkItemShortModel&gt;</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<List<WorkItemShortModel>> GetWorkItemsBySectionIdAsync(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -355,6 +358,7 @@ namespace TestIt.Client.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<List<WorkItemShortModel>>> GetWorkItemsBySectionIdWithHttpInfoAsync(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Move section with all work items into another section
@@ -1138,6 +1142,7 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>List&lt;WorkItemShortModel&gt;</returns>
+        [Obsolete]
         public List<WorkItemShortModel> GetWorkItemsBySectionId(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
             TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = GetWorkItemsBySectionIdWithHttpInfo(id, isDeleted, tagNames, includeIterations, skip, take, orderBy, searchField, searchValue);
@@ -1158,6 +1163,7 @@ namespace TestIt.Client.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>ApiResponse of List&lt;WorkItemShortModel&gt;</returns>
+        [Obsolete]
         public TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>> GetWorkItemsBySectionIdWithHttpInfo(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1243,6 +1249,7 @@ namespace TestIt.Client.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WorkItemShortModel&gt;</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<List<WorkItemShortModel>> GetWorkItemsBySectionIdAsync(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = await GetWorkItemsBySectionIdWithHttpInfoAsync(id, isDeleted, tagNames, includeIterations, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
@@ -1264,6 +1271,7 @@ namespace TestIt.Client.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>>> GetWorkItemsBySectionIdWithHttpInfoAsync(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 

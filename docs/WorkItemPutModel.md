@@ -8,14 +8,14 @@ Name | Type | Description | Notes
 **Iterations** | [**List&lt;IterationPutModel&gt;**](IterationPutModel.md) |  | [optional] 
 **AutoTests** | [**List&lt;AutoTestIdModel&gt;**](AutoTestIdModel.md) |  | [optional] 
 **Id** | **Guid** |  | 
-**SectionId** | **Guid** |  | [optional] 
+**SectionId** | **Guid** |  | 
 **Description** | **string** |  | [optional] 
 **State** | **WorkItemStates** |  | 
 **Priority** | **WorkItemPriorityModel** |  | 
 **Steps** | [**List&lt;StepPutModel&gt;**](StepPutModel.md) |  | 
 **PreconditionSteps** | [**List&lt;StepPutModel&gt;**](StepPutModel.md) |  | 
 **PostconditionSteps** | [**List&lt;StepPutModel&gt;**](StepPutModel.md) |  | 
-**Duration** | **int** |  | [optional] 
+**Duration** | **int** |  | 
 **Attributes** | **Dictionary&lt;string, Object&gt;** |  | 
 **Tags** | [**List&lt;TagShortModel&gt;**](TagShortModel.md) |  | 
 **Links** | [**List&lt;LinkPutModel&gt;**](LinkPutModel.md) |  | 

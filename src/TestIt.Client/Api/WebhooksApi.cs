@@ -152,8 +152,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="eventType">Webhook event type (optional)</param>
+        /// <param name="variablesType"> (optional)</param>
         /// <returns>List&lt;string&gt;</returns>
-        List<string> ApiV2WebhooksSpecialVariablesGet(WebHookEventType? eventType = default(WebHookEventType?));
+        List<string> ApiV2WebhooksSpecialVariablesGet(WebHookEventType? eventType = default(WebHookEventType?), WebhookVariablesType? variablesType = default(WebhookVariablesType?));
 
         /// <summary>
         /// Get special variables for webhook event type
@@ -163,8 +164,9 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="eventType">Webhook event type (optional)</param>
+        /// <param name="variablesType"> (optional)</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        ApiResponse<List<string>> ApiV2WebhooksSpecialVariablesGetWithHttpInfo(WebHookEventType? eventType = default(WebHookEventType?));
+        ApiResponse<List<string>> ApiV2WebhooksSpecialVariablesGetWithHttpInfo(WebHookEventType? eventType = default(WebHookEventType?), WebhookVariablesType? variablesType = default(WebhookVariablesType?));
         /// <summary>
         /// Test webhook&#39;s url
         /// </summary>
@@ -350,9 +352,10 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="eventType">Webhook event type (optional)</param>
+        /// <param name="variablesType"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        System.Threading.Tasks.Task<List<string>> ApiV2WebhooksSpecialVariablesGetAsync(WebHookEventType? eventType = default(WebHookEventType?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<string>> ApiV2WebhooksSpecialVariablesGetAsync(WebHookEventType? eventType = default(WebHookEventType?), WebhookVariablesType? variablesType = default(WebhookVariablesType?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get special variables for webhook event type
@@ -362,9 +365,10 @@ namespace TestIt.Client.Api
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="eventType">Webhook event type (optional)</param>
+        /// <param name="variablesType"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<string>>> ApiV2WebhooksSpecialVariablesGetWithHttpInfoAsync(WebHookEventType? eventType = default(WebHookEventType?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<string>>> ApiV2WebhooksSpecialVariablesGetWithHttpInfoAsync(WebHookEventType? eventType = default(WebHookEventType?), WebhookVariablesType? variablesType = default(WebhookVariablesType?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Test webhook&#39;s url
         /// </summary>
@@ -1384,10 +1388,11 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="eventType">Webhook event type (optional)</param>
+        /// <param name="variablesType"> (optional)</param>
         /// <returns>List&lt;string&gt;</returns>
-        public List<string> ApiV2WebhooksSpecialVariablesGet(WebHookEventType? eventType = default(WebHookEventType?))
+        public List<string> ApiV2WebhooksSpecialVariablesGet(WebHookEventType? eventType = default(WebHookEventType?), WebhookVariablesType? variablesType = default(WebhookVariablesType?))
         {
-            TestIt.Client.Client.ApiResponse<List<string>> localVarResponse = ApiV2WebhooksSpecialVariablesGetWithHttpInfo(eventType);
+            TestIt.Client.Client.ApiResponse<List<string>> localVarResponse = ApiV2WebhooksSpecialVariablesGetWithHttpInfo(eventType, variablesType);
             return localVarResponse.Data;
         }
 
@@ -1396,8 +1401,9 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="eventType">Webhook event type (optional)</param>
+        /// <param name="variablesType"> (optional)</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        public TestIt.Client.Client.ApiResponse<List<string>> ApiV2WebhooksSpecialVariablesGetWithHttpInfo(WebHookEventType? eventType = default(WebHookEventType?))
+        public TestIt.Client.Client.ApiResponse<List<string>> ApiV2WebhooksSpecialVariablesGetWithHttpInfo(WebHookEventType? eventType = default(WebHookEventType?), WebhookVariablesType? variablesType = default(WebhookVariablesType?))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -1418,6 +1424,10 @@ namespace TestIt.Client.Api
             if (eventType != null)
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "eventType", eventType));
+            }
+            if (variablesType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "variablesType", variablesType));
             }
 
             // authentication (Bearer or PrivateToken) required
@@ -1443,11 +1453,12 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="eventType">Webhook event type (optional)</param>
+        /// <param name="variablesType"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        public async System.Threading.Tasks.Task<List<string>> ApiV2WebhooksSpecialVariablesGetAsync(WebHookEventType? eventType = default(WebHookEventType?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<string>> ApiV2WebhooksSpecialVariablesGetAsync(WebHookEventType? eventType = default(WebHookEventType?), WebhookVariablesType? variablesType = default(WebhookVariablesType?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<string>> localVarResponse = await ApiV2WebhooksSpecialVariablesGetWithHttpInfoAsync(eventType, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<string>> localVarResponse = await ApiV2WebhooksSpecialVariablesGetWithHttpInfoAsync(eventType, variablesType, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1456,9 +1467,10 @@ namespace TestIt.Client.Api
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="eventType">Webhook event type (optional)</param>
+        /// <param name="variablesType"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<string>>> ApiV2WebhooksSpecialVariablesGetWithHttpInfoAsync(WebHookEventType? eventType = default(WebHookEventType?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<string>>> ApiV2WebhooksSpecialVariablesGetWithHttpInfoAsync(WebHookEventType? eventType = default(WebHookEventType?), WebhookVariablesType? variablesType = default(WebhookVariablesType?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -1481,6 +1493,10 @@ namespace TestIt.Client.Api
             if (eventType != null)
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "eventType", eventType));
+            }
+            if (variablesType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "variablesType", variablesType));
             }
 
             // authentication (Bearer or PrivateToken) required

@@ -47,7 +47,7 @@ namespace TestIt.Client.Model
         /// Initializes a new instance of the <see cref="TestSuiteV2TreeModel" /> class.
         /// </summary>
         /// <param name="children">nested enumeration of children is allowed.</param>
-        /// <param name="id">Unique ID of the test suite.</param>
+        /// <param name="id">Unique ID of the test suite (required).</param>
         /// <param name="refreshDate">Date of the last refresh of the test suite.</param>
         /// <param name="parentId">Unique ID of the parent test suite in hierarchy.</param>
         /// <param name="testPlanId">Unique ID of test plan to which the test suite belongs (required).</param>
@@ -57,6 +57,7 @@ namespace TestIt.Client.Model
         /// <param name="autoRefresh">Indicates if scheduled auto refresh is enabled for the test suite.</param>
         public TestSuiteV2TreeModel(List<TestSuiteV2TreeModel> children = default(List<TestSuiteV2TreeModel>), Guid id = default(Guid), DateTime? refreshDate = default(DateTime?), Guid? parentId = default(Guid?), Guid testPlanId = default(Guid), string name = default(string), TestSuiteType? type = default(TestSuiteType?), bool? saveStructure = default(bool?), bool? autoRefresh = default(bool?))
         {
+            this.Id = id;
             this.TestPlanId = testPlanId;
             // to ensure "name" is required (not null)
             if (name == null)
@@ -65,7 +66,6 @@ namespace TestIt.Client.Model
             }
             this.Name = name;
             this.Children = children;
-            this.Id = id;
             this.RefreshDate = refreshDate;
             this.ParentId = parentId;
             this.Type = type;
@@ -85,7 +85,7 @@ namespace TestIt.Client.Model
         /// Unique ID of the test suite
         /// </summary>
         /// <value>Unique ID of the test suite</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>

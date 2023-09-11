@@ -35,9 +35,14 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestResultV2ShortModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="configurationId">configurationId.</param>
-        /// <param name="workItemVersionId">workItemVersionId.</param>
+        [JsonConstructorAttribute]
+        protected TestResultV2ShortModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestResultV2ShortModel" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
+        /// <param name="configurationId">configurationId (required).</param>
+        /// <param name="workItemVersionId">workItemVersionId (required).</param>
         /// <param name="autoTestId">autoTestId.</param>
         /// <param name="message">message.</param>
         /// <param name="traces">traces.</param>
@@ -47,7 +52,7 @@ namespace TestIt.Client.Model
         /// <param name="stoppedByUserId">stoppedByUserId.</param>
         /// <param name="testPointId">testPointId.</param>
         /// <param name="testPoint">testPoint.</param>
-        /// <param name="testRunId">testRunId.</param>
+        /// <param name="testRunId">testRunId (required).</param>
         /// <param name="outcome">Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped.</param>
         /// <param name="comment">comment.</param>
         /// <param name="links">links.</param>
@@ -59,6 +64,7 @@ namespace TestIt.Client.Model
             this.Id = id;
             this.ConfigurationId = configurationId;
             this.WorkItemVersionId = workItemVersionId;
+            this.TestRunId = testRunId;
             this.AutoTestId = autoTestId;
             this.Message = message;
             this.Traces = traces;
@@ -68,7 +74,6 @@ namespace TestIt.Client.Model
             this.StoppedByUserId = stoppedByUserId;
             this.TestPointId = testPointId;
             this.TestPoint = testPoint;
-            this.TestRunId = testRunId;
             this.Outcome = outcome;
             this.Comment = comment;
             this.Links = links;
@@ -80,35 +85,35 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets ConfigurationId
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "configurationId", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "configurationId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ConfigurationId { get; set; }
 
         /// <summary>
         /// Gets or Sets WorkItemVersionId
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "workItemVersionId", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "workItemVersionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid WorkItemVersionId { get; set; }
 
         /// <summary>
         /// Gets or Sets AutoTestId
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "autoTestId", EmitDefaultValue = true)]
         public Guid? AutoTestId { get; set; }
 
         /// <summary>
         /// Gets or Sets Message
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "message", EmitDefaultValue = true)]
         public string Message { get; set; }
 
@@ -122,35 +127,35 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets StartedOn
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "startedOn", EmitDefaultValue = true)]
         public DateTime? StartedOn { get; set; }
 
         /// <summary>
         /// Gets or Sets CompletedOn
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "completedOn", EmitDefaultValue = true)]
         public DateTime? CompletedOn { get; set; }
 
         /// <summary>
         /// Gets or Sets RunByUserId
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "runByUserId", EmitDefaultValue = true)]
         public Guid? RunByUserId { get; set; }
 
         /// <summary>
         /// Gets or Sets StoppedByUserId
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "stoppedByUserId", EmitDefaultValue = true)]
         public Guid? StoppedByUserId { get; set; }
 
         /// <summary>
         /// Gets or Sets TestPointId
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "testPointId", EmitDefaultValue = true)]
         public Guid? TestPointId { get; set; }
 
@@ -163,8 +168,8 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets TestRunId
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "testRunId", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "testRunId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestRunId { get; set; }
 
         /// <summary>
@@ -172,7 +177,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <value>Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped</value>
         /// <example>&quot;Passed&quot;</example>
-        [DataMember(Name = "outcome", EmitDefaultValue = false)]
+        [DataMember(Name = "outcome", EmitDefaultValue = true)]
         public string Outcome { get; set; }
 
         /// <summary>

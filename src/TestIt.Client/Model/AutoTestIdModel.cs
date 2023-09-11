@@ -35,7 +35,12 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestIdModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        [JsonConstructorAttribute]
+        protected AutoTestIdModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AutoTestIdModel" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
         public AutoTestIdModel(Guid id = default(Guid))
         {
             this.Id = id;
@@ -44,7 +49,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>

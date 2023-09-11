@@ -40,30 +40,30 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="LabelShortModel" /> class.
         /// </summary>
-        /// <param name="globalId">globalId.</param>
-        /// <param name="name">Label name. (required).</param>
+        /// <param name="globalId">Global ID of the label (required).</param>
+        /// <param name="name">Name of the label (required).</param>
         public LabelShortModel(long globalId = default(long), string name = default(string))
         {
+            this.GlobalId = globalId;
             // to ensure "name" is required (not null)
             if (name == null)
             {
                 throw new ArgumentNullException("name is a required property for LabelShortModel and cannot be null");
             }
             this.Name = name;
-            this.GlobalId = globalId;
         }
 
         /// <summary>
-        /// Gets or Sets GlobalId
+        /// Global ID of the label
         /// </summary>
-        /// <example>100</example>
-        [DataMember(Name = "globalId", EmitDefaultValue = false)]
+        /// <value>Global ID of the label</value>
+        [DataMember(Name = "globalId", IsRequired = true, EmitDefaultValue = true)]
         public long GlobalId { get; set; }
 
         /// <summary>
-        /// Label name.
+        /// Name of the label
         /// </summary>
-        /// <value>Label name.</value>
+        /// <value>Name of the label</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 

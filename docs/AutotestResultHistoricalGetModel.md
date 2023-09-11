@@ -4,16 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | [optional] 
-**CreatedDate** | **DateTime** |  | [optional] 
-**CreatedById** | **Guid** |  | [optional] 
-**TestRunId** | **Guid** |  | [optional] 
+**Id** | **Guid** |  | 
+**CreatedDate** | **DateTime** |  | 
+**CreatedById** | **Guid** |  | 
+**CreatedByName** | **string** |  | [optional] 
+**TestRunId** | **Guid** |  | 
 **TestRunName** | **string** |  | [optional] 
-**ConfigurationId** | **Guid** |  | [optional] 
+**ConfigurationId** | **Guid** |  | 
+**ConfigurationName** | **string** |  | [optional] 
 **Outcome** | **AutotestResultOutcome** |  | 
 **LaunchSource** | **string** |  | [optional] 
-**ModifiedDate** | **DateTime?** |  | [optional] [readonly] 
-**ModifiedById** | **Guid?** |  | [optional] [readonly] 
+**ModifiedDate** | **DateTime?** |  | [optional] 
+**ModifiedById** | **Guid?** |  | [optional] 
 **TestPlanId** | **Guid?** |  | [optional] 
 **TestPlanGlobalId** | **long?** |  | [optional] 
 **TestPlanName** | **string** |  | [optional] 

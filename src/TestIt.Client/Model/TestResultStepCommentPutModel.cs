@@ -40,15 +40,15 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestResultStepCommentPutModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        /// <param name="id">id (required).</param>
         /// <param name="text">text.</param>
         /// <param name="stepId">stepId (required).</param>
         /// <param name="parentStepId">parentStepId.</param>
         /// <param name="attachments">attachments.</param>
         public TestResultStepCommentPutModel(Guid id = default(Guid), string text = default(string), Guid stepId = default(Guid), Guid? parentStepId = default(Guid?), List<AttachmentPutModel> attachments = default(List<AttachmentPutModel>))
         {
-            this.StepId = stepId;
             this.Id = id;
+            this.StepId = stepId;
             this.Text = text;
             this.ParentStepId = parentStepId;
             this.Attachments = attachments;
@@ -57,14 +57,14 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Text
         /// </summary>
-        [DataMember(Name = "text", EmitDefaultValue = false)]
+        [DataMember(Name = "text", EmitDefaultValue = true)]
         public string Text { get; set; }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Attachments
         /// </summary>
-        [DataMember(Name = "attachments", EmitDefaultValue = false)]
+        [DataMember(Name = "attachments", EmitDefaultValue = true)]
         public List<AttachmentPutModel> Attachments { get; set; }
 
         /// <summary>

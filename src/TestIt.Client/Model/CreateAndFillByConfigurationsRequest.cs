@@ -46,7 +46,9 @@ namespace TestIt.Client.Model
         /// <param name="name">Specifies the name of the test run..</param>
         /// <param name="description">Specifies the test run description..</param>
         /// <param name="launchSource">Specifies the test run launch source..</param>
-        public CreateAndFillByConfigurationsRequest(List<TestPointSelector> testPointSelectors = default(List<TestPointSelector>), Guid projectId = default(Guid), Guid testPlanId = default(Guid), string name = default(string), string description = default(string), string launchSource = default(string))
+        /// <param name="attachments">Collection of attachment ids to relate to the test run.</param>
+        /// <param name="links">Collection of links to relate to the test run.</param>
+        public CreateAndFillByConfigurationsRequest(List<TestPointSelector> testPointSelectors = default(List<TestPointSelector>), Guid projectId = default(Guid), Guid testPlanId = default(Guid), string name = default(string), string description = default(string), string launchSource = default(string), List<AttachmentPutModel> attachments = default(List<AttachmentPutModel>), List<LinkPostModel> links = default(List<LinkPostModel>))
         {
             // to ensure "testPointSelectors" is required (not null)
             if (testPointSelectors == null)
@@ -59,6 +61,8 @@ namespace TestIt.Client.Model
             this.Name = name;
             this.Description = description;
             this.LaunchSource = launchSource;
+            this.Attachments = attachments;
+            this.Links = links;
         }
 
         /// <summary>
@@ -104,6 +108,20 @@ namespace TestIt.Client.Model
         public string LaunchSource { get; set; }
 
         /// <summary>
+        /// Collection of attachment ids to relate to the test run
+        /// </summary>
+        /// <value>Collection of attachment ids to relate to the test run</value>
+        [DataMember(Name = "attachments", EmitDefaultValue = true)]
+        public List<AttachmentPutModel> Attachments { get; set; }
+
+        /// <summary>
+        /// Collection of links to relate to the test run
+        /// </summary>
+        /// <value>Collection of links to relate to the test run</value>
+        [DataMember(Name = "links", EmitDefaultValue = true)]
+        public List<LinkPostModel> Links { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -117,6 +135,8 @@ namespace TestIt.Client.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  LaunchSource: ").Append(LaunchSource).Append("\n");
+            sb.Append("  Attachments: ").Append(Attachments).Append("\n");
+            sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -182,6 +202,18 @@ namespace TestIt.Client.Model
                     this.LaunchSource == input.LaunchSource ||
                     (this.LaunchSource != null &&
                     this.LaunchSource.Equals(input.LaunchSource))
+                ) && 
+                (
+                    this.Attachments == input.Attachments ||
+                    this.Attachments != null &&
+                    input.Attachments != null &&
+                    this.Attachments.SequenceEqual(input.Attachments)
+                ) && 
+                (
+                    this.Links == input.Links ||
+                    this.Links != null &&
+                    input.Links != null &&
+                    this.Links.SequenceEqual(input.Links)
                 );
         }
 
@@ -217,6 +249,14 @@ namespace TestIt.Client.Model
                 if (this.LaunchSource != null)
                 {
                     hashCode = (hashCode * 59) + this.LaunchSource.GetHashCode();
+                }
+                if (this.Attachments != null)
+                {
+                    hashCode = (hashCode * 59) + this.Attachments.GetHashCode();
+                }
+                if (this.Links != null)
+                {
+                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
                 }
                 return hashCode;
             }

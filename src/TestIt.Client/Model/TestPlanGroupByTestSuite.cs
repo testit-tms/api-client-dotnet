@@ -35,32 +35,37 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPlanGroupByTestSuite" /> class.
         /// </summary>
-        /// <param name="testSuiteId">testSuiteId.</param>
+        [JsonConstructorAttribute]
+        protected TestPlanGroupByTestSuite() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestPlanGroupByTestSuite" /> class.
+        /// </summary>
+        /// <param name="testSuiteId">testSuiteId (required).</param>
         /// <param name="testSuiteName">testSuiteName.</param>
-        /// <param name="value">value.</param>
+        /// <param name="value">value (required).</param>
         public TestPlanGroupByTestSuite(Guid testSuiteId = default(Guid), string testSuiteName = default(string), long value = default(long))
         {
             this.TestSuiteId = testSuiteId;
-            this.TestSuiteName = testSuiteName;
             this.Value = value;
+            this.TestSuiteName = testSuiteName;
         }
 
         /// <summary>
         /// Gets or Sets TestSuiteId
         /// </summary>
-        [DataMember(Name = "testSuiteId", EmitDefaultValue = false)]
+        [DataMember(Name = "testSuiteId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestSuiteId { get; set; }
 
         /// <summary>
         /// Gets or Sets TestSuiteName
         /// </summary>
-        [DataMember(Name = "testSuiteName", EmitDefaultValue = false)]
+        [DataMember(Name = "testSuiteName", EmitDefaultValue = true)]
         public string TestSuiteName { get; set; }
 
         /// <summary>
         /// Gets or Sets Value
         /// </summary>
-        [DataMember(Name = "value", EmitDefaultValue = false)]
+        [DataMember(Name = "value", IsRequired = true, EmitDefaultValue = true)]
         public long Value { get; set; }
 
         /// <summary>

@@ -35,9 +35,14 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectShortestModel" /> class.
         /// </summary>
-        /// <param name="id">Unique ID of project.</param>
-        /// <param name="isDeleted">Indicates whether the project is deleted.</param>
-        /// <param name="globalId">Global ID of project.</param>
+        [JsonConstructorAttribute]
+        protected ProjectShortestModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectShortestModel" /> class.
+        /// </summary>
+        /// <param name="id">Unique ID of project (required).</param>
+        /// <param name="isDeleted">Indicates whether the project is deleted (required).</param>
+        /// <param name="globalId">Global ID of project (required).</param>
         /// <param name="name">Name of project.</param>
         public ProjectShortestModel(Guid id = default(Guid), bool isDeleted = default(bool), long globalId = default(long), string name = default(string))
         {
@@ -51,28 +56,28 @@ namespace TestIt.Client.Model
         /// Unique ID of project
         /// </summary>
         /// <value>Unique ID of project</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Indicates whether the project is deleted
         /// </summary>
         /// <value>Indicates whether the project is deleted</value>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>
         /// Global ID of project
         /// </summary>
         /// <value>Global ID of project</value>
-        [DataMember(Name = "globalId", EmitDefaultValue = false)]
+        [DataMember(Name = "globalId", IsRequired = true, EmitDefaultValue = true)]
         public long GlobalId { get; set; }
 
         /// <summary>
         /// Name of project
         /// </summary>
         /// <value>Name of project</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>

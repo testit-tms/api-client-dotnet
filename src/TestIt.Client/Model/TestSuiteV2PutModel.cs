@@ -43,7 +43,7 @@ namespace TestIt.Client.Model
         /// <param name="id">id (required).</param>
         /// <param name="parentId">parentId.</param>
         /// <param name="name">name (required).</param>
-        /// <param name="isDeleted">isDeleted.</param>
+        /// <param name="isDeleted">isDeleted (required).</param>
         /// <param name="autoRefresh">autoRefresh.</param>
         public TestSuiteV2PutModel(Guid id = default(Guid), Guid? parentId = default(Guid?), string name = default(string), bool isDeleted = default(bool), bool? autoRefresh = default(bool?))
         {
@@ -54,8 +54,8 @@ namespace TestIt.Client.Model
                 throw new ArgumentNullException("name is a required property for TestSuiteV2PutModel and cannot be null");
             }
             this.Name = name;
-            this.ParentId = parentId;
             this.IsDeleted = isDeleted;
+            this.ParentId = parentId;
             this.AutoRefresh = autoRefresh;
         }
 
@@ -80,7 +80,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets IsDeleted
         /// </summary>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>

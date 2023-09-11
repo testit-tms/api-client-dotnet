@@ -4,20 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | [optional] 
+**Id** | **Guid** |  | 
 **CreatedDate** | **DateTime?** |  | [optional] 
-**IsRead** | **bool** |  | [optional] 
-**EntityId** | **Guid** |  | [optional] 
+**IsRead** | **bool** |  | 
+**EntityId** | **Guid** |  | 
 **NotificationType** | **NotificationTypeModel** |  | 
 **ProjectGlobalId** | **long?** |  | [optional] 
 **ProjectName** | **string** |  | [optional] 
-**TestPlanGlobalId** | **long** |  | [optional] 
+**TestPlanGlobalId** | **long** |  | 
 **TestPlanName** | **string** |  | [optional] 
 **WorkitemGlobalId** | **long?** |  | [optional] 
 **Comment** | **string** |  | [optional] 
 **WorkItemName** | **string** |  | [optional] 
 **AttributeName** | **string** |  | [optional] 
-**CreatedById** | **Guid** |  | [optional] 
+**CreatedById** | **Guid** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

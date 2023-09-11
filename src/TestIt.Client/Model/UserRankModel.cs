@@ -35,12 +35,17 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UserRankModel" /> class.
         /// </summary>
-        /// <param name="score">score.</param>
-        /// <param name="workItemsCreated">workItemsCreated.</param>
-        /// <param name="passedTestPoints">passedTestPoints.</param>
-        /// <param name="failedTestPoints">failedTestPoints.</param>
-        /// <param name="skippedTestPoints">skippedTestPoints.</param>
-        /// <param name="blockedTestPoints">blockedTestPoints.</param>
+        [JsonConstructorAttribute]
+        protected UserRankModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserRankModel" /> class.
+        /// </summary>
+        /// <param name="score">score (required).</param>
+        /// <param name="workItemsCreated">workItemsCreated (required).</param>
+        /// <param name="passedTestPoints">passedTestPoints (required).</param>
+        /// <param name="failedTestPoints">failedTestPoints (required).</param>
+        /// <param name="skippedTestPoints">skippedTestPoints (required).</param>
+        /// <param name="blockedTestPoints">blockedTestPoints (required).</param>
         public UserRankModel(int score = default(int), int workItemsCreated = default(int), int passedTestPoints = default(int), int failedTestPoints = default(int), int skippedTestPoints = default(int), int blockedTestPoints = default(int))
         {
             this.Score = score;
@@ -54,37 +59,37 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Score
         /// </summary>
-        [DataMember(Name = "score", EmitDefaultValue = false)]
+        [DataMember(Name = "score", IsRequired = true, EmitDefaultValue = true)]
         public int Score { get; set; }
 
         /// <summary>
         /// Gets or Sets WorkItemsCreated
         /// </summary>
-        [DataMember(Name = "workItemsCreated", EmitDefaultValue = false)]
+        [DataMember(Name = "workItemsCreated", IsRequired = true, EmitDefaultValue = true)]
         public int WorkItemsCreated { get; set; }
 
         /// <summary>
         /// Gets or Sets PassedTestPoints
         /// </summary>
-        [DataMember(Name = "passedTestPoints", EmitDefaultValue = false)]
+        [DataMember(Name = "passedTestPoints", IsRequired = true, EmitDefaultValue = true)]
         public int PassedTestPoints { get; set; }
 
         /// <summary>
         /// Gets or Sets FailedTestPoints
         /// </summary>
-        [DataMember(Name = "failedTestPoints", EmitDefaultValue = false)]
+        [DataMember(Name = "failedTestPoints", IsRequired = true, EmitDefaultValue = true)]
         public int FailedTestPoints { get; set; }
 
         /// <summary>
         /// Gets or Sets SkippedTestPoints
         /// </summary>
-        [DataMember(Name = "skippedTestPoints", EmitDefaultValue = false)]
+        [DataMember(Name = "skippedTestPoints", IsRequired = true, EmitDefaultValue = true)]
         public int SkippedTestPoints { get; set; }
 
         /// <summary>
         /// Gets or Sets BlockedTestPoints
         /// </summary>
-        [DataMember(Name = "blockedTestPoints", EmitDefaultValue = false)]
+        [DataMember(Name = "blockedTestPoints", IsRequired = true, EmitDefaultValue = true)]
         public int BlockedTestPoints { get; set; }
 
         /// <summary>

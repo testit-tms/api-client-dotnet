@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CreatedDate** | **DateTime** |  | [optional] 
+**CreatedDate** | **DateTime** |  | 
 **ModifiedDate** | **DateTime?** |  | [optional] 
-**CreatedById** | **Guid** |  | [optional] 
+**CreatedById** | **Guid** |  | 
 **ModifiedById** | **Guid?** |  | [optional] 
-**IsDeleted** | **bool** |  | [optional] 
-**ParameterKeyId** | **Guid** |  | [optional] 
-**Id** | **Guid** |  | [optional] 
+**IsDeleted** | **bool** |  | 
+**ParameterKeyId** | **Guid** |  | 
+**Id** | **Guid** |  | 
 **Value** | **string** |  | 
 **Name** | **string** |  | 
 

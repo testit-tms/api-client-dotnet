@@ -52,10 +52,10 @@ namespace TestIt.Client.Model
         /// <param name="completedOn">set when test plan status is completed (status changed to: Completed).</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="createdById">createdById.</param>
+        /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
-        /// <param name="globalId">Used for search Test plan.</param>
-        /// <param name="isDeleted">isDeleted.</param>
+        /// <param name="globalId">Used for search Test plan (required).</param>
+        /// <param name="isDeleted">isDeleted (required).</param>
         /// <param name="lockedDate">lockedDate.</param>
         /// <param name="id">id (required).</param>
         /// <param name="lockedById">lockedById.</param>
@@ -69,9 +69,12 @@ namespace TestIt.Client.Model
         /// <param name="productName">productName.</param>
         /// <param name="hasAutomaticDurationTimer">hasAutomaticDurationTimer.</param>
         /// <param name="attributes">attributes.</param>
-        public TestPlanWithAnalyticModel(TestPlanWithAnalyticModelAnalytic analytic = default(TestPlanWithAnalyticModelAnalytic), TestPlanStatusModel status = default(TestPlanStatusModel), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), bool isDeleted = default(bool), DateTime? lockedDate = default(DateTime?), Guid id = default(Guid), Guid? lockedById = default(Guid?), List<TagShortModel> tags = default(List<TagShortModel>), string name = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string description = default(string), string build = default(string), Guid projectId = default(Guid), string productName = default(string), bool? hasAutomaticDurationTimer = default(bool?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>))
+        public TestPlanWithAnalyticModel(TestPointAnalyticResult analytic = default(TestPointAnalyticResult), TestPlanStatusModel status = default(TestPlanStatusModel), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), bool isDeleted = default(bool), DateTime? lockedDate = default(DateTime?), Guid id = default(Guid), Guid? lockedById = default(Guid?), List<TagShortModel> tags = default(List<TagShortModel>), string name = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string description = default(string), string build = default(string), Guid projectId = default(Guid), string productName = default(string), bool? hasAutomaticDurationTimer = default(bool?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>))
         {
             this.Status = status;
+            this.CreatedById = createdById;
+            this.GlobalId = globalId;
+            this.IsDeleted = isDeleted;
             this.Id = id;
             // to ensure "name" is required (not null)
             if (name == null)
@@ -85,10 +88,7 @@ namespace TestIt.Client.Model
             this.CompletedOn = completedOn;
             this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
-            this.CreatedById = createdById;
             this.ModifiedById = modifiedById;
-            this.GlobalId = globalId;
-            this.IsDeleted = isDeleted;
             this.LockedDate = lockedDate;
             this.LockedById = lockedById;
             this.Tags = tags;
@@ -104,14 +104,14 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Analytic
         /// </summary>
-        [DataMember(Name = "analytic", EmitDefaultValue = false)]
-        public TestPlanWithAnalyticModelAnalytic Analytic { get; set; }
+        [DataMember(Name = "analytic", EmitDefaultValue = true)]
+        public TestPointAnalyticResult Analytic { get; set; }
 
         /// <summary>
         /// Set when test plan is starter (status changed to: In Progress)
         /// </summary>
         /// <value>Set when test plan is starter (status changed to: In Progress)</value>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "startedOn", EmitDefaultValue = true)]
         public DateTime? StartedOn { get; set; }
 
@@ -119,35 +119,35 @@ namespace TestIt.Client.Model
         /// set when test plan status is completed (status changed to: Completed)
         /// </summary>
         /// <value>set when test plan status is completed (status changed to: Completed)</value>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "completedOn", EmitDefaultValue = true)]
         public DateTime? CompletedOn { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
         public DateTime? CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
@@ -156,27 +156,27 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <value>Used for search Test plan</value>
         /// <example>100000</example>
-        [DataMember(Name = "globalId", EmitDefaultValue = false)]
+        [DataMember(Name = "globalId", IsRequired = true, EmitDefaultValue = true)]
         public long GlobalId { get; set; }
 
         /// <summary>
         /// Gets or Sets IsDeleted
         /// </summary>
         /// <example>true</example>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>
         /// Gets or Sets LockedDate
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "lockedDate", EmitDefaultValue = true)]
         public DateTime? LockedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
@@ -203,7 +203,7 @@ namespace TestIt.Client.Model
         /// Used for analytics
         /// </summary>
         /// <value>Used for analytics</value>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "startDate", EmitDefaultValue = true)]
         public DateTime? StartDate { get; set; }
 
@@ -211,7 +211,7 @@ namespace TestIt.Client.Model
         /// Used for analytics
         /// </summary>
         /// <value>Used for analytics</value>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "endDate", EmitDefaultValue = true)]
         public DateTime? EndDate { get; set; }
 
@@ -232,7 +232,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets ProjectId
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
@@ -253,7 +253,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Attributes
         /// </summary>
-        [DataMember(Name = "attributes", EmitDefaultValue = false)]
+        [DataMember(Name = "attributes", EmitDefaultValue = true)]
         public Dictionary<string, Object> Attributes { get; set; }
 
         /// <summary>

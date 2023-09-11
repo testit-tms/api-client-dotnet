@@ -53,10 +53,11 @@ namespace TestIt.Client.Model
         /// <param name="createdDate">createdDate.</param>
         /// <param name="modifiedDate">modifiedDate.</param>
         /// <param name="duration">duration.</param>
+        /// <param name="medianDuration">medianDuration.</param>
         /// <param name="isAutomated">Is result must consist of only manual/automated work items.</param>
         /// <param name="tags">Collection of tags.</param>
         /// <param name="autoTestIds">Collection of identifiers of linked autotests.</param>
-        public WorkItemSelectModelFilter(string nameOrId = default(string), List<Guid> includeIds = default(List<Guid>), List<Guid> excludeIds = default(List<Guid>), string name = default(string), List<Guid> ids = default(List<Guid>), List<long> globalIds = default(List<long>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?), List<Guid> projectIds = default(List<Guid>), List<Guid> sectionIds = default(List<Guid>), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), List<WorkItemStates> states = default(List<WorkItemStates>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<WorkItemEntityTypes> types = default(List<WorkItemEntityTypes>), TestPointFilterModelWorkItemCreatedDate createdDate = default(TestPointFilterModelWorkItemCreatedDate), TestPointFilterModelWorkItemModifiedDate modifiedDate = default(TestPointFilterModelWorkItemModifiedDate), WorkItemFilterModelDuration duration = default(WorkItemFilterModelDuration), bool? isAutomated = default(bool?), List<string> tags = default(List<string>), List<Guid> autoTestIds = default(List<Guid>))
+        public WorkItemSelectModelFilter(string nameOrId = default(string), List<Guid> includeIds = default(List<Guid>), List<Guid> excludeIds = default(List<Guid>), string name = default(string), List<Guid> ids = default(List<Guid>), List<long> globalIds = default(List<long>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?), List<Guid> projectIds = default(List<Guid>), List<Guid> sectionIds = default(List<Guid>), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), List<WorkItemStates> states = default(List<WorkItemStates>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<WorkItemEntityTypes> types = default(List<WorkItemEntityTypes>), TestPointFilterModelWorkItemCreatedDate createdDate = default(TestPointFilterModelWorkItemCreatedDate), TestPointFilterModelWorkItemModifiedDate modifiedDate = default(TestPointFilterModelWorkItemModifiedDate), TestSuiteWorkItemsSearchModelDuration duration = default(TestSuiteWorkItemsSearchModelDuration), TestSuiteWorkItemsSearchModelMedianDuration medianDuration = default(TestSuiteWorkItemsSearchModelMedianDuration), bool? isAutomated = default(bool?), List<string> tags = default(List<string>), List<Guid> autoTestIds = default(List<Guid>))
         {
             this.NameOrId = nameOrId;
             this.IncludeIds = includeIds;
@@ -76,6 +77,7 @@ namespace TestIt.Client.Model
             this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
             this.Duration = duration;
+            this.MedianDuration = medianDuration;
             this.IsAutomated = isAutomated;
             this.Tags = tags;
             this.AutoTestIds = autoTestIds;
@@ -202,7 +204,13 @@ namespace TestIt.Client.Model
         /// Gets or Sets Duration
         /// </summary>
         [DataMember(Name = "duration", EmitDefaultValue = true)]
-        public WorkItemFilterModelDuration Duration { get; set; }
+        public TestSuiteWorkItemsSearchModelDuration Duration { get; set; }
+
+        /// <summary>
+        /// Gets or Sets MedianDuration
+        /// </summary>
+        [DataMember(Name = "medianDuration", EmitDefaultValue = true)]
+        public TestSuiteWorkItemsSearchModelMedianDuration MedianDuration { get; set; }
 
         /// <summary>
         /// Is result must consist of only manual/automated work items
@@ -251,6 +259,7 @@ namespace TestIt.Client.Model
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
             sb.Append("  Duration: ").Append(Duration).Append("\n");
+            sb.Append("  MedianDuration: ").Append(MedianDuration).Append("\n");
             sb.Append("  IsAutomated: ").Append(IsAutomated).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  AutoTestIds: ").Append(AutoTestIds).Append("\n");
@@ -392,6 +401,11 @@ namespace TestIt.Client.Model
                     this.Duration.Equals(input.Duration))
                 ) && 
                 (
+                    this.MedianDuration == input.MedianDuration ||
+                    (this.MedianDuration != null &&
+                    this.MedianDuration.Equals(input.MedianDuration))
+                ) && 
+                (
                     this.IsAutomated == input.IsAutomated ||
                     (this.IsAutomated != null &&
                     this.IsAutomated.Equals(input.IsAutomated))
@@ -490,6 +504,10 @@ namespace TestIt.Client.Model
                 if (this.Duration != null)
                 {
                     hashCode = (hashCode * 59) + this.Duration.GetHashCode();
+                }
+                if (this.MedianDuration != null)
+                {
+                    hashCode = (hashCode * 59) + this.MedianDuration.GetHashCode();
                 }
                 if (this.IsAutomated != null)
                 {

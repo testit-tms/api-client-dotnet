@@ -35,11 +35,16 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestResultsStatisticsGetModelStatuses" /> class.
         /// </summary>
-        /// <param name="inProgress">Number of test results which is running currently.</param>
-        /// <param name="passed">Number of test results which successfully passed.</param>
-        /// <param name="failed">Number of test results which failed with an error.</param>
-        /// <param name="skipped">Number of test results which did not run and were skipped.</param>
-        /// <param name="blocked">Number of test results which cannot be launched.</param>
+        [JsonConstructorAttribute]
+        protected TestResultsStatisticsGetModelStatuses() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestResultsStatisticsGetModelStatuses" /> class.
+        /// </summary>
+        /// <param name="inProgress">Number of test results which is running currently (required).</param>
+        /// <param name="passed">Number of test results which successfully passed (required).</param>
+        /// <param name="failed">Number of test results which failed with an error (required).</param>
+        /// <param name="skipped">Number of test results which did not run and were skipped (required).</param>
+        /// <param name="blocked">Number of test results which cannot be launched (required).</param>
         public TestResultsStatisticsGetModelStatuses(int inProgress = default(int), int passed = default(int), int failed = default(int), int skipped = default(int), int blocked = default(int))
         {
             this.InProgress = inProgress;
@@ -53,35 +58,35 @@ namespace TestIt.Client.Model
         /// Number of test results which is running currently
         /// </summary>
         /// <value>Number of test results which is running currently</value>
-        [DataMember(Name = "inProgress", EmitDefaultValue = false)]
+        [DataMember(Name = "inProgress", IsRequired = true, EmitDefaultValue = true)]
         public int InProgress { get; set; }
 
         /// <summary>
         /// Number of test results which successfully passed
         /// </summary>
         /// <value>Number of test results which successfully passed</value>
-        [DataMember(Name = "passed", EmitDefaultValue = false)]
+        [DataMember(Name = "passed", IsRequired = true, EmitDefaultValue = true)]
         public int Passed { get; set; }
 
         /// <summary>
         /// Number of test results which failed with an error
         /// </summary>
         /// <value>Number of test results which failed with an error</value>
-        [DataMember(Name = "failed", EmitDefaultValue = false)]
+        [DataMember(Name = "failed", IsRequired = true, EmitDefaultValue = true)]
         public int Failed { get; set; }
 
         /// <summary>
         /// Number of test results which did not run and were skipped
         /// </summary>
         /// <value>Number of test results which did not run and were skipped</value>
-        [DataMember(Name = "skipped", EmitDefaultValue = false)]
+        [DataMember(Name = "skipped", IsRequired = true, EmitDefaultValue = true)]
         public int Skipped { get; set; }
 
         /// <summary>
         /// Number of test results which cannot be launched
         /// </summary>
         /// <value>Number of test results which cannot be launched</value>
-        [DataMember(Name = "blocked", EmitDefaultValue = false)]
+        [DataMember(Name = "blocked", IsRequired = true, EmitDefaultValue = true)]
         public int Blocked { get; set; }
 
         /// <summary>

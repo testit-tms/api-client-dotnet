@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | [optional] 
+**Id** | **Guid** |  | 
 **Outcome** | **string** |  | [optional] 
 **Traces** | **string** |  | [optional] 
 **FailureType** | **string** |  | [optional] 

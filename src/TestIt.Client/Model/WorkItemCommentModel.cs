@@ -35,46 +35,51 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemCommentModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        [JsonConstructorAttribute]
+        protected WorkItemCommentModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkItemCommentModel" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
         /// <param name="text">text.</param>
         /// <param name="user">user.</param>
-        /// <param name="createdById">createdById.</param>
+        /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
-        /// <param name="createdDate">createdDate.</param>
+        /// <param name="createdDate">createdDate (required).</param>
         /// <param name="modifiedDate">modifiedDate.</param>
-        public WorkItemCommentModel(Guid id = default(Guid), string text = default(string), WorkItemCommentModelUser user = default(WorkItemCommentModelUser), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?))
+        public WorkItemCommentModel(Guid id = default(Guid), string text = default(string), UserWithRankModel user = default(UserWithRankModel), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?))
         {
             this.Id = id;
+            this.CreatedById = createdById;
+            this.CreatedDate = createdDate;
             this.Text = text;
             this.User = user;
-            this.CreatedById = createdById;
             this.ModifiedById = modifiedById;
-            this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Text
         /// </summary>
-        [DataMember(Name = "text", EmitDefaultValue = false)]
+        [DataMember(Name = "text", EmitDefaultValue = true)]
         public string Text { get; set; }
 
         /// <summary>
         /// Gets or Sets User
         /// </summary>
-        [DataMember(Name = "user", EmitDefaultValue = false)]
-        public WorkItemCommentModelUser User { get; set; }
+        [DataMember(Name = "user", EmitDefaultValue = true)]
+        public UserWithRankModel User { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
@@ -86,7 +91,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+        [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>

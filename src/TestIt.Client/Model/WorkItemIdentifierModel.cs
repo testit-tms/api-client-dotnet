@@ -35,8 +35,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemIdentifierModel" /> class.
         /// </summary>
-        /// <param name="id">Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format.</param>
-        /// <param name="globalId">globalId.</param>
+        [JsonConstructorAttribute]
+        protected WorkItemIdentifierModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkItemIdentifierModel" /> class.
+        /// </summary>
+        /// <param name="id">Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format (required).</param>
+        /// <param name="globalId">globalId (required).</param>
         public WorkItemIdentifierModel(Guid id = default(Guid), long globalId = default(long))
         {
             this.Id = id;
@@ -47,15 +52,15 @@ namespace TestIt.Client.Model
         /// Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format
         /// </summary>
         /// <value>Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format</value>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets GlobalId
         /// </summary>
         /// <example>1000</example>
-        [DataMember(Name = "globalId", EmitDefaultValue = false)]
+        [DataMember(Name = "globalId", IsRequired = true, EmitDefaultValue = true)]
         public long GlobalId { get; set; }
 
         /// <summary>

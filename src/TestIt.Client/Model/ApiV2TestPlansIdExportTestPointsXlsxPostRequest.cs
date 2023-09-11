@@ -35,18 +35,23 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiV2TestPlansIdExportTestPointsXlsxPostRequest" /> class.
         /// </summary>
-        /// <param name="includeName">includeName.</param>
-        /// <param name="includeSection">includeSection.</param>
-        /// <param name="includePriority">includePriority.</param>
-        /// <param name="includeAutomated">includeAutomated.</param>
-        /// <param name="includeStatus">includeStatus.</param>
-        /// <param name="includeDuration">includeDuration.</param>
-        /// <param name="includeCreationDate">includeCreationDate.</param>
-        /// <param name="includeAuthor">includeAuthor.</param>
-        /// <param name="includeModificationDate">includeModificationDate.</param>
-        /// <param name="includeModifiedBy">includeModifiedBy.</param>
-        /// <param name="includeTags">includeTags.</param>
-        /// <param name="includeIterations">includeIterations.</param>
+        [JsonConstructorAttribute]
+        protected ApiV2TestPlansIdExportTestPointsXlsxPostRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiV2TestPlansIdExportTestPointsXlsxPostRequest" /> class.
+        /// </summary>
+        /// <param name="includeName">includeName (required).</param>
+        /// <param name="includeSection">includeSection (required).</param>
+        /// <param name="includePriority">includePriority (required).</param>
+        /// <param name="includeAutomated">includeAutomated (required).</param>
+        /// <param name="includeStatus">includeStatus (required).</param>
+        /// <param name="includeDuration">includeDuration (required).</param>
+        /// <param name="includeCreationDate">includeCreationDate (required).</param>
+        /// <param name="includeAuthor">includeAuthor (required).</param>
+        /// <param name="includeModificationDate">includeModificationDate (required).</param>
+        /// <param name="includeModifiedBy">includeModifiedBy (required).</param>
+        /// <param name="includeTags">includeTags (required).</param>
+        /// <param name="includeIterations">includeIterations (required).</param>
         /// <param name="customAttributesIds">customAttributesIds.</param>
         /// <param name="configurationIds">configurationIds.</param>
         public ApiV2TestPlansIdExportTestPointsXlsxPostRequest(bool includeName = default(bool), bool includeSection = default(bool), bool includePriority = default(bool), bool includeAutomated = default(bool), bool includeStatus = default(bool), bool includeDuration = default(bool), bool includeCreationDate = default(bool), bool includeAuthor = default(bool), bool includeModificationDate = default(bool), bool includeModifiedBy = default(bool), bool includeTags = default(bool), bool includeIterations = default(bool), List<Guid> customAttributesIds = default(List<Guid>), List<Guid> configurationIds = default(List<Guid>))
@@ -70,73 +75,73 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets IncludeName
         /// </summary>
-        [DataMember(Name = "includeName", EmitDefaultValue = true)]
+        [DataMember(Name = "includeName", IsRequired = true, EmitDefaultValue = true)]
         public bool IncludeName { get; set; }
 
         /// <summary>
         /// Gets or Sets IncludeSection
         /// </summary>
-        [DataMember(Name = "includeSection", EmitDefaultValue = true)]
+        [DataMember(Name = "includeSection", IsRequired = true, EmitDefaultValue = true)]
         public bool IncludeSection { get; set; }
 
         /// <summary>
         /// Gets or Sets IncludePriority
         /// </summary>
-        [DataMember(Name = "includePriority", EmitDefaultValue = true)]
+        [DataMember(Name = "includePriority", IsRequired = true, EmitDefaultValue = true)]
         public bool IncludePriority { get; set; }
 
         /// <summary>
         /// Gets or Sets IncludeAutomated
         /// </summary>
-        [DataMember(Name = "includeAutomated", EmitDefaultValue = true)]
+        [DataMember(Name = "includeAutomated", IsRequired = true, EmitDefaultValue = true)]
         public bool IncludeAutomated { get; set; }
 
         /// <summary>
         /// Gets or Sets IncludeStatus
         /// </summary>
-        [DataMember(Name = "includeStatus", EmitDefaultValue = true)]
+        [DataMember(Name = "includeStatus", IsRequired = true, EmitDefaultValue = true)]
         public bool IncludeStatus { get; set; }
 
         /// <summary>
         /// Gets or Sets IncludeDuration
         /// </summary>
-        [DataMember(Name = "includeDuration", EmitDefaultValue = true)]
+        [DataMember(Name = "includeDuration", IsRequired = true, EmitDefaultValue = true)]
         public bool IncludeDuration { get; set; }
 
         /// <summary>
         /// Gets or Sets IncludeCreationDate
         /// </summary>
-        [DataMember(Name = "includeCreationDate", EmitDefaultValue = true)]
+        [DataMember(Name = "includeCreationDate", IsRequired = true, EmitDefaultValue = true)]
         public bool IncludeCreationDate { get; set; }
 
         /// <summary>
         /// Gets or Sets IncludeAuthor
         /// </summary>
-        [DataMember(Name = "includeAuthor", EmitDefaultValue = true)]
+        [DataMember(Name = "includeAuthor", IsRequired = true, EmitDefaultValue = true)]
         public bool IncludeAuthor { get; set; }
 
         /// <summary>
         /// Gets or Sets IncludeModificationDate
         /// </summary>
-        [DataMember(Name = "includeModificationDate", EmitDefaultValue = true)]
+        [DataMember(Name = "includeModificationDate", IsRequired = true, EmitDefaultValue = true)]
         public bool IncludeModificationDate { get; set; }
 
         /// <summary>
         /// Gets or Sets IncludeModifiedBy
         /// </summary>
-        [DataMember(Name = "includeModifiedBy", EmitDefaultValue = true)]
+        [DataMember(Name = "includeModifiedBy", IsRequired = true, EmitDefaultValue = true)]
         public bool IncludeModifiedBy { get; set; }
 
         /// <summary>
         /// Gets or Sets IncludeTags
         /// </summary>
-        [DataMember(Name = "includeTags", EmitDefaultValue = true)]
+        [DataMember(Name = "includeTags", IsRequired = true, EmitDefaultValue = true)]
         public bool IncludeTags { get; set; }
 
         /// <summary>
         /// Gets or Sets IncludeIterations
         /// </summary>
-        [DataMember(Name = "includeIterations", EmitDefaultValue = true)]
+        [DataMember(Name = "includeIterations", IsRequired = true, EmitDefaultValue = true)]
         public bool IncludeIterations { get; set; }
 
         /// <summary>

@@ -35,24 +35,29 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestRunGroupByFailureClassModel" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected TestRunGroupByFailureClassModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestRunGroupByFailureClassModel" /> class.
+        /// </summary>
         /// <param name="failureCategory">failureCategory.</param>
-        /// <param name="value">value.</param>
+        /// <param name="value">value (required).</param>
         public TestRunGroupByFailureClassModel(string failureCategory = default(string), int value = default(int))
         {
-            this.FailureCategory = failureCategory;
             this.Value = value;
+            this.FailureCategory = failureCategory;
         }
 
         /// <summary>
         /// Gets or Sets FailureCategory
         /// </summary>
-        [DataMember(Name = "failureCategory", EmitDefaultValue = false)]
+        [DataMember(Name = "failureCategory", EmitDefaultValue = true)]
         public string FailureCategory { get; set; }
 
         /// <summary>
         /// Gets or Sets Value
         /// </summary>
-        [DataMember(Name = "value", EmitDefaultValue = false)]
+        [DataMember(Name = "value", IsRequired = true, EmitDefaultValue = true)]
         public int Value { get; set; }
 
         /// <summary>

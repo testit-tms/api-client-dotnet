@@ -75,7 +75,7 @@ namespace TestIt.Client.Api
         /// Get change history of WorkItem
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return change history of WorkItem
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return change history of WorkItem
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -91,7 +91,7 @@ namespace TestIt.Client.Api
         /// Get change history of WorkItem
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return change history of WorkItem
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return change history of WorkItem
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -239,7 +239,7 @@ namespace TestIt.Client.Api
         /// Set WorkItem as actual
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System set WorkItem as actual
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System set WorkItem as actual
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -251,7 +251,7 @@ namespace TestIt.Client.Api
         /// Set WorkItem as actual
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System set WorkItem as actual
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System set WorkItem as actual
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -341,7 +341,7 @@ namespace TestIt.Client.Api
         /// <returns>ApiResponse of List&lt;SharedStepReferenceSectionModel&gt;</returns>
         ApiResponse<List<SharedStepReferenceSectionModel>> ApiV2WorkItemsSharedStepIdReferencesSectionsPostWithHttpInfo(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest = default(ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest));
         /// <summary>
-        /// Get SharedStep references in workitems
+        /// Get SharedStep references in work items
         /// </summary>
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets SharedStep identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return SharedStep references
@@ -358,7 +358,7 @@ namespace TestIt.Client.Api
         List<SharedStepReferenceModel> ApiV2WorkItemsSharedStepIdReferencesWorkItemsPost(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest = default(ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest));
 
         /// <summary>
-        /// Get SharedStep references in workitems
+        /// Get SharedStep references in work items
         /// </summary>
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets SharedStep identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return SharedStep references
@@ -400,7 +400,7 @@ namespace TestIt.Client.Api
         /// Create Test Case, Checklist or Shared Step
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates workitem by identifier  &lt;br&gt;System returns workitem model (listed in response parameters)
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates work item by identifier  &lt;br&gt;System returns work item model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWorkItemRequest"> (optional)</param>
@@ -411,7 +411,7 @@ namespace TestIt.Client.Api
         /// Create Test Case, Checklist or Shared Step
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates workitem by identifier  &lt;br&gt;System returns workitem model (listed in response parameters)
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates work item by identifier  &lt;br&gt;System returns work item model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWorkItemRequest"> (optional)</param>
@@ -421,7 +421,7 @@ namespace TestIt.Client.Api
         /// Delete all links AutoTests from WorkItem by Id or GlobalId
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;System search and delete all autotests, related to found workitem  &lt;br&gt;System returns no content response
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;System search and delete all autotests, related to found work item  &lt;br&gt;System returns no content response
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -432,7 +432,7 @@ namespace TestIt.Client.Api
         /// Delete all links AutoTests from WorkItem by Id or GlobalId
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;System search and delete all autotests, related to found workitem  &lt;br&gt;System returns no content response
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;System search and delete all autotests, related to found work item  &lt;br&gt;System returns no content response
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -442,7 +442,7 @@ namespace TestIt.Client.Api
         /// Delete Test Case, Checklist or Shared Step by Id or GlobalId
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System deletes workitem  &lt;br&gt;System returns no content response
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System deletes work item  &lt;br&gt;System returns no content response
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -453,7 +453,7 @@ namespace TestIt.Client.Api
         /// Delete Test Case, Checklist or Shared Step by Id or GlobalId
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System deletes workitem  &lt;br&gt;System returns no content response
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System deletes work item  &lt;br&gt;System returns no content response
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -463,7 +463,7 @@ namespace TestIt.Client.Api
         /// Get all AutoTests linked to WorkItem by Id or GlobalId
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;System search all autotests, related to found workitem  &lt;br&gt;System returns list of found autotests
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;System search all autotests, related to found work item  &lt;br&gt;System returns list of found autotests
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -474,14 +474,14 @@ namespace TestIt.Client.Api
         /// Get all AutoTests linked to WorkItem by Id or GlobalId
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;System search all autotests, related to found workitem  &lt;br&gt;System returns list of found autotests
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;System search all autotests, related to found work item  &lt;br&gt;System returns list of found autotests
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <returns>ApiResponse of List&lt;AutoTestModel&gt;</returns>
         ApiResponse<List<AutoTestModel>> GetAutoTestsForWorkItemWithHttpInfo(string id);
         /// <summary>
-        /// Get iterations by workitem Id or GlobalId
+        /// Get iterations by work item Id or GlobalId
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -491,7 +491,7 @@ namespace TestIt.Client.Api
         List<IterationModel> GetIterations(string id, Guid? versionId = default(Guid?), int? versionNumber = default(int?));
 
         /// <summary>
-        /// Get iterations by workitem Id or GlobalId
+        /// Get iterations by work item Id or GlobalId
         /// </summary>
         /// <remarks>
         /// 
@@ -506,7 +506,7 @@ namespace TestIt.Client.Api
         /// Get Test Case, Checklist or Shared Step by Id or GlobalId
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;[Optional] User sets workitem version identifier  &lt;br&gt;[Optional] User sets workitem version number  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;[Optional] if User sets workitem version identifier, system search workitem version by identifier.  &lt;br&gt;[Optional] if user sets workitem version number, system search workitem version by number  &lt;br&gt;Otherwise, system search last workitem version  &lt;br&gt;System returns workitem 
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;[Optional] User sets work item version identifier  &lt;br&gt;[Optional] User sets work item version number  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;[Optional] if User sets work item version identifier, system search work item version by identifier.  &lt;br&gt;[Optional] if user sets work item version number, system search work item version by number  &lt;br&gt;Otherwise, system search last work item version  &lt;br&gt;System returns work item 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -519,7 +519,7 @@ namespace TestIt.Client.Api
         /// Get Test Case, Checklist or Shared Step by Id or GlobalId
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;[Optional] User sets workitem version identifier  &lt;br&gt;[Optional] User sets workitem version number  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;[Optional] if User sets workitem version identifier, system search workitem version by identifier.  &lt;br&gt;[Optional] if user sets workitem version number, system search workitem version by number  &lt;br&gt;Otherwise, system search last workitem version  &lt;br&gt;System returns workitem 
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;[Optional] User sets work item version identifier  &lt;br&gt;[Optional] User sets work item version number  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;[Optional] if User sets work item version identifier, system search work item version by identifier.  &lt;br&gt;[Optional] if user sets work item version number, system search work item version by number  &lt;br&gt;Otherwise, system search last work item version  &lt;br&gt;System returns work item 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -531,7 +531,7 @@ namespace TestIt.Client.Api
         /// Get WorkItem chronology by Id or GlobalId
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;System search test results of all autotests, related to found workitem  &lt;br&gt;System sort results by CompletedOn ascending, then by CreatedDate ascending  &lt;br&gt;System returns sorted collection of test results
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;System search test results of all autotests, related to found work item  &lt;br&gt;System sort results by CompletedOn ascending, then by CreatedDate ascending  &lt;br&gt;System returns sorted collection of test results
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -542,7 +542,7 @@ namespace TestIt.Client.Api
         /// Get WorkItem chronology by Id or GlobalId
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;System search test results of all autotests, related to found workitem  &lt;br&gt;System sort results by CompletedOn ascending, then by CreatedDate ascending  &lt;br&gt;System returns sorted collection of test results
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;System search test results of all autotests, related to found work item  &lt;br&gt;System sort results by CompletedOn ascending, then by CreatedDate ascending  &lt;br&gt;System returns sorted collection of test results
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -552,7 +552,7 @@ namespace TestIt.Client.Api
         /// Get WorkItem versions
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;[Optional] User sets workitem version identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;                      [Optional] If User set workitem version identifier, System search workitem version by version identifier                      Otherwise, system search all version of workitem                    &lt;br&gt;System returns array of workitem version models (listed in response example)
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;[Optional] User sets work item version identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;                      [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item                    &lt;br&gt;System returns array of work item version models (listed in response example)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -565,7 +565,7 @@ namespace TestIt.Client.Api
         /// Get WorkItem versions
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;[Optional] User sets workitem version identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;                      [Optional] If User set workitem version identifier, System search workitem version by version identifier                      Otherwise, system search all version of workitem                    &lt;br&gt;System returns array of workitem version models (listed in response example)
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;[Optional] User sets work item version identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;                      [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item                    &lt;br&gt;System returns array of work item version models (listed in response example)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -613,7 +613,7 @@ namespace TestIt.Client.Api
         /// Update Test Case, Checklist or Shared Step
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates workitem by identifier  &lt;br&gt;System returns updated workitem model (listed in response parameters)
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates work item by identifier  &lt;br&gt;System returns updated work item model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateWorkItemRequest"> (optional)</param>
@@ -624,7 +624,7 @@ namespace TestIt.Client.Api
         /// Update Test Case, Checklist or Shared Step
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates workitem by identifier  &lt;br&gt;System returns updated workitem model (listed in response parameters)
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates work item by identifier  &lt;br&gt;System returns updated work item model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateWorkItemRequest"> (optional)</param>
@@ -691,7 +691,7 @@ namespace TestIt.Client.Api
         /// Get change history of WorkItem
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return change history of WorkItem
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return change history of WorkItem
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -708,7 +708,7 @@ namespace TestIt.Client.Api
         /// Get change history of WorkItem
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return change history of WorkItem
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return change history of WorkItem
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -867,7 +867,7 @@ namespace TestIt.Client.Api
         /// Set WorkItem as actual
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System set WorkItem as actual
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System set WorkItem as actual
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -880,7 +880,7 @@ namespace TestIt.Client.Api
         /// Set WorkItem as actual
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System set WorkItem as actual
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System set WorkItem as actual
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -980,7 +980,7 @@ namespace TestIt.Client.Api
         /// <returns>Task of ApiResponse (List&lt;SharedStepReferenceSectionModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<SharedStepReferenceSectionModel>>> ApiV2WorkItemsSharedStepIdReferencesSectionsPostWithHttpInfoAsync(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest = default(ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Get SharedStep references in workitems
+        /// Get SharedStep references in work items
         /// </summary>
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets SharedStep identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return SharedStep references
@@ -998,7 +998,7 @@ namespace TestIt.Client.Api
         System.Threading.Tasks.Task<List<SharedStepReferenceModel>> ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostAsync(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest = default(ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Get SharedStep references in workitems
+        /// Get SharedStep references in work items
         /// </summary>
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets SharedStep identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return SharedStep references
@@ -1043,7 +1043,7 @@ namespace TestIt.Client.Api
         /// Create Test Case, Checklist or Shared Step
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates workitem by identifier  &lt;br&gt;System returns workitem model (listed in response parameters)
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates work item by identifier  &lt;br&gt;System returns work item model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWorkItemRequest"> (optional)</param>
@@ -1055,7 +1055,7 @@ namespace TestIt.Client.Api
         /// Create Test Case, Checklist or Shared Step
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates workitem by identifier  &lt;br&gt;System returns workitem model (listed in response parameters)
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates work item by identifier  &lt;br&gt;System returns work item model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWorkItemRequest"> (optional)</param>
@@ -1066,7 +1066,7 @@ namespace TestIt.Client.Api
         /// Delete all links AutoTests from WorkItem by Id or GlobalId
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;System search and delete all autotests, related to found workitem  &lt;br&gt;System returns no content response
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;System search and delete all autotests, related to found work item  &lt;br&gt;System returns no content response
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -1078,7 +1078,7 @@ namespace TestIt.Client.Api
         /// Delete all links AutoTests from WorkItem by Id or GlobalId
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;System search and delete all autotests, related to found workitem  &lt;br&gt;System returns no content response
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;System search and delete all autotests, related to found work item  &lt;br&gt;System returns no content response
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -1089,7 +1089,7 @@ namespace TestIt.Client.Api
         /// Delete Test Case, Checklist or Shared Step by Id or GlobalId
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System deletes workitem  &lt;br&gt;System returns no content response
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System deletes work item  &lt;br&gt;System returns no content response
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -1101,7 +1101,7 @@ namespace TestIt.Client.Api
         /// Delete Test Case, Checklist or Shared Step by Id or GlobalId
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System deletes workitem  &lt;br&gt;System returns no content response
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System deletes work item  &lt;br&gt;System returns no content response
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -1112,7 +1112,7 @@ namespace TestIt.Client.Api
         /// Get all AutoTests linked to WorkItem by Id or GlobalId
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;System search all autotests, related to found workitem  &lt;br&gt;System returns list of found autotests
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;System search all autotests, related to found work item  &lt;br&gt;System returns list of found autotests
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -1124,7 +1124,7 @@ namespace TestIt.Client.Api
         /// Get all AutoTests linked to WorkItem by Id or GlobalId
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;System search all autotests, related to found workitem  &lt;br&gt;System returns list of found autotests
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;System search all autotests, related to found work item  &lt;br&gt;System returns list of found autotests
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -1132,7 +1132,7 @@ namespace TestIt.Client.Api
         /// <returns>Task of ApiResponse (List&lt;AutoTestModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<AutoTestModel>>> GetAutoTestsForWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Get iterations by workitem Id or GlobalId
+        /// Get iterations by work item Id or GlobalId
         /// </summary>
         /// <remarks>
         /// 
@@ -1146,7 +1146,7 @@ namespace TestIt.Client.Api
         System.Threading.Tasks.Task<List<IterationModel>> GetIterationsAsync(string id, Guid? versionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Get iterations by workitem Id or GlobalId
+        /// Get iterations by work item Id or GlobalId
         /// </summary>
         /// <remarks>
         /// 
@@ -1162,7 +1162,7 @@ namespace TestIt.Client.Api
         /// Get Test Case, Checklist or Shared Step by Id or GlobalId
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;[Optional] User sets workitem version identifier  &lt;br&gt;[Optional] User sets workitem version number  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;[Optional] if User sets workitem version identifier, system search workitem version by identifier.  &lt;br&gt;[Optional] if user sets workitem version number, system search workitem version by number  &lt;br&gt;Otherwise, system search last workitem version  &lt;br&gt;System returns workitem 
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;[Optional] User sets work item version identifier  &lt;br&gt;[Optional] User sets work item version number  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;[Optional] if User sets work item version identifier, system search work item version by identifier.  &lt;br&gt;[Optional] if user sets work item version number, system search work item version by number  &lt;br&gt;Otherwise, system search last work item version  &lt;br&gt;System returns work item 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -1176,7 +1176,7 @@ namespace TestIt.Client.Api
         /// Get Test Case, Checklist or Shared Step by Id or GlobalId
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;[Optional] User sets workitem version identifier  &lt;br&gt;[Optional] User sets workitem version number  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;[Optional] if User sets workitem version identifier, system search workitem version by identifier.  &lt;br&gt;[Optional] if user sets workitem version number, system search workitem version by number  &lt;br&gt;Otherwise, system search last workitem version  &lt;br&gt;System returns workitem 
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;[Optional] User sets work item version identifier  &lt;br&gt;[Optional] User sets work item version number  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;[Optional] if User sets work item version identifier, system search work item version by identifier.  &lt;br&gt;[Optional] if user sets work item version number, system search work item version by number  &lt;br&gt;Otherwise, system search last work item version  &lt;br&gt;System returns work item 
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -1189,7 +1189,7 @@ namespace TestIt.Client.Api
         /// Get WorkItem chronology by Id or GlobalId
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;System search test results of all autotests, related to found workitem  &lt;br&gt;System sort results by CompletedOn ascending, then by CreatedDate ascending  &lt;br&gt;System returns sorted collection of test results
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;System search test results of all autotests, related to found work item  &lt;br&gt;System sort results by CompletedOn ascending, then by CreatedDate ascending  &lt;br&gt;System returns sorted collection of test results
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1201,7 +1201,7 @@ namespace TestIt.Client.Api
         /// Get WorkItem chronology by Id or GlobalId
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;System search test results of all autotests, related to found workitem  &lt;br&gt;System sort results by CompletedOn ascending, then by CreatedDate ascending  &lt;br&gt;System returns sorted collection of test results
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;System search test results of all autotests, related to found work item  &lt;br&gt;System sort results by CompletedOn ascending, then by CreatedDate ascending  &lt;br&gt;System returns sorted collection of test results
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1212,7 +1212,7 @@ namespace TestIt.Client.Api
         /// Get WorkItem versions
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;[Optional] User sets workitem version identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;                      [Optional] If User set workitem version identifier, System search workitem version by version identifier                      Otherwise, system search all version of workitem                    &lt;br&gt;System returns array of workitem version models (listed in response example)
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;[Optional] User sets work item version identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;                      [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item                    &lt;br&gt;System returns array of work item version models (listed in response example)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -1226,7 +1226,7 @@ namespace TestIt.Client.Api
         /// Get WorkItem versions
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;[Optional] User sets workitem version identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;                      [Optional] If User set workitem version identifier, System search workitem version by version identifier                      Otherwise, system search all version of workitem                    &lt;br&gt;System returns array of workitem version models (listed in response example)
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;[Optional] User sets work item version identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;                      [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item                    &lt;br&gt;System returns array of work item version models (listed in response example)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -1285,7 +1285,7 @@ namespace TestIt.Client.Api
         /// Update Test Case, Checklist or Shared Step
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates workitem by identifier  &lt;br&gt;System returns updated workitem model (listed in response parameters)
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates work item by identifier  &lt;br&gt;System returns updated work item model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateWorkItemRequest"> (optional)</param>
@@ -1297,7 +1297,7 @@ namespace TestIt.Client.Api
         /// Update Test Case, Checklist or Shared Step
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets workitem properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates workitem by identifier  &lt;br&gt;System returns updated workitem model (listed in response parameters)
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets work item properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates work item by identifier  &lt;br&gt;System returns updated work item model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateWorkItemRequest"> (optional)</param>
@@ -1766,7 +1766,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get change history of WorkItem &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return change history of WorkItem
+        /// Get change history of WorkItem &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return change history of WorkItem
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1783,7 +1783,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get change history of WorkItem &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return change history of WorkItem
+        /// Get change history of WorkItem &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return change history of WorkItem
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1852,7 +1852,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get change history of WorkItem &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return change history of WorkItem
+        /// Get change history of WorkItem &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return change history of WorkItem
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1870,7 +1870,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get change history of WorkItem &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return change history of WorkItem
+        /// Get change history of WorkItem &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return change history of WorkItem
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2692,7 +2692,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Set WorkItem as actual &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System set WorkItem as actual
+        /// Set WorkItem as actual &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System set WorkItem as actual
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2705,7 +2705,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Set WorkItem as actual &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System set WorkItem as actual
+        /// Set WorkItem as actual &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System set WorkItem as actual
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2751,7 +2751,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Set WorkItem as actual &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System set WorkItem as actual
+        /// Set WorkItem as actual &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System set WorkItem as actual
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2765,7 +2765,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Set WorkItem as actual &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System set WorkItem as actual
+        /// Set WorkItem as actual &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System set WorkItem as actual
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -3298,7 +3298,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get SharedStep references in workitems &lt;br&gt;Use case  &lt;br&gt;User sets SharedStep identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return SharedStep references
+        /// Get SharedStep references in work items &lt;br&gt;Use case  &lt;br&gt;User sets SharedStep identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return SharedStep references
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -3316,7 +3316,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get SharedStep references in workitems &lt;br&gt;Use case  &lt;br&gt;User sets SharedStep identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return SharedStep references
+        /// Get SharedStep references in work items &lt;br&gt;Use case  &lt;br&gt;User sets SharedStep identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return SharedStep references
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -3388,7 +3388,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get SharedStep references in workitems &lt;br&gt;Use case  &lt;br&gt;User sets SharedStep identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return SharedStep references
+        /// Get SharedStep references in work items &lt;br&gt;Use case  &lt;br&gt;User sets SharedStep identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return SharedStep references
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -3407,7 +3407,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get SharedStep references in workitems &lt;br&gt;Use case  &lt;br&gt;User sets SharedStep identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return SharedStep references
+        /// Get SharedStep references in work items &lt;br&gt;Use case  &lt;br&gt;User sets SharedStep identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return SharedStep references
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -3604,7 +3604,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Create Test Case, Checklist or Shared Step &lt;br&gt;Use case  &lt;br&gt;User sets workitem properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates workitem by identifier  &lt;br&gt;System returns workitem model (listed in response parameters)
+        /// Create Test Case, Checklist or Shared Step &lt;br&gt;Use case  &lt;br&gt;User sets work item properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates work item by identifier  &lt;br&gt;System returns work item model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWorkItemRequest"> (optional)</param>
@@ -3616,7 +3616,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Create Test Case, Checklist or Shared Step &lt;br&gt;Use case  &lt;br&gt;User sets workitem properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates workitem by identifier  &lt;br&gt;System returns workitem model (listed in response parameters)
+        /// Create Test Case, Checklist or Shared Step &lt;br&gt;Use case  &lt;br&gt;User sets work item properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates work item by identifier  &lt;br&gt;System returns work item model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWorkItemRequest"> (optional)</param>
@@ -3661,7 +3661,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Create Test Case, Checklist or Shared Step &lt;br&gt;Use case  &lt;br&gt;User sets workitem properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates workitem by identifier  &lt;br&gt;System returns workitem model (listed in response parameters)
+        /// Create Test Case, Checklist or Shared Step &lt;br&gt;Use case  &lt;br&gt;User sets work item properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates work item by identifier  &lt;br&gt;System returns work item model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWorkItemRequest"> (optional)</param>
@@ -3674,7 +3674,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Create Test Case, Checklist or Shared Step &lt;br&gt;Use case  &lt;br&gt;User sets workitem properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates workitem by identifier  &lt;br&gt;System returns workitem model (listed in response parameters)
+        /// Create Test Case, Checklist or Shared Step &lt;br&gt;Use case  &lt;br&gt;User sets work item properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates work item by identifier  &lt;br&gt;System returns work item model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWorkItemRequest"> (optional)</param>
@@ -3723,7 +3723,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Delete all links AutoTests from WorkItem by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;System search and delete all autotests, related to found workitem  &lt;br&gt;System returns no content response
+        /// Delete all links AutoTests from WorkItem by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;System search and delete all autotests, related to found work item  &lt;br&gt;System returns no content response
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -3734,7 +3734,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Delete all links AutoTests from WorkItem by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;System search and delete all autotests, related to found workitem  &lt;br&gt;System returns no content response
+        /// Delete all links AutoTests from WorkItem by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;System search and delete all autotests, related to found work item  &lt;br&gt;System returns no content response
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -3782,7 +3782,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Delete all links AutoTests from WorkItem by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;System search and delete all autotests, related to found workitem  &lt;br&gt;System returns no content response
+        /// Delete all links AutoTests from WorkItem by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;System search and delete all autotests, related to found work item  &lt;br&gt;System returns no content response
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -3794,7 +3794,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Delete all links AutoTests from WorkItem by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;System search and delete all autotests, related to found workitem  &lt;br&gt;System returns no content response
+        /// Delete all links AutoTests from WorkItem by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;System search and delete all autotests, related to found work item  &lt;br&gt;System returns no content response
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -3846,7 +3846,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Delete Test Case, Checklist or Shared Step by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System deletes workitem  &lt;br&gt;System returns no content response
+        /// Delete Test Case, Checklist or Shared Step by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System deletes work item  &lt;br&gt;System returns no content response
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -3857,7 +3857,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Delete Test Case, Checklist or Shared Step by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System deletes workitem  &lt;br&gt;System returns no content response
+        /// Delete Test Case, Checklist or Shared Step by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System deletes work item  &lt;br&gt;System returns no content response
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -3905,7 +3905,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Delete Test Case, Checklist or Shared Step by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System deletes workitem  &lt;br&gt;System returns no content response
+        /// Delete Test Case, Checklist or Shared Step by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System deletes work item  &lt;br&gt;System returns no content response
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -3917,7 +3917,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Delete Test Case, Checklist or Shared Step by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System deletes workitem  &lt;br&gt;System returns no content response
+        /// Delete Test Case, Checklist or Shared Step by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System deletes work item  &lt;br&gt;System returns no content response
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -3969,7 +3969,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get all AutoTests linked to WorkItem by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;System search all autotests, related to found workitem  &lt;br&gt;System returns list of found autotests
+        /// Get all AutoTests linked to WorkItem by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;System search all autotests, related to found work item  &lt;br&gt;System returns list of found autotests
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -3981,7 +3981,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get all AutoTests linked to WorkItem by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;System search all autotests, related to found workitem  &lt;br&gt;System returns list of found autotests
+        /// Get all AutoTests linked to WorkItem by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;System search all autotests, related to found work item  &lt;br&gt;System returns list of found autotests
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -4029,7 +4029,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get all AutoTests linked to WorkItem by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;System search all autotests, related to found workitem  &lt;br&gt;System returns list of found autotests
+        /// Get all AutoTests linked to WorkItem by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;System search all autotests, related to found work item  &lt;br&gt;System returns list of found autotests
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -4042,7 +4042,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get all AutoTests linked to WorkItem by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;System search all autotests, related to found workitem  &lt;br&gt;System returns list of found autotests
+        /// Get all AutoTests linked to WorkItem by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;System search all autotests, related to found work item  &lt;br&gt;System returns list of found autotests
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -4094,7 +4094,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get iterations by workitem Id or GlobalId 
+        /// Get iterations by work item Id or GlobalId 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -4108,7 +4108,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get iterations by workitem Id or GlobalId 
+        /// Get iterations by work item Id or GlobalId 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -4166,7 +4166,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get iterations by workitem Id or GlobalId 
+        /// Get iterations by work item Id or GlobalId 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -4181,7 +4181,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get iterations by workitem Id or GlobalId 
+        /// Get iterations by work item Id or GlobalId 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -4243,7 +4243,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get Test Case, Checklist or Shared Step by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;[Optional] User sets workitem version identifier  &lt;br&gt;[Optional] User sets workitem version number  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;[Optional] if User sets workitem version identifier, system search workitem version by identifier.  &lt;br&gt;[Optional] if user sets workitem version number, system search workitem version by number  &lt;br&gt;Otherwise, system search last workitem version  &lt;br&gt;System returns workitem 
+        /// Get Test Case, Checklist or Shared Step by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;[Optional] User sets work item version identifier  &lt;br&gt;[Optional] User sets work item version number  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;[Optional] if User sets work item version identifier, system search work item version by identifier.  &lt;br&gt;[Optional] if user sets work item version number, system search work item version by number  &lt;br&gt;Otherwise, system search last work item version  &lt;br&gt;System returns work item 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -4257,7 +4257,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get Test Case, Checklist or Shared Step by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;[Optional] User sets workitem version identifier  &lt;br&gt;[Optional] User sets workitem version number  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;[Optional] if User sets workitem version identifier, system search workitem version by identifier.  &lt;br&gt;[Optional] if user sets workitem version number, system search workitem version by number  &lt;br&gt;Otherwise, system search last workitem version  &lt;br&gt;System returns workitem 
+        /// Get Test Case, Checklist or Shared Step by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;[Optional] User sets work item version identifier  &lt;br&gt;[Optional] User sets work item version number  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;[Optional] if User sets work item version identifier, system search work item version by identifier.  &lt;br&gt;[Optional] if user sets work item version number, system search work item version by number  &lt;br&gt;Otherwise, system search last work item version  &lt;br&gt;System returns work item 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -4315,7 +4315,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get Test Case, Checklist or Shared Step by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;[Optional] User sets workitem version identifier  &lt;br&gt;[Optional] User sets workitem version number  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;[Optional] if User sets workitem version identifier, system search workitem version by identifier.  &lt;br&gt;[Optional] if user sets workitem version number, system search workitem version by number  &lt;br&gt;Otherwise, system search last workitem version  &lt;br&gt;System returns workitem 
+        /// Get Test Case, Checklist or Shared Step by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;[Optional] User sets work item version identifier  &lt;br&gt;[Optional] User sets work item version number  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;[Optional] if User sets work item version identifier, system search work item version by identifier.  &lt;br&gt;[Optional] if user sets work item version number, system search work item version by number  &lt;br&gt;Otherwise, system search last work item version  &lt;br&gt;System returns work item 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -4330,7 +4330,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get Test Case, Checklist or Shared Step by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;[Optional] User sets workitem version identifier  &lt;br&gt;[Optional] User sets workitem version number  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;[Optional] if User sets workitem version identifier, system search workitem version by identifier.  &lt;br&gt;[Optional] if user sets workitem version number, system search workitem version by number  &lt;br&gt;Otherwise, system search last workitem version  &lt;br&gt;System returns workitem 
+        /// Get Test Case, Checklist or Shared Step by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;[Optional] User sets work item version identifier  &lt;br&gt;[Optional] User sets work item version number  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;[Optional] if User sets work item version identifier, system search work item version by identifier.  &lt;br&gt;[Optional] if user sets work item version number, system search work item version by number  &lt;br&gt;Otherwise, system search last work item version  &lt;br&gt;System returns work item 
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -4392,7 +4392,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get WorkItem chronology by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;System search test results of all autotests, related to found workitem  &lt;br&gt;System sort results by CompletedOn ascending, then by CreatedDate ascending  &lt;br&gt;System returns sorted collection of test results
+        /// Get WorkItem chronology by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;System search test results of all autotests, related to found work item  &lt;br&gt;System sort results by CompletedOn ascending, then by CreatedDate ascending  &lt;br&gt;System returns sorted collection of test results
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -4404,7 +4404,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get WorkItem chronology by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;System search test results of all autotests, related to found workitem  &lt;br&gt;System sort results by CompletedOn ascending, then by CreatedDate ascending  &lt;br&gt;System returns sorted collection of test results
+        /// Get WorkItem chronology by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;System search test results of all autotests, related to found work item  &lt;br&gt;System sort results by CompletedOn ascending, then by CreatedDate ascending  &lt;br&gt;System returns sorted collection of test results
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -4452,7 +4452,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get WorkItem chronology by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;System search test results of all autotests, related to found workitem  &lt;br&gt;System sort results by CompletedOn ascending, then by CreatedDate ascending  &lt;br&gt;System returns sorted collection of test results
+        /// Get WorkItem chronology by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;System search test results of all autotests, related to found work item  &lt;br&gt;System sort results by CompletedOn ascending, then by CreatedDate ascending  &lt;br&gt;System returns sorted collection of test results
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -4465,7 +4465,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get WorkItem chronology by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;System search test results of all autotests, related to found workitem  &lt;br&gt;System sort results by CompletedOn ascending, then by CreatedDate ascending  &lt;br&gt;System returns sorted collection of test results
+        /// Get WorkItem chronology by Id or GlobalId &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;System search test results of all autotests, related to found work item  &lt;br&gt;System sort results by CompletedOn ascending, then by CreatedDate ascending  &lt;br&gt;System returns sorted collection of test results
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -4517,7 +4517,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get WorkItem versions &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;[Optional] User sets workitem version identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;                      [Optional] If User set workitem version identifier, System search workitem version by version identifier                      Otherwise, system search all version of workitem                    &lt;br&gt;System returns array of workitem version models (listed in response example)
+        /// Get WorkItem versions &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;[Optional] User sets work item version identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;                      [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item                    &lt;br&gt;System returns array of work item version models (listed in response example)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -4531,7 +4531,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get WorkItem versions &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;[Optional] User sets workitem version identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;                      [Optional] If User set workitem version identifier, System search workitem version by version identifier                      Otherwise, system search all version of workitem                    &lt;br&gt;System returns array of workitem version models (listed in response example)
+        /// Get WorkItem versions &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;[Optional] User sets work item version identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;                      [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item                    &lt;br&gt;System returns array of work item version models (listed in response example)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -4589,7 +4589,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get WorkItem versions &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;[Optional] User sets workitem version identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;                      [Optional] If User set workitem version identifier, System search workitem version by version identifier                      Otherwise, system search all version of workitem                    &lt;br&gt;System returns array of workitem version models (listed in response example)
+        /// Get WorkItem versions &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;[Optional] User sets work item version identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;                      [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item                    &lt;br&gt;System returns array of work item version models (listed in response example)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -4604,7 +4604,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Get WorkItem versions &lt;br&gt;Use case  &lt;br&gt;User sets workitem identifier  &lt;br&gt;[Optional] User sets workitem version identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search workitem by identifier  &lt;br&gt;                      [Optional] If User set workitem version identifier, System search workitem version by version identifier                      Otherwise, system search all version of workitem                    &lt;br&gt;System returns array of workitem version models (listed in response example)
+        /// Get WorkItem versions &lt;br&gt;Use case  &lt;br&gt;User sets work item identifier  &lt;br&gt;[Optional] User sets work item version identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search work item by identifier  &lt;br&gt;                      [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item                    &lt;br&gt;System returns array of work item version models (listed in response example)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
@@ -4912,7 +4912,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Update Test Case, Checklist or Shared Step &lt;br&gt;Use case  &lt;br&gt;User sets workitem properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates workitem by identifier  &lt;br&gt;System returns updated workitem model (listed in response parameters)
+        /// Update Test Case, Checklist or Shared Step &lt;br&gt;Use case  &lt;br&gt;User sets work item properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates work item by identifier  &lt;br&gt;System returns updated work item model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateWorkItemRequest"> (optional)</param>
@@ -4923,7 +4923,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Update Test Case, Checklist or Shared Step &lt;br&gt;Use case  &lt;br&gt;User sets workitem properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates workitem by identifier  &lt;br&gt;System returns updated workitem model (listed in response parameters)
+        /// Update Test Case, Checklist or Shared Step &lt;br&gt;Use case  &lt;br&gt;User sets work item properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates work item by identifier  &lt;br&gt;System returns updated work item model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateWorkItemRequest"> (optional)</param>
@@ -4968,7 +4968,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Update Test Case, Checklist or Shared Step &lt;br&gt;Use case  &lt;br&gt;User sets workitem properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates workitem by identifier  &lt;br&gt;System returns updated workitem model (listed in response parameters)
+        /// Update Test Case, Checklist or Shared Step &lt;br&gt;Use case  &lt;br&gt;User sets work item properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates work item by identifier  &lt;br&gt;System returns updated work item model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateWorkItemRequest"> (optional)</param>
@@ -4980,7 +4980,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Update Test Case, Checklist or Shared Step &lt;br&gt;Use case  &lt;br&gt;User sets workitem properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates workitem by identifier  &lt;br&gt;System returns updated workitem model (listed in response parameters)
+        /// Update Test Case, Checklist or Shared Step &lt;br&gt;Use case  &lt;br&gt;User sets work item properties (listed in request parameters)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates work item by identifier  &lt;br&gt;System returns updated work item model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateWorkItemRequest"> (optional)</param>

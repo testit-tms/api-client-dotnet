@@ -40,7 +40,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="LabelPostModel" /> class.
         /// </summary>
-        /// <param name="name">Label name. (required).</param>
+        /// <param name="name">Name of the label (required).</param>
         public LabelPostModel(string name = default(string))
         {
             // to ensure "name" is required (not null)
@@ -52,9 +52,9 @@ namespace TestIt.Client.Model
         }
 
         /// <summary>
-        /// Label name.
+        /// Name of the label
         /// </summary>
-        /// <value>Label name.</value>
+        /// <value>Name of the label</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 

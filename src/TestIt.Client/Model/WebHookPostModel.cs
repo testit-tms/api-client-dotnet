@@ -57,14 +57,14 @@ namespace TestIt.Client.Model
         /// <param name="description">Description of the webhook.</param>
         /// <param name="url">Request URL of the webhook (required).</param>
         /// <param name="requestType">requestType (required).</param>
-        /// <param name="shouldSendBody">Indicates if the webhook sends body.</param>
+        /// <param name="shouldSendBody">Indicates if the webhook sends body (required).</param>
         /// <param name="headers">Collection of the webhook headers.</param>
         /// <param name="queryParameters">Collection of the webhook query parameters.</param>
-        /// <param name="isEnabled">Indicates if the webhook is active.</param>
-        /// <param name="shouldSendCustomBody">Indicates if the webhook sends custom body.</param>
+        /// <param name="isEnabled">Indicates if the webhook is active (required).</param>
+        /// <param name="shouldSendCustomBody">Indicates if the webhook sends custom body (required).</param>
         /// <param name="customBody">Custom body of the webhook.</param>
-        /// <param name="shouldReplaceParameters">Indicates if the webhook injects parameters.</param>
-        /// <param name="shouldEscapeParameters">Indicates if the webhook escapes invalid characters in parameters.</param>
+        /// <param name="shouldReplaceParameters">Indicates if the webhook injects parameters (required).</param>
+        /// <param name="shouldEscapeParameters">Indicates if the webhook escapes invalid characters in parameters (required).</param>
         /// <param name="name">Name of the webhook (required).</param>
         public WebHookPostModel(Guid projectId = default(Guid), WebHookEventTypeModel eventType = default(WebHookEventTypeModel), string description = default(string), string url = default(string), RequestTypeModel requestType = default(RequestTypeModel), bool shouldSendBody = default(bool), Dictionary<string, string> headers = default(Dictionary<string, string>), Dictionary<string, string> queryParameters = default(Dictionary<string, string>), bool isEnabled = default(bool), bool shouldSendCustomBody = default(bool), string customBody = default(string), bool shouldReplaceParameters = default(bool), bool shouldEscapeParameters = default(bool), string name = default(string))
         {
@@ -77,6 +77,11 @@ namespace TestIt.Client.Model
             }
             this.Url = url;
             this.RequestType = requestType;
+            this.ShouldSendBody = shouldSendBody;
+            this.IsEnabled = isEnabled;
+            this.ShouldSendCustomBody = shouldSendCustomBody;
+            this.ShouldReplaceParameters = shouldReplaceParameters;
+            this.ShouldEscapeParameters = shouldEscapeParameters;
             // to ensure "name" is required (not null)
             if (name == null)
             {
@@ -84,14 +89,9 @@ namespace TestIt.Client.Model
             }
             this.Name = name;
             this.Description = description;
-            this.ShouldSendBody = shouldSendBody;
             this.Headers = headers;
             this.QueryParameters = queryParameters;
-            this.IsEnabled = isEnabled;
-            this.ShouldSendCustomBody = shouldSendCustomBody;
             this.CustomBody = customBody;
-            this.ShouldReplaceParameters = shouldReplaceParameters;
-            this.ShouldEscapeParameters = shouldEscapeParameters;
         }
 
         /// <summary>
@@ -119,35 +119,35 @@ namespace TestIt.Client.Model
         /// Indicates if the webhook sends body
         /// </summary>
         /// <value>Indicates if the webhook sends body</value>
-        [DataMember(Name = "shouldSendBody", EmitDefaultValue = true)]
+        [DataMember(Name = "shouldSendBody", IsRequired = true, EmitDefaultValue = true)]
         public bool ShouldSendBody { get; set; }
 
         /// <summary>
         /// Collection of the webhook headers
         /// </summary>
         /// <value>Collection of the webhook headers</value>
-        [DataMember(Name = "headers", EmitDefaultValue = false)]
+        [DataMember(Name = "headers", EmitDefaultValue = true)]
         public Dictionary<string, string> Headers { get; set; }
 
         /// <summary>
         /// Collection of the webhook query parameters
         /// </summary>
         /// <value>Collection of the webhook query parameters</value>
-        [DataMember(Name = "queryParameters", EmitDefaultValue = false)]
+        [DataMember(Name = "queryParameters", EmitDefaultValue = true)]
         public Dictionary<string, string> QueryParameters { get; set; }
 
         /// <summary>
         /// Indicates if the webhook is active
         /// </summary>
         /// <value>Indicates if the webhook is active</value>
-        [DataMember(Name = "isEnabled", EmitDefaultValue = true)]
+        [DataMember(Name = "isEnabled", IsRequired = true, EmitDefaultValue = true)]
         public bool IsEnabled { get; set; }
 
         /// <summary>
         /// Indicates if the webhook sends custom body
         /// </summary>
         /// <value>Indicates if the webhook sends custom body</value>
-        [DataMember(Name = "shouldSendCustomBody", EmitDefaultValue = true)]
+        [DataMember(Name = "shouldSendCustomBody", IsRequired = true, EmitDefaultValue = true)]
         public bool ShouldSendCustomBody { get; set; }
 
         /// <summary>
@@ -161,14 +161,14 @@ namespace TestIt.Client.Model
         /// Indicates if the webhook injects parameters
         /// </summary>
         /// <value>Indicates if the webhook injects parameters</value>
-        [DataMember(Name = "shouldReplaceParameters", EmitDefaultValue = true)]
+        [DataMember(Name = "shouldReplaceParameters", IsRequired = true, EmitDefaultValue = true)]
         public bool ShouldReplaceParameters { get; set; }
 
         /// <summary>
         /// Indicates if the webhook escapes invalid characters in parameters
         /// </summary>
         /// <value>Indicates if the webhook escapes invalid characters in parameters</value>
-        [DataMember(Name = "shouldEscapeParameters", EmitDefaultValue = true)]
+        [DataMember(Name = "shouldEscapeParameters", IsRequired = true, EmitDefaultValue = true)]
         public bool ShouldEscapeParameters { get; set; }
 
         /// <summary>

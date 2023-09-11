@@ -35,7 +35,12 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ShortConfiguration" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        [JsonConstructorAttribute]
+        protected ShortConfiguration() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShortConfiguration" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
         /// <param name="name">name.</param>
         public ShortConfiguration(Guid id = default(Guid), string name = default(string))
         {
@@ -46,13 +51,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>

@@ -35,7 +35,12 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="IterationModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        [JsonConstructorAttribute]
+        protected IterationModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IterationModel" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
         /// <param name="parameters">parameters.</param>
         public IterationModel(Guid id = default(Guid), List<ParameterShortModel> parameters = default(List<ParameterShortModel>))
         {
@@ -46,13 +51,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Parameters
         /// </summary>
-        [DataMember(Name = "parameters", EmitDefaultValue = false)]
+        [DataMember(Name = "parameters", EmitDefaultValue = true)]
         public List<ParameterShortModel> Parameters { get; set; }
 
         /// <summary>

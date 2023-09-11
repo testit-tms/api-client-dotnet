@@ -35,11 +35,16 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestResultsStatisticsGetModelFailureCategories" /> class.
         /// </summary>
-        /// <param name="noAnalytics">Number of test results which outcomes were not analyzed.</param>
-        /// <param name="noDefect">Number of test results which outcomes were not caused by any defect.</param>
-        /// <param name="infrastructureDefect">Number of test results which outcomes were caused by some infrastructure defect.</param>
-        /// <param name="productDefect">Number of test results which outcomes were caused by some tested product defect.</param>
-        /// <param name="testDefect">Number of test results which outcomes were caused by test itself.</param>
+        [JsonConstructorAttribute]
+        protected TestResultsStatisticsGetModelFailureCategories() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestResultsStatisticsGetModelFailureCategories" /> class.
+        /// </summary>
+        /// <param name="noAnalytics">Number of test results which outcomes were not analyzed (required).</param>
+        /// <param name="noDefect">Number of test results which outcomes were not caused by any defect (required).</param>
+        /// <param name="infrastructureDefect">Number of test results which outcomes were caused by some infrastructure defect (required).</param>
+        /// <param name="productDefect">Number of test results which outcomes were caused by some tested product defect (required).</param>
+        /// <param name="testDefect">Number of test results which outcomes were caused by test itself (required).</param>
         public TestResultsStatisticsGetModelFailureCategories(int noAnalytics = default(int), int noDefect = default(int), int infrastructureDefect = default(int), int productDefect = default(int), int testDefect = default(int))
         {
             this.NoAnalytics = noAnalytics;
@@ -53,35 +58,35 @@ namespace TestIt.Client.Model
         /// Number of test results which outcomes were not analyzed
         /// </summary>
         /// <value>Number of test results which outcomes were not analyzed</value>
-        [DataMember(Name = "noAnalytics", EmitDefaultValue = false)]
+        [DataMember(Name = "noAnalytics", IsRequired = true, EmitDefaultValue = true)]
         public int NoAnalytics { get; set; }
 
         /// <summary>
         /// Number of test results which outcomes were not caused by any defect
         /// </summary>
         /// <value>Number of test results which outcomes were not caused by any defect</value>
-        [DataMember(Name = "noDefect", EmitDefaultValue = false)]
+        [DataMember(Name = "noDefect", IsRequired = true, EmitDefaultValue = true)]
         public int NoDefect { get; set; }
 
         /// <summary>
         /// Number of test results which outcomes were caused by some infrastructure defect
         /// </summary>
         /// <value>Number of test results which outcomes were caused by some infrastructure defect</value>
-        [DataMember(Name = "infrastructureDefect", EmitDefaultValue = false)]
+        [DataMember(Name = "infrastructureDefect", IsRequired = true, EmitDefaultValue = true)]
         public int InfrastructureDefect { get; set; }
 
         /// <summary>
         /// Number of test results which outcomes were caused by some tested product defect
         /// </summary>
         /// <value>Number of test results which outcomes were caused by some tested product defect</value>
-        [DataMember(Name = "productDefect", EmitDefaultValue = false)]
+        [DataMember(Name = "productDefect", IsRequired = true, EmitDefaultValue = true)]
         public int ProductDefect { get; set; }
 
         /// <summary>
         /// Number of test results which outcomes were caused by test itself
         /// </summary>
         /// <value>Number of test results which outcomes were caused by test itself</value>
-        [DataMember(Name = "testDefect", EmitDefaultValue = false)]
+        [DataMember(Name = "testDefect", IsRequired = true, EmitDefaultValue = true)]
         public int TestDefect { get; set; }
 
         /// <summary>

@@ -35,7 +35,12 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ValidationProblemDetails" /> class.
         /// </summary>
-        /// <param name="errors">errors.</param>
+        [JsonConstructorAttribute]
+        protected ValidationProblemDetails() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ValidationProblemDetails" /> class.
+        /// </summary>
+        /// <param name="errors">errors (required).</param>
         /// <param name="type">type.</param>
         /// <param name="title">title.</param>
         /// <param name="status">status.</param>
@@ -43,6 +48,11 @@ namespace TestIt.Client.Model
         /// <param name="instance">instance.</param>
         public ValidationProblemDetails(Dictionary<string, List<string>> errors = default(Dictionary<string, List<string>>), string type = default(string), string title = default(string), int? status = default(int?), string detail = default(string), string instance = default(string)) : base()
         {
+            // to ensure "errors" is required (not null)
+            if (errors == null)
+            {
+                throw new ArgumentNullException("errors is a required property for ValidationProblemDetails and cannot be null");
+            }
             this.Errors = errors;
             this.Type = type;
             this.Title = title;
@@ -54,7 +64,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Errors
         /// </summary>
-        [DataMember(Name = "errors", EmitDefaultValue = false)]
+        [DataMember(Name = "errors", IsRequired = true, EmitDefaultValue = true)]
         public Dictionary<string, List<string>> Errors { get; set; }
 
         /// <summary>

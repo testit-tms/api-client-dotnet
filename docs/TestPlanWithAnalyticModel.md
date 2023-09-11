@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Analytic** | [**TestPlanWithAnalyticModelAnalytic**](TestPlanWithAnalyticModelAnalytic.md) |  | [optional] 
+**Analytic** | [**TestPointAnalyticResult**](TestPointAnalyticResult.md) |  | [optional] 
 **Status** | **TestPlanStatusModel** |  | 
 **StartedOn** | **DateTime?** | Set when test plan is starter (status changed to: In Progress) | [optional] 
 **CompletedOn** | **DateTime?** | set when test plan status is completed (status changed to: Completed) | [optional] 
 **CreatedDate** | **DateTime?** |  | [optional] 
 **ModifiedDate** | **DateTime?** |  | [optional] 
-**CreatedById** | **Guid** |  | [optional] 
+**CreatedById** | **Guid** |  | 
 **ModifiedById** | **Guid?** |  | [optional] 
-**GlobalId** | **long** | Used for search Test plan | [optional] 
-**IsDeleted** | **bool** |  | [optional] 
+**GlobalId** | **long** | Used for search Test plan | 
+**IsDeleted** | **bool** |  | 
 **LockedDate** | **DateTime?** |  | [optional] 
 **Id** | **Guid** |  | 
 **LockedById** | **Guid?** |  | [optional] 

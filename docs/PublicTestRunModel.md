@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TestRunId** | **Guid** |  | [optional] 
+**TestRunId** | **Guid** |  | 
 **TestPlanId** | **Guid?** |  | [optional] 
-**TestPlanGlobalId** | **long** |  | [optional] 
+**TestPlanGlobalId** | **long** |  | 
 **Name** | **string** |  | [optional] 
 **ProductName** | **string** |  | [optional] 
 **Build** | **string** |  | [optional] 

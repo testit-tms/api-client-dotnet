@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | [optional] 
-**IsDeleted** | **bool** |  | [optional] 
+**Id** | **Guid** |  | 
+**IsDeleted** | **bool** |  | 
 **Name** | **string** |  | [optional] 
 **ProjectShortestModels** | [**List&lt;ProjectShortestModel&gt;**](ProjectShortestModel.md) |  | [optional] 
 **CustomAttributeModels** | [**List&lt;CustomAttributeModel&gt;**](CustomAttributeModel.md) |  | [optional] 

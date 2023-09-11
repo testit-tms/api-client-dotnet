@@ -40,13 +40,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestModel" /> class.
         /// </summary>
-        /// <param name="globalId">Global ID of the autotest.</param>
-        /// <param name="isDeleted">Indicates if the autotest is deleted.</param>
-        /// <param name="mustBeApproved">Indicates if the autotest has unapproved changes from linked work items.</param>
-        /// <param name="id">Unique ID of the autotest.</param>
-        /// <param name="createdDate">Creation date of the autotest.</param>
+        /// <param name="globalId">Global ID of the autotest (required).</param>
+        /// <param name="isDeleted">Indicates if the autotest is deleted (required).</param>
+        /// <param name="mustBeApproved">Indicates if the autotest has unapproved changes from linked work items (required).</param>
+        /// <param name="id">Unique ID of the autotest (required).</param>
+        /// <param name="createdDate">Creation date of the autotest (required).</param>
         /// <param name="modifiedDate">Last modification date of the project.</param>
-        /// <param name="createdById">Unique ID of the project creator.</param>
+        /// <param name="createdById">Unique ID of the project creator (required).</param>
         /// <param name="modifiedById">Unique ID of the project last editor.</param>
         /// <param name="lastTestRunId">Unique ID of the autotest last test run.</param>
         /// <param name="lastTestRunName">Name of the autotest last test run.</param>
@@ -66,8 +66,15 @@ namespace TestIt.Client.Model
         /// <param name="description">Description of the autotest in autotest&#39;s card.</param>
         /// <param name="labels">Collection of the autotest labels.</param>
         /// <param name="isFlaky">Indicates if the autotest is marked as flaky.</param>
-        public AutoTestModel(long globalId = default(long), bool isDeleted = default(bool), bool mustBeApproved = default(bool), Guid id = default(Guid), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), Guid? lastTestRunId = default(Guid?), string lastTestRunName = default(string), Guid? lastTestResultId = default(Guid?), string lastTestResultOutcome = default(string), int? stabilityPercentage = default(int?), string externalId = default(string), List<LinkPutModel> links = default(List<LinkPutModel>), Guid projectId = default(Guid), string name = default(string), string _namespace = default(string), string classname = default(string), List<AutoTestStepModel> steps = default(List<AutoTestStepModel>), List<AutoTestStepModel> setup = default(List<AutoTestStepModel>), List<AutoTestStepModel> teardown = default(List<AutoTestStepModel>), string title = default(string), string description = default(string), List<LabelShortModel> labels = default(List<LabelShortModel>), bool? isFlaky = default(bool?))
+        /// <param name="externalKey">External key of the autotest.</param>
+        public AutoTestModel(long globalId = default(long), bool isDeleted = default(bool), bool mustBeApproved = default(bool), Guid id = default(Guid), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), Guid? lastTestRunId = default(Guid?), string lastTestRunName = default(string), Guid? lastTestResultId = default(Guid?), string lastTestResultOutcome = default(string), int? stabilityPercentage = default(int?), string externalId = default(string), List<LinkPutModel> links = default(List<LinkPutModel>), Guid projectId = default(Guid), string name = default(string), string _namespace = default(string), string classname = default(string), List<AutoTestStepModel> steps = default(List<AutoTestStepModel>), List<AutoTestStepModel> setup = default(List<AutoTestStepModel>), List<AutoTestStepModel> teardown = default(List<AutoTestStepModel>), string title = default(string), string description = default(string), List<LabelShortModel> labels = default(List<LabelShortModel>), bool? isFlaky = default(bool?), string externalKey = default(string))
         {
+            this.GlobalId = globalId;
+            this.IsDeleted = isDeleted;
+            this.MustBeApproved = mustBeApproved;
+            this.Id = id;
+            this.CreatedDate = createdDate;
+            this.CreatedById = createdById;
             // to ensure "externalId" is required (not null)
             if (externalId == null)
             {
@@ -81,13 +88,7 @@ namespace TestIt.Client.Model
                 throw new ArgumentNullException("name is a required property for AutoTestModel and cannot be null");
             }
             this.Name = name;
-            this.GlobalId = globalId;
-            this.IsDeleted = isDeleted;
-            this.MustBeApproved = mustBeApproved;
-            this.Id = id;
-            this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
-            this.CreatedById = createdById;
             this.ModifiedById = modifiedById;
             this.LastTestRunId = lastTestRunId;
             this.LastTestRunName = lastTestRunName;
@@ -104,41 +105,42 @@ namespace TestIt.Client.Model
             this.Description = description;
             this.Labels = labels;
             this.IsFlaky = isFlaky;
+            this.ExternalKey = externalKey;
         }
 
         /// <summary>
         /// Global ID of the autotest
         /// </summary>
         /// <value>Global ID of the autotest</value>
-        [DataMember(Name = "globalId", EmitDefaultValue = false)]
+        [DataMember(Name = "globalId", IsRequired = true, EmitDefaultValue = true)]
         public long GlobalId { get; set; }
 
         /// <summary>
         /// Indicates if the autotest is deleted
         /// </summary>
         /// <value>Indicates if the autotest is deleted</value>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>
         /// Indicates if the autotest has unapproved changes from linked work items
         /// </summary>
         /// <value>Indicates if the autotest has unapproved changes from linked work items</value>
-        [DataMember(Name = "mustBeApproved", EmitDefaultValue = true)]
+        [DataMember(Name = "mustBeApproved", IsRequired = true, EmitDefaultValue = true)]
         public bool MustBeApproved { get; set; }
 
         /// <summary>
         /// Unique ID of the autotest
         /// </summary>
         /// <value>Unique ID of the autotest</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Creation date of the autotest
         /// </summary>
         /// <value>Creation date of the autotest</value>
-        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+        [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
@@ -152,7 +154,7 @@ namespace TestIt.Client.Model
         /// Unique ID of the project creator
         /// </summary>
         /// <value>Unique ID of the project creator</value>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
@@ -289,6 +291,13 @@ namespace TestIt.Client.Model
         public bool? IsFlaky { get; set; }
 
         /// <summary>
+        /// External key of the autotest
+        /// </summary>
+        /// <value>External key of the autotest</value>
+        [DataMember(Name = "externalKey", EmitDefaultValue = true)]
+        public string ExternalKey { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -322,6 +331,7 @@ namespace TestIt.Client.Model
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Labels: ").Append(Labels).Append("\n");
             sb.Append("  IsFlaky: ").Append(IsFlaky).Append("\n");
+            sb.Append("  ExternalKey: ").Append(ExternalKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -488,6 +498,11 @@ namespace TestIt.Client.Model
                     this.IsFlaky == input.IsFlaky ||
                     (this.IsFlaky != null &&
                     this.IsFlaky.Equals(input.IsFlaky))
+                ) && 
+                (
+                    this.ExternalKey == input.ExternalKey ||
+                    (this.ExternalKey != null &&
+                    this.ExternalKey.Equals(input.ExternalKey))
                 );
         }
 
@@ -594,6 +609,10 @@ namespace TestIt.Client.Model
                 if (this.IsFlaky != null)
                 {
                     hashCode = (hashCode * 59) + this.IsFlaky.GetHashCode();
+                }
+                if (this.ExternalKey != null)
+                {
+                    hashCode = (hashCode * 59) + this.ExternalKey.GetHashCode();
                 }
                 return hashCode;
             }

@@ -35,49 +35,54 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPointByTestSuiteModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        [JsonConstructorAttribute]
+        protected TestPointByTestSuiteModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestPointByTestSuiteModel" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
         /// <param name="testerId">testerId.</param>
         /// <param name="workItemId">workItemId.</param>
         /// <param name="configurationId">configurationId.</param>
         /// <param name="status">Applies one of these values: Blocked, NoResults, Failed, Passed.</param>
         /// <param name="lastTestResultId">lastTestResultId.</param>
-        /// <param name="iterationId">iterationId.</param>
+        /// <param name="iterationId">iterationId (required).</param>
         public TestPointByTestSuiteModel(Guid id = default(Guid), Guid? testerId = default(Guid?), Guid? workItemId = default(Guid?), Guid? configurationId = default(Guid?), string status = default(string), Guid? lastTestResultId = default(Guid?), Guid iterationId = default(Guid))
         {
             this.Id = id;
+            this.IterationId = iterationId;
             this.TesterId = testerId;
             this.WorkItemId = workItemId;
             this.ConfigurationId = configurationId;
             this.Status = status;
             this.LastTestResultId = lastTestResultId;
-            this.IterationId = iterationId;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets TesterId
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "testerId", EmitDefaultValue = true)]
         public Guid? TesterId { get; set; }
 
         /// <summary>
         /// Gets or Sets WorkItemId
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "workItemId", EmitDefaultValue = true)]
         public Guid? WorkItemId { get; set; }
 
         /// <summary>
         /// Gets or Sets ConfigurationId
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "configurationId", EmitDefaultValue = true)]
         public Guid? ConfigurationId { get; set; }
 
@@ -92,15 +97,15 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets LastTestResultId
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "lastTestResultId", EmitDefaultValue = true)]
         public Guid? LastTestResultId { get; set; }
 
         /// <summary>
         /// Gets or Sets IterationId
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "iterationId", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "iterationId", IsRequired = true, EmitDefaultValue = true)]
         public Guid IterationId { get; set; }
 
         /// <summary>

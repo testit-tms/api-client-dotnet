@@ -43,7 +43,7 @@ namespace TestIt.Client.Model
         /// <param name="description">description.</param>
         /// <param name="parameters">parameters (required).</param>
         /// <param name="projectId">This property is used to link configuration with project (required).</param>
-        /// <param name="isDefault">isDefault.</param>
+        /// <param name="isDefault">isDefault (required).</param>
         /// <param name="name">name (required).</param>
         public ConfigurationPostModel(string description = default(string), Dictionary<string, string> parameters = default(Dictionary<string, string>), Guid projectId = default(Guid), bool isDefault = default(bool), string name = default(string))
         {
@@ -54,6 +54,7 @@ namespace TestIt.Client.Model
             }
             this.Parameters = parameters;
             this.ProjectId = projectId;
+            this.IsDefault = isDefault;
             // to ensure "name" is required (not null)
             if (name == null)
             {
@@ -61,7 +62,6 @@ namespace TestIt.Client.Model
             }
             this.Name = name;
             this.Description = description;
-            this.IsDefault = isDefault;
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace TestIt.Client.Model
         /// Gets or Sets IsDefault
         /// </summary>
         /// <example>true</example>
-        [DataMember(Name = "isDefault", EmitDefaultValue = true)]
+        [DataMember(Name = "isDefault", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDefault { get; set; }
 
         /// <summary>

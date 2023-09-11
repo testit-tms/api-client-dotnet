@@ -120,7 +120,19 @@ namespace TestIt.Client.Model
         /// Enum ConfigurationChanged for value: ConfigurationChanged
         /// </summary>
         [EnumMember(Value = "ConfigurationChanged")]
-        ConfigurationChanged = 15
+        ConfigurationChanged = 15,
+
+        /// <summary>
+        /// Enum ProjectChanged for value: ProjectChanged
+        /// </summary>
+        [EnumMember(Value = "ProjectChanged")]
+        ProjectChanged = 16,
+
+        /// <summary>
+        /// Enum TestPlanChanged for value: TestPlanChanged
+        /// </summary>
+        [EnumMember(Value = "TestPlanChanged")]
+        TestPlanChanged = 17
 
     }
 

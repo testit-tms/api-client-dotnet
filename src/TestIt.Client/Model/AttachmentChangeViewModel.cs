@@ -35,22 +35,27 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AttachmentChangeViewModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        [JsonConstructorAttribute]
+        protected AttachmentChangeViewModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AttachmentChangeViewModel" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
         /// <param name="name">name.</param>
         /// <param name="type">type.</param>
-        /// <param name="size">size.</param>
+        /// <param name="size">size (required).</param>
         public AttachmentChangeViewModel(Guid id = default(Guid), string name = default(string), string type = default(string), float size = default(float))
         {
             this.Id = id;
+            this.Size = size;
             this.Name = name;
             this.Type = type;
-            this.Size = size;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
@@ -68,7 +73,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Size
         /// </summary>
-        [DataMember(Name = "size", EmitDefaultValue = false)]
+        [DataMember(Name = "size", IsRequired = true, EmitDefaultValue = true)]
         public float Size { get; set; }
 
         /// <summary>

@@ -46,13 +46,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Filter
         /// </summary>
-        [DataMember(Name = "filter", EmitDefaultValue = false)]
+        [DataMember(Name = "filter", EmitDefaultValue = true)]
         public AutotestsSelectModelFilter Filter { get; set; }
 
         /// <summary>
         /// Gets or Sets Includes
         /// </summary>
-        [DataMember(Name = "includes", EmitDefaultValue = false)]
+        [DataMember(Name = "includes", EmitDefaultValue = true)]
         public AutotestsSelectModelIncludes Includes { get; set; }
 
         /// <summary>

@@ -46,7 +46,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestSuiteV2GetModel" /> class.
         /// </summary>
-        /// <param name="id">Unique ID of the test suite.</param>
+        /// <param name="id">Unique ID of the test suite (required).</param>
         /// <param name="refreshDate">Date of the last refresh of the test suite.</param>
         /// <param name="parentId">Unique ID of the parent test suite in hierarchy.</param>
         /// <param name="testPlanId">Unique ID of test plan to which the test suite belongs (required).</param>
@@ -56,6 +56,7 @@ namespace TestIt.Client.Model
         /// <param name="autoRefresh">Indicates if scheduled auto refresh is enabled for the test suite.</param>
         public TestSuiteV2GetModel(Guid id = default(Guid), DateTime? refreshDate = default(DateTime?), Guid? parentId = default(Guid?), Guid testPlanId = default(Guid), string name = default(string), TestSuiteType? type = default(TestSuiteType?), bool? saveStructure = default(bool?), bool? autoRefresh = default(bool?))
         {
+            this.Id = id;
             this.TestPlanId = testPlanId;
             // to ensure "name" is required (not null)
             if (name == null)
@@ -63,7 +64,6 @@ namespace TestIt.Client.Model
                 throw new ArgumentNullException("name is a required property for TestSuiteV2GetModel and cannot be null");
             }
             this.Name = name;
-            this.Id = id;
             this.RefreshDate = refreshDate;
             this.ParentId = parentId;
             this.Type = type;
@@ -75,7 +75,7 @@ namespace TestIt.Client.Model
         /// Unique ID of the test suite
         /// </summary>
         /// <value>Unique ID of the test suite</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>

@@ -35,22 +35,27 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FailureClassRegexModel" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected FailureClassRegexModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FailureClassRegexModel" /> class.
+        /// </summary>
         /// <param name="regexText">regexText.</param>
         /// <param name="failureClassId">failureClassId.</param>
-        /// <param name="id">Unique ID of the entity.</param>
-        /// <param name="isDeleted">Indicates if the entity is deleted.</param>
+        /// <param name="id">Unique ID of the entity (required).</param>
+        /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
         public FailureClassRegexModel(string regexText = default(string), Guid? failureClassId = default(Guid?), Guid id = default(Guid), bool isDeleted = default(bool))
         {
-            this.RegexText = regexText;
-            this.FailureClassId = failureClassId;
             this.Id = id;
             this.IsDeleted = isDeleted;
+            this.RegexText = regexText;
+            this.FailureClassId = failureClassId;
         }
 
         /// <summary>
         /// Gets or Sets RegexText
         /// </summary>
-        [DataMember(Name = "regexText", EmitDefaultValue = false)]
+        [DataMember(Name = "regexText", EmitDefaultValue = true)]
         public string RegexText { get; set; }
 
         /// <summary>
@@ -63,14 +68,14 @@ namespace TestIt.Client.Model
         /// Unique ID of the entity
         /// </summary>
         /// <value>Unique ID of the entity</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Indicates if the entity is deleted
         /// </summary>
         /// <value>Indicates if the entity is deleted</value>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>

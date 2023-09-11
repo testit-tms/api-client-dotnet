@@ -46,42 +46,42 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="NotificationModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        /// <param name="id">id (required).</param>
         /// <param name="createdDate">createdDate.</param>
-        /// <param name="isRead">isRead.</param>
-        /// <param name="entityId">entityId.</param>
+        /// <param name="isRead">isRead (required).</param>
+        /// <param name="entityId">entityId (required).</param>
         /// <param name="notificationType">notificationType (required).</param>
         /// <param name="projectGlobalId">projectGlobalId.</param>
         /// <param name="projectName">projectName.</param>
-        /// <param name="testPlanGlobalId">testPlanGlobalId.</param>
+        /// <param name="testPlanGlobalId">testPlanGlobalId (required).</param>
         /// <param name="testPlanName">testPlanName.</param>
         /// <param name="workitemGlobalId">workitemGlobalId.</param>
         /// <param name="comment">comment.</param>
         /// <param name="workItemName">workItemName.</param>
         /// <param name="attributeName">attributeName.</param>
-        /// <param name="createdById">createdById.</param>
+        /// <param name="createdById">createdById (required).</param>
         public NotificationModel(Guid id = default(Guid), DateTime? createdDate = default(DateTime?), bool isRead = default(bool), Guid entityId = default(Guid), NotificationTypeModel notificationType = default(NotificationTypeModel), long? projectGlobalId = default(long?), string projectName = default(string), long testPlanGlobalId = default(long), string testPlanName = default(string), long? workitemGlobalId = default(long?), string comment = default(string), string workItemName = default(string), string attributeName = default(string), Guid createdById = default(Guid))
         {
-            this.NotificationType = notificationType;
             this.Id = id;
-            this.CreatedDate = createdDate;
             this.IsRead = isRead;
             this.EntityId = entityId;
+            this.NotificationType = notificationType;
+            this.TestPlanGlobalId = testPlanGlobalId;
+            this.CreatedById = createdById;
+            this.CreatedDate = createdDate;
             this.ProjectGlobalId = projectGlobalId;
             this.ProjectName = projectName;
-            this.TestPlanGlobalId = testPlanGlobalId;
             this.TestPlanName = testPlanName;
             this.WorkitemGlobalId = workitemGlobalId;
             this.Comment = comment;
             this.WorkItemName = workItemName;
             this.AttributeName = attributeName;
-            this.CreatedById = createdById;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
@@ -93,13 +93,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets IsRead
         /// </summary>
-        [DataMember(Name = "isRead", EmitDefaultValue = true)]
+        [DataMember(Name = "isRead", IsRequired = true, EmitDefaultValue = true)]
         public bool IsRead { get; set; }
 
         /// <summary>
         /// Gets or Sets EntityId
         /// </summary>
-        [DataMember(Name = "entityId", EmitDefaultValue = false)]
+        [DataMember(Name = "entityId", IsRequired = true, EmitDefaultValue = true)]
         public Guid EntityId { get; set; }
 
         /// <summary>
@@ -117,13 +117,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets TestPlanGlobalId
         /// </summary>
-        [DataMember(Name = "testPlanGlobalId", EmitDefaultValue = false)]
+        [DataMember(Name = "testPlanGlobalId", IsRequired = true, EmitDefaultValue = true)]
         public long TestPlanGlobalId { get; set; }
 
         /// <summary>
         /// Gets or Sets TestPlanName
         /// </summary>
-        [DataMember(Name = "testPlanName", EmitDefaultValue = false)]
+        [DataMember(Name = "testPlanName", EmitDefaultValue = true)]
         public string TestPlanName { get; set; }
 
         /// <summary>
@@ -135,13 +135,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Comment
         /// </summary>
-        [DataMember(Name = "comment", EmitDefaultValue = false)]
+        [DataMember(Name = "comment", EmitDefaultValue = true)]
         public string Comment { get; set; }
 
         /// <summary>
         /// Gets or Sets WorkItemName
         /// </summary>
-        [DataMember(Name = "workItemName", EmitDefaultValue = false)]
+        [DataMember(Name = "workItemName", EmitDefaultValue = true)]
         public string WorkItemName { get; set; }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>

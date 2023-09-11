@@ -36,14 +36,19 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets FailureCategory
         /// </summary>
-        [DataMember(Name = "failureCategory", EmitDefaultValue = false)]
-        public FailureCategoryModel? FailureCategory { get; set; }
+        [DataMember(Name = "failureCategory", IsRequired = true, EmitDefaultValue = true)]
+        public FailureCategoryModel FailureCategory { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AutotestResultReasonSubGetModel" /> class.
         /// </summary>
-        /// <param name="failureCategory">failureCategory.</param>
+        [JsonConstructorAttribute]
+        protected AutotestResultReasonSubGetModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AutotestResultReasonSubGetModel" /> class.
+        /// </summary>
+        /// <param name="failureCategory">failureCategory (required).</param>
         /// <param name="name">name.</param>
-        public AutotestResultReasonSubGetModel(FailureCategoryModel? failureCategory = default(FailureCategoryModel?), string name = default(string))
+        public AutotestResultReasonSubGetModel(FailureCategoryModel failureCategory = default(FailureCategoryModel), string name = default(string))
         {
             this.FailureCategory = failureCategory;
             this.Name = name;
@@ -52,7 +57,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>

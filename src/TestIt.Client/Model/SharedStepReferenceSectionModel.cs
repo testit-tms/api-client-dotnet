@@ -35,81 +35,86 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SharedStepReferenceSectionModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        [JsonConstructorAttribute]
+        protected SharedStepReferenceSectionModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SharedStepReferenceSectionModel" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
         /// <param name="name">name.</param>
-        /// <param name="hasThisSharedStepAsPrecondition">hasThisSharedStepAsPrecondition.</param>
-        /// <param name="hasThisSharedStepAsPostcondition">hasThisSharedStepAsPostcondition.</param>
-        /// <param name="createdById">createdById.</param>
+        /// <param name="hasThisSharedStepAsPrecondition">hasThisSharedStepAsPrecondition (required).</param>
+        /// <param name="hasThisSharedStepAsPostcondition">hasThisSharedStepAsPostcondition (required).</param>
+        /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="isDeleted">isDeleted.</param>
+        /// <param name="isDeleted">isDeleted (required).</param>
         public SharedStepReferenceSectionModel(Guid id = default(Guid), string name = default(string), bool hasThisSharedStepAsPrecondition = default(bool), bool hasThisSharedStepAsPostcondition = default(bool), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), bool isDeleted = default(bool))
         {
             this.Id = id;
-            this.Name = name;
             this.HasThisSharedStepAsPrecondition = hasThisSharedStepAsPrecondition;
             this.HasThisSharedStepAsPostcondition = hasThisSharedStepAsPostcondition;
             this.CreatedById = createdById;
+            this.IsDeleted = isDeleted;
+            this.Name = name;
             this.ModifiedById = modifiedById;
             this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
-            this.IsDeleted = isDeleted;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
         /// <example>&quot;Basic template&quot;</example>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets HasThisSharedStepAsPrecondition
         /// </summary>
         /// <example>true</example>
-        [DataMember(Name = "hasThisSharedStepAsPrecondition", EmitDefaultValue = true)]
+        [DataMember(Name = "hasThisSharedStepAsPrecondition", IsRequired = true, EmitDefaultValue = true)]
         public bool HasThisSharedStepAsPrecondition { get; set; }
 
         /// <summary>
         /// Gets or Sets HasThisSharedStepAsPostcondition
         /// </summary>
         /// <example>true</example>
-        [DataMember(Name = "hasThisSharedStepAsPostcondition", EmitDefaultValue = true)]
+        [DataMember(Name = "hasThisSharedStepAsPostcondition", IsRequired = true, EmitDefaultValue = true)]
         public bool HasThisSharedStepAsPostcondition { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
         public DateTime? CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
@@ -117,7 +122,7 @@ namespace TestIt.Client.Model
         /// Gets or Sets IsDeleted
         /// </summary>
         /// <example>true</example>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Errors** | **Dictionary&lt;string, List&lt;string&gt;&gt;** |  | [optional] 
+**Errors** | **Dictionary&lt;string, List&lt;string&gt;&gt;** |  | 
 **Type** | **string** |  | [optional] 
 **Title** | **string** |  | [optional] 
 **Status** | **int?** |  | [optional] 

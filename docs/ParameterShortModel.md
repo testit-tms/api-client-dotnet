@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | [optional] 
-**ParameterKeyId** | **Guid** |  | [optional] 
+**Id** | **Guid** |  | 
+**ParameterKeyId** | **Guid** |  | 
 **Value** | **string** |  | 
 **Name** | **string** |  | 
 

@@ -35,7 +35,12 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="StepPutModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        [JsonConstructorAttribute]
+        protected StepPutModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StepPutModel" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
         /// <param name="action">action.</param>
         /// <param name="expected">expected.</param>
         /// <param name="testData">testData.</param>
@@ -54,8 +59,8 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
@@ -89,7 +94,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets WorkItemId
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "workItemId", EmitDefaultValue = true)]
         public Guid? WorkItemId { get; set; }
 

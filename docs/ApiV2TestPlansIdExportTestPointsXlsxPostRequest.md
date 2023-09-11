@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IncludeName** | **bool** |  | [optional] 
-**IncludeSection** | **bool** |  | [optional] 
-**IncludePriority** | **bool** |  | [optional] 
-**IncludeAutomated** | **bool** |  | [optional] 
-**IncludeStatus** | **bool** |  | [optional] 
-**IncludeDuration** | **bool** |  | [optional] 
-**IncludeCreationDate** | **bool** |  | [optional] 
-**IncludeAuthor** | **bool** |  | [optional] 
-**IncludeModificationDate** | **bool** |  | [optional] 
-**IncludeModifiedBy** | **bool** |  | [optional] 
-**IncludeTags** | **bool** |  | [optional] 
-**IncludeIterations** | **bool** |  | [optional] 
+**IncludeName** | **bool** |  | 
+**IncludeSection** | **bool** |  | 
+**IncludePriority** | **bool** |  | 
+**IncludeAutomated** | **bool** |  | 
+**IncludeStatus** | **bool** |  | 
+**IncludeDuration** | **bool** |  | 
+**IncludeCreationDate** | **bool** |  | 
+**IncludeAuthor** | **bool** |  | 
+**IncludeModificationDate** | **bool** |  | 
+**IncludeModifiedBy** | **bool** |  | 
+**IncludeTags** | **bool** |  | 
+**IncludeIterations** | **bool** |  | 
 **CustomAttributesIds** | **List&lt;Guid&gt;** |  | [optional] 
 **ConfigurationIds** | **List&lt;Guid&gt;** |  | [optional] 
 

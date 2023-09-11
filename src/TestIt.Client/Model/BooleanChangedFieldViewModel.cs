@@ -35,8 +35,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BooleanChangedFieldViewModel" /> class.
         /// </summary>
-        /// <param name="oldValue">oldValue.</param>
-        /// <param name="newValue">newValue.</param>
+        [JsonConstructorAttribute]
+        protected BooleanChangedFieldViewModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BooleanChangedFieldViewModel" /> class.
+        /// </summary>
+        /// <param name="oldValue">oldValue (required).</param>
+        /// <param name="newValue">newValue (required).</param>
         public BooleanChangedFieldViewModel(bool oldValue = default(bool), bool newValue = default(bool))
         {
             this.OldValue = oldValue;
@@ -46,13 +51,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets OldValue
         /// </summary>
-        [DataMember(Name = "oldValue", EmitDefaultValue = true)]
+        [DataMember(Name = "oldValue", IsRequired = true, EmitDefaultValue = true)]
         public bool OldValue { get; set; }
 
         /// <summary>
         /// Gets or Sets NewValue
         /// </summary>
-        [DataMember(Name = "newValue", EmitDefaultValue = true)]
+        [DataMember(Name = "newValue", IsRequired = true, EmitDefaultValue = true)]
         public bool NewValue { get; set; }
 
         /// <summary>

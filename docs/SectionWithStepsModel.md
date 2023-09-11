@@ -8,11 +8,11 @@ Name | Type | Description | Notes
 **PostconditionSteps** | [**List&lt;StepModel&gt;**](StepModel.md) |  | [optional] 
 **ProjectId** | **Guid?** |  | [optional] 
 **ParentId** | **Guid?** |  | [optional] 
-**IsDeleted** | **bool** |  | [optional] 
-**Id** | **Guid** |  | [optional] 
-**CreatedDate** | **DateTime** |  | [optional] 
+**IsDeleted** | **bool** |  | 
+**Id** | **Guid** |  | 
+**CreatedDate** | **DateTime** |  | 
 **ModifiedDate** | **DateTime?** |  | [optional] 
-**CreatedById** | **Guid** |  | [optional] 
+**CreatedById** | **Guid** |  | 
 **ModifiedById** | **Guid?** |  | [optional] 
 **Name** | **string** |  | 
 

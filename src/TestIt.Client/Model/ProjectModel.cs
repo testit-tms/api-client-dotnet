@@ -35,47 +35,52 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectModel" /> class.
         /// </summary>
-        /// <param name="id">Unique ID of the project.</param>
+        [JsonConstructorAttribute]
+        protected ProjectModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectModel" /> class.
+        /// </summary>
+        /// <param name="id">Unique ID of the project (required).</param>
         /// <param name="description">Description of the project.</param>
         /// <param name="name">Name of the project.</param>
-        /// <param name="isFavorite">Indicates if the project is marked as favorite.</param>
+        /// <param name="isFavorite">Indicates if the project is marked as favorite (required).</param>
         /// <param name="attributesScheme">Collection of the project attributes.</param>
         /// <param name="testPlansAttributesScheme">Collection of the project test plans attributes.</param>
         /// <param name="testCasesCount">Number of test cases in the project.</param>
         /// <param name="sharedStepsCount">Number of shared steps in the project.</param>
         /// <param name="checkListsCount">Number of checklists in the project.</param>
         /// <param name="autoTestsCount">Number of autotests in the project.</param>
-        /// <param name="isDeleted">Indicates if the project is deleted.</param>
-        /// <param name="createdDate">Creation date of the project.</param>
+        /// <param name="isDeleted">Indicates if the project is deleted (required).</param>
+        /// <param name="createdDate">Creation date of the project (required).</param>
         /// <param name="modifiedDate">Last modification date of the project.</param>
-        /// <param name="createdById">Unique ID of the project creator.</param>
+        /// <param name="createdById">Unique ID of the project creator (required).</param>
         /// <param name="modifiedById">Unique ID of the project last editor.</param>
-        /// <param name="globalId">Global ID of the project.</param>
+        /// <param name="globalId">Global ID of the project (required).</param>
         public ProjectModel(Guid id = default(Guid), string description = default(string), string name = default(string), bool isFavorite = default(bool), List<CustomAttributeModel> attributesScheme = default(List<CustomAttributeModel>), List<CustomAttributeModel> testPlansAttributesScheme = default(List<CustomAttributeModel>), int? testCasesCount = default(int?), int? sharedStepsCount = default(int?), int? checkListsCount = default(int?), int? autoTestsCount = default(int?), bool isDeleted = default(bool), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long))
         {
             this.Id = id;
+            this.IsFavorite = isFavorite;
+            this.IsDeleted = isDeleted;
+            this.CreatedDate = createdDate;
+            this.CreatedById = createdById;
+            this.GlobalId = globalId;
             this.Description = description;
             this.Name = name;
-            this.IsFavorite = isFavorite;
             this.AttributesScheme = attributesScheme;
             this.TestPlansAttributesScheme = testPlansAttributesScheme;
             this.TestCasesCount = testCasesCount;
             this.SharedStepsCount = sharedStepsCount;
             this.CheckListsCount = checkListsCount;
             this.AutoTestsCount = autoTestsCount;
-            this.IsDeleted = isDeleted;
-            this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
-            this.CreatedById = createdById;
             this.ModifiedById = modifiedById;
-            this.GlobalId = globalId;
         }
 
         /// <summary>
         /// Unique ID of the project
         /// </summary>
         /// <value>Unique ID of the project</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
@@ -89,14 +94,14 @@ namespace TestIt.Client.Model
         /// Name of the project
         /// </summary>
         /// <value>Name of the project</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Indicates if the project is marked as favorite
         /// </summary>
         /// <value>Indicates if the project is marked as favorite</value>
-        [DataMember(Name = "isFavorite", EmitDefaultValue = true)]
+        [DataMember(Name = "isFavorite", IsRequired = true, EmitDefaultValue = true)]
         public bool IsFavorite { get; set; }
 
         /// <summary>
@@ -145,14 +150,14 @@ namespace TestIt.Client.Model
         /// Indicates if the project is deleted
         /// </summary>
         /// <value>Indicates if the project is deleted</value>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>
         /// Creation date of the project
         /// </summary>
         /// <value>Creation date of the project</value>
-        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+        [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
@@ -166,7 +171,7 @@ namespace TestIt.Client.Model
         /// Unique ID of the project creator
         /// </summary>
         /// <value>Unique ID of the project creator</value>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
@@ -180,7 +185,7 @@ namespace TestIt.Client.Model
         /// Global ID of the project
         /// </summary>
         /// <value>Global ID of the project</value>
-        [DataMember(Name = "globalId", EmitDefaultValue = false)]
+        [DataMember(Name = "globalId", IsRequired = true, EmitDefaultValue = true)]
         public long GlobalId { get; set; }
 
         /// <summary>

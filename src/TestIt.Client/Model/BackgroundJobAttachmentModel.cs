@@ -35,7 +35,12 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BackgroundJobAttachmentModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        [JsonConstructorAttribute]
+        protected BackgroundJobAttachmentModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BackgroundJobAttachmentModel" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
         /// <param name="name">name.</param>
         /// <param name="type">type.</param>
         public BackgroundJobAttachmentModel(Guid id = default(Guid), string name = default(string), string type = default(string))
@@ -48,19 +53,19 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
+        [DataMember(Name = "type", EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>

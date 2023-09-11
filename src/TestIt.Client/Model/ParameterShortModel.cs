@@ -40,12 +40,14 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ParameterShortModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="parameterKeyId">parameterKeyId.</param>
+        /// <param name="id">id (required).</param>
+        /// <param name="parameterKeyId">parameterKeyId (required).</param>
         /// <param name="value">value (required).</param>
         /// <param name="name">name (required).</param>
         public ParameterShortModel(Guid id = default(Guid), Guid parameterKeyId = default(Guid), string value = default(string), string name = default(string))
         {
+            this.Id = id;
+            this.ParameterKeyId = parameterKeyId;
             // to ensure "value" is required (not null)
             if (value == null)
             {
@@ -58,20 +60,18 @@ namespace TestIt.Client.Model
                 throw new ArgumentNullException("name is a required property for ParameterShortModel and cannot be null");
             }
             this.Name = name;
-            this.Id = id;
-            this.ParameterKeyId = parameterKeyId;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets ParameterKeyId
         /// </summary>
-        [DataMember(Name = "parameterKeyId", EmitDefaultValue = false)]
+        [DataMember(Name = "parameterKeyId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ParameterKeyId { get; set; }
 
         /// <summary>

@@ -40,35 +40,35 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="StepCommentModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        /// <param name="id">id (required).</param>
         /// <param name="text">text.</param>
         /// <param name="stepId">stepId (required).</param>
         /// <param name="parentStepId">parentStepId.</param>
         /// <param name="attachments">attachments.</param>
         /// <param name="testResultId">testResultId (required).</param>
-        /// <param name="createdById">createdById.</param>
+        /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
-        /// <param name="createdDate">createdDate.</param>
+        /// <param name="createdDate">createdDate (required).</param>
         /// <param name="modifiedDate">modifiedDate.</param>
         public StepCommentModel(Guid id = default(Guid), string text = default(string), Guid stepId = default(Guid), Guid? parentStepId = default(Guid?), List<AttachmentModel> attachments = default(List<AttachmentModel>), Guid testResultId = default(Guid), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?))
         {
+            this.Id = id;
             this.StepId = stepId;
             this.TestResultId = testResultId;
-            this.Id = id;
+            this.CreatedById = createdById;
+            this.CreatedDate = createdDate;
             this.Text = text;
             this.ParentStepId = parentStepId;
             this.Attachments = attachments;
-            this.CreatedById = createdById;
             this.ModifiedById = modifiedById;
-            this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+        [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>

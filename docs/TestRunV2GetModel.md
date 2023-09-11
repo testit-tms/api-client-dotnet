@@ -7,14 +7,16 @@ Name | Type | Description | Notes
 **StartedOn** | **DateTime?** |  | [optional] 
 **CompletedOn** | **DateTime?** |  | [optional] 
 **StateName** | **TestRunState** |  | 
-**ProjectId** | **Guid** | This property is used to link test run with project | [optional] 
+**ProjectId** | **Guid** | This property is used to link test run with project | 
 **TestPlanId** | **Guid?** | This property is used to link test run with test plan | [optional] 
 **TestResults** | [**List&lt;TestResultV2GetModel&gt;**](TestResultV2GetModel.md) |  | [optional] 
-**CreatedDate** | **DateTime** |  | [optional] 
+**CreatedDate** | **DateTime** |  | 
 **ModifiedDate** | **DateTime?** |  | [optional] 
-**CreatedById** | **Guid** |  | [optional] 
+**CreatedById** | **Guid** |  | 
 **ModifiedById** | **Guid?** |  | [optional] 
 **CreatedByUserName** | **string** |  | [optional] 
+**Attachments** | [**List&lt;AttachmentModel&gt;**](AttachmentModel.md) |  | [optional] 
+**Links** | [**List&lt;LinkModel&gt;**](LinkModel.md) |  | [optional] 
 **Id** | **Guid** |  | 
 **Name** | **string** |  | 
 **Description** | **string** |  | [optional] 

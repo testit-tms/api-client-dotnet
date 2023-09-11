@@ -35,7 +35,12 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="NoContentResult" /> class.
         /// </summary>
-        /// <param name="statusCode">statusCode.</param>
+        [JsonConstructorAttribute]
+        protected NoContentResult() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NoContentResult" /> class.
+        /// </summary>
+        /// <param name="statusCode">statusCode (required).</param>
         public NoContentResult(int statusCode = default(int))
         {
             this.StatusCode = statusCode;
@@ -44,7 +49,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets StatusCode
         /// </summary>
-        [DataMember(Name = "statusCode", EmitDefaultValue = false)]
+        [DataMember(Name = "statusCode", IsRequired = true, EmitDefaultValue = true)]
         public int StatusCode { get; set; }
 
         /// <summary>

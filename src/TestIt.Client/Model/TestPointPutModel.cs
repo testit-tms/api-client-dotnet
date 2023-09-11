@@ -35,26 +35,31 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPointPutModel" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected TestPointPutModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestPointPutModel" /> class.
+        /// </summary>
         /// <param name="testerId">testerId.</param>
-        /// <param name="iterationId">iterationId.</param>
+        /// <param name="iterationId">iterationId (required).</param>
         /// <param name="workItemId">workItemId.</param>
         /// <param name="configurationId">configurationId.</param>
-        /// <param name="testSuiteId">testSuiteId.</param>
+        /// <param name="testSuiteId">testSuiteId (required).</param>
         /// <param name="status">status.</param>
         /// <param name="lastTestResultId">lastTestResultId.</param>
-        /// <param name="id">Unique ID of the entity.</param>
-        /// <param name="isDeleted">Indicates if the entity is deleted.</param>
+        /// <param name="id">Unique ID of the entity (required).</param>
+        /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
         public TestPointPutModel(Guid? testerId = default(Guid?), Guid iterationId = default(Guid), Guid? workItemId = default(Guid?), Guid? configurationId = default(Guid?), Guid testSuiteId = default(Guid), string status = default(string), Guid? lastTestResultId = default(Guid?), Guid id = default(Guid), bool isDeleted = default(bool))
         {
-            this.TesterId = testerId;
             this.IterationId = iterationId;
-            this.WorkItemId = workItemId;
-            this.ConfigurationId = configurationId;
             this.TestSuiteId = testSuiteId;
-            this.Status = status;
-            this.LastTestResultId = lastTestResultId;
             this.Id = id;
             this.IsDeleted = isDeleted;
+            this.TesterId = testerId;
+            this.WorkItemId = workItemId;
+            this.ConfigurationId = configurationId;
+            this.Status = status;
+            this.LastTestResultId = lastTestResultId;
         }
 
         /// <summary>
@@ -66,7 +71,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets IterationId
         /// </summary>
-        [DataMember(Name = "iterationId", EmitDefaultValue = false)]
+        [DataMember(Name = "iterationId", IsRequired = true, EmitDefaultValue = true)]
         public Guid IterationId { get; set; }
 
         /// <summary>
@@ -84,7 +89,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets TestSuiteId
         /// </summary>
-        [DataMember(Name = "testSuiteId", EmitDefaultValue = false)]
+        [DataMember(Name = "testSuiteId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestSuiteId { get; set; }
 
         /// <summary>
@@ -103,14 +108,14 @@ namespace TestIt.Client.Model
         /// Unique ID of the entity
         /// </summary>
         /// <value>Unique ID of the entity</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Indicates if the entity is deleted
         /// </summary>
         /// <value>Indicates if the entity is deleted</value>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>

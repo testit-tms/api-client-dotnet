@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | [optional] 
-**TestPlanId** | **Guid** |  | [optional] 
-**TestPlanChangedFields** | [**TestPlanChangeModelTestPlanChangedFields**](TestPlanChangeModelTestPlanChangedFields.md) |  | [optional] 
-**CreatedById** | **Guid** |  | [optional] 
+**Id** | **Guid** |  | 
+**TestPlanId** | **Guid** |  | 
+**TestPlanChangedFields** | [**TestPlanChangedFieldsViewModel**](TestPlanChangedFieldsViewModel.md) |  | [optional] 
+**CreatedById** | **Guid** |  | 
 **CreatedDate** | **DateTime?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GlobalId** | **long** | Global ID of the autotest | [optional] 
-**IsDeleted** | **bool** | Indicates if the autotest is deleted | [optional] 
-**MustBeApproved** | **bool** | Indicates if the autotest has unapproved changes from linked work items | [optional] 
-**Id** | **Guid** | Unique ID of the autotest | [optional] 
-**CreatedDate** | **DateTime** | Creation date of the autotest | [optional] 
+**GlobalId** | **long** | Global ID of the autotest | 
+**IsDeleted** | **bool** | Indicates if the autotest is deleted | 
+**MustBeApproved** | **bool** | Indicates if the autotest has unapproved changes from linked work items | 
+**Id** | **Guid** | Unique ID of the autotest | 
+**CreatedDate** | **DateTime** | Creation date of the autotest | 
 **ModifiedDate** | **DateTime?** | Last modification date of the project | [optional] 
-**CreatedById** | **Guid** | Unique ID of the project creator | [optional] 
+**CreatedById** | **Guid** | Unique ID of the project creator | 
 **ModifiedById** | **Guid?** | Unique ID of the project last editor | [optional] 
 **LastTestRunId** | **Guid?** | Unique ID of the autotest last test run | [optional] 
 **LastTestRunName** | **string** | Name of the autotest last test run | [optional] 
@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **Description** | **string** | Description of the autotest in autotest&#39;s card | [optional] 
 **Labels** | [**List&lt;LabelShortModel&gt;**](LabelShortModel.md) | Collection of the autotest labels | [optional] 
 **IsFlaky** | **bool?** | Indicates if the autotest is marked as flaky | [optional] 
+**ExternalKey** | **string** | External key of the autotest | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

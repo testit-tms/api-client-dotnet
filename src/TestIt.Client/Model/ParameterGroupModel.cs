@@ -35,32 +35,37 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ParameterGroupModel" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected ParameterGroupModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ParameterGroupModel" /> class.
+        /// </summary>
         /// <param name="name">name.</param>
         /// <param name="values">values.</param>
-        /// <param name="parameterKeyId">parameterKeyId.</param>
+        /// <param name="parameterKeyId">parameterKeyId (required).</param>
         public ParameterGroupModel(string name = default(string), Dictionary<string, string> values = default(Dictionary<string, string>), Guid parameterKeyId = default(Guid))
         {
+            this.ParameterKeyId = parameterKeyId;
             this.Name = name;
             this.Values = values;
-            this.ParameterKeyId = parameterKeyId;
         }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Values
         /// </summary>
-        [DataMember(Name = "values", EmitDefaultValue = false)]
+        [DataMember(Name = "values", EmitDefaultValue = true)]
         public Dictionary<string, string> Values { get; set; }
 
         /// <summary>
         /// Gets or Sets ParameterKeyId
         /// </summary>
-        [DataMember(Name = "parameterKeyId", EmitDefaultValue = false)]
+        [DataMember(Name = "parameterKeyId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ParameterKeyId { get; set; }
 
         /// <summary>

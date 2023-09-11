@@ -96,7 +96,13 @@ namespace TestIt.Client.Model
         /// Enum ImportTestRailXmlProject for value: ImportTestRailXmlProject
         /// </summary>
         [EnumMember(Value = "ImportTestRailXmlProject")]
-        ImportTestRailXmlProject = 11
+        ImportTestRailXmlProject = 11,
+
+        /// <summary>
+        /// Enum PurgeProject for value: PurgeProject
+        /// </summary>
+        [EnumMember(Value = "PurgeProject")]
+        PurgeProject = 12
 
     }
 

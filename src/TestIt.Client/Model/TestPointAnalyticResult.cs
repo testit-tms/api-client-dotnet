@@ -52,31 +52,31 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CountGroupByStatus
         /// </summary>
-        [DataMember(Name = "countGroupByStatus", EmitDefaultValue = false)]
+        [DataMember(Name = "countGroupByStatus", EmitDefaultValue = true)]
         public List<TestPlanGroupByStatus> CountGroupByStatus { get; set; }
 
         /// <summary>
         /// Gets or Sets SumGroupByTester
         /// </summary>
-        [DataMember(Name = "sumGroupByTester", EmitDefaultValue = false)]
+        [DataMember(Name = "sumGroupByTester", EmitDefaultValue = true)]
         public List<TestPlanGroupByTester> SumGroupByTester { get; set; }
 
         /// <summary>
         /// Gets or Sets CountGroupByTester
         /// </summary>
-        [DataMember(Name = "countGroupByTester", EmitDefaultValue = false)]
+        [DataMember(Name = "countGroupByTester", EmitDefaultValue = true)]
         public List<TestPlanGroupByTester> CountGroupByTester { get; set; }
 
         /// <summary>
         /// Gets or Sets CountGroupByTestSuite
         /// </summary>
-        [DataMember(Name = "countGroupByTestSuite", EmitDefaultValue = false)]
+        [DataMember(Name = "countGroupByTestSuite", EmitDefaultValue = true)]
         public List<TestPlanGroupByTestSuite> CountGroupByTestSuite { get; set; }
 
         /// <summary>
         /// Gets or Sets CountGroupByTesterAndStatus
         /// </summary>
-        [DataMember(Name = "countGroupByTesterAndStatus", EmitDefaultValue = false)]
+        [DataMember(Name = "countGroupByTesterAndStatus", EmitDefaultValue = true)]
         public List<TestPlanGroupByTesterAndStatus> CountGroupByTesterAndStatus { get; set; }
 
         /// <summary>

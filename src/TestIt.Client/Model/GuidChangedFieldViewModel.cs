@@ -35,8 +35,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GuidChangedFieldViewModel" /> class.
         /// </summary>
-        /// <param name="oldValue">oldValue.</param>
-        /// <param name="newValue">newValue.</param>
+        [JsonConstructorAttribute]
+        protected GuidChangedFieldViewModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GuidChangedFieldViewModel" /> class.
+        /// </summary>
+        /// <param name="oldValue">oldValue (required).</param>
+        /// <param name="newValue">newValue (required).</param>
         public GuidChangedFieldViewModel(Guid oldValue = default(Guid), Guid newValue = default(Guid))
         {
             this.OldValue = oldValue;
@@ -46,13 +51,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets OldValue
         /// </summary>
-        [DataMember(Name = "oldValue", EmitDefaultValue = false)]
+        [DataMember(Name = "oldValue", IsRequired = true, EmitDefaultValue = true)]
         public Guid OldValue { get; set; }
 
         /// <summary>
         /// Gets or Sets NewValue
         /// </summary>
-        [DataMember(Name = "newValue", EmitDefaultValue = false)]
+        [DataMember(Name = "newValue", IsRequired = true, EmitDefaultValue = true)]
         public Guid NewValue { get; set; }
 
         /// <summary>

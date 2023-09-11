@@ -32,11 +32,22 @@ namespace TestIt.Client.Model
     [DataContract(Name = "TestResultModel")]
     public partial class TestResultModel : IEquatable<TestResultModel>, IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets Outcome
+        /// </summary>
+        [DataMember(Name = "outcome", EmitDefaultValue = true)]
+        public TestResultOutcome? Outcome { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestResultModel" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected TestResultModel() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="TestResultModel" /> class.
         /// </summary>
         /// <param name="autoTestId">autoTestId.</param>
-        /// <param name="configurationId">configurationId.</param>
+        /// <param name="configurationId">configurationId (required).</param>
         /// <param name="startedOn">startedOn.</param>
         /// <param name="completedOn">completedOn.</param>
         /// <param name="durationInMs">durationInMs.</param>
@@ -45,21 +56,21 @@ namespace TestIt.Client.Model
         /// <param name="message">message.</param>
         /// <param name="runByUserId">runByUserId.</param>
         /// <param name="stoppedByUserId">stoppedByUserId.</param>
-        /// <param name="testPointId">testPointId.</param>
-        /// <param name="testRunId">testRunId.</param>
+        /// <param name="testPointId">testPointId (required).</param>
+        /// <param name="testRunId">testRunId (required).</param>
         /// <param name="testPoint">testPoint.</param>
         /// <param name="autoTest">autoTest.</param>
         /// <param name="autoTestStepResults">autoTestStepResults.</param>
         /// <param name="setupResults">setupResults.</param>
         /// <param name="teardownResults">teardownResults.</param>
-        /// <param name="workItemVersionId">workItemVersionId.</param>
+        /// <param name="workItemVersionId">workItemVersionId (required).</param>
         /// <param name="workItemVersionNumber">workItemVersionNumber.</param>
         /// <param name="parameters">parameters.</param>
         /// <param name="properties">properties.</param>
-        /// <param name="id">id.</param>
-        /// <param name="createdDate">createdDate.</param>
+        /// <param name="id">id (required).</param>
+        /// <param name="createdDate">createdDate (required).</param>
         /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="createdById">createdById.</param>
+        /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="stepComments">stepComments.</param>
         /// <param name="failureClassIds">failureClassIds.</param>
@@ -68,10 +79,16 @@ namespace TestIt.Client.Model
         /// <param name="links">links.</param>
         /// <param name="stepResults">stepResults.</param>
         /// <param name="attachments">attachments.</param>
-        public TestResultModel(Guid? autoTestId = default(Guid?), Guid configurationId = default(Guid), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? durationInMs = default(long?), string traces = default(string), string failureType = default(string), string message = default(string), Guid? runByUserId = default(Guid?), Guid? stoppedByUserId = default(Guid?), Guid testPointId = default(Guid), Guid testRunId = default(Guid), TestPointPutModel testPoint = default(TestPointPutModel), AutoTestModel autoTest = default(AutoTestModel), List<AttachmentModelAutoTestStepResultsModel> autoTestStepResults = default(List<AttachmentModelAutoTestStepResultsModel>), List<AttachmentModelAutoTestStepResultsModel> setupResults = default(List<AttachmentModelAutoTestStepResultsModel>), List<AttachmentModelAutoTestStepResultsModel> teardownResults = default(List<AttachmentModelAutoTestStepResultsModel>), Guid workItemVersionId = default(Guid), int? workItemVersionNumber = default(int?), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, string> properties = default(Dictionary<string, string>), Guid id = default(Guid), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), List<StepCommentModel> stepComments = default(List<StepCommentModel>), List<Guid> failureClassIds = default(List<Guid>), string outcome = default(string), string comment = default(string), List<LinkModel> links = default(List<LinkModel>), List<StepResultModel> stepResults = default(List<StepResultModel>), List<AttachmentModel> attachments = default(List<AttachmentModel>))
+        public TestResultModel(Guid? autoTestId = default(Guid?), Guid configurationId = default(Guid), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? durationInMs = default(long?), string traces = default(string), string failureType = default(string), string message = default(string), Guid? runByUserId = default(Guid?), Guid? stoppedByUserId = default(Guid?), Guid testPointId = default(Guid), Guid testRunId = default(Guid), TestPointPutModel testPoint = default(TestPointPutModel), AutoTestModel autoTest = default(AutoTestModel), List<AttachmentModelAutoTestStepResultsModel> autoTestStepResults = default(List<AttachmentModelAutoTestStepResultsModel>), List<AttachmentModelAutoTestStepResultsModel> setupResults = default(List<AttachmentModelAutoTestStepResultsModel>), List<AttachmentModelAutoTestStepResultsModel> teardownResults = default(List<AttachmentModelAutoTestStepResultsModel>), Guid workItemVersionId = default(Guid), int? workItemVersionNumber = default(int?), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, string> properties = default(Dictionary<string, string>), Guid id = default(Guid), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), List<StepCommentModel> stepComments = default(List<StepCommentModel>), List<Guid> failureClassIds = default(List<Guid>), TestResultOutcome? outcome = default(TestResultOutcome?), string comment = default(string), List<LinkModel> links = default(List<LinkModel>), List<StepResultModel> stepResults = default(List<StepResultModel>), List<AttachmentModel> attachments = default(List<AttachmentModel>))
         {
-            this.AutoTestId = autoTestId;
             this.ConfigurationId = configurationId;
+            this.TestPointId = testPointId;
+            this.TestRunId = testRunId;
+            this.WorkItemVersionId = workItemVersionId;
+            this.Id = id;
+            this.CreatedDate = createdDate;
+            this.CreatedById = createdById;
+            this.AutoTestId = autoTestId;
             this.StartedOn = startedOn;
             this.CompletedOn = completedOn;
             this.DurationInMs = durationInMs;
@@ -80,21 +97,15 @@ namespace TestIt.Client.Model
             this.Message = message;
             this.RunByUserId = runByUserId;
             this.StoppedByUserId = stoppedByUserId;
-            this.TestPointId = testPointId;
-            this.TestRunId = testRunId;
             this.TestPoint = testPoint;
             this.AutoTest = autoTest;
             this.AutoTestStepResults = autoTestStepResults;
             this.SetupResults = setupResults;
             this.TeardownResults = teardownResults;
-            this.WorkItemVersionId = workItemVersionId;
             this.WorkItemVersionNumber = workItemVersionNumber;
             this.Parameters = parameters;
             this.Properties = properties;
-            this.Id = id;
-            this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
-            this.CreatedById = createdById;
             this.ModifiedById = modifiedById;
             this.StepComments = stepComments;
             this.FailureClassIds = failureClassIds;
@@ -114,7 +125,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets ConfigurationId
         /// </summary>
-        [DataMember(Name = "configurationId", EmitDefaultValue = false)]
+        [DataMember(Name = "configurationId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ConfigurationId { get; set; }
 
         /// <summary>
@@ -168,13 +179,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets TestPointId
         /// </summary>
-        [DataMember(Name = "testPointId", EmitDefaultValue = false)]
+        [DataMember(Name = "testPointId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestPointId { get; set; }
 
         /// <summary>
         /// Gets or Sets TestRunId
         /// </summary>
-        [DataMember(Name = "testRunId", EmitDefaultValue = false)]
+        [DataMember(Name = "testRunId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestRunId { get; set; }
 
         /// <summary>
@@ -210,7 +221,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets WorkItemVersionId
         /// </summary>
-        [DataMember(Name = "workItemVersionId", EmitDefaultValue = false)]
+        [DataMember(Name = "workItemVersionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid WorkItemVersionId { get; set; }
 
         /// <summary>
@@ -234,13 +245,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+        [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
@@ -252,7 +263,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
@@ -270,14 +281,8 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets FailureClassIds
         /// </summary>
-        [DataMember(Name = "failureClassIds", EmitDefaultValue = false)]
+        [DataMember(Name = "failureClassIds", EmitDefaultValue = true)]
         public List<Guid> FailureClassIds { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Outcome
-        /// </summary>
-        [DataMember(Name = "outcome", EmitDefaultValue = false)]
-        public string Outcome { get; set; }
 
         /// <summary>
         /// Gets or Sets Comment
@@ -294,7 +299,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets StepResults
         /// </summary>
-        [DataMember(Name = "stepResults", EmitDefaultValue = false)]
+        [DataMember(Name = "stepResults", EmitDefaultValue = true)]
         public List<StepResultModel> StepResults { get; set; }
 
         /// <summary>
@@ -528,8 +533,7 @@ namespace TestIt.Client.Model
                 ) && 
                 (
                     this.Outcome == input.Outcome ||
-                    (this.Outcome != null &&
-                    this.Outcome.Equals(input.Outcome))
+                    this.Outcome.Equals(input.Outcome)
                 ) && 
                 (
                     this.Comment == input.Comment ||
@@ -677,10 +681,7 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.FailureClassIds.GetHashCode();
                 }
-                if (this.Outcome != null)
-                {
-                    hashCode = (hashCode * 59) + this.Outcome.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.Outcome.GetHashCode();
                 if (this.Comment != null)
                 {
                     hashCode = (hashCode * 59) + this.Comment.GetHashCode();

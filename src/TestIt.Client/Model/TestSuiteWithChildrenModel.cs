@@ -35,22 +35,27 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestSuiteWithChildrenModel" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected TestSuiteWithChildrenModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestSuiteWithChildrenModel" /> class.
+        /// </summary>
         /// <param name="children">children.</param>
         /// <param name="testerId">testerId.</param>
         /// <param name="parentId">parentId.</param>
-        /// <param name="testPlanId">testPlanId.</param>
+        /// <param name="testPlanId">testPlanId (required).</param>
         /// <param name="name">name.</param>
-        /// <param name="id">Unique ID of the entity.</param>
-        /// <param name="isDeleted">Indicates if the entity is deleted.</param>
+        /// <param name="id">Unique ID of the entity (required).</param>
+        /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
         public TestSuiteWithChildrenModel(List<TestSuiteWithChildrenModel> children = default(List<TestSuiteWithChildrenModel>), Guid? testerId = default(Guid?), Guid? parentId = default(Guid?), Guid testPlanId = default(Guid), string name = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
         {
+            this.TestPlanId = testPlanId;
+            this.Id = id;
+            this.IsDeleted = isDeleted;
             this.Children = children;
             this.TesterId = testerId;
             this.ParentId = parentId;
-            this.TestPlanId = testPlanId;
             this.Name = name;
-            this.Id = id;
-            this.IsDeleted = isDeleted;
         }
 
         /// <summary>
@@ -74,27 +79,27 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets TestPlanId
         /// </summary>
-        [DataMember(Name = "testPlanId", EmitDefaultValue = false)]
+        [DataMember(Name = "testPlanId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestPlanId { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Unique ID of the entity
         /// </summary>
         /// <value>Unique ID of the entity</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Indicates if the entity is deleted
         /// </summary>
         /// <value>Indicates if the entity is deleted</value>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>

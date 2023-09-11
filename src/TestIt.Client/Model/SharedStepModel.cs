@@ -35,45 +35,50 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SharedStepModel" /> class.
         /// </summary>
-        /// <param name="versionId">versionId.</param>
-        /// <param name="globalId">globalId.</param>
+        [JsonConstructorAttribute]
+        protected SharedStepModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SharedStepModel" /> class.
+        /// </summary>
+        /// <param name="versionId">versionId (required).</param>
+        /// <param name="globalId">globalId (required).</param>
         /// <param name="name">name.</param>
         /// <param name="steps">steps.</param>
-        /// <param name="isDeleted">isDeleted.</param>
+        /// <param name="isDeleted">isDeleted (required).</param>
         public SharedStepModel(Guid versionId = default(Guid), long globalId = default(long), string name = default(string), List<StepModel> steps = default(List<StepModel>), bool isDeleted = default(bool))
         {
             this.VersionId = versionId;
             this.GlobalId = globalId;
+            this.IsDeleted = isDeleted;
             this.Name = name;
             this.Steps = steps;
-            this.IsDeleted = isDeleted;
         }
 
         /// <summary>
         /// Gets or Sets VersionId
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "versionId", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "versionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid VersionId { get; set; }
 
         /// <summary>
         /// Gets or Sets GlobalId
         /// </summary>
         /// <example>1000</example>
-        [DataMember(Name = "globalId", EmitDefaultValue = false)]
+        [DataMember(Name = "globalId", IsRequired = true, EmitDefaultValue = true)]
         public long GlobalId { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
         /// <example>&quot;First step&quot;</example>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Steps
         /// </summary>
-        [DataMember(Name = "steps", EmitDefaultValue = false)]
+        [DataMember(Name = "steps", EmitDefaultValue = true)]
         [Obsolete]
         public List<StepModel> Steps { get; set; }
 
@@ -81,7 +86,7 @@ namespace TestIt.Client.Model
         /// Gets or Sets IsDeleted
         /// </summary>
         /// <example>true</example>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>

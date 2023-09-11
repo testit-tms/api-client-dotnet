@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** | Unique ID of the test suite | [optional] 
+**Id** | **Guid** | Unique ID of the test suite | 
 **RefreshDate** | **DateTime?** | Date of the last refresh of the test suite | [optional] 
 **ParentId** | **Guid?** | Unique ID of the parent test suite in hierarchy | [optional] 
 **TestPlanId** | **Guid** | Unique ID of test plan to which the test suite belongs | 

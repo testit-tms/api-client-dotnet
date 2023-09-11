@@ -250,44 +250,10 @@ namespace TestIt.Client.Api
         /// <returns>ApiResponse of TestSuiteV2GetModel</returns>
         ApiResponse<TestSuiteV2GetModel> GetTestSuiteByIdWithHttpInfo(Guid id);
         /// <summary>
-        /// 
-        /// </summary>
-        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="isDeleted"> (optional, default to false)</param>
-        /// <param name="tagNames"> (optional)</param>
-        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
-        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
-        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
-        /// <param name="searchField">Property name for searching (optional)</param>
-        /// <param name="searchValue">Value for searching (optional)</param>
-        /// <returns>List&lt;WorkItemShortModel&gt;</returns>
-        [Obsolete]
-        List<WorkItemShortModel> GetWorkItemsById(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="isDeleted"> (optional, default to false)</param>
-        /// <param name="tagNames"> (optional)</param>
-        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
-        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
-        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
-        /// <param name="searchField">Property name for searching (optional)</param>
-        /// <param name="searchValue">Value for searching (optional)</param>
-        /// <returns>ApiResponse of List&lt;WorkItemShortModel&gt;</returns>
-        [Obsolete]
-        ApiResponse<List<WorkItemShortModel>> GetWorkItemsByIdWithHttpInfo(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
-        /// <summary>
         /// Search WorkItems
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;[Optional] User sets filter  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search work items related to the test points  &lt;br&gt;                      [Optional] User sets filter, system applies filter                     &lt;br&gt;System returns work items array
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;[Optional] User sets filter  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search work items related to the test points  &lt;br&gt;                      [Optional] User sets filter, system applies filter                    &lt;br&gt;System returns work items array
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -298,13 +264,14 @@ namespace TestIt.Client.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="searchWorkItemsRequest"> (optional)</param>
         /// <returns>List&lt;WorkItemShortModel&gt;</returns>
+        [Obsolete]
         List<WorkItemShortModel> SearchWorkItems(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchWorkItemsRequest searchWorkItemsRequest = default(SearchWorkItemsRequest));
 
         /// <summary>
         /// Search WorkItems
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;[Optional] User sets filter  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search work items related to the test points  &lt;br&gt;                      [Optional] User sets filter, system applies filter                     &lt;br&gt;System returns work items array
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;[Optional] User sets filter  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search work items related to the test points  &lt;br&gt;                      [Optional] User sets filter, system applies filter                    &lt;br&gt;System returns work items array
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -315,6 +282,7 @@ namespace TestIt.Client.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="searchWorkItemsRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;WorkItemShortModel&gt;</returns>
+        [Obsolete]
         ApiResponse<List<WorkItemShortModel>> SearchWorkItemsWithHttpInfo(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchWorkItemsRequest searchWorkItemsRequest = default(SearchWorkItemsRequest));
         /// <summary>
         /// Set Configurations By TestSuite Id
@@ -608,49 +576,10 @@ namespace TestIt.Client.Api
         /// <returns>Task of ApiResponse (TestSuiteV2GetModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<TestSuiteV2GetModel>> GetTestSuiteByIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="isDeleted"> (optional, default to false)</param>
-        /// <param name="tagNames"> (optional)</param>
-        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
-        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
-        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
-        /// <param name="searchField">Property name for searching (optional)</param>
-        /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;WorkItemShortModel&gt;</returns>
-        [Obsolete]
-        System.Threading.Tasks.Task<List<WorkItemShortModel>> GetWorkItemsByIdAsync(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="isDeleted"> (optional, default to false)</param>
-        /// <param name="tagNames"> (optional)</param>
-        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
-        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
-        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
-        /// <param name="searchField">Property name for searching (optional)</param>
-        /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
-        [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<List<WorkItemShortModel>>> GetWorkItemsByIdWithHttpInfoAsync(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
         /// Search WorkItems
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;[Optional] User sets filter  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search work items related to the test points  &lt;br&gt;                      [Optional] User sets filter, system applies filter                     &lt;br&gt;System returns work items array
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;[Optional] User sets filter  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search work items related to the test points  &lt;br&gt;                      [Optional] User sets filter, system applies filter                    &lt;br&gt;System returns work items array
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -662,13 +591,14 @@ namespace TestIt.Client.Api
         /// <param name="searchWorkItemsRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WorkItemShortModel&gt;</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<List<WorkItemShortModel>> SearchWorkItemsAsync(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchWorkItemsRequest searchWorkItemsRequest = default(SearchWorkItemsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Search WorkItems
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;[Optional] User sets filter  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search work items related to the test points  &lt;br&gt;                      [Optional] User sets filter, system applies filter                     &lt;br&gt;System returns work items array
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;[Optional] User sets filter  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search work items related to the test points  &lt;br&gt;                      [Optional] User sets filter, system applies filter                    &lt;br&gt;System returns work items array
         /// </remarks>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -680,6 +610,7 @@ namespace TestIt.Client.Api
         /// <param name="searchWorkItemsRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<List<WorkItemShortModel>>> SearchWorkItemsWithHttpInfoAsync(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchWorkItemsRequest searchWorkItemsRequest = default(SearchWorkItemsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Set Configurations By TestSuite Id
@@ -2223,212 +2154,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="isDeleted"> (optional, default to false)</param>
-        /// <param name="tagNames"> (optional)</param>
-        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
-        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
-        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
-        /// <param name="searchField">Property name for searching (optional)</param>
-        /// <param name="searchValue">Value for searching (optional)</param>
-        /// <returns>List&lt;WorkItemShortModel&gt;</returns>
-        [Obsolete]
-        public List<WorkItemShortModel> GetWorkItemsById(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
-        {
-            TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = GetWorkItemsByIdWithHttpInfo(id, isDeleted, tagNames, skip, take, orderBy, searchField, searchValue);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="isDeleted"> (optional, default to false)</param>
-        /// <param name="tagNames"> (optional)</param>
-        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
-        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
-        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
-        /// <param name="searchField">Property name for searching (optional)</param>
-        /// <param name="searchValue">Value for searching (optional)</param>
-        /// <returns>ApiResponse of List&lt;WorkItemShortModel&gt;</returns>
-        [Obsolete]
-        public TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>> GetWorkItemsByIdWithHttpInfo(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
-        {
-            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-            if (isDeleted != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "isDeleted", isDeleted));
-            }
-            if (tagNames != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("multi", "tagNames", tagNames));
-            }
-            if (skip != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
-            }
-            if (take != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
-            }
-            if (orderBy != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
-            }
-            if (searchField != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
-            }
-            if (searchValue != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
-            }
-
-            // authentication (Bearer or PrivateToken) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<List<WorkItemShortModel>>("/api/v2/testSuites/{id}/workItems", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetWorkItemsById", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="isDeleted"> (optional, default to false)</param>
-        /// <param name="tagNames"> (optional)</param>
-        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
-        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
-        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
-        /// <param name="searchField">Property name for searching (optional)</param>
-        /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;WorkItemShortModel&gt;</returns>
-        [Obsolete]
-        public async System.Threading.Tasks.Task<List<WorkItemShortModel>> GetWorkItemsByIdAsync(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = await GetWorkItemsByIdWithHttpInfoAsync(id, isDeleted, tagNames, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="isDeleted"> (optional, default to false)</param>
-        /// <param name="tagNames"> (optional)</param>
-        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
-        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
-        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
-        /// <param name="searchField">Property name for searching (optional)</param>
-        /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
-        [Obsolete]
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>>> GetWorkItemsByIdWithHttpInfoAsync(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-
-            TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-
-            var localVarContentType = TestIt.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = TestIt.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.PathParameters.Add("id", TestIt.Client.Client.ClientUtils.ParameterToString(id)); // path parameter
-            if (isDeleted != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "isDeleted", isDeleted));
-            }
-            if (tagNames != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("multi", "tagNames", tagNames));
-            }
-            if (skip != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
-            }
-            if (take != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
-            }
-            if (orderBy != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
-            }
-            if (searchField != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
-            }
-            if (searchValue != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
-            }
-
-            // authentication (Bearer or PrivateToken) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<WorkItemShortModel>>("/api/v2/testSuites/{id}/workItems", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetWorkItemsById", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Search WorkItems &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;[Optional] User sets filter  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search work items related to the test points  &lt;br&gt;                      [Optional] User sets filter, system applies filter                     &lt;br&gt;System returns work items array
+        /// Search WorkItems &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;[Optional] User sets filter  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search work items related to the test points  &lt;br&gt;                      [Optional] User sets filter, system applies filter                    &lt;br&gt;System returns work items array
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -2439,6 +2165,7 @@ namespace TestIt.Client.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="searchWorkItemsRequest"> (optional)</param>
         /// <returns>List&lt;WorkItemShortModel&gt;</returns>
+        [Obsolete]
         public List<WorkItemShortModel> SearchWorkItems(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchWorkItemsRequest searchWorkItemsRequest = default(SearchWorkItemsRequest))
         {
             TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = SearchWorkItemsWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, searchWorkItemsRequest);
@@ -2446,7 +2173,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Search WorkItems &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;[Optional] User sets filter  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search work items related to the test points  &lt;br&gt;                      [Optional] User sets filter, system applies filter                     &lt;br&gt;System returns work items array
+        /// Search WorkItems &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;[Optional] User sets filter  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search work items related to the test points  &lt;br&gt;                      [Optional] User sets filter, system applies filter                    &lt;br&gt;System returns work items array
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -2457,6 +2184,7 @@ namespace TestIt.Client.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="searchWorkItemsRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;WorkItemShortModel&gt;</returns>
+        [Obsolete]
         public TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>> SearchWorkItemsWithHttpInfo(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchWorkItemsRequest searchWorkItemsRequest = default(SearchWorkItemsRequest))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -2518,7 +2246,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Search WorkItems &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;[Optional] User sets filter  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search work items related to the test points  &lt;br&gt;                      [Optional] User sets filter, system applies filter                     &lt;br&gt;System returns work items array
+        /// Search WorkItems &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;[Optional] User sets filter  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search work items related to the test points  &lt;br&gt;                      [Optional] User sets filter, system applies filter                    &lt;br&gt;System returns work items array
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -2530,6 +2258,7 @@ namespace TestIt.Client.Api
         /// <param name="searchWorkItemsRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WorkItemShortModel&gt;</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<List<WorkItemShortModel>> SearchWorkItemsAsync(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchWorkItemsRequest searchWorkItemsRequest = default(SearchWorkItemsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = await SearchWorkItemsWithHttpInfoAsync(id, skip, take, orderBy, searchField, searchValue, searchWorkItemsRequest, cancellationToken).ConfigureAwait(false);
@@ -2537,7 +2266,7 @@ namespace TestIt.Client.Api
         }
 
         /// <summary>
-        /// Search WorkItems &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;[Optional] User sets filter  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search work items related to the test points  &lt;br&gt;                      [Optional] User sets filter, system applies filter                     &lt;br&gt;System returns work items array
+        /// Search WorkItems &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;[Optional] User sets filter  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search work items related to the test points  &lt;br&gt;                      [Optional] User sets filter, system applies filter                    &lt;br&gt;System returns work items array
         /// </summary>
         /// <exception cref="TestIt.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -2549,6 +2278,7 @@ namespace TestIt.Client.Api
         /// <param name="searchWorkItemsRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<WorkItemShortModel>>> SearchWorkItemsWithHttpInfoAsync(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchWorkItemsRequest searchWorkItemsRequest = default(SearchWorkItemsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 

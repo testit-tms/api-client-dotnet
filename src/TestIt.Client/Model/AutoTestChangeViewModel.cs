@@ -35,40 +35,45 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestChangeViewModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="projectId">projectId.</param>
+        [JsonConstructorAttribute]
+        protected AutoTestChangeViewModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AutoTestChangeViewModel" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
+        /// <param name="projectId">projectId (required).</param>
         /// <param name="externalId">externalId.</param>
-        /// <param name="globalId">globalId.</param>
+        /// <param name="globalId">globalId (required).</param>
         public AutoTestChangeViewModel(Guid id = default(Guid), Guid projectId = default(Guid), string externalId = default(string), long globalId = default(long))
         {
             this.Id = id;
             this.ProjectId = projectId;
-            this.ExternalId = externalId;
             this.GlobalId = globalId;
+            this.ExternalId = externalId;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets ProjectId
         /// </summary>
-        [DataMember(Name = "projectId", EmitDefaultValue = false)]
+        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
         /// Gets or Sets ExternalId
         /// </summary>
-        [DataMember(Name = "externalId", EmitDefaultValue = false)]
+        [DataMember(Name = "externalId", EmitDefaultValue = true)]
         public string ExternalId { get; set; }
 
         /// <summary>
         /// Gets or Sets GlobalId
         /// </summary>
-        [DataMember(Name = "globalId", EmitDefaultValue = false)]
+        [DataMember(Name = "globalId", IsRequired = true, EmitDefaultValue = true)]
         public long GlobalId { get; set; }
 
         /// <summary>

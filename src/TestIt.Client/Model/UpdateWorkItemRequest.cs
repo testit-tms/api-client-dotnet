@@ -56,14 +56,14 @@ namespace TestIt.Client.Model
         /// <param name="iterations">iterations.</param>
         /// <param name="autoTests">autoTests.</param>
         /// <param name="id">id (required).</param>
-        /// <param name="sectionId">sectionId.</param>
+        /// <param name="sectionId">sectionId (required).</param>
         /// <param name="description">description.</param>
         /// <param name="state">state (required).</param>
         /// <param name="priority">priority (required).</param>
         /// <param name="steps">steps (required).</param>
         /// <param name="preconditionSteps">preconditionSteps (required).</param>
         /// <param name="postconditionSteps">postconditionSteps (required).</param>
-        /// <param name="duration">duration.</param>
+        /// <param name="duration">duration (required).</param>
         /// <param name="attributes">attributes (required).</param>
         /// <param name="tags">tags (required).</param>
         /// <param name="links">links (required).</param>
@@ -77,6 +77,7 @@ namespace TestIt.Client.Model
             }
             this.Attachments = attachments;
             this.Id = id;
+            this.SectionId = sectionId;
             this.State = state;
             this.Priority = priority;
             // to ensure "steps" is required (not null)
@@ -97,6 +98,7 @@ namespace TestIt.Client.Model
                 throw new ArgumentNullException("postconditionSteps is a required property for UpdateWorkItemRequest and cannot be null");
             }
             this.PostconditionSteps = postconditionSteps;
+            this.Duration = duration;
             // to ensure "attributes" is required (not null)
             if (attributes == null)
             {
@@ -123,9 +125,7 @@ namespace TestIt.Client.Model
             this.Name = name;
             this.Iterations = iterations;
             this.AutoTests = autoTests;
-            this.SectionId = sectionId;
             this.Description = description;
-            this.Duration = duration;
         }
 
         /// <summary>
@@ -149,22 +149,22 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets SectionId
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "sectionId", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid SectionId { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
         /// <example>&quot;This is a basic test template&quot;</example>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
@@ -189,7 +189,7 @@ namespace TestIt.Client.Model
         /// Gets or Sets Duration
         /// </summary>
         /// <example>10000</example>
-        [DataMember(Name = "duration", EmitDefaultValue = false)]
+        [DataMember(Name = "duration", IsRequired = true, EmitDefaultValue = true)]
         public int Duration { get; set; }
 
         /// <summary>

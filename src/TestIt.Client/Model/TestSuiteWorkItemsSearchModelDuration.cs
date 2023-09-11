@@ -27,7 +27,7 @@ using OpenAPIDateConverter = TestIt.Client.Client.OpenAPIDateConverter;
 namespace TestIt.Client.Model
 {
     /// <summary>
-    /// Duration range model
+    /// Specifies a work item duration range to search for
     /// </summary>
     [DataContract(Name = "TestSuiteWorkItemsSearchModel_duration")]
     public partial class TestSuiteWorkItemsSearchModelDuration : IEquatable<TestSuiteWorkItemsSearchModelDuration>, IValidatableObject

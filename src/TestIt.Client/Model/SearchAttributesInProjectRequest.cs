@@ -53,7 +53,7 @@ namespace TestIt.Client.Model
         /// Specifies an attribute name to search for
         /// </summary>
         /// <value>Specifies an attribute name to search for</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace TestIt.Client.Model
         /// Specifies an attribute types to search for
         /// </summary>
         /// <value>Specifies an attribute types to search for</value>
-        [DataMember(Name = "types", EmitDefaultValue = false)]
+        [DataMember(Name = "types", EmitDefaultValue = true)]
         public List<CustomAttributeTypesEnum> Types { get; set; }
 
         /// <summary>

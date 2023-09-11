@@ -38,6 +38,7 @@ namespace TestIt.Client.Model
         /// <param name="testPlanIds">Specifies a test point test plan IDS to search for.</param>
         /// <param name="testSuiteIds">Specifies a test point test suite IDs to search for.</param>
         /// <param name="workItemGlobalIds">Specifies a test point work item global IDs to search for.</param>
+        /// <param name="workItemMedianDuration">workItemMedianDuration.</param>
         /// <param name="statuses">Specifies a test point statuses to search for.</param>
         /// <param name="priorities">Specifies a test point priorities to search for.</param>
         /// <param name="isAutomated">Specifies a test point automation status to search for.</param>
@@ -56,11 +57,12 @@ namespace TestIt.Client.Model
         /// <param name="workItemCreatedByIds">Specifies a work item creator IDs to search for.</param>
         /// <param name="workItemModifiedDate">workItemModifiedDate.</param>
         /// <param name="workItemModifiedByIds">Specifies a work item last editor IDs to search for.</param>
-        public TestPointFilterModel(List<Guid> testPlanIds = default(List<Guid>), List<Guid> testSuiteIds = default(List<Guid>), List<long> workItemGlobalIds = default(List<long>), List<TestPointStatus> statuses = default(List<TestPointStatus>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), bool? isAutomated = default(bool?), string name = default(string), List<Guid> configurationIds = default(List<Guid>), List<Guid> testerIds = default(List<Guid>), TestPointFilterModelDuration duration = default(TestPointFilterModelDuration), List<Guid> sectionIds = default(List<Guid>), TestPointFilterModelCreatedDate createdDate = default(TestPointFilterModelCreatedDate), List<Guid> createdByIds = default(List<Guid>), TestPointFilterModelModifiedDate modifiedDate = default(TestPointFilterModelModifiedDate), List<Guid> modifiedByIds = default(List<Guid>), List<string> tags = default(List<string>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), TestPointFilterModelWorkItemCreatedDate workItemCreatedDate = default(TestPointFilterModelWorkItemCreatedDate), List<Guid> workItemCreatedByIds = default(List<Guid>), TestPointFilterModelWorkItemModifiedDate workItemModifiedDate = default(TestPointFilterModelWorkItemModifiedDate), List<Guid> workItemModifiedByIds = default(List<Guid>))
+        public TestPointFilterModel(List<Guid> testPlanIds = default(List<Guid>), List<Guid> testSuiteIds = default(List<Guid>), List<long> workItemGlobalIds = default(List<long>), TestPointFilterModelWorkItemMedianDuration workItemMedianDuration = default(TestPointFilterModelWorkItemMedianDuration), List<TestPointStatus> statuses = default(List<TestPointStatus>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), bool? isAutomated = default(bool?), string name = default(string), List<Guid> configurationIds = default(List<Guid>), List<Guid> testerIds = default(List<Guid>), TestPointFilterModelDuration duration = default(TestPointFilterModelDuration), List<Guid> sectionIds = default(List<Guid>), TestPointFilterModelCreatedDate createdDate = default(TestPointFilterModelCreatedDate), List<Guid> createdByIds = default(List<Guid>), TestPointFilterModelModifiedDate modifiedDate = default(TestPointFilterModelModifiedDate), List<Guid> modifiedByIds = default(List<Guid>), List<string> tags = default(List<string>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), TestPointFilterModelWorkItemCreatedDate workItemCreatedDate = default(TestPointFilterModelWorkItemCreatedDate), List<Guid> workItemCreatedByIds = default(List<Guid>), TestPointFilterModelWorkItemModifiedDate workItemModifiedDate = default(TestPointFilterModelWorkItemModifiedDate), List<Guid> workItemModifiedByIds = default(List<Guid>))
         {
             this.TestPlanIds = testPlanIds;
             this.TestSuiteIds = testSuiteIds;
             this.WorkItemGlobalIds = workItemGlobalIds;
+            this.WorkItemMedianDuration = workItemMedianDuration;
             this.Statuses = statuses;
             this.Priorities = priorities;
             this.IsAutomated = isAutomated;
@@ -101,6 +103,12 @@ namespace TestIt.Client.Model
         /// <value>Specifies a test point work item global IDs to search for</value>
         [DataMember(Name = "workItemGlobalIds", EmitDefaultValue = true)]
         public List<long> WorkItemGlobalIds { get; set; }
+
+        /// <summary>
+        /// Gets or Sets WorkItemMedianDuration
+        /// </summary>
+        [DataMember(Name = "workItemMedianDuration", EmitDefaultValue = true)]
+        public TestPointFilterModelWorkItemMedianDuration WorkItemMedianDuration { get; set; }
 
         /// <summary>
         /// Specifies a test point statuses to search for
@@ -234,6 +242,7 @@ namespace TestIt.Client.Model
             sb.Append("  TestPlanIds: ").Append(TestPlanIds).Append("\n");
             sb.Append("  TestSuiteIds: ").Append(TestSuiteIds).Append("\n");
             sb.Append("  WorkItemGlobalIds: ").Append(WorkItemGlobalIds).Append("\n");
+            sb.Append("  WorkItemMedianDuration: ").Append(WorkItemMedianDuration).Append("\n");
             sb.Append("  Statuses: ").Append(Statuses).Append("\n");
             sb.Append("  Priorities: ").Append(Priorities).Append("\n");
             sb.Append("  IsAutomated: ").Append(IsAutomated).Append("\n");
@@ -304,6 +313,11 @@ namespace TestIt.Client.Model
                     this.WorkItemGlobalIds != null &&
                     input.WorkItemGlobalIds != null &&
                     this.WorkItemGlobalIds.SequenceEqual(input.WorkItemGlobalIds)
+                ) && 
+                (
+                    this.WorkItemMedianDuration == input.WorkItemMedianDuration ||
+                    (this.WorkItemMedianDuration != null &&
+                    this.WorkItemMedianDuration.Equals(input.WorkItemMedianDuration))
                 ) && 
                 (
                     this.Statuses == input.Statuses ||
@@ -428,6 +442,10 @@ namespace TestIt.Client.Model
                 if (this.WorkItemGlobalIds != null)
                 {
                     hashCode = (hashCode * 59) + this.WorkItemGlobalIds.GetHashCode();
+                }
+                if (this.WorkItemMedianDuration != null)
+                {
+                    hashCode = (hashCode * 59) + this.WorkItemMedianDuration.GetHashCode();
                 }
                 if (this.Statuses != null)
                 {

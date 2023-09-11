@@ -47,34 +47,34 @@ namespace TestIt.Client.Model
         /// Initializes a new instance of the <see cref="TestRunShortModel" /> class.
         /// </summary>
         /// <param name="stateName">stateName (required).</param>
-        /// <param name="projectId">projectId.</param>
+        /// <param name="projectId">projectId (required).</param>
         /// <param name="testPlanId">testPlanId.</param>
         /// <param name="name">name.</param>
         /// <param name="description">description.</param>
-        /// <param name="id">Unique ID of the entity.</param>
-        /// <param name="isDeleted">Indicates if the entity is deleted.</param>
+        /// <param name="id">Unique ID of the entity (required).</param>
+        /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
         public TestRunShortModel(TestRunState stateName = default(TestRunState), Guid projectId = default(Guid), Guid? testPlanId = default(Guid?), string name = default(string), string description = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
         {
             this.StateName = stateName;
             this.ProjectId = projectId;
+            this.Id = id;
+            this.IsDeleted = isDeleted;
             this.TestPlanId = testPlanId;
             this.Name = name;
             this.Description = description;
-            this.Id = id;
-            this.IsDeleted = isDeleted;
         }
 
         /// <summary>
         /// Gets or Sets ProjectId
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "projectId", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
         /// Gets or Sets TestPlanId
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "testPlanId", EmitDefaultValue = true)]
         public Guid? TestPlanId { get; set; }
 
@@ -95,14 +95,14 @@ namespace TestIt.Client.Model
         /// Unique ID of the entity
         /// </summary>
         /// <value>Unique ID of the entity</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Indicates if the entity is deleted
         /// </summary>
         /// <value>Indicates if the entity is deleted</value>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>

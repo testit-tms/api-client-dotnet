@@ -35,8 +35,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SharedStepChangeViewModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="globalId">globalId.</param>
+        [JsonConstructorAttribute]
+        protected SharedStepChangeViewModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SharedStepChangeViewModel" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
+        /// <param name="globalId">globalId (required).</param>
         /// <param name="name">name.</param>
         /// <param name="steps">steps.</param>
         public SharedStepChangeViewModel(Guid id = default(Guid), long globalId = default(long), string name = default(string), List<WorkItemStepChangeViewModel> steps = default(List<WorkItemStepChangeViewModel>))
@@ -50,25 +55,25 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets GlobalId
         /// </summary>
-        [DataMember(Name = "globalId", EmitDefaultValue = false)]
+        [DataMember(Name = "globalId", IsRequired = true, EmitDefaultValue = true)]
         public long GlobalId { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Steps
         /// </summary>
-        [DataMember(Name = "steps", EmitDefaultValue = false)]
+        [DataMember(Name = "steps", EmitDefaultValue = true)]
         public List<WorkItemStepChangeViewModel> Steps { get; set; }
 
         /// <summary>

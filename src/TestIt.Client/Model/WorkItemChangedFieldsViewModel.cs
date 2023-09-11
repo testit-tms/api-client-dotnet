@@ -55,7 +55,7 @@ namespace TestIt.Client.Model
         /// <param name="globalId">globalId.</param>
         /// <param name="versionNumber">versionNumber.</param>
         /// <param name="entityTypeName">entityTypeName.</param>
-        public WorkItemChangedFieldsViewModel(StringChangedFieldWithDiffsViewModel name = default(StringChangedFieldWithDiffsViewModel), WorkItemChangedFieldsViewModelIsDeleted isDeleted = default(WorkItemChangedFieldsViewModelIsDeleted), WorkItemChangedFieldsViewModelProjectId projectId = default(WorkItemChangedFieldsViewModelProjectId), WorkItemChangedFieldsViewModelIsDeleted isAutomated = default(WorkItemChangedFieldsViewModelIsDeleted), WorkItemChangedFieldsViewModelProjectId sectionId = default(WorkItemChangedFieldsViewModelProjectId), StringChangedFieldWithDiffsViewModel description = default(StringChangedFieldWithDiffsViewModel), WorkItemChangedFieldsViewModelState state = default(WorkItemChangedFieldsViewModelState), WorkItemChangedFieldsViewModelState priority = default(WorkItemChangedFieldsViewModelState), WorkItemChangedFieldsViewModelDuration duration = default(WorkItemChangedFieldsViewModelDuration), Dictionary<string, WorkItemChangedAttributeViewModel> attributes = default(Dictionary<string, WorkItemChangedAttributeViewModel>), WorkItemChangedFieldsViewModelSteps steps = default(WorkItemChangedFieldsViewModelSteps), WorkItemChangedFieldsViewModelSteps preconditionSteps = default(WorkItemChangedFieldsViewModelSteps), WorkItemChangedFieldsViewModelSteps postconditionSteps = default(WorkItemChangedFieldsViewModelSteps), WorkItemChangedFieldsViewModelAutoTests autoTests = default(WorkItemChangedFieldsViewModelAutoTests), WorkItemChangedFieldsViewModelAttachments attachments = default(WorkItemChangedFieldsViewModelAttachments), WorkItemChangedFieldsViewModelTags tags = default(WorkItemChangedFieldsViewModelTags), WorkItemChangedFieldsViewModelLinks links = default(WorkItemChangedFieldsViewModelLinks), WorkItemChangedFieldsViewModelGlobalId globalId = default(WorkItemChangedFieldsViewModelGlobalId), WorkItemChangedFieldsViewModelDuration versionNumber = default(WorkItemChangedFieldsViewModelDuration), WorkItemChangedFieldsViewModelState entityTypeName = default(WorkItemChangedFieldsViewModelState))
+        public WorkItemChangedFieldsViewModel(StringChangedFieldWithDiffsViewModel name = default(StringChangedFieldWithDiffsViewModel), BooleanChangedFieldViewModel isDeleted = default(BooleanChangedFieldViewModel), GuidChangedFieldViewModel projectId = default(GuidChangedFieldViewModel), BooleanChangedFieldViewModel isAutomated = default(BooleanChangedFieldViewModel), GuidChangedFieldViewModel sectionId = default(GuidChangedFieldViewModel), StringChangedFieldWithDiffsViewModel description = default(StringChangedFieldWithDiffsViewModel), StringChangedFieldViewModel state = default(StringChangedFieldViewModel), StringChangedFieldViewModel priority = default(StringChangedFieldViewModel), Int32ChangedFieldViewModel duration = default(Int32ChangedFieldViewModel), Dictionary<string, WorkItemChangedAttributeViewModel> attributes = default(Dictionary<string, WorkItemChangedAttributeViewModel>), WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel steps = default(WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel), WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel preconditionSteps = default(WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel), WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel postconditionSteps = default(WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel), AutoTestChangeViewModelArrayChangedFieldViewModel autoTests = default(AutoTestChangeViewModelArrayChangedFieldViewModel), AttachmentChangeViewModelArrayChangedFieldViewModel attachments = default(AttachmentChangeViewModelArrayChangedFieldViewModel), StringArrayChangedFieldViewModel tags = default(StringArrayChangedFieldViewModel), WorkItemLinkChangeViewModelArrayChangedFieldViewModel links = default(WorkItemLinkChangeViewModelArrayChangedFieldViewModel), Int64ChangedFieldViewModel globalId = default(Int64ChangedFieldViewModel), Int32ChangedFieldViewModel versionNumber = default(Int32ChangedFieldViewModel), StringChangedFieldViewModel entityTypeName = default(StringChangedFieldViewModel))
         {
             this.Name = name;
             this.IsDeleted = isDeleted;
@@ -88,26 +88,26 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets IsDeleted
         /// </summary>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = false)]
-        public WorkItemChangedFieldsViewModelIsDeleted IsDeleted { get; set; }
+        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        public BooleanChangedFieldViewModel IsDeleted { get; set; }
 
         /// <summary>
         /// Gets or Sets ProjectId
         /// </summary>
-        [DataMember(Name = "projectId", EmitDefaultValue = false)]
-        public WorkItemChangedFieldsViewModelProjectId ProjectId { get; set; }
+        [DataMember(Name = "projectId", EmitDefaultValue = true)]
+        public GuidChangedFieldViewModel ProjectId { get; set; }
 
         /// <summary>
         /// Gets or Sets IsAutomated
         /// </summary>
-        [DataMember(Name = "isAutomated", EmitDefaultValue = false)]
-        public WorkItemChangedFieldsViewModelIsDeleted IsAutomated { get; set; }
+        [DataMember(Name = "isAutomated", EmitDefaultValue = true)]
+        public BooleanChangedFieldViewModel IsAutomated { get; set; }
 
         /// <summary>
         /// Gets or Sets SectionId
         /// </summary>
-        [DataMember(Name = "sectionId", EmitDefaultValue = false)]
-        public WorkItemChangedFieldsViewModelProjectId SectionId { get; set; }
+        [DataMember(Name = "sectionId", EmitDefaultValue = true)]
+        public GuidChangedFieldViewModel SectionId { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
@@ -118,86 +118,86 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets State
         /// </summary>
-        [DataMember(Name = "state", EmitDefaultValue = false)]
-        public WorkItemChangedFieldsViewModelState State { get; set; }
+        [DataMember(Name = "state", EmitDefaultValue = true)]
+        public StringChangedFieldViewModel State { get; set; }
 
         /// <summary>
         /// Gets or Sets Priority
         /// </summary>
-        [DataMember(Name = "priority", EmitDefaultValue = false)]
-        public WorkItemChangedFieldsViewModelState Priority { get; set; }
+        [DataMember(Name = "priority", EmitDefaultValue = true)]
+        public StringChangedFieldViewModel Priority { get; set; }
 
         /// <summary>
         /// Gets or Sets Duration
         /// </summary>
-        [DataMember(Name = "duration", EmitDefaultValue = false)]
-        public WorkItemChangedFieldsViewModelDuration Duration { get; set; }
+        [DataMember(Name = "duration", EmitDefaultValue = true)]
+        public Int32ChangedFieldViewModel Duration { get; set; }
 
         /// <summary>
         /// Gets or Sets Attributes
         /// </summary>
-        [DataMember(Name = "attributes", EmitDefaultValue = false)]
+        [DataMember(Name = "attributes", EmitDefaultValue = true)]
         public Dictionary<string, WorkItemChangedAttributeViewModel> Attributes { get; set; }
 
         /// <summary>
         /// Gets or Sets Steps
         /// </summary>
-        [DataMember(Name = "steps", EmitDefaultValue = false)]
-        public WorkItemChangedFieldsViewModelSteps Steps { get; set; }
+        [DataMember(Name = "steps", EmitDefaultValue = true)]
+        public WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel Steps { get; set; }
 
         /// <summary>
         /// Gets or Sets PreconditionSteps
         /// </summary>
-        [DataMember(Name = "preconditionSteps", EmitDefaultValue = false)]
-        public WorkItemChangedFieldsViewModelSteps PreconditionSteps { get; set; }
+        [DataMember(Name = "preconditionSteps", EmitDefaultValue = true)]
+        public WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel PreconditionSteps { get; set; }
 
         /// <summary>
         /// Gets or Sets PostconditionSteps
         /// </summary>
-        [DataMember(Name = "postconditionSteps", EmitDefaultValue = false)]
-        public WorkItemChangedFieldsViewModelSteps PostconditionSteps { get; set; }
+        [DataMember(Name = "postconditionSteps", EmitDefaultValue = true)]
+        public WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel PostconditionSteps { get; set; }
 
         /// <summary>
         /// Gets or Sets AutoTests
         /// </summary>
-        [DataMember(Name = "autoTests", EmitDefaultValue = false)]
-        public WorkItemChangedFieldsViewModelAutoTests AutoTests { get; set; }
+        [DataMember(Name = "autoTests", EmitDefaultValue = true)]
+        public AutoTestChangeViewModelArrayChangedFieldViewModel AutoTests { get; set; }
 
         /// <summary>
         /// Gets or Sets Attachments
         /// </summary>
-        [DataMember(Name = "attachments", EmitDefaultValue = false)]
-        public WorkItemChangedFieldsViewModelAttachments Attachments { get; set; }
+        [DataMember(Name = "attachments", EmitDefaultValue = true)]
+        public AttachmentChangeViewModelArrayChangedFieldViewModel Attachments { get; set; }
 
         /// <summary>
         /// Gets or Sets Tags
         /// </summary>
-        [DataMember(Name = "tags", EmitDefaultValue = false)]
-        public WorkItemChangedFieldsViewModelTags Tags { get; set; }
+        [DataMember(Name = "tags", EmitDefaultValue = true)]
+        public StringArrayChangedFieldViewModel Tags { get; set; }
 
         /// <summary>
         /// Gets or Sets Links
         /// </summary>
-        [DataMember(Name = "links", EmitDefaultValue = false)]
-        public WorkItemChangedFieldsViewModelLinks Links { get; set; }
+        [DataMember(Name = "links", EmitDefaultValue = true)]
+        public WorkItemLinkChangeViewModelArrayChangedFieldViewModel Links { get; set; }
 
         /// <summary>
         /// Gets or Sets GlobalId
         /// </summary>
-        [DataMember(Name = "globalId", EmitDefaultValue = false)]
-        public WorkItemChangedFieldsViewModelGlobalId GlobalId { get; set; }
+        [DataMember(Name = "globalId", EmitDefaultValue = true)]
+        public Int64ChangedFieldViewModel GlobalId { get; set; }
 
         /// <summary>
         /// Gets or Sets VersionNumber
         /// </summary>
-        [DataMember(Name = "versionNumber", EmitDefaultValue = false)]
-        public WorkItemChangedFieldsViewModelDuration VersionNumber { get; set; }
+        [DataMember(Name = "versionNumber", EmitDefaultValue = true)]
+        public Int32ChangedFieldViewModel VersionNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets EntityTypeName
         /// </summary>
-        [DataMember(Name = "entityTypeName", EmitDefaultValue = false)]
-        public WorkItemChangedFieldsViewModelState EntityTypeName { get; set; }
+        [DataMember(Name = "entityTypeName", EmitDefaultValue = true)]
+        public StringChangedFieldViewModel EntityTypeName { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

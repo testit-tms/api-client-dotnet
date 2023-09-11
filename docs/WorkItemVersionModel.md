@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**VersionId** | **Guid** | used for versioning changes in workitem | [optional] 
-**VersionNumber** | **int** | used for define chronology of workitem state in each version | [optional] 
+**VersionId** | **Guid** | used for versioning changes in workitem | 
+**VersionNumber** | **int** | used for define chronology of workitem state in each version | 
 **ModifiedDate** | **DateTime?** |  | [optional] 
 **ModifiedById** | **Guid?** |  | [optional] 
 

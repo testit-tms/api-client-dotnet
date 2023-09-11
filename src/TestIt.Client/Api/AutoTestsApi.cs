@@ -296,6 +296,7 @@ namespace TestIt.Client.Api
         /// <param name="flaky">Is autotest marked as \&quot;Flaky\&quot; (optional)</param>
         /// <param name="includeSteps">If result must also include autotest steps (optional)</param>
         /// <param name="includeLabels">If result must also include autotest labels (optional)</param>
+        /// <param name="externalKey">External key of autotest (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -303,7 +304,7 @@ namespace TestIt.Client.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>List&lt;AutoTestModel&gt;</returns>
         [Obsolete]
-        List<AutoTestModel> GetAllAutoTests(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string _namespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
+        List<AutoTestModel> GetAllAutoTests(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string _namespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), string externalKey = default(string), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
 
         /// <summary>
         /// 
@@ -332,6 +333,7 @@ namespace TestIt.Client.Api
         /// <param name="flaky">Is autotest marked as \&quot;Flaky\&quot; (optional)</param>
         /// <param name="includeSteps">If result must also include autotest steps (optional)</param>
         /// <param name="includeLabels">If result must also include autotest labels (optional)</param>
+        /// <param name="externalKey">External key of autotest (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -339,7 +341,7 @@ namespace TestIt.Client.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>ApiResponse of List&lt;AutoTestModel&gt;</returns>
         [Obsolete]
-        ApiResponse<List<AutoTestModel>> GetAllAutoTestsWithHttpInfo(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string _namespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
+        ApiResponse<List<AutoTestModel>> GetAllAutoTestsWithHttpInfo(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string _namespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), string externalKey = default(string), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
         /// <summary>
         /// Get average autotest duration
         /// </summary>
@@ -866,6 +868,7 @@ namespace TestIt.Client.Api
         /// <param name="flaky">Is autotest marked as \&quot;Flaky\&quot; (optional)</param>
         /// <param name="includeSteps">If result must also include autotest steps (optional)</param>
         /// <param name="includeLabels">If result must also include autotest labels (optional)</param>
+        /// <param name="externalKey">External key of autotest (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -874,7 +877,7 @@ namespace TestIt.Client.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AutoTestModel&gt;</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<List<AutoTestModel>> GetAllAutoTestsAsync(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string _namespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<AutoTestModel>> GetAllAutoTestsAsync(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string _namespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), string externalKey = default(string), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -903,6 +906,7 @@ namespace TestIt.Client.Api
         /// <param name="flaky">Is autotest marked as \&quot;Flaky\&quot; (optional)</param>
         /// <param name="includeSteps">If result must also include autotest steps (optional)</param>
         /// <param name="includeLabels">If result must also include autotest labels (optional)</param>
+        /// <param name="externalKey">External key of autotest (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -911,7 +915,7 @@ namespace TestIt.Client.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AutoTestModel&gt;)</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<List<AutoTestModel>>> GetAllAutoTestsWithHttpInfoAsync(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string _namespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<AutoTestModel>>> GetAllAutoTestsWithHttpInfoAsync(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string _namespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), string externalKey = default(string), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get average autotest duration
         /// </summary>
@@ -2798,6 +2802,7 @@ namespace TestIt.Client.Api
         /// <param name="flaky">Is autotest marked as \&quot;Flaky\&quot; (optional)</param>
         /// <param name="includeSteps">If result must also include autotest steps (optional)</param>
         /// <param name="includeLabels">If result must also include autotest labels (optional)</param>
+        /// <param name="externalKey">External key of autotest (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -2805,9 +2810,9 @@ namespace TestIt.Client.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>List&lt;AutoTestModel&gt;</returns>
         [Obsolete]
-        public List<AutoTestModel> GetAllAutoTests(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string _namespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
+        public List<AutoTestModel> GetAllAutoTests(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string _namespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), string externalKey = default(string), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
-            TestIt.Client.Client.ApiResponse<List<AutoTestModel>> localVarResponse = GetAllAutoTestsWithHttpInfo(projectId, externalId, globalId, _namespace, isNamespaceNull, includeEmptyNamespaces, className, isClassnameNull, includeEmptyClassNames, isDeleted, deleted, labels, stabilityMinimal, minStability, stabilityMaximal, maxStability, isFlaky, flaky, includeSteps, includeLabels, skip, take, orderBy, searchField, searchValue);
+            TestIt.Client.Client.ApiResponse<List<AutoTestModel>> localVarResponse = GetAllAutoTestsWithHttpInfo(projectId, externalId, globalId, _namespace, isNamespaceNull, includeEmptyNamespaces, className, isClassnameNull, includeEmptyClassNames, isDeleted, deleted, labels, stabilityMinimal, minStability, stabilityMaximal, maxStability, isFlaky, flaky, includeSteps, includeLabels, externalKey, skip, take, orderBy, searchField, searchValue);
             return localVarResponse.Data;
         }
 
@@ -2835,6 +2840,7 @@ namespace TestIt.Client.Api
         /// <param name="flaky">Is autotest marked as \&quot;Flaky\&quot; (optional)</param>
         /// <param name="includeSteps">If result must also include autotest steps (optional)</param>
         /// <param name="includeLabels">If result must also include autotest labels (optional)</param>
+        /// <param name="externalKey">External key of autotest (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -2842,7 +2848,7 @@ namespace TestIt.Client.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>ApiResponse of List&lt;AutoTestModel&gt;</returns>
         [Obsolete]
-        public TestIt.Client.Client.ApiResponse<List<AutoTestModel>> GetAllAutoTestsWithHttpInfo(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string _namespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
+        public TestIt.Client.Client.ApiResponse<List<AutoTestModel>> GetAllAutoTestsWithHttpInfo(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string _namespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), string externalKey = default(string), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
 
@@ -2939,6 +2945,10 @@ namespace TestIt.Client.Api
             if (includeLabels != null)
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "includeLabels", includeLabels));
+            }
+            if (externalKey != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "externalKey", externalKey));
             }
             if (skip != null)
             {
@@ -3003,6 +3013,7 @@ namespace TestIt.Client.Api
         /// <param name="flaky">Is autotest marked as \&quot;Flaky\&quot; (optional)</param>
         /// <param name="includeSteps">If result must also include autotest steps (optional)</param>
         /// <param name="includeLabels">If result must also include autotest labels (optional)</param>
+        /// <param name="externalKey">External key of autotest (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -3011,9 +3022,9 @@ namespace TestIt.Client.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AutoTestModel&gt;</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<List<AutoTestModel>> GetAllAutoTestsAsync(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string _namespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<AutoTestModel>> GetAllAutoTestsAsync(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string _namespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), string externalKey = default(string), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.Client.Client.ApiResponse<List<AutoTestModel>> localVarResponse = await GetAllAutoTestsWithHttpInfoAsync(projectId, externalId, globalId, _namespace, isNamespaceNull, includeEmptyNamespaces, className, isClassnameNull, includeEmptyClassNames, isDeleted, deleted, labels, stabilityMinimal, minStability, stabilityMaximal, maxStability, isFlaky, flaky, includeSteps, includeLabels, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
+            TestIt.Client.Client.ApiResponse<List<AutoTestModel>> localVarResponse = await GetAllAutoTestsWithHttpInfoAsync(projectId, externalId, globalId, _namespace, isNamespaceNull, includeEmptyNamespaces, className, isClassnameNull, includeEmptyClassNames, isDeleted, deleted, labels, stabilityMinimal, minStability, stabilityMaximal, maxStability, isFlaky, flaky, includeSteps, includeLabels, externalKey, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3041,6 +3052,7 @@ namespace TestIt.Client.Api
         /// <param name="flaky">Is autotest marked as \&quot;Flaky\&quot; (optional)</param>
         /// <param name="includeSteps">If result must also include autotest steps (optional)</param>
         /// <param name="includeLabels">If result must also include autotest labels (optional)</param>
+        /// <param name="externalKey">External key of autotest (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -3049,7 +3061,7 @@ namespace TestIt.Client.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AutoTestModel&gt;)</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<AutoTestModel>>> GetAllAutoTestsWithHttpInfoAsync(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string _namespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIt.Client.Client.ApiResponse<List<AutoTestModel>>> GetAllAutoTestsWithHttpInfoAsync(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string _namespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), string externalKey = default(string), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIt.Client.Client.RequestOptions localVarRequestOptions = new TestIt.Client.Client.RequestOptions();
@@ -3148,6 +3160,10 @@ namespace TestIt.Client.Api
             if (includeLabels != null)
             {
                 localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "includeLabels", includeLabels));
+            }
+            if (externalKey != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIt.Client.Client.ClientUtils.ParameterToMultiMap("", "externalKey", externalKey));
             }
             if (skip != null)
             {

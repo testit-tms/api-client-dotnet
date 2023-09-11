@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UserId** | **Guid** |  | [optional] 
+**UserId** | **Guid** |  | 
 **UserName** | **string** |  | [optional] 
-**TestPointCount** | **long** |  | [optional] 
+**TestPointCount** | **long** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

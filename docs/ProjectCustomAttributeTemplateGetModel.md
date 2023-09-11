@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** | Unique ID of the custom attributes template | [optional] 
-**IsDeleted** | **bool** | Indicates if the custom attribute template is deleted | [optional] 
+**Id** | **Guid** | Unique ID of the custom attributes template | 
+**IsDeleted** | **bool** | Indicates if the custom attribute template is deleted | 
 **Name** | **string** | Name of the custom attribute template | [optional] 
 **CustomAttributeModels** | [**List&lt;CustomAttributeModel&gt;**](CustomAttributeModel.md) | Attributes of the template | [optional] 
 

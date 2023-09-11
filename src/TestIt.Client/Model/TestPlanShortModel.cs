@@ -35,8 +35,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPlanShortModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="projectId">projectId.</param>
+        [JsonConstructorAttribute]
+        protected TestPlanShortModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestPlanShortModel" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
+        /// <param name="projectId">projectId (required).</param>
         /// <param name="name">name.</param>
         public TestPlanShortModel(Guid id = default(Guid), Guid projectId = default(Guid), string name = default(string))
         {
@@ -48,19 +53,19 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets ProjectId
         /// </summary>
-        [DataMember(Name = "projectId", EmitDefaultValue = false)]
+        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>

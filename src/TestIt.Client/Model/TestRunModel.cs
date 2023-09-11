@@ -47,15 +47,15 @@ namespace TestIt.Client.Model
         /// Initializes a new instance of the <see cref="TestRunModel" /> class.
         /// </summary>
         /// <param name="autoTests">autoTests.</param>
-        /// <param name="autoTestsCount">autoTestsCount.</param>
+        /// <param name="autoTestsCount">autoTestsCount (required).</param>
         /// <param name="testSuiteIds">testSuiteIds.</param>
-        /// <param name="isAutomated">isAutomated.</param>
+        /// <param name="isAutomated">isAutomated (required).</param>
         /// <param name="analytic">analytic.</param>
         /// <param name="testResults">testResults.</param>
         /// <param name="testPlan">testPlan.</param>
-        /// <param name="createdDate">createdDate.</param>
+        /// <param name="createdDate">createdDate (required).</param>
         /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="createdById">createdById.</param>
+        /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="createdByUserName">createdByUserName.</param>
         /// <param name="startedDate">startedDate.</param>
@@ -63,41 +63,41 @@ namespace TestIt.Client.Model
         /// <param name="build">build.</param>
         /// <param name="description">description.</param>
         /// <param name="stateName">stateName (required).</param>
-        /// <param name="projectId">projectId.</param>
+        /// <param name="projectId">projectId (required).</param>
         /// <param name="testPlanId">testPlanId.</param>
         /// <param name="runByUserId">runByUserId.</param>
         /// <param name="stoppedByUserId">stoppedByUserId.</param>
         /// <param name="name">name.</param>
         /// <param name="launchSource">launchSource.</param>
-        /// <param name="id">Unique ID of the entity.</param>
-        /// <param name="isDeleted">Indicates if the entity is deleted.</param>
-        public TestRunModel(List<AutoTestModel> autoTests = default(List<AutoTestModel>), int autoTestsCount = default(int), List<Guid> testSuiteIds = default(List<Guid>), bool isAutomated = default(bool), TestRunModelAnalytic analytic = default(TestRunModelAnalytic), List<TestResultModel> testResults = default(List<TestResultModel>), TestPlanModel testPlan = default(TestPlanModel), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string createdByUserName = default(string), DateTime? startedDate = default(DateTime?), DateTime? completedDate = default(DateTime?), string build = default(string), string description = default(string), TestRunState stateName = default(TestRunState), Guid projectId = default(Guid), Guid? testPlanId = default(Guid?), Guid? runByUserId = default(Guid?), Guid? stoppedByUserId = default(Guid?), string name = default(string), string launchSource = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
+        /// <param name="id">Unique ID of the entity (required).</param>
+        /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
+        public TestRunModel(List<AutoTestModel> autoTests = default(List<AutoTestModel>), int autoTestsCount = default(int), List<Guid> testSuiteIds = default(List<Guid>), bool isAutomated = default(bool), TestRunAnalyticResultModel analytic = default(TestRunAnalyticResultModel), List<TestResultModel> testResults = default(List<TestResultModel>), TestPlanModel testPlan = default(TestPlanModel), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string createdByUserName = default(string), DateTime? startedDate = default(DateTime?), DateTime? completedDate = default(DateTime?), string build = default(string), string description = default(string), TestRunState stateName = default(TestRunState), Guid projectId = default(Guid), Guid? testPlanId = default(Guid?), Guid? runByUserId = default(Guid?), Guid? stoppedByUserId = default(Guid?), string name = default(string), string launchSource = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
         {
-            this.StateName = stateName;
-            this.AutoTests = autoTests;
             this.AutoTestsCount = autoTestsCount;
-            this.TestSuiteIds = testSuiteIds;
             this.IsAutomated = isAutomated;
+            this.CreatedDate = createdDate;
+            this.CreatedById = createdById;
+            this.StateName = stateName;
+            this.ProjectId = projectId;
+            this.Id = id;
+            this.IsDeleted = isDeleted;
+            this.AutoTests = autoTests;
+            this.TestSuiteIds = testSuiteIds;
             this.Analytic = analytic;
             this.TestResults = testResults;
             this.TestPlan = testPlan;
-            this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
-            this.CreatedById = createdById;
             this.ModifiedById = modifiedById;
             this.CreatedByUserName = createdByUserName;
             this.StartedDate = startedDate;
             this.CompletedDate = completedDate;
             this.Build = build;
             this.Description = description;
-            this.ProjectId = projectId;
             this.TestPlanId = testPlanId;
             this.RunByUserId = runByUserId;
             this.StoppedByUserId = stoppedByUserId;
             this.Name = name;
             this.LaunchSource = launchSource;
-            this.Id = id;
-            this.IsDeleted = isDeleted;
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets AutoTestsCount
         /// </summary>
-        [DataMember(Name = "autoTestsCount", EmitDefaultValue = false)]
+        [DataMember(Name = "autoTestsCount", IsRequired = true, EmitDefaultValue = true)]
         public int AutoTestsCount { get; set; }
 
         /// <summary>
@@ -121,14 +121,14 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets IsAutomated
         /// </summary>
-        [DataMember(Name = "isAutomated", EmitDefaultValue = true)]
+        [DataMember(Name = "isAutomated", IsRequired = true, EmitDefaultValue = true)]
         public bool IsAutomated { get; set; }
 
         /// <summary>
         /// Gets or Sets Analytic
         /// </summary>
-        [DataMember(Name = "analytic", EmitDefaultValue = false)]
-        public TestRunModelAnalytic Analytic { get; set; }
+        [DataMember(Name = "analytic", EmitDefaultValue = true)]
+        public TestRunAnalyticResultModel Analytic { get; set; }
 
         /// <summary>
         /// Gets or Sets TestResults
@@ -145,7 +145,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+        [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
@@ -157,7 +157,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
@@ -187,19 +187,19 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Build
         /// </summary>
-        [DataMember(Name = "build", EmitDefaultValue = false)]
+        [DataMember(Name = "build", EmitDefaultValue = true)]
         public string Build { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets ProjectId
         /// </summary>
-        [DataMember(Name = "projectId", EmitDefaultValue = false)]
+        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
@@ -223,27 +223,27 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets LaunchSource
         /// </summary>
-        [DataMember(Name = "launchSource", EmitDefaultValue = false)]
+        [DataMember(Name = "launchSource", EmitDefaultValue = true)]
         public string LaunchSource { get; set; }
 
         /// <summary>
         /// Unique ID of the entity
         /// </summary>
         /// <value>Unique ID of the entity</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Indicates if the entity is deleted
         /// </summary>
         /// <value>Indicates if the entity is deleted</value>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>

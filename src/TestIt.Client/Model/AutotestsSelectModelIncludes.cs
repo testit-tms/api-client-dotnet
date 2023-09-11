@@ -35,9 +35,14 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AutotestsSelectModelIncludes" /> class.
         /// </summary>
-        /// <param name="includeSteps">If autotest steps will be included.</param>
-        /// <param name="includeLinks">If autotest links will be included.</param>
-        /// <param name="includeLabels">If autotest labels will be included.</param>
+        [JsonConstructorAttribute]
+        protected AutotestsSelectModelIncludes() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AutotestsSelectModelIncludes" /> class.
+        /// </summary>
+        /// <param name="includeSteps">If autotest steps will be included (required).</param>
+        /// <param name="includeLinks">If autotest links will be included (required).</param>
+        /// <param name="includeLabels">If autotest labels will be included (required).</param>
         public AutotestsSelectModelIncludes(bool includeSteps = default(bool), bool includeLinks = default(bool), bool includeLabels = default(bool))
         {
             this.IncludeSteps = includeSteps;
@@ -49,21 +54,21 @@ namespace TestIt.Client.Model
         /// If autotest steps will be included
         /// </summary>
         /// <value>If autotest steps will be included</value>
-        [DataMember(Name = "includeSteps", EmitDefaultValue = true)]
+        [DataMember(Name = "includeSteps", IsRequired = true, EmitDefaultValue = true)]
         public bool IncludeSteps { get; set; }
 
         /// <summary>
         /// If autotest links will be included
         /// </summary>
         /// <value>If autotest links will be included</value>
-        [DataMember(Name = "includeLinks", EmitDefaultValue = true)]
+        [DataMember(Name = "includeLinks", IsRequired = true, EmitDefaultValue = true)]
         public bool IncludeLinks { get; set; }
 
         /// <summary>
         /// If autotest labels will be included
         /// </summary>
         /// <value>If autotest labels will be included</value>
-        [DataMember(Name = "includeLabels", EmitDefaultValue = true)]
+        [DataMember(Name = "includeLabels", IsRequired = true, EmitDefaultValue = true)]
         public bool IncludeLabels { get; set; }
 
         /// <summary>

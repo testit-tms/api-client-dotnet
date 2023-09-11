@@ -37,7 +37,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="filter">filter.</param>
         /// <param name="extractionModel">extractionModel.</param>
-        public ApiV2TestPlansIdTestPointsTesterUserIdPostRequest(ApiV2TestPointsSearchPostRequest filter = default(ApiV2TestPointsSearchPostRequest), TestPointSelectModelExtractionModel extractionModel = default(TestPointSelectModelExtractionModel))
+        public ApiV2TestPlansIdTestPointsTesterUserIdPostRequest(TestPointFilterModel filter = default(TestPointFilterModel), TestPointsExtractionModel extractionModel = default(TestPointsExtractionModel))
         {
             this.Filter = filter;
             this.ExtractionModel = extractionModel;
@@ -46,14 +46,14 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Filter
         /// </summary>
-        [DataMember(Name = "filter", EmitDefaultValue = false)]
-        public ApiV2TestPointsSearchPostRequest Filter { get; set; }
+        [DataMember(Name = "filter", EmitDefaultValue = true)]
+        public TestPointFilterModel Filter { get; set; }
 
         /// <summary>
         /// Gets or Sets ExtractionModel
         /// </summary>
-        [DataMember(Name = "extractionModel", EmitDefaultValue = false)]
-        public TestPointSelectModelExtractionModel ExtractionModel { get; set; }
+        [DataMember(Name = "extractionModel", EmitDefaultValue = true)]
+        public TestPointsExtractionModel ExtractionModel { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -46,120 +46,120 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SharedStepReferenceModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="globalId">globalId.</param>
+        /// <param name="id">id (required).</param>
+        /// <param name="globalId">globalId (required).</param>
         /// <param name="name">name.</param>
         /// <param name="entityTypeName">entityTypeName.</param>
-        /// <param name="hasThisSharedStepAsStep">hasThisSharedStepAsStep.</param>
-        /// <param name="hasThisSharedStepAsPrecondition">hasThisSharedStepAsPrecondition.</param>
-        /// <param name="hasThisSharedStepAsPostcondition">hasThisSharedStepAsPostcondition.</param>
-        /// <param name="createdById">createdById.</param>
+        /// <param name="hasThisSharedStepAsStep">hasThisSharedStepAsStep (required).</param>
+        /// <param name="hasThisSharedStepAsPrecondition">hasThisSharedStepAsPrecondition (required).</param>
+        /// <param name="hasThisSharedStepAsPostcondition">hasThisSharedStepAsPostcondition (required).</param>
+        /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="modifiedDate">modifiedDate.</param>
         /// <param name="state">state.</param>
         /// <param name="priority">priority (required).</param>
-        /// <param name="isDeleted">isDeleted.</param>
-        /// <param name="versionId">used for versioning changes in workitem.</param>
-        /// <param name="isAutomated">isAutomated.</param>
-        /// <param name="sectionId">sectionId.</param>
+        /// <param name="isDeleted">isDeleted (required).</param>
+        /// <param name="versionId">used for versioning changes in workitem (required).</param>
+        /// <param name="isAutomated">isAutomated (required).</param>
+        /// <param name="sectionId">sectionId (required).</param>
         /// <param name="tags">tags.</param>
         public SharedStepReferenceModel(Guid id = default(Guid), long globalId = default(long), string name = default(string), string entityTypeName = default(string), bool hasThisSharedStepAsStep = default(bool), bool hasThisSharedStepAsPrecondition = default(bool), bool hasThisSharedStepAsPostcondition = default(bool), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), string state = default(string), WorkItemPriorityModel priority = default(WorkItemPriorityModel), bool isDeleted = default(bool), Guid versionId = default(Guid), bool isAutomated = default(bool), Guid sectionId = default(Guid), List<TagShortModel> tags = default(List<TagShortModel>))
         {
-            this.Priority = priority;
             this.Id = id;
             this.GlobalId = globalId;
-            this.Name = name;
-            this.EntityTypeName = entityTypeName;
             this.HasThisSharedStepAsStep = hasThisSharedStepAsStep;
             this.HasThisSharedStepAsPrecondition = hasThisSharedStepAsPrecondition;
             this.HasThisSharedStepAsPostcondition = hasThisSharedStepAsPostcondition;
             this.CreatedById = createdById;
-            this.ModifiedById = modifiedById;
-            this.CreatedDate = createdDate;
-            this.ModifiedDate = modifiedDate;
-            this.State = state;
+            this.Priority = priority;
             this.IsDeleted = isDeleted;
             this.VersionId = versionId;
             this.IsAutomated = isAutomated;
             this.SectionId = sectionId;
+            this.Name = name;
+            this.EntityTypeName = entityTypeName;
+            this.ModifiedById = modifiedById;
+            this.CreatedDate = createdDate;
+            this.ModifiedDate = modifiedDate;
+            this.State = state;
             this.Tags = tags;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets GlobalId
         /// </summary>
         /// <example>1000</example>
-        [DataMember(Name = "globalId", EmitDefaultValue = false)]
+        [DataMember(Name = "globalId", IsRequired = true, EmitDefaultValue = true)]
         public long GlobalId { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
         /// <example>&quot;Basic template&quot;</example>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets EntityTypeName
         /// </summary>
         /// <example>&quot;TestCase&quot;</example>
-        [DataMember(Name = "entityTypeName", EmitDefaultValue = false)]
+        [DataMember(Name = "entityTypeName", EmitDefaultValue = true)]
         public string EntityTypeName { get; set; }
 
         /// <summary>
         /// Gets or Sets HasThisSharedStepAsStep
         /// </summary>
         /// <example>true</example>
-        [DataMember(Name = "hasThisSharedStepAsStep", EmitDefaultValue = true)]
+        [DataMember(Name = "hasThisSharedStepAsStep", IsRequired = true, EmitDefaultValue = true)]
         public bool HasThisSharedStepAsStep { get; set; }
 
         /// <summary>
         /// Gets or Sets HasThisSharedStepAsPrecondition
         /// </summary>
         /// <example>true</example>
-        [DataMember(Name = "hasThisSharedStepAsPrecondition", EmitDefaultValue = true)]
+        [DataMember(Name = "hasThisSharedStepAsPrecondition", IsRequired = true, EmitDefaultValue = true)]
         public bool HasThisSharedStepAsPrecondition { get; set; }
 
         /// <summary>
         /// Gets or Sets HasThisSharedStepAsPostcondition
         /// </summary>
         /// <example>true</example>
-        [DataMember(Name = "hasThisSharedStepAsPostcondition", EmitDefaultValue = true)]
+        [DataMember(Name = "hasThisSharedStepAsPostcondition", IsRequired = true, EmitDefaultValue = true)]
         public bool HasThisSharedStepAsPostcondition { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
         public DateTime? CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
@@ -167,36 +167,36 @@ namespace TestIt.Client.Model
         /// Gets or Sets State
         /// </summary>
         /// <example>&quot;Ready&quot;</example>
-        [DataMember(Name = "state", EmitDefaultValue = false)]
+        [DataMember(Name = "state", EmitDefaultValue = true)]
         public string State { get; set; }
 
         /// <summary>
         /// Gets or Sets IsDeleted
         /// </summary>
         /// <example>true</example>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>
         /// used for versioning changes in workitem
         /// </summary>
         /// <value>used for versioning changes in workitem</value>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "versionId", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "versionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid VersionId { get; set; }
 
         /// <summary>
         /// Gets or Sets IsAutomated
         /// </summary>
         /// <example>true</example>
-        [DataMember(Name = "isAutomated", EmitDefaultValue = true)]
+        [DataMember(Name = "isAutomated", IsRequired = true, EmitDefaultValue = true)]
         public bool IsAutomated { get; set; }
 
         /// <summary>
         /// Gets or Sets SectionId
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "sectionId", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid SectionId { get; set; }
 
         /// <summary>
