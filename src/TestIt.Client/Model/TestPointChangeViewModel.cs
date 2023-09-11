@@ -35,20 +35,25 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPointChangeViewModel" /> class.
         /// </summary>
-        /// <param name="userId">userId.</param>
+        [JsonConstructorAttribute]
+        protected TestPointChangeViewModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestPointChangeViewModel" /> class.
+        /// </summary>
+        /// <param name="userId">userId (required).</param>
         /// <param name="userName">userName.</param>
-        /// <param name="testPointCount">testPointCount.</param>
+        /// <param name="testPointCount">testPointCount (required).</param>
         public TestPointChangeViewModel(Guid userId = default(Guid), string userName = default(string), long testPointCount = default(long))
         {
             this.UserId = userId;
-            this.UserName = userName;
             this.TestPointCount = testPointCount;
+            this.UserName = userName;
         }
 
         /// <summary>
         /// Gets or Sets UserId
         /// </summary>
-        [DataMember(Name = "userId", EmitDefaultValue = false)]
+        [DataMember(Name = "userId", IsRequired = true, EmitDefaultValue = true)]
         public Guid UserId { get; set; }
 
         /// <summary>
@@ -60,7 +65,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets TestPointCount
         /// </summary>
-        [DataMember(Name = "testPointCount", EmitDefaultValue = false)]
+        [DataMember(Name = "testPointCount", IsRequired = true, EmitDefaultValue = true)]
         public long TestPointCount { get; set; }
 
         /// <summary>

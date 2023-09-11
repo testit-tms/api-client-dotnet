@@ -57,52 +57,52 @@ namespace TestIt.Client.Model
         /// <param name="description">Description of the webhook.</param>
         /// <param name="url">Url to which the webhook sends request.</param>
         /// <param name="requestType">requestType (required).</param>
-        /// <param name="shouldSendBody">Indicates if the webhook sends body.</param>
+        /// <param name="shouldSendBody">Indicates if the webhook sends body (required).</param>
         /// <param name="headers">Collection of headers which the webhook sends.</param>
         /// <param name="queryParameters">Collection of query parameters which the webhook sends.</param>
-        /// <param name="isEnabled">Indicates if the webhook is active.</param>
-        /// <param name="shouldSendCustomBody">Indicates if the webhook sends custom body.</param>
+        /// <param name="isEnabled">Indicates if the webhook is active (required).</param>
+        /// <param name="shouldSendCustomBody">Indicates if the webhook sends custom body (required).</param>
         /// <param name="customBody">Custom body of the webhook.</param>
         /// <param name="customBodyMediaType">MIME type of body of the webhook.</param>
-        /// <param name="shouldReplaceParameters">Indicates if the webhook injects parameters.</param>
-        /// <param name="shouldEscapeParameters">Indicates if the webhook escapes invalid characters in parameters.</param>
-        /// <param name="createdDate">Creation date of the webhook.</param>
-        /// <param name="createdById">Unique ID of user who created the webhook.</param>
+        /// <param name="shouldReplaceParameters">Indicates if the webhook injects parameters (required).</param>
+        /// <param name="shouldEscapeParameters">Indicates if the webhook escapes invalid characters in parameters (required).</param>
+        /// <param name="createdDate">Creation date of the webhook (required).</param>
+        /// <param name="createdById">Unique ID of user who created the webhook (required).</param>
         /// <param name="modifiedDate">Last modification date of the webhook.</param>
         /// <param name="modifiedById">Unique ID of user who modified the webhook last time.</param>
-        /// <param name="projectId">Unique ID of project where the webhook is located.</param>
-        /// <param name="id">Unique ID of the entity.</param>
-        /// <param name="isDeleted">Indicates if the entity is deleted.</param>
+        /// <param name="projectId">Unique ID of project where the webhook is located (required).</param>
+        /// <param name="id">Unique ID of the entity (required).</param>
+        /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
         public WebHookModel(string name = default(string), WebHookEventTypeModel eventType = default(WebHookEventTypeModel), string description = default(string), string url = default(string), RequestTypeModel requestType = default(RequestTypeModel), bool shouldSendBody = default(bool), Dictionary<string, string> headers = default(Dictionary<string, string>), Dictionary<string, string> queryParameters = default(Dictionary<string, string>), bool isEnabled = default(bool), bool shouldSendCustomBody = default(bool), string customBody = default(string), string customBodyMediaType = default(string), bool shouldReplaceParameters = default(bool), bool shouldEscapeParameters = default(bool), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), Guid projectId = default(Guid), Guid id = default(Guid), bool isDeleted = default(bool))
         {
             this.EventType = eventType;
             this.RequestType = requestType;
-            this.Name = name;
-            this.Description = description;
-            this.Url = url;
             this.ShouldSendBody = shouldSendBody;
-            this.Headers = headers;
-            this.QueryParameters = queryParameters;
             this.IsEnabled = isEnabled;
             this.ShouldSendCustomBody = shouldSendCustomBody;
-            this.CustomBody = customBody;
-            this.CustomBodyMediaType = customBodyMediaType;
             this.ShouldReplaceParameters = shouldReplaceParameters;
             this.ShouldEscapeParameters = shouldEscapeParameters;
             this.CreatedDate = createdDate;
             this.CreatedById = createdById;
-            this.ModifiedDate = modifiedDate;
-            this.ModifiedById = modifiedById;
             this.ProjectId = projectId;
             this.Id = id;
             this.IsDeleted = isDeleted;
+            this.Name = name;
+            this.Description = description;
+            this.Url = url;
+            this.Headers = headers;
+            this.QueryParameters = queryParameters;
+            this.CustomBody = customBody;
+            this.CustomBodyMediaType = customBodyMediaType;
+            this.ModifiedDate = modifiedDate;
+            this.ModifiedById = modifiedById;
         }
 
         /// <summary>
         /// Name of the webhook
         /// </summary>
         /// <value>Name of the webhook</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -116,14 +116,14 @@ namespace TestIt.Client.Model
         /// Url to which the webhook sends request
         /// </summary>
         /// <value>Url to which the webhook sends request</value>
-        [DataMember(Name = "url", EmitDefaultValue = false)]
+        [DataMember(Name = "url", EmitDefaultValue = true)]
         public string Url { get; set; }
 
         /// <summary>
         /// Indicates if the webhook sends body
         /// </summary>
         /// <value>Indicates if the webhook sends body</value>
-        [DataMember(Name = "shouldSendBody", EmitDefaultValue = true)]
+        [DataMember(Name = "shouldSendBody", IsRequired = true, EmitDefaultValue = true)]
         public bool ShouldSendBody { get; set; }
 
         /// <summary>
@@ -144,14 +144,14 @@ namespace TestIt.Client.Model
         /// Indicates if the webhook is active
         /// </summary>
         /// <value>Indicates if the webhook is active</value>
-        [DataMember(Name = "isEnabled", EmitDefaultValue = true)]
+        [DataMember(Name = "isEnabled", IsRequired = true, EmitDefaultValue = true)]
         public bool IsEnabled { get; set; }
 
         /// <summary>
         /// Indicates if the webhook sends custom body
         /// </summary>
         /// <value>Indicates if the webhook sends custom body</value>
-        [DataMember(Name = "shouldSendCustomBody", EmitDefaultValue = true)]
+        [DataMember(Name = "shouldSendCustomBody", IsRequired = true, EmitDefaultValue = true)]
         public bool ShouldSendCustomBody { get; set; }
 
         /// <summary>
@@ -172,28 +172,28 @@ namespace TestIt.Client.Model
         /// Indicates if the webhook injects parameters
         /// </summary>
         /// <value>Indicates if the webhook injects parameters</value>
-        [DataMember(Name = "shouldReplaceParameters", EmitDefaultValue = true)]
+        [DataMember(Name = "shouldReplaceParameters", IsRequired = true, EmitDefaultValue = true)]
         public bool ShouldReplaceParameters { get; set; }
 
         /// <summary>
         /// Indicates if the webhook escapes invalid characters in parameters
         /// </summary>
         /// <value>Indicates if the webhook escapes invalid characters in parameters</value>
-        [DataMember(Name = "shouldEscapeParameters", EmitDefaultValue = true)]
+        [DataMember(Name = "shouldEscapeParameters", IsRequired = true, EmitDefaultValue = true)]
         public bool ShouldEscapeParameters { get; set; }
 
         /// <summary>
         /// Creation date of the webhook
         /// </summary>
         /// <value>Creation date of the webhook</value>
-        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+        [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
         /// Unique ID of user who created the webhook
         /// </summary>
         /// <value>Unique ID of user who created the webhook</value>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
@@ -214,21 +214,21 @@ namespace TestIt.Client.Model
         /// Unique ID of project where the webhook is located
         /// </summary>
         /// <value>Unique ID of project where the webhook is located</value>
-        [DataMember(Name = "projectId", EmitDefaultValue = false)]
+        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
         /// Unique ID of the entity
         /// </summary>
         /// <value>Unique ID of the entity</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Indicates if the entity is deleted
         /// </summary>
         /// <value>Indicates if the entity is deleted</value>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>

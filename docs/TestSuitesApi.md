@@ -15,7 +15,6 @@ All URIs are relative to *http://localhost*
 | [**GetTestPointsById**](TestSuitesApi.md#gettestpointsbyid) | **GET** /api/v2/testSuites/{id}/testPoints | Get TestPoints By Id |
 | [**GetTestResultsById**](TestSuitesApi.md#gettestresultsbyid) | **GET** /api/v2/testSuites/{id}/testResults | Get TestResults By Id |
 | [**GetTestSuiteById**](TestSuitesApi.md#gettestsuitebyid) | **GET** /api/v2/testSuites/{id} | Get TestSuite by Id |
-| [**GetWorkItemsById**](TestSuitesApi.md#getworkitemsbyid) | **GET** /api/v2/testSuites/{id}/workItems |  |
 | [**SearchWorkItems**](TestSuitesApi.md#searchworkitems) | **POST** /api/v2/testSuites/{id}/workItems/search | Search WorkItems |
 | [**SetConfigurationsByTestSuiteId**](TestSuitesApi.md#setconfigurationsbytestsuiteid) | **POST** /api/v2/testSuites/{id}/configurations | Set Configurations By TestSuite Id |
 
@@ -111,11 +110,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Successful operation |  -  |
-| **400** | Bad Request |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Update permission for test plan is required |  -  |
 | **404** | Test suite with provided ID was not found |  -  |
+| **400** | Bad Request |  -  |
+| **204** | Successful operation |  -  |
+| **403** | Update permission for test plan is required |  -  |
+| **401** | Unauthorized |  -  |
 | **422** | Shared steps cannot be added to test suite |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -309,8 +308,8 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | No Content |  -  |
 | **403** | Update permission for test suite is required |  -  |
+| **204** | No Content |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -697,10 +696,10 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id |  -  |
 | **204** | Successful operation |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Delete permission for test plan required |  -  |
-| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1109,123 +1108,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
 | **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="getworkitemsbyid"></a>
-# **GetWorkItemsById**
-> List&lt;WorkItemShortModel&gt; GetWorkItemsById (Guid id, bool? isDeleted = null, List<string> tagNames = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
-
-
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
-
-namespace Example
-{
-    public class GetWorkItemsByIdExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure API key authorization: Bearer or PrivateToken
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // Guid | 
-            var isDeleted = false;  // bool? |  (optional)  (default to false)
-            var tagNames = new List<string>(); // List<string> |  (optional) 
-            var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
-            var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
-            var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
-            var searchField = "searchField_example";  // string | Property name for searching (optional) 
-            var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-
-            try
-            {
-                List<WorkItemShortModel> result = apiInstance.GetWorkItemsById(id, isDeleted, tagNames, skip, take, orderBy, searchField, searchValue);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling TestSuitesApi.GetWorkItemsById: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetWorkItemsByIdWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    ApiResponse<List<WorkItemShortModel>> response = apiInstance.GetWorkItemsByIdWithHttpInfo(id, isDeleted, tagNames, skip, take, orderBy, searchField, searchValue);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling TestSuitesApi.GetWorkItemsByIdWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **id** | **Guid** |  |  |
-| **isDeleted** | **bool?** |  | [optional] [default to false] |
-| **tagNames** | [**List&lt;string&gt;**](string.md) |  | [optional]  |
-| **skip** | **int?** | Amount of items to be skipped (offset) | [optional]  |
-| **take** | **int?** | Amount of items to be taken (limit) | [optional]  |
-| **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
-| **searchField** | **string** | Property name for searching | [optional]  |
-| **searchValue** | **string** | Value for searching | [optional]  |
-
-### Return type
-
-[**List&lt;WorkItemShortModel&gt;**](WorkItemShortModel.md)
-
-### Authorization
-
-[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
+| **200** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1235,7 +1121,7 @@ catch (ApiException e)
 
 Search WorkItems
 
-<br>Use case  <br>User sets test suite identifier  <br>[Optional] User sets filter  <br>User runs method execution  <br>System search test suite by identifier  <br>System search test points related to the test suite  <br>System search work items related to the test points  <br>                      [Optional] User sets filter, system applies filter                     <br>System returns work items array
+<br>Use case  <br>User sets test suite identifier  <br>[Optional] User sets filter  <br>User runs method execution  <br>System search test suite by identifier  <br>System search test points related to the test suite  <br>System search work items related to the test points  <br>                      [Optional] User sets filter, system applies filter                    <br>System returns work items array
 
 ### Example
 ```csharp
@@ -1337,11 +1223,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **404** | Can&#39;t find a TestSuite with id! |  -  |
 | **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
-| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1439,11 +1325,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Successful operation |  -  |
 | **400** | &lt;br&gt;Some of Configurations do not exist in the project, or they are not active |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan required |  -  |
 | **404** | &lt;br&gt;Can&#39;t find a TestSuite with id |  -  |
+| **204** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

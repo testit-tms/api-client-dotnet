@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AutoTestId** | **Guid?** |  | [optional] 
-**ConfigurationId** | **Guid** |  | [optional] 
+**ConfigurationId** | **Guid** |  | 
 **StartedOn** | **DateTime?** |  | [optional] 
 **CompletedOn** | **DateTime?** |  | [optional] 
 **DurationInMs** | **long?** |  | [optional] 
@@ -14,25 +14,25 @@ Name | Type | Description | Notes
 **Message** | **string** |  | [optional] 
 **RunByUserId** | **Guid?** |  | [optional] 
 **StoppedByUserId** | **Guid?** |  | [optional] 
-**TestPointId** | **Guid** |  | [optional] 
-**TestRunId** | **Guid** |  | [optional] 
+**TestPointId** | **Guid** |  | 
+**TestRunId** | **Guid** |  | 
 **TestPoint** | [**TestPointPutModel**](TestPointPutModel.md) |  | [optional] 
 **AutoTest** | [**AutoTestModel**](AutoTestModel.md) |  | [optional] 
 **AutoTestStepResults** | [**List&lt;AttachmentModelAutoTestStepResultsModel&gt;**](AttachmentModelAutoTestStepResultsModel.md) |  | [optional] 
 **SetupResults** | [**List&lt;AttachmentModelAutoTestStepResultsModel&gt;**](AttachmentModelAutoTestStepResultsModel.md) |  | [optional] 
 **TeardownResults** | [**List&lt;AttachmentModelAutoTestStepResultsModel&gt;**](AttachmentModelAutoTestStepResultsModel.md) |  | [optional] 
-**WorkItemVersionId** | **Guid** |  | [optional] 
+**WorkItemVersionId** | **Guid** |  | 
 **WorkItemVersionNumber** | **int?** |  | [optional] 
 **Parameters** | **Dictionary&lt;string, string&gt;** |  | [optional] 
 **Properties** | **Dictionary&lt;string, string&gt;** |  | [optional] 
-**Id** | **Guid** |  | [optional] 
-**CreatedDate** | **DateTime** |  | [optional] 
+**Id** | **Guid** |  | 
+**CreatedDate** | **DateTime** |  | 
 **ModifiedDate** | **DateTime?** |  | [optional] 
-**CreatedById** | **Guid** |  | [optional] 
+**CreatedById** | **Guid** |  | 
 **ModifiedById** | **Guid?** |  | [optional] 
 **StepComments** | [**List&lt;StepCommentModel&gt;**](StepCommentModel.md) |  | [optional] 
 **FailureClassIds** | **List&lt;Guid&gt;** |  | [optional] 
-**Outcome** | **string** |  | [optional] 
+**Outcome** | **TestResultOutcome** |  | [optional] 
 **Comment** | **string** |  | [optional] 
 **Links** | [**List&lt;LinkModel&gt;**](LinkModel.md) |  | [optional] 
 **StepResults** | [**List&lt;StepResultModel&gt;**](StepResultModel.md) |  | [optional] 

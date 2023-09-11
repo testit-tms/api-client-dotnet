@@ -46,13 +46,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Filter
         /// </summary>
-        [DataMember(Name = "filter", EmitDefaultValue = false)]
+        [DataMember(Name = "filter", EmitDefaultValue = true)]
         public WorkItemSelectModelFilter Filter { get; set; }
 
         /// <summary>
         /// Gets or Sets ExtractionModel
         /// </summary>
-        [DataMember(Name = "extractionModel", EmitDefaultValue = false)]
+        [DataMember(Name = "extractionModel", EmitDefaultValue = true)]
         public WorkItemSelectModelExtractionModel ExtractionModel { get; set; }
 
         /// <summary>

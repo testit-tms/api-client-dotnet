@@ -35,56 +35,61 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemLinkChangeViewModel" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected WorkItemLinkChangeViewModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkItemLinkChangeViewModel" /> class.
+        /// </summary>
         /// <param name="description">description.</param>
         /// <param name="url">url.</param>
         /// <param name="title">title.</param>
-        /// <param name="hasInfo">hasInfo.</param>
-        /// <param name="id">id.</param>
+        /// <param name="hasInfo">hasInfo (required).</param>
+        /// <param name="id">id (required).</param>
         /// <param name="type">type.</param>
         public WorkItemLinkChangeViewModel(string description = default(string), string url = default(string), string title = default(string), bool hasInfo = default(bool), Guid id = default(Guid), string type = default(string))
         {
+            this.HasInfo = hasInfo;
+            this.Id = id;
             this.Description = description;
             this.Url = url;
             this.Title = title;
-            this.HasInfo = hasInfo;
-            this.Id = id;
             this.Type = type;
         }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
-        [DataMember(Name = "url", EmitDefaultValue = false)]
+        [DataMember(Name = "url", EmitDefaultValue = true)]
         public string Url { get; set; }
 
         /// <summary>
         /// Gets or Sets Title
         /// </summary>
-        [DataMember(Name = "title", EmitDefaultValue = false)]
+        [DataMember(Name = "title", EmitDefaultValue = true)]
         public string Title { get; set; }
 
         /// <summary>
         /// Gets or Sets HasInfo
         /// </summary>
-        [DataMember(Name = "hasInfo", EmitDefaultValue = true)]
+        [DataMember(Name = "hasInfo", IsRequired = true, EmitDefaultValue = true)]
         public bool HasInfo { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
+        [DataMember(Name = "type", EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>

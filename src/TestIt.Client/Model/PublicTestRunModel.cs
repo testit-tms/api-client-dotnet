@@ -35,9 +35,14 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PublicTestRunModel" /> class.
         /// </summary>
-        /// <param name="testRunId">testRunId.</param>
+        [JsonConstructorAttribute]
+        protected PublicTestRunModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PublicTestRunModel" /> class.
+        /// </summary>
+        /// <param name="testRunId">testRunId (required).</param>
         /// <param name="testPlanId">testPlanId.</param>
-        /// <param name="testPlanGlobalId">testPlanGlobalId.</param>
+        /// <param name="testPlanGlobalId">testPlanGlobalId (required).</param>
         /// <param name="name">name.</param>
         /// <param name="productName">productName.</param>
         /// <param name="build">build.</param>
@@ -48,8 +53,8 @@ namespace TestIt.Client.Model
         public PublicTestRunModel(Guid testRunId = default(Guid), Guid? testPlanId = default(Guid?), long testPlanGlobalId = default(long), string name = default(string), string productName = default(string), string build = default(string), List<ConfigurationModel> configurations = default(List<ConfigurationModel>), List<AutoTestModel> autoTests = default(List<AutoTestModel>), List<PublicTestPointModel> testPoints = default(List<PublicTestPointModel>), string status = default(string))
         {
             this.TestRunId = testRunId;
-            this.TestPlanId = testPlanId;
             this.TestPlanGlobalId = testPlanGlobalId;
+            this.TestPlanId = testPlanId;
             this.Name = name;
             this.ProductName = productName;
             this.Build = build;
@@ -62,7 +67,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets TestRunId
         /// </summary>
-        [DataMember(Name = "testRunId", EmitDefaultValue = false)]
+        [DataMember(Name = "testRunId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestRunId { get; set; }
 
         /// <summary>
@@ -74,13 +79,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets TestPlanGlobalId
         /// </summary>
-        [DataMember(Name = "testPlanGlobalId", EmitDefaultValue = false)]
+        [DataMember(Name = "testPlanGlobalId", IsRequired = true, EmitDefaultValue = true)]
         public long TestPlanGlobalId { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -98,25 +103,25 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Configurations
         /// </summary>
-        [DataMember(Name = "configurations", EmitDefaultValue = false)]
+        [DataMember(Name = "configurations", EmitDefaultValue = true)]
         public List<ConfigurationModel> Configurations { get; set; }
 
         /// <summary>
         /// Gets or Sets AutoTests
         /// </summary>
-        [DataMember(Name = "autoTests", EmitDefaultValue = false)]
+        [DataMember(Name = "autoTests", EmitDefaultValue = true)]
         public List<AutoTestModel> AutoTests { get; set; }
 
         /// <summary>
         /// Gets or Sets TestPoints
         /// </summary>
-        [DataMember(Name = "testPoints", EmitDefaultValue = false)]
+        [DataMember(Name = "testPoints", EmitDefaultValue = true)]
         public List<PublicTestPointModel> TestPoints { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", EmitDefaultValue = true)]
         public string Status { get; set; }
 
         /// <summary>

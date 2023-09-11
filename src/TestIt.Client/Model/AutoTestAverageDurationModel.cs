@@ -35,8 +35,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestAverageDurationModel" /> class.
         /// </summary>
-        /// <param name="passedAverageDuration">passedAverageDuration.</param>
-        /// <param name="failedAverageDuration">failedAverageDuration.</param>
+        [JsonConstructorAttribute]
+        protected AutoTestAverageDurationModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AutoTestAverageDurationModel" /> class.
+        /// </summary>
+        /// <param name="passedAverageDuration">passedAverageDuration (required).</param>
+        /// <param name="failedAverageDuration">failedAverageDuration (required).</param>
         public AutoTestAverageDurationModel(double passedAverageDuration = default(double), double failedAverageDuration = default(double))
         {
             this.PassedAverageDuration = passedAverageDuration;
@@ -47,14 +52,14 @@ namespace TestIt.Client.Model
         /// Gets or Sets PassedAverageDuration
         /// </summary>
         /// <example>2.5555</example>
-        [DataMember(Name = "passedAverageDuration", EmitDefaultValue = false)]
+        [DataMember(Name = "passedAverageDuration", IsRequired = true, EmitDefaultValue = true)]
         public double PassedAverageDuration { get; set; }
 
         /// <summary>
         /// Gets or Sets FailedAverageDuration
         /// </summary>
         /// <example>2.5555</example>
-        [DataMember(Name = "failedAverageDuration", EmitDefaultValue = false)]
+        [DataMember(Name = "failedAverageDuration", IsRequired = true, EmitDefaultValue = true)]
         public double FailedAverageDuration { get; set; }
 
         /// <summary>

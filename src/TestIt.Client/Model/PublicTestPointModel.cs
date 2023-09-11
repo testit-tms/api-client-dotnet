@@ -35,30 +35,35 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PublicTestPointModel" /> class.
         /// </summary>
-        /// <param name="configurationId">configurationId.</param>
-        /// <param name="configurationGlobalId">configurationGlobalId.</param>
+        [JsonConstructorAttribute]
+        protected PublicTestPointModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PublicTestPointModel" /> class.
+        /// </summary>
+        /// <param name="configurationId">configurationId (required).</param>
+        /// <param name="configurationGlobalId">configurationGlobalId (required).</param>
         /// <param name="autoTestIds">autoTestIds.</param>
-        /// <param name="iterationId">iterationId.</param>
+        /// <param name="iterationId">iterationId (required).</param>
         /// <param name="parameterModels">parameterModels.</param>
         public PublicTestPointModel(Guid configurationId = default(Guid), long configurationGlobalId = default(long), List<Guid> autoTestIds = default(List<Guid>), Guid iterationId = default(Guid), List<ParameterShortModel> parameterModels = default(List<ParameterShortModel>))
         {
             this.ConfigurationId = configurationId;
             this.ConfigurationGlobalId = configurationGlobalId;
-            this.AutoTestIds = autoTestIds;
             this.IterationId = iterationId;
+            this.AutoTestIds = autoTestIds;
             this.ParameterModels = parameterModels;
         }
 
         /// <summary>
         /// Gets or Sets ConfigurationId
         /// </summary>
-        [DataMember(Name = "configurationId", EmitDefaultValue = false)]
+        [DataMember(Name = "configurationId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ConfigurationId { get; set; }
 
         /// <summary>
         /// Gets or Sets ConfigurationGlobalId
         /// </summary>
-        [DataMember(Name = "configurationGlobalId", EmitDefaultValue = false)]
+        [DataMember(Name = "configurationGlobalId", IsRequired = true, EmitDefaultValue = true)]
         public long ConfigurationGlobalId { get; set; }
 
         /// <summary>
@@ -70,7 +75,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets IterationId
         /// </summary>
-        [DataMember(Name = "iterationId", EmitDefaultValue = false)]
+        [DataMember(Name = "iterationId", IsRequired = true, EmitDefaultValue = true)]
         public Guid IterationId { get; set; }
 
         /// <summary>

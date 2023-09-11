@@ -35,8 +35,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectCustomAttributeTemplateGetModel" /> class.
         /// </summary>
-        /// <param name="id">Unique ID of the custom attributes template.</param>
-        /// <param name="isDeleted">Indicates if the custom attribute template is deleted.</param>
+        [JsonConstructorAttribute]
+        protected ProjectCustomAttributeTemplateGetModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectCustomAttributeTemplateGetModel" /> class.
+        /// </summary>
+        /// <param name="id">Unique ID of the custom attributes template (required).</param>
+        /// <param name="isDeleted">Indicates if the custom attribute template is deleted (required).</param>
         /// <param name="name">Name of the custom attribute template.</param>
         /// <param name="customAttributeModels">Attributes of the template.</param>
         public ProjectCustomAttributeTemplateGetModel(Guid id = default(Guid), bool isDeleted = default(bool), string name = default(string), List<CustomAttributeModel> customAttributeModels = default(List<CustomAttributeModel>))
@@ -51,28 +56,28 @@ namespace TestIt.Client.Model
         /// Unique ID of the custom attributes template
         /// </summary>
         /// <value>Unique ID of the custom attributes template</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Indicates if the custom attribute template is deleted
         /// </summary>
         /// <value>Indicates if the custom attribute template is deleted</value>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>
         /// Name of the custom attribute template
         /// </summary>
         /// <value>Name of the custom attribute template</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Attributes of the template
         /// </summary>
         /// <value>Attributes of the template</value>
-        [DataMember(Name = "customAttributeModels", EmitDefaultValue = false)]
+        [DataMember(Name = "customAttributeModels", EmitDefaultValue = true)]
         public List<CustomAttributeModel> CustomAttributeModels { get; set; }
 
         /// <summary>

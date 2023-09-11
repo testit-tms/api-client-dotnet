@@ -40,17 +40,22 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ParameterModel" /> class.
         /// </summary>
-        /// <param name="createdDate">createdDate.</param>
+        /// <param name="createdDate">createdDate (required).</param>
         /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="createdById">createdById.</param>
+        /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
-        /// <param name="isDeleted">isDeleted.</param>
-        /// <param name="parameterKeyId">parameterKeyId.</param>
-        /// <param name="id">id.</param>
+        /// <param name="isDeleted">isDeleted (required).</param>
+        /// <param name="parameterKeyId">parameterKeyId (required).</param>
+        /// <param name="id">id (required).</param>
         /// <param name="value">value (required).</param>
         /// <param name="name">name (required).</param>
         public ParameterModel(DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), bool isDeleted = default(bool), Guid parameterKeyId = default(Guid), Guid id = default(Guid), string value = default(string), string name = default(string))
         {
+            this.CreatedDate = createdDate;
+            this.CreatedById = createdById;
+            this.IsDeleted = isDeleted;
+            this.ParameterKeyId = parameterKeyId;
+            this.Id = id;
             // to ensure "value" is required (not null)
             if (value == null)
             {
@@ -63,19 +68,14 @@ namespace TestIt.Client.Model
                 throw new ArgumentNullException("name is a required property for ParameterModel and cannot be null");
             }
             this.Name = name;
-            this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
-            this.CreatedById = createdById;
             this.ModifiedById = modifiedById;
-            this.IsDeleted = isDeleted;
-            this.ParameterKeyId = parameterKeyId;
-            this.Id = id;
         }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+        [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
@@ -100,20 +100,20 @@ namespace TestIt.Client.Model
         /// Gets or Sets IsDeleted
         /// </summary>
         /// <example>true</example>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>
         /// Gets or Sets ParameterKeyId
         /// </summary>
-        [DataMember(Name = "parameterKeyId", EmitDefaultValue = false)]
+        [DataMember(Name = "parameterKeyId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ParameterKeyId { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>

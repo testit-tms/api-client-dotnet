@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StepId** | **Guid** |  | [optional] 
+**StepId** | **Guid** |  | 
 **Outcome** | **string** |  | [optional] 
 **SharedStepVersionId** | **Guid?** |  | [optional] 
 **SharedStepResults** | [**List&lt;SharedStepResultModel&gt;**](SharedStepResultModel.md) |  | [optional] 

@@ -46,32 +46,32 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="LinkModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        /// <param name="id">id (required).</param>
         /// <param name="title">Link name..</param>
         /// <param name="url">Address can be specified without protocol, but necessarily with the domain. (required).</param>
         /// <param name="description">Link description..</param>
         /// <param name="type">type.</param>
-        /// <param name="hasInfo">hasInfo.</param>
+        /// <param name="hasInfo">hasInfo (required).</param>
         public LinkModel(Guid id = default(Guid), string title = default(string), string url = default(string), string description = default(string), LinkType? type = default(LinkType?), bool hasInfo = default(bool))
         {
+            this.Id = id;
             // to ensure "url" is required (not null)
             if (url == null)
             {
                 throw new ArgumentNullException("url is a required property for LinkModel and cannot be null");
             }
             this.Url = url;
-            this.Id = id;
+            this.HasInfo = hasInfo;
             this.Title = title;
             this.Description = description;
             this.Type = type;
-            this.HasInfo = hasInfo;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets HasInfo
         /// </summary>
-        [DataMember(Name = "hasInfo", EmitDefaultValue = true)]
+        [DataMember(Name = "hasInfo", IsRequired = true, EmitDefaultValue = true)]
         public bool HasInfo { get; set; }
 
         /// <summary>

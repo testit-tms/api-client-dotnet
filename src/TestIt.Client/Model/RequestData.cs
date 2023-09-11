@@ -35,20 +35,40 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestData" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected RequestData() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RequestData" /> class.
+        /// </summary>
         /// <param name="uri">uri.</param>
-        /// <param name="statusCode">statusCode.</param>
+        /// <param name="statusCode">statusCode (required).</param>
         /// <param name="requestBody">requestBody.</param>
-        /// <param name="requestMeta">requestMeta.</param>
-        /// <param name="responseBody">responseBody.</param>
-        /// <param name="responseMeta">responseMeta.</param>
+        /// <param name="requestMeta">requestMeta (required).</param>
+        /// <param name="responseBody">responseBody (required).</param>
+        /// <param name="responseMeta">responseMeta (required).</param>
         public RequestData(string uri = default(string), int statusCode = default(int), string requestBody = default(string), string requestMeta = default(string), string responseBody = default(string), string responseMeta = default(string))
         {
-            this.Uri = uri;
             this.StatusCode = statusCode;
-            this.RequestBody = requestBody;
+            // to ensure "requestMeta" is required (not null)
+            if (requestMeta == null)
+            {
+                throw new ArgumentNullException("requestMeta is a required property for RequestData and cannot be null");
+            }
             this.RequestMeta = requestMeta;
+            // to ensure "responseBody" is required (not null)
+            if (responseBody == null)
+            {
+                throw new ArgumentNullException("responseBody is a required property for RequestData and cannot be null");
+            }
             this.ResponseBody = responseBody;
+            // to ensure "responseMeta" is required (not null)
+            if (responseMeta == null)
+            {
+                throw new ArgumentNullException("responseMeta is a required property for RequestData and cannot be null");
+            }
             this.ResponseMeta = responseMeta;
+            this.Uri = uri;
+            this.RequestBody = requestBody;
         }
 
         /// <summary>
@@ -60,7 +80,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets StatusCode
         /// </summary>
-        [DataMember(Name = "statusCode", EmitDefaultValue = false)]
+        [DataMember(Name = "statusCode", IsRequired = true, EmitDefaultValue = true)]
         public int StatusCode { get; set; }
 
         /// <summary>
@@ -72,19 +92,19 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets RequestMeta
         /// </summary>
-        [DataMember(Name = "requestMeta", EmitDefaultValue = false)]
+        [DataMember(Name = "requestMeta", IsRequired = true, EmitDefaultValue = true)]
         public string RequestMeta { get; set; }
 
         /// <summary>
         /// Gets or Sets ResponseBody
         /// </summary>
-        [DataMember(Name = "responseBody", EmitDefaultValue = false)]
+        [DataMember(Name = "responseBody", IsRequired = true, EmitDefaultValue = true)]
         public string ResponseBody { get; set; }
 
         /// <summary>
         /// Gets or Sets ResponseMeta
         /// </summary>
-        [DataMember(Name = "responseMeta", EmitDefaultValue = false)]
+        [DataMember(Name = "responseMeta", IsRequired = true, EmitDefaultValue = true)]
         public string ResponseMeta { get; set; }
 
         /// <summary>

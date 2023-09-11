@@ -35,24 +35,29 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPlanGroupByStatus" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected TestPlanGroupByStatus() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestPlanGroupByStatus" /> class.
+        /// </summary>
         /// <param name="status">status.</param>
-        /// <param name="value">value.</param>
+        /// <param name="value">value (required).</param>
         public TestPlanGroupByStatus(string status = default(string), long value = default(long))
         {
-            this.Status = status;
             this.Value = value;
+            this.Status = status;
         }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", EmitDefaultValue = true)]
         public string Status { get; set; }
 
         /// <summary>
         /// Gets or Sets Value
         /// </summary>
-        [DataMember(Name = "value", EmitDefaultValue = false)]
+        [DataMember(Name = "value", IsRequired = true, EmitDefaultValue = true)]
         public long Value { get; set; }
 
         /// <summary>

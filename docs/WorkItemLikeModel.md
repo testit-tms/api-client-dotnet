@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**WorkItemId** | **Guid** |  | [optional] 
-**CreatedDate** | **DateTime** |  | [optional] 
+**WorkItemId** | **Guid** |  | 
+**CreatedDate** | **DateTime** |  | 
 **ModifiedDate** | **DateTime?** |  | [optional] 
-**CreatedById** | **Guid** |  | [optional] 
+**CreatedById** | **Guid** |  | 
 **ModifiedById** | **Guid?** |  | [optional] 
-**Id** | **Guid** | Unique ID of the entity | [optional] 
-**IsDeleted** | **bool** | Indicates if the entity is deleted | [optional] 
+**Id** | **Guid** | Unique ID of the entity | 
+**IsDeleted** | **bool** | Indicates if the entity is deleted | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

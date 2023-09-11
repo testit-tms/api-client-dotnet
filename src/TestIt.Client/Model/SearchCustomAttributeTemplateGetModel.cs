@@ -35,8 +35,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchCustomAttributeTemplateGetModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="isDeleted">isDeleted.</param>
+        [JsonConstructorAttribute]
+        protected SearchCustomAttributeTemplateGetModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SearchCustomAttributeTemplateGetModel" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
+        /// <param name="isDeleted">isDeleted (required).</param>
         /// <param name="name">name.</param>
         /// <param name="projectShortestModels">projectShortestModels.</param>
         /// <param name="customAttributeModels">customAttributeModels.</param>
@@ -52,31 +57,31 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets IsDeleted
         /// </summary>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets ProjectShortestModels
         /// </summary>
-        [DataMember(Name = "projectShortestModels", EmitDefaultValue = false)]
+        [DataMember(Name = "projectShortestModels", EmitDefaultValue = true)]
         public List<ProjectShortestModel> ProjectShortestModels { get; set; }
 
         /// <summary>
         /// Gets or Sets CustomAttributeModels
         /// </summary>
-        [DataMember(Name = "customAttributeModels", EmitDefaultValue = false)]
+        [DataMember(Name = "customAttributeModels", EmitDefaultValue = true)]
         public List<CustomAttributeModel> CustomAttributeModels { get; set; }
 
         /// <summary>

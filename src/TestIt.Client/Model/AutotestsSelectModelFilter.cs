@@ -58,7 +58,8 @@ namespace TestIt.Client.Model
         /// <param name="className">Specifies an autotest class name to search for.</param>
         /// <param name="isEmptyClassName">Specifies an autotest class name presence status to search for.</param>
         /// <param name="lastTestResultOutcome">lastTestResultOutcome.</param>
-        public AutotestsSelectModelFilter(List<Guid> projectIds = default(List<Guid>), List<string> externalIds = default(List<string>), List<long> globalIds = default(List<long>), string name = default(string), bool? isFlaky = default(bool?), bool? mustBeApproved = default(bool?), AutotestFilterModelStabilityPercentage stabilityPercentage = default(AutotestFilterModelStabilityPercentage), AutotestFilterModelCreatedDate createdDate = default(AutotestFilterModelCreatedDate), List<Guid> createdByIds = default(List<Guid>), AutotestFilterModelModifiedDate modifiedDate = default(AutotestFilterModelModifiedDate), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?), string _namespace = default(string), bool? isEmptyNamespace = default(bool?), string className = default(string), bool? isEmptyClassName = default(bool?), AutotestResultOutcome? lastTestResultOutcome = default(AutotestResultOutcome?))
+        /// <param name="externalKey">Specifies an autotest external key to search for.</param>
+        public AutotestsSelectModelFilter(List<Guid> projectIds = default(List<Guid>), List<string> externalIds = default(List<string>), List<long> globalIds = default(List<long>), string name = default(string), bool? isFlaky = default(bool?), bool? mustBeApproved = default(bool?), AutotestFilterModelStabilityPercentage stabilityPercentage = default(AutotestFilterModelStabilityPercentage), AutotestFilterModelCreatedDate createdDate = default(AutotestFilterModelCreatedDate), List<Guid> createdByIds = default(List<Guid>), AutotestFilterModelModifiedDate modifiedDate = default(AutotestFilterModelModifiedDate), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?), string _namespace = default(string), bool? isEmptyNamespace = default(bool?), string className = default(string), bool? isEmptyClassName = default(bool?), AutotestResultOutcome? lastTestResultOutcome = default(AutotestResultOutcome?), string externalKey = default(string))
         {
             this.ProjectIds = projectIds;
             this.ExternalIds = externalIds;
@@ -77,6 +78,7 @@ namespace TestIt.Client.Model
             this.ClassName = className;
             this.IsEmptyClassName = isEmptyClassName;
             this.LastTestResultOutcome = lastTestResultOutcome;
+            this.ExternalKey = externalKey;
         }
 
         /// <summary>
@@ -189,6 +191,13 @@ namespace TestIt.Client.Model
         public bool? IsEmptyClassName { get; set; }
 
         /// <summary>
+        /// Specifies an autotest external key to search for
+        /// </summary>
+        /// <value>Specifies an autotest external key to search for</value>
+        [DataMember(Name = "externalKey", EmitDefaultValue = true)]
+        public string ExternalKey { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -213,6 +222,7 @@ namespace TestIt.Client.Model
             sb.Append("  ClassName: ").Append(ClassName).Append("\n");
             sb.Append("  IsEmptyClassName: ").Append(IsEmptyClassName).Append("\n");
             sb.Append("  LastTestResultOutcome: ").Append(LastTestResultOutcome).Append("\n");
+            sb.Append("  ExternalKey: ").Append(ExternalKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -336,6 +346,11 @@ namespace TestIt.Client.Model
                 (
                     this.LastTestResultOutcome == input.LastTestResultOutcome ||
                     this.LastTestResultOutcome.Equals(input.LastTestResultOutcome)
+                ) && 
+                (
+                    this.ExternalKey == input.ExternalKey ||
+                    (this.ExternalKey != null &&
+                    this.ExternalKey.Equals(input.ExternalKey))
                 );
         }
 
@@ -413,6 +428,10 @@ namespace TestIt.Client.Model
                     hashCode = (hashCode * 59) + this.IsEmptyClassName.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.LastTestResultOutcome.GetHashCode();
+                if (this.ExternalKey != null)
+                {
+                    hashCode = (hashCode * 59) + this.ExternalKey.GetHashCode();
+                }
                 return hashCode;
             }
         }

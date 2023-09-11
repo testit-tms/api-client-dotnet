@@ -55,7 +55,8 @@ namespace TestIt.Client.Model
         /// <param name="description">Description of the autotest in autotest&#39;s card.</param>
         /// <param name="labels">Collection of the autotest labels.</param>
         /// <param name="isFlaky">Indicates if the autotest is marked as flaky.</param>
-        public UpdateAutoTestRequest(Guid id = default(Guid), List<Guid> workItemIdsForLinkWithAutoTest = default(List<Guid>), string externalId = default(string), List<LinkPutModel> links = default(List<LinkPutModel>), Guid projectId = default(Guid), string name = default(string), string _namespace = default(string), string classname = default(string), List<AutoTestStepModel> steps = default(List<AutoTestStepModel>), List<AutoTestStepModel> setup = default(List<AutoTestStepModel>), List<AutoTestStepModel> teardown = default(List<AutoTestStepModel>), string title = default(string), string description = default(string), List<LabelPostModel> labels = default(List<LabelPostModel>), bool? isFlaky = default(bool?))
+        /// <param name="externalKey">External key of the autotest.</param>
+        public UpdateAutoTestRequest(Guid id = default(Guid), List<Guid> workItemIdsForLinkWithAutoTest = default(List<Guid>), string externalId = default(string), List<LinkPutModel> links = default(List<LinkPutModel>), Guid projectId = default(Guid), string name = default(string), string _namespace = default(string), string classname = default(string), List<AutoTestStepModel> steps = default(List<AutoTestStepModel>), List<AutoTestStepModel> setup = default(List<AutoTestStepModel>), List<AutoTestStepModel> teardown = default(List<AutoTestStepModel>), string title = default(string), string description = default(string), List<LabelPostModel> labels = default(List<LabelPostModel>), bool? isFlaky = default(bool?), string externalKey = default(string))
         {
             // to ensure "externalId" is required (not null)
             if (externalId == null)
@@ -82,13 +83,14 @@ namespace TestIt.Client.Model
             this.Description = description;
             this.Labels = labels;
             this.IsFlaky = isFlaky;
+            this.ExternalKey = externalKey;
         }
 
         /// <summary>
         /// Used for search autotest. If value equals Guid mask filled with zeros, search will be executed using ExternalId
         /// </summary>
         /// <value>Used for search autotest. If value equals Guid mask filled with zeros, search will be executed using ExternalId</value>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
@@ -190,6 +192,13 @@ namespace TestIt.Client.Model
         public bool? IsFlaky { get; set; }
 
         /// <summary>
+        /// External key of the autotest
+        /// </summary>
+        /// <value>External key of the autotest</value>
+        [DataMember(Name = "externalKey", EmitDefaultValue = true)]
+        public string ExternalKey { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -212,6 +221,7 @@ namespace TestIt.Client.Model
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Labels: ").Append(Labels).Append("\n");
             sb.Append("  IsFlaky: ").Append(IsFlaky).Append("\n");
+            sb.Append("  ExternalKey: ").Append(ExternalKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -327,6 +337,11 @@ namespace TestIt.Client.Model
                     this.IsFlaky == input.IsFlaky ||
                     (this.IsFlaky != null &&
                     this.IsFlaky.Equals(input.IsFlaky))
+                ) && 
+                (
+                    this.ExternalKey == input.ExternalKey ||
+                    (this.ExternalKey != null &&
+                    this.ExternalKey.Equals(input.ExternalKey))
                 );
         }
 
@@ -398,6 +413,10 @@ namespace TestIt.Client.Model
                 if (this.IsFlaky != null)
                 {
                     hashCode = (hashCode * 59) + this.IsFlaky.GetHashCode();
+                }
+                if (this.ExternalKey != null)
+                {
+                    hashCode = (hashCode * 59) + this.ExternalKey.GetHashCode();
                 }
                 return hashCode;
             }

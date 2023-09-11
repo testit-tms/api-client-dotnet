@@ -37,7 +37,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="filter">filter.</param>
         /// <param name="extractionModel">extractionModel.</param>
-        public ApiV2ProjectsIdTestPlansDeleteBulkPostRequest(ApiV2ProjectsIdTestPlansSearchPostRequest filter = default(ApiV2ProjectsIdTestPlansSearchPostRequest), TestPlanExtractionModel extractionModel = default(TestPlanExtractionModel))
+        public ApiV2ProjectsIdTestPlansDeleteBulkPostRequest(ProjectTestPlansFilterModel filter = default(ProjectTestPlansFilterModel), TestPlanExtractionModel extractionModel = default(TestPlanExtractionModel))
         {
             this.Filter = filter;
             this.ExtractionModel = extractionModel;
@@ -46,8 +46,8 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Filter
         /// </summary>
-        [DataMember(Name = "filter", EmitDefaultValue = false)]
-        public ApiV2ProjectsIdTestPlansSearchPostRequest Filter { get; set; }
+        [DataMember(Name = "filter", EmitDefaultValue = true)]
+        public ProjectTestPlansFilterModel Filter { get; set; }
 
         /// <summary>
         /// Gets or Sets ExtractionModel

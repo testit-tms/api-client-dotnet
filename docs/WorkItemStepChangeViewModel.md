@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **Expected** | **string** |  | [optional] 
 **Comments** | **string** |  | [optional] 
 **TestData** | **string** |  | [optional] 
-**Index** | **int** |  | [optional] 
+**Index** | **int** |  | 
 **WorkItemId** | **Guid?** |  | [optional] 
-**WorkItem** | [**WorkItemStepChangeViewModelWorkItem**](WorkItemStepChangeViewModelWorkItem.md) |  | [optional] 
+**WorkItem** | [**SharedStepChangeViewModel**](SharedStepChangeViewModel.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

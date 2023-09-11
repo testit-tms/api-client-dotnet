@@ -35,8 +35,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemVersionModel" /> class.
         /// </summary>
-        /// <param name="versionId">used for versioning changes in workitem.</param>
-        /// <param name="versionNumber">used for define chronology of workitem state in each version.</param>
+        [JsonConstructorAttribute]
+        protected WorkItemVersionModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkItemVersionModel" /> class.
+        /// </summary>
+        /// <param name="versionId">used for versioning changes in workitem (required).</param>
+        /// <param name="versionNumber">used for define chronology of workitem state in each version (required).</param>
         /// <param name="modifiedDate">modifiedDate.</param>
         /// <param name="modifiedById">modifiedById.</param>
         public WorkItemVersionModel(Guid versionId = default(Guid), int versionNumber = default(int), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?))
@@ -51,8 +56,8 @@ namespace TestIt.Client.Model
         /// used for versioning changes in workitem
         /// </summary>
         /// <value>used for versioning changes in workitem</value>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "versionId", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "versionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid VersionId { get; set; }
 
         /// <summary>
@@ -60,20 +65,20 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <value>used for define chronology of workitem state in each version</value>
         /// <example>10</example>
-        [DataMember(Name = "versionNumber", EmitDefaultValue = false)]
+        [DataMember(Name = "versionNumber", IsRequired = true, EmitDefaultValue = true)]
         public int VersionNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 

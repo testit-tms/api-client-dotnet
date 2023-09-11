@@ -40,33 +40,33 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomAttributeTemplateModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="isDeleted">isDeleted.</param>
+        /// <param name="id">id (required).</param>
+        /// <param name="isDeleted">isDeleted (required).</param>
         /// <param name="name">Custom attributes template name (required).</param>
         public CustomAttributeTemplateModel(Guid id = default(Guid), bool isDeleted = default(bool), string name = default(string))
         {
+            this.Id = id;
+            this.IsDeleted = isDeleted;
             // to ensure "name" is required (not null)
             if (name == null)
             {
                 throw new ArgumentNullException("name is a required property for CustomAttributeTemplateModel and cannot be null");
             }
             this.Name = name;
-            this.Id = id;
-            this.IsDeleted = isDeleted;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets IsDeleted
         /// </summary>
         /// <example>true</example>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>

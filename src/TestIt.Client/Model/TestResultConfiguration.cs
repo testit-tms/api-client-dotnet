@@ -35,32 +35,37 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestResultConfiguration" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected TestResultConfiguration() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestResultConfiguration" /> class.
+        /// </summary>
         /// <param name="description">description.</param>
         /// <param name="parameters">parameters.</param>
-        /// <param name="projectId">This property is used to link configuration with project.</param>
-        /// <param name="isDefault">isDefault.</param>
+        /// <param name="projectId">This property is used to link configuration with project (required).</param>
+        /// <param name="isDefault">isDefault (required).</param>
         /// <param name="name">name.</param>
-        /// <param name="createdDate">createdDate.</param>
+        /// <param name="createdDate">createdDate (required).</param>
         /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="createdById">createdById.</param>
+        /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
-        /// <param name="globalId">globalId.</param>
-        /// <param name="id">Unique ID of the entity.</param>
-        /// <param name="isDeleted">Indicates if the entity is deleted.</param>
+        /// <param name="globalId">globalId (required).</param>
+        /// <param name="id">Unique ID of the entity (required).</param>
+        /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
         public TestResultConfiguration(string description = default(string), Dictionary<string, string> parameters = default(Dictionary<string, string>), Guid projectId = default(Guid), bool isDefault = default(bool), string name = default(string), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), Guid id = default(Guid), bool isDeleted = default(bool))
         {
-            this.Description = description;
-            this.Parameters = parameters;
             this.ProjectId = projectId;
             this.IsDefault = isDefault;
-            this.Name = name;
             this.CreatedDate = createdDate;
-            this.ModifiedDate = modifiedDate;
             this.CreatedById = createdById;
-            this.ModifiedById = modifiedById;
             this.GlobalId = globalId;
             this.Id = id;
             this.IsDeleted = isDeleted;
+            this.Description = description;
+            this.Parameters = parameters;
+            this.Name = name;
+            this.ModifiedDate = modifiedDate;
+            this.ModifiedById = modifiedById;
         }
 
         /// <summary>
@@ -80,15 +85,15 @@ namespace TestIt.Client.Model
         /// This property is used to link configuration with project
         /// </summary>
         /// <value>This property is used to link configuration with project</value>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "projectId", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
         /// Gets or Sets IsDefault
         /// </summary>
         /// <example>true</example>
-        [DataMember(Name = "isDefault", EmitDefaultValue = true)]
+        [DataMember(Name = "isDefault", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDefault { get; set; }
 
         /// <summary>
@@ -101,28 +106,28 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
-        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
+        [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
@@ -130,21 +135,21 @@ namespace TestIt.Client.Model
         /// Gets or Sets GlobalId
         /// </summary>
         /// <example>1000</example>
-        [DataMember(Name = "globalId", EmitDefaultValue = false)]
+        [DataMember(Name = "globalId", IsRequired = true, EmitDefaultValue = true)]
         public long GlobalId { get; set; }
 
         /// <summary>
         /// Unique ID of the entity
         /// </summary>
         /// <value>Unique ID of the entity</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Indicates if the entity is deleted
         /// </summary>
         /// <value>Indicates if the entity is deleted</value>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>

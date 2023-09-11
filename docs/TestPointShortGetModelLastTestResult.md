@@ -5,12 +5,12 @@ Model of the test point last test result
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | [optional] 
-**TestRunId** | **Guid** |  | [optional] 
+**Id** | **Guid** |  | 
+**TestRunId** | **Guid** |  | 
 **AutoTestId** | **Guid?** |  | [optional] 
 **Comment** | **string** |  | [optional] 
 **Links** | [**List&lt;LinkModel&gt;**](LinkModel.md) |  | [optional] 
-**WorkItemVersionId** | **Guid** |  | [optional] 
+**WorkItemVersionId** | **Guid** |  | 
 **Attachments** | [**List&lt;AttachmentModel&gt;**](AttachmentModel.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

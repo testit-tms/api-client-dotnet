@@ -46,80 +46,73 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestRunShortGetModel" /> class.
         /// </summary>
-        /// <param name="id">Unique ID of the test run.</param>
+        /// <param name="id">Unique ID of the test run (required).</param>
         /// <param name="name">Name of the test run.</param>
-        /// <param name="projectId">Unique ID of project where test run is located.</param>
-        /// <param name="createdDate">Date when the test run was created.</param>
-        /// <param name="createdById">Unique ID of user who created the test run.</param>
-        /// <param name="modifiedDate">Date when the test run was modified last time.</param>
-        /// <param name="modifiedById">Unique ID of user who modified the test run last time.</param>
-        /// <param name="isDeleted">Is the test run is deleted.</param>
         /// <param name="state">state (required).</param>
+        /// <param name="createdDate">Date when the test run was created (required).</param>
         /// <param name="startedDate">Date when the test run was started.</param>
-        /// <param name="autotestsCount">Number of autotests run in the test run.</param>
-        /// <param name="statistics">statistics (required).</param>
-        public TestRunShortGetModel(Guid id = default(Guid), string name = default(string), Guid projectId = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), bool isDeleted = default(bool), TestRunState state = default(TestRunState), DateTime? startedDate = default(DateTime?), int autotestsCount = default(int), TestRunShortGetModelStatistics statistics = default(TestRunShortGetModelStatistics))
+        /// <param name="completedDate">Completion date of the test run.</param>
+        /// <param name="createdById">Unique ID of user who created the test run (required).</param>
+        /// <param name="modifiedById">Unique ID of user who modified the test run last time.</param>
+        /// <param name="isDeleted">Is the test run is deleted (required).</param>
+        /// <param name="autoTestsCount">Number of AutoTests run in the test run (required).</param>
+        /// <param name="statistics">statistics.</param>
+        public TestRunShortGetModel(Guid id = default(Guid), string name = default(string), TestRunState state = default(TestRunState), DateTime createdDate = default(DateTime), DateTime? startedDate = default(DateTime?), DateTime? completedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), bool isDeleted = default(bool), int autoTestsCount = default(int), TestRunShortGetModelStatistics statistics = default(TestRunShortGetModelStatistics))
         {
-            this.State = state;
-            // to ensure "statistics" is required (not null)
-            if (statistics == null)
-            {
-                throw new ArgumentNullException("statistics is a required property for TestRunShortGetModel and cannot be null");
-            }
-            this.Statistics = statistics;
             this.Id = id;
-            this.Name = name;
-            this.ProjectId = projectId;
+            this.State = state;
             this.CreatedDate = createdDate;
             this.CreatedById = createdById;
-            this.ModifiedDate = modifiedDate;
-            this.ModifiedById = modifiedById;
             this.IsDeleted = isDeleted;
+            this.AutoTestsCount = autoTestsCount;
+            this.Name = name;
             this.StartedDate = startedDate;
-            this.AutotestsCount = autotestsCount;
+            this.CompletedDate = completedDate;
+            this.ModifiedById = modifiedById;
+            this.Statistics = statistics;
         }
 
         /// <summary>
         /// Unique ID of the test run
         /// </summary>
         /// <value>Unique ID of the test run</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Name of the test run
         /// </summary>
         /// <value>Name of the test run</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
-
-        /// <summary>
-        /// Unique ID of project where test run is located
-        /// </summary>
-        /// <value>Unique ID of project where test run is located</value>
-        [DataMember(Name = "projectId", EmitDefaultValue = false)]
-        public Guid ProjectId { get; set; }
 
         /// <summary>
         /// Date when the test run was created
         /// </summary>
         /// <value>Date when the test run was created</value>
-        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+        [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
+
+        /// <summary>
+        /// Date when the test run was started
+        /// </summary>
+        /// <value>Date when the test run was started</value>
+        [DataMember(Name = "startedDate", EmitDefaultValue = true)]
+        public DateTime? StartedDate { get; set; }
+
+        /// <summary>
+        /// Completion date of the test run
+        /// </summary>
+        /// <value>Completion date of the test run</value>
+        [DataMember(Name = "completedDate", EmitDefaultValue = true)]
+        public DateTime? CompletedDate { get; set; }
 
         /// <summary>
         /// Unique ID of user who created the test run
         /// </summary>
         /// <value>Unique ID of user who created the test run</value>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
-
-        /// <summary>
-        /// Date when the test run was modified last time
-        /// </summary>
-        /// <value>Date when the test run was modified last time</value>
-        [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
-        public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Unique ID of user who modified the test run last time
@@ -132,27 +125,20 @@ namespace TestIt.Client.Model
         /// Is the test run is deleted
         /// </summary>
         /// <value>Is the test run is deleted</value>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>
-        /// Date when the test run was started
+        /// Number of AutoTests run in the test run
         /// </summary>
-        /// <value>Date when the test run was started</value>
-        [DataMember(Name = "startedDate", EmitDefaultValue = true)]
-        public DateTime? StartedDate { get; set; }
-
-        /// <summary>
-        /// Number of autotests run in the test run
-        /// </summary>
-        /// <value>Number of autotests run in the test run</value>
-        [DataMember(Name = "autotestsCount", EmitDefaultValue = false)]
-        public int AutotestsCount { get; set; }
+        /// <value>Number of AutoTests run in the test run</value>
+        [DataMember(Name = "autoTestsCount", IsRequired = true, EmitDefaultValue = true)]
+        public int AutoTestsCount { get; set; }
 
         /// <summary>
         /// Gets or Sets Statistics
         /// </summary>
-        [DataMember(Name = "statistics", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "statistics", EmitDefaultValue = true)]
         public TestRunShortGetModelStatistics Statistics { get; set; }
 
         /// <summary>
@@ -165,15 +151,14 @@ namespace TestIt.Client.Model
             sb.Append("class TestRunShortGetModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
+            sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
+            sb.Append("  StartedDate: ").Append(StartedDate).Append("\n");
+            sb.Append("  CompletedDate: ").Append(CompletedDate).Append("\n");
             sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
-            sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
             sb.Append("  ModifiedById: ").Append(ModifiedById).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
-            sb.Append("  State: ").Append(State).Append("\n");
-            sb.Append("  StartedDate: ").Append(StartedDate).Append("\n");
-            sb.Append("  AutotestsCount: ").Append(AutotestsCount).Append("\n");
+            sb.Append("  AutoTestsCount: ").Append(AutoTestsCount).Append("\n");
             sb.Append("  Statistics: ").Append(Statistics).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -221,9 +206,8 @@ namespace TestIt.Client.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
+                    this.State == input.State ||
+                    this.State.Equals(input.State)
                 ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
@@ -231,14 +215,19 @@ namespace TestIt.Client.Model
                     this.CreatedDate.Equals(input.CreatedDate))
                 ) && 
                 (
+                    this.StartedDate == input.StartedDate ||
+                    (this.StartedDate != null &&
+                    this.StartedDate.Equals(input.StartedDate))
+                ) && 
+                (
+                    this.CompletedDate == input.CompletedDate ||
+                    (this.CompletedDate != null &&
+                    this.CompletedDate.Equals(input.CompletedDate))
+                ) && 
+                (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&
                     this.CreatedById.Equals(input.CreatedById))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
                 ) && 
                 (
                     this.ModifiedById == input.ModifiedById ||
@@ -250,17 +239,8 @@ namespace TestIt.Client.Model
                     this.IsDeleted.Equals(input.IsDeleted)
                 ) && 
                 (
-                    this.State == input.State ||
-                    this.State.Equals(input.State)
-                ) && 
-                (
-                    this.StartedDate == input.StartedDate ||
-                    (this.StartedDate != null &&
-                    this.StartedDate.Equals(input.StartedDate))
-                ) && 
-                (
-                    this.AutotestsCount == input.AutotestsCount ||
-                    this.AutotestsCount.Equals(input.AutotestsCount)
+                    this.AutoTestsCount == input.AutoTestsCount ||
+                    this.AutoTestsCount.Equals(input.AutoTestsCount)
                 ) && 
                 (
                     this.Statistics == input.Statistics ||
@@ -286,33 +266,29 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.ProjectId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProjectId.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.State.GetHashCode();
                 if (this.CreatedDate != null)
                 {
                     hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
                 }
+                if (this.StartedDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.StartedDate.GetHashCode();
+                }
+                if (this.CompletedDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.CompletedDate.GetHashCode();
+                }
                 if (this.CreatedById != null)
                 {
                     hashCode = (hashCode * 59) + this.CreatedById.GetHashCode();
-                }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
                 }
                 if (this.ModifiedById != null)
                 {
                     hashCode = (hashCode * 59) + this.ModifiedById.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                hashCode = (hashCode * 59) + this.State.GetHashCode();
-                if (this.StartedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.StartedDate.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.AutotestsCount.GetHashCode();
+                hashCode = (hashCode * 59) + this.AutoTestsCount.GetHashCode();
                 if (this.Statistics != null)
                 {
                     hashCode = (hashCode * 59) + this.Statistics.GetHashCode();

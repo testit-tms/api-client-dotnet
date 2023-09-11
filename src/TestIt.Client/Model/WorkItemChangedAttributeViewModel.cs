@@ -52,19 +52,19 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
+        [DataMember(Name = "type", EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets OldAttributeName
         /// </summary>
-        [DataMember(Name = "oldAttributeName", EmitDefaultValue = false)]
+        [DataMember(Name = "oldAttributeName", EmitDefaultValue = true)]
         public string OldAttributeName { get; set; }
 
         /// <summary>
         /// Gets or Sets NewAttributeName
         /// </summary>
-        [DataMember(Name = "newAttributeName", EmitDefaultValue = false)]
+        [DataMember(Name = "newAttributeName", EmitDefaultValue = true)]
         public string NewAttributeName { get; set; }
 
         /// <summary>

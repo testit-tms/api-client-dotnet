@@ -41,7 +41,7 @@ namespace TestIt.Client.Model
         /// Initializes a new instance of the <see cref="IterationPutModel" /> class.
         /// </summary>
         /// <param name="parameters">parameters (required).</param>
-        /// <param name="id">id.</param>
+        /// <param name="id">id (required).</param>
         public IterationPutModel(List<ParameterIterationModel> parameters = default(List<ParameterIterationModel>), Guid id = default(Guid))
         {
             // to ensure "parameters" is required (not null)
@@ -63,7 +63,7 @@ namespace TestIt.Client.Model
         /// Gets or Sets Id
         /// </summary>
         /// <example>&quot;00000000-0000-0000-0000-000000000000&quot;</example>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>

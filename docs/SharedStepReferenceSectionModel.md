@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | [optional] 
+**Id** | **Guid** |  | 
 **Name** | **string** |  | [optional] 
-**HasThisSharedStepAsPrecondition** | **bool** |  | [optional] 
-**HasThisSharedStepAsPostcondition** | **bool** |  | [optional] 
-**CreatedById** | **Guid** |  | [optional] 
+**HasThisSharedStepAsPrecondition** | **bool** |  | 
+**HasThisSharedStepAsPostcondition** | **bool** |  | 
+**CreatedById** | **Guid** |  | 
 **ModifiedById** | **Guid?** |  | [optional] 
 **CreatedDate** | **DateTime?** |  | [optional] 
 **ModifiedDate** | **DateTime?** |  | [optional] 
-**IsDeleted** | **bool** |  | [optional] 
+**IsDeleted** | **bool** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

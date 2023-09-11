@@ -48,24 +48,24 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="name">name.</param>
         /// <param name="failureCategory">failureCategory (required).</param>
-        /// <param name="createdDate">createdDate.</param>
+        /// <param name="createdDate">createdDate (required).</param>
         /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="createdById">createdById.</param>
+        /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="failureClassRegexes">failureClassRegexes.</param>
-        /// <param name="id">Unique ID of the entity.</param>
-        /// <param name="isDeleted">Indicates if the entity is deleted.</param>
+        /// <param name="id">Unique ID of the entity (required).</param>
+        /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
         public FailureClassModel(string name = default(string), FailureCategoryModel failureCategory = default(FailureCategoryModel), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), List<FailureClassRegexModel> failureClassRegexes = default(List<FailureClassRegexModel>), Guid id = default(Guid), bool isDeleted = default(bool))
         {
             this.FailureCategory = failureCategory;
-            this.Name = name;
             this.CreatedDate = createdDate;
-            this.ModifiedDate = modifiedDate;
             this.CreatedById = createdById;
-            this.ModifiedById = modifiedById;
-            this.FailureClassRegexes = failureClassRegexes;
             this.Id = id;
             this.IsDeleted = isDeleted;
+            this.Name = name;
+            this.ModifiedDate = modifiedDate;
+            this.ModifiedById = modifiedById;
+            this.FailureClassRegexes = failureClassRegexes;
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+        [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
@@ -108,14 +108,14 @@ namespace TestIt.Client.Model
         /// Unique ID of the entity
         /// </summary>
         /// <value>Unique ID of the entity</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Indicates if the entity is deleted
         /// </summary>
         /// <value>Indicates if the entity is deleted</value>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>

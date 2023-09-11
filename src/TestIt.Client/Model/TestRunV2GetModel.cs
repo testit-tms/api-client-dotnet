@@ -49,21 +49,26 @@ namespace TestIt.Client.Model
         /// <param name="startedOn">startedOn.</param>
         /// <param name="completedOn">completedOn.</param>
         /// <param name="stateName">stateName (required).</param>
-        /// <param name="projectId">This property is used to link test run with project.</param>
+        /// <param name="projectId">This property is used to link test run with project (required).</param>
         /// <param name="testPlanId">This property is used to link test run with test plan.</param>
         /// <param name="testResults">testResults.</param>
-        /// <param name="createdDate">createdDate.</param>
+        /// <param name="createdDate">createdDate (required).</param>
         /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="createdById">createdById.</param>
+        /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="createdByUserName">createdByUserName.</param>
+        /// <param name="attachments">attachments.</param>
+        /// <param name="links">links.</param>
         /// <param name="id">id (required).</param>
         /// <param name="name">name (required).</param>
         /// <param name="description">description.</param>
         /// <param name="launchSource">Once launch source is specified it cannot be updated.</param>
-        public TestRunV2GetModel(DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), TestRunState stateName = default(TestRunState), Guid projectId = default(Guid), Guid? testPlanId = default(Guid?), List<TestResultV2GetModel> testResults = default(List<TestResultV2GetModel>), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string createdByUserName = default(string), Guid id = default(Guid), string name = default(string), string description = default(string), string launchSource = default(string))
+        public TestRunV2GetModel(DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), TestRunState stateName = default(TestRunState), Guid projectId = default(Guid), Guid? testPlanId = default(Guid?), List<TestResultV2GetModel> testResults = default(List<TestResultV2GetModel>), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string createdByUserName = default(string), List<AttachmentModel> attachments = default(List<AttachmentModel>), List<LinkModel> links = default(List<LinkModel>), Guid id = default(Guid), string name = default(string), string description = default(string), string launchSource = default(string))
         {
             this.StateName = stateName;
+            this.ProjectId = projectId;
+            this.CreatedDate = createdDate;
+            this.CreatedById = createdById;
             this.Id = id;
             // to ensure "name" is required (not null)
             if (name == null)
@@ -73,14 +78,13 @@ namespace TestIt.Client.Model
             this.Name = name;
             this.StartedOn = startedOn;
             this.CompletedOn = completedOn;
-            this.ProjectId = projectId;
             this.TestPlanId = testPlanId;
             this.TestResults = testResults;
-            this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
-            this.CreatedById = createdById;
             this.ModifiedById = modifiedById;
             this.CreatedByUserName = createdByUserName;
+            this.Attachments = attachments;
+            this.Links = links;
             this.Description = description;
             this.LaunchSource = launchSource;
         }
@@ -88,14 +92,14 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets StartedOn
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "startedOn", EmitDefaultValue = true)]
         public DateTime? StartedOn { get; set; }
 
         /// <summary>
         /// Gets or Sets CompletedOn
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "completedOn", EmitDefaultValue = true)]
         public DateTime? CompletedOn { get; set; }
 
@@ -103,15 +107,15 @@ namespace TestIt.Client.Model
         /// This property is used to link test run with project
         /// </summary>
         /// <value>This property is used to link test run with project</value>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "projectId", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
         /// This property is used to link test run with test plan
         /// </summary>
         /// <value>This property is used to link test run with test plan</value>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "testPlanId", EmitDefaultValue = true)]
         public Guid? TestPlanId { get; set; }
 
@@ -124,28 +128,28 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
-        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
+        [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
@@ -157,9 +161,21 @@ namespace TestIt.Client.Model
         public string CreatedByUserName { get; set; }
 
         /// <summary>
+        /// Gets or Sets Attachments
+        /// </summary>
+        [DataMember(Name = "attachments", EmitDefaultValue = true)]
+        public List<AttachmentModel> Attachments { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Links
+        /// </summary>
+        [DataMember(Name = "links", EmitDefaultValue = true)]
+        public List<LinkModel> Links { get; set; }
+
+        /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
@@ -203,6 +219,8 @@ namespace TestIt.Client.Model
             sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
             sb.Append("  ModifiedById: ").Append(ModifiedById).Append("\n");
             sb.Append("  CreatedByUserName: ").Append(CreatedByUserName).Append("\n");
+            sb.Append("  Attachments: ").Append(Attachments).Append("\n");
+            sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
@@ -298,6 +316,18 @@ namespace TestIt.Client.Model
                     this.CreatedByUserName.Equals(input.CreatedByUserName))
                 ) && 
                 (
+                    this.Attachments == input.Attachments ||
+                    this.Attachments != null &&
+                    input.Attachments != null &&
+                    this.Attachments.SequenceEqual(input.Attachments)
+                ) && 
+                (
+                    this.Links == input.Links ||
+                    this.Links != null &&
+                    input.Links != null &&
+                    this.Links.SequenceEqual(input.Links)
+                ) && 
+                (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
@@ -368,6 +398,14 @@ namespace TestIt.Client.Model
                 if (this.CreatedByUserName != null)
                 {
                     hashCode = (hashCode * 59) + this.CreatedByUserName.GetHashCode();
+                }
+                if (this.Attachments != null)
+                {
+                    hashCode = (hashCode * 59) + this.Attachments.GetHashCode();
+                }
+                if (this.Links != null)
+                {
+                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
                 }
                 if (this.Id != null)
                 {

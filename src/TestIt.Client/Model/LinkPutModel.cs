@@ -52,7 +52,7 @@ namespace TestIt.Client.Model
         /// <param name="description">Link description..</param>
         /// <param name="type">type.</param>
         /// <param name="hasInfo">hasInfo.</param>
-        public LinkPutModel(Guid id = default(Guid), string title = default(string), string url = default(string), string description = default(string), LinkType? type = default(LinkType?), bool hasInfo = default(bool))
+        public LinkPutModel(Guid? id = default(Guid?), string title = default(string), string url = default(string), string description = default(string), LinkType? type = default(LinkType?), bool? hasInfo = default(bool?))
         {
             // to ensure "url" is required (not null)
             if (url == null)
@@ -70,9 +70,9 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public Guid Id { get; set; }
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "id", EmitDefaultValue = true)]
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// Link name.
@@ -99,7 +99,7 @@ namespace TestIt.Client.Model
         /// Gets or Sets HasInfo
         /// </summary>
         [DataMember(Name = "hasInfo", EmitDefaultValue = true)]
-        public bool HasInfo { get; set; }
+        public bool? HasInfo { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -176,7 +176,8 @@ namespace TestIt.Client.Model
                 ) && 
                 (
                     this.HasInfo == input.HasInfo ||
-                    this.HasInfo.Equals(input.HasInfo)
+                    (this.HasInfo != null &&
+                    this.HasInfo.Equals(input.HasInfo))
                 );
         }
 
@@ -206,7 +207,10 @@ namespace TestIt.Client.Model
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                hashCode = (hashCode * 59) + this.HasInfo.GetHashCode();
+                if (this.HasInfo != null)
+                {
+                    hashCode = (hashCode * 59) + this.HasInfo.GetHashCode();
+                }
                 return hashCode;
             }
         }

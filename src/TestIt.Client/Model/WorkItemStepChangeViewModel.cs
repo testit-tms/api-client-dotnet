@@ -35,20 +35,25 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemStepChangeViewModel" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected WorkItemStepChangeViewModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkItemStepChangeViewModel" /> class.
+        /// </summary>
         /// <param name="action">action.</param>
         /// <param name="expected">expected.</param>
         /// <param name="comments">comments.</param>
         /// <param name="testData">testData.</param>
-        /// <param name="index">index.</param>
+        /// <param name="index">index (required).</param>
         /// <param name="workItemId">workItemId.</param>
         /// <param name="workItem">workItem.</param>
-        public WorkItemStepChangeViewModel(string action = default(string), string expected = default(string), string comments = default(string), string testData = default(string), int index = default(int), Guid? workItemId = default(Guid?), WorkItemStepChangeViewModelWorkItem workItem = default(WorkItemStepChangeViewModelWorkItem))
+        public WorkItemStepChangeViewModel(string action = default(string), string expected = default(string), string comments = default(string), string testData = default(string), int index = default(int), Guid? workItemId = default(Guid?), SharedStepChangeViewModel workItem = default(SharedStepChangeViewModel))
         {
+            this.Index = index;
             this.Action = action;
             this.Expected = expected;
             this.Comments = comments;
             this.TestData = testData;
-            this.Index = index;
             this.WorkItemId = workItemId;
             this.WorkItem = workItem;
         }
@@ -56,31 +61,31 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Action
         /// </summary>
-        [DataMember(Name = "action", EmitDefaultValue = false)]
+        [DataMember(Name = "action", EmitDefaultValue = true)]
         public string Action { get; set; }
 
         /// <summary>
         /// Gets or Sets Expected
         /// </summary>
-        [DataMember(Name = "expected", EmitDefaultValue = false)]
+        [DataMember(Name = "expected", EmitDefaultValue = true)]
         public string Expected { get; set; }
 
         /// <summary>
         /// Gets or Sets Comments
         /// </summary>
-        [DataMember(Name = "comments", EmitDefaultValue = false)]
+        [DataMember(Name = "comments", EmitDefaultValue = true)]
         public string Comments { get; set; }
 
         /// <summary>
         /// Gets or Sets TestData
         /// </summary>
-        [DataMember(Name = "testData", EmitDefaultValue = false)]
+        [DataMember(Name = "testData", EmitDefaultValue = true)]
         public string TestData { get; set; }
 
         /// <summary>
         /// Gets or Sets Index
         /// </summary>
-        [DataMember(Name = "index", EmitDefaultValue = false)]
+        [DataMember(Name = "index", IsRequired = true, EmitDefaultValue = true)]
         public int Index { get; set; }
 
         /// <summary>
@@ -92,8 +97,8 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets WorkItem
         /// </summary>
-        [DataMember(Name = "workItem", EmitDefaultValue = false)]
-        public WorkItemStepChangeViewModelWorkItem WorkItem { get; set; }
+        [DataMember(Name = "workItem", EmitDefaultValue = true)]
+        public SharedStepChangeViewModel WorkItem { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

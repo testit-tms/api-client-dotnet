@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **Description** | **string** | Description of the autotest in autotest&#39;s card | [optional] 
 **Labels** | [**List&lt;LabelPostModel&gt;**](LabelPostModel.md) | Collection of the autotest labels | [optional] 
 **IsFlaky** | **bool?** | Indicates if the autotest is marked as flaky | [optional] 
+**ExternalKey** | **string** | External key of the autotest | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -40,11 +40,12 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateParameterRequest" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        /// <param name="id">id (required).</param>
         /// <param name="value">value (required).</param>
         /// <param name="name">name (required).</param>
         public UpdateParameterRequest(Guid id = default(Guid), string value = default(string), string name = default(string))
         {
+            this.Id = id;
             // to ensure "value" is required (not null)
             if (value == null)
             {
@@ -57,14 +58,13 @@ namespace TestIt.Client.Model
                 throw new ArgumentNullException("name is a required property for UpdateParameterRequest and cannot be null");
             }
             this.Name = name;
-            this.Id = id;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>

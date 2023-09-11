@@ -46,53 +46,53 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPointWithLastResultModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        /// <param name="id">id (required).</param>
         /// <param name="workItemName">workItemName.</param>
-        /// <param name="isAutomated">isAutomated.</param>
+        /// <param name="isAutomated">isAutomated (required).</param>
         /// <param name="testerId">testerId.</param>
-        /// <param name="workItemId">workItemId.</param>
+        /// <param name="workItemId">workItemId (required).</param>
         /// <param name="configurationId">configurationId.</param>
-        /// <param name="testSuiteId">testSuiteId.</param>
+        /// <param name="testSuiteId">testSuiteId (required).</param>
         /// <param name="lastTestResult">lastTestResult.</param>
         /// <param name="status">status.</param>
         /// <param name="workItemGlobalId">workItemGlobalId.</param>
         /// <param name="workItemEntityTypeName">workItemEntityTypeName.</param>
-        /// <param name="sectionId">sectionId.</param>
+        /// <param name="sectionId">sectionId (required).</param>
         /// <param name="sectionName">sectionName.</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="createdById">createdById.</param>
+        /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="attributes">attributes.</param>
         /// <param name="tagNames">tagNames.</param>
-        /// <param name="duration">duration.</param>
+        /// <param name="duration">duration (required).</param>
         /// <param name="priority">priority (required).</param>
         /// <param name="testSuiteNameBreadCrumbs">testSuiteNameBreadCrumbs.</param>
         /// <param name="groupCount">groupCount.</param>
         /// <param name="iteration">iteration.</param>
         public TestPointWithLastResultModel(Guid id = default(Guid), string workItemName = default(string), bool isAutomated = default(bool), Guid? testerId = default(Guid?), Guid workItemId = default(Guid), Guid? configurationId = default(Guid?), Guid testSuiteId = default(Guid), LastTestResultModel lastTestResult = default(LastTestResultModel), string status = default(string), long? workItemGlobalId = default(long?), string workItemEntityTypeName = default(string), Guid sectionId = default(Guid), string sectionName = default(string), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<string> tagNames = default(List<string>), int duration = default(int), WorkItemPriorityModel priority = default(WorkItemPriorityModel), List<string> testSuiteNameBreadCrumbs = default(List<string>), int? groupCount = default(int?), IterationModel iteration = default(IterationModel))
         {
-            this.Priority = priority;
             this.Id = id;
-            this.WorkItemName = workItemName;
             this.IsAutomated = isAutomated;
-            this.TesterId = testerId;
             this.WorkItemId = workItemId;
-            this.ConfigurationId = configurationId;
             this.TestSuiteId = testSuiteId;
+            this.SectionId = sectionId;
+            this.CreatedById = createdById;
+            this.Duration = duration;
+            this.Priority = priority;
+            this.WorkItemName = workItemName;
+            this.TesterId = testerId;
+            this.ConfigurationId = configurationId;
             this.LastTestResult = lastTestResult;
             this.Status = status;
             this.WorkItemGlobalId = workItemGlobalId;
             this.WorkItemEntityTypeName = workItemEntityTypeName;
-            this.SectionId = sectionId;
             this.SectionName = sectionName;
             this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
-            this.CreatedById = createdById;
             this.ModifiedById = modifiedById;
             this.Attributes = attributes;
             this.TagNames = tagNames;
-            this.Duration = duration;
             this.TestSuiteNameBreadCrumbs = testSuiteNameBreadCrumbs;
             this.GroupCount = groupCount;
             this.Iteration = iteration;
@@ -101,7 +101,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets IsAutomated
         /// </summary>
-        [DataMember(Name = "isAutomated", EmitDefaultValue = true)]
+        [DataMember(Name = "isAutomated", IsRequired = true, EmitDefaultValue = true)]
         public bool IsAutomated { get; set; }
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets WorkItemId
         /// </summary>
-        [DataMember(Name = "workItemId", EmitDefaultValue = false)]
+        [DataMember(Name = "workItemId", IsRequired = true, EmitDefaultValue = true)]
         public Guid WorkItemId { get; set; }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets TestSuiteId
         /// </summary>
-        [DataMember(Name = "testSuiteId", EmitDefaultValue = false)]
+        [DataMember(Name = "testSuiteId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestSuiteId { get; set; }
 
         /// <summary>
@@ -167,7 +167,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets SectionId
         /// </summary>
-        [DataMember(Name = "sectionId", EmitDefaultValue = false)]
+        [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid SectionId { get; set; }
 
         /// <summary>
@@ -191,7 +191,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
@@ -215,7 +215,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Duration
         /// </summary>
-        [DataMember(Name = "duration", EmitDefaultValue = false)]
+        [DataMember(Name = "duration", IsRequired = true, EmitDefaultValue = true)]
         public int Duration { get; set; }
 
         /// <summary>

@@ -35,28 +35,33 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestSuiteChangeViewModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        [JsonConstructorAttribute]
+        protected TestSuiteChangeViewModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestSuiteChangeViewModel" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
         /// <param name="name">name.</param>
         /// <param name="configurations">configurations.</param>
-        /// <param name="workItemCount">workItemCount.</param>
+        /// <param name="workItemCount">workItemCount (required).</param>
         public TestSuiteChangeViewModel(Guid id = default(Guid), string name = default(string), List<ShortConfiguration> configurations = default(List<ShortConfiguration>), long workItemCount = default(long))
         {
             this.Id = id;
+            this.WorkItemCount = workItemCount;
             this.Name = name;
             this.Configurations = configurations;
-            this.WorkItemCount = workItemCount;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -68,7 +73,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets WorkItemCount
         /// </summary>
-        [DataMember(Name = "workItemCount", EmitDefaultValue = false)]
+        [DataMember(Name = "workItemCount", IsRequired = true, EmitDefaultValue = true)]
         public long WorkItemCount { get; set; }
 
         /// <summary>

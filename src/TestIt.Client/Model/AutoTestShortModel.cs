@@ -35,48 +35,53 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestShortModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="globalId">globalId.</param>
+        [JsonConstructorAttribute]
+        protected AutoTestShortModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AutoTestShortModel" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
+        /// <param name="globalId">globalId (required).</param>
         /// <param name="externalId">externalId.</param>
-        /// <param name="projectId">projectId.</param>
+        /// <param name="projectId">projectId (required).</param>
         /// <param name="name">name.</param>
         public AutoTestShortModel(Guid id = default(Guid), long globalId = default(long), string externalId = default(string), Guid projectId = default(Guid), string name = default(string))
         {
             this.Id = id;
             this.GlobalId = globalId;
-            this.ExternalId = externalId;
             this.ProjectId = projectId;
+            this.ExternalId = externalId;
             this.Name = name;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets GlobalId
         /// </summary>
-        [DataMember(Name = "globalId", EmitDefaultValue = false)]
+        [DataMember(Name = "globalId", IsRequired = true, EmitDefaultValue = true)]
         public long GlobalId { get; set; }
 
         /// <summary>
         /// Gets or Sets ExternalId
         /// </summary>
-        [DataMember(Name = "externalId", EmitDefaultValue = false)]
+        [DataMember(Name = "externalId", EmitDefaultValue = true)]
         public string ExternalId { get; set; }
 
         /// <summary>
         /// Gets or Sets ProjectId
         /// </summary>
-        [DataMember(Name = "projectId", EmitDefaultValue = false)]
+        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>

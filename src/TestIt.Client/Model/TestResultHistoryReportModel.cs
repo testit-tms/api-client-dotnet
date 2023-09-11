@@ -35,10 +35,15 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestResultHistoryReportModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="createdDate">createdDate.</param>
-        /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="userId">If test run was stopped, this property equals identifier of user who stopped it.Otherwise, the property equals identifier of user who created the test result.</param>
+        [JsonConstructorAttribute]
+        protected TestResultHistoryReportModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestResultHistoryReportModel" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
+        /// <param name="createdDate">createdDate (required).</param>
+        /// <param name="modifiedDate">modifiedDate (required).</param>
+        /// <param name="userId">If test run was stopped, this property equals identifier of user who stopped it.Otherwise, the property equals identifier of user who created the test result (required).</param>
         /// <param name="testRunId">testRunId.</param>
         /// <param name="testRunName">testRunName.</param>
         /// <param name="createdByUserName">createdByUserName.</param>
@@ -46,14 +51,14 @@ namespace TestIt.Client.Model
         /// <param name="testPlanGlobalId">testPlanGlobalId.</param>
         /// <param name="testPlanName">testPlanName.</param>
         /// <param name="configurationName">If test point related to the test result has configuration, this property will be equal to the test point configuration name. Otherwise, this property will be equal to the test result configuration name.</param>
-        /// <param name="isAutomated">isAutomated.</param>
+        /// <param name="isAutomated">isAutomated (required).</param>
         /// <param name="outcome">If any test result related to the test run is linked with autotest and the run has an outcome, the outcome value equalsto the worst outcome of the last modified test result.Otherwise, the outcome equals to the outcome of first created test result in the test run.</param>
         /// <param name="comment">If any test result related to the test run is linked with autotest, comment will have default valueOtherwise, the comment equals to the comment of first created test result in the test run.</param>
         /// <param name="links">If any test result related to the test run is linked with autotest, link will be equal to the links of last modified test result.Otherwise, the links equals to the links of first created test result in the test run.</param>
         /// <param name="startedOn">startedOn.</param>
         /// <param name="completedOn">completedOn.</param>
         /// <param name="duration">duration.</param>
-        /// <param name="createdById">createdById.</param>
+        /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="attachments">If any test result related to the test run is linked with autotest, attachments will be equal to the attachments of last modified test result.Otherwise, the attachments equals to the attachments of first created test result in the test run.</param>
         /// <param name="workItemVersionId">workItemVersionId.</param>
@@ -67,6 +72,8 @@ namespace TestIt.Client.Model
             this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
             this.UserId = userId;
+            this.IsAutomated = isAutomated;
+            this.CreatedById = createdById;
             this.TestRunId = testRunId;
             this.TestRunName = testRunName;
             this.CreatedByUserName = createdByUserName;
@@ -74,14 +81,12 @@ namespace TestIt.Client.Model
             this.TestPlanGlobalId = testPlanGlobalId;
             this.TestPlanName = testPlanName;
             this.ConfigurationName = configurationName;
-            this.IsAutomated = isAutomated;
             this.Outcome = outcome;
             this.Comment = comment;
             this.Links = links;
             this.StartedOn = startedOn;
             this.CompletedOn = completedOn;
             this.Duration = duration;
-            this.CreatedById = createdById;
             this.ModifiedById = modifiedById;
             this.Attachments = attachments;
             this.WorkItemVersionId = workItemVersionId;
@@ -94,36 +99,36 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
-        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
+        [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
-        [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
+        [DataMember(Name = "modifiedDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime ModifiedDate { get; set; }
 
         /// <summary>
         /// If test run was stopped, this property equals identifier of user who stopped it.Otherwise, the property equals identifier of user who created the test result
         /// </summary>
         /// <value>If test run was stopped, this property equals identifier of user who stopped it.Otherwise, the property equals identifier of user who created the test result</value>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "userId", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "userId", IsRequired = true, EmitDefaultValue = true)]
         public Guid UserId { get; set; }
 
         /// <summary>
         /// Gets or Sets TestRunId
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "testRunId", EmitDefaultValue = true)]
         public Guid? TestRunId { get; set; }
 
@@ -144,7 +149,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets TestPlanId
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "testPlanId", EmitDefaultValue = true)]
         public Guid? TestPlanId { get; set; }
 
@@ -174,7 +179,7 @@ namespace TestIt.Client.Model
         /// Gets or Sets IsAutomated
         /// </summary>
         /// <example>true</example>
-        [DataMember(Name = "isAutomated", EmitDefaultValue = true)]
+        [DataMember(Name = "isAutomated", IsRequired = true, EmitDefaultValue = true)]
         public bool IsAutomated { get; set; }
 
         /// <summary>
@@ -203,14 +208,14 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets StartedOn
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "startedOn", EmitDefaultValue = true)]
         public DateTime? StartedOn { get; set; }
 
         /// <summary>
         /// Gets or Sets CompletedOn
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "completedOn", EmitDefaultValue = true)]
         public DateTime? CompletedOn { get; set; }
 
@@ -224,14 +229,14 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
@@ -245,7 +250,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets WorkItemVersionId
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "workItemVersionId", EmitDefaultValue = true)]
         public Guid? WorkItemVersionId { get; set; }
 
@@ -264,7 +269,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets FailureClassIds
         /// </summary>
-        [DataMember(Name = "failureClassIds", EmitDefaultValue = false)]
+        [DataMember(Name = "failureClassIds", EmitDefaultValue = true)]
         public List<Guid> FailureClassIds { get; set; }
 
         /// <summary>

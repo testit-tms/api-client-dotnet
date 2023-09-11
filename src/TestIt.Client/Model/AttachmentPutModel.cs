@@ -40,16 +40,16 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AttachmentPutModel" /> class.
         /// </summary>
-        /// <param name="id">Specifies the GUID of the attachment. (required).</param>
+        /// <param name="id">Unique ID of the attachment (required).</param>
         public AttachmentPutModel(Guid id = default(Guid))
         {
             this.Id = id;
         }
 
         /// <summary>
-        /// Specifies the GUID of the attachment.
+        /// Unique ID of the attachment
         /// </summary>
-        /// <value>Specifies the GUID of the attachment.</value>
+        /// <value>Unique ID of the attachment</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 

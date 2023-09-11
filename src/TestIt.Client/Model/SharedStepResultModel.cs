@@ -35,7 +35,12 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SharedStepResultModel" /> class.
         /// </summary>
-        /// <param name="stepId">stepId.</param>
+        [JsonConstructorAttribute]
+        protected SharedStepResultModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SharedStepResultModel" /> class.
+        /// </summary>
+        /// <param name="stepId">stepId (required).</param>
         /// <param name="outcome">outcome.</param>
         public SharedStepResultModel(Guid stepId = default(Guid), string outcome = default(string))
         {
@@ -46,13 +51,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets StepId
         /// </summary>
-        [DataMember(Name = "stepId", EmitDefaultValue = false)]
+        [DataMember(Name = "stepId", IsRequired = true, EmitDefaultValue = true)]
         public Guid StepId { get; set; }
 
         /// <summary>
         /// Gets or Sets Outcome
         /// </summary>
-        [DataMember(Name = "outcome", EmitDefaultValue = false)]
+        [DataMember(Name = "outcome", EmitDefaultValue = true)]
         public string Outcome { get; set; }
 
         /// <summary>

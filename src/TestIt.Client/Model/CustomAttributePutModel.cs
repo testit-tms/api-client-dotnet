@@ -46,36 +46,36 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomAttributePutModel" /> class.
         /// </summary>
-        /// <param name="id">Unique ID of the attribute.</param>
+        /// <param name="id">Unique ID of the attribute (required).</param>
         /// <param name="options">Collection of the attribute options  &lt;br /&gt;  Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only.</param>
         /// <param name="type">type (required).</param>
-        /// <param name="isDeleted">Indicates if the entity is deleted.</param>
+        /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
         /// <param name="name">Name of the attribute (required).</param>
-        /// <param name="isEnabled">Indicates if the attribute is enabled.</param>
-        /// <param name="isRequired">Indicates if the attribute value is mandatory to specify.</param>
-        /// <param name="isGlobal">Indicates if the attribute is available across all projects.</param>
+        /// <param name="isEnabled">Indicates if the attribute is enabled (required).</param>
+        /// <param name="isRequired">Indicates if the attribute value is mandatory to specify (required).</param>
+        /// <param name="isGlobal">Indicates if the attribute is available across all projects (required).</param>
         public CustomAttributePutModel(Guid id = default(Guid), List<CustomAttributeOptionModel> options = default(List<CustomAttributeOptionModel>), CustomAttributeTypesEnum type = default(CustomAttributeTypesEnum), bool isDeleted = default(bool), string name = default(string), bool isEnabled = default(bool), bool isRequired = default(bool), bool isGlobal = default(bool))
         {
+            this.Id = id;
             this.Type = type;
+            this.IsDeleted = isDeleted;
             // to ensure "name" is required (not null)
             if (name == null)
             {
                 throw new ArgumentNullException("name is a required property for CustomAttributePutModel and cannot be null");
             }
             this.Name = name;
-            this.Id = id;
-            this.Options = options;
-            this.IsDeleted = isDeleted;
             this.IsEnabled = isEnabled;
             this.IsRequired = isRequired;
             this.IsGlobal = isGlobal;
+            this.Options = options;
         }
 
         /// <summary>
         /// Unique ID of the attribute
         /// </summary>
         /// <value>Unique ID of the attribute</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace TestIt.Client.Model
         /// Indicates if the entity is deleted
         /// </summary>
         /// <value>Indicates if the entity is deleted</value>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>
@@ -103,21 +103,21 @@ namespace TestIt.Client.Model
         /// Indicates if the attribute is enabled
         /// </summary>
         /// <value>Indicates if the attribute is enabled</value>
-        [DataMember(Name = "isEnabled", EmitDefaultValue = true)]
+        [DataMember(Name = "isEnabled", IsRequired = true, EmitDefaultValue = true)]
         public bool IsEnabled { get; set; }
 
         /// <summary>
         /// Indicates if the attribute value is mandatory to specify
         /// </summary>
         /// <value>Indicates if the attribute value is mandatory to specify</value>
-        [DataMember(Name = "isRequired", EmitDefaultValue = true)]
+        [DataMember(Name = "isRequired", IsRequired = true, EmitDefaultValue = true)]
         public bool IsRequired { get; set; }
 
         /// <summary>
         /// Indicates if the attribute is available across all projects
         /// </summary>
         /// <value>Indicates if the attribute is available across all projects</value>
-        [DataMember(Name = "isGlobal", EmitDefaultValue = true)]
+        [DataMember(Name = "isGlobal", IsRequired = true, EmitDefaultValue = true)]
         public bool IsGlobal { get; set; }
 
         /// <summary>

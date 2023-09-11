@@ -52,28 +52,32 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemShortModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="versionId">used for versioning changes in workitem.</param>
-        /// <param name="name">name (required).</param>
-        /// <param name="entityTypeName">Property can have one of these values: CheckLists, SharedSteps, TestCases (required).</param>
-        /// <param name="projectId">This property is used to link autotest with project (required).</param>
-        /// <param name="sectionId">This property links workitem with section (required).</param>
-        /// <param name="sectionName">Name of the section where work item is located (required).</param>
-        /// <param name="isAutomated">isAutomated.</param>
-        /// <param name="globalId">globalId.</param>
-        /// <param name="duration">duration.</param>
-        /// <param name="attributes">attributes.</param>
-        /// <param name="createdById">createdById.</param>
-        /// <param name="modifiedById">modifiedById.</param>
-        /// <param name="createdDate">createdDate.</param>
-        /// <param name="modifiedDate">modifiedDate.</param>
+        /// <param name="id">Work Item internal unique identifier (required).</param>
+        /// <param name="versionId">Work Item version identifier (required).</param>
+        /// <param name="name">Work Item name (required).</param>
+        /// <param name="entityTypeName">Work Item type. Possible values: CheckLists, SharedSteps, TestCases (required).</param>
+        /// <param name="projectId">Project unique identifier (required).</param>
+        /// <param name="sectionId">Identifier of Section where Work Item is located (required).</param>
+        /// <param name="sectionName">Section name of Work Item (required).</param>
+        /// <param name="isAutomated">Boolean flag determining whether Work Item is automated (required).</param>
+        /// <param name="globalId">Work Item global identifier (required).</param>
+        /// <param name="duration">Work Item duration (required).</param>
+        /// <param name="medianDuration">Work Item median duration.</param>
+        /// <param name="attributes">Work Item attributes.</param>
+        /// <param name="createdById">Unique identifier of user who created Work Item (required).</param>
+        /// <param name="modifiedById">Unique identifier of user who applied the latest modification of Work Item.</param>
+        /// <param name="createdDate">Date and time of Work Item creation.</param>
+        /// <param name="modifiedDate">Date and time of the latest modification of Work Item.</param>
         /// <param name="state">state (required).</param>
         /// <param name="priority">priority (required).</param>
-        /// <param name="isDeleted">isDeleted.</param>
-        /// <param name="tagNames">tagNames.</param>
-        /// <param name="iterations">iterations.</param>
-        public WorkItemShortModel(Guid id = default(Guid), Guid versionId = default(Guid), string name = default(string), string entityTypeName = default(string), Guid projectId = default(Guid), Guid sectionId = default(Guid), string sectionName = default(string), bool isAutomated = default(bool), long globalId = default(long), int duration = default(int), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), WorkItemStates state = default(WorkItemStates), WorkItemPriorityModel priority = default(WorkItemPriorityModel), bool isDeleted = default(bool), List<string> tagNames = default(List<string>), List<IterationModel> iterations = default(List<IterationModel>))
+        /// <param name="isDeleted">Flag determining whether Work Item is deleted (required).</param>
+        /// <param name="tagNames">Array of tag names of Work Item.</param>
+        /// <param name="iterations">Set of iterations related to Work Item.</param>
+        /// <param name="links">Set of links related to Work Item.</param>
+        public WorkItemShortModel(Guid id = default(Guid), Guid versionId = default(Guid), string name = default(string), string entityTypeName = default(string), Guid projectId = default(Guid), Guid sectionId = default(Guid), string sectionName = default(string), bool isAutomated = default(bool), long globalId = default(long), int duration = default(int), long? medianDuration = default(long?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), WorkItemStates state = default(WorkItemStates), WorkItemPriorityModel priority = default(WorkItemPriorityModel), bool isDeleted = default(bool), List<string> tagNames = default(List<string>), List<IterationModel> iterations = default(List<IterationModel>), List<LinkShortModel> links = default(List<LinkShortModel>))
         {
+            this.Id = id;
+            this.VersionId = versionId;
             // to ensure "name" is required (not null)
             if (name == null)
             {
@@ -94,149 +98,165 @@ namespace TestIt.Client.Model
                 throw new ArgumentNullException("sectionName is a required property for WorkItemShortModel and cannot be null");
             }
             this.SectionName = sectionName;
-            this.State = state;
-            this.Priority = priority;
-            this.Id = id;
-            this.VersionId = versionId;
             this.IsAutomated = isAutomated;
             this.GlobalId = globalId;
             this.Duration = duration;
-            this.Attributes = attributes;
             this.CreatedById = createdById;
+            this.State = state;
+            this.Priority = priority;
+            this.IsDeleted = isDeleted;
+            this.MedianDuration = medianDuration;
+            this.Attributes = attributes;
             this.ModifiedById = modifiedById;
             this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
-            this.IsDeleted = isDeleted;
             this.TagNames = tagNames;
             this.Iterations = iterations;
+            this.Links = links;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Work Item internal unique identifier
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        /// <value>Work Item internal unique identifier</value>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// used for versioning changes in workitem
+        /// Work Item version identifier
         /// </summary>
-        /// <value>used for versioning changes in workitem</value>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "versionId", EmitDefaultValue = false)]
+        /// <value>Work Item version identifier</value>
+        [DataMember(Name = "versionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid VersionId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Work Item name
         /// </summary>
+        /// <value>Work Item name</value>
         /// <example>&quot;Performance test&quot;</example>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Property can have one of these values: CheckLists, SharedSteps, TestCases
+        /// Work Item type. Possible values: CheckLists, SharedSteps, TestCases
         /// </summary>
-        /// <value>Property can have one of these values: CheckLists, SharedSteps, TestCases</value>
-        /// <example>&quot;SharedSteps&quot;</example>
+        /// <value>Work Item type. Possible values: CheckLists, SharedSteps, TestCases</value>
+        /// <example>&quot;TestCases&quot;</example>
         [DataMember(Name = "entityTypeName", IsRequired = true, EmitDefaultValue = true)]
         public string EntityTypeName { get; set; }
 
         /// <summary>
-        /// This property is used to link autotest with project
+        /// Project unique identifier
         /// </summary>
-        /// <value>This property is used to link autotest with project</value>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <value>Project unique identifier</value>
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
-        /// This property links workitem with section
+        /// Identifier of Section where Work Item is located
         /// </summary>
-        /// <value>This property links workitem with section</value>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <value>Identifier of Section where Work Item is located</value>
         [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid SectionId { get; set; }
 
         /// <summary>
-        /// Name of the section where work item is located
+        /// Section name of Work Item
         /// </summary>
-        /// <value>Name of the section where work item is located</value>
+        /// <value>Section name of Work Item</value>
+        /// <example>&quot;Performance tests section&quot;</example>
         [DataMember(Name = "sectionName", IsRequired = true, EmitDefaultValue = true)]
         public string SectionName { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsAutomated
+        /// Boolean flag determining whether Work Item is automated
         /// </summary>
-        /// <example>true</example>
-        [DataMember(Name = "isAutomated", EmitDefaultValue = true)]
+        /// <value>Boolean flag determining whether Work Item is automated</value>
+        [DataMember(Name = "isAutomated", IsRequired = true, EmitDefaultValue = true)]
         public bool IsAutomated { get; set; }
 
         /// <summary>
-        /// Gets or Sets GlobalId
+        /// Work Item global identifier
         /// </summary>
-        /// <example>1000</example>
-        [DataMember(Name = "globalId", EmitDefaultValue = false)]
+        /// <value>Work Item global identifier</value>
+        [DataMember(Name = "globalId", IsRequired = true, EmitDefaultValue = true)]
         public long GlobalId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Duration
+        /// Work Item duration
         /// </summary>
-        /// <example>1000</example>
-        [DataMember(Name = "duration", EmitDefaultValue = false)]
+        /// <value>Work Item duration</value>
+        [DataMember(Name = "duration", IsRequired = true, EmitDefaultValue = true)]
         public int Duration { get; set; }
 
         /// <summary>
-        /// Gets or Sets Attributes
+        /// Work Item median duration
         /// </summary>
+        /// <value>Work Item median duration</value>
+        [DataMember(Name = "medianDuration", EmitDefaultValue = true)]
+        public long? MedianDuration { get; set; }
+
+        /// <summary>
+        /// Work Item attributes
+        /// </summary>
+        /// <value>Work Item attributes</value>
         [DataMember(Name = "attributes", EmitDefaultValue = true)]
         public Dictionary<string, Object> Attributes { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedById
+        /// Unique identifier of user who created Work Item
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        /// <value>Unique identifier of user who created Work Item</value>
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
-        /// Gets or Sets ModifiedById
+        /// Unique identifier of user who applied the latest modification of Work Item
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <value>Unique identifier of user who applied the latest modification of Work Item</value>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedDate
+        /// Date and time of Work Item creation
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <value>Date and time of Work Item creation</value>
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
         public DateTime? CreatedDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets ModifiedDate
+        /// Date and time of the latest modification of Work Item
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <value>Date and time of the latest modification of Work Item</value>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDeleted
+        /// Flag determining whether Work Item is deleted
         /// </summary>
-        /// <example>true</example>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        /// <value>Flag determining whether Work Item is deleted</value>
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>
-        /// Gets or Sets TagNames
+        /// Array of tag names of Work Item
         /// </summary>
-        [DataMember(Name = "tagNames", EmitDefaultValue = false)]
+        /// <value>Array of tag names of Work Item</value>
+        [DataMember(Name = "tagNames", EmitDefaultValue = true)]
         public List<string> TagNames { get; set; }
 
         /// <summary>
-        /// Gets or Sets Iterations
+        /// Set of iterations related to Work Item
         /// </summary>
-        [DataMember(Name = "iterations", EmitDefaultValue = false)]
+        /// <value>Set of iterations related to Work Item</value>
+        [DataMember(Name = "iterations", EmitDefaultValue = true)]
         public List<IterationModel> Iterations { get; set; }
+
+        /// <summary>
+        /// Set of links related to Work Item
+        /// </summary>
+        /// <value>Set of links related to Work Item</value>
+        [DataMember(Name = "links", EmitDefaultValue = true)]
+        public List<LinkShortModel> Links { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -256,6 +276,7 @@ namespace TestIt.Client.Model
             sb.Append("  IsAutomated: ").Append(IsAutomated).Append("\n");
             sb.Append("  GlobalId: ").Append(GlobalId).Append("\n");
             sb.Append("  Duration: ").Append(Duration).Append("\n");
+            sb.Append("  MedianDuration: ").Append(MedianDuration).Append("\n");
             sb.Append("  Attributes: ").Append(Attributes).Append("\n");
             sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
             sb.Append("  ModifiedById: ").Append(ModifiedById).Append("\n");
@@ -266,6 +287,7 @@ namespace TestIt.Client.Model
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  TagNames: ").Append(TagNames).Append("\n");
             sb.Append("  Iterations: ").Append(Iterations).Append("\n");
+            sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -349,6 +371,11 @@ namespace TestIt.Client.Model
                     this.Duration.Equals(input.Duration)
                 ) && 
                 (
+                    this.MedianDuration == input.MedianDuration ||
+                    (this.MedianDuration != null &&
+                    this.MedianDuration.Equals(input.MedianDuration))
+                ) && 
+                (
                     this.Attributes == input.Attributes ||
                     this.Attributes != null &&
                     input.Attributes != null &&
@@ -397,6 +424,12 @@ namespace TestIt.Client.Model
                     this.Iterations != null &&
                     input.Iterations != null &&
                     this.Iterations.SequenceEqual(input.Iterations)
+                ) && 
+                (
+                    this.Links == input.Links ||
+                    this.Links != null &&
+                    input.Links != null &&
+                    this.Links.SequenceEqual(input.Links)
                 );
         }
 
@@ -440,6 +473,10 @@ namespace TestIt.Client.Model
                 hashCode = (hashCode * 59) + this.IsAutomated.GetHashCode();
                 hashCode = (hashCode * 59) + this.GlobalId.GetHashCode();
                 hashCode = (hashCode * 59) + this.Duration.GetHashCode();
+                if (this.MedianDuration != null)
+                {
+                    hashCode = (hashCode * 59) + this.MedianDuration.GetHashCode();
+                }
                 if (this.Attributes != null)
                 {
                     hashCode = (hashCode * 59) + this.Attributes.GetHashCode();
@@ -470,6 +507,10 @@ namespace TestIt.Client.Model
                 if (this.Iterations != null)
                 {
                     hashCode = (hashCode * 59) + this.Iterations.GetHashCode();
+                }
+                if (this.Links != null)
+                {
+                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
                 }
                 return hashCode;
             }

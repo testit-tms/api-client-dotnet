@@ -60,7 +60,13 @@ namespace TestIt.Client.Model
         /// Enum MultipleOptions for value: multipleOptions
         /// </summary>
         [EnumMember(Value = "multipleOptions")]
-        MultipleOptions = 5
+        MultipleOptions = 5,
+
+        /// <summary>
+        /// Enum Checkbox for value: checkbox
+        /// </summary>
+        [EnumMember(Value = "checkbox")]
+        Checkbox = 6
 
     }
 

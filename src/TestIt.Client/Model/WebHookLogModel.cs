@@ -54,52 +54,52 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="webHookName">webHookName.</param>
         /// <param name="eventType">eventType (required).</param>
-        /// <param name="webHookId">webHookId.</param>
+        /// <param name="webHookId">webHookId (required).</param>
         /// <param name="requestBody">requestBody.</param>
         /// <param name="requestMeta">requestMeta.</param>
-        /// <param name="responseStatusCode">responseStatusCode.</param>
+        /// <param name="responseStatusCode">responseStatusCode (required).</param>
         /// <param name="responseBody">responseBody.</param>
         /// <param name="responseMeta">responseMeta.</param>
-        /// <param name="projectId">projectId.</param>
+        /// <param name="projectId">projectId (required).</param>
         /// <param name="url">url.</param>
         /// <param name="requestType">requestType (required).</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="createdById">createdById.</param>
+        /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
-        /// <param name="id">Unique ID of the entity.</param>
-        /// <param name="isDeleted">Indicates if the entity is deleted.</param>
+        /// <param name="id">Unique ID of the entity (required).</param>
+        /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
         public WebHookLogModel(string webHookName = default(string), WebHookEventTypeModel eventType = default(WebHookEventTypeModel), Guid webHookId = default(Guid), string requestBody = default(string), string requestMeta = default(string), int responseStatusCode = default(int), string responseBody = default(string), string responseMeta = default(string), Guid projectId = default(Guid), string url = default(string), RequestTypeModel requestType = default(RequestTypeModel), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), Guid id = default(Guid), bool isDeleted = default(bool))
         {
             this.EventType = eventType;
-            this.RequestType = requestType;
-            this.WebHookName = webHookName;
             this.WebHookId = webHookId;
+            this.ResponseStatusCode = responseStatusCode;
+            this.ProjectId = projectId;
+            this.RequestType = requestType;
+            this.CreatedById = createdById;
+            this.Id = id;
+            this.IsDeleted = isDeleted;
+            this.WebHookName = webHookName;
             this.RequestBody = requestBody;
             this.RequestMeta = requestMeta;
-            this.ResponseStatusCode = responseStatusCode;
             this.ResponseBody = responseBody;
             this.ResponseMeta = responseMeta;
-            this.ProjectId = projectId;
             this.Url = url;
             this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
-            this.CreatedById = createdById;
             this.ModifiedById = modifiedById;
-            this.Id = id;
-            this.IsDeleted = isDeleted;
         }
 
         /// <summary>
         /// Gets or Sets WebHookName
         /// </summary>
-        [DataMember(Name = "webHookName", EmitDefaultValue = false)]
+        [DataMember(Name = "webHookName", EmitDefaultValue = true)]
         public string WebHookName { get; set; }
 
         /// <summary>
         /// Gets or Sets WebHookId
         /// </summary>
-        [DataMember(Name = "webHookId", EmitDefaultValue = false)]
+        [DataMember(Name = "webHookId", IsRequired = true, EmitDefaultValue = true)]
         public Guid WebHookId { get; set; }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets ResponseStatusCode
         /// </summary>
-        [DataMember(Name = "responseStatusCode", EmitDefaultValue = false)]
+        [DataMember(Name = "responseStatusCode", IsRequired = true, EmitDefaultValue = true)]
         public int ResponseStatusCode { get; set; }
 
         /// <summary>
@@ -135,13 +135,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets ProjectId
         /// </summary>
-        [DataMember(Name = "projectId", EmitDefaultValue = false)]
+        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
-        [DataMember(Name = "url", EmitDefaultValue = false)]
+        [DataMember(Name = "url", EmitDefaultValue = true)]
         public string Url { get; set; }
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
@@ -172,14 +172,14 @@ namespace TestIt.Client.Model
         /// Unique ID of the entity
         /// </summary>
         /// <value>Unique ID of the entity</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Indicates if the entity is deleted
         /// </summary>
         /// <value>Indicates if the entity is deleted</value>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>

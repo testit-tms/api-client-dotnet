@@ -35,7 +35,12 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ValidateAntiForgeryTokenAttribute" /> class.
         /// </summary>
-        /// <param name="order">order.</param>
+        [JsonConstructorAttribute]
+        protected ValidateAntiForgeryTokenAttribute() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ValidateAntiForgeryTokenAttribute" /> class.
+        /// </summary>
+        /// <param name="order">order (required).</param>
         public ValidateAntiForgeryTokenAttribute(int order = default(int))
         {
             this.Order = order;
@@ -44,13 +49,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Order
         /// </summary>
-        [DataMember(Name = "order", EmitDefaultValue = false)]
+        [DataMember(Name = "order", IsRequired = true, EmitDefaultValue = true)]
         public int Order { get; set; }
 
         /// <summary>
         /// Gets or Sets IsReusable
         /// </summary>
-        [DataMember(Name = "isReusable", EmitDefaultValue = true)]
+        [DataMember(Name = "isReusable", IsRequired = true, EmitDefaultValue = true)]
         public bool IsReusable { get; private set; }
 
         /// <summary>
@@ -64,7 +69,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets TypeId
         /// </summary>
-        [DataMember(Name = "typeId", EmitDefaultValue = true)]
+        [DataMember(Name = "typeId", IsRequired = true, EmitDefaultValue = true)]
         public Object TypeId { get; private set; }
 
         /// <summary>

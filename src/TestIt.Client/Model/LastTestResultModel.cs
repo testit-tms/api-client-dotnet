@@ -35,34 +35,39 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="LastTestResultModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="testRunId">testRunId.</param>
+        [JsonConstructorAttribute]
+        protected LastTestResultModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LastTestResultModel" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
+        /// <param name="testRunId">testRunId (required).</param>
         /// <param name="autoTestId">autoTestId.</param>
         /// <param name="comment">comment.</param>
         /// <param name="links">links.</param>
-        /// <param name="workItemVersionId">workItemVersionId.</param>
+        /// <param name="workItemVersionId">workItemVersionId (required).</param>
         /// <param name="attachments">attachments.</param>
         public LastTestResultModel(Guid id = default(Guid), Guid testRunId = default(Guid), Guid? autoTestId = default(Guid?), string comment = default(string), List<LinkModel> links = default(List<LinkModel>), Guid workItemVersionId = default(Guid), List<AttachmentModel> attachments = default(List<AttachmentModel>))
         {
             this.Id = id;
             this.TestRunId = testRunId;
+            this.WorkItemVersionId = workItemVersionId;
             this.AutoTestId = autoTestId;
             this.Comment = comment;
             this.Links = links;
-            this.WorkItemVersionId = workItemVersionId;
             this.Attachments = attachments;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets TestRunId
         /// </summary>
-        [DataMember(Name = "testRunId", EmitDefaultValue = false)]
+        [DataMember(Name = "testRunId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestRunId { get; set; }
 
         /// <summary>
@@ -86,7 +91,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets WorkItemVersionId
         /// </summary>
-        [DataMember(Name = "workItemVersionId", EmitDefaultValue = false)]
+        [DataMember(Name = "workItemVersionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid WorkItemVersionId { get; set; }
 
         /// <summary>

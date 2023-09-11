@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | [optional] 
-**GlobalId** | **long** |  | [optional] 
+**Id** | **Guid** |  | 
+**GlobalId** | **long** |  | 
 **Name** | **string** |  | [optional] 
 **Steps** | [**List&lt;WorkItemStepChangeViewModel&gt;**](WorkItemStepChangeViewModel.md) |  | [optional] 
 

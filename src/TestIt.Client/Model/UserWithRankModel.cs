@@ -35,7 +35,12 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UserWithRankModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        [JsonConstructorAttribute]
+        protected UserWithRankModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserWithRankModel" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
         /// <param name="firstName">firstName.</param>
         /// <param name="lastName">lastName.</param>
         /// <param name="middleName">middleName.</param>
@@ -44,14 +49,17 @@ namespace TestIt.Client.Model
         /// <param name="userType">userType.</param>
         /// <param name="avatarUrl">avatarUrl.</param>
         /// <param name="avatarMetadata">avatarMetadata.</param>
-        /// <param name="isDeleted">isDeleted.</param>
-        /// <param name="isDisabled">isDisabled.</param>
+        /// <param name="isDeleted">isDeleted (required).</param>
+        /// <param name="isDisabled">isDisabled (required).</param>
         /// <param name="providerId">providerId.</param>
-        /// <param name="isActiveStatusByEntity">isActiveStatusByEntity.</param>
+        /// <param name="isActiveStatusByEntity">isActiveStatusByEntity (required).</param>
         /// <param name="userRank">userRank.</param>
-        public UserWithRankModel(Guid id = default(Guid), string firstName = default(string), string lastName = default(string), string middleName = default(string), string userName = default(string), string displayName = default(string), string userType = default(string), string avatarUrl = default(string), string avatarMetadata = default(string), bool isDeleted = default(bool), bool isDisabled = default(bool), Guid? providerId = default(Guid?), bool isActiveStatusByEntity = default(bool), UserWithRankModelUserRank userRank = default(UserWithRankModelUserRank))
+        public UserWithRankModel(Guid id = default(Guid), string firstName = default(string), string lastName = default(string), string middleName = default(string), string userName = default(string), string displayName = default(string), string userType = default(string), string avatarUrl = default(string), string avatarMetadata = default(string), bool isDeleted = default(bool), bool isDisabled = default(bool), Guid? providerId = default(Guid?), bool isActiveStatusByEntity = default(bool), UserRankModel userRank = default(UserRankModel))
         {
             this.Id = id;
+            this.IsDeleted = isDeleted;
+            this.IsDisabled = isDisabled;
+            this.IsActiveStatusByEntity = isActiveStatusByEntity;
             this.FirstName = firstName;
             this.LastName = lastName;
             this.MiddleName = middleName;
@@ -60,77 +68,74 @@ namespace TestIt.Client.Model
             this.UserType = userType;
             this.AvatarUrl = avatarUrl;
             this.AvatarMetadata = avatarMetadata;
-            this.IsDeleted = isDeleted;
-            this.IsDisabled = isDisabled;
             this.ProviderId = providerId;
-            this.IsActiveStatusByEntity = isActiveStatusByEntity;
             this.UserRank = userRank;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets FirstName
         /// </summary>
-        [DataMember(Name = "firstName", EmitDefaultValue = false)]
+        [DataMember(Name = "firstName", EmitDefaultValue = true)]
         public string FirstName { get; set; }
 
         /// <summary>
         /// Gets or Sets LastName
         /// </summary>
-        [DataMember(Name = "lastName", EmitDefaultValue = false)]
+        [DataMember(Name = "lastName", EmitDefaultValue = true)]
         public string LastName { get; set; }
 
         /// <summary>
         /// Gets or Sets MiddleName
         /// </summary>
-        [DataMember(Name = "middleName", EmitDefaultValue = false)]
+        [DataMember(Name = "middleName", EmitDefaultValue = true)]
         public string MiddleName { get; set; }
 
         /// <summary>
         /// Gets or Sets UserName
         /// </summary>
-        [DataMember(Name = "userName", EmitDefaultValue = false)]
+        [DataMember(Name = "userName", EmitDefaultValue = true)]
         public string UserName { get; set; }
 
         /// <summary>
         /// Gets or Sets DisplayName
         /// </summary>
-        [DataMember(Name = "displayName", EmitDefaultValue = false)]
+        [DataMember(Name = "displayName", EmitDefaultValue = true)]
         public string DisplayName { get; set; }
 
         /// <summary>
         /// Gets or Sets UserType
         /// </summary>
-        [DataMember(Name = "userType", EmitDefaultValue = false)]
+        [DataMember(Name = "userType", EmitDefaultValue = true)]
         public string UserType { get; set; }
 
         /// <summary>
         /// Gets or Sets AvatarUrl
         /// </summary>
-        [DataMember(Name = "avatarUrl", EmitDefaultValue = false)]
+        [DataMember(Name = "avatarUrl", EmitDefaultValue = true)]
         public string AvatarUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets AvatarMetadata
         /// </summary>
-        [DataMember(Name = "avatarMetadata", EmitDefaultValue = false)]
+        [DataMember(Name = "avatarMetadata", EmitDefaultValue = true)]
         public string AvatarMetadata { get; set; }
 
         /// <summary>
         /// Gets or Sets IsDeleted
         /// </summary>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>
         /// Gets or Sets IsDisabled
         /// </summary>
-        [DataMember(Name = "isDisabled", EmitDefaultValue = true)]
+        [DataMember(Name = "isDisabled", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDisabled { get; set; }
 
         /// <summary>
@@ -142,14 +147,14 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets IsActiveStatusByEntity
         /// </summary>
-        [DataMember(Name = "isActiveStatusByEntity", EmitDefaultValue = true)]
+        [DataMember(Name = "isActiveStatusByEntity", IsRequired = true, EmitDefaultValue = true)]
         public bool IsActiveStatusByEntity { get; set; }
 
         /// <summary>
         /// Gets or Sets UserRank
         /// </summary>
-        [DataMember(Name = "userRank", EmitDefaultValue = false)]
-        public UserWithRankModelUserRank UserRank { get; set; }
+        [DataMember(Name = "userRank", EmitDefaultValue = true)]
+        public UserRankModel UserRank { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

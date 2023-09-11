@@ -32,12 +32,6 @@ namespace TestIt.Client.Model
     [DataContract(Name = "TestResultShortGetModel")]
     public partial class TestResultShortGetModel : IEquatable<TestResultShortGetModel>, IValidatableObject
     {
-
-        /// <summary>
-        /// Gets or Sets Outcome
-        /// </summary>
-        [DataMember(Name = "outcome", IsRequired = true, EmitDefaultValue = true)]
-        public TestResultOutcome Outcome { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TestResultShortGetModel" /> class.
         /// </summary>
@@ -46,97 +40,104 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestResultShortGetModel" /> class.
         /// </summary>
-        /// <param name="id">Unique ID of test result.</param>
+        /// <param name="id">Unique ID of the test result (required).</param>
         /// <param name="name">Name of autotest represented by the test result.</param>
-        /// <param name="autotestGlobalId">Global ID of autotest represented by test result.</param>
-        /// <param name="testRunId">Unique ID of test run where test result is located.</param>
-        /// <param name="configurationId">Unique ID of configuration which test result uses.</param>
-        /// <param name="configurationName">Name of configuration which test result uses.</param>
-        /// <param name="outcome">outcome (required).</param>
-        /// <param name="resultReasons">Collection of result reasons which test result have.</param>
-        /// <param name="comment">Comment to test result.</param>
-        /// <param name="date">Date when test result has been set.</param>
+        /// <param name="autotestGlobalId">Global ID of autotest represented by the test result (required).</param>
+        /// <param name="testRunId">Unique ID of test run where the test result is located (required).</param>
+        /// <param name="configurationId">Unique ID of configuration which the test result uses (required).</param>
+        /// <param name="configurationName">Name of configuration which the test result uses.</param>
+        /// <param name="outcome">Outcome of the test result.</param>
+        /// <param name="resultReasons">Collection of result reasons which the test result have.</param>
+        /// <param name="comment">Comment to the test result.</param>
+        /// <param name="date">Date when the test result has been set (required).</param>
         /// <param name="duration">Time which it took to run the test.</param>
-        /// <param name="links">Collection of links attached to test result.</param>
-        /// <param name="attachments">Collection of files attached to test result.</param>
-        public TestResultShortGetModel(Guid id = default(Guid), string name = default(string), long autotestGlobalId = default(long), Guid testRunId = default(Guid), Guid configurationId = default(Guid), string configurationName = default(string), TestResultOutcome outcome = default(TestResultOutcome), List<AutotestResultReasonSubGetModel> resultReasons = default(List<AutotestResultReasonSubGetModel>), string comment = default(string), DateTime date = default(DateTime), long? duration = default(long?), List<LinkSubGetModel> links = default(List<LinkSubGetModel>), List<AttachmentSubGetModel> attachments = default(List<AttachmentSubGetModel>))
+        /// <param name="links">Collection of links attached to the test result.</param>
+        /// <param name="attachments">Collection of files attached to the test result.</param>
+        public TestResultShortGetModel(Guid id = default(Guid), string name = default(string), long autotestGlobalId = default(long), Guid testRunId = default(Guid), Guid configurationId = default(Guid), string configurationName = default(string), string outcome = default(string), List<AutotestResultReasonSubGetModel> resultReasons = default(List<AutotestResultReasonSubGetModel>), string comment = default(string), DateTime date = default(DateTime), long? duration = default(long?), List<LinkSubGetModel> links = default(List<LinkSubGetModel>), List<AttachmentModel> attachments = default(List<AttachmentModel>))
         {
-            this.Outcome = outcome;
             this.Id = id;
-            this.Name = name;
             this.AutotestGlobalId = autotestGlobalId;
             this.TestRunId = testRunId;
             this.ConfigurationId = configurationId;
+            this.Date = date;
+            this.Name = name;
             this.ConfigurationName = configurationName;
+            this.Outcome = outcome;
             this.ResultReasons = resultReasons;
             this.Comment = comment;
-            this.Date = date;
             this.Duration = duration;
             this.Links = links;
             this.Attachments = attachments;
         }
 
         /// <summary>
-        /// Unique ID of test result
+        /// Unique ID of the test result
         /// </summary>
-        /// <value>Unique ID of test result</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        /// <value>Unique ID of the test result</value>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Name of autotest represented by the test result
         /// </summary>
         /// <value>Name of autotest represented by the test result</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Global ID of autotest represented by test result
+        /// Global ID of autotest represented by the test result
         /// </summary>
-        /// <value>Global ID of autotest represented by test result</value>
-        [DataMember(Name = "autotestGlobalId", EmitDefaultValue = false)]
+        /// <value>Global ID of autotest represented by the test result</value>
+        [DataMember(Name = "autotestGlobalId", IsRequired = true, EmitDefaultValue = true)]
         public long AutotestGlobalId { get; set; }
 
         /// <summary>
-        /// Unique ID of test run where test result is located
+        /// Unique ID of test run where the test result is located
         /// </summary>
-        /// <value>Unique ID of test run where test result is located</value>
-        [DataMember(Name = "testRunId", EmitDefaultValue = false)]
+        /// <value>Unique ID of test run where the test result is located</value>
+        [DataMember(Name = "testRunId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestRunId { get; set; }
 
         /// <summary>
-        /// Unique ID of configuration which test result uses
+        /// Unique ID of configuration which the test result uses
         /// </summary>
-        /// <value>Unique ID of configuration which test result uses</value>
-        [DataMember(Name = "configurationId", EmitDefaultValue = false)]
+        /// <value>Unique ID of configuration which the test result uses</value>
+        [DataMember(Name = "configurationId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ConfigurationId { get; set; }
 
         /// <summary>
-        /// Name of configuration which test result uses
+        /// Name of configuration which the test result uses
         /// </summary>
-        /// <value>Name of configuration which test result uses</value>
-        [DataMember(Name = "configurationName", EmitDefaultValue = false)]
+        /// <value>Name of configuration which the test result uses</value>
+        [DataMember(Name = "configurationName", EmitDefaultValue = true)]
         public string ConfigurationName { get; set; }
 
         /// <summary>
-        /// Collection of result reasons which test result have
+        /// Outcome of the test result
         /// </summary>
-        /// <value>Collection of result reasons which test result have</value>
-        [DataMember(Name = "resultReasons", EmitDefaultValue = false)]
+        /// <value>Outcome of the test result</value>
+        [DataMember(Name = "outcome", EmitDefaultValue = true)]
+        public string Outcome { get; set; }
+
+        /// <summary>
+        /// Collection of result reasons which the test result have
+        /// </summary>
+        /// <value>Collection of result reasons which the test result have</value>
+        [DataMember(Name = "resultReasons", EmitDefaultValue = true)]
         public List<AutotestResultReasonSubGetModel> ResultReasons { get; set; }
 
         /// <summary>
-        /// Comment to test result
+        /// Comment to the test result
         /// </summary>
-        /// <value>Comment to test result</value>
-        [DataMember(Name = "comment", EmitDefaultValue = false)]
+        /// <value>Comment to the test result</value>
+        [DataMember(Name = "comment", EmitDefaultValue = true)]
         public string Comment { get; set; }
 
         /// <summary>
-        /// Date when test result has been set
+        /// Date when the test result has been set
         /// </summary>
-        /// <value>Date when test result has been set</value>
-        [DataMember(Name = "date", EmitDefaultValue = false)]
+        /// <value>Date when the test result has been set</value>
+        [DataMember(Name = "date", IsRequired = true, EmitDefaultValue = true)]
         public DateTime Date { get; set; }
 
         /// <summary>
@@ -147,18 +148,18 @@ namespace TestIt.Client.Model
         public long? Duration { get; set; }
 
         /// <summary>
-        /// Collection of links attached to test result
+        /// Collection of links attached to the test result
         /// </summary>
-        /// <value>Collection of links attached to test result</value>
-        [DataMember(Name = "links", EmitDefaultValue = false)]
+        /// <value>Collection of links attached to the test result</value>
+        [DataMember(Name = "links", EmitDefaultValue = true)]
         public List<LinkSubGetModel> Links { get; set; }
 
         /// <summary>
-        /// Collection of files attached to test result
+        /// Collection of files attached to the test result
         /// </summary>
-        /// <value>Collection of files attached to test result</value>
-        [DataMember(Name = "attachments", EmitDefaultValue = false)]
-        public List<AttachmentSubGetModel> Attachments { get; set; }
+        /// <value>Collection of files attached to the test result</value>
+        [DataMember(Name = "attachments", EmitDefaultValue = true)]
+        public List<AttachmentModel> Attachments { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -247,7 +248,8 @@ namespace TestIt.Client.Model
                 ) && 
                 (
                     this.Outcome == input.Outcome ||
-                    this.Outcome.Equals(input.Outcome)
+                    (this.Outcome != null &&
+                    this.Outcome.Equals(input.Outcome))
                 ) && 
                 (
                     this.ResultReasons == input.ResultReasons ||
@@ -314,7 +316,10 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.ConfigurationName.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Outcome.GetHashCode();
+                if (this.Outcome != null)
+                {
+                    hashCode = (hashCode * 59) + this.Outcome.GetHashCode();
+                }
                 if (this.ResultReasons != null)
                 {
                     hashCode = (hashCode * 59) + this.ResultReasons.GetHashCode();

@@ -42,7 +42,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <param name="autotestSelect">autotestSelect.</param>
         /// <param name="value">Are autotests flaky (required).</param>
-        public FlakyBulkModel(FlakyBulkModelAutotestSelect autotestSelect = default(FlakyBulkModelAutotestSelect), bool value = default(bool))
+        public FlakyBulkModel(AutotestSelectModel autotestSelect = default(AutotestSelectModel), bool value = default(bool))
         {
             this.Value = value;
             this.AutotestSelect = autotestSelect;
@@ -51,8 +51,8 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets AutotestSelect
         /// </summary>
-        [DataMember(Name = "autotestSelect", EmitDefaultValue = false)]
-        public FlakyBulkModelAutotestSelect AutotestSelect { get; set; }
+        [DataMember(Name = "autotestSelect", EmitDefaultValue = true)]
+        public AutotestSelectModel AutotestSelect { get; set; }
 
         /// <summary>
         /// Are autotests flaky

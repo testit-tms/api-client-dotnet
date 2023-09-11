@@ -35,58 +35,63 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemChangeModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="workItemId">workItemId.</param>
-        /// <param name="oldVersionId">oldVersionId.</param>
-        /// <param name="newVersionId">newVersionId.</param>
+        [JsonConstructorAttribute]
+        protected WorkItemChangeModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkItemChangeModel" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
+        /// <param name="workItemId">workItemId (required).</param>
+        /// <param name="oldVersionId">oldVersionId (required).</param>
+        /// <param name="newVersionId">newVersionId (required).</param>
         /// <param name="workItemChangedFields">workItemChangedFields.</param>
-        /// <param name="createdById">createdById.</param>
+        /// <param name="createdById">createdById (required).</param>
         /// <param name="createdDate">createdDate.</param>
-        public WorkItemChangeModel(Guid id = default(Guid), Guid workItemId = default(Guid), Guid oldVersionId = default(Guid), Guid newVersionId = default(Guid), WorkItemChangeModelWorkItemChangedFields workItemChangedFields = default(WorkItemChangeModelWorkItemChangedFields), Guid createdById = default(Guid), DateTime? createdDate = default(DateTime?))
+        public WorkItemChangeModel(Guid id = default(Guid), Guid workItemId = default(Guid), Guid oldVersionId = default(Guid), Guid newVersionId = default(Guid), WorkItemChangedFieldsViewModel workItemChangedFields = default(WorkItemChangedFieldsViewModel), Guid createdById = default(Guid), DateTime? createdDate = default(DateTime?))
         {
             this.Id = id;
             this.WorkItemId = workItemId;
             this.OldVersionId = oldVersionId;
             this.NewVersionId = newVersionId;
-            this.WorkItemChangedFields = workItemChangedFields;
             this.CreatedById = createdById;
+            this.WorkItemChangedFields = workItemChangedFields;
             this.CreatedDate = createdDate;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets WorkItemId
         /// </summary>
-        [DataMember(Name = "workItemId", EmitDefaultValue = false)]
+        [DataMember(Name = "workItemId", IsRequired = true, EmitDefaultValue = true)]
         public Guid WorkItemId { get; set; }
 
         /// <summary>
         /// Gets or Sets OldVersionId
         /// </summary>
-        [DataMember(Name = "oldVersionId", EmitDefaultValue = false)]
+        [DataMember(Name = "oldVersionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid OldVersionId { get; set; }
 
         /// <summary>
         /// Gets or Sets NewVersionId
         /// </summary>
-        [DataMember(Name = "newVersionId", EmitDefaultValue = false)]
+        [DataMember(Name = "newVersionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid NewVersionId { get; set; }
 
         /// <summary>
         /// Gets or Sets WorkItemChangedFields
         /// </summary>
-        [DataMember(Name = "workItemChangedFields", EmitDefaultValue = false)]
-        public WorkItemChangeModelWorkItemChangedFields WorkItemChangedFields { get; set; }
+        [DataMember(Name = "workItemChangedFields", EmitDefaultValue = true)]
+        public WorkItemChangedFieldsViewModel WorkItemChangedFields { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>

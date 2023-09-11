@@ -46,13 +46,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Statuses
         /// </summary>
-        [DataMember(Name = "statuses", EmitDefaultValue = false)]
+        [DataMember(Name = "statuses", EmitDefaultValue = true)]
         public TestResultsStatisticsGetModelStatuses Statuses { get; set; }
 
         /// <summary>
         /// Gets or Sets FailureCategories
         /// </summary>
-        [DataMember(Name = "failureCategories", EmitDefaultValue = false)]
+        [DataMember(Name = "failureCategories", EmitDefaultValue = true)]
         public TestResultsStatisticsGetModelFailureCategories FailureCategories { get; set; }
 
         /// <summary>

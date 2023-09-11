@@ -35,42 +35,47 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestRelatedToTestResult" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected AutoTestRelatedToTestResult() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AutoTestRelatedToTestResult" /> class.
+        /// </summary>
         /// <param name="externalId">This property is used to set autotest identifier from client system.</param>
         /// <param name="links">links.</param>
-        /// <param name="projectId">This property is used to link autotest with project.</param>
+        /// <param name="projectId">This property is used to link autotest with project (required).</param>
         /// <param name="name">name.</param>
         /// <param name="_namespace">_namespace.</param>
         /// <param name="classname">classname.</param>
         /// <param name="steps">steps.</param>
         /// <param name="setup">setup.</param>
         /// <param name="teardown">teardown.</param>
-        /// <param name="globalId">globalId.</param>
+        /// <param name="globalId">globalId (required).</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="createdById">createdById.</param>
+        /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="labels">labels.</param>
-        /// <param name="id">Unique ID of the entity.</param>
-        /// <param name="isDeleted">Indicates if the entity is deleted.</param>
+        /// <param name="id">Unique ID of the entity (required).</param>
+        /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
         public AutoTestRelatedToTestResult(string externalId = default(string), List<LinkModel> links = default(List<LinkModel>), Guid projectId = default(Guid), string name = default(string), string _namespace = default(string), string classname = default(string), List<AutoTestStepModel> steps = default(List<AutoTestStepModel>), List<AutoTestStepModel> setup = default(List<AutoTestStepModel>), List<AutoTestStepModel> teardown = default(List<AutoTestStepModel>), long globalId = default(long), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), List<LabelShortModel> labels = default(List<LabelShortModel>), Guid id = default(Guid), bool isDeleted = default(bool))
         {
+            this.ProjectId = projectId;
+            this.GlobalId = globalId;
+            this.CreatedById = createdById;
+            this.Id = id;
+            this.IsDeleted = isDeleted;
             this.ExternalId = externalId;
             this.Links = links;
-            this.ProjectId = projectId;
             this.Name = name;
             this.Namespace = _namespace;
             this.Classname = classname;
             this.Steps = steps;
             this.Setup = setup;
             this.Teardown = teardown;
-            this.GlobalId = globalId;
             this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
-            this.CreatedById = createdById;
             this.ModifiedById = modifiedById;
             this.Labels = labels;
-            this.Id = id;
-            this.IsDeleted = isDeleted;
         }
 
         /// <summary>
@@ -78,7 +83,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <value>This property is used to set autotest identifier from client system</value>
         /// <example>&quot;10001&quot;</example>
-        [DataMember(Name = "externalId", EmitDefaultValue = false)]
+        [DataMember(Name = "externalId", EmitDefaultValue = true)]
         public string ExternalId { get; set; }
 
         /// <summary>
@@ -91,15 +96,15 @@ namespace TestIt.Client.Model
         /// This property is used to link autotest with project
         /// </summary>
         /// <value>This property is used to link autotest with project</value>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "projectId", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
         /// <example>&quot;WorkItem valid creation test&quot;</example>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -138,34 +143,34 @@ namespace TestIt.Client.Model
         /// Gets or Sets GlobalId
         /// </summary>
         /// <example>1000</example>
-        [DataMember(Name = "globalId", EmitDefaultValue = false)]
+        [DataMember(Name = "globalId", IsRequired = true, EmitDefaultValue = true)]
         public long GlobalId { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
         public DateTime? CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
@@ -179,14 +184,14 @@ namespace TestIt.Client.Model
         /// Unique ID of the entity
         /// </summary>
         /// <value>Unique ID of the entity</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Indicates if the entity is deleted
         /// </summary>
         /// <value>Indicates if the entity is deleted</value>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>

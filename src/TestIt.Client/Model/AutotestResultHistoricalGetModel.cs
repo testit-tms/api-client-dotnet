@@ -46,28 +46,36 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AutotestResultHistoricalGetModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="createdDate">createdDate.</param>
-        /// <param name="createdById">createdById.</param>
-        /// <param name="testRunId">testRunId.</param>
+        /// <param name="id">id (required).</param>
+        /// <param name="createdDate">createdDate (required).</param>
+        /// <param name="createdById">createdById (required).</param>
+        /// <param name="createdByName">createdByName.</param>
+        /// <param name="testRunId">testRunId (required).</param>
         /// <param name="testRunName">testRunName.</param>
-        /// <param name="configurationId">configurationId.</param>
+        /// <param name="configurationId">configurationId (required).</param>
+        /// <param name="configurationName">configurationName.</param>
         /// <param name="outcome">outcome (required).</param>
         /// <param name="launchSource">launchSource.</param>
+        /// <param name="modifiedDate">modifiedDate.</param>
+        /// <param name="modifiedById">modifiedById.</param>
         /// <param name="testPlanId">testPlanId.</param>
         /// <param name="testPlanGlobalId">testPlanGlobalId.</param>
         /// <param name="testPlanName">testPlanName.</param>
         /// <param name="duration">duration.</param>
-        public AutotestResultHistoricalGetModel(Guid id = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), Guid testRunId = default(Guid), string testRunName = default(string), Guid configurationId = default(Guid), AutotestResultOutcome outcome = default(AutotestResultOutcome), string launchSource = default(string), Guid? testPlanId = default(Guid?), long? testPlanGlobalId = default(long?), string testPlanName = default(string), long? duration = default(long?))
+        public AutotestResultHistoricalGetModel(Guid id = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), string createdByName = default(string), Guid testRunId = default(Guid), string testRunName = default(string), Guid configurationId = default(Guid), string configurationName = default(string), AutotestResultOutcome outcome = default(AutotestResultOutcome), string launchSource = default(string), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), Guid? testPlanId = default(Guid?), long? testPlanGlobalId = default(long?), string testPlanName = default(string), long? duration = default(long?))
         {
-            this.Outcome = outcome;
             this.Id = id;
             this.CreatedDate = createdDate;
             this.CreatedById = createdById;
             this.TestRunId = testRunId;
-            this.TestRunName = testRunName;
             this.ConfigurationId = configurationId;
+            this.Outcome = outcome;
+            this.CreatedByName = createdByName;
+            this.TestRunName = testRunName;
+            this.ConfigurationName = configurationName;
             this.LaunchSource = launchSource;
+            this.ModifiedDate = modifiedDate;
+            this.ModifiedById = modifiedById;
             this.TestPlanId = testPlanId;
             this.TestPlanGlobalId = testPlanGlobalId;
             this.TestPlanName = testPlanName;
@@ -77,25 +85,31 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+        [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreatedByName
+        /// </summary>
+        [DataMember(Name = "createdByName", EmitDefaultValue = true)]
+        public string CreatedByName { get; set; }
 
         /// <summary>
         /// Gets or Sets TestRunId
         /// </summary>
-        [DataMember(Name = "testRunId", EmitDefaultValue = false)]
+        [DataMember(Name = "testRunId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestRunId { get; set; }
 
         /// <summary>
@@ -107,8 +121,14 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets ConfigurationId
         /// </summary>
-        [DataMember(Name = "configurationId", EmitDefaultValue = false)]
+        [DataMember(Name = "configurationId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ConfigurationId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ConfigurationName
+        /// </summary>
+        [DataMember(Name = "configurationName", EmitDefaultValue = true)]
+        public string ConfigurationName { get; set; }
 
         /// <summary>
         /// Gets or Sets LaunchSource
@@ -120,30 +140,14 @@ namespace TestIt.Client.Model
         /// Gets or Sets ModifiedDate
         /// </summary>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
-        public DateTime? ModifiedDate { get; private set; }
+        public DateTime? ModifiedDate { get; set; }
 
-        /// <summary>
-        /// Returns false as ModifiedDate should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeModifiedDate()
-        {
-            return false;
-        }
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
-        public Guid? ModifiedById { get; private set; }
+        public Guid? ModifiedById { get; set; }
 
-        /// <summary>
-        /// Returns false as ModifiedById should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeModifiedById()
-        {
-            return false;
-        }
         /// <summary>
         /// Gets or Sets TestPlanId
         /// </summary>
@@ -179,9 +183,11 @@ namespace TestIt.Client.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
+            sb.Append("  CreatedByName: ").Append(CreatedByName).Append("\n");
             sb.Append("  TestRunId: ").Append(TestRunId).Append("\n");
             sb.Append("  TestRunName: ").Append(TestRunName).Append("\n");
             sb.Append("  ConfigurationId: ").Append(ConfigurationId).Append("\n");
+            sb.Append("  ConfigurationName: ").Append(ConfigurationName).Append("\n");
             sb.Append("  Outcome: ").Append(Outcome).Append("\n");
             sb.Append("  LaunchSource: ").Append(LaunchSource).Append("\n");
             sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
@@ -241,6 +247,11 @@ namespace TestIt.Client.Model
                     this.CreatedById.Equals(input.CreatedById))
                 ) && 
                 (
+                    this.CreatedByName == input.CreatedByName ||
+                    (this.CreatedByName != null &&
+                    this.CreatedByName.Equals(input.CreatedByName))
+                ) && 
+                (
                     this.TestRunId == input.TestRunId ||
                     (this.TestRunId != null &&
                     this.TestRunId.Equals(input.TestRunId))
@@ -254,6 +265,11 @@ namespace TestIt.Client.Model
                     this.ConfigurationId == input.ConfigurationId ||
                     (this.ConfigurationId != null &&
                     this.ConfigurationId.Equals(input.ConfigurationId))
+                ) && 
+                (
+                    this.ConfigurationName == input.ConfigurationName ||
+                    (this.ConfigurationName != null &&
+                    this.ConfigurationName.Equals(input.ConfigurationName))
                 ) && 
                 (
                     this.Outcome == input.Outcome ||
@@ -317,6 +333,10 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.CreatedById.GetHashCode();
                 }
+                if (this.CreatedByName != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreatedByName.GetHashCode();
+                }
                 if (this.TestRunId != null)
                 {
                     hashCode = (hashCode * 59) + this.TestRunId.GetHashCode();
@@ -328,6 +348,10 @@ namespace TestIt.Client.Model
                 if (this.ConfigurationId != null)
                 {
                     hashCode = (hashCode * 59) + this.ConfigurationId.GetHashCode();
+                }
+                if (this.ConfigurationName != null)
+                {
+                    hashCode = (hashCode * 59) + this.ConfigurationName.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Outcome.GetHashCode();
                 if (this.LaunchSource != null)

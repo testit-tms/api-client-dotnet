@@ -40,103 +40,88 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AttachmentModel" /> class.
         /// </summary>
-        /// <param name="fileId">fileId (required).</param>
-        /// <param name="type">type (required).</param>
-        /// <param name="size">size (required).</param>
-        /// <param name="createdDate">createdDate.</param>
-        /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="createdById">createdById.</param>
-        /// <param name="modifiedById">modifiedById.</param>
-        /// <param name="name">name (required).</param>
-        /// <param name="id">Specifies the GUID of the attachment. (required).</param>
+        /// <param name="fileId">Unique ID of the attachment file.</param>
+        /// <param name="type">MIME type of the attachment.</param>
+        /// <param name="size">Size in bytes of the attachment file (required).</param>
+        /// <param name="createdDate">Creation date of the attachment (required).</param>
+        /// <param name="modifiedDate">Last modification date of the attachment.</param>
+        /// <param name="createdById">Unique ID of the attachment creator (required).</param>
+        /// <param name="modifiedById">Unique ID of the attachment last editor.</param>
+        /// <param name="name">Name of the attachment file.</param>
+        /// <param name="id">Unique ID of the attachment (required).</param>
         public AttachmentModel(string fileId = default(string), string type = default(string), float size = default(float), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string name = default(string), Guid id = default(Guid))
         {
-            // to ensure "fileId" is required (not null)
-            if (fileId == null)
-            {
-                throw new ArgumentNullException("fileId is a required property for AttachmentModel and cannot be null");
-            }
-            this.FileId = fileId;
-            // to ensure "type" is required (not null)
-            if (type == null)
-            {
-                throw new ArgumentNullException("type is a required property for AttachmentModel and cannot be null");
-            }
-            this.Type = type;
             this.Size = size;
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for AttachmentModel and cannot be null");
-            }
-            this.Name = name;
-            this.Id = id;
             this.CreatedDate = createdDate;
-            this.ModifiedDate = modifiedDate;
             this.CreatedById = createdById;
+            this.Id = id;
+            this.FileId = fileId;
+            this.Type = type;
+            this.ModifiedDate = modifiedDate;
             this.ModifiedById = modifiedById;
+            this.Name = name;
         }
 
         /// <summary>
-        /// Gets or Sets FileId
+        /// Unique ID of the attachment file
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "fileId", IsRequired = true, EmitDefaultValue = true)]
+        /// <value>Unique ID of the attachment file</value>
+        [DataMember(Name = "fileId", EmitDefaultValue = true)]
         public string FileId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Type
+        /// MIME type of the attachment
         /// </summary>
-        /// <example>&quot;image/jpeg&quot;</example>
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
+        /// <value>MIME type of the attachment</value>
+        [DataMember(Name = "type", EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
-        /// Gets or Sets Size
+        /// Size in bytes of the attachment file
         /// </summary>
-        /// <example>5.555</example>
+        /// <value>Size in bytes of the attachment file</value>
         [DataMember(Name = "size", IsRequired = true, EmitDefaultValue = true)]
         public float Size { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedDate
+        /// Creation date of the attachment
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
-        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+        /// <value>Creation date of the attachment</value>
+        [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets ModifiedDate
+        /// Last modification date of the attachment
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <value>Last modification date of the attachment</value>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedById
+        /// Unique ID of the attachment creator
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        /// <value>Unique ID of the attachment creator</value>
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
-        /// Gets or Sets ModifiedById
+        /// Unique ID of the attachment last editor
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <value>Unique ID of the attachment last editor</value>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name of the attachment file
         /// </summary>
-        /// <example>&quot;example&quot;</example>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        /// <value>Name of the attachment file</value>
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Specifies the GUID of the attachment.
+        /// Unique ID of the attachment
         /// </summary>
-        /// <value>Specifies the GUID of the attachment.</value>
+        /// <value>Unique ID of the attachment</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
@@ -291,24 +276,6 @@ namespace TestIt.Client.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // FileId (string) minLength
-            if (this.FileId != null && this.FileId.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for FileId, length must be greater than 1.", new [] { "FileId" });
-            }
-
-            // Type (string) minLength
-            if (this.Type != null && this.Type.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Type, length must be greater than 1.", new [] { "Type" });
-            }
-
-            // Name (string) minLength
-            if (this.Name != null && this.Name.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
-            }
-
             yield break;
         }
     }

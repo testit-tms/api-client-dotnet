@@ -44,7 +44,9 @@ namespace TestIt.Client.Model
         /// <param name="name">name (required).</param>
         /// <param name="description">description.</param>
         /// <param name="launchSource">Once launch source is specified it cannot be updated.</param>
-        public TestRunV2PutModel(Guid id = default(Guid), string name = default(string), string description = default(string), string launchSource = default(string))
+        /// <param name="attachments">attachments.</param>
+        /// <param name="links">links.</param>
+        public TestRunV2PutModel(Guid id = default(Guid), string name = default(string), string description = default(string), string launchSource = default(string), List<AttachmentPutModel> attachments = default(List<AttachmentPutModel>), List<LinkPutModel> links = default(List<LinkPutModel>))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -55,12 +57,14 @@ namespace TestIt.Client.Model
             this.Name = name;
             this.Description = description;
             this.LaunchSource = launchSource;
+            this.Attachments = attachments;
+            this.Links = links;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
@@ -86,6 +90,18 @@ namespace TestIt.Client.Model
         public string LaunchSource { get; set; }
 
         /// <summary>
+        /// Gets or Sets Attachments
+        /// </summary>
+        [DataMember(Name = "attachments", EmitDefaultValue = true)]
+        public List<AttachmentPutModel> Attachments { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Links
+        /// </summary>
+        [DataMember(Name = "links", EmitDefaultValue = true)]
+        public List<LinkPutModel> Links { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -97,6 +113,8 @@ namespace TestIt.Client.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  LaunchSource: ").Append(LaunchSource).Append("\n");
+            sb.Append("  Attachments: ").Append(Attachments).Append("\n");
+            sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -151,6 +169,18 @@ namespace TestIt.Client.Model
                     this.LaunchSource == input.LaunchSource ||
                     (this.LaunchSource != null &&
                     this.LaunchSource.Equals(input.LaunchSource))
+                ) && 
+                (
+                    this.Attachments == input.Attachments ||
+                    this.Attachments != null &&
+                    input.Attachments != null &&
+                    this.Attachments.SequenceEqual(input.Attachments)
+                ) && 
+                (
+                    this.Links == input.Links ||
+                    this.Links != null &&
+                    input.Links != null &&
+                    this.Links.SequenceEqual(input.Links)
                 );
         }
 
@@ -178,6 +208,14 @@ namespace TestIt.Client.Model
                 if (this.LaunchSource != null)
                 {
                     hashCode = (hashCode * 59) + this.LaunchSource.GetHashCode();
+                }
+                if (this.Attachments != null)
+                {
+                    hashCode = (hashCode * 59) + this.Attachments.GetHashCode();
+                }
+                if (this.Links != null)
+                {
+                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
                 }
                 return hashCode;
             }

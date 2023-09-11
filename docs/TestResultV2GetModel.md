@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **_Configuration** | [**TestResultConfiguration**](TestResultConfiguration.md) |  | [optional] 
 **AutoTest** | [**AutoTestRelatedToTestResult**](AutoTestRelatedToTestResult.md) |  | [optional] 
-**Id** | **Guid** |  | [optional] 
-**ConfigurationId** | **Guid** |  | [optional] 
-**WorkItemVersionId** | **Guid** |  | [optional] 
+**Id** | **Guid** |  | 
+**ConfigurationId** | **Guid** |  | 
+**WorkItemVersionId** | **Guid** |  | 
 **AutoTestId** | **Guid?** |  | [optional] 
 **Message** | **string** |  | [optional] 
 **Traces** | **string** |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **StoppedByUserId** | **Guid?** |  | [optional] 
 **TestPointId** | **Guid?** |  | [optional] 
 **TestPoint** | [**TestPointRelatedToTestResult**](TestPointRelatedToTestResult.md) |  | [optional] 
-**TestRunId** | **Guid** |  | [optional] 
+**TestRunId** | **Guid** |  | 
 **Outcome** | **string** | Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped | [optional] 
 **Comment** | **string** |  | [optional] 
 **Links** | [**List&lt;LinkModel&gt;**](LinkModel.md) |  | [optional] 

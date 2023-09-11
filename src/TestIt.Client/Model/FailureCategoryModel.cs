@@ -54,7 +54,13 @@ namespace TestIt.Client.Model
         /// Enum NoDefect for value: NoDefect
         /// </summary>
         [EnumMember(Value = "NoDefect")]
-        NoDefect = 4
+        NoDefect = 4,
+
+        /// <summary>
+        /// Enum NoAnalytics for value: NoAnalytics
+        /// </summary>
+        [EnumMember(Value = "NoAnalytics")]
+        NoAnalytics = 5
 
     }
 

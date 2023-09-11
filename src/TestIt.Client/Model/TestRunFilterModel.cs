@@ -36,17 +36,29 @@ namespace TestIt.Client.Model
         /// Initializes a new instance of the <see cref="TestRunFilterModel" /> class.
         /// </summary>
         /// <param name="projectIds">Specifies a test run project IDs to search for.</param>
+        /// <param name="name">Specifies test run name.</param>
         /// <param name="states">Specifies a test run states to search for.</param>
-        /// <param name="createdDate">createdDate.</param>
+        /// <param name="startedDate">startedDate.</param>
+        /// <param name="createdByIds">Specifies a test run creator IDs to search for.</param>
         /// <param name="modifiedByIds">Specifies a test run last editor IDs to search for.</param>
         /// <param name="isDeleted">Specifies a test run deleted status to search for.</param>
-        public TestRunFilterModel(List<Guid> projectIds = default(List<Guid>), List<TestRunState> states = default(List<TestRunState>), TestRunFilterModelCreatedDate createdDate = default(TestRunFilterModelCreatedDate), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?))
+        /// <param name="autoTestsCount">autoTestsCount.</param>
+        /// <param name="testResultsOutcome">Specifies test results outcomes.</param>
+        /// <param name="failureCategory">Specifies failure categories.</param>
+        /// <param name="completedDate">completedDate.</param>
+        public TestRunFilterModel(List<Guid> projectIds = default(List<Guid>), string name = default(string), List<TestRunState> states = default(List<TestRunState>), TestRunFilterModelStartedDate startedDate = default(TestRunFilterModelStartedDate), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?), TestRunFilterModelAutoTestsCount autoTestsCount = default(TestRunFilterModelAutoTestsCount), List<TestResultOutcome> testResultsOutcome = default(List<TestResultOutcome>), List<FailureCategoryModel> failureCategory = default(List<FailureCategoryModel>), TestRunFilterModelCompletedDate completedDate = default(TestRunFilterModelCompletedDate))
         {
             this.ProjectIds = projectIds;
+            this.Name = name;
             this.States = states;
-            this.CreatedDate = createdDate;
+            this.StartedDate = startedDate;
+            this.CreatedByIds = createdByIds;
             this.ModifiedByIds = modifiedByIds;
             this.IsDeleted = isDeleted;
+            this.AutoTestsCount = autoTestsCount;
+            this.TestResultsOutcome = testResultsOutcome;
+            this.FailureCategory = failureCategory;
+            this.CompletedDate = completedDate;
         }
 
         /// <summary>
@@ -57,6 +69,13 @@ namespace TestIt.Client.Model
         public List<Guid> ProjectIds { get; set; }
 
         /// <summary>
+        /// Specifies test run name
+        /// </summary>
+        /// <value>Specifies test run name</value>
+        [DataMember(Name = "name", EmitDefaultValue = true)]
+        public string Name { get; set; }
+
+        /// <summary>
         /// Specifies a test run states to search for
         /// </summary>
         /// <value>Specifies a test run states to search for</value>
@@ -64,10 +83,17 @@ namespace TestIt.Client.Model
         public List<TestRunState> States { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedDate
+        /// Gets or Sets StartedDate
         /// </summary>
-        [DataMember(Name = "createdDate", EmitDefaultValue = true)]
-        public TestRunFilterModelCreatedDate CreatedDate { get; set; }
+        [DataMember(Name = "startedDate", EmitDefaultValue = true)]
+        public TestRunFilterModelStartedDate StartedDate { get; set; }
+
+        /// <summary>
+        /// Specifies a test run creator IDs to search for
+        /// </summary>
+        /// <value>Specifies a test run creator IDs to search for</value>
+        [DataMember(Name = "createdByIds", EmitDefaultValue = true)]
+        public List<Guid> CreatedByIds { get; set; }
 
         /// <summary>
         /// Specifies a test run last editor IDs to search for
@@ -84,6 +110,32 @@ namespace TestIt.Client.Model
         public bool? IsDeleted { get; set; }
 
         /// <summary>
+        /// Gets or Sets AutoTestsCount
+        /// </summary>
+        [DataMember(Name = "autoTestsCount", EmitDefaultValue = true)]
+        public TestRunFilterModelAutoTestsCount AutoTestsCount { get; set; }
+
+        /// <summary>
+        /// Specifies test results outcomes
+        /// </summary>
+        /// <value>Specifies test results outcomes</value>
+        [DataMember(Name = "testResultsOutcome", EmitDefaultValue = true)]
+        public List<TestResultOutcome> TestResultsOutcome { get; set; }
+
+        /// <summary>
+        /// Specifies failure categories
+        /// </summary>
+        /// <value>Specifies failure categories</value>
+        [DataMember(Name = "failureCategory", EmitDefaultValue = true)]
+        public List<FailureCategoryModel> FailureCategory { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CompletedDate
+        /// </summary>
+        [DataMember(Name = "completedDate", EmitDefaultValue = true)]
+        public TestRunFilterModelCompletedDate CompletedDate { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -92,10 +144,16 @@ namespace TestIt.Client.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class TestRunFilterModel {\n");
             sb.Append("  ProjectIds: ").Append(ProjectIds).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  States: ").Append(States).Append("\n");
-            sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
+            sb.Append("  StartedDate: ").Append(StartedDate).Append("\n");
+            sb.Append("  CreatedByIds: ").Append(CreatedByIds).Append("\n");
             sb.Append("  ModifiedByIds: ").Append(ModifiedByIds).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
+            sb.Append("  AutoTestsCount: ").Append(AutoTestsCount).Append("\n");
+            sb.Append("  TestResultsOutcome: ").Append(TestResultsOutcome).Append("\n");
+            sb.Append("  FailureCategory: ").Append(FailureCategory).Append("\n");
+            sb.Append("  CompletedDate: ").Append(CompletedDate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -138,15 +196,26 @@ namespace TestIt.Client.Model
                     this.ProjectIds.SequenceEqual(input.ProjectIds)
                 ) && 
                 (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
                     this.States == input.States ||
                     this.States != null &&
                     input.States != null &&
                     this.States.SequenceEqual(input.States)
                 ) && 
                 (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
+                    this.StartedDate == input.StartedDate ||
+                    (this.StartedDate != null &&
+                    this.StartedDate.Equals(input.StartedDate))
+                ) && 
+                (
+                    this.CreatedByIds == input.CreatedByIds ||
+                    this.CreatedByIds != null &&
+                    input.CreatedByIds != null &&
+                    this.CreatedByIds.SequenceEqual(input.CreatedByIds)
                 ) && 
                 (
                     this.ModifiedByIds == input.ModifiedByIds ||
@@ -158,6 +227,28 @@ namespace TestIt.Client.Model
                     this.IsDeleted == input.IsDeleted ||
                     (this.IsDeleted != null &&
                     this.IsDeleted.Equals(input.IsDeleted))
+                ) && 
+                (
+                    this.AutoTestsCount == input.AutoTestsCount ||
+                    (this.AutoTestsCount != null &&
+                    this.AutoTestsCount.Equals(input.AutoTestsCount))
+                ) && 
+                (
+                    this.TestResultsOutcome == input.TestResultsOutcome ||
+                    this.TestResultsOutcome != null &&
+                    input.TestResultsOutcome != null &&
+                    this.TestResultsOutcome.SequenceEqual(input.TestResultsOutcome)
+                ) && 
+                (
+                    this.FailureCategory == input.FailureCategory ||
+                    this.FailureCategory != null &&
+                    input.FailureCategory != null &&
+                    this.FailureCategory.SequenceEqual(input.FailureCategory)
+                ) && 
+                (
+                    this.CompletedDate == input.CompletedDate ||
+                    (this.CompletedDate != null &&
+                    this.CompletedDate.Equals(input.CompletedDate))
                 );
         }
 
@@ -174,13 +265,21 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.ProjectIds.GetHashCode();
                 }
+                if (this.Name != null)
+                {
+                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
                 if (this.States != null)
                 {
                     hashCode = (hashCode * 59) + this.States.GetHashCode();
                 }
-                if (this.CreatedDate != null)
+                if (this.StartedDate != null)
                 {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
+                    hashCode = (hashCode * 59) + this.StartedDate.GetHashCode();
+                }
+                if (this.CreatedByIds != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreatedByIds.GetHashCode();
                 }
                 if (this.ModifiedByIds != null)
                 {
@@ -189,6 +288,22 @@ namespace TestIt.Client.Model
                 if (this.IsDeleted != null)
                 {
                     hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
+                }
+                if (this.AutoTestsCount != null)
+                {
+                    hashCode = (hashCode * 59) + this.AutoTestsCount.GetHashCode();
+                }
+                if (this.TestResultsOutcome != null)
+                {
+                    hashCode = (hashCode * 59) + this.TestResultsOutcome.GetHashCode();
+                }
+                if (this.FailureCategory != null)
+                {
+                    hashCode = (hashCode * 59) + this.FailureCategory.GetHashCode();
+                }
+                if (this.CompletedDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.CompletedDate.GetHashCode();
                 }
                 return hashCode;
             }

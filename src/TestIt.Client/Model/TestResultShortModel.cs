@@ -35,7 +35,12 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestResultShortModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        [JsonConstructorAttribute]
+        protected TestResultShortModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestResultShortModel" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
         /// <param name="outcome">outcome.</param>
         /// <param name="traces">traces.</param>
         /// <param name="failureType">failureType.</param>
@@ -60,13 +65,13 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Outcome
         /// </summary>
-        [DataMember(Name = "outcome", EmitDefaultValue = false)]
+        [DataMember(Name = "outcome", EmitDefaultValue = true)]
         public string Outcome { get; set; }
 
         /// <summary>
@@ -78,7 +83,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets FailureType
         /// </summary>
-        [DataMember(Name = "failureType", EmitDefaultValue = false)]
+        [DataMember(Name = "failureType", EmitDefaultValue = true)]
         public string FailureType { get; set; }
 
         /// <summary>

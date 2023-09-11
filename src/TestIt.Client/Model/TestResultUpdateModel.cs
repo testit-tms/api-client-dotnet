@@ -32,68 +32,50 @@ namespace TestIt.Client.Model
     [DataContract(Name = "TestResultUpdateModel")]
     public partial class TestResultUpdateModel : IEquatable<TestResultUpdateModel>, IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets Outcome
+        /// </summary>
+        [DataMember(Name = "outcome", EmitDefaultValue = true)]
+        public TestResultOutcome? Outcome { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TestResultUpdateModel" /> class.
         /// </summary>
-        /// <param name="setupResults">setupResults.</param>
-        /// <param name="teardownResults">teardownResults.</param>
-        /// <param name="durationInMs">durationInMs.</param>
-        /// <param name="stepComments">stepComments.</param>
         /// <param name="failureClassIds">failureClassIds.</param>
         /// <param name="outcome">outcome.</param>
         /// <param name="comment">comment.</param>
         /// <param name="links">links.</param>
         /// <param name="stepResults">stepResults.</param>
         /// <param name="attachments">attachments.</param>
-        public TestResultUpdateModel(List<AttachmentPutModelAutoTestStepResultsModel> setupResults = default(List<AttachmentPutModelAutoTestStepResultsModel>), List<AttachmentPutModelAutoTestStepResultsModel> teardownResults = default(List<AttachmentPutModelAutoTestStepResultsModel>), long? durationInMs = default(long?), List<TestResultStepCommentPutModel> stepComments = default(List<TestResultStepCommentPutModel>), List<Guid> failureClassIds = default(List<Guid>), string outcome = default(string), string comment = default(string), List<LinkModel> links = default(List<LinkModel>), List<StepResultModel> stepResults = default(List<StepResultModel>), List<AttachmentPutModel> attachments = default(List<AttachmentPutModel>))
+        /// <param name="durationInMs">durationInMs.</param>
+        /// <param name="duration">duration.</param>
+        /// <param name="stepComments">stepComments.</param>
+        /// <param name="setupResults">setupResults.</param>
+        /// <param name="teardownResults">teardownResults.</param>
+        /// <param name="message">message.</param>
+        /// <param name="trace">trace.</param>
+        public TestResultUpdateModel(List<Guid> failureClassIds = default(List<Guid>), TestResultOutcome? outcome = default(TestResultOutcome?), string comment = default(string), List<LinkModel> links = default(List<LinkModel>), List<StepResultModel> stepResults = default(List<StepResultModel>), List<AttachmentPutModel> attachments = default(List<AttachmentPutModel>), long? durationInMs = default(long?), long? duration = default(long?), List<TestResultStepCommentPutModel> stepComments = default(List<TestResultStepCommentPutModel>), List<AttachmentPutModelAutoTestStepResultsModel> setupResults = default(List<AttachmentPutModelAutoTestStepResultsModel>), List<AttachmentPutModelAutoTestStepResultsModel> teardownResults = default(List<AttachmentPutModelAutoTestStepResultsModel>), string message = default(string), string trace = default(string))
         {
-            this.SetupResults = setupResults;
-            this.TeardownResults = teardownResults;
-            this.DurationInMs = durationInMs;
-            this.StepComments = stepComments;
             this.FailureClassIds = failureClassIds;
             this.Outcome = outcome;
             this.Comment = comment;
             this.Links = links;
             this.StepResults = stepResults;
             this.Attachments = attachments;
+            this.DurationInMs = durationInMs;
+            this.Duration = duration;
+            this.StepComments = stepComments;
+            this.SetupResults = setupResults;
+            this.TeardownResults = teardownResults;
+            this.Message = message;
+            this.Trace = trace;
         }
-
-        /// <summary>
-        /// Gets or Sets SetupResults
-        /// </summary>
-        [DataMember(Name = "setupResults", EmitDefaultValue = true)]
-        public List<AttachmentPutModelAutoTestStepResultsModel> SetupResults { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TeardownResults
-        /// </summary>
-        [DataMember(Name = "teardownResults", EmitDefaultValue = true)]
-        public List<AttachmentPutModelAutoTestStepResultsModel> TeardownResults { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DurationInMs
-        /// </summary>
-        [DataMember(Name = "durationInMs", EmitDefaultValue = true)]
-        public long? DurationInMs { get; set; }
-
-        /// <summary>
-        /// Gets or Sets StepComments
-        /// </summary>
-        [DataMember(Name = "stepComments", EmitDefaultValue = false)]
-        public List<TestResultStepCommentPutModel> StepComments { get; set; }
 
         /// <summary>
         /// Gets or Sets FailureClassIds
         /// </summary>
-        [DataMember(Name = "failureClassIds", EmitDefaultValue = false)]
+        [DataMember(Name = "failureClassIds", EmitDefaultValue = true)]
         public List<Guid> FailureClassIds { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Outcome
-        /// </summary>
-        [DataMember(Name = "outcome", EmitDefaultValue = false)]
-        public string Outcome { get; set; }
 
         /// <summary>
         /// Gets or Sets Comment
@@ -110,7 +92,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets StepResults
         /// </summary>
-        [DataMember(Name = "stepResults", EmitDefaultValue = false)]
+        [DataMember(Name = "stepResults", EmitDefaultValue = true)]
         public List<StepResultModel> StepResults { get; set; }
 
         /// <summary>
@@ -120,6 +102,49 @@ namespace TestIt.Client.Model
         public List<AttachmentPutModel> Attachments { get; set; }
 
         /// <summary>
+        /// Gets or Sets DurationInMs
+        /// </summary>
+        [DataMember(Name = "durationInMs", EmitDefaultValue = true)]
+        [Obsolete]
+        public long? DurationInMs { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Duration
+        /// </summary>
+        [DataMember(Name = "duration", EmitDefaultValue = true)]
+        public long? Duration { get; set; }
+
+        /// <summary>
+        /// Gets or Sets StepComments
+        /// </summary>
+        [DataMember(Name = "stepComments", EmitDefaultValue = true)]
+        public List<TestResultStepCommentPutModel> StepComments { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SetupResults
+        /// </summary>
+        [DataMember(Name = "setupResults", EmitDefaultValue = true)]
+        public List<AttachmentPutModelAutoTestStepResultsModel> SetupResults { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TeardownResults
+        /// </summary>
+        [DataMember(Name = "teardownResults", EmitDefaultValue = true)]
+        public List<AttachmentPutModelAutoTestStepResultsModel> TeardownResults { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Message
+        /// </summary>
+        [DataMember(Name = "message", EmitDefaultValue = true)]
+        public string Message { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Trace
+        /// </summary>
+        [DataMember(Name = "trace", EmitDefaultValue = true)]
+        public string Trace { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -127,16 +152,19 @@ namespace TestIt.Client.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class TestResultUpdateModel {\n");
-            sb.Append("  SetupResults: ").Append(SetupResults).Append("\n");
-            sb.Append("  TeardownResults: ").Append(TeardownResults).Append("\n");
-            sb.Append("  DurationInMs: ").Append(DurationInMs).Append("\n");
-            sb.Append("  StepComments: ").Append(StepComments).Append("\n");
             sb.Append("  FailureClassIds: ").Append(FailureClassIds).Append("\n");
             sb.Append("  Outcome: ").Append(Outcome).Append("\n");
             sb.Append("  Comment: ").Append(Comment).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  StepResults: ").Append(StepResults).Append("\n");
             sb.Append("  Attachments: ").Append(Attachments).Append("\n");
+            sb.Append("  DurationInMs: ").Append(DurationInMs).Append("\n");
+            sb.Append("  Duration: ").Append(Duration).Append("\n");
+            sb.Append("  StepComments: ").Append(StepComments).Append("\n");
+            sb.Append("  SetupResults: ").Append(SetupResults).Append("\n");
+            sb.Append("  TeardownResults: ").Append(TeardownResults).Append("\n");
+            sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("  Trace: ").Append(Trace).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -173,29 +201,6 @@ namespace TestIt.Client.Model
             }
             return 
                 (
-                    this.SetupResults == input.SetupResults ||
-                    this.SetupResults != null &&
-                    input.SetupResults != null &&
-                    this.SetupResults.SequenceEqual(input.SetupResults)
-                ) && 
-                (
-                    this.TeardownResults == input.TeardownResults ||
-                    this.TeardownResults != null &&
-                    input.TeardownResults != null &&
-                    this.TeardownResults.SequenceEqual(input.TeardownResults)
-                ) && 
-                (
-                    this.DurationInMs == input.DurationInMs ||
-                    (this.DurationInMs != null &&
-                    this.DurationInMs.Equals(input.DurationInMs))
-                ) && 
-                (
-                    this.StepComments == input.StepComments ||
-                    this.StepComments != null &&
-                    input.StepComments != null &&
-                    this.StepComments.SequenceEqual(input.StepComments)
-                ) && 
-                (
                     this.FailureClassIds == input.FailureClassIds ||
                     this.FailureClassIds != null &&
                     input.FailureClassIds != null &&
@@ -203,8 +208,7 @@ namespace TestIt.Client.Model
                 ) && 
                 (
                     this.Outcome == input.Outcome ||
-                    (this.Outcome != null &&
-                    this.Outcome.Equals(input.Outcome))
+                    this.Outcome.Equals(input.Outcome)
                 ) && 
                 (
                     this.Comment == input.Comment ||
@@ -228,6 +232,44 @@ namespace TestIt.Client.Model
                     this.Attachments != null &&
                     input.Attachments != null &&
                     this.Attachments.SequenceEqual(input.Attachments)
+                ) && 
+                (
+                    this.DurationInMs == input.DurationInMs ||
+                    (this.DurationInMs != null &&
+                    this.DurationInMs.Equals(input.DurationInMs))
+                ) && 
+                (
+                    this.Duration == input.Duration ||
+                    (this.Duration != null &&
+                    this.Duration.Equals(input.Duration))
+                ) && 
+                (
+                    this.StepComments == input.StepComments ||
+                    this.StepComments != null &&
+                    input.StepComments != null &&
+                    this.StepComments.SequenceEqual(input.StepComments)
+                ) && 
+                (
+                    this.SetupResults == input.SetupResults ||
+                    this.SetupResults != null &&
+                    input.SetupResults != null &&
+                    this.SetupResults.SequenceEqual(input.SetupResults)
+                ) && 
+                (
+                    this.TeardownResults == input.TeardownResults ||
+                    this.TeardownResults != null &&
+                    input.TeardownResults != null &&
+                    this.TeardownResults.SequenceEqual(input.TeardownResults)
+                ) && 
+                (
+                    this.Message == input.Message ||
+                    (this.Message != null &&
+                    this.Message.Equals(input.Message))
+                ) && 
+                (
+                    this.Trace == input.Trace ||
+                    (this.Trace != null &&
+                    this.Trace.Equals(input.Trace))
                 );
         }
 
@@ -240,30 +282,11 @@ namespace TestIt.Client.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.SetupResults != null)
-                {
-                    hashCode = (hashCode * 59) + this.SetupResults.GetHashCode();
-                }
-                if (this.TeardownResults != null)
-                {
-                    hashCode = (hashCode * 59) + this.TeardownResults.GetHashCode();
-                }
-                if (this.DurationInMs != null)
-                {
-                    hashCode = (hashCode * 59) + this.DurationInMs.GetHashCode();
-                }
-                if (this.StepComments != null)
-                {
-                    hashCode = (hashCode * 59) + this.StepComments.GetHashCode();
-                }
                 if (this.FailureClassIds != null)
                 {
                     hashCode = (hashCode * 59) + this.FailureClassIds.GetHashCode();
                 }
-                if (this.Outcome != null)
-                {
-                    hashCode = (hashCode * 59) + this.Outcome.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.Outcome.GetHashCode();
                 if (this.Comment != null)
                 {
                     hashCode = (hashCode * 59) + this.Comment.GetHashCode();
@@ -280,6 +303,34 @@ namespace TestIt.Client.Model
                 {
                     hashCode = (hashCode * 59) + this.Attachments.GetHashCode();
                 }
+                if (this.DurationInMs != null)
+                {
+                    hashCode = (hashCode * 59) + this.DurationInMs.GetHashCode();
+                }
+                if (this.Duration != null)
+                {
+                    hashCode = (hashCode * 59) + this.Duration.GetHashCode();
+                }
+                if (this.StepComments != null)
+                {
+                    hashCode = (hashCode * 59) + this.StepComments.GetHashCode();
+                }
+                if (this.SetupResults != null)
+                {
+                    hashCode = (hashCode * 59) + this.SetupResults.GetHashCode();
+                }
+                if (this.TeardownResults != null)
+                {
+                    hashCode = (hashCode * 59) + this.TeardownResults.GetHashCode();
+                }
+                if (this.Message != null)
+                {
+                    hashCode = (hashCode * 59) + this.Message.GetHashCode();
+                }
+                if (this.Trace != null)
+                {
+                    hashCode = (hashCode * 59) + this.Trace.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -295,6 +346,12 @@ namespace TestIt.Client.Model
             if (this.DurationInMs < (long?)0)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DurationInMs, must be a value greater than or equal to 0.", new [] { "DurationInMs" });
+            }
+
+            // Duration (long?) minimum
+            if (this.Duration < (long?)0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Duration, must be a value greater than or equal to 0.", new [] { "Duration" });
             }
 
             yield break;

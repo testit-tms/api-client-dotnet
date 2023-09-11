@@ -35,12 +35,17 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomAttributeOptionPostModel" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected CustomAttributeOptionPostModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomAttributeOptionPostModel" /> class.
+        /// </summary>
         /// <param name="value">Value of the attribute option.</param>
-        /// <param name="isDefault">Indicates if the attribute option is used by default.</param>
+        /// <param name="isDefault">Indicates if the attribute option is used by default (required).</param>
         public CustomAttributeOptionPostModel(string value = default(string), bool isDefault = default(bool))
         {
-            this.Value = value;
             this.IsDefault = isDefault;
+            this.Value = value;
         }
 
         /// <summary>
@@ -54,7 +59,7 @@ namespace TestIt.Client.Model
         /// Indicates if the attribute option is used by default
         /// </summary>
         /// <value>Indicates if the attribute option is used by default</value>
-        [DataMember(Name = "isDefault", EmitDefaultValue = true)]
+        [DataMember(Name = "isDefault", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDefault { get; set; }
 
         /// <summary>

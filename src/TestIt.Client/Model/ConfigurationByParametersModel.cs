@@ -40,25 +40,25 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConfigurationByParametersModel" /> class.
         /// </summary>
-        /// <param name="projectId">This property is used to link configuration with project.</param>
+        /// <param name="projectId">This property is used to link configuration with project (required).</param>
         /// <param name="parameterIds">parameterIds (required).</param>
         public ConfigurationByParametersModel(Guid projectId = default(Guid), List<Guid> parameterIds = default(List<Guid>))
         {
+            this.ProjectId = projectId;
             // to ensure "parameterIds" is required (not null)
             if (parameterIds == null)
             {
                 throw new ArgumentNullException("parameterIds is a required property for ConfigurationByParametersModel and cannot be null");
             }
             this.ParameterIds = parameterIds;
-            this.ProjectId = projectId;
         }
 
         /// <summary>
         /// This property is used to link configuration with project
         /// </summary>
         /// <value>This property is used to link configuration with project</value>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "projectId", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>

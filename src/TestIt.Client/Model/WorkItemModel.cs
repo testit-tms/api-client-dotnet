@@ -58,40 +58,50 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemModel" /> class.
         /// </summary>
-        /// <param name="versionId">used for versioning changes in workitem.</param>
-        /// <param name="medianDuration">used for getting a median duration of all autotests related to this workitem.</param>
-        /// <param name="isDeleted">isDeleted.</param>
-        /// <param name="projectId">projectId.</param>
+        /// <param name="versionId">used for versioning changes in workitem (required).</param>
+        /// <param name="medianDuration">used for getting a median duration of all autotests related to this workitem (required).</param>
+        /// <param name="isDeleted">isDeleted (required).</param>
+        /// <param name="projectId">projectId (required).</param>
         /// <param name="entityTypeName">entityTypeName (required).</param>
-        /// <param name="isAutomated">isAutomated.</param>
+        /// <param name="isAutomated">isAutomated (required).</param>
         /// <param name="autoTests">autoTests.</param>
         /// <param name="attachments">attachments.</param>
         /// <param name="sectionPreconditionSteps">sectionPreconditionSteps.</param>
         /// <param name="sectionPostconditionSteps">sectionPostconditionSteps.</param>
-        /// <param name="versionNumber">used for define chronology of workitem state in each version.</param>
+        /// <param name="versionNumber">used for define chronology of workitem state in each version (required).</param>
         /// <param name="iterations">iterations.</param>
-        /// <param name="createdDate">createdDate.</param>
+        /// <param name="createdDate">createdDate (required).</param>
         /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="createdById">createdById.</param>
+        /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
-        /// <param name="globalId">globalId.</param>
+        /// <param name="globalId">globalId (required).</param>
         /// <param name="id">id (required).</param>
-        /// <param name="sectionId">sectionId.</param>
+        /// <param name="sectionId">sectionId (required).</param>
         /// <param name="description">description.</param>
         /// <param name="state">state (required).</param>
         /// <param name="priority">priority (required).</param>
         /// <param name="steps">steps (required).</param>
         /// <param name="preconditionSteps">preconditionSteps (required).</param>
         /// <param name="postconditionSteps">postconditionSteps (required).</param>
-        /// <param name="duration">duration.</param>
+        /// <param name="duration">duration (required).</param>
         /// <param name="attributes">attributes (required).</param>
         /// <param name="tags">tags (required).</param>
         /// <param name="links">links (required).</param>
         /// <param name="name">name (required).</param>
         public WorkItemModel(Guid versionId = default(Guid), long medianDuration = default(long), bool isDeleted = default(bool), Guid projectId = default(Guid), WorkItemEntityTypes entityTypeName = default(WorkItemEntityTypes), bool isAutomated = default(bool), List<AutoTestModel> autoTests = default(List<AutoTestModel>), List<AttachmentModel> attachments = default(List<AttachmentModel>), List<StepModel> sectionPreconditionSteps = default(List<StepModel>), List<StepModel> sectionPostconditionSteps = default(List<StepModel>), int versionNumber = default(int), List<IterationModel> iterations = default(List<IterationModel>), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), Guid id = default(Guid), Guid sectionId = default(Guid), string description = default(string), WorkItemStates state = default(WorkItemStates), WorkItemPriorityModel priority = default(WorkItemPriorityModel), List<StepModel> steps = default(List<StepModel>), List<StepModel> preconditionSteps = default(List<StepModel>), List<StepModel> postconditionSteps = default(List<StepModel>), int duration = default(int), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<TagShortModel> tags = default(List<TagShortModel>), List<LinkModel> links = default(List<LinkModel>), string name = default(string))
         {
+            this.VersionId = versionId;
+            this.MedianDuration = medianDuration;
+            this.IsDeleted = isDeleted;
+            this.ProjectId = projectId;
             this.EntityTypeName = entityTypeName;
+            this.IsAutomated = isAutomated;
+            this.VersionNumber = versionNumber;
+            this.CreatedDate = createdDate;
+            this.CreatedById = createdById;
+            this.GlobalId = globalId;
             this.Id = id;
+            this.SectionId = sectionId;
             this.State = state;
             this.Priority = priority;
             // to ensure "steps" is required (not null)
@@ -112,6 +122,7 @@ namespace TestIt.Client.Model
                 throw new ArgumentNullException("postconditionSteps is a required property for WorkItemModel and cannot be null");
             }
             this.PostconditionSteps = postconditionSteps;
+            this.Duration = duration;
             // to ensure "attributes" is required (not null)
             if (attributes == null)
             {
@@ -136,33 +147,22 @@ namespace TestIt.Client.Model
                 throw new ArgumentNullException("name is a required property for WorkItemModel and cannot be null");
             }
             this.Name = name;
-            this.VersionId = versionId;
-            this.MedianDuration = medianDuration;
-            this.IsDeleted = isDeleted;
-            this.ProjectId = projectId;
-            this.IsAutomated = isAutomated;
             this.AutoTests = autoTests;
             this.Attachments = attachments;
             this.SectionPreconditionSteps = sectionPreconditionSteps;
             this.SectionPostconditionSteps = sectionPostconditionSteps;
-            this.VersionNumber = versionNumber;
             this.Iterations = iterations;
-            this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
-            this.CreatedById = createdById;
             this.ModifiedById = modifiedById;
-            this.GlobalId = globalId;
-            this.SectionId = sectionId;
             this.Description = description;
-            this.Duration = duration;
         }
 
         /// <summary>
         /// used for versioning changes in workitem
         /// </summary>
         /// <value>used for versioning changes in workitem</value>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "versionId", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "versionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid VersionId { get; set; }
 
         /// <summary>
@@ -170,28 +170,28 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <value>used for getting a median duration of all autotests related to this workitem</value>
         /// <example>10000</example>
-        [DataMember(Name = "medianDuration", EmitDefaultValue = false)]
+        [DataMember(Name = "medianDuration", IsRequired = true, EmitDefaultValue = true)]
         public long MedianDuration { get; set; }
 
         /// <summary>
         /// Gets or Sets IsDeleted
         /// </summary>
         /// <example>true</example>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
         /// <summary>
         /// Gets or Sets ProjectId
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "projectId", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
         /// Gets or Sets IsAutomated
         /// </summary>
         /// <example>true</example>
-        [DataMember(Name = "isAutomated", EmitDefaultValue = true)]
+        [DataMember(Name = "isAutomated", IsRequired = true, EmitDefaultValue = true)]
         public bool IsAutomated { get; set; }
 
         /// <summary>
@@ -223,7 +223,7 @@ namespace TestIt.Client.Model
         /// </summary>
         /// <value>used for define chronology of workitem state in each version</value>
         /// <example>10</example>
-        [DataMember(Name = "versionNumber", EmitDefaultValue = false)]
+        [DataMember(Name = "versionNumber", IsRequired = true, EmitDefaultValue = true)]
         public int VersionNumber { get; set; }
 
         /// <summary>
@@ -235,28 +235,28 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
-        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
+        [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        /// <example>&quot;2023-06-29T09:05:58.447458800Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
@@ -264,28 +264,28 @@ namespace TestIt.Client.Model
         /// Gets or Sets GlobalId
         /// </summary>
         /// <example>1000</example>
-        [DataMember(Name = "globalId", EmitDefaultValue = false)]
+        [DataMember(Name = "globalId", IsRequired = true, EmitDefaultValue = true)]
         public long GlobalId { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets SectionId
         /// </summary>
-        /// <example>&quot;6304c6c5-21fa-4bd3-8d38-647bef3d7fe6&quot;</example>
-        [DataMember(Name = "sectionId", EmitDefaultValue = false)]
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid SectionId { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
         /// <example>&quot;This is a basic test template&quot;</example>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
@@ -310,7 +310,7 @@ namespace TestIt.Client.Model
         /// Gets or Sets Duration
         /// </summary>
         /// <example>10000</example>
-        [DataMember(Name = "duration", EmitDefaultValue = false)]
+        [DataMember(Name = "duration", IsRequired = true, EmitDefaultValue = true)]
         public int Duration { get; set; }
 
         /// <summary>

@@ -35,12 +35,17 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestResultChronologyModel" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected TestResultChronologyModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestResultChronologyModel" /> class.
+        /// </summary>
         /// <param name="outcome">outcome.</param>
-        /// <param name="count">count.</param>
+        /// <param name="count">count (required).</param>
         public TestResultChronologyModel(string outcome = default(string), int count = default(int))
         {
-            this.Outcome = outcome;
             this.Count = count;
+            this.Outcome = outcome;
         }
 
         /// <summary>
@@ -53,7 +58,7 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Gets or Sets Count
         /// </summary>
-        [DataMember(Name = "count", EmitDefaultValue = false)]
+        [DataMember(Name = "count", IsRequired = true, EmitDefaultValue = true)]
         public int Count { get; set; }
 
         /// <summary>

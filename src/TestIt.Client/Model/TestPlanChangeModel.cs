@@ -35,42 +35,47 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPlanChangeModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="testPlanId">testPlanId.</param>
+        [JsonConstructorAttribute]
+        protected TestPlanChangeModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestPlanChangeModel" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
+        /// <param name="testPlanId">testPlanId (required).</param>
         /// <param name="testPlanChangedFields">testPlanChangedFields.</param>
-        /// <param name="createdById">createdById.</param>
+        /// <param name="createdById">createdById (required).</param>
         /// <param name="createdDate">createdDate.</param>
-        public TestPlanChangeModel(Guid id = default(Guid), Guid testPlanId = default(Guid), TestPlanChangeModelTestPlanChangedFields testPlanChangedFields = default(TestPlanChangeModelTestPlanChangedFields), Guid createdById = default(Guid), DateTime? createdDate = default(DateTime?))
+        public TestPlanChangeModel(Guid id = default(Guid), Guid testPlanId = default(Guid), TestPlanChangedFieldsViewModel testPlanChangedFields = default(TestPlanChangedFieldsViewModel), Guid createdById = default(Guid), DateTime? createdDate = default(DateTime?))
         {
             this.Id = id;
             this.TestPlanId = testPlanId;
-            this.TestPlanChangedFields = testPlanChangedFields;
             this.CreatedById = createdById;
+            this.TestPlanChangedFields = testPlanChangedFields;
             this.CreatedDate = createdDate;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets TestPlanId
         /// </summary>
-        [DataMember(Name = "testPlanId", EmitDefaultValue = false)]
+        [DataMember(Name = "testPlanId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestPlanId { get; set; }
 
         /// <summary>
         /// Gets or Sets TestPlanChangedFields
         /// </summary>
-        [DataMember(Name = "testPlanChangedFields", EmitDefaultValue = false)]
-        public TestPlanChangeModelTestPlanChangedFields TestPlanChangedFields { get; set; }
+        [DataMember(Name = "testPlanChangedFields", EmitDefaultValue = true)]
+        public TestPlanChangedFieldsViewModel TestPlanChangedFields { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        [DataMember(Name = "createdById", EmitDefaultValue = false)]
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>

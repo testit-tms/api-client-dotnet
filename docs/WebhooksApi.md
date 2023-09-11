@@ -402,8 +402,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
 | **403** | Update permission for webhooks is required |  -  |
+| **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -610,14 +610,14 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 | **403** | Read permission for all requested projects is required |  -  |
+| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="apiv2webhooksspecialvariablesget"></a>
 # **ApiV2WebhooksSpecialVariablesGet**
-> List&lt;string&gt; ApiV2WebhooksSpecialVariablesGet (WebHookEventType? eventType = null)
+> List&lt;string&gt; ApiV2WebhooksSpecialVariablesGet (WebHookEventType? eventType = null, WebhookVariablesType? variablesType = null)
 
 Get special variables for webhook event type
 
@@ -648,11 +648,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WebhooksApi(httpClient, config, httpClientHandler);
             var eventType = (WebHookEventType) "AutomatedTestRunCreated";  // WebHookEventType? | Webhook event type (optional) 
+            var variablesType = (WebhookVariablesType) "VariablesForUrl";  // WebhookVariablesType? |  (optional) 
 
             try
             {
                 // Get special variables for webhook event type
-                List<string> result = apiInstance.ApiV2WebhooksSpecialVariablesGet(eventType);
+                List<string> result = apiInstance.ApiV2WebhooksSpecialVariablesGet(eventType, variablesType);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -673,7 +674,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get special variables for webhook event type
-    ApiResponse<List<string>> response = apiInstance.ApiV2WebhooksSpecialVariablesGetWithHttpInfo(eventType);
+    ApiResponse<List<string>> response = apiInstance.ApiV2WebhooksSpecialVariablesGetWithHttpInfo(eventType, variablesType);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -691,6 +692,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **eventType** | **WebHookEventType?** | Webhook event type | [optional]  |
+| **variablesType** | **WebhookVariablesType?** |  | [optional]  |
 
 ### Return type
 
@@ -807,8 +809,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
 | **403** | Update permission for webhooks is required |  -  |
+| **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

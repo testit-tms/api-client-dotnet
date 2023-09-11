@@ -35,24 +35,29 @@ namespace TestIt.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestRunGroupByStatusModel" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected TestRunGroupByStatusModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestRunGroupByStatusModel" /> class.
+        /// </summary>
         /// <param name="status">status.</param>
-        /// <param name="value">value.</param>
+        /// <param name="value">value (required).</param>
         public TestRunGroupByStatusModel(string status = default(string), int value = default(int))
         {
-            this.Status = status;
             this.Value = value;
+            this.Status = status;
         }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", EmitDefaultValue = true)]
         public string Status { get; set; }
 
         /// <summary>
         /// Gets or Sets Value
         /// </summary>
-        [DataMember(Name = "value", EmitDefaultValue = false)]
+        [DataMember(Name = "value", IsRequired = true, EmitDefaultValue = true)]
         public int Value { get; set; }
 
         /// <summary>
