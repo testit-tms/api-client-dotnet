@@ -4,7 +4,7 @@ on:
   pull_request
 
 env:
-  PROJECT_DIR: ./src/TestIt.Client
+  PROJECT_DIR: ./src/TestIT.ApiClient
   VALIDATION: 1
 
 jobs:

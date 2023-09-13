@@ -6,7 +6,7 @@ on:
       - released
 
 env:
-  PROJECT_DIR: ./src/TestIt.Client
+  PROJECT_DIR: ./src/TestIT.ApiClient
   NUGET_DIR: ./nuget
 
 jobs:
