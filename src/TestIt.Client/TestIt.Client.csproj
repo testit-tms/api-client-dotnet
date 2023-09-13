@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <IsPackable>true</IsPackable>
     <Title>Test IT API client</Title>
-    <PackageId>TestIt.ApiClient</PackageId>
+    <PackageId>TestIT.ApiClient</PackageId>
     <Authors>Test IT</Authors>
     <Description>Test IT TMS API client for .NET</Description>
     <Copyright>Copyright (c) 2019 - 2023 Test IT</Copyright>
