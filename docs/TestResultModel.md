@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestResultModel
+# TestIt.ApiClient.Model.TestResultModel
 
 ## Properties
 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **CreatedById** | **Guid** |  | 
 **ModifiedById** | **Guid?** |  | [optional] 
 **StepComments** | [**List&lt;StepCommentModel&gt;**](StepCommentModel.md) |  | [optional] 
-**FailureClassIds** | **List&lt;Guid&gt;** |  | [optional] 
+**FailureClassIds** | **List&lt;Guid&gt;** |  | 
 **Outcome** | **TestResultOutcome** |  | [optional] 
 **Comment** | **string** |  | [optional] 
 **Links** | [**List&lt;LinkModel&gt;**](LinkModel.md) |  | [optional] 

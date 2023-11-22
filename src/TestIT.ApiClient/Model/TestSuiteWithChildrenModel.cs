@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// TestSuiteWithChildrenModel
@@ -44,18 +44,23 @@ namespace TestIT.ApiClient.Model
         /// <param name="testerId">testerId.</param>
         /// <param name="parentId">parentId.</param>
         /// <param name="testPlanId">testPlanId (required).</param>
-        /// <param name="name">name.</param>
+        /// <param name="name">name (required).</param>
         /// <param name="id">Unique ID of the entity (required).</param>
         /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
         public TestSuiteWithChildrenModel(List<TestSuiteWithChildrenModel> children = default(List<TestSuiteWithChildrenModel>), Guid? testerId = default(Guid?), Guid? parentId = default(Guid?), Guid testPlanId = default(Guid), string name = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
         {
             this.TestPlanId = testPlanId;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for TestSuiteWithChildrenModel and cannot be null");
+            }
+            this.Name = name;
             this.Id = id;
             this.IsDeleted = isDeleted;
             this.Children = children;
             this.TesterId = testerId;
             this.ParentId = parentId;
-            this.Name = name;
         }
 
         /// <summary>
@@ -85,7 +90,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -151,38 +156,38 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Children == input.Children ||
                     this.Children != null &&
                     input.Children != null &&
                     this.Children.SequenceEqual(input.Children)
-                ) &&
+                ) && 
                 (
                     this.TesterId == input.TesterId ||
                     (this.TesterId != null &&
                     this.TesterId.Equals(input.TesterId))
-                ) &&
+                ) && 
                 (
                     this.ParentId == input.ParentId ||
                     (this.ParentId != null &&
                     this.ParentId.Equals(input.ParentId))
-                ) &&
+                ) && 
                 (
                     this.TestPlanId == input.TestPlanId ||
                     (this.TestPlanId != null &&
                     this.TestPlanId.Equals(input.TestPlanId))
-                ) &&
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.IsDeleted == input.IsDeleted ||
                     this.IsDeleted.Equals(input.IsDeleted)

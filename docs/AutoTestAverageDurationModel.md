@@ -1,4 +1,4 @@
-# TestIt.Client.Model.AutoTestAverageDurationModel
+# TestIt.ApiClient.Model.AutoTestAverageDurationModel
 
 ## Properties
 

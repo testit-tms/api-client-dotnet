@@ -1,4 +1,4 @@
-# TestIt.Client.Model.ApiV2BackgroundJobsSearchPostRequest
+# TestIt.ApiClient.Model.ApiV2BackgroundJobsSearchPostRequest
 
 ## Properties
 

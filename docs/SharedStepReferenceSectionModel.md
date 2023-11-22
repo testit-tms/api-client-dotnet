@@ -1,11 +1,11 @@
-# TestIt.Client.Model.SharedStepReferenceSectionModel
+# TestIt.ApiClient.Model.SharedStepReferenceSectionModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** |  | 
-**Name** | **string** |  | [optional] 
+**Name** | **string** |  | 
 **HasThisSharedStepAsPrecondition** | **bool** |  | 
 **HasThisSharedStepAsPostcondition** | **bool** |  | 
 **CreatedById** | **Guid** |  | 

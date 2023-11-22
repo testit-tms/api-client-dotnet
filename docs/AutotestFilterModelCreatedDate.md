@@ -1,4 +1,4 @@
-# TestIt.Client.Model.AutotestFilterModelCreatedDate
+# TestIt.ApiClient.Model.AutotestFilterModelCreatedDate
 Specifies an autotest range of creation date to search for
 
 ## Properties

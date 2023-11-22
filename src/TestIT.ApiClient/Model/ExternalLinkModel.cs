@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// ExternalLinkModel
@@ -153,42 +153,42 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
-                ) &&
+                ) && 
                 (
                     this.Title == input.Title ||
                     (this.Title != null &&
                     this.Title.Equals(input.Title))
-                ) &&
+                ) && 
                 (
                     this.IssueTypeName == input.IssueTypeName ||
                     (this.IssueTypeName != null &&
                     this.IssueTypeName.Equals(input.IssueTypeName))
-                ) &&
+                ) && 
                 (
                     this.IssueTypeIconUrl == input.IssueTypeIconUrl ||
                     (this.IssueTypeIconUrl != null &&
                     this.IssueTypeIconUrl.Equals(input.IssueTypeIconUrl))
-                ) &&
+                ) && 
                 (
                     this.PriorityName == input.PriorityName ||
                     (this.PriorityName != null &&
                     this.PriorityName.Equals(input.PriorityName))
-                ) &&
+                ) && 
                 (
                     this.PriorityIconUrl == input.PriorityIconUrl ||
                     (this.PriorityIconUrl != null &&
                     this.PriorityIconUrl.Equals(input.PriorityIconUrl))
-                ) &&
+                ) && 
                 (
                     this.StatusName == input.StatusName ||
                     (this.StatusName != null &&
                     this.StatusName.Equals(input.StatusName))
-                ) &&
+                ) && 
                 (
                     this.AssigneeDisplayName == input.AssigneeDisplayName ||
                     (this.AssigneeDisplayName != null &&

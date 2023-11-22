@@ -1,4 +1,4 @@
-# TestIt.Client.Model.AttachmentChangeViewModelArrayChangedFieldViewModel
+# TestIt.ApiClient.Model.AttachmentChangeViewModelArrayChangedFieldViewModel
 
 ## Properties
 

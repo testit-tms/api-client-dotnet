@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// ApiV2AttachmentsPostRequest
@@ -36,7 +36,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="ApiV2AttachmentsPostRequest" /> class.
         /// </summary>
         /// <param name="file">file.</param>
-        public ApiV2AttachmentsPostRequest(Client.FileParameter file = default(Client.FileParameter))
+        public ApiV2AttachmentsPostRequest(FileParameter file = default(FileParameter))
         {
             this.File = file;
         }
@@ -45,7 +45,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets File
         /// </summary>
         [DataMember(Name = "file", EmitDefaultValue = false)]
-        public Client.FileParameter File { get; set; }
+        public FileParameter File { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -90,7 +90,7 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.File == input.File ||
                     (this.File != null &&

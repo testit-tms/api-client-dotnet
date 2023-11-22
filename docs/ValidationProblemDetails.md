@@ -1,4 +1,4 @@
-# TestIt.Client.Model.ValidationProblemDetails
+# TestIt.ApiClient.Model.ValidationProblemDetails
 
 ## Properties
 

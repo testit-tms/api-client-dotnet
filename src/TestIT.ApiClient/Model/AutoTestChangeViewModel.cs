@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// AutoTestChangeViewModel
@@ -42,14 +42,19 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="id">id (required).</param>
         /// <param name="projectId">projectId (required).</param>
-        /// <param name="externalId">externalId.</param>
+        /// <param name="externalId">externalId (required).</param>
         /// <param name="globalId">globalId (required).</param>
         public AutoTestChangeViewModel(Guid id = default(Guid), Guid projectId = default(Guid), string externalId = default(string), long globalId = default(long))
         {
             this.Id = id;
             this.ProjectId = projectId;
-            this.GlobalId = globalId;
+            // to ensure "externalId" is required (not null)
+            if (externalId == null)
+            {
+                throw new ArgumentNullException("externalId is a required property for AutoTestChangeViewModel and cannot be null");
+            }
             this.ExternalId = externalId;
+            this.GlobalId = globalId;
         }
 
         /// <summary>
@@ -67,7 +72,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets ExternalId
         /// </summary>
-        [DataMember(Name = "externalId", EmitDefaultValue = true)]
+        [DataMember(Name = "externalId", IsRequired = true, EmitDefaultValue = true)]
         public string ExternalId { get; set; }
 
         /// <summary>
@@ -122,22 +127,22 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
-                ) &&
+                ) && 
                 (
                     this.ExternalId == input.ExternalId ||
                     (this.ExternalId != null &&
                     this.ExternalId.Equals(input.ExternalId))
-                ) &&
+                ) && 
                 (
                     this.GlobalId == input.GlobalId ||
                     this.GlobalId.Equals(input.GlobalId)

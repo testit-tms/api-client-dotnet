@@ -1,4 +1,4 @@
-# TestIt.Client.Model.AvailableTestResultOutcome
+# TestIt.ApiClient.Model.AvailableTestResultOutcome
 
 ## Properties
 

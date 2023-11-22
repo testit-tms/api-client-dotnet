@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// CustomAttributeGetModel
@@ -47,23 +47,33 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="CustomAttributeGetModel" /> class.
         /// </summary>
         /// <param name="id">Unique ID of the attribute (required).</param>
-        /// <param name="options">Collection of the attribute options.</param>
+        /// <param name="options">Collection of the attribute options (required).</param>
         /// <param name="type">type (required).</param>
         /// <param name="isDeleted">Indicates if the attribute is deleted (required).</param>
-        /// <param name="name">Name of the attribute.</param>
+        /// <param name="name">Name of the attribute (required).</param>
         /// <param name="isEnabled">Indicates if the attribute is enabled (required).</param>
         /// <param name="isRequired">Indicates if the attribute is mandatory to specify (required).</param>
         /// <param name="isGlobal">Indicates if the attribute is available across all projects (required).</param>
         public CustomAttributeGetModel(Guid id = default(Guid), List<CustomAttributeOptionModel> options = default(List<CustomAttributeOptionModel>), CustomAttributeTypesEnum type = default(CustomAttributeTypesEnum), bool isDeleted = default(bool), string name = default(string), bool isEnabled = default(bool), bool isRequired = default(bool), bool isGlobal = default(bool))
         {
             this.Id = id;
+            // to ensure "options" is required (not null)
+            if (options == null)
+            {
+                throw new ArgumentNullException("options is a required property for CustomAttributeGetModel and cannot be null");
+            }
+            this.Options = options;
             this.Type = type;
             this.IsDeleted = isDeleted;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for CustomAttributeGetModel and cannot be null");
+            }
+            this.Name = name;
             this.IsEnabled = isEnabled;
             this.IsRequired = isRequired;
             this.IsGlobal = isGlobal;
-            this.Options = options;
-            this.Name = name;
         }
 
         /// <summary>
@@ -77,7 +87,7 @@ namespace TestIT.ApiClient.Model
         /// Collection of the attribute options
         /// </summary>
         /// <value>Collection of the attribute options</value>
-        [DataMember(Name = "options", EmitDefaultValue = true)]
+        [DataMember(Name = "options", IsRequired = true, EmitDefaultValue = true)]
         public List<CustomAttributeOptionModel> Options { get; set; }
 
         /// <summary>
@@ -91,7 +101,7 @@ namespace TestIT.ApiClient.Model
         /// Name of the attribute
         /// </summary>
         /// <value>Name of the attribute</value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -165,39 +175,39 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.Options == input.Options ||
                     this.Options != null &&
                     input.Options != null &&
                     this.Options.SequenceEqual(input.Options)
-                ) &&
+                ) && 
                 (
                     this.Type == input.Type ||
                     this.Type.Equals(input.Type)
-                ) &&
+                ) && 
                 (
                     this.IsDeleted == input.IsDeleted ||
                     this.IsDeleted.Equals(input.IsDeleted)
-                ) &&
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.IsEnabled == input.IsEnabled ||
                     this.IsEnabled.Equals(input.IsEnabled)
-                ) &&
+                ) && 
                 (
                     this.IsRequired == input.IsRequired ||
                     this.IsRequired.Equals(input.IsRequired)
-                ) &&
+                ) && 
                 (
                     this.IsGlobal == input.IsGlobal ||
                     this.IsGlobal.Equals(input.IsGlobal)

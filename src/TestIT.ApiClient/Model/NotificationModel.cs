@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// NotificationModel
@@ -54,10 +54,10 @@ namespace TestIT.ApiClient.Model
         /// <param name="projectGlobalId">projectGlobalId.</param>
         /// <param name="projectName">projectName.</param>
         /// <param name="testPlanGlobalId">testPlanGlobalId (required).</param>
-        /// <param name="testPlanName">testPlanName.</param>
+        /// <param name="testPlanName">testPlanName (required).</param>
         /// <param name="workitemGlobalId">workitemGlobalId.</param>
-        /// <param name="comment">comment.</param>
-        /// <param name="workItemName">workItemName.</param>
+        /// <param name="comment">comment (required).</param>
+        /// <param name="workItemName">workItemName (required).</param>
         /// <param name="attributeName">attributeName.</param>
         /// <param name="createdById">createdById (required).</param>
         public NotificationModel(Guid id = default(Guid), DateTime? createdDate = default(DateTime?), bool isRead = default(bool), Guid entityId = default(Guid), NotificationTypeModel notificationType = default(NotificationTypeModel), long? projectGlobalId = default(long?), string projectName = default(string), long testPlanGlobalId = default(long), string testPlanName = default(string), long? workitemGlobalId = default(long?), string comment = default(string), string workItemName = default(string), string attributeName = default(string), Guid createdById = default(Guid))
@@ -67,14 +67,29 @@ namespace TestIT.ApiClient.Model
             this.EntityId = entityId;
             this.NotificationType = notificationType;
             this.TestPlanGlobalId = testPlanGlobalId;
+            // to ensure "testPlanName" is required (not null)
+            if (testPlanName == null)
+            {
+                throw new ArgumentNullException("testPlanName is a required property for NotificationModel and cannot be null");
+            }
+            this.TestPlanName = testPlanName;
+            // to ensure "comment" is required (not null)
+            if (comment == null)
+            {
+                throw new ArgumentNullException("comment is a required property for NotificationModel and cannot be null");
+            }
+            this.Comment = comment;
+            // to ensure "workItemName" is required (not null)
+            if (workItemName == null)
+            {
+                throw new ArgumentNullException("workItemName is a required property for NotificationModel and cannot be null");
+            }
+            this.WorkItemName = workItemName;
             this.CreatedById = createdById;
             this.CreatedDate = createdDate;
             this.ProjectGlobalId = projectGlobalId;
             this.ProjectName = projectName;
-            this.TestPlanName = testPlanName;
             this.WorkitemGlobalId = workitemGlobalId;
-            this.Comment = comment;
-            this.WorkItemName = workItemName;
             this.AttributeName = attributeName;
         }
 
@@ -123,7 +138,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets TestPlanName
         /// </summary>
-        [DataMember(Name = "testPlanName", EmitDefaultValue = true)]
+        [DataMember(Name = "testPlanName", IsRequired = true, EmitDefaultValue = true)]
         public string TestPlanName { get; set; }
 
         /// <summary>
@@ -135,13 +150,13 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Comment
         /// </summary>
-        [DataMember(Name = "comment", EmitDefaultValue = true)]
+        [DataMember(Name = "comment", IsRequired = true, EmitDefaultValue = true)]
         public string Comment { get; set; }
 
         /// <summary>
         /// Gets or Sets WorkItemName
         /// </summary>
-        [DataMember(Name = "workItemName", EmitDefaultValue = true)]
+        [DataMember(Name = "workItemName", IsRequired = true, EmitDefaultValue = true)]
         public string WorkItemName { get; set; }
 
         /// <summary>
@@ -212,69 +227,69 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) &&
+                ) && 
                 (
                     this.IsRead == input.IsRead ||
                     this.IsRead.Equals(input.IsRead)
-                ) &&
+                ) && 
                 (
                     this.EntityId == input.EntityId ||
                     (this.EntityId != null &&
                     this.EntityId.Equals(input.EntityId))
-                ) &&
+                ) && 
                 (
                     this.NotificationType == input.NotificationType ||
                     this.NotificationType.Equals(input.NotificationType)
-                ) &&
+                ) && 
                 (
                     this.ProjectGlobalId == input.ProjectGlobalId ||
                     (this.ProjectGlobalId != null &&
                     this.ProjectGlobalId.Equals(input.ProjectGlobalId))
-                ) &&
+                ) && 
                 (
                     this.ProjectName == input.ProjectName ||
                     (this.ProjectName != null &&
                     this.ProjectName.Equals(input.ProjectName))
-                ) &&
+                ) && 
                 (
                     this.TestPlanGlobalId == input.TestPlanGlobalId ||
                     this.TestPlanGlobalId.Equals(input.TestPlanGlobalId)
-                ) &&
+                ) && 
                 (
                     this.TestPlanName == input.TestPlanName ||
                     (this.TestPlanName != null &&
                     this.TestPlanName.Equals(input.TestPlanName))
-                ) &&
+                ) && 
                 (
                     this.WorkitemGlobalId == input.WorkitemGlobalId ||
                     (this.WorkitemGlobalId != null &&
                     this.WorkitemGlobalId.Equals(input.WorkitemGlobalId))
-                ) &&
+                ) && 
                 (
                     this.Comment == input.Comment ||
                     (this.Comment != null &&
                     this.Comment.Equals(input.Comment))
-                ) &&
+                ) && 
                 (
                     this.WorkItemName == input.WorkItemName ||
                     (this.WorkItemName != null &&
                     this.WorkItemName.Equals(input.WorkItemName))
-                ) &&
+                ) && 
                 (
                     this.AttributeName == input.AttributeName ||
                     (this.AttributeName != null &&
                     this.AttributeName.Equals(input.AttributeName))
-                ) &&
+                ) && 
                 (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&

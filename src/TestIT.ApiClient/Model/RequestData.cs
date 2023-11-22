@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// RequestData
@@ -155,31 +155,31 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Uri == input.Uri ||
                     (this.Uri != null &&
                     this.Uri.Equals(input.Uri))
-                ) &&
+                ) && 
                 (
                     this.StatusCode == input.StatusCode ||
                     this.StatusCode.Equals(input.StatusCode)
-                ) &&
+                ) && 
                 (
                     this.RequestBody == input.RequestBody ||
                     (this.RequestBody != null &&
                     this.RequestBody.Equals(input.RequestBody))
-                ) &&
+                ) && 
                 (
                     this.RequestMeta == input.RequestMeta ||
                     (this.RequestMeta != null &&
                     this.RequestMeta.Equals(input.RequestMeta))
-                ) &&
+                ) && 
                 (
                     this.ResponseBody == input.ResponseBody ||
                     (this.ResponseBody != null &&
                     this.ResponseBody.Equals(input.ResponseBody))
-                ) &&
+                ) && 
                 (
                     this.ResponseMeta == input.ResponseMeta ||
                     (this.ResponseMeta != null &&

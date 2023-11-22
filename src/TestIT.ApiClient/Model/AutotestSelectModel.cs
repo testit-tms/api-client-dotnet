@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// AutotestSelectModel
@@ -35,25 +35,40 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AutotestSelectModel" /> class.
         /// </summary>
-        /// <param name="filter">filter.</param>
-        /// <param name="extractionModel">extractionModel.</param>
-        public AutotestSelectModel(AutotestFilterModel filter = default(AutotestFilterModel), AutotestsExtractionModel extractionModel = default(AutotestsExtractionModel))
+        [JsonConstructorAttribute]
+        protected AutotestSelectModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AutotestSelectModel" /> class.
+        /// </summary>
+        /// <param name="filter">filter (required).</param>
+        /// <param name="extractionModel">extractionModel (required).</param>
+        public AutotestSelectModel(AutotestSelectModelFilter filter = default(AutotestSelectModelFilter), AutotestSelectModelExtractionModel extractionModel = default(AutotestSelectModelExtractionModel))
         {
+            // to ensure "filter" is required (not null)
+            if (filter == null)
+            {
+                throw new ArgumentNullException("filter is a required property for AutotestSelectModel and cannot be null");
+            }
             this.Filter = filter;
+            // to ensure "extractionModel" is required (not null)
+            if (extractionModel == null)
+            {
+                throw new ArgumentNullException("extractionModel is a required property for AutotestSelectModel and cannot be null");
+            }
             this.ExtractionModel = extractionModel;
         }
 
         /// <summary>
         /// Gets or Sets Filter
         /// </summary>
-        [DataMember(Name = "filter", EmitDefaultValue = true)]
-        public AutotestFilterModel Filter { get; set; }
+        [DataMember(Name = "filter", IsRequired = true, EmitDefaultValue = true)]
+        public AutotestSelectModelFilter Filter { get; set; }
 
         /// <summary>
         /// Gets or Sets ExtractionModel
         /// </summary>
-        [DataMember(Name = "extractionModel", EmitDefaultValue = true)]
-        public AutotestsExtractionModel ExtractionModel { get; set; }
+        [DataMember(Name = "extractionModel", IsRequired = true, EmitDefaultValue = true)]
+        public AutotestSelectModelExtractionModel ExtractionModel { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -99,12 +114,12 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Filter == input.Filter ||
                     (this.Filter != null &&
                     this.Filter.Equals(input.Filter))
-                ) &&
+                ) && 
                 (
                     this.ExtractionModel == input.ExtractionModel ||
                     (this.ExtractionModel != null &&

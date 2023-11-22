@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// AttachmentModel
@@ -40,40 +40,57 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AttachmentModel" /> class.
         /// </summary>
-        /// <param name="fileId">Unique ID of the attachment file.</param>
-        /// <param name="type">MIME type of the attachment.</param>
+        /// <param name="fileId">Unique ID of the attachment file (required).</param>
+        /// <param name="type">MIME type of the attachment (required).</param>
         /// <param name="size">Size in bytes of the attachment file (required).</param>
         /// <param name="createdDate">Creation date of the attachment (required).</param>
         /// <param name="modifiedDate">Last modification date of the attachment.</param>
         /// <param name="createdById">Unique ID of the attachment creator (required).</param>
         /// <param name="modifiedById">Unique ID of the attachment last editor.</param>
-        /// <param name="name">Name of the attachment file.</param>
+        /// <param name="name">Name of the attachment file (required).</param>
+        /// <param name="isTemp">Indicates whether the attachment is temporary (may be automatically deleted) (required).</param>
         /// <param name="id">Unique ID of the attachment (required).</param>
-        public AttachmentModel(string fileId = default(string), string type = default(string), float size = default(float), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string name = default(string), Guid id = default(Guid))
+        public AttachmentModel(string fileId = default(string), string type = default(string), float size = default(float), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string name = default(string), bool isTemp = default(bool), Guid id = default(Guid))
         {
+            // to ensure "fileId" is required (not null)
+            if (fileId == null)
+            {
+                throw new ArgumentNullException("fileId is a required property for AttachmentModel and cannot be null");
+            }
+            this.FileId = fileId;
+            // to ensure "type" is required (not null)
+            if (type == null)
+            {
+                throw new ArgumentNullException("type is a required property for AttachmentModel and cannot be null");
+            }
+            this.Type = type;
             this.Size = size;
             this.CreatedDate = createdDate;
             this.CreatedById = createdById;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for AttachmentModel and cannot be null");
+            }
+            this.Name = name;
+            this.IsTemp = isTemp;
             this.Id = id;
-            this.FileId = fileId;
-            this.Type = type;
             this.ModifiedDate = modifiedDate;
             this.ModifiedById = modifiedById;
-            this.Name = name;
         }
 
         /// <summary>
         /// Unique ID of the attachment file
         /// </summary>
         /// <value>Unique ID of the attachment file</value>
-        [DataMember(Name = "fileId", EmitDefaultValue = true)]
+        [DataMember(Name = "fileId", IsRequired = true, EmitDefaultValue = true)]
         public string FileId { get; set; }
 
         /// <summary>
         /// MIME type of the attachment
         /// </summary>
         /// <value>MIME type of the attachment</value>
-        [DataMember(Name = "type", EmitDefaultValue = true)]
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
@@ -115,8 +132,15 @@ namespace TestIT.ApiClient.Model
         /// Name of the attachment file
         /// </summary>
         /// <value>Name of the attachment file</value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Indicates whether the attachment is temporary (may be automatically deleted)
+        /// </summary>
+        /// <value>Indicates whether the attachment is temporary (may be automatically deleted)</value>
+        [DataMember(Name = "isTemp", IsRequired = true, EmitDefaultValue = true)]
+        public bool IsTemp { get; set; }
 
         /// <summary>
         /// Unique ID of the attachment
@@ -141,6 +165,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
             sb.Append("  ModifiedById: ").Append(ModifiedById).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  IsTemp: ").Append(IsTemp).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -176,46 +201,50 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.FileId == input.FileId ||
                     (this.FileId != null &&
                     this.FileId.Equals(input.FileId))
-                ) &&
+                ) && 
                 (
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
-                ) &&
+                ) && 
                 (
                     this.Size == input.Size ||
                     this.Size.Equals(input.Size)
-                ) &&
+                ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) &&
+                ) && 
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
                     this.ModifiedDate.Equals(input.ModifiedDate))
-                ) &&
+                ) && 
                 (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&
                     this.CreatedById.Equals(input.CreatedById))
-                ) &&
+                ) && 
                 (
                     this.ModifiedById == input.ModifiedById ||
                     (this.ModifiedById != null &&
                     this.ModifiedById.Equals(input.ModifiedById))
-                ) &&
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
+                (
+                    this.IsTemp == input.IsTemp ||
+                    this.IsTemp.Equals(input.IsTemp)
+                ) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
@@ -261,6 +290,7 @@ namespace TestIT.ApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.IsTemp.GetHashCode();
                 if (this.Id != null)
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();

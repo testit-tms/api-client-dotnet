@@ -1,4 +1,4 @@
-# TestIt.Client.Model.ApiV2CustomAttributesSearchPostRequest
+# TestIt.ApiClient.Model.ApiV2CustomAttributesSearchPostRequest
 
 ## Properties
 

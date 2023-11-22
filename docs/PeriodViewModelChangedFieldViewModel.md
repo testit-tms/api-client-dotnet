@@ -1,4 +1,4 @@
-# TestIt.Client.Model.PeriodViewModelChangedFieldViewModel
+# TestIt.ApiClient.Model.PeriodViewModelChangedFieldViewModel
 
 ## Properties
 

@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// AutotestHistoricalResultSelectModel
@@ -144,42 +144,42 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Outcomes == input.Outcomes ||
                     this.Outcomes != null &&
                     input.Outcomes != null &&
                     this.Outcomes.SequenceEqual(input.Outcomes)
-                ) &&
+                ) && 
                 (
                     this.TestPlanIds == input.TestPlanIds ||
                     this.TestPlanIds != null &&
                     input.TestPlanIds != null &&
                     this.TestPlanIds.SequenceEqual(input.TestPlanIds)
-                ) &&
+                ) && 
                 (
                     this.TestRunIds == input.TestRunIds ||
                     this.TestRunIds != null &&
                     input.TestRunIds != null &&
                     this.TestRunIds.SequenceEqual(input.TestRunIds)
-                ) &&
+                ) && 
                 (
                     this.ConfigurationIds == input.ConfigurationIds ||
                     this.ConfigurationIds != null &&
                     input.ConfigurationIds != null &&
                     this.ConfigurationIds.SequenceEqual(input.ConfigurationIds)
-                ) &&
+                ) && 
                 (
                     this.LaunchSource == input.LaunchSource ||
                     (this.LaunchSource != null &&
                     this.LaunchSource.Equals(input.LaunchSource))
-                ) &&
+                ) && 
                 (
                     this.UserIds == input.UserIds ||
                     this.UserIds != null &&
                     input.UserIds != null &&
                     this.UserIds.SequenceEqual(input.UserIds)
-                ) &&
+                ) && 
                 (
                     this.Duration == input.Duration ||
                     (this.Duration != null &&

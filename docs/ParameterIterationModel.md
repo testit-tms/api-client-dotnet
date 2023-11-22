@@ -1,4 +1,4 @@
-# TestIt.Client.Model.ParameterIterationModel
+# TestIt.ApiClient.Model.ParameterIterationModel
 
 ## Properties
 

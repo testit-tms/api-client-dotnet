@@ -1,4 +1,4 @@
-# TestIt.Client.Model.AutotestFilterModelStabilityPercentage
+# TestIt.ApiClient.Model.AutotestFilterModelStabilityPercentage
 Specifies an autotest range of stability percentage to search for
 
 ## Properties

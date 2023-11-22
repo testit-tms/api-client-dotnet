@@ -1,4 +1,4 @@
-# TestIt.Client.Model.ProjectsFilterModelSharedStepsCount
+# TestIt.ApiClient.Model.ProjectsFilterModelSharedStepsCount
 Specifies a project range of shared steps count to search for
 
 ## Properties

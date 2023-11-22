@@ -19,7 +19,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Net.Http;
 
-namespace TestIT.ApiClient.Client
+namespace TestIt.ApiClient.Client
 {
     /// <summary>
     /// Represents a set of configuration settings
@@ -32,7 +32,7 @@ namespace TestIT.ApiClient.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "1.0.0";
+        public const string Version = "2.5.0";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -109,7 +109,7 @@ namespace TestIT.ApiClient.Client
         public Configuration()
         {
             Proxy = null;
-            UserAgent = WebUtility.UrlEncode("OpenAPI-Generator/1.0.0/csharp");
+            UserAgent = WebUtility.UrlEncode("OpenAPI-Generator/2.5.0/csharp");
             BasePath = "http://localhost";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -513,11 +513,11 @@ namespace TestIT.ApiClient.Client
         /// </summary>
         public static string ToDebugReport()
         {
-            string report = "C# SDK (TestIT.ApiClient) Debug Report:\n";
+            string report = "C# SDK (TestIt.ApiClient) Debug Report:\n";
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: v2.0\n";
-            report += "    SDK Package Version: 1.0.0\n";
+            report += "    SDK Package Version: 2.5.0\n";
 
             return report;
         }

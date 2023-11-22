@@ -1,4 +1,4 @@
-# TestIt.Client.Model.CustomAttributeChangeModel
+# TestIt.ApiClient.Model.CustomAttributeChangeModel
 
 ## Properties
 

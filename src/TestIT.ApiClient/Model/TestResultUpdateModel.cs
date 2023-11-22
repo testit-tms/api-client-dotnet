@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// TestResultUpdateModel
@@ -199,73 +199,73 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.FailureClassIds == input.FailureClassIds ||
                     this.FailureClassIds != null &&
                     input.FailureClassIds != null &&
                     this.FailureClassIds.SequenceEqual(input.FailureClassIds)
-                ) &&
+                ) && 
                 (
                     this.Outcome == input.Outcome ||
                     this.Outcome.Equals(input.Outcome)
-                ) &&
+                ) && 
                 (
                     this.Comment == input.Comment ||
                     (this.Comment != null &&
                     this.Comment.Equals(input.Comment))
-                ) &&
+                ) && 
                 (
                     this.Links == input.Links ||
                     this.Links != null &&
                     input.Links != null &&
                     this.Links.SequenceEqual(input.Links)
-                ) &&
+                ) && 
                 (
                     this.StepResults == input.StepResults ||
                     this.StepResults != null &&
                     input.StepResults != null &&
                     this.StepResults.SequenceEqual(input.StepResults)
-                ) &&
+                ) && 
                 (
                     this.Attachments == input.Attachments ||
                     this.Attachments != null &&
                     input.Attachments != null &&
                     this.Attachments.SequenceEqual(input.Attachments)
-                ) &&
+                ) && 
                 (
                     this.DurationInMs == input.DurationInMs ||
                     (this.DurationInMs != null &&
                     this.DurationInMs.Equals(input.DurationInMs))
-                ) &&
+                ) && 
                 (
                     this.Duration == input.Duration ||
                     (this.Duration != null &&
                     this.Duration.Equals(input.Duration))
-                ) &&
+                ) && 
                 (
                     this.StepComments == input.StepComments ||
                     this.StepComments != null &&
                     input.StepComments != null &&
                     this.StepComments.SequenceEqual(input.StepComments)
-                ) &&
+                ) && 
                 (
                     this.SetupResults == input.SetupResults ||
                     this.SetupResults != null &&
                     input.SetupResults != null &&
                     this.SetupResults.SequenceEqual(input.SetupResults)
-                ) &&
+                ) && 
                 (
                     this.TeardownResults == input.TeardownResults ||
                     this.TeardownResults != null &&
                     input.TeardownResults != null &&
                     this.TeardownResults.SequenceEqual(input.TeardownResults)
-                ) &&
+                ) && 
                 (
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
-                ) &&
+                ) && 
                 (
                     this.Trace == input.Trace ||
                     (this.Trace != null &&

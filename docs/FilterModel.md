@@ -1,4 +1,4 @@
-# TestIt.Client.Model.FilterModel
+# TestIt.ApiClient.Model.FilterModel
 
 ## Properties
 
@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **ModifiedDate** | **DateTime?** |  | [optional] 
 **CreatedById** | **Guid** |  | 
 **ModifiedById** | **Guid?** |  | [optional] 
-**Data** | [**WorkItemSearchQueryModel**](WorkItemSearchQueryModel.md) |  | [optional] 
+**Data** | [**FilterModelData**](FilterModelData.md) |  | 
 **ProjectId** | **Guid** |  | 
 **FieldsToShow** | **Object** |  | [optional] 
-**Name** | **string** |  | [optional] 
+**Name** | **string** |  | 
 **Id** | **Guid** | Unique ID of the entity | 
 **IsDeleted** | **bool** | Indicates if the entity is deleted | 
 

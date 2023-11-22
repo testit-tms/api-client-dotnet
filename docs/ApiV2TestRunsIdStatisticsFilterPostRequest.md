@@ -1,4 +1,4 @@
-# TestIt.Client.Model.ApiV2TestRunsIdStatisticsFilterPostRequest
+# TestIt.ApiClient.Model.ApiV2TestRunsIdStatisticsFilterPostRequest
 
 ## Properties
 

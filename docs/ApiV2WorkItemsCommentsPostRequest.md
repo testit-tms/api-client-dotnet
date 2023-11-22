@@ -1,4 +1,4 @@
-# TestIt.Client.Model.ApiV2WorkItemsCommentsPostRequest
+# TestIt.ApiClient.Model.ApiV2WorkItemsCommentsPostRequest
 
 ## Properties
 

@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// ValidateAntiForgeryTokenAttribute
@@ -125,15 +125,15 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Order == input.Order ||
                     this.Order.Equals(input.Order)
-                ) &&
+                ) && 
                 (
                     this.IsReusable == input.IsReusable ||
                     this.IsReusable.Equals(input.IsReusable)
-                ) &&
+                ) && 
                 (
                     this.TypeId == input.TypeId ||
                     (this.TypeId != null &&

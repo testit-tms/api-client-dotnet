@@ -1,13 +1,13 @@
-# TestIt.Client.Model.WebHookModel
+# TestIt.ApiClient.Model.WebHookModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | Name of the webhook | [optional] 
+**Name** | **string** | Name of the webhook | 
 **EventType** | **WebHookEventTypeModel** |  | 
 **Description** | **string** | Description of the webhook | [optional] 
-**Url** | **string** | Url to which the webhook sends request | [optional] 
+**Url** | **string** | Url to which the webhook sends request | 
 **RequestType** | **RequestTypeModel** |  | 
 **ShouldSendBody** | **bool** | Indicates if the webhook sends body | 
 **Headers** | **Dictionary&lt;string, string&gt;** | Collection of headers which the webhook sends | [optional] 

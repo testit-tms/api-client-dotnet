@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// TestRunAnalyticResultModel
@@ -99,13 +99,13 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.CountGroupByStatus == input.CountGroupByStatus ||
                     this.CountGroupByStatus != null &&
                     input.CountGroupByStatus != null &&
                     this.CountGroupByStatus.SequenceEqual(input.CountGroupByStatus)
-                ) &&
+                ) && 
                 (
                     this.CountGroupByFailureClass == input.CountGroupByFailureClass ||
                     this.CountGroupByFailureClass != null &&

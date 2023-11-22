@@ -1,13 +1,13 @@
-# TestIt.Client.Model.TestResultShortModel
+# TestIt.ApiClient.Model.TestResultShortModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** |  | 
-**Outcome** | **string** |  | [optional] 
+**Outcome** | **string** |  | 
 **Traces** | **string** |  | [optional] 
-**FailureType** | **string** |  | [optional] 
+**FailureType** | **string** |  | 
 **Message** | **string** |  | [optional] 
 **TestPoint** | [**TestPointPutModel**](TestPointPutModel.md) |  | [optional] 
 **CreatedDate** | **DateTime?** |  | [optional] 

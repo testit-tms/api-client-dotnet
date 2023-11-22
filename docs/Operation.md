@@ -1,4 +1,4 @@
-# TestIt.Client.Model.Operation
+# TestIt.ApiClient.Model.Operation
 
 ## Properties
 

@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// Test results counts aggregated by result failure categories
@@ -136,23 +136,23 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.NoAnalytics == input.NoAnalytics ||
                     this.NoAnalytics.Equals(input.NoAnalytics)
-                ) &&
+                ) && 
                 (
                     this.NoDefect == input.NoDefect ||
                     this.NoDefect.Equals(input.NoDefect)
-                ) &&
+                ) && 
                 (
                     this.InfrastructureDefect == input.InfrastructureDefect ||
                     this.InfrastructureDefect.Equals(input.InfrastructureDefect)
-                ) &&
+                ) && 
                 (
                     this.ProductDefect == input.ProductDefect ||
                     this.ProductDefect.Equals(input.ProductDefect)
-                ) &&
+                ) && 
                 (
                     this.TestDefect == input.TestDefect ||
                     this.TestDefect.Equals(input.TestDefect)

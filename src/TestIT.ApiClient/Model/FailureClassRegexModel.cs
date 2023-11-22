@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// FailureClassRegexModel
@@ -40,22 +40,27 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FailureClassRegexModel" /> class.
         /// </summary>
-        /// <param name="regexText">regexText.</param>
+        /// <param name="regexText">regexText (required).</param>
         /// <param name="failureClassId">failureClassId.</param>
         /// <param name="id">Unique ID of the entity (required).</param>
         /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
         public FailureClassRegexModel(string regexText = default(string), Guid? failureClassId = default(Guid?), Guid id = default(Guid), bool isDeleted = default(bool))
         {
+            // to ensure "regexText" is required (not null)
+            if (regexText == null)
+            {
+                throw new ArgumentNullException("regexText is a required property for FailureClassRegexModel and cannot be null");
+            }
+            this.RegexText = regexText;
             this.Id = id;
             this.IsDeleted = isDeleted;
-            this.RegexText = regexText;
             this.FailureClassId = failureClassId;
         }
 
         /// <summary>
         /// Gets or Sets RegexText
         /// </summary>
-        [DataMember(Name = "regexText", EmitDefaultValue = true)]
+        [DataMember(Name = "regexText", IsRequired = true, EmitDefaultValue = true)]
         public string RegexText { get; set; }
 
         /// <summary>
@@ -124,22 +129,22 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.RegexText == input.RegexText ||
                     (this.RegexText != null &&
                     this.RegexText.Equals(input.RegexText))
-                ) &&
+                ) && 
                 (
                     this.FailureClassId == input.FailureClassId ||
                     (this.FailureClassId != null &&
                     this.FailureClassId.Equals(input.FailureClassId))
-                ) &&
+                ) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.IsDeleted == input.IsDeleted ||
                     this.IsDeleted.Equals(input.IsDeleted)

@@ -1,4 +1,4 @@
-# TestIt.Client.Model.LabelShortModel
+# TestIt.ApiClient.Model.LabelShortModel
 
 ## Properties
 

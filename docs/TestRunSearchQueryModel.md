@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestRunSearchQueryModel
+# TestIt.ApiClient.Model.TestRunSearchQueryModel
 
 ## Properties
 

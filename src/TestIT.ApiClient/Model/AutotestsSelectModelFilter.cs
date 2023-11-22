@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// Object containing different filters to adjust search
@@ -257,96 +257,96 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.ProjectIds == input.ProjectIds ||
                     this.ProjectIds != null &&
                     input.ProjectIds != null &&
                     this.ProjectIds.SequenceEqual(input.ProjectIds)
-                ) &&
+                ) && 
                 (
                     this.ExternalIds == input.ExternalIds ||
                     this.ExternalIds != null &&
                     input.ExternalIds != null &&
                     this.ExternalIds.SequenceEqual(input.ExternalIds)
-                ) &&
+                ) && 
                 (
                     this.GlobalIds == input.GlobalIds ||
                     this.GlobalIds != null &&
                     input.GlobalIds != null &&
                     this.GlobalIds.SequenceEqual(input.GlobalIds)
-                ) &&
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.IsFlaky == input.IsFlaky ||
                     (this.IsFlaky != null &&
                     this.IsFlaky.Equals(input.IsFlaky))
-                ) &&
+                ) && 
                 (
                     this.MustBeApproved == input.MustBeApproved ||
                     (this.MustBeApproved != null &&
                     this.MustBeApproved.Equals(input.MustBeApproved))
-                ) &&
+                ) && 
                 (
                     this.StabilityPercentage == input.StabilityPercentage ||
                     (this.StabilityPercentage != null &&
                     this.StabilityPercentage.Equals(input.StabilityPercentage))
-                ) &&
+                ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) &&
+                ) && 
                 (
                     this.CreatedByIds == input.CreatedByIds ||
                     this.CreatedByIds != null &&
                     input.CreatedByIds != null &&
                     this.CreatedByIds.SequenceEqual(input.CreatedByIds)
-                ) &&
+                ) && 
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
                     this.ModifiedDate.Equals(input.ModifiedDate))
-                ) &&
+                ) && 
                 (
                     this.ModifiedByIds == input.ModifiedByIds ||
                     this.ModifiedByIds != null &&
                     input.ModifiedByIds != null &&
                     this.ModifiedByIds.SequenceEqual(input.ModifiedByIds)
-                ) &&
+                ) && 
                 (
                     this.IsDeleted == input.IsDeleted ||
                     (this.IsDeleted != null &&
                     this.IsDeleted.Equals(input.IsDeleted))
-                ) &&
+                ) && 
                 (
                     this.Namespace == input.Namespace ||
                     (this.Namespace != null &&
                     this.Namespace.Equals(input.Namespace))
-                ) &&
+                ) && 
                 (
                     this.IsEmptyNamespace == input.IsEmptyNamespace ||
                     (this.IsEmptyNamespace != null &&
                     this.IsEmptyNamespace.Equals(input.IsEmptyNamespace))
-                ) &&
+                ) && 
                 (
                     this.ClassName == input.ClassName ||
                     (this.ClassName != null &&
                     this.ClassName.Equals(input.ClassName))
-                ) &&
+                ) && 
                 (
                     this.IsEmptyClassName == input.IsEmptyClassName ||
                     (this.IsEmptyClassName != null &&
                     this.IsEmptyClassName.Equals(input.IsEmptyClassName))
-                ) &&
+                ) && 
                 (
                     this.LastTestResultOutcome == input.LastTestResultOutcome ||
                     this.LastTestResultOutcome.Equals(input.LastTestResultOutcome)
-                ) &&
+                ) && 
                 (
                     this.ExternalKey == input.ExternalKey ||
                     (this.ExternalKey != null &&

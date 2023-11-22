@@ -1,4 +1,4 @@
-# TestIt.Client.Model.ImageResizeType
+# TestIt.ApiClient.Model.ImageResizeType
 
 ## Properties
 

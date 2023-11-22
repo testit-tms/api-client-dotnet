@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// WorkItemLinkChangeViewModelArrayChangedFieldViewModel
@@ -99,13 +99,13 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.OldValue == input.OldValue ||
                     this.OldValue != null &&
                     input.OldValue != null &&
                     this.OldValue.SequenceEqual(input.OldValue)
-                ) &&
+                ) && 
                 (
                     this.NewValue == input.NewValue ||
                     this.NewValue != null &&

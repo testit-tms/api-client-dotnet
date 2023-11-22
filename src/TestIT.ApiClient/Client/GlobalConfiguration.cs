@@ -10,7 +10,7 @@
 
 using System.Collections.Generic;
 
-namespace TestIT.ApiClient.Client
+namespace TestIt.ApiClient.Client
 {
     /// <summary>
     /// <see cref="GlobalConfiguration"/> provides a compile-time extension point for globally configuring

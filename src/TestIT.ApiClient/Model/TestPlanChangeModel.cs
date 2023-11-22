@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// TestPlanChangeModel
@@ -42,15 +42,20 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="id">id (required).</param>
         /// <param name="testPlanId">testPlanId (required).</param>
-        /// <param name="testPlanChangedFields">testPlanChangedFields.</param>
+        /// <param name="testPlanChangedFields">testPlanChangedFields (required).</param>
         /// <param name="createdById">createdById (required).</param>
         /// <param name="createdDate">createdDate.</param>
-        public TestPlanChangeModel(Guid id = default(Guid), Guid testPlanId = default(Guid), TestPlanChangedFieldsViewModel testPlanChangedFields = default(TestPlanChangedFieldsViewModel), Guid createdById = default(Guid), DateTime? createdDate = default(DateTime?))
+        public TestPlanChangeModel(Guid id = default(Guid), Guid testPlanId = default(Guid), TestPlanChangeModelTestPlanChangedFields testPlanChangedFields = default(TestPlanChangeModelTestPlanChangedFields), Guid createdById = default(Guid), DateTime? createdDate = default(DateTime?))
         {
             this.Id = id;
             this.TestPlanId = testPlanId;
-            this.CreatedById = createdById;
+            // to ensure "testPlanChangedFields" is required (not null)
+            if (testPlanChangedFields == null)
+            {
+                throw new ArgumentNullException("testPlanChangedFields is a required property for TestPlanChangeModel and cannot be null");
+            }
             this.TestPlanChangedFields = testPlanChangedFields;
+            this.CreatedById = createdById;
             this.CreatedDate = createdDate;
         }
 
@@ -69,8 +74,8 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets TestPlanChangedFields
         /// </summary>
-        [DataMember(Name = "testPlanChangedFields", EmitDefaultValue = true)]
-        public TestPlanChangedFieldsViewModel TestPlanChangedFields { get; set; }
+        [DataMember(Name = "testPlanChangedFields", IsRequired = true, EmitDefaultValue = true)]
+        public TestPlanChangeModelTestPlanChangedFields TestPlanChangedFields { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
@@ -131,27 +136,27 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.TestPlanId == input.TestPlanId ||
                     (this.TestPlanId != null &&
                     this.TestPlanId.Equals(input.TestPlanId))
-                ) &&
+                ) && 
                 (
                     this.TestPlanChangedFields == input.TestPlanChangedFields ||
                     (this.TestPlanChangedFields != null &&
                     this.TestPlanChangedFields.Equals(input.TestPlanChangedFields))
-                ) &&
+                ) && 
                 (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&
                     this.CreatedById.Equals(input.CreatedById))
-                ) &&
+                ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&

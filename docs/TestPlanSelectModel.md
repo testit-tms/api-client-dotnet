@@ -1,10 +1,10 @@
-# TestIt.Client.Model.TestPlanSelectModel
+# TestIt.ApiClient.Model.TestPlanSelectModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Filter** | [**ProjectTestPlansFilterModel**](ProjectTestPlansFilterModel.md) |  | [optional] 
+**Filter** | [**ApiV2ProjectsProjectIdTestPlansSearchPostRequest**](ApiV2ProjectsProjectIdTestPlansSearchPostRequest.md) |  | 
 **ExtractionModel** | [**TestPlanExtractionModel**](TestPlanExtractionModel.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,4 +1,4 @@
-# TestIt.Client.Model.ExportProjectWithTestPlansJsonRequest
+# TestIt.ApiClient.Model.ExportProjectWithTestPlansJsonRequest
 
 ## Properties
 

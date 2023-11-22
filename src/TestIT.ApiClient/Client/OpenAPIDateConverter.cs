@@ -9,7 +9,7 @@
 
 using Newtonsoft.Json.Converters;
 
-namespace TestIT.ApiClient.Client
+namespace TestIt.ApiClient.Client
 {
     /// <summary>
     /// Formatter for 'date' openapi formats ss defined by full-date - RFC3339

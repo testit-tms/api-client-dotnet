@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestRunV2GetModel
+# TestIt.ApiClient.Model.TestRunV2GetModel
 
 ## Properties
 
@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **CreatedById** | **Guid** |  | 
 **ModifiedById** | **Guid?** |  | [optional] 
 **CreatedByUserName** | **string** |  | [optional] 
-**Attachments** | [**List&lt;AttachmentModel&gt;**](AttachmentModel.md) |  | [optional] 
-**Links** | [**List&lt;LinkModel&gt;**](LinkModel.md) |  | [optional] 
+**Attachments** | [**List&lt;AttachmentModel&gt;**](AttachmentModel.md) |  | 
+**Links** | [**List&lt;LinkModel&gt;**](LinkModel.md) |  | 
 **Id** | **Guid** |  | 
 **Name** | **string** |  | 
 **Description** | **string** |  | [optional] 

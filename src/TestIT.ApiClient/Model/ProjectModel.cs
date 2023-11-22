@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// ProjectModel
@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="id">Unique ID of the project (required).</param>
         /// <param name="description">Description of the project.</param>
-        /// <param name="name">Name of the project.</param>
+        /// <param name="name">Name of the project (required).</param>
         /// <param name="isFavorite">Indicates if the project is marked as favorite (required).</param>
         /// <param name="attributesScheme">Collection of the project attributes.</param>
         /// <param name="testPlansAttributesScheme">Collection of the project test plans attributes.</param>
@@ -59,13 +59,18 @@ namespace TestIT.ApiClient.Model
         public ProjectModel(Guid id = default(Guid), string description = default(string), string name = default(string), bool isFavorite = default(bool), List<CustomAttributeModel> attributesScheme = default(List<CustomAttributeModel>), List<CustomAttributeModel> testPlansAttributesScheme = default(List<CustomAttributeModel>), int? testCasesCount = default(int?), int? sharedStepsCount = default(int?), int? checkListsCount = default(int?), int? autoTestsCount = default(int?), bool isDeleted = default(bool), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long))
         {
             this.Id = id;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for ProjectModel and cannot be null");
+            }
+            this.Name = name;
             this.IsFavorite = isFavorite;
             this.IsDeleted = isDeleted;
             this.CreatedDate = createdDate;
             this.CreatedById = createdById;
             this.GlobalId = globalId;
             this.Description = description;
-            this.Name = name;
             this.AttributesScheme = attributesScheme;
             this.TestPlansAttributesScheme = testPlansAttributesScheme;
             this.TestCasesCount = testCasesCount;
@@ -94,7 +99,7 @@ namespace TestIT.ApiClient.Model
         /// Name of the project
         /// </summary>
         /// <value>Name of the project</value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -246,82 +251,82 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) &&
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.IsFavorite == input.IsFavorite ||
                     this.IsFavorite.Equals(input.IsFavorite)
-                ) &&
+                ) && 
                 (
                     this.AttributesScheme == input.AttributesScheme ||
                     this.AttributesScheme != null &&
                     input.AttributesScheme != null &&
                     this.AttributesScheme.SequenceEqual(input.AttributesScheme)
-                ) &&
+                ) && 
                 (
                     this.TestPlansAttributesScheme == input.TestPlansAttributesScheme ||
                     this.TestPlansAttributesScheme != null &&
                     input.TestPlansAttributesScheme != null &&
                     this.TestPlansAttributesScheme.SequenceEqual(input.TestPlansAttributesScheme)
-                ) &&
+                ) && 
                 (
                     this.TestCasesCount == input.TestCasesCount ||
                     (this.TestCasesCount != null &&
                     this.TestCasesCount.Equals(input.TestCasesCount))
-                ) &&
+                ) && 
                 (
                     this.SharedStepsCount == input.SharedStepsCount ||
                     (this.SharedStepsCount != null &&
                     this.SharedStepsCount.Equals(input.SharedStepsCount))
-                ) &&
+                ) && 
                 (
                     this.CheckListsCount == input.CheckListsCount ||
                     (this.CheckListsCount != null &&
                     this.CheckListsCount.Equals(input.CheckListsCount))
-                ) &&
+                ) && 
                 (
                     this.AutoTestsCount == input.AutoTestsCount ||
                     (this.AutoTestsCount != null &&
                     this.AutoTestsCount.Equals(input.AutoTestsCount))
-                ) &&
+                ) && 
                 (
                     this.IsDeleted == input.IsDeleted ||
                     this.IsDeleted.Equals(input.IsDeleted)
-                ) &&
+                ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) &&
+                ) && 
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
                     this.ModifiedDate.Equals(input.ModifiedDate))
-                ) &&
+                ) && 
                 (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&
                     this.CreatedById.Equals(input.CreatedById))
-                ) &&
+                ) && 
                 (
                     this.ModifiedById == input.ModifiedById ||
                     (this.ModifiedById != null &&
                     this.ModifiedById.Equals(input.ModifiedById))
-                ) &&
+                ) && 
                 (
                     this.GlobalId == input.GlobalId ||
                     this.GlobalId.Equals(input.GlobalId)

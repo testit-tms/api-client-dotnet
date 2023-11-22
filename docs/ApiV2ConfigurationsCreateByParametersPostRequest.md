@@ -1,4 +1,4 @@
-# TestIt.Client.Model.ApiV2ConfigurationsCreateByParametersPostRequest
+# TestIt.ApiClient.Model.ApiV2ConfigurationsCreateByParametersPostRequest
 
 ## Properties
 

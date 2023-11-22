@@ -1,10 +1,10 @@
-# TestIt.Client.Model.WebHookLogModel
+# TestIt.ApiClient.Model.WebHookLogModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**WebHookName** | **string** |  | [optional] 
+**WebHookName** | **string** |  | 
 **EventType** | **WebHookEventTypeModel** |  | 
 **WebHookId** | **Guid** |  | 
 **RequestBody** | **string** |  | [optional] 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **ResponseBody** | **string** |  | [optional] 
 **ResponseMeta** | **string** |  | [optional] 
 **ProjectId** | **Guid** |  | 
-**Url** | **string** |  | [optional] 
+**Url** | **string** |  | 
 **RequestType** | **RequestTypeModel** |  | 
 **CreatedDate** | **DateTime?** |  | [optional] 
 **ModifiedDate** | **DateTime?** |  | [optional] 

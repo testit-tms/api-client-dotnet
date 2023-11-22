@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestRunFilterModelAutoTestsCount
+# TestIt.ApiClient.Model.TestRunFilterModelAutoTestsCount
 Number of autoTests run in the test run
 
 ## Properties

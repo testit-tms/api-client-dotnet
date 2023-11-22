@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestRunTestResultsPartialBulkSetModelSelector
+# TestIt.ApiClient.Model.TestRunTestResultsPartialBulkSetModelSelector
 Object with filters and extraction parameters
 
 ## Properties

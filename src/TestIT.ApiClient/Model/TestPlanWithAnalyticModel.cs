@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// TestPlanWithAnalyticModel
@@ -46,7 +46,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPlanWithAnalyticModel" /> class.
         /// </summary>
-        /// <param name="analytic">analytic.</param>
+        /// <param name="analytic">analytic (required).</param>
         /// <param name="status">status (required).</param>
         /// <param name="startedOn">Set when test plan is starter (status changed to: In Progress).</param>
         /// <param name="completedOn">set when test plan status is completed (status changed to: Completed).</param>
@@ -68,9 +68,15 @@ namespace TestIT.ApiClient.Model
         /// <param name="projectId">projectId (required).</param>
         /// <param name="productName">productName.</param>
         /// <param name="hasAutomaticDurationTimer">hasAutomaticDurationTimer.</param>
-        /// <param name="attributes">attributes.</param>
-        public TestPlanWithAnalyticModel(TestPointAnalyticResult analytic = default(TestPointAnalyticResult), TestPlanStatusModel status = default(TestPlanStatusModel), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), bool isDeleted = default(bool), DateTime? lockedDate = default(DateTime?), Guid id = default(Guid), Guid? lockedById = default(Guid?), List<TagShortModel> tags = default(List<TagShortModel>), string name = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string description = default(string), string build = default(string), Guid projectId = default(Guid), string productName = default(string), bool? hasAutomaticDurationTimer = default(bool?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>))
+        /// <param name="attributes">attributes (required).</param>
+        public TestPlanWithAnalyticModel(TestPlanWithAnalyticModelAnalytic analytic = default(TestPlanWithAnalyticModelAnalytic), TestPlanStatusModel status = default(TestPlanStatusModel), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), bool isDeleted = default(bool), DateTime? lockedDate = default(DateTime?), Guid id = default(Guid), Guid? lockedById = default(Guid?), List<TagShortModel> tags = default(List<TagShortModel>), string name = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string description = default(string), string build = default(string), Guid projectId = default(Guid), string productName = default(string), bool? hasAutomaticDurationTimer = default(bool?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>))
         {
+            // to ensure "analytic" is required (not null)
+            if (analytic == null)
+            {
+                throw new ArgumentNullException("analytic is a required property for TestPlanWithAnalyticModel and cannot be null");
+            }
+            this.Analytic = analytic;
             this.Status = status;
             this.CreatedById = createdById;
             this.GlobalId = globalId;
@@ -83,7 +89,12 @@ namespace TestIT.ApiClient.Model
             }
             this.Name = name;
             this.ProjectId = projectId;
-            this.Analytic = analytic;
+            // to ensure "attributes" is required (not null)
+            if (attributes == null)
+            {
+                throw new ArgumentNullException("attributes is a required property for TestPlanWithAnalyticModel and cannot be null");
+            }
+            this.Attributes = attributes;
             this.StartedOn = startedOn;
             this.CompletedOn = completedOn;
             this.CreatedDate = createdDate;
@@ -98,20 +109,19 @@ namespace TestIT.ApiClient.Model
             this.Build = build;
             this.ProductName = productName;
             this.HasAutomaticDurationTimer = hasAutomaticDurationTimer;
-            this.Attributes = attributes;
         }
 
         /// <summary>
         /// Gets or Sets Analytic
         /// </summary>
-        [DataMember(Name = "analytic", EmitDefaultValue = true)]
-        public TestPointAnalyticResult Analytic { get; set; }
+        [DataMember(Name = "analytic", IsRequired = true, EmitDefaultValue = true)]
+        public TestPlanWithAnalyticModelAnalytic Analytic { get; set; }
 
         /// <summary>
         /// Set when test plan is starter (status changed to: In Progress)
         /// </summary>
         /// <value>Set when test plan is starter (status changed to: In Progress)</value>
-        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
+        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
         [DataMember(Name = "startedOn", EmitDefaultValue = true)]
         public DateTime? StartedOn { get; set; }
 
@@ -119,35 +129,35 @@ namespace TestIT.ApiClient.Model
         /// set when test plan status is completed (status changed to: Completed)
         /// </summary>
         /// <value>set when test plan status is completed (status changed to: Completed)</value>
-        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
+        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
         [DataMember(Name = "completedOn", EmitDefaultValue = true)]
         public DateTime? CompletedOn { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
+        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
         public DateTime? CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
+        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
@@ -169,14 +179,14 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets LockedDate
         /// </summary>
-        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
+        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
         [DataMember(Name = "lockedDate", EmitDefaultValue = true)]
         public DateTime? LockedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
@@ -203,7 +213,7 @@ namespace TestIT.ApiClient.Model
         /// Used for analytics
         /// </summary>
         /// <value>Used for analytics</value>
-        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
+        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
         [DataMember(Name = "startDate", EmitDefaultValue = true)]
         public DateTime? StartDate { get; set; }
 
@@ -211,7 +221,7 @@ namespace TestIT.ApiClient.Model
         /// Used for analytics
         /// </summary>
         /// <value>Used for analytics</value>
-        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
+        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
         [DataMember(Name = "endDate", EmitDefaultValue = true)]
         public DateTime? EndDate { get; set; }
 
@@ -232,7 +242,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets ProjectId
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
@@ -253,7 +263,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Attributes
         /// </summary>
-        [DataMember(Name = "attributes", EmitDefaultValue = true)]
+        [DataMember(Name = "attributes", IsRequired = true, EmitDefaultValue = true)]
         public Dictionary<string, Object> Attributes { get; set; }
 
         /// <summary>
@@ -321,115 +331,115 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Analytic == input.Analytic ||
                     (this.Analytic != null &&
                     this.Analytic.Equals(input.Analytic))
-                ) &&
+                ) && 
                 (
                     this.Status == input.Status ||
                     this.Status.Equals(input.Status)
-                ) &&
+                ) && 
                 (
                     this.StartedOn == input.StartedOn ||
                     (this.StartedOn != null &&
                     this.StartedOn.Equals(input.StartedOn))
-                ) &&
+                ) && 
                 (
                     this.CompletedOn == input.CompletedOn ||
                     (this.CompletedOn != null &&
                     this.CompletedOn.Equals(input.CompletedOn))
-                ) &&
+                ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) &&
+                ) && 
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
                     this.ModifiedDate.Equals(input.ModifiedDate))
-                ) &&
+                ) && 
                 (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&
                     this.CreatedById.Equals(input.CreatedById))
-                ) &&
+                ) && 
                 (
                     this.ModifiedById == input.ModifiedById ||
                     (this.ModifiedById != null &&
                     this.ModifiedById.Equals(input.ModifiedById))
-                ) &&
+                ) && 
                 (
                     this.GlobalId == input.GlobalId ||
                     this.GlobalId.Equals(input.GlobalId)
-                ) &&
+                ) && 
                 (
                     this.IsDeleted == input.IsDeleted ||
                     this.IsDeleted.Equals(input.IsDeleted)
-                ) &&
+                ) && 
                 (
                     this.LockedDate == input.LockedDate ||
                     (this.LockedDate != null &&
                     this.LockedDate.Equals(input.LockedDate))
-                ) &&
+                ) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.LockedById == input.LockedById ||
                     (this.LockedById != null &&
                     this.LockedById.Equals(input.LockedById))
-                ) &&
+                ) && 
                 (
                     this.Tags == input.Tags ||
                     this.Tags != null &&
                     input.Tags != null &&
                     this.Tags.SequenceEqual(input.Tags)
-                ) &&
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.StartDate == input.StartDate ||
                     (this.StartDate != null &&
                     this.StartDate.Equals(input.StartDate))
-                ) &&
+                ) && 
                 (
                     this.EndDate == input.EndDate ||
                     (this.EndDate != null &&
                     this.EndDate.Equals(input.EndDate))
-                ) &&
+                ) && 
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) &&
+                ) && 
                 (
                     this.Build == input.Build ||
                     (this.Build != null &&
                     this.Build.Equals(input.Build))
-                ) &&
+                ) && 
                 (
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
-                ) &&
+                ) && 
                 (
                     this.ProductName == input.ProductName ||
                     (this.ProductName != null &&
                     this.ProductName.Equals(input.ProductName))
-                ) &&
+                ) && 
                 (
                     this.HasAutomaticDurationTimer == input.HasAutomaticDurationTimer ||
                     (this.HasAutomaticDurationTimer != null &&
                     this.HasAutomaticDurationTimer.Equals(input.HasAutomaticDurationTimer))
-                ) &&
+                ) && 
                 (
                     this.Attributes == input.Attributes ||
                     this.Attributes != null &&

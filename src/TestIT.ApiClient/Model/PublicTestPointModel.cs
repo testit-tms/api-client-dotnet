@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// PublicTestPointModel
@@ -131,27 +131,27 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.ConfigurationId == input.ConfigurationId ||
                     (this.ConfigurationId != null &&
                     this.ConfigurationId.Equals(input.ConfigurationId))
-                ) &&
+                ) && 
                 (
                     this.ConfigurationGlobalId == input.ConfigurationGlobalId ||
                     this.ConfigurationGlobalId.Equals(input.ConfigurationGlobalId)
-                ) &&
+                ) && 
                 (
                     this.AutoTestIds == input.AutoTestIds ||
                     this.AutoTestIds != null &&
                     input.AutoTestIds != null &&
                     this.AutoTestIds.SequenceEqual(input.AutoTestIds)
-                ) &&
+                ) && 
                 (
                     this.IterationId == input.IterationId ||
                     (this.IterationId != null &&
                     this.IterationId.Equals(input.IterationId))
-                ) &&
+                ) && 
                 (
                     this.ParameterModels == input.ParameterModels ||
                     this.ParameterModels != null &&

@@ -1,10 +1,10 @@
-# TestIt.Client.Model.FailureClassRegexModel
+# TestIt.ApiClient.Model.FailureClassRegexModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RegexText** | **string** |  | [optional] 
+**RegexText** | **string** |  | 
 **FailureClassId** | **Guid?** |  | [optional] 
 **Id** | **Guid** | Unique ID of the entity | 
 **IsDeleted** | **bool** | Indicates if the entity is deleted | 

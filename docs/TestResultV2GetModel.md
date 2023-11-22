@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestResultV2GetModel
+# TestIt.ApiClient.Model.TestResultV2GetModel
 
 ## Properties
 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **TestPointId** | **Guid?** |  | [optional] 
 **TestPoint** | [**TestPointRelatedToTestResult**](TestPointRelatedToTestResult.md) |  | [optional] 
 **TestRunId** | **Guid** |  | 
-**Outcome** | **string** | Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped | [optional] 
+**Outcome** | **string** | Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped | 
 **Comment** | **string** |  | [optional] 
 **Links** | [**List&lt;LinkModel&gt;**](LinkModel.md) |  | [optional] 
 **Attachments** | [**List&lt;AttachmentModel&gt;**](AttachmentModel.md) |  | [optional] 

@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// ApiV2TestRunsIdStatisticsFilterPostRequest
@@ -131,30 +131,30 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.ConfigurationIds == input.ConfigurationIds ||
                     this.ConfigurationIds != null &&
                     input.ConfigurationIds != null &&
                     this.ConfigurationIds.SequenceEqual(input.ConfigurationIds)
-                ) &&
+                ) && 
                 (
                     this.Outcomes == input.Outcomes ||
                     this.Outcomes != null &&
                     input.Outcomes != null &&
                     this.Outcomes.SequenceEqual(input.Outcomes)
-                ) &&
+                ) && 
                 (
                     this.FailureCategories == input.FailureCategories ||
                     this.FailureCategories != null &&
                     input.FailureCategories != null &&
                     this.FailureCategories.SequenceEqual(input.FailureCategories)
-                ) &&
+                ) && 
                 (
                     this.Namespace == input.Namespace ||
                     (this.Namespace != null &&
                     this.Namespace.Equals(input.Namespace))
-                ) &&
+                ) && 
                 (
                     this.ClassName == input.ClassName ||
                     (this.ClassName != null &&

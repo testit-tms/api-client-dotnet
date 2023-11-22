@@ -1,4 +1,4 @@
-# TestIt.Client.Model.AutotestsSelectModelFilter
+# TestIt.ApiClient.Model.AutotestsSelectModelFilter
 Object containing different filters to adjust search
 
 ## Properties

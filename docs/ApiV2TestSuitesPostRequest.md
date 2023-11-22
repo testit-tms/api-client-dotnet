@@ -1,4 +1,4 @@
-# TestIt.Client.Model.ApiV2TestSuitesPostRequest
+# TestIt.ApiClient.Model.ApiV2TestSuitesPostRequest
 
 ## Properties
 

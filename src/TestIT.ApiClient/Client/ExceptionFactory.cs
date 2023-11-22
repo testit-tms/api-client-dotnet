@@ -10,7 +10,7 @@
 
 using System;
 
-namespace TestIT.ApiClient.Client
+namespace TestIt.ApiClient.Client
 {
     /// <summary>
     /// A delegate to ExceptionFactory method

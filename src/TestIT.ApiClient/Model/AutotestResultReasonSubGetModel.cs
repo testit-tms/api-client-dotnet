@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// AutotestResultReasonSubGetModel
@@ -47,17 +47,22 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="AutotestResultReasonSubGetModel" /> class.
         /// </summary>
         /// <param name="failureCategory">failureCategory (required).</param>
-        /// <param name="name">name.</param>
+        /// <param name="name">name (required).</param>
         public AutotestResultReasonSubGetModel(FailureCategoryModel failureCategory = default(FailureCategoryModel), string name = default(string))
         {
             this.FailureCategory = failureCategory;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for AutotestResultReasonSubGetModel and cannot be null");
+            }
             this.Name = name;
         }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -104,11 +109,11 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.FailureCategory == input.FailureCategory ||
                     this.FailureCategory.Equals(input.FailureCategory)
-                ) &&
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&

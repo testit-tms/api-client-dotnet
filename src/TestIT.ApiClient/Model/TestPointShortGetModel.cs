@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// TestPointShortGetModel
@@ -65,9 +65,9 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedById">Unique ID of the test point last editor.</param>
         /// <param name="testerId">Unique ID of the test point assigned user.</param>
         /// <param name="parameters">Collection of the test point parameters.</param>
-        /// <param name="attributes">Collection of attributes of work item the test point represents.</param>
-        /// <param name="tags">Collection of the test point tags.</param>
-        /// <param name="links">Collection of the test point links.</param>
+        /// <param name="attributes">Collection of attributes of work item the test point represents (required).</param>
+        /// <param name="tags">Collection of the test point tags (required).</param>
+        /// <param name="links">Collection of the test point links (required).</param>
         /// <param name="testSuiteId">Unique ID of test suite the test point assigned to (required).</param>
         /// <param name="workItemId">Unique ID of work item the test point represents (required).</param>
         /// <param name="workItemGlobalId">Global ID of work item the test point represents (required).</param>
@@ -76,7 +76,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="status">status (required).</param>
         /// <param name="priority">priority (required).</param>
         /// <param name="isAutomated">Indicates if the test point represents an autotest (required).</param>
-        /// <param name="name">Name of the test point.</param>
+        /// <param name="name">Name of the test point (required).</param>
         /// <param name="configurationId">Unique ID of the test point configuration (required).</param>
         /// <param name="duration">Duration of the test point (required).</param>
         /// <param name="sectionId">Unique ID of section where work item the test point represents is located (required).</param>
@@ -94,6 +94,24 @@ namespace TestIT.ApiClient.Model
             this.Id = id;
             this.CreatedDate = createdDate;
             this.CreatedById = createdById;
+            // to ensure "attributes" is required (not null)
+            if (attributes == null)
+            {
+                throw new ArgumentNullException("attributes is a required property for TestPointShortGetModel and cannot be null");
+            }
+            this.Attributes = attributes;
+            // to ensure "tags" is required (not null)
+            if (tags == null)
+            {
+                throw new ArgumentNullException("tags is a required property for TestPointShortGetModel and cannot be null");
+            }
+            this.Tags = tags;
+            // to ensure "links" is required (not null)
+            if (links == null)
+            {
+                throw new ArgumentNullException("links is a required property for TestPointShortGetModel and cannot be null");
+            }
+            this.Links = links;
             this.TestSuiteId = testSuiteId;
             this.WorkItemId = workItemId;
             this.WorkItemGlobalId = workItemGlobalId;
@@ -101,6 +119,12 @@ namespace TestIT.ApiClient.Model
             this.Status = status;
             this.Priority = priority;
             this.IsAutomated = isAutomated;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for TestPointShortGetModel and cannot be null");
+            }
+            this.Name = name;
             this.ConfigurationId = configurationId;
             this.Duration = duration;
             this.SectionId = sectionId;
@@ -119,11 +143,7 @@ namespace TestIT.ApiClient.Model
             this.ModifiedById = modifiedById;
             this.TesterId = testerId;
             this.Parameters = parameters;
-            this.Attributes = attributes;
-            this.Tags = tags;
-            this.Links = links;
             this.WorkItemMedianDuration = workItemMedianDuration;
-            this.Name = name;
             this.SectionName = sectionName;
             this.WorkItemModifiedById = workItemModifiedById;
             this.WorkItemModifiedDate = workItemModifiedDate;
@@ -182,21 +202,21 @@ namespace TestIT.ApiClient.Model
         /// Collection of attributes of work item the test point represents
         /// </summary>
         /// <value>Collection of attributes of work item the test point represents</value>
-        [DataMember(Name = "attributes", EmitDefaultValue = true)]
+        [DataMember(Name = "attributes", IsRequired = true, EmitDefaultValue = true)]
         public Dictionary<string, Object> Attributes { get; set; }
 
         /// <summary>
         /// Collection of the test point tags
         /// </summary>
         /// <value>Collection of the test point tags</value>
-        [DataMember(Name = "tags", EmitDefaultValue = true)]
+        [DataMember(Name = "tags", IsRequired = true, EmitDefaultValue = true)]
         public List<string> Tags { get; set; }
 
         /// <summary>
         /// Collection of the test point links
         /// </summary>
         /// <value>Collection of the test point links</value>
-        [DataMember(Name = "links", EmitDefaultValue = true)]
+        [DataMember(Name = "links", IsRequired = true, EmitDefaultValue = true)]
         public List<string> Links { get; set; }
 
         /// <summary>
@@ -245,7 +265,7 @@ namespace TestIT.ApiClient.Model
         /// Name of the test point
         /// </summary>
         /// <value>Name of the test point</value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -397,155 +417,155 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) &&
+                ) && 
                 (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&
                     this.CreatedById.Equals(input.CreatedById))
-                ) &&
+                ) && 
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
                     this.ModifiedDate.Equals(input.ModifiedDate))
-                ) &&
+                ) && 
                 (
                     this.ModifiedById == input.ModifiedById ||
                     (this.ModifiedById != null &&
                     this.ModifiedById.Equals(input.ModifiedById))
-                ) &&
+                ) && 
                 (
                     this.TesterId == input.TesterId ||
                     (this.TesterId != null &&
                     this.TesterId.Equals(input.TesterId))
-                ) &&
+                ) && 
                 (
                     this.Parameters == input.Parameters ||
                     this.Parameters != null &&
                     input.Parameters != null &&
                     this.Parameters.SequenceEqual(input.Parameters)
-                ) &&
+                ) && 
                 (
                     this.Attributes == input.Attributes ||
                     this.Attributes != null &&
                     input.Attributes != null &&
                     this.Attributes.SequenceEqual(input.Attributes)
-                ) &&
+                ) && 
                 (
                     this.Tags == input.Tags ||
                     this.Tags != null &&
                     input.Tags != null &&
                     this.Tags.SequenceEqual(input.Tags)
-                ) &&
+                ) && 
                 (
                     this.Links == input.Links ||
                     this.Links != null &&
                     input.Links != null &&
                     this.Links.SequenceEqual(input.Links)
-                ) &&
+                ) && 
                 (
                     this.TestSuiteId == input.TestSuiteId ||
                     (this.TestSuiteId != null &&
                     this.TestSuiteId.Equals(input.TestSuiteId))
-                ) &&
+                ) && 
                 (
                     this.WorkItemId == input.WorkItemId ||
                     (this.WorkItemId != null &&
                     this.WorkItemId.Equals(input.WorkItemId))
-                ) &&
+                ) && 
                 (
                     this.WorkItemGlobalId == input.WorkItemGlobalId ||
                     this.WorkItemGlobalId.Equals(input.WorkItemGlobalId)
-                ) &&
+                ) && 
                 (
                     this.WorkItemVersionId == input.WorkItemVersionId ||
                     (this.WorkItemVersionId != null &&
                     this.WorkItemVersionId.Equals(input.WorkItemVersionId))
-                ) &&
+                ) && 
                 (
                     this.WorkItemMedianDuration == input.WorkItemMedianDuration ||
                     (this.WorkItemMedianDuration != null &&
                     this.WorkItemMedianDuration.Equals(input.WorkItemMedianDuration))
-                ) &&
+                ) && 
                 (
                     this.Status == input.Status ||
                     this.Status.Equals(input.Status)
-                ) &&
+                ) && 
                 (
                     this.Priority == input.Priority ||
                     this.Priority.Equals(input.Priority)
-                ) &&
+                ) && 
                 (
                     this.IsAutomated == input.IsAutomated ||
                     this.IsAutomated.Equals(input.IsAutomated)
-                ) &&
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.ConfigurationId == input.ConfigurationId ||
                     (this.ConfigurationId != null &&
                     this.ConfigurationId.Equals(input.ConfigurationId))
-                ) &&
+                ) && 
                 (
                     this.Duration == input.Duration ||
                     this.Duration.Equals(input.Duration)
-                ) &&
+                ) && 
                 (
                     this.SectionId == input.SectionId ||
                     (this.SectionId != null &&
                     this.SectionId.Equals(input.SectionId))
-                ) &&
+                ) && 
                 (
                     this.SectionName == input.SectionName ||
                     (this.SectionName != null &&
                     this.SectionName.Equals(input.SectionName))
-                ) &&
+                ) && 
                 (
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
-                ) &&
+                ) && 
                 (
                     this.LastTestResult == input.LastTestResult ||
                     (this.LastTestResult != null &&
                     this.LastTestResult.Equals(input.LastTestResult))
-                ) &&
+                ) && 
                 (
                     this.IterationId == input.IterationId ||
                     (this.IterationId != null &&
                     this.IterationId.Equals(input.IterationId))
-                ) &&
+                ) && 
                 (
                     this.WorkItemState == input.WorkItemState ||
                     this.WorkItemState.Equals(input.WorkItemState)
-                ) &&
+                ) && 
                 (
                     this.WorkItemCreatedById == input.WorkItemCreatedById ||
                     (this.WorkItemCreatedById != null &&
                     this.WorkItemCreatedById.Equals(input.WorkItemCreatedById))
-                ) &&
+                ) && 
                 (
                     this.WorkItemCreatedDate == input.WorkItemCreatedDate ||
                     (this.WorkItemCreatedDate != null &&
                     this.WorkItemCreatedDate.Equals(input.WorkItemCreatedDate))
-                ) &&
+                ) && 
                 (
                     this.WorkItemModifiedById == input.WorkItemModifiedById ||
                     (this.WorkItemModifiedById != null &&
                     this.WorkItemModifiedById.Equals(input.WorkItemModifiedById))
-                ) &&
+                ) && 
                 (
                     this.WorkItemModifiedDate == input.WorkItemModifiedDate ||
                     (this.WorkItemModifiedDate != null &&

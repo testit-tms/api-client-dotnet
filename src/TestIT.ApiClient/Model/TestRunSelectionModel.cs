@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// Model containing options to filter test runs
@@ -35,24 +35,39 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestRunSelectionModel" /> class.
         /// </summary>
-        /// <param name="filter">filter.</param>
-        /// <param name="extractionModel">extractionModel.</param>
-        public TestRunSelectionModel(TestRunFilterModel filter = default(TestRunFilterModel), TestRunSelectModelExtractionModel extractionModel = default(TestRunSelectModelExtractionModel))
+        [JsonConstructorAttribute]
+        protected TestRunSelectionModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestRunSelectionModel" /> class.
+        /// </summary>
+        /// <param name="filter">filter (required).</param>
+        /// <param name="extractionModel">extractionModel (required).</param>
+        public TestRunSelectionModel(ApiV2TestRunsSearchPostRequest filter = default(ApiV2TestRunsSearchPostRequest), TestRunSelectModelExtractionModel extractionModel = default(TestRunSelectModelExtractionModel))
         {
+            // to ensure "filter" is required (not null)
+            if (filter == null)
+            {
+                throw new ArgumentNullException("filter is a required property for TestRunSelectionModel and cannot be null");
+            }
             this.Filter = filter;
+            // to ensure "extractionModel" is required (not null)
+            if (extractionModel == null)
+            {
+                throw new ArgumentNullException("extractionModel is a required property for TestRunSelectionModel and cannot be null");
+            }
             this.ExtractionModel = extractionModel;
         }
 
         /// <summary>
         /// Gets or Sets Filter
         /// </summary>
-        [DataMember(Name = "filter", EmitDefaultValue = true)]
-        public TestRunFilterModel Filter { get; set; }
+        [DataMember(Name = "filter", IsRequired = true, EmitDefaultValue = true)]
+        public ApiV2TestRunsSearchPostRequest Filter { get; set; }
 
         /// <summary>
         /// Gets or Sets ExtractionModel
         /// </summary>
-        [DataMember(Name = "extractionModel", EmitDefaultValue = true)]
+        [DataMember(Name = "extractionModel", IsRequired = true, EmitDefaultValue = true)]
         public TestRunSelectModelExtractionModel ExtractionModel { get; set; }
 
         /// <summary>
@@ -99,12 +114,12 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Filter == input.Filter ||
                     (this.Filter != null &&
                     this.Filter.Equals(input.Filter))
-                ) &&
+                ) && 
                 (
                     this.ExtractionModel == input.ExtractionModel ||
                     (this.ExtractionModel != null &&

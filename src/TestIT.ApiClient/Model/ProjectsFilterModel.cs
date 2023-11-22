@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// ProjectsFilterModel
@@ -176,53 +176,53 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.IsFavorite == input.IsFavorite ||
                     (this.IsFavorite != null &&
                     this.IsFavorite.Equals(input.IsFavorite))
-                ) &&
+                ) && 
                 (
                     this.IsDeleted == input.IsDeleted ||
                     (this.IsDeleted != null &&
                     this.IsDeleted.Equals(input.IsDeleted))
-                ) &&
+                ) && 
                 (
                     this.TestCasesCount == input.TestCasesCount ||
                     (this.TestCasesCount != null &&
                     this.TestCasesCount.Equals(input.TestCasesCount))
-                ) &&
+                ) && 
                 (
                     this.ChecklistsCount == input.ChecklistsCount ||
                     (this.ChecklistsCount != null &&
                     this.ChecklistsCount.Equals(input.ChecklistsCount))
-                ) &&
+                ) && 
                 (
                     this.SharedStepsCount == input.SharedStepsCount ||
                     (this.SharedStepsCount != null &&
                     this.SharedStepsCount.Equals(input.SharedStepsCount))
-                ) &&
+                ) && 
                 (
                     this.AutotestsCount == input.AutotestsCount ||
                     (this.AutotestsCount != null &&
                     this.AutotestsCount.Equals(input.AutotestsCount))
-                ) &&
+                ) && 
                 (
                     this.GlobalIds == input.GlobalIds ||
                     this.GlobalIds != null &&
                     input.GlobalIds != null &&
                     this.GlobalIds.SequenceEqual(input.GlobalIds)
-                ) &&
+                ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) &&
+                ) && 
                 (
                     this.CreatedByIds == input.CreatedByIds ||
                     this.CreatedByIds != null &&

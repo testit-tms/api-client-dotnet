@@ -1,4 +1,4 @@
-# TestIt.Client.Model.PublicTestPointModel
+# TestIt.ApiClient.Model.PublicTestPointModel
 
 ## Properties
 

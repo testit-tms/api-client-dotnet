@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// AutoTestPostModel
@@ -256,88 +256,88 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.WorkItemIdsForLinkWithAutoTest == input.WorkItemIdsForLinkWithAutoTest ||
                     this.WorkItemIdsForLinkWithAutoTest != null &&
                     input.WorkItemIdsForLinkWithAutoTest != null &&
                     this.WorkItemIdsForLinkWithAutoTest.SequenceEqual(input.WorkItemIdsForLinkWithAutoTest)
-                ) &&
+                ) && 
                 (
                     this.ShouldCreateWorkItem == input.ShouldCreateWorkItem ||
                     (this.ShouldCreateWorkItem != null &&
                     this.ShouldCreateWorkItem.Equals(input.ShouldCreateWorkItem))
-                ) &&
+                ) && 
                 (
                     this.ExternalId == input.ExternalId ||
                     (this.ExternalId != null &&
                     this.ExternalId.Equals(input.ExternalId))
-                ) &&
+                ) && 
                 (
                     this.Links == input.Links ||
                     this.Links != null &&
                     input.Links != null &&
                     this.Links.SequenceEqual(input.Links)
-                ) &&
+                ) && 
                 (
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
-                ) &&
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.Namespace == input.Namespace ||
                     (this.Namespace != null &&
                     this.Namespace.Equals(input.Namespace))
-                ) &&
+                ) && 
                 (
                     this.Classname == input.Classname ||
                     (this.Classname != null &&
                     this.Classname.Equals(input.Classname))
-                ) &&
+                ) && 
                 (
                     this.Steps == input.Steps ||
                     this.Steps != null &&
                     input.Steps != null &&
                     this.Steps.SequenceEqual(input.Steps)
-                ) &&
+                ) && 
                 (
                     this.Setup == input.Setup ||
                     this.Setup != null &&
                     input.Setup != null &&
                     this.Setup.SequenceEqual(input.Setup)
-                ) &&
+                ) && 
                 (
                     this.Teardown == input.Teardown ||
                     this.Teardown != null &&
                     input.Teardown != null &&
                     this.Teardown.SequenceEqual(input.Teardown)
-                ) &&
+                ) && 
                 (
                     this.Title == input.Title ||
                     (this.Title != null &&
                     this.Title.Equals(input.Title))
-                ) &&
+                ) && 
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) &&
+                ) && 
                 (
                     this.Labels == input.Labels ||
                     this.Labels != null &&
                     input.Labels != null &&
                     this.Labels.SequenceEqual(input.Labels)
-                ) &&
+                ) && 
                 (
                     this.IsFlaky == input.IsFlaky ||
                     (this.IsFlaky != null &&
                     this.IsFlaky.Equals(input.IsFlaky))
-                ) &&
+                ) && 
                 (
                     this.ExternalKey == input.ExternalKey ||
                     (this.ExternalKey != null &&

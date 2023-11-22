@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// TestRunStatisticsStatusesGetModel
@@ -136,23 +136,23 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.InProgress == input.InProgress ||
                     this.InProgress.Equals(input.InProgress)
-                ) &&
+                ) && 
                 (
                     this.Passed == input.Passed ||
                     this.Passed.Equals(input.Passed)
-                ) &&
+                ) && 
                 (
                     this.Failed == input.Failed ||
                     this.Failed.Equals(input.Failed)
-                ) &&
+                ) && 
                 (
                     this.Skipped == input.Skipped ||
                     this.Skipped.Equals(input.Skipped)
-                ) &&
+                ) && 
                 (
                     this.Blocked == input.Blocked ||
                     this.Blocked.Equals(input.Blocked)

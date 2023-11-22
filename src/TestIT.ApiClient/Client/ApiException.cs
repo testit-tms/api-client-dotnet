@@ -10,7 +10,7 @@
 
 using System;
 
-namespace TestIT.ApiClient.Client
+namespace TestIt.ApiClient.Client
 {
     /// <summary>
     /// API Exception

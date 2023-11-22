@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// TestPlanLink
@@ -144,37 +144,37 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.BugLink == input.BugLink ||
                     (this.BugLink != null &&
                     this.BugLink.Equals(input.BugLink))
-                ) &&
+                ) && 
                 (
                     this.WorkItemGlobalId == input.WorkItemGlobalId ||
                     (this.WorkItemGlobalId != null &&
                     this.WorkItemGlobalId.Equals(input.WorkItemGlobalId))
-                ) &&
+                ) && 
                 (
                     this.WorkItemName == input.WorkItemName ||
                     (this.WorkItemName != null &&
                     this.WorkItemName.Equals(input.WorkItemName))
-                ) &&
+                ) && 
                 (
                     this.ConfigurationName == input.ConfigurationName ||
                     (this.ConfigurationName != null &&
                     this.ConfigurationName.Equals(input.ConfigurationName))
-                ) &&
+                ) && 
                 (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&
                     this.CreatedById.Equals(input.CreatedById))
-                ) &&
+                ) && 
                 (
                     this.Comment == input.Comment ||
                     (this.Comment != null &&
                     this.Comment.Equals(input.Comment))
-                ) &&
+                ) && 
                 (
                     this.Info == input.Info ||
                     (this.Info != null &&

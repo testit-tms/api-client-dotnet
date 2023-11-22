@@ -1,4 +1,4 @@
-# TestIt.Client.Model.WorkItemPriorityModel
+# TestIt.ApiClient.Model.WorkItemPriorityModel
 
 ## Properties
 

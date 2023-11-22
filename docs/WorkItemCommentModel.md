@@ -1,12 +1,12 @@
-# TestIt.Client.Model.WorkItemCommentModel
+# TestIt.ApiClient.Model.WorkItemCommentModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** |  | 
-**Text** | **string** |  | [optional] 
-**User** | [**UserWithRankModel**](UserWithRankModel.md) |  | [optional] 
+**Text** | **string** |  | 
+**User** | [**WorkItemCommentModelUser**](WorkItemCommentModelUser.md) |  | 
 **CreatedById** | **Guid** |  | 
 **ModifiedById** | **Guid?** |  | [optional] 
 **CreatedDate** | **DateTime** |  | 

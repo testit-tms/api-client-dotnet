@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestPointFilterModelModifiedDate
+# TestIt.ApiClient.Model.TestPointFilterModelModifiedDate
 Specifies a test point range of last modification date to search for
 
 ## Properties

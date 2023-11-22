@@ -1,4 +1,4 @@
-# TestIt.Client.Model.UpdateSectionRequest
+# TestIt.ApiClient.Model.UpdateSectionRequest
 
 ## Properties
 

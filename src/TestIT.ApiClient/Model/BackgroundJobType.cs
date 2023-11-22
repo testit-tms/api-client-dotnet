@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// Defines BackgroundJobType
@@ -102,7 +102,19 @@ namespace TestIT.ApiClient.Model
         /// Enum PurgeProject for value: PurgeProject
         /// </summary>
         [EnumMember(Value = "PurgeProject")]
-        PurgeProject = 12
+        PurgeProject = 12,
+
+        /// <summary>
+        /// Enum ExportProjects for value: ExportProjects
+        /// </summary>
+        [EnumMember(Value = "ExportProjects")]
+        ExportProjects = 13,
+
+        /// <summary>
+        /// Enum ImportProjects for value: ImportProjects
+        /// </summary>
+        [EnumMember(Value = "ImportProjects")]
+        ImportProjects = 14
 
     }
 

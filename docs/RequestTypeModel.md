@@ -1,4 +1,4 @@
-# TestIt.Client.Model.RequestTypeModel
+# TestIt.ApiClient.Model.RequestTypeModel
 
 ## Properties
 

@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// TestPlanChangedFieldsViewModel
@@ -198,67 +198,67 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) &&
+                ) && 
                 (
                     this.ProductName == input.ProductName ||
                     (this.ProductName != null &&
                     this.ProductName.Equals(input.ProductName))
-                ) &&
+                ) && 
                 (
                     this.Build == input.Build ||
                     (this.Build != null &&
                     this.Build.Equals(input.Build))
-                ) &&
+                ) && 
                 (
                     this.Period == input.Period ||
                     (this.Period != null &&
                     this.Period.Equals(input.Period))
-                ) &&
+                ) && 
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
-                ) &&
+                ) && 
                 (
                     this.Tags == input.Tags ||
                     (this.Tags != null &&
                     this.Tags.Equals(input.Tags))
-                ) &&
+                ) && 
                 (
                     this.TestSuite == input.TestSuite ||
                     (this.TestSuite != null &&
                     this.TestSuite.Equals(input.TestSuite))
-                ) &&
+                ) && 
                 (
                     this.TestPoints == input.TestPoints ||
                     (this.TestPoints != null &&
                     this.TestPoints.Equals(input.TestPoints))
-                ) &&
+                ) && 
                 (
                     this.TestResults == input.TestResults ||
                     (this.TestResults != null &&
                     this.TestResults.Equals(input.TestResults))
-                ) &&
+                ) && 
                 (
                     this.Locking == input.Locking ||
                     (this.Locking != null &&
                     this.Locking.Equals(input.Locking))
-                ) &&
+                ) && 
                 (
                     this.HasAutomaticDurationTimer == input.HasAutomaticDurationTimer ||
                     (this.HasAutomaticDurationTimer != null &&
                     this.HasAutomaticDurationTimer.Equals(input.HasAutomaticDurationTimer))
-                ) &&
+                ) && 
                 (
                     this.Attributes == input.Attributes ||
                     this.Attributes != null &&

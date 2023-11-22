@@ -1,4 +1,4 @@
-# TestIt.Client.Model.AutotestFilterModelModifiedDate
+# TestIt.ApiClient.Model.AutotestFilterModelModifiedDate
 Specifies an autotest range of last modification date to search for
 
 ## Properties

@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// TestPlanSelectModel
@@ -35,10 +35,20 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPlanSelectModel" /> class.
         /// </summary>
-        /// <param name="filter">filter.</param>
+        [JsonConstructorAttribute]
+        protected TestPlanSelectModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestPlanSelectModel" /> class.
+        /// </summary>
+        /// <param name="filter">filter (required).</param>
         /// <param name="extractionModel">extractionModel.</param>
-        public TestPlanSelectModel(ProjectTestPlansFilterModel filter = default(ProjectTestPlansFilterModel), TestPlanExtractionModel extractionModel = default(TestPlanExtractionModel))
+        public TestPlanSelectModel(ApiV2ProjectsProjectIdTestPlansSearchPostRequest filter = default(ApiV2ProjectsProjectIdTestPlansSearchPostRequest), TestPlanExtractionModel extractionModel = default(TestPlanExtractionModel))
         {
+            // to ensure "filter" is required (not null)
+            if (filter == null)
+            {
+                throw new ArgumentNullException("filter is a required property for TestPlanSelectModel and cannot be null");
+            }
             this.Filter = filter;
             this.ExtractionModel = extractionModel;
         }
@@ -46,8 +56,8 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Filter
         /// </summary>
-        [DataMember(Name = "filter", EmitDefaultValue = true)]
-        public ProjectTestPlansFilterModel Filter { get; set; }
+        [DataMember(Name = "filter", IsRequired = true, EmitDefaultValue = true)]
+        public ApiV2ProjectsProjectIdTestPlansSearchPostRequest Filter { get; set; }
 
         /// <summary>
         /// Gets or Sets ExtractionModel
@@ -99,12 +109,12 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Filter == input.Filter ||
                     (this.Filter != null &&
                     this.Filter.Equals(input.Filter))
-                ) &&
+                ) && 
                 (
                     this.ExtractionModel == input.ExtractionModel ||
                     (this.ExtractionModel != null &&

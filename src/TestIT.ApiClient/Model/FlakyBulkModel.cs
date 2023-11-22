@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// FlakyBulkModel
@@ -40,19 +40,24 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FlakyBulkModel" /> class.
         /// </summary>
-        /// <param name="autotestSelect">autotestSelect.</param>
+        /// <param name="autotestSelect">autotestSelect (required).</param>
         /// <param name="value">Are autotests flaky (required).</param>
-        public FlakyBulkModel(AutotestSelectModel autotestSelect = default(AutotestSelectModel), bool value = default(bool))
+        public FlakyBulkModel(FlakyBulkModelAutotestSelect autotestSelect = default(FlakyBulkModelAutotestSelect), bool value = default(bool))
         {
-            this.Value = value;
+            // to ensure "autotestSelect" is required (not null)
+            if (autotestSelect == null)
+            {
+                throw new ArgumentNullException("autotestSelect is a required property for FlakyBulkModel and cannot be null");
+            }
             this.AutotestSelect = autotestSelect;
+            this.Value = value;
         }
 
         /// <summary>
         /// Gets or Sets AutotestSelect
         /// </summary>
-        [DataMember(Name = "autotestSelect", EmitDefaultValue = true)]
-        public AutotestSelectModel AutotestSelect { get; set; }
+        [DataMember(Name = "autotestSelect", IsRequired = true, EmitDefaultValue = true)]
+        public FlakyBulkModelAutotestSelect AutotestSelect { get; set; }
 
         /// <summary>
         /// Are autotests flaky
@@ -105,12 +110,12 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.AutotestSelect == input.AutotestSelect ||
                     (this.AutotestSelect != null &&
                     this.AutotestSelect.Equals(input.AutotestSelect))
-                ) &&
+                ) && 
                 (
                     this.Value == input.Value ||
                     this.Value.Equals(input.Value)

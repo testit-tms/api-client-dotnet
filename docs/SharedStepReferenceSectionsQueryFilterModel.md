@@ -1,4 +1,4 @@
-# TestIt.Client.Model.SharedStepReferenceSectionsQueryFilterModel
+# TestIt.ApiClient.Model.SharedStepReferenceSectionsQueryFilterModel
 
 ## Properties
 

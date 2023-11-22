@@ -1,4 +1,4 @@
-# TestIt.Client.Model.SharedStepReferenceModel
+# TestIt.ApiClient.Model.SharedStepReferenceModel
 
 ## Properties
 
@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** |  | 
 **GlobalId** | **long** |  | 
-**Name** | **string** |  | [optional] 
-**EntityTypeName** | **string** |  | [optional] 
+**Name** | **string** |  | 
+**EntityTypeName** | **string** |  | 
 **HasThisSharedStepAsStep** | **bool** |  | 
 **HasThisSharedStepAsPrecondition** | **bool** |  | 
 **HasThisSharedStepAsPostcondition** | **bool** |  | 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **ModifiedById** | **Guid?** |  | [optional] 
 **CreatedDate** | **DateTime?** |  | [optional] 
 **ModifiedDate** | **DateTime?** |  | [optional] 
-**State** | **string** |  | [optional] 
+**State** | **string** |  | 
 **Priority** | **WorkItemPriorityModel** |  | 
 **IsDeleted** | **bool** |  | 
 **VersionId** | **Guid** | used for versioning changes in workitem | 

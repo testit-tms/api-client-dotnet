@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// UserRankModel
@@ -140,27 +140,27 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Score == input.Score ||
                     this.Score.Equals(input.Score)
-                ) &&
+                ) && 
                 (
                     this.WorkItemsCreated == input.WorkItemsCreated ||
                     this.WorkItemsCreated.Equals(input.WorkItemsCreated)
-                ) &&
+                ) && 
                 (
                     this.PassedTestPoints == input.PassedTestPoints ||
                     this.PassedTestPoints.Equals(input.PassedTestPoints)
-                ) &&
+                ) && 
                 (
                     this.FailedTestPoints == input.FailedTestPoints ||
                     this.FailedTestPoints.Equals(input.FailedTestPoints)
-                ) &&
+                ) && 
                 (
                     this.SkippedTestPoints == input.SkippedTestPoints ||
                     this.SkippedTestPoints.Equals(input.SkippedTestPoints)
-                ) &&
+                ) && 
                 (
                     this.BlockedTestPoints == input.BlockedTestPoints ||
                     this.BlockedTestPoints.Equals(input.BlockedTestPoints)

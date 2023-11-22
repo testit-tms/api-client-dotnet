@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TagShortModel
+# TestIt.ApiClient.Model.TagShortModel
 
 ## Properties
 

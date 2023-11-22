@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestPointShortGetModel
+# TestIt.ApiClient.Model.TestPointShortGetModel
 
 ## Properties
 
@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 **ModifiedById** | **Guid?** | Unique ID of the test point last editor | [optional] 
 **TesterId** | **Guid?** | Unique ID of the test point assigned user | [optional] 
 **Parameters** | **Dictionary&lt;string, string&gt;** | Collection of the test point parameters | [optional] 
-**Attributes** | **Dictionary&lt;string, Object&gt;** | Collection of attributes of work item the test point represents | [optional] 
-**Tags** | **List&lt;string&gt;** | Collection of the test point tags | [optional] 
-**Links** | **List&lt;string&gt;** | Collection of the test point links | [optional] 
+**Attributes** | **Dictionary&lt;string, Object&gt;** | Collection of attributes of work item the test point represents | 
+**Tags** | **List&lt;string&gt;** | Collection of the test point tags | 
+**Links** | **List&lt;string&gt;** | Collection of the test point links | 
 **TestSuiteId** | **Guid** | Unique ID of test suite the test point assigned to | 
 **WorkItemId** | **Guid** | Unique ID of work item the test point represents | 
 **WorkItemGlobalId** | **long** | Global ID of work item the test point represents | 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **Status** | **TestPointStatus** |  | 
 **Priority** | **WorkItemPriorityModel** |  | 
 **IsAutomated** | **bool** | Indicates if the test point represents an autotest | 
-**Name** | **string** | Name of the test point | [optional] 
+**Name** | **string** | Name of the test point | 
 **ConfigurationId** | **Guid** | Unique ID of the test point configuration | 
 **Duration** | **int** | Duration of the test point | 
 **SectionId** | **Guid** | Unique ID of section where work item the test point represents is located | 

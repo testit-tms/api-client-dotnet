@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestRunState
+# TestIt.ApiClient.Model.TestRunState
 
 ## Properties
 

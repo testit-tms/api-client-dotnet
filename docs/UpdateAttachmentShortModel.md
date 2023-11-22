@@ -1,4 +1,4 @@
-# TestIt.Client.Model.UpdateAttachmentShortModel
+# TestIt.ApiClient.Model.UpdateAttachmentShortModel
 
 ## Properties
 

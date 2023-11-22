@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestPlanLink
+# TestIt.ApiClient.Model.TestPlanLink
 
 ## Properties
 

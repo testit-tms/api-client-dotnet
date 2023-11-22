@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestRunModel
+# TestIt.ApiClient.Model.TestRunModel
 
 ## Properties
 
@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **AutoTestsCount** | **int** |  | 
 **TestSuiteIds** | **List&lt;Guid&gt;** |  | [optional] 
 **IsAutomated** | **bool** |  | 
-**Analytic** | [**TestRunAnalyticResultModel**](TestRunAnalyticResultModel.md) |  | [optional] 
+**Analytic** | [**TestRunModelAnalytic**](TestRunModelAnalytic.md) |  | 
 **TestResults** | [**List&lt;TestResultModel&gt;**](TestResultModel.md) |  | [optional] 
 **TestPlan** | [**TestPlanModel**](TestPlanModel.md) |  | [optional] 
 **CreatedDate** | **DateTime** |  | 
@@ -18,15 +18,15 @@ Name | Type | Description | Notes
 **CreatedByUserName** | **string** |  | [optional] 
 **StartedDate** | **DateTime?** |  | [optional] 
 **CompletedDate** | **DateTime?** |  | [optional] 
-**Build** | **string** |  | [optional] 
-**Description** | **string** |  | [optional] 
+**Build** | **string** |  | 
+**Description** | **string** |  | 
 **StateName** | **TestRunState** |  | 
 **ProjectId** | **Guid** |  | 
 **TestPlanId** | **Guid?** |  | [optional] 
 **RunByUserId** | **Guid?** |  | [optional] 
 **StoppedByUserId** | **Guid?** |  | [optional] 
-**Name** | **string** |  | [optional] 
-**LaunchSource** | **string** |  | [optional] 
+**Name** | **string** |  | 
+**LaunchSource** | **string** |  | 
 **Id** | **Guid** | Unique ID of the entity | 
 **IsDeleted** | **bool** | Indicates if the entity is deleted | 
 

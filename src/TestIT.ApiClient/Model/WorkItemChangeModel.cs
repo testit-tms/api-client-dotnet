@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// WorkItemChangeModel
@@ -44,17 +44,22 @@ namespace TestIT.ApiClient.Model
         /// <param name="workItemId">workItemId (required).</param>
         /// <param name="oldVersionId">oldVersionId (required).</param>
         /// <param name="newVersionId">newVersionId (required).</param>
-        /// <param name="workItemChangedFields">workItemChangedFields.</param>
+        /// <param name="workItemChangedFields">workItemChangedFields (required).</param>
         /// <param name="createdById">createdById (required).</param>
         /// <param name="createdDate">createdDate.</param>
-        public WorkItemChangeModel(Guid id = default(Guid), Guid workItemId = default(Guid), Guid oldVersionId = default(Guid), Guid newVersionId = default(Guid), WorkItemChangedFieldsViewModel workItemChangedFields = default(WorkItemChangedFieldsViewModel), Guid createdById = default(Guid), DateTime? createdDate = default(DateTime?))
+        public WorkItemChangeModel(Guid id = default(Guid), Guid workItemId = default(Guid), Guid oldVersionId = default(Guid), Guid newVersionId = default(Guid), WorkItemChangeModelWorkItemChangedFields workItemChangedFields = default(WorkItemChangeModelWorkItemChangedFields), Guid createdById = default(Guid), DateTime? createdDate = default(DateTime?))
         {
             this.Id = id;
             this.WorkItemId = workItemId;
             this.OldVersionId = oldVersionId;
             this.NewVersionId = newVersionId;
-            this.CreatedById = createdById;
+            // to ensure "workItemChangedFields" is required (not null)
+            if (workItemChangedFields == null)
+            {
+                throw new ArgumentNullException("workItemChangedFields is a required property for WorkItemChangeModel and cannot be null");
+            }
             this.WorkItemChangedFields = workItemChangedFields;
+            this.CreatedById = createdById;
             this.CreatedDate = createdDate;
         }
 
@@ -85,8 +90,8 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets WorkItemChangedFields
         /// </summary>
-        [DataMember(Name = "workItemChangedFields", EmitDefaultValue = true)]
-        public WorkItemChangedFieldsViewModel WorkItemChangedFields { get; set; }
+        [DataMember(Name = "workItemChangedFields", IsRequired = true, EmitDefaultValue = true)]
+        public WorkItemChangeModelWorkItemChangedFields WorkItemChangedFields { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
@@ -149,37 +154,37 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.WorkItemId == input.WorkItemId ||
                     (this.WorkItemId != null &&
                     this.WorkItemId.Equals(input.WorkItemId))
-                ) &&
+                ) && 
                 (
                     this.OldVersionId == input.OldVersionId ||
                     (this.OldVersionId != null &&
                     this.OldVersionId.Equals(input.OldVersionId))
-                ) &&
+                ) && 
                 (
                     this.NewVersionId == input.NewVersionId ||
                     (this.NewVersionId != null &&
                     this.NewVersionId.Equals(input.NewVersionId))
-                ) &&
+                ) && 
                 (
                     this.WorkItemChangedFields == input.WorkItemChangedFields ||
                     (this.WorkItemChangedFields != null &&
                     this.WorkItemChangedFields.Equals(input.WorkItemChangedFields))
-                ) &&
+                ) && 
                 (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&
                     this.CreatedById.Equals(input.CreatedById))
-                ) &&
+                ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&

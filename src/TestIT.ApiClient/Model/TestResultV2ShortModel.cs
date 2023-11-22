@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// TestResultV2ShortModel
@@ -53,7 +53,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="testPointId">testPointId.</param>
         /// <param name="testPoint">testPoint.</param>
         /// <param name="testRunId">testRunId (required).</param>
-        /// <param name="outcome">Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped.</param>
+        /// <param name="outcome">Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped (required).</param>
         /// <param name="comment">comment.</param>
         /// <param name="links">links.</param>
         /// <param name="attachments">attachments.</param>
@@ -65,6 +65,12 @@ namespace TestIT.ApiClient.Model
             this.ConfigurationId = configurationId;
             this.WorkItemVersionId = workItemVersionId;
             this.TestRunId = testRunId;
+            // to ensure "outcome" is required (not null)
+            if (outcome == null)
+            {
+                throw new ArgumentNullException("outcome is a required property for TestResultV2ShortModel and cannot be null");
+            }
+            this.Outcome = outcome;
             this.AutoTestId = autoTestId;
             this.Message = message;
             this.Traces = traces;
@@ -74,7 +80,6 @@ namespace TestIT.ApiClient.Model
             this.StoppedByUserId = stoppedByUserId;
             this.TestPointId = testPointId;
             this.TestPoint = testPoint;
-            this.Outcome = outcome;
             this.Comment = comment;
             this.Links = links;
             this.Attachments = attachments;
@@ -85,35 +90,35 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets ConfigurationId
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "configurationId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ConfigurationId { get; set; }
 
         /// <summary>
         /// Gets or Sets WorkItemVersionId
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "workItemVersionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid WorkItemVersionId { get; set; }
 
         /// <summary>
         /// Gets or Sets AutoTestId
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "autoTestId", EmitDefaultValue = true)]
         public Guid? AutoTestId { get; set; }
 
         /// <summary>
         /// Gets or Sets Message
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "message", EmitDefaultValue = true)]
         public string Message { get; set; }
 
@@ -127,35 +132,35 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets StartedOn
         /// </summary>
-        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
+        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
         [DataMember(Name = "startedOn", EmitDefaultValue = true)]
         public DateTime? StartedOn { get; set; }
 
         /// <summary>
         /// Gets or Sets CompletedOn
         /// </summary>
-        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
+        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
         [DataMember(Name = "completedOn", EmitDefaultValue = true)]
         public DateTime? CompletedOn { get; set; }
 
         /// <summary>
         /// Gets or Sets RunByUserId
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "runByUserId", EmitDefaultValue = true)]
         public Guid? RunByUserId { get; set; }
 
         /// <summary>
         /// Gets or Sets StoppedByUserId
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "stoppedByUserId", EmitDefaultValue = true)]
         public Guid? StoppedByUserId { get; set; }
 
         /// <summary>
         /// Gets or Sets TestPointId
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "testPointId", EmitDefaultValue = true)]
         public Guid? TestPointId { get; set; }
 
@@ -168,7 +173,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets TestRunId
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "testRunId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestRunId { get; set; }
 
@@ -177,7 +182,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped</value>
         /// <example>&quot;Passed&quot;</example>
-        [DataMember(Name = "outcome", EmitDefaultValue = true)]
+        [DataMember(Name = "outcome", IsRequired = true, EmitDefaultValue = true)]
         public string Outcome { get; set; }
 
         /// <summary>
@@ -272,100 +277,100 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.ConfigurationId == input.ConfigurationId ||
                     (this.ConfigurationId != null &&
                     this.ConfigurationId.Equals(input.ConfigurationId))
-                ) &&
+                ) && 
                 (
                     this.WorkItemVersionId == input.WorkItemVersionId ||
                     (this.WorkItemVersionId != null &&
                     this.WorkItemVersionId.Equals(input.WorkItemVersionId))
-                ) &&
+                ) && 
                 (
                     this.AutoTestId == input.AutoTestId ||
                     (this.AutoTestId != null &&
                     this.AutoTestId.Equals(input.AutoTestId))
-                ) &&
+                ) && 
                 (
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
-                ) &&
+                ) && 
                 (
                     this.Traces == input.Traces ||
                     (this.Traces != null &&
                     this.Traces.Equals(input.Traces))
-                ) &&
+                ) && 
                 (
                     this.StartedOn == input.StartedOn ||
                     (this.StartedOn != null &&
                     this.StartedOn.Equals(input.StartedOn))
-                ) &&
+                ) && 
                 (
                     this.CompletedOn == input.CompletedOn ||
                     (this.CompletedOn != null &&
                     this.CompletedOn.Equals(input.CompletedOn))
-                ) &&
+                ) && 
                 (
                     this.RunByUserId == input.RunByUserId ||
                     (this.RunByUserId != null &&
                     this.RunByUserId.Equals(input.RunByUserId))
-                ) &&
+                ) && 
                 (
                     this.StoppedByUserId == input.StoppedByUserId ||
                     (this.StoppedByUserId != null &&
                     this.StoppedByUserId.Equals(input.StoppedByUserId))
-                ) &&
+                ) && 
                 (
                     this.TestPointId == input.TestPointId ||
                     (this.TestPointId != null &&
                     this.TestPointId.Equals(input.TestPointId))
-                ) &&
+                ) && 
                 (
                     this.TestPoint == input.TestPoint ||
                     (this.TestPoint != null &&
                     this.TestPoint.Equals(input.TestPoint))
-                ) &&
+                ) && 
                 (
                     this.TestRunId == input.TestRunId ||
                     (this.TestRunId != null &&
                     this.TestRunId.Equals(input.TestRunId))
-                ) &&
+                ) && 
                 (
                     this.Outcome == input.Outcome ||
                     (this.Outcome != null &&
                     this.Outcome.Equals(input.Outcome))
-                ) &&
+                ) && 
                 (
                     this.Comment == input.Comment ||
                     (this.Comment != null &&
                     this.Comment.Equals(input.Comment))
-                ) &&
+                ) && 
                 (
                     this.Links == input.Links ||
                     this.Links != null &&
                     input.Links != null &&
                     this.Links.SequenceEqual(input.Links)
-                ) &&
+                ) && 
                 (
                     this.Attachments == input.Attachments ||
                     this.Attachments != null &&
                     input.Attachments != null &&
                     this.Attachments.SequenceEqual(input.Attachments)
-                ) &&
+                ) && 
                 (
                     this.Parameters == input.Parameters ||
                     this.Parameters != null &&
                     input.Parameters != null &&
                     this.Parameters.SequenceEqual(input.Parameters)
-                ) &&
+                ) && 
                 (
                     this.Properties == input.Properties ||
                     this.Properties != null &&

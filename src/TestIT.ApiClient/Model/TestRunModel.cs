@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// TestRunModel
@@ -50,7 +50,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="autoTestsCount">autoTestsCount (required).</param>
         /// <param name="testSuiteIds">testSuiteIds.</param>
         /// <param name="isAutomated">isAutomated (required).</param>
-        /// <param name="analytic">analytic.</param>
+        /// <param name="analytic">analytic (required).</param>
         /// <param name="testResults">testResults.</param>
         /// <param name="testPlan">testPlan.</param>
         /// <param name="createdDate">createdDate (required).</param>
@@ -60,30 +60,59 @@ namespace TestIT.ApiClient.Model
         /// <param name="createdByUserName">createdByUserName.</param>
         /// <param name="startedDate">startedDate.</param>
         /// <param name="completedDate">completedDate.</param>
-        /// <param name="build">build.</param>
-        /// <param name="description">description.</param>
+        /// <param name="build">build (required).</param>
+        /// <param name="description">description (required).</param>
         /// <param name="stateName">stateName (required).</param>
         /// <param name="projectId">projectId (required).</param>
         /// <param name="testPlanId">testPlanId.</param>
         /// <param name="runByUserId">runByUserId.</param>
         /// <param name="stoppedByUserId">stoppedByUserId.</param>
-        /// <param name="name">name.</param>
-        /// <param name="launchSource">launchSource.</param>
+        /// <param name="name">name (required).</param>
+        /// <param name="launchSource">launchSource (required).</param>
         /// <param name="id">Unique ID of the entity (required).</param>
         /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
-        public TestRunModel(List<AutoTestModel> autoTests = default(List<AutoTestModel>), int autoTestsCount = default(int), List<Guid> testSuiteIds = default(List<Guid>), bool isAutomated = default(bool), TestRunAnalyticResultModel analytic = default(TestRunAnalyticResultModel), List<TestResultModel> testResults = default(List<TestResultModel>), TestPlanModel testPlan = default(TestPlanModel), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string createdByUserName = default(string), DateTime? startedDate = default(DateTime?), DateTime? completedDate = default(DateTime?), string build = default(string), string description = default(string), TestRunState stateName = default(TestRunState), Guid projectId = default(Guid), Guid? testPlanId = default(Guid?), Guid? runByUserId = default(Guid?), Guid? stoppedByUserId = default(Guid?), string name = default(string), string launchSource = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
+        public TestRunModel(List<AutoTestModel> autoTests = default(List<AutoTestModel>), int autoTestsCount = default(int), List<Guid> testSuiteIds = default(List<Guid>), bool isAutomated = default(bool), TestRunModelAnalytic analytic = default(TestRunModelAnalytic), List<TestResultModel> testResults = default(List<TestResultModel>), TestPlanModel testPlan = default(TestPlanModel), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string createdByUserName = default(string), DateTime? startedDate = default(DateTime?), DateTime? completedDate = default(DateTime?), string build = default(string), string description = default(string), TestRunState stateName = default(TestRunState), Guid projectId = default(Guid), Guid? testPlanId = default(Guid?), Guid? runByUserId = default(Guid?), Guid? stoppedByUserId = default(Guid?), string name = default(string), string launchSource = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
         {
             this.AutoTestsCount = autoTestsCount;
             this.IsAutomated = isAutomated;
+            // to ensure "analytic" is required (not null)
+            if (analytic == null)
+            {
+                throw new ArgumentNullException("analytic is a required property for TestRunModel and cannot be null");
+            }
+            this.Analytic = analytic;
             this.CreatedDate = createdDate;
             this.CreatedById = createdById;
+            // to ensure "build" is required (not null)
+            if (build == null)
+            {
+                throw new ArgumentNullException("build is a required property for TestRunModel and cannot be null");
+            }
+            this.Build = build;
+            // to ensure "description" is required (not null)
+            if (description == null)
+            {
+                throw new ArgumentNullException("description is a required property for TestRunModel and cannot be null");
+            }
+            this.Description = description;
             this.StateName = stateName;
             this.ProjectId = projectId;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for TestRunModel and cannot be null");
+            }
+            this.Name = name;
+            // to ensure "launchSource" is required (not null)
+            if (launchSource == null)
+            {
+                throw new ArgumentNullException("launchSource is a required property for TestRunModel and cannot be null");
+            }
+            this.LaunchSource = launchSource;
             this.Id = id;
             this.IsDeleted = isDeleted;
             this.AutoTests = autoTests;
             this.TestSuiteIds = testSuiteIds;
-            this.Analytic = analytic;
             this.TestResults = testResults;
             this.TestPlan = testPlan;
             this.ModifiedDate = modifiedDate;
@@ -91,13 +120,9 @@ namespace TestIT.ApiClient.Model
             this.CreatedByUserName = createdByUserName;
             this.StartedDate = startedDate;
             this.CompletedDate = completedDate;
-            this.Build = build;
-            this.Description = description;
             this.TestPlanId = testPlanId;
             this.RunByUserId = runByUserId;
             this.StoppedByUserId = stoppedByUserId;
-            this.Name = name;
-            this.LaunchSource = launchSource;
         }
 
         /// <summary>
@@ -127,8 +152,8 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Analytic
         /// </summary>
-        [DataMember(Name = "analytic", EmitDefaultValue = true)]
-        public TestRunAnalyticResultModel Analytic { get; set; }
+        [DataMember(Name = "analytic", IsRequired = true, EmitDefaultValue = true)]
+        public TestRunModelAnalytic Analytic { get; set; }
 
         /// <summary>
         /// Gets or Sets TestResults
@@ -187,13 +212,13 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Build
         /// </summary>
-        [DataMember(Name = "build", EmitDefaultValue = true)]
+        [DataMember(Name = "build", IsRequired = true, EmitDefaultValue = true)]
         public string Build { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = true)]
+        [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
@@ -223,13 +248,13 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets LaunchSource
         /// </summary>
-        [DataMember(Name = "launchSource", EmitDefaultValue = true)]
+        [DataMember(Name = "launchSource", IsRequired = true, EmitDefaultValue = true)]
         public string LaunchSource { get; set; }
 
         /// <summary>
@@ -313,127 +338,127 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.AutoTests == input.AutoTests ||
                     this.AutoTests != null &&
                     input.AutoTests != null &&
                     this.AutoTests.SequenceEqual(input.AutoTests)
-                ) &&
+                ) && 
                 (
                     this.AutoTestsCount == input.AutoTestsCount ||
                     this.AutoTestsCount.Equals(input.AutoTestsCount)
-                ) &&
+                ) && 
                 (
                     this.TestSuiteIds == input.TestSuiteIds ||
                     this.TestSuiteIds != null &&
                     input.TestSuiteIds != null &&
                     this.TestSuiteIds.SequenceEqual(input.TestSuiteIds)
-                ) &&
+                ) && 
                 (
                     this.IsAutomated == input.IsAutomated ||
                     this.IsAutomated.Equals(input.IsAutomated)
-                ) &&
+                ) && 
                 (
                     this.Analytic == input.Analytic ||
                     (this.Analytic != null &&
                     this.Analytic.Equals(input.Analytic))
-                ) &&
+                ) && 
                 (
                     this.TestResults == input.TestResults ||
                     this.TestResults != null &&
                     input.TestResults != null &&
                     this.TestResults.SequenceEqual(input.TestResults)
-                ) &&
+                ) && 
                 (
                     this.TestPlan == input.TestPlan ||
                     (this.TestPlan != null &&
                     this.TestPlan.Equals(input.TestPlan))
-                ) &&
+                ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) &&
+                ) && 
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
                     this.ModifiedDate.Equals(input.ModifiedDate))
-                ) &&
+                ) && 
                 (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&
                     this.CreatedById.Equals(input.CreatedById))
-                ) &&
+                ) && 
                 (
                     this.ModifiedById == input.ModifiedById ||
                     (this.ModifiedById != null &&
                     this.ModifiedById.Equals(input.ModifiedById))
-                ) &&
+                ) && 
                 (
                     this.CreatedByUserName == input.CreatedByUserName ||
                     (this.CreatedByUserName != null &&
                     this.CreatedByUserName.Equals(input.CreatedByUserName))
-                ) &&
+                ) && 
                 (
                     this.StartedDate == input.StartedDate ||
                     (this.StartedDate != null &&
                     this.StartedDate.Equals(input.StartedDate))
-                ) &&
+                ) && 
                 (
                     this.CompletedDate == input.CompletedDate ||
                     (this.CompletedDate != null &&
                     this.CompletedDate.Equals(input.CompletedDate))
-                ) &&
+                ) && 
                 (
                     this.Build == input.Build ||
                     (this.Build != null &&
                     this.Build.Equals(input.Build))
-                ) &&
+                ) && 
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) &&
+                ) && 
                 (
                     this.StateName == input.StateName ||
                     this.StateName.Equals(input.StateName)
-                ) &&
+                ) && 
                 (
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
-                ) &&
+                ) && 
                 (
                     this.TestPlanId == input.TestPlanId ||
                     (this.TestPlanId != null &&
                     this.TestPlanId.Equals(input.TestPlanId))
-                ) &&
+                ) && 
                 (
                     this.RunByUserId == input.RunByUserId ||
                     (this.RunByUserId != null &&
                     this.RunByUserId.Equals(input.RunByUserId))
-                ) &&
+                ) && 
                 (
                     this.StoppedByUserId == input.StoppedByUserId ||
                     (this.StoppedByUserId != null &&
                     this.StoppedByUserId.Equals(input.StoppedByUserId))
-                ) &&
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.LaunchSource == input.LaunchSource ||
                     (this.LaunchSource != null &&
                     this.LaunchSource.Equals(input.LaunchSource))
-                ) &&
+                ) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.IsDeleted == input.IsDeleted ||
                     this.IsDeleted.Equals(input.IsDeleted)

@@ -1,4 +1,4 @@
-# TestIt.Client.Model.DeletionState
+# TestIt.ApiClient.Model.DeletionState
 
 ## Properties
 

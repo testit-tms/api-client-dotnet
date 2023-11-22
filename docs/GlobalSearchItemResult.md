@@ -1,4 +1,4 @@
-# TestIt.Client.Model.GlobalSearchItemResult
+# TestIt.ApiClient.Model.GlobalSearchItemResult
 
 ## Properties
 

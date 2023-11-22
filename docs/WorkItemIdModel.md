@@ -1,4 +1,4 @@
-# TestIt.Client.Model.WorkItemIdModel
+# TestIt.ApiClient.Model.WorkItemIdModel
 
 ## Properties
 

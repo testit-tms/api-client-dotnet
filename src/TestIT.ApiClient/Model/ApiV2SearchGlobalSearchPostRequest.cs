@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// ApiV2SearchGlobalSearchPostRequest
@@ -127,21 +127,21 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Query == input.Query ||
                     (this.Query != null &&
                     this.Query.Equals(input.Query))
-                ) &&
+                ) && 
                 (
                     this.ResourceType == input.ResourceType ||
                     (this.ResourceType != null &&
                     this.ResourceType.Equals(input.ResourceType))
-                ) &&
+                ) && 
                 (
                     this.Take == input.Take ||
                     this.Take.Equals(input.Take)
-                ) &&
+                ) && 
                 (
                     this.Skip == input.Skip ||
                     this.Skip.Equals(input.Skip)

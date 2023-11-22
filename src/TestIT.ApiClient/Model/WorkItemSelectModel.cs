@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// Model containing options to filter work items
@@ -35,10 +35,20 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemSelectModel" /> class.
         /// </summary>
-        /// <param name="filter">filter.</param>
+        [JsonConstructorAttribute]
+        protected WorkItemSelectModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkItemSelectModel" /> class.
+        /// </summary>
+        /// <param name="filter">filter (required).</param>
         /// <param name="extractionModel">extractionModel.</param>
-        public WorkItemSelectModel(WorkItemSelectModelFilter filter = default(WorkItemSelectModelFilter), WorkItemSelectModelExtractionModel extractionModel = default(WorkItemSelectModelExtractionModel))
+        public WorkItemSelectModel(WorkItemSelectModelFilter filter = default(WorkItemSelectModelFilter), WorkItemLocalSelectModelExtractionModel extractionModel = default(WorkItemLocalSelectModelExtractionModel))
         {
+            // to ensure "filter" is required (not null)
+            if (filter == null)
+            {
+                throw new ArgumentNullException("filter is a required property for WorkItemSelectModel and cannot be null");
+            }
             this.Filter = filter;
             this.ExtractionModel = extractionModel;
         }
@@ -46,14 +56,14 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Filter
         /// </summary>
-        [DataMember(Name = "filter", EmitDefaultValue = true)]
+        [DataMember(Name = "filter", IsRequired = true, EmitDefaultValue = true)]
         public WorkItemSelectModelFilter Filter { get; set; }
 
         /// <summary>
         /// Gets or Sets ExtractionModel
         /// </summary>
         [DataMember(Name = "extractionModel", EmitDefaultValue = true)]
-        public WorkItemSelectModelExtractionModel ExtractionModel { get; set; }
+        public WorkItemLocalSelectModelExtractionModel ExtractionModel { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -99,12 +109,12 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Filter == input.Filter ||
                     (this.Filter != null &&
                     this.Filter.Equals(input.Filter))
-                ) &&
+                ) && 
                 (
                     this.ExtractionModel == input.ExtractionModel ||
                     (this.ExtractionModel != null &&

@@ -1,4 +1,4 @@
-# TestIt.Client.Model.WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel
+# TestIt.ApiClient.Model.WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel
 
 ## Properties
 

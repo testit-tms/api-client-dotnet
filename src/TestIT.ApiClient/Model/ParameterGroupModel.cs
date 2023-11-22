@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// ParameterGroupModel
@@ -40,26 +40,36 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ParameterGroupModel" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="values">values.</param>
+        /// <param name="name">name (required).</param>
+        /// <param name="values">values (required).</param>
         /// <param name="parameterKeyId">parameterKeyId (required).</param>
         public ParameterGroupModel(string name = default(string), Dictionary<string, string> values = default(Dictionary<string, string>), Guid parameterKeyId = default(Guid))
         {
-            this.ParameterKeyId = parameterKeyId;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for ParameterGroupModel and cannot be null");
+            }
             this.Name = name;
+            // to ensure "values" is required (not null)
+            if (values == null)
+            {
+                throw new ArgumentNullException("values is a required property for ParameterGroupModel and cannot be null");
+            }
             this.Values = values;
+            this.ParameterKeyId = parameterKeyId;
         }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Values
         /// </summary>
-        [DataMember(Name = "values", EmitDefaultValue = true)]
+        [DataMember(Name = "values", IsRequired = true, EmitDefaultValue = true)]
         public Dictionary<string, string> Values { get; set; }
 
         /// <summary>
@@ -113,18 +123,18 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.Values == input.Values ||
                     this.Values != null &&
                     input.Values != null &&
                     this.Values.SequenceEqual(input.Values)
-                ) &&
+                ) && 
                 (
                     this.ParameterKeyId == input.ParameterKeyId ||
                     (this.ParameterKeyId != null &&

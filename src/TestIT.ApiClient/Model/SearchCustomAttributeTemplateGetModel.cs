@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// SearchCustomAttributeTemplateGetModel
@@ -42,15 +42,30 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="id">id (required).</param>
         /// <param name="isDeleted">isDeleted (required).</param>
-        /// <param name="name">name.</param>
-        /// <param name="projectShortestModels">projectShortestModels.</param>
-        /// <param name="customAttributeModels">customAttributeModels.</param>
+        /// <param name="name">name (required).</param>
+        /// <param name="projectShortestModels">projectShortestModels (required).</param>
+        /// <param name="customAttributeModels">customAttributeModels (required).</param>
         public SearchCustomAttributeTemplateGetModel(Guid id = default(Guid), bool isDeleted = default(bool), string name = default(string), List<ProjectShortestModel> projectShortestModels = default(List<ProjectShortestModel>), List<CustomAttributeModel> customAttributeModels = default(List<CustomAttributeModel>))
         {
             this.Id = id;
             this.IsDeleted = isDeleted;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for SearchCustomAttributeTemplateGetModel and cannot be null");
+            }
             this.Name = name;
+            // to ensure "projectShortestModels" is required (not null)
+            if (projectShortestModels == null)
+            {
+                throw new ArgumentNullException("projectShortestModels is a required property for SearchCustomAttributeTemplateGetModel and cannot be null");
+            }
             this.ProjectShortestModels = projectShortestModels;
+            // to ensure "customAttributeModels" is required (not null)
+            if (customAttributeModels == null)
+            {
+                throw new ArgumentNullException("customAttributeModels is a required property for SearchCustomAttributeTemplateGetModel and cannot be null");
+            }
             this.CustomAttributeModels = customAttributeModels;
         }
 
@@ -69,19 +84,19 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets ProjectShortestModels
         /// </summary>
-        [DataMember(Name = "projectShortestModels", EmitDefaultValue = true)]
+        [DataMember(Name = "projectShortestModels", IsRequired = true, EmitDefaultValue = true)]
         public List<ProjectShortestModel> ProjectShortestModels { get; set; }
 
         /// <summary>
         /// Gets or Sets CustomAttributeModels
         /// </summary>
-        [DataMember(Name = "customAttributeModels", EmitDefaultValue = true)]
+        [DataMember(Name = "customAttributeModels", IsRequired = true, EmitDefaultValue = true)]
         public List<CustomAttributeModel> CustomAttributeModels { get; set; }
 
         /// <summary>
@@ -131,27 +146,27 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.IsDeleted == input.IsDeleted ||
                     this.IsDeleted.Equals(input.IsDeleted)
-                ) &&
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.ProjectShortestModels == input.ProjectShortestModels ||
                     this.ProjectShortestModels != null &&
                     input.ProjectShortestModels != null &&
                     this.ProjectShortestModels.SequenceEqual(input.ProjectShortestModels)
-                ) &&
+                ) && 
                 (
                     this.CustomAttributeModels == input.CustomAttributeModels ||
                     this.CustomAttributeModels != null &&

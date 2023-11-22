@@ -1,16 +1,16 @@
-# TestIt.Client.Model.WorkItemStepChangeViewModel
+# TestIt.ApiClient.Model.WorkItemStepChangeViewModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Action** | **string** |  | [optional] 
-**Expected** | **string** |  | [optional] 
-**Comments** | **string** |  | [optional] 
-**TestData** | **string** |  | [optional] 
+**Action** | **string** |  | 
+**Expected** | **string** |  | 
+**Comments** | **string** |  | 
+**TestData** | **string** |  | 
 **Index** | **int** |  | 
 **WorkItemId** | **Guid?** |  | [optional] 
-**WorkItem** | [**SharedStepChangeViewModel**](SharedStepChangeViewModel.md) |  | [optional] 
+**WorkItem** | [**WorkItemStepChangeViewModelWorkItem**](WorkItemStepChangeViewModelWorkItem.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

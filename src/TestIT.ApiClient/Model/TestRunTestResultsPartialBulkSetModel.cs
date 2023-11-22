@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// TestRunTestResultsPartialBulkSetModel
@@ -130,29 +130,29 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Selector == input.Selector ||
                     (this.Selector != null &&
                     this.Selector.Equals(input.Selector))
-                ) &&
+                ) && 
                 (
                     this.ResultReasonIds == input.ResultReasonIds ||
                     this.ResultReasonIds != null &&
                     input.ResultReasonIds != null &&
                     this.ResultReasonIds.SequenceEqual(input.ResultReasonIds)
-                ) &&
+                ) && 
                 (
                     this.Links == input.Links ||
                     this.Links != null &&
                     input.Links != null &&
                     this.Links.SequenceEqual(input.Links)
-                ) &&
+                ) && 
                 (
                     this.Comment == input.Comment ||
                     (this.Comment != null &&
                     this.Comment.Equals(input.Comment))
-                ) &&
+                ) && 
                 (
                     this.AttachmentIds == input.AttachmentIds ||
                     this.AttachmentIds != null &&

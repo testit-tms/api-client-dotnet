@@ -1,4 +1,4 @@
-# TestIt.Client.Model.ApiV2CustomAttributesGlobalPostRequest
+# TestIt.ApiClient.Model.ApiV2CustomAttributesGlobalPostRequest
 
 ## Properties
 

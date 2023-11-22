@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIT.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIt.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIT.ApiClient.Model
+namespace TestIt.ApiClient.Model
 {
     /// <summary>
     /// SharedStepChangeViewModel
@@ -42,13 +42,23 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="id">id (required).</param>
         /// <param name="globalId">globalId (required).</param>
-        /// <param name="name">name.</param>
-        /// <param name="steps">steps.</param>
+        /// <param name="name">name (required).</param>
+        /// <param name="steps">steps (required).</param>
         public SharedStepChangeViewModel(Guid id = default(Guid), long globalId = default(long), string name = default(string), List<WorkItemStepChangeViewModel> steps = default(List<WorkItemStepChangeViewModel>))
         {
             this.Id = id;
             this.GlobalId = globalId;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for SharedStepChangeViewModel and cannot be null");
+            }
             this.Name = name;
+            // to ensure "steps" is required (not null)
+            if (steps == null)
+            {
+                throw new ArgumentNullException("steps is a required property for SharedStepChangeViewModel and cannot be null");
+            }
             this.Steps = steps;
         }
 
@@ -67,13 +77,13 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Steps
         /// </summary>
-        [DataMember(Name = "steps", EmitDefaultValue = true)]
+        [DataMember(Name = "steps", IsRequired = true, EmitDefaultValue = true)]
         public List<WorkItemStepChangeViewModel> Steps { get; set; }
 
         /// <summary>
@@ -122,21 +132,21 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.GlobalId == input.GlobalId ||
                     this.GlobalId.Equals(input.GlobalId)
-                ) &&
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.Steps == input.Steps ||
                     this.Steps != null &&
