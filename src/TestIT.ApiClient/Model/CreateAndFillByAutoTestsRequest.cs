@@ -176,45 +176,45 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.ConfigurationIds == input.ConfigurationIds ||
                     this.ConfigurationIds != null &&
                     input.ConfigurationIds != null &&
                     this.ConfigurationIds.SequenceEqual(input.ConfigurationIds)
-                ) && 
+                ) &&
                 (
                     this.AutoTestExternalIds == input.AutoTestExternalIds ||
                     this.AutoTestExternalIds != null &&
                     input.AutoTestExternalIds != null &&
                     this.AutoTestExternalIds.SequenceEqual(input.AutoTestExternalIds)
-                ) && 
+                ) &&
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
+                ) &&
                 (
                     this.LaunchSource == input.LaunchSource ||
                     (this.LaunchSource != null &&
                     this.LaunchSource.Equals(input.LaunchSource))
-                ) && 
+                ) &&
                 (
                     this.Attachments == input.Attachments ||
                     this.Attachments != null &&
                     input.Attachments != null &&
                     this.Attachments.SequenceEqual(input.Attachments)
-                ) && 
+                ) &&
                 (
                     this.Links == input.Links ||
                     this.Links != null &&
@@ -273,7 +273,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -104,12 +104,12 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.OldValue == input.OldValue ||
                     (this.OldValue != null &&
                     this.OldValue.Equals(input.OldValue))
-                ) && 
+                ) &&
                 (
                     this.NewValue == input.NewValue ||
                     (this.NewValue != null &&
@@ -143,7 +143,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

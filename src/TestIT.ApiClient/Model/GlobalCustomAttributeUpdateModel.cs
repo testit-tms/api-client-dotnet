@@ -131,23 +131,23 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.Options == input.Options ||
                     this.Options != null &&
                     input.Options != null &&
                     this.Options.SequenceEqual(input.Options)
-                ) && 
+                ) &&
                 (
                     this.IsEnabled == input.IsEnabled ||
                     (this.IsEnabled != null &&
                     this.IsEnabled.Equals(input.IsEnabled))
-                ) && 
+                ) &&
                 (
                     this.IsRequired == input.IsRequired ||
                     (this.IsRequired != null &&
@@ -189,7 +189,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)

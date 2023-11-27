@@ -35,39 +35,24 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AutotestsSelectModel" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected AutotestsSelectModel() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AutotestsSelectModel" /> class.
-        /// </summary>
-        /// <param name="filter">filter (required).</param>
-        /// <param name="includes">includes (required).</param>
+        /// <param name="filter">filter.</param>
+        /// <param name="includes">includes.</param>
         public AutotestsSelectModel(AutotestsSelectModelFilter filter = default(AutotestsSelectModelFilter), AutotestsSelectModelIncludes includes = default(AutotestsSelectModelIncludes))
         {
-            // to ensure "filter" is required (not null)
-            if (filter == null)
-            {
-                throw new ArgumentNullException("filter is a required property for AutotestsSelectModel and cannot be null");
-            }
             this.Filter = filter;
-            // to ensure "includes" is required (not null)
-            if (includes == null)
-            {
-                throw new ArgumentNullException("includes is a required property for AutotestsSelectModel and cannot be null");
-            }
             this.Includes = includes;
         }
 
         /// <summary>
         /// Gets or Sets Filter
         /// </summary>
-        [DataMember(Name = "filter", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "filter", EmitDefaultValue = true)]
         public AutotestsSelectModelFilter Filter { get; set; }
 
         /// <summary>
         /// Gets or Sets Includes
         /// </summary>
-        [DataMember(Name = "includes", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "includes", EmitDefaultValue = true)]
         public AutotestsSelectModelIncludes Includes { get; set; }
 
         /// <summary>
@@ -114,12 +99,12 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Filter == input.Filter ||
                     (this.Filter != null &&
                     this.Filter.Equals(input.Filter))
-                ) && 
+                ) &&
                 (
                     this.Includes == input.Includes ||
                     (this.Includes != null &&
@@ -153,7 +138,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

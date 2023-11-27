@@ -43,17 +43,12 @@ namespace TestIT.ApiClient.Model
         /// <param name="id">Unique ID of project (required).</param>
         /// <param name="isDeleted">Indicates whether the project is deleted (required).</param>
         /// <param name="globalId">Global ID of project (required).</param>
-        /// <param name="name">Name of project (required).</param>
+        /// <param name="name">Name of project.</param>
         public ProjectShortestModel(Guid id = default(Guid), bool isDeleted = default(bool), long globalId = default(long), string name = default(string))
         {
             this.Id = id;
             this.IsDeleted = isDeleted;
             this.GlobalId = globalId;
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for ProjectShortestModel and cannot be null");
-            }
             this.Name = name;
         }
 
@@ -82,7 +77,7 @@ namespace TestIT.ApiClient.Model
         /// Name of project
         /// </summary>
         /// <value>Name of project</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -131,20 +126,20 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.IsDeleted == input.IsDeleted ||
                     this.IsDeleted.Equals(input.IsDeleted)
-                ) && 
+                ) &&
                 (
                     this.GlobalId == input.GlobalId ||
                     this.GlobalId.Equals(input.GlobalId)
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
@@ -180,7 +175,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

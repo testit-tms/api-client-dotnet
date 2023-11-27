@@ -140,27 +140,27 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Score == input.Score ||
                     this.Score.Equals(input.Score)
-                ) && 
+                ) &&
                 (
                     this.WorkItemsCreated == input.WorkItemsCreated ||
                     this.WorkItemsCreated.Equals(input.WorkItemsCreated)
-                ) && 
+                ) &&
                 (
                     this.PassedTestPoints == input.PassedTestPoints ||
                     this.PassedTestPoints.Equals(input.PassedTestPoints)
-                ) && 
+                ) &&
                 (
                     this.FailedTestPoints == input.FailedTestPoints ||
                     this.FailedTestPoints.Equals(input.FailedTestPoints)
-                ) && 
+                ) &&
                 (
                     this.SkippedTestPoints == input.SkippedTestPoints ||
                     this.SkippedTestPoints.Equals(input.SkippedTestPoints)
-                ) && 
+                ) &&
                 (
                     this.BlockedTestPoints == input.BlockedTestPoints ||
                     this.BlockedTestPoints.Equals(input.BlockedTestPoints)
@@ -191,7 +191,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

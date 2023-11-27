@@ -40,7 +40,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateAutoTestRequest" /> class.
         /// </summary>
-        /// <param name="id">Used for search autotest. If value is null or equals Guid mask filled with zeros, search will be executed using ExternalId.</param>
+        /// <param name="id">Used for search autotest. If value equals Guid mask filled with zeros, search will be executed using ExternalId.</param>
         /// <param name="workItemIdsForLinkWithAutoTest">workItemIdsForLinkWithAutoTest.</param>
         /// <param name="externalId">External ID of the autotest (required).</param>
         /// <param name="links">Collection of the autotest links.</param>
@@ -56,7 +56,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="labels">Collection of the autotest labels.</param>
         /// <param name="isFlaky">Indicates if the autotest is marked as flaky.</param>
         /// <param name="externalKey">External key of the autotest.</param>
-        public UpdateAutoTestRequest(Guid? id = default(Guid?), List<Guid> workItemIdsForLinkWithAutoTest = default(List<Guid>), string externalId = default(string), List<LinkPutModel> links = default(List<LinkPutModel>), Guid projectId = default(Guid), string name = default(string), string _namespace = default(string), string classname = default(string), List<AutoTestStepModel> steps = default(List<AutoTestStepModel>), List<AutoTestStepModel> setup = default(List<AutoTestStepModel>), List<AutoTestStepModel> teardown = default(List<AutoTestStepModel>), string title = default(string), string description = default(string), List<LabelPostModel> labels = default(List<LabelPostModel>), bool? isFlaky = default(bool?), string externalKey = default(string))
+        public UpdateAutoTestRequest(Guid id = default(Guid), List<Guid> workItemIdsForLinkWithAutoTest = default(List<Guid>), string externalId = default(string), List<LinkPutModel> links = default(List<LinkPutModel>), Guid projectId = default(Guid), string name = default(string), string _namespace = default(string), string classname = default(string), List<AutoTestStepModel> steps = default(List<AutoTestStepModel>), List<AutoTestStepModel> setup = default(List<AutoTestStepModel>), List<AutoTestStepModel> teardown = default(List<AutoTestStepModel>), string title = default(string), string description = default(string), List<LabelPostModel> labels = default(List<LabelPostModel>), bool? isFlaky = default(bool?), string externalKey = default(string))
         {
             // to ensure "externalId" is required (not null)
             if (externalId == null)
@@ -87,12 +87,12 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Used for search autotest. If value is null or equals Guid mask filled with zeros, search will be executed using ExternalId
+        /// Used for search autotest. If value equals Guid mask filled with zeros, search will be executed using ExternalId
         /// </summary>
-        /// <value>Used for search autotest. If value is null or equals Guid mask filled with zeros, search will be executed using ExternalId</value>
-        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
-        [DataMember(Name = "id", EmitDefaultValue = true)]
-        public Guid? Id { get; set; }
+        /// <value>Used for search autotest. If value equals Guid mask filled with zeros, search will be executed using ExternalId</value>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets WorkItemIdsForLinkWithAutoTest
@@ -256,88 +256,88 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.WorkItemIdsForLinkWithAutoTest == input.WorkItemIdsForLinkWithAutoTest ||
                     this.WorkItemIdsForLinkWithAutoTest != null &&
                     input.WorkItemIdsForLinkWithAutoTest != null &&
                     this.WorkItemIdsForLinkWithAutoTest.SequenceEqual(input.WorkItemIdsForLinkWithAutoTest)
-                ) && 
+                ) &&
                 (
                     this.ExternalId == input.ExternalId ||
                     (this.ExternalId != null &&
                     this.ExternalId.Equals(input.ExternalId))
-                ) && 
+                ) &&
                 (
                     this.Links == input.Links ||
                     this.Links != null &&
                     input.Links != null &&
                     this.Links.SequenceEqual(input.Links)
-                ) && 
+                ) &&
                 (
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.Namespace == input.Namespace ||
                     (this.Namespace != null &&
                     this.Namespace.Equals(input.Namespace))
-                ) && 
+                ) &&
                 (
                     this.Classname == input.Classname ||
                     (this.Classname != null &&
                     this.Classname.Equals(input.Classname))
-                ) && 
+                ) &&
                 (
                     this.Steps == input.Steps ||
                     this.Steps != null &&
                     input.Steps != null &&
                     this.Steps.SequenceEqual(input.Steps)
-                ) && 
+                ) &&
                 (
                     this.Setup == input.Setup ||
                     this.Setup != null &&
                     input.Setup != null &&
                     this.Setup.SequenceEqual(input.Setup)
-                ) && 
+                ) &&
                 (
                     this.Teardown == input.Teardown ||
                     this.Teardown != null &&
                     input.Teardown != null &&
                     this.Teardown.SequenceEqual(input.Teardown)
-                ) && 
+                ) &&
                 (
                     this.Title == input.Title ||
                     (this.Title != null &&
                     this.Title.Equals(input.Title))
-                ) && 
+                ) &&
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
+                ) &&
                 (
                     this.Labels == input.Labels ||
                     this.Labels != null &&
                     input.Labels != null &&
                     this.Labels.SequenceEqual(input.Labels)
-                ) && 
+                ) &&
                 (
                     this.IsFlaky == input.IsFlaky ||
                     (this.IsFlaky != null &&
                     this.IsFlaky.Equals(input.IsFlaky))
-                ) && 
+                ) &&
                 (
                     this.ExternalKey == input.ExternalKey ||
                     (this.ExternalKey != null &&
@@ -427,7 +427,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ExternalId (string) minLength
             if (this.ExternalId != null && this.ExternalId.Length < 1)

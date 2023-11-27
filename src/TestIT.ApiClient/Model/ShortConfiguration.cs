@@ -41,15 +41,10 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="ShortConfiguration" /> class.
         /// </summary>
         /// <param name="id">id (required).</param>
-        /// <param name="name">name (required).</param>
+        /// <param name="name">name.</param>
         public ShortConfiguration(Guid id = default(Guid), string name = default(string))
         {
             this.Id = id;
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for ShortConfiguration and cannot be null");
-            }
             this.Name = name;
         }
 
@@ -62,7 +57,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -109,12 +104,12 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
@@ -148,7 +143,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

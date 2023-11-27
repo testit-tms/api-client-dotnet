@@ -136,23 +136,23 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.InProgress == input.InProgress ||
                     this.InProgress.Equals(input.InProgress)
-                ) && 
+                ) &&
                 (
                     this.Passed == input.Passed ||
                     this.Passed.Equals(input.Passed)
-                ) && 
+                ) &&
                 (
                     this.Failed == input.Failed ||
                     this.Failed.Equals(input.Failed)
-                ) && 
+                ) &&
                 (
                     this.Skipped == input.Skipped ||
                     this.Skipped.Equals(input.Skipped)
-                ) && 
+                ) &&
                 (
                     this.Blocked == input.Blocked ||
                     this.Blocked.Equals(input.Blocked)
@@ -182,7 +182,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

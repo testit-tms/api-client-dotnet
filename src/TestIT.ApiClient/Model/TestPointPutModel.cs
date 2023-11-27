@@ -169,47 +169,47 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.TesterId == input.TesterId ||
                     (this.TesterId != null &&
                     this.TesterId.Equals(input.TesterId))
-                ) && 
+                ) &&
                 (
                     this.IterationId == input.IterationId ||
                     (this.IterationId != null &&
                     this.IterationId.Equals(input.IterationId))
-                ) && 
+                ) &&
                 (
                     this.WorkItemId == input.WorkItemId ||
                     (this.WorkItemId != null &&
                     this.WorkItemId.Equals(input.WorkItemId))
-                ) && 
+                ) &&
                 (
                     this.ConfigurationId == input.ConfigurationId ||
                     (this.ConfigurationId != null &&
                     this.ConfigurationId.Equals(input.ConfigurationId))
-                ) && 
+                ) &&
                 (
                     this.TestSuiteId == input.TestSuiteId ||
                     (this.TestSuiteId != null &&
                     this.TestSuiteId.Equals(input.TestSuiteId))
-                ) && 
+                ) &&
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
-                ) && 
+                ) &&
                 (
                     this.LastTestResultId == input.LastTestResultId ||
                     (this.LastTestResultId != null &&
                     this.LastTestResultId.Equals(input.LastTestResultId))
-                ) && 
+                ) &&
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.IsDeleted == input.IsDeleted ||
                     this.IsDeleted.Equals(input.IsDeleted)
@@ -267,7 +267,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -117,24 +117,24 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.ProjectIds == input.ProjectIds ||
                     this.ProjectIds != null &&
                     input.ProjectIds != null &&
                     this.ProjectIds.SequenceEqual(input.ProjectIds)
-                ) && 
+                ) &&
                 (
                     this.CustomAttributeTypes == input.CustomAttributeTypes ||
                     this.CustomAttributeTypes != null &&
                     input.CustomAttributeTypes != null &&
                     this.CustomAttributeTypes.SequenceEqual(input.CustomAttributeTypes)
-                ) && 
+                ) &&
                 (
                     this.IsDeleted == input.IsDeleted ||
                     (this.IsDeleted != null &&
@@ -176,7 +176,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

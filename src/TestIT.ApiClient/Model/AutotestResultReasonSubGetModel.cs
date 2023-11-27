@@ -47,22 +47,17 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="AutotestResultReasonSubGetModel" /> class.
         /// </summary>
         /// <param name="failureCategory">failureCategory (required).</param>
-        /// <param name="name">name (required).</param>
+        /// <param name="name">name.</param>
         public AutotestResultReasonSubGetModel(FailureCategoryModel failureCategory = default(FailureCategoryModel), string name = default(string))
         {
             this.FailureCategory = failureCategory;
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for AutotestResultReasonSubGetModel and cannot be null");
-            }
             this.Name = name;
         }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -109,11 +104,11 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.FailureCategory == input.FailureCategory ||
                     this.FailureCategory.Equals(input.FailureCategory)
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
@@ -144,7 +139,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -144,42 +144,42 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Outcomes == input.Outcomes ||
                     this.Outcomes != null &&
                     input.Outcomes != null &&
                     this.Outcomes.SequenceEqual(input.Outcomes)
-                ) && 
+                ) &&
                 (
                     this.TestPlanIds == input.TestPlanIds ||
                     this.TestPlanIds != null &&
                     input.TestPlanIds != null &&
                     this.TestPlanIds.SequenceEqual(input.TestPlanIds)
-                ) && 
+                ) &&
                 (
                     this.TestRunIds == input.TestRunIds ||
                     this.TestRunIds != null &&
                     input.TestRunIds != null &&
                     this.TestRunIds.SequenceEqual(input.TestRunIds)
-                ) && 
+                ) &&
                 (
                     this.ConfigurationIds == input.ConfigurationIds ||
                     this.ConfigurationIds != null &&
                     input.ConfigurationIds != null &&
                     this.ConfigurationIds.SequenceEqual(input.ConfigurationIds)
-                ) && 
+                ) &&
                 (
                     this.LaunchSource == input.LaunchSource ||
                     (this.LaunchSource != null &&
                     this.LaunchSource.Equals(input.LaunchSource))
-                ) && 
+                ) &&
                 (
                     this.UserIds == input.UserIds ||
                     this.UserIds != null &&
                     input.UserIds != null &&
                     this.UserIds.SequenceEqual(input.UserIds)
-                ) && 
+                ) &&
                 (
                     this.Duration == input.Duration ||
                     (this.Duration != null &&
@@ -233,7 +233,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // LaunchSource (string) maxLength
             if (this.LaunchSource != null && this.LaunchSource.Length > 255)

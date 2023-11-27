@@ -144,37 +144,37 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.BugLink == input.BugLink ||
                     (this.BugLink != null &&
                     this.BugLink.Equals(input.BugLink))
-                ) && 
+                ) &&
                 (
                     this.WorkItemGlobalId == input.WorkItemGlobalId ||
                     (this.WorkItemGlobalId != null &&
                     this.WorkItemGlobalId.Equals(input.WorkItemGlobalId))
-                ) && 
+                ) &&
                 (
                     this.WorkItemName == input.WorkItemName ||
                     (this.WorkItemName != null &&
                     this.WorkItemName.Equals(input.WorkItemName))
-                ) && 
+                ) &&
                 (
                     this.ConfigurationName == input.ConfigurationName ||
                     (this.ConfigurationName != null &&
                     this.ConfigurationName.Equals(input.ConfigurationName))
-                ) && 
+                ) &&
                 (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&
                     this.CreatedById.Equals(input.CreatedById))
-                ) && 
+                ) &&
                 (
                     this.Comment == input.Comment ||
                     (this.Comment != null &&
                     this.Comment.Equals(input.Comment))
-                ) && 
+                ) &&
                 (
                     this.Info == input.Info ||
                     (this.Info != null &&
@@ -228,7 +228,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

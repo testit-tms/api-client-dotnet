@@ -199,73 +199,73 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.FailureClassIds == input.FailureClassIds ||
                     this.FailureClassIds != null &&
                     input.FailureClassIds != null &&
                     this.FailureClassIds.SequenceEqual(input.FailureClassIds)
-                ) && 
+                ) &&
                 (
                     this.Outcome == input.Outcome ||
                     this.Outcome.Equals(input.Outcome)
-                ) && 
+                ) &&
                 (
                     this.Comment == input.Comment ||
                     (this.Comment != null &&
                     this.Comment.Equals(input.Comment))
-                ) && 
+                ) &&
                 (
                     this.Links == input.Links ||
                     this.Links != null &&
                     input.Links != null &&
                     this.Links.SequenceEqual(input.Links)
-                ) && 
+                ) &&
                 (
                     this.StepResults == input.StepResults ||
                     this.StepResults != null &&
                     input.StepResults != null &&
                     this.StepResults.SequenceEqual(input.StepResults)
-                ) && 
+                ) &&
                 (
                     this.Attachments == input.Attachments ||
                     this.Attachments != null &&
                     input.Attachments != null &&
                     this.Attachments.SequenceEqual(input.Attachments)
-                ) && 
+                ) &&
                 (
                     this.DurationInMs == input.DurationInMs ||
                     (this.DurationInMs != null &&
                     this.DurationInMs.Equals(input.DurationInMs))
-                ) && 
+                ) &&
                 (
                     this.Duration == input.Duration ||
                     (this.Duration != null &&
                     this.Duration.Equals(input.Duration))
-                ) && 
+                ) &&
                 (
                     this.StepComments == input.StepComments ||
                     this.StepComments != null &&
                     input.StepComments != null &&
                     this.StepComments.SequenceEqual(input.StepComments)
-                ) && 
+                ) &&
                 (
                     this.SetupResults == input.SetupResults ||
                     this.SetupResults != null &&
                     input.SetupResults != null &&
                     this.SetupResults.SequenceEqual(input.SetupResults)
-                ) && 
+                ) &&
                 (
                     this.TeardownResults == input.TeardownResults ||
                     this.TeardownResults != null &&
                     input.TeardownResults != null &&
                     this.TeardownResults.SequenceEqual(input.TeardownResults)
-                ) && 
+                ) &&
                 (
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
-                ) && 
+                ) &&
                 (
                     this.Trace == input.Trace ||
                     (this.Trace != null &&
@@ -340,7 +340,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // DurationInMs (long?) minimum
             if (this.DurationInMs < (long?)0)

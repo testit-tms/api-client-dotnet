@@ -52,10 +52,10 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WebHookModel" /> class.
         /// </summary>
-        /// <param name="name">Name of the webhook (required).</param>
+        /// <param name="name">Name of the webhook.</param>
         /// <param name="eventType">eventType (required).</param>
         /// <param name="description">Description of the webhook.</param>
-        /// <param name="url">Url to which the webhook sends request (required).</param>
+        /// <param name="url">Url to which the webhook sends request.</param>
         /// <param name="requestType">requestType (required).</param>
         /// <param name="shouldSendBody">Indicates if the webhook sends body (required).</param>
         /// <param name="headers">Collection of headers which the webhook sends.</param>
@@ -75,19 +75,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
         public WebHookModel(string name = default(string), WebHookEventTypeModel eventType = default(WebHookEventTypeModel), string description = default(string), string url = default(string), RequestTypeModel requestType = default(RequestTypeModel), bool shouldSendBody = default(bool), Dictionary<string, string> headers = default(Dictionary<string, string>), Dictionary<string, string> queryParameters = default(Dictionary<string, string>), bool isEnabled = default(bool), bool shouldSendCustomBody = default(bool), string customBody = default(string), string customBodyMediaType = default(string), bool shouldReplaceParameters = default(bool), bool shouldEscapeParameters = default(bool), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), Guid projectId = default(Guid), Guid id = default(Guid), bool isDeleted = default(bool))
         {
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for WebHookModel and cannot be null");
-            }
-            this.Name = name;
             this.EventType = eventType;
-            // to ensure "url" is required (not null)
-            if (url == null)
-            {
-                throw new ArgumentNullException("url is a required property for WebHookModel and cannot be null");
-            }
-            this.Url = url;
             this.RequestType = requestType;
             this.ShouldSendBody = shouldSendBody;
             this.IsEnabled = isEnabled;
@@ -99,7 +87,9 @@ namespace TestIT.ApiClient.Model
             this.ProjectId = projectId;
             this.Id = id;
             this.IsDeleted = isDeleted;
+            this.Name = name;
             this.Description = description;
+            this.Url = url;
             this.Headers = headers;
             this.QueryParameters = queryParameters;
             this.CustomBody = customBody;
@@ -112,7 +102,7 @@ namespace TestIT.ApiClient.Model
         /// Name of the webhook
         /// </summary>
         /// <value>Name of the webhook</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -126,7 +116,7 @@ namespace TestIT.ApiClient.Model
         /// Url to which the webhook sends request
         /// </summary>
         /// <value>Url to which the webhook sends request</value>
-        [DataMember(Name = "url", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "url", EmitDefaultValue = true)]
         public string Url { get; set; }
 
         /// <summary>
@@ -304,102 +294,102 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.EventType == input.EventType ||
                     this.EventType.Equals(input.EventType)
-                ) && 
+                ) &&
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
+                ) &&
                 (
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
-                ) && 
+                ) &&
                 (
                     this.RequestType == input.RequestType ||
                     this.RequestType.Equals(input.RequestType)
-                ) && 
+                ) &&
                 (
                     this.ShouldSendBody == input.ShouldSendBody ||
                     this.ShouldSendBody.Equals(input.ShouldSendBody)
-                ) && 
+                ) &&
                 (
                     this.Headers == input.Headers ||
                     this.Headers != null &&
                     input.Headers != null &&
                     this.Headers.SequenceEqual(input.Headers)
-                ) && 
+                ) &&
                 (
                     this.QueryParameters == input.QueryParameters ||
                     this.QueryParameters != null &&
                     input.QueryParameters != null &&
                     this.QueryParameters.SequenceEqual(input.QueryParameters)
-                ) && 
+                ) &&
                 (
                     this.IsEnabled == input.IsEnabled ||
                     this.IsEnabled.Equals(input.IsEnabled)
-                ) && 
+                ) &&
                 (
                     this.ShouldSendCustomBody == input.ShouldSendCustomBody ||
                     this.ShouldSendCustomBody.Equals(input.ShouldSendCustomBody)
-                ) && 
+                ) &&
                 (
                     this.CustomBody == input.CustomBody ||
                     (this.CustomBody != null &&
                     this.CustomBody.Equals(input.CustomBody))
-                ) && 
+                ) &&
                 (
                     this.CustomBodyMediaType == input.CustomBodyMediaType ||
                     (this.CustomBodyMediaType != null &&
                     this.CustomBodyMediaType.Equals(input.CustomBodyMediaType))
-                ) && 
+                ) &&
                 (
                     this.ShouldReplaceParameters == input.ShouldReplaceParameters ||
                     this.ShouldReplaceParameters.Equals(input.ShouldReplaceParameters)
-                ) && 
+                ) &&
                 (
                     this.ShouldEscapeParameters == input.ShouldEscapeParameters ||
                     this.ShouldEscapeParameters.Equals(input.ShouldEscapeParameters)
-                ) && 
+                ) &&
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
+                ) &&
                 (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&
                     this.CreatedById.Equals(input.CreatedById))
-                ) && 
+                ) &&
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
                     this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
+                ) &&
                 (
                     this.ModifiedById == input.ModifiedById ||
                     (this.ModifiedById != null &&
                     this.ModifiedById.Equals(input.ModifiedById))
-                ) && 
+                ) &&
                 (
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
-                ) && 
+                ) &&
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.IsDeleted == input.IsDeleted ||
                     this.IsDeleted.Equals(input.IsDeleted)
@@ -484,7 +474,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

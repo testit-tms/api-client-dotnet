@@ -42,8 +42,8 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="selectModel">selectModel (required).</param>
         /// <param name="description">description.</param>
-        /// <param name="attachmentUpdateScheme">attachmentUpdateScheme (required).</param>
-        /// <param name="linkUpdateScheme">linkUpdateScheme (required).</param>
+        /// <param name="attachmentUpdateScheme">attachmentUpdateScheme.</param>
+        /// <param name="linkUpdateScheme">linkUpdateScheme.</param>
         public ApiV2TestRunsUpdateMultiplePostRequest(TestRunSelectionModel selectModel = default(TestRunSelectionModel), string description = default(string), SetOfAttachmentIds attachmentUpdateScheme = default(SetOfAttachmentIds), SetOfLinks linkUpdateScheme = default(SetOfLinks))
         {
             // to ensure "selectModel" is required (not null)
@@ -52,19 +52,9 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("selectModel is a required property for ApiV2TestRunsUpdateMultiplePostRequest and cannot be null");
             }
             this.SelectModel = selectModel;
-            // to ensure "attachmentUpdateScheme" is required (not null)
-            if (attachmentUpdateScheme == null)
-            {
-                throw new ArgumentNullException("attachmentUpdateScheme is a required property for ApiV2TestRunsUpdateMultiplePostRequest and cannot be null");
-            }
-            this.AttachmentUpdateScheme = attachmentUpdateScheme;
-            // to ensure "linkUpdateScheme" is required (not null)
-            if (linkUpdateScheme == null)
-            {
-                throw new ArgumentNullException("linkUpdateScheme is a required property for ApiV2TestRunsUpdateMultiplePostRequest and cannot be null");
-            }
-            this.LinkUpdateScheme = linkUpdateScheme;
             this.Description = description;
+            this.AttachmentUpdateScheme = attachmentUpdateScheme;
+            this.LinkUpdateScheme = linkUpdateScheme;
         }
 
         /// <summary>
@@ -82,13 +72,13 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets AttachmentUpdateScheme
         /// </summary>
-        [DataMember(Name = "attachmentUpdateScheme", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "attachmentUpdateScheme", EmitDefaultValue = true)]
         public SetOfAttachmentIds AttachmentUpdateScheme { get; set; }
 
         /// <summary>
         /// Gets or Sets LinkUpdateScheme
         /// </summary>
-        [DataMember(Name = "linkUpdateScheme", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "linkUpdateScheme", EmitDefaultValue = true)]
         public SetOfLinks LinkUpdateScheme { get; set; }
 
         /// <summary>
@@ -137,22 +127,22 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.SelectModel == input.SelectModel ||
                     (this.SelectModel != null &&
                     this.SelectModel.Equals(input.SelectModel))
-                ) && 
+                ) &&
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
+                ) &&
                 (
                     this.AttachmentUpdateScheme == input.AttachmentUpdateScheme ||
                     (this.AttachmentUpdateScheme != null &&
                     this.AttachmentUpdateScheme.Equals(input.AttachmentUpdateScheme))
-                ) && 
+                ) &&
                 (
                     this.LinkUpdateScheme == input.LinkUpdateScheme ||
                     (this.LinkUpdateScheme != null &&
@@ -194,7 +184,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

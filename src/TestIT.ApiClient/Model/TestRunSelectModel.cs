@@ -35,39 +35,24 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestRunSelectModel" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected TestRunSelectModel() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TestRunSelectModel" /> class.
-        /// </summary>
-        /// <param name="filter">filter (required).</param>
-        /// <param name="extractionModel">extractionModel (required).</param>
-        public TestRunSelectModel(ApiV2TestRunsSearchPostRequest filter = default(ApiV2TestRunsSearchPostRequest), TestRunSelectModelExtractionModel extractionModel = default(TestRunSelectModelExtractionModel))
+        /// <param name="filter">filter.</param>
+        /// <param name="extractionModel">extractionModel.</param>
+        public TestRunSelectModel(TestRunFilterModel filter = default(TestRunFilterModel), TestRunSelectModelExtractionModel extractionModel = default(TestRunSelectModelExtractionModel))
         {
-            // to ensure "filter" is required (not null)
-            if (filter == null)
-            {
-                throw new ArgumentNullException("filter is a required property for TestRunSelectModel and cannot be null");
-            }
             this.Filter = filter;
-            // to ensure "extractionModel" is required (not null)
-            if (extractionModel == null)
-            {
-                throw new ArgumentNullException("extractionModel is a required property for TestRunSelectModel and cannot be null");
-            }
             this.ExtractionModel = extractionModel;
         }
 
         /// <summary>
         /// Gets or Sets Filter
         /// </summary>
-        [DataMember(Name = "filter", IsRequired = true, EmitDefaultValue = true)]
-        public ApiV2TestRunsSearchPostRequest Filter { get; set; }
+        [DataMember(Name = "filter", EmitDefaultValue = true)]
+        public TestRunFilterModel Filter { get; set; }
 
         /// <summary>
         /// Gets or Sets ExtractionModel
         /// </summary>
-        [DataMember(Name = "extractionModel", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "extractionModel", EmitDefaultValue = true)]
         public TestRunSelectModelExtractionModel ExtractionModel { get; set; }
 
         /// <summary>
@@ -114,12 +99,12 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Filter == input.Filter ||
                     (this.Filter != null &&
                     this.Filter.Equals(input.Filter))
-                ) && 
+                ) &&
                 (
                     this.ExtractionModel == input.ExtractionModel ||
                     (this.ExtractionModel != null &&
@@ -153,7 +138,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

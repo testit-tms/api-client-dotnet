@@ -47,7 +47,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="TestRunShortGetModel" /> class.
         /// </summary>
         /// <param name="id">Unique ID of the test run (required).</param>
-        /// <param name="name">Name of the test run (required).</param>
+        /// <param name="name">Name of the test run.</param>
         /// <param name="state">state (required).</param>
         /// <param name="createdDate">Date when the test run was created (required).</param>
         /// <param name="startedDate">Date when the test run was started.</param>
@@ -56,30 +56,20 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedById">Unique ID of user who modified the test run last time.</param>
         /// <param name="isDeleted">Is the test run is deleted (required).</param>
         /// <param name="autoTestsCount">Number of AutoTests run in the test run (required).</param>
-        /// <param name="statistics">statistics (required).</param>
+        /// <param name="statistics">statistics.</param>
         public TestRunShortGetModel(Guid id = default(Guid), string name = default(string), TestRunState state = default(TestRunState), DateTime createdDate = default(DateTime), DateTime? startedDate = default(DateTime?), DateTime? completedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), bool isDeleted = default(bool), int autoTestsCount = default(int), TestRunShortGetModelStatistics statistics = default(TestRunShortGetModelStatistics))
         {
             this.Id = id;
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for TestRunShortGetModel and cannot be null");
-            }
-            this.Name = name;
             this.State = state;
             this.CreatedDate = createdDate;
             this.CreatedById = createdById;
             this.IsDeleted = isDeleted;
             this.AutoTestsCount = autoTestsCount;
-            // to ensure "statistics" is required (not null)
-            if (statistics == null)
-            {
-                throw new ArgumentNullException("statistics is a required property for TestRunShortGetModel and cannot be null");
-            }
-            this.Statistics = statistics;
+            this.Name = name;
             this.StartedDate = startedDate;
             this.CompletedDate = completedDate;
             this.ModifiedById = modifiedById;
+            this.Statistics = statistics;
         }
 
         /// <summary>
@@ -93,7 +83,7 @@ namespace TestIT.ApiClient.Model
         /// Name of the test run
         /// </summary>
         /// <value>Name of the test run</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -148,7 +138,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Statistics
         /// </summary>
-        [DataMember(Name = "statistics", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "statistics", EmitDefaultValue = true)]
         public TestRunShortGetModelStatistics Statistics { get; set; }
 
         /// <summary>
@@ -204,54 +194,54 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.State == input.State ||
                     this.State.Equals(input.State)
-                ) && 
+                ) &&
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
+                ) &&
                 (
                     this.StartedDate == input.StartedDate ||
                     (this.StartedDate != null &&
                     this.StartedDate.Equals(input.StartedDate))
-                ) && 
+                ) &&
                 (
                     this.CompletedDate == input.CompletedDate ||
                     (this.CompletedDate != null &&
                     this.CompletedDate.Equals(input.CompletedDate))
-                ) && 
+                ) &&
                 (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&
                     this.CreatedById.Equals(input.CreatedById))
-                ) && 
+                ) &&
                 (
                     this.ModifiedById == input.ModifiedById ||
                     (this.ModifiedById != null &&
                     this.ModifiedById.Equals(input.ModifiedById))
-                ) && 
+                ) &&
                 (
                     this.IsDeleted == input.IsDeleted ||
                     this.IsDeleted.Equals(input.IsDeleted)
-                ) && 
+                ) &&
                 (
                     this.AutoTestsCount == input.AutoTestsCount ||
                     this.AutoTestsCount.Equals(input.AutoTestsCount)
-                ) && 
+                ) &&
                 (
                     this.Statistics == input.Statistics ||
                     (this.Statistics != null &&
@@ -312,7 +302,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

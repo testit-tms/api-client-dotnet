@@ -295,125 +295,125 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.TestPlanIds == input.TestPlanIds ||
                     this.TestPlanIds != null &&
                     input.TestPlanIds != null &&
                     this.TestPlanIds.SequenceEqual(input.TestPlanIds)
-                ) && 
+                ) &&
                 (
                     this.TestSuiteIds == input.TestSuiteIds ||
                     this.TestSuiteIds != null &&
                     input.TestSuiteIds != null &&
                     this.TestSuiteIds.SequenceEqual(input.TestSuiteIds)
-                ) && 
+                ) &&
                 (
                     this.WorkItemGlobalIds == input.WorkItemGlobalIds ||
                     this.WorkItemGlobalIds != null &&
                     input.WorkItemGlobalIds != null &&
                     this.WorkItemGlobalIds.SequenceEqual(input.WorkItemGlobalIds)
-                ) && 
+                ) &&
                 (
                     this.WorkItemMedianDuration == input.WorkItemMedianDuration ||
                     (this.WorkItemMedianDuration != null &&
                     this.WorkItemMedianDuration.Equals(input.WorkItemMedianDuration))
-                ) && 
+                ) &&
                 (
                     this.Statuses == input.Statuses ||
                     this.Statuses != null &&
                     input.Statuses != null &&
                     this.Statuses.SequenceEqual(input.Statuses)
-                ) && 
+                ) &&
                 (
                     this.Priorities == input.Priorities ||
                     this.Priorities != null &&
                     input.Priorities != null &&
                     this.Priorities.SequenceEqual(input.Priorities)
-                ) && 
+                ) &&
                 (
                     this.IsAutomated == input.IsAutomated ||
                     (this.IsAutomated != null &&
                     this.IsAutomated.Equals(input.IsAutomated))
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.ConfigurationIds == input.ConfigurationIds ||
                     this.ConfigurationIds != null &&
                     input.ConfigurationIds != null &&
                     this.ConfigurationIds.SequenceEqual(input.ConfigurationIds)
-                ) && 
+                ) &&
                 (
                     this.TesterIds == input.TesterIds ||
                     this.TesterIds != null &&
                     input.TesterIds != null &&
                     this.TesterIds.SequenceEqual(input.TesterIds)
-                ) && 
+                ) &&
                 (
                     this.Duration == input.Duration ||
                     (this.Duration != null &&
                     this.Duration.Equals(input.Duration))
-                ) && 
+                ) &&
                 (
                     this.SectionIds == input.SectionIds ||
                     this.SectionIds != null &&
                     input.SectionIds != null &&
                     this.SectionIds.SequenceEqual(input.SectionIds)
-                ) && 
+                ) &&
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
+                ) &&
                 (
                     this.CreatedByIds == input.CreatedByIds ||
                     this.CreatedByIds != null &&
                     input.CreatedByIds != null &&
                     this.CreatedByIds.SequenceEqual(input.CreatedByIds)
-                ) && 
+                ) &&
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
                     this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
+                ) &&
                 (
                     this.ModifiedByIds == input.ModifiedByIds ||
                     this.ModifiedByIds != null &&
                     input.ModifiedByIds != null &&
                     this.ModifiedByIds.SequenceEqual(input.ModifiedByIds)
-                ) && 
+                ) &&
                 (
                     this.Tags == input.Tags ||
                     this.Tags != null &&
                     input.Tags != null &&
                     this.Tags.SequenceEqual(input.Tags)
-                ) && 
+                ) &&
                 (
                     this.Attributes == input.Attributes ||
                     this.Attributes != null &&
                     input.Attributes != null &&
                     this.Attributes.SequenceEqual(input.Attributes)
-                ) && 
+                ) &&
                 (
                     this.WorkItemCreatedDate == input.WorkItemCreatedDate ||
                     (this.WorkItemCreatedDate != null &&
                     this.WorkItemCreatedDate.Equals(input.WorkItemCreatedDate))
-                ) && 
+                ) &&
                 (
                     this.WorkItemCreatedByIds == input.WorkItemCreatedByIds ||
                     this.WorkItemCreatedByIds != null &&
                     input.WorkItemCreatedByIds != null &&
                     this.WorkItemCreatedByIds.SequenceEqual(input.WorkItemCreatedByIds)
-                ) && 
+                ) &&
                 (
                     this.WorkItemModifiedDate == input.WorkItemModifiedDate ||
                     (this.WorkItemModifiedDate != null &&
                     this.WorkItemModifiedDate.Equals(input.WorkItemModifiedDate))
-                ) && 
+                ) &&
                 (
                     this.WorkItemModifiedByIds == input.WorkItemModifiedByIds ||
                     this.WorkItemModifiedByIds != null &&
@@ -528,7 +528,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)

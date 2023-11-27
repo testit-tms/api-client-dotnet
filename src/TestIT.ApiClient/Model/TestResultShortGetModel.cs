@@ -41,63 +41,33 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="TestResultShortGetModel" /> class.
         /// </summary>
         /// <param name="id">Unique ID of the test result (required).</param>
-        /// <param name="name">Name of autotest represented by the test result (required).</param>
+        /// <param name="name">Name of autotest represented by the test result.</param>
         /// <param name="autotestGlobalId">Global ID of autotest represented by the test result (required).</param>
         /// <param name="testRunId">Unique ID of test run where the test result is located (required).</param>
         /// <param name="configurationId">Unique ID of configuration which the test result uses (required).</param>
-        /// <param name="configurationName">Name of configuration which the test result uses (required).</param>
-        /// <param name="outcome">Outcome of the test result (required).</param>
-        /// <param name="resultReasons">Collection of result reasons which the test result have (required).</param>
+        /// <param name="configurationName">Name of configuration which the test result uses.</param>
+        /// <param name="outcome">Outcome of the test result.</param>
+        /// <param name="resultReasons">Collection of result reasons which the test result have.</param>
         /// <param name="comment">Comment to the test result.</param>
         /// <param name="date">Date when the test result has been set (required).</param>
         /// <param name="duration">Time which it took to run the test.</param>
-        /// <param name="links">Collection of links attached to the test result (required).</param>
-        /// <param name="attachments">Collection of files attached to the test result (required).</param>
+        /// <param name="links">Collection of links attached to the test result.</param>
+        /// <param name="attachments">Collection of files attached to the test result.</param>
         public TestResultShortGetModel(Guid id = default(Guid), string name = default(string), long autotestGlobalId = default(long), Guid testRunId = default(Guid), Guid configurationId = default(Guid), string configurationName = default(string), string outcome = default(string), List<AutotestResultReasonSubGetModel> resultReasons = default(List<AutotestResultReasonSubGetModel>), string comment = default(string), DateTime date = default(DateTime), long? duration = default(long?), List<LinkSubGetModel> links = default(List<LinkSubGetModel>), List<AttachmentModel> attachments = default(List<AttachmentModel>))
         {
             this.Id = id;
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for TestResultShortGetModel and cannot be null");
-            }
-            this.Name = name;
             this.AutotestGlobalId = autotestGlobalId;
             this.TestRunId = testRunId;
             this.ConfigurationId = configurationId;
-            // to ensure "configurationName" is required (not null)
-            if (configurationName == null)
-            {
-                throw new ArgumentNullException("configurationName is a required property for TestResultShortGetModel and cannot be null");
-            }
-            this.ConfigurationName = configurationName;
-            // to ensure "outcome" is required (not null)
-            if (outcome == null)
-            {
-                throw new ArgumentNullException("outcome is a required property for TestResultShortGetModel and cannot be null");
-            }
-            this.Outcome = outcome;
-            // to ensure "resultReasons" is required (not null)
-            if (resultReasons == null)
-            {
-                throw new ArgumentNullException("resultReasons is a required property for TestResultShortGetModel and cannot be null");
-            }
-            this.ResultReasons = resultReasons;
             this.Date = date;
-            // to ensure "links" is required (not null)
-            if (links == null)
-            {
-                throw new ArgumentNullException("links is a required property for TestResultShortGetModel and cannot be null");
-            }
-            this.Links = links;
-            // to ensure "attachments" is required (not null)
-            if (attachments == null)
-            {
-                throw new ArgumentNullException("attachments is a required property for TestResultShortGetModel and cannot be null");
-            }
-            this.Attachments = attachments;
+            this.Name = name;
+            this.ConfigurationName = configurationName;
+            this.Outcome = outcome;
+            this.ResultReasons = resultReasons;
             this.Comment = comment;
             this.Duration = duration;
+            this.Links = links;
+            this.Attachments = attachments;
         }
 
         /// <summary>
@@ -111,7 +81,7 @@ namespace TestIT.ApiClient.Model
         /// Name of autotest represented by the test result
         /// </summary>
         /// <value>Name of autotest represented by the test result</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -139,21 +109,21 @@ namespace TestIT.ApiClient.Model
         /// Name of configuration which the test result uses
         /// </summary>
         /// <value>Name of configuration which the test result uses</value>
-        [DataMember(Name = "configurationName", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "configurationName", EmitDefaultValue = true)]
         public string ConfigurationName { get; set; }
 
         /// <summary>
         /// Outcome of the test result
         /// </summary>
         /// <value>Outcome of the test result</value>
-        [DataMember(Name = "outcome", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "outcome", EmitDefaultValue = true)]
         public string Outcome { get; set; }
 
         /// <summary>
         /// Collection of result reasons which the test result have
         /// </summary>
         /// <value>Collection of result reasons which the test result have</value>
-        [DataMember(Name = "resultReasons", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "resultReasons", EmitDefaultValue = true)]
         public List<AutotestResultReasonSubGetModel> ResultReasons { get; set; }
 
         /// <summary>
@@ -181,14 +151,14 @@ namespace TestIT.ApiClient.Model
         /// Collection of links attached to the test result
         /// </summary>
         /// <value>Collection of links attached to the test result</value>
-        [DataMember(Name = "links", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "links", EmitDefaultValue = true)]
         public List<LinkSubGetModel> Links { get; set; }
 
         /// <summary>
         /// Collection of files attached to the test result
         /// </summary>
         /// <value>Collection of files attached to the test result</value>
-        [DataMember(Name = "attachments", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "attachments", EmitDefaultValue = true)]
         public List<AttachmentModel> Attachments { get; set; }
 
         /// <summary>
@@ -246,68 +216,68 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.AutotestGlobalId == input.AutotestGlobalId ||
                     this.AutotestGlobalId.Equals(input.AutotestGlobalId)
-                ) && 
+                ) &&
                 (
                     this.TestRunId == input.TestRunId ||
                     (this.TestRunId != null &&
                     this.TestRunId.Equals(input.TestRunId))
-                ) && 
+                ) &&
                 (
                     this.ConfigurationId == input.ConfigurationId ||
                     (this.ConfigurationId != null &&
                     this.ConfigurationId.Equals(input.ConfigurationId))
-                ) && 
+                ) &&
                 (
                     this.ConfigurationName == input.ConfigurationName ||
                     (this.ConfigurationName != null &&
                     this.ConfigurationName.Equals(input.ConfigurationName))
-                ) && 
+                ) &&
                 (
                     this.Outcome == input.Outcome ||
                     (this.Outcome != null &&
                     this.Outcome.Equals(input.Outcome))
-                ) && 
+                ) &&
                 (
                     this.ResultReasons == input.ResultReasons ||
                     this.ResultReasons != null &&
                     input.ResultReasons != null &&
                     this.ResultReasons.SequenceEqual(input.ResultReasons)
-                ) && 
+                ) &&
                 (
                     this.Comment == input.Comment ||
                     (this.Comment != null &&
                     this.Comment.Equals(input.Comment))
-                ) && 
+                ) &&
                 (
                     this.Date == input.Date ||
                     (this.Date != null &&
                     this.Date.Equals(input.Date))
-                ) && 
+                ) &&
                 (
                     this.Duration == input.Duration ||
                     (this.Duration != null &&
                     this.Duration.Equals(input.Duration))
-                ) && 
+                ) &&
                 (
                     this.Links == input.Links ||
                     this.Links != null &&
                     input.Links != null &&
                     this.Links.SequenceEqual(input.Links)
-                ) && 
+                ) &&
                 (
                     this.Attachments == input.Attachments ||
                     this.Attachments != null &&
@@ -383,7 +353,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -250,88 +250,88 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.ConfigurationId == input.ConfigurationId ||
                     (this.ConfigurationId != null &&
                     this.ConfigurationId.Equals(input.ConfigurationId))
-                ) && 
+                ) &&
                 (
                     this.Links == input.Links ||
                     this.Links != null &&
                     input.Links != null &&
                     this.Links.SequenceEqual(input.Links)
-                ) && 
+                ) &&
                 (
                     this.FailureReasonNames == input.FailureReasonNames ||
                     this.FailureReasonNames != null &&
                     input.FailureReasonNames != null &&
                     this.FailureReasonNames.SequenceEqual(input.FailureReasonNames)
-                ) && 
+                ) &&
                 (
                     this.AutoTestExternalId == input.AutoTestExternalId ||
                     (this.AutoTestExternalId != null &&
                     this.AutoTestExternalId.Equals(input.AutoTestExternalId))
-                ) && 
+                ) &&
                 (
                     this.Outcome == input.Outcome ||
                     this.Outcome.Equals(input.Outcome)
-                ) && 
+                ) &&
                 (
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
-                ) && 
+                ) &&
                 (
                     this.Traces == input.Traces ||
                     (this.Traces != null &&
                     this.Traces.Equals(input.Traces))
-                ) && 
+                ) &&
                 (
                     this.StartedOn == input.StartedOn ||
                     (this.StartedOn != null &&
                     this.StartedOn.Equals(input.StartedOn))
-                ) && 
+                ) &&
                 (
                     this.CompletedOn == input.CompletedOn ||
                     (this.CompletedOn != null &&
                     this.CompletedOn.Equals(input.CompletedOn))
-                ) && 
+                ) &&
                 (
                     this.Duration == input.Duration ||
                     (this.Duration != null &&
                     this.Duration.Equals(input.Duration))
-                ) && 
+                ) &&
                 (
                     this.Attachments == input.Attachments ||
                     this.Attachments != null &&
                     input.Attachments != null &&
                     this.Attachments.SequenceEqual(input.Attachments)
-                ) && 
+                ) &&
                 (
                     this.Parameters == input.Parameters ||
                     this.Parameters != null &&
                     input.Parameters != null &&
                     this.Parameters.SequenceEqual(input.Parameters)
-                ) && 
+                ) &&
                 (
                     this.Properties == input.Properties ||
                     this.Properties != null &&
                     input.Properties != null &&
                     this.Properties.SequenceEqual(input.Properties)
-                ) && 
+                ) &&
                 (
                     this.StepResults == input.StepResults ||
                     this.StepResults != null &&
                     input.StepResults != null &&
                     this.StepResults.SequenceEqual(input.StepResults)
-                ) && 
+                ) &&
                 (
                     this.SetupResults == input.SetupResults ||
                     this.SetupResults != null &&
                     input.SetupResults != null &&
                     this.SetupResults.SequenceEqual(input.SetupResults)
-                ) && 
+                ) &&
                 (
                     this.TeardownResults == input.TeardownResults ||
                     this.TeardownResults != null &&
@@ -419,7 +419,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // AutoTestExternalId (string) minLength
             if (this.AutoTestExternalId != null && this.AutoTestExternalId.Length < 1)

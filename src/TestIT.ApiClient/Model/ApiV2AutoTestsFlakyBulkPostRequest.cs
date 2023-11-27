@@ -40,24 +40,19 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiV2AutoTestsFlakyBulkPostRequest" /> class.
         /// </summary>
-        /// <param name="autotestSelect">autotestSelect (required).</param>
+        /// <param name="autotestSelect">autotestSelect.</param>
         /// <param name="value">Are autotests flaky (required).</param>
-        public ApiV2AutoTestsFlakyBulkPostRequest(FlakyBulkModelAutotestSelect autotestSelect = default(FlakyBulkModelAutotestSelect), bool value = default(bool))
+        public ApiV2AutoTestsFlakyBulkPostRequest(AutotestSelectModel autotestSelect = default(AutotestSelectModel), bool value = default(bool))
         {
-            // to ensure "autotestSelect" is required (not null)
-            if (autotestSelect == null)
-            {
-                throw new ArgumentNullException("autotestSelect is a required property for ApiV2AutoTestsFlakyBulkPostRequest and cannot be null");
-            }
-            this.AutotestSelect = autotestSelect;
             this.Value = value;
+            this.AutotestSelect = autotestSelect;
         }
 
         /// <summary>
         /// Gets or Sets AutotestSelect
         /// </summary>
-        [DataMember(Name = "autotestSelect", IsRequired = true, EmitDefaultValue = true)]
-        public FlakyBulkModelAutotestSelect AutotestSelect { get; set; }
+        [DataMember(Name = "autotestSelect", EmitDefaultValue = true)]
+        public AutotestSelectModel AutotestSelect { get; set; }
 
         /// <summary>
         /// Are autotests flaky
@@ -110,12 +105,12 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.AutotestSelect == input.AutotestSelect ||
                     (this.AutotestSelect != null &&
                     this.AutotestSelect.Equals(input.AutotestSelect))
-                ) && 
+                ) &&
                 (
                     this.Value == input.Value ||
                     this.Value.Equals(input.Value)
@@ -145,7 +140,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

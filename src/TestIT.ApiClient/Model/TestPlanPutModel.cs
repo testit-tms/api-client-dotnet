@@ -51,7 +51,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="projectId">projectId (required).</param>
         /// <param name="productName">productName.</param>
         /// <param name="hasAutomaticDurationTimer">hasAutomaticDurationTimer.</param>
-        /// <param name="attributes">attributes (required).</param>
+        /// <param name="attributes">attributes.</param>
         public TestPlanPutModel(Guid id = default(Guid), Guid? lockedById = default(Guid?), List<TagShortModel> tags = default(List<TagShortModel>), string name = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string description = default(string), string build = default(string), Guid projectId = default(Guid), string productName = default(string), bool? hasAutomaticDurationTimer = default(bool?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>))
         {
             this.Id = id;
@@ -62,12 +62,6 @@ namespace TestIT.ApiClient.Model
             }
             this.Name = name;
             this.ProjectId = projectId;
-            // to ensure "attributes" is required (not null)
-            if (attributes == null)
-            {
-                throw new ArgumentNullException("attributes is a required property for TestPlanPutModel and cannot be null");
-            }
-            this.Attributes = attributes;
             this.LockedById = lockedById;
             this.Tags = tags;
             this.StartDate = startDate;
@@ -76,12 +70,13 @@ namespace TestIT.ApiClient.Model
             this.Build = build;
             this.ProductName = productName;
             this.HasAutomaticDurationTimer = hasAutomaticDurationTimer;
+            this.Attributes = attributes;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
@@ -108,7 +103,7 @@ namespace TestIT.ApiClient.Model
         /// Used for analytics
         /// </summary>
         /// <value>Used for analytics</value>
-        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "startDate", EmitDefaultValue = true)]
         public DateTime? StartDate { get; set; }
 
@@ -116,7 +111,7 @@ namespace TestIT.ApiClient.Model
         /// Used for analytics
         /// </summary>
         /// <value>Used for analytics</value>
-        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "endDate", EmitDefaultValue = true)]
         public DateTime? EndDate { get; set; }
 
@@ -137,7 +132,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets ProjectId
         /// </summary>
-        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
@@ -158,7 +153,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Attributes
         /// </summary>
-        [DataMember(Name = "attributes", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "attributes", EmitDefaultValue = true)]
         public Dictionary<string, Object> Attributes { get; set; }
 
         /// <summary>
@@ -215,63 +210,63 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.LockedById == input.LockedById ||
                     (this.LockedById != null &&
                     this.LockedById.Equals(input.LockedById))
-                ) && 
+                ) &&
                 (
                     this.Tags == input.Tags ||
                     this.Tags != null &&
                     input.Tags != null &&
                     this.Tags.SequenceEqual(input.Tags)
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.StartDate == input.StartDate ||
                     (this.StartDate != null &&
                     this.StartDate.Equals(input.StartDate))
-                ) && 
+                ) &&
                 (
                     this.EndDate == input.EndDate ||
                     (this.EndDate != null &&
                     this.EndDate.Equals(input.EndDate))
-                ) && 
+                ) &&
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
+                ) &&
                 (
                     this.Build == input.Build ||
                     (this.Build != null &&
                     this.Build.Equals(input.Build))
-                ) && 
+                ) &&
                 (
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
-                ) && 
+                ) &&
                 (
                     this.ProductName == input.ProductName ||
                     (this.ProductName != null &&
                     this.ProductName.Equals(input.ProductName))
-                ) && 
+                ) &&
                 (
                     this.HasAutomaticDurationTimer == input.HasAutomaticDurationTimer ||
                     (this.HasAutomaticDurationTimer != null &&
                     this.HasAutomaticDurationTimer.Equals(input.HasAutomaticDurationTimer))
-                ) && 
+                ) &&
                 (
                     this.Attributes == input.Attributes ||
                     this.Attributes != null &&
@@ -346,7 +341,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 450)

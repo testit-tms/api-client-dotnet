@@ -42,32 +42,22 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="versionId">versionId (required).</param>
         /// <param name="globalId">globalId (required).</param>
-        /// <param name="name">name (required).</param>
-        /// <param name="steps">steps (required).</param>
+        /// <param name="name">name.</param>
+        /// <param name="steps">steps.</param>
         /// <param name="isDeleted">isDeleted (required).</param>
         public SectionSharedStep(Guid versionId = default(Guid), long globalId = default(long), string name = default(string), List<StepModel> steps = default(List<StepModel>), bool isDeleted = default(bool))
         {
             this.VersionId = versionId;
             this.GlobalId = globalId;
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for SectionSharedStep and cannot be null");
-            }
-            this.Name = name;
-            // to ensure "steps" is required (not null)
-            if (steps == null)
-            {
-                throw new ArgumentNullException("steps is a required property for SectionSharedStep and cannot be null");
-            }
-            this.Steps = steps;
             this.IsDeleted = isDeleted;
+            this.Name = name;
+            this.Steps = steps;
         }
 
         /// <summary>
         /// Gets or Sets VersionId
         /// </summary>
-        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "versionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid VersionId { get; set; }
 
@@ -82,13 +72,13 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Name
         /// </summary>
         /// <example>&quot;First step&quot;</example>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Steps
         /// </summary>
-        [DataMember(Name = "steps", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "steps", EmitDefaultValue = true)]
         [Obsolete]
         public List<StepModel> Steps { get; set; }
 
@@ -146,27 +136,27 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.VersionId == input.VersionId ||
                     (this.VersionId != null &&
                     this.VersionId.Equals(input.VersionId))
-                ) && 
+                ) &&
                 (
                     this.GlobalId == input.GlobalId ||
                     this.GlobalId.Equals(input.GlobalId)
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.Steps == input.Steps ||
                     this.Steps != null &&
                     input.Steps != null &&
                     this.Steps.SequenceEqual(input.Steps)
-                ) && 
+                ) &&
                 (
                     this.IsDeleted == input.IsDeleted ||
                     this.IsDeleted.Equals(input.IsDeleted)
@@ -205,7 +195,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

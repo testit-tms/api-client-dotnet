@@ -41,15 +41,10 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="SharedStepResultModel" /> class.
         /// </summary>
         /// <param name="stepId">stepId (required).</param>
-        /// <param name="outcome">outcome (required).</param>
+        /// <param name="outcome">outcome.</param>
         public SharedStepResultModel(Guid stepId = default(Guid), string outcome = default(string))
         {
             this.StepId = stepId;
-            // to ensure "outcome" is required (not null)
-            if (outcome == null)
-            {
-                throw new ArgumentNullException("outcome is a required property for SharedStepResultModel and cannot be null");
-            }
             this.Outcome = outcome;
         }
 
@@ -62,7 +57,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Outcome
         /// </summary>
-        [DataMember(Name = "outcome", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "outcome", EmitDefaultValue = true)]
         public string Outcome { get; set; }
 
         /// <summary>
@@ -109,12 +104,12 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.StepId == input.StepId ||
                     (this.StepId != null &&
                     this.StepId.Equals(input.StepId))
-                ) && 
+                ) &&
                 (
                     this.Outcome == input.Outcome ||
                     (this.Outcome != null &&
@@ -148,7 +143,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

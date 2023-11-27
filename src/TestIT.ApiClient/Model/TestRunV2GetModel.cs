@@ -57,8 +57,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="createdByUserName">createdByUserName.</param>
-        /// <param name="attachments">attachments (required).</param>
-        /// <param name="links">links (required).</param>
+        /// <param name="attachments">attachments.</param>
+        /// <param name="links">links.</param>
         /// <param name="id">id (required).</param>
         /// <param name="name">name (required).</param>
         /// <param name="description">description.</param>
@@ -69,18 +69,6 @@ namespace TestIT.ApiClient.Model
             this.ProjectId = projectId;
             this.CreatedDate = createdDate;
             this.CreatedById = createdById;
-            // to ensure "attachments" is required (not null)
-            if (attachments == null)
-            {
-                throw new ArgumentNullException("attachments is a required property for TestRunV2GetModel and cannot be null");
-            }
-            this.Attachments = attachments;
-            // to ensure "links" is required (not null)
-            if (links == null)
-            {
-                throw new ArgumentNullException("links is a required property for TestRunV2GetModel and cannot be null");
-            }
-            this.Links = links;
             this.Id = id;
             // to ensure "name" is required (not null)
             if (name == null)
@@ -95,6 +83,8 @@ namespace TestIT.ApiClient.Model
             this.ModifiedDate = modifiedDate;
             this.ModifiedById = modifiedById;
             this.CreatedByUserName = createdByUserName;
+            this.Attachments = attachments;
+            this.Links = links;
             this.Description = description;
             this.LaunchSource = launchSource;
         }
@@ -102,14 +92,14 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets StartedOn
         /// </summary>
-        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "startedOn", EmitDefaultValue = true)]
         public DateTime? StartedOn { get; set; }
 
         /// <summary>
         /// Gets or Sets CompletedOn
         /// </summary>
-        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "completedOn", EmitDefaultValue = true)]
         public DateTime? CompletedOn { get; set; }
 
@@ -117,7 +107,7 @@ namespace TestIT.ApiClient.Model
         /// This property is used to link test run with project
         /// </summary>
         /// <value>This property is used to link test run with project</value>
-        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
@@ -125,7 +115,7 @@ namespace TestIT.ApiClient.Model
         /// This property is used to link test run with test plan
         /// </summary>
         /// <value>This property is used to link test run with test plan</value>
-        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "testPlanId", EmitDefaultValue = true)]
         public Guid? TestPlanId { get; set; }
 
@@ -138,28 +128,28 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
+        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
-        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
@@ -173,19 +163,19 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Attachments
         /// </summary>
-        [DataMember(Name = "attachments", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "attachments", EmitDefaultValue = true)]
         public List<AttachmentModel> Attachments { get; set; }
 
         /// <summary>
         /// Gets or Sets Links
         /// </summary>
-        [DataMember(Name = "links", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "links", EmitDefaultValue = true)]
         public List<LinkModel> Links { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
@@ -269,89 +259,89 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.StartedOn == input.StartedOn ||
                     (this.StartedOn != null &&
                     this.StartedOn.Equals(input.StartedOn))
-                ) && 
+                ) &&
                 (
                     this.CompletedOn == input.CompletedOn ||
                     (this.CompletedOn != null &&
                     this.CompletedOn.Equals(input.CompletedOn))
-                ) && 
+                ) &&
                 (
                     this.StateName == input.StateName ||
                     this.StateName.Equals(input.StateName)
-                ) && 
+                ) &&
                 (
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
-                ) && 
+                ) &&
                 (
                     this.TestPlanId == input.TestPlanId ||
                     (this.TestPlanId != null &&
                     this.TestPlanId.Equals(input.TestPlanId))
-                ) && 
+                ) &&
                 (
                     this.TestResults == input.TestResults ||
                     this.TestResults != null &&
                     input.TestResults != null &&
                     this.TestResults.SequenceEqual(input.TestResults)
-                ) && 
+                ) &&
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
+                ) &&
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
                     this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
+                ) &&
                 (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&
                     this.CreatedById.Equals(input.CreatedById))
-                ) && 
+                ) &&
                 (
                     this.ModifiedById == input.ModifiedById ||
                     (this.ModifiedById != null &&
                     this.ModifiedById.Equals(input.ModifiedById))
-                ) && 
+                ) &&
                 (
                     this.CreatedByUserName == input.CreatedByUserName ||
                     (this.CreatedByUserName != null &&
                     this.CreatedByUserName.Equals(input.CreatedByUserName))
-                ) && 
+                ) &&
                 (
                     this.Attachments == input.Attachments ||
                     this.Attachments != null &&
                     input.Attachments != null &&
                     this.Attachments.SequenceEqual(input.Attachments)
-                ) && 
+                ) &&
                 (
                     this.Links == input.Links ||
                     this.Links != null &&
                     input.Links != null &&
                     this.Links.SequenceEqual(input.Links)
-                ) && 
+                ) &&
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
+                ) &&
                 (
                     this.LaunchSource == input.LaunchSource ||
                     (this.LaunchSource != null &&
@@ -442,7 +432,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) minLength
             if (this.Name != null && this.Name.Length < 1)

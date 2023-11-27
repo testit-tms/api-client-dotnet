@@ -35,20 +35,10 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemSelectModel" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected WorkItemSelectModel() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WorkItemSelectModel" /> class.
-        /// </summary>
-        /// <param name="filter">filter (required).</param>
+        /// <param name="filter">filter.</param>
         /// <param name="extractionModel">extractionModel.</param>
-        public WorkItemSelectModel(WorkItemSelectModelFilter filter = default(WorkItemSelectModelFilter), WorkItemLocalSelectModelExtractionModel extractionModel = default(WorkItemLocalSelectModelExtractionModel))
+        public WorkItemSelectModel(WorkItemSelectModelFilter filter = default(WorkItemSelectModelFilter), WorkItemSelectModelExtractionModel extractionModel = default(WorkItemSelectModelExtractionModel))
         {
-            // to ensure "filter" is required (not null)
-            if (filter == null)
-            {
-                throw new ArgumentNullException("filter is a required property for WorkItemSelectModel and cannot be null");
-            }
             this.Filter = filter;
             this.ExtractionModel = extractionModel;
         }
@@ -56,14 +46,14 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Filter
         /// </summary>
-        [DataMember(Name = "filter", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "filter", EmitDefaultValue = true)]
         public WorkItemSelectModelFilter Filter { get; set; }
 
         /// <summary>
         /// Gets or Sets ExtractionModel
         /// </summary>
         [DataMember(Name = "extractionModel", EmitDefaultValue = true)]
-        public WorkItemLocalSelectModelExtractionModel ExtractionModel { get; set; }
+        public WorkItemSelectModelExtractionModel ExtractionModel { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -109,12 +99,12 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Filter == input.Filter ||
                     (this.Filter != null &&
                     this.Filter.Equals(input.Filter))
-                ) && 
+                ) &&
                 (
                     this.ExtractionModel == input.ExtractionModel ||
                     (this.ExtractionModel != null &&
@@ -148,7 +138,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

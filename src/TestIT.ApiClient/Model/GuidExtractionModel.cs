@@ -99,13 +99,13 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Include == input.Include ||
                     this.Include != null &&
                     input.Include != null &&
                     this.Include.SequenceEqual(input.Include)
-                ) && 
+                ) &&
                 (
                     this.Exclude == input.Exclude ||
                     this.Exclude != null &&
@@ -140,7 +140,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

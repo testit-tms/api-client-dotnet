@@ -27,33 +27,33 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// Model containing options to filter work items
+    /// Extraction parameters for work items
     /// </summary>
-    [DataContract(Name = "WorkItemGroupGetModel_selectModel")]
-    public partial class WorkItemGroupGetModelSelectModel : IEquatable<WorkItemGroupGetModelSelectModel>, IValidatableObject
+    [DataContract(Name = "WorkItemsExtractionModel_ids")]
+    public partial class WorkItemsExtractionModelIds : IEquatable<WorkItemsExtractionModelIds>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkItemGroupGetModelSelectModel" /> class.
+        /// Initializes a new instance of the <see cref="WorkItemsExtractionModelIds" /> class.
         /// </summary>
-        /// <param name="filter">filter.</param>
-        /// <param name="extractionModel">extractionModel.</param>
-        public WorkItemGroupGetModelSelectModel(WorkItemLocalSelectModelFilter filter = default(WorkItemLocalSelectModelFilter), WorkItemLocalSelectModelExtractionModel extractionModel = default(WorkItemLocalSelectModelExtractionModel))
+        /// <param name="include">include.</param>
+        /// <param name="exclude">exclude.</param>
+        public WorkItemsExtractionModelIds(List<Guid> include = default(List<Guid>), List<Guid> exclude = default(List<Guid>))
         {
-            this.Filter = filter;
-            this.ExtractionModel = extractionModel;
+            this.Include = include;
+            this.Exclude = exclude;
         }
 
         /// <summary>
-        /// Gets or Sets Filter
+        /// Gets or Sets Include
         /// </summary>
-        [DataMember(Name = "filter", EmitDefaultValue = true)]
-        public WorkItemLocalSelectModelFilter Filter { get; set; }
+        [DataMember(Name = "include", EmitDefaultValue = true)]
+        public List<Guid> Include { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExtractionModel
+        /// Gets or Sets Exclude
         /// </summary>
-        [DataMember(Name = "extractionModel", EmitDefaultValue = true)]
-        public WorkItemLocalSelectModelExtractionModel ExtractionModel { get; set; }
+        [DataMember(Name = "exclude", EmitDefaultValue = true)]
+        public List<Guid> Exclude { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -62,9 +62,9 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WorkItemGroupGetModelSelectModel {\n");
-            sb.Append("  Filter: ").Append(Filter).Append("\n");
-            sb.Append("  ExtractionModel: ").Append(ExtractionModel).Append("\n");
+            sb.Append("class WorkItemsExtractionModelIds {\n");
+            sb.Append("  Include: ").Append(Include).Append("\n");
+            sb.Append("  Exclude: ").Append(Exclude).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -85,30 +85,32 @@ namespace TestIT.ApiClient.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as WorkItemGroupGetModelSelectModel);
+            return this.Equals(input as WorkItemsExtractionModelIds);
         }
 
         /// <summary>
-        /// Returns true if WorkItemGroupGetModelSelectModel instances are equal
+        /// Returns true if WorkItemsExtractionModelIds instances are equal
         /// </summary>
-        /// <param name="input">Instance of WorkItemGroupGetModelSelectModel to be compared</param>
+        /// <param name="input">Instance of WorkItemsExtractionModelIds to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(WorkItemGroupGetModelSelectModel input)
+        public bool Equals(WorkItemsExtractionModelIds input)
         {
             if (input == null)
             {
                 return false;
             }
-            return 
+            return
                 (
-                    this.Filter == input.Filter ||
-                    (this.Filter != null &&
-                    this.Filter.Equals(input.Filter))
-                ) && 
+                    this.Include == input.Include ||
+                    this.Include != null &&
+                    input.Include != null &&
+                    this.Include.SequenceEqual(input.Include)
+                ) &&
                 (
-                    this.ExtractionModel == input.ExtractionModel ||
-                    (this.ExtractionModel != null &&
-                    this.ExtractionModel.Equals(input.ExtractionModel))
+                    this.Exclude == input.Exclude ||
+                    this.Exclude != null &&
+                    input.Exclude != null &&
+                    this.Exclude.SequenceEqual(input.Exclude)
                 );
         }
 
@@ -121,13 +123,13 @@ namespace TestIT.ApiClient.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Filter != null)
+                if (this.Include != null)
                 {
-                    hashCode = (hashCode * 59) + this.Filter.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Include.GetHashCode();
                 }
-                if (this.ExtractionModel != null)
+                if (this.Exclude != null)
                 {
-                    hashCode = (hashCode * 59) + this.ExtractionModel.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Exclude.GetHashCode();
                 }
                 return hashCode;
             }
@@ -138,7 +140,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

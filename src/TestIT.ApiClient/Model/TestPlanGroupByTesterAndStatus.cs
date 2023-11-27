@@ -41,18 +41,13 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="TestPlanGroupByTesterAndStatus" /> class.
         /// </summary>
         /// <param name="userId">userId.</param>
-        /// <param name="status">status (required).</param>
+        /// <param name="status">status.</param>
         /// <param name="value">value (required).</param>
         public TestPlanGroupByTesterAndStatus(Guid? userId = default(Guid?), string status = default(string), long value = default(long))
         {
-            // to ensure "status" is required (not null)
-            if (status == null)
-            {
-                throw new ArgumentNullException("status is a required property for TestPlanGroupByTesterAndStatus and cannot be null");
-            }
-            this.Status = status;
             this.Value = value;
             this.UserId = userId;
+            this.Status = status;
         }
 
         /// <summary>
@@ -64,7 +59,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "status", EmitDefaultValue = true)]
         public string Status { get; set; }
 
         /// <summary>
@@ -118,17 +113,17 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.UserId == input.UserId ||
                     (this.UserId != null &&
                     this.UserId.Equals(input.UserId))
-                ) && 
+                ) &&
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
-                ) && 
+                ) &&
                 (
                     this.Value == input.Value ||
                     this.Value.Equals(input.Value)
@@ -162,7 +157,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

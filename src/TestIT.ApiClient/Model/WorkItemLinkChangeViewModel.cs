@@ -40,58 +40,38 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemLinkChangeViewModel" /> class.
         /// </summary>
-        /// <param name="description">description (required).</param>
-        /// <param name="url">url (required).</param>
-        /// <param name="title">title (required).</param>
+        /// <param name="description">description.</param>
+        /// <param name="url">url.</param>
+        /// <param name="title">title.</param>
         /// <param name="hasInfo">hasInfo (required).</param>
         /// <param name="id">id (required).</param>
-        /// <param name="type">type (required).</param>
+        /// <param name="type">type.</param>
         public WorkItemLinkChangeViewModel(string description = default(string), string url = default(string), string title = default(string), bool hasInfo = default(bool), Guid id = default(Guid), string type = default(string))
         {
-            // to ensure "description" is required (not null)
-            if (description == null)
-            {
-                throw new ArgumentNullException("description is a required property for WorkItemLinkChangeViewModel and cannot be null");
-            }
-            this.Description = description;
-            // to ensure "url" is required (not null)
-            if (url == null)
-            {
-                throw new ArgumentNullException("url is a required property for WorkItemLinkChangeViewModel and cannot be null");
-            }
-            this.Url = url;
-            // to ensure "title" is required (not null)
-            if (title == null)
-            {
-                throw new ArgumentNullException("title is a required property for WorkItemLinkChangeViewModel and cannot be null");
-            }
-            this.Title = title;
             this.HasInfo = hasInfo;
             this.Id = id;
-            // to ensure "type" is required (not null)
-            if (type == null)
-            {
-                throw new ArgumentNullException("type is a required property for WorkItemLinkChangeViewModel and cannot be null");
-            }
+            this.Description = description;
+            this.Url = url;
+            this.Title = title;
             this.Type = type;
         }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
-        [DataMember(Name = "url", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "url", EmitDefaultValue = true)]
         public string Url { get; set; }
 
         /// <summary>
         /// Gets or Sets Title
         /// </summary>
-        [DataMember(Name = "title", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "title", EmitDefaultValue = true)]
         public string Title { get; set; }
 
         /// <summary>
@@ -109,7 +89,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "type", EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
@@ -160,31 +140,31 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
+                ) &&
                 (
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
-                ) && 
+                ) &&
                 (
                     this.Title == input.Title ||
                     (this.Title != null &&
                     this.Title.Equals(input.Title))
-                ) && 
+                ) &&
                 (
                     this.HasInfo == input.HasInfo ||
                     this.HasInfo.Equals(input.HasInfo)
-                ) && 
+                ) &&
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.Type == input.Type ||
                     (this.Type != null &&
@@ -231,7 +211,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

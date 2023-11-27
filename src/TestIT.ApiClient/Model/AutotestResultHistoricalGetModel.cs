@@ -49,11 +49,11 @@ namespace TestIT.ApiClient.Model
         /// <param name="id">id (required).</param>
         /// <param name="createdDate">createdDate (required).</param>
         /// <param name="createdById">createdById (required).</param>
-        /// <param name="createdByName">createdByName (required).</param>
+        /// <param name="createdByName">createdByName.</param>
         /// <param name="testRunId">testRunId (required).</param>
         /// <param name="testRunName">testRunName.</param>
         /// <param name="configurationId">configurationId (required).</param>
-        /// <param name="configurationName">configurationName (required).</param>
+        /// <param name="configurationName">configurationName.</param>
         /// <param name="outcome">outcome (required).</param>
         /// <param name="launchSource">launchSource.</param>
         /// <param name="modifiedDate">modifiedDate.</param>
@@ -67,22 +67,12 @@ namespace TestIT.ApiClient.Model
             this.Id = id;
             this.CreatedDate = createdDate;
             this.CreatedById = createdById;
-            // to ensure "createdByName" is required (not null)
-            if (createdByName == null)
-            {
-                throw new ArgumentNullException("createdByName is a required property for AutotestResultHistoricalGetModel and cannot be null");
-            }
-            this.CreatedByName = createdByName;
             this.TestRunId = testRunId;
             this.ConfigurationId = configurationId;
-            // to ensure "configurationName" is required (not null)
-            if (configurationName == null)
-            {
-                throw new ArgumentNullException("configurationName is a required property for AutotestResultHistoricalGetModel and cannot be null");
-            }
-            this.ConfigurationName = configurationName;
             this.Outcome = outcome;
+            this.CreatedByName = createdByName;
             this.TestRunName = testRunName;
+            this.ConfigurationName = configurationName;
             this.LaunchSource = launchSource;
             this.ModifiedDate = modifiedDate;
             this.ModifiedById = modifiedById;
@@ -113,7 +103,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets CreatedByName
         /// </summary>
-        [DataMember(Name = "createdByName", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "createdByName", EmitDefaultValue = true)]
         public string CreatedByName { get; set; }
 
         /// <summary>
@@ -137,7 +127,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets ConfigurationName
         /// </summary>
-        [DataMember(Name = "configurationName", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "configurationName", EmitDefaultValue = true)]
         public string ConfigurationName { get; set; }
 
         /// <summary>
@@ -240,81 +230,81 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
+                ) &&
                 (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&
                     this.CreatedById.Equals(input.CreatedById))
-                ) && 
+                ) &&
                 (
                     this.CreatedByName == input.CreatedByName ||
                     (this.CreatedByName != null &&
                     this.CreatedByName.Equals(input.CreatedByName))
-                ) && 
+                ) &&
                 (
                     this.TestRunId == input.TestRunId ||
                     (this.TestRunId != null &&
                     this.TestRunId.Equals(input.TestRunId))
-                ) && 
+                ) &&
                 (
                     this.TestRunName == input.TestRunName ||
                     (this.TestRunName != null &&
                     this.TestRunName.Equals(input.TestRunName))
-                ) && 
+                ) &&
                 (
                     this.ConfigurationId == input.ConfigurationId ||
                     (this.ConfigurationId != null &&
                     this.ConfigurationId.Equals(input.ConfigurationId))
-                ) && 
+                ) &&
                 (
                     this.ConfigurationName == input.ConfigurationName ||
                     (this.ConfigurationName != null &&
                     this.ConfigurationName.Equals(input.ConfigurationName))
-                ) && 
+                ) &&
                 (
                     this.Outcome == input.Outcome ||
                     this.Outcome.Equals(input.Outcome)
-                ) && 
+                ) &&
                 (
                     this.LaunchSource == input.LaunchSource ||
                     (this.LaunchSource != null &&
                     this.LaunchSource.Equals(input.LaunchSource))
-                ) && 
+                ) &&
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
                     this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
+                ) &&
                 (
                     this.ModifiedById == input.ModifiedById ||
                     (this.ModifiedById != null &&
                     this.ModifiedById.Equals(input.ModifiedById))
-                ) && 
+                ) &&
                 (
                     this.TestPlanId == input.TestPlanId ||
                     (this.TestPlanId != null &&
                     this.TestPlanId.Equals(input.TestPlanId))
-                ) && 
+                ) &&
                 (
                     this.TestPlanGlobalId == input.TestPlanGlobalId ||
                     (this.TestPlanGlobalId != null &&
                     this.TestPlanGlobalId.Equals(input.TestPlanGlobalId))
-                ) && 
+                ) &&
                 (
                     this.TestPlanName == input.TestPlanName ||
                     (this.TestPlanName != null &&
                     this.TestPlanName.Equals(input.TestPlanName))
-                ) && 
+                ) &&
                 (
                     this.Duration == input.Duration ||
                     (this.Duration != null &&
@@ -401,7 +391,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -41,80 +41,35 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="UserWithRankModel" /> class.
         /// </summary>
         /// <param name="id">id (required).</param>
-        /// <param name="firstName">firstName (required).</param>
-        /// <param name="lastName">lastName (required).</param>
-        /// <param name="middleName">middleName (required).</param>
-        /// <param name="userName">userName (required).</param>
-        /// <param name="displayName">displayName (required).</param>
-        /// <param name="userType">userType (required).</param>
-        /// <param name="avatarUrl">avatarUrl (required).</param>
-        /// <param name="avatarMetadata">avatarMetadata (required).</param>
+        /// <param name="firstName">firstName.</param>
+        /// <param name="lastName">lastName.</param>
+        /// <param name="middleName">middleName.</param>
+        /// <param name="userName">userName.</param>
+        /// <param name="displayName">displayName.</param>
+        /// <param name="userType">userType.</param>
+        /// <param name="avatarUrl">avatarUrl.</param>
+        /// <param name="avatarMetadata">avatarMetadata.</param>
         /// <param name="isDeleted">isDeleted (required).</param>
         /// <param name="isDisabled">isDisabled (required).</param>
         /// <param name="providerId">providerId.</param>
         /// <param name="isActiveStatusByEntity">isActiveStatusByEntity (required).</param>
-        /// <param name="userRank">userRank (required).</param>
-        public UserWithRankModel(Guid id = default(Guid), string firstName = default(string), string lastName = default(string), string middleName = default(string), string userName = default(string), string displayName = default(string), string userType = default(string), string avatarUrl = default(string), string avatarMetadata = default(string), bool isDeleted = default(bool), bool isDisabled = default(bool), Guid? providerId = default(Guid?), bool isActiveStatusByEntity = default(bool), UserWithRankModelUserRank userRank = default(UserWithRankModelUserRank))
+        /// <param name="userRank">userRank.</param>
+        public UserWithRankModel(Guid id = default(Guid), string firstName = default(string), string lastName = default(string), string middleName = default(string), string userName = default(string), string displayName = default(string), string userType = default(string), string avatarUrl = default(string), string avatarMetadata = default(string), bool isDeleted = default(bool), bool isDisabled = default(bool), Guid? providerId = default(Guid?), bool isActiveStatusByEntity = default(bool), UserRankModel userRank = default(UserRankModel))
         {
             this.Id = id;
-            // to ensure "firstName" is required (not null)
-            if (firstName == null)
-            {
-                throw new ArgumentNullException("firstName is a required property for UserWithRankModel and cannot be null");
-            }
-            this.FirstName = firstName;
-            // to ensure "lastName" is required (not null)
-            if (lastName == null)
-            {
-                throw new ArgumentNullException("lastName is a required property for UserWithRankModel and cannot be null");
-            }
-            this.LastName = lastName;
-            // to ensure "middleName" is required (not null)
-            if (middleName == null)
-            {
-                throw new ArgumentNullException("middleName is a required property for UserWithRankModel and cannot be null");
-            }
-            this.MiddleName = middleName;
-            // to ensure "userName" is required (not null)
-            if (userName == null)
-            {
-                throw new ArgumentNullException("userName is a required property for UserWithRankModel and cannot be null");
-            }
-            this.UserName = userName;
-            // to ensure "displayName" is required (not null)
-            if (displayName == null)
-            {
-                throw new ArgumentNullException("displayName is a required property for UserWithRankModel and cannot be null");
-            }
-            this.DisplayName = displayName;
-            // to ensure "userType" is required (not null)
-            if (userType == null)
-            {
-                throw new ArgumentNullException("userType is a required property for UserWithRankModel and cannot be null");
-            }
-            this.UserType = userType;
-            // to ensure "avatarUrl" is required (not null)
-            if (avatarUrl == null)
-            {
-                throw new ArgumentNullException("avatarUrl is a required property for UserWithRankModel and cannot be null");
-            }
-            this.AvatarUrl = avatarUrl;
-            // to ensure "avatarMetadata" is required (not null)
-            if (avatarMetadata == null)
-            {
-                throw new ArgumentNullException("avatarMetadata is a required property for UserWithRankModel and cannot be null");
-            }
-            this.AvatarMetadata = avatarMetadata;
             this.IsDeleted = isDeleted;
             this.IsDisabled = isDisabled;
             this.IsActiveStatusByEntity = isActiveStatusByEntity;
-            // to ensure "userRank" is required (not null)
-            if (userRank == null)
-            {
-                throw new ArgumentNullException("userRank is a required property for UserWithRankModel and cannot be null");
-            }
-            this.UserRank = userRank;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.MiddleName = middleName;
+            this.UserName = userName;
+            this.DisplayName = displayName;
+            this.UserType = userType;
+            this.AvatarUrl = avatarUrl;
+            this.AvatarMetadata = avatarMetadata;
             this.ProviderId = providerId;
+            this.UserRank = userRank;
         }
 
         /// <summary>
@@ -126,49 +81,49 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets FirstName
         /// </summary>
-        [DataMember(Name = "firstName", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "firstName", EmitDefaultValue = true)]
         public string FirstName { get; set; }
 
         /// <summary>
         /// Gets or Sets LastName
         /// </summary>
-        [DataMember(Name = "lastName", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "lastName", EmitDefaultValue = true)]
         public string LastName { get; set; }
 
         /// <summary>
         /// Gets or Sets MiddleName
         /// </summary>
-        [DataMember(Name = "middleName", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "middleName", EmitDefaultValue = true)]
         public string MiddleName { get; set; }
 
         /// <summary>
         /// Gets or Sets UserName
         /// </summary>
-        [DataMember(Name = "userName", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "userName", EmitDefaultValue = true)]
         public string UserName { get; set; }
 
         /// <summary>
         /// Gets or Sets DisplayName
         /// </summary>
-        [DataMember(Name = "displayName", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "displayName", EmitDefaultValue = true)]
         public string DisplayName { get; set; }
 
         /// <summary>
         /// Gets or Sets UserType
         /// </summary>
-        [DataMember(Name = "userType", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "userType", EmitDefaultValue = true)]
         public string UserType { get; set; }
 
         /// <summary>
         /// Gets or Sets AvatarUrl
         /// </summary>
-        [DataMember(Name = "avatarUrl", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "avatarUrl", EmitDefaultValue = true)]
         public string AvatarUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets AvatarMetadata
         /// </summary>
-        [DataMember(Name = "avatarMetadata", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "avatarMetadata", EmitDefaultValue = true)]
         public string AvatarMetadata { get; set; }
 
         /// <summary>
@@ -198,8 +153,8 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets UserRank
         /// </summary>
-        [DataMember(Name = "userRank", IsRequired = true, EmitDefaultValue = true)]
-        public UserWithRankModelUserRank UserRank { get; set; }
+        [DataMember(Name = "userRank", EmitDefaultValue = true)]
+        public UserRankModel UserRank { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -257,69 +212,69 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.FirstName == input.FirstName ||
                     (this.FirstName != null &&
                     this.FirstName.Equals(input.FirstName))
-                ) && 
+                ) &&
                 (
                     this.LastName == input.LastName ||
                     (this.LastName != null &&
                     this.LastName.Equals(input.LastName))
-                ) && 
+                ) &&
                 (
                     this.MiddleName == input.MiddleName ||
                     (this.MiddleName != null &&
                     this.MiddleName.Equals(input.MiddleName))
-                ) && 
+                ) &&
                 (
                     this.UserName == input.UserName ||
                     (this.UserName != null &&
                     this.UserName.Equals(input.UserName))
-                ) && 
+                ) &&
                 (
                     this.DisplayName == input.DisplayName ||
                     (this.DisplayName != null &&
                     this.DisplayName.Equals(input.DisplayName))
-                ) && 
+                ) &&
                 (
                     this.UserType == input.UserType ||
                     (this.UserType != null &&
                     this.UserType.Equals(input.UserType))
-                ) && 
+                ) &&
                 (
                     this.AvatarUrl == input.AvatarUrl ||
                     (this.AvatarUrl != null &&
                     this.AvatarUrl.Equals(input.AvatarUrl))
-                ) && 
+                ) &&
                 (
                     this.AvatarMetadata == input.AvatarMetadata ||
                     (this.AvatarMetadata != null &&
                     this.AvatarMetadata.Equals(input.AvatarMetadata))
-                ) && 
+                ) &&
                 (
                     this.IsDeleted == input.IsDeleted ||
                     this.IsDeleted.Equals(input.IsDeleted)
-                ) && 
+                ) &&
                 (
                     this.IsDisabled == input.IsDisabled ||
                     this.IsDisabled.Equals(input.IsDisabled)
-                ) && 
+                ) &&
                 (
                     this.ProviderId == input.ProviderId ||
                     (this.ProviderId != null &&
                     this.ProviderId.Equals(input.ProviderId))
-                ) && 
+                ) &&
                 (
                     this.IsActiveStatusByEntity == input.IsActiveStatusByEntity ||
                     this.IsActiveStatusByEntity.Equals(input.IsActiveStatusByEntity)
-                ) && 
+                ) &&
                 (
                     this.UserRank == input.UserRank ||
                     (this.UserRank != null &&
@@ -392,7 +347,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

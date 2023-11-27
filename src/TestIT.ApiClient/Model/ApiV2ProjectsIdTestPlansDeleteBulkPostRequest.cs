@@ -27,33 +27,33 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// TestRunModelAnalytic
+    /// ApiV2ProjectsIdTestPlansDeleteBulkPostRequest
     /// </summary>
-    [DataContract(Name = "TestRunModel_analytic")]
-    public partial class TestRunModelAnalytic : IEquatable<TestRunModelAnalytic>, IValidatableObject
+    [DataContract(Name = "_api_v2_projects__id__testPlans_delete_bulk_post_request")]
+    public partial class ApiV2ProjectsIdTestPlansDeleteBulkPostRequest : IEquatable<ApiV2ProjectsIdTestPlansDeleteBulkPostRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TestRunModelAnalytic" /> class.
+        /// Initializes a new instance of the <see cref="ApiV2ProjectsIdTestPlansDeleteBulkPostRequest" /> class.
         /// </summary>
-        /// <param name="countGroupByStatus">countGroupByStatus.</param>
-        /// <param name="countGroupByFailureClass">countGroupByFailureClass.</param>
-        public TestRunModelAnalytic(List<TestRunGroupByStatusModel> countGroupByStatus = default(List<TestRunGroupByStatusModel>), List<TestRunGroupByFailureClassModel> countGroupByFailureClass = default(List<TestRunGroupByFailureClassModel>))
+        /// <param name="filter">filter.</param>
+        /// <param name="extractionModel">extractionModel.</param>
+        public ApiV2ProjectsIdTestPlansDeleteBulkPostRequest(ProjectTestPlansFilterModel filter = default(ProjectTestPlansFilterModel), TestPlanExtractionModel extractionModel = default(TestPlanExtractionModel))
         {
-            this.CountGroupByStatus = countGroupByStatus;
-            this.CountGroupByFailureClass = countGroupByFailureClass;
+            this.Filter = filter;
+            this.ExtractionModel = extractionModel;
         }
 
         /// <summary>
-        /// Gets or Sets CountGroupByStatus
+        /// Gets or Sets Filter
         /// </summary>
-        [DataMember(Name = "countGroupByStatus", EmitDefaultValue = true)]
-        public List<TestRunGroupByStatusModel> CountGroupByStatus { get; set; }
+        [DataMember(Name = "filter", EmitDefaultValue = true)]
+        public ProjectTestPlansFilterModel Filter { get; set; }
 
         /// <summary>
-        /// Gets or Sets CountGroupByFailureClass
+        /// Gets or Sets ExtractionModel
         /// </summary>
-        [DataMember(Name = "countGroupByFailureClass", EmitDefaultValue = true)]
-        public List<TestRunGroupByFailureClassModel> CountGroupByFailureClass { get; set; }
+        [DataMember(Name = "extractionModel", EmitDefaultValue = true)]
+        public TestPlanExtractionModel ExtractionModel { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -62,9 +62,9 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class TestRunModelAnalytic {\n");
-            sb.Append("  CountGroupByStatus: ").Append(CountGroupByStatus).Append("\n");
-            sb.Append("  CountGroupByFailureClass: ").Append(CountGroupByFailureClass).Append("\n");
+            sb.Append("class ApiV2ProjectsIdTestPlansDeleteBulkPostRequest {\n");
+            sb.Append("  Filter: ").Append(Filter).Append("\n");
+            sb.Append("  ExtractionModel: ").Append(ExtractionModel).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -85,32 +85,30 @@ namespace TestIT.ApiClient.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TestRunModelAnalytic);
+            return this.Equals(input as ApiV2ProjectsIdTestPlansDeleteBulkPostRequest);
         }
 
         /// <summary>
-        /// Returns true if TestRunModelAnalytic instances are equal
+        /// Returns true if ApiV2ProjectsIdTestPlansDeleteBulkPostRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of TestRunModelAnalytic to be compared</param>
+        /// <param name="input">Instance of ApiV2ProjectsIdTestPlansDeleteBulkPostRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TestRunModelAnalytic input)
+        public bool Equals(ApiV2ProjectsIdTestPlansDeleteBulkPostRequest input)
         {
             if (input == null)
             {
                 return false;
             }
-            return 
+            return
                 (
-                    this.CountGroupByStatus == input.CountGroupByStatus ||
-                    this.CountGroupByStatus != null &&
-                    input.CountGroupByStatus != null &&
-                    this.CountGroupByStatus.SequenceEqual(input.CountGroupByStatus)
-                ) && 
+                    this.Filter == input.Filter ||
+                    (this.Filter != null &&
+                    this.Filter.Equals(input.Filter))
+                ) &&
                 (
-                    this.CountGroupByFailureClass == input.CountGroupByFailureClass ||
-                    this.CountGroupByFailureClass != null &&
-                    input.CountGroupByFailureClass != null &&
-                    this.CountGroupByFailureClass.SequenceEqual(input.CountGroupByFailureClass)
+                    this.ExtractionModel == input.ExtractionModel ||
+                    (this.ExtractionModel != null &&
+                    this.ExtractionModel.Equals(input.ExtractionModel))
                 );
         }
 
@@ -123,13 +121,13 @@ namespace TestIT.ApiClient.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.CountGroupByStatus != null)
+                if (this.Filter != null)
                 {
-                    hashCode = (hashCode * 59) + this.CountGroupByStatus.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Filter.GetHashCode();
                 }
-                if (this.CountGroupByFailureClass != null)
+                if (this.ExtractionModel != null)
                 {
-                    hashCode = (hashCode * 59) + this.CountGroupByFailureClass.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ExtractionModel.GetHashCode();
                 }
                 return hashCode;
             }
@@ -140,7 +138,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

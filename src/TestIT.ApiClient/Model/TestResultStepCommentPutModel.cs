@@ -41,40 +41,30 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="TestResultStepCommentPutModel" /> class.
         /// </summary>
         /// <param name="id">id (required).</param>
-        /// <param name="text">text (required).</param>
+        /// <param name="text">text.</param>
         /// <param name="stepId">stepId (required).</param>
         /// <param name="parentStepId">parentStepId.</param>
-        /// <param name="attachments">attachments (required).</param>
+        /// <param name="attachments">attachments.</param>
         public TestResultStepCommentPutModel(Guid id = default(Guid), string text = default(string), Guid stepId = default(Guid), Guid? parentStepId = default(Guid?), List<AttachmentPutModel> attachments = default(List<AttachmentPutModel>))
         {
             this.Id = id;
-            // to ensure "text" is required (not null)
-            if (text == null)
-            {
-                throw new ArgumentNullException("text is a required property for TestResultStepCommentPutModel and cannot be null");
-            }
-            this.Text = text;
             this.StepId = stepId;
-            // to ensure "attachments" is required (not null)
-            if (attachments == null)
-            {
-                throw new ArgumentNullException("attachments is a required property for TestResultStepCommentPutModel and cannot be null");
-            }
-            this.Attachments = attachments;
+            this.Text = text;
             this.ParentStepId = parentStepId;
+            this.Attachments = attachments;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
+        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Text
         /// </summary>
-        [DataMember(Name = "text", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "text", EmitDefaultValue = true)]
         public string Text { get; set; }
 
         /// <summary>
@@ -92,7 +82,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Attachments
         /// </summary>
-        [DataMember(Name = "attachments", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "attachments", EmitDefaultValue = true)]
         public List<AttachmentPutModel> Attachments { get; set; }
 
         /// <summary>
@@ -142,27 +132,27 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.Text == input.Text ||
                     (this.Text != null &&
                     this.Text.Equals(input.Text))
-                ) && 
+                ) &&
                 (
                     this.StepId == input.StepId ||
                     (this.StepId != null &&
                     this.StepId.Equals(input.StepId))
-                ) && 
+                ) &&
                 (
                     this.ParentStepId == input.ParentStepId ||
                     (this.ParentStepId != null &&
                     this.ParentStepId.Equals(input.ParentStepId))
-                ) && 
+                ) &&
                 (
                     this.Attachments == input.Attachments ||
                     this.Attachments != null &&
@@ -209,7 +199,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

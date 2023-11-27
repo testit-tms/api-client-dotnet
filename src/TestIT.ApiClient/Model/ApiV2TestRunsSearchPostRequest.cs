@@ -188,63 +188,63 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.ProjectIds == input.ProjectIds ||
                     this.ProjectIds != null &&
                     input.ProjectIds != null &&
                     this.ProjectIds.SequenceEqual(input.ProjectIds)
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.States == input.States ||
                     this.States != null &&
                     input.States != null &&
                     this.States.SequenceEqual(input.States)
-                ) && 
+                ) &&
                 (
                     this.StartedDate == input.StartedDate ||
                     (this.StartedDate != null &&
                     this.StartedDate.Equals(input.StartedDate))
-                ) && 
+                ) &&
                 (
                     this.CreatedByIds == input.CreatedByIds ||
                     this.CreatedByIds != null &&
                     input.CreatedByIds != null &&
                     this.CreatedByIds.SequenceEqual(input.CreatedByIds)
-                ) && 
+                ) &&
                 (
                     this.ModifiedByIds == input.ModifiedByIds ||
                     this.ModifiedByIds != null &&
                     input.ModifiedByIds != null &&
                     this.ModifiedByIds.SequenceEqual(input.ModifiedByIds)
-                ) && 
+                ) &&
                 (
                     this.IsDeleted == input.IsDeleted ||
                     (this.IsDeleted != null &&
                     this.IsDeleted.Equals(input.IsDeleted))
-                ) && 
+                ) &&
                 (
                     this.AutoTestsCount == input.AutoTestsCount ||
                     (this.AutoTestsCount != null &&
                     this.AutoTestsCount.Equals(input.AutoTestsCount))
-                ) && 
+                ) &&
                 (
                     this.TestResultsOutcome == input.TestResultsOutcome ||
                     this.TestResultsOutcome != null &&
                     input.TestResultsOutcome != null &&
                     this.TestResultsOutcome.SequenceEqual(input.TestResultsOutcome)
-                ) && 
+                ) &&
                 (
                     this.FailureCategory == input.FailureCategory ||
                     this.FailureCategory != null &&
                     input.FailureCategory != null &&
                     this.FailureCategory.SequenceEqual(input.FailureCategory)
-                ) && 
+                ) &&
                 (
                     this.CompletedDate == input.CompletedDate ||
                     (this.CompletedDate != null &&
@@ -314,7 +314,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

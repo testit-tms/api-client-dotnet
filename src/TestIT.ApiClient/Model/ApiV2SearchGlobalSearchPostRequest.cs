@@ -127,21 +127,21 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Query == input.Query ||
                     (this.Query != null &&
                     this.Query.Equals(input.Query))
-                ) && 
+                ) &&
                 (
                     this.ResourceType == input.ResourceType ||
                     (this.ResourceType != null &&
                     this.ResourceType.Equals(input.ResourceType))
-                ) && 
+                ) &&
                 (
                     this.Take == input.Take ||
                     this.Take.Equals(input.Take)
-                ) && 
+                ) &&
                 (
                     this.Skip == input.Skip ||
                     this.Skip.Equals(input.Skip)
@@ -176,7 +176,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

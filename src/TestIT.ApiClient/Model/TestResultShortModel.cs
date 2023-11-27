@@ -41,9 +41,9 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="TestResultShortModel" /> class.
         /// </summary>
         /// <param name="id">id (required).</param>
-        /// <param name="outcome">outcome (required).</param>
+        /// <param name="outcome">outcome.</param>
         /// <param name="traces">traces.</param>
-        /// <param name="failureType">failureType (required).</param>
+        /// <param name="failureType">failureType.</param>
         /// <param name="message">message.</param>
         /// <param name="testPoint">testPoint.</param>
         /// <param name="createdDate">createdDate.</param>
@@ -52,19 +52,9 @@ namespace TestIT.ApiClient.Model
         public TestResultShortModel(Guid id = default(Guid), string outcome = default(string), string traces = default(string), string failureType = default(string), string message = default(string), TestPointPutModel testPoint = default(TestPointPutModel), DateTime? createdDate = default(DateTime?), AutoTestShortModel autoTest = default(AutoTestShortModel), List<AttachmentModel> attachments = default(List<AttachmentModel>))
         {
             this.Id = id;
-            // to ensure "outcome" is required (not null)
-            if (outcome == null)
-            {
-                throw new ArgumentNullException("outcome is a required property for TestResultShortModel and cannot be null");
-            }
             this.Outcome = outcome;
-            // to ensure "failureType" is required (not null)
-            if (failureType == null)
-            {
-                throw new ArgumentNullException("failureType is a required property for TestResultShortModel and cannot be null");
-            }
-            this.FailureType = failureType;
             this.Traces = traces;
+            this.FailureType = failureType;
             this.Message = message;
             this.TestPoint = testPoint;
             this.CreatedDate = createdDate;
@@ -81,7 +71,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Outcome
         /// </summary>
-        [DataMember(Name = "outcome", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "outcome", EmitDefaultValue = true)]
         public string Outcome { get; set; }
 
         /// <summary>
@@ -93,7 +83,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets FailureType
         /// </summary>
-        [DataMember(Name = "failureType", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "failureType", EmitDefaultValue = true)]
         public string FailureType { get; set; }
 
         /// <summary>
@@ -177,47 +167,47 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.Outcome == input.Outcome ||
                     (this.Outcome != null &&
                     this.Outcome.Equals(input.Outcome))
-                ) && 
+                ) &&
                 (
                     this.Traces == input.Traces ||
                     (this.Traces != null &&
                     this.Traces.Equals(input.Traces))
-                ) && 
+                ) &&
                 (
                     this.FailureType == input.FailureType ||
                     (this.FailureType != null &&
                     this.FailureType.Equals(input.FailureType))
-                ) && 
+                ) &&
                 (
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
-                ) && 
+                ) &&
                 (
                     this.TestPoint == input.TestPoint ||
                     (this.TestPoint != null &&
                     this.TestPoint.Equals(input.TestPoint))
-                ) && 
+                ) &&
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
+                ) &&
                 (
                     this.AutoTest == input.AutoTest ||
                     (this.AutoTest != null &&
                     this.AutoTest.Equals(input.AutoTest))
-                ) && 
+                ) &&
                 (
                     this.Attachments == input.Attachments ||
                     this.Attachments != null &&
@@ -280,7 +270,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

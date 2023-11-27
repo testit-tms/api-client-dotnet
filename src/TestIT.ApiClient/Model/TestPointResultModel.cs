@@ -144,38 +144,38 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.TestPointId == input.TestPointId ||
                     (this.TestPointId != null &&
                     this.TestPointId.Equals(input.TestPointId))
-                ) && 
+                ) &&
                 (
                     this.AggregatedOutcome == input.AggregatedOutcome ||
                     (this.AggregatedOutcome != null &&
                     this.AggregatedOutcome.Equals(input.AggregatedOutcome))
-                ) && 
+                ) &&
                 (
                     this.WorkItemGlobalId == input.WorkItemGlobalId ||
                     (this.WorkItemGlobalId != null &&
                     this.WorkItemGlobalId.Equals(input.WorkItemGlobalId))
-                ) && 
+                ) &&
                 (
                     this.WorkItemName == input.WorkItemName ||
                     (this.WorkItemName != null &&
                     this.WorkItemName.Equals(input.WorkItemName))
-                ) && 
+                ) &&
                 (
                     this.ConfigurationName == input.ConfigurationName ||
                     (this.ConfigurationName != null &&
                     this.ConfigurationName.Equals(input.ConfigurationName))
-                ) && 
+                ) &&
                 (
                     this.TestResults == input.TestResults ||
                     this.TestResults != null &&
                     input.TestResults != null &&
                     this.TestResults.SequenceEqual(input.TestResults)
-                ) && 
+                ) &&
                 (
                     this.Attachments == input.Attachments ||
                     this.Attachments != null &&
@@ -230,7 +230,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

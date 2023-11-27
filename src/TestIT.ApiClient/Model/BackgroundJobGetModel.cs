@@ -58,12 +58,11 @@ namespace TestIT.ApiClient.Model
         /// <param name="state">state (required).</param>
         /// <param name="isDeleted">isDeleted (required).</param>
         /// <param name="progress">progress (required).</param>
-        /// <param name="createdDate">createdDate (required).</param>
         /// <param name="startDate">startDate.</param>
         /// <param name="endDate">endDate.</param>
         /// <param name="error">error.</param>
         /// <param name="attachments">attachments (required).</param>
-        public BackgroundJobGetModel(Guid id = default(Guid), string jobId = default(string), BackgroundJobType jobType = default(BackgroundJobType), BackgroundJobState state = default(BackgroundJobState), bool isDeleted = default(bool), long progress = default(long), DateTime createdDate = default(DateTime), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string error = default(string), List<BackgroundJobAttachmentModel> attachments = default(List<BackgroundJobAttachmentModel>))
+        public BackgroundJobGetModel(Guid id = default(Guid), string jobId = default(string), BackgroundJobType jobType = default(BackgroundJobType), BackgroundJobState state = default(BackgroundJobState), bool isDeleted = default(bool), long progress = default(long), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string error = default(string), List<BackgroundJobAttachmentModel> attachments = default(List<BackgroundJobAttachmentModel>))
         {
             this.Id = id;
             // to ensure "jobId" is required (not null)
@@ -76,7 +75,6 @@ namespace TestIT.ApiClient.Model
             this.State = state;
             this.IsDeleted = isDeleted;
             this.Progress = progress;
-            this.CreatedDate = createdDate;
             // to ensure "attachments" is required (not null)
             if (attachments == null)
             {
@@ -111,12 +109,6 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         [DataMember(Name = "progress", IsRequired = true, EmitDefaultValue = true)]
         public long Progress { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CreatedDate
-        /// </summary>
-        [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
-        public DateTime CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets StartDate
@@ -156,7 +148,6 @@ namespace TestIT.ApiClient.Model
             sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  Progress: ").Append(Progress).Append("\n");
-            sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  StartDate: ").Append(StartDate).Append("\n");
             sb.Append("  EndDate: ").Append(EndDate).Append("\n");
             sb.Append("  Error: ").Append(Error).Append("\n");
@@ -195,53 +186,48 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.JobId == input.JobId ||
                     (this.JobId != null &&
                     this.JobId.Equals(input.JobId))
-                ) && 
+                ) &&
                 (
                     this.JobType == input.JobType ||
                     this.JobType.Equals(input.JobType)
-                ) && 
+                ) &&
                 (
                     this.State == input.State ||
                     this.State.Equals(input.State)
-                ) && 
+                ) &&
                 (
                     this.IsDeleted == input.IsDeleted ||
                     this.IsDeleted.Equals(input.IsDeleted)
-                ) && 
+                ) &&
                 (
                     this.Progress == input.Progress ||
                     this.Progress.Equals(input.Progress)
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
+                ) &&
                 (
                     this.StartDate == input.StartDate ||
                     (this.StartDate != null &&
                     this.StartDate.Equals(input.StartDate))
-                ) && 
+                ) &&
                 (
                     this.EndDate == input.EndDate ||
                     (this.EndDate != null &&
                     this.EndDate.Equals(input.EndDate))
-                ) && 
+                ) &&
                 (
                     this.Error == input.Error ||
                     (this.Error != null &&
                     this.Error.Equals(input.Error))
-                ) && 
+                ) &&
                 (
                     this.Attachments == input.Attachments ||
                     this.Attachments != null &&
@@ -271,10 +257,6 @@ namespace TestIT.ApiClient.Model
                 hashCode = (hashCode * 59) + this.State.GetHashCode();
                 hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
                 hashCode = (hashCode * 59) + this.Progress.GetHashCode();
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
                 if (this.StartDate != null)
                 {
                     hashCode = (hashCode * 59) + this.StartDate.GetHashCode();
@@ -300,7 +282,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

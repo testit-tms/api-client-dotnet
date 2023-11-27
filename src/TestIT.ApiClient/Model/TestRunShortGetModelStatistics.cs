@@ -35,39 +35,24 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestRunShortGetModelStatistics" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected TestRunShortGetModelStatistics() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TestRunShortGetModelStatistics" /> class.
-        /// </summary>
-        /// <param name="statuses">statuses (required).</param>
-        /// <param name="failureCategories">failureCategories (required).</param>
+        /// <param name="statuses">statuses.</param>
+        /// <param name="failureCategories">failureCategories.</param>
         public TestRunShortGetModelStatistics(TestResultsStatisticsGetModelStatuses statuses = default(TestResultsStatisticsGetModelStatuses), TestResultsStatisticsGetModelFailureCategories failureCategories = default(TestResultsStatisticsGetModelFailureCategories))
         {
-            // to ensure "statuses" is required (not null)
-            if (statuses == null)
-            {
-                throw new ArgumentNullException("statuses is a required property for TestRunShortGetModelStatistics and cannot be null");
-            }
             this.Statuses = statuses;
-            // to ensure "failureCategories" is required (not null)
-            if (failureCategories == null)
-            {
-                throw new ArgumentNullException("failureCategories is a required property for TestRunShortGetModelStatistics and cannot be null");
-            }
             this.FailureCategories = failureCategories;
         }
 
         /// <summary>
         /// Gets or Sets Statuses
         /// </summary>
-        [DataMember(Name = "statuses", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "statuses", EmitDefaultValue = true)]
         public TestResultsStatisticsGetModelStatuses Statuses { get; set; }
 
         /// <summary>
         /// Gets or Sets FailureCategories
         /// </summary>
-        [DataMember(Name = "failureCategories", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "failureCategories", EmitDefaultValue = true)]
         public TestResultsStatisticsGetModelFailureCategories FailureCategories { get; set; }
 
         /// <summary>
@@ -114,12 +99,12 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Statuses == input.Statuses ||
                     (this.Statuses != null &&
                     this.Statuses.Equals(input.Statuses))
-                ) && 
+                ) &&
                 (
                     this.FailureCategories == input.FailureCategories ||
                     (this.FailureCategories != null &&
@@ -153,7 +138,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

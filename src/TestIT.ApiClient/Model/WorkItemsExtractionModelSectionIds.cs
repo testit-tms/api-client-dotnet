@@ -27,38 +27,33 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// WorkItemChangedFieldsViewModelGlobalId
+    /// Extraction parameters for sections
     /// </summary>
-    [DataContract(Name = "WorkItemChangedFieldsViewModel_globalId")]
-    public partial class WorkItemChangedFieldsViewModelGlobalId : IEquatable<WorkItemChangedFieldsViewModelGlobalId>, IValidatableObject
+    [DataContract(Name = "WorkItemsExtractionModel_sectionIds")]
+    public partial class WorkItemsExtractionModelSectionIds : IEquatable<WorkItemsExtractionModelSectionIds>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkItemChangedFieldsViewModelGlobalId" /> class.
+        /// Initializes a new instance of the <see cref="WorkItemsExtractionModelSectionIds" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected WorkItemChangedFieldsViewModelGlobalId() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WorkItemChangedFieldsViewModelGlobalId" /> class.
-        /// </summary>
-        /// <param name="oldValue">oldValue (required).</param>
-        /// <param name="newValue">newValue (required).</param>
-        public WorkItemChangedFieldsViewModelGlobalId(long oldValue = default(long), long newValue = default(long))
+        /// <param name="include">include.</param>
+        /// <param name="exclude">exclude.</param>
+        public WorkItemsExtractionModelSectionIds(List<Guid> include = default(List<Guid>), List<Guid> exclude = default(List<Guid>))
         {
-            this.OldValue = oldValue;
-            this.NewValue = newValue;
+            this.Include = include;
+            this.Exclude = exclude;
         }
 
         /// <summary>
-        /// Gets or Sets OldValue
+        /// Gets or Sets Include
         /// </summary>
-        [DataMember(Name = "oldValue", IsRequired = true, EmitDefaultValue = true)]
-        public long OldValue { get; set; }
+        [DataMember(Name = "include", EmitDefaultValue = true)]
+        public List<Guid> Include { get; set; }
 
         /// <summary>
-        /// Gets or Sets NewValue
+        /// Gets or Sets Exclude
         /// </summary>
-        [DataMember(Name = "newValue", IsRequired = true, EmitDefaultValue = true)]
-        public long NewValue { get; set; }
+        [DataMember(Name = "exclude", EmitDefaultValue = true)]
+        public List<Guid> Exclude { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -67,9 +62,9 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WorkItemChangedFieldsViewModelGlobalId {\n");
-            sb.Append("  OldValue: ").Append(OldValue).Append("\n");
-            sb.Append("  NewValue: ").Append(NewValue).Append("\n");
+            sb.Append("class WorkItemsExtractionModelSectionIds {\n");
+            sb.Append("  Include: ").Append(Include).Append("\n");
+            sb.Append("  Exclude: ").Append(Exclude).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,28 +85,32 @@ namespace TestIT.ApiClient.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as WorkItemChangedFieldsViewModelGlobalId);
+            return this.Equals(input as WorkItemsExtractionModelSectionIds);
         }
 
         /// <summary>
-        /// Returns true if WorkItemChangedFieldsViewModelGlobalId instances are equal
+        /// Returns true if WorkItemsExtractionModelSectionIds instances are equal
         /// </summary>
-        /// <param name="input">Instance of WorkItemChangedFieldsViewModelGlobalId to be compared</param>
+        /// <param name="input">Instance of WorkItemsExtractionModelSectionIds to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(WorkItemChangedFieldsViewModelGlobalId input)
+        public bool Equals(WorkItemsExtractionModelSectionIds input)
         {
             if (input == null)
             {
                 return false;
             }
-            return 
+            return
                 (
-                    this.OldValue == input.OldValue ||
-                    this.OldValue.Equals(input.OldValue)
-                ) && 
+                    this.Include == input.Include ||
+                    this.Include != null &&
+                    input.Include != null &&
+                    this.Include.SequenceEqual(input.Include)
+                ) &&
                 (
-                    this.NewValue == input.NewValue ||
-                    this.NewValue.Equals(input.NewValue)
+                    this.Exclude == input.Exclude ||
+                    this.Exclude != null &&
+                    input.Exclude != null &&
+                    this.Exclude.SequenceEqual(input.Exclude)
                 );
         }
 
@@ -124,8 +123,14 @@ namespace TestIT.ApiClient.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.OldValue.GetHashCode();
-                hashCode = (hashCode * 59) + this.NewValue.GetHashCode();
+                if (this.Include != null)
+                {
+                    hashCode = (hashCode * 59) + this.Include.GetHashCode();
+                }
+                if (this.Exclude != null)
+                {
+                    hashCode = (hashCode * 59) + this.Exclude.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -135,7 +140,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }
