@@ -15,10 +15,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Mime;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
-namespace TestIt.ApiClient.Api
+namespace TestIT.ApiClient.Api
 {
 
     /// <summary>
@@ -30,7 +30,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Search for custom attributes templates
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
@@ -47,7 +47,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
@@ -63,7 +63,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets attribute template internal identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System delete attribute template from project
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <returns></returns>
@@ -75,7 +75,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets attribute template internal identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System delete attribute template from project
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -86,7 +86,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets attribute template internal identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System add attribute template to project
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <returns></returns>
@@ -98,7 +98,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets attribute template internal identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System add attribute template to project
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -118,7 +118,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
@@ -136,7 +136,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
@@ -153,7 +153,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets attribute template internal identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System delete attribute template from project
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -166,7 +166,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets attribute template internal identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System delete attribute template from project
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -178,7 +178,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets attribute template internal identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System add attribute template to project
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -191,7 +191,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets attribute template internal identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System add attribute template to project
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -213,7 +213,7 @@ namespace TestIt.ApiClient.Api
     /// </summary>
     public partial class ProjectAttributeTemplatesApi : IDisposable, IProjectAttributeTemplatesApi
     {
-        private TestIt.ApiClient.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private TestIT.ApiClient.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectAttributeTemplatesApi"/> class.
@@ -235,14 +235,14 @@ namespace TestIt.ApiClient.Api
         /// <returns></returns>
         public ProjectAttributeTemplatesApi(string basePath)
         {
-            this.Configuration = TestIt.ApiClient.Client.Configuration.MergeConfigurations(
-                TestIt.ApiClient.Client.GlobalConfiguration.Instance,
-                new TestIt.ApiClient.Client.Configuration { BasePath = basePath }
+            this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
+                TestIT.ApiClient.Client.GlobalConfiguration.Instance,
+                new TestIT.ApiClient.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new TestIt.ApiClient.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new TestIT.ApiClient.Client.ApiClient(this.Configuration.BasePath);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = TestIt.ApiClient.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -253,18 +253,18 @@ namespace TestIt.ApiClient.Api
         /// <param name="configuration">An instance of Configuration.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
-        public ProjectAttributeTemplatesApi(TestIt.ApiClient.Client.Configuration configuration)
+        public ProjectAttributeTemplatesApi(TestIT.ApiClient.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = TestIt.ApiClient.Client.Configuration.MergeConfigurations(
-                TestIt.ApiClient.Client.GlobalConfiguration.Instance,
+            this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
+                TestIT.ApiClient.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new TestIt.ApiClient.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new TestIT.ApiClient.Client.ApiClient(this.Configuration.BasePath);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = TestIt.ApiClient.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -299,14 +299,14 @@ namespace TestIt.ApiClient.Api
         {
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = TestIt.ApiClient.Client.Configuration.MergeConfigurations(
-                TestIt.ApiClient.Client.GlobalConfiguration.Instance,
-                new TestIt.ApiClient.Client.Configuration { BasePath = basePath }
+            this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
+                TestIT.ApiClient.Client.GlobalConfiguration.Instance,
+                new TestIT.ApiClient.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new TestIt.ApiClient.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new TestIT.ApiClient.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = TestIt.ApiClient.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -321,19 +321,19 @@ namespace TestIt.ApiClient.Api
         /// Some configuration settings will not be applied without passing an HttpClientHandler.
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
-        public ProjectAttributeTemplatesApi(HttpClient client, TestIt.ApiClient.Client.Configuration configuration, HttpClientHandler handler = null)
+        public ProjectAttributeTemplatesApi(HttpClient client, TestIT.ApiClient.Client.Configuration configuration, HttpClientHandler handler = null)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = TestIt.ApiClient.Client.Configuration.MergeConfigurations(
-                TestIt.ApiClient.Client.GlobalConfiguration.Instance,
+            this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
+                TestIT.ApiClient.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new TestIt.ApiClient.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new TestIT.ApiClient.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = TestIt.ApiClient.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -344,7 +344,7 @@ namespace TestIt.ApiClient.Api
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public ProjectAttributeTemplatesApi(TestIt.ApiClient.Client.ISynchronousClient client, TestIt.ApiClient.Client.IAsynchronousClient asyncClient, TestIt.ApiClient.Client.IReadableConfiguration configuration)
+        public ProjectAttributeTemplatesApi(TestIT.ApiClient.Client.ISynchronousClient client, TestIT.ApiClient.Client.IAsynchronousClient asyncClient, TestIT.ApiClient.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -353,7 +353,7 @@ namespace TestIt.ApiClient.Api
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = TestIt.ApiClient.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -367,17 +367,17 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Holds the ApiClient if created
         /// </summary>
-        public TestIt.ApiClient.Client.ApiClient ApiClient { get; set; } = null;
+        public TestIT.ApiClient.Client.ApiClient ApiClient { get; set; } = null;
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public TestIt.ApiClient.Client.IAsynchronousClient AsynchronousClient { get; set; }
+        public TestIT.ApiClient.Client.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public TestIt.ApiClient.Client.ISynchronousClient Client { get; set; }
+        public TestIT.ApiClient.Client.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -392,12 +392,12 @@ namespace TestIt.ApiClient.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public TestIt.ApiClient.Client.IReadableConfiguration Configuration { get; set; }
+        public TestIT.ApiClient.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public TestIt.ApiClient.Client.ExceptionFactory ExceptionFactory
+        public TestIT.ApiClient.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -413,7 +413,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Search for custom attributes templates 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
@@ -424,14 +424,14 @@ namespace TestIt.ApiClient.Api
         /// <returns>List&lt;ProjectCustomAttributeTemplateGetModel&gt;</returns>
         public List<ProjectCustomAttributeTemplateGetModel> ApiV2ProjectsProjectIdAttributesTemplatesSearchPost(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest = default(ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest))
         {
-            TestIt.ApiClient.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> localVarResponse = ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> localVarResponse = ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Search for custom attributes templates 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
@@ -440,13 +440,13 @@ namespace TestIt.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;ProjectCustomAttributeTemplateGetModel&gt;</returns>
-        public TestIt.ApiClient.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfo(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest = default(ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfo(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest = default(ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectAttributeTemplatesApi->ApiV2ProjectsProjectIdAttributesTemplatesSearchPost");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectAttributeTemplatesApi->ApiV2ProjectsProjectIdAttributesTemplatesSearchPost");
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -457,32 +457,32 @@ namespace TestIt.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             if (skip != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
             }
             if (take != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
             }
             if (orderBy != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
             }
             if (searchField != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
             }
             if (searchValue != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
             localVarRequestOptions.Data = apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest;
 
@@ -507,7 +507,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Search for custom attributes templates 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
@@ -519,14 +519,14 @@ namespace TestIt.ApiClient.Api
         /// <returns>Task of List&lt;ProjectCustomAttributeTemplateGetModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest = default(ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.ApiClient.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> localVarResponse = await ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfoAsync(projectId, skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> localVarResponse = await ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfoAsync(projectId, skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Search for custom attributes templates 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
@@ -536,14 +536,14 @@ namespace TestIt.ApiClient.Api
         /// <param name="apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ProjectCustomAttributeTemplateGetModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.ApiClient.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfoAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest = default(ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfoAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest = default(ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectAttributeTemplatesApi->ApiV2ProjectsProjectIdAttributesTemplatesSearchPost");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectAttributeTemplatesApi->ApiV2ProjectsProjectIdAttributesTemplatesSearchPost");
 
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -555,32 +555,32 @@ namespace TestIt.ApiClient.Api
             };
 
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             if (skip != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
             }
             if (take != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
             }
             if (orderBy != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
             }
             if (searchField != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
             }
             if (searchValue != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
             localVarRequestOptions.Data = apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest;
 
@@ -606,7 +606,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Delete CustomAttributeTemplate from Project &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets attribute template internal identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System delete attribute template from project
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <returns></returns>
@@ -618,17 +618,17 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Delete CustomAttributeTemplate from Project &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets attribute template internal identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System delete attribute template from project
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.ApiClient.Client.ApiResponse<Object> ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDeleteWithHttpInfo(string projectId, Guid templateId)
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDeleteWithHttpInfo(string projectId, Guid templateId)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectAttributeTemplatesApi->ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDelete");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectAttributeTemplatesApi->ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDelete");
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -637,14 +637,14 @@ namespace TestIt.ApiClient.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("templateId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(templateId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("templateId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(templateId)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -667,7 +667,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Delete CustomAttributeTemplate from Project &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets attribute template internal identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System delete attribute template from project
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -680,19 +680,19 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Delete CustomAttributeTemplate from Project &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets attribute template internal identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System delete attribute template from project
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDeleteWithHttpInfoAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDeleteWithHttpInfoAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectAttributeTemplatesApi->ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDelete");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectAttributeTemplatesApi->ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDelete");
 
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -702,14 +702,14 @@ namespace TestIt.ApiClient.Api
             };
 
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("templateId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(templateId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("templateId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(templateId)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -733,7 +733,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Add CustomAttributeTemplate to Project &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets attribute template internal identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System add attribute template to project
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <returns></returns>
@@ -745,17 +745,17 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Add CustomAttributeTemplate to Project &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets attribute template internal identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System add attribute template to project
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.ApiClient.Client.ApiResponse<Object> ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPostWithHttpInfo(string projectId, Guid templateId)
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPostWithHttpInfo(string projectId, Guid templateId)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectAttributeTemplatesApi->ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPost");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectAttributeTemplatesApi->ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPost");
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -764,14 +764,14 @@ namespace TestIt.ApiClient.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("templateId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(templateId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("templateId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(templateId)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -794,7 +794,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Add CustomAttributeTemplate to Project &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets attribute template internal identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System add attribute template to project
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -807,19 +807,19 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Add CustomAttributeTemplate to Project &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets attribute template internal identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System add attribute template to project
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPostWithHttpInfoAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPostWithHttpInfoAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectAttributeTemplatesApi->ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPost");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectAttributeTemplatesApi->ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPost");
 
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -829,14 +829,14 @@ namespace TestIt.ApiClient.Api
             };
 
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("templateId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(templateId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("templateId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(templateId)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))

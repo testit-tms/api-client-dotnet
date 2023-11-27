@@ -15,10 +15,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Mime;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
-namespace TestIt.ApiClient.Api
+namespace TestIT.ApiClient.Api
 {
 
     /// <summary>
@@ -30,7 +30,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Delete attachment file
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <returns></returns>
         void ApiV2AttachmentsIdDelete(Guid id);
@@ -41,14 +41,14 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ApiV2AttachmentsIdDeleteWithHttpInfo(Guid id);
         /// <summary>
         /// Download attachment file
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="width">Width of the result image (optional)</param>
         /// <param name="height">Height of the result image (optional)</param>
@@ -64,7 +64,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="width">Width of the result image (optional)</param>
         /// <param name="height">Height of the result image (optional)</param>
@@ -76,7 +76,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Get size of attachments storage in bytes
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>long</returns>
         long ApiV2AttachmentsOccupiedFileStorageSizeGet();
 
@@ -86,7 +86,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of long</returns>
         ApiResponse<long> ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfo();
         /// <summary>
@@ -95,7 +95,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// File size is restricted to 50 MB (52 428 800 bytes)
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
         /// <returns>AttachmentModel</returns>
         AttachmentModel ApiV2AttachmentsPost(FileParameter file = default(FileParameter));
@@ -106,7 +106,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// File size is restricted to 50 MB (52 428 800 bytes)
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
         /// <returns>ApiResponse of AttachmentModel</returns>
         ApiResponse<AttachmentModel> ApiV2AttachmentsPostWithHttpInfo(FileParameter file = default(FileParameter));
@@ -125,7 +125,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -137,7 +137,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -148,7 +148,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="width">Width of the result image (optional)</param>
         /// <param name="height">Height of the result image (optional)</param>
@@ -165,7 +165,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="width">Width of the result image (optional)</param>
         /// <param name="height">Height of the result image (optional)</param>
@@ -181,7 +181,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of long</returns>
         System.Threading.Tasks.Task<long> ApiV2AttachmentsOccupiedFileStorageSizeGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -192,7 +192,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (long)</returns>
         System.Threading.Tasks.Task<ApiResponse<long>> ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -202,7 +202,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// File size is restricted to 50 MB (52 428 800 bytes)
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AttachmentModel</returns>
@@ -214,7 +214,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// File size is restricted to 50 MB (52 428 800 bytes)
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AttachmentModel)</returns>
@@ -235,7 +235,7 @@ namespace TestIt.ApiClient.Api
     /// </summary>
     public partial class AttachmentsApi : IDisposable, IAttachmentsApi
     {
-        private TestIt.ApiClient.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private TestIT.ApiClient.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AttachmentsApi"/> class.
@@ -257,14 +257,14 @@ namespace TestIt.ApiClient.Api
         /// <returns></returns>
         public AttachmentsApi(string basePath)
         {
-            this.Configuration = TestIt.ApiClient.Client.Configuration.MergeConfigurations(
-                TestIt.ApiClient.Client.GlobalConfiguration.Instance,
-                new TestIt.ApiClient.Client.Configuration { BasePath = basePath }
+            this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
+                TestIT.ApiClient.Client.GlobalConfiguration.Instance,
+                new TestIT.ApiClient.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new TestIt.ApiClient.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new TestIT.ApiClient.Client.ApiClient(this.Configuration.BasePath);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = TestIt.ApiClient.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -275,18 +275,18 @@ namespace TestIt.ApiClient.Api
         /// <param name="configuration">An instance of Configuration.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
-        public AttachmentsApi(TestIt.ApiClient.Client.Configuration configuration)
+        public AttachmentsApi(TestIT.ApiClient.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = TestIt.ApiClient.Client.Configuration.MergeConfigurations(
-                TestIt.ApiClient.Client.GlobalConfiguration.Instance,
+            this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
+                TestIT.ApiClient.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new TestIt.ApiClient.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new TestIT.ApiClient.Client.ApiClient(this.Configuration.BasePath);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = TestIt.ApiClient.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -321,14 +321,14 @@ namespace TestIt.ApiClient.Api
         {
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = TestIt.ApiClient.Client.Configuration.MergeConfigurations(
-                TestIt.ApiClient.Client.GlobalConfiguration.Instance,
-                new TestIt.ApiClient.Client.Configuration { BasePath = basePath }
+            this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
+                TestIT.ApiClient.Client.GlobalConfiguration.Instance,
+                new TestIT.ApiClient.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new TestIt.ApiClient.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new TestIT.ApiClient.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = TestIt.ApiClient.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -343,19 +343,19 @@ namespace TestIt.ApiClient.Api
         /// Some configuration settings will not be applied without passing an HttpClientHandler.
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
-        public AttachmentsApi(HttpClient client, TestIt.ApiClient.Client.Configuration configuration, HttpClientHandler handler = null)
+        public AttachmentsApi(HttpClient client, TestIT.ApiClient.Client.Configuration configuration, HttpClientHandler handler = null)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = TestIt.ApiClient.Client.Configuration.MergeConfigurations(
-                TestIt.ApiClient.Client.GlobalConfiguration.Instance,
+            this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
+                TestIT.ApiClient.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new TestIt.ApiClient.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new TestIT.ApiClient.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = TestIt.ApiClient.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -366,7 +366,7 @@ namespace TestIt.ApiClient.Api
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public AttachmentsApi(TestIt.ApiClient.Client.ISynchronousClient client, TestIt.ApiClient.Client.IAsynchronousClient asyncClient, TestIt.ApiClient.Client.IReadableConfiguration configuration)
+        public AttachmentsApi(TestIT.ApiClient.Client.ISynchronousClient client, TestIT.ApiClient.Client.IAsynchronousClient asyncClient, TestIT.ApiClient.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -375,7 +375,7 @@ namespace TestIt.ApiClient.Api
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = TestIt.ApiClient.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -389,17 +389,17 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Holds the ApiClient if created
         /// </summary>
-        public TestIt.ApiClient.Client.ApiClient ApiClient { get; set; } = null;
+        public TestIT.ApiClient.Client.ApiClient ApiClient { get; set; } = null;
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public TestIt.ApiClient.Client.IAsynchronousClient AsynchronousClient { get; set; }
+        public TestIT.ApiClient.Client.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public TestIt.ApiClient.Client.ISynchronousClient Client { get; set; }
+        public TestIT.ApiClient.Client.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -414,12 +414,12 @@ namespace TestIt.ApiClient.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public TestIt.ApiClient.Client.IReadableConfiguration Configuration { get; set; }
+        public TestIT.ApiClient.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public TestIt.ApiClient.Client.ExceptionFactory ExceptionFactory
+        public TestIT.ApiClient.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -435,7 +435,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Delete attachment file 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <returns></returns>
         public void ApiV2AttachmentsIdDelete(Guid id)
@@ -446,12 +446,12 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Delete attachment file 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.ApiClient.Client.ApiResponse<Object> ApiV2AttachmentsIdDeleteWithHttpInfo(Guid id)
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2AttachmentsIdDeleteWithHttpInfo(Guid id)
         {
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -463,13 +463,13 @@ namespace TestIt.ApiClient.Api
                 "text/json"
             };
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", TestIt.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -492,7 +492,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Delete attachment file 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -504,14 +504,14 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Delete attachment file 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.ApiClient.Client.ApiResponse<Object>> ApiV2AttachmentsIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2AttachmentsIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -524,13 +524,13 @@ namespace TestIt.ApiClient.Api
             };
 
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", TestIt.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -554,7 +554,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Download attachment file 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="width">Width of the result image (optional)</param>
         /// <param name="height">Height of the result image (optional)</param>
@@ -564,14 +564,14 @@ namespace TestIt.ApiClient.Api
         /// <returns>FileParameter</returns>
         public FileParameter ApiV2AttachmentsIdGet(Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?))
         {
-            TestIt.ApiClient.Client.ApiResponse<FileParameter> localVarResponse = ApiV2AttachmentsIdGetWithHttpInfo(id, width, height, resizeType, backgroundColor, preview);
+            TestIT.ApiClient.Client.ApiResponse<FileParameter> localVarResponse = ApiV2AttachmentsIdGetWithHttpInfo(id, width, height, resizeType, backgroundColor, preview);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Download attachment file 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="width">Width of the result image (optional)</param>
         /// <param name="height">Height of the result image (optional)</param>
@@ -579,9 +579,9 @@ namespace TestIt.ApiClient.Api
         /// <param name="backgroundColor">Color of the background if the &#x60;resizeType&#x60; is &#x60;AddBackgroundStripes&#x60; (optional)</param>
         /// <param name="preview">If image must be converted to a preview (lower quality, no animation) (optional)</param>
         /// <returns>ApiResponse of FileParameter</returns>
-        public TestIt.ApiClient.Client.ApiResponse<FileParameter> ApiV2AttachmentsIdGetWithHttpInfo(Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?))
+        public TestIT.ApiClient.Client.ApiResponse<FileParameter> ApiV2AttachmentsIdGetWithHttpInfo(Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?))
         {
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -591,32 +591,32 @@ namespace TestIt.ApiClient.Api
                 "application/octet-stream"
             };
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", TestIt.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (width != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "width", width));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "width", width));
             }
             if (height != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "height", height));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "height", height));
             }
             if (resizeType != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "resizeType", resizeType));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "resizeType", resizeType));
             }
             if (backgroundColor != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "backgroundColor", backgroundColor));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "backgroundColor", backgroundColor));
             }
             if (preview != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "preview", preview));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "preview", preview));
             }
 
             // authentication (Bearer or PrivateToken) required
@@ -640,7 +640,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Download attachment file 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="width">Width of the result image (optional)</param>
         /// <param name="height">Height of the result image (optional)</param>
@@ -651,14 +651,14 @@ namespace TestIt.ApiClient.Api
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> ApiV2AttachmentsIdGetAsync(Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.ApiClient.Client.ApiResponse<FileParameter> localVarResponse = await ApiV2AttachmentsIdGetWithHttpInfoAsync(id, width, height, resizeType, backgroundColor, preview, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<FileParameter> localVarResponse = await ApiV2AttachmentsIdGetWithHttpInfoAsync(id, width, height, resizeType, backgroundColor, preview, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Download attachment file 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="width">Width of the result image (optional)</param>
         /// <param name="height">Height of the result image (optional)</param>
@@ -667,10 +667,10 @@ namespace TestIt.ApiClient.Api
         /// <param name="preview">If image must be converted to a preview (lower quality, no animation) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
-        public async System.Threading.Tasks.Task<TestIt.ApiClient.Client.ApiResponse<FileParameter>> ApiV2AttachmentsIdGetWithHttpInfoAsync(Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<FileParameter>> ApiV2AttachmentsIdGetWithHttpInfoAsync(Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -681,32 +681,32 @@ namespace TestIt.ApiClient.Api
             };
 
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", TestIt.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (width != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "width", width));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "width", width));
             }
             if (height != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "height", height));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "height", height));
             }
             if (resizeType != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "resizeType", resizeType));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "resizeType", resizeType));
             }
             if (backgroundColor != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "backgroundColor", backgroundColor));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "backgroundColor", backgroundColor));
             }
             if (preview != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "preview", preview));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "preview", preview));
             }
 
             // authentication (Bearer or PrivateToken) required
@@ -731,22 +731,22 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Get size of attachments storage in bytes 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>long</returns>
         public long ApiV2AttachmentsOccupiedFileStorageSizeGet()
         {
-            TestIt.ApiClient.Client.ApiResponse<long> localVarResponse = ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfo();
+            TestIT.ApiClient.Client.ApiResponse<long> localVarResponse = ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get size of attachments storage in bytes 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of long</returns>
-        public TestIt.ApiClient.Client.ApiResponse<long> ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfo()
+        public TestIT.ApiClient.Client.ApiResponse<long> ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfo()
         {
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -756,10 +756,10 @@ namespace TestIt.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -784,25 +784,25 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Get size of attachments storage in bytes 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of long</returns>
         public async System.Threading.Tasks.Task<long> ApiV2AttachmentsOccupiedFileStorageSizeGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.ApiClient.Client.ApiResponse<long> localVarResponse = await ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<long> localVarResponse = await ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get size of attachments storage in bytes 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (long)</returns>
-        public async System.Threading.Tasks.Task<TestIt.ApiClient.Client.ApiResponse<long>> ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<long>> ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -813,10 +813,10 @@ namespace TestIt.ApiClient.Api
             };
 
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -842,24 +842,24 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Upload new attachment file File size is restricted to 50 MB (52 428 800 bytes)
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
         /// <returns>AttachmentModel</returns>
         public AttachmentModel ApiV2AttachmentsPost(FileParameter file = default(FileParameter))
         {
-            TestIt.ApiClient.Client.ApiResponse<AttachmentModel> localVarResponse = ApiV2AttachmentsPostWithHttpInfo(file);
+            TestIT.ApiClient.Client.ApiResponse<AttachmentModel> localVarResponse = ApiV2AttachmentsPostWithHttpInfo(file);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Upload new attachment file File size is restricted to 50 MB (52 428 800 bytes)
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
         /// <returns>ApiResponse of AttachmentModel</returns>
-        public TestIt.ApiClient.Client.ApiResponse<AttachmentModel> ApiV2AttachmentsPostWithHttpInfo(FileParameter file = default(FileParameter))
+        public TestIT.ApiClient.Client.ApiResponse<AttachmentModel> ApiV2AttachmentsPostWithHttpInfo(FileParameter file = default(FileParameter))
         {
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "multipart/form-data"
@@ -870,10 +870,10 @@ namespace TestIt.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (file != null)
@@ -902,27 +902,27 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Upload new attachment file File size is restricted to 50 MB (52 428 800 bytes)
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AttachmentModel</returns>
         public async System.Threading.Tasks.Task<AttachmentModel> ApiV2AttachmentsPostAsync(FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.ApiClient.Client.ApiResponse<AttachmentModel> localVarResponse = await ApiV2AttachmentsPostWithHttpInfoAsync(file, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<AttachmentModel> localVarResponse = await ApiV2AttachmentsPostWithHttpInfoAsync(file, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Upload new attachment file File size is restricted to 50 MB (52 428 800 bytes)
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AttachmentModel)</returns>
-        public async System.Threading.Tasks.Task<TestIt.ApiClient.Client.ApiResponse<AttachmentModel>> ApiV2AttachmentsPostWithHttpInfoAsync(FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<AttachmentModel>> ApiV2AttachmentsPostWithHttpInfoAsync(FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "multipart/form-data"
@@ -934,10 +934,10 @@ namespace TestIt.ApiClient.Api
             };
 
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (file != null)

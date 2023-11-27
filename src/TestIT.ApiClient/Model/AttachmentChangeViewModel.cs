@@ -21,10 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = TestIt.ApiClient.Client.FileParameter;
-using OpenAPIDateConverter = TestIt.ApiClient.Client.OpenAPIDateConverter;
+using FileParameter = TestIT.ApiClient.Client.FileParameter;
+using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 
-namespace TestIt.ApiClient.Model
+namespace TestIT.ApiClient.Model
 {
     /// <summary>
     /// AttachmentChangeViewModel

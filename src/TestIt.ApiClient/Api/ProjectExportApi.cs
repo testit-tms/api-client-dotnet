@@ -15,10 +15,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Mime;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
-namespace TestIt.ApiClient.Api
+namespace TestIT.ApiClient.Api
 {
 
     /// <summary>
@@ -33,7 +33,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;This method exports the selected project or its part (sections, work items) to a &#x60;.json&#x60; file.  &lt;br&gt;In the request body, you can specify sections and test cases to be exported.  &lt;br&gt;Example of a request to export two sections and two test cases:  &lt;br&gt;    &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\&quot; \\              -H \&quot;accept: application/json\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: application/json-patch+json\&quot; \\              -d \&quot;{\\\&quot;sectionIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;9fa85f64-5717-4562-b3fc-2c963f66a000\\\&quot;],\\\&quot;workItemIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;90085f64-5717-4562-b3fc-2c963f66a000\\\&quot;]}\&quot;              &#x60;&#x60;&#x60;    &lt;br&gt;In the response, you get:  &lt;br&gt;              - A &#x60;.zip&#x60; file with attachments and a.json file if you enable attachments export.&lt;br /&gt;              - A &#x60;.json&#x60; file with the project if you do not enable attachments export.              
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
         /// <param name="exportProjectJsonRequest"> (optional)</param>
@@ -47,7 +47,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;This method exports the selected project or its part (sections, work items) to a &#x60;.json&#x60; file.  &lt;br&gt;In the request body, you can specify sections and test cases to be exported.  &lt;br&gt;Example of a request to export two sections and two test cases:  &lt;br&gt;    &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\&quot; \\              -H \&quot;accept: application/json\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: application/json-patch+json\&quot; \\              -d \&quot;{\\\&quot;sectionIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;9fa85f64-5717-4562-b3fc-2c963f66a000\\\&quot;],\\\&quot;workItemIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;90085f64-5717-4562-b3fc-2c963f66a000\\\&quot;]}\&quot;              &#x60;&#x60;&#x60;    &lt;br&gt;In the response, you get:  &lt;br&gt;              - A &#x60;.zip&#x60; file with attachments and a.json file if you enable attachments export.&lt;br /&gt;              - A &#x60;.json&#x60; file with the project if you do not enable attachments export.              
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
         /// <param name="exportProjectJsonRequest"> (optional)</param>
@@ -57,7 +57,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Export project as JSON file in background job
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectJsonRequest"> (optional)</param>
@@ -70,7 +70,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectJsonRequest"> (optional)</param>
@@ -79,7 +79,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Export project as JSON file with test plans in background job
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
@@ -92,7 +92,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
@@ -101,7 +101,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Export project as Zip file with test plans in background job
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
@@ -114,7 +114,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
@@ -123,7 +123,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Export project as Zip file in background job
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectJsonRequest"> (optional)</param>
@@ -136,7 +136,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectJsonRequest"> (optional)</param>
@@ -157,7 +157,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;This method exports the selected project or its part (sections, work items) to a &#x60;.json&#x60; file.  &lt;br&gt;In the request body, you can specify sections and test cases to be exported.  &lt;br&gt;Example of a request to export two sections and two test cases:  &lt;br&gt;    &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\&quot; \\              -H \&quot;accept: application/json\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: application/json-patch+json\&quot; \\              -d \&quot;{\\\&quot;sectionIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;9fa85f64-5717-4562-b3fc-2c963f66a000\\\&quot;],\\\&quot;workItemIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;90085f64-5717-4562-b3fc-2c963f66a000\\\&quot;]}\&quot;              &#x60;&#x60;&#x60;    &lt;br&gt;In the response, you get:  &lt;br&gt;              - A &#x60;.zip&#x60; file with attachments and a.json file if you enable attachments export.&lt;br /&gt;              - A &#x60;.json&#x60; file with the project if you do not enable attachments export.              
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
         /// <param name="exportProjectJsonRequest"> (optional)</param>
@@ -172,7 +172,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;This method exports the selected project or its part (sections, work items) to a &#x60;.json&#x60; file.  &lt;br&gt;In the request body, you can specify sections and test cases to be exported.  &lt;br&gt;Example of a request to export two sections and two test cases:  &lt;br&gt;    &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\&quot; \\              -H \&quot;accept: application/json\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: application/json-patch+json\&quot; \\              -d \&quot;{\\\&quot;sectionIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;9fa85f64-5717-4562-b3fc-2c963f66a000\\\&quot;],\\\&quot;workItemIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;90085f64-5717-4562-b3fc-2c963f66a000\\\&quot;]}\&quot;              &#x60;&#x60;&#x60;    &lt;br&gt;In the response, you get:  &lt;br&gt;              - A &#x60;.zip&#x60; file with attachments and a.json file if you enable attachments export.&lt;br /&gt;              - A &#x60;.json&#x60; file with the project if you do not enable attachments export.              
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
         /// <param name="exportProjectJsonRequest"> (optional)</param>
@@ -186,7 +186,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectJsonRequest"> (optional)</param>
@@ -200,7 +200,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectJsonRequest"> (optional)</param>
@@ -213,7 +213,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
@@ -227,7 +227,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
@@ -240,7 +240,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
@@ -254,7 +254,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
@@ -267,7 +267,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectJsonRequest"> (optional)</param>
@@ -281,7 +281,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectJsonRequest"> (optional)</param>
@@ -304,7 +304,7 @@ namespace TestIt.ApiClient.Api
     /// </summary>
     public partial class ProjectExportApi : IDisposable, IProjectExportApi
     {
-        private TestIt.ApiClient.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private TestIT.ApiClient.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectExportApi"/> class.
@@ -326,14 +326,14 @@ namespace TestIt.ApiClient.Api
         /// <returns></returns>
         public ProjectExportApi(string basePath)
         {
-            this.Configuration = TestIt.ApiClient.Client.Configuration.MergeConfigurations(
-                TestIt.ApiClient.Client.GlobalConfiguration.Instance,
-                new TestIt.ApiClient.Client.Configuration { BasePath = basePath }
+            this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
+                TestIT.ApiClient.Client.GlobalConfiguration.Instance,
+                new TestIT.ApiClient.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new TestIt.ApiClient.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new TestIT.ApiClient.Client.ApiClient(this.Configuration.BasePath);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = TestIt.ApiClient.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -344,18 +344,18 @@ namespace TestIt.ApiClient.Api
         /// <param name="configuration">An instance of Configuration.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
-        public ProjectExportApi(TestIt.ApiClient.Client.Configuration configuration)
+        public ProjectExportApi(TestIT.ApiClient.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = TestIt.ApiClient.Client.Configuration.MergeConfigurations(
-                TestIt.ApiClient.Client.GlobalConfiguration.Instance,
+            this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
+                TestIT.ApiClient.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new TestIt.ApiClient.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new TestIT.ApiClient.Client.ApiClient(this.Configuration.BasePath);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = TestIt.ApiClient.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -390,14 +390,14 @@ namespace TestIt.ApiClient.Api
         {
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = TestIt.ApiClient.Client.Configuration.MergeConfigurations(
-                TestIt.ApiClient.Client.GlobalConfiguration.Instance,
-                new TestIt.ApiClient.Client.Configuration { BasePath = basePath }
+            this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
+                TestIT.ApiClient.Client.GlobalConfiguration.Instance,
+                new TestIT.ApiClient.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new TestIt.ApiClient.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new TestIT.ApiClient.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = TestIt.ApiClient.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -412,19 +412,19 @@ namespace TestIt.ApiClient.Api
         /// Some configuration settings will not be applied without passing an HttpClientHandler.
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
-        public ProjectExportApi(HttpClient client, TestIt.ApiClient.Client.Configuration configuration, HttpClientHandler handler = null)
+        public ProjectExportApi(HttpClient client, TestIT.ApiClient.Client.Configuration configuration, HttpClientHandler handler = null)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = TestIt.ApiClient.Client.Configuration.MergeConfigurations(
-                TestIt.ApiClient.Client.GlobalConfiguration.Instance,
+            this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
+                TestIT.ApiClient.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new TestIt.ApiClient.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new TestIT.ApiClient.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = TestIt.ApiClient.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -435,7 +435,7 @@ namespace TestIt.ApiClient.Api
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public ProjectExportApi(TestIt.ApiClient.Client.ISynchronousClient client, TestIt.ApiClient.Client.IAsynchronousClient asyncClient, TestIt.ApiClient.Client.IReadableConfiguration configuration)
+        public ProjectExportApi(TestIT.ApiClient.Client.ISynchronousClient client, TestIT.ApiClient.Client.IAsynchronousClient asyncClient, TestIT.ApiClient.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -444,7 +444,7 @@ namespace TestIt.ApiClient.Api
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = TestIt.ApiClient.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -458,17 +458,17 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Holds the ApiClient if created
         /// </summary>
-        public TestIt.ApiClient.Client.ApiClient ApiClient { get; set; } = null;
+        public TestIT.ApiClient.Client.ApiClient ApiClient { get; set; } = null;
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public TestIt.ApiClient.Client.IAsynchronousClient AsynchronousClient { get; set; }
+        public TestIT.ApiClient.Client.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public TestIt.ApiClient.Client.ISynchronousClient Client { get; set; }
+        public TestIT.ApiClient.Client.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -483,12 +483,12 @@ namespace TestIt.ApiClient.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public TestIt.ApiClient.Client.IReadableConfiguration Configuration { get; set; }
+        public TestIT.ApiClient.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public TestIt.ApiClient.Client.ExceptionFactory ExceptionFactory
+        public TestIT.ApiClient.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -504,7 +504,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Export project as JSON file &lt;br&gt;This method exports the selected project or its part (sections, work items) to a &#x60;.json&#x60; file.  &lt;br&gt;In the request body, you can specify sections and test cases to be exported.  &lt;br&gt;Example of a request to export two sections and two test cases:  &lt;br&gt;    &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\&quot; \\              -H \&quot;accept: application/json\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: application/json-patch+json\&quot; \\              -d \&quot;{\\\&quot;sectionIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;9fa85f64-5717-4562-b3fc-2c963f66a000\\\&quot;],\\\&quot;workItemIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;90085f64-5717-4562-b3fc-2c963f66a000\\\&quot;]}\&quot;              &#x60;&#x60;&#x60;    &lt;br&gt;In the response, you get:  &lt;br&gt;              - A &#x60;.zip&#x60; file with attachments and a.json file if you enable attachments export.&lt;br /&gt;              - A &#x60;.json&#x60; file with the project if you do not enable attachments export.              
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
         /// <param name="exportProjectJsonRequest"> (optional)</param>
@@ -512,26 +512,26 @@ namespace TestIt.ApiClient.Api
         [Obsolete]
         public FileParameter Export(string projectId, bool? includeAttachments = default(bool?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest))
         {
-            TestIt.ApiClient.Client.ApiResponse<FileParameter> localVarResponse = ExportWithHttpInfo(projectId, includeAttachments, exportProjectJsonRequest);
+            TestIT.ApiClient.Client.ApiResponse<FileParameter> localVarResponse = ExportWithHttpInfo(projectId, includeAttachments, exportProjectJsonRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Export project as JSON file &lt;br&gt;This method exports the selected project or its part (sections, work items) to a &#x60;.json&#x60; file.  &lt;br&gt;In the request body, you can specify sections and test cases to be exported.  &lt;br&gt;Example of a request to export two sections and two test cases:  &lt;br&gt;    &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\&quot; \\              -H \&quot;accept: application/json\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: application/json-patch+json\&quot; \\              -d \&quot;{\\\&quot;sectionIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;9fa85f64-5717-4562-b3fc-2c963f66a000\\\&quot;],\\\&quot;workItemIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;90085f64-5717-4562-b3fc-2c963f66a000\\\&quot;]}\&quot;              &#x60;&#x60;&#x60;    &lt;br&gt;In the response, you get:  &lt;br&gt;              - A &#x60;.zip&#x60; file with attachments and a.json file if you enable attachments export.&lt;br /&gt;              - A &#x60;.json&#x60; file with the project if you do not enable attachments export.              
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
         /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <returns>ApiResponse of FileParameter</returns>
         [Obsolete]
-        public TestIt.ApiClient.Client.ApiResponse<FileParameter> ExportWithHttpInfo(string projectId, bool? includeAttachments = default(bool?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest))
+        public TestIT.ApiClient.Client.ApiResponse<FileParameter> ExportWithHttpInfo(string projectId, bool? includeAttachments = default(bool?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectExportApi->Export");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectExportApi->Export");
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -542,16 +542,16 @@ namespace TestIt.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             if (includeAttachments != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "includeAttachments", includeAttachments));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "includeAttachments", includeAttachments));
             }
             localVarRequestOptions.Data = exportProjectJsonRequest;
 
@@ -576,7 +576,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Export project as JSON file &lt;br&gt;This method exports the selected project or its part (sections, work items) to a &#x60;.json&#x60; file.  &lt;br&gt;In the request body, you can specify sections and test cases to be exported.  &lt;br&gt;Example of a request to export two sections and two test cases:  &lt;br&gt;    &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\&quot; \\              -H \&quot;accept: application/json\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: application/json-patch+json\&quot; \\              -d \&quot;{\\\&quot;sectionIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;9fa85f64-5717-4562-b3fc-2c963f66a000\\\&quot;],\\\&quot;workItemIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;90085f64-5717-4562-b3fc-2c963f66a000\\\&quot;]}\&quot;              &#x60;&#x60;&#x60;    &lt;br&gt;In the response, you get:  &lt;br&gt;              - A &#x60;.zip&#x60; file with attachments and a.json file if you enable attachments export.&lt;br /&gt;              - A &#x60;.json&#x60; file with the project if you do not enable attachments export.              
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
         /// <param name="exportProjectJsonRequest"> (optional)</param>
@@ -585,28 +585,28 @@ namespace TestIt.ApiClient.Api
         [Obsolete]
         public async System.Threading.Tasks.Task<FileParameter> ExportAsync(string projectId, bool? includeAttachments = default(bool?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.ApiClient.Client.ApiResponse<FileParameter> localVarResponse = await ExportWithHttpInfoAsync(projectId, includeAttachments, exportProjectJsonRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<FileParameter> localVarResponse = await ExportWithHttpInfoAsync(projectId, includeAttachments, exportProjectJsonRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Export project as JSON file &lt;br&gt;This method exports the selected project or its part (sections, work items) to a &#x60;.json&#x60; file.  &lt;br&gt;In the request body, you can specify sections and test cases to be exported.  &lt;br&gt;Example of a request to export two sections and two test cases:  &lt;br&gt;    &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain}.com/api/v2/projects/27a32ce6-d972-4ef8-bef5-51be4bf9e468/export\&quot; \\              -H \&quot;accept: application/json\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: application/json-patch+json\&quot; \\              -d \&quot;{\\\&quot;sectionIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;9fa85f64-5717-4562-b3fc-2c963f66a000\\\&quot;],\\\&quot;workItemIds\\\&quot;:[\\\&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6\\\&quot;,\\\&quot;90085f64-5717-4562-b3fc-2c963f66a000\\\&quot;]}\&quot;              &#x60;&#x60;&#x60;    &lt;br&gt;In the response, you get:  &lt;br&gt;              - A &#x60;.zip&#x60; file with attachments and a.json file if you enable attachments export.&lt;br /&gt;              - A &#x60;.json&#x60; file with the project if you do not enable attachments export.              
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Specifies the ID of the project you want to export.</param>
         /// <param name="includeAttachments">Enables attachment export. (optional, default to false)</param>
         /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<TestIt.ApiClient.Client.ApiResponse<FileParameter>> ExportWithHttpInfoAsync(string projectId, bool? includeAttachments = default(bool?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<FileParameter>> ExportWithHttpInfoAsync(string projectId, bool? includeAttachments = default(bool?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectExportApi->Export");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectExportApi->Export");
 
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -618,16 +618,16 @@ namespace TestIt.ApiClient.Api
             };
 
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             if (includeAttachments != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "includeAttachments", includeAttachments));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "includeAttachments", includeAttachments));
             }
             localVarRequestOptions.Data = exportProjectJsonRequest;
 
@@ -653,32 +653,32 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Export project as JSON file in background job 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <returns>Guid</returns>
         public Guid ExportProjectJson(string projectId, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest))
         {
-            TestIt.ApiClient.Client.ApiResponse<Guid> localVarResponse = ExportProjectJsonWithHttpInfo(projectId, timeZoneOffsetInMinutes, exportProjectJsonRequest);
+            TestIT.ApiClient.Client.ApiResponse<Guid> localVarResponse = ExportProjectJsonWithHttpInfo(projectId, timeZoneOffsetInMinutes, exportProjectJsonRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Export project as JSON file in background job 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <returns>ApiResponse of Guid</returns>
-        public TestIt.ApiClient.Client.ApiResponse<Guid> ExportProjectJsonWithHttpInfo(string projectId, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest))
+        public TestIT.ApiClient.Client.ApiResponse<Guid> ExportProjectJsonWithHttpInfo(string projectId, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectExportApi->ExportProjectJson");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectExportApi->ExportProjectJson");
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -689,16 +689,16 @@ namespace TestIt.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             if (timeZoneOffsetInMinutes != null)
             {
-                localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.ApiClient.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
+                localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIT.ApiClient.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
             }
             localVarRequestOptions.Data = exportProjectJsonRequest;
 
@@ -723,7 +723,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Export project as JSON file in background job 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectJsonRequest"> (optional)</param>
@@ -731,27 +731,27 @@ namespace TestIt.ApiClient.Api
         /// <returns>Task of Guid</returns>
         public async System.Threading.Tasks.Task<Guid> ExportProjectJsonAsync(string projectId, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.ApiClient.Client.ApiResponse<Guid> localVarResponse = await ExportProjectJsonWithHttpInfoAsync(projectId, timeZoneOffsetInMinutes, exportProjectJsonRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<Guid> localVarResponse = await ExportProjectJsonWithHttpInfoAsync(projectId, timeZoneOffsetInMinutes, exportProjectJsonRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Export project as JSON file in background job 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Guid)</returns>
-        public async System.Threading.Tasks.Task<TestIt.ApiClient.Client.ApiResponse<Guid>> ExportProjectJsonWithHttpInfoAsync(string projectId, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Guid>> ExportProjectJsonWithHttpInfoAsync(string projectId, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectExportApi->ExportProjectJson");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectExportApi->ExportProjectJson");
 
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -763,16 +763,16 @@ namespace TestIt.ApiClient.Api
             };
 
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             if (timeZoneOffsetInMinutes != null)
             {
-                localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.ApiClient.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
+                localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIT.ApiClient.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
             }
             localVarRequestOptions.Data = exportProjectJsonRequest;
 
@@ -798,32 +798,32 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Export project as JSON file with test plans in background job 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <returns>Guid</returns>
         public Guid ExportProjectWithTestPlansJson(string projectId, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest))
         {
-            TestIt.ApiClient.Client.ApiResponse<Guid> localVarResponse = ExportProjectWithTestPlansJsonWithHttpInfo(projectId, timeZoneOffsetInMinutes, exportProjectWithTestPlansJsonRequest);
+            TestIT.ApiClient.Client.ApiResponse<Guid> localVarResponse = ExportProjectWithTestPlansJsonWithHttpInfo(projectId, timeZoneOffsetInMinutes, exportProjectWithTestPlansJsonRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Export project as JSON file with test plans in background job 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <returns>ApiResponse of Guid</returns>
-        public TestIt.ApiClient.Client.ApiResponse<Guid> ExportProjectWithTestPlansJsonWithHttpInfo(string projectId, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest))
+        public TestIT.ApiClient.Client.ApiResponse<Guid> ExportProjectWithTestPlansJsonWithHttpInfo(string projectId, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectExportApi->ExportProjectWithTestPlansJson");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectExportApi->ExportProjectWithTestPlansJson");
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -834,16 +834,16 @@ namespace TestIt.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             if (timeZoneOffsetInMinutes != null)
             {
-                localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.ApiClient.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
+                localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIT.ApiClient.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
             }
             localVarRequestOptions.Data = exportProjectWithTestPlansJsonRequest;
 
@@ -868,7 +868,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Export project as JSON file with test plans in background job 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
@@ -876,27 +876,27 @@ namespace TestIt.ApiClient.Api
         /// <returns>Task of Guid</returns>
         public async System.Threading.Tasks.Task<Guid> ExportProjectWithTestPlansJsonAsync(string projectId, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.ApiClient.Client.ApiResponse<Guid> localVarResponse = await ExportProjectWithTestPlansJsonWithHttpInfoAsync(projectId, timeZoneOffsetInMinutes, exportProjectWithTestPlansJsonRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<Guid> localVarResponse = await ExportProjectWithTestPlansJsonWithHttpInfoAsync(projectId, timeZoneOffsetInMinutes, exportProjectWithTestPlansJsonRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Export project as JSON file with test plans in background job 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Guid)</returns>
-        public async System.Threading.Tasks.Task<TestIt.ApiClient.Client.ApiResponse<Guid>> ExportProjectWithTestPlansJsonWithHttpInfoAsync(string projectId, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Guid>> ExportProjectWithTestPlansJsonWithHttpInfoAsync(string projectId, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectExportApi->ExportProjectWithTestPlansJson");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectExportApi->ExportProjectWithTestPlansJson");
 
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -908,16 +908,16 @@ namespace TestIt.ApiClient.Api
             };
 
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             if (timeZoneOffsetInMinutes != null)
             {
-                localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.ApiClient.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
+                localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIT.ApiClient.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
             }
             localVarRequestOptions.Data = exportProjectWithTestPlansJsonRequest;
 
@@ -943,32 +943,32 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Export project as Zip file with test plans in background job 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <returns>Guid</returns>
         public Guid ExportProjectWithTestPlansZip(string projectId, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest))
         {
-            TestIt.ApiClient.Client.ApiResponse<Guid> localVarResponse = ExportProjectWithTestPlansZipWithHttpInfo(projectId, timeZoneOffsetInMinutes, exportProjectWithTestPlansJsonRequest);
+            TestIT.ApiClient.Client.ApiResponse<Guid> localVarResponse = ExportProjectWithTestPlansZipWithHttpInfo(projectId, timeZoneOffsetInMinutes, exportProjectWithTestPlansJsonRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Export project as Zip file with test plans in background job 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <returns>ApiResponse of Guid</returns>
-        public TestIt.ApiClient.Client.ApiResponse<Guid> ExportProjectWithTestPlansZipWithHttpInfo(string projectId, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest))
+        public TestIT.ApiClient.Client.ApiResponse<Guid> ExportProjectWithTestPlansZipWithHttpInfo(string projectId, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectExportApi->ExportProjectWithTestPlansZip");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectExportApi->ExportProjectWithTestPlansZip");
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -979,16 +979,16 @@ namespace TestIt.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             if (timeZoneOffsetInMinutes != null)
             {
-                localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.ApiClient.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
+                localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIT.ApiClient.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
             }
             localVarRequestOptions.Data = exportProjectWithTestPlansJsonRequest;
 
@@ -1013,7 +1013,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Export project as Zip file with test plans in background job 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
@@ -1021,27 +1021,27 @@ namespace TestIt.ApiClient.Api
         /// <returns>Task of Guid</returns>
         public async System.Threading.Tasks.Task<Guid> ExportProjectWithTestPlansZipAsync(string projectId, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.ApiClient.Client.ApiResponse<Guid> localVarResponse = await ExportProjectWithTestPlansZipWithHttpInfoAsync(projectId, timeZoneOffsetInMinutes, exportProjectWithTestPlansJsonRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<Guid> localVarResponse = await ExportProjectWithTestPlansZipWithHttpInfoAsync(projectId, timeZoneOffsetInMinutes, exportProjectWithTestPlansJsonRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Export project as Zip file with test plans in background job 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectWithTestPlansJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Guid)</returns>
-        public async System.Threading.Tasks.Task<TestIt.ApiClient.Client.ApiResponse<Guid>> ExportProjectWithTestPlansZipWithHttpInfoAsync(string projectId, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Guid>> ExportProjectWithTestPlansZipWithHttpInfoAsync(string projectId, long? timeZoneOffsetInMinutes = default(long?), ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = default(ExportProjectWithTestPlansJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectExportApi->ExportProjectWithTestPlansZip");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectExportApi->ExportProjectWithTestPlansZip");
 
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1053,16 +1053,16 @@ namespace TestIt.ApiClient.Api
             };
 
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             if (timeZoneOffsetInMinutes != null)
             {
-                localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.ApiClient.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
+                localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIT.ApiClient.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
             }
             localVarRequestOptions.Data = exportProjectWithTestPlansJsonRequest;
 
@@ -1088,32 +1088,32 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Export project as Zip file in background job 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <returns>Guid</returns>
         public Guid ExportProjectZip(string projectId, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest))
         {
-            TestIt.ApiClient.Client.ApiResponse<Guid> localVarResponse = ExportProjectZipWithHttpInfo(projectId, timeZoneOffsetInMinutes, exportProjectJsonRequest);
+            TestIT.ApiClient.Client.ApiResponse<Guid> localVarResponse = ExportProjectZipWithHttpInfo(projectId, timeZoneOffsetInMinutes, exportProjectJsonRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Export project as Zip file in background job 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <returns>ApiResponse of Guid</returns>
-        public TestIt.ApiClient.Client.ApiResponse<Guid> ExportProjectZipWithHttpInfo(string projectId, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest))
+        public TestIT.ApiClient.Client.ApiResponse<Guid> ExportProjectZipWithHttpInfo(string projectId, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectExportApi->ExportProjectZip");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectExportApi->ExportProjectZip");
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1124,16 +1124,16 @@ namespace TestIt.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             if (timeZoneOffsetInMinutes != null)
             {
-                localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.ApiClient.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
+                localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIT.ApiClient.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
             }
             localVarRequestOptions.Data = exportProjectJsonRequest;
 
@@ -1158,7 +1158,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Export project as Zip file in background job 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectJsonRequest"> (optional)</param>
@@ -1166,27 +1166,27 @@ namespace TestIt.ApiClient.Api
         /// <returns>Task of Guid</returns>
         public async System.Threading.Tasks.Task<Guid> ExportProjectZipAsync(string projectId, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.ApiClient.Client.ApiResponse<Guid> localVarResponse = await ExportProjectZipWithHttpInfoAsync(projectId, timeZoneOffsetInMinutes, exportProjectJsonRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<Guid> localVarResponse = await ExportProjectZipWithHttpInfoAsync(projectId, timeZoneOffsetInMinutes, exportProjectJsonRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Export project as Zip file in background job 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="exportProjectJsonRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Guid)</returns>
-        public async System.Threading.Tasks.Task<TestIt.ApiClient.Client.ApiResponse<Guid>> ExportProjectZipWithHttpInfoAsync(string projectId, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Guid>> ExportProjectZipWithHttpInfoAsync(string projectId, long? timeZoneOffsetInMinutes = default(long?), ExportProjectJsonRequest exportProjectJsonRequest = default(ExportProjectJsonRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectExportApi->ExportProjectZip");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectExportApi->ExportProjectZip");
 
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1198,16 +1198,16 @@ namespace TestIt.ApiClient.Api
             };
 
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             if (timeZoneOffsetInMinutes != null)
             {
-                localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIt.ApiClient.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
+                localVarRequestOptions.HeaderParameters.Add("time-Zone-Offset-In-Minutes", TestIT.ApiClient.Client.ClientUtils.ParameterToString(timeZoneOffsetInMinutes)); // header parameter
             }
             localVarRequestOptions.Data = exportProjectJsonRequest;
 

@@ -15,10 +15,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Mime;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
-namespace TestIt.ApiClient.Api
+namespace TestIT.ApiClient.Api
 {
 
     /// <summary>
@@ -33,7 +33,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal identifier  &lt;br&gt;User sets query params  &lt;br&gt;User runs method execution  &lt;br&gt;System return analytics
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="mustUpdateCache"> (optional, default to false)</param>
@@ -51,7 +51,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal identifier  &lt;br&gt;User sets query params  &lt;br&gt;User runs method execution  &lt;br&gt;System return analytics
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="mustUpdateCache"> (optional, default to false)</param>
@@ -65,7 +65,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Delete multiple test plans
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <returns>List&lt;Guid&gt;</returns>
@@ -77,7 +77,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
@@ -88,7 +88,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System purge delete project workitems
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="name">TestPlan name to check</param>
         /// <returns>bool</returns>
@@ -100,7 +100,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System purge delete project workitems
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="name">TestPlan name to check</param>
         /// <returns>ApiResponse of bool</returns>
@@ -108,7 +108,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Permanently delete multiple archived test plans
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <returns></returns>
@@ -120,7 +120,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -128,7 +128,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Restore multiple test plans
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <returns></returns>
@@ -140,7 +140,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -151,7 +151,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets request body   &lt;br&gt;User runs method execution  &lt;br&gt;System returns project testplans with analytics
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="mustUpdateCache"> (optional, default to false)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -169,7 +169,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets request body   &lt;br&gt;User runs method execution  &lt;br&gt;System returns project testplans with analytics
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="mustUpdateCache"> (optional, default to false)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -195,7 +195,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal identifier  &lt;br&gt;User sets query params  &lt;br&gt;User runs method execution  &lt;br&gt;System return analytics
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="mustUpdateCache"> (optional, default to false)</param>
@@ -214,7 +214,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal identifier  &lt;br&gt;User sets query params  &lt;br&gt;User runs method execution  &lt;br&gt;System return analytics
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="mustUpdateCache"> (optional, default to false)</param>
@@ -232,7 +232,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -245,7 +245,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -257,7 +257,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System purge delete project workitems
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="name">TestPlan name to check</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -270,7 +270,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System purge delete project workitems
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="name">TestPlan name to check</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -282,7 +282,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -295,7 +295,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -307,7 +307,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -320,7 +320,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -332,7 +332,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets request body   &lt;br&gt;User runs method execution  &lt;br&gt;System returns project testplans with analytics
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="mustUpdateCache"> (optional, default to false)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -351,7 +351,7 @@ namespace TestIt.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets request body   &lt;br&gt;User runs method execution  &lt;br&gt;System returns project testplans with analytics
         /// </remarks>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="mustUpdateCache"> (optional, default to false)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -379,7 +379,7 @@ namespace TestIt.ApiClient.Api
     /// </summary>
     public partial class ProjectTestPlansApi : IDisposable, IProjectTestPlansApi
     {
-        private TestIt.ApiClient.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private TestIT.ApiClient.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectTestPlansApi"/> class.
@@ -401,14 +401,14 @@ namespace TestIt.ApiClient.Api
         /// <returns></returns>
         public ProjectTestPlansApi(string basePath)
         {
-            this.Configuration = TestIt.ApiClient.Client.Configuration.MergeConfigurations(
-                TestIt.ApiClient.Client.GlobalConfiguration.Instance,
-                new TestIt.ApiClient.Client.Configuration { BasePath = basePath }
+            this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
+                TestIT.ApiClient.Client.GlobalConfiguration.Instance,
+                new TestIT.ApiClient.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new TestIt.ApiClient.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new TestIT.ApiClient.Client.ApiClient(this.Configuration.BasePath);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = TestIt.ApiClient.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -419,18 +419,18 @@ namespace TestIt.ApiClient.Api
         /// <param name="configuration">An instance of Configuration.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
-        public ProjectTestPlansApi(TestIt.ApiClient.Client.Configuration configuration)
+        public ProjectTestPlansApi(TestIT.ApiClient.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = TestIt.ApiClient.Client.Configuration.MergeConfigurations(
-                TestIt.ApiClient.Client.GlobalConfiguration.Instance,
+            this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
+                TestIT.ApiClient.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new TestIt.ApiClient.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new TestIT.ApiClient.Client.ApiClient(this.Configuration.BasePath);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = TestIt.ApiClient.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -465,14 +465,14 @@ namespace TestIt.ApiClient.Api
         {
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = TestIt.ApiClient.Client.Configuration.MergeConfigurations(
-                TestIt.ApiClient.Client.GlobalConfiguration.Instance,
-                new TestIt.ApiClient.Client.Configuration { BasePath = basePath }
+            this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
+                TestIT.ApiClient.Client.GlobalConfiguration.Instance,
+                new TestIT.ApiClient.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new TestIt.ApiClient.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new TestIT.ApiClient.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = TestIt.ApiClient.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -487,19 +487,19 @@ namespace TestIt.ApiClient.Api
         /// Some configuration settings will not be applied without passing an HttpClientHandler.
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
-        public ProjectTestPlansApi(HttpClient client, TestIt.ApiClient.Client.Configuration configuration, HttpClientHandler handler = null)
+        public ProjectTestPlansApi(HttpClient client, TestIT.ApiClient.Client.Configuration configuration, HttpClientHandler handler = null)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = TestIt.ApiClient.Client.Configuration.MergeConfigurations(
-                TestIt.ApiClient.Client.GlobalConfiguration.Instance,
+            this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
+                TestIT.ApiClient.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new TestIt.ApiClient.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new TestIT.ApiClient.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = TestIt.ApiClient.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -510,7 +510,7 @@ namespace TestIt.ApiClient.Api
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public ProjectTestPlansApi(TestIt.ApiClient.Client.ISynchronousClient client, TestIt.ApiClient.Client.IAsynchronousClient asyncClient, TestIt.ApiClient.Client.IReadableConfiguration configuration)
+        public ProjectTestPlansApi(TestIT.ApiClient.Client.ISynchronousClient client, TestIT.ApiClient.Client.IAsynchronousClient asyncClient, TestIT.ApiClient.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -519,7 +519,7 @@ namespace TestIt.ApiClient.Api
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = TestIt.ApiClient.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -533,17 +533,17 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Holds the ApiClient if created
         /// </summary>
-        public TestIt.ApiClient.Client.ApiClient ApiClient { get; set; } = null;
+        public TestIT.ApiClient.Client.ApiClient ApiClient { get; set; } = null;
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public TestIt.ApiClient.Client.IAsynchronousClient AsynchronousClient { get; set; }
+        public TestIT.ApiClient.Client.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public TestIt.ApiClient.Client.ISynchronousClient Client { get; set; }
+        public TestIT.ApiClient.Client.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -558,12 +558,12 @@ namespace TestIt.ApiClient.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public TestIt.ApiClient.Client.IReadableConfiguration Configuration { get; set; }
+        public TestIT.ApiClient.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public TestIt.ApiClient.Client.ExceptionFactory ExceptionFactory
+        public TestIT.ApiClient.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -579,7 +579,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Get TestPlans analytics &lt;br&gt;Use case  &lt;br&gt;User sets project internal identifier  &lt;br&gt;User sets query params  &lt;br&gt;User runs method execution  &lt;br&gt;System return analytics
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="mustUpdateCache"> (optional, default to false)</param>
@@ -591,14 +591,14 @@ namespace TestIt.ApiClient.Api
         /// <returns>List&lt;TestPlanWithAnalyticModel&gt;</returns>
         public List<TestPlanWithAnalyticModel> ApiV2ProjectsProjectIdTestPlansAnalyticsGet(Guid projectId, bool? isDeleted = default(bool?), bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
-            TestIt.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>> localVarResponse = ApiV2ProjectsProjectIdTestPlansAnalyticsGetWithHttpInfo(projectId, isDeleted, mustUpdateCache, skip, take, orderBy, searchField, searchValue);
+            TestIT.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>> localVarResponse = ApiV2ProjectsProjectIdTestPlansAnalyticsGetWithHttpInfo(projectId, isDeleted, mustUpdateCache, skip, take, orderBy, searchField, searchValue);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get TestPlans analytics &lt;br&gt;Use case  &lt;br&gt;User sets project internal identifier  &lt;br&gt;User sets query params  &lt;br&gt;User runs method execution  &lt;br&gt;System return analytics
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="mustUpdateCache"> (optional, default to false)</param>
@@ -608,9 +608,9 @@ namespace TestIt.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>ApiResponse of List&lt;TestPlanWithAnalyticModel&gt;</returns>
-        public TestIt.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>> ApiV2ProjectsProjectIdTestPlansAnalyticsGetWithHttpInfo(Guid projectId, bool? isDeleted = default(bool?), bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
+        public TestIT.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>> ApiV2ProjectsProjectIdTestPlansAnalyticsGetWithHttpInfo(Guid projectId, bool? isDeleted = default(bool?), bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -620,40 +620,40 @@ namespace TestIt.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             if (isDeleted != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "isDeleted", isDeleted));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "isDeleted", isDeleted));
             }
             if (mustUpdateCache != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "mustUpdateCache", mustUpdateCache));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "mustUpdateCache", mustUpdateCache));
             }
             if (skip != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
             }
             if (take != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
             }
             if (orderBy != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
             }
             if (searchField != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
             }
             if (searchValue != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
 
             // authentication (Bearer or PrivateToken) required
@@ -677,7 +677,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Get TestPlans analytics &lt;br&gt;Use case  &lt;br&gt;User sets project internal identifier  &lt;br&gt;User sets query params  &lt;br&gt;User runs method execution  &lt;br&gt;System return analytics
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="mustUpdateCache"> (optional, default to false)</param>
@@ -690,14 +690,14 @@ namespace TestIt.ApiClient.Api
         /// <returns>Task of List&lt;TestPlanWithAnalyticModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<TestPlanWithAnalyticModel>> ApiV2ProjectsProjectIdTestPlansAnalyticsGetAsync(Guid projectId, bool? isDeleted = default(bool?), bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>> localVarResponse = await ApiV2ProjectsProjectIdTestPlansAnalyticsGetWithHttpInfoAsync(projectId, isDeleted, mustUpdateCache, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>> localVarResponse = await ApiV2ProjectsProjectIdTestPlansAnalyticsGetWithHttpInfoAsync(projectId, isDeleted, mustUpdateCache, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get TestPlans analytics &lt;br&gt;Use case  &lt;br&gt;User sets project internal identifier  &lt;br&gt;User sets query params  &lt;br&gt;User runs method execution  &lt;br&gt;System return analytics
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="mustUpdateCache"> (optional, default to false)</param>
@@ -708,10 +708,10 @@ namespace TestIt.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPlanWithAnalyticModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>>> ApiV2ProjectsProjectIdTestPlansAnalyticsGetWithHttpInfoAsync(Guid projectId, bool? isDeleted = default(bool?), bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>>> ApiV2ProjectsProjectIdTestPlansAnalyticsGetWithHttpInfoAsync(Guid projectId, bool? isDeleted = default(bool?), bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -722,40 +722,40 @@ namespace TestIt.ApiClient.Api
             };
 
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             if (isDeleted != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "isDeleted", isDeleted));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "isDeleted", isDeleted));
             }
             if (mustUpdateCache != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "mustUpdateCache", mustUpdateCache));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "mustUpdateCache", mustUpdateCache));
             }
             if (skip != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
             }
             if (take != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
             }
             if (orderBy != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
             }
             if (searchField != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
             }
             if (searchValue != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
 
             // authentication (Bearer or PrivateToken) required
@@ -780,30 +780,30 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Delete multiple test plans 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <returns>List&lt;Guid&gt;</returns>
         public List<Guid> ApiV2ProjectsProjectIdTestPlansDeleteBulkPost(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest))
         {
-            TestIt.ApiClient.Client.ApiResponse<List<Guid>> localVarResponse = ApiV2ProjectsProjectIdTestPlansDeleteBulkPostWithHttpInfo(projectId, apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<List<Guid>> localVarResponse = ApiV2ProjectsProjectIdTestPlansDeleteBulkPostWithHttpInfo(projectId, apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Delete multiple test plans 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
-        public TestIt.ApiClient.Client.ApiResponse<List<Guid>> ApiV2ProjectsProjectIdTestPlansDeleteBulkPostWithHttpInfo(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<List<Guid>> ApiV2ProjectsProjectIdTestPlansDeleteBulkPostWithHttpInfo(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlansApi->ApiV2ProjectsProjectIdTestPlansDeleteBulkPost");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlansApi->ApiV2ProjectsProjectIdTestPlansDeleteBulkPost");
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -814,13 +814,13 @@ namespace TestIt.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.Data = apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest;
 
             // authentication (Bearer or PrivateToken) required
@@ -844,33 +844,33 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Delete multiple test plans 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Guid&gt;</returns>
         public async System.Threading.Tasks.Task<List<Guid>> ApiV2ProjectsProjectIdTestPlansDeleteBulkPostAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.ApiClient.Client.ApiResponse<List<Guid>> localVarResponse = await ApiV2ProjectsProjectIdTestPlansDeleteBulkPostWithHttpInfoAsync(projectId, apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<Guid>> localVarResponse = await ApiV2ProjectsProjectIdTestPlansDeleteBulkPostWithHttpInfoAsync(projectId, apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Delete multiple test plans 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.ApiClient.Client.ApiResponse<List<Guid>>> ApiV2ProjectsProjectIdTestPlansDeleteBulkPostWithHttpInfoAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<Guid>>> ApiV2ProjectsProjectIdTestPlansDeleteBulkPostWithHttpInfoAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlansApi->ApiV2ProjectsProjectIdTestPlansDeleteBulkPost");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlansApi->ApiV2ProjectsProjectIdTestPlansDeleteBulkPost");
 
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -882,13 +882,13 @@ namespace TestIt.ApiClient.Api
             };
 
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.Data = apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest;
 
             // authentication (Bearer or PrivateToken) required
@@ -913,30 +913,30 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Checks if TestPlan exists with the specified name exists for the project &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System purge delete project workitems
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="name">TestPlan name to check</param>
         /// <returns>bool</returns>
         public bool ApiV2ProjectsProjectIdTestPlansNameExistsGet(Guid projectId, string name)
         {
-            TestIt.ApiClient.Client.ApiResponse<bool> localVarResponse = ApiV2ProjectsProjectIdTestPlansNameExistsGetWithHttpInfo(projectId, name);
+            TestIT.ApiClient.Client.ApiResponse<bool> localVarResponse = ApiV2ProjectsProjectIdTestPlansNameExistsGetWithHttpInfo(projectId, name);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Checks if TestPlan exists with the specified name exists for the project &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System purge delete project workitems
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="name">TestPlan name to check</param>
         /// <returns>ApiResponse of bool</returns>
-        public TestIt.ApiClient.Client.ApiResponse<bool> ApiV2ProjectsProjectIdTestPlansNameExistsGetWithHttpInfo(Guid projectId, string name)
+        public TestIT.ApiClient.Client.ApiResponse<bool> ApiV2ProjectsProjectIdTestPlansNameExistsGetWithHttpInfo(Guid projectId, string name)
         {
             // verify the required parameter 'name' is set
             if (name == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'name' when calling ProjectTestPlansApi->ApiV2ProjectsProjectIdTestPlansNameExistsGet");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'name' when calling ProjectTestPlansApi->ApiV2ProjectsProjectIdTestPlansNameExistsGet");
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -946,14 +946,14 @@ namespace TestIt.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("name", TestIt.ApiClient.Client.ClientUtils.ParameterToString(name)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("name", TestIT.ApiClient.Client.ClientUtils.ParameterToString(name)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -976,33 +976,33 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Checks if TestPlan exists with the specified name exists for the project &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System purge delete project workitems
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="name">TestPlan name to check</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of bool</returns>
         public async System.Threading.Tasks.Task<bool> ApiV2ProjectsProjectIdTestPlansNameExistsGetAsync(Guid projectId, string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.ApiClient.Client.ApiResponse<bool> localVarResponse = await ApiV2ProjectsProjectIdTestPlansNameExistsGetWithHttpInfoAsync(projectId, name, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<bool> localVarResponse = await ApiV2ProjectsProjectIdTestPlansNameExistsGetWithHttpInfoAsync(projectId, name, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Checks if TestPlan exists with the specified name exists for the project &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System purge delete project workitems
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="name">TestPlan name to check</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (bool)</returns>
-        public async System.Threading.Tasks.Task<TestIt.ApiClient.Client.ApiResponse<bool>> ApiV2ProjectsProjectIdTestPlansNameExistsGetWithHttpInfoAsync(Guid projectId, string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<bool>> ApiV2ProjectsProjectIdTestPlansNameExistsGetWithHttpInfoAsync(Guid projectId, string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'name' is set
             if (name == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'name' when calling ProjectTestPlansApi->ApiV2ProjectsProjectIdTestPlansNameExistsGet");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'name' when calling ProjectTestPlansApi->ApiV2ProjectsProjectIdTestPlansNameExistsGet");
 
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1013,14 +1013,14 @@ namespace TestIt.ApiClient.Api
             };
 
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("name", TestIt.ApiClient.Client.ClientUtils.ParameterToString(name)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("name", TestIT.ApiClient.Client.ClientUtils.ParameterToString(name)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1044,7 +1044,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Permanently delete multiple archived test plans 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <returns></returns>
@@ -1056,17 +1056,17 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Permanently delete multiple archived test plans 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.ApiClient.Client.ApiResponse<Object> ApiV2ProjectsProjectIdTestPlansPurgeBulkPostWithHttpInfo(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2ProjectsProjectIdTestPlansPurgeBulkPostWithHttpInfo(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlansApi->ApiV2ProjectsProjectIdTestPlansPurgeBulkPost");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlansApi->ApiV2ProjectsProjectIdTestPlansPurgeBulkPost");
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1077,13 +1077,13 @@ namespace TestIt.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.Data = apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest;
 
             // authentication (Bearer or PrivateToken) required
@@ -1107,7 +1107,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Permanently delete multiple archived test plans 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1120,19 +1120,19 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Permanently delete multiple archived test plans 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdTestPlansPurgeBulkPostWithHttpInfoAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdTestPlansPurgeBulkPostWithHttpInfoAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlansApi->ApiV2ProjectsProjectIdTestPlansPurgeBulkPost");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlansApi->ApiV2ProjectsProjectIdTestPlansPurgeBulkPost");
 
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1144,13 +1144,13 @@ namespace TestIt.ApiClient.Api
             };
 
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.Data = apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest;
 
             // authentication (Bearer or PrivateToken) required
@@ -1175,7 +1175,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Restore multiple test plans 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <returns></returns>
@@ -1187,17 +1187,17 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Restore multiple test plans 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIt.ApiClient.Client.ApiResponse<Object> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfo(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfo(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlansApi->ApiV2ProjectsProjectIdTestPlansRestoreBulkPost");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlansApi->ApiV2ProjectsProjectIdTestPlansRestoreBulkPost");
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1208,13 +1208,13 @@ namespace TestIt.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.Data = apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest;
 
             // authentication (Bearer or PrivateToken) required
@@ -1238,7 +1238,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Restore multiple test plans 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1251,19 +1251,19 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Restore multiple test plans 
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIt.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfoAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfoAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlansApi->ApiV2ProjectsProjectIdTestPlansRestoreBulkPost");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlansApi->ApiV2ProjectsProjectIdTestPlansRestoreBulkPost");
 
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1275,13 +1275,13 @@ namespace TestIt.ApiClient.Api
             };
 
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.Data = apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest;
 
             // authentication (Bearer or PrivateToken) required
@@ -1306,7 +1306,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Get Project TestPlans with analytics &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets request body   &lt;br&gt;User runs method execution  &lt;br&gt;System returns project testplans with analytics
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="mustUpdateCache"> (optional, default to false)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1318,14 +1318,14 @@ namespace TestIt.ApiClient.Api
         /// <returns>List&lt;TestPlanWithAnalyticModel&gt;</returns>
         public List<TestPlanWithAnalyticModel> ApiV2ProjectsProjectIdTestPlansSearchPost(string projectId, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdTestPlansSearchPostRequest apiV2ProjectsProjectIdTestPlansSearchPostRequest = default(ApiV2ProjectsProjectIdTestPlansSearchPostRequest))
         {
-            TestIt.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>> localVarResponse = ApiV2ProjectsProjectIdTestPlansSearchPostWithHttpInfo(projectId, mustUpdateCache, skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdTestPlansSearchPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>> localVarResponse = ApiV2ProjectsProjectIdTestPlansSearchPostWithHttpInfo(projectId, mustUpdateCache, skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdTestPlansSearchPostRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get Project TestPlans with analytics &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets request body   &lt;br&gt;User runs method execution  &lt;br&gt;System returns project testplans with analytics
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="mustUpdateCache"> (optional, default to false)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1335,13 +1335,13 @@ namespace TestIt.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;TestPlanWithAnalyticModel&gt;</returns>
-        public TestIt.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>> ApiV2ProjectsProjectIdTestPlansSearchPostWithHttpInfo(string projectId, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdTestPlansSearchPostRequest apiV2ProjectsProjectIdTestPlansSearchPostRequest = default(ApiV2ProjectsProjectIdTestPlansSearchPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>> ApiV2ProjectsProjectIdTestPlansSearchPostWithHttpInfo(string projectId, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdTestPlansSearchPostRequest apiV2ProjectsProjectIdTestPlansSearchPostRequest = default(ApiV2ProjectsProjectIdTestPlansSearchPostRequest))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlansApi->ApiV2ProjectsProjectIdTestPlansSearchPost");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlansApi->ApiV2ProjectsProjectIdTestPlansSearchPost");
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1352,36 +1352,36 @@ namespace TestIt.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             if (mustUpdateCache != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "mustUpdateCache", mustUpdateCache));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "mustUpdateCache", mustUpdateCache));
             }
             if (skip != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
             }
             if (take != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
             }
             if (orderBy != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
             }
             if (searchField != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
             }
             if (searchValue != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
             localVarRequestOptions.Data = apiV2ProjectsProjectIdTestPlansSearchPostRequest;
 
@@ -1406,7 +1406,7 @@ namespace TestIt.ApiClient.Api
         /// <summary>
         /// Get Project TestPlans with analytics &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets request body   &lt;br&gt;User runs method execution  &lt;br&gt;System returns project testplans with analytics
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="mustUpdateCache"> (optional, default to false)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1419,14 +1419,14 @@ namespace TestIt.ApiClient.Api
         /// <returns>Task of List&lt;TestPlanWithAnalyticModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<TestPlanWithAnalyticModel>> ApiV2ProjectsProjectIdTestPlansSearchPostAsync(string projectId, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdTestPlansSearchPostRequest apiV2ProjectsProjectIdTestPlansSearchPostRequest = default(ApiV2ProjectsProjectIdTestPlansSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIt.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>> localVarResponse = await ApiV2ProjectsProjectIdTestPlansSearchPostWithHttpInfoAsync(projectId, mustUpdateCache, skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdTestPlansSearchPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>> localVarResponse = await ApiV2ProjectsProjectIdTestPlansSearchPostWithHttpInfoAsync(projectId, mustUpdateCache, skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdTestPlansSearchPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get Project TestPlans with analytics &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets request body   &lt;br&gt;User runs method execution  &lt;br&gt;System returns project testplans with analytics
         /// </summary>
-        /// <exception cref="TestIt.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="mustUpdateCache"> (optional, default to false)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1437,14 +1437,14 @@ namespace TestIt.ApiClient.Api
         /// <param name="apiV2ProjectsProjectIdTestPlansSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPlanWithAnalyticModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIt.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>>> ApiV2ProjectsProjectIdTestPlansSearchPostWithHttpInfoAsync(string projectId, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdTestPlansSearchPostRequest apiV2ProjectsProjectIdTestPlansSearchPostRequest = default(ApiV2ProjectsProjectIdTestPlansSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>>> ApiV2ProjectsProjectIdTestPlansSearchPostWithHttpInfoAsync(string projectId, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdTestPlansSearchPostRequest apiV2ProjectsProjectIdTestPlansSearchPostRequest = default(ApiV2ProjectsProjectIdTestPlansSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIt.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlansApi->ApiV2ProjectsProjectIdTestPlansSearchPost");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlansApi->ApiV2ProjectsProjectIdTestPlansSearchPost");
 
 
-            TestIt.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIt.ApiClient.Client.RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1456,36 +1456,36 @@ namespace TestIt.ApiClient.Api
             };
 
 
-            var localVarContentType = TestIt.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = TestIt.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("projectId", TestIt.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             if (mustUpdateCache != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "mustUpdateCache", mustUpdateCache));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "mustUpdateCache", mustUpdateCache));
             }
             if (skip != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
             }
             if (take != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
             }
             if (orderBy != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
             }
             if (searchField != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
             }
             if (searchValue != null)
             {
-                localVarRequestOptions.QueryParameters.Add(TestIt.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
             localVarRequestOptions.Data = apiV2ProjectsProjectIdTestPlansSearchPostRequest;
 

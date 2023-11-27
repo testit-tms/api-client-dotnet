@@ -11,7 +11,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace TestIt.ApiClient.Client
+namespace TestIT.ApiClient.Client
 {
     /// <summary>
     /// Contract for Asynchronous RESTful API interactions.

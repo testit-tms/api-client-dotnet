@@ -10,7 +10,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace TestIt.ApiClient.Client
+namespace TestIT.ApiClient.Client
 {
     /// <summary>
     /// A URI builder

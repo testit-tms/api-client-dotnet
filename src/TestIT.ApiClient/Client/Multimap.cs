@@ -12,7 +12,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace TestIt.ApiClient.Client
+namespace TestIT.ApiClient.Client
 {
     /// <summary>
     /// A dictionary in which one key has many associated values.

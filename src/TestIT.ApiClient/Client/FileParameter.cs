@@ -10,7 +10,7 @@
 
 using System.IO;
 
-namespace TestIt.ApiClient.Client
+namespace TestIT.ApiClient.Client
 {
 
     /// <summary>

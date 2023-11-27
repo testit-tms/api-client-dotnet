@@ -18,7 +18,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace TestIt.ApiClient.Client
+namespace TestIT.ApiClient.Client
 {
     /// <summary>
     /// Utility functions providing some benefit to API client consumers.

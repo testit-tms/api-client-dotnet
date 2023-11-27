@@ -11,7 +11,7 @@
 using Polly;
 using System.Net.Http;
 
-namespace TestIt.ApiClient.Client
+namespace TestIT.ApiClient.Client
 {
     /// <summary>
     /// Configuration class to set the polly retry policies to be applied to the requests.

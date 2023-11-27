@@ -17,7 +17,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
-  <ItemGroup>
+    <ItemGroup>
     <None Include="../../README.md" Pack="true" PackagePath="$(PackageReadmeFile)" />
     <None Include="../../LICENSE.md" Pack="true" PackagePath="$(PackageLicenseFile)" />
     <None Include="../../images/icon.png" Pack="true" PackagePath="$(PackageIcon)" />

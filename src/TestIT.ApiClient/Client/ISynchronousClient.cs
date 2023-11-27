@@ -11,7 +11,7 @@
 using System;
 using System.IO;
 
-namespace TestIt.ApiClient.Client
+namespace TestIT.ApiClient.Client
 {
     /// <summary>
     /// Contract for Synchronous RESTful API interactions.
