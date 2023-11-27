@@ -1,4 +1,4 @@
-# TestIt.Client.Model.ConfigurationExtractionModelIds
+# TestIt.ApiClient.Model.ConfigurationExtractionModelIds
 Extraction parameters for configurations
 
 ## Properties

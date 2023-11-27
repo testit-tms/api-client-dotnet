@@ -73,7 +73,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="stepComments">stepComments.</param>
-        /// <param name="failureClassIds">failureClassIds.</param>
+        /// <param name="failureClassIds">failureClassIds (required).</param>
         /// <param name="outcome">outcome.</param>
         /// <param name="comment">comment.</param>
         /// <param name="links">links.</param>
@@ -88,6 +88,12 @@ namespace TestIT.ApiClient.Model
             this.Id = id;
             this.CreatedDate = createdDate;
             this.CreatedById = createdById;
+            // to ensure "failureClassIds" is required (not null)
+            if (failureClassIds == null)
+            {
+                throw new ArgumentNullException("failureClassIds is a required property for TestResultModel and cannot be null");
+            }
+            this.FailureClassIds = failureClassIds;
             this.AutoTestId = autoTestId;
             this.StartedOn = startedOn;
             this.CompletedOn = completedOn;
@@ -108,7 +114,6 @@ namespace TestIT.ApiClient.Model
             this.ModifiedDate = modifiedDate;
             this.ModifiedById = modifiedById;
             this.StepComments = stepComments;
-            this.FailureClassIds = failureClassIds;
             this.Outcome = outcome;
             this.Comment = comment;
             this.Links = links;
@@ -281,7 +286,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets FailureClassIds
         /// </summary>
-        [DataMember(Name = "failureClassIds", EmitDefaultValue = true)]
+        [DataMember(Name = "failureClassIds", IsRequired = true, EmitDefaultValue = true)]
         public List<Guid> FailureClassIds { get; set; }
 
         /// <summary>
@@ -383,175 +388,175 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.AutoTestId == input.AutoTestId ||
                     (this.AutoTestId != null &&
                     this.AutoTestId.Equals(input.AutoTestId))
-                ) &&
+                ) && 
                 (
                     this.ConfigurationId == input.ConfigurationId ||
                     (this.ConfigurationId != null &&
                     this.ConfigurationId.Equals(input.ConfigurationId))
-                ) &&
+                ) && 
                 (
                     this.StartedOn == input.StartedOn ||
                     (this.StartedOn != null &&
                     this.StartedOn.Equals(input.StartedOn))
-                ) &&
+                ) && 
                 (
                     this.CompletedOn == input.CompletedOn ||
                     (this.CompletedOn != null &&
                     this.CompletedOn.Equals(input.CompletedOn))
-                ) &&
+                ) && 
                 (
                     this.DurationInMs == input.DurationInMs ||
                     (this.DurationInMs != null &&
                     this.DurationInMs.Equals(input.DurationInMs))
-                ) &&
+                ) && 
                 (
                     this.Traces == input.Traces ||
                     (this.Traces != null &&
                     this.Traces.Equals(input.Traces))
-                ) &&
+                ) && 
                 (
                     this.FailureType == input.FailureType ||
                     (this.FailureType != null &&
                     this.FailureType.Equals(input.FailureType))
-                ) &&
+                ) && 
                 (
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
-                ) &&
+                ) && 
                 (
                     this.RunByUserId == input.RunByUserId ||
                     (this.RunByUserId != null &&
                     this.RunByUserId.Equals(input.RunByUserId))
-                ) &&
+                ) && 
                 (
                     this.StoppedByUserId == input.StoppedByUserId ||
                     (this.StoppedByUserId != null &&
                     this.StoppedByUserId.Equals(input.StoppedByUserId))
-                ) &&
+                ) && 
                 (
                     this.TestPointId == input.TestPointId ||
                     (this.TestPointId != null &&
                     this.TestPointId.Equals(input.TestPointId))
-                ) &&
+                ) && 
                 (
                     this.TestRunId == input.TestRunId ||
                     (this.TestRunId != null &&
                     this.TestRunId.Equals(input.TestRunId))
-                ) &&
+                ) && 
                 (
                     this.TestPoint == input.TestPoint ||
                     (this.TestPoint != null &&
                     this.TestPoint.Equals(input.TestPoint))
-                ) &&
+                ) && 
                 (
                     this.AutoTest == input.AutoTest ||
                     (this.AutoTest != null &&
                     this.AutoTest.Equals(input.AutoTest))
-                ) &&
+                ) && 
                 (
                     this.AutoTestStepResults == input.AutoTestStepResults ||
                     this.AutoTestStepResults != null &&
                     input.AutoTestStepResults != null &&
                     this.AutoTestStepResults.SequenceEqual(input.AutoTestStepResults)
-                ) &&
+                ) && 
                 (
                     this.SetupResults == input.SetupResults ||
                     this.SetupResults != null &&
                     input.SetupResults != null &&
                     this.SetupResults.SequenceEqual(input.SetupResults)
-                ) &&
+                ) && 
                 (
                     this.TeardownResults == input.TeardownResults ||
                     this.TeardownResults != null &&
                     input.TeardownResults != null &&
                     this.TeardownResults.SequenceEqual(input.TeardownResults)
-                ) &&
+                ) && 
                 (
                     this.WorkItemVersionId == input.WorkItemVersionId ||
                     (this.WorkItemVersionId != null &&
                     this.WorkItemVersionId.Equals(input.WorkItemVersionId))
-                ) &&
+                ) && 
                 (
                     this.WorkItemVersionNumber == input.WorkItemVersionNumber ||
                     (this.WorkItemVersionNumber != null &&
                     this.WorkItemVersionNumber.Equals(input.WorkItemVersionNumber))
-                ) &&
+                ) && 
                 (
                     this.Parameters == input.Parameters ||
                     this.Parameters != null &&
                     input.Parameters != null &&
                     this.Parameters.SequenceEqual(input.Parameters)
-                ) &&
+                ) && 
                 (
                     this.Properties == input.Properties ||
                     this.Properties != null &&
                     input.Properties != null &&
                     this.Properties.SequenceEqual(input.Properties)
-                ) &&
+                ) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) &&
+                ) && 
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
                     this.ModifiedDate.Equals(input.ModifiedDate))
-                ) &&
+                ) && 
                 (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&
                     this.CreatedById.Equals(input.CreatedById))
-                ) &&
+                ) && 
                 (
                     this.ModifiedById == input.ModifiedById ||
                     (this.ModifiedById != null &&
                     this.ModifiedById.Equals(input.ModifiedById))
-                ) &&
+                ) && 
                 (
                     this.StepComments == input.StepComments ||
                     this.StepComments != null &&
                     input.StepComments != null &&
                     this.StepComments.SequenceEqual(input.StepComments)
-                ) &&
+                ) && 
                 (
                     this.FailureClassIds == input.FailureClassIds ||
                     this.FailureClassIds != null &&
                     input.FailureClassIds != null &&
                     this.FailureClassIds.SequenceEqual(input.FailureClassIds)
-                ) &&
+                ) && 
                 (
                     this.Outcome == input.Outcome ||
                     this.Outcome.Equals(input.Outcome)
-                ) &&
+                ) && 
                 (
                     this.Comment == input.Comment ||
                     (this.Comment != null &&
                     this.Comment.Equals(input.Comment))
-                ) &&
+                ) && 
                 (
                     this.Links == input.Links ||
                     this.Links != null &&
                     input.Links != null &&
                     this.Links.SequenceEqual(input.Links)
-                ) &&
+                ) && 
                 (
                     this.StepResults == input.StepResults ||
                     this.StepResults != null &&
                     input.StepResults != null &&
                     this.StepResults.SequenceEqual(input.StepResults)
-                ) &&
+                ) && 
                 (
                     this.Attachments == input.Attachments ||
                     this.Attachments != null &&
@@ -707,7 +712,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

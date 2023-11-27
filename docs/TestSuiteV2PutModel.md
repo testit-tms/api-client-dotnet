@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestSuiteV2PutModel
+# TestIt.ApiClient.Model.TestSuiteV2PutModel
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# TestIt.Client.Model.CreateAutoTestRequest
+# TestIt.ApiClient.Model.CreateAutoTestRequest
 
 ## Properties
 

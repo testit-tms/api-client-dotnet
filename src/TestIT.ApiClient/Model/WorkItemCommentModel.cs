@@ -41,19 +41,29 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="WorkItemCommentModel" /> class.
         /// </summary>
         /// <param name="id">id (required).</param>
-        /// <param name="text">text.</param>
-        /// <param name="user">user.</param>
+        /// <param name="text">text (required).</param>
+        /// <param name="user">user (required).</param>
         /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="createdDate">createdDate (required).</param>
         /// <param name="modifiedDate">modifiedDate.</param>
-        public WorkItemCommentModel(Guid id = default(Guid), string text = default(string), UserWithRankModel user = default(UserWithRankModel), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?))
+        public WorkItemCommentModel(Guid id = default(Guid), string text = default(string), WorkItemCommentModelUser user = default(WorkItemCommentModelUser), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?))
         {
             this.Id = id;
+            // to ensure "text" is required (not null)
+            if (text == null)
+            {
+                throw new ArgumentNullException("text is a required property for WorkItemCommentModel and cannot be null");
+            }
+            this.Text = text;
+            // to ensure "user" is required (not null)
+            if (user == null)
+            {
+                throw new ArgumentNullException("user is a required property for WorkItemCommentModel and cannot be null");
+            }
+            this.User = user;
             this.CreatedById = createdById;
             this.CreatedDate = createdDate;
-            this.Text = text;
-            this.User = user;
             this.ModifiedById = modifiedById;
             this.ModifiedDate = modifiedDate;
         }
@@ -67,14 +77,14 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Text
         /// </summary>
-        [DataMember(Name = "text", EmitDefaultValue = true)]
+        [DataMember(Name = "text", IsRequired = true, EmitDefaultValue = true)]
         public string Text { get; set; }
 
         /// <summary>
         /// Gets or Sets User
         /// </summary>
-        [DataMember(Name = "user", EmitDefaultValue = true)]
-        public UserWithRankModel User { get; set; }
+        [DataMember(Name = "user", IsRequired = true, EmitDefaultValue = true)]
+        public WorkItemCommentModelUser User { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
@@ -149,37 +159,37 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.Text == input.Text ||
                     (this.Text != null &&
                     this.Text.Equals(input.Text))
-                ) &&
+                ) && 
                 (
                     this.User == input.User ||
                     (this.User != null &&
                     this.User.Equals(input.User))
-                ) &&
+                ) && 
                 (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&
                     this.CreatedById.Equals(input.CreatedById))
-                ) &&
+                ) && 
                 (
                     this.ModifiedById == input.ModifiedById ||
                     (this.ModifiedById != null &&
                     this.ModifiedById.Equals(input.ModifiedById))
-                ) &&
+                ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) &&
+                ) && 
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
@@ -233,7 +243,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

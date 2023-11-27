@@ -38,12 +38,12 @@ namespace TestIT.ApiClient.Model
         /// <param name="nameOrId">Name or identifier (UUID) of work item.</param>
         /// <param name="includeIds">Collection of identifiers of work items which need to be included in result regardless of filtering.</param>
         /// <param name="excludeIds">Collection of identifiers of work items which need to be excluded from result regardless of filtering.</param>
+        /// <param name="projectIds">Collection of project identifiers.</param>
         /// <param name="name">Name of work item.</param>
         /// <param name="ids">Specifies a work item unique IDs to search for.</param>
         /// <param name="globalIds">Collection of global (integer) identifiers.</param>
         /// <param name="attributes">Custom attributes of work item.</param>
         /// <param name="isDeleted">Is result must consist of only actual/deleted work items.</param>
-        /// <param name="projectIds">Collection of project identifiers.</param>
         /// <param name="sectionIds">Collection of section identifiers.</param>
         /// <param name="createdByIds">Collection of identifiers of users who created work item.</param>
         /// <param name="modifiedByIds">Collection of identifiers of users who applied last modification to work item.</param>
@@ -57,17 +57,17 @@ namespace TestIT.ApiClient.Model
         /// <param name="isAutomated">Is result must consist of only manual/automated work items.</param>
         /// <param name="tags">Collection of tags.</param>
         /// <param name="autoTestIds">Collection of identifiers of linked autotests.</param>
-        public WorkItemFilterModel(string nameOrId = default(string), List<Guid> includeIds = default(List<Guid>), List<Guid> excludeIds = default(List<Guid>), string name = default(string), List<Guid> ids = default(List<Guid>), List<long> globalIds = default(List<long>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?), List<Guid> projectIds = default(List<Guid>), List<Guid> sectionIds = default(List<Guid>), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), List<WorkItemStates> states = default(List<WorkItemStates>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<WorkItemEntityTypes> types = default(List<WorkItemEntityTypes>), TestPointFilterModelWorkItemCreatedDate createdDate = default(TestPointFilterModelWorkItemCreatedDate), TestPointFilterModelWorkItemModifiedDate modifiedDate = default(TestPointFilterModelWorkItemModifiedDate), TestSuiteWorkItemsSearchModelDuration duration = default(TestSuiteWorkItemsSearchModelDuration), TestSuiteWorkItemsSearchModelMedianDuration medianDuration = default(TestSuiteWorkItemsSearchModelMedianDuration), bool? isAutomated = default(bool?), List<string> tags = default(List<string>), List<Guid> autoTestIds = default(List<Guid>))
+        public WorkItemFilterModel(string nameOrId = default(string), List<Guid> includeIds = default(List<Guid>), List<Guid> excludeIds = default(List<Guid>), List<Guid> projectIds = default(List<Guid>), string name = default(string), List<Guid> ids = default(List<Guid>), List<long> globalIds = default(List<long>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?), List<Guid> sectionIds = default(List<Guid>), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), List<WorkItemStates> states = default(List<WorkItemStates>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<WorkItemEntityTypes> types = default(List<WorkItemEntityTypes>), TestPointFilterModelWorkItemCreatedDate createdDate = default(TestPointFilterModelWorkItemCreatedDate), TestPointFilterModelWorkItemModifiedDate modifiedDate = default(TestPointFilterModelWorkItemModifiedDate), TestSuiteWorkItemsSearchModelDuration duration = default(TestSuiteWorkItemsSearchModelDuration), TestSuiteWorkItemsSearchModelMedianDuration medianDuration = default(TestSuiteWorkItemsSearchModelMedianDuration), bool? isAutomated = default(bool?), List<string> tags = default(List<string>), List<Guid> autoTestIds = default(List<Guid>))
         {
             this.NameOrId = nameOrId;
             this.IncludeIds = includeIds;
             this.ExcludeIds = excludeIds;
+            this.ProjectIds = projectIds;
             this.Name = name;
             this.Ids = ids;
             this.GlobalIds = globalIds;
             this.Attributes = attributes;
             this.IsDeleted = isDeleted;
-            this.ProjectIds = projectIds;
             this.SectionIds = sectionIds;
             this.CreatedByIds = createdByIds;
             this.ModifiedByIds = modifiedByIds;
@@ -105,6 +105,13 @@ namespace TestIT.ApiClient.Model
         public List<Guid> ExcludeIds { get; set; }
 
         /// <summary>
+        /// Collection of project identifiers
+        /// </summary>
+        /// <value>Collection of project identifiers</value>
+        [DataMember(Name = "projectIds", EmitDefaultValue = true)]
+        public List<Guid> ProjectIds { get; set; }
+
+        /// <summary>
         /// Name of work item
         /// </summary>
         /// <value>Name of work item</value>
@@ -138,13 +145,6 @@ namespace TestIT.ApiClient.Model
         /// <value>Is result must consist of only actual/deleted work items</value>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
         public bool? IsDeleted { get; set; }
-
-        /// <summary>
-        /// Collection of project identifiers
-        /// </summary>
-        /// <value>Collection of project identifiers</value>
-        [DataMember(Name = "projectIds", EmitDefaultValue = true)]
-        public List<Guid> ProjectIds { get; set; }
 
         /// <summary>
         /// Collection of section identifiers
@@ -244,12 +244,12 @@ namespace TestIT.ApiClient.Model
             sb.Append("  NameOrId: ").Append(NameOrId).Append("\n");
             sb.Append("  IncludeIds: ").Append(IncludeIds).Append("\n");
             sb.Append("  ExcludeIds: ").Append(ExcludeIds).Append("\n");
+            sb.Append("  ProjectIds: ").Append(ProjectIds).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Ids: ").Append(Ids).Append("\n");
             sb.Append("  GlobalIds: ").Append(GlobalIds).Append("\n");
             sb.Append("  Attributes: ").Append(Attributes).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
-            sb.Append("  ProjectIds: ").Append(ProjectIds).Append("\n");
             sb.Append("  SectionIds: ").Append(SectionIds).Append("\n");
             sb.Append("  CreatedByIds: ").Append(CreatedByIds).Append("\n");
             sb.Append("  ModifiedByIds: ").Append(ModifiedByIds).Append("\n");
@@ -297,125 +297,125 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.NameOrId == input.NameOrId ||
                     (this.NameOrId != null &&
                     this.NameOrId.Equals(input.NameOrId))
-                ) &&
+                ) && 
                 (
                     this.IncludeIds == input.IncludeIds ||
                     this.IncludeIds != null &&
                     input.IncludeIds != null &&
                     this.IncludeIds.SequenceEqual(input.IncludeIds)
-                ) &&
+                ) && 
                 (
                     this.ExcludeIds == input.ExcludeIds ||
                     this.ExcludeIds != null &&
                     input.ExcludeIds != null &&
                     this.ExcludeIds.SequenceEqual(input.ExcludeIds)
-                ) &&
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) &&
-                (
-                    this.Ids == input.Ids ||
-                    this.Ids != null &&
-                    input.Ids != null &&
-                    this.Ids.SequenceEqual(input.Ids)
-                ) &&
-                (
-                    this.GlobalIds == input.GlobalIds ||
-                    this.GlobalIds != null &&
-                    input.GlobalIds != null &&
-                    this.GlobalIds.SequenceEqual(input.GlobalIds)
-                ) &&
-                (
-                    this.Attributes == input.Attributes ||
-                    this.Attributes != null &&
-                    input.Attributes != null &&
-                    this.Attributes.SequenceEqual(input.Attributes)
-                ) &&
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    (this.IsDeleted != null &&
-                    this.IsDeleted.Equals(input.IsDeleted))
-                ) &&
+                ) && 
                 (
                     this.ProjectIds == input.ProjectIds ||
                     this.ProjectIds != null &&
                     input.ProjectIds != null &&
                     this.ProjectIds.SequenceEqual(input.ProjectIds)
-                ) &&
+                ) && 
+                (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.Ids == input.Ids ||
+                    this.Ids != null &&
+                    input.Ids != null &&
+                    this.Ids.SequenceEqual(input.Ids)
+                ) && 
+                (
+                    this.GlobalIds == input.GlobalIds ||
+                    this.GlobalIds != null &&
+                    input.GlobalIds != null &&
+                    this.GlobalIds.SequenceEqual(input.GlobalIds)
+                ) && 
+                (
+                    this.Attributes == input.Attributes ||
+                    this.Attributes != null &&
+                    input.Attributes != null &&
+                    this.Attributes.SequenceEqual(input.Attributes)
+                ) && 
+                (
+                    this.IsDeleted == input.IsDeleted ||
+                    (this.IsDeleted != null &&
+                    this.IsDeleted.Equals(input.IsDeleted))
+                ) && 
                 (
                     this.SectionIds == input.SectionIds ||
                     this.SectionIds != null &&
                     input.SectionIds != null &&
                     this.SectionIds.SequenceEqual(input.SectionIds)
-                ) &&
+                ) && 
                 (
                     this.CreatedByIds == input.CreatedByIds ||
                     this.CreatedByIds != null &&
                     input.CreatedByIds != null &&
                     this.CreatedByIds.SequenceEqual(input.CreatedByIds)
-                ) &&
+                ) && 
                 (
                     this.ModifiedByIds == input.ModifiedByIds ||
                     this.ModifiedByIds != null &&
                     input.ModifiedByIds != null &&
                     this.ModifiedByIds.SequenceEqual(input.ModifiedByIds)
-                ) &&
+                ) && 
                 (
                     this.States == input.States ||
                     this.States != null &&
                     input.States != null &&
                     this.States.SequenceEqual(input.States)
-                ) &&
+                ) && 
                 (
                     this.Priorities == input.Priorities ||
                     this.Priorities != null &&
                     input.Priorities != null &&
                     this.Priorities.SequenceEqual(input.Priorities)
-                ) &&
+                ) && 
                 (
                     this.Types == input.Types ||
                     this.Types != null &&
                     input.Types != null &&
                     this.Types.SequenceEqual(input.Types)
-                ) &&
+                ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) &&
+                ) && 
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
                     this.ModifiedDate.Equals(input.ModifiedDate))
-                ) &&
+                ) && 
                 (
                     this.Duration == input.Duration ||
                     (this.Duration != null &&
                     this.Duration.Equals(input.Duration))
-                ) &&
+                ) && 
                 (
                     this.MedianDuration == input.MedianDuration ||
                     (this.MedianDuration != null &&
                     this.MedianDuration.Equals(input.MedianDuration))
-                ) &&
+                ) && 
                 (
                     this.IsAutomated == input.IsAutomated ||
                     (this.IsAutomated != null &&
                     this.IsAutomated.Equals(input.IsAutomated))
-                ) &&
+                ) && 
                 (
                     this.Tags == input.Tags ||
                     this.Tags != null &&
                     input.Tags != null &&
                     this.Tags.SequenceEqual(input.Tags)
-                ) &&
+                ) && 
                 (
                     this.AutoTestIds == input.AutoTestIds ||
                     this.AutoTestIds != null &&
@@ -445,6 +445,10 @@ namespace TestIT.ApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.ExcludeIds.GetHashCode();
                 }
+                if (this.ProjectIds != null)
+                {
+                    hashCode = (hashCode * 59) + this.ProjectIds.GetHashCode();
+                }
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
@@ -464,10 +468,6 @@ namespace TestIT.ApiClient.Model
                 if (this.IsDeleted != null)
                 {
                     hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                }
-                if (this.ProjectIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProjectIds.GetHashCode();
                 }
                 if (this.SectionIds != null)
                 {
@@ -530,7 +530,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)

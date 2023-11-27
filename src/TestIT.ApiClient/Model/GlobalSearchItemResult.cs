@@ -141,27 +141,27 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.ResourceType == input.ResourceType ||
                     (this.ResourceType != null &&
                     this.ResourceType.Equals(input.ResourceType))
-                ) &&
+                ) && 
                 (
                     this.ResourceId == input.ResourceId ||
                     (this.ResourceId != null &&
                     this.ResourceId.Equals(input.ResourceId))
-                ) &&
+                ) && 
                 (
                     this.GlobalId == input.GlobalId ||
                     (this.GlobalId != null &&
                     this.GlobalId.Equals(input.GlobalId))
-                ) &&
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.ProjectGlobalId == input.ProjectGlobalId ||
                     this.ProjectGlobalId.Equals(input.ProjectGlobalId)
@@ -203,7 +203,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

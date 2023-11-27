@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestPointFilterModelWorkItemCreatedDate
+# TestIt.ApiClient.Model.TestPointFilterModelWorkItemCreatedDate
 Specifies a work item range of creation date to search for
 
 ## Properties

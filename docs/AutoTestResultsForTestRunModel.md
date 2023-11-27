@@ -1,4 +1,4 @@
-# TestIt.Client.Model.AutoTestResultsForTestRunModel
+# TestIt.ApiClient.Model.AutoTestResultsForTestRunModel
 
 ## Properties
 

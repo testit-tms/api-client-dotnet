@@ -1,10 +1,10 @@
-# TestIt.Client.Model.TestPlanWithTestSuiteTreeModel
+# TestIt.ApiClient.Model.TestPlanWithTestSuiteTreeModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TestSuites** | [**List&lt;TestSuiteWithChildrenModel&gt;**](TestSuiteWithChildrenModel.md) |  | [optional] 
+**TestSuites** | [**List&lt;TestSuiteWithChildrenModel&gt;**](TestSuiteWithChildrenModel.md) |  | 
 **Status** | **TestPlanStatusModel** |  | 
 **StartedOn** | **DateTime?** | Set when test plan is starter (status changed to: In Progress) | [optional] 
 **CompletedOn** | **DateTime?** | set when test plan status is completed (status changed to: Completed) | [optional] 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **ProjectId** | **Guid** |  | 
 **ProductName** | **string** |  | [optional] 
 **HasAutomaticDurationTimer** | **bool?** |  | [optional] 
-**Attributes** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
+**Attributes** | **Dictionary&lt;string, Object&gt;** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

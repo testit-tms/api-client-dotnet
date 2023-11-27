@@ -52,7 +52,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WebHookLogModel" /> class.
         /// </summary>
-        /// <param name="webHookName">webHookName.</param>
+        /// <param name="webHookName">webHookName (required).</param>
         /// <param name="eventType">eventType (required).</param>
         /// <param name="webHookId">webHookId (required).</param>
         /// <param name="requestBody">requestBody.</param>
@@ -61,7 +61,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="responseBody">responseBody.</param>
         /// <param name="responseMeta">responseMeta.</param>
         /// <param name="projectId">projectId (required).</param>
-        /// <param name="url">url.</param>
+        /// <param name="url">url (required).</param>
         /// <param name="requestType">requestType (required).</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="modifiedDate">modifiedDate.</param>
@@ -71,20 +71,30 @@ namespace TestIT.ApiClient.Model
         /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
         public WebHookLogModel(string webHookName = default(string), WebHookEventTypeModel eventType = default(WebHookEventTypeModel), Guid webHookId = default(Guid), string requestBody = default(string), string requestMeta = default(string), int responseStatusCode = default(int), string responseBody = default(string), string responseMeta = default(string), Guid projectId = default(Guid), string url = default(string), RequestTypeModel requestType = default(RequestTypeModel), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), Guid id = default(Guid), bool isDeleted = default(bool))
         {
+            // to ensure "webHookName" is required (not null)
+            if (webHookName == null)
+            {
+                throw new ArgumentNullException("webHookName is a required property for WebHookLogModel and cannot be null");
+            }
+            this.WebHookName = webHookName;
             this.EventType = eventType;
             this.WebHookId = webHookId;
             this.ResponseStatusCode = responseStatusCode;
             this.ProjectId = projectId;
+            // to ensure "url" is required (not null)
+            if (url == null)
+            {
+                throw new ArgumentNullException("url is a required property for WebHookLogModel and cannot be null");
+            }
+            this.Url = url;
             this.RequestType = requestType;
             this.CreatedById = createdById;
             this.Id = id;
             this.IsDeleted = isDeleted;
-            this.WebHookName = webHookName;
             this.RequestBody = requestBody;
             this.RequestMeta = requestMeta;
             this.ResponseBody = responseBody;
             this.ResponseMeta = responseMeta;
-            this.Url = url;
             this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
             this.ModifiedById = modifiedById;
@@ -93,7 +103,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets WebHookName
         /// </summary>
-        [DataMember(Name = "webHookName", EmitDefaultValue = true)]
+        [DataMember(Name = "webHookName", IsRequired = true, EmitDefaultValue = true)]
         public string WebHookName { get; set; }
 
         /// <summary>
@@ -141,7 +151,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
-        [DataMember(Name = "url", EmitDefaultValue = true)]
+        [DataMember(Name = "url", IsRequired = true, EmitDefaultValue = true)]
         public string Url { get; set; }
 
         /// <summary>
@@ -241,84 +251,84 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.WebHookName == input.WebHookName ||
                     (this.WebHookName != null &&
                     this.WebHookName.Equals(input.WebHookName))
-                ) &&
+                ) && 
                 (
                     this.EventType == input.EventType ||
                     this.EventType.Equals(input.EventType)
-                ) &&
+                ) && 
                 (
                     this.WebHookId == input.WebHookId ||
                     (this.WebHookId != null &&
                     this.WebHookId.Equals(input.WebHookId))
-                ) &&
+                ) && 
                 (
                     this.RequestBody == input.RequestBody ||
                     (this.RequestBody != null &&
                     this.RequestBody.Equals(input.RequestBody))
-                ) &&
+                ) && 
                 (
                     this.RequestMeta == input.RequestMeta ||
                     (this.RequestMeta != null &&
                     this.RequestMeta.Equals(input.RequestMeta))
-                ) &&
+                ) && 
                 (
                     this.ResponseStatusCode == input.ResponseStatusCode ||
                     this.ResponseStatusCode.Equals(input.ResponseStatusCode)
-                ) &&
+                ) && 
                 (
                     this.ResponseBody == input.ResponseBody ||
                     (this.ResponseBody != null &&
                     this.ResponseBody.Equals(input.ResponseBody))
-                ) &&
+                ) && 
                 (
                     this.ResponseMeta == input.ResponseMeta ||
                     (this.ResponseMeta != null &&
                     this.ResponseMeta.Equals(input.ResponseMeta))
-                ) &&
+                ) && 
                 (
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
-                ) &&
+                ) && 
                 (
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
-                ) &&
+                ) && 
                 (
                     this.RequestType == input.RequestType ||
                     this.RequestType.Equals(input.RequestType)
-                ) &&
+                ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) &&
+                ) && 
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
                     this.ModifiedDate.Equals(input.ModifiedDate))
-                ) &&
+                ) && 
                 (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&
                     this.CreatedById.Equals(input.CreatedById))
-                ) &&
+                ) && 
                 (
                     this.ModifiedById == input.ModifiedById ||
                     (this.ModifiedById != null &&
                     this.ModifiedById.Equals(input.ModifiedById))
-                ) &&
+                ) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.IsDeleted == input.IsDeleted ||
                     this.IsDeleted.Equals(input.IsDeleted)
@@ -399,7 +409,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

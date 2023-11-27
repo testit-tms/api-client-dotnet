@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestResultsStatisticsGetModelStatuses
+# TestIt.ApiClient.Model.TestResultsStatisticsGetModelStatuses
 Test results counts aggregated by outcome
 
 ## Properties

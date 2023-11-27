@@ -1,4 +1,4 @@
-# TestIt.Client.Api.WorkItemsApi
+# TestIt.ApiClient.Api.WorkItemsApi
 
 All URIs are relative to *http://localhost*
 
@@ -43,9 +43,9 @@ Upload and link attachment to WorkItem
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -128,12 +128,12 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **413** | Multipart body length limit exceeded (default constraint is one gigabyte) |  -  |
-| **404** |  |  -  |
 | **200** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test result required |  -  |
+| **404** |  |  -  |
+| **413** | Multipart body length limit exceeded (default constraint is one gigabyte) |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -150,9 +150,9 @@ Transform CheckList to TestCase
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -233,12 +233,12 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
-| **403** | Update permission for test library required |  -  |
-| **422** | Client Error |  -  |
-| **404** | Can&#39;t find CheckList with id |  -  |
 | **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Update permission for test library required |  -  |
+| **404** | Can&#39;t find CheckList with id |  -  |
+| **422** | Client Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -255,9 +255,9 @@ Get change history of WorkItem
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -369,9 +369,9 @@ Delete like from WorkItem
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -467,9 +467,9 @@ Set like to WorkItem
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -546,8 +546,8 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
 | **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -565,9 +565,9 @@ Get likes count of WorkItem
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -648,8 +648,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
 | **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
 
@@ -668,9 +668,9 @@ Get likes of WorkItem
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -751,8 +751,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
 | **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
 
@@ -771,9 +771,9 @@ Get test results history of WorkItem
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -882,8 +882,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
 | **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
 
@@ -902,9 +902,9 @@ Set WorkItem as actual
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -1008,9 +1008,9 @@ Move WorkItem to another section
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -1100,7 +1100,7 @@ catch (ApiException e)
 
 <a id="apiv2workitemssearchpost"></a>
 # **ApiV2WorkItemsSearchPost**
-> List&lt;WorkItemShortModel&gt; ApiV2WorkItemsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ProjectsIdWorkItemsSearchPostRequest apiV2ProjectsIdWorkItemsSearchPostRequest = null)
+> List&lt;WorkItemShortModel&gt; ApiV2WorkItemsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = null)
 
 Search for work items
 
@@ -1109,9 +1109,9 @@ Search for work items
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -1135,12 +1135,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var apiV2ProjectsIdWorkItemsSearchPostRequest = new ApiV2ProjectsIdWorkItemsSearchPostRequest(); // ApiV2ProjectsIdWorkItemsSearchPostRequest |  (optional) 
+            var apiV2ProjectsProjectIdWorkItemsSearchPostRequest = new ApiV2ProjectsProjectIdWorkItemsSearchPostRequest(); // ApiV2ProjectsProjectIdWorkItemsSearchPostRequest |  (optional) 
 
             try
             {
                 // Search for work items
-                List<WorkItemShortModel> result = apiInstance.ApiV2WorkItemsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2ProjectsIdWorkItemsSearchPostRequest);
+                List<WorkItemShortModel> result = apiInstance.ApiV2WorkItemsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdWorkItemsSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1161,7 +1161,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for work items
-    ApiResponse<List<WorkItemShortModel>> response = apiInstance.ApiV2WorkItemsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2ProjectsIdWorkItemsSearchPostRequest);
+    ApiResponse<List<WorkItemShortModel>> response = apiInstance.ApiV2WorkItemsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdWorkItemsSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1183,7 +1183,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **apiV2ProjectsIdWorkItemsSearchPostRequest** | [**ApiV2ProjectsIdWorkItemsSearchPostRequest**](ApiV2ProjectsIdWorkItemsSearchPostRequest.md) |  | [optional]  |
+| **apiV2ProjectsProjectIdWorkItemsSearchPostRequest** | [**ApiV2ProjectsProjectIdWorkItemsSearchPostRequest**](ApiV2ProjectsProjectIdWorkItemsSearchPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -1220,9 +1220,9 @@ Get SharedStep references in sections
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -1334,9 +1334,9 @@ Get SharedStep references in work items
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -1448,9 +1448,9 @@ Get SharedStep references
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -1551,9 +1551,9 @@ Create Test Case, Checklist or Shared Step
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -1634,8 +1634,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | &lt;br&gt;Field is required  &lt;br&gt;Priority is not a valid  &lt;br&gt;Tags must be set  &lt;br&gt;Duration should be a positive number  &lt;br&gt;Should be empty for CheckList  &lt;br&gt;Attribute value must be a valid guid for user scheme  &lt;br&gt;There is no option in ProjectAttributesScheme with such Id  &lt;br&gt;Attribute value must be a valid guid for options scheme |  -  |
 | **201** | Successful operation |  -  |
+| **400** | &lt;br&gt;Field is required  &lt;br&gt;Priority is not a valid  &lt;br&gt;Tags must be set  &lt;br&gt;Duration should be a positive number  &lt;br&gt;Should be empty for CheckList  &lt;br&gt;Attribute value must be a valid guid for user scheme  &lt;br&gt;There is no option in ProjectAttributesScheme with such Id  &lt;br&gt;Attribute value must be a valid guid for options scheme |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test library required |  -  |
 | **404** | &lt;br&gt;Can&#39;t find section  &lt;br&gt;Can&#39;t find project  &lt;br&gt;Can&#39;t find attachmentIds  &lt;br&gt;Project not found  &lt;br&gt;Can&#39;t attributesScheme  &lt;br&gt;Can&#39;t attribute  &lt;br&gt;AutoTestIds not exist in project |  -  |
@@ -1655,9 +1655,9 @@ Delete all links AutoTests from WorkItem by Id or GlobalId
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -1734,11 +1734,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test library required |  -  |
 | **404** | Can&#39;t find a WorkItem with workItemId |  -  |
-| **400** | Bad Request |  -  |
-| **204** | No Content |  -  |
 | **200** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1756,9 +1756,9 @@ Delete Test Case, Checklist or Shared Step by Id or GlobalId
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -1835,12 +1835,12 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **422** | Could not delete Shared Step that has references |  -  |
-| **404** | Can&#39;t find a WorkItem with id |  -  |
-| **401** | Unauthorized |  -  |
-| **400** | Bad Request |  -  |
-| **403** | Delete permission for test library required |  -  |
 | **204** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Delete permission for test library required |  -  |
+| **404** | Can&#39;t find a WorkItem with id |  -  |
+| **422** | Could not delete Shared Step that has references |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1857,9 +1857,9 @@ Get all AutoTests linked to WorkItem by Id or GlobalId
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -1940,11 +1940,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
 | **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
 | **404** | Can&#39;t find WorkItem with workItemId |  -  |
-| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1959,9 +1959,9 @@ Get iterations by work item Id or GlobalId
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -2046,9 +2046,9 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
 | **404** | Can&#39;t find workItem with id |  -  |
 | **400** | Bad Request |  -  |
-| **200** | Successful operation |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
 
@@ -2067,9 +2067,9 @@ Get Test Case, Checklist or Shared Step by Id or GlobalId
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -2154,11 +2154,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for test library required |  -  |
-| **401** | Unauthorized |  -  |
-| **404** | Can&#39;t find workItem with id |  -  |
 | **200** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Read permission for test library required |  -  |
+| **404** | Can&#39;t find workItem with id |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2175,9 +2175,9 @@ Get WorkItem chronology by Id or GlobalId
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -2259,10 +2259,10 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
-| **401** | Unauthorized |  -  |
-| **404** | Can&#39;t find WorkItem with workItemId |  -  |
 | **400** | Not valid workItemId |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
+| **404** | Can&#39;t find WorkItem with workItemId |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2279,9 +2279,9 @@ Get WorkItem versions
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -2366,11 +2366,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Can&#39;t find WorkItem with workItemId |  -  |
 | **200** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
+| **404** | Can&#39;t find WorkItem with workItemId |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2385,9 +2385,9 @@ Permanently delete test case, checklist or shared steps from archive
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -2464,8 +2464,12 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Delete permission for test library is required |  -  |
 | **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Delete permission for test library is required |  -  |
+| **404** | Not Found |  -  |
+| **422** | Client Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2480,9 +2484,9 @@ Restore test case, checklist or shared steps from archive
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -2560,7 +2564,10 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Update permission for test library is required |  -  |
+| **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2577,9 +2584,9 @@ Update Test Case, Checklist or Shared Step
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -2656,11 +2663,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | &lt;br&gt;WorkItem not found  &lt;br&gt;Can&#39;t find section  &lt;br&gt;Can&#39;t attributesScheme  &lt;br&gt;Can&#39;t attribute  &lt;br&gt;AutoTestIds not exist in project |  -  |
+| **204** | Successful operation |  -  |
 | **400** | &lt;br&gt;Field is required  &lt;br&gt;Priority is not a valid  &lt;br&gt;duration should be a positive number  &lt;br&gt;should be empty for CheckList  &lt;br&gt;There is no option in ProjectAttributesScheme with such Id  &lt;br&gt;Attribute value must be a valid guid for options scheme |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test library required |  -  |
-| **204** | Successful operation |  -  |
+| **404** | &lt;br&gt;WorkItem not found  &lt;br&gt;Can&#39;t find section  &lt;br&gt;Can&#39;t attributesScheme  &lt;br&gt;Can&#39;t attribute  &lt;br&gt;AutoTestIds not exist in project |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -1,15 +1,15 @@
-# TestIt.Client.Model.WorkItemLinkChangeViewModel
+# TestIt.ApiClient.Model.WorkItemLinkChangeViewModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Description** | **string** |  | [optional] 
-**Url** | **string** |  | [optional] 
-**Title** | **string** |  | [optional] 
+**Description** | **string** |  | 
+**Url** | **string** |  | 
+**Title** | **string** |  | 
 **HasInfo** | **bool** |  | 
 **Id** | **Guid** |  | 
-**Type** | **string** |  | [optional] 
+**Type** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

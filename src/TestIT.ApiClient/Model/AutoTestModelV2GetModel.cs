@@ -40,10 +40,10 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestModelV2GetModel" /> class.
         /// </summary>
-        /// <param name="externalId">This property is used to set autotest identifier from client system.</param>
+        /// <param name="externalId">This property is used to set autotest identifier from client system (required).</param>
         /// <param name="links">links.</param>
         /// <param name="projectId">This property is used to link autotest with project (required).</param>
-        /// <param name="name">name.</param>
+        /// <param name="name">name (required).</param>
         /// <param name="_namespace">_namespace.</param>
         /// <param name="classname">classname.</param>
         /// <param name="steps">steps.</param>
@@ -59,14 +59,24 @@ namespace TestIT.ApiClient.Model
         /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
         public AutoTestModelV2GetModel(string externalId = default(string), List<LinkModel> links = default(List<LinkModel>), Guid projectId = default(Guid), string name = default(string), string _namespace = default(string), string classname = default(string), List<AutoTestStepModel> steps = default(List<AutoTestStepModel>), List<AutoTestStepModel> setup = default(List<AutoTestStepModel>), List<AutoTestStepModel> teardown = default(List<AutoTestStepModel>), long globalId = default(long), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), List<LabelShortModel> labels = default(List<LabelShortModel>), Guid id = default(Guid), bool isDeleted = default(bool))
         {
+            // to ensure "externalId" is required (not null)
+            if (externalId == null)
+            {
+                throw new ArgumentNullException("externalId is a required property for AutoTestModelV2GetModel and cannot be null");
+            }
+            this.ExternalId = externalId;
             this.ProjectId = projectId;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for AutoTestModelV2GetModel and cannot be null");
+            }
+            this.Name = name;
             this.GlobalId = globalId;
             this.CreatedById = createdById;
             this.Id = id;
             this.IsDeleted = isDeleted;
-            this.ExternalId = externalId;
             this.Links = links;
-            this.Name = name;
             this.Namespace = _namespace;
             this.Classname = classname;
             this.Steps = steps;
@@ -83,7 +93,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>This property is used to set autotest identifier from client system</value>
         /// <example>&quot;10001&quot;</example>
-        [DataMember(Name = "externalId", EmitDefaultValue = true)]
+        [DataMember(Name = "externalId", IsRequired = true, EmitDefaultValue = true)]
         public string ExternalId { get; set; }
 
         /// <summary>
@@ -96,7 +106,7 @@ namespace TestIT.ApiClient.Model
         /// This property is used to link autotest with project
         /// </summary>
         /// <value>This property is used to link autotest with project</value>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
@@ -104,7 +114,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Name
         /// </summary>
         /// <example>&quot;WorkItem valid creation test&quot;</example>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -149,28 +159,28 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
+        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
         public DateTime? CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
+        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
@@ -253,91 +263,91 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.ExternalId == input.ExternalId ||
                     (this.ExternalId != null &&
                     this.ExternalId.Equals(input.ExternalId))
-                ) &&
+                ) && 
                 (
                     this.Links == input.Links ||
                     this.Links != null &&
                     input.Links != null &&
                     this.Links.SequenceEqual(input.Links)
-                ) &&
+                ) && 
                 (
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
-                ) &&
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.Namespace == input.Namespace ||
                     (this.Namespace != null &&
                     this.Namespace.Equals(input.Namespace))
-                ) &&
+                ) && 
                 (
                     this.Classname == input.Classname ||
                     (this.Classname != null &&
                     this.Classname.Equals(input.Classname))
-                ) &&
+                ) && 
                 (
                     this.Steps == input.Steps ||
                     this.Steps != null &&
                     input.Steps != null &&
                     this.Steps.SequenceEqual(input.Steps)
-                ) &&
+                ) && 
                 (
                     this.Setup == input.Setup ||
                     this.Setup != null &&
                     input.Setup != null &&
                     this.Setup.SequenceEqual(input.Setup)
-                ) &&
+                ) && 
                 (
                     this.Teardown == input.Teardown ||
                     this.Teardown != null &&
                     input.Teardown != null &&
                     this.Teardown.SequenceEqual(input.Teardown)
-                ) &&
+                ) && 
                 (
                     this.GlobalId == input.GlobalId ||
                     this.GlobalId.Equals(input.GlobalId)
-                ) &&
+                ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) &&
+                ) && 
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
                     this.ModifiedDate.Equals(input.ModifiedDate))
-                ) &&
+                ) && 
                 (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&
                     this.CreatedById.Equals(input.CreatedById))
-                ) &&
+                ) && 
                 (
                     this.ModifiedById == input.ModifiedById ||
                     (this.ModifiedById != null &&
                     this.ModifiedById.Equals(input.ModifiedById))
-                ) &&
+                ) && 
                 (
                     this.Labels == input.Labels ||
                     this.Labels != null &&
                     input.Labels != null &&
                     this.Labels.SequenceEqual(input.Labels)
-                ) &&
+                ) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.IsDeleted == input.IsDeleted ||
                     this.IsDeleted.Equals(input.IsDeleted)
@@ -424,7 +434,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

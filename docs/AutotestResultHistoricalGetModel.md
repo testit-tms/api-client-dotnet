@@ -1,4 +1,4 @@
-# TestIt.Client.Model.AutotestResultHistoricalGetModel
+# TestIt.ApiClient.Model.AutotestResultHistoricalGetModel
 
 ## Properties
 
@@ -7,11 +7,11 @@ Name | Type | Description | Notes
 **Id** | **Guid** |  | 
 **CreatedDate** | **DateTime** |  | 
 **CreatedById** | **Guid** |  | 
-**CreatedByName** | **string** |  | [optional] 
+**CreatedByName** | **string** |  | 
 **TestRunId** | **Guid** |  | 
 **TestRunName** | **string** |  | [optional] 
 **ConfigurationId** | **Guid** |  | 
-**ConfigurationName** | **string** |  | [optional] 
+**ConfigurationName** | **string** |  | 
 **Outcome** | **AutotestResultOutcome** |  | 
 **LaunchSource** | **string** |  | [optional] 
 **ModifiedDate** | **DateTime?** |  | [optional] 

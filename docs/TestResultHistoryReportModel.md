@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestResultHistoryReportModel
+# TestIt.ApiClient.Model.TestResultHistoryReportModel
 
 ## Properties
 
@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **WorkItemVersionId** | **Guid?** |  | [optional] 
 **WorkItemVersionNumber** | **int?** |  | [optional] 
 **LaunchSource** | **string** |  | [optional] 
-**FailureClassIds** | **List&lt;Guid&gt;** |  | [optional] 
+**FailureClassIds** | **List&lt;Guid&gt;** |  | 
 **Parameters** | **Dictionary&lt;string, string&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

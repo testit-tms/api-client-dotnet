@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestPointFilterModelDuration
+# TestIt.ApiClient.Model.TestPointFilterModelDuration
 Specifies a test point range of duration to search for
 
 ## Properties

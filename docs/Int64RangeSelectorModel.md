@@ -1,4 +1,4 @@
-# TestIt.Client.Model.Int64RangeSelectorModel
+# TestIt.ApiClient.Model.Int64RangeSelectorModel
 
 ## Properties
 

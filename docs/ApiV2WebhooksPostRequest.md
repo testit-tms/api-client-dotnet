@@ -1,4 +1,4 @@
-# TestIt.Client.Model.ApiV2WebhooksPostRequest
+# TestIt.ApiClient.Model.ApiV2WebhooksPostRequest
 
 ## Properties
 
@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **Url** | **string** | Request URL of the webhook | 
 **RequestType** | **RequestTypeModel** |  | 
 **ShouldSendBody** | **bool** | Indicates if the webhook sends body | 
-**Headers** | **Dictionary&lt;string, string&gt;** | Collection of the webhook headers | [optional] 
-**QueryParameters** | **Dictionary&lt;string, string&gt;** | Collection of the webhook query parameters | [optional] 
+**Headers** | **Dictionary&lt;string, string&gt;** | Collection of the webhook headers | 
+**QueryParameters** | **Dictionary&lt;string, string&gt;** | Collection of the webhook query parameters | 
 **IsEnabled** | **bool** | Indicates if the webhook is active | 
 **ShouldSendCustomBody** | **bool** | Indicates if the webhook sends custom body | 
 **CustomBody** | **string** | Custom body of the webhook | [optional] 

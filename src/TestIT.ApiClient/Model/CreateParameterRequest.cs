@@ -40,8 +40,8 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateParameterRequest" /> class.
         /// </summary>
-        /// <param name="value">value (required).</param>
-        /// <param name="name">name (required).</param>
+        /// <param name="value">Value of the parameter (required).</param>
+        /// <param name="name">Key of the parameter (required).</param>
         public CreateParameterRequest(string value = default(string), string name = default(string))
         {
             // to ensure "value" is required (not null)
@@ -59,14 +59,16 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Gets or Sets Value
+        /// Value of the parameter
         /// </summary>
+        /// <value>Value of the parameter</value>
         [DataMember(Name = "value", IsRequired = true, EmitDefaultValue = true)]
         public string Value { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Key of the parameter
         /// </summary>
+        /// <value>Key of the parameter</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -114,12 +116,12 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Value == input.Value ||
                     (this.Value != null &&
                     this.Value.Equals(input.Value))
-                ) &&
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
@@ -153,12 +155,12 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // Value (string) maxLength
-            if (this.Value != null && this.Value.Length > 255)
+            if (this.Value != null && this.Value.Length > 1500)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Value, length must be less than 255.", new [] { "Value" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Value, length must be less than 1500.", new [] { "Value" });
             }
 
             // Value (string) minLength

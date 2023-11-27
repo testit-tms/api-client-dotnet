@@ -35,17 +35,32 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectAttributesFilterModel" /> class.
         /// </summary>
-        /// <param name="name">Specifies an attribute name to search for.</param>
+        [JsonConstructorAttribute]
+        protected ProjectAttributesFilterModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectAttributesFilterModel" /> class.
+        /// </summary>
+        /// <param name="name">Specifies an attribute name to search for (required).</param>
         /// <param name="isRequired">Specifies an attribute mandatory status to search for.</param>
         /// <param name="isGlobal">Specifies an attribute global status to search for.</param>
-        /// <param name="types">Specifies an attribute types to search for.</param>
+        /// <param name="types">Specifies an attribute types to search for (required).</param>
         /// <param name="isEnabled">Specifies an attribute enabled status to search for.</param>
         public ProjectAttributesFilterModel(string name = default(string), bool? isRequired = default(bool?), bool? isGlobal = default(bool?), List<CustomAttributeTypesEnum> types = default(List<CustomAttributeTypesEnum>), bool? isEnabled = default(bool?))
         {
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for ProjectAttributesFilterModel and cannot be null");
+            }
             this.Name = name;
+            // to ensure "types" is required (not null)
+            if (types == null)
+            {
+                throw new ArgumentNullException("types is a required property for ProjectAttributesFilterModel and cannot be null");
+            }
+            this.Types = types;
             this.IsRequired = isRequired;
             this.IsGlobal = isGlobal;
-            this.Types = types;
             this.IsEnabled = isEnabled;
         }
 
@@ -53,7 +68,7 @@ namespace TestIT.ApiClient.Model
         /// Specifies an attribute name to search for
         /// </summary>
         /// <value>Specifies an attribute name to search for</value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -74,7 +89,7 @@ namespace TestIT.ApiClient.Model
         /// Specifies an attribute types to search for
         /// </summary>
         /// <value>Specifies an attribute types to search for</value>
-        [DataMember(Name = "types", EmitDefaultValue = true)]
+        [DataMember(Name = "types", IsRequired = true, EmitDefaultValue = true)]
         public List<CustomAttributeTypesEnum> Types { get; set; }
 
         /// <summary>
@@ -131,28 +146,28 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.IsRequired == input.IsRequired ||
                     (this.IsRequired != null &&
                     this.IsRequired.Equals(input.IsRequired))
-                ) &&
+                ) && 
                 (
                     this.IsGlobal == input.IsGlobal ||
                     (this.IsGlobal != null &&
                     this.IsGlobal.Equals(input.IsGlobal))
-                ) &&
+                ) && 
                 (
                     this.Types == input.Types ||
                     this.Types != null &&
                     input.Types != null &&
                     this.Types.SequenceEqual(input.Types)
-                ) &&
+                ) && 
                 (
                     this.IsEnabled == input.IsEnabled ||
                     (this.IsEnabled != null &&
@@ -198,7 +213,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

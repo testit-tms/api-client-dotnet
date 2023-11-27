@@ -14,6 +14,7 @@
 | 4.2     | 2.2        |
 | 4.3     | 2.3        |
 | 4.4     | 2.4        |
+| 4.5     | 2.5        |
 
 <a name="frameworks-supported"></a>
 ## Frameworks supported
@@ -122,8 +123,9 @@ Class | Method | HTTP request | Description
 *BackgroundJobsApi* | [**ApiV2BackgroundJobsGet**](docs\BackgroundJobsApi.md#apiv2backgroundjobsget) | **GET** /api/v2/backgroundJobs | 
 *BackgroundJobsApi* | [**ApiV2BackgroundJobsIdCancelPost**](docs\BackgroundJobsApi.md#apiv2backgroundjobsidcancelpost) | **POST** /api/v2/backgroundJobs/{id}/cancel | Cancel current user background job
 *BackgroundJobsApi* | [**ApiV2BackgroundJobsIdGet**](docs\BackgroundJobsApi.md#apiv2backgroundjobsidget) | **GET** /api/v2/backgroundJobs/{id} | Get background job by ID
+*BackgroundJobsApi* | [**ApiV2BackgroundJobsIdStatusGet**](docs\BackgroundJobsApi.md#apiv2backgroundjobsidstatusget) | **GET** /api/v2/backgroundJobs/{id}/status | Get background job status by job ID
 *BackgroundJobsApi* | [**ApiV2BackgroundJobsSearchPost**](docs\BackgroundJobsApi.md#apiv2backgroundjobssearchpost) | **POST** /api/v2/backgroundJobs/search | Search for user background jobs
-*ConfigurationsApi* | [**ApiV2ConfigurationsCreateByParametersPost**](docs\ConfigurationsApi.md#apiv2configurationscreatebyparameterspost) | **POST** /api/v2/configurations/createByParameters | Create Configurations by parameters
+*ConfigurationsApi* | [**ApiV2ConfigurationsCreateByParametersPost**](docs\ConfigurationsApi.md#apiv2configurationscreatebyparameterspost) | **POST** /api/v2/configurations/createByParameters | Create configurations by parameters
 *ConfigurationsApi* | [**ApiV2ConfigurationsDeleteBulkPost**](docs\ConfigurationsApi.md#apiv2configurationsdeletebulkpost) | **POST** /api/v2/configurations/delete/bulk | Delete multiple configurations
 *ConfigurationsApi* | [**ApiV2ConfigurationsIdDelete**](docs\ConfigurationsApi.md#apiv2configurationsiddelete) | **DELETE** /api/v2/configurations/{id} | Delete configuration
 *ConfigurationsApi* | [**ApiV2ConfigurationsIdPatch**](docs\ConfigurationsApi.md#apiv2configurationsidpatch) | **PATCH** /api/v2/configurations/{id} | Patch configuration
@@ -168,10 +170,43 @@ Class | Method | HTTP request | Description
 *ParametersApi* | [**GetAllParameters**](docs\ParametersApi.md#getallparameters) | **GET** /api/v2/parameters | Get all parameters
 *ParametersApi* | [**GetParameterById**](docs\ParametersApi.md#getparameterbyid) | **GET** /api/v2/parameters/{id} | Get parameter by ID
 *ParametersApi* | [**UpdateParameter**](docs\ParametersApi.md#updateparameter) | **PUT** /api/v2/parameters | Update parameter
+*ProjectAttributeTemplatesApi* | [**ApiV2ProjectsProjectIdAttributesTemplatesSearchPost**](docs\ProjectAttributeTemplatesApi.md#apiv2projectsprojectidattributestemplatessearchpost) | **POST** /api/v2/projects/{projectId}/attributes/templates/search | Search for custom attributes templates
+*ProjectAttributeTemplatesApi* | [**ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDelete**](docs\ProjectAttributeTemplatesApi.md#apiv2projectsprojectidattributestemplatestemplateiddelete) | **DELETE** /api/v2/projects/{projectId}/attributes/templates/{templateId} | Delete CustomAttributeTemplate from Project
+*ProjectAttributeTemplatesApi* | [**ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPost**](docs\ProjectAttributeTemplatesApi.md#apiv2projectsprojectidattributestemplatestemplateidpost) | **POST** /api/v2/projects/{projectId}/attributes/templates/{templateId} | Add CustomAttributeTemplate to Project
+*ProjectAttributesApi* | [**CreateProjectsAttribute**](docs\ProjectAttributesApi.md#createprojectsattribute) | **POST** /api/v2/projects/{projectId}/attributes | Create project attribute
+*ProjectAttributesApi* | [**DeleteProjectsAttribute**](docs\ProjectAttributesApi.md#deleteprojectsattribute) | **DELETE** /api/v2/projects/{projectId}/attributes/{attributeId} | Delete project attribute
+*ProjectAttributesApi* | [**GetAttributeByProjectId**](docs\ProjectAttributesApi.md#getattributebyprojectid) | **GET** /api/v2/projects/{projectId}/attributes/{attributeId} | Get project attribute
+*ProjectAttributesApi* | [**GetAttributesByProjectId**](docs\ProjectAttributesApi.md#getattributesbyprojectid) | **GET** /api/v2/projects/{projectId}/attributes | Get project attributes
+*ProjectAttributesApi* | [**SearchAttributesInProject**](docs\ProjectAttributesApi.md#searchattributesinproject) | **POST** /api/v2/projects/{projectId}/attributes/search | Search for attributes used in the project
+*ProjectAttributesApi* | [**UpdateProjectsAttribute**](docs\ProjectAttributesApi.md#updateprojectsattribute) | **PUT** /api/v2/projects/{projectId}/attributes | Edit attribute of the project
+*ProjectConfigurationsApi* | [**GetConfigurationsByProjectId**](docs\ProjectConfigurationsApi.md#getconfigurationsbyprojectid) | **GET** /api/v2/projects/{projectId}/configurations | Get project configurations
+*ProjectExportApi* | [**Export**](docs\ProjectExportApi.md#export) | **POST** /api/v2/projects/{projectId}/export | Export project as JSON file
+*ProjectExportApi* | [**ExportProjectJson**](docs\ProjectExportApi.md#exportprojectjson) | **POST** /api/v2/projects/{projectId}/export/json | Export project as JSON file in background job
+*ProjectExportApi* | [**ExportProjectWithTestPlansJson**](docs\ProjectExportApi.md#exportprojectwithtestplansjson) | **POST** /api/v2/projects/{projectId}/export/testPlans/json | Export project as JSON file with test plans in background job
+*ProjectExportApi* | [**ExportProjectWithTestPlansZip**](docs\ProjectExportApi.md#exportprojectwithtestplanszip) | **POST** /api/v2/projects/{projectId}/export/testPlans/zip | Export project as Zip file with test plans in background job
+*ProjectExportApi* | [**ExportProjectZip**](docs\ProjectExportApi.md#exportprojectzip) | **POST** /api/v2/projects/{projectId}/export/zip | Export project as Zip file in background job
+*ProjectImportApi* | [**BackgroundImportToExistingProject**](docs\ProjectImportApi.md#backgroundimporttoexistingproject) | **POST** /api/v2/projects/{projectId}/import/json | Import project from JSON file into existing project in background job
+*ProjectImportApi* | [**BackgroundImportZipToExistingProject**](docs\ProjectImportApi.md#backgroundimportziptoexistingproject) | **POST** /api/v2/projects/{projectId}/import/zip | Import project from Zip file into existing project in background job
+*ProjectImportApi* | [**ImportToExistingProject**](docs\ProjectImportApi.md#importtoexistingproject) | **POST** /api/v2/projects/{projectId}/import | Import project from JSON file into existing project
+*ProjectSectionsApi* | [**GetSectionsByProjectId**](docs\ProjectSectionsApi.md#getsectionsbyprojectid) | **GET** /api/v2/projects/{projectId}/sections | Get project sections
+*ProjectTestPlanAttributesApi* | [**CreateCustomAttributeTestPlanProjectRelations**](docs\ProjectTestPlanAttributesApi.md#createcustomattributetestplanprojectrelations) | **POST** /api/v2/projects/{projectId}/testPlans/attributes | Add attributes to project's test plans
+*ProjectTestPlanAttributesApi* | [**DeleteCustomAttributeTestPlanProjectRelations**](docs\ProjectTestPlanAttributesApi.md#deletecustomattributetestplanprojectrelations) | **DELETE** /api/v2/projects/{projectId}/testPlans/attributes/{attributeId} | Delete attribute from project's test plans
+*ProjectTestPlanAttributesApi* | [**GetCustomAttributeTestPlanProjectRelations**](docs\ProjectTestPlanAttributesApi.md#getcustomattributetestplanprojectrelations) | **GET** /api/v2/projects/{projectId}/testPlans/attributes | Get project's test plan attributes
+*ProjectTestPlanAttributesApi* | [**SearchTestPlanAttributesInProject**](docs\ProjectTestPlanAttributesApi.md#searchtestplanattributesinproject) | **POST** /api/v2/projects/{projectId}/testPlans/attributes/search | Search for attributes used in the project test plans
+*ProjectTestPlanAttributesApi* | [**UpdateCustomAttributeTestPlanProjectRelations**](docs\ProjectTestPlanAttributesApi.md#updatecustomattributetestplanprojectrelations) | **PUT** /api/v2/projects/{projectId}/testPlans/attributes | Update attribute of project's test plans
+*ProjectTestPlansApi* | [**ApiV2ProjectsProjectIdTestPlansAnalyticsGet**](docs\ProjectTestPlansApi.md#apiv2projectsprojectidtestplansanalyticsget) | **GET** /api/v2/projects/{projectId}/testPlans/analytics | Get TestPlans analytics
+*ProjectTestPlansApi* | [**ApiV2ProjectsProjectIdTestPlansDeleteBulkPost**](docs\ProjectTestPlansApi.md#apiv2projectsprojectidtestplansdeletebulkpost) | **POST** /api/v2/projects/{projectId}/testPlans/delete/bulk | Delete multiple test plans
+*ProjectTestPlansApi* | [**ApiV2ProjectsProjectIdTestPlansNameExistsGet**](docs\ProjectTestPlansApi.md#apiv2projectsprojectidtestplansnameexistsget) | **GET** /api/v2/projects/{projectId}/testPlans/{name}/exists | Checks if TestPlan exists with the specified name exists for the project
+*ProjectTestPlansApi* | [**ApiV2ProjectsProjectIdTestPlansPurgeBulkPost**](docs\ProjectTestPlansApi.md#apiv2projectsprojectidtestplanspurgebulkpost) | **POST** /api/v2/projects/{projectId}/testPlans/purge/bulk | Permanently delete multiple archived test plans
+*ProjectTestPlansApi* | [**ApiV2ProjectsProjectIdTestPlansRestoreBulkPost**](docs\ProjectTestPlansApi.md#apiv2projectsprojectidtestplansrestorebulkpost) | **POST** /api/v2/projects/{projectId}/testPlans/restore/bulk | Restore multiple test plans
+*ProjectTestPlansApi* | [**ApiV2ProjectsProjectIdTestPlansSearchPost**](docs\ProjectTestPlansApi.md#apiv2projectsprojectidtestplanssearchpost) | **POST** /api/v2/projects/{projectId}/testPlans/search | Get Project TestPlans with analytics
+*ProjectWorkItemsApi* | [**ApiV2ProjectsProjectIdWorkItemsSearchGroupedPost**](docs\ProjectWorkItemsApi.md#apiv2projectsprojectidworkitemssearchgroupedpost) | **POST** /api/v2/projects/{projectId}/workItems/search/grouped | Search for work items and group results by attribute
+*ProjectWorkItemsApi* | [**ApiV2ProjectsProjectIdWorkItemsSearchIdPost**](docs\ProjectWorkItemsApi.md#apiv2projectsprojectidworkitemssearchidpost) | **POST** /api/v2/projects/{projectId}/workItems/search/id | Search for work items and extract IDs only
+*ProjectWorkItemsApi* | [**ApiV2ProjectsProjectIdWorkItemsSearchPost**](docs\ProjectWorkItemsApi.md#apiv2projectsprojectidworkitemssearchpost) | **POST** /api/v2/projects/{projectId}/workItems/search | Search for work items
+*ProjectWorkItemsApi* | [**ApiV2ProjectsProjectIdWorkItemsTagsGet**](docs\ProjectWorkItemsApi.md#apiv2projectsprojectidworkitemstagsget) | **GET** /api/v2/projects/{projectId}/workItems/tags | Get WorkItems Tags
+*ProjectWorkItemsApi* | [**GetWorkItemsByProjectId**](docs\ProjectWorkItemsApi.md#getworkitemsbyprojectid) | **GET** /api/v2/projects/{projectId}/workItems | Get project work items
 *ProjectsApi* | [**AddGlobaAttributesToProject**](docs\ProjectsApi.md#addglobaattributestoproject) | **POST** /api/v2/projects/{id}/globalAttributes | Add global attributes to project
-*ProjectsApi* | [**ApiV2ProjectsIdAttributesTemplatesSearchPost**](docs\ProjectsApi.md#apiv2projectsidattributestemplatessearchpost) | **POST** /api/v2/projects/{id}/attributes/templates/search | Search for custom attributes templates
-*ProjectsApi* | [**ApiV2ProjectsIdAttributesTemplatesTemplateIdDelete**](docs\ProjectsApi.md#apiv2projectsidattributestemplatestemplateiddelete) | **DELETE** /api/v2/projects/{id}/attributes/templates/{templateId} | Delete CustomAttributeTemplate from Project
-*ProjectsApi* | [**ApiV2ProjectsIdAttributesTemplatesTemplateIdPost**](docs\ProjectsApi.md#apiv2projectsidattributestemplatestemplateidpost) | **POST** /api/v2/projects/{id}/attributes/templates/{templateId} | Add CustomAttributeTemplate to Project
+*ProjectsApi* | [**ApiV2ProjectsDemoPost**](docs\ProjectsApi.md#apiv2projectsdemopost) | **POST** /api/v2/projects/demo | 
 *ProjectsApi* | [**ApiV2ProjectsIdDelete**](docs\ProjectsApi.md#apiv2projectsiddelete) | **DELETE** /api/v2/projects/{id} | Archive project
 *ProjectsApi* | [**ApiV2ProjectsIdFailureClassesGet**](docs\ProjectsApi.md#apiv2projectsidfailureclassesget) | **GET** /api/v2/projects/{id}/failureClasses | Get failure classes
 *ProjectsApi* | [**ApiV2ProjectsIdFavoritePut**](docs\ProjectsApi.md#apiv2projectsidfavoriteput) | **PUT** /api/v2/projects/{id}/favorite | Mark Project as favorite
@@ -179,55 +214,26 @@ Class | Method | HTTP request | Description
 *ProjectsApi* | [**ApiV2ProjectsIdPatch**](docs\ProjectsApi.md#apiv2projectsidpatch) | **PATCH** /api/v2/projects/{id} | Patch project
 *ProjectsApi* | [**ApiV2ProjectsIdPurgePost**](docs\ProjectsApi.md#apiv2projectsidpurgepost) | **POST** /api/v2/projects/{id}/purge | Purge archived project
 *ProjectsApi* | [**ApiV2ProjectsIdRestorePost**](docs\ProjectsApi.md#apiv2projectsidrestorepost) | **POST** /api/v2/projects/{id}/restore | Restore archived project
-*ProjectsApi* | [**ApiV2ProjectsIdTestPlansAnalyticsGet**](docs\ProjectsApi.md#apiv2projectsidtestplansanalyticsget) | **GET** /api/v2/projects/{id}/testPlans/analytics | Get TestPlans analytics
-*ProjectsApi* | [**ApiV2ProjectsIdTestPlansDeleteBulkPost**](docs\ProjectsApi.md#apiv2projectsidtestplansdeletebulkpost) | **POST** /api/v2/projects/{id}/testPlans/delete/bulk | Delete multiple test plans
-*ProjectsApi* | [**ApiV2ProjectsIdTestPlansNameExistsGet**](docs\ProjectsApi.md#apiv2projectsidtestplansnameexistsget) | **GET** /api/v2/projects/{id}/testPlans/{name}/exists | Checks if TestPlan exists with the specified name exists for the project
-*ProjectsApi* | [**ApiV2ProjectsIdTestPlansPurgeBulkPost**](docs\ProjectsApi.md#apiv2projectsidtestplanspurgebulkpost) | **POST** /api/v2/projects/{id}/testPlans/purge/bulk | Permanently delete multiple archived test plans
-*ProjectsApi* | [**ApiV2ProjectsIdTestPlansRestoreBulkPost**](docs\ProjectsApi.md#apiv2projectsidtestplansrestorebulkpost) | **POST** /api/v2/projects/{id}/testPlans/restore/bulk | Restore multiple test plans
-*ProjectsApi* | [**ApiV2ProjectsIdTestPlansSearchPost**](docs\ProjectsApi.md#apiv2projectsidtestplanssearchpost) | **POST** /api/v2/projects/{id}/testPlans/search | Get Project TestPlans with analytics
+*ProjectsApi* | [**ApiV2ProjectsIdTestPlansAttributeAttributeIdDelete**](docs\ProjectsApi.md#apiv2projectsidtestplansattributeattributeiddelete) | **DELETE** /api/v2/projects/{id}/testPlans/attribute/{attributeId} | Delete attribute from project's test plans
+*ProjectsApi* | [**ApiV2ProjectsIdTestPlansAttributePut**](docs\ProjectsApi.md#apiv2projectsidtestplansattributeput) | **PUT** /api/v2/projects/{id}/testPlans/attribute | Update attribute of project's test plans
 *ProjectsApi* | [**ApiV2ProjectsIdTestRunsActiveGet**](docs\ProjectsApi.md#apiv2projectsidtestrunsactiveget) | **GET** /api/v2/projects/{id}/testRuns/active | Get active Project TestRuns
 *ProjectsApi* | [**ApiV2ProjectsIdTestRunsFullGet**](docs\ProjectsApi.md#apiv2projectsidtestrunsfullget) | **GET** /api/v2/projects/{id}/testRuns/full | Get Project TestRuns full models
-*ProjectsApi* | [**ApiV2ProjectsIdWorkItemsSearchIdPost**](docs\ProjectsApi.md#apiv2projectsidworkitemssearchidpost) | **POST** /api/v2/projects/{id}/workItems/search/id | Search for work items and extract IDs only
-*ProjectsApi* | [**ApiV2ProjectsIdWorkItemsSearchPost**](docs\ProjectsApi.md#apiv2projectsidworkitemssearchpost) | **POST** /api/v2/projects/{id}/workItems/search | Search for work items
-*ProjectsApi* | [**ApiV2ProjectsIdWorkItemsTagsGet**](docs\ProjectsApi.md#apiv2projectsidworkitemstagsget) | **GET** /api/v2/projects/{id}/workItems/tags | Get WorkItems Tags
 *ProjectsApi* | [**ApiV2ProjectsNameNameExistsGet**](docs\ProjectsApi.md#apiv2projectsnamenameexistsget) | **GET** /api/v2/projects/name/{name}/exists | 
 *ProjectsApi* | [**ApiV2ProjectsPurgeBulkPost**](docs\ProjectsApi.md#apiv2projectspurgebulkpost) | **POST** /api/v2/projects/purge/bulk | Purge multiple projects
 *ProjectsApi* | [**ApiV2ProjectsRestoreBulkPost**](docs\ProjectsApi.md#apiv2projectsrestorebulkpost) | **POST** /api/v2/projects/restore/bulk | Restore multiple projects
 *ProjectsApi* | [**ApiV2ProjectsSearchPost**](docs\ProjectsApi.md#apiv2projectssearchpost) | **POST** /api/v2/projects/search | Search for projects
 *ProjectsApi* | [**BackgroundImportProject**](docs\ProjectsApi.md#backgroundimportproject) | **POST** /api/v2/projects/import/json | Import project from JSON file in background job
-*ProjectsApi* | [**BackgroundImportToExistingProject**](docs\ProjectsApi.md#backgroundimporttoexistingproject) | **POST** /api/v2/projects/{id}/import/json | Import project from JSON file into existing project in background job
 *ProjectsApi* | [**BackgroundImportZipProject**](docs\ProjectsApi.md#backgroundimportzipproject) | **POST** /api/v2/projects/import/zip | Import project from Zip file in background job
-*ProjectsApi* | [**BackgroundImportZipToExistingProject**](docs\ProjectsApi.md#backgroundimportziptoexistingproject) | **POST** /api/v2/projects/{id}/import/zip | Import project from Zip file into existing project in background job
-*ProjectsApi* | [**CreateCustomAttributeTestPlanProjectRelations**](docs\ProjectsApi.md#createcustomattributetestplanprojectrelations) | **POST** /api/v2/projects/{id}/testPlans/attributes | Add attributes to project's test plans
 *ProjectsApi* | [**CreateProject**](docs\ProjectsApi.md#createproject) | **POST** /api/v2/projects | Create project
-*ProjectsApi* | [**CreateProjectsAttribute**](docs\ProjectsApi.md#createprojectsattribute) | **POST** /api/v2/projects/{id}/attributes | Create project attribute
-*ProjectsApi* | [**DeleteCustomAttributeTestPlanProjectRelations**](docs\ProjectsApi.md#deletecustomattributetestplanprojectrelations) | **DELETE** /api/v2/projects/{id}/testPlans/attribute/{attributeId} | Delete attribute from project's test plans
 *ProjectsApi* | [**DeleteProjectAutoTests**](docs\ProjectsApi.md#deleteprojectautotests) | **DELETE** /api/v2/projects/{id}/autoTests | Delete all autotests from project
-*ProjectsApi* | [**DeleteProjectsAttribute**](docs\ProjectsApi.md#deleteprojectsattribute) | **DELETE** /api/v2/projects/{id}/attributes/{attributeId} | Delete project attribute
-*ProjectsApi* | [**Export**](docs\ProjectsApi.md#export) | **POST** /api/v2/projects/{id}/export | Export project as JSON file
-*ProjectsApi* | [**ExportProjectJson**](docs\ProjectsApi.md#exportprojectjson) | **POST** /api/v2/projects/{id}/export/json | Export project as JSON file in background job
-*ProjectsApi* | [**ExportProjectWithTestPlansJson**](docs\ProjectsApi.md#exportprojectwithtestplansjson) | **POST** /api/v2/projects/{id}/export/testPlans/json | Export project as JSON file with test plans in background job
-*ProjectsApi* | [**ExportProjectWithTestPlansZip**](docs\ProjectsApi.md#exportprojectwithtestplanszip) | **POST** /api/v2/projects/{id}/export/testPlans/zip | Export project as Zip file with test plans in background job
-*ProjectsApi* | [**ExportProjectZip**](docs\ProjectsApi.md#exportprojectzip) | **POST** /api/v2/projects/{id}/export/zip | Export project as Zip file in background job
 *ProjectsApi* | [**ExportWithTestPlansAndConfigurations**](docs\ProjectsApi.md#exportwithtestplansandconfigurations) | **POST** /api/v2/projects/{id}/export-by-testPlans | Export project with test plans, test suites and test points as JSON file
 *ProjectsApi* | [**GetAllProjects**](docs\ProjectsApi.md#getallprojects) | **GET** /api/v2/projects | Get all projects
-*ProjectsApi* | [**GetAttributeByProjectId**](docs\ProjectsApi.md#getattributebyprojectid) | **GET** /api/v2/projects/{id}/attributes/{attributeId} | Get project attribute
-*ProjectsApi* | [**GetAttributesByProjectId**](docs\ProjectsApi.md#getattributesbyprojectid) | **GET** /api/v2/projects/{id}/attributes | Get project attributes
 *ProjectsApi* | [**GetAutoTestsNamespaces**](docs\ProjectsApi.md#getautotestsnamespaces) | **GET** /api/v2/projects/{id}/autoTestsNamespaces | Get namespaces of autotests in project
-*ProjectsApi* | [**GetConfigurationsByProjectId**](docs\ProjectsApi.md#getconfigurationsbyprojectid) | **GET** /api/v2/projects/{id}/configurations | Get project configurations
-*ProjectsApi* | [**GetCustomAttributeTestPlanProjectRelations**](docs\ProjectsApi.md#getcustomattributetestplanprojectrelations) | **GET** /api/v2/projects/{id}/testPlans/attributes | Get project's test plan attributes
 *ProjectsApi* | [**GetProjectById**](docs\ProjectsApi.md#getprojectbyid) | **GET** /api/v2/projects/{id} | Get project by ID
-*ProjectsApi* | [**GetSectionsByProjectId**](docs\ProjectsApi.md#getsectionsbyprojectid) | **GET** /api/v2/projects/{id}/sections | Get project sections
 *ProjectsApi* | [**GetTestPlansByProjectId**](docs\ProjectsApi.md#gettestplansbyprojectid) | **GET** /api/v2/projects/{id}/testPlans | Get project test plans
 *ProjectsApi* | [**GetTestRunsByProjectId**](docs\ProjectsApi.md#gettestrunsbyprojectid) | **GET** /api/v2/projects/{id}/testRuns | Get project test runs
-*ProjectsApi* | [**GetWorkItemsByProjectId**](docs\ProjectsApi.md#getworkitemsbyprojectid) | **GET** /api/v2/projects/{id}/workItems | Get project work items
 *ProjectsApi* | [**Import**](docs\ProjectsApi.md#import) | **POST** /api/v2/projects/import | Import project from JSON file
-*ProjectsApi* | [**ImportToExistingProject**](docs\ProjectsApi.md#importtoexistingproject) | **POST** /api/v2/projects/{id}/import | Import project from JSON file into existing project
-*ProjectsApi* | [**SearchAttributesInProject**](docs\ProjectsApi.md#searchattributesinproject) | **POST** /api/v2/projects/{id}/attributes/search | Search for attributes used in the project
-*ProjectsApi* | [**SearchTestPlanAttributesInProject**](docs\ProjectsApi.md#searchtestplanattributesinproject) | **POST** /api/v2/projects/{id}/testPlans/attributes/search | Search for attributes used in the project test plans
-*ProjectsApi* | [**UpdateCustomAttributeTestPlanProjectRelations**](docs\ProjectsApi.md#updatecustomattributetestplanprojectrelations) | **PUT** /api/v2/projects/{id}/testPlans/attribute | Update attribute of project's test plans
 *ProjectsApi* | [**UpdateProject**](docs\ProjectsApi.md#updateproject) | **PUT** /api/v2/projects | Update project
-*ProjectsApi* | [**UpdateProjectsAttribute**](docs\ProjectsApi.md#updateprojectsattribute) | **PUT** /api/v2/projects/{id}/attributes | Edit attribute of the project
 *SearchApi* | [**ApiV2SearchGlobalSearchPost**](docs\SearchApi.md#apiv2searchglobalsearchpost) | **POST** /api/v2/search/globalSearch | 
 *SectionsApi* | [**ApiV2SectionsIdPatch**](docs\SectionsApi.md#apiv2sectionsidpatch) | **PATCH** /api/v2/sections/{id} | Patch section
 *SectionsApi* | [**CreateSection**](docs\SectionsApi.md#createsection) | **POST** /api/v2/sections | Create section
@@ -355,8 +361,8 @@ Class | Method | HTTP request | Description
 *WorkItemsCommentsApi* | [**ApiV2WorkItemsCommentsPut**](docs\WorkItemsCommentsApi.md#apiv2workitemscommentsput) | **PUT** /api/v2/workItems/comments | Update work item comment
 *WorkItemsCommentsApi* | [**ApiV2WorkItemsIdCommentsGet**](docs\WorkItemsCommentsApi.md#apiv2workitemsidcommentsget) | **GET** /api/v2/workItems/{id}/comments | Get work item comments
 
-<a name="documentation-for-models"></a>
 
+<a id="documentation-for-models"></a>
 ## Documentation for Models
 
 You can see the documentation [here](https://github.com/testit-tms/api-client-dotnet/blob/main/docs/Readme.md)

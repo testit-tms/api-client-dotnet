@@ -1,4 +1,4 @@
-# TestIt.Client.Model.StepModel
+# TestIt.ApiClient.Model.StepModel
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# TestIt.Client.Model.AttachmentPutModelAutoTestStepResultsModel
+# TestIt.ApiClient.Model.AttachmentPutModelAutoTestStepResultsModel
 
 ## Properties
 

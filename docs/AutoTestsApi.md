@@ -1,4 +1,4 @@
-# TestIt.Client.Api.AutoTestsApi
+# TestIt.ApiClient.Api.AutoTestsApi
 
 All URIs are relative to *http://localhost*
 
@@ -38,9 +38,9 @@ User permissions for project:  - Read only  - Execute  - Write  - Full control
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -146,9 +146,9 @@ See <a href=\"https://www.rfc-editor.org/rfc/rfc6902\" target=\"_blank\">RFC 690
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -245,9 +245,9 @@ Get test results history for autotest
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -341,10 +341,10 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
-| **404** | Autotest with provided ID was not found |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for autotests required |  -  |
+| **404** | Autotest with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -361,9 +361,9 @@ User permissions for project:  - Read only  - Execute  - Write  - Full control
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -463,9 +463,9 @@ User permissions for project:  - Read only  - Execute  - Write  - Full control
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -544,9 +544,9 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **200** | Success |  -  |
 | **403** | Invalid user permissions |  -  |
 | **404** | Autotest with provided ID was not found |  -  |
-| **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -561,9 +561,9 @@ Search for autotests
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -672,9 +672,9 @@ Create autotest
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -755,12 +755,12 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Update permission for autotests is required |  -  |
-| **401** | Unauthorized |  -  |
-| **409** | Autotest with the same external ID already exists is the project |  -  |
-| **404** | Project with provided ID cannot be found |  -  |
 | **201** | Created |  -  |
 | **400** | &lt;br&gt;- Name cannot be empty or contain only white space characters  &lt;br&gt;- External ID cannot be empty or contain only white space characters  &lt;br&gt;- Namespace cannot be empty or contain only white space characters  &lt;br&gt;- Classname cannot be empty or contain only white space characters  &lt;br&gt;- Steps cannot be &#x60;null&#x60;  &lt;br&gt;- Steps nesting level is more than 15  &lt;br&gt;- Invalid URI |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Update permission for autotests is required |  -  |
+| **404** | Project with provided ID cannot be found |  -  |
+| **409** | Autotest with the same external ID already exists is the project |  -  |
 | **422** | &lt;br&gt;- Labels have duplicates  &lt;br&gt;- Labels begin with &#x60;::&#x60;  &lt;br&gt;- Labels with the same base have different values |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -778,9 +778,9 @@ Create multiple autotests
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -861,13 +861,13 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **201** | Created |  -  |
 | **400** | &lt;br&gt;- Name cannot be empty or contain only white space characters  &lt;br&gt;- External ID cannot be empty or contain only white space characters  &lt;br&gt;- Namespace cannot be empty or contain only white space characters  &lt;br&gt;- Classname cannot be empty or contain only white space characters  &lt;br&gt;- Steps cannot be &#x60;null&#x60;  &lt;br&gt;- Steps nesting level is more than 15  &lt;br&gt;- Invalid URI |  -  |
 | **401** | Unauthorized |  -  |
-| **201** | Created |  -  |
-| **404** | Project with provided ID cannot be found |  -  |
-| **422** | &lt;br&gt;- Labels have duplicates  &lt;br&gt;- Labels begin with &#x60;::&#x60;  &lt;br&gt;- Labels with the same base have different values |  -  |
 | **403** | Update permission for autotests is required |  -  |
+| **404** | Project with provided ID cannot be found |  -  |
 | **409** | Autotest with the same external ID already exists is the project |  -  |
+| **422** | &lt;br&gt;- Labels have duplicates  &lt;br&gt;- Labels begin with &#x60;::&#x60;  &lt;br&gt;- Labels with the same base have different values |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -884,9 +884,9 @@ Delete autotest
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -963,10 +963,10 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Delete permission for autotests is required |  -  |
 | **404** | Autotest with provided ID cannot be found |  -  |
-| **401** | Unauthorized |  -  |
-| **204** | No Content |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -983,9 +983,9 @@ Unlink autotest from work item
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -1064,11 +1064,11 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | &lt;br&gt;- Autotest with provided ID cannot be found  &lt;br&gt;- Work item with provided ID cannot be found |  -  |
-| **401** | Unauthorized |  -  |
 | **204** | No Content |  -  |
-| **403** | Update permission for autotests is required |  -  |
 | **400** | Work item ID is invalid |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Update permission for autotests is required |  -  |
+| **404** | &lt;br&gt;- Autotest with provided ID cannot be found  &lt;br&gt;- Work item with provided ID cannot be found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1083,9 +1083,9 @@ void (empty response body)
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -1214,9 +1214,9 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Forbidden |  -  |
 | **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 | **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1234,9 +1234,9 @@ Get average autotest duration
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -1318,9 +1318,9 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for autotests is required |  -  |
 | **404** | Autotest with provided ID was not found |  -  |
-| **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1337,9 +1337,9 @@ Get autotest by internal or global ID
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -1420,11 +1420,11 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **200** | Success |  -  |
 | **400** | Autotest ID is invalid |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for autotests is required |  -  |
 | **404** | Autotest with provided ID cannot be found |  -  |
-| **401** | Unauthorized |  -  |
-| **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1441,9 +1441,9 @@ Get autotest chronology
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -1525,9 +1525,9 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
-| **404** | Autotest with provided ID was not found |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for autotests is required |  -  |
+| **404** | Autotest with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1544,9 +1544,9 @@ Get completed tests runs for autotests
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -1627,9 +1627,9 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for autotests is required |  -  |
-| **401** | Unauthorized |  -  |
 | **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Read permission for autotests is required |  -  |
 | **404** | Autotest with provided ID was not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1645,9 +1645,9 @@ catch (ApiException e)
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -1754,10 +1754,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **404** | Not Found |  -  |
+| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
-| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1774,9 +1774,9 @@ Get work items linked to autotest
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -1862,9 +1862,9 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
-| **404** | Autotest with provided ID cannot be found |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for autotests is required |  -  |
+| **404** | Autotest with provided ID cannot be found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1881,9 +1881,9 @@ Link autotest with work items
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -1962,10 +1962,10 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | Unauthorized |  -  |
-| **403** | Update permission for autotests is required |  -  |
 | **204** | No Content |  -  |
 | **400** | &lt;br&gt;- Autotest cannot be linked to shared steps  &lt;br&gt;- Autotest cannot be linked to work item from other project  &lt;br&gt;- Work item ID is invalid |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Update permission for autotests is required |  -  |
 | **404** | &lt;br&gt;- Autotest with provided ID cannot be found  &lt;br&gt;- Work item with provided ID cannot be found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1983,9 +1983,9 @@ Update autotest
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -2063,11 +2063,11 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **400** | &lt;br&gt;- Name cannot be empty or contain only white space characters  &lt;br&gt;- External ID cannot be empty or contain only white space characters  &lt;br&gt;- Namespace cannot be empty or contain only white space characters  &lt;br&gt;- Classname cannot be empty or contain only white space characters  &lt;br&gt;- Steps cannot be &#x60;null&#x60;  &lt;br&gt;- Steps nesting level is more than 15  &lt;br&gt;- Invalid URI |  -  |
-| **422** | &lt;br&gt;- Project ID cannot be changed  &lt;br&gt;- Labels have duplicates  &lt;br&gt;- Labels begin with &#x60;::&#x60;  &lt;br&gt;- Labels with the same base have different values |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for autotests is required |  -  |
 | **404** | &lt;br&gt;- Autotests with provided ID cannot be found  &lt;br&gt;- Project with provided ID cannot be found  &lt;br&gt;- Link with provided ID cannot be found  &lt;br&gt;- Label with provided ID cannot be found |  -  |
 | **409** | Autotest with the same external ID already exists is the project |  -  |
+| **422** | &lt;br&gt;- Project ID cannot be changed  &lt;br&gt;- Labels have duplicates  &lt;br&gt;- Labels begin with &#x60;::&#x60;  &lt;br&gt;- Labels with the same base have different values |  -  |
 | **204** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2085,9 +2085,9 @@ Update multiple autotests
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -2165,12 +2165,12 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
-| **404** | &lt;br&gt;- Autotests with provided ID cannot be found  &lt;br&gt;- Project with provided ID cannot be found  &lt;br&gt;- Link with provided ID cannot be found  &lt;br&gt;- Label with provided ID cannot be found |  -  |
-| **409** | Autotest with the same external ID already exists is the project |  -  |
-| **422** | &lt;br&gt;- Project ID cannot be changed  &lt;br&gt;- Labels have duplicates  &lt;br&gt;- Labels begin with &#x60;::&#x60;  &lt;br&gt;- Labels with the same base have different values |  -  |
 | **400** | &lt;br&gt;- Name cannot be empty or contain only white space characters  &lt;br&gt;- External ID cannot be empty or contain only white space characters  &lt;br&gt;- Namespace cannot be empty or contain only white space characters  &lt;br&gt;- Classname cannot be empty or contain only white space characters  &lt;br&gt;- Steps cannot be &#x60;null&#x60;  &lt;br&gt;- Steps nesting level is more than 15  &lt;br&gt;- Invalid URI |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for autotests is required |  -  |
+| **404** | &lt;br&gt;- Autotests with provided ID cannot be found  &lt;br&gt;- Project with provided ID cannot be found  &lt;br&gt;- Link with provided ID cannot be found  &lt;br&gt;- Label with provided ID cannot be found |  -  |
+| **409** | Autotest with the same external ID already exists is the project |  -  |
+| **422** | &lt;br&gt;- Project ID cannot be changed  &lt;br&gt;- Labels have duplicates  &lt;br&gt;- Labels begin with &#x60;::&#x60;  &lt;br&gt;- Labels with the same base have different values |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

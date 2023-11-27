@@ -1,4 +1,4 @@
-# TestIt.Client.Model.AutoTestNamespaceModel
+# TestIt.ApiClient.Model.AutoTestNamespaceModel
 
 ## Properties
 

@@ -106,11 +106,11 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.PassedAverageDuration == input.PassedAverageDuration ||
                     this.PassedAverageDuration.Equals(input.PassedAverageDuration)
-                ) &&
+                ) && 
                 (
                     this.FailedAverageDuration == input.FailedAverageDuration ||
                     this.FailedAverageDuration.Equals(input.FailedAverageDuration)
@@ -137,7 +137,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

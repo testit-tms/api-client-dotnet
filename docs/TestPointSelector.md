@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestPointSelector
+# TestIt.ApiClient.Model.TestPointSelector
 
 ## Properties
 

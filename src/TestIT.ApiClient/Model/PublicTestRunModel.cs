@@ -43,25 +43,50 @@ namespace TestIT.ApiClient.Model
         /// <param name="testRunId">testRunId (required).</param>
         /// <param name="testPlanId">testPlanId.</param>
         /// <param name="testPlanGlobalId">testPlanGlobalId (required).</param>
-        /// <param name="name">name.</param>
+        /// <param name="name">name (required).</param>
         /// <param name="productName">productName.</param>
         /// <param name="build">build.</param>
-        /// <param name="configurations">configurations.</param>
-        /// <param name="autoTests">autoTests.</param>
-        /// <param name="testPoints">testPoints.</param>
-        /// <param name="status">status.</param>
+        /// <param name="configurations">configurations (required).</param>
+        /// <param name="autoTests">autoTests (required).</param>
+        /// <param name="testPoints">testPoints (required).</param>
+        /// <param name="status">status (required).</param>
         public PublicTestRunModel(Guid testRunId = default(Guid), Guid? testPlanId = default(Guid?), long testPlanGlobalId = default(long), string name = default(string), string productName = default(string), string build = default(string), List<ConfigurationModel> configurations = default(List<ConfigurationModel>), List<AutoTestModel> autoTests = default(List<AutoTestModel>), List<PublicTestPointModel> testPoints = default(List<PublicTestPointModel>), string status = default(string))
         {
             this.TestRunId = testRunId;
             this.TestPlanGlobalId = testPlanGlobalId;
-            this.TestPlanId = testPlanId;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for PublicTestRunModel and cannot be null");
+            }
             this.Name = name;
+            // to ensure "configurations" is required (not null)
+            if (configurations == null)
+            {
+                throw new ArgumentNullException("configurations is a required property for PublicTestRunModel and cannot be null");
+            }
+            this.Configurations = configurations;
+            // to ensure "autoTests" is required (not null)
+            if (autoTests == null)
+            {
+                throw new ArgumentNullException("autoTests is a required property for PublicTestRunModel and cannot be null");
+            }
+            this.AutoTests = autoTests;
+            // to ensure "testPoints" is required (not null)
+            if (testPoints == null)
+            {
+                throw new ArgumentNullException("testPoints is a required property for PublicTestRunModel and cannot be null");
+            }
+            this.TestPoints = testPoints;
+            // to ensure "status" is required (not null)
+            if (status == null)
+            {
+                throw new ArgumentNullException("status is a required property for PublicTestRunModel and cannot be null");
+            }
+            this.Status = status;
+            this.TestPlanId = testPlanId;
             this.ProductName = productName;
             this.Build = build;
-            this.Configurations = configurations;
-            this.AutoTests = autoTests;
-            this.TestPoints = testPoints;
-            this.Status = status;
         }
 
         /// <summary>
@@ -85,7 +110,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -103,25 +128,25 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Configurations
         /// </summary>
-        [DataMember(Name = "configurations", EmitDefaultValue = true)]
+        [DataMember(Name = "configurations", IsRequired = true, EmitDefaultValue = true)]
         public List<ConfigurationModel> Configurations { get; set; }
 
         /// <summary>
         /// Gets or Sets AutoTests
         /// </summary>
-        [DataMember(Name = "autoTests", EmitDefaultValue = true)]
+        [DataMember(Name = "autoTests", IsRequired = true, EmitDefaultValue = true)]
         public List<AutoTestModel> AutoTests { get; set; }
 
         /// <summary>
         /// Gets or Sets TestPoints
         /// </summary>
-        [DataMember(Name = "testPoints", EmitDefaultValue = true)]
+        [DataMember(Name = "testPoints", IsRequired = true, EmitDefaultValue = true)]
         public List<PublicTestPointModel> TestPoints { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = true)]
+        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
         public string Status { get; set; }
 
         /// <summary>
@@ -176,54 +201,54 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.TestRunId == input.TestRunId ||
                     (this.TestRunId != null &&
                     this.TestRunId.Equals(input.TestRunId))
-                ) &&
+                ) && 
                 (
                     this.TestPlanId == input.TestPlanId ||
                     (this.TestPlanId != null &&
                     this.TestPlanId.Equals(input.TestPlanId))
-                ) &&
+                ) && 
                 (
                     this.TestPlanGlobalId == input.TestPlanGlobalId ||
                     this.TestPlanGlobalId.Equals(input.TestPlanGlobalId)
-                ) &&
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.ProductName == input.ProductName ||
                     (this.ProductName != null &&
                     this.ProductName.Equals(input.ProductName))
-                ) &&
+                ) && 
                 (
                     this.Build == input.Build ||
                     (this.Build != null &&
                     this.Build.Equals(input.Build))
-                ) &&
+                ) && 
                 (
                     this.Configurations == input.Configurations ||
                     this.Configurations != null &&
                     input.Configurations != null &&
                     this.Configurations.SequenceEqual(input.Configurations)
-                ) &&
+                ) && 
                 (
                     this.AutoTests == input.AutoTests ||
                     this.AutoTests != null &&
                     input.AutoTests != null &&
                     this.AutoTests.SequenceEqual(input.AutoTests)
-                ) &&
+                ) && 
                 (
                     this.TestPoints == input.TestPoints ||
                     this.TestPoints != null &&
                     input.TestPoints != null &&
                     this.TestPoints.SequenceEqual(input.TestPoints)
-                ) &&
+                ) && 
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
@@ -286,7 +311,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

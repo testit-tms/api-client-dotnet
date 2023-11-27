@@ -1,10 +1,10 @@
-# TestIt.Client.Model.LinkModel
+# TestIt.ApiClient.Model.LinkModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | 
+**Id** | **Guid?** |  | [optional] 
 **Title** | **string** | Link name. | [optional] 
 **Url** | **string** | Address can be specified without protocol, but necessarily with the domain. | 
 **Description** | **string** | Link description. | [optional] 

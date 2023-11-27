@@ -1,11 +1,11 @@
-# TestIt.Client.Model.StepResultModel
+# TestIt.ApiClient.Model.StepResultModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **StepId** | **Guid** |  | 
-**Outcome** | **string** |  | [optional] 
+**Outcome** | **string** |  | 
 **SharedStepVersionId** | **Guid?** |  | [optional] 
 **SharedStepResults** | [**List&lt;SharedStepResultModel&gt;**](SharedStepResultModel.md) |  | [optional] 
 **Comment** | [**StepCommentModel**](StepCommentModel.md) |  | [optional] 

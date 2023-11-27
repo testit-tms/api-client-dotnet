@@ -131,27 +131,27 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.ConfigurationId == input.ConfigurationId ||
                     (this.ConfigurationId != null &&
                     this.ConfigurationId.Equals(input.ConfigurationId))
-                ) &&
+                ) && 
                 (
                     this.ConfigurationGlobalId == input.ConfigurationGlobalId ||
                     this.ConfigurationGlobalId.Equals(input.ConfigurationGlobalId)
-                ) &&
+                ) && 
                 (
                     this.AutoTestIds == input.AutoTestIds ||
                     this.AutoTestIds != null &&
                     input.AutoTestIds != null &&
                     this.AutoTestIds.SequenceEqual(input.AutoTestIds)
-                ) &&
+                ) && 
                 (
                     this.IterationId == input.IterationId ||
                     (this.IterationId != null &&
                     this.IterationId.Equals(input.IterationId))
-                ) &&
+                ) && 
                 (
                     this.ParameterModels == input.ParameterModels ||
                     this.ParameterModels != null &&
@@ -195,7 +195,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

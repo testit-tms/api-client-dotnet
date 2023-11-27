@@ -1,4 +1,4 @@
-# TestIt.Client.Api.AttachmentsApi
+# TestIt.ApiClient.Api.AttachmentsApi
 
 All URIs are relative to *http://localhost*
 
@@ -20,9 +20,9 @@ Delete attachment file
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -99,8 +99,8 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **422** | Attachment file is already in use |  -  |
 | **204** | Attachment file was deleted successfully |  -  |
+| **422** | Attachment file is already in use |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -115,9 +115,9 @@ Download attachment file
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -223,9 +223,9 @@ Get size of attachments storage in bytes
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -311,16 +311,16 @@ This endpoint does not need any parameter.
 
 Upload new attachment file
 
-File size is restricted to 1 GB (1 073 741 824 bytes)
+File size is restricted to 50 MB (52 428 800 bytes)
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -401,10 +401,10 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **201** | Created |  -  |
+| **400** | &lt;br&gt;- Invalid file contents  &lt;br&gt;- Invalid HTTP headers |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
-| **400** | &lt;br&gt;- Invalid file contents  &lt;br&gt;- Invalid HTTP headers |  -  |
-| **201** | Created |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -72,8 +72,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="priority">priority (required).</param>
         /// <param name="isDeleted">Flag determining whether Work Item is deleted (required).</param>
         /// <param name="tagNames">Array of tag names of Work Item.</param>
-        /// <param name="iterations">Set of iterations related to Work Item.</param>
-        /// <param name="links">Set of links related to Work Item.</param>
+        /// <param name="iterations">Set of iterations related to Work Item (required).</param>
+        /// <param name="links">Set of links related to Work Item (required).</param>
         public WorkItemShortModel(Guid id = default(Guid), Guid versionId = default(Guid), string name = default(string), string entityTypeName = default(string), Guid projectId = default(Guid), Guid sectionId = default(Guid), string sectionName = default(string), bool isAutomated = default(bool), long globalId = default(long), int duration = default(int), long? medianDuration = default(long?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), WorkItemStates state = default(WorkItemStates), WorkItemPriorityModel priority = default(WorkItemPriorityModel), bool isDeleted = default(bool), List<string> tagNames = default(List<string>), List<IterationModel> iterations = default(List<IterationModel>), List<LinkShortModel> links = default(List<LinkShortModel>))
         {
             this.Id = id;
@@ -105,14 +105,24 @@ namespace TestIT.ApiClient.Model
             this.State = state;
             this.Priority = priority;
             this.IsDeleted = isDeleted;
+            // to ensure "iterations" is required (not null)
+            if (iterations == null)
+            {
+                throw new ArgumentNullException("iterations is a required property for WorkItemShortModel and cannot be null");
+            }
+            this.Iterations = iterations;
+            // to ensure "links" is required (not null)
+            if (links == null)
+            {
+                throw new ArgumentNullException("links is a required property for WorkItemShortModel and cannot be null");
+            }
+            this.Links = links;
             this.MedianDuration = medianDuration;
             this.Attributes = attributes;
             this.ModifiedById = modifiedById;
             this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
             this.TagNames = tagNames;
-            this.Iterations = iterations;
-            this.Links = links;
         }
 
         /// <summary>
@@ -248,14 +258,14 @@ namespace TestIT.ApiClient.Model
         /// Set of iterations related to Work Item
         /// </summary>
         /// <value>Set of iterations related to Work Item</value>
-        [DataMember(Name = "iterations", EmitDefaultValue = true)]
+        [DataMember(Name = "iterations", IsRequired = true, EmitDefaultValue = true)]
         public List<IterationModel> Iterations { get; set; }
 
         /// <summary>
         /// Set of links related to Work Item
         /// </summary>
         /// <value>Set of links related to Work Item</value>
-        [DataMember(Name = "links", EmitDefaultValue = true)]
+        [DataMember(Name = "links", IsRequired = true, EmitDefaultValue = true)]
         public List<LinkShortModel> Links { get; set; }
 
         /// <summary>
@@ -521,7 +531,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // Name (string) minLength
             if (this.Name != null && this.Name.Length < 1)

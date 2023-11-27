@@ -1,13 +1,13 @@
-# TestIt.Client.Model.AutoTestModelV2GetModel
+# TestIt.ApiClient.Model.AutoTestModelV2GetModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ExternalId** | **string** | This property is used to set autotest identifier from client system | [optional] 
+**ExternalId** | **string** | This property is used to set autotest identifier from client system | 
 **Links** | [**List&lt;LinkModel&gt;**](LinkModel.md) |  | [optional] 
 **ProjectId** | **Guid** | This property is used to link autotest with project | 
-**Name** | **string** |  | [optional] 
+**Name** | **string** |  | 
 **Namespace** | **string** |  | [optional] 
 **Classname** | **string** |  | [optional] 
 **Steps** | [**List&lt;AutoTestStepModel&gt;**](AutoTestStepModel.md) |  | [optional] 

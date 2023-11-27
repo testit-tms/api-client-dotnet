@@ -41,13 +41,18 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="TestPlanGroupByTestSuite" /> class.
         /// </summary>
         /// <param name="testSuiteId">testSuiteId (required).</param>
-        /// <param name="testSuiteName">testSuiteName.</param>
+        /// <param name="testSuiteName">testSuiteName (required).</param>
         /// <param name="value">value (required).</param>
         public TestPlanGroupByTestSuite(Guid testSuiteId = default(Guid), string testSuiteName = default(string), long value = default(long))
         {
             this.TestSuiteId = testSuiteId;
-            this.Value = value;
+            // to ensure "testSuiteName" is required (not null)
+            if (testSuiteName == null)
+            {
+                throw new ArgumentNullException("testSuiteName is a required property for TestPlanGroupByTestSuite and cannot be null");
+            }
             this.TestSuiteName = testSuiteName;
+            this.Value = value;
         }
 
         /// <summary>
@@ -59,7 +64,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets TestSuiteName
         /// </summary>
-        [DataMember(Name = "testSuiteName", EmitDefaultValue = true)]
+        [DataMember(Name = "testSuiteName", IsRequired = true, EmitDefaultValue = true)]
         public string TestSuiteName { get; set; }
 
         /// <summary>
@@ -113,17 +118,17 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.TestSuiteId == input.TestSuiteId ||
                     (this.TestSuiteId != null &&
                     this.TestSuiteId.Equals(input.TestSuiteId))
-                ) &&
+                ) && 
                 (
                     this.TestSuiteName == input.TestSuiteName ||
                     (this.TestSuiteName != null &&
                     this.TestSuiteName.Equals(input.TestSuiteName))
-                ) &&
+                ) && 
                 (
                     this.Value == input.Value ||
                     this.Value.Equals(input.Value)
@@ -157,7 +162,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

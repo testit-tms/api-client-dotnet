@@ -1,4 +1,4 @@
-# TestIt.Client.Model.NotificationModel
+# TestIt.ApiClient.Model.NotificationModel
 
 ## Properties
 
@@ -12,10 +12,10 @@ Name | Type | Description | Notes
 **ProjectGlobalId** | **long?** |  | [optional] 
 **ProjectName** | **string** |  | [optional] 
 **TestPlanGlobalId** | **long** |  | 
-**TestPlanName** | **string** |  | [optional] 
+**TestPlanName** | **string** |  | 
 **WorkitemGlobalId** | **long?** |  | [optional] 
-**Comment** | **string** |  | [optional] 
-**WorkItemName** | **string** |  | [optional] 
+**Comment** | **string** |  | 
+**WorkItemName** | **string** |  | 
 **AttributeName** | **string** |  | [optional] 
 **CreatedById** | **Guid** |  | 
 

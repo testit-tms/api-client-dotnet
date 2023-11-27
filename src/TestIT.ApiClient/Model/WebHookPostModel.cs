@@ -58,8 +58,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="url">Request URL of the webhook (required).</param>
         /// <param name="requestType">requestType (required).</param>
         /// <param name="shouldSendBody">Indicates if the webhook sends body (required).</param>
-        /// <param name="headers">Collection of the webhook headers.</param>
-        /// <param name="queryParameters">Collection of the webhook query parameters.</param>
+        /// <param name="headers">Collection of the webhook headers (required).</param>
+        /// <param name="queryParameters">Collection of the webhook query parameters (required).</param>
         /// <param name="isEnabled">Indicates if the webhook is active (required).</param>
         /// <param name="shouldSendCustomBody">Indicates if the webhook sends custom body (required).</param>
         /// <param name="customBody">Custom body of the webhook.</param>
@@ -78,6 +78,18 @@ namespace TestIT.ApiClient.Model
             this.Url = url;
             this.RequestType = requestType;
             this.ShouldSendBody = shouldSendBody;
+            // to ensure "headers" is required (not null)
+            if (headers == null)
+            {
+                throw new ArgumentNullException("headers is a required property for WebHookPostModel and cannot be null");
+            }
+            this.Headers = headers;
+            // to ensure "queryParameters" is required (not null)
+            if (queryParameters == null)
+            {
+                throw new ArgumentNullException("queryParameters is a required property for WebHookPostModel and cannot be null");
+            }
+            this.QueryParameters = queryParameters;
             this.IsEnabled = isEnabled;
             this.ShouldSendCustomBody = shouldSendCustomBody;
             this.ShouldReplaceParameters = shouldReplaceParameters;
@@ -89,8 +101,6 @@ namespace TestIT.ApiClient.Model
             }
             this.Name = name;
             this.Description = description;
-            this.Headers = headers;
-            this.QueryParameters = queryParameters;
             this.CustomBody = customBody;
         }
 
@@ -126,14 +136,14 @@ namespace TestIT.ApiClient.Model
         /// Collection of the webhook headers
         /// </summary>
         /// <value>Collection of the webhook headers</value>
-        [DataMember(Name = "headers", EmitDefaultValue = true)]
+        [DataMember(Name = "headers", IsRequired = true, EmitDefaultValue = true)]
         public Dictionary<string, string> Headers { get; set; }
 
         /// <summary>
         /// Collection of the webhook query parameters
         /// </summary>
         /// <value>Collection of the webhook query parameters</value>
-        [DataMember(Name = "queryParameters", EmitDefaultValue = true)]
+        [DataMember(Name = "queryParameters", IsRequired = true, EmitDefaultValue = true)]
         public Dictionary<string, string> QueryParameters { get; set; }
 
         /// <summary>
@@ -234,67 +244,67 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
-                ) &&
+                ) && 
                 (
                     this.EventType == input.EventType ||
                     this.EventType.Equals(input.EventType)
-                ) &&
+                ) && 
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) &&
+                ) && 
                 (
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
-                ) &&
+                ) && 
                 (
                     this.RequestType == input.RequestType ||
                     this.RequestType.Equals(input.RequestType)
-                ) &&
+                ) && 
                 (
                     this.ShouldSendBody == input.ShouldSendBody ||
                     this.ShouldSendBody.Equals(input.ShouldSendBody)
-                ) &&
+                ) && 
                 (
                     this.Headers == input.Headers ||
                     this.Headers != null &&
                     input.Headers != null &&
                     this.Headers.SequenceEqual(input.Headers)
-                ) &&
+                ) && 
                 (
                     this.QueryParameters == input.QueryParameters ||
                     this.QueryParameters != null &&
                     input.QueryParameters != null &&
                     this.QueryParameters.SequenceEqual(input.QueryParameters)
-                ) &&
+                ) && 
                 (
                     this.IsEnabled == input.IsEnabled ||
                     this.IsEnabled.Equals(input.IsEnabled)
-                ) &&
+                ) && 
                 (
                     this.ShouldSendCustomBody == input.ShouldSendCustomBody ||
                     this.ShouldSendCustomBody.Equals(input.ShouldSendCustomBody)
-                ) &&
+                ) && 
                 (
                     this.CustomBody == input.CustomBody ||
                     (this.CustomBody != null &&
                     this.CustomBody.Equals(input.CustomBody))
-                ) &&
+                ) && 
                 (
                     this.ShouldReplaceParameters == input.ShouldReplaceParameters ||
                     this.ShouldReplaceParameters.Equals(input.ShouldReplaceParameters)
-                ) &&
+                ) && 
                 (
                     this.ShouldEscapeParameters == input.ShouldEscapeParameters ||
                     this.ShouldEscapeParameters.Equals(input.ShouldEscapeParameters)
-                ) &&
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
@@ -355,7 +365,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // Url (string) minLength
             if (this.Url != null && this.Url.Length < 1)

@@ -1,4 +1,4 @@
-# TestIt.Client.Model.SharedStepReferenceSectionsQueryFilterModelModifiedDate
+# TestIt.ApiClient.Model.SharedStepReferenceSectionsQueryFilterModelModifiedDate
 Date and time of work item last modification
 
 ## Properties

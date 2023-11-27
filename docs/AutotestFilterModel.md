@@ -1,4 +1,4 @@
-# TestIt.Client.Model.AutotestFilterModel
+# TestIt.ApiClient.Model.AutotestFilterModel
 
 ## Properties
 

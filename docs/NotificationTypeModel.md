@@ -1,4 +1,4 @@
-# TestIt.Client.Model.NotificationTypeModel
+# TestIt.ApiClient.Model.NotificationTypeModel
 
 ## Properties
 

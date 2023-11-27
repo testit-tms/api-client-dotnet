@@ -1,4 +1,4 @@
-# TestIt.Client.Api.TestPointsApi
+# TestIt.ApiClient.Api.TestPointsApi
 
 All URIs are relative to *http://localhost*
 
@@ -20,9 +20,9 @@ Get all test runs which use test point
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -103,8 +103,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for test points is required |  -  |
 | **200** | Success |  -  |
+| **403** | Read permission for test points is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -119,9 +119,9 @@ Get work item represented by test point
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -202,8 +202,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **403** | Read permission for test points is required |  -  |
 | **200** | Success |  -  |
+| **403** | Read permission for test points is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -218,9 +218,9 @@ Search for test points and extract IDs only
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -327,9 +327,9 @@ Search for test points
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {

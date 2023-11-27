@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestPlanPostModel
+# TestIt.ApiClient.Model.TestPlanPostModel
 
 ## Properties
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **ProjectId** | **Guid** |  | 
 **ProductName** | **string** |  | [optional] 
 **HasAutomaticDurationTimer** | **bool?** |  | [optional] 
-**Attributes** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
+**Attributes** | **Dictionary&lt;string, Object&gt;** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,4 +1,4 @@
-# TestIt.Client.Model.ExternalLinkModel
+# TestIt.ApiClient.Model.ExternalLinkModel
 
 ## Properties
 

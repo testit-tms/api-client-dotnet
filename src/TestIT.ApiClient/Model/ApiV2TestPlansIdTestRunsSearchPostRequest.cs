@@ -135,34 +135,34 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.States == input.States ||
                     this.States != null &&
                     input.States != null &&
                     this.States.SequenceEqual(input.States)
-                ) &&
+                ) && 
                 (
                     this.StartedDate == input.StartedDate ||
                     (this.StartedDate != null &&
                     this.StartedDate.Equals(input.StartedDate))
-                ) &&
+                ) && 
                 (
                     this.CompletedDate == input.CompletedDate ||
                     (this.CompletedDate != null &&
                     this.CompletedDate.Equals(input.CompletedDate))
-                ) &&
+                ) && 
                 (
                     this.CreatedByIds == input.CreatedByIds ||
                     this.CreatedByIds != null &&
                     input.CreatedByIds != null &&
                     this.CreatedByIds.SequenceEqual(input.CreatedByIds)
-                ) &&
+                ) && 
                 (
                     this.ModifiedByIds == input.ModifiedByIds ||
                     this.ModifiedByIds != null &&
@@ -213,7 +213,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)

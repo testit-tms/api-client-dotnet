@@ -1,4 +1,4 @@
-# TestIt.Client.Model.SetOfAttachmentIds
+# TestIt.ApiClient.Model.SetOfAttachmentIds
 
 ## Properties
 

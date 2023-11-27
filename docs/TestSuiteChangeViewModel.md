@@ -1,11 +1,11 @@
-# TestIt.Client.Model.TestSuiteChangeViewModel
+# TestIt.ApiClient.Model.TestSuiteChangeViewModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** |  | 
-**Name** | **string** |  | [optional] 
+**Name** | **string** |  | 
 **Configurations** | [**List&lt;ShortConfiguration&gt;**](ShortConfiguration.md) |  | [optional] 
 **WorkItemCount** | **long** |  | 
 

@@ -176,53 +176,53 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.IsFavorite == input.IsFavorite ||
                     (this.IsFavorite != null &&
                     this.IsFavorite.Equals(input.IsFavorite))
-                ) &&
+                ) && 
                 (
                     this.IsDeleted == input.IsDeleted ||
                     (this.IsDeleted != null &&
                     this.IsDeleted.Equals(input.IsDeleted))
-                ) &&
+                ) && 
                 (
                     this.TestCasesCount == input.TestCasesCount ||
                     (this.TestCasesCount != null &&
                     this.TestCasesCount.Equals(input.TestCasesCount))
-                ) &&
+                ) && 
                 (
                     this.ChecklistsCount == input.ChecklistsCount ||
                     (this.ChecklistsCount != null &&
                     this.ChecklistsCount.Equals(input.ChecklistsCount))
-                ) &&
+                ) && 
                 (
                     this.SharedStepsCount == input.SharedStepsCount ||
                     (this.SharedStepsCount != null &&
                     this.SharedStepsCount.Equals(input.SharedStepsCount))
-                ) &&
+                ) && 
                 (
                     this.AutotestsCount == input.AutotestsCount ||
                     (this.AutotestsCount != null &&
                     this.AutotestsCount.Equals(input.AutotestsCount))
-                ) &&
+                ) && 
                 (
                     this.GlobalIds == input.GlobalIds ||
                     this.GlobalIds != null &&
                     input.GlobalIds != null &&
                     this.GlobalIds.SequenceEqual(input.GlobalIds)
-                ) &&
+                ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) &&
+                ) && 
                 (
                     this.CreatedByIds == input.CreatedByIds ||
                     this.CreatedByIds != null &&
@@ -289,7 +289,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)

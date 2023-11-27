@@ -1,4 +1,4 @@
-# TestIt.Client.Api.SearchApi
+# TestIt.ApiClient.Api.SearchApi
 
 All URIs are relative to *http://localhost*
 
@@ -17,9 +17,9 @@ All URIs are relative to *http://localhost*
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {

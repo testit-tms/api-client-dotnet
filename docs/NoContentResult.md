@@ -1,4 +1,4 @@
-# TestIt.Client.Model.NoContentResult
+# TestIt.ApiClient.Model.NoContentResult
 
 ## Properties
 

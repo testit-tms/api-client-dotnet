@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestRunTestResultsPartialBulkSetModel
+# TestIt.ApiClient.Model.TestRunTestResultsPartialBulkSetModel
 
 ## Properties
 

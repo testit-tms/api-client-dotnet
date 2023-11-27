@@ -1,4 +1,4 @@
-# TestIt.Client.Model.BackgroundJobGetModel
+# TestIt.ApiClient.Model.BackgroundJobGetModel
 
 ## Properties
 
@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **State** | **BackgroundJobState** |  | 
 **IsDeleted** | **bool** |  | 
 **Progress** | **long** |  | 
+**CreatedDate** | **DateTime** |  | 
 **StartDate** | **DateTime?** |  | [optional] 
 **EndDate** | **DateTime?** |  | [optional] 
 **Error** | **string** |  | [optional] 

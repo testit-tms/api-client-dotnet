@@ -41,12 +41,22 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="LinkShortModel" /> class.
         /// </summary>
         /// <param name="id">id (required).</param>
-        /// <param name="title">title.</param>
-        /// <param name="url">url.</param>
+        /// <param name="title">title (required).</param>
+        /// <param name="url">url (required).</param>
         public LinkShortModel(Guid id = default(Guid), string title = default(string), string url = default(string))
         {
             this.Id = id;
+            // to ensure "title" is required (not null)
+            if (title == null)
+            {
+                throw new ArgumentNullException("title is a required property for LinkShortModel and cannot be null");
+            }
             this.Title = title;
+            // to ensure "url" is required (not null)
+            if (url == null)
+            {
+                throw new ArgumentNullException("url is a required property for LinkShortModel and cannot be null");
+            }
             this.Url = url;
         }
 
@@ -59,13 +69,13 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Title
         /// </summary>
-        [DataMember(Name = "title", EmitDefaultValue = true)]
+        [DataMember(Name = "title", IsRequired = true, EmitDefaultValue = true)]
         public string Title { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
-        [DataMember(Name = "url", EmitDefaultValue = true)]
+        [DataMember(Name = "url", IsRequired = true, EmitDefaultValue = true)]
         public string Url { get; set; }
 
         /// <summary>
@@ -113,17 +123,17 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.Title == input.Title ||
                     (this.Title != null &&
                     this.Title.Equals(input.Title))
-                ) &&
+                ) && 
                 (
                     this.Url == input.Url ||
                     (this.Url != null &&
@@ -161,7 +171,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

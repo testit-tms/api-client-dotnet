@@ -1,4 +1,4 @@
-# TestIt.Client.Model.ParameterModel
+# TestIt.ApiClient.Model.ParameterModel
 
 ## Properties
 
@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **IsDeleted** | **bool** |  | 
 **ParameterKeyId** | **Guid** |  | 
 **Id** | **Guid** |  | 
-**Value** | **string** |  | 
-**Name** | **string** |  | 
+**Value** | **string** | Value of the parameter | 
+**Name** | **string** | Key of the parameter | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -42,13 +42,23 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="id">Unique ID of the custom attributes template (required).</param>
         /// <param name="isDeleted">Indicates if the custom attribute template is deleted (required).</param>
-        /// <param name="name">Name of the custom attribute template.</param>
-        /// <param name="customAttributeModels">Attributes of the template.</param>
+        /// <param name="name">Name of the custom attribute template (required).</param>
+        /// <param name="customAttributeModels">Attributes of the template (required).</param>
         public ProjectCustomAttributeTemplateGetModel(Guid id = default(Guid), bool isDeleted = default(bool), string name = default(string), List<CustomAttributeModel> customAttributeModels = default(List<CustomAttributeModel>))
         {
             this.Id = id;
             this.IsDeleted = isDeleted;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for ProjectCustomAttributeTemplateGetModel and cannot be null");
+            }
             this.Name = name;
+            // to ensure "customAttributeModels" is required (not null)
+            if (customAttributeModels == null)
+            {
+                throw new ArgumentNullException("customAttributeModels is a required property for ProjectCustomAttributeTemplateGetModel and cannot be null");
+            }
             this.CustomAttributeModels = customAttributeModels;
         }
 
@@ -70,14 +80,14 @@ namespace TestIT.ApiClient.Model
         /// Name of the custom attribute template
         /// </summary>
         /// <value>Name of the custom attribute template</value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Attributes of the template
         /// </summary>
         /// <value>Attributes of the template</value>
-        [DataMember(Name = "customAttributeModels", EmitDefaultValue = true)]
+        [DataMember(Name = "customAttributeModels", IsRequired = true, EmitDefaultValue = true)]
         public List<CustomAttributeModel> CustomAttributeModels { get; set; }
 
         /// <summary>
@@ -126,21 +136,21 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.IsDeleted == input.IsDeleted ||
                     this.IsDeleted.Equals(input.IsDeleted)
-                ) &&
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.CustomAttributeModels == input.CustomAttributeModels ||
                     this.CustomAttributeModels != null &&
@@ -180,7 +190,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

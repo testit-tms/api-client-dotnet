@@ -1,10 +1,10 @@
-# TestIt.Client.Model.AutoTestPutModel
+# TestIt.ApiClient.Model.AutoTestPutModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** | Used for search autotest. If value equals Guid mask filled with zeros, search will be executed using ExternalId | [optional] 
+**Id** | **Guid?** | Used for search autotest. If value is null or equals Guid mask filled with zeros, search will be executed using ExternalId | [optional] 
 **WorkItemIdsForLinkWithAutoTest** | **List&lt;Guid&gt;** |  | [optional] 
 **ExternalId** | **string** | External ID of the autotest | 
 **Links** | [**List&lt;LinkPutModel&gt;**](LinkPutModel.md) | Collection of the autotest links | [optional] 

@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestPointFilterModelWorkItemMedianDuration
+# TestIt.ApiClient.Model.TestPointFilterModelWorkItemMedianDuration
 Specifies a test point work item median duration range to search for
 
 ## Properties

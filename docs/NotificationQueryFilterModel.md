@@ -1,4 +1,4 @@
-# TestIt.Client.Model.NotificationQueryFilterModel
+# TestIt.ApiClient.Model.NotificationQueryFilterModel
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# TestIt.Client.Api.BackgroundJobsApi
+# TestIt.ApiClient.Api.BackgroundJobsApi
 
 All URIs are relative to *http://localhost*
 
@@ -7,6 +7,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2BackgroundJobsGet**](BackgroundJobsApi.md#apiv2backgroundjobsget) | **GET** /api/v2/backgroundJobs |  |
 | [**ApiV2BackgroundJobsIdCancelPost**](BackgroundJobsApi.md#apiv2backgroundjobsidcancelpost) | **POST** /api/v2/backgroundJobs/{id}/cancel | Cancel current user background job |
 | [**ApiV2BackgroundJobsIdGet**](BackgroundJobsApi.md#apiv2backgroundjobsidget) | **GET** /api/v2/backgroundJobs/{id} | Get background job by ID |
+| [**ApiV2BackgroundJobsIdStatusGet**](BackgroundJobsApi.md#apiv2backgroundjobsidstatusget) | **GET** /api/v2/backgroundJobs/{id}/status | Get background job status by job ID |
 | [**ApiV2BackgroundJobsSearchPost**](BackgroundJobsApi.md#apiv2backgroundjobssearchpost) | **POST** /api/v2/backgroundJobs/search | Search for user background jobs |
 
 <a id="apiv2backgroundjobsget"></a>
@@ -20,9 +21,9 @@ All URIs are relative to *http://localhost*
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -124,9 +125,9 @@ Cancel current user background job
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -218,9 +219,9 @@ Get background job by ID
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {
@@ -305,6 +306,104 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="apiv2backgroundjobsidstatusget"></a>
+# **ApiV2BackgroundJobsIdStatusGet**
+> BackgroundJobState ApiV2BackgroundJobsIdStatusGet (Guid id)
+
+Get background job status by job ID
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
+
+namespace Example
+{
+    public class ApiV2BackgroundJobsIdStatusGetExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new BackgroundJobsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Unique ID of the background job
+
+            try
+            {
+                // Get background job status by job ID
+                BackgroundJobState result = apiInstance.ApiV2BackgroundJobsIdStatusGet(id);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling BackgroundJobsApi.ApiV2BackgroundJobsIdStatusGet: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2BackgroundJobsIdStatusGetWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get background job status by job ID
+    ApiResponse<BackgroundJobState> response = apiInstance.ApiV2BackgroundJobsIdStatusGetWithHttpInfo(id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling BackgroundJobsApi.ApiV2BackgroundJobsIdStatusGetWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** | Unique ID of the background job |  |
+
+### Return type
+
+[**BackgroundJobState**](BackgroundJobState.md)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="apiv2backgroundjobssearchpost"></a>
 # **ApiV2BackgroundJobsSearchPost**
 > List&lt;BackgroundJobGetModel&gt; ApiV2BackgroundJobsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2BackgroundJobsSearchPostRequest apiV2BackgroundJobsSearchPostRequest = null)
@@ -316,9 +415,9 @@ Search for user background jobs
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.Client.Api;
-using TestIt.Client.Client;
-using TestIt.Client.Model;
+using TestIt.ApiClient.Api;
+using TestIt.ApiClient.Client;
+using TestIt.ApiClient.Model;
 
 namespace Example
 {

@@ -141,35 +141,35 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.ProjectIds == input.ProjectIds ||
                     this.ProjectIds != null &&
                     input.ProjectIds != null &&
                     this.ProjectIds.SequenceEqual(input.ProjectIds)
-                ) &&
+                ) && 
                 (
                     this.CustomAttributeIds == input.CustomAttributeIds ||
                     this.CustomAttributeIds != null &&
                     input.CustomAttributeIds != null &&
                     this.CustomAttributeIds.SequenceEqual(input.CustomAttributeIds)
-                ) &&
+                ) && 
                 (
                     this.CustomAttributeTypes == input.CustomAttributeTypes ||
                     this.CustomAttributeTypes != null &&
                     input.CustomAttributeTypes != null &&
                     this.CustomAttributeTypes.SequenceEqual(input.CustomAttributeTypes)
-                ) &&
+                ) && 
                 (
                     this.IsGlobal == input.IsGlobal ||
                     (this.IsGlobal != null &&
                     this.IsGlobal.Equals(input.IsGlobal))
-                ) &&
+                ) && 
                 (
                     this.IsDeleted == input.IsDeleted ||
                     (this.IsDeleted != null &&
@@ -219,7 +219,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)

@@ -1,4 +1,4 @@
-# TestIt.Client.Model.ApiV2SearchGlobalSearchPostRequest
+# TestIt.ApiClient.Model.ApiV2SearchGlobalSearchPostRequest
 
 ## Properties
 

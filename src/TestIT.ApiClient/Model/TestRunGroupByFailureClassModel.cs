@@ -40,18 +40,23 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestRunGroupByFailureClassModel" /> class.
         /// </summary>
-        /// <param name="failureCategory">failureCategory.</param>
+        /// <param name="failureCategory">failureCategory (required).</param>
         /// <param name="value">value (required).</param>
         public TestRunGroupByFailureClassModel(string failureCategory = default(string), int value = default(int))
         {
-            this.Value = value;
+            // to ensure "failureCategory" is required (not null)
+            if (failureCategory == null)
+            {
+                throw new ArgumentNullException("failureCategory is a required property for TestRunGroupByFailureClassModel and cannot be null");
+            }
             this.FailureCategory = failureCategory;
+            this.Value = value;
         }
 
         /// <summary>
         /// Gets or Sets FailureCategory
         /// </summary>
-        [DataMember(Name = "failureCategory", EmitDefaultValue = true)]
+        [DataMember(Name = "failureCategory", IsRequired = true, EmitDefaultValue = true)]
         public string FailureCategory { get; set; }
 
         /// <summary>
@@ -104,12 +109,12 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.FailureCategory == input.FailureCategory ||
                     (this.FailureCategory != null &&
                     this.FailureCategory.Equals(input.FailureCategory))
-                ) &&
+                ) && 
                 (
                     this.Value == input.Value ||
                     this.Value.Equals(input.Value)
@@ -139,7 +144,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

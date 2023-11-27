@@ -50,7 +50,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="url">Address can be specified without protocol, but necessarily with the domain. (required).</param>
         /// <param name="description">Link description..</param>
         /// <param name="type">type.</param>
-        /// <param name="hasInfo">hasInfo.</param>
+        /// <param name="hasInfo">hasInfo (required).</param>
         public LinkPostModel(string title = default(string), string url = default(string), string description = default(string), LinkType? type = default(LinkType?), bool hasInfo = default(bool))
         {
             // to ensure "url" is required (not null)
@@ -59,10 +59,10 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("url is a required property for LinkPostModel and cannot be null");
             }
             this.Url = url;
+            this.HasInfo = hasInfo;
             this.Title = title;
             this.Description = description;
             this.Type = type;
-            this.HasInfo = hasInfo;
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets HasInfo
         /// </summary>
-        [DataMember(Name = "hasInfo", EmitDefaultValue = true)]
+        [DataMember(Name = "hasInfo", IsRequired = true, EmitDefaultValue = true)]
         public bool HasInfo { get; set; }
 
         /// <summary>
@@ -139,26 +139,26 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Title == input.Title ||
                     (this.Title != null &&
                     this.Title.Equals(input.Title))
-                ) &&
+                ) && 
                 (
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
-                ) &&
+                ) && 
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) &&
+                ) && 
                 (
                     this.Type == input.Type ||
                     this.Type.Equals(input.Type)
-                ) &&
+                ) && 
                 (
                     this.HasInfo == input.HasInfo ||
                     this.HasInfo.Equals(input.HasInfo)
@@ -197,7 +197,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // Url (string) minLength
             if (this.Url != null && this.Url.Length < 1)

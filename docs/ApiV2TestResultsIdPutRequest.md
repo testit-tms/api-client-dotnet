@@ -1,4 +1,4 @@
-# TestIt.Client.Model.ApiV2TestResultsIdPutRequest
+# TestIt.ApiClient.Model.ApiV2TestResultsIdPutRequest
 
 ## Properties
 

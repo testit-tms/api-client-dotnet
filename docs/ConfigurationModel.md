@@ -1,4 +1,4 @@
-# TestIt.Client.Model.ConfigurationModel
+# TestIt.ApiClient.Model.ConfigurationModel
 
 ## Properties
 

@@ -102,7 +102,19 @@ namespace TestIT.ApiClient.Model
         /// Enum PurgeProject for value: PurgeProject
         /// </summary>
         [EnumMember(Value = "PurgeProject")]
-        PurgeProject = 12
+        PurgeProject = 12,
+
+        /// <summary>
+        /// Enum ExportProjects for value: ExportProjects
+        /// </summary>
+        [EnumMember(Value = "ExportProjects")]
+        ExportProjects = 13,
+
+        /// <summary>
+        /// Enum ImportProjects for value: ImportProjects
+        /// </summary>
+        [EnumMember(Value = "ImportProjects")]
+        ImportProjects = 14
 
     }
 

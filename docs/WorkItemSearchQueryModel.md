@@ -1,15 +1,15 @@
-# TestIt.Client.Model.WorkItemSearchQueryModel
+# TestIt.ApiClient.Model.WorkItemSearchQueryModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ProjectIds** | **List&lt;Guid&gt;** | Collection of project identifiers | [optional] 
 **Name** | **string** | Name of work item | [optional] 
 **Ids** | **List&lt;Guid&gt;** | Specifies a work item unique IDs to search for | [optional] 
 **GlobalIds** | **List&lt;long&gt;** | Collection of global (integer) identifiers | [optional] 
 **Attributes** | [**Dictionary&lt;string, List&lt;string&gt;&gt;**](Set.md) | Custom attributes of work item | [optional] 
 **IsDeleted** | **bool?** | Is result must consist of only actual/deleted work items | [optional] 
-**ProjectIds** | **List&lt;Guid&gt;** | Collection of project identifiers | [optional] 
 **SectionIds** | **List&lt;Guid&gt;** | Collection of section identifiers | [optional] 
 **CreatedByIds** | **List&lt;Guid&gt;** | Collection of identifiers of users who created work item | [optional] 
 **ModifiedByIds** | **List&lt;Guid&gt;** | Collection of identifiers of users who applied last modification to work item | [optional] 

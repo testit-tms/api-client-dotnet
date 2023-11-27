@@ -1,4 +1,4 @@
-# TestIt.Client.Model.ProjectModel
+# TestIt.ApiClient.Model.ProjectModel
 
 ## Properties
 
@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** | Unique ID of the project | 
 **Description** | **string** | Description of the project | [optional] 
-**Name** | **string** | Name of the project | [optional] 
+**Name** | **string** | Name of the project | 
 **IsFavorite** | **bool** | Indicates if the project is marked as favorite | 
 **AttributesScheme** | [**List&lt;CustomAttributeModel&gt;**](CustomAttributeModel.md) | Collection of the project attributes | [optional] 
 **TestPlansAttributesScheme** | [**List&lt;CustomAttributeModel&gt;**](CustomAttributeModel.md) | Collection of the project test plans attributes | [optional] 

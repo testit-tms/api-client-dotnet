@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Api
         /// <summary>
         /// Get test result by ID aggregated with previous results
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <returns>TestResultModel</returns>
         TestResultModel ApiV2TestResultsIdAggregatedGet(Guid id);
@@ -39,16 +39,16 @@ namespace TestIT.ApiClient.Api
         /// Get test result by ID aggregated with previous results
         /// </summary>
         /// <remarks>
-        ///
+        /// 
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <returns>ApiResponse of TestResultModel</returns>
         ApiResponse<TestResultModel> ApiV2TestResultsIdAggregatedGetWithHttpInfo(Guid id);
         /// <summary>
         /// Attach file to the test result
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="attachmentId">Attachment unique ID</param>
         /// <returns></returns>
@@ -58,9 +58,9 @@ namespace TestIT.ApiClient.Api
         /// Attach file to the test result
         /// </summary>
         /// <remarks>
-        ///
+        /// 
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="attachmentId">Attachment unique ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -68,7 +68,7 @@ namespace TestIT.ApiClient.Api
         /// <summary>
         /// Get test result attachments meta-information
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <returns>List&lt;AttachmentModel&gt;</returns>
         List<AttachmentModel> ApiV2TestResultsIdAttachmentsInfoGet(Guid id);
@@ -77,16 +77,16 @@ namespace TestIT.ApiClient.Api
         /// Get test result attachments meta-information
         /// </summary>
         /// <remarks>
-        ///
+        /// 
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <returns>ApiResponse of List&lt;AttachmentModel&gt;</returns>
         ApiResponse<List<AttachmentModel>> ApiV2TestResultsIdAttachmentsInfoGetWithHttpInfo(Guid id);
         /// <summary>
         /// Get test result by ID
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <returns>TestResultModel</returns>
         TestResultModel ApiV2TestResultsIdGet(Guid id);
@@ -95,16 +95,16 @@ namespace TestIT.ApiClient.Api
         /// Get test result by ID
         /// </summary>
         /// <remarks>
-        ///
+        /// 
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <returns>ApiResponse of TestResultModel</returns>
         ApiResponse<TestResultModel> ApiV2TestResultsIdGetWithHttpInfo(Guid id);
         /// <summary>
         /// Edit test result by ID
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="apiV2TestResultsIdPutRequest"> (optional)</param>
         /// <returns></returns>
@@ -114,9 +114,9 @@ namespace TestIT.ApiClient.Api
         /// Edit test result by ID
         /// </summary>
         /// <remarks>
-        ///
+        /// 
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="apiV2TestResultsIdPutRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -124,7 +124,7 @@ namespace TestIT.ApiClient.Api
         /// <summary>
         /// Search for test results
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -138,9 +138,9 @@ namespace TestIT.ApiClient.Api
         /// Search for test results
         /// </summary>
         /// <remarks>
-        ///
+        /// 
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -152,7 +152,7 @@ namespace TestIT.ApiClient.Api
         /// <summary>
         /// Search for test results and extract statistics
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <returns>TestResultsStatisticsGetModel</returns>
         TestResultsStatisticsGetModel ApiV2TestResultsStatisticsFilterPost(ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest));
@@ -161,9 +161,9 @@ namespace TestIT.ApiClient.Api
         /// Search for test results and extract statistics
         /// </summary>
         /// <remarks>
-        ///
+        /// 
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of TestResultsStatisticsGetModel</returns>
         ApiResponse<TestResultsStatisticsGetModel> ApiV2TestResultsStatisticsFilterPostWithHttpInfo(ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest));
@@ -173,7 +173,7 @@ namespace TestIT.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets testResultId  &lt;br&gt;User attaches a file  &lt;br&gt;System creates attachment and links it to the test result  &lt;br&gt;System returns attachment identifier
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="file">Select file (optional)</param>
         /// <returns>Guid</returns>
@@ -185,7 +185,7 @@ namespace TestIT.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets testResultId  &lt;br&gt;User attaches a file  &lt;br&gt;System creates attachment and links it to the test result  &lt;br&gt;System returns attachment identifier
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="file">Select file (optional)</param>
         /// <returns>ApiResponse of Guid</returns>
@@ -196,7 +196,7 @@ namespace TestIT.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets testResultId and attachmentId  &lt;br&gt;User attaches a file  &lt;br&gt;User runs method execution  &lt;br&gt;System deletes attachment and unlinks it from the test result  &lt;br&gt;System returns attachment identifier
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="attachmentId">Attachment internal identifier (guid format)</param>
         /// <returns></returns>
@@ -208,7 +208,7 @@ namespace TestIT.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets testResultId and attachmentId  &lt;br&gt;User attaches a file  &lt;br&gt;User runs method execution  &lt;br&gt;System deletes attachment and unlinks it from the test result  &lt;br&gt;System returns attachment identifier
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="attachmentId">Attachment internal identifier (guid format)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -219,7 +219,7 @@ namespace TestIT.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets attachmentId and testResultId  &lt;br&gt;[Optional] User sets resize configuration  &lt;br&gt;User runs method execution  &lt;br&gt;System search attachments by the attachmentId and the testResultId  &lt;br&gt;                      [Optional] If resize configuration is set, System resizes the attachment according to the resize                      configuration                    &lt;br&gt;[Optional] Otherwise, System does not resize the attachment  &lt;br&gt;System returns attachment as a file
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="attachmentId">Attachment internal identifier (guid format)</param>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="width">Width of the result image (optional)</param>
@@ -236,7 +236,7 @@ namespace TestIT.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets attachmentId and testResultId  &lt;br&gt;[Optional] User sets resize configuration  &lt;br&gt;User runs method execution  &lt;br&gt;System search attachments by the attachmentId and the testResultId  &lt;br&gt;                      [Optional] If resize configuration is set, System resizes the attachment according to the resize                      configuration                    &lt;br&gt;[Optional] Otherwise, System does not resize the attachment  &lt;br&gt;System returns attachment as a file
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="attachmentId">Attachment internal identifier (guid format)</param>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="width">Width of the result image (optional)</param>
@@ -252,7 +252,7 @@ namespace TestIT.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets attachmentId and testResultId  &lt;br&gt;User runs method execution  &lt;br&gt;System search attachment by the attachmentId and the testResultId  &lt;br&gt;System returns attachment data
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="attachmentId">Attachment internal identifier (guid format)</param>
         /// <returns>AttachmentModel</returns>
@@ -264,7 +264,7 @@ namespace TestIT.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets attachmentId and testResultId  &lt;br&gt;User runs method execution  &lt;br&gt;System search attachment by the attachmentId and the testResultId  &lt;br&gt;System returns attachment data
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="attachmentId">Attachment internal identifier (guid format)</param>
         /// <returns>ApiResponse of AttachmentModel</returns>
@@ -275,7 +275,7 @@ namespace TestIT.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets testResultId  &lt;br&gt;User runs method execution  &lt;br&gt;System search all attachments of the test result  &lt;br&gt;System returns attachments enumeration
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <returns>List&lt;AttachmentModel&gt;</returns>
         List<AttachmentModel> GetAttachments(Guid id);
@@ -286,7 +286,7 @@ namespace TestIT.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets testResultId  &lt;br&gt;User runs method execution  &lt;br&gt;System search all attachments of the test result  &lt;br&gt;System returns attachments enumeration
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <returns>ApiResponse of List&lt;AttachmentModel&gt;</returns>
         ApiResponse<List<AttachmentModel>> GetAttachmentsWithHttpInfo(Guid id);
@@ -303,9 +303,9 @@ namespace TestIT.ApiClient.Api
         /// Get test result by ID aggregated with previous results
         /// </summary>
         /// <remarks>
-        ///
+        /// 
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestResultModel</returns>
@@ -315,9 +315,9 @@ namespace TestIT.ApiClient.Api
         /// Get test result by ID aggregated with previous results
         /// </summary>
         /// <remarks>
-        ///
+        /// 
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestResultModel)</returns>
@@ -326,9 +326,9 @@ namespace TestIT.ApiClient.Api
         /// Attach file to the test result
         /// </summary>
         /// <remarks>
-        ///
+        /// 
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="attachmentId">Attachment unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -339,9 +339,9 @@ namespace TestIT.ApiClient.Api
         /// Attach file to the test result
         /// </summary>
         /// <remarks>
-        ///
+        /// 
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="attachmentId">Attachment unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -351,9 +351,9 @@ namespace TestIT.ApiClient.Api
         /// Get test result attachments meta-information
         /// </summary>
         /// <remarks>
-        ///
+        /// 
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AttachmentModel&gt;</returns>
@@ -363,9 +363,9 @@ namespace TestIT.ApiClient.Api
         /// Get test result attachments meta-information
         /// </summary>
         /// <remarks>
-        ///
+        /// 
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AttachmentModel&gt;)</returns>
@@ -374,9 +374,9 @@ namespace TestIT.ApiClient.Api
         /// Get test result by ID
         /// </summary>
         /// <remarks>
-        ///
+        /// 
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestResultModel</returns>
@@ -386,9 +386,9 @@ namespace TestIT.ApiClient.Api
         /// Get test result by ID
         /// </summary>
         /// <remarks>
-        ///
+        /// 
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestResultModel)</returns>
@@ -397,9 +397,9 @@ namespace TestIT.ApiClient.Api
         /// Edit test result by ID
         /// </summary>
         /// <remarks>
-        ///
+        /// 
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="apiV2TestResultsIdPutRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -410,9 +410,9 @@ namespace TestIT.ApiClient.Api
         /// Edit test result by ID
         /// </summary>
         /// <remarks>
-        ///
+        /// 
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="apiV2TestResultsIdPutRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -422,9 +422,9 @@ namespace TestIT.ApiClient.Api
         /// Search for test results
         /// </summary>
         /// <remarks>
-        ///
+        /// 
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -439,9 +439,9 @@ namespace TestIT.ApiClient.Api
         /// Search for test results
         /// </summary>
         /// <remarks>
-        ///
+        /// 
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -455,9 +455,9 @@ namespace TestIT.ApiClient.Api
         /// Search for test results and extract statistics
         /// </summary>
         /// <remarks>
-        ///
+        /// 
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestResultsStatisticsGetModel</returns>
@@ -467,9 +467,9 @@ namespace TestIT.ApiClient.Api
         /// Search for test results and extract statistics
         /// </summary>
         /// <remarks>
-        ///
+        /// 
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestResultsStatisticsGetModel)</returns>
@@ -480,7 +480,7 @@ namespace TestIT.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets testResultId  &lt;br&gt;User attaches a file  &lt;br&gt;System creates attachment and links it to the test result  &lt;br&gt;System returns attachment identifier
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="file">Select file (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -493,7 +493,7 @@ namespace TestIT.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets testResultId  &lt;br&gt;User attaches a file  &lt;br&gt;System creates attachment and links it to the test result  &lt;br&gt;System returns attachment identifier
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="file">Select file (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -505,7 +505,7 @@ namespace TestIT.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets testResultId and attachmentId  &lt;br&gt;User attaches a file  &lt;br&gt;User runs method execution  &lt;br&gt;System deletes attachment and unlinks it from the test result  &lt;br&gt;System returns attachment identifier
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="attachmentId">Attachment internal identifier (guid format)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -518,7 +518,7 @@ namespace TestIT.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets testResultId and attachmentId  &lt;br&gt;User attaches a file  &lt;br&gt;User runs method execution  &lt;br&gt;System deletes attachment and unlinks it from the test result  &lt;br&gt;System returns attachment identifier
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="attachmentId">Attachment internal identifier (guid format)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -530,7 +530,7 @@ namespace TestIT.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets attachmentId and testResultId  &lt;br&gt;[Optional] User sets resize configuration  &lt;br&gt;User runs method execution  &lt;br&gt;System search attachments by the attachmentId and the testResultId  &lt;br&gt;                      [Optional] If resize configuration is set, System resizes the attachment according to the resize                      configuration                    &lt;br&gt;[Optional] Otherwise, System does not resize the attachment  &lt;br&gt;System returns attachment as a file
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="attachmentId">Attachment internal identifier (guid format)</param>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="width">Width of the result image (optional)</param>
@@ -548,7 +548,7 @@ namespace TestIT.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets attachmentId and testResultId  &lt;br&gt;[Optional] User sets resize configuration  &lt;br&gt;User runs method execution  &lt;br&gt;System search attachments by the attachmentId and the testResultId  &lt;br&gt;                      [Optional] If resize configuration is set, System resizes the attachment according to the resize                      configuration                    &lt;br&gt;[Optional] Otherwise, System does not resize the attachment  &lt;br&gt;System returns attachment as a file
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="attachmentId">Attachment internal identifier (guid format)</param>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="width">Width of the result image (optional)</param>
@@ -565,7 +565,7 @@ namespace TestIT.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets attachmentId and testResultId  &lt;br&gt;User runs method execution  &lt;br&gt;System search attachment by the attachmentId and the testResultId  &lt;br&gt;System returns attachment data
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="attachmentId">Attachment internal identifier (guid format)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -578,7 +578,7 @@ namespace TestIT.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets attachmentId and testResultId  &lt;br&gt;User runs method execution  &lt;br&gt;System search attachment by the attachmentId and the testResultId  &lt;br&gt;System returns attachment data
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="attachmentId">Attachment internal identifier (guid format)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -590,7 +590,7 @@ namespace TestIT.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets testResultId  &lt;br&gt;User runs method execution  &lt;br&gt;System search all attachments of the test result  &lt;br&gt;System returns attachments enumeration
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AttachmentModel&gt;</returns>
@@ -602,7 +602,7 @@ namespace TestIT.ApiClient.Api
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User sets testResultId  &lt;br&gt;User runs method execution  &lt;br&gt;System search all attachments of the test result  &lt;br&gt;System returns attachments enumeration
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AttachmentModel&gt;)</returns>
@@ -623,7 +623,7 @@ namespace TestIT.ApiClient.Api
     /// </summary>
     public partial class TestResultsApi : IDisposable, ITestResultsApi
     {
-        private ExceptionFactory _exceptionFactory = (name, response) => null;
+        private TestIT.ApiClient.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TestResultsApi"/> class.
@@ -646,10 +646,10 @@ namespace TestIT.ApiClient.Api
         public TestResultsApi(string basePath)
         {
             this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
-                GlobalConfiguration.Instance,
-                new Configuration { BasePath = basePath }
+                TestIT.ApiClient.Client.GlobalConfiguration.Instance,
+                new TestIT.ApiClient.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new TestIT.ApiClient.Client.ApiClient(this.Configuration.BasePath);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
             this.ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
@@ -663,15 +663,15 @@ namespace TestIT.ApiClient.Api
         /// <param name="configuration">An instance of Configuration.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
-        public TestResultsApi(Configuration configuration)
+        public TestResultsApi(TestIT.ApiClient.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
-                GlobalConfiguration.Instance,
+                TestIT.ApiClient.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new TestIT.ApiClient.Client.ApiClient(this.Configuration.BasePath);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
             ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
@@ -710,10 +710,10 @@ namespace TestIT.ApiClient.Api
             if (client == null) throw new ArgumentNullException("client");
 
             this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
-                GlobalConfiguration.Instance,
-                new Configuration { BasePath = basePath }
+                TestIT.ApiClient.Client.GlobalConfiguration.Instance,
+                new TestIT.ApiClient.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new TestIT.ApiClient.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
             this.ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
@@ -731,16 +731,16 @@ namespace TestIT.ApiClient.Api
         /// Some configuration settings will not be applied without passing an HttpClientHandler.
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
-        public TestResultsApi(HttpClient client, Configuration configuration, HttpClientHandler handler = null)
+        public TestResultsApi(HttpClient client, TestIT.ApiClient.Client.Configuration configuration, HttpClientHandler handler = null)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
             if (client == null) throw new ArgumentNullException("client");
 
             this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
-                GlobalConfiguration.Instance,
+                TestIT.ApiClient.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new TestIT.ApiClient.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
             ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
@@ -754,7 +754,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public TestResultsApi(ISynchronousClient client, IAsynchronousClient asyncClient, IReadableConfiguration configuration)
+        public TestResultsApi(TestIT.ApiClient.Client.ISynchronousClient client, TestIT.ApiClient.Client.IAsynchronousClient asyncClient, TestIT.ApiClient.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -777,17 +777,17 @@ namespace TestIT.ApiClient.Api
         /// <summary>
         /// Holds the ApiClient if created
         /// </summary>
-        public Client.ApiClient ApiClient { get; set; } = null;
+        public TestIT.ApiClient.Client.ApiClient ApiClient { get; set; } = null;
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public IAsynchronousClient AsynchronousClient { get; set; }
+        public TestIT.ApiClient.Client.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public ISynchronousClient Client { get; set; }
+        public TestIT.ApiClient.Client.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -802,12 +802,12 @@ namespace TestIT.ApiClient.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public IReadableConfiguration Configuration { get; set; }
+        public TestIT.ApiClient.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public ExceptionFactory ExceptionFactory
+        public TestIT.ApiClient.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -821,26 +821,26 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get test result by ID aggregated with previous results
+        /// Get test result by ID aggregated with previous results 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <returns>TestResultModel</returns>
         public TestResultModel ApiV2TestResultsIdAggregatedGet(Guid id)
         {
-            ApiResponse<TestResultModel> localVarResponse = ApiV2TestResultsIdAggregatedGetWithHttpInfo(id);
+            TestIT.ApiClient.Client.ApiResponse<TestResultModel> localVarResponse = ApiV2TestResultsIdAggregatedGetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get test result by ID aggregated with previous results
+        /// Get test result by ID aggregated with previous results 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <returns>ApiResponse of TestResultModel</returns>
-        public ApiResponse<TestResultModel> ApiV2TestResultsIdAggregatedGetWithHttpInfo(Guid id)
+        public TestIT.ApiClient.Client.ApiResponse<TestResultModel> ApiV2TestResultsIdAggregatedGetWithHttpInfo(Guid id)
         {
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -850,13 +850,13 @@ namespace TestIT.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -877,29 +877,29 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get test result by ID aggregated with previous results
+        /// Get test result by ID aggregated with previous results 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestResultModel</returns>
         public async System.Threading.Tasks.Task<TestResultModel> ApiV2TestResultsIdAggregatedGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            ApiResponse<TestResultModel> localVarResponse = await ApiV2TestResultsIdAggregatedGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<TestResultModel> localVarResponse = await ApiV2TestResultsIdAggregatedGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get test result by ID aggregated with previous results
+        /// Get test result by ID aggregated with previous results 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestResultModel)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TestResultModel>> ApiV2TestResultsIdAggregatedGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TestResultModel>> ApiV2TestResultsIdAggregatedGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -910,13 +910,13 @@ namespace TestIT.ApiClient.Api
             };
 
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -938,9 +938,9 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Attach file to the test result
+        /// Attach file to the test result 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="attachmentId">Attachment unique ID</param>
         /// <returns></returns>
@@ -950,15 +950,15 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Attach file to the test result
+        /// Attach file to the test result 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="attachmentId">Attachment unique ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> ApiV2TestResultsIdAttachmentsAttachmentIdPutWithHttpInfo(Guid id, Guid attachmentId)
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2TestResultsIdAttachmentsAttachmentIdPutWithHttpInfo(Guid id, Guid attachmentId)
         {
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -968,14 +968,14 @@ namespace TestIT.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.PathParameters.Add("attachmentId", ClientUtils.ParameterToString(attachmentId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("attachmentId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(attachmentId)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -996,9 +996,9 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Attach file to the test result
+        /// Attach file to the test result 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="attachmentId">Attachment unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1009,17 +1009,17 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Attach file to the test result
+        /// Attach file to the test result 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="attachmentId">Attachment unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestResultsIdAttachmentsAttachmentIdPutWithHttpInfoAsync(Guid id, Guid attachmentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2TestResultsIdAttachmentsAttachmentIdPutWithHttpInfoAsync(Guid id, Guid attachmentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1030,14 +1030,14 @@ namespace TestIT.ApiClient.Api
             };
 
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.PathParameters.Add("attachmentId", ClientUtils.ParameterToString(attachmentId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("attachmentId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(attachmentId)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1059,26 +1059,26 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get test result attachments meta-information
+        /// Get test result attachments meta-information 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <returns>List&lt;AttachmentModel&gt;</returns>
         public List<AttachmentModel> ApiV2TestResultsIdAttachmentsInfoGet(Guid id)
         {
-            ApiResponse<List<AttachmentModel>> localVarResponse = ApiV2TestResultsIdAttachmentsInfoGetWithHttpInfo(id);
+            TestIT.ApiClient.Client.ApiResponse<List<AttachmentModel>> localVarResponse = ApiV2TestResultsIdAttachmentsInfoGetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get test result attachments meta-information
+        /// Get test result attachments meta-information 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <returns>ApiResponse of List&lt;AttachmentModel&gt;</returns>
-        public ApiResponse<List<AttachmentModel>> ApiV2TestResultsIdAttachmentsInfoGetWithHttpInfo(Guid id)
+        public TestIT.ApiClient.Client.ApiResponse<List<AttachmentModel>> ApiV2TestResultsIdAttachmentsInfoGetWithHttpInfo(Guid id)
         {
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1088,13 +1088,13 @@ namespace TestIT.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1115,29 +1115,29 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get test result attachments meta-information
+        /// Get test result attachments meta-information 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AttachmentModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<AttachmentModel>> ApiV2TestResultsIdAttachmentsInfoGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            ApiResponse<List<AttachmentModel>> localVarResponse = await ApiV2TestResultsIdAttachmentsInfoGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<AttachmentModel>> localVarResponse = await ApiV2TestResultsIdAttachmentsInfoGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get test result attachments meta-information
+        /// Get test result attachments meta-information 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AttachmentModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<AttachmentModel>>> ApiV2TestResultsIdAttachmentsInfoGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<AttachmentModel>>> ApiV2TestResultsIdAttachmentsInfoGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1148,13 +1148,13 @@ namespace TestIT.ApiClient.Api
             };
 
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1176,26 +1176,26 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get test result by ID
+        /// Get test result by ID 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <returns>TestResultModel</returns>
         public TestResultModel ApiV2TestResultsIdGet(Guid id)
         {
-            ApiResponse<TestResultModel> localVarResponse = ApiV2TestResultsIdGetWithHttpInfo(id);
+            TestIT.ApiClient.Client.ApiResponse<TestResultModel> localVarResponse = ApiV2TestResultsIdGetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get test result by ID
+        /// Get test result by ID 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <returns>ApiResponse of TestResultModel</returns>
-        public ApiResponse<TestResultModel> ApiV2TestResultsIdGetWithHttpInfo(Guid id)
+        public TestIT.ApiClient.Client.ApiResponse<TestResultModel> ApiV2TestResultsIdGetWithHttpInfo(Guid id)
         {
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1205,13 +1205,13 @@ namespace TestIT.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1232,29 +1232,29 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get test result by ID
+        /// Get test result by ID 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestResultModel</returns>
         public async System.Threading.Tasks.Task<TestResultModel> ApiV2TestResultsIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            ApiResponse<TestResultModel> localVarResponse = await ApiV2TestResultsIdGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<TestResultModel> localVarResponse = await ApiV2TestResultsIdGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get test result by ID
+        /// Get test result by ID 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestResultModel)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TestResultModel>> ApiV2TestResultsIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TestResultModel>> ApiV2TestResultsIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1265,13 +1265,13 @@ namespace TestIT.ApiClient.Api
             };
 
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1293,9 +1293,9 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Edit test result by ID
+        /// Edit test result by ID 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="apiV2TestResultsIdPutRequest"> (optional)</param>
         /// <returns></returns>
@@ -1305,15 +1305,15 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Edit test result by ID
+        /// Edit test result by ID 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="apiV2TestResultsIdPutRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> ApiV2TestResultsIdPutWithHttpInfo(Guid id, ApiV2TestResultsIdPutRequest apiV2TestResultsIdPutRequest = default(ApiV2TestResultsIdPutRequest))
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2TestResultsIdPutWithHttpInfo(Guid id, ApiV2TestResultsIdPutRequest apiV2TestResultsIdPutRequest = default(ApiV2TestResultsIdPutRequest))
         {
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1324,13 +1324,13 @@ namespace TestIT.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = apiV2TestResultsIdPutRequest;
 
             // authentication (Bearer or PrivateToken) required
@@ -1352,9 +1352,9 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Edit test result by ID
+        /// Edit test result by ID 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="apiV2TestResultsIdPutRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1365,17 +1365,17 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Edit test result by ID
+        /// Edit test result by ID 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="apiV2TestResultsIdPutRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestResultsIdPutWithHttpInfoAsync(Guid id, ApiV2TestResultsIdPutRequest apiV2TestResultsIdPutRequest = default(ApiV2TestResultsIdPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2TestResultsIdPutWithHttpInfoAsync(Guid id, ApiV2TestResultsIdPutRequest apiV2TestResultsIdPutRequest = default(ApiV2TestResultsIdPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1387,13 +1387,13 @@ namespace TestIT.ApiClient.Api
             };
 
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = apiV2TestResultsIdPutRequest;
 
             // authentication (Bearer or PrivateToken) required
@@ -1416,9 +1416,9 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search for test results
+        /// Search for test results 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -1428,14 +1428,14 @@ namespace TestIT.ApiClient.Api
         /// <returns>List&lt;TestResultShortGetModel&gt;</returns>
         public List<TestResultShortGetModel> ApiV2TestResultsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest))
         {
-            ApiResponse<List<TestResultShortGetModel>> localVarResponse = ApiV2TestResultsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2TestResultsSearchPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<List<TestResultShortGetModel>> localVarResponse = ApiV2TestResultsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2TestResultsSearchPostRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Search for test results
+        /// Search for test results 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -1443,9 +1443,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of List&lt;TestResultShortGetModel&gt;</returns>
-        public ApiResponse<List<TestResultShortGetModel>> ApiV2TestResultsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<List<TestResultShortGetModel>> ApiV2TestResultsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest))
         {
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1456,31 +1456,31 @@ namespace TestIT.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (skip != null)
             {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "Skip", skip));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
             }
             if (take != null)
             {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "Take", take));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
             }
             if (orderBy != null)
             {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
             }
             if (searchField != null)
             {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
             }
             if (searchValue != null)
             {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
             localVarRequestOptions.Data = apiV2TestResultsSearchPostRequest;
 
@@ -1503,9 +1503,9 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search for test results
+        /// Search for test results 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -1516,14 +1516,14 @@ namespace TestIT.ApiClient.Api
         /// <returns>Task of List&lt;TestResultShortGetModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<TestResultShortGetModel>> ApiV2TestResultsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            ApiResponse<List<TestResultShortGetModel>> localVarResponse = await ApiV2TestResultsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, apiV2TestResultsSearchPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<TestResultShortGetModel>> localVarResponse = await ApiV2TestResultsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, apiV2TestResultsSearchPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Search for test results
+        /// Search for test results 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -1532,10 +1532,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestResultShortGetModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<TestResultShortGetModel>>> ApiV2TestResultsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestResultShortGetModel>>> ApiV2TestResultsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1547,31 +1547,31 @@ namespace TestIT.ApiClient.Api
             };
 
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (skip != null)
             {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "Skip", skip));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
             }
             if (take != null)
             {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "Take", take));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
             }
             if (orderBy != null)
             {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
             }
             if (searchField != null)
             {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
             }
             if (searchValue != null)
             {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
             localVarRequestOptions.Data = apiV2TestResultsSearchPostRequest;
 
@@ -1595,26 +1595,26 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search for test results and extract statistics
+        /// Search for test results and extract statistics 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <returns>TestResultsStatisticsGetModel</returns>
         public TestResultsStatisticsGetModel ApiV2TestResultsStatisticsFilterPost(ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest))
         {
-            ApiResponse<TestResultsStatisticsGetModel> localVarResponse = ApiV2TestResultsStatisticsFilterPostWithHttpInfo(apiV2TestResultsSearchPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<TestResultsStatisticsGetModel> localVarResponse = ApiV2TestResultsStatisticsFilterPostWithHttpInfo(apiV2TestResultsSearchPostRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Search for test results and extract statistics
+        /// Search for test results and extract statistics 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of TestResultsStatisticsGetModel</returns>
-        public ApiResponse<TestResultsStatisticsGetModel> ApiV2TestResultsStatisticsFilterPostWithHttpInfo(ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<TestResultsStatisticsGetModel> ApiV2TestResultsStatisticsFilterPostWithHttpInfo(ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest))
         {
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1625,10 +1625,10 @@ namespace TestIT.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = apiV2TestResultsSearchPostRequest;
@@ -1652,29 +1652,29 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search for test results and extract statistics
+        /// Search for test results and extract statistics 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestResultsStatisticsGetModel</returns>
         public async System.Threading.Tasks.Task<TestResultsStatisticsGetModel> ApiV2TestResultsStatisticsFilterPostAsync(ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            ApiResponse<TestResultsStatisticsGetModel> localVarResponse = await ApiV2TestResultsStatisticsFilterPostWithHttpInfoAsync(apiV2TestResultsSearchPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<TestResultsStatisticsGetModel> localVarResponse = await ApiV2TestResultsStatisticsFilterPostWithHttpInfoAsync(apiV2TestResultsSearchPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Search for test results and extract statistics
+        /// Search for test results and extract statistics 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2TestResultsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestResultsStatisticsGetModel)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TestResultsStatisticsGetModel>> ApiV2TestResultsStatisticsFilterPostWithHttpInfoAsync(ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TestResultsStatisticsGetModel>> ApiV2TestResultsStatisticsFilterPostWithHttpInfoAsync(ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = default(ApiV2TestResultsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1686,10 +1686,10 @@ namespace TestIT.ApiClient.Api
             };
 
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = apiV2TestResultsSearchPostRequest;
@@ -1716,26 +1716,26 @@ namespace TestIT.ApiClient.Api
         /// <summary>
         /// Upload and link attachment to TestResult &lt;br&gt;Use case  &lt;br&gt;User sets testResultId  &lt;br&gt;User attaches a file  &lt;br&gt;System creates attachment and links it to the test result  &lt;br&gt;System returns attachment identifier
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="file">Select file (optional)</param>
         /// <returns>Guid</returns>
         public Guid CreateAttachment(Guid id, FileParameter file = default(FileParameter))
         {
-            ApiResponse<Guid> localVarResponse = CreateAttachmentWithHttpInfo(id, file);
+            TestIT.ApiClient.Client.ApiResponse<Guid> localVarResponse = CreateAttachmentWithHttpInfo(id, file);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Upload and link attachment to TestResult &lt;br&gt;Use case  &lt;br&gt;User sets testResultId  &lt;br&gt;User attaches a file  &lt;br&gt;System creates attachment and links it to the test result  &lt;br&gt;System returns attachment identifier
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="file">Select file (optional)</param>
         /// <returns>ApiResponse of Guid</returns>
-        public ApiResponse<Guid> CreateAttachmentWithHttpInfo(Guid id, FileParameter file = default(FileParameter))
+        public TestIT.ApiClient.Client.ApiResponse<Guid> CreateAttachmentWithHttpInfo(Guid id, FileParameter file = default(FileParameter))
         {
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "multipart/form-data"
@@ -1746,13 +1746,13 @@ namespace TestIT.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (file != null)
             {
                 localVarRequestOptions.FileParameters.Add("file", file);
@@ -1779,29 +1779,29 @@ namespace TestIT.ApiClient.Api
         /// <summary>
         /// Upload and link attachment to TestResult &lt;br&gt;Use case  &lt;br&gt;User sets testResultId  &lt;br&gt;User attaches a file  &lt;br&gt;System creates attachment and links it to the test result  &lt;br&gt;System returns attachment identifier
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="file">Select file (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Guid</returns>
         public async System.Threading.Tasks.Task<Guid> CreateAttachmentAsync(Guid id, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            ApiResponse<Guid> localVarResponse = await CreateAttachmentWithHttpInfoAsync(id, file, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<Guid> localVarResponse = await CreateAttachmentWithHttpInfoAsync(id, file, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Upload and link attachment to TestResult &lt;br&gt;Use case  &lt;br&gt;User sets testResultId  &lt;br&gt;User attaches a file  &lt;br&gt;System creates attachment and links it to the test result  &lt;br&gt;System returns attachment identifier
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="file">Select file (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Guid)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Guid>> CreateAttachmentWithHttpInfoAsync(Guid id, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Guid>> CreateAttachmentWithHttpInfoAsync(Guid id, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "multipart/form-data"
@@ -1813,13 +1813,13 @@ namespace TestIT.ApiClient.Api
             };
 
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (file != null)
             {
                 localVarRequestOptions.FileParameters.Add("file", file);
@@ -1847,7 +1847,7 @@ namespace TestIT.ApiClient.Api
         /// <summary>
         /// Remove attachment and unlink from TestResult &lt;br&gt;Use case  &lt;br&gt;User sets testResultId and attachmentId  &lt;br&gt;User attaches a file  &lt;br&gt;User runs method execution  &lt;br&gt;System deletes attachment and unlinks it from the test result  &lt;br&gt;System returns attachment identifier
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="attachmentId">Attachment internal identifier (guid format)</param>
         /// <returns></returns>
@@ -1859,13 +1859,13 @@ namespace TestIT.ApiClient.Api
         /// <summary>
         /// Remove attachment and unlink from TestResult &lt;br&gt;Use case  &lt;br&gt;User sets testResultId and attachmentId  &lt;br&gt;User attaches a file  &lt;br&gt;User runs method execution  &lt;br&gt;System deletes attachment and unlinks it from the test result  &lt;br&gt;System returns attachment identifier
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="attachmentId">Attachment internal identifier (guid format)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteAttachmentWithHttpInfo(Guid id, Guid attachmentId)
+        public TestIT.ApiClient.Client.ApiResponse<Object> DeleteAttachmentWithHttpInfo(Guid id, Guid attachmentId)
         {
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1875,14 +1875,14 @@ namespace TestIT.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.PathParameters.Add("attachmentId", ClientUtils.ParameterToString(attachmentId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("attachmentId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(attachmentId)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1905,7 +1905,7 @@ namespace TestIT.ApiClient.Api
         /// <summary>
         /// Remove attachment and unlink from TestResult &lt;br&gt;Use case  &lt;br&gt;User sets testResultId and attachmentId  &lt;br&gt;User attaches a file  &lt;br&gt;User runs method execution  &lt;br&gt;System deletes attachment and unlinks it from the test result  &lt;br&gt;System returns attachment identifier
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="attachmentId">Attachment internal identifier (guid format)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1918,15 +1918,15 @@ namespace TestIT.ApiClient.Api
         /// <summary>
         /// Remove attachment and unlink from TestResult &lt;br&gt;Use case  &lt;br&gt;User sets testResultId and attachmentId  &lt;br&gt;User attaches a file  &lt;br&gt;User runs method execution  &lt;br&gt;System deletes attachment and unlinks it from the test result  &lt;br&gt;System returns attachment identifier
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="attachmentId">Attachment internal identifier (guid format)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteAttachmentWithHttpInfoAsync(Guid id, Guid attachmentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteAttachmentWithHttpInfoAsync(Guid id, Guid attachmentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1937,14 +1937,14 @@ namespace TestIT.ApiClient.Api
             };
 
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.PathParameters.Add("attachmentId", ClientUtils.ParameterToString(attachmentId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("attachmentId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(attachmentId)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1968,7 +1968,7 @@ namespace TestIT.ApiClient.Api
         /// <summary>
         /// Get attachment of TestResult &lt;br&gt;Use case  &lt;br&gt;User sets attachmentId and testResultId  &lt;br&gt;[Optional] User sets resize configuration  &lt;br&gt;User runs method execution  &lt;br&gt;System search attachments by the attachmentId and the testResultId  &lt;br&gt;                      [Optional] If resize configuration is set, System resizes the attachment according to the resize                      configuration                    &lt;br&gt;[Optional] Otherwise, System does not resize the attachment  &lt;br&gt;System returns attachment as a file
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="attachmentId">Attachment internal identifier (guid format)</param>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="width">Width of the result image (optional)</param>
@@ -1985,7 +1985,7 @@ namespace TestIT.ApiClient.Api
         /// <summary>
         /// Get attachment of TestResult &lt;br&gt;Use case  &lt;br&gt;User sets attachmentId and testResultId  &lt;br&gt;[Optional] User sets resize configuration  &lt;br&gt;User runs method execution  &lt;br&gt;System search attachments by the attachmentId and the testResultId  &lt;br&gt;                      [Optional] If resize configuration is set, System resizes the attachment according to the resize                      configuration                    &lt;br&gt;[Optional] Otherwise, System does not resize the attachment  &lt;br&gt;System returns attachment as a file
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="attachmentId">Attachment internal identifier (guid format)</param>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="width">Width of the result image (optional)</param>
@@ -1994,9 +1994,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="backgroundColor">Color of the background if the &#x60;resizeType&#x60; is &#x60;AddBackgroundStripes&#x60; (optional)</param>
         /// <param name="preview">If image must be converted to a preview (lower quality, no animation) (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DownloadAttachmentWithHttpInfo(Guid attachmentId, Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?))
+        public TestIT.ApiClient.Client.ApiResponse<Object> DownloadAttachmentWithHttpInfo(Guid attachmentId, Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?))
         {
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2006,33 +2006,33 @@ namespace TestIT.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("attachmentId", ClientUtils.ParameterToString(attachmentId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("id", ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("attachmentId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(attachmentId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (width != null)
             {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "width", width));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "width", width));
             }
             if (height != null)
             {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "height", height));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "height", height));
             }
             if (resizeType != null)
             {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "resizeType", resizeType));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "resizeType", resizeType));
             }
             if (backgroundColor != null)
             {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "backgroundColor", backgroundColor));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "backgroundColor", backgroundColor));
             }
             if (preview != null)
             {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "preview", preview));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "preview", preview));
             }
 
             // authentication (Bearer or PrivateToken) required
@@ -2056,7 +2056,7 @@ namespace TestIT.ApiClient.Api
         /// <summary>
         /// Get attachment of TestResult &lt;br&gt;Use case  &lt;br&gt;User sets attachmentId and testResultId  &lt;br&gt;[Optional] User sets resize configuration  &lt;br&gt;User runs method execution  &lt;br&gt;System search attachments by the attachmentId and the testResultId  &lt;br&gt;                      [Optional] If resize configuration is set, System resizes the attachment according to the resize                      configuration                    &lt;br&gt;[Optional] Otherwise, System does not resize the attachment  &lt;br&gt;System returns attachment as a file
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="attachmentId">Attachment internal identifier (guid format)</param>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="width">Width of the result image (optional)</param>
@@ -2074,7 +2074,7 @@ namespace TestIT.ApiClient.Api
         /// <summary>
         /// Get attachment of TestResult &lt;br&gt;Use case  &lt;br&gt;User sets attachmentId and testResultId  &lt;br&gt;[Optional] User sets resize configuration  &lt;br&gt;User runs method execution  &lt;br&gt;System search attachments by the attachmentId and the testResultId  &lt;br&gt;                      [Optional] If resize configuration is set, System resizes the attachment according to the resize                      configuration                    &lt;br&gt;[Optional] Otherwise, System does not resize the attachment  &lt;br&gt;System returns attachment as a file
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="attachmentId">Attachment internal identifier (guid format)</param>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="width">Width of the result image (optional)</param>
@@ -2084,10 +2084,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="preview">If image must be converted to a preview (lower quality, no animation) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DownloadAttachmentWithHttpInfoAsync(Guid attachmentId, Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DownloadAttachmentWithHttpInfoAsync(Guid attachmentId, Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2098,33 +2098,33 @@ namespace TestIT.ApiClient.Api
             };
 
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("attachmentId", ClientUtils.ParameterToString(attachmentId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("id", ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("attachmentId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(attachmentId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (width != null)
             {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "width", width));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "width", width));
             }
             if (height != null)
             {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "height", height));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "height", height));
             }
             if (resizeType != null)
             {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "resizeType", resizeType));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "resizeType", resizeType));
             }
             if (backgroundColor != null)
             {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "backgroundColor", backgroundColor));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "backgroundColor", backgroundColor));
             }
             if (preview != null)
             {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "preview", preview));
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "preview", preview));
             }
 
             // authentication (Bearer or PrivateToken) required
@@ -2149,26 +2149,26 @@ namespace TestIT.ApiClient.Api
         /// <summary>
         /// Get Metadata of TestResult&#39;s attachment &lt;br&gt;Use case  &lt;br&gt;User sets attachmentId and testResultId  &lt;br&gt;User runs method execution  &lt;br&gt;System search attachment by the attachmentId and the testResultId  &lt;br&gt;System returns attachment data
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="attachmentId">Attachment internal identifier (guid format)</param>
         /// <returns>AttachmentModel</returns>
         public AttachmentModel GetAttachment(Guid id, Guid attachmentId)
         {
-            ApiResponse<AttachmentModel> localVarResponse = GetAttachmentWithHttpInfo(id, attachmentId);
+            TestIT.ApiClient.Client.ApiResponse<AttachmentModel> localVarResponse = GetAttachmentWithHttpInfo(id, attachmentId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get Metadata of TestResult&#39;s attachment &lt;br&gt;Use case  &lt;br&gt;User sets attachmentId and testResultId  &lt;br&gt;User runs method execution  &lt;br&gt;System search attachment by the attachmentId and the testResultId  &lt;br&gt;System returns attachment data
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="attachmentId">Attachment internal identifier (guid format)</param>
         /// <returns>ApiResponse of AttachmentModel</returns>
-        public ApiResponse<AttachmentModel> GetAttachmentWithHttpInfo(Guid id, Guid attachmentId)
+        public TestIT.ApiClient.Client.ApiResponse<AttachmentModel> GetAttachmentWithHttpInfo(Guid id, Guid attachmentId)
         {
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2178,14 +2178,14 @@ namespace TestIT.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.PathParameters.Add("attachmentId", ClientUtils.ParameterToString(attachmentId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("attachmentId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(attachmentId)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2208,29 +2208,29 @@ namespace TestIT.ApiClient.Api
         /// <summary>
         /// Get Metadata of TestResult&#39;s attachment &lt;br&gt;Use case  &lt;br&gt;User sets attachmentId and testResultId  &lt;br&gt;User runs method execution  &lt;br&gt;System search attachment by the attachmentId and the testResultId  &lt;br&gt;System returns attachment data
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="attachmentId">Attachment internal identifier (guid format)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AttachmentModel</returns>
         public async System.Threading.Tasks.Task<AttachmentModel> GetAttachmentAsync(Guid id, Guid attachmentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            ApiResponse<AttachmentModel> localVarResponse = await GetAttachmentWithHttpInfoAsync(id, attachmentId, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<AttachmentModel> localVarResponse = await GetAttachmentWithHttpInfoAsync(id, attachmentId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get Metadata of TestResult&#39;s attachment &lt;br&gt;Use case  &lt;br&gt;User sets attachmentId and testResultId  &lt;br&gt;User runs method execution  &lt;br&gt;System search attachment by the attachmentId and the testResultId  &lt;br&gt;System returns attachment data
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="attachmentId">Attachment internal identifier (guid format)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AttachmentModel)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<AttachmentModel>> GetAttachmentWithHttpInfoAsync(Guid id, Guid attachmentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<AttachmentModel>> GetAttachmentWithHttpInfoAsync(Guid id, Guid attachmentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2241,14 +2241,14 @@ namespace TestIT.ApiClient.Api
             };
 
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.PathParameters.Add("attachmentId", ClientUtils.ParameterToString(attachmentId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("attachmentId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(attachmentId)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2272,24 +2272,24 @@ namespace TestIT.ApiClient.Api
         /// <summary>
         /// Get all attachments of TestResult &lt;br&gt;Use case  &lt;br&gt;User sets testResultId  &lt;br&gt;User runs method execution  &lt;br&gt;System search all attachments of the test result  &lt;br&gt;System returns attachments enumeration
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <returns>List&lt;AttachmentModel&gt;</returns>
         public List<AttachmentModel> GetAttachments(Guid id)
         {
-            ApiResponse<List<AttachmentModel>> localVarResponse = GetAttachmentsWithHttpInfo(id);
+            TestIT.ApiClient.Client.ApiResponse<List<AttachmentModel>> localVarResponse = GetAttachmentsWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get all attachments of TestResult &lt;br&gt;Use case  &lt;br&gt;User sets testResultId  &lt;br&gt;User runs method execution  &lt;br&gt;System search all attachments of the test result  &lt;br&gt;System returns attachments enumeration
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <returns>ApiResponse of List&lt;AttachmentModel&gt;</returns>
-        public ApiResponse<List<AttachmentModel>> GetAttachmentsWithHttpInfo(Guid id)
+        public TestIT.ApiClient.Client.ApiResponse<List<AttachmentModel>> GetAttachmentsWithHttpInfo(Guid id)
         {
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2299,13 +2299,13 @@ namespace TestIT.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2328,27 +2328,27 @@ namespace TestIT.ApiClient.Api
         /// <summary>
         /// Get all attachments of TestResult &lt;br&gt;Use case  &lt;br&gt;User sets testResultId  &lt;br&gt;User runs method execution  &lt;br&gt;System search all attachments of the test result  &lt;br&gt;System returns attachments enumeration
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AttachmentModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<AttachmentModel>> GetAttachmentsAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            ApiResponse<List<AttachmentModel>> localVarResponse = await GetAttachmentsWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<AttachmentModel>> localVarResponse = await GetAttachmentsWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get all attachments of TestResult &lt;br&gt;Use case  &lt;br&gt;User sets testResultId  &lt;br&gt;User runs method execution  &lt;br&gt;System search all attachments of the test result  &lt;br&gt;System returns attachments enumeration
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result internal identifier (guid format)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AttachmentModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<AttachmentModel>>> GetAttachmentsWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<AttachmentModel>>> GetAttachmentsWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2359,13 +2359,13 @@ namespace TestIT.ApiClient.Api
             };
 
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))

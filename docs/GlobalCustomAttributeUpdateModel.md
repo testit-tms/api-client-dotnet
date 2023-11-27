@@ -1,4 +1,4 @@
-# TestIt.Client.Model.GlobalCustomAttributeUpdateModel
+# TestIt.ApiClient.Model.GlobalCustomAttributeUpdateModel
 
 ## Properties
 

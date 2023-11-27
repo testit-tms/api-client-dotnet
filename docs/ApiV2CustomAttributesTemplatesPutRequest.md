@@ -1,4 +1,4 @@
-# TestIt.Client.Model.ApiV2CustomAttributesTemplatesPutRequest
+# TestIt.ApiClient.Model.ApiV2CustomAttributesTemplatesPutRequest
 
 ## Properties
 

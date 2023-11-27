@@ -1,11 +1,11 @@
-# TestIt.Client.Model.TestRunShortGetModel
+# TestIt.ApiClient.Model.TestRunShortGetModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** | Unique ID of the test run | 
-**Name** | **string** | Name of the test run | [optional] 
+**Name** | **string** | Name of the test run | 
 **State** | **TestRunState** |  | 
 **CreatedDate** | **DateTime** | Date when the test run was created | 
 **StartedDate** | **DateTime?** | Date when the test run was started | [optional] 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **ModifiedById** | **Guid?** | Unique ID of user who modified the test run last time | [optional] 
 **IsDeleted** | **bool** | Is the test run is deleted | 
 **AutoTestsCount** | **int** | Number of AutoTests run in the test run | 
-**Statistics** | [**TestRunShortGetModelStatistics**](TestRunShortGetModelStatistics.md) |  | [optional] 
+**Statistics** | [**TestRunShortGetModelStatistics**](TestRunShortGetModelStatistics.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -123,17 +123,17 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Results == input.Results ||
                     this.Results != null &&
                     input.Results != null &&
                     this.Results.SequenceEqual(input.Results)
-                ) &&
+                ) && 
                 (
                     this.MoreResultsAvailable == input.MoreResultsAvailable ||
                     this.MoreResultsAvailable.Equals(input.MoreResultsAvailable)
-                ) &&
+                ) && 
                 (
                     this.AvailableResourceTypes == input.AvailableResourceTypes ||
                     this.AvailableResourceTypes != null &&
@@ -169,7 +169,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -1,4 +1,4 @@
-# TestIt.Client.Model.CreateAndFillByWorkItemsRequest
+# TestIt.ApiClient.Model.CreateAndFillByWorkItemsRequest
 
 ## Properties
 

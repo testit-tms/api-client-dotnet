@@ -129,29 +129,29 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.CreatedByIds == input.CreatedByIds ||
                     this.CreatedByIds != null &&
                     input.CreatedByIds != null &&
                     this.CreatedByIds.SequenceEqual(input.CreatedByIds)
-                ) &&
+                ) && 
                 (
                     this.ModifiedByIds == input.ModifiedByIds ||
                     this.ModifiedByIds != null &&
                     input.ModifiedByIds != null &&
                     this.ModifiedByIds.SequenceEqual(input.ModifiedByIds)
-                ) &&
+                ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) &&
+                ) && 
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
@@ -197,7 +197,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

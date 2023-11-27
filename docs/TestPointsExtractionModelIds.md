@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestPointsExtractionModelIds
+# TestIt.ApiClient.Model.TestPointsExtractionModelIds
 Extraction parameters for test points
 
 ## Properties

@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestSuiteWithChildrenModel
+# TestIt.ApiClient.Model.TestSuiteWithChildrenModel
 
 ## Properties
 
@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **TesterId** | **Guid?** |  | [optional] 
 **ParentId** | **Guid?** |  | [optional] 
 **TestPlanId** | **Guid** |  | 
-**Name** | **string** |  | [optional] 
+**Name** | **string** |  | 
 **Id** | **Guid** | Unique ID of the entity | 
 **IsDeleted** | **bool** | Indicates if the entity is deleted | 
 

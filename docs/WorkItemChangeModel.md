@@ -1,4 +1,4 @@
-# TestIt.Client.Model.WorkItemChangeModel
+# TestIt.ApiClient.Model.WorkItemChangeModel
 
 ## Properties
 
@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **WorkItemId** | **Guid** |  | 
 **OldVersionId** | **Guid** |  | 
 **NewVersionId** | **Guid** |  | 
-**WorkItemChangedFields** | [**WorkItemChangedFieldsViewModel**](WorkItemChangedFieldsViewModel.md) |  | [optional] 
+**WorkItemChangedFields** | [**WorkItemChangeModelWorkItemChangedFields**](WorkItemChangeModelWorkItemChangedFields.md) |  | 
 **CreatedById** | **Guid** |  | 
 **CreatedDate** | **DateTime?** |  | [optional] 
 

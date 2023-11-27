@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestPointStatus
+# TestIt.ApiClient.Model.TestPointStatus
 
 ## Properties
 

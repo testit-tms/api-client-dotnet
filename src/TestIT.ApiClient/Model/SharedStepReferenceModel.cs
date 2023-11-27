@@ -48,8 +48,8 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="id">id (required).</param>
         /// <param name="globalId">globalId (required).</param>
-        /// <param name="name">name.</param>
-        /// <param name="entityTypeName">entityTypeName.</param>
+        /// <param name="name">name (required).</param>
+        /// <param name="entityTypeName">entityTypeName (required).</param>
         /// <param name="hasThisSharedStepAsStep">hasThisSharedStepAsStep (required).</param>
         /// <param name="hasThisSharedStepAsPrecondition">hasThisSharedStepAsPrecondition (required).</param>
         /// <param name="hasThisSharedStepAsPostcondition">hasThisSharedStepAsPostcondition (required).</param>
@@ -57,7 +57,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="state">state.</param>
+        /// <param name="state">state (required).</param>
         /// <param name="priority">priority (required).</param>
         /// <param name="isDeleted">isDeleted (required).</param>
         /// <param name="versionId">used for versioning changes in workitem (required).</param>
@@ -68,28 +68,43 @@ namespace TestIT.ApiClient.Model
         {
             this.Id = id;
             this.GlobalId = globalId;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for SharedStepReferenceModel and cannot be null");
+            }
+            this.Name = name;
+            // to ensure "entityTypeName" is required (not null)
+            if (entityTypeName == null)
+            {
+                throw new ArgumentNullException("entityTypeName is a required property for SharedStepReferenceModel and cannot be null");
+            }
+            this.EntityTypeName = entityTypeName;
             this.HasThisSharedStepAsStep = hasThisSharedStepAsStep;
             this.HasThisSharedStepAsPrecondition = hasThisSharedStepAsPrecondition;
             this.HasThisSharedStepAsPostcondition = hasThisSharedStepAsPostcondition;
             this.CreatedById = createdById;
+            // to ensure "state" is required (not null)
+            if (state == null)
+            {
+                throw new ArgumentNullException("state is a required property for SharedStepReferenceModel and cannot be null");
+            }
+            this.State = state;
             this.Priority = priority;
             this.IsDeleted = isDeleted;
             this.VersionId = versionId;
             this.IsAutomated = isAutomated;
             this.SectionId = sectionId;
-            this.Name = name;
-            this.EntityTypeName = entityTypeName;
             this.ModifiedById = modifiedById;
             this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
-            this.State = state;
             this.Tags = tags;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
@@ -104,14 +119,14 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Name
         /// </summary>
         /// <example>&quot;Basic template&quot;</example>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets EntityTypeName
         /// </summary>
         /// <example>&quot;TestCase&quot;</example>
-        [DataMember(Name = "entityTypeName", EmitDefaultValue = true)]
+        [DataMember(Name = "entityTypeName", IsRequired = true, EmitDefaultValue = true)]
         public string EntityTypeName { get; set; }
 
         /// <summary>
@@ -138,28 +153,28 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
+        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
         public DateTime? CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
+        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
@@ -167,7 +182,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets State
         /// </summary>
         /// <example>&quot;Ready&quot;</example>
-        [DataMember(Name = "state", EmitDefaultValue = true)]
+        [DataMember(Name = "state", IsRequired = true, EmitDefaultValue = true)]
         public string State { get; set; }
 
         /// <summary>
@@ -181,7 +196,7 @@ namespace TestIT.ApiClient.Model
         /// used for versioning changes in workitem
         /// </summary>
         /// <value>used for versioning changes in workitem</value>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "versionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid VersionId { get; set; }
 
@@ -195,7 +210,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets SectionId
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid SectionId { get; set; }
 
@@ -265,85 +280,85 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.GlobalId == input.GlobalId ||
                     this.GlobalId.Equals(input.GlobalId)
-                ) &&
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.EntityTypeName == input.EntityTypeName ||
                     (this.EntityTypeName != null &&
                     this.EntityTypeName.Equals(input.EntityTypeName))
-                ) &&
+                ) && 
                 (
                     this.HasThisSharedStepAsStep == input.HasThisSharedStepAsStep ||
                     this.HasThisSharedStepAsStep.Equals(input.HasThisSharedStepAsStep)
-                ) &&
+                ) && 
                 (
                     this.HasThisSharedStepAsPrecondition == input.HasThisSharedStepAsPrecondition ||
                     this.HasThisSharedStepAsPrecondition.Equals(input.HasThisSharedStepAsPrecondition)
-                ) &&
+                ) && 
                 (
                     this.HasThisSharedStepAsPostcondition == input.HasThisSharedStepAsPostcondition ||
                     this.HasThisSharedStepAsPostcondition.Equals(input.HasThisSharedStepAsPostcondition)
-                ) &&
+                ) && 
                 (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&
                     this.CreatedById.Equals(input.CreatedById))
-                ) &&
+                ) && 
                 (
                     this.ModifiedById == input.ModifiedById ||
                     (this.ModifiedById != null &&
                     this.ModifiedById.Equals(input.ModifiedById))
-                ) &&
+                ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) &&
+                ) && 
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
                     this.ModifiedDate.Equals(input.ModifiedDate))
-                ) &&
+                ) && 
                 (
                     this.State == input.State ||
                     (this.State != null &&
                     this.State.Equals(input.State))
-                ) &&
+                ) && 
                 (
                     this.Priority == input.Priority ||
                     this.Priority.Equals(input.Priority)
-                ) &&
+                ) && 
                 (
                     this.IsDeleted == input.IsDeleted ||
                     this.IsDeleted.Equals(input.IsDeleted)
-                ) &&
+                ) && 
                 (
                     this.VersionId == input.VersionId ||
                     (this.VersionId != null &&
                     this.VersionId.Equals(input.VersionId))
-                ) &&
+                ) && 
                 (
                     this.IsAutomated == input.IsAutomated ||
                     this.IsAutomated.Equals(input.IsAutomated)
-                ) &&
+                ) && 
                 (
                     this.SectionId == input.SectionId ||
                     (this.SectionId != null &&
                     this.SectionId.Equals(input.SectionId))
-                ) &&
+                ) && 
                 (
                     this.Tags == input.Tags ||
                     this.Tags != null &&
@@ -421,7 +436,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

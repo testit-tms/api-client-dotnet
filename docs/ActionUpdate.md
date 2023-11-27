@@ -1,4 +1,4 @@
-# TestIt.Client.Model.ActionUpdate
+# TestIt.ApiClient.Model.ActionUpdate
 
 ## Properties
 

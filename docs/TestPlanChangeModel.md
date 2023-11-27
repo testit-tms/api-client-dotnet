@@ -1,4 +1,4 @@
-# TestIt.Client.Model.TestPlanChangeModel
+# TestIt.ApiClient.Model.TestPlanChangeModel
 
 ## Properties
 
@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** |  | 
 **TestPlanId** | **Guid** |  | 
-**TestPlanChangedFields** | [**TestPlanChangedFieldsViewModel**](TestPlanChangedFieldsViewModel.md) |  | [optional] 
+**TestPlanChangedFields** | [**TestPlanChangeModelTestPlanChangedFields**](TestPlanChangeModelTestPlanChangedFields.md) |  | 
 **CreatedById** | **Guid** |  | 
 **CreatedDate** | **DateTime?** |  | [optional] 
 

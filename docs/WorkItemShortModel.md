@@ -1,4 +1,4 @@
-# TestIt.Client.Model.WorkItemShortModel
+# TestIt.ApiClient.Model.WorkItemShortModel
 
 ## Properties
 
@@ -24,8 +24,8 @@ Name | Type | Description | Notes
 **Priority** | **WorkItemPriorityModel** |  | 
 **IsDeleted** | **bool** | Flag determining whether Work Item is deleted | 
 **TagNames** | **List&lt;string&gt;** | Array of tag names of Work Item | [optional] 
-**Iterations** | [**List&lt;IterationModel&gt;**](IterationModel.md) | Set of iterations related to Work Item | [optional] 
-**Links** | [**List&lt;LinkShortModel&gt;**](LinkShortModel.md) | Set of links related to Work Item | [optional] 
+**Iterations** | [**List&lt;IterationModel&gt;**](IterationModel.md) | Set of iterations related to Work Item | 
+**Links** | [**List&lt;LinkShortModel&gt;**](LinkShortModel.md) | Set of links related to Work Item | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

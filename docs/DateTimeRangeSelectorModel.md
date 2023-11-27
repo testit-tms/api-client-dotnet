@@ -1,4 +1,4 @@
-# TestIt.Client.Model.DateTimeRangeSelectorModel
+# TestIt.ApiClient.Model.DateTimeRangeSelectorModel
 
 ## Properties
 

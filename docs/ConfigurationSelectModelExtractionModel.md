@@ -1,4 +1,4 @@
-# TestIt.Client.Model.ConfigurationSelectModelExtractionModel
+# TestIt.ApiClient.Model.ConfigurationSelectModelExtractionModel
 Rules for configurations extraction
 
 ## Properties

@@ -1,4 +1,4 @@
-# TestIt.Client.Model.StringArrayChangedFieldViewModel
+# TestIt.ApiClient.Model.StringArrayChangedFieldViewModel
 
 ## Properties
 
