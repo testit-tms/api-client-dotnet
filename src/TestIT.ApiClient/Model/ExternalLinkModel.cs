@@ -153,42 +153,42 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
-                ) &&
+                ) && 
                 (
                     this.Title == input.Title ||
                     (this.Title != null &&
                     this.Title.Equals(input.Title))
-                ) &&
+                ) && 
                 (
                     this.IssueTypeName == input.IssueTypeName ||
                     (this.IssueTypeName != null &&
                     this.IssueTypeName.Equals(input.IssueTypeName))
-                ) &&
+                ) && 
                 (
                     this.IssueTypeIconUrl == input.IssueTypeIconUrl ||
                     (this.IssueTypeIconUrl != null &&
                     this.IssueTypeIconUrl.Equals(input.IssueTypeIconUrl))
-                ) &&
+                ) && 
                 (
                     this.PriorityName == input.PriorityName ||
                     (this.PriorityName != null &&
                     this.PriorityName.Equals(input.PriorityName))
-                ) &&
+                ) && 
                 (
                     this.PriorityIconUrl == input.PriorityIconUrl ||
                     (this.PriorityIconUrl != null &&
                     this.PriorityIconUrl.Equals(input.PriorityIconUrl))
-                ) &&
+                ) && 
                 (
                     this.StatusName == input.StatusName ||
                     (this.StatusName != null &&
                     this.StatusName.Equals(input.StatusName))
-                ) &&
+                ) && 
                 (
                     this.AssigneeDisplayName == input.AssigneeDisplayName ||
                     (this.AssigneeDisplayName != null &&
@@ -246,7 +246,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

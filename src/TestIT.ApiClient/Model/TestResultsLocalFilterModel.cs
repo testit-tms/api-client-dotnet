@@ -131,30 +131,30 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.ConfigurationIds == input.ConfigurationIds ||
                     this.ConfigurationIds != null &&
                     input.ConfigurationIds != null &&
                     this.ConfigurationIds.SequenceEqual(input.ConfigurationIds)
-                ) &&
+                ) && 
                 (
                     this.Outcomes == input.Outcomes ||
                     this.Outcomes != null &&
                     input.Outcomes != null &&
                     this.Outcomes.SequenceEqual(input.Outcomes)
-                ) &&
+                ) && 
                 (
                     this.FailureCategories == input.FailureCategories ||
                     this.FailureCategories != null &&
                     input.FailureCategories != null &&
                     this.FailureCategories.SequenceEqual(input.FailureCategories)
-                ) &&
+                ) && 
                 (
                     this.Namespace == input.Namespace ||
                     (this.Namespace != null &&
                     this.Namespace.Equals(input.Namespace))
-                ) &&
+                ) && 
                 (
                     this.ClassName == input.ClassName ||
                     (this.ClassName != null &&
@@ -200,7 +200,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // Namespace (string) maxLength
             if (this.Namespace != null && this.Namespace.Length > 255)

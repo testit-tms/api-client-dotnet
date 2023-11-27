@@ -42,15 +42,20 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="id">id (required).</param>
         /// <param name="testPlanId">testPlanId (required).</param>
-        /// <param name="testPlanChangedFields">testPlanChangedFields.</param>
+        /// <param name="testPlanChangedFields">testPlanChangedFields (required).</param>
         /// <param name="createdById">createdById (required).</param>
         /// <param name="createdDate">createdDate.</param>
-        public TestPlanChangeModel(Guid id = default(Guid), Guid testPlanId = default(Guid), TestPlanChangedFieldsViewModel testPlanChangedFields = default(TestPlanChangedFieldsViewModel), Guid createdById = default(Guid), DateTime? createdDate = default(DateTime?))
+        public TestPlanChangeModel(Guid id = default(Guid), Guid testPlanId = default(Guid), TestPlanChangeModelTestPlanChangedFields testPlanChangedFields = default(TestPlanChangeModelTestPlanChangedFields), Guid createdById = default(Guid), DateTime? createdDate = default(DateTime?))
         {
             this.Id = id;
             this.TestPlanId = testPlanId;
-            this.CreatedById = createdById;
+            // to ensure "testPlanChangedFields" is required (not null)
+            if (testPlanChangedFields == null)
+            {
+                throw new ArgumentNullException("testPlanChangedFields is a required property for TestPlanChangeModel and cannot be null");
+            }
             this.TestPlanChangedFields = testPlanChangedFields;
+            this.CreatedById = createdById;
             this.CreatedDate = createdDate;
         }
 
@@ -69,8 +74,8 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets TestPlanChangedFields
         /// </summary>
-        [DataMember(Name = "testPlanChangedFields", EmitDefaultValue = true)]
-        public TestPlanChangedFieldsViewModel TestPlanChangedFields { get; set; }
+        [DataMember(Name = "testPlanChangedFields", IsRequired = true, EmitDefaultValue = true)]
+        public TestPlanChangeModelTestPlanChangedFields TestPlanChangedFields { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
@@ -131,27 +136,27 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.TestPlanId == input.TestPlanId ||
                     (this.TestPlanId != null &&
                     this.TestPlanId.Equals(input.TestPlanId))
-                ) &&
+                ) && 
                 (
                     this.TestPlanChangedFields == input.TestPlanChangedFields ||
                     (this.TestPlanChangedFields != null &&
                     this.TestPlanChangedFields.Equals(input.TestPlanChangedFields))
-                ) &&
+                ) && 
                 (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&
                     this.CreatedById.Equals(input.CreatedById))
-                ) &&
+                ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
@@ -197,7 +202,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

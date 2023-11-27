@@ -302,122 +302,122 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.WorkItemName == input.WorkItemName ||
                     (this.WorkItemName != null &&
                     this.WorkItemName.Equals(input.WorkItemName))
-                ) &&
+                ) && 
                 (
                     this.IsAutomated == input.IsAutomated ||
                     this.IsAutomated.Equals(input.IsAutomated)
-                ) &&
+                ) && 
                 (
                     this.TesterId == input.TesterId ||
                     (this.TesterId != null &&
                     this.TesterId.Equals(input.TesterId))
-                ) &&
+                ) && 
                 (
                     this.WorkItemId == input.WorkItemId ||
                     (this.WorkItemId != null &&
                     this.WorkItemId.Equals(input.WorkItemId))
-                ) &&
+                ) && 
                 (
                     this.ConfigurationId == input.ConfigurationId ||
                     (this.ConfigurationId != null &&
                     this.ConfigurationId.Equals(input.ConfigurationId))
-                ) &&
+                ) && 
                 (
                     this.TestSuiteId == input.TestSuiteId ||
                     (this.TestSuiteId != null &&
                     this.TestSuiteId.Equals(input.TestSuiteId))
-                ) &&
+                ) && 
                 (
                     this.LastTestResult == input.LastTestResult ||
                     (this.LastTestResult != null &&
                     this.LastTestResult.Equals(input.LastTestResult))
-                ) &&
+                ) && 
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
-                ) &&
+                ) && 
                 (
                     this.WorkItemGlobalId == input.WorkItemGlobalId ||
                     (this.WorkItemGlobalId != null &&
                     this.WorkItemGlobalId.Equals(input.WorkItemGlobalId))
-                ) &&
+                ) && 
                 (
                     this.WorkItemEntityTypeName == input.WorkItemEntityTypeName ||
                     (this.WorkItemEntityTypeName != null &&
                     this.WorkItemEntityTypeName.Equals(input.WorkItemEntityTypeName))
-                ) &&
+                ) && 
                 (
                     this.SectionId == input.SectionId ||
                     (this.SectionId != null &&
                     this.SectionId.Equals(input.SectionId))
-                ) &&
+                ) && 
                 (
                     this.SectionName == input.SectionName ||
                     (this.SectionName != null &&
                     this.SectionName.Equals(input.SectionName))
-                ) &&
+                ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) &&
+                ) && 
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
                     this.ModifiedDate.Equals(input.ModifiedDate))
-                ) &&
+                ) && 
                 (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&
                     this.CreatedById.Equals(input.CreatedById))
-                ) &&
+                ) && 
                 (
                     this.ModifiedById == input.ModifiedById ||
                     (this.ModifiedById != null &&
                     this.ModifiedById.Equals(input.ModifiedById))
-                ) &&
+                ) && 
                 (
                     this.Attributes == input.Attributes ||
                     this.Attributes != null &&
                     input.Attributes != null &&
                     this.Attributes.SequenceEqual(input.Attributes)
-                ) &&
+                ) && 
                 (
                     this.TagNames == input.TagNames ||
                     this.TagNames != null &&
                     input.TagNames != null &&
                     this.TagNames.SequenceEqual(input.TagNames)
-                ) &&
+                ) && 
                 (
                     this.Duration == input.Duration ||
                     this.Duration.Equals(input.Duration)
-                ) &&
+                ) && 
                 (
                     this.Priority == input.Priority ||
                     this.Priority.Equals(input.Priority)
-                ) &&
+                ) && 
                 (
                     this.TestSuiteNameBreadCrumbs == input.TestSuiteNameBreadCrumbs ||
                     this.TestSuiteNameBreadCrumbs != null &&
                     input.TestSuiteNameBreadCrumbs != null &&
                     this.TestSuiteNameBreadCrumbs.SequenceEqual(input.TestSuiteNameBreadCrumbs)
-                ) &&
+                ) && 
                 (
                     this.GroupCount == input.GroupCount ||
                     (this.GroupCount != null &&
                     this.GroupCount.Equals(input.GroupCount))
-                ) &&
+                ) && 
                 (
                     this.Iteration == input.Iteration ||
                     (this.Iteration != null &&
@@ -530,7 +530,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

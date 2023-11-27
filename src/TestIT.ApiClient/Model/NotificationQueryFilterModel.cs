@@ -108,18 +108,18 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Types == input.Types ||
                     this.Types != null &&
                     input.Types != null &&
                     this.Types.SequenceEqual(input.Types)
-                ) &&
+                ) && 
                 (
                     this.IsRead == input.IsRead ||
                     (this.IsRead != null &&
                     this.IsRead.Equals(input.IsRead))
-                ) &&
+                ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
@@ -157,7 +157,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

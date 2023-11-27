@@ -40,46 +40,71 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemStepChangeViewModel" /> class.
         /// </summary>
-        /// <param name="action">action.</param>
-        /// <param name="expected">expected.</param>
-        /// <param name="comments">comments.</param>
-        /// <param name="testData">testData.</param>
+        /// <param name="action">action (required).</param>
+        /// <param name="expected">expected (required).</param>
+        /// <param name="comments">comments (required).</param>
+        /// <param name="testData">testData (required).</param>
         /// <param name="index">index (required).</param>
         /// <param name="workItemId">workItemId.</param>
-        /// <param name="workItem">workItem.</param>
-        public WorkItemStepChangeViewModel(string action = default(string), string expected = default(string), string comments = default(string), string testData = default(string), int index = default(int), Guid? workItemId = default(Guid?), SharedStepChangeViewModel workItem = default(SharedStepChangeViewModel))
+        /// <param name="workItem">workItem (required).</param>
+        public WorkItemStepChangeViewModel(string action = default(string), string expected = default(string), string comments = default(string), string testData = default(string), int index = default(int), Guid? workItemId = default(Guid?), WorkItemStepChangeViewModelWorkItem workItem = default(WorkItemStepChangeViewModelWorkItem))
         {
-            this.Index = index;
+            // to ensure "action" is required (not null)
+            if (action == null)
+            {
+                throw new ArgumentNullException("action is a required property for WorkItemStepChangeViewModel and cannot be null");
+            }
             this.Action = action;
+            // to ensure "expected" is required (not null)
+            if (expected == null)
+            {
+                throw new ArgumentNullException("expected is a required property for WorkItemStepChangeViewModel and cannot be null");
+            }
             this.Expected = expected;
+            // to ensure "comments" is required (not null)
+            if (comments == null)
+            {
+                throw new ArgumentNullException("comments is a required property for WorkItemStepChangeViewModel and cannot be null");
+            }
             this.Comments = comments;
+            // to ensure "testData" is required (not null)
+            if (testData == null)
+            {
+                throw new ArgumentNullException("testData is a required property for WorkItemStepChangeViewModel and cannot be null");
+            }
             this.TestData = testData;
-            this.WorkItemId = workItemId;
+            this.Index = index;
+            // to ensure "workItem" is required (not null)
+            if (workItem == null)
+            {
+                throw new ArgumentNullException("workItem is a required property for WorkItemStepChangeViewModel and cannot be null");
+            }
             this.WorkItem = workItem;
+            this.WorkItemId = workItemId;
         }
 
         /// <summary>
         /// Gets or Sets Action
         /// </summary>
-        [DataMember(Name = "action", EmitDefaultValue = true)]
+        [DataMember(Name = "action", IsRequired = true, EmitDefaultValue = true)]
         public string Action { get; set; }
 
         /// <summary>
         /// Gets or Sets Expected
         /// </summary>
-        [DataMember(Name = "expected", EmitDefaultValue = true)]
+        [DataMember(Name = "expected", IsRequired = true, EmitDefaultValue = true)]
         public string Expected { get; set; }
 
         /// <summary>
         /// Gets or Sets Comments
         /// </summary>
-        [DataMember(Name = "comments", EmitDefaultValue = true)]
+        [DataMember(Name = "comments", IsRequired = true, EmitDefaultValue = true)]
         public string Comments { get; set; }
 
         /// <summary>
         /// Gets or Sets TestData
         /// </summary>
-        [DataMember(Name = "testData", EmitDefaultValue = true)]
+        [DataMember(Name = "testData", IsRequired = true, EmitDefaultValue = true)]
         public string TestData { get; set; }
 
         /// <summary>
@@ -97,8 +122,8 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets WorkItem
         /// </summary>
-        [DataMember(Name = "workItem", EmitDefaultValue = true)]
-        public SharedStepChangeViewModel WorkItem { get; set; }
+        [DataMember(Name = "workItem", IsRequired = true, EmitDefaultValue = true)]
+        public WorkItemStepChangeViewModelWorkItem WorkItem { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -229,7 +254,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

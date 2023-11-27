@@ -40,18 +40,23 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPlanGroupByStatus" /> class.
         /// </summary>
-        /// <param name="status">status.</param>
+        /// <param name="status">status (required).</param>
         /// <param name="value">value (required).</param>
         public TestPlanGroupByStatus(string status = default(string), long value = default(long))
         {
-            this.Value = value;
+            // to ensure "status" is required (not null)
+            if (status == null)
+            {
+                throw new ArgumentNullException("status is a required property for TestPlanGroupByStatus and cannot be null");
+            }
             this.Status = status;
+            this.Value = value;
         }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = true)]
+        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
         public string Status { get; set; }
 
         /// <summary>
@@ -104,12 +109,12 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
-                ) &&
+                ) && 
                 (
                     this.Value == input.Value ||
                     this.Value.Equals(input.Value)
@@ -139,7 +144,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

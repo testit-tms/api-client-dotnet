@@ -205,14 +205,14 @@ namespace TestIT.ApiClient.Model
         /// This property is used to link workitem with project
         /// </summary>
         /// <value>This property is used to link workitem with project</value>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
         /// Gets or Sets SectionId
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid SectionId { get; set; }
 
@@ -281,91 +281,91 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.EntityTypeName == input.EntityTypeName ||
                     this.EntityTypeName.Equals(input.EntityTypeName)
-                ) &&
+                ) && 
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) &&
+                ) && 
                 (
                     this.State == input.State ||
                     this.State.Equals(input.State)
-                ) &&
+                ) && 
                 (
                     this.Priority == input.Priority ||
                     this.Priority.Equals(input.Priority)
-                ) &&
+                ) && 
                 (
                     this.Steps == input.Steps ||
                     this.Steps != null &&
                     input.Steps != null &&
                     this.Steps.SequenceEqual(input.Steps)
-                ) &&
+                ) && 
                 (
                     this.PreconditionSteps == input.PreconditionSteps ||
                     this.PreconditionSteps != null &&
                     input.PreconditionSteps != null &&
                     this.PreconditionSteps.SequenceEqual(input.PreconditionSteps)
-                ) &&
+                ) && 
                 (
                     this.PostconditionSteps == input.PostconditionSteps ||
                     this.PostconditionSteps != null &&
                     input.PostconditionSteps != null &&
                     this.PostconditionSteps.SequenceEqual(input.PostconditionSteps)
-                ) &&
+                ) && 
                 (
                     this.Duration == input.Duration ||
                     this.Duration.Equals(input.Duration)
-                ) &&
+                ) && 
                 (
                     this.Attributes == input.Attributes ||
                     this.Attributes != null &&
                     input.Attributes != null &&
                     this.Attributes.SequenceEqual(input.Attributes)
-                ) &&
+                ) && 
                 (
                     this.Tags == input.Tags ||
                     this.Tags != null &&
                     input.Tags != null &&
                     this.Tags.SequenceEqual(input.Tags)
-                ) &&
+                ) && 
                 (
                     this.Attachments == input.Attachments ||
                     this.Attachments != null &&
                     input.Attachments != null &&
                     this.Attachments.SequenceEqual(input.Attachments)
-                ) &&
+                ) && 
                 (
                     this.Iterations == input.Iterations ||
                     this.Iterations != null &&
                     input.Iterations != null &&
                     this.Iterations.SequenceEqual(input.Iterations)
-                ) &&
+                ) && 
                 (
                     this.Links == input.Links ||
                     this.Links != null &&
                     input.Links != null &&
                     this.Links.SequenceEqual(input.Links)
-                ) &&
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
-                ) &&
+                ) && 
                 (
                     this.SectionId == input.SectionId ||
                     (this.SectionId != null &&
                     this.SectionId.Equals(input.SectionId))
-                ) &&
+                ) && 
                 (
                     this.AutoTests == input.AutoTests ||
                     this.AutoTests != null &&
@@ -448,7 +448,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // Duration (int) maximum
             if (this.Duration > (int)86400000)

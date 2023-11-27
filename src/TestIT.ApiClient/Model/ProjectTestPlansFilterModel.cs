@@ -225,88 +225,88 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) &&
+                ) && 
                 (
                     this.Build == input.Build ||
                     (this.Build != null &&
                     this.Build.Equals(input.Build))
-                ) &&
+                ) && 
                 (
                     this.ProductName == input.ProductName ||
                     (this.ProductName != null &&
                     this.ProductName.Equals(input.ProductName))
-                ) &&
+                ) && 
                 (
                     this.Status == input.Status ||
                     this.Status != null &&
                     input.Status != null &&
                     this.Status.SequenceEqual(input.Status)
-                ) &&
+                ) && 
                 (
                     this.GlobalIds == input.GlobalIds ||
                     this.GlobalIds != null &&
                     input.GlobalIds != null &&
                     this.GlobalIds.SequenceEqual(input.GlobalIds)
-                ) &&
+                ) && 
                 (
                     this.IsLocked == input.IsLocked ||
                     (this.IsLocked != null &&
                     this.IsLocked.Equals(input.IsLocked))
-                ) &&
+                ) && 
                 (
                     this.LockedDate == input.LockedDate ||
                     (this.LockedDate != null &&
                     this.LockedDate.Equals(input.LockedDate))
-                ) &&
+                ) && 
                 (
                     this.AutomaticDurationTimer == input.AutomaticDurationTimer ||
                     this.AutomaticDurationTimer != null &&
                     input.AutomaticDurationTimer != null &&
                     this.AutomaticDurationTimer.SequenceEqual(input.AutomaticDurationTimer)
-                ) &&
+                ) && 
                 (
                     this.CreatedByIds == input.CreatedByIds ||
                     this.CreatedByIds != null &&
                     input.CreatedByIds != null &&
                     this.CreatedByIds.SequenceEqual(input.CreatedByIds)
-                ) &&
+                ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) &&
+                ) && 
                 (
                     this.StartDate == input.StartDate ||
                     (this.StartDate != null &&
                     this.StartDate.Equals(input.StartDate))
-                ) &&
+                ) && 
                 (
                     this.EndDate == input.EndDate ||
                     (this.EndDate != null &&
                     this.EndDate.Equals(input.EndDate))
-                ) &&
+                ) && 
                 (
                     this.TagNames == input.TagNames ||
                     this.TagNames != null &&
                     input.TagNames != null &&
                     this.TagNames.SequenceEqual(input.TagNames)
-                ) &&
+                ) && 
                 (
                     this.Attributes == input.Attributes ||
                     this.Attributes != null &&
                     input.Attributes != null &&
                     this.Attributes.SequenceEqual(input.Attributes)
-                ) &&
+                ) && 
                 (
                     this.IsDeleted == input.IsDeleted ||
                     (this.IsDeleted != null &&
@@ -396,7 +396,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)

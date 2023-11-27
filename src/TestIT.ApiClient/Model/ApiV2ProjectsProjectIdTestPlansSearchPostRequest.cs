@@ -27,13 +27,13 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// ApiV2ProjectsIdTestPlansSearchPostRequest
+    /// ApiV2ProjectsProjectIdTestPlansSearchPostRequest
     /// </summary>
-    [DataContract(Name = "_api_v2_projects__id__testPlans_search_post_request")]
-    public partial class ApiV2ProjectsIdTestPlansSearchPostRequest : IEquatable<ApiV2ProjectsIdTestPlansSearchPostRequest>, IValidatableObject
+    [DataContract(Name = "_api_v2_projects__projectId__testPlans_search_post_request")]
+    public partial class ApiV2ProjectsProjectIdTestPlansSearchPostRequest : IEquatable<ApiV2ProjectsProjectIdTestPlansSearchPostRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApiV2ProjectsIdTestPlansSearchPostRequest" /> class.
+        /// Initializes a new instance of the <see cref="ApiV2ProjectsProjectIdTestPlansSearchPostRequest" /> class.
         /// </summary>
         /// <param name="name">name.</param>
         /// <param name="description">description.</param>
@@ -51,7 +51,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="tagNames">tagNames.</param>
         /// <param name="attributes">attributes.</param>
         /// <param name="isDeleted">isDeleted.</param>
-        public ApiV2ProjectsIdTestPlansSearchPostRequest(string name = default(string), string description = default(string), string build = default(string), string productName = default(string), List<TestPlanStatusModel> status = default(List<TestPlanStatusModel>), List<long> globalIds = default(List<long>), bool? isLocked = default(bool?), DateTimeRangeSelectorModel lockedDate = default(DateTimeRangeSelectorModel), List<bool> automaticDurationTimer = default(List<bool>), List<Guid> createdByIds = default(List<Guid>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel startDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel endDate = default(DateTimeRangeSelectorModel), List<string> tagNames = default(List<string>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?))
+        public ApiV2ProjectsProjectIdTestPlansSearchPostRequest(string name = default(string), string description = default(string), string build = default(string), string productName = default(string), List<TestPlanStatusModel> status = default(List<TestPlanStatusModel>), List<long> globalIds = default(List<long>), bool? isLocked = default(bool?), DateTimeRangeSelectorModel lockedDate = default(DateTimeRangeSelectorModel), List<bool> automaticDurationTimer = default(List<bool>), List<Guid> createdByIds = default(List<Guid>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel startDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel endDate = default(DateTimeRangeSelectorModel), List<string> tagNames = default(List<string>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?))
         {
             this.Name = name;
             this.Description = description;
@@ -174,7 +174,7 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ApiV2ProjectsIdTestPlansSearchPostRequest {\n");
+            sb.Append("class ApiV2ProjectsProjectIdTestPlansSearchPostRequest {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Build: ").Append(Build).Append("\n");
@@ -211,102 +211,102 @@ namespace TestIT.ApiClient.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ApiV2ProjectsIdTestPlansSearchPostRequest);
+            return this.Equals(input as ApiV2ProjectsProjectIdTestPlansSearchPostRequest);
         }
 
         /// <summary>
-        /// Returns true if ApiV2ProjectsIdTestPlansSearchPostRequest instances are equal
+        /// Returns true if ApiV2ProjectsProjectIdTestPlansSearchPostRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of ApiV2ProjectsIdTestPlansSearchPostRequest to be compared</param>
+        /// <param name="input">Instance of ApiV2ProjectsProjectIdTestPlansSearchPostRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ApiV2ProjectsIdTestPlansSearchPostRequest input)
+        public bool Equals(ApiV2ProjectsProjectIdTestPlansSearchPostRequest input)
         {
             if (input == null)
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) &&
+                ) && 
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) &&
+                ) && 
                 (
                     this.Build == input.Build ||
                     (this.Build != null &&
                     this.Build.Equals(input.Build))
-                ) &&
+                ) && 
                 (
                     this.ProductName == input.ProductName ||
                     (this.ProductName != null &&
                     this.ProductName.Equals(input.ProductName))
-                ) &&
+                ) && 
                 (
                     this.Status == input.Status ||
                     this.Status != null &&
                     input.Status != null &&
                     this.Status.SequenceEqual(input.Status)
-                ) &&
+                ) && 
                 (
                     this.GlobalIds == input.GlobalIds ||
                     this.GlobalIds != null &&
                     input.GlobalIds != null &&
                     this.GlobalIds.SequenceEqual(input.GlobalIds)
-                ) &&
+                ) && 
                 (
                     this.IsLocked == input.IsLocked ||
                     (this.IsLocked != null &&
                     this.IsLocked.Equals(input.IsLocked))
-                ) &&
+                ) && 
                 (
                     this.LockedDate == input.LockedDate ||
                     (this.LockedDate != null &&
                     this.LockedDate.Equals(input.LockedDate))
-                ) &&
+                ) && 
                 (
                     this.AutomaticDurationTimer == input.AutomaticDurationTimer ||
                     this.AutomaticDurationTimer != null &&
                     input.AutomaticDurationTimer != null &&
                     this.AutomaticDurationTimer.SequenceEqual(input.AutomaticDurationTimer)
-                ) &&
+                ) && 
                 (
                     this.CreatedByIds == input.CreatedByIds ||
                     this.CreatedByIds != null &&
                     input.CreatedByIds != null &&
                     this.CreatedByIds.SequenceEqual(input.CreatedByIds)
-                ) &&
+                ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) &&
+                ) && 
                 (
                     this.StartDate == input.StartDate ||
                     (this.StartDate != null &&
                     this.StartDate.Equals(input.StartDate))
-                ) &&
+                ) && 
                 (
                     this.EndDate == input.EndDate ||
                     (this.EndDate != null &&
                     this.EndDate.Equals(input.EndDate))
-                ) &&
+                ) && 
                 (
                     this.TagNames == input.TagNames ||
                     this.TagNames != null &&
                     input.TagNames != null &&
                     this.TagNames.SequenceEqual(input.TagNames)
-                ) &&
+                ) && 
                 (
                     this.Attributes == input.Attributes ||
                     this.Attributes != null &&
                     input.Attributes != null &&
                     this.Attributes.SequenceEqual(input.Attributes)
-                ) &&
+                ) && 
                 (
                     this.IsDeleted == input.IsDeleted ||
                     (this.IsDeleted != null &&
@@ -396,7 +396,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)

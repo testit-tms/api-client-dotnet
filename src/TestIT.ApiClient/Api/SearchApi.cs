@@ -28,20 +28,20 @@ namespace TestIT.ApiClient.Api
     {
         #region Synchronous Operations
         /// <summary>
-        ///
+        /// 
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2SearchGlobalSearchPostRequest"> (optional)</param>
         /// <returns>GlobalSearchResponse</returns>
         GlobalSearchResponse ApiV2SearchGlobalSearchPost(ApiV2SearchGlobalSearchPostRequest apiV2SearchGlobalSearchPostRequest = default(ApiV2SearchGlobalSearchPostRequest));
 
         /// <summary>
-        ///
+        /// 
         /// </summary>
         /// <remarks>
-        ///
+        /// 
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2SearchGlobalSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of GlobalSearchResponse</returns>
         ApiResponse<GlobalSearchResponse> ApiV2SearchGlobalSearchPostWithHttpInfo(ApiV2SearchGlobalSearchPostRequest apiV2SearchGlobalSearchPostRequest = default(ApiV2SearchGlobalSearchPostRequest));
@@ -55,24 +55,24 @@ namespace TestIT.ApiClient.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        ///
+        /// 
         /// </summary>
         /// <remarks>
-        ///
+        /// 
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2SearchGlobalSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GlobalSearchResponse</returns>
         System.Threading.Tasks.Task<GlobalSearchResponse> ApiV2SearchGlobalSearchPostAsync(ApiV2SearchGlobalSearchPostRequest apiV2SearchGlobalSearchPostRequest = default(ApiV2SearchGlobalSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        ///
+        /// 
         /// </summary>
         /// <remarks>
-        ///
+        /// 
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2SearchGlobalSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GlobalSearchResponse)</returns>
@@ -93,7 +93,7 @@ namespace TestIT.ApiClient.Api
     /// </summary>
     public partial class SearchApi : IDisposable, ISearchApi
     {
-        private ExceptionFactory _exceptionFactory = (name, response) => null;
+        private TestIT.ApiClient.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchApi"/> class.
@@ -116,10 +116,10 @@ namespace TestIT.ApiClient.Api
         public SearchApi(string basePath)
         {
             this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
-                GlobalConfiguration.Instance,
-                new Configuration { BasePath = basePath }
+                TestIT.ApiClient.Client.GlobalConfiguration.Instance,
+                new TestIT.ApiClient.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new TestIT.ApiClient.Client.ApiClient(this.Configuration.BasePath);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
             this.ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
@@ -133,15 +133,15 @@ namespace TestIT.ApiClient.Api
         /// <param name="configuration">An instance of Configuration.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
-        public SearchApi(Configuration configuration)
+        public SearchApi(TestIT.ApiClient.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
-                GlobalConfiguration.Instance,
+                TestIT.ApiClient.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new TestIT.ApiClient.Client.ApiClient(this.Configuration.BasePath);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
             ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
@@ -180,10 +180,10 @@ namespace TestIT.ApiClient.Api
             if (client == null) throw new ArgumentNullException("client");
 
             this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
-                GlobalConfiguration.Instance,
-                new Configuration { BasePath = basePath }
+                TestIT.ApiClient.Client.GlobalConfiguration.Instance,
+                new TestIT.ApiClient.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new TestIT.ApiClient.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
             this.ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
@@ -201,16 +201,16 @@ namespace TestIT.ApiClient.Api
         /// Some configuration settings will not be applied without passing an HttpClientHandler.
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
-        public SearchApi(HttpClient client, Configuration configuration, HttpClientHandler handler = null)
+        public SearchApi(HttpClient client, TestIT.ApiClient.Client.Configuration configuration, HttpClientHandler handler = null)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
             if (client == null) throw new ArgumentNullException("client");
 
             this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
-                GlobalConfiguration.Instance,
+                TestIT.ApiClient.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new TestIT.ApiClient.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
             ExceptionFactory = TestIT.ApiClient.Client.Configuration.DefaultExceptionFactory;
@@ -224,7 +224,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public SearchApi(ISynchronousClient client, IAsynchronousClient asyncClient, IReadableConfiguration configuration)
+        public SearchApi(TestIT.ApiClient.Client.ISynchronousClient client, TestIT.ApiClient.Client.IAsynchronousClient asyncClient, TestIT.ApiClient.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -247,17 +247,17 @@ namespace TestIT.ApiClient.Api
         /// <summary>
         /// Holds the ApiClient if created
         /// </summary>
-        public Client.ApiClient ApiClient { get; set; } = null;
+        public TestIT.ApiClient.Client.ApiClient ApiClient { get; set; } = null;
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public IAsynchronousClient AsynchronousClient { get; set; }
+        public TestIT.ApiClient.Client.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public ISynchronousClient Client { get; set; }
+        public TestIT.ApiClient.Client.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -272,12 +272,12 @@ namespace TestIT.ApiClient.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public IReadableConfiguration Configuration { get; set; }
+        public TestIT.ApiClient.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public ExceptionFactory ExceptionFactory
+        public TestIT.ApiClient.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -291,26 +291,26 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        ///
+        ///  
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2SearchGlobalSearchPostRequest"> (optional)</param>
         /// <returns>GlobalSearchResponse</returns>
         public GlobalSearchResponse ApiV2SearchGlobalSearchPost(ApiV2SearchGlobalSearchPostRequest apiV2SearchGlobalSearchPostRequest = default(ApiV2SearchGlobalSearchPostRequest))
         {
-            ApiResponse<GlobalSearchResponse> localVarResponse = ApiV2SearchGlobalSearchPostWithHttpInfo(apiV2SearchGlobalSearchPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<GlobalSearchResponse> localVarResponse = ApiV2SearchGlobalSearchPostWithHttpInfo(apiV2SearchGlobalSearchPostRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///
+        ///  
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2SearchGlobalSearchPostRequest"> (optional)</param>
         /// <returns>ApiResponse of GlobalSearchResponse</returns>
-        public ApiResponse<GlobalSearchResponse> ApiV2SearchGlobalSearchPostWithHttpInfo(ApiV2SearchGlobalSearchPostRequest apiV2SearchGlobalSearchPostRequest = default(ApiV2SearchGlobalSearchPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<GlobalSearchResponse> ApiV2SearchGlobalSearchPostWithHttpInfo(ApiV2SearchGlobalSearchPostRequest apiV2SearchGlobalSearchPostRequest = default(ApiV2SearchGlobalSearchPostRequest))
         {
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -321,10 +321,10 @@ namespace TestIT.ApiClient.Api
                 "application/json"
             };
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = apiV2SearchGlobalSearchPostRequest;
@@ -348,29 +348,29 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        ///
+        ///  
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2SearchGlobalSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GlobalSearchResponse</returns>
         public async System.Threading.Tasks.Task<GlobalSearchResponse> ApiV2SearchGlobalSearchPostAsync(ApiV2SearchGlobalSearchPostRequest apiV2SearchGlobalSearchPostRequest = default(ApiV2SearchGlobalSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            ApiResponse<GlobalSearchResponse> localVarResponse = await ApiV2SearchGlobalSearchPostWithHttpInfoAsync(apiV2SearchGlobalSearchPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<GlobalSearchResponse> localVarResponse = await ApiV2SearchGlobalSearchPostWithHttpInfoAsync(apiV2SearchGlobalSearchPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///
+        ///  
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2SearchGlobalSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GlobalSearchResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GlobalSearchResponse>> ApiV2SearchGlobalSearchPostWithHttpInfoAsync(ApiV2SearchGlobalSearchPostRequest apiV2SearchGlobalSearchPostRequest = default(ApiV2SearchGlobalSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<GlobalSearchResponse>> ApiV2SearchGlobalSearchPostWithHttpInfoAsync(ApiV2SearchGlobalSearchPostRequest apiV2SearchGlobalSearchPostRequest = default(ApiV2SearchGlobalSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            RequestOptions localVarRequestOptions = new RequestOptions();
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -382,10 +382,10 @@ namespace TestIT.ApiClient.Api
             };
 
 
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = apiV2SearchGlobalSearchPostRequest;

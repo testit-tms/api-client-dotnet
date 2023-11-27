@@ -64,7 +64,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="workItemVersionId">workItemVersionId.</param>
         /// <param name="workItemVersionNumber">workItemVersionNumber.</param>
         /// <param name="launchSource">launchSource.</param>
-        /// <param name="failureClassIds">failureClassIds.</param>
+        /// <param name="failureClassIds">failureClassIds (required).</param>
         /// <param name="parameters">parameters.</param>
         public TestResultHistoryReportModel(Guid id = default(Guid), DateTime createdDate = default(DateTime), DateTime modifiedDate = default(DateTime), Guid userId = default(Guid), Guid? testRunId = default(Guid?), string testRunName = default(string), string createdByUserName = default(string), Guid? testPlanId = default(Guid?), long? testPlanGlobalId = default(long?), string testPlanName = default(string), string configurationName = default(string), bool isAutomated = default(bool), string outcome = default(string), string comment = default(string), List<LinkModel> links = default(List<LinkModel>), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? duration = default(long?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), List<AttachmentModel> attachments = default(List<AttachmentModel>), Guid? workItemVersionId = default(Guid?), int? workItemVersionNumber = default(int?), string launchSource = default(string), List<Guid> failureClassIds = default(List<Guid>), Dictionary<string, string> parameters = default(Dictionary<string, string>))
         {
@@ -74,6 +74,12 @@ namespace TestIT.ApiClient.Model
             this.UserId = userId;
             this.IsAutomated = isAutomated;
             this.CreatedById = createdById;
+            // to ensure "failureClassIds" is required (not null)
+            if (failureClassIds == null)
+            {
+                throw new ArgumentNullException("failureClassIds is a required property for TestResultHistoryReportModel and cannot be null");
+            }
+            this.FailureClassIds = failureClassIds;
             this.TestRunId = testRunId;
             this.TestRunName = testRunName;
             this.CreatedByUserName = createdByUserName;
@@ -92,28 +98,27 @@ namespace TestIT.ApiClient.Model
             this.WorkItemVersionId = workItemVersionId;
             this.WorkItemVersionNumber = workItemVersionNumber;
             this.LaunchSource = launchSource;
-            this.FailureClassIds = failureClassIds;
             this.Parameters = parameters;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
+        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
         [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
+        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
         [DataMember(Name = "modifiedDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime ModifiedDate { get; set; }
 
@@ -121,14 +126,14 @@ namespace TestIT.ApiClient.Model
         /// If test run was stopped, this property equals identifier of user who stopped it.Otherwise, the property equals identifier of user who created the test result
         /// </summary>
         /// <value>If test run was stopped, this property equals identifier of user who stopped it.Otherwise, the property equals identifier of user who created the test result</value>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "userId", IsRequired = true, EmitDefaultValue = true)]
         public Guid UserId { get; set; }
 
         /// <summary>
         /// Gets or Sets TestRunId
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "testRunId", EmitDefaultValue = true)]
         public Guid? TestRunId { get; set; }
 
@@ -149,7 +154,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets TestPlanId
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "testPlanId", EmitDefaultValue = true)]
         public Guid? TestPlanId { get; set; }
 
@@ -208,14 +213,14 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets StartedOn
         /// </summary>
-        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
+        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
         [DataMember(Name = "startedOn", EmitDefaultValue = true)]
         public DateTime? StartedOn { get; set; }
 
         /// <summary>
         /// Gets or Sets CompletedOn
         /// </summary>
-        /// <example>&quot;2023-09-05T14:27:24.282190200Z&quot;</example>
+        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
         [DataMember(Name = "completedOn", EmitDefaultValue = true)]
         public DateTime? CompletedOn { get; set; }
 
@@ -229,14 +234,14 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
@@ -250,7 +255,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets WorkItemVersionId
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "workItemVersionId", EmitDefaultValue = true)]
         public Guid? WorkItemVersionId { get; set; }
 
@@ -269,7 +274,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets FailureClassIds
         /// </summary>
-        [DataMember(Name = "failureClassIds", EmitDefaultValue = true)]
+        [DataMember(Name = "failureClassIds", IsRequired = true, EmitDefaultValue = true)]
         public List<Guid> FailureClassIds { get; set; }
 
         /// <summary>
@@ -346,134 +351,134 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) &&
+                ) && 
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
                     this.ModifiedDate.Equals(input.ModifiedDate))
-                ) &&
+                ) && 
                 (
                     this.UserId == input.UserId ||
                     (this.UserId != null &&
                     this.UserId.Equals(input.UserId))
-                ) &&
+                ) && 
                 (
                     this.TestRunId == input.TestRunId ||
                     (this.TestRunId != null &&
                     this.TestRunId.Equals(input.TestRunId))
-                ) &&
+                ) && 
                 (
                     this.TestRunName == input.TestRunName ||
                     (this.TestRunName != null &&
                     this.TestRunName.Equals(input.TestRunName))
-                ) &&
+                ) && 
                 (
                     this.CreatedByUserName == input.CreatedByUserName ||
                     (this.CreatedByUserName != null &&
                     this.CreatedByUserName.Equals(input.CreatedByUserName))
-                ) &&
+                ) && 
                 (
                     this.TestPlanId == input.TestPlanId ||
                     (this.TestPlanId != null &&
                     this.TestPlanId.Equals(input.TestPlanId))
-                ) &&
+                ) && 
                 (
                     this.TestPlanGlobalId == input.TestPlanGlobalId ||
                     (this.TestPlanGlobalId != null &&
                     this.TestPlanGlobalId.Equals(input.TestPlanGlobalId))
-                ) &&
+                ) && 
                 (
                     this.TestPlanName == input.TestPlanName ||
                     (this.TestPlanName != null &&
                     this.TestPlanName.Equals(input.TestPlanName))
-                ) &&
+                ) && 
                 (
                     this.ConfigurationName == input.ConfigurationName ||
                     (this.ConfigurationName != null &&
                     this.ConfigurationName.Equals(input.ConfigurationName))
-                ) &&
+                ) && 
                 (
                     this.IsAutomated == input.IsAutomated ||
                     this.IsAutomated.Equals(input.IsAutomated)
-                ) &&
+                ) && 
                 (
                     this.Outcome == input.Outcome ||
                     (this.Outcome != null &&
                     this.Outcome.Equals(input.Outcome))
-                ) &&
+                ) && 
                 (
                     this.Comment == input.Comment ||
                     (this.Comment != null &&
                     this.Comment.Equals(input.Comment))
-                ) &&
+                ) && 
                 (
                     this.Links == input.Links ||
                     this.Links != null &&
                     input.Links != null &&
                     this.Links.SequenceEqual(input.Links)
-                ) &&
+                ) && 
                 (
                     this.StartedOn == input.StartedOn ||
                     (this.StartedOn != null &&
                     this.StartedOn.Equals(input.StartedOn))
-                ) &&
+                ) && 
                 (
                     this.CompletedOn == input.CompletedOn ||
                     (this.CompletedOn != null &&
                     this.CompletedOn.Equals(input.CompletedOn))
-                ) &&
+                ) && 
                 (
                     this.Duration == input.Duration ||
                     (this.Duration != null &&
                     this.Duration.Equals(input.Duration))
-                ) &&
+                ) && 
                 (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&
                     this.CreatedById.Equals(input.CreatedById))
-                ) &&
+                ) && 
                 (
                     this.ModifiedById == input.ModifiedById ||
                     (this.ModifiedById != null &&
                     this.ModifiedById.Equals(input.ModifiedById))
-                ) &&
+                ) && 
                 (
                     this.Attachments == input.Attachments ||
                     this.Attachments != null &&
                     input.Attachments != null &&
                     this.Attachments.SequenceEqual(input.Attachments)
-                ) &&
+                ) && 
                 (
                     this.WorkItemVersionId == input.WorkItemVersionId ||
                     (this.WorkItemVersionId != null &&
                     this.WorkItemVersionId.Equals(input.WorkItemVersionId))
-                ) &&
+                ) && 
                 (
                     this.WorkItemVersionNumber == input.WorkItemVersionNumber ||
                     (this.WorkItemVersionNumber != null &&
                     this.WorkItemVersionNumber.Equals(input.WorkItemVersionNumber))
-                ) &&
+                ) && 
                 (
                     this.LaunchSource == input.LaunchSource ||
                     (this.LaunchSource != null &&
                     this.LaunchSource.Equals(input.LaunchSource))
-                ) &&
+                ) && 
                 (
                     this.FailureClassIds == input.FailureClassIds ||
                     this.FailureClassIds != null &&
                     input.FailureClassIds != null &&
                     this.FailureClassIds.SequenceEqual(input.FailureClassIds)
-                ) &&
+                ) && 
                 (
                     this.Parameters == input.Parameters ||
                     this.Parameters != null &&
@@ -601,7 +606,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

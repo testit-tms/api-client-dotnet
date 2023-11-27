@@ -27,41 +27,25 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// Rules for different level entities inclusion/exclusion
+    /// AutotestSelectModelExtractionModel
     /// </summary>
-    [DataContract(Name = "WorkItemSelectModel_extractionModel")]
-    public partial class WorkItemSelectModelExtractionModel : IEquatable<WorkItemSelectModelExtractionModel>, IValidatableObject
+    [DataContract(Name = "AutotestSelectModel_extractionModel")]
+    public partial class AutotestSelectModelExtractionModel : IEquatable<AutotestSelectModelExtractionModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkItemSelectModelExtractionModel" /> class.
+        /// Initializes a new instance of the <see cref="AutotestSelectModelExtractionModel" /> class.
         /// </summary>
         /// <param name="ids">ids.</param>
-        /// <param name="sectionIds">sectionIds.</param>
-        /// <param name="projectIds">projectIds.</param>
-        public WorkItemSelectModelExtractionModel(WorkItemsExtractionModelIds ids = default(WorkItemsExtractionModelIds), WorkItemsExtractionModelSectionIds sectionIds = default(WorkItemsExtractionModelSectionIds), ConfigurationExtractionModelProjectIds projectIds = default(ConfigurationExtractionModelProjectIds))
+        public AutotestSelectModelExtractionModel(AutotestsExtractionModelIds ids = default(AutotestsExtractionModelIds))
         {
             this.Ids = ids;
-            this.SectionIds = sectionIds;
-            this.ProjectIds = projectIds;
         }
 
         /// <summary>
         /// Gets or Sets Ids
         /// </summary>
         [DataMember(Name = "ids", EmitDefaultValue = true)]
-        public WorkItemsExtractionModelIds Ids { get; set; }
-
-        /// <summary>
-        /// Gets or Sets SectionIds
-        /// </summary>
-        [DataMember(Name = "sectionIds", EmitDefaultValue = true)]
-        public WorkItemsExtractionModelSectionIds SectionIds { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ProjectIds
-        /// </summary>
-        [DataMember(Name = "projectIds", EmitDefaultValue = true)]
-        public ConfigurationExtractionModelProjectIds ProjectIds { get; set; }
+        public AutotestsExtractionModelIds Ids { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -70,10 +54,8 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WorkItemSelectModelExtractionModel {\n");
+            sb.Append("class AutotestSelectModelExtractionModel {\n");
             sb.Append("  Ids: ").Append(Ids).Append("\n");
-            sb.Append("  SectionIds: ").Append(SectionIds).Append("\n");
-            sb.Append("  ProjectIds: ").Append(ProjectIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -94,35 +76,25 @@ namespace TestIT.ApiClient.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as WorkItemSelectModelExtractionModel);
+            return this.Equals(input as AutotestSelectModelExtractionModel);
         }
 
         /// <summary>
-        /// Returns true if WorkItemSelectModelExtractionModel instances are equal
+        /// Returns true if AutotestSelectModelExtractionModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of WorkItemSelectModelExtractionModel to be compared</param>
+        /// <param name="input">Instance of AutotestSelectModelExtractionModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(WorkItemSelectModelExtractionModel input)
+        public bool Equals(AutotestSelectModelExtractionModel input)
         {
             if (input == null)
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Ids == input.Ids ||
                     (this.Ids != null &&
                     this.Ids.Equals(input.Ids))
-                ) &&
-                (
-                    this.SectionIds == input.SectionIds ||
-                    (this.SectionIds != null &&
-                    this.SectionIds.Equals(input.SectionIds))
-                ) &&
-                (
-                    this.ProjectIds == input.ProjectIds ||
-                    (this.ProjectIds != null &&
-                    this.ProjectIds.Equals(input.ProjectIds))
                 );
         }
 
@@ -139,14 +111,6 @@ namespace TestIT.ApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.Ids.GetHashCode();
                 }
-                if (this.SectionIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.SectionIds.GetHashCode();
-                }
-                if (this.ProjectIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProjectIds.GetHashCode();
-                }
                 return hashCode;
             }
         }
@@ -156,7 +120,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

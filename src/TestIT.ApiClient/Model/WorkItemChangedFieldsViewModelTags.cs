@@ -27,35 +27,33 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// Collection of filters to apply to search
+    /// WorkItemChangedFieldsViewModelTags
     /// </summary>
-    [DataContract(Name = "_api_v2_projects__id__attributes_templates_search_post_request")]
-    public partial class ApiV2ProjectsIdAttributesTemplatesSearchPostRequest : IEquatable<ApiV2ProjectsIdAttributesTemplatesSearchPostRequest>, IValidatableObject
+    [DataContract(Name = "WorkItemChangedFieldsViewModel_tags")]
+    public partial class WorkItemChangedFieldsViewModelTags : IEquatable<WorkItemChangedFieldsViewModelTags>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApiV2ProjectsIdAttributesTemplatesSearchPostRequest" /> class.
+        /// Initializes a new instance of the <see cref="WorkItemChangedFieldsViewModelTags" /> class.
         /// </summary>
-        /// <param name="name">Name of custom attribute template.</param>
-        /// <param name="customAttributeTypes">Collection of custom attributes types.</param>
-        public ApiV2ProjectsIdAttributesTemplatesSearchPostRequest(string name = default(string), List<CustomAttributeTypesEnum> customAttributeTypes = default(List<CustomAttributeTypesEnum>))
+        /// <param name="oldValue">oldValue.</param>
+        /// <param name="newValue">newValue.</param>
+        public WorkItemChangedFieldsViewModelTags(List<string> oldValue = default(List<string>), List<string> newValue = default(List<string>))
         {
-            this.Name = name;
-            this.CustomAttributeTypes = customAttributeTypes;
+            this.OldValue = oldValue;
+            this.NewValue = newValue;
         }
 
         /// <summary>
-        /// Name of custom attribute template
+        /// Gets or Sets OldValue
         /// </summary>
-        /// <value>Name of custom attribute template</value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string Name { get; set; }
+        [DataMember(Name = "oldValue", EmitDefaultValue = true)]
+        public List<string> OldValue { get; set; }
 
         /// <summary>
-        /// Collection of custom attributes types
+        /// Gets or Sets NewValue
         /// </summary>
-        /// <value>Collection of custom attributes types</value>
-        [DataMember(Name = "customAttributeTypes", EmitDefaultValue = true)]
-        public List<CustomAttributeTypesEnum> CustomAttributeTypes { get; set; }
+        [DataMember(Name = "newValue", EmitDefaultValue = true)]
+        public List<string> NewValue { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -64,9 +62,9 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ApiV2ProjectsIdAttributesTemplatesSearchPostRequest {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  CustomAttributeTypes: ").Append(CustomAttributeTypes).Append("\n");
+            sb.Append("class WorkItemChangedFieldsViewModelTags {\n");
+            sb.Append("  OldValue: ").Append(OldValue).Append("\n");
+            sb.Append("  NewValue: ").Append(NewValue).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -87,31 +85,32 @@ namespace TestIT.ApiClient.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ApiV2ProjectsIdAttributesTemplatesSearchPostRequest);
+            return this.Equals(input as WorkItemChangedFieldsViewModelTags);
         }
 
         /// <summary>
-        /// Returns true if ApiV2ProjectsIdAttributesTemplatesSearchPostRequest instances are equal
+        /// Returns true if WorkItemChangedFieldsViewModelTags instances are equal
         /// </summary>
-        /// <param name="input">Instance of ApiV2ProjectsIdAttributesTemplatesSearchPostRequest to be compared</param>
+        /// <param name="input">Instance of WorkItemChangedFieldsViewModelTags to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ApiV2ProjectsIdAttributesTemplatesSearchPostRequest input)
+        public bool Equals(WorkItemChangedFieldsViewModelTags input)
         {
             if (input == null)
             {
                 return false;
             }
-            return
+            return 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) &&
+                    this.OldValue == input.OldValue ||
+                    this.OldValue != null &&
+                    input.OldValue != null &&
+                    this.OldValue.SequenceEqual(input.OldValue)
+                ) && 
                 (
-                    this.CustomAttributeTypes == input.CustomAttributeTypes ||
-                    this.CustomAttributeTypes != null &&
-                    input.CustomAttributeTypes != null &&
-                    this.CustomAttributeTypes.SequenceEqual(input.CustomAttributeTypes)
+                    this.NewValue == input.NewValue ||
+                    this.NewValue != null &&
+                    input.NewValue != null &&
+                    this.NewValue.SequenceEqual(input.NewValue)
                 );
         }
 
@@ -124,13 +123,13 @@ namespace TestIT.ApiClient.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Name != null)
+                if (this.OldValue != null)
                 {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                    hashCode = (hashCode * 59) + this.OldValue.GetHashCode();
                 }
-                if (this.CustomAttributeTypes != null)
+                if (this.NewValue != null)
                 {
-                    hashCode = (hashCode * 59) + this.CustomAttributeTypes.GetHashCode();
+                    hashCode = (hashCode * 59) + this.NewValue.GetHashCode();
                 }
                 return hashCode;
             }
@@ -141,7 +140,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

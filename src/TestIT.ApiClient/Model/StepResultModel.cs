@@ -41,13 +41,18 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="StepResultModel" /> class.
         /// </summary>
         /// <param name="stepId">stepId (required).</param>
-        /// <param name="outcome">outcome.</param>
+        /// <param name="outcome">outcome (required).</param>
         /// <param name="sharedStepVersionId">sharedStepVersionId.</param>
         /// <param name="sharedStepResults">sharedStepResults.</param>
         /// <param name="comment">comment.</param>
         public StepResultModel(Guid stepId = default(Guid), string outcome = default(string), Guid? sharedStepVersionId = default(Guid?), List<SharedStepResultModel> sharedStepResults = default(List<SharedStepResultModel>), StepCommentModel comment = default(StepCommentModel))
         {
             this.StepId = stepId;
+            // to ensure "outcome" is required (not null)
+            if (outcome == null)
+            {
+                throw new ArgumentNullException("outcome is a required property for StepResultModel and cannot be null");
+            }
             this.Outcome = outcome;
             this.SharedStepVersionId = sharedStepVersionId;
             this.SharedStepResults = sharedStepResults;
@@ -63,7 +68,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Outcome
         /// </summary>
-        [DataMember(Name = "outcome", EmitDefaultValue = true)]
+        [DataMember(Name = "outcome", IsRequired = true, EmitDefaultValue = true)]
         public string Outcome { get; set; }
 
         /// <summary>
@@ -131,28 +136,28 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.StepId == input.StepId ||
                     (this.StepId != null &&
                     this.StepId.Equals(input.StepId))
-                ) &&
+                ) && 
                 (
                     this.Outcome == input.Outcome ||
                     (this.Outcome != null &&
                     this.Outcome.Equals(input.Outcome))
-                ) &&
+                ) && 
                 (
                     this.SharedStepVersionId == input.SharedStepVersionId ||
                     (this.SharedStepVersionId != null &&
                     this.SharedStepVersionId.Equals(input.SharedStepVersionId))
-                ) &&
+                ) && 
                 (
                     this.SharedStepResults == input.SharedStepResults ||
                     this.SharedStepResults != null &&
                     input.SharedStepResults != null &&
                     this.SharedStepResults.SequenceEqual(input.SharedStepResults)
-                ) &&
+                ) && 
                 (
                     this.Comment == input.Comment ||
                     (this.Comment != null &&
@@ -198,7 +203,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

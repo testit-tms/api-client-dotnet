@@ -27,18 +27,28 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// Model containing options to filter work items
+    /// ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest
     /// </summary>
-    [DataContract(Name = "_api_v2_projects__id__workItems_search_post_request")]
-    public partial class ApiV2ProjectsIdWorkItemsSearchPostRequest : IEquatable<ApiV2ProjectsIdWorkItemsSearchPostRequest>, IValidatableObject
+    [DataContract(Name = "_api_v2_projects__projectId__testPlans_delete_bulk_post_request")]
+    public partial class ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest : IEquatable<ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApiV2ProjectsIdWorkItemsSearchPostRequest" /> class.
+        /// Initializes a new instance of the <see cref="ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest" /> class.
         /// </summary>
-        /// <param name="filter">filter.</param>
+        [JsonConstructorAttribute]
+        protected ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest" /> class.
+        /// </summary>
+        /// <param name="filter">filter (required).</param>
         /// <param name="extractionModel">extractionModel.</param>
-        public ApiV2ProjectsIdWorkItemsSearchPostRequest(WorkItemSelectModelFilter filter = default(WorkItemSelectModelFilter), WorkItemSelectModelExtractionModel extractionModel = default(WorkItemSelectModelExtractionModel))
+        public ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest(ApiV2ProjectsProjectIdTestPlansSearchPostRequest filter = default(ApiV2ProjectsProjectIdTestPlansSearchPostRequest), TestPlanExtractionModel extractionModel = default(TestPlanExtractionModel))
         {
+            // to ensure "filter" is required (not null)
+            if (filter == null)
+            {
+                throw new ArgumentNullException("filter is a required property for ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest and cannot be null");
+            }
             this.Filter = filter;
             this.ExtractionModel = extractionModel;
         }
@@ -46,14 +56,14 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Filter
         /// </summary>
-        [DataMember(Name = "filter", EmitDefaultValue = true)]
-        public WorkItemSelectModelFilter Filter { get; set; }
+        [DataMember(Name = "filter", IsRequired = true, EmitDefaultValue = true)]
+        public ApiV2ProjectsProjectIdTestPlansSearchPostRequest Filter { get; set; }
 
         /// <summary>
         /// Gets or Sets ExtractionModel
         /// </summary>
         [DataMember(Name = "extractionModel", EmitDefaultValue = true)]
-        public WorkItemSelectModelExtractionModel ExtractionModel { get; set; }
+        public TestPlanExtractionModel ExtractionModel { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -62,7 +72,7 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ApiV2ProjectsIdWorkItemsSearchPostRequest {\n");
+            sb.Append("class ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest {\n");
             sb.Append("  Filter: ").Append(Filter).Append("\n");
             sb.Append("  ExtractionModel: ").Append(ExtractionModel).Append("\n");
             sb.Append("}\n");
@@ -85,26 +95,26 @@ namespace TestIT.ApiClient.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ApiV2ProjectsIdWorkItemsSearchPostRequest);
+            return this.Equals(input as ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest);
         }
 
         /// <summary>
-        /// Returns true if ApiV2ProjectsIdWorkItemsSearchPostRequest instances are equal
+        /// Returns true if ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of ApiV2ProjectsIdWorkItemsSearchPostRequest to be compared</param>
+        /// <param name="input">Instance of ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ApiV2ProjectsIdWorkItemsSearchPostRequest input)
+        public bool Equals(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest input)
         {
             if (input == null)
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.Filter == input.Filter ||
                     (this.Filter != null &&
                     this.Filter.Equals(input.Filter))
-                ) &&
+                ) && 
                 (
                     this.ExtractionModel == input.ExtractionModel ||
                     (this.ExtractionModel != null &&
@@ -138,7 +148,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -29,33 +29,21 @@ namespace TestIT.ApiClient.Model
     /// <summary>
     /// Rules for different level entities inclusion/exclusion
     /// </summary>
-    [DataContract(Name = "WorkItemsExtractionModel")]
-    public partial class WorkItemsExtractionModel : IEquatable<WorkItemsExtractionModel>, IValidatableObject
+    [DataContract(Name = "WorkItemExtractionModel")]
+    public partial class WorkItemExtractionModel : IEquatable<WorkItemExtractionModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkItemsExtractionModel" /> class.
+        /// Initializes a new instance of the <see cref="WorkItemExtractionModel" /> class.
         /// </summary>
+        /// <param name="projectIds">projectIds.</param>
         /// <param name="ids">ids.</param>
         /// <param name="sectionIds">sectionIds.</param>
-        /// <param name="projectIds">projectIds.</param>
-        public WorkItemsExtractionModel(WorkItemsExtractionModelIds ids = default(WorkItemsExtractionModelIds), WorkItemsExtractionModelSectionIds sectionIds = default(WorkItemsExtractionModelSectionIds), ConfigurationExtractionModelProjectIds projectIds = default(ConfigurationExtractionModelProjectIds))
+        public WorkItemExtractionModel(ConfigurationExtractionModelProjectIds projectIds = default(ConfigurationExtractionModelProjectIds), WorkItemExtractionModelIds ids = default(WorkItemExtractionModelIds), WorkItemExtractionModelSectionIds sectionIds = default(WorkItemExtractionModelSectionIds))
         {
+            this.ProjectIds = projectIds;
             this.Ids = ids;
             this.SectionIds = sectionIds;
-            this.ProjectIds = projectIds;
         }
-
-        /// <summary>
-        /// Gets or Sets Ids
-        /// </summary>
-        [DataMember(Name = "ids", EmitDefaultValue = true)]
-        public WorkItemsExtractionModelIds Ids { get; set; }
-
-        /// <summary>
-        /// Gets or Sets SectionIds
-        /// </summary>
-        [DataMember(Name = "sectionIds", EmitDefaultValue = true)]
-        public WorkItemsExtractionModelSectionIds SectionIds { get; set; }
 
         /// <summary>
         /// Gets or Sets ProjectIds
@@ -64,16 +52,28 @@ namespace TestIT.ApiClient.Model
         public ConfigurationExtractionModelProjectIds ProjectIds { get; set; }
 
         /// <summary>
+        /// Gets or Sets Ids
+        /// </summary>
+        [DataMember(Name = "ids", EmitDefaultValue = true)]
+        public WorkItemExtractionModelIds Ids { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SectionIds
+        /// </summary>
+        [DataMember(Name = "sectionIds", EmitDefaultValue = true)]
+        public WorkItemExtractionModelSectionIds SectionIds { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WorkItemsExtractionModel {\n");
+            sb.Append("class WorkItemExtractionModel {\n");
+            sb.Append("  ProjectIds: ").Append(ProjectIds).Append("\n");
             sb.Append("  Ids: ").Append(Ids).Append("\n");
             sb.Append("  SectionIds: ").Append(SectionIds).Append("\n");
-            sb.Append("  ProjectIds: ").Append(ProjectIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -94,35 +94,35 @@ namespace TestIT.ApiClient.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as WorkItemsExtractionModel);
+            return this.Equals(input as WorkItemExtractionModel);
         }
 
         /// <summary>
-        /// Returns true if WorkItemsExtractionModel instances are equal
+        /// Returns true if WorkItemExtractionModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of WorkItemsExtractionModel to be compared</param>
+        /// <param name="input">Instance of WorkItemExtractionModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(WorkItemsExtractionModel input)
+        public bool Equals(WorkItemExtractionModel input)
         {
             if (input == null)
             {
                 return false;
             }
-            return
-                (
-                    this.Ids == input.Ids ||
-                    (this.Ids != null &&
-                    this.Ids.Equals(input.Ids))
-                ) &&
-                (
-                    this.SectionIds == input.SectionIds ||
-                    (this.SectionIds != null &&
-                    this.SectionIds.Equals(input.SectionIds))
-                ) &&
+            return 
                 (
                     this.ProjectIds == input.ProjectIds ||
                     (this.ProjectIds != null &&
                     this.ProjectIds.Equals(input.ProjectIds))
+                ) && 
+                (
+                    this.Ids == input.Ids ||
+                    (this.Ids != null &&
+                    this.Ids.Equals(input.Ids))
+                ) && 
+                (
+                    this.SectionIds == input.SectionIds ||
+                    (this.SectionIds != null &&
+                    this.SectionIds.Equals(input.SectionIds))
                 );
         }
 
@@ -135,6 +135,10 @@ namespace TestIT.ApiClient.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.ProjectIds != null)
+                {
+                    hashCode = (hashCode * 59) + this.ProjectIds.GetHashCode();
+                }
                 if (this.Ids != null)
                 {
                     hashCode = (hashCode * 59) + this.Ids.GetHashCode();
@@ -142,10 +146,6 @@ namespace TestIT.ApiClient.Model
                 if (this.SectionIds != null)
                 {
                     hashCode = (hashCode * 59) + this.SectionIds.GetHashCode();
-                }
-                if (this.ProjectIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProjectIds.GetHashCode();
                 }
                 return hashCode;
             }
@@ -156,7 +156,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -212,61 +212,61 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.IncludeName == input.IncludeName ||
                     this.IncludeName.Equals(input.IncludeName)
-                ) &&
+                ) && 
                 (
                     this.IncludeSection == input.IncludeSection ||
                     this.IncludeSection.Equals(input.IncludeSection)
-                ) &&
+                ) && 
                 (
                     this.IncludePriority == input.IncludePriority ||
                     this.IncludePriority.Equals(input.IncludePriority)
-                ) &&
+                ) && 
                 (
                     this.IncludeAutomated == input.IncludeAutomated ||
                     this.IncludeAutomated.Equals(input.IncludeAutomated)
-                ) &&
+                ) && 
                 (
                     this.IncludeStatus == input.IncludeStatus ||
                     this.IncludeStatus.Equals(input.IncludeStatus)
-                ) &&
+                ) && 
                 (
                     this.IncludeDuration == input.IncludeDuration ||
                     this.IncludeDuration.Equals(input.IncludeDuration)
-                ) &&
+                ) && 
                 (
                     this.IncludeCreationDate == input.IncludeCreationDate ||
                     this.IncludeCreationDate.Equals(input.IncludeCreationDate)
-                ) &&
+                ) && 
                 (
                     this.IncludeAuthor == input.IncludeAuthor ||
                     this.IncludeAuthor.Equals(input.IncludeAuthor)
-                ) &&
+                ) && 
                 (
                     this.IncludeModificationDate == input.IncludeModificationDate ||
                     this.IncludeModificationDate.Equals(input.IncludeModificationDate)
-                ) &&
+                ) && 
                 (
                     this.IncludeModifiedBy == input.IncludeModifiedBy ||
                     this.IncludeModifiedBy.Equals(input.IncludeModifiedBy)
-                ) &&
+                ) && 
                 (
                     this.IncludeTags == input.IncludeTags ||
                     this.IncludeTags.Equals(input.IncludeTags)
-                ) &&
+                ) && 
                 (
                     this.IncludeIterations == input.IncludeIterations ||
                     this.IncludeIterations.Equals(input.IncludeIterations)
-                ) &&
+                ) && 
                 (
                     this.CustomAttributesIds == input.CustomAttributesIds ||
                     this.CustomAttributesIds != null &&
                     input.CustomAttributesIds != null &&
                     this.CustomAttributesIds.SequenceEqual(input.CustomAttributesIds)
-                ) &&
+                ) && 
                 (
                     this.ConfigurationIds == input.ConfigurationIds ||
                     this.ConfigurationIds != null &&
@@ -313,7 +313,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

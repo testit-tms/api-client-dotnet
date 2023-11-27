@@ -41,14 +41,15 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="TestPointShortModel" /> class.
         /// </summary>
         /// <param name="testSuiteId">testSuiteId (required).</param>
-        /// <param name="id">id (required).</param>
-        /// <param name="testerId">testerId.</param>
-        /// <param name="workItemId">workItemId.</param>
-        /// <param name="configurationId">configurationId.</param>
-        /// <param name="status">Applies one of these values: Blocked, NoResults, Failed, Passed.</param>
-        /// <param name="lastTestResultId">lastTestResultId.</param>
-        /// <param name="iterationId">iterationId (required).</param>
-        public TestPointShortModel(Guid testSuiteId = default(Guid), Guid id = default(Guid), Guid? testerId = default(Guid?), Guid? workItemId = default(Guid?), Guid? configurationId = default(Guid?), string status = default(string), Guid? lastTestResultId = default(Guid?), Guid iterationId = default(Guid))
+        /// <param name="id">Test point unique internal identifier (required).</param>
+        /// <param name="testerId">Tester who is responded for the test unique internal identifier.</param>
+        /// <param name="workItemId">Workitem to which test point relates unique identifier.</param>
+        /// <param name="configurationId">Configuration to which test point relates unique identifier.</param>
+        /// <param name="status">Test point status  &lt;br&gt;Applies one of these values: Blocked, NoResults, Failed, Passed.</param>
+        /// <param name="lastTestResultId">Last test result unique identifier.</param>
+        /// <param name="iterationId">Iteration unique identifier (required).</param>
+        /// <param name="workItemMedianDuration">Median duration of work item the test point represents.</param>
+        public TestPointShortModel(Guid testSuiteId = default(Guid), Guid id = default(Guid), Guid? testerId = default(Guid?), Guid? workItemId = default(Guid?), Guid? configurationId = default(Guid?), string status = default(string), Guid? lastTestResultId = default(Guid?), Guid iterationId = default(Guid), long? workItemMedianDuration = default(long?))
         {
             this.TestSuiteId = testSuiteId;
             this.Id = id;
@@ -58,64 +59,72 @@ namespace TestIT.ApiClient.Model
             this.ConfigurationId = configurationId;
             this.Status = status;
             this.LastTestResultId = lastTestResultId;
+            this.WorkItemMedianDuration = workItemMedianDuration;
         }
 
         /// <summary>
         /// Gets or Sets TestSuiteId
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
         [DataMember(Name = "testSuiteId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestSuiteId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Test point unique internal identifier
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <value>Test point unique internal identifier</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets TesterId
+        /// Tester who is responded for the test unique internal identifier
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <value>Tester who is responded for the test unique internal identifier</value>
         [DataMember(Name = "testerId", EmitDefaultValue = true)]
         public Guid? TesterId { get; set; }
 
         /// <summary>
-        /// Gets or Sets WorkItemId
+        /// Workitem to which test point relates unique identifier
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <value>Workitem to which test point relates unique identifier</value>
         [DataMember(Name = "workItemId", EmitDefaultValue = true)]
         public Guid? WorkItemId { get; set; }
 
         /// <summary>
-        /// Gets or Sets ConfigurationId
+        /// Configuration to which test point relates unique identifier
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <value>Configuration to which test point relates unique identifier</value>
         [DataMember(Name = "configurationId", EmitDefaultValue = true)]
         public Guid? ConfigurationId { get; set; }
 
         /// <summary>
-        /// Applies one of these values: Blocked, NoResults, Failed, Passed
+        /// Test point status  &lt;br&gt;Applies one of these values: Blocked, NoResults, Failed, Passed
         /// </summary>
-        /// <value>Applies one of these values: Blocked, NoResults, Failed, Passed</value>
+        /// <value>Test point status  &lt;br&gt;Applies one of these values: Blocked, NoResults, Failed, Passed</value>
         /// <example>&quot;NoResult&quot;</example>
         [DataMember(Name = "status", EmitDefaultValue = true)]
         public string Status { get; set; }
 
         /// <summary>
-        /// Gets or Sets LastTestResultId
+        /// Last test result unique identifier
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <value>Last test result unique identifier</value>
         [DataMember(Name = "lastTestResultId", EmitDefaultValue = true)]
         public Guid? LastTestResultId { get; set; }
 
         /// <summary>
-        /// Gets or Sets IterationId
+        /// Iteration unique identifier
         /// </summary>
-        /// <example>&quot;d5e8b098-d2b8-480f-b49c-13dc4bf70a08&quot;</example>
+        /// <value>Iteration unique identifier</value>
         [DataMember(Name = "iterationId", IsRequired = true, EmitDefaultValue = true)]
         public Guid IterationId { get; set; }
+
+        /// <summary>
+        /// Median duration of work item the test point represents
+        /// </summary>
+        /// <value>Median duration of work item the test point represents</value>
+        [DataMember(Name = "workItemMedianDuration", EmitDefaultValue = true)]
+        public long? WorkItemMedianDuration { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -133,6 +142,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  LastTestResultId: ").Append(LastTestResultId).Append("\n");
             sb.Append("  IterationId: ").Append(IterationId).Append("\n");
+            sb.Append("  WorkItemMedianDuration: ").Append(WorkItemMedianDuration).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -167,46 +177,51 @@ namespace TestIT.ApiClient.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.TestSuiteId == input.TestSuiteId ||
                     (this.TestSuiteId != null &&
                     this.TestSuiteId.Equals(input.TestSuiteId))
-                ) &&
+                ) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) &&
+                ) && 
                 (
                     this.TesterId == input.TesterId ||
                     (this.TesterId != null &&
                     this.TesterId.Equals(input.TesterId))
-                ) &&
+                ) && 
                 (
                     this.WorkItemId == input.WorkItemId ||
                     (this.WorkItemId != null &&
                     this.WorkItemId.Equals(input.WorkItemId))
-                ) &&
+                ) && 
                 (
                     this.ConfigurationId == input.ConfigurationId ||
                     (this.ConfigurationId != null &&
                     this.ConfigurationId.Equals(input.ConfigurationId))
-                ) &&
+                ) && 
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
-                ) &&
+                ) && 
                 (
                     this.LastTestResultId == input.LastTestResultId ||
                     (this.LastTestResultId != null &&
                     this.LastTestResultId.Equals(input.LastTestResultId))
-                ) &&
+                ) && 
                 (
                     this.IterationId == input.IterationId ||
                     (this.IterationId != null &&
                     this.IterationId.Equals(input.IterationId))
+                ) && 
+                (
+                    this.WorkItemMedianDuration == input.WorkItemMedianDuration ||
+                    (this.WorkItemMedianDuration != null &&
+                    this.WorkItemMedianDuration.Equals(input.WorkItemMedianDuration))
                 );
         }
 
@@ -251,6 +266,10 @@ namespace TestIT.ApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.IterationId.GetHashCode();
                 }
+                if (this.WorkItemMedianDuration != null)
+                {
+                    hashCode = (hashCode * 59) + this.WorkItemMedianDuration.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -260,7 +279,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -28,7 +28,6 @@ using ErrorEventArgs = Newtonsoft.Json.Serialization.ErrorEventArgs;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Polly;
-using TestIT.ApiClient.Model;
 
 namespace TestIT.ApiClient.Client
 {
@@ -70,10 +69,10 @@ namespace TestIT.ApiClient.Client
         /// <returns>A JSON string.</returns>
         public string Serialize(object obj)
         {
-            if (obj != null && obj is AbstractOpenAPISchema)
+            if (obj != null && obj is TestIT.ApiClient.Model.AbstractOpenAPISchema)
             {
                 // the object to be serialized is an oneOf/anyOf schema
-                return ((AbstractOpenAPISchema)obj).ToJson();
+                return ((TestIT.ApiClient.Model.AbstractOpenAPISchema)obj).ToJson();
             }
             else
             {
@@ -200,7 +199,7 @@ namespace TestIT.ApiClient.Client
         /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHandler</see>.
         /// </summary>
         public ApiClient() :
-                 this(GlobalConfiguration.Instance.BasePath)
+                 this(TestIT.ApiClient.Client.GlobalConfiguration.Instance.BasePath)
         {
         }
 
@@ -232,7 +231,7 @@ namespace TestIT.ApiClient.Client
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
         public ApiClient(HttpClient client, HttpClientHandler handler = null) :
-                 this(client, GlobalConfiguration.Instance.BasePath, handler)
+                 this(client, TestIT.ApiClient.Client.GlobalConfiguration.Instance.BasePath, handler)
         {
         }
 
@@ -518,7 +517,7 @@ namespace TestIT.ApiClient.Client
                 object responseData = await deserializer.Deserialize<T>(response).ConfigureAwait(false);
 
                 // if the response type is oneOf/anyOf, call FromJSON to deserialize the data
-                if (typeof(AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
+                if (typeof(TestIT.ApiClient.Model.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
                 {
                     responseData = (T) typeof(T).GetMethod("FromJson").Invoke(null, new object[] { response.Content });
                 }
