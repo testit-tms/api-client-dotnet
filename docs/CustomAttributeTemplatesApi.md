@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.CustomAttributeTemplatesApi
+# TestIT.ApiClient.Api.CustomAttributeTemplatesApi
 
 All URIs are relative to *http://localhost*
 
@@ -13,7 +13,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2CustomAttributesTemplatesPut**](CustomAttributeTemplatesApi.md#apiv2customattributestemplatesput) | **PUT** /api/v2/customAttributes/templates | Update custom attributes template |
 | [**ApiV2CustomAttributesTemplatesSearchPost**](CustomAttributeTemplatesApi.md#apiv2customattributestemplatessearchpost) | **POST** /api/v2/customAttributes/templates/search | Search CustomAttributeTemplates |
 
-<a id="apiv2customattributestemplatesidcustomattributesexcludepost"></a>
+<a name="apiv2customattributestemplatesidcustomattributesexcludepost"></a>
 # **ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePost**
 > void ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePost (Guid id, List<Guid> requestBody = null)
 
@@ -26,9 +26,9 @@ Exclude CustomAttributes from CustomAttributeTemplate
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -114,7 +114,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2customattributestemplatesidcustomattributesincludepost"></a>
+<a name="apiv2customattributestemplatesidcustomattributesincludepost"></a>
 # **ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePost**
 > void ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePost (Guid id, List<Guid> requestBody = null)
 
@@ -127,9 +127,9 @@ Include CustomAttributes to CustomAttributeTemplate
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -215,7 +215,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2customattributestemplatesiddelete"></a>
+<a name="apiv2customattributestemplatesiddelete"></a>
 # **ApiV2CustomAttributesTemplatesIdDelete**
 > NoContentResult ApiV2CustomAttributesTemplatesIdDelete (Guid id)
 
@@ -228,9 +228,9 @@ Delete CustomAttributeTemplate
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -317,7 +317,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2customattributestemplatesidget"></a>
+<a name="apiv2customattributestemplatesidget"></a>
 # **ApiV2CustomAttributesTemplatesIdGet**
 > CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesIdGet (Guid id)
 
@@ -330,9 +330,9 @@ Get CustomAttributeTemplate by ID
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -419,7 +419,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2customattributestemplatesnameget"></a>
+<a name="apiv2customattributestemplatesnameget"></a>
 # **ApiV2CustomAttributesTemplatesNameGet**
 > CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesNameGet (string name)
 
@@ -432,9 +432,9 @@ Get CustomAttributeTemplate by name
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -519,7 +519,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2customattributestemplatespost"></a>
+<a name="apiv2customattributestemplatespost"></a>
 # **ApiV2CustomAttributesTemplatesPost**
 > CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesPost (ApiV2CustomAttributesTemplatesPostRequest apiV2CustomAttributesTemplatesPostRequest = null)
 
@@ -532,9 +532,9 @@ Create CustomAttributeTemplate
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -621,7 +621,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2customattributestemplatesput"></a>
+<a name="apiv2customattributestemplatesput"></a>
 # **ApiV2CustomAttributesTemplatesPut**
 > void ApiV2CustomAttributesTemplatesPut (ApiV2CustomAttributesTemplatesPutRequest apiV2CustomAttributesTemplatesPutRequest = null)
 
@@ -632,9 +632,9 @@ Update custom attributes template
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -716,7 +716,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2customattributestemplatessearchpost"></a>
+<a name="apiv2customattributestemplatessearchpost"></a>
 # **ApiV2CustomAttributesTemplatesSearchPost**
 > List&lt;SearchCustomAttributeTemplateGetModel&gt; ApiV2CustomAttributesTemplatesSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2CustomAttributesTemplatesSearchPostRequest apiV2CustomAttributesTemplatesSearchPostRequest = null)
 
@@ -729,9 +729,9 @@ Search CustomAttributeTemplates
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

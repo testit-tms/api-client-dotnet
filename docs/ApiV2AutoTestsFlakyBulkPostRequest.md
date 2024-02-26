@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ApiV2AutoTestsFlakyBulkPostRequest
+# TestIT.ApiClient.Model.ApiV2AutoTestsFlakyBulkPostRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.GlobalCustomAttributePostModel
+# TestIT.ApiClient.Model.GlobalCustomAttributePostModel
 
 ## Properties
 

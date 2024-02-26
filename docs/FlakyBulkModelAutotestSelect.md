@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.FlakyBulkModelAutotestSelect
+# TestIT.ApiClient.Model.FlakyBulkModelAutotestSelect
 
 ## Properties
 

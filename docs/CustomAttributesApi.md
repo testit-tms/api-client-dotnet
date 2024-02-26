@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.CustomAttributesApi
+# TestIT.ApiClient.Api.CustomAttributesApi
 
 All URIs are relative to *http://localhost*
 
@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2CustomAttributesIdGet**](CustomAttributesApi.md#apiv2customattributesidget) | **GET** /api/v2/customAttributes/{id} | Get attribute |
 | [**ApiV2CustomAttributesSearchPost**](CustomAttributesApi.md#apiv2customattributessearchpost) | **POST** /api/v2/customAttributes/search | Search for attributes |
 
-<a id="apiv2customattributesglobaliddelete"></a>
+<a name="apiv2customattributesglobaliddelete"></a>
 # **ApiV2CustomAttributesGlobalIdDelete**
 > void ApiV2CustomAttributesGlobalIdDelete (Guid id)
 
@@ -21,9 +21,9 @@ Delete global attribute
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -105,7 +105,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2customattributesglobalidput"></a>
+<a name="apiv2customattributesglobalidput"></a>
 # **ApiV2CustomAttributesGlobalIdPut**
 > CustomAttributeModel ApiV2CustomAttributesGlobalIdPut (Guid id, ApiV2CustomAttributesGlobalIdPutRequest apiV2CustomAttributesGlobalIdPutRequest = null)
 
@@ -116,9 +116,9 @@ Edit global attribute
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -206,7 +206,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2customattributesglobalpost"></a>
+<a name="apiv2customattributesglobalpost"></a>
 # **ApiV2CustomAttributesGlobalPost**
 > CustomAttributeModel ApiV2CustomAttributesGlobalPost (ApiV2CustomAttributesGlobalPostRequest apiV2CustomAttributesGlobalPostRequest = null)
 
@@ -217,9 +217,9 @@ Create global attribute
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -305,7 +305,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2customattributesidget"></a>
+<a name="apiv2customattributesidget"></a>
 # **ApiV2CustomAttributesIdGet**
 > CustomAttributeModel ApiV2CustomAttributesIdGet (Guid id)
 
@@ -316,9 +316,9 @@ Get attribute
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -403,7 +403,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2customattributessearchpost"></a>
+<a name="apiv2customattributessearchpost"></a>
 # **ApiV2CustomAttributesSearchPost**
 > List&lt;CustomAttributeModel&gt; ApiV2CustomAttributesSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2CustomAttributesSearchPostRequest apiV2CustomAttributesSearchPostRequest = null)
 
@@ -414,9 +414,9 @@ Search for attributes
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

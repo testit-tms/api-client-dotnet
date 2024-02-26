@@ -40,6 +40,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SectionWithStepsModel" /> class.
         /// </summary>
+        /// <param name="attachments">attachments.</param>
         /// <param name="preconditionSteps">preconditionSteps.</param>
         /// <param name="postconditionSteps">postconditionSteps.</param>
         /// <param name="projectId">projectId.</param>
@@ -51,7 +52,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="name">name (required).</param>
-        public SectionWithStepsModel(List<StepModel> preconditionSteps = default(List<StepModel>), List<StepModel> postconditionSteps = default(List<StepModel>), Guid? projectId = default(Guid?), Guid? parentId = default(Guid?), bool isDeleted = default(bool), Guid id = default(Guid), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string name = default(string))
+        public SectionWithStepsModel(List<AttachmentModel> attachments = default(List<AttachmentModel>), List<StepModel> preconditionSteps = default(List<StepModel>), List<StepModel> postconditionSteps = default(List<StepModel>), Guid? projectId = default(Guid?), Guid? parentId = default(Guid?), bool isDeleted = default(bool), Guid id = default(Guid), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string name = default(string))
         {
             this.IsDeleted = isDeleted;
             this.Id = id;
@@ -63,6 +64,7 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("name is a required property for SectionWithStepsModel and cannot be null");
             }
             this.Name = name;
+            this.Attachments = attachments;
             this.PreconditionSteps = preconditionSteps;
             this.PostconditionSteps = postconditionSteps;
             this.ProjectId = projectId;
@@ -70,6 +72,12 @@ namespace TestIT.ApiClient.Model
             this.ModifiedDate = modifiedDate;
             this.ModifiedById = modifiedById;
         }
+
+        /// <summary>
+        /// Gets or Sets Attachments
+        /// </summary>
+        [DataMember(Name = "attachments", EmitDefaultValue = true)]
+        public List<AttachmentModel> Attachments { get; set; }
 
         /// <summary>
         /// Gets or Sets PreconditionSteps
@@ -86,14 +94,14 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets ProjectId
         /// </summary>
-        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
+        /// <example>&quot;11421721-181a-4696-aa8a-ec54c0d06fca&quot;</example>
         [DataMember(Name = "projectId", EmitDefaultValue = true)]
         public Guid? ProjectId { get; set; }
 
         /// <summary>
         /// Gets or Sets ParentId
         /// </summary>
-        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
+        /// <example>&quot;11421721-181a-4696-aa8a-ec54c0d06fca&quot;</example>
         [DataMember(Name = "parentId", EmitDefaultValue = true)]
         public Guid? ParentId { get; set; }
 
@@ -107,35 +115,35 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
+        /// <example>&quot;11421721-181a-4696-aa8a-ec54c0d06fca&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
+        /// <example>&quot;2024-02-20T09:07:44.591229100Z&quot;</example>
         [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        /// <example>&quot;2023-11-20T14:26:39.252984700Z&quot;</example>
+        /// <example>&quot;2024-02-20T09:07:44.591229100Z&quot;</example>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
+        /// <example>&quot;11421721-181a-4696-aa8a-ec54c0d06fca&quot;</example>
         [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
-        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
+        /// <example>&quot;11421721-181a-4696-aa8a-ec54c0d06fca&quot;</example>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
@@ -154,6 +162,7 @@ namespace TestIT.ApiClient.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class SectionWithStepsModel {\n");
+            sb.Append("  Attachments: ").Append(Attachments).Append("\n");
             sb.Append("  PreconditionSteps: ").Append(PreconditionSteps).Append("\n");
             sb.Append("  PostconditionSteps: ").Append(PostconditionSteps).Append("\n");
             sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
@@ -200,6 +209,12 @@ namespace TestIT.ApiClient.Model
                 return false;
             }
             return 
+                (
+                    this.Attachments == input.Attachments ||
+                    this.Attachments != null &&
+                    input.Attachments != null &&
+                    this.Attachments.SequenceEqual(input.Attachments)
+                ) && 
                 (
                     this.PreconditionSteps == input.PreconditionSteps ||
                     this.PreconditionSteps != null &&
@@ -267,6 +282,10 @@ namespace TestIT.ApiClient.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Attachments != null)
+                {
+                    hashCode = (hashCode * 59) + this.Attachments.GetHashCode();
+                }
                 if (this.PreconditionSteps != null)
                 {
                     hashCode = (hashCode * 59) + this.PreconditionSteps.GetHashCode();

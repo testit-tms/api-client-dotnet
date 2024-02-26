@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.WorkItemChangedFieldsViewModelDuration
+# TestIT.ApiClient.Model.WorkItemChangedFieldsViewModelDuration
 
 ## Properties
 

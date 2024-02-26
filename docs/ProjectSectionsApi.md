@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.ProjectSectionsApi
+# TestIT.ApiClient.Api.ProjectSectionsApi
 
 All URIs are relative to *http://localhost*
 
@@ -6,7 +6,7 @@ All URIs are relative to *http://localhost*
 |--------|--------------|-------------|
 | [**GetSectionsByProjectId**](ProjectSectionsApi.md#getsectionsbyprojectid) | **GET** /api/v2/projects/{projectId}/sections | Get project sections |
 
-<a id="getsectionsbyprojectid"></a>
+<a name="getsectionsbyprojectid"></a>
 # **GetSectionsByProjectId**
 > List&lt;SectionModel&gt; GetSectionsByProjectId (string projectId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -19,9 +19,9 @@ Get project sections
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

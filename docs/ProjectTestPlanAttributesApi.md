@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.ProjectTestPlanAttributesApi
+# TestIT.ApiClient.Api.ProjectTestPlanAttributesApi
 
 All URIs are relative to *http://localhost*
 
@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 | [**SearchTestPlanAttributesInProject**](ProjectTestPlanAttributesApi.md#searchtestplanattributesinproject) | **POST** /api/v2/projects/{projectId}/testPlans/attributes/search | Search for attributes used in the project test plans |
 | [**UpdateCustomAttributeTestPlanProjectRelations**](ProjectTestPlanAttributesApi.md#updatecustomattributetestplanprojectrelations) | **PUT** /api/v2/projects/{projectId}/testPlans/attributes | Update attribute of project&#39;s test plans |
 
-<a id="createcustomattributetestplanprojectrelations"></a>
+<a name="createcustomattributetestplanprojectrelations"></a>
 # **CreateCustomAttributeTestPlanProjectRelations**
 > void CreateCustomAttributeTestPlanProjectRelations (string projectId, List<Guid> requestBody = null)
 
@@ -23,9 +23,9 @@ Add attributes to project's test plans
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -110,7 +110,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="deletecustomattributetestplanprojectrelations"></a>
+<a name="deletecustomattributetestplanprojectrelations"></a>
 # **DeleteCustomAttributeTestPlanProjectRelations**
 > void DeleteCustomAttributeTestPlanProjectRelations (string projectId, Guid attributeId)
 
@@ -123,9 +123,9 @@ Delete attribute from project's test plans
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -209,7 +209,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getcustomattributetestplanprojectrelations"></a>
+<a name="getcustomattributetestplanprojectrelations"></a>
 # **GetCustomAttributeTestPlanProjectRelations**
 > List&lt;CustomAttributeModel&gt; GetCustomAttributeTestPlanProjectRelations (string projectId)
 
@@ -222,9 +222,9 @@ Get project's test plan attributes
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -310,7 +310,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="searchtestplanattributesinproject"></a>
+<a name="searchtestplanattributesinproject"></a>
 # **SearchTestPlanAttributesInProject**
 > List&lt;CustomAttributeGetModel&gt; SearchTestPlanAttributesInProject (string projectId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, SearchAttributesInProjectRequest searchAttributesInProjectRequest = null)
 
@@ -321,9 +321,9 @@ Search for attributes used in the project test plans
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -421,7 +421,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="updatecustomattributetestplanprojectrelations"></a>
+<a name="updatecustomattributetestplanprojectrelations"></a>
 # **UpdateCustomAttributeTestPlanProjectRelations**
 > void UpdateCustomAttributeTestPlanProjectRelations (string projectId, UpdateCustomAttributeTestPlanProjectRelationsRequest updateCustomAttributeTestPlanProjectRelationsRequest = null)
 
@@ -434,9 +434,9 @@ Update attribute of project's test plans
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

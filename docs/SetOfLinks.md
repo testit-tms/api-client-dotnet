@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.SetOfLinks
+# TestIT.ApiClient.Model.SetOfLinks
 
 ## Properties
 

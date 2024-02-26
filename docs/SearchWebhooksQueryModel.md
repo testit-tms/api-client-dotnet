@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.SearchWebhooksQueryModel
+# TestIT.ApiClient.Model.SearchWebhooksQueryModel
 
 ## Properties
 

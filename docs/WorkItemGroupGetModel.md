@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.WorkItemGroupGetModel
+# TestIT.ApiClient.Model.WorkItemGroupGetModel
 
 ## Properties
 

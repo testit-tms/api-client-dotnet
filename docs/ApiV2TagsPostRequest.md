@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TagShortModel
+# TestIT.ApiClient.Model.ApiV2TagsPostRequest
 
 ## Properties
 

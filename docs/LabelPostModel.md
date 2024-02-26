@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.LabelPostModel
+# TestIT.ApiClient.Model.LabelPostModel
 
 ## Properties
 

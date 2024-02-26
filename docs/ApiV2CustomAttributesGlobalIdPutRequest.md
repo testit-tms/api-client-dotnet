@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ApiV2CustomAttributesGlobalIdPutRequest
+# TestIT.ApiClient.Model.ApiV2CustomAttributesGlobalIdPutRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.WorkItemEntityTypes
+# TestIT.ApiClient.Model.WorkItemEntityTypes
 
 ## Properties
 

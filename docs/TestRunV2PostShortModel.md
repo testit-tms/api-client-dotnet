@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestRunV2PostShortModel
+# TestIT.ApiClient.Model.TestRunV2PostShortModel
 
 ## Properties
 

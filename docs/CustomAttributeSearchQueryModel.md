@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.CustomAttributeSearchQueryModel
+# TestIT.ApiClient.Model.CustomAttributeSearchQueryModel
 
 ## Properties
 

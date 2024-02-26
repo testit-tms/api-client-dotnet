@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.ProjectWorkItemsApi
+# TestIT.ApiClient.Api.ProjectWorkItemsApi
 
 All URIs are relative to *http://localhost*
 
@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2ProjectsProjectIdWorkItemsTagsGet**](ProjectWorkItemsApi.md#apiv2projectsprojectidworkitemstagsget) | **GET** /api/v2/projects/{projectId}/workItems/tags | Get WorkItems Tags |
 | [**GetWorkItemsByProjectId**](ProjectWorkItemsApi.md#getworkitemsbyprojectid) | **GET** /api/v2/projects/{projectId}/workItems | Get project work items |
 
-<a id="apiv2projectsprojectidworkitemssearchgroupedpost"></a>
+<a name="apiv2projectsprojectidworkitemssearchgroupedpost"></a>
 # **ApiV2ProjectsProjectIdWorkItemsSearchGroupedPost**
 > List&lt;WorkItemGroupModel&gt; ApiV2ProjectsProjectIdWorkItemsSearchGroupedPost (string projectId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ProjectsProjectIdWorkItemsSearchGroupedPostRequest apiV2ProjectsProjectIdWorkItemsSearchGroupedPostRequest = null)
 
@@ -21,9 +21,9 @@ Search for work items and group results by attribute
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -121,7 +121,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2projectsprojectidworkitemssearchidpost"></a>
+<a name="apiv2projectsprojectidworkitemssearchidpost"></a>
 # **ApiV2ProjectsProjectIdWorkItemsSearchIdPost**
 > List&lt;Guid&gt; ApiV2ProjectsProjectIdWorkItemsSearchIdPost (string projectId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = null)
 
@@ -132,9 +132,9 @@ Search for work items and extract IDs only
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -232,7 +232,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2projectsprojectidworkitemssearchpost"></a>
+<a name="apiv2projectsprojectidworkitemssearchpost"></a>
 # **ApiV2ProjectsProjectIdWorkItemsSearchPost**
 > List&lt;WorkItemShortModel&gt; ApiV2ProjectsProjectIdWorkItemsSearchPost (string projectId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = null)
 
@@ -243,9 +243,9 @@ Search for work items
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -343,9 +343,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2projectsprojectidworkitemstagsget"></a>
+<a name="apiv2projectsprojectidworkitemstagsget"></a>
 # **ApiV2ProjectsProjectIdWorkItemsTagsGet**
-> List&lt;TagShortModel&gt; ApiV2ProjectsProjectIdWorkItemsTagsGet (Guid projectId, bool? isDeleted = null)
+> List&lt;TagModel&gt; ApiV2ProjectsProjectIdWorkItemsTagsGet (Guid projectId, bool? isDeleted = null)
 
 Get WorkItems Tags
 
@@ -356,9 +356,9 @@ Get WorkItems Tags
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -383,7 +383,7 @@ namespace Example
             try
             {
                 // Get WorkItems Tags
-                List<TagShortModel> result = apiInstance.ApiV2ProjectsProjectIdWorkItemsTagsGet(projectId, isDeleted);
+                List<TagModel> result = apiInstance.ApiV2ProjectsProjectIdWorkItemsTagsGet(projectId, isDeleted);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -404,7 +404,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get WorkItems Tags
-    ApiResponse<List<TagShortModel>> response = apiInstance.ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfo(projectId, isDeleted);
+    ApiResponse<List<TagModel>> response = apiInstance.ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfo(projectId, isDeleted);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -426,7 +426,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;TagShortModel&gt;**](TagShortModel.md)
+[**List&lt;TagModel&gt;**](TagModel.md)
 
 ### Authorization
 
@@ -445,7 +445,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getworkitemsbyprojectid"></a>
+<a name="getworkitemsbyprojectid"></a>
 # **GetWorkItemsByProjectId**
 > List&lt;WorkItemShortModel&gt; GetWorkItemsByProjectId (string projectId, bool? isDeleted = null, List<string> tagNames = null, bool? includeIterations = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -458,9 +458,9 @@ Get project work items
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

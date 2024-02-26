@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ParameterGroupModel
+# TestIT.ApiClient.Model.ParameterGroupModel
 
 ## Properties
 

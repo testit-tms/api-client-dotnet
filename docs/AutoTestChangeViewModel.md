@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.AutoTestChangeViewModel
+# TestIT.ApiClient.Model.AutoTestChangeViewModel
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestRunShortGetModel
+# TestIT.ApiClient.Model.TestRunShortGetModel
 
 ## Properties
 

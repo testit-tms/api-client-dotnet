@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestPlanGroupByTestSuite
+# TestIT.ApiClient.Model.TestPlanGroupByTestSuite
 
 ## Properties
 

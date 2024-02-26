@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestRunFilterModelStartedDate
+# TestIT.ApiClient.Model.TestRunFilterModelStartedDate
 Specifies a test run range of started date to search for
 
 ## Properties

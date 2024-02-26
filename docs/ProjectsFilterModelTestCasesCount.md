@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ProjectsFilterModelTestCasesCount
+# TestIT.ApiClient.Model.ProjectsFilterModelTestCasesCount
 Specifies a project range of test cases count to search for
 
 ## Properties

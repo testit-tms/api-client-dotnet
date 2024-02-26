@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ProjectsFilterModel
+# TestIT.ApiClient.Model.ProjectsFilterModel
 
 ## Properties
 

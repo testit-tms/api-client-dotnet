@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.AttachmentModel
+# TestIT.ApiClient.Model.AttachmentModel
 
 ## Properties
 
@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **CreatedById** | **Guid** | Unique ID of the attachment creator | 
 **ModifiedById** | **Guid?** | Unique ID of the attachment last editor | [optional] 
 **Name** | **string** | Name of the attachment file | 
-**IsTemp** | **bool** | Indicates whether the attachment is temporary (may be automatically deleted) | 
 **Id** | **Guid** | Unique ID of the attachment | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

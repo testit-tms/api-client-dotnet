@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ApiV2ProjectsProjectIdWorkItemsSearchPostRequest
+# TestIT.ApiClient.Model.ApiV2ProjectsProjectIdWorkItemsSearchPostRequest
 Model containing options to filter work items
 
 ## Properties

@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.Int64ChangedFieldViewModel
+# TestIT.ApiClient.Model.Int64ChangedFieldViewModel
 
 ## Properties
 

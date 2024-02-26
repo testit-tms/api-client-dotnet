@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.LinkShortModel
+# TestIT.ApiClient.Model.LinkShortModel
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.WorkItemCommentPutModel
+# TestIT.ApiClient.Model.WorkItemCommentPutModel
 
 ## Properties
 

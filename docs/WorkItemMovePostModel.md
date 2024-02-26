@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.WorkItemMovePostModel
+# TestIT.ApiClient.Model.WorkItemMovePostModel
 
 ## Properties
 

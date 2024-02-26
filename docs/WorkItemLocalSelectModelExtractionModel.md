@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.WorkItemLocalSelectModelExtractionModel
+# TestIT.ApiClient.Model.WorkItemLocalSelectModelExtractionModel
 Rules for different level entities inclusion/exclusion
 
 ## Properties

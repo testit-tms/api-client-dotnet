@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.ProjectConfigurationsApi
+# TestIT.ApiClient.Api.ProjectConfigurationsApi
 
 All URIs are relative to *http://localhost*
 
@@ -6,7 +6,7 @@ All URIs are relative to *http://localhost*
 |--------|--------------|-------------|
 | [**GetConfigurationsByProjectId**](ProjectConfigurationsApi.md#getconfigurationsbyprojectid) | **GET** /api/v2/projects/{projectId}/configurations | Get project configurations |
 
-<a id="getconfigurationsbyprojectid"></a>
+<a name="getconfigurationsbyprojectid"></a>
 # **GetConfigurationsByProjectId**
 > List&lt;ConfigurationModel&gt; GetConfigurationsByProjectId (string projectId)
 
@@ -19,9 +19,9 @@ Get project configurations
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

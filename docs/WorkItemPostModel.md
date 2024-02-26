@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.WorkItemPostModel
+# TestIT.ApiClient.Model.WorkItemPostModel
 
 ## Properties
 
@@ -8,12 +8,12 @@ Name | Type | Description | Notes
 **Description** | **string** |  | [optional] 
 **State** | **WorkItemStates** |  | 
 **Priority** | **WorkItemPriorityModel** |  | 
-**Steps** | [**List&lt;StepPutModel&gt;**](StepPutModel.md) |  | 
-**PreconditionSteps** | [**List&lt;StepPutModel&gt;**](StepPutModel.md) |  | 
-**PostconditionSteps** | [**List&lt;StepPutModel&gt;**](StepPutModel.md) |  | 
+**Steps** | [**List&lt;StepPostModel&gt;**](StepPostModel.md) |  | 
+**PreconditionSteps** | [**List&lt;StepPostModel&gt;**](StepPostModel.md) |  | 
+**PostconditionSteps** | [**List&lt;StepPostModel&gt;**](StepPostModel.md) |  | 
 **Duration** | **int** | Must be 0 for shared steps and greater than 0 for the other types of work items | 
 **Attributes** | **Dictionary&lt;string, Object&gt;** |  | 
-**Tags** | [**List&lt;TagShortModel&gt;**](TagShortModel.md) |  | 
+**Tags** | [**List&lt;TagPostModel&gt;**](TagPostModel.md) |  | 
 **Attachments** | [**List&lt;AttachmentPutModel&gt;**](AttachmentPutModel.md) |  | [optional] 
 **Iterations** | [**List&lt;IterationPutModel&gt;**](IterationPutModel.md) |  | [optional] 
 **Links** | [**List&lt;LinkPostModel&gt;**](LinkPostModel.md) |  | 

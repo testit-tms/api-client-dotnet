@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest
+# TestIT.ApiClient.Model.ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest
 
 ## Properties
 

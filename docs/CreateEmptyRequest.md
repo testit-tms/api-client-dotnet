@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.CreateEmptyRequest
+# TestIT.ApiClient.Model.CreateEmptyRequest
 
 ## Properties
 

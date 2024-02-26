@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ApiV2ProjectsSearchPostRequest
+# TestIT.ApiClient.Model.ApiV2ProjectsSearchPostRequest
 
 ## Properties
 

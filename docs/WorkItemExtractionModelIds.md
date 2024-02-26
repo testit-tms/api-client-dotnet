@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.WorkItemExtractionModelIds
+# TestIT.ApiClient.Model.WorkItemExtractionModelIds
 Extraction parameters for work items
 
 ## Properties

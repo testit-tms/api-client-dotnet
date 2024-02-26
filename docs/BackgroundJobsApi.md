@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.BackgroundJobsApi
+# TestIT.ApiClient.Api.BackgroundJobsApi
 
 All URIs are relative to *http://localhost*
 
@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2BackgroundJobsIdStatusGet**](BackgroundJobsApi.md#apiv2backgroundjobsidstatusget) | **GET** /api/v2/backgroundJobs/{id}/status | Get background job status by job ID |
 | [**ApiV2BackgroundJobsSearchPost**](BackgroundJobsApi.md#apiv2backgroundjobssearchpost) | **POST** /api/v2/backgroundJobs/search | Search for user background jobs |
 
-<a id="apiv2backgroundjobsget"></a>
+<a name="apiv2backgroundjobsget"></a>
 # **ApiV2BackgroundJobsGet**
 > List&lt;BackgroundJobGetModel&gt; ApiV2BackgroundJobsGet (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -21,9 +21,9 @@ All URIs are relative to *http://localhost*
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -114,7 +114,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2backgroundjobsidcancelpost"></a>
+<a name="apiv2backgroundjobsidcancelpost"></a>
 # **ApiV2BackgroundJobsIdCancelPost**
 > void ApiV2BackgroundJobsIdCancelPost (Guid id)
 
@@ -125,9 +125,9 @@ Cancel current user background job
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -208,7 +208,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2backgroundjobsidget"></a>
+<a name="apiv2backgroundjobsidget"></a>
 # **ApiV2BackgroundJobsIdGet**
 > BackgroundJobGetModel ApiV2BackgroundJobsIdGet (Guid id)
 
@@ -219,9 +219,9 @@ Get background job by ID
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -306,7 +306,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2backgroundjobsidstatusget"></a>
+<a name="apiv2backgroundjobsidstatusget"></a>
 # **ApiV2BackgroundJobsIdStatusGet**
 > BackgroundJobState ApiV2BackgroundJobsIdStatusGet (Guid id)
 
@@ -317,9 +317,9 @@ Get background job status by job ID
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -404,7 +404,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2backgroundjobssearchpost"></a>
+<a name="apiv2backgroundjobssearchpost"></a>
 # **ApiV2BackgroundJobsSearchPost**
 > List&lt;BackgroundJobGetModel&gt; ApiV2BackgroundJobsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2BackgroundJobsSearchPostRequest apiV2BackgroundJobsSearchPostRequest = null)
 
@@ -415,9 +415,9 @@ Search for user background jobs
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

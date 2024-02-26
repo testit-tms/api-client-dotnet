@@ -75,7 +75,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="projectId">This property is used to link workitem with project (required).</param>
         /// <param name="sectionId">sectionId (required).</param>
         /// <param name="autoTests">autoTests.</param>
-        public WorkItemPostModel(WorkItemEntityTypes entityTypeName = default(WorkItemEntityTypes), string description = default(string), WorkItemStates state = default(WorkItemStates), WorkItemPriorityModel priority = default(WorkItemPriorityModel), List<StepPutModel> steps = default(List<StepPutModel>), List<StepPutModel> preconditionSteps = default(List<StepPutModel>), List<StepPutModel> postconditionSteps = default(List<StepPutModel>), int duration = default(int), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<TagShortModel> tags = default(List<TagShortModel>), List<AttachmentPutModel> attachments = default(List<AttachmentPutModel>), List<IterationPutModel> iterations = default(List<IterationPutModel>), List<LinkPostModel> links = default(List<LinkPostModel>), string name = default(string), Guid projectId = default(Guid), Guid sectionId = default(Guid), List<AutoTestIdModel> autoTests = default(List<AutoTestIdModel>))
+        public WorkItemPostModel(WorkItemEntityTypes entityTypeName = default(WorkItemEntityTypes), string description = default(string), WorkItemStates state = default(WorkItemStates), WorkItemPriorityModel priority = default(WorkItemPriorityModel), List<StepPostModel> steps = default(List<StepPostModel>), List<StepPostModel> preconditionSteps = default(List<StepPostModel>), List<StepPostModel> postconditionSteps = default(List<StepPostModel>), int duration = default(int), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<TagPostModel> tags = default(List<TagPostModel>), List<AttachmentPutModel> attachments = default(List<AttachmentPutModel>), List<IterationPutModel> iterations = default(List<IterationPutModel>), List<LinkPostModel> links = default(List<LinkPostModel>), string name = default(string), Guid projectId = default(Guid), Guid sectionId = default(Guid), List<AutoTestIdModel> autoTests = default(List<AutoTestIdModel>))
         {
             this.EntityTypeName = entityTypeName;
             this.State = state;
@@ -142,19 +142,19 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Steps
         /// </summary>
         [DataMember(Name = "steps", IsRequired = true, EmitDefaultValue = true)]
-        public List<StepPutModel> Steps { get; set; }
+        public List<StepPostModel> Steps { get; set; }
 
         /// <summary>
         /// Gets or Sets PreconditionSteps
         /// </summary>
         [DataMember(Name = "preconditionSteps", IsRequired = true, EmitDefaultValue = true)]
-        public List<StepPutModel> PreconditionSteps { get; set; }
+        public List<StepPostModel> PreconditionSteps { get; set; }
 
         /// <summary>
         /// Gets or Sets PostconditionSteps
         /// </summary>
         [DataMember(Name = "postconditionSteps", IsRequired = true, EmitDefaultValue = true)]
-        public List<StepPutModel> PostconditionSteps { get; set; }
+        public List<StepPostModel> PostconditionSteps { get; set; }
 
         /// <summary>
         /// Must be 0 for shared steps and greater than 0 for the other types of work items
@@ -174,7 +174,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Tags
         /// </summary>
         [DataMember(Name = "tags", IsRequired = true, EmitDefaultValue = true)]
-        public List<TagShortModel> Tags { get; set; }
+        public List<TagPostModel> Tags { get; set; }
 
         /// <summary>
         /// Gets or Sets Attachments
@@ -205,14 +205,14 @@ namespace TestIT.ApiClient.Model
         /// This property is used to link workitem with project
         /// </summary>
         /// <value>This property is used to link workitem with project</value>
-        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
+        /// <example>&quot;11421721-181a-4696-aa8a-ec54c0d06fca&quot;</example>
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
         /// Gets or Sets SectionId
         /// </summary>
-        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
+        /// <example>&quot;11421721-181a-4696-aa8a-ec54c0d06fca&quot;</example>
         [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid SectionId { get; set; }
 

@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ValidateAntiForgeryTokenAttribute
+# TestIT.ApiClient.Model.ValidateAntiForgeryTokenAttribute
 
 ## Properties
 

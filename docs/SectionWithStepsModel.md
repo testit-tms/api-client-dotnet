@@ -1,9 +1,10 @@
-# TestIt.ApiClient.Model.SectionWithStepsModel
+# TestIT.ApiClient.Model.SectionWithStepsModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Attachments** | [**List&lt;AttachmentModel&gt;**](AttachmentModel.md) |  | [optional] 
 **PreconditionSteps** | [**List&lt;StepModel&gt;**](StepModel.md) |  | [optional] 
 **PostconditionSteps** | [**List&lt;StepModel&gt;**](StepModel.md) |  | [optional] 
 **ProjectId** | **Guid?** |  | [optional] 

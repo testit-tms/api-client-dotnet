@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.SectionRenameModel
+# TestIT.ApiClient.Model.SectionRenameModel
 
 ## Properties
 

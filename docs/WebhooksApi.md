@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.WebhooksApi
+# TestIT.ApiClient.Api.WebhooksApi
 
 All URIs are relative to *http://localhost*
 
@@ -13,7 +13,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2WebhooksSpecialVariablesGet**](WebhooksApi.md#apiv2webhooksspecialvariablesget) | **GET** /api/v2/webhooks/specialVariables | Get special variables for webhook event type |
 | [**ApiV2WebhooksTestPost**](WebhooksApi.md#apiv2webhookstestpost) | **POST** /api/v2/webhooks/test | Test webhook&#39;s url |
 
-<a id="apiv2webhooksget"></a>
+<a name="apiv2webhooksget"></a>
 # **ApiV2WebhooksGet**
 > List&lt;WebHookModel&gt; ApiV2WebhooksGet (Guid? projectId = null)
 
@@ -24,9 +24,9 @@ Get all webhooks
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -112,7 +112,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2webhooksiddelete"></a>
+<a name="apiv2webhooksiddelete"></a>
 # **ApiV2WebhooksIdDelete**
 > void ApiV2WebhooksIdDelete (Guid id)
 
@@ -123,9 +123,9 @@ Delete webhook by ID
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -207,7 +207,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2webhooksidget"></a>
+<a name="apiv2webhooksidget"></a>
 # **ApiV2WebhooksIdGet**
 > WebHookModel ApiV2WebhooksIdGet (Guid id)
 
@@ -218,9 +218,9 @@ Get webhook by ID
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -306,7 +306,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2webhooksidput"></a>
+<a name="apiv2webhooksidput"></a>
 # **ApiV2WebhooksIdPut**
 > WebHookModel ApiV2WebhooksIdPut (Guid id, ApiV2WebhooksPostRequest apiV2WebhooksPostRequest = null)
 
@@ -317,9 +317,9 @@ Edit webhook by ID
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -407,7 +407,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2webhookspost"></a>
+<a name="apiv2webhookspost"></a>
 # **ApiV2WebhooksPost**
 > WebHookModel ApiV2WebhooksPost (ApiV2WebhooksPostRequest apiV2WebhooksPostRequest = null)
 
@@ -418,9 +418,9 @@ Create webhook
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -506,7 +506,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2webhookssearchpost"></a>
+<a name="apiv2webhookssearchpost"></a>
 # **ApiV2WebhooksSearchPost**
 > List&lt;WebHookModel&gt; ApiV2WebhooksSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2WebhooksSearchPostRequest apiV2WebhooksSearchPostRequest = null)
 
@@ -517,9 +517,9 @@ Search for webhooks
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -615,7 +615,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2webhooksspecialvariablesget"></a>
+<a name="apiv2webhooksspecialvariablesget"></a>
 # **ApiV2WebhooksSpecialVariablesGet**
 > List&lt;string&gt; ApiV2WebhooksSpecialVariablesGet (WebHookEventType? eventType = null, WebhookVariablesType? variablesType = null)
 
@@ -626,9 +626,9 @@ Get special variables for webhook event type
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -715,7 +715,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2webhookstestpost"></a>
+<a name="apiv2webhookstestpost"></a>
 # **ApiV2WebhooksTestPost**
 > RequestData ApiV2WebhooksTestPost (ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = null)
 
@@ -726,9 +726,9 @@ Test webhook's url
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

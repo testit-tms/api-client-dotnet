@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.WorkItemChangedFieldsViewModelIsDeleted
+# TestIT.ApiClient.Model.WorkItemChangedFieldsViewModelIsDeleted
 
 ## Properties
 

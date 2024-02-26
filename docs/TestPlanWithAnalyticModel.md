@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestPlanWithAnalyticModel
+# TestIT.ApiClient.Model.TestPlanWithAnalyticModel
 
 ## Properties
 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **LockedDate** | **DateTime?** |  | [optional] 
 **Id** | **Guid** |  | 
 **LockedById** | **Guid?** |  | [optional] 
-**Tags** | [**List&lt;TagShortModel&gt;**](TagShortModel.md) |  | [optional] 
+**Tags** | [**List&lt;TagPostModel&gt;**](TagPostModel.md) |  | [optional] 
 **Name** | **string** |  | 
 **StartDate** | **DateTime?** | Used for analytics | [optional] 
 **EndDate** | **DateTime?** | Used for analytics | [optional] 

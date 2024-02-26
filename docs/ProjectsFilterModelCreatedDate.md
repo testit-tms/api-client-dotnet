@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ProjectsFilterModelCreatedDate
+# TestIT.ApiClient.Model.ProjectsFilterModelCreatedDate
 Specifies a project range of creation date to search for
 
 ## Properties

@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.AutotestResultReasonSubGetModel
+# TestIT.ApiClient.Model.AutotestResultReasonSubGetModel
 
 ## Properties
 

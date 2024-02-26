@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ProjectsFilterModelAutotestsCount
+# TestIT.ApiClient.Model.ProjectsFilterModelAutotestsCount
 Specifies a project range of autotests count to search for
 
 ## Properties

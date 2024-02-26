@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.WorkItemGroupType
+# TestIT.ApiClient.Model.WorkItemGroupType
 
 ## Properties
 

@@ -48,9 +48,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="createdById">Unique ID of the attachment creator (required).</param>
         /// <param name="modifiedById">Unique ID of the attachment last editor.</param>
         /// <param name="name">Name of the attachment file (required).</param>
-        /// <param name="isTemp">Indicates whether the attachment is temporary (may be automatically deleted) (required).</param>
         /// <param name="id">Unique ID of the attachment (required).</param>
-        public AttachmentModel(string fileId = default(string), string type = default(string), float size = default(float), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string name = default(string), bool isTemp = default(bool), Guid id = default(Guid))
+        public AttachmentModel(string fileId = default(string), string type = default(string), float size = default(float), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string name = default(string), Guid id = default(Guid))
         {
             // to ensure "fileId" is required (not null)
             if (fileId == null)
@@ -73,7 +72,6 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("name is a required property for AttachmentModel and cannot be null");
             }
             this.Name = name;
-            this.IsTemp = isTemp;
             this.Id = id;
             this.ModifiedDate = modifiedDate;
             this.ModifiedById = modifiedById;
@@ -136,13 +134,6 @@ namespace TestIT.ApiClient.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Indicates whether the attachment is temporary (may be automatically deleted)
-        /// </summary>
-        /// <value>Indicates whether the attachment is temporary (may be automatically deleted)</value>
-        [DataMember(Name = "isTemp", IsRequired = true, EmitDefaultValue = true)]
-        public bool IsTemp { get; set; }
-
-        /// <summary>
         /// Unique ID of the attachment
         /// </summary>
         /// <value>Unique ID of the attachment</value>
@@ -165,7 +156,6 @@ namespace TestIT.ApiClient.Model
             sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
             sb.Append("  ModifiedById: ").Append(ModifiedById).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  IsTemp: ").Append(IsTemp).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -242,10 +232,6 @@ namespace TestIT.ApiClient.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.IsTemp == input.IsTemp ||
-                    this.IsTemp.Equals(input.IsTemp)
-                ) && 
-                (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
@@ -290,7 +276,6 @@ namespace TestIT.ApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.IsTemp.GetHashCode();
                 if (this.Id != null)
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();

@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestRunSelectModelExtractionModel
+# TestIT.ApiClient.Model.TestRunSelectModelExtractionModel
 Rules for different level entities inclusion/exclusion
 
 ## Properties

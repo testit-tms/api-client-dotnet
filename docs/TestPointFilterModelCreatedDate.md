@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestPointFilterModelCreatedDate
+# TestIT.ApiClient.Model.TestPointFilterModelCreatedDate
 Specifies a test point range of creation date to search for
 
 ## Properties

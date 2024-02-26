@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.SharedStepReferenceSectionModel
+# TestIT.ApiClient.Model.SharedStepReferenceSectionModel
 
 ## Properties
 

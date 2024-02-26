@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.TestSuitesApi
+# TestIT.ApiClient.Api.TestSuitesApi
 
 All URIs are relative to *http://localhost*
 
@@ -18,7 +18,7 @@ All URIs are relative to *http://localhost*
 | [**SearchWorkItems**](TestSuitesApi.md#searchworkitems) | **POST** /api/v2/testSuites/{id}/workItems/search | Search WorkItems |
 | [**SetConfigurationsByTestSuiteId**](TestSuitesApi.md#setconfigurationsbytestsuiteid) | **POST** /api/v2/testSuites/{id}/configurations | Set Configurations By TestSuite Id |
 
-<a id="addtestpointstotestsuite"></a>
+<a name="addtestpointstotestsuite"></a>
 # **AddTestPointsToTestSuite**
 > void AddTestPointsToTestSuite (Guid id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = null)
 
@@ -29,9 +29,9 @@ Add test-points to test suite
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -119,7 +119,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testsuitesidpatch"></a>
+<a name="apiv2testsuitesidpatch"></a>
 # **ApiV2TestSuitesIdPatch**
 > void ApiV2TestSuitesIdPatch (Guid id, List<Operation> operation = null)
 
@@ -132,9 +132,9 @@ See <a href=\"https://www.rfc-editor.org/rfc/rfc6902\" target=\"_blank\">RFC 690
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -218,7 +218,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testsuitesidrefreshpost"></a>
+<a name="apiv2testsuitesidrefreshpost"></a>
 # **ApiV2TestSuitesIdRefreshPost**
 > void ApiV2TestSuitesIdRefreshPost (Guid id)
 
@@ -229,9 +229,9 @@ Refresh test suite. Only dynamic test suites are supported by this method
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -313,7 +313,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testsuitesidworkitemspost"></a>
+<a name="apiv2testsuitesidworkitemspost"></a>
 # **ApiV2TestSuitesIdWorkItemsPost**
 > void ApiV2TestSuitesIdWorkItemsPost (Guid id, List<Guid> requestBody = null)
 
@@ -324,9 +324,9 @@ Set work items for test suite
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -410,7 +410,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testsuitespost"></a>
+<a name="apiv2testsuitespost"></a>
 # **ApiV2TestSuitesPost**
 > TestSuiteV2GetModel ApiV2TestSuitesPost (ApiV2TestSuitesPostRequest apiV2TestSuitesPostRequest = null)
 
@@ -421,9 +421,9 @@ Create test suite
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -509,7 +509,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testsuitesput"></a>
+<a name="apiv2testsuitesput"></a>
 # **ApiV2TestSuitesPut**
 > void ApiV2TestSuitesPut (ApiV2TestSuitesPutRequest apiV2TestSuitesPutRequest = null)
 
@@ -520,9 +520,9 @@ Edit test suite
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -604,7 +604,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="deletetestsuite"></a>
+<a name="deletetestsuite"></a>
 # **DeleteTestSuite**
 > void DeleteTestSuite (Guid id)
 
@@ -617,9 +617,9 @@ Delete TestSuite
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -703,7 +703,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getconfigurationsbytestsuiteid"></a>
+<a name="getconfigurationsbytestsuiteid"></a>
 # **GetConfigurationsByTestSuiteId**
 > List&lt;ConfigurationModel&gt; GetConfigurationsByTestSuiteId (Guid id)
 
@@ -716,9 +716,9 @@ Get Configurations By Id
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -806,7 +806,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="gettestpointsbyid"></a>
+<a name="gettestpointsbyid"></a>
 # **GetTestPointsById**
 > List&lt;TestPointByTestSuiteModel&gt; GetTestPointsById (Guid id)
 
@@ -819,9 +819,9 @@ Get TestPoints By Id
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -909,7 +909,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="gettestresultsbyid"></a>
+<a name="gettestresultsbyid"></a>
 # **GetTestResultsById**
 > List&lt;TestResultV2ShortModel&gt; GetTestResultsById (Guid id)
 
@@ -922,9 +922,9 @@ Get TestResults By Id
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1012,7 +1012,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="gettestsuitebyid"></a>
+<a name="gettestsuitebyid"></a>
 # **GetTestSuiteById**
 > TestSuiteV2GetModel GetTestSuiteById (Guid id)
 
@@ -1025,9 +1025,9 @@ Get TestSuite by Id
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1115,7 +1115,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="searchworkitems"></a>
+<a name="searchworkitems"></a>
 # **SearchWorkItems**
 > List&lt;WorkItemShortModel&gt; SearchWorkItems (Guid id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, SearchWorkItemsRequest searchWorkItemsRequest = null)
 
@@ -1128,9 +1128,9 @@ Search WorkItems
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1231,7 +1231,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="setconfigurationsbytestsuiteid"></a>
+<a name="setconfigurationsbytestsuiteid"></a>
 # **SetConfigurationsByTestSuiteId**
 > void SetConfigurationsByTestSuiteId (Guid id, List<Guid> requestBody = null)
 
@@ -1244,9 +1244,9 @@ Set Configurations By TestSuite Id
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

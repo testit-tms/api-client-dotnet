@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.WorkItemStepChangeViewModel
+# TestIT.ApiClient.Model.WorkItemStepChangeViewModel
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestRunStatisticsStatusesGetModel
+# TestIT.ApiClient.Model.TestRunStatisticsStatusesGetModel
 
 ## Properties
 

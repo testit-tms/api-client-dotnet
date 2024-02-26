@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestRunModelAnalytic
+# TestIT.ApiClient.Model.TestRunModelAnalytic
 
 ## Properties
 

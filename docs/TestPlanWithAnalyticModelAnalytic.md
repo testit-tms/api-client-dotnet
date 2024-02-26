@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestPlanWithAnalyticModelAnalytic
+# TestIT.ApiClient.Model.TestPlanWithAnalyticModelAnalytic
 
 ## Properties
 

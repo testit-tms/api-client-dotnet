@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.AutotestsExtractionModelIds
+# TestIT.ApiClient.Model.AutotestsExtractionModelIds
 Extraction parameters for autotests
 
 ## Properties

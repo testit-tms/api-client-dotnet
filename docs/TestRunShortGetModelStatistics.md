@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestRunShortGetModelStatistics
+# TestIT.ApiClient.Model.TestRunShortGetModelStatistics
 Statistics of the test run
 
 ## Properties

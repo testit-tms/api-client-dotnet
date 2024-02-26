@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ApiV2NotificationsSearchPostRequest
+# TestIT.ApiClient.Model.ApiV2NotificationsSearchPostRequest
 
 ## Properties
 

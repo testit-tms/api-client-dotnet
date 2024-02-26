@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.FailureClassModel
+# TestIT.ApiClient.Model.FailureClassModel
 
 ## Properties
 

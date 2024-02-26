@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestRunFilterModelCompletedDate
+# TestIT.ApiClient.Model.TestRunFilterModelCompletedDate
 Specifies a test run range of completed date to search for
 
 ## Properties

@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.SharedStepReferenceModel
+# TestIT.ApiClient.Model.SharedStepReferenceModel
 
 ## Properties
 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **VersionId** | **Guid** | used for versioning changes in workitem | 
 **IsAutomated** | **bool** |  | 
 **SectionId** | **Guid** |  | 
-**Tags** | [**List&lt;TagShortModel&gt;**](TagShortModel.md) |  | [optional] 
+**Tags** | [**List&lt;TagModel&gt;**](TagModel.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

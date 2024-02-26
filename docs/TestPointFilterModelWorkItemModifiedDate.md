@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestPointFilterModelWorkItemModifiedDate
+# TestIT.ApiClient.Model.TestPointFilterModelWorkItemModifiedDate
 Specifies a work item range of last modification date to search for
 
 ## Properties

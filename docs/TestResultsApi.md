@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.TestResultsApi
+# TestIT.ApiClient.Api.TestResultsApi
 
 All URIs are relative to *http://localhost*
 
@@ -17,7 +17,7 @@ All URIs are relative to *http://localhost*
 | [**GetAttachment**](TestResultsApi.md#getattachment) | **GET** /api/v2/testResults/{id}/attachments/{attachmentId}/info | Get Metadata of TestResult&#39;s attachment |
 | [**GetAttachments**](TestResultsApi.md#getattachments) | **GET** /api/v2/testResults/{id}/attachments | Get all attachments of TestResult |
 
-<a id="apiv2testresultsidaggregatedget"></a>
+<a name="apiv2testresultsidaggregatedget"></a>
 # **ApiV2TestResultsIdAggregatedGet**
 > TestResultModel ApiV2TestResultsIdAggregatedGet (Guid id)
 
@@ -28,9 +28,9 @@ Get test result by ID aggregated with previous results
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -116,7 +116,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testresultsidattachmentsattachmentidput"></a>
+<a name="apiv2testresultsidattachmentsattachmentidput"></a>
 # **ApiV2TestResultsIdAttachmentsAttachmentIdPut**
 > void ApiV2TestResultsIdAttachmentsAttachmentIdPut (Guid id, Guid attachmentId)
 
@@ -127,9 +127,9 @@ Attach file to the test result
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -213,7 +213,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testresultsidattachmentsinfoget"></a>
+<a name="apiv2testresultsidattachmentsinfoget"></a>
 # **ApiV2TestResultsIdAttachmentsInfoGet**
 > List&lt;AttachmentModel&gt; ApiV2TestResultsIdAttachmentsInfoGet (Guid id)
 
@@ -224,9 +224,9 @@ Get test result attachments meta-information
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -312,7 +312,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testresultsidget"></a>
+<a name="apiv2testresultsidget"></a>
 # **ApiV2TestResultsIdGet**
 > TestResultModel ApiV2TestResultsIdGet (Guid id)
 
@@ -323,9 +323,9 @@ Get test result by ID
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -411,7 +411,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testresultsidput"></a>
+<a name="apiv2testresultsidput"></a>
 # **ApiV2TestResultsIdPut**
 > void ApiV2TestResultsIdPut (Guid id, ApiV2TestResultsIdPutRequest apiV2TestResultsIdPutRequest = null)
 
@@ -422,9 +422,9 @@ Edit test result by ID
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -508,7 +508,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testresultssearchpost"></a>
+<a name="apiv2testresultssearchpost"></a>
 # **ApiV2TestResultsSearchPost**
 > List&lt;TestResultShortGetModel&gt; ApiV2TestResultsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = null)
 
@@ -519,9 +519,9 @@ Search for test results
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -617,7 +617,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testresultsstatisticsfilterpost"></a>
+<a name="apiv2testresultsstatisticsfilterpost"></a>
 # **ApiV2TestResultsStatisticsFilterPost**
 > TestResultsStatisticsGetModel ApiV2TestResultsStatisticsFilterPost (ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = null)
 
@@ -628,9 +628,9 @@ Search for test results and extract statistics
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -716,7 +716,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="createattachment"></a>
+<a name="createattachment"></a>
 # **CreateAttachment**
 > Guid CreateAttachment (Guid id, FileParameter file = null)
 
@@ -729,9 +729,9 @@ Upload and link attachment to TestResult
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -823,7 +823,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="deleteattachment"></a>
+<a name="deleteattachment"></a>
 # **DeleteAttachment**
 > void DeleteAttachment (Guid id, Guid attachmentId)
 
@@ -836,9 +836,9 @@ Remove attachment and unlink from TestResult
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -924,9 +924,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="downloadattachment"></a>
+<a name="downloadattachment"></a>
 # **DownloadAttachment**
-> void DownloadAttachment (Guid attachmentId, Guid id, int? width = null, int? height = null, ImageResizeType? resizeType = null, string backgroundColor = null, bool? preview = null)
+> FileParameter DownloadAttachment (Guid attachmentId, Guid id, int? width = null, int? height = null, ImageResizeType? resizeType = null, string backgroundColor = null, bool? preview = null)
 
 Get attachment of TestResult
 
@@ -937,9 +937,9 @@ Get attachment of TestResult
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -969,7 +969,8 @@ namespace Example
             try
             {
                 // Get attachment of TestResult
-                apiInstance.DownloadAttachment(attachmentId, id, width, height, resizeType, backgroundColor, preview);
+                FileParameter result = apiInstance.DownloadAttachment(attachmentId, id, width, height, resizeType, backgroundColor, preview);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -989,7 +990,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get attachment of TestResult
-    apiInstance.DownloadAttachmentWithHttpInfo(attachmentId, id, width, height, resizeType, backgroundColor, preview);
+    ApiResponse<FileParameter> response = apiInstance.DownloadAttachmentWithHttpInfo(attachmentId, id, width, height, resizeType, backgroundColor, preview);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -1013,7 +1017,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -1022,7 +1026,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/octet-stream, application/json
 
 
 ### HTTP response details
@@ -1036,7 +1040,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getattachment"></a>
+<a name="getattachment"></a>
 # **GetAttachment**
 > AttachmentModel GetAttachment (Guid id, Guid attachmentId)
 
@@ -1049,9 +1053,9 @@ Get Metadata of TestResult's attachment
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1142,7 +1146,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getattachments"></a>
+<a name="getattachments"></a>
 # **GetAttachments**
 > List&lt;AttachmentModel&gt; GetAttachments (Guid id)
 
@@ -1155,9 +1159,9 @@ Get all attachments of TestResult
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

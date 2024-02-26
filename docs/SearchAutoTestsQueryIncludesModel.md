@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.SearchAutoTestsQueryIncludesModel
+# TestIT.ApiClient.Model.SearchAutoTestsQueryIncludesModel
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.SearchApi
+# TestIT.ApiClient.Api.SearchApi
 
 All URIs are relative to *http://localhost*
 
@@ -6,7 +6,7 @@ All URIs are relative to *http://localhost*
 |--------|--------------|-------------|
 | [**ApiV2SearchGlobalSearchPost**](SearchApi.md#apiv2searchglobalsearchpost) | **POST** /api/v2/search/globalSearch |  |
 
-<a id="apiv2searchglobalsearchpost"></a>
+<a name="apiv2searchglobalsearchpost"></a>
 # **ApiV2SearchGlobalSearchPost**
 > GlobalSearchResponse ApiV2SearchGlobalSearchPost (ApiV2SearchGlobalSearchPostRequest apiV2SearchGlobalSearchPostRequest = null)
 
@@ -17,9 +17,9 @@ All URIs are relative to *http://localhost*
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

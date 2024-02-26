@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.BackgroundJobAttachmentModel
+# TestIT.ApiClient.Model.BackgroundJobAttachmentModel
 
 ## Properties
 

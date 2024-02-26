@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestSuiteWorkItemsSearchModelDuration
+# TestIT.ApiClient.Model.TestSuiteWorkItemsSearchModelDuration
 Specifies a work item duration range to search for
 
 ## Properties

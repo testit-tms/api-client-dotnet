@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestSuiteWorkItemsSearchModel
+# TestIT.ApiClient.Model.TestSuiteWorkItemsSearchModel
 
 ## Properties
 

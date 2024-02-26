@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.UserWithRankModelUserRank
+# TestIT.ApiClient.Model.UserWithRankModelUserRank
 
 ## Properties
 

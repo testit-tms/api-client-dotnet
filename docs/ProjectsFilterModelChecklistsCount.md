@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ProjectsFilterModelChecklistsCount
+# TestIT.ApiClient.Model.ProjectsFilterModelChecklistsCount
 Specifies a project range of checklists count to search for
 
 ## Properties

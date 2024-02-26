@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestPointChangeViewModelChangedFieldViewModel
+# TestIT.ApiClient.Model.TestPointChangeViewModelChangedFieldViewModel
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestRunTestResultsSelectModelFilter
+# TestIT.ApiClient.Model.TestRunTestResultsSelectModelFilter
 Collection of filters to apply to search
 
 ## Properties

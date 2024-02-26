@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.WorkItemStates
+# TestIT.ApiClient.Model.WorkItemStates
 
 ## Properties
 

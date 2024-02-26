@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ApiV2TestRunsUpdateMultiplePostRequest
+# TestIT.ApiClient.Model.ApiV2TestRunsUpdateMultiplePostRequest
 
 ## Properties
 

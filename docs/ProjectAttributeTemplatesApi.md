@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.ProjectAttributeTemplatesApi
+# TestIT.ApiClient.Api.ProjectAttributeTemplatesApi
 
 All URIs are relative to *http://localhost*
 
@@ -8,7 +8,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDelete**](ProjectAttributeTemplatesApi.md#apiv2projectsprojectidattributestemplatestemplateiddelete) | **DELETE** /api/v2/projects/{projectId}/attributes/templates/{templateId} | Delete CustomAttributeTemplate from Project |
 | [**ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPost**](ProjectAttributeTemplatesApi.md#apiv2projectsprojectidattributestemplatestemplateidpost) | **POST** /api/v2/projects/{projectId}/attributes/templates/{templateId} | Add CustomAttributeTemplate to Project |
 
-<a id="apiv2projectsprojectidattributestemplatessearchpost"></a>
+<a name="apiv2projectsprojectidattributestemplatessearchpost"></a>
 # **ApiV2ProjectsProjectIdAttributesTemplatesSearchPost**
 > List&lt;ProjectCustomAttributeTemplateGetModel&gt; ApiV2ProjectsProjectIdAttributesTemplatesSearchPost (string projectId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest = null)
 
@@ -19,9 +19,9 @@ Search for custom attributes templates
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -119,7 +119,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2projectsprojectidattributestemplatestemplateiddelete"></a>
+<a name="apiv2projectsprojectidattributestemplatestemplateiddelete"></a>
 # **ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDelete**
 > void ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDelete (string projectId, Guid templateId)
 
@@ -132,9 +132,9 @@ Delete CustomAttributeTemplate from Project
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -219,7 +219,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2projectsprojectidattributestemplatestemplateidpost"></a>
+<a name="apiv2projectsprojectidattributestemplatestemplateidpost"></a>
 # **ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPost**
 > void ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPost (string projectId, Guid templateId)
 
@@ -232,9 +232,9 @@ Add CustomAttributeTemplate to Project
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

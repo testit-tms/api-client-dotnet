@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ProjectCustomAttributesTemplatesFilterModel
+# TestIT.ApiClient.Model.ProjectCustomAttributesTemplatesFilterModel
 Collection of filters to apply to search
 
 ## Properties

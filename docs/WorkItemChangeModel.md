@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.WorkItemChangeModel
+# TestIT.ApiClient.Model.WorkItemChangeModel
 
 ## Properties
 

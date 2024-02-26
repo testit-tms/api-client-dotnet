@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.LinkSubGetModel
+# TestIT.ApiClient.Model.LinkSubGetModel
 
 ## Properties
 

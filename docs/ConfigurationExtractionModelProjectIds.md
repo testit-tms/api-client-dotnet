@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ConfigurationExtractionModelProjectIds
+# TestIT.ApiClient.Model.ConfigurationExtractionModelProjectIds
 Extraction parameters for projects
 
 ## Properties

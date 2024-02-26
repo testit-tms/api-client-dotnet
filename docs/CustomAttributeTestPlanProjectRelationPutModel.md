@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.CustomAttributeTestPlanProjectRelationPutModel
+# TestIT.ApiClient.Model.CustomAttributeTestPlanProjectRelationPutModel
 
 ## Properties
 

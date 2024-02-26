@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.GuidExtractionModel
+# TestIT.ApiClient.Model.GuidExtractionModel
 
 ## Properties
 
