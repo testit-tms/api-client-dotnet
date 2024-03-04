@@ -15,43 +15,7 @@
 | 4.3     | 2.3        |
 | 4.4     | 2.4        |
 | 4.5     | 2.5        |
-
-<a name="frameworks-supported"></a>
-## Frameworks supported
-- .NET Core >=1.0
-- .NET Framework >=4.6
-
-<a name="installation"></a>
-## Installation
-
-### NuGet CLI
-```
-Install-Package TestIt.ApiClient
-```
-
-### .NET CLI
-```
-dotnet package add TestIt.ApiClient
-```
-
-<a name="examples"></a>
-## Examples
-
-Please follow the [installation](#installation) instruction and execute the following C## Getting Started
-
-### Compatibility
-
-| Test IT | API Client |
-|---------|------------|
-| 3.3     | 1.0        |
-| 3.4     | 1.1        |
-| 3.5     | 1.2        |
-| 3.9     | 2.0        |
-| 4.0     | 2.1        |
-| 4.2     | 2.2        |
-| 4.3     | 2.3        |
-| 4.4     | 2.4        |
-| 4.5     | 2.5        |
+| 4.6     | 2.6        |
 
 <a name="frameworks-supported"></a>
 ## Frameworks supported
