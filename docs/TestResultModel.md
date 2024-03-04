@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestResultModel
+# TestIT.ApiClient.Model.TestResultModel
 
 ## Properties
 

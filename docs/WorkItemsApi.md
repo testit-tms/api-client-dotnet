@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.WorkItemsApi
+# TestIT.ApiClient.Api.WorkItemsApi
 
 All URIs are relative to *http://localhost*
 
@@ -30,7 +30,7 @@ All URIs are relative to *http://localhost*
 | [**RestoreWorkItem**](WorkItemsApi.md#restoreworkitem) | **POST** /api/v2/workItems/{id}/restore | Restore test case, checklist or shared steps from archive |
 | [**UpdateWorkItem**](WorkItemsApi.md#updateworkitem) | **PUT** /api/v2/workItems | Update Test Case, Checklist or Shared Step |
 
-<a id="apiv2workitemsidattachmentspost"></a>
+<a name="apiv2workitemsidattachmentspost"></a>
 # **ApiV2WorkItemsIdAttachmentsPost**
 > Guid ApiV2WorkItemsIdAttachmentsPost (Guid id, FileParameter file = null)
 
@@ -43,9 +43,9 @@ Upload and link attachment to WorkItem
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -137,7 +137,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2workitemsidchecklisttransformtotestcasepost"></a>
+<a name="apiv2workitemsidchecklisttransformtotestcasepost"></a>
 # **ApiV2WorkItemsIdCheckListTransformToTestCasePost**
 > WorkItemModel ApiV2WorkItemsIdCheckListTransformToTestCasePost (Guid id)
 
@@ -150,9 +150,9 @@ Transform CheckList to TestCase
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -242,7 +242,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2workitemsidhistoryget"></a>
+<a name="apiv2workitemsidhistoryget"></a>
 # **ApiV2WorkItemsIdHistoryGet**
 > List&lt;WorkItemChangeModel&gt; ApiV2WorkItemsIdHistoryGet (Guid id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -255,9 +255,9 @@ Get change history of WorkItem
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -356,7 +356,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2workitemsidlikedelete"></a>
+<a name="apiv2workitemsidlikedelete"></a>
 # **ApiV2WorkItemsIdLikeDelete**
 > void ApiV2WorkItemsIdLikeDelete (Guid id)
 
@@ -369,9 +369,9 @@ Delete like from WorkItem
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -454,7 +454,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2workitemsidlikepost"></a>
+<a name="apiv2workitemsidlikepost"></a>
 # **ApiV2WorkItemsIdLikePost**
 > void ApiV2WorkItemsIdLikePost (Guid id)
 
@@ -467,9 +467,9 @@ Set like to WorkItem
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -552,7 +552,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2workitemsidlikescountget"></a>
+<a name="apiv2workitemsidlikescountget"></a>
 # **ApiV2WorkItemsIdLikesCountGet**
 > int ApiV2WorkItemsIdLikesCountGet (Guid id)
 
@@ -565,9 +565,9 @@ Get likes count of WorkItem
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -655,7 +655,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2workitemsidlikesget"></a>
+<a name="apiv2workitemsidlikesget"></a>
 # **ApiV2WorkItemsIdLikesGet**
 > List&lt;WorkItemLikeModel&gt; ApiV2WorkItemsIdLikesGet (Guid id)
 
@@ -668,9 +668,9 @@ Get likes of WorkItem
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -758,7 +758,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2workitemsidtestresultshistoryget"></a>
+<a name="apiv2workitemsidtestresultshistoryget"></a>
 # **ApiV2WorkItemsIdTestResultsHistoryGet**
 > List&lt;TestResultHistoryReportModel&gt; ApiV2WorkItemsIdTestResultsHistoryGet (Guid id, DateTime? from = null, DateTime? to = null, List<Guid> configurationIds = null, List<Guid> testPlanIds = null, List<Guid> userIds = null, List<string> outcomes = null, bool? isAutomated = null, bool? automated = null, List<Guid> testRunIds = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -771,9 +771,9 @@ Get test results history of WorkItem
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -889,7 +889,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2workitemsidversionversionidactualpost"></a>
+<a name="apiv2workitemsidversionversionidactualpost"></a>
 # **ApiV2WorkItemsIdVersionVersionIdActualPost**
 > WorkItemModel ApiV2WorkItemsIdVersionVersionIdActualPost (Guid id, Guid versionId)
 
@@ -902,9 +902,9 @@ Set WorkItem as actual
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -995,7 +995,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2workitemsmovepost"></a>
+<a name="apiv2workitemsmovepost"></a>
 # **ApiV2WorkItemsMovePost**
 > WorkItemShortModel ApiV2WorkItemsMovePost (ApiV2WorkItemsMovePostRequest apiV2WorkItemsMovePostRequest = null)
 
@@ -1008,9 +1008,9 @@ Move WorkItem to another section
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1098,7 +1098,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2workitemssearchpost"></a>
+<a name="apiv2workitemssearchpost"></a>
 # **ApiV2WorkItemsSearchPost**
 > List&lt;WorkItemShortModel&gt; ApiV2WorkItemsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = null)
 
@@ -1109,9 +1109,9 @@ Search for work items
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1207,7 +1207,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2workitemssharedstepidreferencessectionspost"></a>
+<a name="apiv2workitemssharedstepidreferencessectionspost"></a>
 # **ApiV2WorkItemsSharedStepIdReferencesSectionsPost**
 > List&lt;SharedStepReferenceSectionModel&gt; ApiV2WorkItemsSharedStepIdReferencesSectionsPost (Guid sharedStepId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest = null)
 
@@ -1220,9 +1220,9 @@ Get SharedStep references in sections
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1321,7 +1321,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2workitemssharedstepidreferencesworkitemspost"></a>
+<a name="apiv2workitemssharedstepidreferencesworkitemspost"></a>
 # **ApiV2WorkItemsSharedStepIdReferencesWorkItemsPost**
 > List&lt;SharedStepReferenceModel&gt; ApiV2WorkItemsSharedStepIdReferencesWorkItemsPost (Guid sharedStepId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest = null)
 
@@ -1334,9 +1334,9 @@ Get SharedStep references in work items
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1435,7 +1435,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2workitemssharedstepssharedstepidreferencesget"></a>
+<a name="apiv2workitemssharedstepssharedstepidreferencesget"></a>
 # **ApiV2WorkItemsSharedStepsSharedStepIdReferencesGet**
 > List&lt;SharedStepReferenceModel&gt; ApiV2WorkItemsSharedStepsSharedStepIdReferencesGet (Guid sharedStepId)
 
@@ -1448,9 +1448,9 @@ Get SharedStep references
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1538,7 +1538,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="createworkitem"></a>
+<a name="createworkitem"></a>
 # **CreateWorkItem**
 > WorkItemModel CreateWorkItem (CreateWorkItemRequest createWorkItemRequest = null)
 
@@ -1551,9 +1551,9 @@ Create Test Case, Checklist or Shared Step
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1642,7 +1642,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="deleteallworkitemsfromautotest"></a>
+<a name="deleteallworkitemsfromautotest"></a>
 # **DeleteAllWorkItemsFromAutoTest**
 > void DeleteAllWorkItemsFromAutoTest (string id)
 
@@ -1655,9 +1655,9 @@ Delete all links AutoTests from WorkItem by Id or GlobalId
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1743,7 +1743,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="deleteworkitem"></a>
+<a name="deleteworkitem"></a>
 # **DeleteWorkItem**
 > void DeleteWorkItem (string id)
 
@@ -1756,9 +1756,9 @@ Delete Test Case, Checklist or Shared Step by Id or GlobalId
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1844,7 +1844,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getautotestsforworkitem"></a>
+<a name="getautotestsforworkitem"></a>
 # **GetAutoTestsForWorkItem**
 > List&lt;AutoTestModel&gt; GetAutoTestsForWorkItem (string id)
 
@@ -1857,9 +1857,9 @@ Get all AutoTests linked to WorkItem by Id or GlobalId
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1948,7 +1948,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getiterations"></a>
+<a name="getiterations"></a>
 # **GetIterations**
 > List&lt;IterationModel&gt; GetIterations (string id, Guid? versionId = null, int? versionNumber = null)
 
@@ -1959,9 +1959,9 @@ Get iterations by work item Id or GlobalId
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -2054,7 +2054,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getworkitembyid"></a>
+<a name="getworkitembyid"></a>
 # **GetWorkItemById**
 > WorkItemModel GetWorkItemById (string id, Guid? versionId = null, int? versionNumber = null)
 
@@ -2067,9 +2067,9 @@ Get Test Case, Checklist or Shared Step by Id or GlobalId
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -2162,7 +2162,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getworkitemchronology"></a>
+<a name="getworkitemchronology"></a>
 # **GetWorkItemChronology**
 > List&lt;TestResultChronologyModel&gt; GetWorkItemChronology (string id)
 
@@ -2175,9 +2175,9 @@ Get WorkItem chronology by Id or GlobalId
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -2266,7 +2266,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getworkitemversions"></a>
+<a name="getworkitemversions"></a>
 # **GetWorkItemVersions**
 > List&lt;WorkItemVersionModel&gt; GetWorkItemVersions (string id, Guid? workItemVersionId = null, int? versionNumber = null)
 
@@ -2279,9 +2279,9 @@ Get WorkItem versions
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -2374,7 +2374,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="purgeworkitem"></a>
+<a name="purgeworkitem"></a>
 # **PurgeWorkItem**
 > void PurgeWorkItem (string id)
 
@@ -2385,9 +2385,9 @@ Permanently delete test case, checklist or shared steps from archive
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -2473,7 +2473,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="restoreworkitem"></a>
+<a name="restoreworkitem"></a>
 # **RestoreWorkItem**
 > void RestoreWorkItem (string id)
 
@@ -2484,9 +2484,9 @@ Restore test case, checklist or shared steps from archive
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -2571,7 +2571,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="updateworkitem"></a>
+<a name="updateworkitem"></a>
 # **UpdateWorkItem**
 > void UpdateWorkItem (UpdateWorkItemRequest updateWorkItemRequest = null)
 
@@ -2584,9 +2584,9 @@ Update Test Case, Checklist or Shared Step
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

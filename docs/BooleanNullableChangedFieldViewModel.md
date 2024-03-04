@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.BooleanNullableChangedFieldViewModel
+# TestIT.ApiClient.Model.BooleanNullableChangedFieldViewModel
 
 ## Properties
 

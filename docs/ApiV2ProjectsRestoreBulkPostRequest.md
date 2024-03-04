@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ApiV2ProjectsRestoreBulkPostRequest
+# TestIT.ApiClient.Model.ApiV2ProjectsRestoreBulkPostRequest
 
 ## Properties
 

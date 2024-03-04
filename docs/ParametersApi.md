@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.ParametersApi
+# TestIT.ApiClient.Api.ParametersApi
 
 All URIs are relative to *http://localhost*
 
@@ -20,7 +20,7 @@ All URIs are relative to *http://localhost*
 | [**GetParameterById**](ParametersApi.md#getparameterbyid) | **GET** /api/v2/parameters/{id} | Get parameter by ID |
 | [**UpdateParameter**](ParametersApi.md#updateparameter) | **PUT** /api/v2/parameters | Update parameter |
 
-<a id="apiv2parametersbulkpost"></a>
+<a name="apiv2parametersbulkpost"></a>
 # **ApiV2ParametersBulkPost**
 > List&lt;ParameterModel&gt; ApiV2ParametersBulkPost (List<ParameterPostModel> parameterPostModel = null)
 
@@ -33,9 +33,9 @@ Create multiple parameters
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -121,7 +121,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2parametersbulkput"></a>
+<a name="apiv2parametersbulkput"></a>
 # **ApiV2ParametersBulkPut**
 > void ApiV2ParametersBulkPut (List<ParameterPutModel> parameterPutModel = null)
 
@@ -134,9 +134,9 @@ Update multiple parameters
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -220,7 +220,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2parametersgroupsget"></a>
+<a name="apiv2parametersgroupsget"></a>
 # **ApiV2ParametersGroupsGet**
 > List&lt;ParameterGroupModel&gt; ApiV2ParametersGroupsGet (bool? isDeleted = null, List<Guid> parameterKeyIds = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -233,9 +233,9 @@ Get parameters as group
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -333,7 +333,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2parameterskeynamenameexistsget"></a>
+<a name="apiv2parameterskeynamenameexistsget"></a>
 # **ApiV2ParametersKeyNameNameExistsGet**
 > bool ApiV2ParametersKeyNameNameExistsGet (string name)
 
@@ -346,9 +346,9 @@ Check existence parameter key in system
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -434,7 +434,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2parameterskeyvaluesget"></a>
+<a name="apiv2parameterskeyvaluesget"></a>
 # **ApiV2ParametersKeyValuesGet**
 > List&lt;string&gt; ApiV2ParametersKeyValuesGet (string key)
 
@@ -447,9 +447,9 @@ Get all parameter key values
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -534,7 +534,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2parameterskeysget"></a>
+<a name="apiv2parameterskeysget"></a>
 # **ApiV2ParametersKeysGet**
 > List&lt;string&gt; ApiV2ParametersKeysGet ()
 
@@ -547,9 +547,9 @@ Get all parameter keys
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -629,7 +629,7 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2parameterssearchgroupspost"></a>
+<a name="apiv2parameterssearchgroupspost"></a>
 # **ApiV2ParametersSearchGroupsPost**
 > List&lt;ParameterGroupModel&gt; ApiV2ParametersSearchGroupsPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ParametersSearchPostRequest apiV2ParametersSearchPostRequest = null)
 
@@ -640,9 +640,9 @@ Search for parameters as group
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -737,7 +737,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2parameterssearchpost"></a>
+<a name="apiv2parameterssearchpost"></a>
 # **ApiV2ParametersSearchPost**
 > List&lt;ParameterModel&gt; ApiV2ParametersSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ParametersSearchPostRequest apiV2ParametersSearchPostRequest = null)
 
@@ -748,9 +748,9 @@ Search for parameters
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -845,7 +845,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="createparameter"></a>
+<a name="createparameter"></a>
 # **CreateParameter**
 > ParameterModel CreateParameter (CreateParameterRequest createParameterRequest = null)
 
@@ -858,9 +858,9 @@ Create parameter
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -946,7 +946,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="deletebyname"></a>
+<a name="deletebyname"></a>
 # **DeleteByName**
 > void DeleteByName (string name)
 
@@ -959,9 +959,9 @@ Deletes parameter and all it's values
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1044,7 +1044,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="deletebyparameterkeyid"></a>
+<a name="deletebyparameterkeyid"></a>
 # **DeleteByParameterKeyId**
 > void DeleteByParameterKeyId (Guid keyId)
 
@@ -1057,9 +1057,9 @@ Deletes parameter and all it's values by parameter key identifier
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1142,7 +1142,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="deleteparameter"></a>
+<a name="deleteparameter"></a>
 # **DeleteParameter**
 > void DeleteParameter (Guid id)
 
@@ -1155,9 +1155,9 @@ Delete parameter
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1240,7 +1240,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getallparameters"></a>
+<a name="getallparameters"></a>
 # **GetAllParameters**
 > List&lt;ParameterModel&gt; GetAllParameters (bool? isDeleted = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -1253,9 +1253,9 @@ Get all parameters
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1351,7 +1351,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getparameterbyid"></a>
+<a name="getparameterbyid"></a>
 # **GetParameterById**
 > ParameterModel GetParameterById (Guid id)
 
@@ -1364,9 +1364,9 @@ Get parameter by ID
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1452,7 +1452,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="updateparameter"></a>
+<a name="updateparameter"></a>
 # **UpdateParameter**
 > void UpdateParameter (UpdateParameterRequest updateParameterRequest = null)
 
@@ -1465,9 +1465,9 @@ Update parameter
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

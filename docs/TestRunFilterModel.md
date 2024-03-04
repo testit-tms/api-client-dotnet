@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestRunFilterModel
+# TestIT.ApiClient.Model.TestRunFilterModel
 
 ## Properties
 
@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **ProjectIds** | **List&lt;Guid&gt;** | Specifies a test run project IDs to search for | [optional] 
 **Name** | **string** | Specifies test run name | [optional] 
 **States** | [**List&lt;TestRunState&gt;**](TestRunState.md) | Specifies a test run states to search for | [optional] 
+**CreatedDate** | [**TestRunFilterModelCreatedDate**](TestRunFilterModelCreatedDate.md) |  | [optional] 
 **StartedDate** | [**TestRunFilterModelStartedDate**](TestRunFilterModelStartedDate.md) |  | [optional] 
 **CreatedByIds** | **List&lt;Guid&gt;** | Specifies a test run creator IDs to search for | [optional] 
 **ModifiedByIds** | **List&lt;Guid&gt;** | Specifies a test run last editor IDs to search for | [optional] 

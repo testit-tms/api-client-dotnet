@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.AutoTestsApi
+# TestIT.ApiClient.Api.AutoTestsApi
 
 All URIs are relative to *http://localhost*
 
@@ -25,7 +25,7 @@ All URIs are relative to *http://localhost*
 | [**UpdateAutoTest**](AutoTestsApi.md#updateautotest) | **PUT** /api/v2/autoTests | Update autotest |
 | [**UpdateMultiple**](AutoTestsApi.md#updatemultiple) | **PUT** /api/v2/autoTests/bulk | Update multiple autotests |
 
-<a id="apiv2autotestsflakybulkpost"></a>
+<a name="apiv2autotestsflakybulkpost"></a>
 # **ApiV2AutoTestsFlakyBulkPost**
 > void ApiV2AutoTestsFlakyBulkPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2AutoTestsFlakyBulkPostRequest apiV2AutoTestsFlakyBulkPostRequest = null)
 
@@ -38,9 +38,9 @@ User permissions for project:  - Read only  - Execute  - Write  - Full control
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -133,7 +133,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2autotestsidpatch"></a>
+<a name="apiv2autotestsidpatch"></a>
 # **ApiV2AutoTestsIdPatch**
 > void ApiV2AutoTestsIdPatch (Guid id, List<Operation> operation = null)
 
@@ -146,9 +146,9 @@ See <a href=\"https://www.rfc-editor.org/rfc/rfc6902\" target=\"_blank\">RFC 690
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -232,7 +232,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2autotestsidtestresultssearchpost"></a>
+<a name="apiv2autotestsidtestresultssearchpost"></a>
 # **ApiV2AutoTestsIdTestResultsSearchPost**
 > List&lt;AutotestResultHistoricalGetModel&gt; ApiV2AutoTestsIdTestResultsSearchPost (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2AutoTestsIdTestResultsSearchPostRequest apiV2AutoTestsIdTestResultsSearchPostRequest = null)
 
@@ -245,9 +245,9 @@ Get test results history for autotest
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -348,7 +348,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2autotestsidworkitemschangedidget"></a>
+<a name="apiv2autotestsidworkitemschangedidget"></a>
 # **ApiV2AutoTestsIdWorkItemsChangedIdGet**
 > List&lt;Guid&gt; ApiV2AutoTestsIdWorkItemsChangedIdGet (Guid id)
 
@@ -361,9 +361,9 @@ User permissions for project:  - Read only  - Execute  - Write  - Full control
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -450,7 +450,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2autotestsidworkitemschangedworkitemidapprovepost"></a>
+<a name="apiv2autotestsidworkitemschangedworkitemidapprovepost"></a>
 # **ApiV2AutoTestsIdWorkItemsChangedWorkItemIdApprovePost**
 > void ApiV2AutoTestsIdWorkItemsChangedWorkItemIdApprovePost (Guid id, Guid workItemId)
 
@@ -463,9 +463,9 @@ User permissions for project:  - Read only  - Execute  - Write  - Full control
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -550,7 +550,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2autotestssearchpost"></a>
+<a name="apiv2autotestssearchpost"></a>
 # **ApiV2AutoTestsSearchPost**
 > List&lt;AutoTestModel&gt; ApiV2AutoTestsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2AutoTestsSearchPostRequest apiV2AutoTestsSearchPostRequest = null)
 
@@ -561,9 +561,9 @@ Search for autotests
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -659,7 +659,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="createautotest"></a>
+<a name="createautotest"></a>
 # **CreateAutoTest**
 > AutoTestModel CreateAutoTest (CreateAutoTestRequest createAutoTestRequest = null)
 
@@ -672,9 +672,9 @@ Create autotest
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -765,7 +765,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="createmultiple"></a>
+<a name="createmultiple"></a>
 # **CreateMultiple**
 > List&lt;AutoTestModel&gt; CreateMultiple (List<AutoTestPostModel> autoTestPostModel = null)
 
@@ -778,9 +778,9 @@ Create multiple autotests
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -871,7 +871,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="deleteautotest"></a>
+<a name="deleteautotest"></a>
 # **DeleteAutoTest**
 > void DeleteAutoTest (string id)
 
@@ -884,9 +884,9 @@ Delete autotest
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -970,7 +970,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="deleteautotestlinkfromworkitem"></a>
+<a name="deleteautotestlinkfromworkitem"></a>
 # **DeleteAutoTestLinkFromWorkItem**
 > void DeleteAutoTestLinkFromWorkItem (string id, string workItemId = null)
 
@@ -983,9 +983,9 @@ Unlink autotest from work item
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1072,7 +1072,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getallautotests"></a>
+<a name="getallautotests"></a>
 # **GetAllAutoTests**
 > List&lt;AutoTestModel&gt; GetAllAutoTests (Guid? projectId = null, string externalId = null, long? globalId = null, string _namespace = null, bool? isNamespaceNull = null, bool? includeEmptyNamespaces = null, string className = null, bool? isClassnameNull = null, bool? includeEmptyClassNames = null, bool? isDeleted = null, bool? deleted = null, List<string> labels = null, int? stabilityMinimal = null, int? minStability = null, int? stabilityMaximal = null, int? maxStability = null, bool? isFlaky = null, bool? flaky = null, bool? includeSteps = null, bool? includeLabels = null, string externalKey = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -1083,9 +1083,9 @@ void (empty response body)
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1221,7 +1221,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getautotestaverageduration"></a>
+<a name="getautotestaverageduration"></a>
 # **GetAutoTestAverageDuration**
 > AutoTestAverageDurationModel GetAutoTestAverageDuration (string id)
 
@@ -1234,9 +1234,9 @@ Get average autotest duration
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1324,7 +1324,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getautotestbyid"></a>
+<a name="getautotestbyid"></a>
 # **GetAutoTestById**
 > AutoTestModel GetAutoTestById (string id)
 
@@ -1337,9 +1337,9 @@ Get autotest by internal or global ID
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1428,7 +1428,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getautotestchronology"></a>
+<a name="getautotestchronology"></a>
 # **GetAutoTestChronology**
 > List&lt;TestResultChronologyModel&gt; GetAutoTestChronology (string id)
 
@@ -1441,9 +1441,9 @@ Get autotest chronology
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1531,7 +1531,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="gettestruns"></a>
+<a name="gettestruns"></a>
 # **GetTestRuns**
 > List&lt;TestRunShortModel&gt; GetTestRuns (string id)
 
@@ -1544,9 +1544,9 @@ Get completed tests runs for autotests
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1634,7 +1634,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getworkitemresults"></a>
+<a name="getworkitemresults"></a>
 # **GetWorkItemResults**
 > List&lt;TestResultHistoryReportModel&gt; GetWorkItemResults (string id, DateTime? from = null, DateTime? to = null, List<Guid> configurationIds = null, List<Guid> testPlanIds = null, List<Guid> userIds = null, List<string> outcomes = null, bool? isAutomated = null, bool? automated = null, List<Guid> testRunIds = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -1645,9 +1645,9 @@ catch (ApiException e)
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1761,7 +1761,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getworkitemslinkedtoautotest"></a>
+<a name="getworkitemslinkedtoautotest"></a>
 # **GetWorkItemsLinkedToAutoTest**
 > List&lt;WorkItemIdentifierModel&gt; GetWorkItemsLinkedToAutoTest (string id, bool? isDeleted = null, bool? isWorkItemDeleted = null)
 
@@ -1774,9 +1774,9 @@ Get work items linked to autotest
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1868,7 +1868,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="linkautotesttoworkitem"></a>
+<a name="linkautotesttoworkitem"></a>
 # **LinkAutoTestToWorkItem**
 > void LinkAutoTestToWorkItem (string id, LinkAutoTestToWorkItemRequest linkAutoTestToWorkItemRequest = null)
 
@@ -1881,9 +1881,9 @@ Link autotest with work items
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1970,7 +1970,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="updateautotest"></a>
+<a name="updateautotest"></a>
 # **UpdateAutoTest**
 > void UpdateAutoTest (UpdateAutoTestRequest updateAutoTestRequest = null)
 
@@ -1983,9 +1983,9 @@ Update autotest
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -2072,7 +2072,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="updatemultiple"></a>
+<a name="updatemultiple"></a>
 # **UpdateMultiple**
 > void UpdateMultiple (List<AutoTestPutModel> autoTestPutModel = null)
 
@@ -2085,9 +2085,9 @@ Update multiple autotests
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

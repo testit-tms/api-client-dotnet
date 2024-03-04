@@ -67,7 +67,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
+        /// <example>&quot;11421721-181a-4696-aa8a-ec54c0d06fca&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
@@ -102,7 +102,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets WorkItemId
         /// </summary>
-        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
+        /// <example>&quot;11421721-181a-4696-aa8a-ec54c0d06fca&quot;</example>
         [DataMember(Name = "workItemId", EmitDefaultValue = true)]
         public Guid? WorkItemId { get; set; }
 

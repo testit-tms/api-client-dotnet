@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestResultsStatisticsGetModelFailureCategories
+# TestIT.ApiClient.Model.TestResultsStatisticsGetModelFailureCategories
 Test results counts aggregated by result failure categories
 
 ## Properties

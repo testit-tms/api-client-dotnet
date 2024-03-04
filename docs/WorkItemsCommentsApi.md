@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.WorkItemsCommentsApi
+# TestIT.ApiClient.Api.WorkItemsCommentsApi
 
 All URIs are relative to *http://localhost*
 
@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2WorkItemsCommentsPut**](WorkItemsCommentsApi.md#apiv2workitemscommentsput) | **PUT** /api/v2/workItems/comments | Update work item comment |
 | [**ApiV2WorkItemsIdCommentsGet**](WorkItemsCommentsApi.md#apiv2workitemsidcommentsget) | **GET** /api/v2/workItems/{id}/comments | Get work item comments |
 
-<a id="apiv2workitemscommentscommentiddelete"></a>
+<a name="apiv2workitemscommentscommentiddelete"></a>
 # **ApiV2WorkItemsCommentsCommentIdDelete**
 > void ApiV2WorkItemsCommentsCommentIdDelete (Guid commentId)
 
@@ -22,9 +22,9 @@ Delete WorkItem comment
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -109,7 +109,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2workitemscommentspost"></a>
+<a name="apiv2workitemscommentspost"></a>
 # **ApiV2WorkItemsCommentsPost**
 > WorkItemCommentModel ApiV2WorkItemsCommentsPost (ApiV2WorkItemsCommentsPostRequest apiV2WorkItemsCommentsPostRequest = null)
 
@@ -122,9 +122,9 @@ Create WorkItem comment
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -213,7 +213,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2workitemscommentsput"></a>
+<a name="apiv2workitemscommentsput"></a>
 # **ApiV2WorkItemsCommentsPut**
 > void ApiV2WorkItemsCommentsPut (ApiV2WorkItemsCommentsPutRequest apiV2WorkItemsCommentsPutRequest = null)
 
@@ -224,9 +224,9 @@ Update work item comment
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -308,7 +308,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2workitemsidcommentsget"></a>
+<a name="apiv2workitemsidcommentsget"></a>
 # **ApiV2WorkItemsIdCommentsGet**
 > List&lt;WorkItemCommentModel&gt; ApiV2WorkItemsIdCommentsGet (string id)
 
@@ -319,9 +319,9 @@ Get work item comments
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

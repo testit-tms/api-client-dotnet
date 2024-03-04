@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestResultHistoryReportModel
+# TestIT.ApiClient.Model.TestResultHistoryReportModel
 
 ## Properties
 

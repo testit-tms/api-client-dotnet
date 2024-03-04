@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.TestPlansApi
+# TestIT.ApiClient.Api.TestPlansApi
 
 All URIs are relative to *http://localhost*
 
@@ -35,7 +35,7 @@ All URIs are relative to *http://localhost*
 | [**Start**](TestPlansApi.md#start) | **POST** /api/v2/testPlans/{id}/start | Start TestPlan |
 | [**UpdateTestPlan**](TestPlansApi.md#updatetestplan) | **PUT** /api/v2/testPlans | Update TestPlan |
 
-<a id="addtestpointswithsections"></a>
+<a name="addtestpointswithsections"></a>
 # **AddTestPointsWithSections**
 > void AddTestPointsWithSections (string id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = null)
 
@@ -46,9 +46,9 @@ Add test-points to TestPlan with sections
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -135,7 +135,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="addworkitemswithsections"></a>
+<a name="addworkitemswithsections"></a>
 # **AddWorkItemsWithSections**
 > void AddWorkItemsWithSections (string id, List<Guid> requestBody = null)
 
@@ -148,9 +148,9 @@ Add WorkItems to TestPlan with Sections as TestSuites
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -238,7 +238,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testplansidanalyticsget"></a>
+<a name="apiv2testplansidanalyticsget"></a>
 # **ApiV2TestPlansIdAnalyticsGet**
 > TestPointAnalyticResult ApiV2TestPlansIdAnalyticsGet (string id)
 
@@ -251,9 +251,9 @@ Get analytics by TestPlan
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -341,7 +341,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testplansidautobalancepost"></a>
+<a name="apiv2testplansidautobalancepost"></a>
 # **ApiV2TestPlansIdAutobalancePost**
 > TestPlanWithTestSuiteTreeModel ApiV2TestPlansIdAutobalancePost (string id, List<Guid> testers = null)
 
@@ -352,9 +352,9 @@ Distribute test points between the users
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -442,7 +442,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testplansidconfigurationsget"></a>
+<a name="apiv2testplansidconfigurationsget"></a>
 # **ApiV2TestPlansIdConfigurationsGet**
 > List&lt;ConfigurationModel&gt; ApiV2TestPlansIdConfigurationsGet (string id)
 
@@ -455,9 +455,9 @@ Get TestPlan configurations
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -546,7 +546,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testplansidexporttestpointsxlsxpost"></a>
+<a name="apiv2testplansidexporttestpointsxlsxpost"></a>
 # **ApiV2TestPlansIdExportTestPointsXlsxPost**
 > FileParameter ApiV2TestPlansIdExportTestPointsXlsxPost (string id, long? timeZoneOffsetInMinutes = null, ApiV2TestPlansIdExportTestPointsXlsxPostRequest apiV2TestPlansIdExportTestPointsXlsxPostRequest = null)
 
@@ -559,9 +559,9 @@ Export TestPoints from TestPlan in xls format
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -654,7 +654,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testplansidexporttestresulthistoryxlsxpost"></a>
+<a name="apiv2testplansidexporttestresulthistoryxlsxpost"></a>
 # **ApiV2TestPlansIdExportTestResultHistoryXlsxPost**
 > FileParameter ApiV2TestPlansIdExportTestResultHistoryXlsxPost (string id, bool? mustReturnOnlyLastTestResult = null, bool? includeSteps = null, bool? includeDeletedTestSuites = null, long? timeZoneOffsetInMinutes = null)
 
@@ -667,9 +667,9 @@ Export TestResults history from TestPlan in xls format
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -766,7 +766,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testplansidhistoryget"></a>
+<a name="apiv2testplansidhistoryget"></a>
 # **ApiV2TestPlansIdHistoryGet**
 > List&lt;TestPlanChangeModel&gt; ApiV2TestPlansIdHistoryGet (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -779,9 +779,9 @@ Get TestPlan history
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -880,7 +880,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testplansidlinksget"></a>
+<a name="apiv2testplansidlinksget"></a>
 # **ApiV2TestPlansIdLinksGet**
 > List&lt;TestPlanLink&gt; ApiV2TestPlansIdLinksGet (string id, int? skip = null, int? take = null, string orderBy = null)
 
@@ -893,9 +893,9 @@ Get Links of TestPlan
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -988,7 +988,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testplansidpatch"></a>
+<a name="apiv2testplansidpatch"></a>
 # **ApiV2TestPlansIdPatch**
 > void ApiV2TestPlansIdPatch (Guid id, List<Operation> operation = null)
 
@@ -1001,9 +1001,9 @@ See <a href=\"https://www.rfc-editor.org/rfc/rfc6902\" target=\"_blank\">RFC 690
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1087,7 +1087,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testplansidtestpointslastresultsget"></a>
+<a name="apiv2testplansidtestpointslastresultsget"></a>
 # **ApiV2TestPlansIdTestPointsLastResultsGet**
 > List&lt;TestPointWithLastResultModel&gt; ApiV2TestPlansIdTestPointsLastResultsGet (string id, Guid? testerId = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -1100,9 +1100,9 @@ Get TestPoints with last result from TestPlan
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1203,7 +1203,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testplansidtestpointsresetpost"></a>
+<a name="apiv2testplansidtestpointsresetpost"></a>
 # **ApiV2TestPlansIdTestPointsResetPost**
 > void ApiV2TestPlansIdTestPointsResetPost (string id, List<Guid> requestBody = null)
 
@@ -1216,9 +1216,9 @@ Reset TestPoints status of TestPlan
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1304,7 +1304,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testplansidtestpointstesterdelete"></a>
+<a name="apiv2testplansidtestpointstesterdelete"></a>
 # **ApiV2TestPlansIdTestPointsTesterDelete**
 > List&lt;Guid&gt; ApiV2TestPlansIdTestPointsTesterDelete (string id, ApiV2TestPlansIdTestPointsTesterUserIdPostRequest apiV2TestPlansIdTestPointsTesterUserIdPostRequest = null)
 
@@ -1315,9 +1315,9 @@ Unassign users from multiple test points
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1405,7 +1405,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testplansidtestpointstesteruseridpost"></a>
+<a name="apiv2testplansidtestpointstesteruseridpost"></a>
 # **ApiV2TestPlansIdTestPointsTesterUserIdPost**
 > List&lt;Guid&gt; ApiV2TestPlansIdTestPointsTesterUserIdPost (string id, Guid userId, ApiV2TestPlansIdTestPointsTesterUserIdPostRequest apiV2TestPlansIdTestPointsTesterUserIdPostRequest = null)
 
@@ -1416,9 +1416,9 @@ Assign user as a tester to multiple test points
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1508,7 +1508,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testplansidtestrunsget"></a>
+<a name="apiv2testplansidtestrunsget"></a>
 # **ApiV2TestPlansIdTestRunsGet**
 > List&lt;TestRunModel&gt; ApiV2TestPlansIdTestRunsGet (string id, bool? notStarted = null, bool? inProgress = null, bool? stopped = null, bool? completed = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -1521,9 +1521,9 @@ Get TestRuns of TestPlan
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1628,7 +1628,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testplansidtestrunssearchpost"></a>
+<a name="apiv2testplansidtestrunssearchpost"></a>
 # **ApiV2TestPlansIdTestRunsSearchPost**
 > List&lt;TestRunModel&gt; ApiV2TestPlansIdTestRunsSearchPost (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2TestPlansIdTestRunsSearchPostRequest apiV2TestPlansIdTestRunsSearchPostRequest = null)
 
@@ -1641,9 +1641,9 @@ Search TestRuns of TestPlan
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1742,7 +1742,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testplansidtestrunstestresultslastmodifiedmodifieddateget"></a>
+<a name="apiv2testplansidtestrunstestresultslastmodifiedmodifieddateget"></a>
 # **ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet**
 > DateTime ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet (string id)
 
@@ -1753,9 +1753,9 @@ Get last modification date of test plan's test results
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1842,7 +1842,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testplansidunlockrequestpost"></a>
+<a name="apiv2testplansidunlockrequestpost"></a>
 # **ApiV2TestPlansIdUnlockRequestPost**
 > void ApiV2TestPlansIdUnlockRequestPost (string id)
 
@@ -1855,9 +1855,9 @@ Send unlock TestPlan notification
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1942,7 +1942,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testplansshortspost"></a>
+<a name="apiv2testplansshortspost"></a>
 # **ApiV2TestPlansShortsPost**
 > List&lt;TestPlanShortModel&gt; ApiV2TestPlansShortsPost (bool? isDeleted = null, List<Guid> requestBody = null)
 
@@ -1955,9 +1955,9 @@ Get TestPlans short models by Project identifiers
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -2047,7 +2047,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="clone"></a>
+<a name="clone"></a>
 # **Clone**
 > TestPlanModel Clone (string id)
 
@@ -2060,9 +2060,9 @@ Clone TestPlan
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -2151,7 +2151,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="complete"></a>
+<a name="complete"></a>
 # **Complete**
 > void Complete (string id)
 
@@ -2164,9 +2164,9 @@ Complete TestPlan
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -2251,7 +2251,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="createtestplan"></a>
+<a name="createtestplan"></a>
 # **CreateTestPlan**
 > TestPlanModel CreateTestPlan (CreateTestPlanRequest createTestPlanRequest = null)
 
@@ -2264,9 +2264,9 @@ Create TestPlan
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -2355,7 +2355,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="deletetestplan"></a>
+<a name="deletetestplan"></a>
 # **DeleteTestPlan**
 > void DeleteTestPlan (string id)
 
@@ -2368,9 +2368,9 @@ Delete TestPlan
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -2454,7 +2454,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="gettestplanbyid"></a>
+<a name="gettestplanbyid"></a>
 # **GetTestPlanById**
 > TestPlanModel GetTestPlanById (string id)
 
@@ -2467,9 +2467,9 @@ Get TestPlan by Id
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -2557,7 +2557,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="gettestsuitesbyid"></a>
+<a name="gettestsuitesbyid"></a>
 # **GetTestSuitesById**
 > List&lt;TestSuiteV2TreeModel&gt; GetTestSuitesById (string id)
 
@@ -2570,9 +2570,9 @@ Get TestSuites Tree By Id
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -2660,7 +2660,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="pause"></a>
+<a name="pause"></a>
 # **Pause**
 > void Pause (string id)
 
@@ -2673,9 +2673,9 @@ Pause TestPlan
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -2760,7 +2760,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="purgetestplan"></a>
+<a name="purgetestplan"></a>
 # **PurgeTestPlan**
 > void PurgeTestPlan (string id)
 
@@ -2771,9 +2771,9 @@ Permanently delete test plan from archive
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -2855,7 +2855,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="restoretestplan"></a>
+<a name="restoretestplan"></a>
 # **RestoreTestPlan**
 > void RestoreTestPlan (string id)
 
@@ -2868,9 +2868,9 @@ Restore TestPlan
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -2954,7 +2954,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="start"></a>
+<a name="start"></a>
 # **Start**
 > void Start (string id)
 
@@ -2967,9 +2967,9 @@ Start TestPlan
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -3053,7 +3053,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="updatetestplan"></a>
+<a name="updatetestplan"></a>
 # **UpdateTestPlan**
 > void UpdateTestPlan (UpdateTestPlanRequest updateTestPlanRequest = null)
 
@@ -3066,9 +3066,9 @@ Update TestPlan
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

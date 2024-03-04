@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.AutotestHistoricalResultSelectModel
+# TestIT.ApiClient.Model.AutotestHistoricalResultSelectModel
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.FlakyBulkModel
+# TestIT.ApiClient.Model.FlakyBulkModel
 
 ## Properties
 

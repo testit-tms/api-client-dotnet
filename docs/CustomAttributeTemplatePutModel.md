@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.CustomAttributeTemplatePutModel
+# TestIT.ApiClient.Model.CustomAttributeTemplatePutModel
 
 ## Properties
 

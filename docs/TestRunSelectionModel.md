@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestRunSelectionModel
+# TestIT.ApiClient.Model.TestRunSelectionModel
 Model containing options to filter test runs
 
 ## Properties

@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.GuidChangedFieldViewModel
+# TestIT.ApiClient.Model.GuidChangedFieldViewModel
 
 ## Properties
 

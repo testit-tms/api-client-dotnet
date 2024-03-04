@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.MoveRequest
+# TestIT.ApiClient.Model.MoveRequest
 
 ## Properties
 

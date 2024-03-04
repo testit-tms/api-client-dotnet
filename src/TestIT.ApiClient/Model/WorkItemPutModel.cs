@@ -68,7 +68,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="tags">tags (required).</param>
         /// <param name="links">links (required).</param>
         /// <param name="name">name (required).</param>
-        public WorkItemPutModel(List<AttachmentPutModel> attachments = default(List<AttachmentPutModel>), List<IterationPutModel> iterations = default(List<IterationPutModel>), List<AutoTestIdModel> autoTests = default(List<AutoTestIdModel>), Guid id = default(Guid), Guid sectionId = default(Guid), string description = default(string), WorkItemStates state = default(WorkItemStates), WorkItemPriorityModel priority = default(WorkItemPriorityModel), List<StepPutModel> steps = default(List<StepPutModel>), List<StepPutModel> preconditionSteps = default(List<StepPutModel>), List<StepPutModel> postconditionSteps = default(List<StepPutModel>), int duration = default(int), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<TagShortModel> tags = default(List<TagShortModel>), List<LinkPutModel> links = default(List<LinkPutModel>), string name = default(string))
+        public WorkItemPutModel(List<AttachmentPutModel> attachments = default(List<AttachmentPutModel>), List<IterationPutModel> iterations = default(List<IterationPutModel>), List<AutoTestIdModel> autoTests = default(List<AutoTestIdModel>), Guid id = default(Guid), Guid sectionId = default(Guid), string description = default(string), WorkItemStates state = default(WorkItemStates), WorkItemPriorityModel priority = default(WorkItemPriorityModel), List<StepPutModel> steps = default(List<StepPutModel>), List<StepPutModel> preconditionSteps = default(List<StepPutModel>), List<StepPutModel> postconditionSteps = default(List<StepPutModel>), int duration = default(int), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<TagPutModel> tags = default(List<TagPutModel>), List<LinkPutModel> links = default(List<LinkPutModel>), string name = default(string))
         {
             // to ensure "attachments" is required (not null)
             if (attachments == null)
@@ -149,14 +149,14 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
+        /// <example>&quot;11421721-181a-4696-aa8a-ec54c0d06fca&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets SectionId
         /// </summary>
-        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
+        /// <example>&quot;11421721-181a-4696-aa8a-ec54c0d06fca&quot;</example>
         [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid SectionId { get; set; }
 
@@ -202,7 +202,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Tags
         /// </summary>
         [DataMember(Name = "tags", IsRequired = true, EmitDefaultValue = true)]
-        public List<TagShortModel> Tags { get; set; }
+        public List<TagPutModel> Tags { get; set; }
 
         /// <summary>
         /// Gets or Sets Links

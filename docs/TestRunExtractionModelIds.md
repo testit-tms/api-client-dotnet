@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestRunExtractionModelIds
+# TestIT.ApiClient.Model.TestRunExtractionModelIds
 Extraction parameters for test runs
 
 ## Properties

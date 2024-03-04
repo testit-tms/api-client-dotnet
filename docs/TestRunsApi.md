@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.TestRunsApi
+# TestIT.ApiClient.Api.TestRunsApi
 
 All URIs are relative to *http://localhost*
 
@@ -21,7 +21,7 @@ All URIs are relative to *http://localhost*
 | [**StopTestRun**](TestRunsApi.md#stoptestrun) | **POST** /api/v2/testRuns/{id}/stop | Stop TestRun |
 | [**UpdateEmpty**](TestRunsApi.md#updateempty) | **PUT** /api/v2/testRuns | Update empty TestRun |
 
-<a id="apiv2testrunsidstatisticsfilterpost"></a>
+<a name="apiv2testrunsidstatisticsfilterpost"></a>
 # **ApiV2TestRunsIdStatisticsFilterPost**
 > TestResultsStatisticsGetModel ApiV2TestRunsIdStatisticsFilterPost (Guid id, ApiV2TestRunsIdStatisticsFilterPostRequest apiV2TestRunsIdStatisticsFilterPostRequest = null)
 
@@ -32,9 +32,9 @@ Search for the test run test results and build statistics
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -122,7 +122,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testrunsidtestpointsresultsget"></a>
+<a name="apiv2testrunsidtestpointsresultsget"></a>
 # **ApiV2TestRunsIdTestPointsResultsGet**
 > List&lt;TestPointResultModel&gt; ApiV2TestRunsIdTestPointsResultsGet (Guid id)
 
@@ -133,9 +133,9 @@ Get test results from the test run grouped by test points
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -221,7 +221,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testrunsidtestresultsbulkput"></a>
+<a name="apiv2testrunsidtestresultsbulkput"></a>
 # **ApiV2TestRunsIdTestResultsBulkPut**
 > void ApiV2TestRunsIdTestResultsBulkPut (Guid id, ApiV2TestRunsIdTestResultsBulkPutRequest apiV2TestRunsIdTestResultsBulkPutRequest = null)
 
@@ -232,9 +232,9 @@ Partial edit of multiple test results in the test run
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -318,7 +318,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testrunsidtestresultslastmodifiedmodificationdateget"></a>
+<a name="apiv2testrunsidtestresultslastmodifiedmodificationdateget"></a>
 # **ApiV2TestRunsIdTestResultsLastModifiedModificationDateGet**
 > DateTime ApiV2TestRunsIdTestResultsLastModifiedModificationDateGet (Guid id)
 
@@ -329,9 +329,9 @@ Get modification date of last test result of the test run
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -417,7 +417,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testrunssearchpost"></a>
+<a name="apiv2testrunssearchpost"></a>
 # **ApiV2TestRunsSearchPost**
 > List&lt;TestRunShortGetModel&gt; ApiV2TestRunsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2TestRunsSearchPostRequest apiV2TestRunsSearchPostRequest = null)
 
@@ -428,9 +428,9 @@ Search for test runs
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -526,7 +526,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testrunsupdatemultiplepost"></a>
+<a name="apiv2testrunsupdatemultiplepost"></a>
 # **ApiV2TestRunsUpdateMultiplePost**
 > void ApiV2TestRunsUpdateMultiplePost (ApiV2TestRunsUpdateMultiplePostRequest apiV2TestRunsUpdateMultiplePostRequest = null)
 
@@ -537,9 +537,9 @@ Update multiple test runs
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -620,7 +620,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="completetestrun"></a>
+<a name="completetestrun"></a>
 # **CompleteTestRun**
 > void CompleteTestRun (Guid id)
 
@@ -633,9 +633,9 @@ Complete TestRun
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -720,7 +720,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="createandfillbyautotests"></a>
+<a name="createandfillbyautotests"></a>
 # **CreateAndFillByAutoTests**
 > TestRunV2GetModel CreateAndFillByAutoTests (CreateAndFillByAutoTestsRequest createAndFillByAutoTestsRequest = null)
 
@@ -733,9 +733,9 @@ This method creates a test run based on an autotest and a configuration.  The di
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -824,7 +824,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="createandfillbyconfigurations"></a>
+<a name="createandfillbyconfigurations"></a>
 # **CreateAndFillByConfigurations**
 > TestRunV2GetModel CreateAndFillByConfigurations (CreateAndFillByConfigurationsRequest createAndFillByConfigurationsRequest = null)
 
@@ -837,9 +837,9 @@ This method creates a test run based on a combination of a configuration and a w
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -928,7 +928,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="createandfillbyworkitems"></a>
+<a name="createandfillbyworkitems"></a>
 # **CreateAndFillByWorkItems**
 > TestRunV2GetModel CreateAndFillByWorkItems (CreateAndFillByWorkItemsRequest createAndFillByWorkItemsRequest = null)
 
@@ -941,9 +941,9 @@ This method creates a test run based on a combination of configuration and work 
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1032,7 +1032,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="createempty"></a>
+<a name="createempty"></a>
 # **CreateEmpty**
 > TestRunV2GetModel CreateEmpty (CreateEmptyRequest createEmptyRequest = null)
 
@@ -1045,9 +1045,9 @@ Create empty TestRun
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1136,7 +1136,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="gettestrunbyid"></a>
+<a name="gettestrunbyid"></a>
 # **GetTestRunById**
 > TestRunV2GetModel GetTestRunById (Guid id)
 
@@ -1149,9 +1149,9 @@ Get TestRun by Id
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1239,7 +1239,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="setautotestresultsfortestrun"></a>
+<a name="setautotestresultsfortestrun"></a>
 # **SetAutoTestResultsForTestRun**
 > List&lt;Guid&gt; SetAutoTestResultsForTestRun (Guid id, List<AutoTestResultsForTestRunModel> autoTestResultsForTestRunModel = null)
 
@@ -1252,9 +1252,9 @@ This method sends test results to the test management system.
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1346,7 +1346,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="starttestrun"></a>
+<a name="starttestrun"></a>
 # **StartTestRun**
 > void StartTestRun (Guid id)
 
@@ -1359,9 +1359,9 @@ Start TestRun
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1446,7 +1446,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="stoptestrun"></a>
+<a name="stoptestrun"></a>
 # **StopTestRun**
 > void StopTestRun (Guid id)
 
@@ -1459,9 +1459,9 @@ Stop TestRun
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1546,7 +1546,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="updateempty"></a>
+<a name="updateempty"></a>
 # **UpdateEmpty**
 > void UpdateEmpty (UpdateEmptyRequest updateEmptyRequest = null)
 
@@ -1559,9 +1559,9 @@ Update empty TestRun
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

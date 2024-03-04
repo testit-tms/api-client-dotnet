@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.FailureClassRegexModel
+# TestIT.ApiClient.Model.FailureClassRegexModel
 
 ## Properties
 

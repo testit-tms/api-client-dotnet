@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.SectionSharedStep
+# TestIT.ApiClient.Model.SectionSharedStep
 Nested shared steps are allowed
 
 ## Properties

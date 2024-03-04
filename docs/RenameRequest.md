@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.RenameRequest
+# TestIT.ApiClient.Model.RenameRequest
 
 ## Properties
 

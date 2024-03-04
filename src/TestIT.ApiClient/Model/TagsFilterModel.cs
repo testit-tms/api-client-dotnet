@@ -27,35 +27,43 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// TagShortModel
+    /// TagsFilterModel
     /// </summary>
-    [DataContract(Name = "TagShortModel")]
-    public partial class TagShortModel : IEquatable<TagShortModel>, IValidatableObject
+    [DataContract(Name = "TagsFilterModel")]
+    public partial class TagsFilterModel : IEquatable<TagsFilterModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TagShortModel" /> class.
+        /// Initializes a new instance of the <see cref="TagsFilterModel" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected TagShortModel() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TagShortModel" /> class.
-        /// </summary>
-        /// <param name="name">name (required).</param>
-        public TagShortModel(string name = default(string))
+        /// <param name="name">Specifies a tag name to search for.</param>
+        /// <param name="createdDate">createdDate.</param>
+        /// <param name="createdByIds">Specifies a tag creator IDs to search for.</param>
+        public TagsFilterModel(string name = default(string), TagsFilterModelCreatedDate createdDate = default(TagsFilterModelCreatedDate), List<Guid> createdByIds = default(List<Guid>))
         {
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for TagShortModel and cannot be null");
-            }
             this.Name = name;
+            this.CreatedDate = createdDate;
+            this.CreatedByIds = createdByIds;
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Specifies a tag name to search for
         /// </summary>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        /// <value>Specifies a tag name to search for</value>
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreatedDate
+        /// </summary>
+        [DataMember(Name = "createdDate", EmitDefaultValue = true)]
+        public TagsFilterModelCreatedDate CreatedDate { get; set; }
+
+        /// <summary>
+        /// Specifies a tag creator IDs to search for
+        /// </summary>
+        /// <value>Specifies a tag creator IDs to search for</value>
+        [DataMember(Name = "createdByIds", EmitDefaultValue = true)]
+        public List<Guid> CreatedByIds { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -64,8 +72,10 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class TagShortModel {\n");
+            sb.Append("class TagsFilterModel {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
+            sb.Append("  CreatedByIds: ").Append(CreatedByIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -86,15 +96,15 @@ namespace TestIT.ApiClient.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TagShortModel);
+            return this.Equals(input as TagsFilterModel);
         }
 
         /// <summary>
-        /// Returns true if TagShortModel instances are equal
+        /// Returns true if TagsFilterModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of TagShortModel to be compared</param>
+        /// <param name="input">Instance of TagsFilterModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TagShortModel input)
+        public bool Equals(TagsFilterModel input)
         {
             if (input == null)
             {
@@ -105,6 +115,17 @@ namespace TestIT.ApiClient.Model
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.CreatedDate == input.CreatedDate ||
+                    (this.CreatedDate != null &&
+                    this.CreatedDate.Equals(input.CreatedDate))
+                ) && 
+                (
+                    this.CreatedByIds == input.CreatedByIds ||
+                    this.CreatedByIds != null &&
+                    input.CreatedByIds != null &&
+                    this.CreatedByIds.SequenceEqual(input.CreatedByIds)
                 );
         }
 
@@ -121,6 +142,14 @@ namespace TestIT.ApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
+                if (this.CreatedDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
+                }
+                if (this.CreatedByIds != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreatedByIds.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -133,9 +162,9 @@ namespace TestIT.ApiClient.Model
         public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
-            if (this.Name != null && this.Name.Length > 30)
+            if (this.Name != null && this.Name.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 30.", new [] { "Name" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
             }
 
             // Name (string) minLength

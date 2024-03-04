@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ApiV2AttachmentsPostRequest
+# TestIT.ApiClient.Model.ApiV2AttachmentsPostRequest
 
 ## Properties
 

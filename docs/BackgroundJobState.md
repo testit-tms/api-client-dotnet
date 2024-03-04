@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.BackgroundJobState
+# TestIT.ApiClient.Model.BackgroundJobState
 
 ## Properties
 

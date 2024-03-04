@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.ConfigurationsApi
+# TestIT.ApiClient.Api.ConfigurationsApi
 
 All URIs are relative to *http://localhost*
 
@@ -17,7 +17,7 @@ All URIs are relative to *http://localhost*
 | [**CreateConfiguration**](ConfigurationsApi.md#createconfiguration) | **POST** /api/v2/configurations | Create Configuration |
 | [**GetConfigurationById**](ConfigurationsApi.md#getconfigurationbyid) | **GET** /api/v2/configurations/{id} | Get configuration by internal or global ID |
 
-<a id="apiv2configurationscreatebyparameterspost"></a>
+<a name="apiv2configurationscreatebyparameterspost"></a>
 # **ApiV2ConfigurationsCreateByParametersPost**
 > List&lt;Guid&gt; ApiV2ConfigurationsCreateByParametersPost (ApiV2ConfigurationsCreateByParametersPostRequest apiV2ConfigurationsCreateByParametersPostRequest = null)
 
@@ -28,9 +28,9 @@ Create configurations by parameters
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -116,7 +116,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2configurationsdeletebulkpost"></a>
+<a name="apiv2configurationsdeletebulkpost"></a>
 # **ApiV2ConfigurationsDeleteBulkPost**
 > int ApiV2ConfigurationsDeleteBulkPost (ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = null)
 
@@ -127,9 +127,9 @@ Delete multiple configurations
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -214,7 +214,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2configurationsiddelete"></a>
+<a name="apiv2configurationsiddelete"></a>
 # **ApiV2ConfigurationsIdDelete**
 > void ApiV2ConfigurationsIdDelete (string id)
 
@@ -225,9 +225,9 @@ Delete configuration
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -309,7 +309,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2configurationsidpatch"></a>
+<a name="apiv2configurationsidpatch"></a>
 # **ApiV2ConfigurationsIdPatch**
 > void ApiV2ConfigurationsIdPatch (Guid id, List<Operation> operation = null)
 
@@ -322,9 +322,9 @@ See <a href=\"https://www.rfc-editor.org/rfc/rfc6902\" target=\"_blank\">RFC 690
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -408,7 +408,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2configurationsidpurgepost"></a>
+<a name="apiv2configurationsidpurgepost"></a>
 # **ApiV2ConfigurationsIdPurgePost**
 > void ApiV2ConfigurationsIdPurgePost (string id)
 
@@ -419,9 +419,9 @@ Permanently delete configuration from archive
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -503,7 +503,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2configurationsidrestorepost"></a>
+<a name="apiv2configurationsidrestorepost"></a>
 # **ApiV2ConfigurationsIdRestorePost**
 > void ApiV2ConfigurationsIdRestorePost (string id)
 
@@ -514,9 +514,9 @@ Restore configuration from the archive
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -598,7 +598,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2configurationspurgebulkpost"></a>
+<a name="apiv2configurationspurgebulkpost"></a>
 # **ApiV2ConfigurationsPurgeBulkPost**
 > void ApiV2ConfigurationsPurgeBulkPost (ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = null)
 
@@ -609,9 +609,9 @@ Permanently delete multiple archived configurations
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -693,7 +693,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2configurationsput"></a>
+<a name="apiv2configurationsput"></a>
 # **ApiV2ConfigurationsPut**
 > void ApiV2ConfigurationsPut (ApiV2ConfigurationsPutRequest apiV2ConfigurationsPutRequest = null)
 
@@ -704,9 +704,9 @@ Edit configuration
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -788,7 +788,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2configurationsrestorebulkpost"></a>
+<a name="apiv2configurationsrestorebulkpost"></a>
 # **ApiV2ConfigurationsRestoreBulkPost**
 > int ApiV2ConfigurationsRestoreBulkPost (ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = null)
 
@@ -799,9 +799,9 @@ Restore multiple configurations from the archive
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -883,10 +883,11 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **403** | Read permission for archive is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2configurationssearchpost"></a>
+<a name="apiv2configurationssearchpost"></a>
 # **ApiV2ConfigurationsSearchPost**
 > List&lt;ConfigurationModel&gt; ApiV2ConfigurationsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ConfigurationsSearchPostRequest apiV2ConfigurationsSearchPostRequest = null)
 
@@ -897,9 +898,9 @@ Search for configurations
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -994,7 +995,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="createconfiguration"></a>
+<a name="createconfiguration"></a>
 # **CreateConfiguration**
 > ConfigurationModel CreateConfiguration (CreateConfigurationRequest createConfigurationRequest = null)
 
@@ -1007,9 +1008,9 @@ Create Configuration
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -1099,7 +1100,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getconfigurationbyid"></a>
+<a name="getconfigurationbyid"></a>
 # **GetConfigurationById**
 > ConfigurationModel GetConfigurationById (string id)
 
@@ -1112,9 +1113,9 @@ Get configuration by internal or global ID
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

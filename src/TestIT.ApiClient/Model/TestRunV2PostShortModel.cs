@@ -60,7 +60,7 @@ namespace TestIT.ApiClient.Model
         /// This property is to link test run with a project
         /// </summary>
         /// <value>This property is to link test run with a project</value>
-        /// <example>&quot;0140e7a3-3a4b-42f9-9ad1-71dd64bc64b8&quot;</example>
+        /// <example>&quot;11421721-181a-4696-aa8a-ec54c0d06fca&quot;</example>
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 

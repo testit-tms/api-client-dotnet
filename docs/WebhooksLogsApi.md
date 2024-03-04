@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.WebhooksLogsApi
+# TestIT.ApiClient.Api.WebhooksLogsApi
 
 All URIs are relative to *http://localhost*
 
@@ -8,7 +8,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2WebhooksLogsIdDelete**](WebhooksLogsApi.md#apiv2webhookslogsiddelete) | **DELETE** /api/v2/webhooks/logs/{id} | Delete webhook log by ID |
 | [**ApiV2WebhooksLogsIdGet**](WebhooksLogsApi.md#apiv2webhookslogsidget) | **GET** /api/v2/webhooks/logs/{id} | Get webhook log by ID |
 
-<a id="apiv2webhookslogsget"></a>
+<a name="apiv2webhookslogsget"></a>
 # **ApiV2WebhooksLogsGet**
 > List&lt;WebHookLogModel&gt; ApiV2WebhooksLogsGet (Guid? projectId = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -19,9 +19,9 @@ Get all webhook logs
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -116,7 +116,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2webhookslogsiddelete"></a>
+<a name="apiv2webhookslogsiddelete"></a>
 # **ApiV2WebhooksLogsIdDelete**
 > void ApiV2WebhooksLogsIdDelete (Guid id)
 
@@ -127,9 +127,9 @@ Delete webhook log by ID
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -211,7 +211,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2webhookslogsidget"></a>
+<a name="apiv2webhookslogsidget"></a>
 # **ApiV2WebhooksLogsIdGet**
 > WebHookLogModel ApiV2WebhooksLogsIdGet (Guid id)
 
@@ -222,9 +222,9 @@ Get webhook log by ID
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

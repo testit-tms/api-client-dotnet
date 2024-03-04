@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ApiV2TestRunsIdTestResultsBulkPutRequest
+# TestIT.ApiClient.Model.ApiV2TestRunsIdTestResultsBulkPutRequest
 
 ## Properties
 

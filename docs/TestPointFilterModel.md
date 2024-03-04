@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestPointFilterModel
+# TestIT.ApiClient.Model.TestPointFilterModel
 
 ## Properties
 
@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **TestSuiteIds** | **List&lt;Guid&gt;** | Specifies a test point test suite IDs to search for | [optional] 
 **WorkItemGlobalIds** | **List&lt;long&gt;** | Specifies a test point work item global IDs to search for | [optional] 
 **WorkItemMedianDuration** | [**TestPointFilterModelWorkItemMedianDuration**](TestPointFilterModelWorkItemMedianDuration.md) |  | [optional] 
+**WorkItemIsDeleted** | **bool?** | Specifies a test point work item is deleted flag to search for | [optional] 
 **Statuses** | [**List&lt;TestPointStatus&gt;**](TestPointStatus.md) | Specifies a test point statuses to search for | [optional] 
 **Priorities** | [**List&lt;WorkItemPriorityModel&gt;**](WorkItemPriorityModel.md) | Specifies a test point priorities to search for | [optional] 
 **IsAutomated** | **bool?** | Specifies a test point automation status to search for | [optional] 

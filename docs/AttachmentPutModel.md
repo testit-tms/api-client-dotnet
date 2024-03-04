@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.AttachmentPutModel
+# TestIT.ApiClient.Model.AttachmentPutModel
 
 ## Properties
 

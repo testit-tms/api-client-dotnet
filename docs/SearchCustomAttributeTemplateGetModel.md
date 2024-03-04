@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.SearchCustomAttributeTemplateGetModel
+# TestIT.ApiClient.Model.SearchCustomAttributeTemplateGetModel
 
 ## Properties
 

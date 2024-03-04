@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.ProjectAttributesApi
+# TestIT.ApiClient.Api.ProjectAttributesApi
 
 All URIs are relative to *http://localhost*
 
@@ -11,7 +11,7 @@ All URIs are relative to *http://localhost*
 | [**SearchAttributesInProject**](ProjectAttributesApi.md#searchattributesinproject) | **POST** /api/v2/projects/{projectId}/attributes/search | Search for attributes used in the project |
 | [**UpdateProjectsAttribute**](ProjectAttributesApi.md#updateprojectsattribute) | **PUT** /api/v2/projects/{projectId}/attributes | Edit attribute of the project |
 
-<a id="createprojectsattribute"></a>
+<a name="createprojectsattribute"></a>
 # **CreateProjectsAttribute**
 > CustomAttributeModel CreateProjectsAttribute (string projectId, CreateProjectsAttributeRequest createProjectsAttributeRequest = null)
 
@@ -24,9 +24,9 @@ Create project attribute
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -118,7 +118,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="deleteprojectsattribute"></a>
+<a name="deleteprojectsattribute"></a>
 # **DeleteProjectsAttribute**
 > void DeleteProjectsAttribute (string projectId, Guid attributeId)
 
@@ -131,9 +131,9 @@ Delete project attribute
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -219,7 +219,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getattributebyprojectid"></a>
+<a name="getattributebyprojectid"></a>
 # **GetAttributeByProjectId**
 > CustomAttributeModel GetAttributeByProjectId (string projectId, Guid attributeId)
 
@@ -232,9 +232,9 @@ Get project attribute
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -323,7 +323,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getattributesbyprojectid"></a>
+<a name="getattributesbyprojectid"></a>
 # **GetAttributesByProjectId**
 > List&lt;CustomAttributeModel&gt; GetAttributesByProjectId (string projectId, DeletionState? isDeleted = null)
 
@@ -336,9 +336,9 @@ Get project attributes
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -426,7 +426,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="searchattributesinproject"></a>
+<a name="searchattributesinproject"></a>
 # **SearchAttributesInProject**
 > List&lt;CustomAttributeGetModel&gt; SearchAttributesInProject (string projectId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, SearchAttributesInProjectRequest searchAttributesInProjectRequest = null)
 
@@ -437,9 +437,9 @@ Search for attributes used in the project
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -537,7 +537,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="updateprojectsattribute"></a>
+<a name="updateprojectsattribute"></a>
 # **UpdateProjectsAttribute**
 > void UpdateProjectsAttribute (string projectId, UpdateProjectsAttributeRequest updateProjectsAttributeRequest = null)
 
@@ -548,9 +548,9 @@ Edit attribute of the project
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

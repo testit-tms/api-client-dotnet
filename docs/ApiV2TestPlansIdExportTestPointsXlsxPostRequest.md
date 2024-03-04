@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ApiV2TestPlansIdExportTestPointsXlsxPostRequest
+# TestIT.ApiClient.Model.ApiV2TestPlansIdExportTestPointsXlsxPostRequest
 
 ## Properties
 

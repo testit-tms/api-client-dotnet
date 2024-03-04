@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ParameterPostModel
+# TestIT.ApiClient.Model.ParameterPostModel
 
 ## Properties
 

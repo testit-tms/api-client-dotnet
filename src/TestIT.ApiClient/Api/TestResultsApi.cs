@@ -227,8 +227,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="resizeType">Type of resizing to apply to the result image (optional)</param>
         /// <param name="backgroundColor">Color of the background if the &#x60;resizeType&#x60; is &#x60;AddBackgroundStripes&#x60; (optional)</param>
         /// <param name="preview">If image must be converted to a preview (lower quality, no animation) (optional)</param>
-        /// <returns></returns>
-        void DownloadAttachment(Guid attachmentId, Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?));
+        /// <returns>FileParameter</returns>
+        FileParameter DownloadAttachment(Guid attachmentId, Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?));
 
         /// <summary>
         /// Get attachment of TestResult
@@ -244,8 +244,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="resizeType">Type of resizing to apply to the result image (optional)</param>
         /// <param name="backgroundColor">Color of the background if the &#x60;resizeType&#x60; is &#x60;AddBackgroundStripes&#x60; (optional)</param>
         /// <param name="preview">If image must be converted to a preview (lower quality, no animation) (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DownloadAttachmentWithHttpInfo(Guid attachmentId, Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?));
+        /// <returns>ApiResponse of FileParameter</returns>
+        ApiResponse<FileParameter> DownloadAttachmentWithHttpInfo(Guid attachmentId, Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?));
         /// <summary>
         /// Get Metadata of TestResult&#39;s attachment
         /// </summary>
@@ -539,8 +539,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="backgroundColor">Color of the background if the &#x60;resizeType&#x60; is &#x60;AddBackgroundStripes&#x60; (optional)</param>
         /// <param name="preview">If image must be converted to a preview (lower quality, no animation) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DownloadAttachmentAsync(Guid attachmentId, Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of FileParameter</returns>
+        System.Threading.Tasks.Task<FileParameter> DownloadAttachmentAsync(Guid attachmentId, Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get attachment of TestResult
@@ -557,8 +557,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="backgroundColor">Color of the background if the &#x60;resizeType&#x60; is &#x60;AddBackgroundStripes&#x60; (optional)</param>
         /// <param name="preview">If image must be converted to a preview (lower quality, no animation) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DownloadAttachmentWithHttpInfoAsync(Guid attachmentId, Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (FileParameter)</returns>
+        System.Threading.Tasks.Task<ApiResponse<FileParameter>> DownloadAttachmentWithHttpInfoAsync(Guid attachmentId, Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get Metadata of TestResult&#39;s attachment
         /// </summary>
@@ -1976,10 +1976,11 @@ namespace TestIT.ApiClient.Api
         /// <param name="resizeType">Type of resizing to apply to the result image (optional)</param>
         /// <param name="backgroundColor">Color of the background if the &#x60;resizeType&#x60; is &#x60;AddBackgroundStripes&#x60; (optional)</param>
         /// <param name="preview">If image must be converted to a preview (lower quality, no animation) (optional)</param>
-        /// <returns></returns>
-        public void DownloadAttachment(Guid attachmentId, Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?))
+        /// <returns>FileParameter</returns>
+        public FileParameter DownloadAttachment(Guid attachmentId, Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?))
         {
-            DownloadAttachmentWithHttpInfo(attachmentId, id, width, height, resizeType, backgroundColor, preview);
+            TestIT.ApiClient.Client.ApiResponse<FileParameter> localVarResponse = DownloadAttachmentWithHttpInfo(attachmentId, id, width, height, resizeType, backgroundColor, preview);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1993,8 +1994,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="resizeType">Type of resizing to apply to the result image (optional)</param>
         /// <param name="backgroundColor">Color of the background if the &#x60;resizeType&#x60; is &#x60;AddBackgroundStripes&#x60; (optional)</param>
         /// <param name="preview">If image must be converted to a preview (lower quality, no animation) (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> DownloadAttachmentWithHttpInfo(Guid attachmentId, Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?))
+        /// <returns>ApiResponse of FileParameter</returns>
+        public TestIT.ApiClient.Client.ApiResponse<FileParameter> DownloadAttachmentWithHttpInfo(Guid attachmentId, Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -2003,6 +2004,7 @@ namespace TestIT.ApiClient.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/octet-stream",
                 "application/json"
             };
 
@@ -2042,7 +2044,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/api/v2/testResults/{id}/attachments/{attachmentId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<FileParameter>("/api/v2/testResults/{id}/attachments/{attachmentId}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2065,10 +2067,11 @@ namespace TestIT.ApiClient.Api
         /// <param name="backgroundColor">Color of the background if the &#x60;resizeType&#x60; is &#x60;AddBackgroundStripes&#x60; (optional)</param>
         /// <param name="preview">If image must be converted to a preview (lower quality, no animation) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DownloadAttachmentAsync(Guid attachmentId, Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of FileParameter</returns>
+        public async System.Threading.Tasks.Task<FileParameter> DownloadAttachmentAsync(Guid attachmentId, Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DownloadAttachmentWithHttpInfoAsync(attachmentId, id, width, height, resizeType, backgroundColor, preview, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<FileParameter> localVarResponse = await DownloadAttachmentWithHttpInfoAsync(attachmentId, id, width, height, resizeType, backgroundColor, preview, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2083,8 +2086,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="backgroundColor">Color of the background if the &#x60;resizeType&#x60; is &#x60;AddBackgroundStripes&#x60; (optional)</param>
         /// <param name="preview">If image must be converted to a preview (lower quality, no animation) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DownloadAttachmentWithHttpInfoAsync(Guid attachmentId, Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (FileParameter)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<FileParameter>> DownloadAttachmentWithHttpInfoAsync(Guid attachmentId, Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2094,6 +2097,7 @@ namespace TestIT.ApiClient.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/octet-stream",
                 "application/json"
             };
 
@@ -2135,7 +2139,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/api/v2/testResults/{id}/attachments/{attachmentId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<FileParameter>("/api/v2/testResults/{id}/attachments/{attachmentId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

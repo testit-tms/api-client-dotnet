@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.WorkItemLinkChangeViewModelArrayChangedFieldViewModel
+# TestIT.ApiClient.Model.WorkItemLinkChangeViewModelArrayChangedFieldViewModel
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.GetXlsxTestPointsByTestPlanModel
+# TestIT.ApiClient.Model.GetXlsxTestPointsByTestPlanModel
 
 ## Properties
 

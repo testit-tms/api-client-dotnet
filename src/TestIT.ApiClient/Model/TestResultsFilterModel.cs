@@ -36,14 +36,24 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="TestResultsFilterModel" /> class.
         /// </summary>
         /// <param name="testRunIds">Specifies a test result test run IDs to search for.</param>
+        /// <param name="autoTestGlobalIds">Specifies an autotest global IDs to search results for.</param>
+        /// <param name="name">Specifies an autotest name to search results for.</param>
+        /// <param name="createdDate">createdDate.</param>
+        /// <param name="duration">duration.</param>
+        /// <param name="resultReasons">Specifies result reasons for searching test results.</param>
         /// <param name="configurationIds">Specifies a test result configuration IDs to search for.</param>
         /// <param name="outcomes">Specifies a test result outcomes to search for.</param>
         /// <param name="failureCategories">Specifies a test result failure categories to search for.</param>
         /// <param name="_namespace">Specifies a test result namespace to search for.</param>
         /// <param name="className">Specifies a test result class name to search for.</param>
-        public TestResultsFilterModel(List<Guid> testRunIds = default(List<Guid>), List<Guid> configurationIds = default(List<Guid>), List<TestResultOutcome> outcomes = default(List<TestResultOutcome>), List<FailureCategoryModel> failureCategories = default(List<FailureCategoryModel>), string _namespace = default(string), string className = default(string))
+        public TestResultsFilterModel(List<Guid> testRunIds = default(List<Guid>), List<long> autoTestGlobalIds = default(List<long>), string name = default(string), TestResultsFilterModelCreatedDate createdDate = default(TestResultsFilterModelCreatedDate), TestResultsFilterModelDuration duration = default(TestResultsFilterModelDuration), List<string> resultReasons = default(List<string>), List<Guid> configurationIds = default(List<Guid>), List<TestResultOutcome> outcomes = default(List<TestResultOutcome>), List<FailureCategoryModel> failureCategories = default(List<FailureCategoryModel>), string _namespace = default(string), string className = default(string))
         {
             this.TestRunIds = testRunIds;
+            this.AutoTestGlobalIds = autoTestGlobalIds;
+            this.Name = name;
+            this.CreatedDate = createdDate;
+            this.Duration = duration;
+            this.ResultReasons = resultReasons;
             this.ConfigurationIds = configurationIds;
             this.Outcomes = outcomes;
             this.FailureCategories = failureCategories;
@@ -57,6 +67,39 @@ namespace TestIT.ApiClient.Model
         /// <value>Specifies a test result test run IDs to search for</value>
         [DataMember(Name = "testRunIds", EmitDefaultValue = true)]
         public List<Guid> TestRunIds { get; set; }
+
+        /// <summary>
+        /// Specifies an autotest global IDs to search results for
+        /// </summary>
+        /// <value>Specifies an autotest global IDs to search results for</value>
+        [DataMember(Name = "autoTestGlobalIds", EmitDefaultValue = true)]
+        public List<long> AutoTestGlobalIds { get; set; }
+
+        /// <summary>
+        /// Specifies an autotest name to search results for
+        /// </summary>
+        /// <value>Specifies an autotest name to search results for</value>
+        [DataMember(Name = "name", EmitDefaultValue = true)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreatedDate
+        /// </summary>
+        [DataMember(Name = "createdDate", EmitDefaultValue = true)]
+        public TestResultsFilterModelCreatedDate CreatedDate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Duration
+        /// </summary>
+        [DataMember(Name = "duration", EmitDefaultValue = true)]
+        public TestResultsFilterModelDuration Duration { get; set; }
+
+        /// <summary>
+        /// Specifies result reasons for searching test results
+        /// </summary>
+        /// <value>Specifies result reasons for searching test results</value>
+        [DataMember(Name = "resultReasons", EmitDefaultValue = true)]
+        public List<string> ResultReasons { get; set; }
 
         /// <summary>
         /// Specifies a test result configuration IDs to search for
@@ -102,6 +145,11 @@ namespace TestIT.ApiClient.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class TestResultsFilterModel {\n");
             sb.Append("  TestRunIds: ").Append(TestRunIds).Append("\n");
+            sb.Append("  AutoTestGlobalIds: ").Append(AutoTestGlobalIds).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
+            sb.Append("  Duration: ").Append(Duration).Append("\n");
+            sb.Append("  ResultReasons: ").Append(ResultReasons).Append("\n");
             sb.Append("  ConfigurationIds: ").Append(ConfigurationIds).Append("\n");
             sb.Append("  Outcomes: ").Append(Outcomes).Append("\n");
             sb.Append("  FailureCategories: ").Append(FailureCategories).Append("\n");
@@ -149,6 +197,33 @@ namespace TestIT.ApiClient.Model
                     this.TestRunIds.SequenceEqual(input.TestRunIds)
                 ) && 
                 (
+                    this.AutoTestGlobalIds == input.AutoTestGlobalIds ||
+                    this.AutoTestGlobalIds != null &&
+                    input.AutoTestGlobalIds != null &&
+                    this.AutoTestGlobalIds.SequenceEqual(input.AutoTestGlobalIds)
+                ) && 
+                (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.CreatedDate == input.CreatedDate ||
+                    (this.CreatedDate != null &&
+                    this.CreatedDate.Equals(input.CreatedDate))
+                ) && 
+                (
+                    this.Duration == input.Duration ||
+                    (this.Duration != null &&
+                    this.Duration.Equals(input.Duration))
+                ) && 
+                (
+                    this.ResultReasons == input.ResultReasons ||
+                    this.ResultReasons != null &&
+                    input.ResultReasons != null &&
+                    this.ResultReasons.SequenceEqual(input.ResultReasons)
+                ) && 
+                (
                     this.ConfigurationIds == input.ConfigurationIds ||
                     this.ConfigurationIds != null &&
                     input.ConfigurationIds != null &&
@@ -190,6 +265,26 @@ namespace TestIT.ApiClient.Model
                 if (this.TestRunIds != null)
                 {
                     hashCode = (hashCode * 59) + this.TestRunIds.GetHashCode();
+                }
+                if (this.AutoTestGlobalIds != null)
+                {
+                    hashCode = (hashCode * 59) + this.AutoTestGlobalIds.GetHashCode();
+                }
+                if (this.Name != null)
+                {
+                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.CreatedDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
+                }
+                if (this.Duration != null)
+                {
+                    hashCode = (hashCode * 59) + this.Duration.GetHashCode();
+                }
+                if (this.ResultReasons != null)
+                {
+                    hashCode = (hashCode * 59) + this.ResultReasons.GetHashCode();
                 }
                 if (this.ConfigurationIds != null)
                 {

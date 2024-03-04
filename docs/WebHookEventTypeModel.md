@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.WebHookEventTypeModel
+# TestIT.ApiClient.Model.WebHookEventTypeModel
 
 ## Properties
 

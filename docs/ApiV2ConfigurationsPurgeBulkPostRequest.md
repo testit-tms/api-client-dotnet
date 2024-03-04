@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ApiV2ConfigurationsPurgeBulkPostRequest
+# TestIT.ApiClient.Model.ApiV2ConfigurationsPurgeBulkPostRequest
 
 ## Properties
 

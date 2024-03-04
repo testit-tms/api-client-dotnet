@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.TestPointsApi
+# TestIT.ApiClient.Api.TestPointsApi
 
 All URIs are relative to *http://localhost*
 
@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2TestPointsSearchIdPost**](TestPointsApi.md#apiv2testpointssearchidpost) | **POST** /api/v2/testPoints/search/id | Search for test points and extract IDs only |
 | [**ApiV2TestPointsSearchPost**](TestPointsApi.md#apiv2testpointssearchpost) | **POST** /api/v2/testPoints/search | Search for test points |
 
-<a id="apiv2testpointsidtestrunsget"></a>
+<a name="apiv2testpointsidtestrunsget"></a>
 # **ApiV2TestPointsIdTestRunsGet**
 > List&lt;TestRunModel&gt; ApiV2TestPointsIdTestRunsGet (Guid id)
 
@@ -20,9 +20,9 @@ Get all test runs which use test point
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -108,7 +108,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testpointsidworkitemget"></a>
+<a name="apiv2testpointsidworkitemget"></a>
 # **ApiV2TestPointsIdWorkItemGet**
 > WorkItemModel ApiV2TestPointsIdWorkItemGet (Guid id)
 
@@ -119,9 +119,9 @@ Get work item represented by test point
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -207,7 +207,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testpointssearchidpost"></a>
+<a name="apiv2testpointssearchidpost"></a>
 # **ApiV2TestPointsSearchIdPost**
 > List&lt;Guid&gt; ApiV2TestPointsSearchIdPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = null)
 
@@ -218,9 +218,9 @@ Search for test points and extract IDs only
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -316,7 +316,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2testpointssearchpost"></a>
+<a name="apiv2testpointssearchpost"></a>
 # **ApiV2TestPointsSearchPost**
 > List&lt;TestPointShortGetModel&gt; ApiV2TestPointsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = null)
 
@@ -327,9 +327,9 @@ Search for test points
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

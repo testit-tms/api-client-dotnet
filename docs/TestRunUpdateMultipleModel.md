@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestRunUpdateMultipleModel
+# TestIT.ApiClient.Model.TestRunUpdateMultipleModel
 
 ## Properties
 

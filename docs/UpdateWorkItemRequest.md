@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.UpdateWorkItemRequest
+# TestIT.ApiClient.Model.UpdateWorkItemRequest
 
 ## Properties
 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **PostconditionSteps** | [**List&lt;StepPutModel&gt;**](StepPutModel.md) |  | 
 **Duration** | **int** |  | 
 **Attributes** | **Dictionary&lt;string, Object&gt;** |  | 
-**Tags** | [**List&lt;TagShortModel&gt;**](TagShortModel.md) |  | 
+**Tags** | [**List&lt;TagPutModel&gt;**](TagPutModel.md) |  | 
 **Links** | [**List&lt;LinkPutModel&gt;**](LinkPutModel.md) |  | 
 **Name** | **string** |  | 
 

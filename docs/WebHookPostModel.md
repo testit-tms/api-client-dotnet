@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.WebHookPostModel
+# TestIT.ApiClient.Model.WebHookPostModel
 
 ## Properties
 

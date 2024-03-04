@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestRunGroupByFailureClassModel
+# TestIT.ApiClient.Model.TestRunGroupByFailureClassModel
 
 ## Properties
 

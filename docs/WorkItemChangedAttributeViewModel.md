@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.WorkItemChangedAttributeViewModel
+# TestIT.ApiClient.Model.WorkItemChangedAttributeViewModel
 
 ## Properties
 

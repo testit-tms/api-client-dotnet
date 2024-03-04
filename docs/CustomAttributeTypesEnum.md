@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.CustomAttributeTypesEnum
+# TestIT.ApiClient.Model.CustomAttributeTypesEnum
 
 ## Properties
 

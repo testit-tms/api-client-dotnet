@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.AutotestsSelectModelIncludes
+# TestIT.ApiClient.Model.AutotestsSelectModelIncludes
 Object specifying data to be included
 
 ## Properties

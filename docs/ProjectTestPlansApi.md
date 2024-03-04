@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.ProjectTestPlansApi
+# TestIT.ApiClient.Api.ProjectTestPlansApi
 
 All URIs are relative to *http://localhost*
 
@@ -11,7 +11,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2ProjectsProjectIdTestPlansRestoreBulkPost**](ProjectTestPlansApi.md#apiv2projectsprojectidtestplansrestorebulkpost) | **POST** /api/v2/projects/{projectId}/testPlans/restore/bulk | Restore multiple test plans |
 | [**ApiV2ProjectsProjectIdTestPlansSearchPost**](ProjectTestPlansApi.md#apiv2projectsprojectidtestplanssearchpost) | **POST** /api/v2/projects/{projectId}/testPlans/search | Get Project TestPlans with analytics |
 
-<a id="apiv2projectsprojectidtestplansanalyticsget"></a>
+<a name="apiv2projectsprojectidtestplansanalyticsget"></a>
 # **ApiV2ProjectsProjectIdTestPlansAnalyticsGet**
 > List&lt;TestPlanWithAnalyticModel&gt; ApiV2ProjectsProjectIdTestPlansAnalyticsGet (Guid projectId, bool? isDeleted = null, bool? mustUpdateCache = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -24,9 +24,9 @@ Get TestPlans analytics
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -125,7 +125,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2projectsprojectidtestplansdeletebulkpost"></a>
+<a name="apiv2projectsprojectidtestplansdeletebulkpost"></a>
 # **ApiV2ProjectsProjectIdTestPlansDeleteBulkPost**
 > List&lt;Guid&gt; ApiV2ProjectsProjectIdTestPlansDeleteBulkPost (string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = null)
 
@@ -136,9 +136,9 @@ Delete multiple test plans
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -226,7 +226,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2projectsprojectidtestplansnameexistsget"></a>
+<a name="apiv2projectsprojectidtestplansnameexistsget"></a>
 # **ApiV2ProjectsProjectIdTestPlansNameExistsGet**
 > bool ApiV2ProjectsProjectIdTestPlansNameExistsGet (Guid projectId, string name)
 
@@ -239,9 +239,9 @@ Checks if TestPlan exists with the specified name exists for the project
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -328,7 +328,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2projectsprojectidtestplanspurgebulkpost"></a>
+<a name="apiv2projectsprojectidtestplanspurgebulkpost"></a>
 # **ApiV2ProjectsProjectIdTestPlansPurgeBulkPost**
 > void ApiV2ProjectsProjectIdTestPlansPurgeBulkPost (string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = null)
 
@@ -339,9 +339,9 @@ Permanently delete multiple archived test plans
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -425,7 +425,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2projectsprojectidtestplansrestorebulkpost"></a>
+<a name="apiv2projectsprojectidtestplansrestorebulkpost"></a>
 # **ApiV2ProjectsProjectIdTestPlansRestoreBulkPost**
 > void ApiV2ProjectsProjectIdTestPlansRestoreBulkPost (string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = null)
 
@@ -436,9 +436,9 @@ Restore multiple test plans
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -522,7 +522,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2projectsprojectidtestplanssearchpost"></a>
+<a name="apiv2projectsprojectidtestplanssearchpost"></a>
 # **ApiV2ProjectsProjectIdTestPlansSearchPost**
 > List&lt;TestPlanWithAnalyticModel&gt; ApiV2ProjectsProjectIdTestPlansSearchPost (string projectId, bool? mustUpdateCache = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ProjectsProjectIdTestPlansSearchPostRequest apiV2ProjectsProjectIdTestPlansSearchPostRequest = null)
 
@@ -535,9 +535,9 @@ Get Project TestPlans with analytics
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

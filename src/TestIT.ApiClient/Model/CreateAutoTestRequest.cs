@@ -42,6 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="workItemIdsForLinkWithAutoTest">Specifies the IDs of work items to link your autotest to. You can specify several IDs..</param>
         /// <param name="shouldCreateWorkItem">Creates a test case linked to the autotest..</param>
+        /// <param name="attributes">Key value pair of custom work item attributes.</param>
         /// <param name="externalId">External ID of the autotest (required).</param>
         /// <param name="links">Collection of the autotest links.</param>
         /// <param name="projectId">Unique ID of the autotest project (required).</param>
@@ -56,7 +57,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="labels">Collection of the autotest labels.</param>
         /// <param name="isFlaky">Indicates if the autotest is marked as flaky.</param>
         /// <param name="externalKey">External key of the autotest.</param>
-        public CreateAutoTestRequest(List<Guid> workItemIdsForLinkWithAutoTest = default(List<Guid>), bool? shouldCreateWorkItem = default(bool?), string externalId = default(string), List<LinkPostModel> links = default(List<LinkPostModel>), Guid projectId = default(Guid), string name = default(string), string _namespace = default(string), string classname = default(string), List<AutoTestStepModel> steps = default(List<AutoTestStepModel>), List<AutoTestStepModel> setup = default(List<AutoTestStepModel>), List<AutoTestStepModel> teardown = default(List<AutoTestStepModel>), string title = default(string), string description = default(string), List<LabelPostModel> labels = default(List<LabelPostModel>), bool? isFlaky = default(bool?), string externalKey = default(string))
+        public CreateAutoTestRequest(List<Guid> workItemIdsForLinkWithAutoTest = default(List<Guid>), bool? shouldCreateWorkItem = default(bool?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), string externalId = default(string), List<LinkPostModel> links = default(List<LinkPostModel>), Guid projectId = default(Guid), string name = default(string), string _namespace = default(string), string classname = default(string), List<AutoTestStepModel> steps = default(List<AutoTestStepModel>), List<AutoTestStepModel> setup = default(List<AutoTestStepModel>), List<AutoTestStepModel> teardown = default(List<AutoTestStepModel>), string title = default(string), string description = default(string), List<LabelPostModel> labels = default(List<LabelPostModel>), bool? isFlaky = default(bool?), string externalKey = default(string))
         {
             // to ensure "externalId" is required (not null)
             if (externalId == null)
@@ -73,6 +74,7 @@ namespace TestIT.ApiClient.Model
             this.Name = name;
             this.WorkItemIdsForLinkWithAutoTest = workItemIdsForLinkWithAutoTest;
             this.ShouldCreateWorkItem = shouldCreateWorkItem;
+            this.Attributes = attributes;
             this.Links = links;
             this.Namespace = _namespace;
             this.Classname = classname;
@@ -99,6 +101,13 @@ namespace TestIT.ApiClient.Model
         /// <value>Creates a test case linked to the autotest.</value>
         [DataMember(Name = "shouldCreateWorkItem", EmitDefaultValue = true)]
         public bool? ShouldCreateWorkItem { get; set; }
+
+        /// <summary>
+        /// Key value pair of custom work item attributes
+        /// </summary>
+        /// <value>Key value pair of custom work item attributes</value>
+        [DataMember(Name = "attributes", EmitDefaultValue = true)]
+        public Dictionary<string, Object> Attributes { get; set; }
 
         /// <summary>
         /// External ID of the autotest
@@ -208,6 +217,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("class CreateAutoTestRequest {\n");
             sb.Append("  WorkItemIdsForLinkWithAutoTest: ").Append(WorkItemIdsForLinkWithAutoTest).Append("\n");
             sb.Append("  ShouldCreateWorkItem: ").Append(ShouldCreateWorkItem).Append("\n");
+            sb.Append("  Attributes: ").Append(Attributes).Append("\n");
             sb.Append("  ExternalId: ").Append(ExternalId).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
@@ -267,6 +277,12 @@ namespace TestIT.ApiClient.Model
                     this.ShouldCreateWorkItem == input.ShouldCreateWorkItem ||
                     (this.ShouldCreateWorkItem != null &&
                     this.ShouldCreateWorkItem.Equals(input.ShouldCreateWorkItem))
+                ) && 
+                (
+                    this.Attributes == input.Attributes ||
+                    this.Attributes != null &&
+                    input.Attributes != null &&
+                    this.Attributes.SequenceEqual(input.Attributes)
                 ) && 
                 (
                     this.ExternalId == input.ExternalId ||
@@ -361,6 +377,10 @@ namespace TestIT.ApiClient.Model
                 if (this.ShouldCreateWorkItem != null)
                 {
                     hashCode = (hashCode * 59) + this.ShouldCreateWorkItem.GetHashCode();
+                }
+                if (this.Attributes != null)
+                {
+                    hashCode = (hashCode * 59) + this.Attributes.GetHashCode();
                 }
                 if (this.ExternalId != null)
                 {

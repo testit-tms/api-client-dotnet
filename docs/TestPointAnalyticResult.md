@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestPointAnalyticResult
+# TestIT.ApiClient.Model.TestPointAnalyticResult
 
 ## Properties
 

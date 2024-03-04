@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.WorkItemChangedFieldsViewModelSteps
+# TestIT.ApiClient.Model.WorkItemChangedFieldsViewModelSteps
 
 ## Properties
 

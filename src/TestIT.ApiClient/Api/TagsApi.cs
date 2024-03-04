@@ -28,14 +28,36 @@ namespace TestIT.ApiClient.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// Delete tags
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets collection of tags internal (guid format) identifiers  &lt;br&gt;System searches and deletes a collection of tags
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TagsDeleteRequest"> (optional)</param>
+        /// <returns></returns>
+        void ApiV2TagsDelete(ApiV2TagsDeleteRequest apiV2TagsDeleteRequest = default(ApiV2TagsDeleteRequest));
+
+        /// <summary>
+        /// Delete tags
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets collection of tags internal (guid format) identifiers  &lt;br&gt;System searches and deletes a collection of tags
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TagsDeleteRequest"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ApiV2TagsDeleteWithHttpInfo(ApiV2TagsDeleteRequest apiV2TagsDeleteRequest = default(ApiV2TagsDeleteRequest));
+        /// <summary>
         /// Get all Tags
         /// </summary>
         /// <remarks>
         /// &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System returns tags (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;TagShortModel&gt;</returns>
-        List<TagShortModel> ApiV2TagsGet();
+        /// <returns>List&lt;TagModel&gt;</returns>
+        [Obsolete]
+        List<TagModel> ApiV2TagsGet();
 
         /// <summary>
         /// Get all Tags
@@ -44,8 +66,103 @@ namespace TestIT.ApiClient.Api
         /// &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System returns tags (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;TagShortModel&gt;</returns>
-        ApiResponse<List<TagShortModel>> ApiV2TagsGetWithHttpInfo();
+        /// <returns>ApiResponse of List&lt;TagModel&gt;</returns>
+        [Obsolete]
+        ApiResponse<List<TagModel>> ApiV2TagsGetWithHttpInfo();
+        /// <summary>
+        /// Delete tag
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets tag internal (guid format) identifier  &lt;br&gt;System search and delete tag
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Tag internal (UUID) identifier</param>
+        /// <returns></returns>
+        void ApiV2TagsIdDelete(Guid id);
+
+        /// <summary>
+        /// Delete tag
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets tag internal (guid format) identifier  &lt;br&gt;System search and delete tag
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Tag internal (UUID) identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ApiV2TagsIdDeleteWithHttpInfo(Guid id);
+        /// <summary>
+        /// Create tag
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets tag model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates tag  &lt;br&gt;System returns tag model (listed in the response example)
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TagsPostRequest"> (optional)</param>
+        /// <returns>TagModel</returns>
+        TagModel ApiV2TagsPost(ApiV2TagsPostRequest apiV2TagsPostRequest = default(ApiV2TagsPostRequest));
+
+        /// <summary>
+        /// Create tag
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets tag model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates tag  &lt;br&gt;System returns tag model (listed in the response example)
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TagsPostRequest"> (optional)</param>
+        /// <returns>ApiResponse of TagModel</returns>
+        ApiResponse<TagModel> ApiV2TagsPostWithHttpInfo(ApiV2TagsPostRequest apiV2TagsPostRequest = default(ApiV2TagsPostRequest));
+        /// <summary>
+        /// Update tag
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets tag ID and model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates tag  &lt;br&gt;System returns tag model (listed in the response example)
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"> (optional)</param>
+        /// <param name="apiV2TagsPutRequest"> (optional)</param>
+        /// <returns>TagModel</returns>
+        TagModel ApiV2TagsPut(Guid? id = default(Guid?), ApiV2TagsPutRequest apiV2TagsPutRequest = default(ApiV2TagsPutRequest));
+
+        /// <summary>
+        /// Update tag
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets tag ID and model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates tag  &lt;br&gt;System returns tag model (listed in the response example)
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"> (optional)</param>
+        /// <param name="apiV2TagsPutRequest"> (optional)</param>
+        /// <returns>ApiResponse of TagModel</returns>
+        ApiResponse<TagModel> ApiV2TagsPutWithHttpInfo(Guid? id = default(Guid?), ApiV2TagsPutRequest apiV2TagsPutRequest = default(ApiV2TagsPutRequest));
+        /// <summary>
+        /// Search tags
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System returns collection of tags (listed in the response example)
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <returns>List&lt;TagModel&gt;</returns>
+        List<TagModel> ApiV2TagsSearchGet(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
+
+        /// <summary>
+        /// Search tags
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System returns collection of tags (listed in the response example)
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <returns>ApiResponse of List&lt;TagModel&gt;</returns>
+        ApiResponse<List<TagModel>> ApiV2TagsSearchGetWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
         /// <summary>
         /// Get all Tags that are used in TestPlans
         /// </summary>
@@ -58,8 +175,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <returns>List&lt;TagShortModel&gt;</returns>
-        List<TagShortModel> ApiV2TagsTestPlansTagsGet(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
+        /// <returns>List&lt;TagModel&gt;</returns>
+        List<TagModel> ApiV2TagsTestPlansTagsGet(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
 
         /// <summary>
         /// Get all Tags that are used in TestPlans
@@ -73,8 +190,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <returns>ApiResponse of List&lt;TagShortModel&gt;</returns>
-        ApiResponse<List<TagShortModel>> ApiV2TagsTestPlansTagsGetWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
+        /// <returns>ApiResponse of List&lt;TagModel&gt;</returns>
+        ApiResponse<List<TagModel>> ApiV2TagsTestPlansTagsGetWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
         #endregion Synchronous Operations
     }
 
@@ -85,6 +202,29 @@ namespace TestIT.ApiClient.Api
     {
         #region Asynchronous Operations
         /// <summary>
+        /// Delete tags
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets collection of tags internal (guid format) identifiers  &lt;br&gt;System searches and deletes a collection of tags
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TagsDeleteRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ApiV2TagsDeleteAsync(ApiV2TagsDeleteRequest apiV2TagsDeleteRequest = default(ApiV2TagsDeleteRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Delete tags
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets collection of tags internal (guid format) identifiers  &lt;br&gt;System searches and deletes a collection of tags
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TagsDeleteRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TagsDeleteWithHttpInfoAsync(ApiV2TagsDeleteRequest apiV2TagsDeleteRequest = default(ApiV2TagsDeleteRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
         /// Get all Tags
         /// </summary>
         /// <remarks>
@@ -92,8 +232,9 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;TagShortModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TagShortModel>> ApiV2TagsGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;TagModel&gt;</returns>
+        [Obsolete]
+        System.Threading.Tasks.Task<List<TagModel>> ApiV2TagsGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get all Tags
@@ -103,8 +244,111 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;TagShortModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TagShortModel>>> ApiV2TagsGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;TagModel&gt;)</returns>
+        [Obsolete]
+        System.Threading.Tasks.Task<ApiResponse<List<TagModel>>> ApiV2TagsGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Delete tag
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets tag internal (guid format) identifier  &lt;br&gt;System search and delete tag
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Tag internal (UUID) identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ApiV2TagsIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Delete tag
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets tag internal (guid format) identifier  &lt;br&gt;System search and delete tag
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Tag internal (UUID) identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TagsIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Create tag
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets tag model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates tag  &lt;br&gt;System returns tag model (listed in the response example)
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TagsPostRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TagModel</returns>
+        System.Threading.Tasks.Task<TagModel> ApiV2TagsPostAsync(ApiV2TagsPostRequest apiV2TagsPostRequest = default(ApiV2TagsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Create tag
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets tag model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates tag  &lt;br&gt;System returns tag model (listed in the response example)
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TagsPostRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TagModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TagModel>> ApiV2TagsPostWithHttpInfoAsync(ApiV2TagsPostRequest apiV2TagsPostRequest = default(ApiV2TagsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Update tag
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets tag ID and model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates tag  &lt;br&gt;System returns tag model (listed in the response example)
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"> (optional)</param>
+        /// <param name="apiV2TagsPutRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TagModel</returns>
+        System.Threading.Tasks.Task<TagModel> ApiV2TagsPutAsync(Guid? id = default(Guid?), ApiV2TagsPutRequest apiV2TagsPutRequest = default(ApiV2TagsPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Update tag
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets tag ID and model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates tag  &lt;br&gt;System returns tag model (listed in the response example)
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"> (optional)</param>
+        /// <param name="apiV2TagsPutRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TagModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TagModel>> ApiV2TagsPutWithHttpInfoAsync(Guid? id = default(Guid?), ApiV2TagsPutRequest apiV2TagsPutRequest = default(ApiV2TagsPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Search tags
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System returns collection of tags (listed in the response example)
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;TagModel&gt;</returns>
+        System.Threading.Tasks.Task<List<TagModel>> ApiV2TagsSearchGetAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Search tags
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System returns collection of tags (listed in the response example)
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;TagModel&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<TagModel>>> ApiV2TagsSearchGetWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get all Tags that are used in TestPlans
         /// </summary>
@@ -118,8 +362,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;TagShortModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TagShortModel>> ApiV2TagsTestPlansTagsGetAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;TagModel&gt;</returns>
+        System.Threading.Tasks.Task<List<TagModel>> ApiV2TagsTestPlansTagsGetAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get all Tags that are used in TestPlans
@@ -134,8 +378,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;TagShortModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TagShortModel>>> ApiV2TagsTestPlansTagsGetWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;TagModel&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<TagModel>>> ApiV2TagsTestPlansTagsGetWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -350,13 +594,137 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
+        /// Delete tags &lt;br&gt;Use case  &lt;br&gt;User sets collection of tags internal (guid format) identifiers  &lt;br&gt;System searches and deletes a collection of tags
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TagsDeleteRequest"> (optional)</param>
+        /// <returns></returns>
+        public void ApiV2TagsDelete(ApiV2TagsDeleteRequest apiV2TagsDeleteRequest = default(ApiV2TagsDeleteRequest))
+        {
+            ApiV2TagsDeleteWithHttpInfo(apiV2TagsDeleteRequest);
+        }
+
+        /// <summary>
+        /// Delete tags &lt;br&gt;Use case  &lt;br&gt;User sets collection of tags internal (guid format) identifiers  &lt;br&gt;System searches and deletes a collection of tags
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TagsDeleteRequest"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2TagsDeleteWithHttpInfo(ApiV2TagsDeleteRequest apiV2TagsDeleteRequest = default(ApiV2TagsDeleteRequest))
+        {
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = apiV2TagsDeleteRequest;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>("/api/v2/tags", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TagsDelete", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete tags &lt;br&gt;Use case  &lt;br&gt;User sets collection of tags internal (guid format) identifiers  &lt;br&gt;System searches and deletes a collection of tags
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TagsDeleteRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ApiV2TagsDeleteAsync(ApiV2TagsDeleteRequest apiV2TagsDeleteRequest = default(ApiV2TagsDeleteRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await ApiV2TagsDeleteWithHttpInfoAsync(apiV2TagsDeleteRequest, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Delete tags &lt;br&gt;Use case  &lt;br&gt;User sets collection of tags internal (guid format) identifiers  &lt;br&gt;System searches and deletes a collection of tags
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TagsDeleteRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2TagsDeleteWithHttpInfoAsync(ApiV2TagsDeleteRequest apiV2TagsDeleteRequest = default(ApiV2TagsDeleteRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = apiV2TagsDeleteRequest;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/v2/tags", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TagsDelete", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Get all Tags &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System returns tags (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;TagShortModel&gt;</returns>
-        public List<TagShortModel> ApiV2TagsGet()
+        /// <returns>List&lt;TagModel&gt;</returns>
+        [Obsolete]
+        public List<TagModel> ApiV2TagsGet()
         {
-            TestIT.ApiClient.Client.ApiResponse<List<TagShortModel>> localVarResponse = ApiV2TagsGetWithHttpInfo();
+            TestIT.ApiClient.Client.ApiResponse<List<TagModel>> localVarResponse = ApiV2TagsGetWithHttpInfo();
             return localVarResponse.Data;
         }
 
@@ -364,8 +732,9 @@ namespace TestIT.ApiClient.Api
         /// Get all Tags &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System returns tags (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;TagShortModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<TagShortModel>> ApiV2TagsGetWithHttpInfo()
+        /// <returns>ApiResponse of List&lt;TagModel&gt;</returns>
+        [Obsolete]
+        public TestIT.ApiClient.Client.ApiResponse<List<TagModel>> ApiV2TagsGetWithHttpInfo()
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -391,7 +760,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<TagShortModel>>("/api/v2/tags", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<TagModel>>("/api/v2/tags", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -407,10 +776,11 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;TagShortModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TagShortModel>> ApiV2TagsGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;TagModel&gt;</returns>
+        [Obsolete]
+        public async System.Threading.Tasks.Task<List<TagModel>> ApiV2TagsGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<TagShortModel>> localVarResponse = await ApiV2TagsGetWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<TagModel>> localVarResponse = await ApiV2TagsGetWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -419,8 +789,9 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;TagShortModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TagShortModel>>> ApiV2TagsGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;TagModel&gt;)</returns>
+        [Obsolete]
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TagModel>>> ApiV2TagsGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -449,7 +820,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<TagShortModel>>("/api/v2/tags", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<TagModel>>("/api/v2/tags", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -461,23 +832,384 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all Tags that are used in TestPlans &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System returns tags (listed in the response example)
+        /// Delete tag &lt;br&gt;Use case  &lt;br&gt;User sets tag internal (guid format) identifier  &lt;br&gt;System search and delete tag
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
-        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
-        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
-        /// <param name="searchField">Property name for searching (optional)</param>
-        /// <param name="searchValue">Value for searching (optional)</param>
-        /// <returns>List&lt;TagShortModel&gt;</returns>
-        public List<TagShortModel> ApiV2TagsTestPlansTagsGet(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
+        /// <param name="id">Tag internal (UUID) identifier</param>
+        /// <returns></returns>
+        public void ApiV2TagsIdDelete(Guid id)
         {
-            TestIT.ApiClient.Client.ApiResponse<List<TagShortModel>> localVarResponse = ApiV2TagsTestPlansTagsGetWithHttpInfo(skip, take, orderBy, searchField, searchValue);
+            ApiV2TagsIdDeleteWithHttpInfo(id);
+        }
+
+        /// <summary>
+        /// Delete tag &lt;br&gt;Use case  &lt;br&gt;User sets tag internal (guid format) identifier  &lt;br&gt;System search and delete tag
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Tag internal (UUID) identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2TagsIdDeleteWithHttpInfo(Guid id)
+        {
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>("/api/v2/tags/{id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TagsIdDelete", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete tag &lt;br&gt;Use case  &lt;br&gt;User sets tag internal (guid format) identifier  &lt;br&gt;System search and delete tag
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Tag internal (UUID) identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ApiV2TagsIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await ApiV2TagsIdDeleteWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Delete tag &lt;br&gt;Use case  &lt;br&gt;User sets tag internal (guid format) identifier  &lt;br&gt;System search and delete tag
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Tag internal (UUID) identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2TagsIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/v2/tags/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TagsIdDelete", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create tag &lt;br&gt;Use case  &lt;br&gt;User sets tag model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates tag  &lt;br&gt;System returns tag model (listed in the response example)
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TagsPostRequest"> (optional)</param>
+        /// <returns>TagModel</returns>
+        public TagModel ApiV2TagsPost(ApiV2TagsPostRequest apiV2TagsPostRequest = default(ApiV2TagsPostRequest))
+        {
+            TestIT.ApiClient.Client.ApiResponse<TagModel> localVarResponse = ApiV2TagsPostWithHttpInfo(apiV2TagsPostRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get all Tags that are used in TestPlans &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System returns tags (listed in the response example)
+        /// Create tag &lt;br&gt;Use case  &lt;br&gt;User sets tag model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates tag  &lt;br&gt;System returns tag model (listed in the response example)
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TagsPostRequest"> (optional)</param>
+        /// <returns>ApiResponse of TagModel</returns>
+        public TestIT.ApiClient.Client.ApiResponse<TagModel> ApiV2TagsPostWithHttpInfo(ApiV2TagsPostRequest apiV2TagsPostRequest = default(ApiV2TagsPostRequest))
+        {
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = apiV2TagsPostRequest;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<TagModel>("/api/v2/tags", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TagsPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create tag &lt;br&gt;Use case  &lt;br&gt;User sets tag model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates tag  &lt;br&gt;System returns tag model (listed in the response example)
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TagsPostRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TagModel</returns>
+        public async System.Threading.Tasks.Task<TagModel> ApiV2TagsPostAsync(ApiV2TagsPostRequest apiV2TagsPostRequest = default(ApiV2TagsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIT.ApiClient.Client.ApiResponse<TagModel> localVarResponse = await ApiV2TagsPostWithHttpInfoAsync(apiV2TagsPostRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create tag &lt;br&gt;Use case  &lt;br&gt;User sets tag model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates tag  &lt;br&gt;System returns tag model (listed in the response example)
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TagsPostRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TagModel)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TagModel>> ApiV2TagsPostWithHttpInfoAsync(ApiV2TagsPostRequest apiV2TagsPostRequest = default(ApiV2TagsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = apiV2TagsPostRequest;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<TagModel>("/api/v2/tags", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TagsPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update tag &lt;br&gt;Use case  &lt;br&gt;User sets tag ID and model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates tag  &lt;br&gt;System returns tag model (listed in the response example)
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"> (optional)</param>
+        /// <param name="apiV2TagsPutRequest"> (optional)</param>
+        /// <returns>TagModel</returns>
+        public TagModel ApiV2TagsPut(Guid? id = default(Guid?), ApiV2TagsPutRequest apiV2TagsPutRequest = default(ApiV2TagsPutRequest))
+        {
+            TestIT.ApiClient.Client.ApiResponse<TagModel> localVarResponse = ApiV2TagsPutWithHttpInfo(id, apiV2TagsPutRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update tag &lt;br&gt;Use case  &lt;br&gt;User sets tag ID and model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates tag  &lt;br&gt;System returns tag model (listed in the response example)
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"> (optional)</param>
+        /// <param name="apiV2TagsPutRequest"> (optional)</param>
+        /// <returns>ApiResponse of TagModel</returns>
+        public TestIT.ApiClient.Client.ApiResponse<TagModel> ApiV2TagsPutWithHttpInfo(Guid? id = default(Guid?), ApiV2TagsPutRequest apiV2TagsPutRequest = default(ApiV2TagsPutRequest))
+        {
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (id != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "id", id));
+            }
+            localVarRequestOptions.Data = apiV2TagsPutRequest;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Put<TagModel>("/api/v2/tags", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TagsPut", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update tag &lt;br&gt;Use case  &lt;br&gt;User sets tag ID and model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates tag  &lt;br&gt;System returns tag model (listed in the response example)
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"> (optional)</param>
+        /// <param name="apiV2TagsPutRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TagModel</returns>
+        public async System.Threading.Tasks.Task<TagModel> ApiV2TagsPutAsync(Guid? id = default(Guid?), ApiV2TagsPutRequest apiV2TagsPutRequest = default(ApiV2TagsPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIT.ApiClient.Client.ApiResponse<TagModel> localVarResponse = await ApiV2TagsPutWithHttpInfoAsync(id, apiV2TagsPutRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update tag &lt;br&gt;Use case  &lt;br&gt;User sets tag ID and model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates tag  &lt;br&gt;System returns tag model (listed in the response example)
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"> (optional)</param>
+        /// <param name="apiV2TagsPutRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TagModel)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TagModel>> ApiV2TagsPutWithHttpInfoAsync(Guid? id = default(Guid?), ApiV2TagsPutRequest apiV2TagsPutRequest = default(ApiV2TagsPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (id != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "id", id));
+            }
+            localVarRequestOptions.Data = apiV2TagsPutRequest;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PutAsync<TagModel>("/api/v2/tags", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TagsPut", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Search tags &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System returns collection of tags (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -485,8 +1217,24 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <returns>ApiResponse of List&lt;TagShortModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<TagShortModel>> ApiV2TagsTestPlansTagsGetWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
+        /// <returns>List&lt;TagModel&gt;</returns>
+        public List<TagModel> ApiV2TagsSearchGet(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
+        {
+            TestIT.ApiClient.Client.ApiResponse<List<TagModel>> localVarResponse = ApiV2TagsSearchGetWithHttpInfo(skip, take, orderBy, searchField, searchValue);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Search tags &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System returns collection of tags (listed in the response example)
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <returns>ApiResponse of List&lt;TagModel&gt;</returns>
+        public TestIT.ApiClient.Client.ApiResponse<List<TagModel>> ApiV2TagsSearchGetWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -532,7 +1280,178 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<TagShortModel>>("/api/v2/tags/testPlansTags", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<TagModel>>("/api/v2/tags/search", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TagsSearchGet", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Search tags &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System returns collection of tags (listed in the response example)
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;TagModel&gt;</returns>
+        public async System.Threading.Tasks.Task<List<TagModel>> ApiV2TagsSearchGetAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIT.ApiClient.Client.ApiResponse<List<TagModel>> localVarResponse = await ApiV2TagsSearchGetWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Search tags &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System returns collection of tags (listed in the response example)
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;TagModel&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TagModel>>> ApiV2TagsSearchGetWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (skip != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
+            }
+            if (take != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
+            }
+            if (orderBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
+            }
+            if (searchField != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
+            }
+            if (searchValue != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
+            }
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<TagModel>>("/api/v2/tags/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TagsSearchGet", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get all Tags that are used in TestPlans &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System returns tags (listed in the response example)
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <returns>List&lt;TagModel&gt;</returns>
+        public List<TagModel> ApiV2TagsTestPlansTagsGet(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
+        {
+            TestIT.ApiClient.Client.ApiResponse<List<TagModel>> localVarResponse = ApiV2TagsTestPlansTagsGetWithHttpInfo(skip, take, orderBy, searchField, searchValue);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get all Tags that are used in TestPlans &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System returns tags (listed in the response example)
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <returns>ApiResponse of List&lt;TagModel&gt;</returns>
+        public TestIT.ApiClient.Client.ApiResponse<List<TagModel>> ApiV2TagsTestPlansTagsGetWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
+        {
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (skip != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
+            }
+            if (take != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
+            }
+            if (orderBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
+            }
+            if (searchField != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
+            }
+            if (searchValue != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
+            }
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<TagModel>>("/api/v2/tags/testPlansTags", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -553,10 +1472,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;TagShortModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TagShortModel>> ApiV2TagsTestPlansTagsGetAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;TagModel&gt;</returns>
+        public async System.Threading.Tasks.Task<List<TagModel>> ApiV2TagsTestPlansTagsGetAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<TagShortModel>> localVarResponse = await ApiV2TagsTestPlansTagsGetWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<TagModel>> localVarResponse = await ApiV2TagsTestPlansTagsGetWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -570,8 +1489,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;TagShortModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TagShortModel>>> ApiV2TagsTestPlansTagsGetWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;TagModel&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TagModel>>> ApiV2TagsTestPlansTagsGetWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -620,7 +1539,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<TagShortModel>>("/api/v2/tags/testPlansTags", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<TagModel>>("/api/v2/tags/testPlansTags", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

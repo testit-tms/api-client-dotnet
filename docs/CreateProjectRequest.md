@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.CreateProjectRequest
+# TestIT.ApiClient.Model.CreateProjectRequest
 
 ## Properties
 

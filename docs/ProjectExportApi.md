@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.ProjectExportApi
+# TestIT.ApiClient.Api.ProjectExportApi
 
 All URIs are relative to *http://localhost*
 
@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 | [**ExportProjectWithTestPlansZip**](ProjectExportApi.md#exportprojectwithtestplanszip) | **POST** /api/v2/projects/{projectId}/export/testPlans/zip | Export project as Zip file with test plans in background job |
 | [**ExportProjectZip**](ProjectExportApi.md#exportprojectzip) | **POST** /api/v2/projects/{projectId}/export/zip | Export project as Zip file in background job |
 
-<a id="export"></a>
+<a name="export"></a>
 # **Export**
 > FileParameter Export (string projectId, bool? includeAttachments = null, ExportProjectJsonRequest exportProjectJsonRequest = null)
 
@@ -23,9 +23,9 @@ Export project as JSON file
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -116,7 +116,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="exportprojectjson"></a>
+<a name="exportprojectjson"></a>
 # **ExportProjectJson**
 > Guid ExportProjectJson (string projectId, long? timeZoneOffsetInMinutes = null, ExportProjectJsonRequest exportProjectJsonRequest = null)
 
@@ -127,9 +127,9 @@ Export project as JSON file in background job
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -219,7 +219,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="exportprojectwithtestplansjson"></a>
+<a name="exportprojectwithtestplansjson"></a>
 # **ExportProjectWithTestPlansJson**
 > Guid ExportProjectWithTestPlansJson (string projectId, long? timeZoneOffsetInMinutes = null, ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = null)
 
@@ -230,9 +230,9 @@ Export project as JSON file with test plans in background job
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -322,7 +322,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="exportprojectwithtestplanszip"></a>
+<a name="exportprojectwithtestplanszip"></a>
 # **ExportProjectWithTestPlansZip**
 > Guid ExportProjectWithTestPlansZip (string projectId, long? timeZoneOffsetInMinutes = null, ExportProjectWithTestPlansJsonRequest exportProjectWithTestPlansJsonRequest = null)
 
@@ -333,9 +333,9 @@ Export project as Zip file with test plans in background job
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -425,7 +425,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="exportprojectzip"></a>
+<a name="exportprojectzip"></a>
 # **ExportProjectZip**
 > Guid ExportProjectZip (string projectId, long? timeZoneOffsetInMinutes = null, ExportProjectJsonRequest exportProjectJsonRequest = null)
 
@@ -436,9 +436,9 @@ Export project as Zip file in background job
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

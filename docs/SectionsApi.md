@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.SectionsApi
+# TestIT.ApiClient.Api.SectionsApi
 
 All URIs are relative to *http://localhost*
 
@@ -13,7 +13,7 @@ All URIs are relative to *http://localhost*
 | [**Rename**](SectionsApi.md#rename) | **POST** /api/v2/sections/rename | Rename section |
 | [**UpdateSection**](SectionsApi.md#updatesection) | **PUT** /api/v2/sections | Update section |
 
-<a id="apiv2sectionsidpatch"></a>
+<a name="apiv2sectionsidpatch"></a>
 # **ApiV2SectionsIdPatch**
 > void ApiV2SectionsIdPatch (Guid id, List<Operation> operation = null)
 
@@ -26,9 +26,9 @@ See <a href=\"https://www.rfc-editor.org/rfc/rfc6902\" target=\"_blank\">RFC 690
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -112,7 +112,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="createsection"></a>
+<a name="createsection"></a>
 # **CreateSection**
 > SectionWithStepsModel CreateSection (CreateSectionRequest createSectionRequest = null)
 
@@ -125,9 +125,9 @@ Create section
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -217,7 +217,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="deletesection"></a>
+<a name="deletesection"></a>
 # **DeleteSection**
 > void DeleteSection (Guid id)
 
@@ -230,9 +230,9 @@ Delete section
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -319,7 +319,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getsectionbyid"></a>
+<a name="getsectionbyid"></a>
 # **GetSectionById**
 > SectionWithStepsModel GetSectionById (Guid id, DeletionState? isDeleted = null)
 
@@ -332,9 +332,9 @@ Get section
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -425,7 +425,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getworkitemsbysectionid"></a>
+<a name="getworkitemsbysectionid"></a>
 # **GetWorkItemsBySectionId**
 > List&lt;WorkItemShortModel&gt; GetWorkItemsBySectionId (Guid id, bool? isDeleted = null, List<string> tagNames = null, bool? includeIterations = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -438,9 +438,9 @@ Get section work items
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -545,7 +545,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="move"></a>
+<a name="move"></a>
 # **Move**
 > void Move (MoveRequest moveRequest = null)
 
@@ -556,9 +556,9 @@ Move section with all work items into another section
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -640,7 +640,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="rename"></a>
+<a name="rename"></a>
 # **Rename**
 > void Rename (RenameRequest renameRequest = null)
 
@@ -653,9 +653,9 @@ Rename section
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -741,7 +741,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="updatesection"></a>
+<a name="updatesection"></a>
 # **UpdateSection**
 > void UpdateSection (UpdateSectionRequest updateSectionRequest = null)
 
@@ -754,9 +754,9 @@ Update section
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestRunTestResultsSelectModelTestResultIdsExtractionModel
+# TestIT.ApiClient.Model.TestRunTestResultsSelectModelTestResultIdsExtractionModel
 Rules to include and exclude certain entities in result
 
 ## Properties

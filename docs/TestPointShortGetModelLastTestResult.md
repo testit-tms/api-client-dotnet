@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestPointShortGetModelLastTestResult
+# TestIT.ApiClient.Model.TestPointShortGetModelLastTestResult
 Model of the test point last test result
 
 ## Properties

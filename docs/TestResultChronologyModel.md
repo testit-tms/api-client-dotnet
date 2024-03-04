@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestResultChronologyModel
+# TestIT.ApiClient.Model.TestResultChronologyModel
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestRunGroupByStatusModel
+# TestIT.ApiClient.Model.TestRunGroupByStatusModel
 
 ## Properties
 

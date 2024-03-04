@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ApiV2WorkItemsMovePostRequest
+# TestIT.ApiClient.Model.ApiV2WorkItemsMovePostRequest
 
 ## Properties
 

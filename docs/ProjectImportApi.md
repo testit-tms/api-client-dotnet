@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.ProjectImportApi
+# TestIT.ApiClient.Api.ProjectImportApi
 
 All URIs are relative to *http://localhost*
 
@@ -8,7 +8,7 @@ All URIs are relative to *http://localhost*
 | [**BackgroundImportZipToExistingProject**](ProjectImportApi.md#backgroundimportziptoexistingproject) | **POST** /api/v2/projects/{projectId}/import/zip | Import project from Zip file into existing project in background job |
 | [**ImportToExistingProject**](ProjectImportApi.md#importtoexistingproject) | **POST** /api/v2/projects/{projectId}/import | Import project from JSON file into existing project |
 
-<a id="backgroundimporttoexistingproject"></a>
+<a name="backgroundimporttoexistingproject"></a>
 # **BackgroundImportToExistingProject**
 > Guid BackgroundImportToExistingProject (string projectId, FileParameter file = null)
 
@@ -19,9 +19,9 @@ Import project from JSON file into existing project in background job
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -109,7 +109,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="backgroundimportziptoexistingproject"></a>
+<a name="backgroundimportziptoexistingproject"></a>
 # **BackgroundImportZipToExistingProject**
 > Guid BackgroundImportZipToExistingProject (string projectId, FileParameter file = null)
 
@@ -120,9 +120,9 @@ Import project from Zip file into existing project in background job
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -210,7 +210,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="importtoexistingproject"></a>
+<a name="importtoexistingproject"></a>
 # **ImportToExistingProject**
 > void ImportToExistingProject (string projectId, bool? includeAttachments = null, FileParameter file = null)
 
@@ -223,9 +223,9 @@ Import project from JSON file into existing project
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

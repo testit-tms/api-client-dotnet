@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.WorkItemChangedFieldsViewModelGlobalId
+# TestIT.ApiClient.Model.WorkItemChangedFieldsViewModelGlobalId
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestPlanChangedFieldsViewModel
+# TestIT.ApiClient.Model.TestPlanChangedFieldsViewModel
 
 ## Properties
 

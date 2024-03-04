@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.NotificationsApi
+# TestIT.ApiClient.Api.NotificationsApi
 
 All URIs are relative to *http://localhost*
 
@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2NotificationsReadPost**](NotificationsApi.md#apiv2notificationsreadpost) | **POST** /api/v2/notifications/read | Set all Notifications as read |
 | [**ApiV2NotificationsSearchPost**](NotificationsApi.md#apiv2notificationssearchpost) | **POST** /api/v2/notifications/search | Search Notifications for current User |
 
-<a id="apiv2notificationscountget"></a>
+<a name="apiv2notificationscountget"></a>
 # **ApiV2NotificationsCountGet**
 > int ApiV2NotificationsCountGet (bool? isRead = null)
 
@@ -23,9 +23,9 @@ Get unread Notifications total in last 7 days
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -111,7 +111,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2notificationsget"></a>
+<a name="apiv2notificationsget"></a>
 # **ApiV2NotificationsGet**
 > List&lt;NotificationModel&gt; ApiV2NotificationsGet (NotificationTypeModel? notificationType = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
@@ -124,9 +124,9 @@ Get all Notifications for current User
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -223,7 +223,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2notificationsidreadpost"></a>
+<a name="apiv2notificationsidreadpost"></a>
 # **ApiV2NotificationsIdReadPost**
 > void ApiV2NotificationsIdReadPost (Guid id)
 
@@ -236,9 +236,9 @@ Set Notification as read
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -321,7 +321,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2notificationsreadpost"></a>
+<a name="apiv2notificationsreadpost"></a>
 # **ApiV2NotificationsReadPost**
 > void ApiV2NotificationsReadPost ()
 
@@ -334,9 +334,9 @@ Set all Notifications as read
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -413,7 +413,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2notificationssearchpost"></a>
+<a name="apiv2notificationssearchpost"></a>
 # **ApiV2NotificationsSearchPost**
 > List&lt;NotificationModel&gt; ApiV2NotificationsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2NotificationsSearchPostRequest apiV2NotificationsSearchPostRequest = null)
 
@@ -426,9 +426,9 @@ Search Notifications for current User
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

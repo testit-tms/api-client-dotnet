@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Api.AttachmentsApi
+# TestIT.ApiClient.Api.AttachmentsApi
 
 All URIs are relative to *http://localhost*
 
@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2AttachmentsOccupiedFileStorageSizeGet**](AttachmentsApi.md#apiv2attachmentsoccupiedfilestoragesizeget) | **GET** /api/v2/attachments/occupiedFileStorageSize | Get size of attachments storage in bytes |
 | [**ApiV2AttachmentsPost**](AttachmentsApi.md#apiv2attachmentspost) | **POST** /api/v2/attachments | Upload new attachment file |
 
-<a id="apiv2attachmentsiddelete"></a>
+<a name="apiv2attachmentsiddelete"></a>
 # **ApiV2AttachmentsIdDelete**
 > void ApiV2AttachmentsIdDelete (Guid id)
 
@@ -20,9 +20,9 @@ Delete attachment file
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -104,7 +104,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2attachmentsidget"></a>
+<a name="apiv2attachmentsidget"></a>
 # **ApiV2AttachmentsIdGet**
 > FileParameter ApiV2AttachmentsIdGet (Guid id, int? width = null, int? height = null, ImageResizeType? resizeType = null, string backgroundColor = null, bool? preview = null)
 
@@ -115,9 +115,9 @@ Download attachment file
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -212,7 +212,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2attachmentsoccupiedfilestoragesizeget"></a>
+<a name="apiv2attachmentsoccupiedfilestoragesizeget"></a>
 # **ApiV2AttachmentsOccupiedFileStorageSizeGet**
 > long ApiV2AttachmentsOccupiedFileStorageSizeGet ()
 
@@ -223,9 +223,9 @@ Get size of attachments storage in bytes
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {
@@ -305,7 +305,7 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="apiv2attachmentspost"></a>
+<a name="apiv2attachmentspost"></a>
 # **ApiV2AttachmentsPost**
 > AttachmentModel ApiV2AttachmentsPost (FileParameter file = null)
 
@@ -318,9 +318,9 @@ File size is restricted to 50 MB (52 428 800 bytes)
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using TestIt.ApiClient.Api;
-using TestIt.ApiClient.Client;
-using TestIt.ApiClient.Model;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
 
 namespace Example
 {

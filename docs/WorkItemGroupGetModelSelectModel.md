@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.WorkItemGroupGetModelSelectModel
+# TestIT.ApiClient.Model.WorkItemGroupGetModelSelectModel
 Model containing options to filter work items
 
 ## Properties

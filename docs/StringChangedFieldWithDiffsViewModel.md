@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.StringChangedFieldWithDiffsViewModel
+# TestIT.ApiClient.Model.StringChangedFieldWithDiffsViewModel
 
 ## Properties
 

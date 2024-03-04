@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.AutotestResultOutcome
+# TestIT.ApiClient.Model.AutotestResultOutcome
 
 ## Properties
 

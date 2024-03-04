@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.IterationPutModel
+# TestIT.ApiClient.Model.IterationPutModel
 
 ## Properties
 

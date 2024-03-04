@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.PeriodViewModel
+# TestIT.ApiClient.Model.PeriodViewModel
 
 ## Properties
 

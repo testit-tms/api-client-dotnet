@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest
+# TestIT.ApiClient.Model.ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest
 
 ## Properties
 

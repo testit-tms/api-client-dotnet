@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest
+# TestIT.ApiClient.Model.ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest
 Collection of filters to apply to search
 
 ## Properties

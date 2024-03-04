@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.TestRunStatisticsErrorCategoriesGetModel
+# TestIT.ApiClient.Model.TestRunStatisticsErrorCategoriesGetModel
 
 ## Properties
 

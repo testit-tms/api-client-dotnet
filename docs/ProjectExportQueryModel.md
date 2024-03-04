@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.ProjectExportQueryModel
+# TestIT.ApiClient.Model.ProjectExportQueryModel
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.AutoTestModelV2GetModel
+# TestIT.ApiClient.Model.AutoTestModelV2GetModel
 
 ## Properties
 
@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **CreatedById** | **Guid** |  | 
 **ModifiedById** | **Guid?** |  | [optional] 
 **Labels** | [**List&lt;LabelShortModel&gt;**](LabelShortModel.md) |  | [optional] 
+**ExternalKey** | **string** |  | [optional] 
 **Id** | **Guid** | Unique ID of the entity | 
 **IsDeleted** | **bool** | Indicates if the entity is deleted | 
 

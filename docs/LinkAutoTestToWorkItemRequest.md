@@ -1,4 +1,4 @@
-# TestIt.ApiClient.Model.LinkAutoTestToWorkItemRequest
+# TestIT.ApiClient.Model.LinkAutoTestToWorkItemRequest
 
 ## Properties
 
