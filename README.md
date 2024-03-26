@@ -371,7 +371,7 @@ Class | Method | HTTP request | Description
 <a name="documentation-for-models"></a>
 ## Documentation for Models
 
-You can see the documentation [here](https://github.com/testit-tms/api-client-dotnet/blob/main/docs/Readme.md)
+You can see the documentation [here](https://github.com/testit-tms/api-client-dotnet/blob/main/docs/README.MD)
 
 # Contributing
 
