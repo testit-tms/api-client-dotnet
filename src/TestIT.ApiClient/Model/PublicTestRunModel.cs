@@ -50,7 +50,9 @@ namespace TestIT.ApiClient.Model
         /// <param name="autoTests">autoTests (required).</param>
         /// <param name="testPoints">testPoints (required).</param>
         /// <param name="status">status (required).</param>
-        public PublicTestRunModel(Guid testRunId = default(Guid), Guid? testPlanId = default(Guid?), long testPlanGlobalId = default(long), string name = default(string), string productName = default(string), string build = default(string), List<ConfigurationModel> configurations = default(List<ConfigurationModel>), List<AutoTestModel> autoTests = default(List<AutoTestModel>), List<PublicTestPointModel> testPoints = default(List<PublicTestPointModel>), string status = default(string))
+        /// <param name="customParameters">customParameters.</param>
+        /// <param name="testRunDescription">testRunDescription.</param>
+        public PublicTestRunModel(Guid testRunId = default(Guid), Guid? testPlanId = default(Guid?), long testPlanGlobalId = default(long), string name = default(string), string productName = default(string), string build = default(string), List<ConfigurationModel> configurations = default(List<ConfigurationModel>), List<AutoTestModel> autoTests = default(List<AutoTestModel>), List<PublicTestPointModel> testPoints = default(List<PublicTestPointModel>), string status = default(string), Dictionary<string, string> customParameters = default(Dictionary<string, string>), string testRunDescription = default(string))
         {
             this.TestRunId = testRunId;
             this.TestPlanGlobalId = testPlanGlobalId;
@@ -87,6 +89,8 @@ namespace TestIT.ApiClient.Model
             this.TestPlanId = testPlanId;
             this.ProductName = productName;
             this.Build = build;
+            this.CustomParameters = customParameters;
+            this.TestRunDescription = testRunDescription;
         }
 
         /// <summary>
@@ -150,6 +154,18 @@ namespace TestIT.ApiClient.Model
         public string Status { get; set; }
 
         /// <summary>
+        /// Gets or Sets CustomParameters
+        /// </summary>
+        [DataMember(Name = "customParameters", EmitDefaultValue = true)]
+        public Dictionary<string, string> CustomParameters { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TestRunDescription
+        /// </summary>
+        [DataMember(Name = "testRunDescription", EmitDefaultValue = true)]
+        public string TestRunDescription { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -167,6 +183,8 @@ namespace TestIT.ApiClient.Model
             sb.Append("  AutoTests: ").Append(AutoTests).Append("\n");
             sb.Append("  TestPoints: ").Append(TestPoints).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  CustomParameters: ").Append(CustomParameters).Append("\n");
+            sb.Append("  TestRunDescription: ").Append(TestRunDescription).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -253,6 +271,17 @@ namespace TestIT.ApiClient.Model
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.CustomParameters == input.CustomParameters ||
+                    this.CustomParameters != null &&
+                    input.CustomParameters != null &&
+                    this.CustomParameters.SequenceEqual(input.CustomParameters)
+                ) && 
+                (
+                    this.TestRunDescription == input.TestRunDescription ||
+                    (this.TestRunDescription != null &&
+                    this.TestRunDescription.Equals(input.TestRunDescription))
                 );
         }
 
@@ -301,6 +330,14 @@ namespace TestIT.ApiClient.Model
                 if (this.Status != null)
                 {
                     hashCode = (hashCode * 59) + this.Status.GetHashCode();
+                }
+                if (this.CustomParameters != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomParameters.GetHashCode();
+                }
+                if (this.TestRunDescription != null)
+                {
+                    hashCode = (hashCode * 59) + this.TestRunDescription.GetHashCode();
                 }
                 return hashCode;
             }

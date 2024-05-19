@@ -717,7 +717,7 @@ catch (ApiException e)
 
 <a name="apiv2webhookstestpost"></a>
 # **ApiV2WebhooksTestPost**
-> RequestData ApiV2WebhooksTestPost (ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = null)
+> WebhookResponse ApiV2WebhooksTestPost (ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = null)
 
 Test webhook's url
 
@@ -752,7 +752,7 @@ namespace Example
             try
             {
                 // Test webhook's url
-                RequestData result = apiInstance.ApiV2WebhooksTestPost(apiV2WebhooksTestPostRequest);
+                WebhookResponse result = apiInstance.ApiV2WebhooksTestPost(apiV2WebhooksTestPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -773,7 +773,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Test webhook's url
-    ApiResponse<RequestData> response = apiInstance.ApiV2WebhooksTestPostWithHttpInfo(apiV2WebhooksTestPostRequest);
+    ApiResponse<WebhookResponse> response = apiInstance.ApiV2WebhooksTestPostWithHttpInfo(apiV2WebhooksTestPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -794,7 +794,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**RequestData**](RequestData.md)
+[**WebhookResponse**](WebhookResponse.md)
 
 ### Authorization
 

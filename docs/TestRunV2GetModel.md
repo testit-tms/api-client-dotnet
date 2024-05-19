@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **CreatedByUserName** | **string** |  | [optional] 
 **Attachments** | [**List&lt;AttachmentModel&gt;**](AttachmentModel.md) |  | 
 **Links** | [**List&lt;LinkModel&gt;**](LinkModel.md) |  | 
+**CustomParameters** | **Dictionary&lt;string, string&gt;** |  | [optional] 
+**Webhooks** | [**List&lt;NamedEntityModel&gt;**](NamedEntityModel.md) |  | 
 **Id** | **Guid** |  | 
 **Name** | **string** |  | 
 **Description** | **string** |  | [optional] 

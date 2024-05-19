@@ -45,11 +45,13 @@ namespace TestIT.ApiClient.Model
         /// <param name="autoTestIds">autoTestIds.</param>
         /// <param name="iterationId">iterationId (required).</param>
         /// <param name="parameterModels">parameterModels.</param>
-        public PublicTestPointModel(Guid configurationId = default(Guid), long configurationGlobalId = default(long), List<Guid> autoTestIds = default(List<Guid>), Guid iterationId = default(Guid), List<ParameterShortModel> parameterModels = default(List<ParameterShortModel>))
+        /// <param name="id">id (required).</param>
+        public PublicTestPointModel(Guid configurationId = default(Guid), long configurationGlobalId = default(long), List<Guid> autoTestIds = default(List<Guid>), Guid iterationId = default(Guid), List<ParameterShortModel> parameterModels = default(List<ParameterShortModel>), Guid id = default(Guid))
         {
             this.ConfigurationId = configurationId;
             this.ConfigurationGlobalId = configurationGlobalId;
             this.IterationId = iterationId;
+            this.Id = id;
             this.AutoTestIds = autoTestIds;
             this.ParameterModels = parameterModels;
         }
@@ -85,6 +87,12 @@ namespace TestIT.ApiClient.Model
         public List<ParameterShortModel> ParameterModels { get; set; }
 
         /// <summary>
+        /// Gets or Sets Id
+        /// </summary>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
+        public Guid Id { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -97,6 +105,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  AutoTestIds: ").Append(AutoTestIds).Append("\n");
             sb.Append("  IterationId: ").Append(IterationId).Append("\n");
             sb.Append("  ParameterModels: ").Append(ParameterModels).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -157,6 +166,11 @@ namespace TestIT.ApiClient.Model
                     this.ParameterModels != null &&
                     input.ParameterModels != null &&
                     this.ParameterModels.SequenceEqual(input.ParameterModels)
+                ) && 
+                (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 );
         }
 
@@ -185,6 +199,10 @@ namespace TestIT.ApiClient.Model
                 if (this.ParameterModels != null)
                 {
                     hashCode = (hashCode * 59) + this.ParameterModels.GetHashCode();
+                }
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
                 return hashCode;
             }

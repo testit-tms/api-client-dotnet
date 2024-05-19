@@ -59,11 +59,13 @@ namespace TestIT.ApiClient.Model
         /// <param name="createdByUserName">createdByUserName.</param>
         /// <param name="attachments">attachments (required).</param>
         /// <param name="links">links (required).</param>
+        /// <param name="customParameters">customParameters.</param>
+        /// <param name="webhooks">webhooks (required).</param>
         /// <param name="id">id (required).</param>
         /// <param name="name">name (required).</param>
         /// <param name="description">description.</param>
         /// <param name="launchSource">Once launch source is specified it cannot be updated.</param>
-        public TestRunV2GetModel(DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), TestRunState stateName = default(TestRunState), Guid projectId = default(Guid), Guid? testPlanId = default(Guid?), List<TestResultV2GetModel> testResults = default(List<TestResultV2GetModel>), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string createdByUserName = default(string), List<AttachmentModel> attachments = default(List<AttachmentModel>), List<LinkModel> links = default(List<LinkModel>), Guid id = default(Guid), string name = default(string), string description = default(string), string launchSource = default(string))
+        public TestRunV2GetModel(DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), TestRunState stateName = default(TestRunState), Guid projectId = default(Guid), Guid? testPlanId = default(Guid?), List<TestResultV2GetModel> testResults = default(List<TestResultV2GetModel>), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string createdByUserName = default(string), List<AttachmentModel> attachments = default(List<AttachmentModel>), List<LinkModel> links = default(List<LinkModel>), Dictionary<string, string> customParameters = default(Dictionary<string, string>), List<NamedEntityModel> webhooks = default(List<NamedEntityModel>), Guid id = default(Guid), string name = default(string), string description = default(string), string launchSource = default(string))
         {
             this.StateName = stateName;
             this.ProjectId = projectId;
@@ -81,6 +83,12 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("links is a required property for TestRunV2GetModel and cannot be null");
             }
             this.Links = links;
+            // to ensure "webhooks" is required (not null)
+            if (webhooks == null)
+            {
+                throw new ArgumentNullException("webhooks is a required property for TestRunV2GetModel and cannot be null");
+            }
+            this.Webhooks = webhooks;
             this.Id = id;
             // to ensure "name" is required (not null)
             if (name == null)
@@ -95,6 +103,7 @@ namespace TestIT.ApiClient.Model
             this.ModifiedDate = modifiedDate;
             this.ModifiedById = modifiedById;
             this.CreatedByUserName = createdByUserName;
+            this.CustomParameters = customParameters;
             this.Description = description;
             this.LaunchSource = launchSource;
         }
@@ -102,14 +111,14 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets StartedOn
         /// </summary>
-        /// <example>&quot;2024-02-20T09:07:44.591229100Z&quot;</example>
+        /// <example>&quot;2024-05-14T09:00:32.159620900Z&quot;</example>
         [DataMember(Name = "startedOn", EmitDefaultValue = true)]
         public DateTime? StartedOn { get; set; }
 
         /// <summary>
         /// Gets or Sets CompletedOn
         /// </summary>
-        /// <example>&quot;2024-02-20T09:07:44.591229100Z&quot;</example>
+        /// <example>&quot;2024-05-14T09:00:32.159620900Z&quot;</example>
         [DataMember(Name = "completedOn", EmitDefaultValue = true)]
         public DateTime? CompletedOn { get; set; }
 
@@ -117,7 +126,7 @@ namespace TestIT.ApiClient.Model
         /// This property is used to link test run with project
         /// </summary>
         /// <value>This property is used to link test run with project</value>
-        /// <example>&quot;11421721-181a-4696-aa8a-ec54c0d06fca&quot;</example>
+        /// <example>&quot;20b3442e-1e9e-4fea-b940-4fde3f2f9ff6&quot;</example>
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
@@ -125,7 +134,7 @@ namespace TestIT.ApiClient.Model
         /// This property is used to link test run with test plan
         /// </summary>
         /// <value>This property is used to link test run with test plan</value>
-        /// <example>&quot;11421721-181a-4696-aa8a-ec54c0d06fca&quot;</example>
+        /// <example>&quot;20b3442e-1e9e-4fea-b940-4fde3f2f9ff6&quot;</example>
         [DataMember(Name = "testPlanId", EmitDefaultValue = true)]
         public Guid? TestPlanId { get; set; }
 
@@ -138,28 +147,28 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        /// <example>&quot;2024-02-20T09:07:44.591229100Z&quot;</example>
+        /// <example>&quot;2024-05-14T09:00:32.159620900Z&quot;</example>
         [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        /// <example>&quot;2024-02-20T09:07:44.591229100Z&quot;</example>
+        /// <example>&quot;2024-05-14T09:00:32.159620900Z&quot;</example>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        /// <example>&quot;11421721-181a-4696-aa8a-ec54c0d06fca&quot;</example>
+        /// <example>&quot;20b3442e-1e9e-4fea-b940-4fde3f2f9ff6&quot;</example>
         [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
-        /// <example>&quot;11421721-181a-4696-aa8a-ec54c0d06fca&quot;</example>
+        /// <example>&quot;20b3442e-1e9e-4fea-b940-4fde3f2f9ff6&quot;</example>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
@@ -183,9 +192,21 @@ namespace TestIT.ApiClient.Model
         public List<LinkModel> Links { get; set; }
 
         /// <summary>
+        /// Gets or Sets CustomParameters
+        /// </summary>
+        [DataMember(Name = "customParameters", EmitDefaultValue = true)]
+        public Dictionary<string, string> CustomParameters { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Webhooks
+        /// </summary>
+        [DataMember(Name = "webhooks", IsRequired = true, EmitDefaultValue = true)]
+        public List<NamedEntityModel> Webhooks { get; set; }
+
+        /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;11421721-181a-4696-aa8a-ec54c0d06fca&quot;</example>
+        /// <example>&quot;20b3442e-1e9e-4fea-b940-4fde3f2f9ff6&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
@@ -231,6 +252,8 @@ namespace TestIT.ApiClient.Model
             sb.Append("  CreatedByUserName: ").Append(CreatedByUserName).Append("\n");
             sb.Append("  Attachments: ").Append(Attachments).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
+            sb.Append("  CustomParameters: ").Append(CustomParameters).Append("\n");
+            sb.Append("  Webhooks: ").Append(Webhooks).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
@@ -338,6 +361,18 @@ namespace TestIT.ApiClient.Model
                     this.Links.SequenceEqual(input.Links)
                 ) && 
                 (
+                    this.CustomParameters == input.CustomParameters ||
+                    this.CustomParameters != null &&
+                    input.CustomParameters != null &&
+                    this.CustomParameters.SequenceEqual(input.CustomParameters)
+                ) && 
+                (
+                    this.Webhooks == input.Webhooks ||
+                    this.Webhooks != null &&
+                    input.Webhooks != null &&
+                    this.Webhooks.SequenceEqual(input.Webhooks)
+                ) && 
+                (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
@@ -416,6 +451,14 @@ namespace TestIT.ApiClient.Model
                 if (this.Links != null)
                 {
                     hashCode = (hashCode * 59) + this.Links.GetHashCode();
+                }
+                if (this.CustomParameters != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomParameters.GetHashCode();
+                }
+                if (this.Webhooks != null)
+                {
+                    hashCode = (hashCode * 59) + this.Webhooks.GetHashCode();
                 }
                 if (this.Id != null)
                 {

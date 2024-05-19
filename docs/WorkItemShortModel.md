@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** | Work Item internal unique identifier | 
 **VersionId** | **Guid** | Work Item version identifier | 
+**VersionNumber** | **int** | Work Item version number | 
 **Name** | **string** | Work Item name | 
 **EntityTypeName** | **string** | Work Item type. Possible values: CheckLists, SharedSteps, TestCases | 
 **ProjectId** | **Guid** | Project unique identifier | 

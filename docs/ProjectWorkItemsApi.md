@@ -345,7 +345,7 @@ catch (ApiException e)
 
 <a name="apiv2projectsprojectidworkitemstagsget"></a>
 # **ApiV2ProjectsProjectIdWorkItemsTagsGet**
-> List&lt;TagModel&gt; ApiV2ProjectsProjectIdWorkItemsTagsGet (Guid projectId, bool? isDeleted = null)
+> List&lt;TagShortModel&gt; ApiV2ProjectsProjectIdWorkItemsTagsGet (Guid projectId, bool? isDeleted = null)
 
 Get WorkItems Tags
 
@@ -383,7 +383,7 @@ namespace Example
             try
             {
                 // Get WorkItems Tags
-                List<TagModel> result = apiInstance.ApiV2ProjectsProjectIdWorkItemsTagsGet(projectId, isDeleted);
+                List<TagShortModel> result = apiInstance.ApiV2ProjectsProjectIdWorkItemsTagsGet(projectId, isDeleted);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -404,7 +404,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get WorkItems Tags
-    ApiResponse<List<TagModel>> response = apiInstance.ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfo(projectId, isDeleted);
+    ApiResponse<List<TagShortModel>> response = apiInstance.ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfo(projectId, isDeleted);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -426,7 +426,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;TagModel&gt;**](TagModel.md)
+[**List&lt;TagShortModel&gt;**](TagShortModel.md)
 
 ### Authorization
 
