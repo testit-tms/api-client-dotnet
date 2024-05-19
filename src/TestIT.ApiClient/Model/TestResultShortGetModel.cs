@@ -49,11 +49,15 @@ namespace TestIT.ApiClient.Model
         /// <param name="outcome">Outcome of the test result (required).</param>
         /// <param name="resultReasons">Collection of result reasons which the test result have (required).</param>
         /// <param name="comment">Comment to the test result.</param>
-        /// <param name="date">Date when the test result has been set (required).</param>
+        /// <param name="date">Date when the test result was completed or started or created (required).</param>
+        /// <param name="createdDate">Date when the test result has been created (required).</param>
+        /// <param name="modifiedDate">Date when the test result has been modified.</param>
+        /// <param name="startedOn">Date when the test result has been started.</param>
+        /// <param name="completedOn">Date when the test result has been completed.</param>
         /// <param name="duration">Time which it took to run the test.</param>
         /// <param name="links">Collection of links attached to the test result (required).</param>
         /// <param name="attachments">Collection of files attached to the test result (required).</param>
-        public TestResultShortGetModel(Guid id = default(Guid), string name = default(string), long autotestGlobalId = default(long), Guid testRunId = default(Guid), Guid configurationId = default(Guid), string configurationName = default(string), string outcome = default(string), List<AutotestResultReasonSubGetModel> resultReasons = default(List<AutotestResultReasonSubGetModel>), string comment = default(string), DateTime date = default(DateTime), long? duration = default(long?), List<LinkSubGetModel> links = default(List<LinkSubGetModel>), List<AttachmentModel> attachments = default(List<AttachmentModel>))
+        public TestResultShortGetModel(Guid id = default(Guid), string name = default(string), long autotestGlobalId = default(long), Guid testRunId = default(Guid), Guid configurationId = default(Guid), string configurationName = default(string), string outcome = default(string), List<AutotestResultReasonSubGetModel> resultReasons = default(List<AutotestResultReasonSubGetModel>), string comment = default(string), DateTime date = default(DateTime), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? duration = default(long?), List<LinkSubGetModel> links = default(List<LinkSubGetModel>), List<AttachmentModel> attachments = default(List<AttachmentModel>))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -84,6 +88,7 @@ namespace TestIT.ApiClient.Model
             }
             this.ResultReasons = resultReasons;
             this.Date = date;
+            this.CreatedDate = createdDate;
             // to ensure "links" is required (not null)
             if (links == null)
             {
@@ -97,6 +102,9 @@ namespace TestIT.ApiClient.Model
             }
             this.Attachments = attachments;
             this.Comment = comment;
+            this.ModifiedDate = modifiedDate;
+            this.StartedOn = startedOn;
+            this.CompletedOn = completedOn;
             this.Duration = duration;
         }
 
@@ -164,11 +172,40 @@ namespace TestIT.ApiClient.Model
         public string Comment { get; set; }
 
         /// <summary>
-        /// Date when the test result has been set
+        /// Date when the test result was completed or started or created
         /// </summary>
-        /// <value>Date when the test result has been set</value>
+        /// <value>Date when the test result was completed or started or created</value>
         [DataMember(Name = "date", IsRequired = true, EmitDefaultValue = true)]
+        [Obsolete]
         public DateTime Date { get; set; }
+
+        /// <summary>
+        /// Date when the test result has been created
+        /// </summary>
+        /// <value>Date when the test result has been created</value>
+        [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
+        public DateTime CreatedDate { get; set; }
+
+        /// <summary>
+        /// Date when the test result has been modified
+        /// </summary>
+        /// <value>Date when the test result has been modified</value>
+        [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
+        public DateTime? ModifiedDate { get; set; }
+
+        /// <summary>
+        /// Date when the test result has been started
+        /// </summary>
+        /// <value>Date when the test result has been started</value>
+        [DataMember(Name = "startedOn", EmitDefaultValue = true)]
+        public DateTime? StartedOn { get; set; }
+
+        /// <summary>
+        /// Date when the test result has been completed
+        /// </summary>
+        /// <value>Date when the test result has been completed</value>
+        [DataMember(Name = "completedOn", EmitDefaultValue = true)]
+        public DateTime? CompletedOn { get; set; }
 
         /// <summary>
         /// Time which it took to run the test
@@ -209,6 +246,10 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ResultReasons: ").Append(ResultReasons).Append("\n");
             sb.Append("  Comment: ").Append(Comment).Append("\n");
             sb.Append("  Date: ").Append(Date).Append("\n");
+            sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
+            sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
+            sb.Append("  StartedOn: ").Append(StartedOn).Append("\n");
+            sb.Append("  CompletedOn: ").Append(CompletedOn).Append("\n");
             sb.Append("  Duration: ").Append(Duration).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  Attachments: ").Append(Attachments).Append("\n");
@@ -298,6 +339,26 @@ namespace TestIT.ApiClient.Model
                     this.Date.Equals(input.Date))
                 ) && 
                 (
+                    this.CreatedDate == input.CreatedDate ||
+                    (this.CreatedDate != null &&
+                    this.CreatedDate.Equals(input.CreatedDate))
+                ) && 
+                (
+                    this.ModifiedDate == input.ModifiedDate ||
+                    (this.ModifiedDate != null &&
+                    this.ModifiedDate.Equals(input.ModifiedDate))
+                ) && 
+                (
+                    this.StartedOn == input.StartedOn ||
+                    (this.StartedOn != null &&
+                    this.StartedOn.Equals(input.StartedOn))
+                ) && 
+                (
+                    this.CompletedOn == input.CompletedOn ||
+                    (this.CompletedOn != null &&
+                    this.CompletedOn.Equals(input.CompletedOn))
+                ) && 
+                (
                     this.Duration == input.Duration ||
                     (this.Duration != null &&
                     this.Duration.Equals(input.Duration))
@@ -361,6 +422,22 @@ namespace TestIT.ApiClient.Model
                 if (this.Date != null)
                 {
                     hashCode = (hashCode * 59) + this.Date.GetHashCode();
+                }
+                if (this.CreatedDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
+                }
+                if (this.ModifiedDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
+                }
+                if (this.StartedOn != null)
+                {
+                    hashCode = (hashCode * 59) + this.StartedOn.GetHashCode();
+                }
+                if (this.CompletedOn != null)
+                {
+                    hashCode = (hashCode * 59) + this.CompletedOn.GetHashCode();
                 }
                 if (this.Duration != null)
                 {

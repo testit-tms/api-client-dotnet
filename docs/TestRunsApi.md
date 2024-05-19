@@ -4,10 +4,16 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
+| [**ApiV2TestRunsDelete**](TestRunsApi.md#apiv2testrunsdelete) | **DELETE** /api/v2/testRuns | Delete multiple test runs |
+| [**ApiV2TestRunsIdDelete**](TestRunsApi.md#apiv2testrunsiddelete) | **DELETE** /api/v2/testRuns/{id} | Delete test run |
+| [**ApiV2TestRunsIdPurgePost**](TestRunsApi.md#apiv2testrunsidpurgepost) | **POST** /api/v2/testRuns/{id}/purge | Permanently delete test run from archive |
+| [**ApiV2TestRunsIdRestorePost**](TestRunsApi.md#apiv2testrunsidrestorepost) | **POST** /api/v2/testRuns/{id}/restore | Restore test run from the archive |
 | [**ApiV2TestRunsIdStatisticsFilterPost**](TestRunsApi.md#apiv2testrunsidstatisticsfilterpost) | **POST** /api/v2/testRuns/{id}/statistics/filter | Search for the test run test results and build statistics |
 | [**ApiV2TestRunsIdTestPointsResultsGet**](TestRunsApi.md#apiv2testrunsidtestpointsresultsget) | **GET** /api/v2/testRuns/{id}/testPoints/results | Get test results from the test run grouped by test points |
 | [**ApiV2TestRunsIdTestResultsBulkPut**](TestRunsApi.md#apiv2testrunsidtestresultsbulkput) | **PUT** /api/v2/testRuns/{id}/testResults/bulk | Partial edit of multiple test results in the test run |
 | [**ApiV2TestRunsIdTestResultsLastModifiedModificationDateGet**](TestRunsApi.md#apiv2testrunsidtestresultslastmodifiedmodificationdateget) | **GET** /api/v2/testRuns/{id}/testResults/lastModified/modificationDate | Get modification date of last test result of the test run |
+| [**ApiV2TestRunsPurgeBulkPost**](TestRunsApi.md#apiv2testrunspurgebulkpost) | **POST** /api/v2/testRuns/purge/bulk | Permanently delete multiple test runs from archive |
+| [**ApiV2TestRunsRestoreBulkPost**](TestRunsApi.md#apiv2testrunsrestorebulkpost) | **POST** /api/v2/testRuns/restore/bulk | Restore multiple test runs from the archive |
 | [**ApiV2TestRunsSearchPost**](TestRunsApi.md#apiv2testrunssearchpost) | **POST** /api/v2/testRuns/search | Search for test runs |
 | [**ApiV2TestRunsUpdateMultiplePost**](TestRunsApi.md#apiv2testrunsupdatemultiplepost) | **POST** /api/v2/testRuns/updateMultiple | Update multiple test runs |
 | [**CompleteTestRun**](TestRunsApi.md#completetestrun) | **POST** /api/v2/testRuns/{id}/complete | Complete TestRun |
@@ -20,6 +26,408 @@ All URIs are relative to *http://localhost*
 | [**StartTestRun**](TestRunsApi.md#starttestrun) | **POST** /api/v2/testRuns/{id}/start | Start TestRun |
 | [**StopTestRun**](TestRunsApi.md#stoptestrun) | **POST** /api/v2/testRuns/{id}/stop | Stop TestRun |
 | [**UpdateEmpty**](TestRunsApi.md#updateempty) | **PUT** /api/v2/testRuns | Update empty TestRun |
+
+<a name="apiv2testrunsdelete"></a>
+# **ApiV2TestRunsDelete**
+> int ApiV2TestRunsDelete (ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = null)
+
+Delete multiple test runs
+
+<br>Use case  <br>User sets selection parameters of test runs  <br>System search and delete collection of test runs  <br>System returns the number of deleted test runs
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
+
+namespace Example
+{
+    public class ApiV2TestRunsDeleteExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
+            var apiV2TestRunsDeleteRequest = new ApiV2TestRunsDeleteRequest(); // ApiV2TestRunsDeleteRequest |  (optional) 
+
+            try
+            {
+                // Delete multiple test runs
+                int result = apiInstance.ApiV2TestRunsDelete(apiV2TestRunsDeleteRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TestRunsApi.ApiV2TestRunsDelete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2TestRunsDeleteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete multiple test runs
+    ApiResponse<int> response = apiInstance.ApiV2TestRunsDeleteWithHttpInfo(apiV2TestRunsDeleteRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TestRunsApi.ApiV2TestRunsDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **apiV2TestRunsDeleteRequest** | [**ApiV2TestRunsDeleteRequest**](ApiV2TestRunsDeleteRequest.md) |  | [optional]  |
+
+### Return type
+
+**int**
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **400** | &lt;br&gt;- ID is not valid  &lt;br&gt;- Project was archived and cannot be edited anymore |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="apiv2testrunsiddelete"></a>
+# **ApiV2TestRunsIdDelete**
+> void ApiV2TestRunsIdDelete (Guid id)
+
+Delete test run
+
+<br>Use case  <br>User sets test run internal (guid format) identifier  <br>System search and delete test run
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
+
+namespace Example
+{
+    public class ApiV2TestRunsIdDeleteExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Test run internal (UUID) identifier
+
+            try
+            {
+                // Delete test run
+                apiInstance.ApiV2TestRunsIdDelete(id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TestRunsApi.ApiV2TestRunsIdDelete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2TestRunsIdDeleteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete test run
+    apiInstance.ApiV2TestRunsIdDeleteWithHttpInfo(id);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TestRunsApi.ApiV2TestRunsIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** | Test run internal (UUID) identifier |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **400** | &lt;br&gt;- ID is not valid  &lt;br&gt;- Project was archived and cannot be edited anymore |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Test run with provided ID cannot be found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="apiv2testrunsidpurgepost"></a>
+# **ApiV2TestRunsIdPurgePost**
+> void ApiV2TestRunsIdPurgePost (Guid id)
+
+Permanently delete test run from archive
+
+<br>Use case  <br>User sets archived test run internal (guid format) identifier  <br>System search and purge archived test run
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
+
+namespace Example
+{
+    public class ApiV2TestRunsIdPurgePostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Test run internal (UUID) identifier
+
+            try
+            {
+                // Permanently delete test run from archive
+                apiInstance.ApiV2TestRunsIdPurgePost(id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TestRunsApi.ApiV2TestRunsIdPurgePost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2TestRunsIdPurgePostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Permanently delete test run from archive
+    apiInstance.ApiV2TestRunsIdPurgePostWithHttpInfo(id);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TestRunsApi.ApiV2TestRunsIdPurgePostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** | Test run internal (UUID) identifier |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **400** | &lt;br&gt;- ID is not valid |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Delete permission for archived test runs is required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="apiv2testrunsidrestorepost"></a>
+# **ApiV2TestRunsIdRestorePost**
+> void ApiV2TestRunsIdRestorePost (Guid id)
+
+Restore test run from the archive
+
+<br>Use case  <br>User sets archived test run internal (guid format) identifier  <br>System search and restore test run
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
+
+namespace Example
+{
+    public class ApiV2TestRunsIdRestorePostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Unique ID of the test run
+
+            try
+            {
+                // Restore test run from the archive
+                apiInstance.ApiV2TestRunsIdRestorePost(id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TestRunsApi.ApiV2TestRunsIdRestorePost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2TestRunsIdRestorePostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Restore test run from the archive
+    apiInstance.ApiV2TestRunsIdRestorePostWithHttpInfo(id);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TestRunsApi.ApiV2TestRunsIdRestorePostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** | Unique ID of the test run |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **400** | &lt;br&gt;- ID is not valid  &lt;br&gt;- Project was archived and cannot be edited anymore |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Read permission for archive is required |  -  |
+| **404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="apiv2testrunsidstatisticsfilterpost"></a>
 # **ApiV2TestRunsIdStatisticsFilterPost**
@@ -414,6 +822,212 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **403** | Read permission for test runs is required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="apiv2testrunspurgebulkpost"></a>
+# **ApiV2TestRunsPurgeBulkPost**
+> int ApiV2TestRunsPurgeBulkPost (ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = null)
+
+Permanently delete multiple test runs from archive
+
+<br>Use case  <br>User sets selection parameters of archived test runs  <br>System search and delete collection of archived test runs  <br>System returns the number of deleted archived test runs
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
+
+namespace Example
+{
+    public class ApiV2TestRunsPurgeBulkPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
+            var apiV2TestRunsDeleteRequest = new ApiV2TestRunsDeleteRequest(); // ApiV2TestRunsDeleteRequest |  (optional) 
+
+            try
+            {
+                // Permanently delete multiple test runs from archive
+                int result = apiInstance.ApiV2TestRunsPurgeBulkPost(apiV2TestRunsDeleteRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TestRunsApi.ApiV2TestRunsPurgeBulkPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2TestRunsPurgeBulkPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Permanently delete multiple test runs from archive
+    ApiResponse<int> response = apiInstance.ApiV2TestRunsPurgeBulkPostWithHttpInfo(apiV2TestRunsDeleteRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TestRunsApi.ApiV2TestRunsPurgeBulkPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **apiV2TestRunsDeleteRequest** | [**ApiV2TestRunsDeleteRequest**](ApiV2TestRunsDeleteRequest.md) |  | [optional]  |
+
+### Return type
+
+**int**
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Delete permission for archived test runs is required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="apiv2testrunsrestorebulkpost"></a>
+# **ApiV2TestRunsRestoreBulkPost**
+> int ApiV2TestRunsRestoreBulkPost (ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = null)
+
+Restore multiple test runs from the archive
+
+<br>Use case  <br>User sets selection parameters of archived test runs  <br>System search and restore collection of archived test runs  <br>System returns the number of restored test runs
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
+
+namespace Example
+{
+    public class ApiV2TestRunsRestoreBulkPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
+            var apiV2TestRunsDeleteRequest = new ApiV2TestRunsDeleteRequest(); // ApiV2TestRunsDeleteRequest |  (optional) 
+
+            try
+            {
+                // Restore multiple test runs from the archive
+                int result = apiInstance.ApiV2TestRunsRestoreBulkPost(apiV2TestRunsDeleteRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TestRunsApi.ApiV2TestRunsRestoreBulkPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2TestRunsRestoreBulkPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Restore multiple test runs from the archive
+    ApiResponse<int> response = apiInstance.ApiV2TestRunsRestoreBulkPostWithHttpInfo(apiV2TestRunsDeleteRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TestRunsApi.ApiV2TestRunsRestoreBulkPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **apiV2TestRunsDeleteRequest** | [**ApiV2TestRunsDeleteRequest**](ApiV2TestRunsDeleteRequest.md) |  | [optional]  |
+
+### Return type
+
+**int**
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Read permission for archive is required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -921,7 +1535,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
-| **400** | &lt;br&gt;- Field is required  &lt;br&gt;- Test run cannot be created with deleted test points  &lt;br&gt;- Test run cannot be created in deleted test suite  &lt;br&gt;- Test run cannot be created with non-automated test point  &lt;br&gt;- Test run must be automated  &lt;br&gt;- Some work items do not exist  &lt;br&gt;- Project ID is invalid  &lt;br&gt;- Test point selectors are required  &lt;br&gt;- Some work item IDs are invalid  &lt;br&gt;- Some configuration IDs are invalid |  -  |
+| **400** | &lt;br&gt;- Field is required  &lt;br&gt;- Test run cannot be created with deleted test points  &lt;br&gt;- Test suites with IDs [ids] is archived  &lt;br&gt;- Configurations with IDs [ids] is archived  &lt;br&gt;- Test run cannot be created with non-automated test point  &lt;br&gt;- Test run must be automated  &lt;br&gt;- Some work items do not exist  &lt;br&gt;- Project ID is invalid  &lt;br&gt;- Test point selectors are required  &lt;br&gt;- Some work item IDs are invalid  &lt;br&gt;- Some configuration IDs are invalid |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test results is required |  -  |
 | **404** | Some test points do not exists |  -  |
@@ -1025,7 +1639,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
-| **400** | &lt;br&gt;- Field is required  &lt;br&gt;- Test run cannot be created with deleted test points  &lt;br&gt;- Test run cannot be created in deleted test suite  &lt;br&gt;- Test run cannot be created with non-automated test point  &lt;br&gt;- Some work items do not exist  &lt;br&gt;- Project ID is invalid |  -  |
+| **400** | &lt;br&gt;- Field is required  &lt;br&gt;- Test run cannot be created with deleted test points  &lt;br&gt;- Test suites with IDs [ids] is archived  &lt;br&gt;- Configurations with IDs [ids] is archived  &lt;br&gt;- Test run cannot be created with non-automated test point  &lt;br&gt;- Some work items do not exist  &lt;br&gt;- Project ID is invalid |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test results is required |  -  |
 | **404** | Some test points, work items or configurations do not exist |  -  |

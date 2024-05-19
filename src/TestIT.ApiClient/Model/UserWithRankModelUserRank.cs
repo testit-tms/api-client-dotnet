@@ -46,7 +46,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="failedTestPoints">failedTestPoints (required).</param>
         /// <param name="skippedTestPoints">skippedTestPoints (required).</param>
         /// <param name="blockedTestPoints">blockedTestPoints (required).</param>
-        public UserWithRankModelUserRank(int score = default(int), int workItemsCreated = default(int), int passedTestPoints = default(int), int failedTestPoints = default(int), int skippedTestPoints = default(int), int blockedTestPoints = default(int))
+        /// <param name="levelAvatarEnabled">levelAvatarEnabled (required).</param>
+        public UserWithRankModelUserRank(int score = default(int), int workItemsCreated = default(int), int passedTestPoints = default(int), int failedTestPoints = default(int), int skippedTestPoints = default(int), int blockedTestPoints = default(int), bool levelAvatarEnabled = default(bool))
         {
             this.Score = score;
             this.WorkItemsCreated = workItemsCreated;
@@ -54,6 +55,7 @@ namespace TestIT.ApiClient.Model
             this.FailedTestPoints = failedTestPoints;
             this.SkippedTestPoints = skippedTestPoints;
             this.BlockedTestPoints = blockedTestPoints;
+            this.LevelAvatarEnabled = levelAvatarEnabled;
         }
 
         /// <summary>
@@ -93,6 +95,12 @@ namespace TestIT.ApiClient.Model
         public int BlockedTestPoints { get; set; }
 
         /// <summary>
+        /// Gets or Sets LevelAvatarEnabled
+        /// </summary>
+        [DataMember(Name = "levelAvatarEnabled", IsRequired = true, EmitDefaultValue = true)]
+        public bool LevelAvatarEnabled { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -106,6 +114,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  FailedTestPoints: ").Append(FailedTestPoints).Append("\n");
             sb.Append("  SkippedTestPoints: ").Append(SkippedTestPoints).Append("\n");
             sb.Append("  BlockedTestPoints: ").Append(BlockedTestPoints).Append("\n");
+            sb.Append("  LevelAvatarEnabled: ").Append(LevelAvatarEnabled).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -164,6 +173,10 @@ namespace TestIT.ApiClient.Model
                 (
                     this.BlockedTestPoints == input.BlockedTestPoints ||
                     this.BlockedTestPoints.Equals(input.BlockedTestPoints)
+                ) && 
+                (
+                    this.LevelAvatarEnabled == input.LevelAvatarEnabled ||
+                    this.LevelAvatarEnabled.Equals(input.LevelAvatarEnabled)
                 );
         }
 
@@ -182,6 +195,7 @@ namespace TestIT.ApiClient.Model
                 hashCode = (hashCode * 59) + this.FailedTestPoints.GetHashCode();
                 hashCode = (hashCode * 59) + this.SkippedTestPoints.GetHashCode();
                 hashCode = (hashCode * 59) + this.BlockedTestPoints.GetHashCode();
+                hashCode = (hashCode * 59) + this.LevelAvatarEnabled.GetHashCode();
                 return hashCode;
             }
         }

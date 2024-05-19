@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **AutoTests** | [**List&lt;AutoTestModel&gt;**](AutoTestModel.md) |  | 
 **TestPoints** | [**List&lt;PublicTestPointModel&gt;**](PublicTestPointModel.md) |  | 
 **Status** | **string** |  | 
+**CustomParameters** | **Dictionary&lt;string, string&gt;** |  | [optional] 
+**TestRunDescription** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

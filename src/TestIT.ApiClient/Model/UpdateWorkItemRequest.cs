@@ -149,14 +149,14 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;11421721-181a-4696-aa8a-ec54c0d06fca&quot;</example>
+        /// <example>&quot;20b3442e-1e9e-4fea-b940-4fde3f2f9ff6&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets SectionId
         /// </summary>
-        /// <example>&quot;11421721-181a-4696-aa8a-ec54c0d06fca&quot;</example>
+        /// <example>&quot;20b3442e-1e9e-4fea-b940-4fde3f2f9ff6&quot;</example>
         [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid SectionId { get; set; }
 

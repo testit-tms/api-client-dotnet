@@ -39,6 +39,9 @@ namespace TestIT.ApiClient.Model
         /// <param name="autoTestGlobalIds">Specifies an autotest global IDs to search results for.</param>
         /// <param name="name">Specifies an autotest name to search results for.</param>
         /// <param name="createdDate">createdDate.</param>
+        /// <param name="modifiedDate">modifiedDate.</param>
+        /// <param name="startedOn">startedOn.</param>
+        /// <param name="completedOn">completedOn.</param>
         /// <param name="duration">duration.</param>
         /// <param name="resultReasons">Specifies result reasons for searching test results.</param>
         /// <param name="configurationIds">Specifies a test result configuration IDs to search for.</param>
@@ -46,12 +49,15 @@ namespace TestIT.ApiClient.Model
         /// <param name="failureCategories">Specifies a test result failure categories to search for.</param>
         /// <param name="_namespace">Specifies a test result namespace to search for.</param>
         /// <param name="className">Specifies a test result class name to search for.</param>
-        public ApiV2TestResultsSearchPostRequest(List<Guid> testRunIds = default(List<Guid>), List<long> autoTestGlobalIds = default(List<long>), string name = default(string), TestResultsFilterModelCreatedDate createdDate = default(TestResultsFilterModelCreatedDate), TestResultsFilterModelDuration duration = default(TestResultsFilterModelDuration), List<string> resultReasons = default(List<string>), List<Guid> configurationIds = default(List<Guid>), List<TestResultOutcome> outcomes = default(List<TestResultOutcome>), List<FailureCategoryModel> failureCategories = default(List<FailureCategoryModel>), string _namespace = default(string), string className = default(string))
+        public ApiV2TestResultsSearchPostRequest(List<Guid> testRunIds = default(List<Guid>), List<long> autoTestGlobalIds = default(List<long>), string name = default(string), TestResultsFilterModelCreatedDate createdDate = default(TestResultsFilterModelCreatedDate), TestResultsFilterModelModifiedDate modifiedDate = default(TestResultsFilterModelModifiedDate), TestResultsFilterModelStartedOn startedOn = default(TestResultsFilterModelStartedOn), TestResultsFilterModelCompletedOn completedOn = default(TestResultsFilterModelCompletedOn), TestResultsFilterModelDuration duration = default(TestResultsFilterModelDuration), List<string> resultReasons = default(List<string>), List<Guid> configurationIds = default(List<Guid>), List<TestResultOutcome> outcomes = default(List<TestResultOutcome>), List<FailureCategoryModel> failureCategories = default(List<FailureCategoryModel>), string _namespace = default(string), string className = default(string))
         {
             this.TestRunIds = testRunIds;
             this.AutoTestGlobalIds = autoTestGlobalIds;
             this.Name = name;
             this.CreatedDate = createdDate;
+            this.ModifiedDate = modifiedDate;
+            this.StartedOn = startedOn;
+            this.CompletedOn = completedOn;
             this.Duration = duration;
             this.ResultReasons = resultReasons;
             this.ConfigurationIds = configurationIds;
@@ -87,6 +93,24 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
         public TestResultsFilterModelCreatedDate CreatedDate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ModifiedDate
+        /// </summary>
+        [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
+        public TestResultsFilterModelModifiedDate ModifiedDate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets StartedOn
+        /// </summary>
+        [DataMember(Name = "startedOn", EmitDefaultValue = true)]
+        public TestResultsFilterModelStartedOn StartedOn { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CompletedOn
+        /// </summary>
+        [DataMember(Name = "completedOn", EmitDefaultValue = true)]
+        public TestResultsFilterModelCompletedOn CompletedOn { get; set; }
 
         /// <summary>
         /// Gets or Sets Duration
@@ -148,6 +172,9 @@ namespace TestIT.ApiClient.Model
             sb.Append("  AutoTestGlobalIds: ").Append(AutoTestGlobalIds).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
+            sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
+            sb.Append("  StartedOn: ").Append(StartedOn).Append("\n");
+            sb.Append("  CompletedOn: ").Append(CompletedOn).Append("\n");
             sb.Append("  Duration: ").Append(Duration).Append("\n");
             sb.Append("  ResultReasons: ").Append(ResultReasons).Append("\n");
             sb.Append("  ConfigurationIds: ").Append(ConfigurationIds).Append("\n");
@@ -211,6 +238,21 @@ namespace TestIT.ApiClient.Model
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
+                ) && 
+                (
+                    this.ModifiedDate == input.ModifiedDate ||
+                    (this.ModifiedDate != null &&
+                    this.ModifiedDate.Equals(input.ModifiedDate))
+                ) && 
+                (
+                    this.StartedOn == input.StartedOn ||
+                    (this.StartedOn != null &&
+                    this.StartedOn.Equals(input.StartedOn))
+                ) && 
+                (
+                    this.CompletedOn == input.CompletedOn ||
+                    (this.CompletedOn != null &&
+                    this.CompletedOn.Equals(input.CompletedOn))
                 ) && 
                 (
                     this.Duration == input.Duration ||
@@ -277,6 +319,18 @@ namespace TestIT.ApiClient.Model
                 if (this.CreatedDate != null)
                 {
                     hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
+                }
+                if (this.ModifiedDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
+                }
+                if (this.StartedOn != null)
+                {
+                    hashCode = (hashCode * 59) + this.StartedOn.GetHashCode();
+                }
+                if (this.CompletedOn != null)
+                {
+                    hashCode = (hashCode * 59) + this.CompletedOn.GetHashCode();
                 }
                 if (this.Duration != null)
                 {

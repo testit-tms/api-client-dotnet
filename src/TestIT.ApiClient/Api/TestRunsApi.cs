@@ -28,6 +28,90 @@ namespace TestIT.ApiClient.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// Delete multiple test runs
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets selection parameters of test runs  &lt;br&gt;System search and delete collection of test runs  &lt;br&gt;System returns the number of deleted test runs
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TestRunsDeleteRequest"> (optional)</param>
+        /// <returns>int</returns>
+        int ApiV2TestRunsDelete(ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = default(ApiV2TestRunsDeleteRequest));
+
+        /// <summary>
+        /// Delete multiple test runs
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets selection parameters of test runs  &lt;br&gt;System search and delete collection of test runs  &lt;br&gt;System returns the number of deleted test runs
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TestRunsDeleteRequest"> (optional)</param>
+        /// <returns>ApiResponse of int</returns>
+        ApiResponse<int> ApiV2TestRunsDeleteWithHttpInfo(ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = default(ApiV2TestRunsDeleteRequest));
+        /// <summary>
+        /// Delete test run
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets test run internal (guid format) identifier  &lt;br&gt;System search and delete test run
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Test run internal (UUID) identifier</param>
+        /// <returns></returns>
+        void ApiV2TestRunsIdDelete(Guid id);
+
+        /// <summary>
+        /// Delete test run
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets test run internal (guid format) identifier  &lt;br&gt;System search and delete test run
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Test run internal (UUID) identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ApiV2TestRunsIdDeleteWithHttpInfo(Guid id);
+        /// <summary>
+        /// Permanently delete test run from archive
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets archived test run internal (guid format) identifier  &lt;br&gt;System search and purge archived test run
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Test run internal (UUID) identifier</param>
+        /// <returns></returns>
+        void ApiV2TestRunsIdPurgePost(Guid id);
+
+        /// <summary>
+        /// Permanently delete test run from archive
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets archived test run internal (guid format) identifier  &lt;br&gt;System search and purge archived test run
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Test run internal (UUID) identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ApiV2TestRunsIdPurgePostWithHttpInfo(Guid id);
+        /// <summary>
+        /// Restore test run from the archive
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets archived test run internal (guid format) identifier  &lt;br&gt;System search and restore test run
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the test run</param>
+        /// <returns></returns>
+        void ApiV2TestRunsIdRestorePost(Guid id);
+
+        /// <summary>
+        /// Restore test run from the archive
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets archived test run internal (guid format) identifier  &lt;br&gt;System search and restore test run
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the test run</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ApiV2TestRunsIdRestorePostWithHttpInfo(Guid id);
+        /// <summary>
         /// Search for the test run test results and build statistics
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
@@ -103,6 +187,48 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test run unique ID</param>
         /// <returns>ApiResponse of DateTime</returns>
         ApiResponse<DateTime> ApiV2TestRunsIdTestResultsLastModifiedModificationDateGetWithHttpInfo(Guid id);
+        /// <summary>
+        /// Permanently delete multiple test runs from archive
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets selection parameters of archived test runs  &lt;br&gt;System search and delete collection of archived test runs  &lt;br&gt;System returns the number of deleted archived test runs
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TestRunsDeleteRequest"> (optional)</param>
+        /// <returns>int</returns>
+        int ApiV2TestRunsPurgeBulkPost(ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = default(ApiV2TestRunsDeleteRequest));
+
+        /// <summary>
+        /// Permanently delete multiple test runs from archive
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets selection parameters of archived test runs  &lt;br&gt;System search and delete collection of archived test runs  &lt;br&gt;System returns the number of deleted archived test runs
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TestRunsDeleteRequest"> (optional)</param>
+        /// <returns>ApiResponse of int</returns>
+        ApiResponse<int> ApiV2TestRunsPurgeBulkPostWithHttpInfo(ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = default(ApiV2TestRunsDeleteRequest));
+        /// <summary>
+        /// Restore multiple test runs from the archive
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets selection parameters of archived test runs  &lt;br&gt;System search and restore collection of archived test runs  &lt;br&gt;System returns the number of restored test runs
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TestRunsDeleteRequest"> (optional)</param>
+        /// <returns>int</returns>
+        int ApiV2TestRunsRestoreBulkPost(ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = default(ApiV2TestRunsDeleteRequest));
+
+        /// <summary>
+        /// Restore multiple test runs from the archive
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets selection parameters of archived test runs  &lt;br&gt;System search and restore collection of archived test runs  &lt;br&gt;System returns the number of restored test runs
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TestRunsDeleteRequest"> (optional)</param>
+        /// <returns>ApiResponse of int</returns>
+        ApiResponse<int> ApiV2TestRunsRestoreBulkPostWithHttpInfo(ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = default(ApiV2TestRunsDeleteRequest));
         /// <summary>
         /// Search for test runs
         /// </summary>
@@ -371,6 +497,98 @@ namespace TestIT.ApiClient.Api
     {
         #region Asynchronous Operations
         /// <summary>
+        /// Delete multiple test runs
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets selection parameters of test runs  &lt;br&gt;System search and delete collection of test runs  &lt;br&gt;System returns the number of deleted test runs
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TestRunsDeleteRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of int</returns>
+        System.Threading.Tasks.Task<int> ApiV2TestRunsDeleteAsync(ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = default(ApiV2TestRunsDeleteRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Delete multiple test runs
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets selection parameters of test runs  &lt;br&gt;System search and delete collection of test runs  &lt;br&gt;System returns the number of deleted test runs
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TestRunsDeleteRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (int)</returns>
+        System.Threading.Tasks.Task<ApiResponse<int>> ApiV2TestRunsDeleteWithHttpInfoAsync(ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = default(ApiV2TestRunsDeleteRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Delete test run
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets test run internal (guid format) identifier  &lt;br&gt;System search and delete test run
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Test run internal (UUID) identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ApiV2TestRunsIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Delete test run
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets test run internal (guid format) identifier  &lt;br&gt;System search and delete test run
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Test run internal (UUID) identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestRunsIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Permanently delete test run from archive
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets archived test run internal (guid format) identifier  &lt;br&gt;System search and purge archived test run
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Test run internal (UUID) identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ApiV2TestRunsIdPurgePostAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Permanently delete test run from archive
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets archived test run internal (guid format) identifier  &lt;br&gt;System search and purge archived test run
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Test run internal (UUID) identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestRunsIdPurgePostWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Restore test run from the archive
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets archived test run internal (guid format) identifier  &lt;br&gt;System search and restore test run
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the test run</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ApiV2TestRunsIdRestorePostAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Restore test run from the archive
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets archived test run internal (guid format) identifier  &lt;br&gt;System search and restore test run
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the test run</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestRunsIdRestorePostWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
         /// Search for the test run test results and build statistics
         /// </summary>
         /// <remarks>
@@ -466,6 +684,52 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DateTime)</returns>
         System.Threading.Tasks.Task<ApiResponse<DateTime>> ApiV2TestRunsIdTestResultsLastModifiedModificationDateGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Permanently delete multiple test runs from archive
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets selection parameters of archived test runs  &lt;br&gt;System search and delete collection of archived test runs  &lt;br&gt;System returns the number of deleted archived test runs
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TestRunsDeleteRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of int</returns>
+        System.Threading.Tasks.Task<int> ApiV2TestRunsPurgeBulkPostAsync(ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = default(ApiV2TestRunsDeleteRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Permanently delete multiple test runs from archive
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets selection parameters of archived test runs  &lt;br&gt;System search and delete collection of archived test runs  &lt;br&gt;System returns the number of deleted archived test runs
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TestRunsDeleteRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (int)</returns>
+        System.Threading.Tasks.Task<ApiResponse<int>> ApiV2TestRunsPurgeBulkPostWithHttpInfoAsync(ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = default(ApiV2TestRunsDeleteRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Restore multiple test runs from the archive
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets selection parameters of archived test runs  &lt;br&gt;System search and restore collection of archived test runs  &lt;br&gt;System returns the number of restored test runs
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TestRunsDeleteRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of int</returns>
+        System.Threading.Tasks.Task<int> ApiV2TestRunsRestoreBulkPostAsync(ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = default(ApiV2TestRunsDeleteRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Restore multiple test runs from the archive
+        /// </summary>
+        /// <remarks>
+        /// &lt;br&gt;Use case  &lt;br&gt;User sets selection parameters of archived test runs  &lt;br&gt;System search and restore collection of archived test runs  &lt;br&gt;System returns the number of restored test runs
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TestRunsDeleteRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (int)</returns>
+        System.Threading.Tasks.Task<ApiResponse<int>> ApiV2TestRunsRestoreBulkPostWithHttpInfoAsync(ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = default(ApiV2TestRunsDeleteRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Search for test runs
         /// </summary>
@@ -968,6 +1232,470 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
+        /// Delete multiple test runs &lt;br&gt;Use case  &lt;br&gt;User sets selection parameters of test runs  &lt;br&gt;System search and delete collection of test runs  &lt;br&gt;System returns the number of deleted test runs
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TestRunsDeleteRequest"> (optional)</param>
+        /// <returns>int</returns>
+        public int ApiV2TestRunsDelete(ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = default(ApiV2TestRunsDeleteRequest))
+        {
+            TestIT.ApiClient.Client.ApiResponse<int> localVarResponse = ApiV2TestRunsDeleteWithHttpInfo(apiV2TestRunsDeleteRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Delete multiple test runs &lt;br&gt;Use case  &lt;br&gt;User sets selection parameters of test runs  &lt;br&gt;System search and delete collection of test runs  &lt;br&gt;System returns the number of deleted test runs
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TestRunsDeleteRequest"> (optional)</param>
+        /// <returns>ApiResponse of int</returns>
+        public TestIT.ApiClient.Client.ApiResponse<int> ApiV2TestRunsDeleteWithHttpInfo(ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = default(ApiV2TestRunsDeleteRequest))
+        {
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = apiV2TestRunsDeleteRequest;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<int>("/api/v2/testRuns", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TestRunsDelete", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete multiple test runs &lt;br&gt;Use case  &lt;br&gt;User sets selection parameters of test runs  &lt;br&gt;System search and delete collection of test runs  &lt;br&gt;System returns the number of deleted test runs
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TestRunsDeleteRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of int</returns>
+        public async System.Threading.Tasks.Task<int> ApiV2TestRunsDeleteAsync(ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = default(ApiV2TestRunsDeleteRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIT.ApiClient.Client.ApiResponse<int> localVarResponse = await ApiV2TestRunsDeleteWithHttpInfoAsync(apiV2TestRunsDeleteRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Delete multiple test runs &lt;br&gt;Use case  &lt;br&gt;User sets selection parameters of test runs  &lt;br&gt;System search and delete collection of test runs  &lt;br&gt;System returns the number of deleted test runs
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TestRunsDeleteRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (int)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<int>> ApiV2TestRunsDeleteWithHttpInfoAsync(ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = default(ApiV2TestRunsDeleteRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = apiV2TestRunsDeleteRequest;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<int>("/api/v2/testRuns", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TestRunsDelete", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete test run &lt;br&gt;Use case  &lt;br&gt;User sets test run internal (guid format) identifier  &lt;br&gt;System search and delete test run
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Test run internal (UUID) identifier</param>
+        /// <returns></returns>
+        public void ApiV2TestRunsIdDelete(Guid id)
+        {
+            ApiV2TestRunsIdDeleteWithHttpInfo(id);
+        }
+
+        /// <summary>
+        /// Delete test run &lt;br&gt;Use case  &lt;br&gt;User sets test run internal (guid format) identifier  &lt;br&gt;System search and delete test run
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Test run internal (UUID) identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2TestRunsIdDeleteWithHttpInfo(Guid id)
+        {
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>("/api/v2/testRuns/{id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TestRunsIdDelete", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete test run &lt;br&gt;Use case  &lt;br&gt;User sets test run internal (guid format) identifier  &lt;br&gt;System search and delete test run
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Test run internal (UUID) identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ApiV2TestRunsIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await ApiV2TestRunsIdDeleteWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Delete test run &lt;br&gt;Use case  &lt;br&gt;User sets test run internal (guid format) identifier  &lt;br&gt;System search and delete test run
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Test run internal (UUID) identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2TestRunsIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/v2/testRuns/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TestRunsIdDelete", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Permanently delete test run from archive &lt;br&gt;Use case  &lt;br&gt;User sets archived test run internal (guid format) identifier  &lt;br&gt;System search and purge archived test run
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Test run internal (UUID) identifier</param>
+        /// <returns></returns>
+        public void ApiV2TestRunsIdPurgePost(Guid id)
+        {
+            ApiV2TestRunsIdPurgePostWithHttpInfo(id);
+        }
+
+        /// <summary>
+        /// Permanently delete test run from archive &lt;br&gt;Use case  &lt;br&gt;User sets archived test run internal (guid format) identifier  &lt;br&gt;System search and purge archived test run
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Test run internal (UUID) identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2TestRunsIdPurgePostWithHttpInfo(Guid id)
+        {
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/api/v2/testRuns/{id}/purge", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TestRunsIdPurgePost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Permanently delete test run from archive &lt;br&gt;Use case  &lt;br&gt;User sets archived test run internal (guid format) identifier  &lt;br&gt;System search and purge archived test run
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Test run internal (UUID) identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ApiV2TestRunsIdPurgePostAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await ApiV2TestRunsIdPurgePostWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Permanently delete test run from archive &lt;br&gt;Use case  &lt;br&gt;User sets archived test run internal (guid format) identifier  &lt;br&gt;System search and purge archived test run
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Test run internal (UUID) identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2TestRunsIdPurgePostWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/testRuns/{id}/purge", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TestRunsIdPurgePost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Restore test run from the archive &lt;br&gt;Use case  &lt;br&gt;User sets archived test run internal (guid format) identifier  &lt;br&gt;System search and restore test run
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the test run</param>
+        /// <returns></returns>
+        public void ApiV2TestRunsIdRestorePost(Guid id)
+        {
+            ApiV2TestRunsIdRestorePostWithHttpInfo(id);
+        }
+
+        /// <summary>
+        /// Restore test run from the archive &lt;br&gt;Use case  &lt;br&gt;User sets archived test run internal (guid format) identifier  &lt;br&gt;System search and restore test run
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the test run</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2TestRunsIdRestorePostWithHttpInfo(Guid id)
+        {
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/api/v2/testRuns/{id}/restore", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TestRunsIdRestorePost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Restore test run from the archive &lt;br&gt;Use case  &lt;br&gt;User sets archived test run internal (guid format) identifier  &lt;br&gt;System search and restore test run
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the test run</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ApiV2TestRunsIdRestorePostAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await ApiV2TestRunsIdRestorePostWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Restore test run from the archive &lt;br&gt;Use case  &lt;br&gt;User sets archived test run internal (guid format) identifier  &lt;br&gt;System search and restore test run
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the test run</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2TestRunsIdRestorePostWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/testRuns/{id}/restore", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TestRunsIdRestorePost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Search for the test run test results and build statistics 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
@@ -1443,6 +2171,244 @@ namespace TestIT.ApiClient.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2TestRunsIdTestResultsLastModifiedModificationDateGet", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Permanently delete multiple test runs from archive &lt;br&gt;Use case  &lt;br&gt;User sets selection parameters of archived test runs  &lt;br&gt;System search and delete collection of archived test runs  &lt;br&gt;System returns the number of deleted archived test runs
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TestRunsDeleteRequest"> (optional)</param>
+        /// <returns>int</returns>
+        public int ApiV2TestRunsPurgeBulkPost(ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = default(ApiV2TestRunsDeleteRequest))
+        {
+            TestIT.ApiClient.Client.ApiResponse<int> localVarResponse = ApiV2TestRunsPurgeBulkPostWithHttpInfo(apiV2TestRunsDeleteRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Permanently delete multiple test runs from archive &lt;br&gt;Use case  &lt;br&gt;User sets selection parameters of archived test runs  &lt;br&gt;System search and delete collection of archived test runs  &lt;br&gt;System returns the number of deleted archived test runs
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TestRunsDeleteRequest"> (optional)</param>
+        /// <returns>ApiResponse of int</returns>
+        public TestIT.ApiClient.Client.ApiResponse<int> ApiV2TestRunsPurgeBulkPostWithHttpInfo(ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = default(ApiV2TestRunsDeleteRequest))
+        {
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = apiV2TestRunsDeleteRequest;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<int>("/api/v2/testRuns/purge/bulk", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TestRunsPurgeBulkPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Permanently delete multiple test runs from archive &lt;br&gt;Use case  &lt;br&gt;User sets selection parameters of archived test runs  &lt;br&gt;System search and delete collection of archived test runs  &lt;br&gt;System returns the number of deleted archived test runs
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TestRunsDeleteRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of int</returns>
+        public async System.Threading.Tasks.Task<int> ApiV2TestRunsPurgeBulkPostAsync(ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = default(ApiV2TestRunsDeleteRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIT.ApiClient.Client.ApiResponse<int> localVarResponse = await ApiV2TestRunsPurgeBulkPostWithHttpInfoAsync(apiV2TestRunsDeleteRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Permanently delete multiple test runs from archive &lt;br&gt;Use case  &lt;br&gt;User sets selection parameters of archived test runs  &lt;br&gt;System search and delete collection of archived test runs  &lt;br&gt;System returns the number of deleted archived test runs
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TestRunsDeleteRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (int)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<int>> ApiV2TestRunsPurgeBulkPostWithHttpInfoAsync(ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = default(ApiV2TestRunsDeleteRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = apiV2TestRunsDeleteRequest;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<int>("/api/v2/testRuns/purge/bulk", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TestRunsPurgeBulkPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Restore multiple test runs from the archive &lt;br&gt;Use case  &lt;br&gt;User sets selection parameters of archived test runs  &lt;br&gt;System search and restore collection of archived test runs  &lt;br&gt;System returns the number of restored test runs
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TestRunsDeleteRequest"> (optional)</param>
+        /// <returns>int</returns>
+        public int ApiV2TestRunsRestoreBulkPost(ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = default(ApiV2TestRunsDeleteRequest))
+        {
+            TestIT.ApiClient.Client.ApiResponse<int> localVarResponse = ApiV2TestRunsRestoreBulkPostWithHttpInfo(apiV2TestRunsDeleteRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Restore multiple test runs from the archive &lt;br&gt;Use case  &lt;br&gt;User sets selection parameters of archived test runs  &lt;br&gt;System search and restore collection of archived test runs  &lt;br&gt;System returns the number of restored test runs
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TestRunsDeleteRequest"> (optional)</param>
+        /// <returns>ApiResponse of int</returns>
+        public TestIT.ApiClient.Client.ApiResponse<int> ApiV2TestRunsRestoreBulkPostWithHttpInfo(ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = default(ApiV2TestRunsDeleteRequest))
+        {
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = apiV2TestRunsDeleteRequest;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<int>("/api/v2/testRuns/restore/bulk", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TestRunsRestoreBulkPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Restore multiple test runs from the archive &lt;br&gt;Use case  &lt;br&gt;User sets selection parameters of archived test runs  &lt;br&gt;System search and restore collection of archived test runs  &lt;br&gt;System returns the number of restored test runs
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TestRunsDeleteRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of int</returns>
+        public async System.Threading.Tasks.Task<int> ApiV2TestRunsRestoreBulkPostAsync(ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = default(ApiV2TestRunsDeleteRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIT.ApiClient.Client.ApiResponse<int> localVarResponse = await ApiV2TestRunsRestoreBulkPostWithHttpInfoAsync(apiV2TestRunsDeleteRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Restore multiple test runs from the archive &lt;br&gt;Use case  &lt;br&gt;User sets selection parameters of archived test runs  &lt;br&gt;System search and restore collection of archived test runs  &lt;br&gt;System returns the number of restored test runs
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiV2TestRunsDeleteRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (int)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<int>> ApiV2TestRunsRestoreBulkPostWithHttpInfoAsync(ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = default(ApiV2TestRunsDeleteRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = apiV2TestRunsDeleteRequest;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<int>("/api/v2/testRuns/restore/bulk", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TestRunsRestoreBulkPost", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

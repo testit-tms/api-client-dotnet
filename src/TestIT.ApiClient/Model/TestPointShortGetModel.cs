@@ -69,9 +69,11 @@ namespace TestIT.ApiClient.Model
         /// <param name="tags">Collection of the test point tags (required).</param>
         /// <param name="links">Collection of the test point links (required).</param>
         /// <param name="testSuiteId">Unique ID of test suite the test point assigned to (required).</param>
+        /// <param name="testSuiteName">Name of the test suite (required).</param>
         /// <param name="workItemId">Unique ID of work item the test point represents (required).</param>
         /// <param name="workItemGlobalId">Global ID of work item the test point represents (required).</param>
         /// <param name="workItemVersionId">Unique ID of work item version the test point represents (required).</param>
+        /// <param name="workItemVersionNumber">Number of work item version the test point represents (required).</param>
         /// <param name="workItemMedianDuration">Median duration of work item the test point represents.</param>
         /// <param name="status">status (required).</param>
         /// <param name="priority">priority (required).</param>
@@ -89,7 +91,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="workItemCreatedDate">Creation date of work item (required).</param>
         /// <param name="workItemModifiedById">Unique ID of the work item last editor.</param>
         /// <param name="workItemModifiedDate">Modified date of work item.</param>
-        public TestPointShortGetModel(Guid id = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), Guid? testerId = default(Guid?), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<string> tags = default(List<string>), List<string> links = default(List<string>), Guid testSuiteId = default(Guid), Guid workItemId = default(Guid), long workItemGlobalId = default(long), Guid workItemVersionId = default(Guid), long? workItemMedianDuration = default(long?), TestPointStatus status = default(TestPointStatus), WorkItemPriorityModel priority = default(WorkItemPriorityModel), bool isAutomated = default(bool), string name = default(string), Guid configurationId = default(Guid), int duration = default(int), Guid sectionId = default(Guid), string sectionName = default(string), Guid projectId = default(Guid), TestPointShortGetModelLastTestResult lastTestResult = default(TestPointShortGetModelLastTestResult), Guid iterationId = default(Guid), WorkItemState workItemState = default(WorkItemState), Guid workItemCreatedById = default(Guid), DateTime workItemCreatedDate = default(DateTime), Guid? workItemModifiedById = default(Guid?), DateTime? workItemModifiedDate = default(DateTime?))
+        public TestPointShortGetModel(Guid id = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), Guid? testerId = default(Guid?), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<string> tags = default(List<string>), List<string> links = default(List<string>), Guid testSuiteId = default(Guid), string testSuiteName = default(string), Guid workItemId = default(Guid), long workItemGlobalId = default(long), Guid workItemVersionId = default(Guid), int workItemVersionNumber = default(int), long? workItemMedianDuration = default(long?), TestPointStatus status = default(TestPointStatus), WorkItemPriorityModel priority = default(WorkItemPriorityModel), bool isAutomated = default(bool), string name = default(string), Guid configurationId = default(Guid), int duration = default(int), Guid sectionId = default(Guid), string sectionName = default(string), Guid projectId = default(Guid), TestPointShortGetModelLastTestResult lastTestResult = default(TestPointShortGetModelLastTestResult), Guid iterationId = default(Guid), WorkItemState workItemState = default(WorkItemState), Guid workItemCreatedById = default(Guid), DateTime workItemCreatedDate = default(DateTime), Guid? workItemModifiedById = default(Guid?), DateTime? workItemModifiedDate = default(DateTime?))
         {
             this.Id = id;
             this.CreatedDate = createdDate;
@@ -113,9 +115,16 @@ namespace TestIT.ApiClient.Model
             }
             this.Links = links;
             this.TestSuiteId = testSuiteId;
+            // to ensure "testSuiteName" is required (not null)
+            if (testSuiteName == null)
+            {
+                throw new ArgumentNullException("testSuiteName is a required property for TestPointShortGetModel and cannot be null");
+            }
+            this.TestSuiteName = testSuiteName;
             this.WorkItemId = workItemId;
             this.WorkItemGlobalId = workItemGlobalId;
             this.WorkItemVersionId = workItemVersionId;
+            this.WorkItemVersionNumber = workItemVersionNumber;
             this.Status = status;
             this.Priority = priority;
             this.IsAutomated = isAutomated;
@@ -227,6 +236,13 @@ namespace TestIT.ApiClient.Model
         public Guid TestSuiteId { get; set; }
 
         /// <summary>
+        /// Name of the test suite
+        /// </summary>
+        /// <value>Name of the test suite</value>
+        [DataMember(Name = "testSuiteName", IsRequired = true, EmitDefaultValue = true)]
+        public string TestSuiteName { get; set; }
+
+        /// <summary>
         /// Unique ID of work item the test point represents
         /// </summary>
         /// <value>Unique ID of work item the test point represents</value>
@@ -246,6 +262,13 @@ namespace TestIT.ApiClient.Model
         /// <value>Unique ID of work item version the test point represents</value>
         [DataMember(Name = "workItemVersionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid WorkItemVersionId { get; set; }
+
+        /// <summary>
+        /// Number of work item version the test point represents
+        /// </summary>
+        /// <value>Number of work item version the test point represents</value>
+        [DataMember(Name = "workItemVersionNumber", IsRequired = true, EmitDefaultValue = true)]
+        public int WorkItemVersionNumber { get; set; }
 
         /// <summary>
         /// Median duration of work item the test point represents
@@ -363,9 +386,11 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  TestSuiteId: ").Append(TestSuiteId).Append("\n");
+            sb.Append("  TestSuiteName: ").Append(TestSuiteName).Append("\n");
             sb.Append("  WorkItemId: ").Append(WorkItemId).Append("\n");
             sb.Append("  WorkItemGlobalId: ").Append(WorkItemGlobalId).Append("\n");
             sb.Append("  WorkItemVersionId: ").Append(WorkItemVersionId).Append("\n");
+            sb.Append("  WorkItemVersionNumber: ").Append(WorkItemVersionNumber).Append("\n");
             sb.Append("  WorkItemMedianDuration: ").Append(WorkItemMedianDuration).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Priority: ").Append(Priority).Append("\n");
@@ -478,6 +503,11 @@ namespace TestIT.ApiClient.Model
                     this.TestSuiteId.Equals(input.TestSuiteId))
                 ) && 
                 (
+                    this.TestSuiteName == input.TestSuiteName ||
+                    (this.TestSuiteName != null &&
+                    this.TestSuiteName.Equals(input.TestSuiteName))
+                ) && 
+                (
                     this.WorkItemId == input.WorkItemId ||
                     (this.WorkItemId != null &&
                     this.WorkItemId.Equals(input.WorkItemId))
@@ -490,6 +520,10 @@ namespace TestIT.ApiClient.Model
                     this.WorkItemVersionId == input.WorkItemVersionId ||
                     (this.WorkItemVersionId != null &&
                     this.WorkItemVersionId.Equals(input.WorkItemVersionId))
+                ) && 
+                (
+                    this.WorkItemVersionNumber == input.WorkItemVersionNumber ||
+                    this.WorkItemVersionNumber.Equals(input.WorkItemVersionNumber)
                 ) && 
                 (
                     this.WorkItemMedianDuration == input.WorkItemMedianDuration ||
@@ -626,6 +660,10 @@ namespace TestIT.ApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.TestSuiteId.GetHashCode();
                 }
+                if (this.TestSuiteName != null)
+                {
+                    hashCode = (hashCode * 59) + this.TestSuiteName.GetHashCode();
+                }
                 if (this.WorkItemId != null)
                 {
                     hashCode = (hashCode * 59) + this.WorkItemId.GetHashCode();
@@ -635,6 +673,7 @@ namespace TestIT.ApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.WorkItemVersionId.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.WorkItemVersionNumber.GetHashCode();
                 if (this.WorkItemMedianDuration != null)
                 {
                     hashCode = (hashCode * 59) + this.WorkItemMedianDuration.GetHashCode();

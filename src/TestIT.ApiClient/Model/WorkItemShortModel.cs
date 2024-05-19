@@ -54,6 +54,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="id">Work Item internal unique identifier (required).</param>
         /// <param name="versionId">Work Item version identifier (required).</param>
+        /// <param name="versionNumber">Work Item version number (required).</param>
         /// <param name="name">Work Item name (required).</param>
         /// <param name="entityTypeName">Work Item type. Possible values: CheckLists, SharedSteps, TestCases (required).</param>
         /// <param name="projectId">Project unique identifier (required).</param>
@@ -74,10 +75,11 @@ namespace TestIT.ApiClient.Model
         /// <param name="tagNames">Array of tag names of Work Item.</param>
         /// <param name="iterations">Set of iterations related to Work Item (required).</param>
         /// <param name="links">Set of links related to Work Item (required).</param>
-        public WorkItemShortModel(Guid id = default(Guid), Guid versionId = default(Guid), string name = default(string), string entityTypeName = default(string), Guid projectId = default(Guid), Guid sectionId = default(Guid), string sectionName = default(string), bool isAutomated = default(bool), long globalId = default(long), int duration = default(int), long? medianDuration = default(long?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), WorkItemStates state = default(WorkItemStates), WorkItemPriorityModel priority = default(WorkItemPriorityModel), bool isDeleted = default(bool), List<string> tagNames = default(List<string>), List<IterationModel> iterations = default(List<IterationModel>), List<LinkShortModel> links = default(List<LinkShortModel>))
+        public WorkItemShortModel(Guid id = default(Guid), Guid versionId = default(Guid), int versionNumber = default(int), string name = default(string), string entityTypeName = default(string), Guid projectId = default(Guid), Guid sectionId = default(Guid), string sectionName = default(string), bool isAutomated = default(bool), long globalId = default(long), int duration = default(int), long? medianDuration = default(long?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), WorkItemStates state = default(WorkItemStates), WorkItemPriorityModel priority = default(WorkItemPriorityModel), bool isDeleted = default(bool), List<string> tagNames = default(List<string>), List<IterationModel> iterations = default(List<IterationModel>), List<LinkShortModel> links = default(List<LinkShortModel>))
         {
             this.Id = id;
             this.VersionId = versionId;
+            this.VersionNumber = versionNumber;
             // to ensure "name" is required (not null)
             if (name == null)
             {
@@ -138,6 +140,13 @@ namespace TestIT.ApiClient.Model
         /// <value>Work Item version identifier</value>
         [DataMember(Name = "versionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid VersionId { get; set; }
+
+        /// <summary>
+        /// Work Item version number
+        /// </summary>
+        /// <value>Work Item version number</value>
+        [DataMember(Name = "versionNumber", IsRequired = true, EmitDefaultValue = true)]
+        public int VersionNumber { get; set; }
 
         /// <summary>
         /// Work Item name
@@ -278,6 +287,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("class WorkItemShortModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  VersionId: ").Append(VersionId).Append("\n");
+            sb.Append("  VersionNumber: ").Append(VersionNumber).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  EntityTypeName: ").Append(EntityTypeName).Append("\n");
             sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
@@ -342,6 +352,10 @@ namespace TestIT.ApiClient.Model
                     this.VersionId == input.VersionId ||
                     (this.VersionId != null &&
                     this.VersionId.Equals(input.VersionId))
+                ) && 
+                (
+                    this.VersionNumber == input.VersionNumber ||
+                    this.VersionNumber.Equals(input.VersionNumber)
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -460,6 +474,7 @@ namespace TestIT.ApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.VersionId.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.VersionNumber.GetHashCode();
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();

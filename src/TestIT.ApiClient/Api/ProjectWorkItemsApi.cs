@@ -126,8 +126,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
-        /// <returns>List&lt;TagModel&gt;</returns>
-        List<TagModel> ApiV2ProjectsProjectIdWorkItemsTagsGet(Guid projectId, bool? isDeleted = default(bool?));
+        /// <returns>List&lt;TagShortModel&gt;</returns>
+        List<TagShortModel> ApiV2ProjectsProjectIdWorkItemsTagsGet(Guid projectId, bool? isDeleted = default(bool?));
 
         /// <summary>
         /// Get WorkItems Tags
@@ -138,8 +138,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;TagModel&gt;</returns>
-        ApiResponse<List<TagModel>> ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfo(Guid projectId, bool? isDeleted = default(bool?));
+        /// <returns>ApiResponse of List&lt;TagShortModel&gt;</returns>
+        ApiResponse<List<TagShortModel>> ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfo(Guid projectId, bool? isDeleted = default(bool?));
         /// <summary>
         /// Get project work items
         /// </summary>
@@ -303,8 +303,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId">Project internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;TagModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TagModel>> ApiV2ProjectsProjectIdWorkItemsTagsGetAsync(Guid projectId, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;TagShortModel&gt;</returns>
+        System.Threading.Tasks.Task<List<TagShortModel>> ApiV2ProjectsProjectIdWorkItemsTagsGetAsync(Guid projectId, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get WorkItems Tags
@@ -316,8 +316,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId">Project internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;TagModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TagModel>>> ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfoAsync(Guid projectId, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;TagShortModel&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<TagShortModel>>> ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfoAsync(Guid projectId, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get project work items
         /// </summary>
@@ -1157,10 +1157,10 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
-        /// <returns>List&lt;TagModel&gt;</returns>
-        public List<TagModel> ApiV2ProjectsProjectIdWorkItemsTagsGet(Guid projectId, bool? isDeleted = default(bool?))
+        /// <returns>List&lt;TagShortModel&gt;</returns>
+        public List<TagShortModel> ApiV2ProjectsProjectIdWorkItemsTagsGet(Guid projectId, bool? isDeleted = default(bool?))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<TagModel>> localVarResponse = ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfo(projectId, isDeleted);
+            TestIT.ApiClient.Client.ApiResponse<List<TagShortModel>> localVarResponse = ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfo(projectId, isDeleted);
             return localVarResponse.Data;
         }
 
@@ -1170,8 +1170,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;TagModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<TagModel>> ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfo(Guid projectId, bool? isDeleted = default(bool?))
+        /// <returns>ApiResponse of List&lt;TagShortModel&gt;</returns>
+        public TestIT.ApiClient.Client.ApiResponse<List<TagShortModel>> ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfo(Guid projectId, bool? isDeleted = default(bool?))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1202,7 +1202,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<TagModel>>("/api/v2/projects/{projectId}/workItems/tags", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<TagShortModel>>("/api/v2/projects/{projectId}/workItems/tags", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1220,10 +1220,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId">Project internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;TagModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TagModel>> ApiV2ProjectsProjectIdWorkItemsTagsGetAsync(Guid projectId, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;TagShortModel&gt;</returns>
+        public async System.Threading.Tasks.Task<List<TagShortModel>> ApiV2ProjectsProjectIdWorkItemsTagsGetAsync(Guid projectId, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<TagModel>> localVarResponse = await ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfoAsync(projectId, isDeleted, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<TagShortModel>> localVarResponse = await ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfoAsync(projectId, isDeleted, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1234,8 +1234,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId">Project internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;TagModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TagModel>>> ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfoAsync(Guid projectId, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;TagShortModel&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TagShortModel>>> ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfoAsync(Guid projectId, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1269,7 +1269,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<TagModel>>("/api/v2/projects/{projectId}/workItems/tags", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<TagShortModel>>("/api/v2/projects/{projectId}/workItems/tags", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

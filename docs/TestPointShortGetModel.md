@@ -15,9 +15,11 @@ Name | Type | Description | Notes
 **Tags** | **List&lt;string&gt;** | Collection of the test point tags | 
 **Links** | **List&lt;string&gt;** | Collection of the test point links | 
 **TestSuiteId** | **Guid** | Unique ID of test suite the test point assigned to | 
+**TestSuiteName** | **string** | Name of the test suite | 
 **WorkItemId** | **Guid** | Unique ID of work item the test point represents | 
 **WorkItemGlobalId** | **long** | Global ID of work item the test point represents | 
 **WorkItemVersionId** | **Guid** | Unique ID of work item version the test point represents | 
+**WorkItemVersionNumber** | **int** | Number of work item version the test point represents | 
 **WorkItemMedianDuration** | **long?** | Median duration of work item the test point represents | [optional] 
 **Status** | **TestPointStatus** |  | 
 **Priority** | **WorkItemPriorityModel** |  | 

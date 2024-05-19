@@ -172,8 +172,8 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2WebhooksTestPostRequest"> (optional)</param>
-        /// <returns>RequestData</returns>
-        RequestData ApiV2WebhooksTestPost(ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = default(ApiV2WebhooksTestPostRequest));
+        /// <returns>WebhookResponse</returns>
+        WebhookResponse ApiV2WebhooksTestPost(ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = default(ApiV2WebhooksTestPostRequest));
 
         /// <summary>
         /// Test webhook&#39;s url
@@ -183,8 +183,8 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2WebhooksTestPostRequest"> (optional)</param>
-        /// <returns>ApiResponse of RequestData</returns>
-        ApiResponse<RequestData> ApiV2WebhooksTestPostWithHttpInfo(ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = default(ApiV2WebhooksTestPostRequest));
+        /// <returns>ApiResponse of WebhookResponse</returns>
+        ApiResponse<WebhookResponse> ApiV2WebhooksTestPostWithHttpInfo(ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = default(ApiV2WebhooksTestPostRequest));
         #endregion Synchronous Operations
     }
 
@@ -378,8 +378,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2WebhooksTestPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of RequestData</returns>
-        System.Threading.Tasks.Task<RequestData> ApiV2WebhooksTestPostAsync(ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = default(ApiV2WebhooksTestPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of WebhookResponse</returns>
+        System.Threading.Tasks.Task<WebhookResponse> ApiV2WebhooksTestPostAsync(ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = default(ApiV2WebhooksTestPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Test webhook&#39;s url
@@ -390,8 +390,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2WebhooksTestPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (RequestData)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RequestData>> ApiV2WebhooksTestPostWithHttpInfoAsync(ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = default(ApiV2WebhooksTestPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (WebhookResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<WebhookResponse>> ApiV2WebhooksTestPostWithHttpInfoAsync(ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = default(ApiV2WebhooksTestPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1523,10 +1523,10 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2WebhooksTestPostRequest"> (optional)</param>
-        /// <returns>RequestData</returns>
-        public RequestData ApiV2WebhooksTestPost(ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = default(ApiV2WebhooksTestPostRequest))
+        /// <returns>WebhookResponse</returns>
+        public WebhookResponse ApiV2WebhooksTestPost(ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = default(ApiV2WebhooksTestPostRequest))
         {
-            TestIT.ApiClient.Client.ApiResponse<RequestData> localVarResponse = ApiV2WebhooksTestPostWithHttpInfo(apiV2WebhooksTestPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<WebhookResponse> localVarResponse = ApiV2WebhooksTestPostWithHttpInfo(apiV2WebhooksTestPostRequest);
             return localVarResponse.Data;
         }
 
@@ -1535,8 +1535,8 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2WebhooksTestPostRequest"> (optional)</param>
-        /// <returns>ApiResponse of RequestData</returns>
-        public TestIT.ApiClient.Client.ApiResponse<RequestData> ApiV2WebhooksTestPostWithHttpInfo(ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = default(ApiV2WebhooksTestPostRequest))
+        /// <returns>ApiResponse of WebhookResponse</returns>
+        public TestIT.ApiClient.Client.ApiResponse<WebhookResponse> ApiV2WebhooksTestPostWithHttpInfo(ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = default(ApiV2WebhooksTestPostRequest))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1564,7 +1564,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<RequestData>("/api/v2/webhooks/test", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<WebhookResponse>("/api/v2/webhooks/test", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1581,10 +1581,10 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2WebhooksTestPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of RequestData</returns>
-        public async System.Threading.Tasks.Task<RequestData> ApiV2WebhooksTestPostAsync(ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = default(ApiV2WebhooksTestPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of WebhookResponse</returns>
+        public async System.Threading.Tasks.Task<WebhookResponse> ApiV2WebhooksTestPostAsync(ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = default(ApiV2WebhooksTestPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<RequestData> localVarResponse = await ApiV2WebhooksTestPostWithHttpInfoAsync(apiV2WebhooksTestPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<WebhookResponse> localVarResponse = await ApiV2WebhooksTestPostWithHttpInfoAsync(apiV2WebhooksTestPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1594,8 +1594,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2WebhooksTestPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (RequestData)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<RequestData>> ApiV2WebhooksTestPostWithHttpInfoAsync(ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = default(ApiV2WebhooksTestPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (WebhookResponse)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<WebhookResponse>> ApiV2WebhooksTestPostWithHttpInfoAsync(ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = default(ApiV2WebhooksTestPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1626,7 +1626,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<RequestData>("/api/v2/webhooks/test", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<WebhookResponse>("/api/v2/webhooks/test", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

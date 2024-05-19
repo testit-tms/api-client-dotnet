@@ -47,7 +47,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="CustomAttributeModel" /> class.
         /// </summary>
         /// <param name="id">Unique ID of the attribute (required).</param>
-        /// <param name="options">Collection of the attribute options  &lt;br /&gt;  Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only.</param>
+        /// <param name="options">Collection of the attribute options  &lt;br /&gt;  Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only (required).</param>
         /// <param name="type">type (required).</param>
         /// <param name="isDeleted">Indicates if the attribute is deleted (required).</param>
         /// <param name="name">Name of the attribute (required).</param>
@@ -57,6 +57,12 @@ namespace TestIT.ApiClient.Model
         public CustomAttributeModel(Guid id = default(Guid), List<CustomAttributeOptionModel> options = default(List<CustomAttributeOptionModel>), CustomAttributeTypesEnum type = default(CustomAttributeTypesEnum), bool isDeleted = default(bool), string name = default(string), bool isEnabled = default(bool), bool isRequired = default(bool), bool isGlobal = default(bool))
         {
             this.Id = id;
+            // to ensure "options" is required (not null)
+            if (options == null)
+            {
+                throw new ArgumentNullException("options is a required property for CustomAttributeModel and cannot be null");
+            }
+            this.Options = options;
             this.Type = type;
             this.IsDeleted = isDeleted;
             // to ensure "name" is required (not null)
@@ -68,7 +74,6 @@ namespace TestIT.ApiClient.Model
             this.IsEnabled = isEnabled;
             this.IsRequired = isRequired;
             this.IsGlobal = isGlobal;
-            this.Options = options;
         }
 
         /// <summary>
@@ -82,7 +87,7 @@ namespace TestIT.ApiClient.Model
         /// Collection of the attribute options  &lt;br /&gt;  Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only
         /// </summary>
         /// <value>Collection of the attribute options  &lt;br /&gt;  Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only</value>
-        [DataMember(Name = "options", EmitDefaultValue = true)]
+        [DataMember(Name = "options", IsRequired = true, EmitDefaultValue = true)]
         public List<CustomAttributeOptionModel> Options { get; set; }
 
         /// <summary>

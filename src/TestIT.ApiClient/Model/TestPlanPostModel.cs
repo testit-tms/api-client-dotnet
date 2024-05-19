@@ -91,7 +91,7 @@ namespace TestIT.ApiClient.Model
         /// Used for analytics
         /// </summary>
         /// <value>Used for analytics</value>
-        /// <example>&quot;2024-02-20T09:07:44.591229100Z&quot;</example>
+        /// <example>&quot;2024-05-14T09:00:32.159620900Z&quot;</example>
         [DataMember(Name = "startDate", EmitDefaultValue = true)]
         public DateTime? StartDate { get; set; }
 
@@ -99,7 +99,7 @@ namespace TestIT.ApiClient.Model
         /// Used for analytics
         /// </summary>
         /// <value>Used for analytics</value>
-        /// <example>&quot;2024-02-20T09:07:44.591229100Z&quot;</example>
+        /// <example>&quot;2024-05-14T09:00:32.159620900Z&quot;</example>
         [DataMember(Name = "endDate", EmitDefaultValue = true)]
         public DateTime? EndDate { get; set; }
 
@@ -120,7 +120,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets ProjectId
         /// </summary>
-        /// <example>&quot;11421721-181a-4696-aa8a-ec54c0d06fca&quot;</example>
+        /// <example>&quot;20b3442e-1e9e-4fea-b940-4fde3f2f9ff6&quot;</example>
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
