@@ -11,13 +11,13 @@ All URIs are relative to *http://localhost*
 | [**ApiV2ProjectsProjectIdTestPlansRestoreBulkPost**](ProjectTestPlansApi.md#apiv2projectsprojectidtestplansrestorebulkpost) | **POST** /api/v2/projects/{projectId}/testPlans/restore/bulk | Restore multiple test plans |
 | [**ApiV2ProjectsProjectIdTestPlansSearchPost**](ProjectTestPlansApi.md#apiv2projectsprojectidtestplanssearchpost) | **POST** /api/v2/projects/{projectId}/testPlans/search | Get Project TestPlans with analytics |
 
-<a name="apiv2projectsprojectidtestplansanalyticsget"></a>
+<a id="apiv2projectsprojectidtestplansanalyticsget"></a>
 # **ApiV2ProjectsProjectIdTestPlansAnalyticsGet**
 > List&lt;TestPlanWithAnalyticModel&gt; ApiV2ProjectsProjectIdTestPlansAnalyticsGet (Guid projectId, bool? isDeleted = null, bool? mustUpdateCache = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
 Get TestPlans analytics
 
-<br>Use case  <br>User sets project internal identifier  <br>User sets query params  <br>User runs method execution  <br>System return analytics
+ Use case   User sets project internal identifier   User sets query params   User runs method execution   System return analytics
 
 ### Example
 ```csharp
@@ -121,11 +121,17 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **200** | OK |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsprojectidtestplansdeletebulkpost"></a>
+<a id="apiv2projectsprojectidtestplansdeletebulkpost"></a>
 # **ApiV2ProjectsProjectIdTestPlansDeleteBulkPost**
 > List&lt;Guid&gt; ApiV2ProjectsProjectIdTestPlansDeleteBulkPost (string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = null)
 
@@ -221,18 +227,23 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | - Read permission for the project is required  - Delete permission for test plans is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsprojectidtestplansnameexistsget"></a>
+<a id="apiv2projectsprojectidtestplansnameexistsget"></a>
 # **ApiV2ProjectsProjectIdTestPlansNameExistsGet**
 > bool ApiV2ProjectsProjectIdTestPlansNameExistsGet (Guid projectId, string name)
 
 Checks if TestPlan exists with the specified name exists for the project
 
-<br>Use case  <br>User sets project internal or global identifier   <br>User runs method execution  <br>System purge delete project workitems
+ Use case   User sets project internal or global identifier    User runs method execution   System purge delete project workitems
 
 ### Example
 ```csharp
@@ -324,11 +335,17 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsprojectidtestplanspurgebulkpost"></a>
+<a id="apiv2projectsprojectidtestplanspurgebulkpost"></a>
 # **ApiV2ProjectsProjectIdTestPlansPurgeBulkPost**
 > void ApiV2ProjectsProjectIdTestPlansPurgeBulkPost (string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = null)
 
@@ -421,13 +438,18 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Full access permission for the archive is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsprojectidtestplansrestorebulkpost"></a>
+<a id="apiv2projectsprojectidtestplansrestorebulkpost"></a>
 # **ApiV2ProjectsProjectIdTestPlansRestoreBulkPost**
-> void ApiV2ProjectsProjectIdTestPlansRestoreBulkPost (string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = null)
+> List&lt;Guid&gt; ApiV2ProjectsProjectIdTestPlansRestoreBulkPost (string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = null)
 
 Restore multiple test plans
 
@@ -463,7 +485,8 @@ namespace Example
             try
             {
                 // Restore multiple test plans
-                apiInstance.ApiV2ProjectsProjectIdTestPlansRestoreBulkPost(projectId, apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest);
+                List<Guid> result = apiInstance.ApiV2ProjectsProjectIdTestPlansRestoreBulkPost(projectId, apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -483,7 +506,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Restore multiple test plans
-    apiInstance.ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfo(projectId, apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest);
+    ApiResponse<List<Guid>> response = apiInstance.ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfo(projectId, apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -502,7 +528,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+**List<Guid>**
 
 ### Authorization
 
@@ -517,18 +543,23 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for the archive is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2projectsprojectidtestplanssearchpost"></a>
+<a id="apiv2projectsprojectidtestplanssearchpost"></a>
 # **ApiV2ProjectsProjectIdTestPlansSearchPost**
 > List&lt;TestPlanWithAnalyticModel&gt; ApiV2ProjectsProjectIdTestPlansSearchPost (string projectId, bool? mustUpdateCache = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ProjectsProjectIdTestPlansSearchPostRequest apiV2ProjectsProjectIdTestPlansSearchPostRequest = null)
 
 Get Project TestPlans with analytics
 
-<br>Use case  <br>User sets project internal or global identifier   <br>User sets request body   <br>User runs method execution  <br>System returns project testplans with analytics
+ Use case   User sets project internal or global identifier    User sets request body    User runs method execution   System returns project testplans with analytics
 
 ### Example
 ```csharp
@@ -632,7 +663,13 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **200** | OK |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

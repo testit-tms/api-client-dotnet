@@ -18,7 +18,7 @@ All URIs are relative to *http://localhost*
 | [**SearchWorkItems**](TestSuitesApi.md#searchworkitems) | **POST** /api/v2/testSuites/{id}/workItems/search | Search WorkItems |
 | [**SetConfigurationsByTestSuiteId**](TestSuitesApi.md#setconfigurationsbytestsuiteid) | **POST** /api/v2/testSuites/{id}/configurations | Set Configurations By TestSuite Id |
 
-<a name="addtestpointstotestsuite"></a>
+<a id="addtestpointstotestsuite"></a>
 # **AddTestPointsToTestSuite**
 > void AddTestPointsToTestSuite (Guid id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = null)
 
@@ -115,11 +115,12 @@ void (empty response body)
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan is required |  -  |
 | **404** | Test suite with provided ID was not found |  -  |
+| **409** | Conflict |  -  |
 | **422** | Shared steps cannot be added to test suite |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testsuitesidpatch"></a>
+<a id="apiv2testsuitesidpatch"></a>
 # **ApiV2TestSuitesIdPatch**
 > void ApiV2TestSuitesIdPatch (Guid id, List<Operation> operation = null)
 
@@ -214,11 +215,16 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Update permission for test suite is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testsuitesidrefreshpost"></a>
+<a id="apiv2testsuitesidrefreshpost"></a>
 # **ApiV2TestSuitesIdRefreshPost**
 > void ApiV2TestSuitesIdRefreshPost (Guid id)
 
@@ -309,11 +315,16 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Update permission for test suite is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testsuitesidworkitemspost"></a>
+<a id="apiv2testsuitesidworkitemspost"></a>
 # **ApiV2TestSuitesIdWorkItemsPost**
 > void ApiV2TestSuitesIdWorkItemsPost (Guid id, List<Guid> requestBody = null)
 
@@ -406,11 +417,16 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testsuitespost"></a>
+<a id="apiv2testsuitespost"></a>
 # **ApiV2TestSuitesPost**
 > TestSuiteV2GetModel ApiV2TestSuitesPost (ApiV2TestSuitesPostRequest apiV2TestSuitesPostRequest = null)
 
@@ -505,11 +521,16 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testsuitesput"></a>
+<a id="apiv2testsuitesput"></a>
 # **ApiV2TestSuitesPut**
 > void ApiV2TestSuitesPut (ApiV2TestSuitesPutRequest apiV2TestSuitesPutRequest = null)
 
@@ -600,17 +621,22 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deletetestsuite"></a>
+<a id="deletetestsuite"></a>
 # **DeleteTestSuite**
 > void DeleteTestSuite (Guid id)
 
 Delete TestSuite
 
-<br>Use case  <br>User sets test suite identifier  <br>User runs method execution  <br>System search test suite by identifier  <br>System deletes test suite  <br>System returns no content response
+ Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System deletes test suite   System returns no content response
 
 ### Example
 ```csharp
@@ -697,19 +723,22 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Delete permission for test plan required |  -  |
-| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id |  -  |
+| **404** |  Can&#39;t find a TestSuite with id |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getconfigurationsbytestsuiteid"></a>
+<a id="getconfigurationsbytestsuiteid"></a>
 # **GetConfigurationsByTestSuiteId**
 > List&lt;ConfigurationModel&gt; GetConfigurationsByTestSuiteId (Guid id)
 
 Get Configurations By Id
 
-<br>Use case  <br>User sets test suite identifier  <br>User runs method execution  <br>System search test suite by identifier  <br>System search test points related to the test suite  <br>System search configurations related to the test points  <br>System returns configurations array
+ Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configurations related to the test points   System returns configurations array
 
 ### Example
 ```csharp
@@ -800,19 +829,22 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
-| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
+| **404** |  Can&#39;t find a TestSuite with id! |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="gettestpointsbyid"></a>
+<a id="gettestpointsbyid"></a>
 # **GetTestPointsById**
 > List&lt;TestPointByTestSuiteModel&gt; GetTestPointsById (Guid id)
 
 Get TestPoints By Id
 
-<br>Use case  <br>User sets test suite identifier  <br>User runs method execution  <br>System search test suite by identifier  <br>System search test points related to the test suite  <br>System returns test points array
+ Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System returns test points array
 
 ### Example
 ```csharp
@@ -903,19 +935,22 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
-| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
+| **404** |  Can&#39;t find a TestSuite with id! |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="gettestresultsbyid"></a>
+<a id="gettestresultsbyid"></a>
 # **GetTestResultsById**
 > List&lt;TestResultV2ShortModel&gt; GetTestResultsById (Guid id)
 
 Get TestResults By Id
 
-<br>Use case  <br>User sets test suite identifier  <br>User runs method execution  <br>System search test suite by identifier  <br>System search test points related to the test suite  <br>System search test results related to the test points  <br>System returns test results array
+ Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search test results related to the test points   System returns test results array
 
 ### Example
 ```csharp
@@ -1006,19 +1041,22 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
-| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
+| **404** |  Can&#39;t find a TestSuite with id! |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="gettestsuitebyid"></a>
+<a id="gettestsuitebyid"></a>
 # **GetTestSuiteById**
 > TestSuiteV2GetModel GetTestSuiteById (Guid id)
 
 Get TestSuite by Id
 
-<br>Use case  <br>User sets test suite identifier  <br>User runs method execution  <br>System search test suite by identifier  <br>System returns test suite
+ Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System returns test suite
 
 ### Example
 ```csharp
@@ -1109,19 +1147,23 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
+| **404** |  Can&#39;t find a TestSuite with id! |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
-| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id! |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
+| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="searchworkitems"></a>
+<a id="searchworkitems"></a>
 # **SearchWorkItems**
 > List&lt;WorkItemShortModel&gt; SearchWorkItems (Guid id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, SearchWorkItemsRequest searchWorkItemsRequest = null)
 
 Search WorkItems
 
-<br>Use case  <br>User sets test suite identifier  <br>[Optional] User sets filter  <br>User runs method execution  <br>System search test suite by identifier  <br>System search test points related to the test suite  <br>System search work items related to the test points  <br>                      [Optional] User sets filter, system applies filter                    <br>System returns work items array
+ Use case   User sets test suite identifier   [Optional] User sets filter   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search work items related to the test points                         [Optional] User sets filter, system applies filter                     System returns work items array
 
 ### Example
 ```csharp
@@ -1228,16 +1270,18 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
 | **404** | Can&#39;t find a TestSuite with id! |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="setconfigurationsbytestsuiteid"></a>
+<a id="setconfigurationsbytestsuiteid"></a>
 # **SetConfigurationsByTestSuiteId**
 > void SetConfigurationsByTestSuiteId (Guid id, List<Guid> requestBody = null)
 
 Set Configurations By TestSuite Id
 
-<br>Use case  <br>User sets test suite identifier  <br>User sets collection of configuration identifiers  <br>User runs method execution  <br>System search test suite by identifier  <br>System search test points related to the test suite  <br>System search configuration  <br>System restores(if exist) or creates test points with listed configuration  <br>System returns no content response
+ Use case   User sets test suite identifier   User sets collection of configuration identifiers   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configuration   System restores(if exist) or creates test points with listed configuration   System returns no content response
 
 ### Example
 ```csharp
@@ -1326,10 +1370,12 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
-| **400** | &lt;br&gt;Some of Configurations do not exist in the project, or they are not active |  -  |
+| **400** |  Some of Configurations do not exist in the project, or they are not active |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan required |  -  |
-| **404** | &lt;br&gt;Can&#39;t find a TestSuite with id |  -  |
+| **404** |  Can&#39;t find a TestSuite with id |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

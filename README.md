@@ -39,6 +39,45 @@ dotnet package add TestIt.ApiClient
 <a name="examples"></a>
 ## Examples
 
+Please follow the [installation](#installation) instruction and execute the following C## Getting Started
+
+### Compatibility
+
+| Test IT | API Client |
+|---------|------------|
+| 3.3     | 1.0        |
+| 3.4     | 1.1        |
+| 3.5     | 1.2        |
+| 3.9     | 2.0        |
+| 4.0     | 2.1        |
+| 4.2     | 2.2        |
+| 4.3     | 2.3        |
+| 4.4     | 2.4        |
+| 4.5     | 2.5        |
+| 4.6     | 2.6        |
+| 5.0     | 3.0        |
+
+<a name="frameworks-supported"></a>
+## Frameworks supported
+- .NET Core >=1.0
+- .NET Framework >=4.6
+
+<a name="installation"></a>
+## Installation
+
+### NuGet CLI
+```
+Install-Package TestIt.ApiClient
+```
+
+### .NET CLI
+```
+dotnet package add TestIt.ApiClient
+```
+
+<a name="examples"></a>
+## Examples
+
 Please follow the [installation](#installation) instruction and execute the following C# code:
 
 To use the API client with a HTTP proxy, setup a `System.Net.WebProxy`
@@ -122,6 +161,7 @@ Class | Method | HTTP request | Description
 *AutoTestsApi* | [**LinkAutoTestToWorkItem**](docs\AutoTestsApi.md#linkautotesttoworkitem) | **POST** /api/v2/autoTests/{id}/workItems | Link autotest with work items
 *AutoTestsApi* | [**UpdateAutoTest**](docs\AutoTestsApi.md#updateautotest) | **PUT** /api/v2/autoTests | Update autotest
 *AutoTestsApi* | [**UpdateMultiple**](docs\AutoTestsApi.md#updatemultiple) | **PUT** /api/v2/autoTests/bulk | Update multiple autotests
+*BackgroundJobsApi* | [**ApiV2BackgroundJobsCompletedDelete**](docs\BackgroundJobsApi.md#apiv2backgroundjobscompleteddelete) | **DELETE** /api/v2/backgroundJobs/completed | Delete all completed background jobs
 *BackgroundJobsApi* | [**ApiV2BackgroundJobsGet**](docs\BackgroundJobsApi.md#apiv2backgroundjobsget) | **GET** /api/v2/backgroundJobs | 
 *BackgroundJobsApi* | [**ApiV2BackgroundJobsIdCancelPost**](docs\BackgroundJobsApi.md#apiv2backgroundjobsidcancelpost) | **POST** /api/v2/backgroundJobs/{id}/cancel | Cancel current user background job
 *BackgroundJobsApi* | [**ApiV2BackgroundJobsIdGet**](docs\BackgroundJobsApi.md#apiv2backgroundjobsidget) | **GET** /api/v2/backgroundJobs/{id} | Get background job by ID
@@ -182,11 +222,6 @@ Class | Method | HTTP request | Description
 *ProjectAttributesApi* | [**SearchAttributesInProject**](docs\ProjectAttributesApi.md#searchattributesinproject) | **POST** /api/v2/projects/{projectId}/attributes/search | Search for attributes used in the project
 *ProjectAttributesApi* | [**UpdateProjectsAttribute**](docs\ProjectAttributesApi.md#updateprojectsattribute) | **PUT** /api/v2/projects/{projectId}/attributes | Edit attribute of the project
 *ProjectConfigurationsApi* | [**GetConfigurationsByProjectId**](docs\ProjectConfigurationsApi.md#getconfigurationsbyprojectid) | **GET** /api/v2/projects/{projectId}/configurations | Get project configurations
-*ProjectExportApi* | [**Export**](docs\ProjectExportApi.md#export) | **POST** /api/v2/projects/{projectId}/export | Export project as JSON file
-*ProjectExportApi* | [**ExportProjectJson**](docs\ProjectExportApi.md#exportprojectjson) | **POST** /api/v2/projects/{projectId}/export/json | Export project as JSON file in background job
-*ProjectExportApi* | [**ExportProjectWithTestPlansJson**](docs\ProjectExportApi.md#exportprojectwithtestplansjson) | **POST** /api/v2/projects/{projectId}/export/testPlans/json | Export project as JSON file with test plans in background job
-*ProjectExportApi* | [**ExportProjectWithTestPlansZip**](docs\ProjectExportApi.md#exportprojectwithtestplanszip) | **POST** /api/v2/projects/{projectId}/export/testPlans/zip | Export project as Zip file with test plans in background job
-*ProjectExportApi* | [**ExportProjectZip**](docs\ProjectExportApi.md#exportprojectzip) | **POST** /api/v2/projects/{projectId}/export/zip | Export project as Zip file in background job
 *ProjectImportApi* | [**BackgroundImportToExistingProject**](docs\ProjectImportApi.md#backgroundimporttoexistingproject) | **POST** /api/v2/projects/{projectId}/import/json | Import project from JSON file into existing project in background job
 *ProjectImportApi* | [**BackgroundImportZipToExistingProject**](docs\ProjectImportApi.md#backgroundimportziptoexistingproject) | **POST** /api/v2/projects/{projectId}/import/zip | Import project from Zip file into existing project in background job
 *ProjectImportApi* | [**ImportToExistingProject**](docs\ProjectImportApi.md#importtoexistingproject) | **POST** /api/v2/projects/{projectId}/import | Import project from JSON file into existing project
@@ -214,7 +249,7 @@ Class | Method | HTTP request | Description
 *ProjectsApi* | [**ApiV2ProjectsIdFavoritePut**](docs\ProjectsApi.md#apiv2projectsidfavoriteput) | **PUT** /api/v2/projects/{id}/favorite | Mark Project as favorite
 *ProjectsApi* | [**ApiV2ProjectsIdFiltersGet**](docs\ProjectsApi.md#apiv2projectsidfiltersget) | **GET** /api/v2/projects/{id}/filters | Get Project filters
 *ProjectsApi* | [**ApiV2ProjectsIdPatch**](docs\ProjectsApi.md#apiv2projectsidpatch) | **PATCH** /api/v2/projects/{id} | Patch project
-*ProjectsApi* | [**ApiV2ProjectsIdPurgePost**](docs\ProjectsApi.md#apiv2projectsidpurgepost) | **POST** /api/v2/projects/{id}/purge | Purge archived project
+*ProjectsApi* | [**ApiV2ProjectsIdPurgePost**](docs\ProjectsApi.md#apiv2projectsidpurgepost) | **POST** /api/v2/projects/{id}/purge | Purge the project
 *ProjectsApi* | [**ApiV2ProjectsIdRestorePost**](docs\ProjectsApi.md#apiv2projectsidrestorepost) | **POST** /api/v2/projects/{id}/restore | Restore archived project
 *ProjectsApi* | [**ApiV2ProjectsIdTestPlansAttributeAttributeIdDelete**](docs\ProjectsApi.md#apiv2projectsidtestplansattributeattributeiddelete) | **DELETE** /api/v2/projects/{id}/testPlans/attribute/{attributeId} | Delete attribute from project's test plans
 *ProjectsApi* | [**ApiV2ProjectsIdTestPlansAttributePut**](docs\ProjectsApi.md#apiv2projectsidtestplansattributeput) | **PUT** /api/v2/projects/{id}/testPlans/attribute | Update attribute of project's test plans
@@ -228,7 +263,6 @@ Class | Method | HTTP request | Description
 *ProjectsApi* | [**BackgroundImportZipProject**](docs\ProjectsApi.md#backgroundimportzipproject) | **POST** /api/v2/projects/import/zip | Import project from Zip file in background job
 *ProjectsApi* | [**CreateProject**](docs\ProjectsApi.md#createproject) | **POST** /api/v2/projects | Create project
 *ProjectsApi* | [**DeleteProjectAutoTests**](docs\ProjectsApi.md#deleteprojectautotests) | **DELETE** /api/v2/projects/{id}/autoTests | Delete all autotests from project
-*ProjectsApi* | [**ExportWithTestPlansAndConfigurations**](docs\ProjectsApi.md#exportwithtestplansandconfigurations) | **POST** /api/v2/projects/{id}/export-by-testPlans | Export project with test plans, test suites and test points as JSON file
 *ProjectsApi* | [**GetAllProjects**](docs\ProjectsApi.md#getallprojects) | **GET** /api/v2/projects | Get all projects
 *ProjectsApi* | [**GetAutoTestsNamespaces**](docs\ProjectsApi.md#getautotestsnamespaces) | **GET** /api/v2/projects/{id}/autoTestsNamespaces | Get namespaces of autotests in project
 *ProjectsApi* | [**GetProjectById**](docs\ProjectsApi.md#getprojectbyid) | **GET** /api/v2/projects/{id} | Get project by ID
@@ -375,7 +409,7 @@ Class | Method | HTTP request | Description
 *WorkItemsCommentsApi* | [**ApiV2WorkItemsIdCommentsGet**](docs\WorkItemsCommentsApi.md#apiv2workitemsidcommentsget) | **GET** /api/v2/workItems/{id}/comments | Get work item comments
 
 
-<a name="documentation-for-models"></a>
+<a id="documentation-for-models"></a>
 ## Documentation for Models
 
 You can see the documentation [here](https://github.com/testit-tms/api-client-dotnet/blob/main/docs/README.MD)

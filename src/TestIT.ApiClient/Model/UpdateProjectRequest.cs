@@ -32,6 +32,12 @@ namespace TestIT.ApiClient.Model
     [DataContract(Name = "UpdateProject_request")]
     public partial class UpdateProjectRequest : IEquatable<UpdateProjectRequest>, IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets Type
+        /// </summary>
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
+        public ProjectTypeModel Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateProjectRequest" /> class.
         /// </summary>
@@ -44,7 +50,9 @@ namespace TestIT.ApiClient.Model
         /// <param name="description">Description of the project.</param>
         /// <param name="name">Name of the project (required).</param>
         /// <param name="isFavorite">Indicates if the project is marked as favorite.</param>
-        public UpdateProjectRequest(Guid id = default(Guid), string description = default(string), string name = default(string), bool? isFavorite = default(bool?))
+        /// <param name="isFlakyAuto">Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically.</param>
+        /// <param name="type">type (required).</param>
+        public UpdateProjectRequest(Guid id = default(Guid), string description = default(string), string name = default(string), bool? isFavorite = default(bool?), bool? isFlakyAuto = default(bool?), ProjectTypeModel type = default(ProjectTypeModel))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -53,8 +61,10 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("name is a required property for UpdateProjectRequest and cannot be null");
             }
             this.Name = name;
+            this.Type = type;
             this.Description = description;
             this.IsFavorite = isFavorite;
+            this.IsFlakyAuto = isFlakyAuto;
         }
 
         /// <summary>
@@ -86,6 +96,13 @@ namespace TestIT.ApiClient.Model
         public bool? IsFavorite { get; set; }
 
         /// <summary>
+        /// Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically
+        /// </summary>
+        /// <value>Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically</value>
+        [DataMember(Name = "isFlakyAuto", EmitDefaultValue = true)]
+        public bool? IsFlakyAuto { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -97,6 +114,8 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  IsFavorite: ").Append(IsFavorite).Append("\n");
+            sb.Append("  IsFlakyAuto: ").Append(IsFlakyAuto).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -151,6 +170,15 @@ namespace TestIT.ApiClient.Model
                     this.IsFavorite == input.IsFavorite ||
                     (this.IsFavorite != null &&
                     this.IsFavorite.Equals(input.IsFavorite))
+                ) && 
+                (
+                    this.IsFlakyAuto == input.IsFlakyAuto ||
+                    (this.IsFlakyAuto != null &&
+                    this.IsFlakyAuto.Equals(input.IsFlakyAuto))
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    this.Type.Equals(input.Type)
                 );
         }
 
@@ -179,6 +207,11 @@ namespace TestIT.ApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.IsFavorite.GetHashCode();
                 }
+                if (this.IsFlakyAuto != null)
+                {
+                    hashCode = (hashCode * 59) + this.IsFlakyAuto.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 return hashCode;
             }
         }
@@ -188,7 +221,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) minLength
             if (this.Name != null && this.Name.Length < 1)

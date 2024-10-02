@@ -8,7 +8,7 @@ All URIs are relative to *http://localhost*
 | [**BackgroundImportZipToExistingProject**](ProjectImportApi.md#backgroundimportziptoexistingproject) | **POST** /api/v2/projects/{projectId}/import/zip | Import project from Zip file into existing project in background job |
 | [**ImportToExistingProject**](ProjectImportApi.md#importtoexistingproject) | **POST** /api/v2/projects/{projectId}/import | Import project from JSON file into existing project |
 
-<a name="backgroundimporttoexistingproject"></a>
+<a id="backgroundimporttoexistingproject"></a>
 # **BackgroundImportToExistingProject**
 > Guid BackgroundImportToExistingProject (string projectId, FileParameter file = null)
 
@@ -104,12 +104,17 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Update permission for project settings required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="backgroundimportziptoexistingproject"></a>
+<a id="backgroundimportziptoexistingproject"></a>
 # **BackgroundImportZipToExistingProject**
 > Guid BackgroundImportZipToExistingProject (string projectId, FileParameter file = null)
 
@@ -205,18 +210,23 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Update permission for project settings required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="importtoexistingproject"></a>
+<a id="importtoexistingproject"></a>
 # **ImportToExistingProject**
 > void ImportToExistingProject (string projectId, bool? includeAttachments = null, FileParameter file = null)
 
 Import project from JSON file into existing project
 
-<br>Use case  <br>User attaches project as json file taken from export or export-by-testPlans method  <br>User runs method execution  <br>System updates project  <br>System returns no content response
+ Use case   User attaches project as json file taken from export or export-by-testPlans method   User runs method execution   System updates project   System returns no content response
 
 ### Example
 ```csharp
@@ -307,10 +317,13 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
-| **403** | Update permission for project settings required |  -  |
 | **413** | Multipart body length limit exceeded |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Update permission for project settings required |  -  |
 | **404** | File not found |  -  |
 | **409** | Entity with same id already imported in other project |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

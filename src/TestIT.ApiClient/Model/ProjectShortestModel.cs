@@ -32,6 +32,12 @@ namespace TestIT.ApiClient.Model
     [DataContract(Name = "ProjectShortestModel")]
     public partial class ProjectShortestModel : IEquatable<ProjectShortestModel>, IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets Type
+        /// </summary>
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
+        public ProjectTypeModel Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectShortestModel" /> class.
         /// </summary>
@@ -44,7 +50,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="isDeleted">Indicates whether the project is deleted (required).</param>
         /// <param name="globalId">Global ID of project (required).</param>
         /// <param name="name">Name of project (required).</param>
-        public ProjectShortestModel(Guid id = default(Guid), bool isDeleted = default(bool), long globalId = default(long), string name = default(string))
+        /// <param name="type">type (required).</param>
+        public ProjectShortestModel(Guid id = default(Guid), bool isDeleted = default(bool), long globalId = default(long), string name = default(string), ProjectTypeModel type = default(ProjectTypeModel))
         {
             this.Id = id;
             this.IsDeleted = isDeleted;
@@ -55,6 +62,7 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("name is a required property for ProjectShortestModel and cannot be null");
             }
             this.Name = name;
+            this.Type = type;
         }
 
         /// <summary>
@@ -97,6 +105,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  GlobalId: ").Append(GlobalId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -149,6 +158,10 @@ namespace TestIT.ApiClient.Model
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    this.Type.Equals(input.Type)
                 );
         }
 
@@ -171,6 +184,7 @@ namespace TestIT.ApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 return hashCode;
             }
         }
@@ -180,7 +194,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

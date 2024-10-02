@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2AttachmentsOccupiedFileStorageSizeGet**](AttachmentsApi.md#apiv2attachmentsoccupiedfilestoragesizeget) | **GET** /api/v2/attachments/occupiedFileStorageSize | Get size of attachments storage in bytes |
 | [**ApiV2AttachmentsPost**](AttachmentsApi.md#apiv2attachmentspost) | **POST** /api/v2/attachments | Upload new attachment file |
 
-<a name="apiv2attachmentsiddelete"></a>
+<a id="apiv2attachmentsiddelete"></a>
 # **ApiV2AttachmentsIdDelete**
 > void ApiV2AttachmentsIdDelete (Guid id)
 
@@ -93,20 +93,25 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Attachment file was deleted successfully |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
 | **422** | Attachment file is already in use |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2attachmentsidget"></a>
+<a id="apiv2attachmentsidget"></a>
 # **ApiV2AttachmentsIdGet**
-> FileParameter ApiV2AttachmentsIdGet (Guid id, int? width = null, int? height = null, ImageResizeType? resizeType = null, string backgroundColor = null, bool? preview = null)
+> void ApiV2AttachmentsIdGet (Guid id, int? width = null, int? height = null, ImageResizeType? resizeType = null, string backgroundColor = null, bool? preview = null)
 
 Download attachment file
 
@@ -146,8 +151,7 @@ namespace Example
             try
             {
                 // Download attachment file
-                FileParameter result = apiInstance.ApiV2AttachmentsIdGet(id, width, height, resizeType, backgroundColor, preview);
-                Debug.WriteLine(result);
+                apiInstance.ApiV2AttachmentsIdGet(id, width, height, resizeType, backgroundColor, preview);
             }
             catch (ApiException  e)
             {
@@ -167,10 +171,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Download attachment file
-    ApiResponse<FileParameter> response = apiInstance.ApiV2AttachmentsIdGetWithHttpInfo(id, width, height, resizeType, backgroundColor, preview);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.ApiV2AttachmentsIdGetWithHttpInfo(id, width, height, resizeType, backgroundColor, preview);
 }
 catch (ApiException e)
 {
@@ -193,7 +194,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**FileParameter**](FileParameter.md)
+void (empty response body)
 
 ### Authorization
 
@@ -202,17 +203,23 @@ catch (ApiException e)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2attachmentsoccupiedfilestoragesizeget"></a>
+<a id="apiv2attachmentsoccupiedfilestoragesizeget"></a>
 # **ApiV2AttachmentsOccupiedFileStorageSizeGet**
 > long ApiV2AttachmentsOccupiedFileStorageSizeGet ()
 
@@ -301,11 +308,17 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2attachmentspost"></a>
+<a id="apiv2attachmentspost"></a>
 # **ApiV2AttachmentsPost**
 > AttachmentModel ApiV2AttachmentsPost (FileParameter file = null)
 
@@ -402,9 +415,12 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
-| **400** | &lt;br&gt;- Invalid file contents  &lt;br&gt;- Invalid HTTP headers |  -  |
+| **400** |  - Invalid file contents   - Invalid HTTP headers |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

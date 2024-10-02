@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **IsAutomated** | **bool?** | Is result must consist of only manual/automated work items | [optional] 
 **Tags** | **List&lt;string&gt;** | Collection of tags | [optional] 
 **AutoTestIds** | **List&lt;Guid&gt;** | Collection of identifiers of linked autotests | [optional] 
+**WorkItemVersionIds** | **List&lt;Guid&gt;** | Collection of identifiers work items versions. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

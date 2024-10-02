@@ -35,7 +35,7 @@ All URIs are relative to *http://localhost*
 | [**Start**](TestPlansApi.md#start) | **POST** /api/v2/testPlans/{id}/start | Start TestPlan |
 | [**UpdateTestPlan**](TestPlansApi.md#updatetestplan) | **PUT** /api/v2/testPlans | Update TestPlan |
 
-<a name="addtestpointswithsections"></a>
+<a id="addtestpointswithsections"></a>
 # **AddTestPointsWithSections**
 > void AddTestPointsWithSections (string id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = null)
 
@@ -128,20 +128,22 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan is required |  -  |
 | **404** | Test suite with provided ID was not found |  -  |
+| **409** | Conflict |  -  |
 | **422** | Shared steps cannot be added to test suite |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="addworkitemswithsections"></a>
+<a id="addworkitemswithsections"></a>
 # **AddWorkItemsWithSections**
 > void AddWorkItemsWithSections (string id, List<Guid> requestBody = null)
 
 Add WorkItems to TestPlan with Sections as TestSuites
 
-<br>Use case  <br>User sets TestPlan identifier  <br>User sets WorkItem identifiers (listed in request example)  <br>User runs method execution  <br>System added WorkItems and Sections to TestPlan  <br>System returns no content response
+ Use case   User sets TestPlan identifier   User sets WorkItem identifiers (listed in request example)   User runs method execution   System added WorkItems and Sections to TestPlan   System returns no content response
 
 ### Example
 ```csharp
@@ -230,21 +232,22 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
-| **400** | &lt;br&gt;TestPlan is locked  &lt;br&gt;Some of configurations do not exist in the project, or they are not active |  -  |
+| **400** |  TestPlan is locked   Some of configurations do not exist in the project, or they are not active |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for TestPlan required |  -  |
-| **404** | &lt;br&gt;Can&#39;t find a TestPlan with id  &lt;br&gt;Some of workItems do not exist |  -  |
+| **404** |  Can&#39;t find a TestPlan with id   Some of workItems do not exist |  -  |
+| **409** | Conflict |  -  |
 | **422** | Can&#39;t put a SharedStep in the TestSuite |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testplansidanalyticsget"></a>
+<a id="apiv2testplansidanalyticsget"></a>
 # **ApiV2TestPlansIdAnalyticsGet**
 > TestPointAnalyticResult ApiV2TestPlansIdAnalyticsGet (string id)
 
 Get analytics by TestPlan
 
-<br>Use case  <br>User sets test plan identifier  <br>User runs method execution  <br>System returns analytics by test plan
+ Use case   User sets test plan identifier   User runs method execution   System returns analytics by test plan
 
 ### Example
 ```csharp
@@ -336,12 +339,15 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
-| **404** | Can&#39;t find a Project with id |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Can&#39;t find a Project with id |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testplansidautobalancepost"></a>
+<a id="apiv2testplansidautobalancepost"></a>
 # **ApiV2TestPlansIdAutobalancePost**
 > TestPlanWithTestSuiteTreeModel ApiV2TestPlansIdAutobalancePost (string id, List<Guid> testers = null)
 
@@ -437,18 +443,23 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testplansidconfigurationsget"></a>
+<a id="apiv2testplansidconfigurationsget"></a>
 # **ApiV2TestPlansIdConfigurationsGet**
 > List&lt;ConfigurationModel&gt; ApiV2TestPlansIdConfigurationsGet (string id)
 
 Get TestPlan configurations
 
-<br>Use case  <br>User sets test plan identifier  <br>User runs method execution  <br>System return test plan configurations
+ Use case   User sets test plan identifier   User runs method execution   System return test plan configurations
 
 ### Example
 ```csharp
@@ -543,16 +554,18 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
 | **404** | TestPlan not found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testplansidexporttestpointsxlsxpost"></a>
+<a id="apiv2testplansidexporttestpointsxlsxpost"></a>
 # **ApiV2TestPlansIdExportTestPointsXlsxPost**
-> FileParameter ApiV2TestPlansIdExportTestPointsXlsxPost (string id, long? timeZoneOffsetInMinutes = null, ApiV2TestPlansIdExportTestPointsXlsxPostRequest apiV2TestPlansIdExportTestPointsXlsxPostRequest = null)
+> void ApiV2TestPlansIdExportTestPointsXlsxPost (string id, long? timeZoneOffsetInMinutes = null, ApiV2TestPlansIdExportTestPointsXlsxPostRequest apiV2TestPlansIdExportTestPointsXlsxPostRequest = null)
 
 Export TestPoints from TestPlan in xls format
 
-<br>Use case  <br>User sets test plan identifier  <br>User sets filter model (listed in request example)  <br>User runs method execution  <br>System return export xlsx file
+ Use case   User sets test plan identifier   User sets filter model (listed in request example)   User runs method execution   System return export xlsx file
 
 ### Example
 ```csharp
@@ -587,8 +600,7 @@ namespace Example
             try
             {
                 // Export TestPoints from TestPlan in xls format
-                FileParameter result = apiInstance.ApiV2TestPlansIdExportTestPointsXlsxPost(id, timeZoneOffsetInMinutes, apiV2TestPlansIdExportTestPointsXlsxPostRequest);
-                Debug.WriteLine(result);
+                apiInstance.ApiV2TestPlansIdExportTestPointsXlsxPost(id, timeZoneOffsetInMinutes, apiV2TestPlansIdExportTestPointsXlsxPostRequest);
             }
             catch (ApiException  e)
             {
@@ -608,10 +620,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Export TestPoints from TestPlan in xls format
-    ApiResponse<FileParameter> response = apiInstance.ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(id, timeZoneOffsetInMinutes, apiV2TestPlansIdExportTestPointsXlsxPostRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(id, timeZoneOffsetInMinutes, apiV2TestPlansIdExportTestPointsXlsxPostRequest);
 }
 catch (ApiException e)
 {
@@ -631,7 +640,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**FileParameter**](FileParameter.md)
+void (empty response body)
 
 ### Authorization
 
@@ -640,7 +649,7 @@ catch (ApiException e)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/octet-stream, application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -651,16 +660,18 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
 | **404** | TestPlan not found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testplansidexporttestresulthistoryxlsxpost"></a>
+<a id="apiv2testplansidexporttestresulthistoryxlsxpost"></a>
 # **ApiV2TestPlansIdExportTestResultHistoryXlsxPost**
-> FileParameter ApiV2TestPlansIdExportTestResultHistoryXlsxPost (string id, bool? mustReturnOnlyLastTestResult = null, bool? includeSteps = null, bool? includeDeletedTestSuites = null, long? timeZoneOffsetInMinutes = null)
+> void ApiV2TestPlansIdExportTestResultHistoryXlsxPost (string id, bool? mustReturnOnlyLastTestResult = null, bool? includeSteps = null, bool? includeDeletedTestSuites = null, long? timeZoneOffsetInMinutes = null)
 
 Export TestResults history from TestPlan in xls format
 
-<br>Use case  <br>User sets test plan identifier  <br>User sets filter model (listed in request example)  <br>User runs method execution  <br>System return export xlsx file
+ Use case   User sets test plan identifier   User sets filter model (listed in request example)   User runs method execution   System return export xlsx file
 
 ### Example
 ```csharp
@@ -697,8 +708,7 @@ namespace Example
             try
             {
                 // Export TestResults history from TestPlan in xls format
-                FileParameter result = apiInstance.ApiV2TestPlansIdExportTestResultHistoryXlsxPost(id, mustReturnOnlyLastTestResult, includeSteps, includeDeletedTestSuites, timeZoneOffsetInMinutes);
-                Debug.WriteLine(result);
+                apiInstance.ApiV2TestPlansIdExportTestResultHistoryXlsxPost(id, mustReturnOnlyLastTestResult, includeSteps, includeDeletedTestSuites, timeZoneOffsetInMinutes);
             }
             catch (ApiException  e)
             {
@@ -718,10 +728,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Export TestResults history from TestPlan in xls format
-    ApiResponse<FileParameter> response = apiInstance.ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfo(id, mustReturnOnlyLastTestResult, includeSteps, includeDeletedTestSuites, timeZoneOffsetInMinutes);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfo(id, mustReturnOnlyLastTestResult, includeSteps, includeDeletedTestSuites, timeZoneOffsetInMinutes);
 }
 catch (ApiException e)
 {
@@ -743,7 +750,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**FileParameter**](FileParameter.md)
+void (empty response body)
 
 ### Authorization
 
@@ -752,7 +759,7 @@ catch (ApiException e)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream, application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -763,16 +770,18 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
 | **404** | TestPlan not found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testplansidhistoryget"></a>
+<a id="apiv2testplansidhistoryget"></a>
 # **ApiV2TestPlansIdHistoryGet**
 > List&lt;TestPlanChangeModel&gt; ApiV2TestPlansIdHistoryGet (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
 Get TestPlan history
 
-<br>Use case  <br>User sets test plan identifier  <br>User runs method execution  <br>System return test plan history
+ Use case   User sets test plan identifier   User runs method execution   System return test plan history
 
 ### Example
 ```csharp
@@ -877,16 +886,18 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
 | **404** | TestPlan not found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testplansidlinksget"></a>
+<a id="apiv2testplansidlinksget"></a>
 # **ApiV2TestPlansIdLinksGet**
 > List&lt;TestPlanLink&gt; ApiV2TestPlansIdLinksGet (string id, int? skip = null, int? take = null, string orderBy = null)
 
 Get Links of TestPlan
 
-<br>Use case  <br>User sets test plan identifier  <br>User sets pagination filter (listed in request example)  <br>User runs method execution  <br>System returns links of TestPlan
+ Use case   User sets test plan identifier   User sets pagination filter (listed in request example)   User runs method execution   System returns links of TestPlan
 
 ### Example
 ```csharp
@@ -983,12 +994,16 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testplansidpatch"></a>
+<a id="apiv2testplansidpatch"></a>
 # **ApiV2TestPlansIdPatch**
 > void ApiV2TestPlansIdPatch (Guid id, List<Operation> operation = null)
 
@@ -1083,17 +1098,22 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testplansidtestpointslastresultsget"></a>
+<a id="apiv2testplansidtestpointslastresultsget"></a>
 # **ApiV2TestPlansIdTestPointsLastResultsGet**
 > List&lt;TestPointWithLastResultModel&gt; ApiV2TestPlansIdTestPointsLastResultsGet (string id, Guid? testerId = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
 Get TestPoints with last result from TestPlan
 
-<br>Use case  <br>User sets test plan identifier  <br>User sets filter (listed in request example)  <br>User runs method execution  <br>System return test points with last result from test plan
+ Use case   User sets test plan identifier   User sets filter (listed in request example)   User runs method execution   System return test points with last result from test plan
 
 ### Example
 ```csharp
@@ -1200,16 +1220,18 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
 | **404** | TestPlan not found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testplansidtestpointsresetpost"></a>
+<a id="apiv2testplansidtestpointsresetpost"></a>
 # **ApiV2TestPlansIdTestPointsResetPost**
 > void ApiV2TestPlansIdTestPointsResetPost (string id, List<Guid> requestBody = null)
 
 Reset TestPoints status of TestPlan
 
-<br>Use case  <br>User sets test plan identifier  <br>User sets test points identifiers  <br>User runs method execution  <br>System reset test points statuses of test plan
+ Use case   User sets test plan identifier   User sets test points identifiers   User runs method execution   System reset test points statuses of test plan
 
 ### Example
 ```csharp
@@ -1299,12 +1321,15 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
-| **422** | Client Error |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testplansidtestpointstesterdelete"></a>
+<a id="apiv2testplansidtestpointstesterdelete"></a>
 # **ApiV2TestPlansIdTestPointsTesterDelete**
 > List&lt;Guid&gt; ApiV2TestPlansIdTestPointsTesterDelete (string id, ApiV2TestPlansIdTestPointsTesterUserIdPostRequest apiV2TestPlansIdTestPointsTesterUserIdPostRequest = null)
 
@@ -1400,12 +1425,17 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Update permission for test plans is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testplansidtestpointstesteruseridpost"></a>
+<a id="apiv2testplansidtestpointstesteruseridpost"></a>
 # **ApiV2TestPlansIdTestPointsTesterUserIdPost**
 > List&lt;Guid&gt; ApiV2TestPlansIdTestPointsTesterUserIdPost (string id, Guid userId, ApiV2TestPlansIdTestPointsTesterUserIdPostRequest apiV2TestPlansIdTestPointsTesterUserIdPostRequest = null)
 
@@ -1503,18 +1533,23 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Update permission for test plans is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testplansidtestrunsget"></a>
+<a id="apiv2testplansidtestrunsget"></a>
 # **ApiV2TestPlansIdTestRunsGet**
 > List&lt;TestRunModel&gt; ApiV2TestPlansIdTestRunsGet (string id, bool? notStarted = null, bool? inProgress = null, bool? stopped = null, bool? completed = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
 Get TestRuns of TestPlan
 
-<br>Use case  <br>User sets test plan identifier  <br>User sets TestRun status filter (listed in request example)  <br>User runs method execution  <br>System returns TestRuns for TestPlan
+ Use case   User sets test plan identifier   User sets TestRun status filter (listed in request example)   User runs method execution   System returns TestRuns for TestPlan
 
 ### Example
 ```csharp
@@ -1623,18 +1658,22 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testplansidtestrunssearchpost"></a>
+<a id="apiv2testplansidtestrunssearchpost"></a>
 # **ApiV2TestPlansIdTestRunsSearchPost**
 > List&lt;TestRunModel&gt; ApiV2TestPlansIdTestRunsSearchPost (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2TestPlansIdTestRunsSearchPostRequest apiV2TestPlansIdTestRunsSearchPostRequest = null)
 
 Search TestRuns of TestPlan
 
-<br>Use case  <br>User sets test plan identifier  <br>User sets TestRuns filter (listed in request example)  <br>User runs method execution  <br>System returns TestRuns for TestPlan
+ Use case   User sets test plan identifier   User sets TestRuns filter (listed in request example)   User runs method execution   System returns TestRuns for TestPlan
 
 ### Example
 ```csharp
@@ -1737,14 +1776,18 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testplansidtestrunstestresultslastmodifiedmodifieddateget"></a>
+<a id="apiv2testplansidtestrunstestresultslastmodifiedmodifieddateget"></a>
 # **ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet**
-> DateTime ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet (string id)
+> void ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet (string id)
 
 Get last modification date of test plan's test results
 
@@ -1779,8 +1822,7 @@ namespace Example
             try
             {
                 // Get last modification date of test plan's test results
-                DateTime result = apiInstance.ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet(id);
-                Debug.WriteLine(result);
+                apiInstance.ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet(id);
             }
             catch (ApiException  e)
             {
@@ -1800,10 +1842,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get last modification date of test plan's test results
-    ApiResponse<DateTime> response = apiInstance.ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfo(id);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfo(id);
 }
 catch (ApiException e)
 {
@@ -1821,7 +1860,7 @@ catch (ApiException e)
 
 ### Return type
 
-**DateTime**
+void (empty response body)
 
 ### Authorization
 
@@ -1836,19 +1875,24 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Last modification date exists |  -  |
 | **204** | Last modification date does not exist |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
+| **200** | Last modification date exists |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testplansidunlockrequestpost"></a>
+<a id="apiv2testplansidunlockrequestpost"></a>
 # **ApiV2TestPlansIdUnlockRequestPost**
 > void ApiV2TestPlansIdUnlockRequestPost (string id)
 
 Send unlock TestPlan notification
 
-<br>Use case  <br>User sets test plan identifier  <br>User runs method execution  <br>System send unlock test plan notification
+ Use case   User sets test plan identifier   User runs method execution   System send unlock test plan notification
 
 ### Example
 ```csharp
@@ -1934,21 +1978,25 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
+| **201** | Created |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
 | **404** | TestPlan not found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
+| **200** | Successful operation |  -  |
+| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testplansshortspost"></a>
+<a id="apiv2testplansshortspost"></a>
 # **ApiV2TestPlansShortsPost**
 > List&lt;TestPlanShortModel&gt; ApiV2TestPlansShortsPost (bool? isDeleted = null, List<Guid> requestBody = null)
 
 Get TestPlans short models by Project identifiers
 
-<br>Use case  <br>User sets projects identifiers  <br>User runs method execution  <br>System return test plans short models (listed in response example)
+ Use case   User sets projects identifiers   User runs method execution   System return test plans short models (listed in response example)
 
 ### Example
 ```csharp
@@ -2041,19 +2089,22 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for project required |  -  |
 | **404** | Project not found |  -  |
-| **401** | Unauthorized |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="clone"></a>
+<a id="clone"></a>
 # **Clone**
 > TestPlanModel Clone (string id)
 
 Clone TestPlan
 
-<br>Use case  <br>User sets test plan identifier  <br>User runs method execution  <br>System clones test plan  <br>System returns test plan (listed in response example)
+ Use case   User sets test plan identifier   User runs method execution   System clones test plan   System returns test plan (listed in response example)
 
 ### Example
 ```csharp
@@ -2148,16 +2199,18 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan required |  -  |
 | **404** | Can&#39;t find a TestPlan with id! |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="complete"></a>
+<a id="complete"></a>
 # **Complete**
 > void Complete (string id)
 
 Complete TestPlan
 
-<br>Use case  <br>User sets test plan identifier  <br>User runs method execution  <br>System completes the test plan and updates test plan status  <br>System returns no content response
+ Use case   User sets test plan identifier   User runs method execution   System completes the test plan and updates test plan status   System returns no content response
 
 ### Example
 ```csharp
@@ -2244,20 +2297,22 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
-| **400** | &lt;br&gt;Execute status from New to Completed forbidden  &lt;br&gt;Execute status from Completed to Completed forbidden |  -  |
+| **400** |  Execute status from New to Completed forbidden   Execute status from Completed to Completed forbidden |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan required |  -  |
 | **404** | Can&#39;t find a TestPlan with id! |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createtestplan"></a>
+<a id="createtestplan"></a>
 # **CreateTestPlan**
 > TestPlanModel CreateTestPlan (CreateTestPlanRequest createTestPlanRequest = null)
 
 Create TestPlan
 
-<br>Use case  <br>User sets test plan properties (listed in request example)  <br>User runs method execution  <br>System creates test plan  <br>System returns test plan (listed in response example)
+ Use case   User sets test plan properties (listed in request example)   User runs method execution   System creates test plan   System returns test plan (listed in response example)
 
 ### Example
 ```csharp
@@ -2348,20 +2403,22 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Successful operation |  -  |
-| **400** | &lt;br&gt;Field is required  &lt;br&gt;Tags must be no more than 10! |  -  |
+| **400** |  Field is required   Tags must be no more than 10! |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan required |  -  |
+| **404** | Not Found |  -  |
 | **409** | TestPlan with the same name already exists! |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deletetestplan"></a>
+<a id="deletetestplan"></a>
 # **DeleteTestPlan**
 > void DeleteTestPlan (string id)
 
 Delete TestPlan
 
-<br>Use case  <br>User sets test plan identifier  <br>User runs method execution  <br>System delete test plan  <br>System returns no content response
+ Use case   User sets test plan identifier   User runs method execution   System delete test plan   System returns no content response
 
 ### Example
 ```csharp
@@ -2448,19 +2505,22 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Delete permission for test plan required |  -  |
 | **404** | Can&#39;t find a TestPlan with id! |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="gettestplanbyid"></a>
+<a id="gettestplanbyid"></a>
 # **GetTestPlanById**
 > TestPlanModel GetTestPlanById (string id)
 
 Get TestPlan by Id
 
-<br>Use case  <br>User sets test plan identifier  <br>User runs method execution  <br>System search  test plan by the identifier  <br>System returns test plan
+ Use case   User sets test plan identifier   User runs method execution   System search  test plan by the identifier   System returns test plan
 
 ### Example
 ```csharp
@@ -2551,19 +2611,23 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
+| **404** | Can&#39;t find a Project with id |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
-| **404** | Can&#39;t find a Project with id |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
+| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="gettestsuitesbyid"></a>
+<a id="gettestsuitesbyid"></a>
 # **GetTestSuitesById**
 > List&lt;TestSuiteV2TreeModel&gt; GetTestSuitesById (string id)
 
 Get TestSuites Tree By Id
 
-<br>Use case  <br>User sets test plan identifier  <br>User runs method execution  <br>System finds test suites related to the test plan  <br>System returns test suites as a tree model (listed in response example)
+ Use case   User sets test plan identifier   User runs method execution   System finds test suites related to the test plan   System returns test suites as a tree model (listed in response example)
 
 ### Example
 ```csharp
@@ -2654,19 +2718,22 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
 | **404** | Can&#39;t find a TestRun with id! |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="pause"></a>
+<a id="pause"></a>
 # **Pause**
 > void Pause (string id)
 
 Pause TestPlan
 
-<br>Use case  <br>User sets test plan identifier  <br>User runs method execution  <br>System pauses the test plan and updates test plan status  <br>System returns no content response
+ Use case   User sets test plan identifier   User runs method execution   System pauses the test plan and updates test plan status   System returns no content response
 
 ### Example
 ```csharp
@@ -2753,14 +2820,16 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
-| **400** | &lt;br&gt;Execute status from New to Paused forbidden  &lt;br&gt;Execute status from Paused to Paused forbidden  &lt;br&gt;Execute status from Completed to Paused forbidden |  -  |
+| **400** |  Execute status from New to Paused forbidden   Execute status from Paused to Paused forbidden   Execute status from Completed to Paused forbidden |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan required |  -  |
 | **404** | Can&#39;t find a TestPlan with id! |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="purgetestplan"></a>
+<a id="purgetestplan"></a>
 # **PurgeTestPlan**
 > void PurgeTestPlan (string id)
 
@@ -2851,17 +2920,22 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Full access permission for the archive is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="restoretestplan"></a>
+<a id="restoretestplan"></a>
 # **RestoreTestPlan**
 > void RestoreTestPlan (string id)
 
 Restore TestPlan
 
-<br>Use case  <br>User sets test plan identifier  <br>User runs method execution  <br>System restores test plan  <br>System returns no content response
+ Use case   User sets test plan identifier   User runs method execution   System restores test plan   System returns no content response
 
 ### Example
 ```csharp
@@ -2948,19 +3022,22 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan required |  -  |
 | **404** | Can&#39;t find a TestPlan with id! |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="start"></a>
+<a id="start"></a>
 # **Start**
 > void Start (string id)
 
 Start TestPlan
 
-<br>Use case  <br>User sets test plan identifier  <br>User runs method execution  <br>System starts the test plan and updates test plan status  <br>System returns no content response
+ Use case   User sets test plan identifier   User runs method execution   System starts the test plan and updates test plan status   System returns no content response
 
 ### Example
 ```csharp
@@ -3047,19 +3124,22 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan required |  -  |
 | **404** | Can&#39;t find a TestPlan with id! |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updatetestplan"></a>
+<a id="updatetestplan"></a>
 # **UpdateTestPlan**
 > void UpdateTestPlan (UpdateTestPlanRequest updateTestPlanRequest = null)
 
 Update TestPlan
 
-<br>Use case  <br>User sets test plan properties(listed in request example)  <br>User runs method execution  <br>System updates test plan  <br>System returns no content response
+ Use case   User sets test plan properties(listed in request example)   User runs method execution   System updates test plan   System returns no content response
 
 ### Example
 ```csharp
@@ -3146,7 +3226,7 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
-| **400** | &lt;br&gt;Field is required  &lt;br&gt;Tags must be no more than 10!  &lt;br&gt;StartDate can&#39;t be more than EndDate! |  -  |
+| **400** |  Field is required   Tags must be no more than 10!   StartDate can&#39;t be more than EndDate! |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan required |  -  |
 | **404** | Can&#39;t find a TestPlan with id! |  -  |

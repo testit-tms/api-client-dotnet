@@ -9,13 +9,13 @@ All URIs are relative to *http://localhost*
 | [**ApiV2WorkItemsCommentsPut**](WorkItemsCommentsApi.md#apiv2workitemscommentsput) | **PUT** /api/v2/workItems/comments | Update work item comment |
 | [**ApiV2WorkItemsIdCommentsGet**](WorkItemsCommentsApi.md#apiv2workitemsidcommentsget) | **GET** /api/v2/workItems/{id}/comments | Get work item comments |
 
-<a name="apiv2workitemscommentscommentiddelete"></a>
+<a id="apiv2workitemscommentscommentiddelete"></a>
 # **ApiV2WorkItemsCommentsCommentIdDelete**
 > void ApiV2WorkItemsCommentsCommentIdDelete (Guid commentId)
 
 Delete WorkItem comment
 
-<br>Use case  <br>User sets comment identifier  <br>User runs method execution  <br>System delete comment   <br>System returns success status code
+ Use case   User sets comment identifier   User runs method execution   System delete comment    System returns success status code
 
 ### Example
 ```csharp
@@ -106,16 +106,18 @@ void (empty response body)
 | **401** | Unauthorized |  -  |
 | **403** | System admin permission required |  -  |
 | **404** | WorkItem is not found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemscommentspost"></a>
+<a id="apiv2workitemscommentspost"></a>
 # **ApiV2WorkItemsCommentsPost**
 > WorkItemCommentModel ApiV2WorkItemsCommentsPost (ApiV2WorkItemsCommentsPostRequest apiV2WorkItemsCommentsPostRequest = null)
 
 Create WorkItem comment
 
-<br>Use case  <br>User sets comment properties (listed in request parameters)  <br>User runs method execution  <br>System creates comment   <br>System returns comment model (listed in response parameters)
+ Use case   User sets comment properties (listed in request parameters)   User runs method execution   System creates comment    System returns comment model (listed in response parameters)
 
 ### Example
 ```csharp
@@ -210,10 +212,12 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
 | **404** | WorkItem is not found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemscommentsput"></a>
+<a id="apiv2workitemscommentsput"></a>
 # **ApiV2WorkItemsCommentsPut**
 > void ApiV2WorkItemsCommentsPut (ApiV2WorkItemsCommentsPutRequest apiV2WorkItemsCommentsPutRequest = null)
 
@@ -304,11 +308,16 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | System administrator role is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemsidcommentsget"></a>
+<a id="apiv2workitemsidcommentsget"></a>
 # **ApiV2WorkItemsIdCommentsGet**
 > List&lt;WorkItemCommentModel&gt; ApiV2WorkItemsIdCommentsGet (string id)
 
@@ -402,8 +411,13 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for test library is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

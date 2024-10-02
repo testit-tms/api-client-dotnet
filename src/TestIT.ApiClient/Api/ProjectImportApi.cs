@@ -34,6 +34,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="file">Select file (optional)</param>
         /// <returns>Guid</returns>
+        [Obsolete]
         Guid BackgroundImportToExistingProject(string projectId, FileParameter file = default(FileParameter));
 
         /// <summary>
@@ -46,6 +47,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="file">Select file (optional)</param>
         /// <returns>ApiResponse of Guid</returns>
+        [Obsolete]
         ApiResponse<Guid> BackgroundImportToExistingProjectWithHttpInfo(string projectId, FileParameter file = default(FileParameter));
         /// <summary>
         /// Import project from Zip file into existing project in background job
@@ -54,6 +56,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="file">Select file (optional)</param>
         /// <returns>Guid</returns>
+        [Obsolete]
         Guid BackgroundImportZipToExistingProject(string projectId, FileParameter file = default(FileParameter));
 
         /// <summary>
@@ -66,12 +69,13 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="file">Select file (optional)</param>
         /// <returns>ApiResponse of Guid</returns>
+        [Obsolete]
         ApiResponse<Guid> BackgroundImportZipToExistingProjectWithHttpInfo(string projectId, FileParameter file = default(FileParameter));
         /// <summary>
         /// Import project from JSON file into existing project
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User attaches project as json file taken from export or export-by-testPlans method  &lt;br&gt;User runs method execution  &lt;br&gt;System updates project  &lt;br&gt;System returns no content response
+        ///  Use case   User attaches project as json file taken from export or export-by-testPlans method   User runs method execution   System updates project   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -85,7 +89,7 @@ namespace TestIT.ApiClient.Api
         /// Import project from JSON file into existing project
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User attaches project as json file taken from export or export-by-testPlans method  &lt;br&gt;User runs method execution  &lt;br&gt;System updates project  &lt;br&gt;System returns no content response
+        ///  Use case   User attaches project as json file taken from export or export-by-testPlans method   User runs method execution   System updates project   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -114,6 +118,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="file">Select file (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Guid</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<Guid> BackgroundImportToExistingProjectAsync(string projectId, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -127,6 +132,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="file">Select file (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Guid)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<Guid>> BackgroundImportToExistingProjectWithHttpInfoAsync(string projectId, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Import project from Zip file into existing project in background job
@@ -139,6 +145,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="file">Select file (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Guid</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<Guid> BackgroundImportZipToExistingProjectAsync(string projectId, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -152,12 +159,13 @@ namespace TestIT.ApiClient.Api
         /// <param name="file">Select file (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Guid)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<Guid>> BackgroundImportZipToExistingProjectWithHttpInfoAsync(string projectId, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Import project from JSON file into existing project
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User attaches project as json file taken from export or export-by-testPlans method  &lt;br&gt;User runs method execution  &lt;br&gt;System updates project  &lt;br&gt;System returns no content response
+        ///  Use case   User attaches project as json file taken from export or export-by-testPlans method   User runs method execution   System updates project   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -172,7 +180,7 @@ namespace TestIT.ApiClient.Api
         /// Import project from JSON file into existing project
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User attaches project as json file taken from export or export-by-testPlans method  &lt;br&gt;User runs method execution  &lt;br&gt;System updates project  &lt;br&gt;System returns no content response
+        ///  Use case   User attaches project as json file taken from export or export-by-testPlans method   User runs method execution   System updates project   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -402,6 +410,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="file">Select file (optional)</param>
         /// <returns>Guid</returns>
+        [Obsolete]
         public Guid BackgroundImportToExistingProject(string projectId, FileParameter file = default(FileParameter))
         {
             TestIT.ApiClient.Client.ApiResponse<Guid> localVarResponse = BackgroundImportToExistingProjectWithHttpInfo(projectId, file);
@@ -415,6 +424,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="file">Select file (optional)</param>
         /// <returns>ApiResponse of Guid</returns>
+        [Obsolete]
         public TestIT.ApiClient.Client.ApiResponse<Guid> BackgroundImportToExistingProjectWithHttpInfo(string projectId, FileParameter file = default(FileParameter))
         {
             // verify the required parameter 'projectId' is set
@@ -470,6 +480,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="file">Select file (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Guid</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Guid> BackgroundImportToExistingProjectAsync(string projectId, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<Guid> localVarResponse = await BackgroundImportToExistingProjectWithHttpInfoAsync(projectId, file, cancellationToken).ConfigureAwait(false);
@@ -484,6 +495,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="file">Select file (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Guid)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Guid>> BackgroundImportToExistingProjectWithHttpInfoAsync(string projectId, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
@@ -541,6 +553,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="file">Select file (optional)</param>
         /// <returns>Guid</returns>
+        [Obsolete]
         public Guid BackgroundImportZipToExistingProject(string projectId, FileParameter file = default(FileParameter))
         {
             TestIT.ApiClient.Client.ApiResponse<Guid> localVarResponse = BackgroundImportZipToExistingProjectWithHttpInfo(projectId, file);
@@ -554,6 +567,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="file">Select file (optional)</param>
         /// <returns>ApiResponse of Guid</returns>
+        [Obsolete]
         public TestIT.ApiClient.Client.ApiResponse<Guid> BackgroundImportZipToExistingProjectWithHttpInfo(string projectId, FileParameter file = default(FileParameter))
         {
             // verify the required parameter 'projectId' is set
@@ -609,6 +623,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="file">Select file (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Guid</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Guid> BackgroundImportZipToExistingProjectAsync(string projectId, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<Guid> localVarResponse = await BackgroundImportZipToExistingProjectWithHttpInfoAsync(projectId, file, cancellationToken).ConfigureAwait(false);
@@ -623,6 +638,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="file">Select file (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Guid)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Guid>> BackgroundImportZipToExistingProjectWithHttpInfoAsync(string projectId, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
@@ -674,7 +690,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Import project from JSON file into existing project &lt;br&gt;Use case  &lt;br&gt;User attaches project as json file taken from export or export-by-testPlans method  &lt;br&gt;User runs method execution  &lt;br&gt;System updates project  &lt;br&gt;System returns no content response
+        /// Import project from JSON file into existing project  Use case   User attaches project as json file taken from export or export-by-testPlans method   User runs method execution   System updates project   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -688,7 +704,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Import project from JSON file into existing project &lt;br&gt;Use case  &lt;br&gt;User attaches project as json file taken from export or export-by-testPlans method  &lt;br&gt;User runs method execution  &lt;br&gt;System updates project  &lt;br&gt;System returns no content response
+        /// Import project from JSON file into existing project  Use case   User attaches project as json file taken from export or export-by-testPlans method   User runs method execution   System updates project   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -748,7 +764,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Import project from JSON file into existing project &lt;br&gt;Use case  &lt;br&gt;User attaches project as json file taken from export or export-by-testPlans method  &lt;br&gt;User runs method execution  &lt;br&gt;System updates project  &lt;br&gt;System returns no content response
+        /// Import project from JSON file into existing project  Use case   User attaches project as json file taken from export or export-by-testPlans method   User runs method execution   System updates project   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -763,7 +779,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Import project from JSON file into existing project &lt;br&gt;Use case  &lt;br&gt;User attaches project as json file taken from export or export-by-testPlans method  &lt;br&gt;User runs method execution  &lt;br&gt;System updates project  &lt;br&gt;System returns no content response
+        /// Import project from JSON file into existing project  Use case   User attaches project as json file taken from export or export-by-testPlans method   User runs method execution   System updates project   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>

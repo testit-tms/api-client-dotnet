@@ -90,7 +90,7 @@ namespace TestIT.ApiClient.Model
         /// Used for search autotest. If value is null or equals Guid mask filled with zeros, search will be executed using ExternalId
         /// </summary>
         /// <value>Used for search autotest. If value is null or equals Guid mask filled with zeros, search will be executed using ExternalId</value>
-        /// <example>&quot;20b3442e-1e9e-4fea-b940-4fde3f2f9ff6&quot;</example>
+        /// <example>&quot;59173397-9485-4b36-9196-9405cf7416c2&quot;</example>
         [DataMember(Name = "id", EmitDefaultValue = true)]
         public Guid? Id { get; set; }
 
@@ -427,7 +427,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ExternalId (string) minLength
             if (this.ExternalId != null && this.ExternalId.Length < 1)

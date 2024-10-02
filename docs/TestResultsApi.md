@@ -17,7 +17,7 @@ All URIs are relative to *http://localhost*
 | [**GetAttachment**](TestResultsApi.md#getattachment) | **GET** /api/v2/testResults/{id}/attachments/{attachmentId}/info | Get Metadata of TestResult&#39;s attachment |
 | [**GetAttachments**](TestResultsApi.md#getattachments) | **GET** /api/v2/testResults/{id}/attachments | Get all attachments of TestResult |
 
-<a name="apiv2testresultsidaggregatedget"></a>
+<a id="apiv2testresultsidaggregatedget"></a>
 # **ApiV2TestResultsIdAggregatedGet**
 > TestResultModel ApiV2TestResultsIdAggregatedGet (Guid id)
 
@@ -111,12 +111,17 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for the test result is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testresultsidattachmentsattachmentidput"></a>
+<a id="apiv2testresultsidattachmentsattachmentidput"></a>
 # **ApiV2TestResultsIdAttachmentsAttachmentIdPut**
 > void ApiV2TestResultsIdAttachmentsAttachmentIdPut (Guid id, Guid attachmentId)
 
@@ -208,12 +213,17 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Only edits from assigned user are allowed |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testresultsidattachmentsinfoget"></a>
+<a id="apiv2testresultsidattachmentsinfoget"></a>
 # **ApiV2TestResultsIdAttachmentsInfoGet**
 > List&lt;AttachmentModel&gt; ApiV2TestResultsIdAttachmentsInfoGet (Guid id)
 
@@ -307,12 +317,17 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for the test result is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testresultsidget"></a>
+<a id="apiv2testresultsidget"></a>
 # **ApiV2TestResultsIdGet**
 > TestResultModel ApiV2TestResultsIdGet (Guid id)
 
@@ -406,12 +421,17 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for the test result is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testresultsidput"></a>
+<a id="apiv2testresultsidput"></a>
 # **ApiV2TestResultsIdPut**
 > void ApiV2TestResultsIdPut (Guid id, ApiV2TestResultsIdPutRequest apiV2TestResultsIdPutRequest = null)
 
@@ -503,12 +523,17 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Only edits from assigned user are allowed |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testresultssearchpost"></a>
+<a id="apiv2testresultssearchpost"></a>
 # **ApiV2TestResultsSearchPost**
 > List&lt;TestResultShortGetModel&gt; ApiV2TestResultsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = null)
 
@@ -612,12 +637,17 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **200** | OK |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for all requested test runs is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testresultsstatisticsfilterpost"></a>
+<a id="apiv2testresultsstatisticsfilterpost"></a>
 # **ApiV2TestResultsStatisticsFilterPost**
 > TestResultsStatisticsGetModel ApiV2TestResultsStatisticsFilterPost (ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = null)
 
@@ -711,18 +741,23 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for all requested test runs is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createattachment"></a>
+<a id="createattachment"></a>
 # **CreateAttachment**
-> Guid CreateAttachment (Guid id, FileParameter file = null)
+> void CreateAttachment (Guid id, FileParameter file = null)
 
 Upload and link attachment to TestResult
 
-<br>Use case  <br>User sets testResultId  <br>User attaches a file  <br>System creates attachment and links it to the test result  <br>System returns attachment identifier
+ Use case   User sets testResultId   User attaches a file   System creates attachment and links it to the test result   System returns attachment identifier
 
 ### Example
 ```csharp
@@ -756,8 +791,7 @@ namespace Example
             try
             {
                 // Upload and link attachment to TestResult
-                Guid result = apiInstance.CreateAttachment(id, file);
-                Debug.WriteLine(result);
+                apiInstance.CreateAttachment(id, file);
             }
             catch (ApiException  e)
             {
@@ -777,10 +811,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Upload and link attachment to TestResult
-    ApiResponse<Guid> response = apiInstance.CreateAttachmentWithHttpInfo(id, file);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.CreateAttachmentWithHttpInfo(id, file);
 }
 catch (ApiException e)
 {
@@ -799,7 +830,7 @@ catch (ApiException e)
 
 ### Return type
 
-**Guid**
+void (empty response body)
 
 ### Authorization
 
@@ -814,22 +845,24 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
+| **413** | Multipart body length limit exceeded (default constraint is one gigabyte) |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test result required |  -  |
 | **404** |  |  -  |
-| **413** | Multipart body length limit exceeded (default constraint is one gigabyte) |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
+| **200** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleteattachment"></a>
+<a id="deleteattachment"></a>
 # **DeleteAttachment**
 > void DeleteAttachment (Guid id, Guid attachmentId)
 
 Remove attachment and unlink from TestResult
 
-<br>Use case  <br>User sets testResultId and attachmentId  <br>User attaches a file  <br>User runs method execution  <br>System deletes attachment and unlinks it from the test result  <br>System returns attachment identifier
+ Use case   User sets testResultId and attachmentId   User attaches a file   User runs method execution   System deletes attachment and unlinks it from the test result   System returns attachment identifier
 
 ### Example
 ```csharp
@@ -921,16 +954,19 @@ void (empty response body)
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test result required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="downloadattachment"></a>
+<a id="downloadattachment"></a>
 # **DownloadAttachment**
-> FileParameter DownloadAttachment (Guid attachmentId, Guid id, int? width = null, int? height = null, ImageResizeType? resizeType = null, string backgroundColor = null, bool? preview = null)
+> void DownloadAttachment (Guid attachmentId, Guid id, int? width = null, int? height = null, ImageResizeType? resizeType = null, string backgroundColor = null, bool? preview = null)
 
 Get attachment of TestResult
 
-<br>Use case  <br>User sets attachmentId and testResultId  <br>[Optional] User sets resize configuration  <br>User runs method execution  <br>System search attachments by the attachmentId and the testResultId  <br>                      [Optional] If resize configuration is set, System resizes the attachment according to the resize                      configuration                    <br>[Optional] Otherwise, System does not resize the attachment  <br>System returns attachment as a file
+ Use case   User sets attachmentId and testResultId   [Optional] User sets resize configuration   User runs method execution   System search attachments by the attachmentId and the testResultId                         [Optional] If resize configuration is set, System resizes the attachment according to the resize                      configuration                     [Optional] Otherwise, System does not resize the attachment   System returns attachment as a file
 
 ### Example
 ```csharp
@@ -969,8 +1005,7 @@ namespace Example
             try
             {
                 // Get attachment of TestResult
-                FileParameter result = apiInstance.DownloadAttachment(attachmentId, id, width, height, resizeType, backgroundColor, preview);
-                Debug.WriteLine(result);
+                apiInstance.DownloadAttachment(attachmentId, id, width, height, resizeType, backgroundColor, preview);
             }
             catch (ApiException  e)
             {
@@ -990,10 +1025,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get attachment of TestResult
-    ApiResponse<FileParameter> response = apiInstance.DownloadAttachmentWithHttpInfo(attachmentId, id, width, height, resizeType, backgroundColor, preview);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.DownloadAttachmentWithHttpInfo(attachmentId, id, width, height, resizeType, backgroundColor, preview);
 }
 catch (ApiException e)
 {
@@ -1017,7 +1049,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**FileParameter**](FileParameter.md)
+void (empty response body)
 
 ### Authorization
 
@@ -1026,27 +1058,29 @@ catch (ApiException e)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream, application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test result required |  -  |
-| **404** | &lt;br&gt;File not found  &lt;br&gt;Attachment not found |  -  |
+| **404** |  File not found   Attachment not found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getattachment"></a>
+<a id="getattachment"></a>
 # **GetAttachment**
 > AttachmentModel GetAttachment (Guid id, Guid attachmentId)
 
 Get Metadata of TestResult's attachment
 
-<br>Use case  <br>User sets attachmentId and testResultId  <br>User runs method execution  <br>System search attachment by the attachmentId and the testResultId  <br>System returns attachment data
+ Use case   User sets attachmentId and testResultId   User runs method execution   System search attachment by the attachmentId and the testResultId   System returns attachment data
 
 ### Example
 ```csharp
@@ -1143,16 +1177,18 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test result required |  -  |
 | **404** | File not found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getattachments"></a>
+<a id="getattachments"></a>
 # **GetAttachments**
 > List&lt;AttachmentModel&gt; GetAttachments (Guid id)
 
 Get all attachments of TestResult
 
-<br>Use case  <br>User sets testResultId  <br>User runs method execution  <br>System search all attachments of the test result  <br>System returns attachments enumeration
+ Use case   User sets testResultId   User runs method execution   System search all attachments of the test result   System returns attachments enumeration
 
 ### Example
 ```csharp
@@ -1242,11 +1278,13 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test result required |  -  |
 | **404** | TestResult not found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

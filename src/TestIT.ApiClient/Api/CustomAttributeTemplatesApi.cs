@@ -31,7 +31,7 @@ namespace TestIT.ApiClient.Api
         /// Exclude CustomAttributes from CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier  &lt;br&gt;User sets attribute internal identifiers   &lt;br&gt;User runs method execution  &lt;br&gt;System delete attributes from attributes tempalte
+        ///  Use case   User sets attribute template internal identifier   User sets attribute internal identifiers    User runs method execution   System delete attributes from attributes tempalte
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Api
         /// Exclude CustomAttributes from CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier  &lt;br&gt;User sets attribute internal identifiers   &lt;br&gt;User runs method execution  &lt;br&gt;System delete attributes from attributes tempalte
+        ///  Use case   User sets attribute template internal identifier   User sets attribute internal identifiers    User runs method execution   System delete attributes from attributes tempalte
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -54,7 +54,7 @@ namespace TestIT.ApiClient.Api
         /// Include CustomAttributes to CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier  &lt;br&gt;User sets attribute internal identifiers   &lt;br&gt;User runs method execution  &lt;br&gt;System add attributes to attributes tempalte
+        ///  Use case   User sets attribute template internal identifier   User sets attribute internal identifiers    User runs method execution   System add attributes to attributes tempalte
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -66,7 +66,7 @@ namespace TestIT.ApiClient.Api
         /// Include CustomAttributes to CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier  &lt;br&gt;User sets attribute internal identifiers   &lt;br&gt;User runs method execution  &lt;br&gt;System add attributes to attributes tempalte
+        ///  Use case   User sets attribute template internal identifier   User sets attribute internal identifiers    User runs method execution   System add attributes to attributes tempalte
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -77,28 +77,28 @@ namespace TestIT.ApiClient.Api
         /// Delete CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search and delete attribute template  &lt;br&gt;System returns no content response
+        ///  Use case   User sets attribute template internal identifier   User runs method execution   System search and delete attribute template   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
-        /// <returns>NoContentResult</returns>
-        NoContentResult ApiV2CustomAttributesTemplatesIdDelete(Guid id);
+        /// <returns></returns>
+        void ApiV2CustomAttributesTemplatesIdDelete(Guid id);
 
         /// <summary>
         /// Delete CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search and delete attribute template  &lt;br&gt;System returns no content response
+        ///  Use case   User sets attribute template internal identifier   User runs method execution   System search and delete attribute template   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
-        /// <returns>ApiResponse of NoContentResult</returns>
-        ApiResponse<NoContentResult> ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfo(Guid id);
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfo(Guid id);
         /// <summary>
         /// Get CustomAttributeTemplate by ID
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System return attribute template (listed in response example)
+        ///  Use case   User sets attribute template internal identifier    User runs method execution   System return attribute template (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
@@ -109,7 +109,7 @@ namespace TestIT.ApiClient.Api
         /// Get CustomAttributeTemplate by ID
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System return attribute template (listed in response example)
+        ///  Use case   User sets attribute template internal identifier    User runs method execution   System return attribute template (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
@@ -119,7 +119,7 @@ namespace TestIT.ApiClient.Api
         /// Get CustomAttributeTemplate by name
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template name  &lt;br&gt;User runs method execution  &lt;br&gt;System search and return list of attribute templates (listed in response example)
+        ///  Use case   User sets attribute template name   User runs method execution   System search and return list of attribute templates (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
@@ -130,7 +130,7 @@ namespace TestIT.ApiClient.Api
         /// Get CustomAttributeTemplate by name
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template name  &lt;br&gt;User runs method execution  &lt;br&gt;System search and return list of attribute templates (listed in response example)
+        ///  Use case   User sets attribute template name   User runs method execution   System search and return list of attribute templates (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
@@ -140,7 +140,7 @@ namespace TestIT.ApiClient.Api
         /// Create CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template parameters (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates attribute template  &lt;br&gt;System returns attribute template model (example listed in response parameters)
+        ///  Use case   User sets attribute template parameters (listed in request example)   User runs method execution   System creates attribute template   System returns attribute template model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2CustomAttributesTemplatesPostRequest"> (optional)</param>
@@ -151,7 +151,7 @@ namespace TestIT.ApiClient.Api
         /// Create CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template parameters (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates attribute template  &lt;br&gt;System returns attribute template model (example listed in response parameters)
+        ///  Use case   User sets attribute template parameters (listed in request example)   User runs method execution   System creates attribute template   System returns attribute template model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2CustomAttributesTemplatesPostRequest"> (optional)</param>
@@ -179,7 +179,7 @@ namespace TestIT.ApiClient.Api
         /// Search CustomAttributeTemplates
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets search params model (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return attribute templates (listed in response example)
+        ///  Use case   User sets search params model (listed in request example)   User runs method execution   System return attribute templates (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -195,7 +195,7 @@ namespace TestIT.ApiClient.Api
         /// Search CustomAttributeTemplates
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets search params model (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return attribute templates (listed in response example)
+        ///  Use case   User sets search params model (listed in request example)   User runs method execution   System return attribute templates (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -219,7 +219,7 @@ namespace TestIT.ApiClient.Api
         /// Exclude CustomAttributes from CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier  &lt;br&gt;User sets attribute internal identifiers   &lt;br&gt;User runs method execution  &lt;br&gt;System delete attributes from attributes tempalte
+        ///  Use case   User sets attribute template internal identifier   User sets attribute internal identifiers    User runs method execution   System delete attributes from attributes tempalte
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -232,7 +232,7 @@ namespace TestIT.ApiClient.Api
         /// Exclude CustomAttributes from CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier  &lt;br&gt;User sets attribute internal identifiers   &lt;br&gt;User runs method execution  &lt;br&gt;System delete attributes from attributes tempalte
+        ///  Use case   User sets attribute template internal identifier   User sets attribute internal identifiers    User runs method execution   System delete attributes from attributes tempalte
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -244,7 +244,7 @@ namespace TestIT.ApiClient.Api
         /// Include CustomAttributes to CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier  &lt;br&gt;User sets attribute internal identifiers   &lt;br&gt;User runs method execution  &lt;br&gt;System add attributes to attributes tempalte
+        ///  Use case   User sets attribute template internal identifier   User sets attribute internal identifiers    User runs method execution   System add attributes to attributes tempalte
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -257,7 +257,7 @@ namespace TestIT.ApiClient.Api
         /// Include CustomAttributes to CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier  &lt;br&gt;User sets attribute internal identifiers   &lt;br&gt;User runs method execution  &lt;br&gt;System add attributes to attributes tempalte
+        ///  Use case   User sets attribute template internal identifier   User sets attribute internal identifiers    User runs method execution   System add attributes to attributes tempalte
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -269,30 +269,30 @@ namespace TestIT.ApiClient.Api
         /// Delete CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search and delete attribute template  &lt;br&gt;System returns no content response
+        ///  Use case   User sets attribute template internal identifier   User runs method execution   System search and delete attribute template   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of NoContentResult</returns>
-        System.Threading.Tasks.Task<NoContentResult> ApiV2CustomAttributesTemplatesIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search and delete attribute template  &lt;br&gt;System returns no content response
+        ///  Use case   User sets attribute template internal identifier   User runs method execution   System search and delete attribute template   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (NoContentResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<NoContentResult>> ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get CustomAttributeTemplate by ID
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System return attribute template (listed in response example)
+        ///  Use case   User sets attribute template internal identifier    User runs method execution   System return attribute template (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
@@ -304,7 +304,7 @@ namespace TestIT.ApiClient.Api
         /// Get CustomAttributeTemplate by ID
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System return attribute template (listed in response example)
+        ///  Use case   User sets attribute template internal identifier    User runs method execution   System return attribute template (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
@@ -315,7 +315,7 @@ namespace TestIT.ApiClient.Api
         /// Get CustomAttributeTemplate by name
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template name  &lt;br&gt;User runs method execution  &lt;br&gt;System search and return list of attribute templates (listed in response example)
+        ///  Use case   User sets attribute template name   User runs method execution   System search and return list of attribute templates (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
@@ -327,7 +327,7 @@ namespace TestIT.ApiClient.Api
         /// Get CustomAttributeTemplate by name
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template name  &lt;br&gt;User runs method execution  &lt;br&gt;System search and return list of attribute templates (listed in response example)
+        ///  Use case   User sets attribute template name   User runs method execution   System search and return list of attribute templates (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
@@ -338,7 +338,7 @@ namespace TestIT.ApiClient.Api
         /// Create CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template parameters (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates attribute template  &lt;br&gt;System returns attribute template model (example listed in response parameters)
+        ///  Use case   User sets attribute template parameters (listed in request example)   User runs method execution   System creates attribute template   System returns attribute template model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2CustomAttributesTemplatesPostRequest"> (optional)</param>
@@ -350,7 +350,7 @@ namespace TestIT.ApiClient.Api
         /// Create CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets attribute template parameters (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates attribute template  &lt;br&gt;System returns attribute template model (example listed in response parameters)
+        ///  Use case   User sets attribute template parameters (listed in request example)   User runs method execution   System creates attribute template   System returns attribute template model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2CustomAttributesTemplatesPostRequest"> (optional)</param>
@@ -384,7 +384,7 @@ namespace TestIT.ApiClient.Api
         /// Search CustomAttributeTemplates
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets search params model (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return attribute templates (listed in response example)
+        ///  Use case   User sets search params model (listed in request example)   User runs method execution   System return attribute templates (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -401,7 +401,7 @@ namespace TestIT.ApiClient.Api
         /// Search CustomAttributeTemplates
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets search params model (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return attribute templates (listed in response example)
+        ///  Use case   User sets search params model (listed in request example)   User runs method execution   System return attribute templates (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -627,7 +627,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Exclude CustomAttributes from CustomAttributeTemplate &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier  &lt;br&gt;User sets attribute internal identifiers   &lt;br&gt;User runs method execution  &lt;br&gt;System delete attributes from attributes tempalte
+        /// Exclude CustomAttributes from CustomAttributeTemplate  Use case   User sets attribute template internal identifier   User sets attribute internal identifiers    User runs method execution   System delete attributes from attributes tempalte
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -639,7 +639,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Exclude CustomAttributes from CustomAttributeTemplate &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier  &lt;br&gt;User sets attribute internal identifiers   &lt;br&gt;User runs method execution  &lt;br&gt;System delete attributes from attributes tempalte
+        /// Exclude CustomAttributes from CustomAttributeTemplate  Use case   User sets attribute template internal identifier   User sets attribute internal identifiers    User runs method execution   System delete attributes from attributes tempalte
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -686,7 +686,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Exclude CustomAttributes from CustomAttributeTemplate &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier  &lt;br&gt;User sets attribute internal identifiers   &lt;br&gt;User runs method execution  &lt;br&gt;System delete attributes from attributes tempalte
+        /// Exclude CustomAttributes from CustomAttributeTemplate  Use case   User sets attribute template internal identifier   User sets attribute internal identifiers    User runs method execution   System delete attributes from attributes tempalte
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -699,7 +699,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Exclude CustomAttributes from CustomAttributeTemplate &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier  &lt;br&gt;User sets attribute internal identifiers   &lt;br&gt;User runs method execution  &lt;br&gt;System delete attributes from attributes tempalte
+        /// Exclude CustomAttributes from CustomAttributeTemplate  Use case   User sets attribute template internal identifier   User sets attribute internal identifiers    User runs method execution   System delete attributes from attributes tempalte
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -750,7 +750,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Include CustomAttributes to CustomAttributeTemplate &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier  &lt;br&gt;User sets attribute internal identifiers   &lt;br&gt;User runs method execution  &lt;br&gt;System add attributes to attributes tempalte
+        /// Include CustomAttributes to CustomAttributeTemplate  Use case   User sets attribute template internal identifier   User sets attribute internal identifiers    User runs method execution   System add attributes to attributes tempalte
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -762,7 +762,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Include CustomAttributes to CustomAttributeTemplate &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier  &lt;br&gt;User sets attribute internal identifiers   &lt;br&gt;User runs method execution  &lt;br&gt;System add attributes to attributes tempalte
+        /// Include CustomAttributes to CustomAttributeTemplate  Use case   User sets attribute template internal identifier   User sets attribute internal identifiers    User runs method execution   System add attributes to attributes tempalte
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -809,7 +809,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Include CustomAttributes to CustomAttributeTemplate &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier  &lt;br&gt;User sets attribute internal identifiers   &lt;br&gt;User runs method execution  &lt;br&gt;System add attributes to attributes tempalte
+        /// Include CustomAttributes to CustomAttributeTemplate  Use case   User sets attribute template internal identifier   User sets attribute internal identifiers    User runs method execution   System add attributes to attributes tempalte
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -822,7 +822,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Include CustomAttributes to CustomAttributeTemplate &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier  &lt;br&gt;User sets attribute internal identifiers   &lt;br&gt;User runs method execution  &lt;br&gt;System add attributes to attributes tempalte
+        /// Include CustomAttributes to CustomAttributeTemplate  Use case   User sets attribute template internal identifier   User sets attribute internal identifiers    User runs method execution   System add attributes to attributes tempalte
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -873,24 +873,23 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete CustomAttributeTemplate &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search and delete attribute template  &lt;br&gt;System returns no content response
+        /// Delete CustomAttributeTemplate  Use case   User sets attribute template internal identifier   User runs method execution   System search and delete attribute template   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
-        /// <returns>NoContentResult</returns>
-        public NoContentResult ApiV2CustomAttributesTemplatesIdDelete(Guid id)
+        /// <returns></returns>
+        public void ApiV2CustomAttributesTemplatesIdDelete(Guid id)
         {
-            TestIT.ApiClient.Client.ApiResponse<NoContentResult> localVarResponse = ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfo(id);
-            return localVarResponse.Data;
+            ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfo(id);
         }
 
         /// <summary>
-        /// Delete CustomAttributeTemplate &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search and delete attribute template  &lt;br&gt;System returns no content response
+        /// Delete CustomAttributeTemplate  Use case   User sets attribute template internal identifier   User runs method execution   System search and delete attribute template   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
-        /// <returns>ApiResponse of NoContentResult</returns>
-        public TestIT.ApiClient.Client.ApiResponse<NoContentResult> ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfo(Guid id)
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfo(Guid id)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -917,7 +916,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<NoContentResult>("/api/v2/customAttributes/templates/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<Object>("/api/v2/customAttributes/templates/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -929,26 +928,25 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete CustomAttributeTemplate &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search and delete attribute template  &lt;br&gt;System returns no content response
+        /// Delete CustomAttributeTemplate  Use case   User sets attribute template internal identifier   User runs method execution   System search and delete attribute template   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of NoContentResult</returns>
-        public async System.Threading.Tasks.Task<NoContentResult> ApiV2CustomAttributesTemplatesIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<NoContentResult> localVarResponse = await ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Delete CustomAttributeTemplate &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search and delete attribute template  &lt;br&gt;System returns no content response
+        /// Delete CustomAttributeTemplate  Use case   User sets attribute template internal identifier   User runs method execution   System search and delete attribute template   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (NoContentResult)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<NoContentResult>> ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -978,7 +976,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<NoContentResult>("/api/v2/customAttributes/templates/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/v2/customAttributes/templates/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -990,7 +988,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get CustomAttributeTemplate by ID &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System return attribute template (listed in response example)
+        /// Get CustomAttributeTemplate by ID  Use case   User sets attribute template internal identifier    User runs method execution   System return attribute template (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
@@ -1002,7 +1000,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get CustomAttributeTemplate by ID &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System return attribute template (listed in response example)
+        /// Get CustomAttributeTemplate by ID  Use case   User sets attribute template internal identifier    User runs method execution   System return attribute template (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
@@ -1046,7 +1044,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get CustomAttributeTemplate by ID &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System return attribute template (listed in response example)
+        /// Get CustomAttributeTemplate by ID  Use case   User sets attribute template internal identifier    User runs method execution   System return attribute template (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
@@ -1059,7 +1057,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get CustomAttributeTemplate by ID &lt;br&gt;Use case  &lt;br&gt;User sets attribute template internal identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System return attribute template (listed in response example)
+        /// Get CustomAttributeTemplate by ID  Use case   User sets attribute template internal identifier    User runs method execution   System return attribute template (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
@@ -1107,7 +1105,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get CustomAttributeTemplate by name &lt;br&gt;Use case  &lt;br&gt;User sets attribute template name  &lt;br&gt;User runs method execution  &lt;br&gt;System search and return list of attribute templates (listed in response example)
+        /// Get CustomAttributeTemplate by name  Use case   User sets attribute template name   User runs method execution   System search and return list of attribute templates (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
@@ -1119,7 +1117,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get CustomAttributeTemplate by name &lt;br&gt;Use case  &lt;br&gt;User sets attribute template name  &lt;br&gt;User runs method execution  &lt;br&gt;System search and return list of attribute templates (listed in response example)
+        /// Get CustomAttributeTemplate by name  Use case   User sets attribute template name   User runs method execution   System search and return list of attribute templates (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
@@ -1167,7 +1165,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get CustomAttributeTemplate by name &lt;br&gt;Use case  &lt;br&gt;User sets attribute template name  &lt;br&gt;User runs method execution  &lt;br&gt;System search and return list of attribute templates (listed in response example)
+        /// Get CustomAttributeTemplate by name  Use case   User sets attribute template name   User runs method execution   System search and return list of attribute templates (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
@@ -1180,7 +1178,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get CustomAttributeTemplate by name &lt;br&gt;Use case  &lt;br&gt;User sets attribute template name  &lt;br&gt;User runs method execution  &lt;br&gt;System search and return list of attribute templates (listed in response example)
+        /// Get CustomAttributeTemplate by name  Use case   User sets attribute template name   User runs method execution   System search and return list of attribute templates (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
@@ -1232,7 +1230,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create CustomAttributeTemplate &lt;br&gt;Use case  &lt;br&gt;User sets attribute template parameters (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates attribute template  &lt;br&gt;System returns attribute template model (example listed in response parameters)
+        /// Create CustomAttributeTemplate  Use case   User sets attribute template parameters (listed in request example)   User runs method execution   System creates attribute template   System returns attribute template model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2CustomAttributesTemplatesPostRequest"> (optional)</param>
@@ -1244,7 +1242,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create CustomAttributeTemplate &lt;br&gt;Use case  &lt;br&gt;User sets attribute template parameters (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates attribute template  &lt;br&gt;System returns attribute template model (example listed in response parameters)
+        /// Create CustomAttributeTemplate  Use case   User sets attribute template parameters (listed in request example)   User runs method execution   System creates attribute template   System returns attribute template model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2CustomAttributesTemplatesPostRequest"> (optional)</param>
@@ -1289,7 +1287,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create CustomAttributeTemplate &lt;br&gt;Use case  &lt;br&gt;User sets attribute template parameters (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates attribute template  &lt;br&gt;System returns attribute template model (example listed in response parameters)
+        /// Create CustomAttributeTemplate  Use case   User sets attribute template parameters (listed in request example)   User runs method execution   System creates attribute template   System returns attribute template model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2CustomAttributesTemplatesPostRequest"> (optional)</param>
@@ -1302,7 +1300,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create CustomAttributeTemplate &lt;br&gt;Use case  &lt;br&gt;User sets attribute template parameters (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates attribute template  &lt;br&gt;System returns attribute template model (example listed in response parameters)
+        /// Create CustomAttributeTemplate  Use case   User sets attribute template parameters (listed in request example)   User runs method execution   System creates attribute template   System returns attribute template model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="apiV2CustomAttributesTemplatesPostRequest"> (optional)</param>
@@ -1468,7 +1466,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search CustomAttributeTemplates &lt;br&gt;Use case  &lt;br&gt;User sets search params model (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return attribute templates (listed in response example)
+        /// Search CustomAttributeTemplates  Use case   User sets search params model (listed in request example)   User runs method execution   System return attribute templates (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1485,7 +1483,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search CustomAttributeTemplates &lt;br&gt;Use case  &lt;br&gt;User sets search params model (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return attribute templates (listed in response example)
+        /// Search CustomAttributeTemplates  Use case   User sets search params model (listed in request example)   User runs method execution   System return attribute templates (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1555,7 +1553,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search CustomAttributeTemplates &lt;br&gt;Use case  &lt;br&gt;User sets search params model (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return attribute templates (listed in response example)
+        /// Search CustomAttributeTemplates  Use case   User sets search params model (listed in request example)   User runs method execution   System return attribute templates (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1573,7 +1571,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search CustomAttributeTemplates &lt;br&gt;Use case  &lt;br&gt;User sets search params model (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return attribute templates (listed in response example)
+        /// Search CustomAttributeTemplates  Use case   User sets search params model (listed in request example)   User runs method execution   System return attribute templates (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>

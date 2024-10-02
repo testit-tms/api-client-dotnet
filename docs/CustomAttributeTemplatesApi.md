@@ -13,13 +13,13 @@ All URIs are relative to *http://localhost*
 | [**ApiV2CustomAttributesTemplatesPut**](CustomAttributeTemplatesApi.md#apiv2customattributestemplatesput) | **PUT** /api/v2/customAttributes/templates | Update custom attributes template |
 | [**ApiV2CustomAttributesTemplatesSearchPost**](CustomAttributeTemplatesApi.md#apiv2customattributestemplatessearchpost) | **POST** /api/v2/customAttributes/templates/search | Search CustomAttributeTemplates |
 
-<a name="apiv2customattributestemplatesidcustomattributesexcludepost"></a>
+<a id="apiv2customattributestemplatesidcustomattributesexcludepost"></a>
 # **ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePost**
 > void ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePost (Guid id, List<Guid> requestBody = null)
 
 Exclude CustomAttributes from CustomAttributeTemplate
 
-<br>Use case  <br>User sets attribute template internal identifier  <br>User sets attribute internal identifiers   <br>User runs method execution  <br>System delete attributes from attributes tempalte
+ Use case   User sets attribute template internal identifier   User sets attribute internal identifiers    User runs method execution   System delete attributes from attributes tempalte
 
 ### Example
 ```csharp
@@ -107,20 +107,23 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
-| **404** | Not Found |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Admin system role is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2customattributestemplatesidcustomattributesincludepost"></a>
+<a id="apiv2customattributestemplatesidcustomattributesincludepost"></a>
 # **ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePost**
 > void ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePost (Guid id, List<Guid> requestBody = null)
 
 Include CustomAttributes to CustomAttributeTemplate
 
-<br>Use case  <br>User sets attribute template internal identifier  <br>User sets attribute internal identifiers   <br>User runs method execution  <br>System add attributes to attributes tempalte
+ Use case   User sets attribute template internal identifier   User sets attribute internal identifiers    User runs method execution   System add attributes to attributes tempalte
 
 ### Example
 ```csharp
@@ -208,20 +211,23 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
-| **404** | Not Found |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Admin system role is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2customattributestemplatesiddelete"></a>
+<a id="apiv2customattributestemplatesiddelete"></a>
 # **ApiV2CustomAttributesTemplatesIdDelete**
-> NoContentResult ApiV2CustomAttributesTemplatesIdDelete (Guid id)
+> void ApiV2CustomAttributesTemplatesIdDelete (Guid id)
 
 Delete CustomAttributeTemplate
 
-<br>Use case  <br>User sets attribute template internal identifier  <br>User runs method execution  <br>System search and delete attribute template  <br>System returns no content response
+ Use case   User sets attribute template internal identifier   User runs method execution   System search and delete attribute template   System returns no content response
 
 ### Example
 ```csharp
@@ -254,8 +260,7 @@ namespace Example
             try
             {
                 // Delete CustomAttributeTemplate
-                NoContentResult result = apiInstance.ApiV2CustomAttributesTemplatesIdDelete(id);
-                Debug.WriteLine(result);
+                apiInstance.ApiV2CustomAttributesTemplatesIdDelete(id);
             }
             catch (ApiException  e)
             {
@@ -275,10 +280,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete CustomAttributeTemplate
-    ApiResponse<NoContentResult> response = apiInstance.ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfo(id);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
@@ -296,7 +298,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**NoContentResult**](NoContentResult.md)
+void (empty response body)
 
 ### Authorization
 
@@ -313,17 +315,21 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
 | **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Admin system role is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2customattributestemplatesidget"></a>
+<a id="apiv2customattributestemplatesidget"></a>
 # **ApiV2CustomAttributesTemplatesIdGet**
 > CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesIdGet (Guid id)
 
 Get CustomAttributeTemplate by ID
 
-<br>Use case  <br>User sets attribute template internal identifier   <br>User runs method execution  <br>System return attribute template (listed in response example)
+ Use case   User sets attribute template internal identifier    User runs method execution   System return attribute template (listed in response example)
 
 ### Example
 ```csharp
@@ -413,19 +419,23 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Can&#39;t find a CustomAttributeTemplate with identifier |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2customattributestemplatesnameget"></a>
+<a id="apiv2customattributestemplatesnameget"></a>
 # **ApiV2CustomAttributesTemplatesNameGet**
 > CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesNameGet (string name)
 
 Get CustomAttributeTemplate by name
 
-<br>Use case  <br>User sets attribute template name  <br>User runs method execution  <br>System search and return list of attribute templates (listed in response example)
+ Use case   User sets attribute template name   User runs method execution   System search and return list of attribute templates (listed in response example)
 
 ### Example
 ```csharp
@@ -515,17 +525,23 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2customattributestemplatespost"></a>
+<a id="apiv2customattributestemplatespost"></a>
 # **ApiV2CustomAttributesTemplatesPost**
 > CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesPost (ApiV2CustomAttributesTemplatesPostRequest apiV2CustomAttributesTemplatesPostRequest = null)
 
 Create CustomAttributeTemplate
 
-<br>Use case  <br>User sets attribute template parameters (listed in request example)  <br>User runs method execution  <br>System creates attribute template  <br>System returns attribute template model (example listed in response parameters)
+ Use case   User sets attribute template parameters (listed in request example)   User runs method execution   System creates attribute template   System returns attribute template model (example listed in response parameters)
 
 ### Example
 ```csharp
@@ -617,11 +633,15 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
 | **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Admin system role is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2customattributestemplatesput"></a>
+<a id="apiv2customattributestemplatesput"></a>
 # **ApiV2CustomAttributesTemplatesPut**
 > void ApiV2CustomAttributesTemplatesPut (ApiV2CustomAttributesTemplatesPutRequest apiV2CustomAttributesTemplatesPutRequest = null)
 
@@ -711,18 +731,23 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | System administrator role is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2customattributestemplatessearchpost"></a>
+<a id="apiv2customattributestemplatessearchpost"></a>
 # **ApiV2CustomAttributesTemplatesSearchPost**
 > List&lt;SearchCustomAttributeTemplateGetModel&gt; ApiV2CustomAttributesTemplatesSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2CustomAttributesTemplatesSearchPostRequest apiV2CustomAttributesTemplatesSearchPostRequest = null)
 
 Search CustomAttributeTemplates
 
-<br>Use case  <br>User sets search params model (listed in request example)  <br>User runs method execution  <br>System return attribute templates (listed in response example)
+ Use case   User sets search params model (listed in request example)   User runs method execution   System return attribute templates (listed in response example)
 
 ### Example
 ```csharp
@@ -822,8 +847,13 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **200** | OK |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 | **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

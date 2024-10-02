@@ -31,7 +31,7 @@ namespace TestIT.ApiClient.Api
         /// Create multiple parameters
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets list of parameter model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates parameters  &lt;br&gt;System returns list of parameter model (listed in the response example)
+        ///  Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System creates parameters   System returns list of parameter model (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPostModel"> (optional)</param>
@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Api
         /// Create multiple parameters
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets list of parameter model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates parameters  &lt;br&gt;System returns list of parameter model (listed in the response example)
+        ///  Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System creates parameters   System returns list of parameter model (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPostModel"> (optional)</param>
@@ -52,7 +52,7 @@ namespace TestIT.ApiClient.Api
         /// Update multiple parameters
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets list of parameter model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates parameters
+        ///  Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System updates parameters
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPutModel"> (optional)</param>
@@ -63,7 +63,7 @@ namespace TestIT.ApiClient.Api
         /// Update multiple parameters
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets list of parameter model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates parameters
+        ///  Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System updates parameters
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPutModel"> (optional)</param>
@@ -73,7 +73,7 @@ namespace TestIT.ApiClient.Api
         /// Get parameters as group
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameters  &lt;br&gt;System returns parameters models as groups (listed in the response example)
+        ///  Use case   User runs method execution   System search parameters   System returns parameters models as groups (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted"> (optional)</param>
@@ -90,7 +90,7 @@ namespace TestIT.ApiClient.Api
         /// Get parameters as group
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameters  &lt;br&gt;System returns parameters models as groups (listed in the response example)
+        ///  Use case   User runs method execution   System search parameters   System returns parameters models as groups (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted"> (optional)</param>
@@ -106,7 +106,7 @@ namespace TestIT.ApiClient.Api
         /// Check existence parameter key in system
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets name of parameter key  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameter key  &lt;br&gt;System returns the flag for the existence of the parameter key in the system
+        ///  Use case   User sets name of parameter key   User runs method execution   System search parameter key   System returns the flag for the existence of the parameter key in the system
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
@@ -117,7 +117,7 @@ namespace TestIT.ApiClient.Api
         /// Check existence parameter key in system
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets name of parameter key  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameter key  &lt;br&gt;System returns the flag for the existence of the parameter key in the system
+        ///  Use case   User sets name of parameter key   User runs method execution   System search parameter key   System returns the flag for the existence of the parameter key in the system
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
@@ -127,7 +127,7 @@ namespace TestIT.ApiClient.Api
         /// Get all parameter key values
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets parameter key (string format)  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameter values using the key  &lt;br&gt;System returns parameter
+        ///  Use case   User sets parameter key (string format)   User runs method execution   System search parameter values using the key   System returns parameter
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">Parameter key (string format)</param>
@@ -138,7 +138,7 @@ namespace TestIT.ApiClient.Api
         /// Get all parameter key values
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets parameter key (string format)  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameter values using the key  &lt;br&gt;System returns parameter
+        ///  Use case   User sets parameter key (string format)   User runs method execution   System search parameter values using the key   System returns parameter
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">Parameter key (string format)</param>
@@ -148,7 +148,7 @@ namespace TestIT.ApiClient.Api
         /// Get all parameter keys
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System search all parameter keys  &lt;br&gt;System returns parameter keys
+        ///  Use case   User runs method execution   System search all parameter keys   System returns parameter keys
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;string&gt;</returns>
@@ -158,7 +158,7 @@ namespace TestIT.ApiClient.Api
         /// Get all parameter keys
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System search all parameter keys  &lt;br&gt;System returns parameter keys
+        ///  Use case   User runs method execution   System search all parameter keys   System returns parameter keys
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
@@ -223,7 +223,7 @@ namespace TestIT.ApiClient.Api
         /// Create parameter
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets parameter model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates parameter  &lt;br&gt;System returns parameter model
+        ///  Use case   User sets parameter model (listed in the request example)   User runs method execution   System creates parameter   System returns parameter model
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createParameterRequest"> (optional)</param>
@@ -234,7 +234,7 @@ namespace TestIT.ApiClient.Api
         /// Create parameter
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets parameter model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates parameter  &lt;br&gt;System returns parameter model
+        ///  Use case   User sets parameter model (listed in the request example)   User runs method execution   System creates parameter   System returns parameter model
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createParameterRequest"> (optional)</param>
@@ -268,7 +268,7 @@ namespace TestIT.ApiClient.Api
         /// Deletes parameter and all it&#39;s values by parameter key identifier
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="keyId"></param>
+        /// <param name="keyId">Identifier of the parameter key</param>
         /// <returns></returns>
         void DeleteByParameterKeyId(Guid keyId);
 
@@ -279,14 +279,14 @@ namespace TestIT.ApiClient.Api
         /// Deletes parameter and all it&#39;s values by parameter key identifier
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="keyId"></param>
+        /// <param name="keyId">Identifier of the parameter key</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteByParameterKeyIdWithHttpInfo(Guid keyId);
         /// <summary>
         /// Delete parameter
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets parameter internal (guid format) identifier  &lt;br&gt;System search and delete parameter  &lt;br&gt;System returns deleted parameter
+        ///  Use case   User sets parameter internal (guid format) identifier   System search and delete parameter   System returns deleted parameter
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -297,7 +297,7 @@ namespace TestIT.ApiClient.Api
         /// Delete parameter
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets parameter internal (guid format) identifier  &lt;br&gt;System search and delete parameter  &lt;br&gt;System returns deleted parameter
+        ///  Use case   User sets parameter internal (guid format) identifier   System search and delete parameter   System returns deleted parameter
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -307,7 +307,7 @@ namespace TestIT.ApiClient.Api
         /// Get all parameters
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;[Optional] User sets isDeleted field value  &lt;br&gt;[Optional] If User sets isDeleted field value as true, System search all deleted parameters  &lt;br&gt;[Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted  &lt;br&gt;If User did not set isDeleted field value, System search all parameters  &lt;br&gt;System returns array of all found parameters(listed in response model)
+        ///  Use case   [Optional] User sets isDeleted field value   [Optional] If User sets isDeleted field value as true, System search all deleted parameters   [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted   If User did not set isDeleted field value, System search all parameters   System returns array of all found parameters(listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -323,7 +323,7 @@ namespace TestIT.ApiClient.Api
         /// Get all parameters
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;[Optional] User sets isDeleted field value  &lt;br&gt;[Optional] If User sets isDeleted field value as true, System search all deleted parameters  &lt;br&gt;[Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted  &lt;br&gt;If User did not set isDeleted field value, System search all parameters  &lt;br&gt;System returns array of all found parameters(listed in response model)
+        ///  Use case   [Optional] User sets isDeleted field value   [Optional] If User sets isDeleted field value as true, System search all deleted parameters   [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted   If User did not set isDeleted field value, System search all parameters   System returns array of all found parameters(listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -338,7 +338,7 @@ namespace TestIT.ApiClient.Api
         /// Get parameter by ID
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets parameter internal (guid format) identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameter using the identifier  &lt;br&gt;System returns parameter
+        ///  Use case   User sets parameter internal (guid format) identifier   User runs method execution   System search parameter using the identifier   System returns parameter
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -349,7 +349,7 @@ namespace TestIT.ApiClient.Api
         /// Get parameter by ID
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets parameter internal (guid format) identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameter using the identifier  &lt;br&gt;System returns parameter
+        ///  Use case   User sets parameter internal (guid format) identifier   User runs method execution   System search parameter using the identifier   System returns parameter
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -359,7 +359,7 @@ namespace TestIT.ApiClient.Api
         /// Update parameter
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets parameter updated properties(listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updated parameter using updated properties  &lt;br&gt;System returns no content response
+        ///  Use case   User sets parameter updated properties(listed in the request example)   User runs method execution   System updated parameter using updated properties   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateParameterRequest"> (optional)</param>
@@ -370,7 +370,7 @@ namespace TestIT.ApiClient.Api
         /// Update parameter
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets parameter updated properties(listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updated parameter using updated properties  &lt;br&gt;System returns no content response
+        ///  Use case   User sets parameter updated properties(listed in the request example)   User runs method execution   System updated parameter using updated properties   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateParameterRequest"> (optional)</param>
@@ -389,7 +389,7 @@ namespace TestIT.ApiClient.Api
         /// Create multiple parameters
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets list of parameter model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates parameters  &lt;br&gt;System returns list of parameter model (listed in the response example)
+        ///  Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System creates parameters   System returns list of parameter model (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPostModel"> (optional)</param>
@@ -401,7 +401,7 @@ namespace TestIT.ApiClient.Api
         /// Create multiple parameters
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets list of parameter model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates parameters  &lt;br&gt;System returns list of parameter model (listed in the response example)
+        ///  Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System creates parameters   System returns list of parameter model (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPostModel"> (optional)</param>
@@ -412,7 +412,7 @@ namespace TestIT.ApiClient.Api
         /// Update multiple parameters
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets list of parameter model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates parameters
+        ///  Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System updates parameters
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPutModel"> (optional)</param>
@@ -424,7 +424,7 @@ namespace TestIT.ApiClient.Api
         /// Update multiple parameters
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets list of parameter model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates parameters
+        ///  Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System updates parameters
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPutModel"> (optional)</param>
@@ -435,7 +435,7 @@ namespace TestIT.ApiClient.Api
         /// Get parameters as group
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameters  &lt;br&gt;System returns parameters models as groups (listed in the response example)
+        ///  Use case   User runs method execution   System search parameters   System returns parameters models as groups (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted"> (optional)</param>
@@ -453,7 +453,7 @@ namespace TestIT.ApiClient.Api
         /// Get parameters as group
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameters  &lt;br&gt;System returns parameters models as groups (listed in the response example)
+        ///  Use case   User runs method execution   System search parameters   System returns parameters models as groups (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted"> (optional)</param>
@@ -470,7 +470,7 @@ namespace TestIT.ApiClient.Api
         /// Check existence parameter key in system
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets name of parameter key  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameter key  &lt;br&gt;System returns the flag for the existence of the parameter key in the system
+        ///  Use case   User sets name of parameter key   User runs method execution   System search parameter key   System returns the flag for the existence of the parameter key in the system
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
@@ -482,7 +482,7 @@ namespace TestIT.ApiClient.Api
         /// Check existence parameter key in system
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets name of parameter key  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameter key  &lt;br&gt;System returns the flag for the existence of the parameter key in the system
+        ///  Use case   User sets name of parameter key   User runs method execution   System search parameter key   System returns the flag for the existence of the parameter key in the system
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
@@ -493,7 +493,7 @@ namespace TestIT.ApiClient.Api
         /// Get all parameter key values
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets parameter key (string format)  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameter values using the key  &lt;br&gt;System returns parameter
+        ///  Use case   User sets parameter key (string format)   User runs method execution   System search parameter values using the key   System returns parameter
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">Parameter key (string format)</param>
@@ -505,7 +505,7 @@ namespace TestIT.ApiClient.Api
         /// Get all parameter key values
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets parameter key (string format)  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameter values using the key  &lt;br&gt;System returns parameter
+        ///  Use case   User sets parameter key (string format)   User runs method execution   System search parameter values using the key   System returns parameter
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">Parameter key (string format)</param>
@@ -516,7 +516,7 @@ namespace TestIT.ApiClient.Api
         /// Get all parameter keys
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System search all parameter keys  &lt;br&gt;System returns parameter keys
+        ///  Use case   User runs method execution   System search all parameter keys   System returns parameter keys
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -527,7 +527,7 @@ namespace TestIT.ApiClient.Api
         /// Get all parameter keys
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System search all parameter keys  &lt;br&gt;System returns parameter keys
+        ///  Use case   User runs method execution   System search all parameter keys   System returns parameter keys
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -603,7 +603,7 @@ namespace TestIT.ApiClient.Api
         /// Create parameter
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets parameter model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates parameter  &lt;br&gt;System returns parameter model
+        ///  Use case   User sets parameter model (listed in the request example)   User runs method execution   System creates parameter   System returns parameter model
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createParameterRequest"> (optional)</param>
@@ -615,7 +615,7 @@ namespace TestIT.ApiClient.Api
         /// Create parameter
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets parameter model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates parameter  &lt;br&gt;System returns parameter model
+        ///  Use case   User sets parameter model (listed in the request example)   User runs method execution   System creates parameter   System returns parameter model
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createParameterRequest"> (optional)</param>
@@ -652,7 +652,7 @@ namespace TestIT.ApiClient.Api
         /// Deletes parameter and all it&#39;s values by parameter key identifier
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="keyId"></param>
+        /// <param name="keyId">Identifier of the parameter key</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task DeleteByParameterKeyIdAsync(Guid keyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -664,7 +664,7 @@ namespace TestIT.ApiClient.Api
         /// Deletes parameter and all it&#39;s values by parameter key identifier
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="keyId"></param>
+        /// <param name="keyId">Identifier of the parameter key</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteByParameterKeyIdWithHttpInfoAsync(Guid keyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -672,7 +672,7 @@ namespace TestIT.ApiClient.Api
         /// Delete parameter
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets parameter internal (guid format) identifier  &lt;br&gt;System search and delete parameter  &lt;br&gt;System returns deleted parameter
+        ///  Use case   User sets parameter internal (guid format) identifier   System search and delete parameter   System returns deleted parameter
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -684,7 +684,7 @@ namespace TestIT.ApiClient.Api
         /// Delete parameter
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets parameter internal (guid format) identifier  &lt;br&gt;System search and delete parameter  &lt;br&gt;System returns deleted parameter
+        ///  Use case   User sets parameter internal (guid format) identifier   System search and delete parameter   System returns deleted parameter
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -695,7 +695,7 @@ namespace TestIT.ApiClient.Api
         /// Get all parameters
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;[Optional] User sets isDeleted field value  &lt;br&gt;[Optional] If User sets isDeleted field value as true, System search all deleted parameters  &lt;br&gt;[Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted  &lt;br&gt;If User did not set isDeleted field value, System search all parameters  &lt;br&gt;System returns array of all found parameters(listed in response model)
+        ///  Use case   [Optional] User sets isDeleted field value   [Optional] If User sets isDeleted field value as true, System search all deleted parameters   [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted   If User did not set isDeleted field value, System search all parameters   System returns array of all found parameters(listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -712,7 +712,7 @@ namespace TestIT.ApiClient.Api
         /// Get all parameters
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;[Optional] User sets isDeleted field value  &lt;br&gt;[Optional] If User sets isDeleted field value as true, System search all deleted parameters  &lt;br&gt;[Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted  &lt;br&gt;If User did not set isDeleted field value, System search all parameters  &lt;br&gt;System returns array of all found parameters(listed in response model)
+        ///  Use case   [Optional] User sets isDeleted field value   [Optional] If User sets isDeleted field value as true, System search all deleted parameters   [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted   If User did not set isDeleted field value, System search all parameters   System returns array of all found parameters(listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -728,7 +728,7 @@ namespace TestIT.ApiClient.Api
         /// Get parameter by ID
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets parameter internal (guid format) identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameter using the identifier  &lt;br&gt;System returns parameter
+        ///  Use case   User sets parameter internal (guid format) identifier   User runs method execution   System search parameter using the identifier   System returns parameter
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -740,7 +740,7 @@ namespace TestIT.ApiClient.Api
         /// Get parameter by ID
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets parameter internal (guid format) identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameter using the identifier  &lt;br&gt;System returns parameter
+        ///  Use case   User sets parameter internal (guid format) identifier   User runs method execution   System search parameter using the identifier   System returns parameter
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -751,7 +751,7 @@ namespace TestIT.ApiClient.Api
         /// Update parameter
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets parameter updated properties(listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updated parameter using updated properties  &lt;br&gt;System returns no content response
+        ///  Use case   User sets parameter updated properties(listed in the request example)   User runs method execution   System updated parameter using updated properties   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateParameterRequest"> (optional)</param>
@@ -763,7 +763,7 @@ namespace TestIT.ApiClient.Api
         /// Update parameter
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets parameter updated properties(listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updated parameter using updated properties  &lt;br&gt;System returns no content response
+        ///  Use case   User sets parameter updated properties(listed in the request example)   User runs method execution   System updated parameter using updated properties   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateParameterRequest"> (optional)</param>
@@ -984,7 +984,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create multiple parameters &lt;br&gt;Use case  &lt;br&gt;User sets list of parameter model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates parameters  &lt;br&gt;System returns list of parameter model (listed in the response example)
+        /// Create multiple parameters  Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System creates parameters   System returns list of parameter model (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPostModel"> (optional)</param>
@@ -996,7 +996,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create multiple parameters &lt;br&gt;Use case  &lt;br&gt;User sets list of parameter model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates parameters  &lt;br&gt;System returns list of parameter model (listed in the response example)
+        /// Create multiple parameters  Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System creates parameters   System returns list of parameter model (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPostModel"> (optional)</param>
@@ -1041,7 +1041,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create multiple parameters &lt;br&gt;Use case  &lt;br&gt;User sets list of parameter model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates parameters  &lt;br&gt;System returns list of parameter model (listed in the response example)
+        /// Create multiple parameters  Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System creates parameters   System returns list of parameter model (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPostModel"> (optional)</param>
@@ -1054,7 +1054,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create multiple parameters &lt;br&gt;Use case  &lt;br&gt;User sets list of parameter model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates parameters  &lt;br&gt;System returns list of parameter model (listed in the response example)
+        /// Create multiple parameters  Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System creates parameters   System returns list of parameter model (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPostModel"> (optional)</param>
@@ -1103,7 +1103,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update multiple parameters &lt;br&gt;Use case  &lt;br&gt;User sets list of parameter model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates parameters
+        /// Update multiple parameters  Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System updates parameters
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPutModel"> (optional)</param>
@@ -1114,7 +1114,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update multiple parameters &lt;br&gt;Use case  &lt;br&gt;User sets list of parameter model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates parameters
+        /// Update multiple parameters  Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System updates parameters
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPutModel"> (optional)</param>
@@ -1159,7 +1159,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update multiple parameters &lt;br&gt;Use case  &lt;br&gt;User sets list of parameter model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates parameters
+        /// Update multiple parameters  Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System updates parameters
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPutModel"> (optional)</param>
@@ -1171,7 +1171,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update multiple parameters &lt;br&gt;Use case  &lt;br&gt;User sets list of parameter model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates parameters
+        /// Update multiple parameters  Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System updates parameters
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterPutModel"> (optional)</param>
@@ -1220,7 +1220,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get parameters as group &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameters  &lt;br&gt;System returns parameters models as groups (listed in the response example)
+        /// Get parameters as group  Use case   User runs method execution   System search parameters   System returns parameters models as groups (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted"> (optional)</param>
@@ -1238,7 +1238,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get parameters as group &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameters  &lt;br&gt;System returns parameters models as groups (listed in the response example)
+        /// Get parameters as group  Use case   User runs method execution   System search parameters   System returns parameters models as groups (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted"> (optional)</param>
@@ -1315,7 +1315,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get parameters as group &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameters  &lt;br&gt;System returns parameters models as groups (listed in the response example)
+        /// Get parameters as group  Use case   User runs method execution   System search parameters   System returns parameters models as groups (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted"> (optional)</param>
@@ -1334,7 +1334,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get parameters as group &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameters  &lt;br&gt;System returns parameters models as groups (listed in the response example)
+        /// Get parameters as group  Use case   User runs method execution   System search parameters   System returns parameters models as groups (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted"> (optional)</param>
@@ -1415,7 +1415,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Check existence parameter key in system &lt;br&gt;Use case  &lt;br&gt;User sets name of parameter key  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameter key  &lt;br&gt;System returns the flag for the existence of the parameter key in the system
+        /// Check existence parameter key in system  Use case   User sets name of parameter key   User runs method execution   System search parameter key   System returns the flag for the existence of the parameter key in the system
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
@@ -1427,7 +1427,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Check existence parameter key in system &lt;br&gt;Use case  &lt;br&gt;User sets name of parameter key  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameter key  &lt;br&gt;System returns the flag for the existence of the parameter key in the system
+        /// Check existence parameter key in system  Use case   User sets name of parameter key   User runs method execution   System search parameter key   System returns the flag for the existence of the parameter key in the system
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
@@ -1475,7 +1475,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Check existence parameter key in system &lt;br&gt;Use case  &lt;br&gt;User sets name of parameter key  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameter key  &lt;br&gt;System returns the flag for the existence of the parameter key in the system
+        /// Check existence parameter key in system  Use case   User sets name of parameter key   User runs method execution   System search parameter key   System returns the flag for the existence of the parameter key in the system
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
@@ -1488,7 +1488,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Check existence parameter key in system &lt;br&gt;Use case  &lt;br&gt;User sets name of parameter key  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameter key  &lt;br&gt;System returns the flag for the existence of the parameter key in the system
+        /// Check existence parameter key in system  Use case   User sets name of parameter key   User runs method execution   System search parameter key   System returns the flag for the existence of the parameter key in the system
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
@@ -1540,7 +1540,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all parameter key values &lt;br&gt;Use case  &lt;br&gt;User sets parameter key (string format)  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameter values using the key  &lt;br&gt;System returns parameter
+        /// Get all parameter key values  Use case   User sets parameter key (string format)   User runs method execution   System search parameter values using the key   System returns parameter
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">Parameter key (string format)</param>
@@ -1552,7 +1552,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all parameter key values &lt;br&gt;Use case  &lt;br&gt;User sets parameter key (string format)  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameter values using the key  &lt;br&gt;System returns parameter
+        /// Get all parameter key values  Use case   User sets parameter key (string format)   User runs method execution   System search parameter values using the key   System returns parameter
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">Parameter key (string format)</param>
@@ -1600,7 +1600,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all parameter key values &lt;br&gt;Use case  &lt;br&gt;User sets parameter key (string format)  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameter values using the key  &lt;br&gt;System returns parameter
+        /// Get all parameter key values  Use case   User sets parameter key (string format)   User runs method execution   System search parameter values using the key   System returns parameter
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">Parameter key (string format)</param>
@@ -1613,7 +1613,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all parameter key values &lt;br&gt;Use case  &lt;br&gt;User sets parameter key (string format)  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameter values using the key  &lt;br&gt;System returns parameter
+        /// Get all parameter key values  Use case   User sets parameter key (string format)   User runs method execution   System search parameter values using the key   System returns parameter
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">Parameter key (string format)</param>
@@ -1665,7 +1665,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all parameter keys &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System search all parameter keys  &lt;br&gt;System returns parameter keys
+        /// Get all parameter keys  Use case   User runs method execution   System search all parameter keys   System returns parameter keys
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;string&gt;</returns>
@@ -1676,7 +1676,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all parameter keys &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System search all parameter keys  &lt;br&gt;System returns parameter keys
+        /// Get all parameter keys  Use case   User runs method execution   System search all parameter keys   System returns parameter keys
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
@@ -1718,7 +1718,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all parameter keys &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System search all parameter keys  &lt;br&gt;System returns parameter keys
+        /// Get all parameter keys  Use case   User runs method execution   System search all parameter keys   System returns parameter keys
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1730,7 +1730,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all parameter keys &lt;br&gt;Use case  &lt;br&gt;User runs method execution  &lt;br&gt;System search all parameter keys  &lt;br&gt;System returns parameter keys
+        /// Get all parameter keys  Use case   User runs method execution   System search all parameter keys   System returns parameter keys
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -2134,7 +2134,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create parameter &lt;br&gt;Use case  &lt;br&gt;User sets parameter model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates parameter  &lt;br&gt;System returns parameter model
+        /// Create parameter  Use case   User sets parameter model (listed in the request example)   User runs method execution   System creates parameter   System returns parameter model
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createParameterRequest"> (optional)</param>
@@ -2146,7 +2146,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create parameter &lt;br&gt;Use case  &lt;br&gt;User sets parameter model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates parameter  &lt;br&gt;System returns parameter model
+        /// Create parameter  Use case   User sets parameter model (listed in the request example)   User runs method execution   System creates parameter   System returns parameter model
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createParameterRequest"> (optional)</param>
@@ -2191,7 +2191,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create parameter &lt;br&gt;Use case  &lt;br&gt;User sets parameter model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates parameter  &lt;br&gt;System returns parameter model
+        /// Create parameter  Use case   User sets parameter model (listed in the request example)   User runs method execution   System creates parameter   System returns parameter model
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createParameterRequest"> (optional)</param>
@@ -2204,7 +2204,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create parameter &lt;br&gt;Use case  &lt;br&gt;User sets parameter model (listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates parameter  &lt;br&gt;System returns parameter model
+        /// Create parameter  Use case   User sets parameter model (listed in the request example)   User runs method execution   System creates parameter   System returns parameter model
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createParameterRequest"> (optional)</param>
@@ -2379,7 +2379,7 @@ namespace TestIT.ApiClient.Api
         /// Delete parameters by parameter key identifier Deletes parameter and all it&#39;s values by parameter key identifier
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="keyId"></param>
+        /// <param name="keyId">Identifier of the parameter key</param>
         /// <returns></returns>
         public void DeleteByParameterKeyId(Guid keyId)
         {
@@ -2390,7 +2390,7 @@ namespace TestIT.ApiClient.Api
         /// Delete parameters by parameter key identifier Deletes parameter and all it&#39;s values by parameter key identifier
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="keyId"></param>
+        /// <param name="keyId">Identifier of the parameter key</param>
         /// <returns>ApiResponse of Object(void)</returns>
         public TestIT.ApiClient.Client.ApiResponse<Object> DeleteByParameterKeyIdWithHttpInfo(Guid keyId)
         {
@@ -2434,7 +2434,7 @@ namespace TestIT.ApiClient.Api
         /// Delete parameters by parameter key identifier Deletes parameter and all it&#39;s values by parameter key identifier
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="keyId"></param>
+        /// <param name="keyId">Identifier of the parameter key</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task DeleteByParameterKeyIdAsync(Guid keyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2446,7 +2446,7 @@ namespace TestIT.ApiClient.Api
         /// Delete parameters by parameter key identifier Deletes parameter and all it&#39;s values by parameter key identifier
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="keyId"></param>
+        /// <param name="keyId">Identifier of the parameter key</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteByParameterKeyIdWithHttpInfoAsync(Guid keyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2491,7 +2491,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete parameter &lt;br&gt;Use case  &lt;br&gt;User sets parameter internal (guid format) identifier  &lt;br&gt;System search and delete parameter  &lt;br&gt;System returns deleted parameter
+        /// Delete parameter  Use case   User sets parameter internal (guid format) identifier   System search and delete parameter   System returns deleted parameter
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -2502,7 +2502,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete parameter &lt;br&gt;Use case  &lt;br&gt;User sets parameter internal (guid format) identifier  &lt;br&gt;System search and delete parameter  &lt;br&gt;System returns deleted parameter
+        /// Delete parameter  Use case   User sets parameter internal (guid format) identifier   System search and delete parameter   System returns deleted parameter
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -2546,7 +2546,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete parameter &lt;br&gt;Use case  &lt;br&gt;User sets parameter internal (guid format) identifier  &lt;br&gt;System search and delete parameter  &lt;br&gt;System returns deleted parameter
+        /// Delete parameter  Use case   User sets parameter internal (guid format) identifier   System search and delete parameter   System returns deleted parameter
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -2558,7 +2558,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete parameter &lt;br&gt;Use case  &lt;br&gt;User sets parameter internal (guid format) identifier  &lt;br&gt;System search and delete parameter  &lt;br&gt;System returns deleted parameter
+        /// Delete parameter  Use case   User sets parameter internal (guid format) identifier   System search and delete parameter   System returns deleted parameter
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -2606,7 +2606,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all parameters &lt;br&gt;Use case  &lt;br&gt;[Optional] User sets isDeleted field value  &lt;br&gt;[Optional] If User sets isDeleted field value as true, System search all deleted parameters  &lt;br&gt;[Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted  &lt;br&gt;If User did not set isDeleted field value, System search all parameters  &lt;br&gt;System returns array of all found parameters(listed in response model)
+        /// Get all parameters  Use case   [Optional] User sets isDeleted field value   [Optional] If User sets isDeleted field value as true, System search all deleted parameters   [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted   If User did not set isDeleted field value, System search all parameters   System returns array of all found parameters(listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -2623,7 +2623,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all parameters &lt;br&gt;Use case  &lt;br&gt;[Optional] User sets isDeleted field value  &lt;br&gt;[Optional] If User sets isDeleted field value as true, System search all deleted parameters  &lt;br&gt;[Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted  &lt;br&gt;If User did not set isDeleted field value, System search all parameters  &lt;br&gt;System returns array of all found parameters(listed in response model)
+        /// Get all parameters  Use case   [Optional] User sets isDeleted field value   [Optional] If User sets isDeleted field value as true, System search all deleted parameters   [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted   If User did not set isDeleted field value, System search all parameters   System returns array of all found parameters(listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -2695,7 +2695,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all parameters &lt;br&gt;Use case  &lt;br&gt;[Optional] User sets isDeleted field value  &lt;br&gt;[Optional] If User sets isDeleted field value as true, System search all deleted parameters  &lt;br&gt;[Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted  &lt;br&gt;If User did not set isDeleted field value, System search all parameters  &lt;br&gt;System returns array of all found parameters(listed in response model)
+        /// Get all parameters  Use case   [Optional] User sets isDeleted field value   [Optional] If User sets isDeleted field value as true, System search all deleted parameters   [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted   If User did not set isDeleted field value, System search all parameters   System returns array of all found parameters(listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -2713,7 +2713,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all parameters &lt;br&gt;Use case  &lt;br&gt;[Optional] User sets isDeleted field value  &lt;br&gt;[Optional] If User sets isDeleted field value as true, System search all deleted parameters  &lt;br&gt;[Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted  &lt;br&gt;If User did not set isDeleted field value, System search all parameters  &lt;br&gt;System returns array of all found parameters(listed in response model)
+        /// Get all parameters  Use case   [Optional] User sets isDeleted field value   [Optional] If User sets isDeleted field value as true, System search all deleted parameters   [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted   If User did not set isDeleted field value, System search all parameters   System returns array of all found parameters(listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -2789,7 +2789,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get parameter by ID &lt;br&gt;Use case  &lt;br&gt;User sets parameter internal (guid format) identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameter using the identifier  &lt;br&gt;System returns parameter
+        /// Get parameter by ID  Use case   User sets parameter internal (guid format) identifier   User runs method execution   System search parameter using the identifier   System returns parameter
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -2801,7 +2801,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get parameter by ID &lt;br&gt;Use case  &lt;br&gt;User sets parameter internal (guid format) identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameter using the identifier  &lt;br&gt;System returns parameter
+        /// Get parameter by ID  Use case   User sets parameter internal (guid format) identifier   User runs method execution   System search parameter using the identifier   System returns parameter
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -2845,7 +2845,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get parameter by ID &lt;br&gt;Use case  &lt;br&gt;User sets parameter internal (guid format) identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameter using the identifier  &lt;br&gt;System returns parameter
+        /// Get parameter by ID  Use case   User sets parameter internal (guid format) identifier   User runs method execution   System search parameter using the identifier   System returns parameter
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -2858,7 +2858,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get parameter by ID &lt;br&gt;Use case  &lt;br&gt;User sets parameter internal (guid format) identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search parameter using the identifier  &lt;br&gt;System returns parameter
+        /// Get parameter by ID  Use case   User sets parameter internal (guid format) identifier   User runs method execution   System search parameter using the identifier   System returns parameter
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -2906,7 +2906,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update parameter &lt;br&gt;Use case  &lt;br&gt;User sets parameter updated properties(listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updated parameter using updated properties  &lt;br&gt;System returns no content response
+        /// Update parameter  Use case   User sets parameter updated properties(listed in the request example)   User runs method execution   System updated parameter using updated properties   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateParameterRequest"> (optional)</param>
@@ -2917,7 +2917,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update parameter &lt;br&gt;Use case  &lt;br&gt;User sets parameter updated properties(listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updated parameter using updated properties  &lt;br&gt;System returns no content response
+        /// Update parameter  Use case   User sets parameter updated properties(listed in the request example)   User runs method execution   System updated parameter using updated properties   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateParameterRequest"> (optional)</param>
@@ -2962,7 +2962,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update parameter &lt;br&gt;Use case  &lt;br&gt;User sets parameter updated properties(listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updated parameter using updated properties  &lt;br&gt;System returns no content response
+        /// Update parameter  Use case   User sets parameter updated properties(listed in the request example)   User runs method execution   System updated parameter using updated properties   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateParameterRequest"> (optional)</param>
@@ -2974,7 +2974,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update parameter &lt;br&gt;Use case  &lt;br&gt;User sets parameter updated properties(listed in the request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updated parameter using updated properties  &lt;br&gt;System returns no content response
+        /// Update parameter  Use case   User sets parameter updated properties(listed in the request example)   User runs method execution   System updated parameter using updated properties   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateParameterRequest"> (optional)</param>
