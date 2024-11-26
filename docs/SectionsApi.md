@@ -13,7 +13,7 @@ All URIs are relative to *http://localhost*
 | [**Rename**](SectionsApi.md#rename) | **POST** /api/v2/sections/rename | Rename section |
 | [**UpdateSection**](SectionsApi.md#updatesection) | **PUT** /api/v2/sections | Update section |
 
-<a name="apiv2sectionsidpatch"></a>
+<a id="apiv2sectionsidpatch"></a>
 # **ApiV2SectionsIdPatch**
 > void ApiV2SectionsIdPatch (Guid id, List<Operation> operation = null)
 
@@ -108,17 +108,22 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Update permission for section is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createsection"></a>
+<a id="createsection"></a>
 # **CreateSection**
 > SectionWithStepsModel CreateSection (CreateSectionRequest createSectionRequest = null)
 
 Create section
 
-<br>Use case  <br>User sets section properties (listed in request example)  <br>User runs method execution  <br>System creates section property values  <br>System returns section (listed in response example)
+ Use case   User sets section properties (listed in request example)   User runs method execution   System creates section property values   System returns section (listed in response example)
 
 ### Example
 ```csharp
@@ -214,16 +219,17 @@ catch (ApiException e)
 | **403** | Update permission for test library is required |  -  |
 | **404** | Parent section with provided ID was not found |  -  |
 | **409** | Section with the same name already exists in the parent section |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deletesection"></a>
+<a id="deletesection"></a>
 # **DeleteSection**
 > void DeleteSection (Guid id)
 
 Delete section
 
-<br>Use case  <br>User sets section identifier  <br>User runs method execution  <br>System search section by the identifier  <br>System search and delete nested sections of the found section  <br>System search and delete workitems related to the found nested sections  <br>System deletes initial section and related workitem  <br>System returns no content response
+ Use case   User sets section identifier   User runs method execution   System search section by the identifier   System search and delete nested sections of the found section   System search and delete workitems related to the found nested sections   System deletes initial section and related workitem   System returns no content response
 
 ### Example
 ```csharp
@@ -313,19 +319,19 @@ void (empty response body)
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Delete permission for test library is required |  -  |
-| **409** | Conflict |  -  |
 | **404** | Section with provided ID was not found |  -  |
+| **409** | Conflict |  -  |
 | **422** | Cannot delete root section |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getsectionbyid"></a>
+<a id="getsectionbyid"></a>
 # **GetSectionById**
 > SectionWithStepsModel GetSectionById (Guid id, DeletionState? isDeleted = null)
 
 Get section
 
-<br>Use case  <br>User sets section internal (guid format) identifier  <br>User runs method execution  <br>System search section by the section identifier  <br>              [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.                <br>System returns section
+ Use case   User sets section internal (guid format) identifier   User runs method execution   System search section by the section identifier                 [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.                 System returns section
 
 ### Example
 ```csharp
@@ -417,21 +423,23 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library is required |  -  |
 | **404** | Section with provided ID was not found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getworkitemsbysectionid"></a>
+<a id="getworkitemsbysectionid"></a>
 # **GetWorkItemsBySectionId**
 > List&lt;WorkItemShortModel&gt; GetWorkItemsBySectionId (Guid id, bool? isDeleted = null, List<string> tagNames = null, bool? includeIterations = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
 Get section work items
 
-<br>Use case  <br>User sets section identifier  <br>User runs method execution  <br>System search section by the identifier  <br>System search work items related to the section  <br>              [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.                <br>System returns work item collection
+ Use case   User sets section identifier   User runs method execution   System search section by the identifier   System search work items related to the section                 [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.                 System returns work item collection
 
 ### Example
 ```csharp
@@ -537,15 +545,17 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
-| **400** | &lt;br&gt;- &#x60;orderBy&#x60; statement must have one &#x60;.&#x60; and no &#x60;,&#x60; symbols  &lt;br&gt;- &#x60;orderBy&#x60; statement has invalid length  &lt;br&gt;- &#x60;orderBy&#x60; statement must have UUID as attribute key  &lt;br&gt;- Search field was not found |  -  |
+| **200** | OK |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** |  - &#x60;orderBy&#x60; statement must have one &#x60;.&#x60; and no &#x60;,&#x60; symbols   - &#x60;orderBy&#x60; statement has invalid length   - &#x60;orderBy&#x60; statement must have UUID as attribute key   - Search field was not found |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library is required |  -  |
 | **404** | Section with provided ID was not found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="move"></a>
+<a id="move"></a>
 # **Move**
 > void Move (MoveRequest moveRequest = null)
 
@@ -636,17 +646,22 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Update permission for test library is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="rename"></a>
+<a id="rename"></a>
 # **Rename**
 > void Rename (RenameRequest renameRequest = null)
 
 Rename section
 
-<br>Use case  <br>User sets section identifier and new name (listed in request example)  <br>User runs method execution  <br>System search section by the identifier  <br>System updates section name using the new name  <br>System returns no content response
+ Use case   User sets section identifier and new name (listed in request example)   User runs method execution   System search section by the identifier   System updates section name using the new name   System returns no content response
 
 ### Example
 ```csharp
@@ -733,6 +748,7 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test library is required |  -  |
 | **404** | Section with provided ID was not found |  -  |
@@ -741,13 +757,13 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updatesection"></a>
+<a id="updatesection"></a>
 # **UpdateSection**
 > void UpdateSection (UpdateSectionRequest updateSectionRequest = null)
 
 Update section
 
-<br>Use case  <br>User sets section properties (listed in request example)  <br>User runs method execution  <br>System search section by the identifier  <br>System updates section using the property values  <br>System returns no content response
+ Use case   User sets section properties (listed in request example)   User runs method execution   System search section by the identifier   System updates section using the property values   System returns no content response
 
 ### Example
 ```csharp
@@ -834,12 +850,12 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
-| **400** | &lt;br&gt;- ID is invalid  &lt;br&gt;- Root section cannot be create |  -  |
+| **400** |  - ID is invalid   - Root section cannot be create |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test library is required |  -  |
-| **404** | &lt;br&gt;- Section cannot be found  &lt;br&gt;- Parent section cannot be found  &lt;br&gt;- Project cannot be found |  -  |
+| **404** |  - Section cannot be found   - Parent section cannot be found   - Project cannot be found |  -  |
 | **409** | Section with the same name already exists in the parent section |  -  |
-| **422** | &lt;br&gt;- Root section cannot be edited  &lt;br&gt;- Parent ID cannot be changed  &lt;br&gt;- Project ID cannot be changed |  -  |
+| **422** |  - Root section cannot be edited   - Parent ID cannot be changed   - Project ID cannot be changed |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

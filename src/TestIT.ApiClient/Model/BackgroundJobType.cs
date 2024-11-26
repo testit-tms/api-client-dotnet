@@ -114,7 +114,19 @@ namespace TestIT.ApiClient.Model
         /// Enum ImportProjects for value: ImportProjects
         /// </summary>
         [EnumMember(Value = "ImportProjects")]
-        ImportProjects = 14
+        ImportProjects = 14,
+
+        /// <summary>
+        /// Enum PurgeEntities for value: PurgeEntities
+        /// </summary>
+        [EnumMember(Value = "PurgeEntities")]
+        PurgeEntities = 15,
+
+        /// <summary>
+        /// Enum DeleteCompletedJobs for value: DeleteCompletedJobs
+        /// </summary>
+        [EnumMember(Value = "DeleteCompletedJobs")]
+        DeleteCompletedJobs = 16
 
     }
 

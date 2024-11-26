@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="ApiV2CustomAttributesGlobalIdPutRequest" /> class.
         /// </summary>
         /// <param name="name">Name of attribute (required).</param>
-        /// <param name="options">Collection of attribute options  &lt;br /&gt;  Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only.</param>
+        /// <param name="options">Collection of attribute options     Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only.</param>
         /// <param name="isEnabled">Indicates whether the attribute is available.</param>
         /// <param name="isRequired">Indicates whether the attribute value is mandatory to specify.</param>
         public ApiV2CustomAttributesGlobalIdPutRequest(string name = default(string), List<CustomAttributeOptionModel> options = default(List<CustomAttributeOptionModel>), bool? isEnabled = default(bool?), bool? isRequired = default(bool?))
@@ -65,9 +65,9 @@ namespace TestIT.ApiClient.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Collection of attribute options  &lt;br /&gt;  Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only
+        /// Collection of attribute options     Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only
         /// </summary>
-        /// <value>Collection of attribute options  &lt;br /&gt;  Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only</value>
+        /// <value>Collection of attribute options     Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only</value>
         [DataMember(Name = "options", EmitDefaultValue = true)]
         public List<CustomAttributeOptionModel> Options { get; set; }
 
@@ -189,7 +189,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)

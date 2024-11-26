@@ -47,7 +47,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="CustomAttributeModel" /> class.
         /// </summary>
         /// <param name="id">Unique ID of the attribute (required).</param>
-        /// <param name="options">Collection of the attribute options  &lt;br /&gt;  Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only (required).</param>
+        /// <param name="options">Collection of the attribute options     Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only (required).</param>
         /// <param name="type">type (required).</param>
         /// <param name="isDeleted">Indicates if the attribute is deleted (required).</param>
         /// <param name="name">Name of the attribute (required).</param>
@@ -84,9 +84,9 @@ namespace TestIT.ApiClient.Model
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Collection of the attribute options  &lt;br /&gt;  Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only
+        /// Collection of the attribute options     Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only
         /// </summary>
-        /// <value>Collection of the attribute options  &lt;br /&gt;  Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only</value>
+        /// <value>Collection of the attribute options     Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only</value>
         [DataMember(Name = "options", IsRequired = true, EmitDefaultValue = true)]
         public List<CustomAttributeOptionModel> Options { get; set; }
 
@@ -249,7 +249,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)

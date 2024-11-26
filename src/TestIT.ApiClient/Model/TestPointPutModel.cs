@@ -46,13 +46,20 @@ namespace TestIT.ApiClient.Model
         /// <param name="configurationId">configurationId.</param>
         /// <param name="testSuiteId">testSuiteId (required).</param>
         /// <param name="status">status.</param>
+        /// <param name="statusModel">statusModel (required).</param>
         /// <param name="lastTestResultId">lastTestResultId.</param>
         /// <param name="id">Unique ID of the entity (required).</param>
         /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
-        public TestPointPutModel(Guid? testerId = default(Guid?), Guid iterationId = default(Guid), Guid? workItemId = default(Guid?), Guid? configurationId = default(Guid?), Guid testSuiteId = default(Guid), string status = default(string), Guid? lastTestResultId = default(Guid?), Guid id = default(Guid), bool isDeleted = default(bool))
+        public TestPointPutModel(Guid? testerId = default(Guid?), Guid iterationId = default(Guid), Guid? workItemId = default(Guid?), Guid? configurationId = default(Guid?), Guid testSuiteId = default(Guid), string status = default(string), TestPointPutModelStatusModel statusModel = default(TestPointPutModelStatusModel), Guid? lastTestResultId = default(Guid?), Guid id = default(Guid), bool isDeleted = default(bool))
         {
             this.IterationId = iterationId;
             this.TestSuiteId = testSuiteId;
+            // to ensure "statusModel" is required (not null)
+            if (statusModel == null)
+            {
+                throw new ArgumentNullException("statusModel is a required property for TestPointPutModel and cannot be null");
+            }
+            this.StatusModel = statusModel;
             this.Id = id;
             this.IsDeleted = isDeleted;
             this.TesterId = testerId;
@@ -96,7 +103,14 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Status
         /// </summary>
         [DataMember(Name = "status", EmitDefaultValue = true)]
+        [Obsolete]
         public string Status { get; set; }
+
+        /// <summary>
+        /// Gets or Sets StatusModel
+        /// </summary>
+        [DataMember(Name = "statusModel", IsRequired = true, EmitDefaultValue = true)]
+        public TestPointPutModelStatusModel StatusModel { get; set; }
 
         /// <summary>
         /// Gets or Sets LastTestResultId
@@ -132,6 +146,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ConfigurationId: ").Append(ConfigurationId).Append("\n");
             sb.Append("  TestSuiteId: ").Append(TestSuiteId).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  StatusModel: ").Append(StatusModel).Append("\n");
             sb.Append("  LastTestResultId: ").Append(LastTestResultId).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
@@ -201,6 +216,11 @@ namespace TestIT.ApiClient.Model
                     this.Status.Equals(input.Status))
                 ) && 
                 (
+                    this.StatusModel == input.StatusModel ||
+                    (this.StatusModel != null &&
+                    this.StatusModel.Equals(input.StatusModel))
+                ) && 
+                (
                     this.LastTestResultId == input.LastTestResultId ||
                     (this.LastTestResultId != null &&
                     this.LastTestResultId.Equals(input.LastTestResultId))
@@ -249,6 +269,10 @@ namespace TestIT.ApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.Status.GetHashCode();
                 }
+                if (this.StatusModel != null)
+                {
+                    hashCode = (hashCode * 59) + this.StatusModel.GetHashCode();
+                }
                 if (this.LastTestResultId != null)
                 {
                     hashCode = (hashCode * 59) + this.LastTestResultId.GetHashCode();
@@ -267,7 +291,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

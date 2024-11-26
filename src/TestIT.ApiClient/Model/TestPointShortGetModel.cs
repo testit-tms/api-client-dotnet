@@ -91,7 +91,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="workItemCreatedDate">Creation date of work item (required).</param>
         /// <param name="workItemModifiedById">Unique ID of the work item last editor.</param>
         /// <param name="workItemModifiedDate">Modified date of work item.</param>
-        public TestPointShortGetModel(Guid id = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), Guid? testerId = default(Guid?), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<string> tags = default(List<string>), List<string> links = default(List<string>), Guid testSuiteId = default(Guid), string testSuiteName = default(string), Guid workItemId = default(Guid), long workItemGlobalId = default(long), Guid workItemVersionId = default(Guid), int workItemVersionNumber = default(int), long? workItemMedianDuration = default(long?), TestPointStatus status = default(TestPointStatus), WorkItemPriorityModel priority = default(WorkItemPriorityModel), bool isAutomated = default(bool), string name = default(string), Guid configurationId = default(Guid), int duration = default(int), Guid sectionId = default(Guid), string sectionName = default(string), Guid projectId = default(Guid), TestPointShortGetModelLastTestResult lastTestResult = default(TestPointShortGetModelLastTestResult), Guid iterationId = default(Guid), WorkItemState workItemState = default(WorkItemState), Guid workItemCreatedById = default(Guid), DateTime workItemCreatedDate = default(DateTime), Guid? workItemModifiedById = default(Guid?), DateTime? workItemModifiedDate = default(DateTime?))
+        public TestPointShortGetModel(Guid id = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), Guid? testerId = default(Guid?), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<string> tags = default(List<string>), List<string> links = default(List<string>), Guid testSuiteId = default(Guid), string testSuiteName = default(string), Guid workItemId = default(Guid), long workItemGlobalId = default(long), Guid workItemVersionId = default(Guid), int workItemVersionNumber = default(int), long? workItemMedianDuration = default(long?), TestPointStatus status = default(TestPointStatus), WorkItemPriorityModel priority = default(WorkItemPriorityModel), bool isAutomated = default(bool), string name = default(string), Guid configurationId = default(Guid), int duration = default(int), Guid sectionId = default(Guid), string sectionName = default(string), Guid projectId = default(Guid), LastTestResultModel lastTestResult = default(LastTestResultModel), Guid iterationId = default(Guid), WorkItemState workItemState = default(WorkItemState), Guid workItemCreatedById = default(Guid), DateTime workItemCreatedDate = default(DateTime), Guid? workItemModifiedById = default(Guid?), DateTime? workItemModifiedDate = default(DateTime?))
         {
             this.Id = id;
             this.CreatedDate = createdDate;
@@ -330,7 +330,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets LastTestResult
         /// </summary>
         [DataMember(Name = "lastTestResult", IsRequired = true, EmitDefaultValue = true)]
-        public TestPointShortGetModelLastTestResult LastTestResult { get; set; }
+        public LastTestResultModel LastTestResult { get; set; }
 
         /// <summary>
         /// Unique ID of work item iteration the test point represents
@@ -736,7 +736,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

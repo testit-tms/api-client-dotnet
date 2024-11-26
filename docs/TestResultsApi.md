@@ -4,11 +4,14 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
+| [**ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPost**](TestResultsApi.md#apiv2testresultsexternalprojectsexternalprojectiddefectsexternalformspost) | **POST** /api/v2/testResults/external-projects/{externalProjectId}/defects/external-forms |  |
+| [**ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPost**](TestResultsApi.md#apiv2testresultsexternalprojectsexternalprojectiddefectspost) | **POST** /api/v2/testResults/external-projects/{externalProjectId}/defects |  |
 | [**ApiV2TestResultsIdAggregatedGet**](TestResultsApi.md#apiv2testresultsidaggregatedget) | **GET** /api/v2/testResults/{id}/aggregated | Get test result by ID aggregated with previous results |
 | [**ApiV2TestResultsIdAttachmentsAttachmentIdPut**](TestResultsApi.md#apiv2testresultsidattachmentsattachmentidput) | **PUT** /api/v2/testResults/{id}/attachments/{attachmentId} | Attach file to the test result |
 | [**ApiV2TestResultsIdAttachmentsInfoGet**](TestResultsApi.md#apiv2testresultsidattachmentsinfoget) | **GET** /api/v2/testResults/{id}/attachments/info | Get test result attachments meta-information |
 | [**ApiV2TestResultsIdGet**](TestResultsApi.md#apiv2testresultsidget) | **GET** /api/v2/testResults/{id} | Get test result by ID |
 | [**ApiV2TestResultsIdPut**](TestResultsApi.md#apiv2testresultsidput) | **PUT** /api/v2/testResults/{id} | Edit test result by ID |
+| [**ApiV2TestResultsIdRerunsGet**](TestResultsApi.md#apiv2testresultsidrerunsget) | **GET** /api/v2/testResults/{id}/reruns | Get reruns |
 | [**ApiV2TestResultsSearchPost**](TestResultsApi.md#apiv2testresultssearchpost) | **POST** /api/v2/testResults/search | Search for test results |
 | [**ApiV2TestResultsStatisticsFilterPost**](TestResultsApi.md#apiv2testresultsstatisticsfilterpost) | **POST** /api/v2/testResults/statistics/filter | Search for test results and extract statistics |
 | [**CreateAttachment**](TestResultsApi.md#createattachment) | **POST** /api/v2/testResults/{id}/attachments | Upload and link attachment to TestResult |
@@ -17,9 +20,217 @@ All URIs are relative to *http://localhost*
 | [**GetAttachment**](TestResultsApi.md#getattachment) | **GET** /api/v2/testResults/{id}/attachments/{attachmentId}/info | Get Metadata of TestResult&#39;s attachment |
 | [**GetAttachments**](TestResultsApi.md#getattachments) | **GET** /api/v2/testResults/{id}/attachments | Get all attachments of TestResult |
 
-<a name="apiv2testresultsidaggregatedget"></a>
+<a id="apiv2testresultsexternalprojectsexternalprojectiddefectsexternalformspost"></a>
+# **ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPost**
+> GetExternalFormApiResult ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPost (Guid externalProjectId, ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequest apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequest = null)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
+
+namespace Example
+{
+    public class ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestResultsApi(httpClient, config, httpClientHandler);
+            var externalProjectId = "externalProjectId_example";  // Guid | 
+            var apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequest = new ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequest(); // ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequest |  (optional) 
+
+            try
+            {
+                GetExternalFormApiResult result = apiInstance.ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPost(externalProjectId, apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TestResultsApi.ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<GetExternalFormApiResult> response = apiInstance.ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostWithHttpInfo(externalProjectId, apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TestResultsApi.ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **externalProjectId** | **Guid** |  |  |
+| **apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequest** | [**ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequest**](ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequest.md) |  | [optional]  |
+
+### Return type
+
+[**GetExternalFormApiResult**](GetExternalFormApiResult.md)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="apiv2testresultsexternalprojectsexternalprojectiddefectspost"></a>
+# **ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPost**
+> DefectApiModel ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPost (Guid externalProjectId, ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequest apiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequest = null)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
+
+namespace Example
+{
+    public class ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestResultsApi(httpClient, config, httpClientHandler);
+            var externalProjectId = "externalProjectId_example";  // Guid | 
+            var apiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequest = new ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequest(); // ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequest |  (optional) 
+
+            try
+            {
+                DefectApiModel result = apiInstance.ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPost(externalProjectId, apiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TestResultsApi.ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<DefectApiModel> response = apiInstance.ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPostWithHttpInfo(externalProjectId, apiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TestResultsApi.ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **externalProjectId** | **Guid** |  |  |
+| **apiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequest** | [**ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequest**](ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequest.md) |  | [optional]  |
+
+### Return type
+
+[**DefectApiModel**](DefectApiModel.md)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Created |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="apiv2testresultsidaggregatedget"></a>
 # **ApiV2TestResultsIdAggregatedGet**
-> TestResultModel ApiV2TestResultsIdAggregatedGet (Guid id)
+> TestResultResponse ApiV2TestResultsIdAggregatedGet (Guid id)
 
 Get test result by ID aggregated with previous results
 
@@ -54,7 +265,7 @@ namespace Example
             try
             {
                 // Get test result by ID aggregated with previous results
-                TestResultModel result = apiInstance.ApiV2TestResultsIdAggregatedGet(id);
+                TestResultResponse result = apiInstance.ApiV2TestResultsIdAggregatedGet(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -75,7 +286,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get test result by ID aggregated with previous results
-    ApiResponse<TestResultModel> response = apiInstance.ApiV2TestResultsIdAggregatedGetWithHttpInfo(id);
+    ApiResponse<TestResultResponse> response = apiInstance.ApiV2TestResultsIdAggregatedGetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -96,7 +307,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**TestResultModel**](TestResultModel.md)
+[**TestResultResponse**](TestResultResponse.md)
 
 ### Authorization
 
@@ -111,12 +322,17 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for the test result is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testresultsidattachmentsattachmentidput"></a>
+<a id="apiv2testresultsidattachmentsattachmentidput"></a>
 # **ApiV2TestResultsIdAttachmentsAttachmentIdPut**
 > void ApiV2TestResultsIdAttachmentsAttachmentIdPut (Guid id, Guid attachmentId)
 
@@ -208,12 +424,17 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Only edits from assigned user are allowed |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testresultsidattachmentsinfoget"></a>
+<a id="apiv2testresultsidattachmentsinfoget"></a>
 # **ApiV2TestResultsIdAttachmentsInfoGet**
 > List&lt;AttachmentModel&gt; ApiV2TestResultsIdAttachmentsInfoGet (Guid id)
 
@@ -307,14 +528,19 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for the test result is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testresultsidget"></a>
+<a id="apiv2testresultsidget"></a>
 # **ApiV2TestResultsIdGet**
-> TestResultModel ApiV2TestResultsIdGet (Guid id)
+> TestResultResponse ApiV2TestResultsIdGet (Guid id)
 
 Get test result by ID
 
@@ -349,7 +575,7 @@ namespace Example
             try
             {
                 // Get test result by ID
-                TestResultModel result = apiInstance.ApiV2TestResultsIdGet(id);
+                TestResultResponse result = apiInstance.ApiV2TestResultsIdGet(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -370,7 +596,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get test result by ID
-    ApiResponse<TestResultModel> response = apiInstance.ApiV2TestResultsIdGetWithHttpInfo(id);
+    ApiResponse<TestResultResponse> response = apiInstance.ApiV2TestResultsIdGetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -391,7 +617,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**TestResultModel**](TestResultModel.md)
+[**TestResultResponse**](TestResultResponse.md)
 
 ### Authorization
 
@@ -406,14 +632,19 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for the test result is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testresultsidput"></a>
+<a id="apiv2testresultsidput"></a>
 # **ApiV2TestResultsIdPut**
-> void ApiV2TestResultsIdPut (Guid id, ApiV2TestResultsIdPutRequest apiV2TestResultsIdPutRequest = null)
+> void ApiV2TestResultsIdPut (Guid id, TestResultUpdateV2Request testResultUpdateV2Request = null)
 
 Edit test result by ID
 
@@ -444,12 +675,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestResultsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // Guid | Test result unique ID
-            var apiV2TestResultsIdPutRequest = new ApiV2TestResultsIdPutRequest(); // ApiV2TestResultsIdPutRequest |  (optional) 
+            var testResultUpdateV2Request = new TestResultUpdateV2Request(); // TestResultUpdateV2Request |  (optional) 
 
             try
             {
                 // Edit test result by ID
-                apiInstance.ApiV2TestResultsIdPut(id, apiV2TestResultsIdPutRequest);
+                apiInstance.ApiV2TestResultsIdPut(id, testResultUpdateV2Request);
             }
             catch (ApiException  e)
             {
@@ -469,7 +700,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Edit test result by ID
-    apiInstance.ApiV2TestResultsIdPutWithHttpInfo(id, apiV2TestResultsIdPutRequest);
+    apiInstance.ApiV2TestResultsIdPutWithHttpInfo(id, testResultUpdateV2Request);
 }
 catch (ApiException e)
 {
@@ -484,7 +715,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid** | Test result unique ID |  |
-| **apiV2TestResultsIdPutRequest** | [**ApiV2TestResultsIdPutRequest**](ApiV2TestResultsIdPutRequest.md) |  | [optional]  |
+| **testResultUpdateV2Request** | [**TestResultUpdateV2Request**](TestResultUpdateV2Request.md) |  | [optional]  |
 
 ### Return type
 
@@ -503,14 +734,123 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Only edits from assigned user are allowed |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testresultssearchpost"></a>
+<a id="apiv2testresultsidrerunsget"></a>
+# **ApiV2TestResultsIdRerunsGet**
+> RerunsModel ApiV2TestResultsIdRerunsGet (Guid id)
+
+Get reruns
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
+
+namespace Example
+{
+    public class ApiV2TestResultsIdRerunsGetExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestResultsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // Guid | Test result unique ID
+
+            try
+            {
+                // Get reruns
+                RerunsModel result = apiInstance.ApiV2TestResultsIdRerunsGet(id);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TestResultsApi.ApiV2TestResultsIdRerunsGet: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2TestResultsIdRerunsGetWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get reruns
+    ApiResponse<RerunsModel> response = apiInstance.ApiV2TestResultsIdRerunsGetWithHttpInfo(id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TestResultsApi.ApiV2TestResultsIdRerunsGetWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** | Test result unique ID |  |
+
+### Return type
+
+[**RerunsModel**](RerunsModel.md)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="apiv2testresultssearchpost"></a>
 # **ApiV2TestResultsSearchPost**
-> List&lt;TestResultShortGetModel&gt; ApiV2TestResultsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = null)
+> List&lt;TestResultShortResponse&gt; ApiV2TestResultsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = null)
 
 Search for test results
 
@@ -550,7 +890,7 @@ namespace Example
             try
             {
                 // Search for test results
-                List<TestResultShortGetModel> result = apiInstance.ApiV2TestResultsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2TestResultsSearchPostRequest);
+                List<TestResultShortResponse> result = apiInstance.ApiV2TestResultsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2TestResultsSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -571,7 +911,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for test results
-    ApiResponse<List<TestResultShortGetModel>> response = apiInstance.ApiV2TestResultsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2TestResultsSearchPostRequest);
+    ApiResponse<List<TestResultShortResponse>> response = apiInstance.ApiV2TestResultsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2TestResultsSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -597,7 +937,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;TestResultShortGetModel&gt;**](TestResultShortGetModel.md)
+[**List&lt;TestResultShortResponse&gt;**](TestResultShortResponse.md)
 
 ### Authorization
 
@@ -612,14 +952,19 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **200** | OK |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for all requested test runs is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2testresultsstatisticsfilterpost"></a>
+<a id="apiv2testresultsstatisticsfilterpost"></a>
 # **ApiV2TestResultsStatisticsFilterPost**
-> TestResultsStatisticsGetModel ApiV2TestResultsStatisticsFilterPost (ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = null)
+> TestResultsStatisticsResponse ApiV2TestResultsStatisticsFilterPost (ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = null)
 
 Search for test results and extract statistics
 
@@ -654,7 +999,7 @@ namespace Example
             try
             {
                 // Search for test results and extract statistics
-                TestResultsStatisticsGetModel result = apiInstance.ApiV2TestResultsStatisticsFilterPost(apiV2TestResultsSearchPostRequest);
+                TestResultsStatisticsResponse result = apiInstance.ApiV2TestResultsStatisticsFilterPost(apiV2TestResultsSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -675,7 +1020,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for test results and extract statistics
-    ApiResponse<TestResultsStatisticsGetModel> response = apiInstance.ApiV2TestResultsStatisticsFilterPostWithHttpInfo(apiV2TestResultsSearchPostRequest);
+    ApiResponse<TestResultsStatisticsResponse> response = apiInstance.ApiV2TestResultsStatisticsFilterPostWithHttpInfo(apiV2TestResultsSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -696,7 +1041,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**TestResultsStatisticsGetModel**](TestResultsStatisticsGetModel.md)
+[**TestResultsStatisticsResponse**](TestResultsStatisticsResponse.md)
 
 ### Authorization
 
@@ -711,18 +1056,23 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for all requested test runs is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createattachment"></a>
+<a id="createattachment"></a>
 # **CreateAttachment**
-> Guid CreateAttachment (Guid id, FileParameter file = null)
+> void CreateAttachment (Guid id, FileParameter file = null)
 
 Upload and link attachment to TestResult
 
-<br>Use case  <br>User sets testResultId  <br>User attaches a file  <br>System creates attachment and links it to the test result  <br>System returns attachment identifier
+ Use case   User sets testResultId   User attaches a file   System creates attachment and links it to the test result   System returns attachment identifier
 
 ### Example
 ```csharp
@@ -756,8 +1106,7 @@ namespace Example
             try
             {
                 // Upload and link attachment to TestResult
-                Guid result = apiInstance.CreateAttachment(id, file);
-                Debug.WriteLine(result);
+                apiInstance.CreateAttachment(id, file);
             }
             catch (ApiException  e)
             {
@@ -777,10 +1126,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Upload and link attachment to TestResult
-    ApiResponse<Guid> response = apiInstance.CreateAttachmentWithHttpInfo(id, file);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.CreateAttachmentWithHttpInfo(id, file);
 }
 catch (ApiException e)
 {
@@ -799,7 +1145,7 @@ catch (ApiException e)
 
 ### Return type
 
-**Guid**
+void (empty response body)
 
 ### Authorization
 
@@ -814,22 +1160,24 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
+| **413** | Multipart body length limit exceeded (default constraint is one gigabyte) |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test result required |  -  |
 | **404** |  |  -  |
-| **413** | Multipart body length limit exceeded (default constraint is one gigabyte) |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
+| **200** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleteattachment"></a>
+<a id="deleteattachment"></a>
 # **DeleteAttachment**
 > void DeleteAttachment (Guid id, Guid attachmentId)
 
 Remove attachment and unlink from TestResult
 
-<br>Use case  <br>User sets testResultId and attachmentId  <br>User attaches a file  <br>User runs method execution  <br>System deletes attachment and unlinks it from the test result  <br>System returns attachment identifier
+ Use case   User sets testResultId and attachmentId   User attaches a file   User runs method execution   System deletes attachment and unlinks it from the test result   System returns attachment identifier
 
 ### Example
 ```csharp
@@ -921,16 +1269,19 @@ void (empty response body)
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test result required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="downloadattachment"></a>
+<a id="downloadattachment"></a>
 # **DownloadAttachment**
-> FileParameter DownloadAttachment (Guid attachmentId, Guid id, int? width = null, int? height = null, ImageResizeType? resizeType = null, string backgroundColor = null, bool? preview = null)
+> void DownloadAttachment (Guid attachmentId, Guid id, int? width = null, int? height = null, ImageResizeType? resizeType = null, string backgroundColor = null, bool? preview = null)
 
 Get attachment of TestResult
 
-<br>Use case  <br>User sets attachmentId and testResultId  <br>[Optional] User sets resize configuration  <br>User runs method execution  <br>System search attachments by the attachmentId and the testResultId  <br>                      [Optional] If resize configuration is set, System resizes the attachment according to the resize                      configuration                    <br>[Optional] Otherwise, System does not resize the attachment  <br>System returns attachment as a file
+ Use case   User sets attachmentId and testResultId   [Optional] User sets resize configuration   User runs method execution   System search attachments by the attachmentId and the testResultId                         [Optional] If resize configuration is set, System resizes the attachment according to the resize                      configuration                     [Optional] Otherwise, System does not resize the attachment   System returns attachment as a file
 
 ### Example
 ```csharp
@@ -969,8 +1320,7 @@ namespace Example
             try
             {
                 // Get attachment of TestResult
-                FileParameter result = apiInstance.DownloadAttachment(attachmentId, id, width, height, resizeType, backgroundColor, preview);
-                Debug.WriteLine(result);
+                apiInstance.DownloadAttachment(attachmentId, id, width, height, resizeType, backgroundColor, preview);
             }
             catch (ApiException  e)
             {
@@ -990,10 +1340,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get attachment of TestResult
-    ApiResponse<FileParameter> response = apiInstance.DownloadAttachmentWithHttpInfo(attachmentId, id, width, height, resizeType, backgroundColor, preview);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.DownloadAttachmentWithHttpInfo(attachmentId, id, width, height, resizeType, backgroundColor, preview);
 }
 catch (ApiException e)
 {
@@ -1017,7 +1364,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**FileParameter**](FileParameter.md)
+void (empty response body)
 
 ### Authorization
 
@@ -1026,27 +1373,29 @@ catch (ApiException e)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream, application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test result required |  -  |
-| **404** | &lt;br&gt;File not found  &lt;br&gt;Attachment not found |  -  |
+| **404** |  File not found   Attachment not found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getattachment"></a>
+<a id="getattachment"></a>
 # **GetAttachment**
 > AttachmentModel GetAttachment (Guid id, Guid attachmentId)
 
 Get Metadata of TestResult's attachment
 
-<br>Use case  <br>User sets attachmentId and testResultId  <br>User runs method execution  <br>System search attachment by the attachmentId and the testResultId  <br>System returns attachment data
+ Use case   User sets attachmentId and testResultId   User runs method execution   System search attachment by the attachmentId and the testResultId   System returns attachment data
 
 ### Example
 ```csharp
@@ -1143,16 +1492,18 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test result required |  -  |
 | **404** | File not found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getattachments"></a>
+<a id="getattachments"></a>
 # **GetAttachments**
 > List&lt;AttachmentModel&gt; GetAttachments (Guid id)
 
 Get all attachments of TestResult
 
-<br>Use case  <br>User sets testResultId  <br>User runs method execution  <br>System search all attachments of the test result  <br>System returns attachments enumeration
+ Use case   User sets testResultId   User runs method execution   System search all attachments of the test result   System returns attachments enumeration
 
 ### Example
 ```csharp
@@ -1242,11 +1593,13 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test result required |  -  |
 | **404** | TestResult not found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

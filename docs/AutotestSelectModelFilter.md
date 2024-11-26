@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **IsEmptyClassName** | **bool?** | Specifies an autotest class name presence status to search for | [optional] 
 **LastTestResultOutcome** | **AutotestResultOutcome** |  | [optional] 
 **ExternalKey** | **string** | Specifies an autotest external key to search for | [optional] 
+**LastTestResultConfigurationIds** | **List&lt;Guid&gt;** | Specifies an autotest configuration IDs of the last test result to search for | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -75,11 +75,12 @@ namespace TestIT.ApiClient.Model
         /// <param name="stepComments">stepComments.</param>
         /// <param name="failureClassIds">failureClassIds (required).</param>
         /// <param name="outcome">outcome.</param>
+        /// <param name="status">status.</param>
         /// <param name="comment">comment.</param>
         /// <param name="links">links.</param>
         /// <param name="stepResults">stepResults.</param>
         /// <param name="attachments">attachments.</param>
-        public TestResultModel(Guid? autoTestId = default(Guid?), Guid configurationId = default(Guid), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? durationInMs = default(long?), string traces = default(string), string failureType = default(string), string message = default(string), Guid? runByUserId = default(Guid?), Guid? stoppedByUserId = default(Guid?), Guid testPointId = default(Guid), Guid testRunId = default(Guid), TestPointPutModel testPoint = default(TestPointPutModel), AutoTestModel autoTest = default(AutoTestModel), List<AttachmentModelAutoTestStepResultsModel> autoTestStepResults = default(List<AttachmentModelAutoTestStepResultsModel>), List<AttachmentModelAutoTestStepResultsModel> setupResults = default(List<AttachmentModelAutoTestStepResultsModel>), List<AttachmentModelAutoTestStepResultsModel> teardownResults = default(List<AttachmentModelAutoTestStepResultsModel>), Guid workItemVersionId = default(Guid), int? workItemVersionNumber = default(int?), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, string> properties = default(Dictionary<string, string>), Guid id = default(Guid), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), List<StepCommentModel> stepComments = default(List<StepCommentModel>), List<Guid> failureClassIds = default(List<Guid>), TestResultOutcome? outcome = default(TestResultOutcome?), string comment = default(string), List<LinkModel> links = default(List<LinkModel>), List<StepResultModel> stepResults = default(List<StepResultModel>), List<AttachmentModel> attachments = default(List<AttachmentModel>))
+        public TestResultModel(Guid? autoTestId = default(Guid?), Guid configurationId = default(Guid), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? durationInMs = default(long?), string traces = default(string), string failureType = default(string), string message = default(string), Guid? runByUserId = default(Guid?), Guid? stoppedByUserId = default(Guid?), Guid testPointId = default(Guid), Guid testRunId = default(Guid), TestPointPutModel testPoint = default(TestPointPutModel), AutoTestModel autoTest = default(AutoTestModel), List<AttachmentModelAutoTestStepResultsModel> autoTestStepResults = default(List<AttachmentModelAutoTestStepResultsModel>), List<AttachmentModelAutoTestStepResultsModel> setupResults = default(List<AttachmentModelAutoTestStepResultsModel>), List<AttachmentModelAutoTestStepResultsModel> teardownResults = default(List<AttachmentModelAutoTestStepResultsModel>), Guid workItemVersionId = default(Guid), int? workItemVersionNumber = default(int?), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, string> properties = default(Dictionary<string, string>), Guid id = default(Guid), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), List<StepCommentModel> stepComments = default(List<StepCommentModel>), List<Guid> failureClassIds = default(List<Guid>), TestResultOutcome? outcome = default(TestResultOutcome?), TestStatusModel status = default(TestStatusModel), string comment = default(string), List<LinkModel> links = default(List<LinkModel>), List<StepResultModel> stepResults = default(List<StepResultModel>), List<AttachmentModel> attachments = default(List<AttachmentModel>))
         {
             this.ConfigurationId = configurationId;
             this.TestPointId = testPointId;
@@ -115,6 +116,7 @@ namespace TestIT.ApiClient.Model
             this.ModifiedById = modifiedById;
             this.StepComments = stepComments;
             this.Outcome = outcome;
+            this.Status = status;
             this.Comment = comment;
             this.Links = links;
             this.StepResults = stepResults;
@@ -290,6 +292,12 @@ namespace TestIT.ApiClient.Model
         public List<Guid> FailureClassIds { get; set; }
 
         /// <summary>
+        /// Gets or Sets Status
+        /// </summary>
+        [DataMember(Name = "status", EmitDefaultValue = true)]
+        public TestStatusModel Status { get; set; }
+
+        /// <summary>
         /// Gets or Sets Comment
         /// </summary>
         [DataMember(Name = "comment", EmitDefaultValue = true)]
@@ -350,6 +358,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  StepComments: ").Append(StepComments).Append("\n");
             sb.Append("  FailureClassIds: ").Append(FailureClassIds).Append("\n");
             sb.Append("  Outcome: ").Append(Outcome).Append("\n");
+            sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Comment: ").Append(Comment).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  StepResults: ").Append(StepResults).Append("\n");
@@ -541,6 +550,11 @@ namespace TestIT.ApiClient.Model
                     this.Outcome.Equals(input.Outcome)
                 ) && 
                 (
+                    this.Status == input.Status ||
+                    (this.Status != null &&
+                    this.Status.Equals(input.Status))
+                ) && 
+                (
                     this.Comment == input.Comment ||
                     (this.Comment != null &&
                     this.Comment.Equals(input.Comment))
@@ -687,6 +701,10 @@ namespace TestIT.ApiClient.Model
                     hashCode = (hashCode * 59) + this.FailureClassIds.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Outcome.GetHashCode();
+                if (this.Status != null)
+                {
+                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
+                }
                 if (this.Comment != null)
                 {
                     hashCode = (hashCode * 59) + this.Comment.GetHashCode();
@@ -712,7 +730,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

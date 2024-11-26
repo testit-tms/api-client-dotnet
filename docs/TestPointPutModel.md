@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **ConfigurationId** | **Guid?** |  | [optional] 
 **TestSuiteId** | **Guid** |  | 
 **Status** | **string** |  | [optional] 
+**StatusModel** | [**TestPointPutModelStatusModel**](TestPointPutModelStatusModel.md) |  | 
 **LastTestResultId** | **Guid?** |  | [optional] 
 **Id** | **Guid** | Unique ID of the entity | 
 **IsDeleted** | **bool** | Indicates if the entity is deleted | 

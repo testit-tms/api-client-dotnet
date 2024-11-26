@@ -45,7 +45,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="globalIds">Specifies a project global IDs to search for.</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="createdByIds">Specifies an autotest creator IDs to search for.</param>
-        public ProjectsFilterModel(string name = default(string), bool? isFavorite = default(bool?), bool? isDeleted = default(bool?), ProjectsFilterModelTestCasesCount testCasesCount = default(ProjectsFilterModelTestCasesCount), ProjectsFilterModelChecklistsCount checklistsCount = default(ProjectsFilterModelChecklistsCount), ProjectsFilterModelSharedStepsCount sharedStepsCount = default(ProjectsFilterModelSharedStepsCount), ProjectsFilterModelAutotestsCount autotestsCount = default(ProjectsFilterModelAutotestsCount), List<long> globalIds = default(List<long>), ProjectsFilterModelCreatedDate createdDate = default(ProjectsFilterModelCreatedDate), List<Guid> createdByIds = default(List<Guid>))
+        /// <param name="types">Collection of project types to search for.</param>
+        public ProjectsFilterModel(string name = default(string), bool? isFavorite = default(bool?), bool? isDeleted = default(bool?), ProjectsFilterModelTestCasesCount testCasesCount = default(ProjectsFilterModelTestCasesCount), ProjectsFilterModelChecklistsCount checklistsCount = default(ProjectsFilterModelChecklistsCount), ProjectsFilterModelSharedStepsCount sharedStepsCount = default(ProjectsFilterModelSharedStepsCount), ProjectsFilterModelAutotestsCount autotestsCount = default(ProjectsFilterModelAutotestsCount), List<long> globalIds = default(List<long>), ProjectsFilterModelCreatedDate createdDate = default(ProjectsFilterModelCreatedDate), List<Guid> createdByIds = default(List<Guid>), List<ProjectTypeModel> types = default(List<ProjectTypeModel>))
         {
             this.Name = name;
             this.IsFavorite = isFavorite;
@@ -57,6 +58,7 @@ namespace TestIT.ApiClient.Model
             this.GlobalIds = globalIds;
             this.CreatedDate = createdDate;
             this.CreatedByIds = createdByIds;
+            this.Types = types;
         }
 
         /// <summary>
@@ -125,6 +127,13 @@ namespace TestIT.ApiClient.Model
         public List<Guid> CreatedByIds { get; set; }
 
         /// <summary>
+        /// Collection of project types to search for
+        /// </summary>
+        /// <value>Collection of project types to search for</value>
+        [DataMember(Name = "types", EmitDefaultValue = true)]
+        public List<ProjectTypeModel> Types { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -142,6 +151,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  GlobalIds: ").Append(GlobalIds).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  CreatedByIds: ").Append(CreatedByIds).Append("\n");
+            sb.Append("  Types: ").Append(Types).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -228,6 +238,12 @@ namespace TestIT.ApiClient.Model
                     this.CreatedByIds != null &&
                     input.CreatedByIds != null &&
                     this.CreatedByIds.SequenceEqual(input.CreatedByIds)
+                ) && 
+                (
+                    this.Types == input.Types ||
+                    this.Types != null &&
+                    input.Types != null &&
+                    this.Types.SequenceEqual(input.Types)
                 );
         }
 
@@ -280,6 +296,10 @@ namespace TestIT.ApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.CreatedByIds.GetHashCode();
                 }
+                if (this.Types != null)
+                {
+                    hashCode = (hashCode * 59) + this.Types.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -289,7 +309,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)

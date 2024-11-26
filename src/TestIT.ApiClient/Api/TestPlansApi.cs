@@ -32,9 +32,9 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
+        /// <param name="addTestPointsWithSectionsRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
         /// <returns></returns>
-        void AddTestPointsWithSections(string id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest));
+        void AddTestPointsWithSections(string id, AddTestPointsWithSectionsRequest addTestPointsWithSectionsRequest = default(AddTestPointsWithSectionsRequest));
 
         /// <summary>
         /// Add test-points to TestPlan with sections
@@ -44,14 +44,14 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
+        /// <param name="addTestPointsWithSectionsRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> AddTestPointsWithSectionsWithHttpInfo(string id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest));
+        ApiResponse<Object> AddTestPointsWithSectionsWithHttpInfo(string id, AddTestPointsWithSectionsRequest addTestPointsWithSectionsRequest = default(AddTestPointsWithSectionsRequest));
         /// <summary>
         /// Add WorkItems to TestPlan with Sections as TestSuites
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets TestPlan identifier  &lt;br&gt;User sets WorkItem identifiers (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System added WorkItems and Sections to TestPlan  &lt;br&gt;System returns no content response
+        ///  Use case   User sets TestPlan identifier   User sets WorkItem identifiers (listed in request example)   User runs method execution   System added WorkItems and Sections to TestPlan   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -63,7 +63,7 @@ namespace TestIT.ApiClient.Api
         /// Add WorkItems to TestPlan with Sections as TestSuites
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets TestPlan identifier  &lt;br&gt;User sets WorkItem identifiers (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System added WorkItems and Sections to TestPlan  &lt;br&gt;System returns no content response
+        ///  Use case   User sets TestPlan identifier   User sets WorkItem identifiers (listed in request example)   User runs method execution   System added WorkItems and Sections to TestPlan   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -74,7 +74,7 @@ namespace TestIT.ApiClient.Api
         /// Get analytics by TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System returns analytics by test plan
+        ///  Use case   User sets test plan identifier   User runs method execution   System returns analytics by test plan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -85,7 +85,7 @@ namespace TestIT.ApiClient.Api
         /// Get analytics by TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System returns analytics by test plan
+        ///  Use case   User sets test plan identifier   User runs method execution   System returns analytics by test plan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -115,7 +115,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPlan configurations
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return test plan configurations
+        ///  Use case   User sets test plan identifier   User runs method execution   System return test plan configurations
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -126,7 +126,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPlan configurations
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return test plan configurations
+        ///  Use case   User sets test plan identifier   User runs method execution   System return test plan configurations
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -136,32 +136,32 @@ namespace TestIT.ApiClient.Api
         /// Export TestPoints from TestPlan in xls format
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter model (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return export xlsx file
+        ///  Use case   User sets test plan identifier   User sets filter model (listed in request example)   User runs method execution   System return export xlsx file
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="apiV2TestPlansIdExportTestPointsXlsxPostRequest"> (optional)</param>
-        /// <returns>FileParameter</returns>
-        FileParameter ApiV2TestPlansIdExportTestPointsXlsxPost(string id, long? timeZoneOffsetInMinutes = default(long?), ApiV2TestPlansIdExportTestPointsXlsxPostRequest apiV2TestPlansIdExportTestPointsXlsxPostRequest = default(ApiV2TestPlansIdExportTestPointsXlsxPostRequest));
+        /// <returns></returns>
+        void ApiV2TestPlansIdExportTestPointsXlsxPost(string id, long? timeZoneOffsetInMinutes = default(long?), ApiV2TestPlansIdExportTestPointsXlsxPostRequest apiV2TestPlansIdExportTestPointsXlsxPostRequest = default(ApiV2TestPlansIdExportTestPointsXlsxPostRequest));
 
         /// <summary>
         /// Export TestPoints from TestPlan in xls format
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter model (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return export xlsx file
+        ///  Use case   User sets test plan identifier   User sets filter model (listed in request example)   User runs method execution   System return export xlsx file
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="apiV2TestPlansIdExportTestPointsXlsxPostRequest"> (optional)</param>
-        /// <returns>ApiResponse of FileParameter</returns>
-        ApiResponse<FileParameter> ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ApiV2TestPlansIdExportTestPointsXlsxPostRequest apiV2TestPlansIdExportTestPointsXlsxPostRequest = default(ApiV2TestPlansIdExportTestPointsXlsxPostRequest));
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ApiV2TestPlansIdExportTestPointsXlsxPostRequest apiV2TestPlansIdExportTestPointsXlsxPostRequest = default(ApiV2TestPlansIdExportTestPointsXlsxPostRequest));
         /// <summary>
         /// Export TestResults history from TestPlan in xls format
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter model (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return export xlsx file
+        ///  Use case   User sets test plan identifier   User sets filter model (listed in request example)   User runs method execution   System return export xlsx file
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -169,14 +169,14 @@ namespace TestIT.ApiClient.Api
         /// <param name="includeSteps"> (optional)</param>
         /// <param name="includeDeletedTestSuites"> (optional)</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <returns>FileParameter</returns>
-        FileParameter ApiV2TestPlansIdExportTestResultHistoryXlsxPost(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?));
+        /// <returns></returns>
+        void ApiV2TestPlansIdExportTestResultHistoryXlsxPost(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?));
 
         /// <summary>
         /// Export TestResults history from TestPlan in xls format
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter model (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return export xlsx file
+        ///  Use case   User sets test plan identifier   User sets filter model (listed in request example)   User runs method execution   System return export xlsx file
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -184,13 +184,13 @@ namespace TestIT.ApiClient.Api
         /// <param name="includeSteps"> (optional)</param>
         /// <param name="includeDeletedTestSuites"> (optional)</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <returns>ApiResponse of FileParameter</returns>
-        ApiResponse<FileParameter> ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfo(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?));
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfo(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?));
         /// <summary>
         /// Get TestPlan history
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return test plan history
+        ///  Use case   User sets test plan identifier   User runs method execution   System return test plan history
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -206,7 +206,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPlan history
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return test plan history
+        ///  Use case   User sets test plan identifier   User runs method execution   System return test plan history
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -221,7 +221,7 @@ namespace TestIT.ApiClient.Api
         /// Get Links of TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets pagination filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System returns links of TestPlan
+        ///  Use case   User sets test plan identifier   User sets pagination filter (listed in request example)   User runs method execution   System returns links of TestPlan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -235,7 +235,7 @@ namespace TestIT.ApiClient.Api
         /// Get Links of TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets pagination filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System returns links of TestPlan
+        ///  Use case   User sets test plan identifier   User sets pagination filter (listed in request example)   User runs method execution   System returns links of TestPlan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -268,10 +268,31 @@ namespace TestIT.ApiClient.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ApiV2TestPlansIdPatchWithHttpInfo(Guid id, List<Operation> operation = default(List<Operation>));
         /// <summary>
+        /// Get summary by TestPlan
+        /// </summary>
+        /// <remarks>
+        ///  Use case   User sets test plan identifier   User runs method execution   System returns summary by test plan
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
+        /// <returns>TestPlanSummaryModel</returns>
+        TestPlanSummaryModel ApiV2TestPlansIdSummariesGet(string id);
+
+        /// <summary>
+        /// Get summary by TestPlan
+        /// </summary>
+        /// <remarks>
+        ///  Use case   User sets test plan identifier   User runs method execution   System returns summary by test plan
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
+        /// <returns>ApiResponse of TestPlanSummaryModel</returns>
+        ApiResponse<TestPlanSummaryModel> ApiV2TestPlansIdSummariesGetWithHttpInfo(string id);
+        /// <summary>
         /// Get TestPoints with last result from TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return test points with last result from test plan
+        ///  Use case   User sets test plan identifier   User sets filter (listed in request example)   User runs method execution   System return test points with last result from test plan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -288,7 +309,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPoints with last result from TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return test points with last result from test plan
+        ///  Use case   User sets test plan identifier   User sets filter (listed in request example)   User runs method execution   System return test points with last result from test plan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -304,7 +325,7 @@ namespace TestIT.ApiClient.Api
         /// Reset TestPoints status of TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets test points identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System reset test points statuses of test plan
+        ///  Use case   User sets test plan identifier   User sets test points identifiers   User runs method execution   System reset test points statuses of test plan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -316,7 +337,7 @@ namespace TestIT.ApiClient.Api
         /// Reset TestPoints status of TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets test points identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System reset test points statuses of test plan
+        ///  Use case   User sets test plan identifier   User sets test points identifiers   User runs method execution   System reset test points statuses of test plan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -369,7 +390,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestRuns of TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets TestRun status filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System returns TestRuns for TestPlan
+        ///  Use case   User sets test plan identifier   User sets TestRun status filter (listed in request example)   User runs method execution   System returns TestRuns for TestPlan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -389,7 +410,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestRuns of TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets TestRun status filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System returns TestRuns for TestPlan
+        ///  Use case   User sets test plan identifier   User sets TestRun status filter (listed in request example)   User runs method execution   System returns TestRuns for TestPlan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -408,7 +429,7 @@ namespace TestIT.ApiClient.Api
         /// Search TestRuns of TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets TestRuns filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System returns TestRuns for TestPlan
+        ///  Use case   User sets test plan identifier   User sets TestRuns filter (listed in request example)   User runs method execution   System returns TestRuns for TestPlan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -425,7 +446,7 @@ namespace TestIT.ApiClient.Api
         /// Search TestRuns of TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets TestRuns filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System returns TestRuns for TestPlan
+        ///  Use case   User sets test plan identifier   User sets TestRuns filter (listed in request example)   User runs method execution   System returns TestRuns for TestPlan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -442,8 +463,8 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan unique or global ID</param>
-        /// <returns>DateTime</returns>
-        DateTime ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet(string id);
+        /// <returns></returns>
+        void ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet(string id);
 
         /// <summary>
         /// Get last modification date of test plan&#39;s test results
@@ -453,13 +474,13 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan unique or global ID</param>
-        /// <returns>ApiResponse of DateTime</returns>
-        ApiResponse<DateTime> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfo(string id);
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfo(string id);
         /// <summary>
         /// Send unlock TestPlan notification
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System send unlock test plan notification
+        ///  Use case   User sets test plan identifier   User runs method execution   System send unlock test plan notification
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -470,7 +491,7 @@ namespace TestIT.ApiClient.Api
         /// Send unlock TestPlan notification
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System send unlock test plan notification
+        ///  Use case   User sets test plan identifier   User runs method execution   System send unlock test plan notification
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -480,7 +501,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPlans short models by Project identifiers
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets projects identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System return test plans short models (listed in response example)
+        ///  Use case   User sets projects identifiers   User runs method execution   System return test plans short models (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted"> (optional)</param>
@@ -492,7 +513,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPlans short models by Project identifiers
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets projects identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System return test plans short models (listed in response example)
+        ///  Use case   User sets projects identifiers   User runs method execution   System return test plans short models (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted"> (optional)</param>
@@ -503,7 +524,7 @@ namespace TestIT.ApiClient.Api
         /// Clone TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System clones test plan  &lt;br&gt;System returns test plan (listed in response example)
+        ///  Use case   User sets test plan identifier   User runs method execution   System clones test plan   System returns test plan (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -514,7 +535,7 @@ namespace TestIT.ApiClient.Api
         /// Clone TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System clones test plan  &lt;br&gt;System returns test plan (listed in response example)
+        ///  Use case   User sets test plan identifier   User runs method execution   System clones test plan   System returns test plan (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -524,7 +545,7 @@ namespace TestIT.ApiClient.Api
         /// Complete TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System completes the test plan and updates test plan status  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test plan identifier   User runs method execution   System completes the test plan and updates test plan status   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -535,7 +556,7 @@ namespace TestIT.ApiClient.Api
         /// Complete TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System completes the test plan and updates test plan status  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test plan identifier   User runs method execution   System completes the test plan and updates test plan status   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -545,7 +566,7 @@ namespace TestIT.ApiClient.Api
         /// Create TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan properties (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates test plan  &lt;br&gt;System returns test plan (listed in response example)
+        ///  Use case   User sets test plan properties (listed in request example)   User runs method execution   System creates test plan   System returns test plan (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestPlanRequest"> (optional)</param>
@@ -556,7 +577,7 @@ namespace TestIT.ApiClient.Api
         /// Create TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan properties (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates test plan  &lt;br&gt;System returns test plan (listed in response example)
+        ///  Use case   User sets test plan properties (listed in request example)   User runs method execution   System creates test plan   System returns test plan (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestPlanRequest"> (optional)</param>
@@ -566,7 +587,7 @@ namespace TestIT.ApiClient.Api
         /// Delete TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System delete test plan  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test plan identifier   User runs method execution   System delete test plan   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -577,7 +598,7 @@ namespace TestIT.ApiClient.Api
         /// Delete TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System delete test plan  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test plan identifier   User runs method execution   System delete test plan   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -587,7 +608,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPlan by Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search  test plan by the identifier  &lt;br&gt;System returns test plan
+        ///  Use case   User sets test plan identifier   User runs method execution   System search  test plan by the identifier   System returns test plan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -598,7 +619,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPlan by Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search  test plan by the identifier  &lt;br&gt;System returns test plan
+        ///  Use case   User sets test plan identifier   User runs method execution   System search  test plan by the identifier   System returns test plan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -608,7 +629,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestSuites Tree By Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System finds test suites related to the test plan  &lt;br&gt;System returns test suites as a tree model (listed in response example)
+        ///  Use case   User sets test plan identifier   User runs method execution   System finds test suites related to the test plan   System returns test suites as a tree model (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -619,7 +640,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestSuites Tree By Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System finds test suites related to the test plan  &lt;br&gt;System returns test suites as a tree model (listed in response example)
+        ///  Use case   User sets test plan identifier   User runs method execution   System finds test suites related to the test plan   System returns test suites as a tree model (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -629,7 +650,7 @@ namespace TestIT.ApiClient.Api
         /// Pause TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System pauses the test plan and updates test plan status  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test plan identifier   User runs method execution   System pauses the test plan and updates test plan status   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -640,7 +661,7 @@ namespace TestIT.ApiClient.Api
         /// Pause TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System pauses the test plan and updates test plan status  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test plan identifier   User runs method execution   System pauses the test plan and updates test plan status   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -668,7 +689,7 @@ namespace TestIT.ApiClient.Api
         /// Restore TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System restores test plan  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test plan identifier   User runs method execution   System restores test plan   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -679,7 +700,7 @@ namespace TestIT.ApiClient.Api
         /// Restore TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System restores test plan  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test plan identifier   User runs method execution   System restores test plan   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -689,7 +710,7 @@ namespace TestIT.ApiClient.Api
         /// Start TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System starts the test plan and updates test plan status  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test plan identifier   User runs method execution   System starts the test plan and updates test plan status   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -700,7 +721,7 @@ namespace TestIT.ApiClient.Api
         /// Start TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System starts the test plan and updates test plan status  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test plan identifier   User runs method execution   System starts the test plan and updates test plan status   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -710,7 +731,7 @@ namespace TestIT.ApiClient.Api
         /// Update TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan properties(listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates test plan  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test plan properties(listed in request example)   User runs method execution   System updates test plan   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateTestPlanRequest"> (optional)</param>
@@ -721,7 +742,7 @@ namespace TestIT.ApiClient.Api
         /// Update TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan properties(listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates test plan  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test plan properties(listed in request example)   User runs method execution   System updates test plan   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateTestPlanRequest"> (optional)</param>
@@ -744,10 +765,10 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
+        /// <param name="addTestPointsWithSectionsRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task AddTestPointsWithSectionsAsync(string id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task AddTestPointsWithSectionsAsync(string id, AddTestPointsWithSectionsRequest addTestPointsWithSectionsRequest = default(AddTestPointsWithSectionsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Add test-points to TestPlan with sections
@@ -757,15 +778,15 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
+        /// <param name="addTestPointsWithSectionsRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> AddTestPointsWithSectionsWithHttpInfoAsync(string id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> AddTestPointsWithSectionsWithHttpInfoAsync(string id, AddTestPointsWithSectionsRequest addTestPointsWithSectionsRequest = default(AddTestPointsWithSectionsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Add WorkItems to TestPlan with Sections as TestSuites
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets TestPlan identifier  &lt;br&gt;User sets WorkItem identifiers (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System added WorkItems and Sections to TestPlan  &lt;br&gt;System returns no content response
+        ///  Use case   User sets TestPlan identifier   User sets WorkItem identifiers (listed in request example)   User runs method execution   System added WorkItems and Sections to TestPlan   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -778,7 +799,7 @@ namespace TestIT.ApiClient.Api
         /// Add WorkItems to TestPlan with Sections as TestSuites
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets TestPlan identifier  &lt;br&gt;User sets WorkItem identifiers (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System added WorkItems and Sections to TestPlan  &lt;br&gt;System returns no content response
+        ///  Use case   User sets TestPlan identifier   User sets WorkItem identifiers (listed in request example)   User runs method execution   System added WorkItems and Sections to TestPlan   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -790,7 +811,7 @@ namespace TestIT.ApiClient.Api
         /// Get analytics by TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System returns analytics by test plan
+        ///  Use case   User sets test plan identifier   User runs method execution   System returns analytics by test plan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -802,7 +823,7 @@ namespace TestIT.ApiClient.Api
         /// Get analytics by TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System returns analytics by test plan
+        ///  Use case   User sets test plan identifier   User runs method execution   System returns analytics by test plan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -838,7 +859,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPlan configurations
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return test plan configurations
+        ///  Use case   User sets test plan identifier   User runs method execution   System return test plan configurations
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -850,7 +871,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPlan configurations
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return test plan configurations
+        ///  Use case   User sets test plan identifier   User runs method execution   System return test plan configurations
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -861,34 +882,34 @@ namespace TestIT.ApiClient.Api
         /// Export TestPoints from TestPlan in xls format
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter model (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return export xlsx file
+        ///  Use case   User sets test plan identifier   User sets filter model (listed in request example)   User runs method execution   System return export xlsx file
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="apiV2TestPlansIdExportTestPointsXlsxPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of FileParameter</returns>
-        System.Threading.Tasks.Task<FileParameter> ApiV2TestPlansIdExportTestPointsXlsxPostAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ApiV2TestPlansIdExportTestPointsXlsxPostRequest apiV2TestPlansIdExportTestPointsXlsxPostRequest = default(ApiV2TestPlansIdExportTestPointsXlsxPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ApiV2TestPlansIdExportTestPointsXlsxPostAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ApiV2TestPlansIdExportTestPointsXlsxPostRequest apiV2TestPlansIdExportTestPointsXlsxPostRequest = default(ApiV2TestPlansIdExportTestPointsXlsxPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Export TestPoints from TestPlan in xls format
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter model (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return export xlsx file
+        ///  Use case   User sets test plan identifier   User sets filter model (listed in request example)   User runs method execution   System return export xlsx file
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="apiV2TestPlansIdExportTestPointsXlsxPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (FileParameter)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FileParameter>> ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ApiV2TestPlansIdExportTestPointsXlsxPostRequest apiV2TestPlansIdExportTestPointsXlsxPostRequest = default(ApiV2TestPlansIdExportTestPointsXlsxPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ApiV2TestPlansIdExportTestPointsXlsxPostRequest apiV2TestPlansIdExportTestPointsXlsxPostRequest = default(ApiV2TestPlansIdExportTestPointsXlsxPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Export TestResults history from TestPlan in xls format
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter model (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return export xlsx file
+        ///  Use case   User sets test plan identifier   User sets filter model (listed in request example)   User runs method execution   System return export xlsx file
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -897,14 +918,14 @@ namespace TestIT.ApiClient.Api
         /// <param name="includeDeletedTestSuites"> (optional)</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of FileParameter</returns>
-        System.Threading.Tasks.Task<FileParameter> ApiV2TestPlansIdExportTestResultHistoryXlsxPostAsync(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ApiV2TestPlansIdExportTestResultHistoryXlsxPostAsync(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Export TestResults history from TestPlan in xls format
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter model (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return export xlsx file
+        ///  Use case   User sets test plan identifier   User sets filter model (listed in request example)   User runs method execution   System return export xlsx file
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -913,13 +934,13 @@ namespace TestIT.ApiClient.Api
         /// <param name="includeDeletedTestSuites"> (optional)</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (FileParameter)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FileParameter>> ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfoAsync(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfoAsync(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get TestPlan history
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return test plan history
+        ///  Use case   User sets test plan identifier   User runs method execution   System return test plan history
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -936,7 +957,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPlan history
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return test plan history
+        ///  Use case   User sets test plan identifier   User runs method execution   System return test plan history
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -952,7 +973,7 @@ namespace TestIT.ApiClient.Api
         /// Get Links of TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets pagination filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System returns links of TestPlan
+        ///  Use case   User sets test plan identifier   User sets pagination filter (listed in request example)   User runs method execution   System returns links of TestPlan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -967,7 +988,7 @@ namespace TestIT.ApiClient.Api
         /// Get Links of TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets pagination filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System returns links of TestPlan
+        ///  Use case   User sets test plan identifier   User sets pagination filter (listed in request example)   User runs method execution   System returns links of TestPlan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1003,10 +1024,33 @@ namespace TestIT.ApiClient.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestPlansIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
+        /// Get summary by TestPlan
+        /// </summary>
+        /// <remarks>
+        ///  Use case   User sets test plan identifier   User runs method execution   System returns summary by test plan
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TestPlanSummaryModel</returns>
+        System.Threading.Tasks.Task<TestPlanSummaryModel> ApiV2TestPlansIdSummariesGetAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get summary by TestPlan
+        /// </summary>
+        /// <remarks>
+        ///  Use case   User sets test plan identifier   User runs method execution   System returns summary by test plan
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TestPlanSummaryModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TestPlanSummaryModel>> ApiV2TestPlansIdSummariesGetWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
         /// Get TestPoints with last result from TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return test points with last result from test plan
+        ///  Use case   User sets test plan identifier   User sets filter (listed in request example)   User runs method execution   System return test points with last result from test plan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1024,7 +1068,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPoints with last result from TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return test points with last result from test plan
+        ///  Use case   User sets test plan identifier   User sets filter (listed in request example)   User runs method execution   System return test points with last result from test plan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1041,7 +1085,7 @@ namespace TestIT.ApiClient.Api
         /// Reset TestPoints status of TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets test points identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System reset test points statuses of test plan
+        ///  Use case   User sets test plan identifier   User sets test points identifiers   User runs method execution   System reset test points statuses of test plan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1054,7 +1098,7 @@ namespace TestIT.ApiClient.Api
         /// Reset TestPoints status of TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets test points identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System reset test points statuses of test plan
+        ///  Use case   User sets test plan identifier   User sets test points identifiers   User runs method execution   System reset test points statuses of test plan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1118,7 +1162,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestRuns of TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets TestRun status filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System returns TestRuns for TestPlan
+        ///  Use case   User sets test plan identifier   User sets TestRun status filter (listed in request example)   User runs method execution   System returns TestRuns for TestPlan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1139,7 +1183,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestRuns of TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets TestRun status filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System returns TestRuns for TestPlan
+        ///  Use case   User sets test plan identifier   User sets TestRun status filter (listed in request example)   User runs method execution   System returns TestRuns for TestPlan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1159,7 +1203,7 @@ namespace TestIT.ApiClient.Api
         /// Search TestRuns of TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets TestRuns filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System returns TestRuns for TestPlan
+        ///  Use case   User sets test plan identifier   User sets TestRuns filter (listed in request example)   User runs method execution   System returns TestRuns for TestPlan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1177,7 +1221,7 @@ namespace TestIT.ApiClient.Api
         /// Search TestRuns of TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets TestRuns filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System returns TestRuns for TestPlan
+        ///  Use case   User sets test plan identifier   User sets TestRuns filter (listed in request example)   User runs method execution   System returns TestRuns for TestPlan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1199,8 +1243,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan unique or global ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DateTime</returns>
-        System.Threading.Tasks.Task<DateTime> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get last modification date of test plan&#39;s test results
@@ -1211,13 +1255,13 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan unique or global ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DateTime)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DateTime>> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Send unlock TestPlan notification
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System send unlock test plan notification
+        ///  Use case   User sets test plan identifier   User runs method execution   System send unlock test plan notification
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1229,7 +1273,7 @@ namespace TestIT.ApiClient.Api
         /// Send unlock TestPlan notification
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System send unlock test plan notification
+        ///  Use case   User sets test plan identifier   User runs method execution   System send unlock test plan notification
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1240,7 +1284,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPlans short models by Project identifiers
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets projects identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System return test plans short models (listed in response example)
+        ///  Use case   User sets projects identifiers   User runs method execution   System return test plans short models (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted"> (optional)</param>
@@ -1253,7 +1297,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPlans short models by Project identifiers
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets projects identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System return test plans short models (listed in response example)
+        ///  Use case   User sets projects identifiers   User runs method execution   System return test plans short models (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted"> (optional)</param>
@@ -1265,7 +1309,7 @@ namespace TestIT.ApiClient.Api
         /// Clone TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System clones test plan  &lt;br&gt;System returns test plan (listed in response example)
+        ///  Use case   User sets test plan identifier   User runs method execution   System clones test plan   System returns test plan (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1277,7 +1321,7 @@ namespace TestIT.ApiClient.Api
         /// Clone TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System clones test plan  &lt;br&gt;System returns test plan (listed in response example)
+        ///  Use case   User sets test plan identifier   User runs method execution   System clones test plan   System returns test plan (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1288,7 +1332,7 @@ namespace TestIT.ApiClient.Api
         /// Complete TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System completes the test plan and updates test plan status  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test plan identifier   User runs method execution   System completes the test plan and updates test plan status   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1300,7 +1344,7 @@ namespace TestIT.ApiClient.Api
         /// Complete TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System completes the test plan and updates test plan status  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test plan identifier   User runs method execution   System completes the test plan and updates test plan status   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1311,7 +1355,7 @@ namespace TestIT.ApiClient.Api
         /// Create TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan properties (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates test plan  &lt;br&gt;System returns test plan (listed in response example)
+        ///  Use case   User sets test plan properties (listed in request example)   User runs method execution   System creates test plan   System returns test plan (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestPlanRequest"> (optional)</param>
@@ -1323,7 +1367,7 @@ namespace TestIT.ApiClient.Api
         /// Create TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan properties (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates test plan  &lt;br&gt;System returns test plan (listed in response example)
+        ///  Use case   User sets test plan properties (listed in request example)   User runs method execution   System creates test plan   System returns test plan (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestPlanRequest"> (optional)</param>
@@ -1334,7 +1378,7 @@ namespace TestIT.ApiClient.Api
         /// Delete TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System delete test plan  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test plan identifier   User runs method execution   System delete test plan   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1346,7 +1390,7 @@ namespace TestIT.ApiClient.Api
         /// Delete TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System delete test plan  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test plan identifier   User runs method execution   System delete test plan   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1357,7 +1401,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPlan by Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search  test plan by the identifier  &lt;br&gt;System returns test plan
+        ///  Use case   User sets test plan identifier   User runs method execution   System search  test plan by the identifier   System returns test plan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1369,7 +1413,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPlan by Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search  test plan by the identifier  &lt;br&gt;System returns test plan
+        ///  Use case   User sets test plan identifier   User runs method execution   System search  test plan by the identifier   System returns test plan
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1380,7 +1424,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestSuites Tree By Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System finds test suites related to the test plan  &lt;br&gt;System returns test suites as a tree model (listed in response example)
+        ///  Use case   User sets test plan identifier   User runs method execution   System finds test suites related to the test plan   System returns test suites as a tree model (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1392,7 +1436,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestSuites Tree By Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System finds test suites related to the test plan  &lt;br&gt;System returns test suites as a tree model (listed in response example)
+        ///  Use case   User sets test plan identifier   User runs method execution   System finds test suites related to the test plan   System returns test suites as a tree model (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1403,7 +1447,7 @@ namespace TestIT.ApiClient.Api
         /// Pause TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System pauses the test plan and updates test plan status  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test plan identifier   User runs method execution   System pauses the test plan and updates test plan status   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1415,7 +1459,7 @@ namespace TestIT.ApiClient.Api
         /// Pause TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System pauses the test plan and updates test plan status  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test plan identifier   User runs method execution   System pauses the test plan and updates test plan status   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1449,7 +1493,7 @@ namespace TestIT.ApiClient.Api
         /// Restore TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System restores test plan  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test plan identifier   User runs method execution   System restores test plan   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1461,7 +1505,7 @@ namespace TestIT.ApiClient.Api
         /// Restore TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System restores test plan  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test plan identifier   User runs method execution   System restores test plan   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1472,7 +1516,7 @@ namespace TestIT.ApiClient.Api
         /// Start TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System starts the test plan and updates test plan status  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test plan identifier   User runs method execution   System starts the test plan and updates test plan status   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1484,7 +1528,7 @@ namespace TestIT.ApiClient.Api
         /// Start TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System starts the test plan and updates test plan status  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test plan identifier   User runs method execution   System starts the test plan and updates test plan status   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1495,7 +1539,7 @@ namespace TestIT.ApiClient.Api
         /// Update TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan properties(listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates test plan  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test plan properties(listed in request example)   User runs method execution   System updates test plan   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateTestPlanRequest"> (optional)</param>
@@ -1507,7 +1551,7 @@ namespace TestIT.ApiClient.Api
         /// Update TestPlan
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test plan properties(listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates test plan  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test plan properties(listed in request example)   User runs method execution   System updates test plan   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateTestPlanRequest"> (optional)</param>
@@ -1732,11 +1776,11 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
+        /// <param name="addTestPointsWithSectionsRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
         /// <returns></returns>
-        public void AddTestPointsWithSections(string id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest))
+        public void AddTestPointsWithSections(string id, AddTestPointsWithSectionsRequest addTestPointsWithSectionsRequest = default(AddTestPointsWithSectionsRequest))
         {
-            AddTestPointsWithSectionsWithHttpInfo(id, apiV2ProjectsProjectIdWorkItemsSearchPostRequest);
+            AddTestPointsWithSectionsWithHttpInfo(id, addTestPointsWithSectionsRequest);
         }
 
         /// <summary>
@@ -1744,9 +1788,9 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
+        /// <param name="addTestPointsWithSectionsRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> AddTestPointsWithSectionsWithHttpInfo(string id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<Object> AddTestPointsWithSectionsWithHttpInfo(string id, AddTestPointsWithSectionsRequest addTestPointsWithSectionsRequest = default(AddTestPointsWithSectionsRequest))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1770,7 +1814,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = apiV2ProjectsProjectIdWorkItemsSearchPostRequest;
+            localVarRequestOptions.Data = addTestPointsWithSectionsRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1795,12 +1839,12 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
+        /// <param name="addTestPointsWithSectionsRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task AddTestPointsWithSectionsAsync(string id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task AddTestPointsWithSectionsAsync(string id, AddTestPointsWithSectionsRequest addTestPointsWithSectionsRequest = default(AddTestPointsWithSectionsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await AddTestPointsWithSectionsWithHttpInfoAsync(id, apiV2ProjectsProjectIdWorkItemsSearchPostRequest, cancellationToken).ConfigureAwait(false);
+            await AddTestPointsWithSectionsWithHttpInfoAsync(id, addTestPointsWithSectionsRequest, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1808,10 +1852,10 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
+        /// <param name="addTestPointsWithSectionsRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> AddTestPointsWithSectionsWithHttpInfoAsync(string id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> AddTestPointsWithSectionsWithHttpInfoAsync(string id, AddTestPointsWithSectionsRequest addTestPointsWithSectionsRequest = default(AddTestPointsWithSectionsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1837,7 +1881,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = apiV2ProjectsProjectIdWorkItemsSearchPostRequest;
+            localVarRequestOptions.Data = addTestPointsWithSectionsRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1859,7 +1903,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Add WorkItems to TestPlan with Sections as TestSuites &lt;br&gt;Use case  &lt;br&gt;User sets TestPlan identifier  &lt;br&gt;User sets WorkItem identifiers (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System added WorkItems and Sections to TestPlan  &lt;br&gt;System returns no content response
+        /// Add WorkItems to TestPlan with Sections as TestSuites  Use case   User sets TestPlan identifier   User sets WorkItem identifiers (listed in request example)   User runs method execution   System added WorkItems and Sections to TestPlan   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1871,7 +1915,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Add WorkItems to TestPlan with Sections as TestSuites &lt;br&gt;Use case  &lt;br&gt;User sets TestPlan identifier  &lt;br&gt;User sets WorkItem identifiers (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System added WorkItems and Sections to TestPlan  &lt;br&gt;System returns no content response
+        /// Add WorkItems to TestPlan with Sections as TestSuites  Use case   User sets TestPlan identifier   User sets WorkItem identifiers (listed in request example)   User runs method execution   System added WorkItems and Sections to TestPlan   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1922,7 +1966,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Add WorkItems to TestPlan with Sections as TestSuites &lt;br&gt;Use case  &lt;br&gt;User sets TestPlan identifier  &lt;br&gt;User sets WorkItem identifiers (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System added WorkItems and Sections to TestPlan  &lt;br&gt;System returns no content response
+        /// Add WorkItems to TestPlan with Sections as TestSuites  Use case   User sets TestPlan identifier   User sets WorkItem identifiers (listed in request example)   User runs method execution   System added WorkItems and Sections to TestPlan   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1935,7 +1979,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Add WorkItems to TestPlan with Sections as TestSuites &lt;br&gt;Use case  &lt;br&gt;User sets TestPlan identifier  &lt;br&gt;User sets WorkItem identifiers (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System added WorkItems and Sections to TestPlan  &lt;br&gt;System returns no content response
+        /// Add WorkItems to TestPlan with Sections as TestSuites  Use case   User sets TestPlan identifier   User sets WorkItem identifiers (listed in request example)   User runs method execution   System added WorkItems and Sections to TestPlan   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -1990,7 +2034,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get analytics by TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System returns analytics by test plan
+        /// Get analytics by TestPlan  Use case   User sets test plan identifier   User runs method execution   System returns analytics by test plan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -2002,7 +2046,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get analytics by TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System returns analytics by test plan
+        /// Get analytics by TestPlan  Use case   User sets test plan identifier   User runs method execution   System returns analytics by test plan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -2050,7 +2094,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get analytics by TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System returns analytics by test plan
+        /// Get analytics by TestPlan  Use case   User sets test plan identifier   User runs method execution   System returns analytics by test plan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -2063,7 +2107,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get analytics by TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System returns analytics by test plan
+        /// Get analytics by TestPlan  Use case   User sets test plan identifier   User runs method execution   System returns analytics by test plan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -2252,7 +2296,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPlan configurations &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return test plan configurations
+        /// Get TestPlan configurations  Use case   User sets test plan identifier   User runs method execution   System return test plan configurations
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -2264,7 +2308,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPlan configurations &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return test plan configurations
+        /// Get TestPlan configurations  Use case   User sets test plan identifier   User runs method execution   System return test plan configurations
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -2312,7 +2356,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPlan configurations &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return test plan configurations
+        /// Get TestPlan configurations  Use case   User sets test plan identifier   User runs method execution   System return test plan configurations
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -2325,7 +2369,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPlan configurations &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return test plan configurations
+        /// Get TestPlan configurations  Use case   User sets test plan identifier   User runs method execution   System return test plan configurations
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -2377,28 +2421,27 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Export TestPoints from TestPlan in xls format &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter model (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return export xlsx file
+        /// Export TestPoints from TestPlan in xls format  Use case   User sets test plan identifier   User sets filter model (listed in request example)   User runs method execution   System return export xlsx file
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="apiV2TestPlansIdExportTestPointsXlsxPostRequest"> (optional)</param>
-        /// <returns>FileParameter</returns>
-        public FileParameter ApiV2TestPlansIdExportTestPointsXlsxPost(string id, long? timeZoneOffsetInMinutes = default(long?), ApiV2TestPlansIdExportTestPointsXlsxPostRequest apiV2TestPlansIdExportTestPointsXlsxPostRequest = default(ApiV2TestPlansIdExportTestPointsXlsxPostRequest))
+        /// <returns></returns>
+        public void ApiV2TestPlansIdExportTestPointsXlsxPost(string id, long? timeZoneOffsetInMinutes = default(long?), ApiV2TestPlansIdExportTestPointsXlsxPostRequest apiV2TestPlansIdExportTestPointsXlsxPostRequest = default(ApiV2TestPlansIdExportTestPointsXlsxPostRequest))
         {
-            TestIT.ApiClient.Client.ApiResponse<FileParameter> localVarResponse = ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(id, timeZoneOffsetInMinutes, apiV2TestPlansIdExportTestPointsXlsxPostRequest);
-            return localVarResponse.Data;
+            ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(id, timeZoneOffsetInMinutes, apiV2TestPlansIdExportTestPointsXlsxPostRequest);
         }
 
         /// <summary>
-        /// Export TestPoints from TestPlan in xls format &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter model (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return export xlsx file
+        /// Export TestPoints from TestPlan in xls format  Use case   User sets test plan identifier   User sets filter model (listed in request example)   User runs method execution   System return export xlsx file
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="apiV2TestPlansIdExportTestPointsXlsxPostRequest"> (optional)</param>
-        /// <returns>ApiResponse of FileParameter</returns>
-        public TestIT.ApiClient.Client.ApiResponse<FileParameter> ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ApiV2TestPlansIdExportTestPointsXlsxPostRequest apiV2TestPlansIdExportTestPointsXlsxPostRequest = default(ApiV2TestPlansIdExportTestPointsXlsxPostRequest))
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(string id, long? timeZoneOffsetInMinutes = default(long?), ApiV2TestPlansIdExportTestPointsXlsxPostRequest apiV2TestPlansIdExportTestPointsXlsxPostRequest = default(ApiV2TestPlansIdExportTestPointsXlsxPostRequest))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -2412,7 +2455,6 @@ namespace TestIT.ApiClient.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/octet-stream",
                 "application/json"
             };
 
@@ -2436,7 +2478,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<FileParameter>("/api/v2/testPlans/{id}/export/testPoints/xlsx", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<Object>("/api/v2/testPlans/{id}/export/testPoints/xlsx", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2448,30 +2490,29 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Export TestPoints from TestPlan in xls format &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter model (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return export xlsx file
+        /// Export TestPoints from TestPlan in xls format  Use case   User sets test plan identifier   User sets filter model (listed in request example)   User runs method execution   System return export xlsx file
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="apiV2TestPlansIdExportTestPointsXlsxPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of FileParameter</returns>
-        public async System.Threading.Tasks.Task<FileParameter> ApiV2TestPlansIdExportTestPointsXlsxPostAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ApiV2TestPlansIdExportTestPointsXlsxPostRequest apiV2TestPlansIdExportTestPointsXlsxPostRequest = default(ApiV2TestPlansIdExportTestPointsXlsxPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ApiV2TestPlansIdExportTestPointsXlsxPostAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ApiV2TestPlansIdExportTestPointsXlsxPostRequest apiV2TestPlansIdExportTestPointsXlsxPostRequest = default(ApiV2TestPlansIdExportTestPointsXlsxPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<FileParameter> localVarResponse = await ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfoAsync(id, timeZoneOffsetInMinutes, apiV2TestPlansIdExportTestPointsXlsxPostRequest, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfoAsync(id, timeZoneOffsetInMinutes, apiV2TestPlansIdExportTestPointsXlsxPostRequest, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Export TestPoints from TestPlan in xls format &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter model (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return export xlsx file
+        /// Export TestPoints from TestPlan in xls format  Use case   User sets test plan identifier   User sets filter model (listed in request example)   User runs method execution   System return export xlsx file
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="apiV2TestPlansIdExportTestPointsXlsxPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (FileParameter)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<FileParameter>> ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ApiV2TestPlansIdExportTestPointsXlsxPostRequest apiV2TestPlansIdExportTestPointsXlsxPostRequest = default(ApiV2TestPlansIdExportTestPointsXlsxPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfoAsync(string id, long? timeZoneOffsetInMinutes = default(long?), ApiV2TestPlansIdExportTestPointsXlsxPostRequest apiV2TestPlansIdExportTestPointsXlsxPostRequest = default(ApiV2TestPlansIdExportTestPointsXlsxPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -2486,7 +2527,6 @@ namespace TestIT.ApiClient.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/octet-stream",
                 "application/json"
             };
 
@@ -2512,7 +2552,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<FileParameter>("/api/v2/testPlans/{id}/export/testPoints/xlsx", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/testPlans/{id}/export/testPoints/xlsx", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2524,7 +2564,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Export TestResults history from TestPlan in xls format &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter model (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return export xlsx file
+        /// Export TestResults history from TestPlan in xls format  Use case   User sets test plan identifier   User sets filter model (listed in request example)   User runs method execution   System return export xlsx file
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -2532,15 +2572,14 @@ namespace TestIT.ApiClient.Api
         /// <param name="includeSteps"> (optional)</param>
         /// <param name="includeDeletedTestSuites"> (optional)</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <returns>FileParameter</returns>
-        public FileParameter ApiV2TestPlansIdExportTestResultHistoryXlsxPost(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?))
+        /// <returns></returns>
+        public void ApiV2TestPlansIdExportTestResultHistoryXlsxPost(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?))
         {
-            TestIT.ApiClient.Client.ApiResponse<FileParameter> localVarResponse = ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfo(id, mustReturnOnlyLastTestResult, includeSteps, includeDeletedTestSuites, timeZoneOffsetInMinutes);
-            return localVarResponse.Data;
+            ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfo(id, mustReturnOnlyLastTestResult, includeSteps, includeDeletedTestSuites, timeZoneOffsetInMinutes);
         }
 
         /// <summary>
-        /// Export TestResults history from TestPlan in xls format &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter model (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return export xlsx file
+        /// Export TestResults history from TestPlan in xls format  Use case   User sets test plan identifier   User sets filter model (listed in request example)   User runs method execution   System return export xlsx file
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -2548,8 +2587,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="includeSteps"> (optional)</param>
         /// <param name="includeDeletedTestSuites"> (optional)</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
-        /// <returns>ApiResponse of FileParameter</returns>
-        public TestIT.ApiClient.Client.ApiResponse<FileParameter> ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfo(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?))
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfo(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -2562,7 +2601,6 @@ namespace TestIT.ApiClient.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/octet-stream",
                 "application/json"
             };
 
@@ -2597,7 +2635,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<FileParameter>("/api/v2/testPlans/{id}/export/testResultHistory/xlsx", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<Object>("/api/v2/testPlans/{id}/export/testResultHistory/xlsx", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2609,7 +2647,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Export TestResults history from TestPlan in xls format &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter model (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return export xlsx file
+        /// Export TestResults history from TestPlan in xls format  Use case   User sets test plan identifier   User sets filter model (listed in request example)   User runs method execution   System return export xlsx file
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -2618,15 +2656,14 @@ namespace TestIT.ApiClient.Api
         /// <param name="includeDeletedTestSuites"> (optional)</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of FileParameter</returns>
-        public async System.Threading.Tasks.Task<FileParameter> ApiV2TestPlansIdExportTestResultHistoryXlsxPostAsync(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ApiV2TestPlansIdExportTestResultHistoryXlsxPostAsync(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<FileParameter> localVarResponse = await ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfoAsync(id, mustReturnOnlyLastTestResult, includeSteps, includeDeletedTestSuites, timeZoneOffsetInMinutes, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfoAsync(id, mustReturnOnlyLastTestResult, includeSteps, includeDeletedTestSuites, timeZoneOffsetInMinutes, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Export TestResults history from TestPlan in xls format &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter model (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return export xlsx file
+        /// Export TestResults history from TestPlan in xls format  Use case   User sets test plan identifier   User sets filter model (listed in request example)   User runs method execution   System return export xlsx file
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -2635,8 +2672,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="includeDeletedTestSuites"> (optional)</param>
         /// <param name="timeZoneOffsetInMinutes"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (FileParameter)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<FileParameter>> ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfoAsync(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2TestPlansIdExportTestResultHistoryXlsxPostWithHttpInfoAsync(string id, bool? mustReturnOnlyLastTestResult = default(bool?), bool? includeSteps = default(bool?), bool? includeDeletedTestSuites = default(bool?), long? timeZoneOffsetInMinutes = default(long?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -2650,7 +2687,6 @@ namespace TestIT.ApiClient.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/octet-stream",
                 "application/json"
             };
 
@@ -2687,7 +2723,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<FileParameter>("/api/v2/testPlans/{id}/export/testResultHistory/xlsx", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/testPlans/{id}/export/testResultHistory/xlsx", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2699,7 +2735,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPlan history &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return test plan history
+        /// Get TestPlan history  Use case   User sets test plan identifier   User runs method execution   System return test plan history
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -2716,7 +2752,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPlan history &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return test plan history
+        /// Get TestPlan history  Use case   User sets test plan identifier   User runs method execution   System return test plan history
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -2789,7 +2825,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPlan history &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return test plan history
+        /// Get TestPlan history  Use case   User sets test plan identifier   User runs method execution   System return test plan history
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -2807,7 +2843,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPlan history &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System return test plan history
+        /// Get TestPlan history  Use case   User sets test plan identifier   User runs method execution   System return test plan history
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -2884,7 +2920,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Links of TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets pagination filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System returns links of TestPlan
+        /// Get Links of TestPlan  Use case   User sets test plan identifier   User sets pagination filter (listed in request example)   User runs method execution   System returns links of TestPlan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -2899,7 +2935,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Links of TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets pagination filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System returns links of TestPlan
+        /// Get Links of TestPlan  Use case   User sets test plan identifier   User sets pagination filter (listed in request example)   User runs method execution   System returns links of TestPlan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -2962,7 +2998,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Links of TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets pagination filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System returns links of TestPlan
+        /// Get Links of TestPlan  Use case   User sets test plan identifier   User sets pagination filter (listed in request example)   User runs method execution   System returns links of TestPlan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -2978,7 +3014,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Links of TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets pagination filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System returns links of TestPlan
+        /// Get Links of TestPlan  Use case   User sets test plan identifier   User sets pagination filter (listed in request example)   User runs method execution   System returns links of TestPlan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -3168,7 +3204,132 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPoints with last result from TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return test points with last result from test plan
+        /// Get summary by TestPlan  Use case   User sets test plan identifier   User runs method execution   System returns summary by test plan
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
+        /// <returns>TestPlanSummaryModel</returns>
+        public TestPlanSummaryModel ApiV2TestPlansIdSummariesGet(string id)
+        {
+            TestIT.ApiClient.Client.ApiResponse<TestPlanSummaryModel> localVarResponse = ApiV2TestPlansIdSummariesGetWithHttpInfo(id);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get summary by TestPlan  Use case   User sets test plan identifier   User runs method execution   System returns summary by test plan
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
+        /// <returns>ApiResponse of TestPlanSummaryModel</returns>
+        public TestIT.ApiClient.Client.ApiResponse<TestPlanSummaryModel> ApiV2TestPlansIdSummariesGetWithHttpInfo(string id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdSummariesGet");
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<TestPlanSummaryModel>("/api/v2/testPlans/{id}/summaries", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdSummariesGet", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get summary by TestPlan  Use case   User sets test plan identifier   User runs method execution   System returns summary by test plan
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TestPlanSummaryModel</returns>
+        public async System.Threading.Tasks.Task<TestPlanSummaryModel> ApiV2TestPlansIdSummariesGetAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIT.ApiClient.Client.ApiResponse<TestPlanSummaryModel> localVarResponse = await ApiV2TestPlansIdSummariesGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get summary by TestPlan  Use case   User sets test plan identifier   User runs method execution   System returns summary by test plan
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TestPlanSummaryModel)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TestPlanSummaryModel>> ApiV2TestPlansIdSummariesGetWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'id' when calling TestPlansApi->ApiV2TestPlansIdSummariesGet");
+
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TestPlanSummaryModel>("/api/v2/testPlans/{id}/summaries", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TestPlansIdSummariesGet", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get TestPoints with last result from TestPlan  Use case   User sets test plan identifier   User sets filter (listed in request example)   User runs method execution   System return test points with last result from test plan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -3186,7 +3347,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPoints with last result from TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return test points with last result from test plan
+        /// Get TestPoints with last result from TestPlan  Use case   User sets test plan identifier   User sets filter (listed in request example)   User runs method execution   System return test points with last result from test plan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -3264,7 +3425,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPoints with last result from TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return test points with last result from test plan
+        /// Get TestPoints with last result from TestPlan  Use case   User sets test plan identifier   User sets filter (listed in request example)   User runs method execution   System return test points with last result from test plan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -3283,7 +3444,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPoints with last result from TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System return test points with last result from test plan
+        /// Get TestPoints with last result from TestPlan  Use case   User sets test plan identifier   User sets filter (listed in request example)   User runs method execution   System return test points with last result from test plan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -3365,7 +3526,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Reset TestPoints status of TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets test points identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System reset test points statuses of test plan
+        /// Reset TestPoints status of TestPlan  Use case   User sets test plan identifier   User sets test points identifiers   User runs method execution   System reset test points statuses of test plan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -3377,7 +3538,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Reset TestPoints status of TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets test points identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System reset test points statuses of test plan
+        /// Reset TestPoints status of TestPlan  Use case   User sets test plan identifier   User sets test points identifiers   User runs method execution   System reset test points statuses of test plan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -3428,7 +3589,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Reset TestPoints status of TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets test points identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System reset test points statuses of test plan
+        /// Reset TestPoints status of TestPlan  Use case   User sets test plan identifier   User sets test points identifiers   User runs method execution   System reset test points statuses of test plan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -3441,7 +3602,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Reset TestPoints status of TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets test points identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System reset test points statuses of test plan
+        /// Reset TestPoints status of TestPlan  Use case   User sets test plan identifier   User sets test points identifiers   User runs method execution   System reset test points statuses of test plan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -3768,7 +3929,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestRuns of TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets TestRun status filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System returns TestRuns for TestPlan
+        /// Get TestRuns of TestPlan  Use case   User sets test plan identifier   User sets TestRun status filter (listed in request example)   User runs method execution   System returns TestRuns for TestPlan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -3789,7 +3950,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestRuns of TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets TestRun status filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System returns TestRuns for TestPlan
+        /// Get TestRuns of TestPlan  Use case   User sets test plan identifier   User sets TestRun status filter (listed in request example)   User runs method execution   System returns TestRuns for TestPlan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -3882,7 +4043,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestRuns of TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets TestRun status filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System returns TestRuns for TestPlan
+        /// Get TestRuns of TestPlan  Use case   User sets test plan identifier   User sets TestRun status filter (listed in request example)   User runs method execution   System returns TestRuns for TestPlan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -3904,7 +4065,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestRuns of TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets TestRun status filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System returns TestRuns for TestPlan
+        /// Get TestRuns of TestPlan  Use case   User sets test plan identifier   User sets TestRun status filter (listed in request example)   User runs method execution   System returns TestRuns for TestPlan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -4001,7 +4162,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search TestRuns of TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets TestRuns filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System returns TestRuns for TestPlan
+        /// Search TestRuns of TestPlan  Use case   User sets test plan identifier   User sets TestRuns filter (listed in request example)   User runs method execution   System returns TestRuns for TestPlan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -4019,7 +4180,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search TestRuns of TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets TestRuns filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System returns TestRuns for TestPlan
+        /// Search TestRuns of TestPlan  Use case   User sets test plan identifier   User sets TestRuns filter (listed in request example)   User runs method execution   System returns TestRuns for TestPlan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -4095,7 +4256,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search TestRuns of TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets TestRuns filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System returns TestRuns for TestPlan
+        /// Search TestRuns of TestPlan  Use case   User sets test plan identifier   User sets TestRuns filter (listed in request example)   User runs method execution   System returns TestRuns for TestPlan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -4114,7 +4275,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search TestRuns of TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User sets TestRuns filter (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System returns TestRuns for TestPlan
+        /// Search TestRuns of TestPlan  Use case   User sets test plan identifier   User sets TestRuns filter (listed in request example)   User runs method execution   System returns TestRuns for TestPlan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -4198,11 +4359,10 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan unique or global ID</param>
-        /// <returns>DateTime</returns>
-        public DateTime ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet(string id)
+        /// <returns></returns>
+        public void ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet(string id)
         {
-            TestIT.ApiClient.Client.ApiResponse<DateTime> localVarResponse = ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfo(id);
-            return localVarResponse.Data;
+            ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfo(id);
         }
 
         /// <summary>
@@ -4210,8 +4370,8 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan unique or global ID</param>
-        /// <returns>ApiResponse of DateTime</returns>
-        public TestIT.ApiClient.Client.ApiResponse<DateTime> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfo(string id)
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4242,7 +4402,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<DateTime>("/api/v2/testPlans/{id}/testRuns/testResults/lastModified/modifiedDate", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<Object>("/api/v2/testPlans/{id}/testRuns/testResults/lastModified/modifiedDate", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -4259,11 +4419,10 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan unique or global ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DateTime</returns>
-        public async System.Threading.Tasks.Task<DateTime> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<DateTime> localVarResponse = await ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -4272,8 +4431,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan unique or global ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DateTime)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<DateTime>> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4307,7 +4466,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<DateTime>("/api/v2/testPlans/{id}/testRuns/testResults/lastModified/modifiedDate", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/api/v2/testPlans/{id}/testRuns/testResults/lastModified/modifiedDate", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -4319,7 +4478,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Send unlock TestPlan notification &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System send unlock test plan notification
+        /// Send unlock TestPlan notification  Use case   User sets test plan identifier   User runs method execution   System send unlock test plan notification
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -4330,7 +4489,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Send unlock TestPlan notification &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System send unlock test plan notification
+        /// Send unlock TestPlan notification  Use case   User sets test plan identifier   User runs method execution   System send unlock test plan notification
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -4378,7 +4537,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Send unlock TestPlan notification &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System send unlock test plan notification
+        /// Send unlock TestPlan notification  Use case   User sets test plan identifier   User runs method execution   System send unlock test plan notification
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -4390,7 +4549,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Send unlock TestPlan notification &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System send unlock test plan notification
+        /// Send unlock TestPlan notification  Use case   User sets test plan identifier   User runs method execution   System send unlock test plan notification
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -4442,7 +4601,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPlans short models by Project identifiers &lt;br&gt;Use case  &lt;br&gt;User sets projects identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System return test plans short models (listed in response example)
+        /// Get TestPlans short models by Project identifiers  Use case   User sets projects identifiers   User runs method execution   System return test plans short models (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted"> (optional)</param>
@@ -4455,7 +4614,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPlans short models by Project identifiers &lt;br&gt;Use case  &lt;br&gt;User sets projects identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System return test plans short models (listed in response example)
+        /// Get TestPlans short models by Project identifiers  Use case   User sets projects identifiers   User runs method execution   System return test plans short models (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted"> (optional)</param>
@@ -4505,7 +4664,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPlans short models by Project identifiers &lt;br&gt;Use case  &lt;br&gt;User sets projects identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System return test plans short models (listed in response example)
+        /// Get TestPlans short models by Project identifiers  Use case   User sets projects identifiers   User runs method execution   System return test plans short models (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted"> (optional)</param>
@@ -4519,7 +4678,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPlans short models by Project identifiers &lt;br&gt;Use case  &lt;br&gt;User sets projects identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System return test plans short models (listed in response example)
+        /// Get TestPlans short models by Project identifiers  Use case   User sets projects identifiers   User runs method execution   System return test plans short models (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted"> (optional)</param>
@@ -4573,7 +4732,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Clone TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System clones test plan  &lt;br&gt;System returns test plan (listed in response example)
+        /// Clone TestPlan  Use case   User sets test plan identifier   User runs method execution   System clones test plan   System returns test plan (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -4585,7 +4744,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Clone TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System clones test plan  &lt;br&gt;System returns test plan (listed in response example)
+        /// Clone TestPlan  Use case   User sets test plan identifier   User runs method execution   System clones test plan   System returns test plan (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -4633,7 +4792,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Clone TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System clones test plan  &lt;br&gt;System returns test plan (listed in response example)
+        /// Clone TestPlan  Use case   User sets test plan identifier   User runs method execution   System clones test plan   System returns test plan (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -4646,7 +4805,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Clone TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System clones test plan  &lt;br&gt;System returns test plan (listed in response example)
+        /// Clone TestPlan  Use case   User sets test plan identifier   User runs method execution   System clones test plan   System returns test plan (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -4698,7 +4857,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Complete TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System completes the test plan and updates test plan status  &lt;br&gt;System returns no content response
+        /// Complete TestPlan  Use case   User sets test plan identifier   User runs method execution   System completes the test plan and updates test plan status   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -4709,7 +4868,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Complete TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System completes the test plan and updates test plan status  &lt;br&gt;System returns no content response
+        /// Complete TestPlan  Use case   User sets test plan identifier   User runs method execution   System completes the test plan and updates test plan status   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -4757,7 +4916,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Complete TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System completes the test plan and updates test plan status  &lt;br&gt;System returns no content response
+        /// Complete TestPlan  Use case   User sets test plan identifier   User runs method execution   System completes the test plan and updates test plan status   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -4769,7 +4928,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Complete TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System completes the test plan and updates test plan status  &lt;br&gt;System returns no content response
+        /// Complete TestPlan  Use case   User sets test plan identifier   User runs method execution   System completes the test plan and updates test plan status   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -4821,7 +4980,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan properties (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates test plan  &lt;br&gt;System returns test plan (listed in response example)
+        /// Create TestPlan  Use case   User sets test plan properties (listed in request example)   User runs method execution   System creates test plan   System returns test plan (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestPlanRequest"> (optional)</param>
@@ -4833,7 +4992,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan properties (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates test plan  &lt;br&gt;System returns test plan (listed in response example)
+        /// Create TestPlan  Use case   User sets test plan properties (listed in request example)   User runs method execution   System creates test plan   System returns test plan (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestPlanRequest"> (optional)</param>
@@ -4878,7 +5037,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan properties (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates test plan  &lt;br&gt;System returns test plan (listed in response example)
+        /// Create TestPlan  Use case   User sets test plan properties (listed in request example)   User runs method execution   System creates test plan   System returns test plan (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestPlanRequest"> (optional)</param>
@@ -4891,7 +5050,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan properties (listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System creates test plan  &lt;br&gt;System returns test plan (listed in response example)
+        /// Create TestPlan  Use case   User sets test plan properties (listed in request example)   User runs method execution   System creates test plan   System returns test plan (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestPlanRequest"> (optional)</param>
@@ -4940,7 +5099,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System delete test plan  &lt;br&gt;System returns no content response
+        /// Delete TestPlan  Use case   User sets test plan identifier   User runs method execution   System delete test plan   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -4951,7 +5110,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System delete test plan  &lt;br&gt;System returns no content response
+        /// Delete TestPlan  Use case   User sets test plan identifier   User runs method execution   System delete test plan   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -4999,7 +5158,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System delete test plan  &lt;br&gt;System returns no content response
+        /// Delete TestPlan  Use case   User sets test plan identifier   User runs method execution   System delete test plan   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -5011,7 +5170,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System delete test plan  &lt;br&gt;System returns no content response
+        /// Delete TestPlan  Use case   User sets test plan identifier   User runs method execution   System delete test plan   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -5063,7 +5222,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPlan by Id &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search  test plan by the identifier  &lt;br&gt;System returns test plan
+        /// Get TestPlan by Id  Use case   User sets test plan identifier   User runs method execution   System search  test plan by the identifier   System returns test plan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -5075,7 +5234,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPlan by Id &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search  test plan by the identifier  &lt;br&gt;System returns test plan
+        /// Get TestPlan by Id  Use case   User sets test plan identifier   User runs method execution   System search  test plan by the identifier   System returns test plan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -5123,7 +5282,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPlan by Id &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search  test plan by the identifier  &lt;br&gt;System returns test plan
+        /// Get TestPlan by Id  Use case   User sets test plan identifier   User runs method execution   System search  test plan by the identifier   System returns test plan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -5136,7 +5295,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPlan by Id &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search  test plan by the identifier  &lt;br&gt;System returns test plan
+        /// Get TestPlan by Id  Use case   User sets test plan identifier   User runs method execution   System search  test plan by the identifier   System returns test plan
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -5188,7 +5347,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestSuites Tree By Id &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System finds test suites related to the test plan  &lt;br&gt;System returns test suites as a tree model (listed in response example)
+        /// Get TestSuites Tree By Id  Use case   User sets test plan identifier   User runs method execution   System finds test suites related to the test plan   System returns test suites as a tree model (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -5200,7 +5359,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestSuites Tree By Id &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System finds test suites related to the test plan  &lt;br&gt;System returns test suites as a tree model (listed in response example)
+        /// Get TestSuites Tree By Id  Use case   User sets test plan identifier   User runs method execution   System finds test suites related to the test plan   System returns test suites as a tree model (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -5248,7 +5407,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestSuites Tree By Id &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System finds test suites related to the test plan  &lt;br&gt;System returns test suites as a tree model (listed in response example)
+        /// Get TestSuites Tree By Id  Use case   User sets test plan identifier   User runs method execution   System finds test suites related to the test plan   System returns test suites as a tree model (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -5261,7 +5420,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestSuites Tree By Id &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System finds test suites related to the test plan  &lt;br&gt;System returns test suites as a tree model (listed in response example)
+        /// Get TestSuites Tree By Id  Use case   User sets test plan identifier   User runs method execution   System finds test suites related to the test plan   System returns test suites as a tree model (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -5313,7 +5472,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Pause TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System pauses the test plan and updates test plan status  &lt;br&gt;System returns no content response
+        /// Pause TestPlan  Use case   User sets test plan identifier   User runs method execution   System pauses the test plan and updates test plan status   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -5324,7 +5483,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Pause TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System pauses the test plan and updates test plan status  &lt;br&gt;System returns no content response
+        /// Pause TestPlan  Use case   User sets test plan identifier   User runs method execution   System pauses the test plan and updates test plan status   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -5372,7 +5531,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Pause TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System pauses the test plan and updates test plan status  &lt;br&gt;System returns no content response
+        /// Pause TestPlan  Use case   User sets test plan identifier   User runs method execution   System pauses the test plan and updates test plan status   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -5384,7 +5543,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Pause TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System pauses the test plan and updates test plan status  &lt;br&gt;System returns no content response
+        /// Pause TestPlan  Use case   User sets test plan identifier   User runs method execution   System pauses the test plan and updates test plan status   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -5559,7 +5718,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Restore TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System restores test plan  &lt;br&gt;System returns no content response
+        /// Restore TestPlan  Use case   User sets test plan identifier   User runs method execution   System restores test plan   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -5570,7 +5729,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Restore TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System restores test plan  &lt;br&gt;System returns no content response
+        /// Restore TestPlan  Use case   User sets test plan identifier   User runs method execution   System restores test plan   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -5618,7 +5777,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Restore TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System restores test plan  &lt;br&gt;System returns no content response
+        /// Restore TestPlan  Use case   User sets test plan identifier   User runs method execution   System restores test plan   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -5630,7 +5789,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Restore TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System restores test plan  &lt;br&gt;System returns no content response
+        /// Restore TestPlan  Use case   User sets test plan identifier   User runs method execution   System restores test plan   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -5682,7 +5841,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Start TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System starts the test plan and updates test plan status  &lt;br&gt;System returns no content response
+        /// Start TestPlan  Use case   User sets test plan identifier   User runs method execution   System starts the test plan and updates test plan status   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -5693,7 +5852,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Start TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System starts the test plan and updates test plan status  &lt;br&gt;System returns no content response
+        /// Start TestPlan  Use case   User sets test plan identifier   User runs method execution   System starts the test plan and updates test plan status   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -5741,7 +5900,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Start TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System starts the test plan and updates test plan status  &lt;br&gt;System returns no content response
+        /// Start TestPlan  Use case   User sets test plan identifier   User runs method execution   System starts the test plan and updates test plan status   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -5753,7 +5912,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Start TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System starts the test plan and updates test plan status  &lt;br&gt;System returns no content response
+        /// Start TestPlan  Use case   User sets test plan identifier   User runs method execution   System starts the test plan and updates test plan status   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int  format) identifier</param>
@@ -5805,7 +5964,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan properties(listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates test plan  &lt;br&gt;System returns no content response
+        /// Update TestPlan  Use case   User sets test plan properties(listed in request example)   User runs method execution   System updates test plan   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateTestPlanRequest"> (optional)</param>
@@ -5816,7 +5975,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan properties(listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates test plan  &lt;br&gt;System returns no content response
+        /// Update TestPlan  Use case   User sets test plan properties(listed in request example)   User runs method execution   System updates test plan   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateTestPlanRequest"> (optional)</param>
@@ -5861,7 +6020,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan properties(listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates test plan  &lt;br&gt;System returns no content response
+        /// Update TestPlan  Use case   User sets test plan properties(listed in request example)   User runs method execution   System updates test plan   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateTestPlanRequest"> (optional)</param>
@@ -5873,7 +6032,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update TestPlan &lt;br&gt;Use case  &lt;br&gt;User sets test plan properties(listed in request example)  &lt;br&gt;User runs method execution  &lt;br&gt;System updates test plan  &lt;br&gt;System returns no content response
+        /// Update TestPlan  Use case   User sets test plan properties(listed in request example)   User runs method execution   System updates test plan   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateTestPlanRequest"> (optional)</param>

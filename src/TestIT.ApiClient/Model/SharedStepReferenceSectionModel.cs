@@ -70,7 +70,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;20b3442e-1e9e-4fea-b940-4fde3f2f9ff6&quot;</example>
+        /// <example>&quot;3e5a61f5-bb50-44f4-8898-6dda6d40fe23&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
@@ -98,28 +98,28 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        /// <example>&quot;20b3442e-1e9e-4fea-b940-4fde3f2f9ff6&quot;</example>
+        /// <example>&quot;3e5a61f5-bb50-44f4-8898-6dda6d40fe23&quot;</example>
         [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
-        /// <example>&quot;20b3442e-1e9e-4fea-b940-4fde3f2f9ff6&quot;</example>
+        /// <example>&quot;3e5a61f5-bb50-44f4-8898-6dda6d40fe23&quot;</example>
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        /// <example>&quot;2024-05-14T09:00:32.159620900Z&quot;</example>
+        /// <example>&quot;2024-11-21T11:05:56.558551500Z&quot;</example>
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
         public DateTime? CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        /// <example>&quot;2024-05-14T09:00:32.159620900Z&quot;</example>
+        /// <example>&quot;2024-11-21T11:05:56.558551500Z&quot;</example>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
@@ -271,7 +271,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

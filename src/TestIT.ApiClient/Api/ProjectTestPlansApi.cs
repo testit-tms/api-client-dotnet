@@ -31,7 +31,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPlans analytics
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal identifier  &lt;br&gt;User sets query params  &lt;br&gt;User runs method execution  &lt;br&gt;System return analytics
+        ///  Use case   User sets project internal identifier   User sets query params   User runs method execution   System return analytics
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -49,7 +49,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPlans analytics
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal identifier  &lt;br&gt;User sets query params  &lt;br&gt;User runs method execution  &lt;br&gt;System return analytics
+        ///  Use case   User sets project internal identifier   User sets query params   User runs method execution   System return analytics
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -86,7 +86,7 @@ namespace TestIT.ApiClient.Api
         /// Checks if TestPlan exists with the specified name exists for the project
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System purge delete project workitems
+        ///  Use case   User sets project internal or global identifier    User runs method execution   System purge delete project workitems
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -98,7 +98,7 @@ namespace TestIT.ApiClient.Api
         /// Checks if TestPlan exists with the specified name exists for the project
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System purge delete project workitems
+        ///  Use case   User sets project internal or global identifier    User runs method execution   System purge delete project workitems
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -131,8 +131,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
-        /// <returns></returns>
-        void ApiV2ProjectsProjectIdTestPlansRestoreBulkPost(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest));
+        /// <returns>List&lt;Guid&gt;</returns>
+        List<Guid> ApiV2ProjectsProjectIdTestPlansRestoreBulkPost(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest));
 
         /// <summary>
         /// Restore multiple test plans
@@ -143,13 +143,13 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfo(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest));
+        /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
+        ApiResponse<List<Guid>> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfo(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest));
         /// <summary>
         /// Get Project TestPlans with analytics
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets request body   &lt;br&gt;User runs method execution  &lt;br&gt;System returns project testplans with analytics
+        ///  Use case   User sets project internal or global identifier    User sets request body    User runs method execution   System returns project testplans with analytics
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -167,7 +167,7 @@ namespace TestIT.ApiClient.Api
         /// Get Project TestPlans with analytics
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets request body   &lt;br&gt;User runs method execution  &lt;br&gt;System returns project testplans with analytics
+        ///  Use case   User sets project internal or global identifier    User sets request body    User runs method execution   System returns project testplans with analytics
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -193,7 +193,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPlans analytics
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal identifier  &lt;br&gt;User sets query params  &lt;br&gt;User runs method execution  &lt;br&gt;System return analytics
+        ///  Use case   User sets project internal identifier   User sets query params   User runs method execution   System return analytics
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -212,7 +212,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPlans analytics
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal identifier  &lt;br&gt;User sets query params  &lt;br&gt;User runs method execution  &lt;br&gt;System return analytics
+        ///  Use case   User sets project internal identifier   User sets query params   User runs method execution   System return analytics
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -255,7 +255,7 @@ namespace TestIT.ApiClient.Api
         /// Checks if TestPlan exists with the specified name exists for the project
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System purge delete project workitems
+        ///  Use case   User sets project internal or global identifier    User runs method execution   System purge delete project workitems
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -268,7 +268,7 @@ namespace TestIT.ApiClient.Api
         /// Checks if TestPlan exists with the specified name exists for the project
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System purge delete project workitems
+        ///  Use case   User sets project internal or global identifier    User runs method execution   System purge delete project workitems
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -311,8 +311,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2ProjectsProjectIdTestPlansRestoreBulkPostAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;Guid&gt;</returns>
+        System.Threading.Tasks.Task<List<Guid>> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Restore multiple test plans
@@ -324,13 +324,13 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfoAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Guid>>> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfoAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get Project TestPlans with analytics
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets request body   &lt;br&gt;User runs method execution  &lt;br&gt;System returns project testplans with analytics
+        ///  Use case   User sets project internal or global identifier    User sets request body    User runs method execution   System returns project testplans with analytics
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -349,7 +349,7 @@ namespace TestIT.ApiClient.Api
         /// Get Project TestPlans with analytics
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets request body   &lt;br&gt;User runs method execution  &lt;br&gt;System returns project testplans with analytics
+        ///  Use case   User sets project internal or global identifier    User sets request body    User runs method execution   System returns project testplans with analytics
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -577,7 +577,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPlans analytics &lt;br&gt;Use case  &lt;br&gt;User sets project internal identifier  &lt;br&gt;User sets query params  &lt;br&gt;User runs method execution  &lt;br&gt;System return analytics
+        /// Get TestPlans analytics  Use case   User sets project internal identifier   User sets query params   User runs method execution   System return analytics
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -596,7 +596,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPlans analytics &lt;br&gt;Use case  &lt;br&gt;User sets project internal identifier  &lt;br&gt;User sets query params  &lt;br&gt;User runs method execution  &lt;br&gt;System return analytics
+        /// Get TestPlans analytics  Use case   User sets project internal identifier   User sets query params   User runs method execution   System return analytics
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -675,7 +675,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPlans analytics &lt;br&gt;Use case  &lt;br&gt;User sets project internal identifier  &lt;br&gt;User sets query params  &lt;br&gt;User runs method execution  &lt;br&gt;System return analytics
+        /// Get TestPlans analytics  Use case   User sets project internal identifier   User sets query params   User runs method execution   System return analytics
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -695,7 +695,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPlans analytics &lt;br&gt;Use case  &lt;br&gt;User sets project internal identifier  &lt;br&gt;User sets query params  &lt;br&gt;User runs method execution  &lt;br&gt;System return analytics
+        /// Get TestPlans analytics  Use case   User sets project internal identifier   User sets query params   User runs method execution   System return analytics
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -911,7 +911,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Checks if TestPlan exists with the specified name exists for the project &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System purge delete project workitems
+        /// Checks if TestPlan exists with the specified name exists for the project  Use case   User sets project internal or global identifier    User runs method execution   System purge delete project workitems
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -924,7 +924,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Checks if TestPlan exists with the specified name exists for the project &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System purge delete project workitems
+        /// Checks if TestPlan exists with the specified name exists for the project  Use case   User sets project internal or global identifier    User runs method execution   System purge delete project workitems
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -974,7 +974,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Checks if TestPlan exists with the specified name exists for the project &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System purge delete project workitems
+        /// Checks if TestPlan exists with the specified name exists for the project  Use case   User sets project internal or global identifier    User runs method execution   System purge delete project workitems
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -988,7 +988,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Checks if TestPlan exists with the specified name exists for the project &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User runs method execution  &lt;br&gt;System purge delete project workitems
+        /// Checks if TestPlan exists with the specified name exists for the project  Use case   User sets project internal or global identifier    User runs method execution   System purge delete project workitems
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1178,10 +1178,11 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
-        /// <returns></returns>
-        public void ApiV2ProjectsProjectIdTestPlansRestoreBulkPost(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest))
+        /// <returns>List&lt;Guid&gt;</returns>
+        public List<Guid> ApiV2ProjectsProjectIdTestPlansRestoreBulkPost(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest))
         {
-            ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfo(projectId, apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<List<Guid>> localVarResponse = ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfo(projectId, apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1190,8 +1191,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfo(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest))
+        /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
+        public TestIT.ApiClient.Client.ApiResponse<List<Guid>> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfo(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -1224,7 +1225,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/api/v2/projects/{projectId}/testPlans/restore/bulk", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<List<Guid>>("/api/v2/projects/{projectId}/testPlans/restore/bulk", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1242,10 +1243,11 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2ProjectsProjectIdTestPlansRestoreBulkPostAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;Guid&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Guid>> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfoAsync(projectId, apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<Guid>> localVarResponse = await ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfoAsync(projectId, apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1255,8 +1257,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId">Unique or global ID of the project</param>
         /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfoAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<Guid>>> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfoAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -1292,7 +1294,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/projects/{projectId}/testPlans/restore/bulk", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<Guid>>("/api/v2/projects/{projectId}/testPlans/restore/bulk", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1304,7 +1306,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Project TestPlans with analytics &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets request body   &lt;br&gt;User runs method execution  &lt;br&gt;System returns project testplans with analytics
+        /// Get Project TestPlans with analytics  Use case   User sets project internal or global identifier    User sets request body    User runs method execution   System returns project testplans with analytics
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1323,7 +1325,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Project TestPlans with analytics &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets request body   &lt;br&gt;User runs method execution  &lt;br&gt;System returns project testplans with analytics
+        /// Get Project TestPlans with analytics  Use case   User sets project internal or global identifier    User sets request body    User runs method execution   System returns project testplans with analytics
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1404,7 +1406,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Project TestPlans with analytics &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets request body   &lt;br&gt;User runs method execution  &lt;br&gt;System returns project testplans with analytics
+        /// Get Project TestPlans with analytics  Use case   User sets project internal or global identifier    User sets request body    User runs method execution   System returns project testplans with analytics
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1424,7 +1426,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Project TestPlans with analytics &lt;br&gt;Use case  &lt;br&gt;User sets project internal or global identifier   &lt;br&gt;User sets request body   &lt;br&gt;User runs method execution  &lt;br&gt;System returns project testplans with analytics
+        /// Get Project TestPlans with analytics  Use case   User sets project internal or global identifier    User sets request body    User runs method execution   System returns project testplans with analytics
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>

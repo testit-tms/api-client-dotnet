@@ -47,7 +47,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="testResultsOutcome">Specifies test results outcomes.</param>
         /// <param name="failureCategory">Specifies failure categories.</param>
         /// <param name="completedDate">completedDate.</param>
-        public ApiV2TestRunsSearchPostRequest(List<Guid> projectIds = default(List<Guid>), string name = default(string), List<TestRunState> states = default(List<TestRunState>), TestRunFilterModelCreatedDate createdDate = default(TestRunFilterModelCreatedDate), TestRunFilterModelStartedDate startedDate = default(TestRunFilterModelStartedDate), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?), TestRunFilterModelAutoTestsCount autoTestsCount = default(TestRunFilterModelAutoTestsCount), List<TestResultOutcome> testResultsOutcome = default(List<TestResultOutcome>), List<FailureCategoryModel> failureCategory = default(List<FailureCategoryModel>), TestRunFilterModelCompletedDate completedDate = default(TestRunFilterModelCompletedDate))
+        /// <param name="testResultsConfigurationIds">Specifies a test result configuration IDs to search for.</param>
+        public ApiV2TestRunsSearchPostRequest(List<Guid> projectIds = default(List<Guid>), string name = default(string), List<TestRunState> states = default(List<TestRunState>), TestRunFilterModelCreatedDate createdDate = default(TestRunFilterModelCreatedDate), TestRunFilterModelStartedDate startedDate = default(TestRunFilterModelStartedDate), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?), TestRunFilterModelAutoTestsCount autoTestsCount = default(TestRunFilterModelAutoTestsCount), List<TestResultOutcome> testResultsOutcome = default(List<TestResultOutcome>), List<FailureCategoryModel> failureCategory = default(List<FailureCategoryModel>), TestRunFilterModelCompletedDate completedDate = default(TestRunFilterModelCompletedDate), List<Guid> testResultsConfigurationIds = default(List<Guid>))
         {
             this.ProjectIds = projectIds;
             this.Name = name;
@@ -61,6 +62,7 @@ namespace TestIT.ApiClient.Model
             this.TestResultsOutcome = testResultsOutcome;
             this.FailureCategory = failureCategory;
             this.CompletedDate = completedDate;
+            this.TestResultsConfigurationIds = testResultsConfigurationIds;
         }
 
         /// <summary>
@@ -144,6 +146,13 @@ namespace TestIT.ApiClient.Model
         public TestRunFilterModelCompletedDate CompletedDate { get; set; }
 
         /// <summary>
+        /// Specifies a test result configuration IDs to search for
+        /// </summary>
+        /// <value>Specifies a test result configuration IDs to search for</value>
+        [DataMember(Name = "testResultsConfigurationIds", EmitDefaultValue = true)]
+        public List<Guid> TestResultsConfigurationIds { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -163,6 +172,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  TestResultsOutcome: ").Append(TestResultsOutcome).Append("\n");
             sb.Append("  FailureCategory: ").Append(FailureCategory).Append("\n");
             sb.Append("  CompletedDate: ").Append(CompletedDate).Append("\n");
+            sb.Append("  TestResultsConfigurationIds: ").Append(TestResultsConfigurationIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -263,6 +273,12 @@ namespace TestIT.ApiClient.Model
                     this.CompletedDate == input.CompletedDate ||
                     (this.CompletedDate != null &&
                     this.CompletedDate.Equals(input.CompletedDate))
+                ) && 
+                (
+                    this.TestResultsConfigurationIds == input.TestResultsConfigurationIds ||
+                    this.TestResultsConfigurationIds != null &&
+                    input.TestResultsConfigurationIds != null &&
+                    this.TestResultsConfigurationIds.SequenceEqual(input.TestResultsConfigurationIds)
                 );
         }
 
@@ -323,6 +339,10 @@ namespace TestIT.ApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.CompletedDate.GetHashCode();
                 }
+                if (this.TestResultsConfigurationIds != null)
+                {
+                    hashCode = (hashCode * 59) + this.TestResultsConfigurationIds.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -332,7 +352,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

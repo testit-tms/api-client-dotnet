@@ -20,13 +20,13 @@ All URIs are relative to *http://localhost*
 | [**GetParameterById**](ParametersApi.md#getparameterbyid) | **GET** /api/v2/parameters/{id} | Get parameter by ID |
 | [**UpdateParameter**](ParametersApi.md#updateparameter) | **PUT** /api/v2/parameters | Update parameter |
 
-<a name="apiv2parametersbulkpost"></a>
+<a id="apiv2parametersbulkpost"></a>
 # **ApiV2ParametersBulkPost**
 > List&lt;ParameterModel&gt; ApiV2ParametersBulkPost (List<ParameterPostModel> parameterPostModel = null)
 
 Create multiple parameters
 
-<br>Use case  <br>User sets list of parameter model (listed in the request example)  <br>User runs method execution  <br>System creates parameters  <br>System returns list of parameter model (listed in the response example)
+ Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System creates parameters   System returns list of parameter model (listed in the response example)
 
 ### Example
 ```csharp
@@ -117,17 +117,22 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
-| **400** | &lt;br&gt;- Parameter model is not valid |  -  |
+| **400** |  - Parameter model is not valid |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2parametersbulkput"></a>
+<a id="apiv2parametersbulkput"></a>
 # **ApiV2ParametersBulkPut**
 > void ApiV2ParametersBulkPut (List<ParameterPutModel> parameterPutModel = null)
 
 Update multiple parameters
 
-<br>Use case  <br>User sets list of parameter model (listed in the request example)  <br>User runs method execution  <br>System updates parameters
+ Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System updates parameters
 
 ### Example
 ```csharp
@@ -214,19 +219,22 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
-| **400** | &lt;br&gt;- Parameter model is not valid |  -  |
+| **400** |  - Parameter model is not valid |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Invalid user permissions |  -  |
-| **422** | Client Error |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2parametersgroupsget"></a>
+<a id="apiv2parametersgroupsget"></a>
 # **ApiV2ParametersGroupsGet**
 > List&lt;ParameterGroupModel&gt; ApiV2ParametersGroupsGet (bool? isDeleted = null, List<Guid> parameterKeyIds = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
 Get parameters as group
 
-<br>Use case  <br>User runs method execution  <br>System search parameters  <br>System returns parameters models as groups (listed in the response example)
+ Use case   User runs method execution   System search parameters   System returns parameters models as groups (listed in the response example)
 
 ### Example
 ```csharp
@@ -328,18 +336,23 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **200** | OK |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2parameterskeynamenameexistsget"></a>
+<a id="apiv2parameterskeynamenameexistsget"></a>
 # **ApiV2ParametersKeyNameNameExistsGet**
 > bool ApiV2ParametersKeyNameNameExistsGet (string name)
 
 Check existence parameter key in system
 
-<br>Use case  <br>User sets name of parameter key  <br>User runs method execution  <br>System search parameter key  <br>System returns the flag for the existence of the parameter key in the system
+ Use case   User sets name of parameter key   User runs method execution   System search parameter key   System returns the flag for the existence of the parameter key in the system
 
 ### Example
 ```csharp
@@ -429,18 +442,23 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2parameterskeyvaluesget"></a>
+<a id="apiv2parameterskeyvaluesget"></a>
 # **ApiV2ParametersKeyValuesGet**
 > List&lt;string&gt; ApiV2ParametersKeyValuesGet (string key)
 
 Get all parameter key values
 
-<br>Use case  <br>User sets parameter key (string format)  <br>User runs method execution  <br>System search parameter values using the key  <br>System returns parameter
+ Use case   User sets parameter key (string format)   User runs method execution   System search parameter values using the key   System returns parameter
 
 ### Example
 ```csharp
@@ -531,16 +549,22 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2parameterskeysget"></a>
+<a id="apiv2parameterskeysget"></a>
 # **ApiV2ParametersKeysGet**
 > List&lt;string&gt; ApiV2ParametersKeysGet ()
 
 Get all parameter keys
 
-<br>Use case  <br>User runs method execution  <br>System search all parameter keys  <br>System returns parameter keys
+ Use case   User runs method execution   System search all parameter keys   System returns parameter keys
 
 ### Example
 ```csharp
@@ -626,10 +650,16 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2parameterssearchgroupspost"></a>
+<a id="apiv2parameterssearchgroupspost"></a>
 # **ApiV2ParametersSearchGroupsPost**
 > List&lt;ParameterGroupModel&gt; ApiV2ParametersSearchGroupsPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ParametersSearchPostRequest apiV2ParametersSearchPostRequest = null)
 
@@ -733,11 +763,17 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **200** | OK |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2parameterssearchpost"></a>
+<a id="apiv2parameterssearchpost"></a>
 # **ApiV2ParametersSearchPost**
 > List&lt;ParameterModel&gt; ApiV2ParametersSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ParametersSearchPostRequest apiV2ParametersSearchPostRequest = null)
 
@@ -841,17 +877,23 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **200** | OK |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createparameter"></a>
+<a id="createparameter"></a>
 # **CreateParameter**
 > ParameterModel CreateParameter (CreateParameterRequest createParameterRequest = null)
 
 Create parameter
 
-<br>Use case  <br>User sets parameter model (listed in the request example)  <br>User runs method execution  <br>System creates parameter  <br>System returns parameter model
+ Use case   User sets parameter model (listed in the request example)   User runs method execution   System creates parameter   System returns parameter model
 
 ### Example
 ```csharp
@@ -943,10 +985,15 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
 | **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deletebyname"></a>
+<a id="deletebyname"></a>
 # **DeleteByName**
 > void DeleteByName (string name)
 
@@ -1040,11 +1087,15 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
 | **400** | Provided name either is empty or contains only white spaces |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
 | **422** | Parameter is in use in iterations |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deletebyparameterkeyid"></a>
+<a id="deletebyparameterkeyid"></a>
 # **DeleteByParameterKeyId**
 > void DeleteByParameterKeyId (Guid keyId)
 
@@ -1078,7 +1129,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ParametersApi(httpClient, config, httpClientHandler);
-            var keyId = "keyId_example";  // Guid | 
+            var keyId = "keyId_example";  // Guid | Identifier of the parameter key
 
             try
             {
@@ -1117,7 +1168,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **keyId** | **Guid** |  |  |
+| **keyId** | **Guid** | Identifier of the parameter key |  |
 
 ### Return type
 
@@ -1137,18 +1188,22 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Invalid user permissions |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
 | **422** | Parameter is in use in iterations |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleteparameter"></a>
+<a id="deleteparameter"></a>
 # **DeleteParameter**
 > void DeleteParameter (Guid id)
 
 Delete parameter
 
-<br>Use case  <br>User sets parameter internal (guid format) identifier  <br>System search and delete parameter  <br>System returns deleted parameter
+ Use case   User sets parameter internal (guid format) identifier   System search and delete parameter   System returns deleted parameter
 
 ### Example
 ```csharp
@@ -1234,19 +1289,24 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
-| **400** | &lt;br&gt;- ID is not valid  &lt;br&gt;- DTO is not valid |  -  |
+| **200** | OK |  -  |
+| **404** | Not Found |  -  |
+| **400** |  - ID is not valid   - DTO is not valid |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **409** | Conflict |  -  |
 | **422** | Parameter is in use in iterations |  -  |
+| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getallparameters"></a>
+<a id="getallparameters"></a>
 # **GetAllParameters**
 > List&lt;ParameterModel&gt; GetAllParameters (bool? isDeleted = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
 Get all parameters
 
-<br>Use case  <br>[Optional] User sets isDeleted field value  <br>[Optional] If User sets isDeleted field value as true, System search all deleted parameters  <br>[Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted  <br>If User did not set isDeleted field value, System search all parameters  <br>System returns array of all found parameters(listed in response model)
+ Use case   [Optional] User sets isDeleted field value   [Optional] If User sets isDeleted field value as true, System search all deleted parameters   [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted   If User did not set isDeleted field value, System search all parameters   System returns array of all found parameters(listed in response model)
 
 ### Example
 ```csharp
@@ -1346,18 +1406,23 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **200** | OK |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Invalid user permissions |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getparameterbyid"></a>
+<a id="getparameterbyid"></a>
 # **GetParameterById**
 > ParameterModel GetParameterById (Guid id)
 
 Get parameter by ID
 
-<br>Use case  <br>User sets parameter internal (guid format) identifier  <br>User runs method execution  <br>System search parameter using the identifier  <br>System returns parameter
+ Use case   User sets parameter internal (guid format) identifier   User runs method execution   System search parameter using the identifier   System returns parameter
 
 ### Example
 ```csharp
@@ -1447,18 +1512,23 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Parameter with provided ID was not found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updateparameter"></a>
+<a id="updateparameter"></a>
 # **UpdateParameter**
 > void UpdateParameter (UpdateParameterRequest updateParameterRequest = null)
 
 Update parameter
 
-<br>Use case  <br>User sets parameter updated properties(listed in the request example)  <br>User runs method execution  <br>System updated parameter using updated properties  <br>System returns no content response
+ Use case   User sets parameter updated properties(listed in the request example)   User runs method execution   System updated parameter using updated properties   System returns no content response
 
 ### Example
 ```csharp
@@ -1545,8 +1615,12 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
-| **400** | &lt;br&gt;- ID is not valid  &lt;br&gt;- DTO is not valid |  -  |
+| **400** |  - ID is not valid   - DTO is not valid |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Parameter with provided ID was not found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

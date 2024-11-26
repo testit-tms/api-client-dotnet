@@ -4,8 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**NoAnalytics** | **int** | Number of test results which outcomes were not analyzed | 
-**NoDefect** | **int** | Number of test results which outcomes were not caused by any defect | 
 **InfrastructureDefect** | **int** | Number of test results which outcomes were caused by some infrastructure defect | 
 **ProductDefect** | **int** | Number of test results which outcomes were caused by some tested product defect | 
 **TestDefect** | **int** | Number of test results which outcomes were caused by test itself | 

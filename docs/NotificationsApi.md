@@ -10,13 +10,13 @@ All URIs are relative to *http://localhost*
 | [**ApiV2NotificationsReadPost**](NotificationsApi.md#apiv2notificationsreadpost) | **POST** /api/v2/notifications/read | Set all Notifications as read |
 | [**ApiV2NotificationsSearchPost**](NotificationsApi.md#apiv2notificationssearchpost) | **POST** /api/v2/notifications/search | Search Notifications for current User |
 
-<a name="apiv2notificationscountget"></a>
+<a id="apiv2notificationscountget"></a>
 # **ApiV2NotificationsCountGet**
 > int ApiV2NotificationsCountGet (bool? isRead = null)
 
 Get unread Notifications total in last 7 days
 
-<br>Use case  <br>User runs method execution  <br>System returns unread notifications total (listed in the response example)
+ Use case   User runs method execution   System returns unread notifications total (listed in the response example)
 
 ### Example
 ```csharp
@@ -107,17 +107,22 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2notificationsget"></a>
+<a id="apiv2notificationsget"></a>
 # **ApiV2NotificationsGet**
 > List&lt;NotificationModel&gt; ApiV2NotificationsGet (NotificationTypeModel? notificationType = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
 Get all Notifications for current User
 
-<br>Use case  <br>User runs method execution  <br>System returns notifications (listed in the response example)
+ Use case   User runs method execution   System returns notifications (listed in the response example)
 
 ### Example
 ```csharp
@@ -218,18 +223,22 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
-| **400** | &lt;br&gt;orderByStatement must have one &#39;.&#39; and no &#39;,&#39; symbols  &lt;br&gt;orderByStatement has invalid length  &lt;br&gt;orderByStatement must have uuid as attribute key  &lt;br&gt;Search field not found |  -  |
+| **400** |  orderByStatement must have one &#39;.&#39; and no &#39;,&#39; symbols   orderByStatement has invalid length   orderByStatement must have uuid as attribute key   Search field not found |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2notificationsidreadpost"></a>
+<a id="apiv2notificationsidreadpost"></a>
 # **ApiV2NotificationsIdReadPost**
 > void ApiV2NotificationsIdReadPost (Guid id)
 
 Set Notification as read
 
-<br>Use case  <br>User sets notification internal (guid format) identifier  <br>User runs method execution  <br>System set notification as read
+ Use case   User sets notification internal (guid format) identifier   User runs method execution   System set notification as read
 
 ### Example
 ```csharp
@@ -315,19 +324,24 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Successful operation |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Can&#39;t find notification with notificationId |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
+| **204** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2notificationsreadpost"></a>
+<a id="apiv2notificationsreadpost"></a>
 # **ApiV2NotificationsReadPost**
 > void ApiV2NotificationsReadPost ()
 
 Set all Notifications as read
 
-<br>Use case  <br>User runs method execution  <br>System set all notifications as read
+ Use case   User runs method execution   System set all notifications as read
 
 ### Example
 ```csharp
@@ -408,18 +422,24 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Successful operation |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
+| **204** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2notificationssearchpost"></a>
+<a id="apiv2notificationssearchpost"></a>
 # **ApiV2NotificationsSearchPost**
 > List&lt;NotificationModel&gt; ApiV2NotificationsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2NotificationsSearchPostRequest apiV2NotificationsSearchPostRequest = null)
 
 Search Notifications for current User
 
-<br>Use case  <br>User set filter and runs method execution  <br>System returns notifications (listed in the response example)
+ Use case   User set filter and runs method execution   System returns notifications (listed in the response example)
 
 ### Example
 ```csharp
@@ -522,6 +542,10 @@ catch (ApiException e)
 | **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

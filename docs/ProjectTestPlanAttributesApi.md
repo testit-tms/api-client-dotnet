@@ -10,13 +10,13 @@ All URIs are relative to *http://localhost*
 | [**SearchTestPlanAttributesInProject**](ProjectTestPlanAttributesApi.md#searchtestplanattributesinproject) | **POST** /api/v2/projects/{projectId}/testPlans/attributes/search | Search for attributes used in the project test plans |
 | [**UpdateCustomAttributeTestPlanProjectRelations**](ProjectTestPlanAttributesApi.md#updatecustomattributetestplanprojectrelations) | **PUT** /api/v2/projects/{projectId}/testPlans/attributes | Update attribute of project&#39;s test plans |
 
-<a name="createcustomattributetestplanprojectrelations"></a>
+<a id="createcustomattributetestplanprojectrelations"></a>
 # **CreateCustomAttributeTestPlanProjectRelations**
 > void CreateCustomAttributeTestPlanProjectRelations (string projectId, List<Guid> requestBody = null)
 
 Add attributes to project's test plans
 
-<br>Use case  <br>User sets project internal or global identifier and attributes identifiers  <br>User runs method execution  <br>System updates project and add attributes to project for test plans  <br>System returns no content response
+ Use case   User sets project internal or global identifier and attributes identifiers   User runs method execution   System updates project and add attributes to project for test plans   System returns no content response
 
 ### Example
 ```csharp
@@ -105,18 +105,22 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
+| **400** |   Attributes must be global  |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Update permission for project settings is required |  -  |
-| **400** | &lt;br&gt; Attributes must be global  |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deletecustomattributetestplanprojectrelations"></a>
+<a id="deletecustomattributetestplanprojectrelations"></a>
 # **DeleteCustomAttributeTestPlanProjectRelations**
 > void DeleteCustomAttributeTestPlanProjectRelations (string projectId, Guid attributeId)
 
 Delete attribute from project's test plans
 
-<br>Use case  <br>User sets project internal or global identifier and attribute identifier  <br>User runs method execution  <br>System updates project and delete attribute from project for test plans  <br>System returns no content response
+ Use case   User sets project internal or global identifier and attribute identifier   User runs method execution   System updates project and delete attribute from project for test plans   System returns no content response
 
 ### Example
 ```csharp
@@ -205,17 +209,22 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Update permission for project settings is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getcustomattributetestplanprojectrelations"></a>
+<a id="getcustomattributetestplanprojectrelations"></a>
 # **GetCustomAttributeTestPlanProjectRelations**
 > List&lt;CustomAttributeModel&gt; GetCustomAttributeTestPlanProjectRelations (string projectId)
 
 Get project's test plan attributes
 
-<br>Use case  <br>User runs method execution  <br>System returns project for test plans attributes by project identifier
+ Use case   User runs method execution   System returns project for test plans attributes by project identifier
 
 ### Example
 ```csharp
@@ -305,12 +314,17 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for project settings is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="searchtestplanattributesinproject"></a>
+<a id="searchtestplanattributesinproject"></a>
 # **SearchTestPlanAttributesInProject**
 > List&lt;CustomAttributeGetModel&gt; SearchTestPlanAttributesInProject (string projectId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, SearchAttributesInProjectRequest searchAttributesInProjectRequest = null)
 
@@ -416,18 +430,23 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **200** | OK |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for project is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updatecustomattributetestplanprojectrelations"></a>
+<a id="updatecustomattributetestplanprojectrelations"></a>
 # **UpdateCustomAttributeTestPlanProjectRelations**
 > void UpdateCustomAttributeTestPlanProjectRelations (string projectId, UpdateCustomAttributeTestPlanProjectRelationsRequest updateCustomAttributeTestPlanProjectRelationsRequest = null)
 
 Update attribute of project's test plans
 
-<br>Use case  <br>User sets project internal or global identifier and attribute model  <br>User runs method execution  <br>System updates project and project attribute for test plan  <br>System returns no content response
+ Use case   User sets project internal or global identifier and attribute model   User runs method execution   System updates project and project attribute for test plan   System returns no content response
 
 ### Example
 ```csharp
@@ -516,7 +535,12 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Update permission for project settings is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

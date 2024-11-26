@@ -32,9 +32,9 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal identifier</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
+        /// <param name="addTestPointsWithSectionsRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
         /// <returns></returns>
-        void AddTestPointsToTestSuite(Guid id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest));
+        void AddTestPointsToTestSuite(Guid id, AddTestPointsWithSectionsRequest addTestPointsWithSectionsRequest = default(AddTestPointsWithSectionsRequest));
 
         /// <summary>
         /// Add test-points to test suite
@@ -44,9 +44,9 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal identifier</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
+        /// <param name="addTestPointsWithSectionsRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> AddTestPointsToTestSuiteWithHttpInfo(Guid id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest));
+        ApiResponse<Object> AddTestPointsToTestSuiteWithHttpInfo(Guid id, AddTestPointsWithSectionsRequest addTestPointsWithSectionsRequest = default(AddTestPointsWithSectionsRequest));
         /// <summary>
         /// Patch test suite
         /// </summary>
@@ -148,7 +148,7 @@ namespace TestIT.ApiClient.Api
         /// Delete TestSuite
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System deletes test suite  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System deletes test suite   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -159,7 +159,7 @@ namespace TestIT.ApiClient.Api
         /// Delete TestSuite
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System deletes test suite  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System deletes test suite   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -169,7 +169,7 @@ namespace TestIT.ApiClient.Api
         /// Get Configurations By Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search configurations related to the test points  &lt;br&gt;System returns configurations array
+        ///  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configurations related to the test points   System returns configurations array
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -180,7 +180,7 @@ namespace TestIT.ApiClient.Api
         /// Get Configurations By Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search configurations related to the test points  &lt;br&gt;System returns configurations array
+        ///  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configurations related to the test points   System returns configurations array
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -190,7 +190,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPoints By Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System returns test points array
+        ///  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System returns test points array
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -201,7 +201,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPoints By Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System returns test points array
+        ///  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System returns test points array
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -211,7 +211,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestResults By Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search test results related to the test points  &lt;br&gt;System returns test results array
+        ///  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search test results related to the test points   System returns test results array
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -222,7 +222,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestResults By Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search test results related to the test points  &lt;br&gt;System returns test results array
+        ///  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search test results related to the test points   System returns test results array
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -232,7 +232,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestSuite by Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System returns test suite
+        ///  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System returns test suite
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -243,7 +243,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestSuite by Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System returns test suite
+        ///  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System returns test suite
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -253,7 +253,7 @@ namespace TestIT.ApiClient.Api
         /// Search WorkItems
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;[Optional] User sets filter  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search work items related to the test points  &lt;br&gt;                      [Optional] User sets filter, system applies filter                    &lt;br&gt;System returns work items array
+        ///  Use case   User sets test suite identifier   [Optional] User sets filter   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search work items related to the test points                         [Optional] User sets filter, system applies filter                     System returns work items array
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -271,7 +271,7 @@ namespace TestIT.ApiClient.Api
         /// Search WorkItems
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;[Optional] User sets filter  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search work items related to the test points  &lt;br&gt;                      [Optional] User sets filter, system applies filter                    &lt;br&gt;System returns work items array
+        ///  Use case   User sets test suite identifier   [Optional] User sets filter   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search work items related to the test points                         [Optional] User sets filter, system applies filter                     System returns work items array
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -288,7 +288,7 @@ namespace TestIT.ApiClient.Api
         /// Set Configurations By TestSuite Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User sets collection of configuration identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search configuration  &lt;br&gt;System restores(if exist) or creates test points with listed configuration  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test suite identifier   User sets collection of configuration identifiers   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configuration   System restores(if exist) or creates test points with listed configuration   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -300,7 +300,7 @@ namespace TestIT.ApiClient.Api
         /// Set Configurations By TestSuite Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User sets collection of configuration identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search configuration  &lt;br&gt;System restores(if exist) or creates test points with listed configuration  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test suite identifier   User sets collection of configuration identifiers   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configuration   System restores(if exist) or creates test points with listed configuration   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -324,10 +324,10 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal identifier</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
+        /// <param name="addTestPointsWithSectionsRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task AddTestPointsToTestSuiteAsync(Guid id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task AddTestPointsToTestSuiteAsync(Guid id, AddTestPointsWithSectionsRequest addTestPointsWithSectionsRequest = default(AddTestPointsWithSectionsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Add test-points to test suite
@@ -337,10 +337,10 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal identifier</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
+        /// <param name="addTestPointsWithSectionsRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> AddTestPointsToTestSuiteWithHttpInfoAsync(Guid id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> AddTestPointsToTestSuiteWithHttpInfoAsync(Guid id, AddTestPointsWithSectionsRequest addTestPointsWithSectionsRequest = default(AddTestPointsWithSectionsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Patch test suite
         /// </summary>
@@ -464,7 +464,7 @@ namespace TestIT.ApiClient.Api
         /// Delete TestSuite
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System deletes test suite  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System deletes test suite   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -476,7 +476,7 @@ namespace TestIT.ApiClient.Api
         /// Delete TestSuite
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System deletes test suite  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System deletes test suite   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -487,7 +487,7 @@ namespace TestIT.ApiClient.Api
         /// Get Configurations By Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search configurations related to the test points  &lt;br&gt;System returns configurations array
+        ///  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configurations related to the test points   System returns configurations array
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -499,7 +499,7 @@ namespace TestIT.ApiClient.Api
         /// Get Configurations By Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search configurations related to the test points  &lt;br&gt;System returns configurations array
+        ///  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configurations related to the test points   System returns configurations array
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -510,7 +510,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPoints By Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System returns test points array
+        ///  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System returns test points array
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -522,7 +522,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPoints By Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System returns test points array
+        ///  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System returns test points array
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -533,7 +533,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestResults By Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search test results related to the test points  &lt;br&gt;System returns test results array
+        ///  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search test results related to the test points   System returns test results array
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -545,7 +545,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestResults By Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search test results related to the test points  &lt;br&gt;System returns test results array
+        ///  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search test results related to the test points   System returns test results array
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -556,7 +556,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestSuite by Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System returns test suite
+        ///  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System returns test suite
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -568,7 +568,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestSuite by Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System returns test suite
+        ///  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System returns test suite
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -579,7 +579,7 @@ namespace TestIT.ApiClient.Api
         /// Search WorkItems
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;[Optional] User sets filter  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search work items related to the test points  &lt;br&gt;                      [Optional] User sets filter, system applies filter                    &lt;br&gt;System returns work items array
+        ///  Use case   User sets test suite identifier   [Optional] User sets filter   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search work items related to the test points                         [Optional] User sets filter, system applies filter                     System returns work items array
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -598,7 +598,7 @@ namespace TestIT.ApiClient.Api
         /// Search WorkItems
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;[Optional] User sets filter  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search work items related to the test points  &lt;br&gt;                      [Optional] User sets filter, system applies filter                    &lt;br&gt;System returns work items array
+        ///  Use case   User sets test suite identifier   [Optional] User sets filter   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search work items related to the test points                         [Optional] User sets filter, system applies filter                     System returns work items array
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -616,7 +616,7 @@ namespace TestIT.ApiClient.Api
         /// Set Configurations By TestSuite Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User sets collection of configuration identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search configuration  &lt;br&gt;System restores(if exist) or creates test points with listed configuration  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test suite identifier   User sets collection of configuration identifiers   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configuration   System restores(if exist) or creates test points with listed configuration   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -629,7 +629,7 @@ namespace TestIT.ApiClient.Api
         /// Set Configurations By TestSuite Id
         /// </summary>
         /// <remarks>
-        /// &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User sets collection of configuration identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search configuration  &lt;br&gt;System restores(if exist) or creates test points with listed configuration  &lt;br&gt;System returns no content response
+        ///  Use case   User sets test suite identifier   User sets collection of configuration identifiers   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configuration   System restores(if exist) or creates test points with listed configuration   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -855,11 +855,11 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal identifier</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
+        /// <param name="addTestPointsWithSectionsRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
         /// <returns></returns>
-        public void AddTestPointsToTestSuite(Guid id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest))
+        public void AddTestPointsToTestSuite(Guid id, AddTestPointsWithSectionsRequest addTestPointsWithSectionsRequest = default(AddTestPointsWithSectionsRequest))
         {
-            AddTestPointsToTestSuiteWithHttpInfo(id, apiV2ProjectsProjectIdWorkItemsSearchPostRequest);
+            AddTestPointsToTestSuiteWithHttpInfo(id, addTestPointsWithSectionsRequest);
         }
 
         /// <summary>
@@ -867,9 +867,9 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal identifier</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
+        /// <param name="addTestPointsWithSectionsRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> AddTestPointsToTestSuiteWithHttpInfo(Guid id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<Object> AddTestPointsToTestSuiteWithHttpInfo(Guid id, AddTestPointsWithSectionsRequest addTestPointsWithSectionsRequest = default(AddTestPointsWithSectionsRequest))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -889,7 +889,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = apiV2ProjectsProjectIdWorkItemsSearchPostRequest;
+            localVarRequestOptions.Data = addTestPointsWithSectionsRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -914,12 +914,12 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal identifier</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
+        /// <param name="addTestPointsWithSectionsRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task AddTestPointsToTestSuiteAsync(Guid id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task AddTestPointsToTestSuiteAsync(Guid id, AddTestPointsWithSectionsRequest addTestPointsWithSectionsRequest = default(AddTestPointsWithSectionsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await AddTestPointsToTestSuiteWithHttpInfoAsync(id, apiV2ProjectsProjectIdWorkItemsSearchPostRequest, cancellationToken).ConfigureAwait(false);
+            await AddTestPointsToTestSuiteWithHttpInfoAsync(id, addTestPointsWithSectionsRequest, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -927,10 +927,10 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal identifier</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
+        /// <param name="addTestPointsWithSectionsRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> AddTestPointsToTestSuiteWithHttpInfoAsync(Guid id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> AddTestPointsToTestSuiteWithHttpInfoAsync(Guid id, AddTestPointsWithSectionsRequest addTestPointsWithSectionsRequest = default(AddTestPointsWithSectionsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -952,7 +952,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = apiV2ProjectsProjectIdWorkItemsSearchPostRequest;
+            localVarRequestOptions.Data = addTestPointsWithSectionsRequest;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1571,7 +1571,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete TestSuite &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System deletes test suite  &lt;br&gt;System returns no content response
+        /// Delete TestSuite  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System deletes test suite   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -1582,7 +1582,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete TestSuite &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System deletes test suite  &lt;br&gt;System returns no content response
+        /// Delete TestSuite  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System deletes test suite   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -1626,7 +1626,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete TestSuite &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System deletes test suite  &lt;br&gt;System returns no content response
+        /// Delete TestSuite  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System deletes test suite   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -1638,7 +1638,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete TestSuite &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System deletes test suite  &lt;br&gt;System returns no content response
+        /// Delete TestSuite  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System deletes test suite   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -1686,7 +1686,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Configurations By Id &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search configurations related to the test points  &lt;br&gt;System returns configurations array
+        /// Get Configurations By Id  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configurations related to the test points   System returns configurations array
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -1698,7 +1698,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Configurations By Id &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search configurations related to the test points  &lt;br&gt;System returns configurations array
+        /// Get Configurations By Id  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configurations related to the test points   System returns configurations array
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -1742,7 +1742,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Configurations By Id &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search configurations related to the test points  &lt;br&gt;System returns configurations array
+        /// Get Configurations By Id  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configurations related to the test points   System returns configurations array
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -1755,7 +1755,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Configurations By Id &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search configurations related to the test points  &lt;br&gt;System returns configurations array
+        /// Get Configurations By Id  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configurations related to the test points   System returns configurations array
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -1803,7 +1803,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPoints By Id &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System returns test points array
+        /// Get TestPoints By Id  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System returns test points array
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -1815,7 +1815,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPoints By Id &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System returns test points array
+        /// Get TestPoints By Id  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System returns test points array
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -1859,7 +1859,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPoints By Id &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System returns test points array
+        /// Get TestPoints By Id  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System returns test points array
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -1872,7 +1872,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPoints By Id &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System returns test points array
+        /// Get TestPoints By Id  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System returns test points array
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -1920,7 +1920,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestResults By Id &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search test results related to the test points  &lt;br&gt;System returns test results array
+        /// Get TestResults By Id  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search test results related to the test points   System returns test results array
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -1932,7 +1932,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestResults By Id &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search test results related to the test points  &lt;br&gt;System returns test results array
+        /// Get TestResults By Id  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search test results related to the test points   System returns test results array
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -1976,7 +1976,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestResults By Id &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search test results related to the test points  &lt;br&gt;System returns test results array
+        /// Get TestResults By Id  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search test results related to the test points   System returns test results array
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -1989,7 +1989,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestResults By Id &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search test results related to the test points  &lt;br&gt;System returns test results array
+        /// Get TestResults By Id  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search test results related to the test points   System returns test results array
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -2037,7 +2037,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestSuite by Id &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System returns test suite
+        /// Get TestSuite by Id  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System returns test suite
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -2049,7 +2049,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestSuite by Id &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System returns test suite
+        /// Get TestSuite by Id  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System returns test suite
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -2093,7 +2093,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestSuite by Id &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System returns test suite
+        /// Get TestSuite by Id  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System returns test suite
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -2106,7 +2106,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestSuite by Id &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System returns test suite
+        /// Get TestSuite by Id  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System returns test suite
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -2154,7 +2154,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search WorkItems &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;[Optional] User sets filter  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search work items related to the test points  &lt;br&gt;                      [Optional] User sets filter, system applies filter                    &lt;br&gt;System returns work items array
+        /// Search WorkItems  Use case   User sets test suite identifier   [Optional] User sets filter   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search work items related to the test points                         [Optional] User sets filter, system applies filter                     System returns work items array
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -2173,7 +2173,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search WorkItems &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;[Optional] User sets filter  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search work items related to the test points  &lt;br&gt;                      [Optional] User sets filter, system applies filter                    &lt;br&gt;System returns work items array
+        /// Search WorkItems  Use case   User sets test suite identifier   [Optional] User sets filter   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search work items related to the test points                         [Optional] User sets filter, system applies filter                     System returns work items array
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -2246,7 +2246,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search WorkItems &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;[Optional] User sets filter  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search work items related to the test points  &lt;br&gt;                      [Optional] User sets filter, system applies filter                    &lt;br&gt;System returns work items array
+        /// Search WorkItems  Use case   User sets test suite identifier   [Optional] User sets filter   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search work items related to the test points                         [Optional] User sets filter, system applies filter                     System returns work items array
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -2266,7 +2266,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search WorkItems &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;[Optional] User sets filter  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search work items related to the test points  &lt;br&gt;                      [Optional] User sets filter, system applies filter                    &lt;br&gt;System returns work items array
+        /// Search WorkItems  Use case   User sets test suite identifier   [Optional] User sets filter   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search work items related to the test points                         [Optional] User sets filter, system applies filter                     System returns work items array
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -2343,7 +2343,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set Configurations By TestSuite Id &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User sets collection of configuration identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search configuration  &lt;br&gt;System restores(if exist) or creates test points with listed configuration  &lt;br&gt;System returns no content response
+        /// Set Configurations By TestSuite Id  Use case   User sets test suite identifier   User sets collection of configuration identifiers   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configuration   System restores(if exist) or creates test points with listed configuration   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -2355,7 +2355,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set Configurations By TestSuite Id &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User sets collection of configuration identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search configuration  &lt;br&gt;System restores(if exist) or creates test points with listed configuration  &lt;br&gt;System returns no content response
+        /// Set Configurations By TestSuite Id  Use case   User sets test suite identifier   User sets collection of configuration identifiers   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configuration   System restores(if exist) or creates test points with listed configuration   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -2402,7 +2402,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set Configurations By TestSuite Id &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User sets collection of configuration identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search configuration  &lt;br&gt;System restores(if exist) or creates test points with listed configuration  &lt;br&gt;System returns no content response
+        /// Set Configurations By TestSuite Id  Use case   User sets test suite identifier   User sets collection of configuration identifiers   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configuration   System restores(if exist) or creates test points with listed configuration   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
@@ -2415,7 +2415,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set Configurations By TestSuite Id &lt;br&gt;Use case  &lt;br&gt;User sets test suite identifier  &lt;br&gt;User sets collection of configuration identifiers  &lt;br&gt;User runs method execution  &lt;br&gt;System search test suite by identifier  &lt;br&gt;System search test points related to the test suite  &lt;br&gt;System search configuration  &lt;br&gt;System restores(if exist) or creates test points with listed configuration  &lt;br&gt;System returns no content response
+        /// Set Configurations By TestSuite Id  Use case   User sets test suite identifier   User sets collection of configuration identifiers   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configuration   System restores(if exist) or creates test points with listed configuration   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>

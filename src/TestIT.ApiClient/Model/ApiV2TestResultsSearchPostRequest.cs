@@ -35,7 +35,12 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiV2TestResultsSearchPostRequest" /> class.
         /// </summary>
-        /// <param name="testRunIds">Specifies a test result test run IDs to search for.</param>
+        /// <param name="configurationIds">Specifies a test result configuration IDs to search for.</param>
+        /// <param name="outcomes">Specifies a test result outcomes to search for.</param>
+        /// <param name="statusCodes">Specifies a test result status codes to search for.</param>
+        /// <param name="failureCategories">Specifies a test result failure categories to search for.</param>
+        /// <param name="_namespace">Specifies a test result namespace to search for.</param>
+        /// <param name="className">Specifies a test result class name to search for.</param>
         /// <param name="autoTestGlobalIds">Specifies an autotest global IDs to search results for.</param>
         /// <param name="name">Specifies an autotest name to search results for.</param>
         /// <param name="createdDate">createdDate.</param>
@@ -44,14 +49,15 @@ namespace TestIT.ApiClient.Model
         /// <param name="completedOn">completedOn.</param>
         /// <param name="duration">duration.</param>
         /// <param name="resultReasons">Specifies result reasons for searching test results.</param>
-        /// <param name="configurationIds">Specifies a test result configuration IDs to search for.</param>
-        /// <param name="outcomes">Specifies a test result outcomes to search for.</param>
-        /// <param name="failureCategories">Specifies a test result failure categories to search for.</param>
-        /// <param name="_namespace">Specifies a test result namespace to search for.</param>
-        /// <param name="className">Specifies a test result class name to search for.</param>
-        public ApiV2TestResultsSearchPostRequest(List<Guid> testRunIds = default(List<Guid>), List<long> autoTestGlobalIds = default(List<long>), string name = default(string), TestResultsFilterModelCreatedDate createdDate = default(TestResultsFilterModelCreatedDate), TestResultsFilterModelModifiedDate modifiedDate = default(TestResultsFilterModelModifiedDate), TestResultsFilterModelStartedOn startedOn = default(TestResultsFilterModelStartedOn), TestResultsFilterModelCompletedOn completedOn = default(TestResultsFilterModelCompletedOn), TestResultsFilterModelDuration duration = default(TestResultsFilterModelDuration), List<string> resultReasons = default(List<string>), List<Guid> configurationIds = default(List<Guid>), List<TestResultOutcome> outcomes = default(List<TestResultOutcome>), List<FailureCategoryModel> failureCategories = default(List<FailureCategoryModel>), string _namespace = default(string), string className = default(string))
+        /// <param name="testRunIds">Specifies a test result test run IDs to search for.</param>
+        public ApiV2TestResultsSearchPostRequest(List<Guid> configurationIds = default(List<Guid>), List<TestResultOutcome> outcomes = default(List<TestResultOutcome>), List<string> statusCodes = default(List<string>), List<FailureCategoryModel> failureCategories = default(List<FailureCategoryModel>), string _namespace = default(string), string className = default(string), List<long> autoTestGlobalIds = default(List<long>), string name = default(string), TestResultsFilterRequestCreatedDate createdDate = default(TestResultsFilterRequestCreatedDate), TestResultsFilterRequestModifiedDate modifiedDate = default(TestResultsFilterRequestModifiedDate), TestResultsFilterRequestStartedOn startedOn = default(TestResultsFilterRequestStartedOn), TestResultsFilterRequestCompletedOn completedOn = default(TestResultsFilterRequestCompletedOn), TestResultsFilterRequestDuration duration = default(TestResultsFilterRequestDuration), List<string> resultReasons = default(List<string>), List<Guid> testRunIds = default(List<Guid>))
         {
-            this.TestRunIds = testRunIds;
+            this.ConfigurationIds = configurationIds;
+            this.Outcomes = outcomes;
+            this.StatusCodes = statusCodes;
+            this.FailureCategories = failureCategories;
+            this.Namespace = _namespace;
+            this.ClassName = className;
             this.AutoTestGlobalIds = autoTestGlobalIds;
             this.Name = name;
             this.CreatedDate = createdDate;
@@ -60,70 +66,8 @@ namespace TestIT.ApiClient.Model
             this.CompletedOn = completedOn;
             this.Duration = duration;
             this.ResultReasons = resultReasons;
-            this.ConfigurationIds = configurationIds;
-            this.Outcomes = outcomes;
-            this.FailureCategories = failureCategories;
-            this.Namespace = _namespace;
-            this.ClassName = className;
+            this.TestRunIds = testRunIds;
         }
-
-        /// <summary>
-        /// Specifies a test result test run IDs to search for
-        /// </summary>
-        /// <value>Specifies a test result test run IDs to search for</value>
-        [DataMember(Name = "testRunIds", EmitDefaultValue = true)]
-        public List<Guid> TestRunIds { get; set; }
-
-        /// <summary>
-        /// Specifies an autotest global IDs to search results for
-        /// </summary>
-        /// <value>Specifies an autotest global IDs to search results for</value>
-        [DataMember(Name = "autoTestGlobalIds", EmitDefaultValue = true)]
-        public List<long> AutoTestGlobalIds { get; set; }
-
-        /// <summary>
-        /// Specifies an autotest name to search results for
-        /// </summary>
-        /// <value>Specifies an autotest name to search results for</value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CreatedDate
-        /// </summary>
-        [DataMember(Name = "createdDate", EmitDefaultValue = true)]
-        public TestResultsFilterModelCreatedDate CreatedDate { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ModifiedDate
-        /// </summary>
-        [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
-        public TestResultsFilterModelModifiedDate ModifiedDate { get; set; }
-
-        /// <summary>
-        /// Gets or Sets StartedOn
-        /// </summary>
-        [DataMember(Name = "startedOn", EmitDefaultValue = true)]
-        public TestResultsFilterModelStartedOn StartedOn { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CompletedOn
-        /// </summary>
-        [DataMember(Name = "completedOn", EmitDefaultValue = true)]
-        public TestResultsFilterModelCompletedOn CompletedOn { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Duration
-        /// </summary>
-        [DataMember(Name = "duration", EmitDefaultValue = true)]
-        public TestResultsFilterModelDuration Duration { get; set; }
-
-        /// <summary>
-        /// Specifies result reasons for searching test results
-        /// </summary>
-        /// <value>Specifies result reasons for searching test results</value>
-        [DataMember(Name = "resultReasons", EmitDefaultValue = true)]
-        public List<string> ResultReasons { get; set; }
 
         /// <summary>
         /// Specifies a test result configuration IDs to search for
@@ -137,7 +81,15 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Specifies a test result outcomes to search for</value>
         [DataMember(Name = "outcomes", EmitDefaultValue = true)]
+        [Obsolete]
         public List<TestResultOutcome> Outcomes { get; set; }
+
+        /// <summary>
+        /// Specifies a test result status codes to search for
+        /// </summary>
+        /// <value>Specifies a test result status codes to search for</value>
+        [DataMember(Name = "statusCodes", EmitDefaultValue = true)]
+        public List<string> StatusCodes { get; set; }
 
         /// <summary>
         /// Specifies a test result failure categories to search for
@@ -161,6 +113,64 @@ namespace TestIT.ApiClient.Model
         public string ClassName { get; set; }
 
         /// <summary>
+        /// Specifies an autotest global IDs to search results for
+        /// </summary>
+        /// <value>Specifies an autotest global IDs to search results for</value>
+        [DataMember(Name = "autoTestGlobalIds", EmitDefaultValue = true)]
+        public List<long> AutoTestGlobalIds { get; set; }
+
+        /// <summary>
+        /// Specifies an autotest name to search results for
+        /// </summary>
+        /// <value>Specifies an autotest name to search results for</value>
+        [DataMember(Name = "name", EmitDefaultValue = true)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreatedDate
+        /// </summary>
+        [DataMember(Name = "createdDate", EmitDefaultValue = true)]
+        public TestResultsFilterRequestCreatedDate CreatedDate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ModifiedDate
+        /// </summary>
+        [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
+        public TestResultsFilterRequestModifiedDate ModifiedDate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets StartedOn
+        /// </summary>
+        [DataMember(Name = "startedOn", EmitDefaultValue = true)]
+        public TestResultsFilterRequestStartedOn StartedOn { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CompletedOn
+        /// </summary>
+        [DataMember(Name = "completedOn", EmitDefaultValue = true)]
+        public TestResultsFilterRequestCompletedOn CompletedOn { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Duration
+        /// </summary>
+        [DataMember(Name = "duration", EmitDefaultValue = true)]
+        public TestResultsFilterRequestDuration Duration { get; set; }
+
+        /// <summary>
+        /// Specifies result reasons for searching test results
+        /// </summary>
+        /// <value>Specifies result reasons for searching test results</value>
+        [DataMember(Name = "resultReasons", EmitDefaultValue = true)]
+        public List<string> ResultReasons { get; set; }
+
+        /// <summary>
+        /// Specifies a test result test run IDs to search for
+        /// </summary>
+        /// <value>Specifies a test result test run IDs to search for</value>
+        [DataMember(Name = "testRunIds", EmitDefaultValue = true)]
+        public List<Guid> TestRunIds { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -168,7 +178,12 @@ namespace TestIT.ApiClient.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class ApiV2TestResultsSearchPostRequest {\n");
-            sb.Append("  TestRunIds: ").Append(TestRunIds).Append("\n");
+            sb.Append("  ConfigurationIds: ").Append(ConfigurationIds).Append("\n");
+            sb.Append("  Outcomes: ").Append(Outcomes).Append("\n");
+            sb.Append("  StatusCodes: ").Append(StatusCodes).Append("\n");
+            sb.Append("  FailureCategories: ").Append(FailureCategories).Append("\n");
+            sb.Append("  Namespace: ").Append(Namespace).Append("\n");
+            sb.Append("  ClassName: ").Append(ClassName).Append("\n");
             sb.Append("  AutoTestGlobalIds: ").Append(AutoTestGlobalIds).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
@@ -177,11 +192,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  CompletedOn: ").Append(CompletedOn).Append("\n");
             sb.Append("  Duration: ").Append(Duration).Append("\n");
             sb.Append("  ResultReasons: ").Append(ResultReasons).Append("\n");
-            sb.Append("  ConfigurationIds: ").Append(ConfigurationIds).Append("\n");
-            sb.Append("  Outcomes: ").Append(Outcomes).Append("\n");
-            sb.Append("  FailureCategories: ").Append(FailureCategories).Append("\n");
-            sb.Append("  Namespace: ").Append(Namespace).Append("\n");
-            sb.Append("  ClassName: ").Append(ClassName).Append("\n");
+            sb.Append("  TestRunIds: ").Append(TestRunIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -218,10 +229,38 @@ namespace TestIT.ApiClient.Model
             }
             return 
                 (
-                    this.TestRunIds == input.TestRunIds ||
-                    this.TestRunIds != null &&
-                    input.TestRunIds != null &&
-                    this.TestRunIds.SequenceEqual(input.TestRunIds)
+                    this.ConfigurationIds == input.ConfigurationIds ||
+                    this.ConfigurationIds != null &&
+                    input.ConfigurationIds != null &&
+                    this.ConfigurationIds.SequenceEqual(input.ConfigurationIds)
+                ) && 
+                (
+                    this.Outcomes == input.Outcomes ||
+                    this.Outcomes != null &&
+                    input.Outcomes != null &&
+                    this.Outcomes.SequenceEqual(input.Outcomes)
+                ) && 
+                (
+                    this.StatusCodes == input.StatusCodes ||
+                    this.StatusCodes != null &&
+                    input.StatusCodes != null &&
+                    this.StatusCodes.SequenceEqual(input.StatusCodes)
+                ) && 
+                (
+                    this.FailureCategories == input.FailureCategories ||
+                    this.FailureCategories != null &&
+                    input.FailureCategories != null &&
+                    this.FailureCategories.SequenceEqual(input.FailureCategories)
+                ) && 
+                (
+                    this.Namespace == input.Namespace ||
+                    (this.Namespace != null &&
+                    this.Namespace.Equals(input.Namespace))
+                ) && 
+                (
+                    this.ClassName == input.ClassName ||
+                    (this.ClassName != null &&
+                    this.ClassName.Equals(input.ClassName))
                 ) && 
                 (
                     this.AutoTestGlobalIds == input.AutoTestGlobalIds ||
@@ -266,32 +305,10 @@ namespace TestIT.ApiClient.Model
                     this.ResultReasons.SequenceEqual(input.ResultReasons)
                 ) && 
                 (
-                    this.ConfigurationIds == input.ConfigurationIds ||
-                    this.ConfigurationIds != null &&
-                    input.ConfigurationIds != null &&
-                    this.ConfigurationIds.SequenceEqual(input.ConfigurationIds)
-                ) && 
-                (
-                    this.Outcomes == input.Outcomes ||
-                    this.Outcomes != null &&
-                    input.Outcomes != null &&
-                    this.Outcomes.SequenceEqual(input.Outcomes)
-                ) && 
-                (
-                    this.FailureCategories == input.FailureCategories ||
-                    this.FailureCategories != null &&
-                    input.FailureCategories != null &&
-                    this.FailureCategories.SequenceEqual(input.FailureCategories)
-                ) && 
-                (
-                    this.Namespace == input.Namespace ||
-                    (this.Namespace != null &&
-                    this.Namespace.Equals(input.Namespace))
-                ) && 
-                (
-                    this.ClassName == input.ClassName ||
-                    (this.ClassName != null &&
-                    this.ClassName.Equals(input.ClassName))
+                    this.TestRunIds == input.TestRunIds ||
+                    this.TestRunIds != null &&
+                    input.TestRunIds != null &&
+                    this.TestRunIds.SequenceEqual(input.TestRunIds)
                 );
         }
 
@@ -304,9 +321,29 @@ namespace TestIT.ApiClient.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.TestRunIds != null)
+                if (this.ConfigurationIds != null)
                 {
-                    hashCode = (hashCode * 59) + this.TestRunIds.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ConfigurationIds.GetHashCode();
+                }
+                if (this.Outcomes != null)
+                {
+                    hashCode = (hashCode * 59) + this.Outcomes.GetHashCode();
+                }
+                if (this.StatusCodes != null)
+                {
+                    hashCode = (hashCode * 59) + this.StatusCodes.GetHashCode();
+                }
+                if (this.FailureCategories != null)
+                {
+                    hashCode = (hashCode * 59) + this.FailureCategories.GetHashCode();
+                }
+                if (this.Namespace != null)
+                {
+                    hashCode = (hashCode * 59) + this.Namespace.GetHashCode();
+                }
+                if (this.ClassName != null)
+                {
+                    hashCode = (hashCode * 59) + this.ClassName.GetHashCode();
                 }
                 if (this.AutoTestGlobalIds != null)
                 {
@@ -340,25 +377,9 @@ namespace TestIT.ApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.ResultReasons.GetHashCode();
                 }
-                if (this.ConfigurationIds != null)
+                if (this.TestRunIds != null)
                 {
-                    hashCode = (hashCode * 59) + this.ConfigurationIds.GetHashCode();
-                }
-                if (this.Outcomes != null)
-                {
-                    hashCode = (hashCode * 59) + this.Outcomes.GetHashCode();
-                }
-                if (this.FailureCategories != null)
-                {
-                    hashCode = (hashCode * 59) + this.FailureCategories.GetHashCode();
-                }
-                if (this.Namespace != null)
-                {
-                    hashCode = (hashCode * 59) + this.Namespace.GetHashCode();
-                }
-                if (this.ClassName != null)
-                {
-                    hashCode = (hashCode * 59) + this.ClassName.GetHashCode();
+                    hashCode = (hashCode * 59) + this.TestRunIds.GetHashCode();
                 }
                 return hashCode;
             }
@@ -369,7 +390,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Namespace (string) maxLength
             if (this.Namespace != null && this.Namespace.Length > 255)

@@ -59,7 +59,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="isEmptyClassName">Specifies an autotest class name presence status to search for.</param>
         /// <param name="lastTestResultOutcome">lastTestResultOutcome.</param>
         /// <param name="externalKey">Specifies an autotest external key to search for.</param>
-        public AutotestsSelectModelFilter(List<Guid> projectIds = default(List<Guid>), List<string> externalIds = default(List<string>), List<long> globalIds = default(List<long>), string name = default(string), bool? isFlaky = default(bool?), bool? mustBeApproved = default(bool?), AutotestFilterModelStabilityPercentage stabilityPercentage = default(AutotestFilterModelStabilityPercentage), AutotestFilterModelCreatedDate createdDate = default(AutotestFilterModelCreatedDate), List<Guid> createdByIds = default(List<Guid>), AutotestFilterModelModifiedDate modifiedDate = default(AutotestFilterModelModifiedDate), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?), string _namespace = default(string), bool? isEmptyNamespace = default(bool?), string className = default(string), bool? isEmptyClassName = default(bool?), AutotestResultOutcome? lastTestResultOutcome = default(AutotestResultOutcome?), string externalKey = default(string))
+        /// <param name="lastTestResultConfigurationIds">Specifies an autotest configuration IDs of the last test result to search for.</param>
+        public AutotestsSelectModelFilter(List<Guid> projectIds = default(List<Guid>), List<string> externalIds = default(List<string>), List<long> globalIds = default(List<long>), string name = default(string), bool? isFlaky = default(bool?), bool? mustBeApproved = default(bool?), AutotestFilterModelStabilityPercentage stabilityPercentage = default(AutotestFilterModelStabilityPercentage), AutotestFilterModelCreatedDate createdDate = default(AutotestFilterModelCreatedDate), List<Guid> createdByIds = default(List<Guid>), AutotestFilterModelModifiedDate modifiedDate = default(AutotestFilterModelModifiedDate), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?), string _namespace = default(string), bool? isEmptyNamespace = default(bool?), string className = default(string), bool? isEmptyClassName = default(bool?), AutotestResultOutcome? lastTestResultOutcome = default(AutotestResultOutcome?), string externalKey = default(string), List<Guid> lastTestResultConfigurationIds = default(List<Guid>))
         {
             this.ProjectIds = projectIds;
             this.ExternalIds = externalIds;
@@ -79,6 +80,7 @@ namespace TestIT.ApiClient.Model
             this.IsEmptyClassName = isEmptyClassName;
             this.LastTestResultOutcome = lastTestResultOutcome;
             this.ExternalKey = externalKey;
+            this.LastTestResultConfigurationIds = lastTestResultConfigurationIds;
         }
 
         /// <summary>
@@ -198,6 +200,13 @@ namespace TestIT.ApiClient.Model
         public string ExternalKey { get; set; }
 
         /// <summary>
+        /// Specifies an autotest configuration IDs of the last test result to search for
+        /// </summary>
+        /// <value>Specifies an autotest configuration IDs of the last test result to search for</value>
+        [DataMember(Name = "lastTestResultConfigurationIds", EmitDefaultValue = true)]
+        public List<Guid> LastTestResultConfigurationIds { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -223,6 +232,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  IsEmptyClassName: ").Append(IsEmptyClassName).Append("\n");
             sb.Append("  LastTestResultOutcome: ").Append(LastTestResultOutcome).Append("\n");
             sb.Append("  ExternalKey: ").Append(ExternalKey).Append("\n");
+            sb.Append("  LastTestResultConfigurationIds: ").Append(LastTestResultConfigurationIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -351,6 +361,12 @@ namespace TestIT.ApiClient.Model
                     this.ExternalKey == input.ExternalKey ||
                     (this.ExternalKey != null &&
                     this.ExternalKey.Equals(input.ExternalKey))
+                ) && 
+                (
+                    this.LastTestResultConfigurationIds == input.LastTestResultConfigurationIds ||
+                    this.LastTestResultConfigurationIds != null &&
+                    input.LastTestResultConfigurationIds != null &&
+                    this.LastTestResultConfigurationIds.SequenceEqual(input.LastTestResultConfigurationIds)
                 );
         }
 
@@ -432,6 +448,10 @@ namespace TestIT.ApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.ExternalKey.GetHashCode();
                 }
+                if (this.LastTestResultConfigurationIds != null)
+                {
+                    hashCode = (hashCode * 59) + this.LastTestResultConfigurationIds.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -441,7 +461,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)

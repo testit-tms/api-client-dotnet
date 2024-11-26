@@ -28,6 +28,26 @@ namespace TestIT.ApiClient.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name"> (optional)</param>
+        /// <param name="isGlobal"> (optional)</param>
+        /// <returns>CustomAttributeValidationResult</returns>
+        CustomAttributeValidationResult ApiV2CustomAttributesExistsGet(string name = default(string), bool? isGlobal = default(bool?));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name"> (optional)</param>
+        /// <param name="isGlobal"> (optional)</param>
+        /// <returns>ApiResponse of CustomAttributeValidationResult</returns>
+        ApiResponse<CustomAttributeValidationResult> ApiV2CustomAttributesExistsGetWithHttpInfo(string name = default(string), bool? isGlobal = default(bool?));
+        /// <summary>
         /// Delete global attribute
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
@@ -138,6 +158,31 @@ namespace TestIT.ApiClient.Api
     public interface ICustomAttributesApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name"> (optional)</param>
+        /// <param name="isGlobal"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CustomAttributeValidationResult</returns>
+        System.Threading.Tasks.Task<CustomAttributeValidationResult> ApiV2CustomAttributesExistsGetAsync(string name = default(string), bool? isGlobal = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name"> (optional)</param>
+        /// <param name="isGlobal"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CustomAttributeValidationResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CustomAttributeValidationResult>> ApiV2CustomAttributesExistsGetWithHttpInfoAsync(string name = default(string), bool? isGlobal = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete global attribute
         /// </summary>
@@ -476,6 +521,141 @@ namespace TestIT.ApiClient.Api
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name"> (optional)</param>
+        /// <param name="isGlobal"> (optional)</param>
+        /// <returns>CustomAttributeValidationResult</returns>
+        public CustomAttributeValidationResult ApiV2CustomAttributesExistsGet(string name = default(string), bool? isGlobal = default(bool?))
+        {
+            TestIT.ApiClient.Client.ApiResponse<CustomAttributeValidationResult> localVarResponse = ApiV2CustomAttributesExistsGetWithHttpInfo(name, isGlobal);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name"> (optional)</param>
+        /// <param name="isGlobal"> (optional)</param>
+        /// <returns>ApiResponse of CustomAttributeValidationResult</returns>
+        public TestIT.ApiClient.Client.ApiResponse<CustomAttributeValidationResult> ApiV2CustomAttributesExistsGetWithHttpInfo(string name = default(string), bool? isGlobal = default(bool?))
+        {
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (name != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "name", name));
+            }
+            if (isGlobal != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "isGlobal", isGlobal));
+            }
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<CustomAttributeValidationResult>("/api/v2/customAttributes/exists", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2CustomAttributesExistsGet", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name"> (optional)</param>
+        /// <param name="isGlobal"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CustomAttributeValidationResult</returns>
+        public async System.Threading.Tasks.Task<CustomAttributeValidationResult> ApiV2CustomAttributesExistsGetAsync(string name = default(string), bool? isGlobal = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            TestIT.ApiClient.Client.ApiResponse<CustomAttributeValidationResult> localVarResponse = await ApiV2CustomAttributesExistsGetWithHttpInfoAsync(name, isGlobal, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name"> (optional)</param>
+        /// <param name="isGlobal"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CustomAttributeValidationResult)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<CustomAttributeValidationResult>> ApiV2CustomAttributesExistsGetWithHttpInfoAsync(string name = default(string), bool? isGlobal = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (name != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "name", name));
+            }
+            if (isGlobal != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "isGlobal", isGlobal));
+            }
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<CustomAttributeValidationResult>("/api/v2/customAttributes/exists", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2CustomAttributesExistsGet", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>

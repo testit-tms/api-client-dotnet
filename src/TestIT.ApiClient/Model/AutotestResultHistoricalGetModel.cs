@@ -46,6 +46,12 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AutotestResultHistoricalGetModel" /> class.
         /// </summary>
+        /// <param name="modifiedDate">modifiedDate.</param>
+        /// <param name="modifiedById">modifiedById.</param>
+        /// <param name="testPlanId">testPlanId.</param>
+        /// <param name="testPlanGlobalId">testPlanGlobalId.</param>
+        /// <param name="testPlanName">testPlanName.</param>
+        /// <param name="duration">duration.</param>
         /// <param name="id">id (required).</param>
         /// <param name="createdDate">createdDate (required).</param>
         /// <param name="createdById">createdById (required).</param>
@@ -56,13 +62,9 @@ namespace TestIT.ApiClient.Model
         /// <param name="configurationName">configurationName (required).</param>
         /// <param name="outcome">outcome (required).</param>
         /// <param name="launchSource">launchSource.</param>
-        /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="modifiedById">modifiedById.</param>
-        /// <param name="testPlanId">testPlanId.</param>
-        /// <param name="testPlanGlobalId">testPlanGlobalId.</param>
-        /// <param name="testPlanName">testPlanName.</param>
-        /// <param name="duration">duration.</param>
-        public AutotestResultHistoricalGetModel(Guid id = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), string createdByName = default(string), Guid testRunId = default(Guid), string testRunName = default(string), Guid configurationId = default(Guid), string configurationName = default(string), AutotestResultOutcome outcome = default(AutotestResultOutcome), string launchSource = default(string), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), Guid? testPlanId = default(Guid?), long? testPlanGlobalId = default(long?), string testPlanName = default(string), long? duration = default(long?))
+        /// <param name="rerunCount">rerunCount (required).</param>
+        /// <param name="rerunTestResults">rerunTestResults (required).</param>
+        public AutotestResultHistoricalGetModel(DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), Guid? testPlanId = default(Guid?), long? testPlanGlobalId = default(long?), string testPlanName = default(string), long? duration = default(long?), Guid id = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), string createdByName = default(string), Guid testRunId = default(Guid), string testRunName = default(string), Guid configurationId = default(Guid), string configurationName = default(string), AutotestResultOutcome outcome = default(AutotestResultOutcome), string launchSource = default(string), int rerunCount = default(int), List<RerunTestResultModel> rerunTestResults = default(List<RerunTestResultModel>))
         {
             this.Id = id;
             this.CreatedDate = createdDate;
@@ -82,15 +84,58 @@ namespace TestIT.ApiClient.Model
             }
             this.ConfigurationName = configurationName;
             this.Outcome = outcome;
-            this.TestRunName = testRunName;
-            this.LaunchSource = launchSource;
+            this.RerunCount = rerunCount;
+            // to ensure "rerunTestResults" is required (not null)
+            if (rerunTestResults == null)
+            {
+                throw new ArgumentNullException("rerunTestResults is a required property for AutotestResultHistoricalGetModel and cannot be null");
+            }
+            this.RerunTestResults = rerunTestResults;
             this.ModifiedDate = modifiedDate;
             this.ModifiedById = modifiedById;
             this.TestPlanId = testPlanId;
             this.TestPlanGlobalId = testPlanGlobalId;
             this.TestPlanName = testPlanName;
             this.Duration = duration;
+            this.TestRunName = testRunName;
+            this.LaunchSource = launchSource;
         }
+
+        /// <summary>
+        /// Gets or Sets ModifiedDate
+        /// </summary>
+        [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
+        public DateTime? ModifiedDate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ModifiedById
+        /// </summary>
+        [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
+        public Guid? ModifiedById { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TestPlanId
+        /// </summary>
+        [DataMember(Name = "testPlanId", EmitDefaultValue = true)]
+        public Guid? TestPlanId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TestPlanGlobalId
+        /// </summary>
+        [DataMember(Name = "testPlanGlobalId", EmitDefaultValue = true)]
+        public long? TestPlanGlobalId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TestPlanName
+        /// </summary>
+        [DataMember(Name = "testPlanName", EmitDefaultValue = true)]
+        public string TestPlanName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Duration
+        /// </summary>
+        [DataMember(Name = "duration", EmitDefaultValue = true)]
+        public long? Duration { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -147,40 +192,16 @@ namespace TestIT.ApiClient.Model
         public string LaunchSource { get; set; }
 
         /// <summary>
-        /// Gets or Sets ModifiedDate
+        /// Gets or Sets RerunCount
         /// </summary>
-        [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
-        public DateTime? ModifiedDate { get; set; }
+        [DataMember(Name = "rerunCount", IsRequired = true, EmitDefaultValue = true)]
+        public int RerunCount { get; set; }
 
         /// <summary>
-        /// Gets or Sets ModifiedById
+        /// Gets or Sets RerunTestResults
         /// </summary>
-        [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
-        public Guid? ModifiedById { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TestPlanId
-        /// </summary>
-        [DataMember(Name = "testPlanId", EmitDefaultValue = true)]
-        public Guid? TestPlanId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TestPlanGlobalId
-        /// </summary>
-        [DataMember(Name = "testPlanGlobalId", EmitDefaultValue = true)]
-        public long? TestPlanGlobalId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TestPlanName
-        /// </summary>
-        [DataMember(Name = "testPlanName", EmitDefaultValue = true)]
-        public string TestPlanName { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Duration
-        /// </summary>
-        [DataMember(Name = "duration", EmitDefaultValue = true)]
-        public long? Duration { get; set; }
+        [DataMember(Name = "rerunTestResults", IsRequired = true, EmitDefaultValue = true)]
+        public List<RerunTestResultModel> RerunTestResults { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -190,6 +211,12 @@ namespace TestIT.ApiClient.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class AutotestResultHistoricalGetModel {\n");
+            sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
+            sb.Append("  ModifiedById: ").Append(ModifiedById).Append("\n");
+            sb.Append("  TestPlanId: ").Append(TestPlanId).Append("\n");
+            sb.Append("  TestPlanGlobalId: ").Append(TestPlanGlobalId).Append("\n");
+            sb.Append("  TestPlanName: ").Append(TestPlanName).Append("\n");
+            sb.Append("  Duration: ").Append(Duration).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
@@ -200,12 +227,8 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ConfigurationName: ").Append(ConfigurationName).Append("\n");
             sb.Append("  Outcome: ").Append(Outcome).Append("\n");
             sb.Append("  LaunchSource: ").Append(LaunchSource).Append("\n");
-            sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
-            sb.Append("  ModifiedById: ").Append(ModifiedById).Append("\n");
-            sb.Append("  TestPlanId: ").Append(TestPlanId).Append("\n");
-            sb.Append("  TestPlanGlobalId: ").Append(TestPlanGlobalId).Append("\n");
-            sb.Append("  TestPlanName: ").Append(TestPlanName).Append("\n");
-            sb.Append("  Duration: ").Append(Duration).Append("\n");
+            sb.Append("  RerunCount: ").Append(RerunCount).Append("\n");
+            sb.Append("  RerunTestResults: ").Append(RerunTestResults).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -241,6 +264,36 @@ namespace TestIT.ApiClient.Model
                 return false;
             }
             return 
+                (
+                    this.ModifiedDate == input.ModifiedDate ||
+                    (this.ModifiedDate != null &&
+                    this.ModifiedDate.Equals(input.ModifiedDate))
+                ) && 
+                (
+                    this.ModifiedById == input.ModifiedById ||
+                    (this.ModifiedById != null &&
+                    this.ModifiedById.Equals(input.ModifiedById))
+                ) && 
+                (
+                    this.TestPlanId == input.TestPlanId ||
+                    (this.TestPlanId != null &&
+                    this.TestPlanId.Equals(input.TestPlanId))
+                ) && 
+                (
+                    this.TestPlanGlobalId == input.TestPlanGlobalId ||
+                    (this.TestPlanGlobalId != null &&
+                    this.TestPlanGlobalId.Equals(input.TestPlanGlobalId))
+                ) && 
+                (
+                    this.TestPlanName == input.TestPlanName ||
+                    (this.TestPlanName != null &&
+                    this.TestPlanName.Equals(input.TestPlanName))
+                ) && 
+                (
+                    this.Duration == input.Duration ||
+                    (this.Duration != null &&
+                    this.Duration.Equals(input.Duration))
+                ) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
@@ -291,34 +344,14 @@ namespace TestIT.ApiClient.Model
                     this.LaunchSource.Equals(input.LaunchSource))
                 ) && 
                 (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
+                    this.RerunCount == input.RerunCount ||
+                    this.RerunCount.Equals(input.RerunCount)
                 ) && 
                 (
-                    this.ModifiedById == input.ModifiedById ||
-                    (this.ModifiedById != null &&
-                    this.ModifiedById.Equals(input.ModifiedById))
-                ) && 
-                (
-                    this.TestPlanId == input.TestPlanId ||
-                    (this.TestPlanId != null &&
-                    this.TestPlanId.Equals(input.TestPlanId))
-                ) && 
-                (
-                    this.TestPlanGlobalId == input.TestPlanGlobalId ||
-                    (this.TestPlanGlobalId != null &&
-                    this.TestPlanGlobalId.Equals(input.TestPlanGlobalId))
-                ) && 
-                (
-                    this.TestPlanName == input.TestPlanName ||
-                    (this.TestPlanName != null &&
-                    this.TestPlanName.Equals(input.TestPlanName))
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    (this.Duration != null &&
-                    this.Duration.Equals(input.Duration))
+                    this.RerunTestResults == input.RerunTestResults ||
+                    this.RerunTestResults != null &&
+                    input.RerunTestResults != null &&
+                    this.RerunTestResults.SequenceEqual(input.RerunTestResults)
                 );
         }
 
@@ -331,6 +364,30 @@ namespace TestIT.ApiClient.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.ModifiedDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
+                }
+                if (this.ModifiedById != null)
+                {
+                    hashCode = (hashCode * 59) + this.ModifiedById.GetHashCode();
+                }
+                if (this.TestPlanId != null)
+                {
+                    hashCode = (hashCode * 59) + this.TestPlanId.GetHashCode();
+                }
+                if (this.TestPlanGlobalId != null)
+                {
+                    hashCode = (hashCode * 59) + this.TestPlanGlobalId.GetHashCode();
+                }
+                if (this.TestPlanName != null)
+                {
+                    hashCode = (hashCode * 59) + this.TestPlanName.GetHashCode();
+                }
+                if (this.Duration != null)
+                {
+                    hashCode = (hashCode * 59) + this.Duration.GetHashCode();
+                }
                 if (this.Id != null)
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
@@ -368,29 +425,10 @@ namespace TestIT.ApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.LaunchSource.GetHashCode();
                 }
-                if (this.ModifiedDate != null)
+                hashCode = (hashCode * 59) + this.RerunCount.GetHashCode();
+                if (this.RerunTestResults != null)
                 {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                if (this.ModifiedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedById.GetHashCode();
-                }
-                if (this.TestPlanId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestPlanId.GetHashCode();
-                }
-                if (this.TestPlanGlobalId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestPlanGlobalId.GetHashCode();
-                }
-                if (this.TestPlanName != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestPlanName.GetHashCode();
-                }
-                if (this.Duration != null)
-                {
-                    hashCode = (hashCode * 59) + this.Duration.GetHashCode();
+                    hashCode = (hashCode * 59) + this.RerunTestResults.GetHashCode();
                 }
                 return hashCode;
             }
@@ -401,7 +439,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

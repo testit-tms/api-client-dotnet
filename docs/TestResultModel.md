@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **StepComments** | [**List&lt;StepCommentModel&gt;**](StepCommentModel.md) |  | [optional] 
 **FailureClassIds** | **List&lt;Guid&gt;** |  | 
 **Outcome** | **TestResultOutcome** |  | [optional] 
+**Status** | [**TestStatusModel**](TestStatusModel.md) |  | [optional] 
 **Comment** | **string** |  | [optional] 
 **Links** | [**List&lt;LinkModel&gt;**](LinkModel.md) |  | [optional] 
 **StepResults** | [**List&lt;StepResultModel&gt;**](StepResultModel.md) |  | [optional] 

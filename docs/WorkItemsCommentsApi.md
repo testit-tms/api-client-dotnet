@@ -7,15 +7,16 @@ All URIs are relative to *http://localhost*
 | [**ApiV2WorkItemsCommentsCommentIdDelete**](WorkItemsCommentsApi.md#apiv2workitemscommentscommentiddelete) | **DELETE** /api/v2/workItems/comments/{commentId} | Delete WorkItem comment |
 | [**ApiV2WorkItemsCommentsPost**](WorkItemsCommentsApi.md#apiv2workitemscommentspost) | **POST** /api/v2/workItems/comments | Create WorkItem comment |
 | [**ApiV2WorkItemsCommentsPut**](WorkItemsCommentsApi.md#apiv2workitemscommentsput) | **PUT** /api/v2/workItems/comments | Update work item comment |
+| [**ApiV2WorkItemsIdCommentsCountGet**](WorkItemsCommentsApi.md#apiv2workitemsidcommentscountget) | **GET** /api/v2/workItems/{id}/comments/count | Get work item comments count |
 | [**ApiV2WorkItemsIdCommentsGet**](WorkItemsCommentsApi.md#apiv2workitemsidcommentsget) | **GET** /api/v2/workItems/{id}/comments | Get work item comments |
 
-<a name="apiv2workitemscommentscommentiddelete"></a>
+<a id="apiv2workitemscommentscommentiddelete"></a>
 # **ApiV2WorkItemsCommentsCommentIdDelete**
 > void ApiV2WorkItemsCommentsCommentIdDelete (Guid commentId)
 
 Delete WorkItem comment
 
-<br>Use case  <br>User sets comment identifier  <br>User runs method execution  <br>System delete comment   <br>System returns success status code
+ Use case   User sets comment identifier   User runs method execution   System delete comment    System returns success status code
 
 ### Example
 ```csharp
@@ -106,16 +107,18 @@ void (empty response body)
 | **401** | Unauthorized |  -  |
 | **403** | System admin permission required |  -  |
 | **404** | WorkItem is not found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemscommentspost"></a>
+<a id="apiv2workitemscommentspost"></a>
 # **ApiV2WorkItemsCommentsPost**
 > WorkItemCommentModel ApiV2WorkItemsCommentsPost (ApiV2WorkItemsCommentsPostRequest apiV2WorkItemsCommentsPostRequest = null)
 
 Create WorkItem comment
 
-<br>Use case  <br>User sets comment properties (listed in request parameters)  <br>User runs method execution  <br>System creates comment   <br>System returns comment model (listed in response parameters)
+ Use case   User sets comment properties (listed in request parameters)   User runs method execution   System creates comment    System returns comment model (listed in response parameters)
 
 ### Example
 ```csharp
@@ -210,10 +213,12 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
 | **404** | WorkItem is not found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemscommentsput"></a>
+<a id="apiv2workitemscommentsput"></a>
 # **ApiV2WorkItemsCommentsPut**
 > void ApiV2WorkItemsCommentsPut (ApiV2WorkItemsCommentsPutRequest apiV2WorkItemsCommentsPutRequest = null)
 
@@ -304,11 +309,120 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | System administrator role is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemsidcommentsget"></a>
+<a id="apiv2workitemsidcommentscountget"></a>
+# **ApiV2WorkItemsIdCommentsCountGet**
+> int ApiV2WorkItemsIdCommentsCountGet (string id)
+
+Get work item comments count
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
+
+namespace Example
+{
+    public class ApiV2WorkItemsIdCommentsCountGetExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WorkItemsCommentsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | Unique or global ID of the work item
+
+            try
+            {
+                // Get work item comments count
+                int result = apiInstance.ApiV2WorkItemsIdCommentsCountGet(id);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WorkItemsCommentsApi.ApiV2WorkItemsIdCommentsCountGet: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2WorkItemsIdCommentsCountGetWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get work item comments count
+    ApiResponse<int> response = apiInstance.ApiV2WorkItemsIdCommentsCountGetWithHttpInfo(id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkItemsCommentsApi.ApiV2WorkItemsIdCommentsCountGetWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Unique or global ID of the work item |  |
+
+### Return type
+
+**int**
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Read permission for test library is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="apiv2workitemsidcommentsget"></a>
 # **ApiV2WorkItemsIdCommentsGet**
 > List&lt;WorkItemCommentModel&gt; ApiV2WorkItemsIdCommentsGet (string id)
 
@@ -402,8 +516,13 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for test library is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
