@@ -6,7 +6,7 @@ All URIs are relative to *http://localhost*
 |--------|--------------|-------------|
 | [**ApiV2SearchGlobalSearchPost**](SearchApi.md#apiv2searchglobalsearchpost) | **POST** /api/v2/search/globalSearch |  |
 
-<a name="apiv2searchglobalsearchpost"></a>
+<a id="apiv2searchglobalsearchpost"></a>
 # **ApiV2SearchGlobalSearchPost**
 > GlobalSearchResponse ApiV2SearchGlobalSearchPost (ApiV2SearchGlobalSearchPostRequest apiV2SearchGlobalSearchPostRequest = null)
 
@@ -98,7 +98,13 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -45,7 +45,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="testerId">Tester who is responded for the test unique internal identifier.</param>
         /// <param name="workItemId">Workitem to which test point relates unique identifier.</param>
         /// <param name="configurationId">Configuration to which test point relates unique identifier.</param>
-        /// <param name="status">Test point status  &lt;br&gt;Applies one of these values: Blocked, NoResults, Failed, Passed.</param>
+        /// <param name="status">Test point status   Applies one of these values: Blocked, NoResults, Failed, Passed.</param>
         /// <param name="lastTestResultId">Last test result unique identifier.</param>
         /// <param name="iterationId">Iteration unique identifier (required).</param>
         /// <param name="workItemMedianDuration">Median duration of work item the test point represents.</param>
@@ -65,7 +65,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets TestSuiteId
         /// </summary>
-        /// <example>&quot;20b3442e-1e9e-4fea-b940-4fde3f2f9ff6&quot;</example>
+        /// <example>&quot;3e5a61f5-bb50-44f4-8898-6dda6d40fe23&quot;</example>
         [DataMember(Name = "testSuiteId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestSuiteId { get; set; }
 
@@ -98,9 +98,9 @@ namespace TestIT.ApiClient.Model
         public Guid? ConfigurationId { get; set; }
 
         /// <summary>
-        /// Test point status  &lt;br&gt;Applies one of these values: Blocked, NoResults, Failed, Passed
+        /// Test point status   Applies one of these values: Blocked, NoResults, Failed, Passed
         /// </summary>
-        /// <value>Test point status  &lt;br&gt;Applies one of these values: Blocked, NoResults, Failed, Passed</value>
+        /// <value>Test point status   Applies one of these values: Blocked, NoResults, Failed, Passed</value>
         /// <example>&quot;NoResult&quot;</example>
         [DataMember(Name = "status", EmitDefaultValue = true)]
         public string Status { get; set; }
@@ -279,7 +279,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

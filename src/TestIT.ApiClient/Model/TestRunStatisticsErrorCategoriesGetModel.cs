@@ -40,33 +40,15 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestRunStatisticsErrorCategoriesGetModel" /> class.
         /// </summary>
-        /// <param name="noAnalytics">Number of test results which outcomes were not analyzed (required).</param>
-        /// <param name="noDefect">Number of test results which outcomes were not caused by any defect (required).</param>
         /// <param name="infrastructureDefect">Number of test results which outcomes were caused by some infrastructure defect (required).</param>
         /// <param name="productDefect">Number of test results which outcomes were caused by some tested product defect (required).</param>
         /// <param name="testDefect">Number of test results which outcomes were caused by test itself (required).</param>
-        public TestRunStatisticsErrorCategoriesGetModel(int noAnalytics = default(int), int noDefect = default(int), int infrastructureDefect = default(int), int productDefect = default(int), int testDefect = default(int))
+        public TestRunStatisticsErrorCategoriesGetModel(int infrastructureDefect = default(int), int productDefect = default(int), int testDefect = default(int))
         {
-            this.NoAnalytics = noAnalytics;
-            this.NoDefect = noDefect;
             this.InfrastructureDefect = infrastructureDefect;
             this.ProductDefect = productDefect;
             this.TestDefect = testDefect;
         }
-
-        /// <summary>
-        /// Number of test results which outcomes were not analyzed
-        /// </summary>
-        /// <value>Number of test results which outcomes were not analyzed</value>
-        [DataMember(Name = "noAnalytics", IsRequired = true, EmitDefaultValue = true)]
-        public int NoAnalytics { get; set; }
-
-        /// <summary>
-        /// Number of test results which outcomes were not caused by any defect
-        /// </summary>
-        /// <value>Number of test results which outcomes were not caused by any defect</value>
-        [DataMember(Name = "noDefect", IsRequired = true, EmitDefaultValue = true)]
-        public int NoDefect { get; set; }
 
         /// <summary>
         /// Number of test results which outcomes were caused by some infrastructure defect
@@ -97,8 +79,6 @@ namespace TestIT.ApiClient.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class TestRunStatisticsErrorCategoriesGetModel {\n");
-            sb.Append("  NoAnalytics: ").Append(NoAnalytics).Append("\n");
-            sb.Append("  NoDefect: ").Append(NoDefect).Append("\n");
             sb.Append("  InfrastructureDefect: ").Append(InfrastructureDefect).Append("\n");
             sb.Append("  ProductDefect: ").Append(ProductDefect).Append("\n");
             sb.Append("  TestDefect: ").Append(TestDefect).Append("\n");
@@ -138,14 +118,6 @@ namespace TestIT.ApiClient.Model
             }
             return 
                 (
-                    this.NoAnalytics == input.NoAnalytics ||
-                    this.NoAnalytics.Equals(input.NoAnalytics)
-                ) && 
-                (
-                    this.NoDefect == input.NoDefect ||
-                    this.NoDefect.Equals(input.NoDefect)
-                ) && 
-                (
                     this.InfrastructureDefect == input.InfrastructureDefect ||
                     this.InfrastructureDefect.Equals(input.InfrastructureDefect)
                 ) && 
@@ -168,8 +140,6 @@ namespace TestIT.ApiClient.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.NoAnalytics.GetHashCode();
-                hashCode = (hashCode * 59) + this.NoDefect.GetHashCode();
                 hashCode = (hashCode * 59) + this.InfrastructureDefect.GetHashCode();
                 hashCode = (hashCode * 59) + this.ProductDefect.GetHashCode();
                 hashCode = (hashCode * 59) + this.TestDefect.GetHashCode();
@@ -182,7 +152,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -51,6 +51,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="lastTestRunId">Unique ID of the autotest last test run.</param>
         /// <param name="lastTestRunName">Name of the autotest last test run.</param>
         /// <param name="lastTestResultId">Unique ID of the autotest last test result.</param>
+        /// <param name="lastTestResultConfiguration">lastTestResultConfiguration.</param>
         /// <param name="lastTestResultOutcome">Outcome of the autotest last test result.</param>
         /// <param name="stabilityPercentage">Stability percentage of the autotest.</param>
         /// <param name="externalId">External ID of the autotest (required).</param>
@@ -67,7 +68,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="labels">Collection of the autotest labels.</param>
         /// <param name="isFlaky">Indicates if the autotest is marked as flaky.</param>
         /// <param name="externalKey">External key of the autotest.</param>
-        public AutoTestModel(long globalId = default(long), bool isDeleted = default(bool), bool mustBeApproved = default(bool), Guid id = default(Guid), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), Guid? lastTestRunId = default(Guid?), string lastTestRunName = default(string), Guid? lastTestResultId = default(Guid?), string lastTestResultOutcome = default(string), int? stabilityPercentage = default(int?), string externalId = default(string), List<LinkPutModel> links = default(List<LinkPutModel>), Guid projectId = default(Guid), string name = default(string), string _namespace = default(string), string classname = default(string), List<AutoTestStepModel> steps = default(List<AutoTestStepModel>), List<AutoTestStepModel> setup = default(List<AutoTestStepModel>), List<AutoTestStepModel> teardown = default(List<AutoTestStepModel>), string title = default(string), string description = default(string), List<LabelShortModel> labels = default(List<LabelShortModel>), bool? isFlaky = default(bool?), string externalKey = default(string))
+        public AutoTestModel(long globalId = default(long), bool isDeleted = default(bool), bool mustBeApproved = default(bool), Guid id = default(Guid), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), Guid? lastTestRunId = default(Guid?), string lastTestRunName = default(string), Guid? lastTestResultId = default(Guid?), AutoTestModelLastTestResultConfiguration lastTestResultConfiguration = default(AutoTestModelLastTestResultConfiguration), string lastTestResultOutcome = default(string), int? stabilityPercentage = default(int?), string externalId = default(string), List<LinkPutModel> links = default(List<LinkPutModel>), Guid projectId = default(Guid), string name = default(string), string _namespace = default(string), string classname = default(string), List<AutoTestStepModel> steps = default(List<AutoTestStepModel>), List<AutoTestStepModel> setup = default(List<AutoTestStepModel>), List<AutoTestStepModel> teardown = default(List<AutoTestStepModel>), string title = default(string), string description = default(string), List<LabelShortModel> labels = default(List<LabelShortModel>), bool? isFlaky = default(bool?), string externalKey = default(string))
         {
             this.GlobalId = globalId;
             this.IsDeleted = isDeleted;
@@ -93,6 +94,7 @@ namespace TestIT.ApiClient.Model
             this.LastTestRunId = lastTestRunId;
             this.LastTestRunName = lastTestRunName;
             this.LastTestResultId = lastTestResultId;
+            this.LastTestResultConfiguration = lastTestResultConfiguration;
             this.LastTestResultOutcome = lastTestResultOutcome;
             this.StabilityPercentage = stabilityPercentage;
             this.Links = links;
@@ -184,6 +186,12 @@ namespace TestIT.ApiClient.Model
         /// <value>Unique ID of the autotest last test result</value>
         [DataMember(Name = "lastTestResultId", EmitDefaultValue = true)]
         public Guid? LastTestResultId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets LastTestResultConfiguration
+        /// </summary>
+        [DataMember(Name = "lastTestResultConfiguration", EmitDefaultValue = true)]
+        public AutoTestModelLastTestResultConfiguration LastTestResultConfiguration { get; set; }
 
         /// <summary>
         /// Outcome of the autotest last test result
@@ -316,6 +324,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  LastTestRunId: ").Append(LastTestRunId).Append("\n");
             sb.Append("  LastTestRunName: ").Append(LastTestRunName).Append("\n");
             sb.Append("  LastTestResultId: ").Append(LastTestResultId).Append("\n");
+            sb.Append("  LastTestResultConfiguration: ").Append(LastTestResultConfiguration).Append("\n");
             sb.Append("  LastTestResultOutcome: ").Append(LastTestResultOutcome).Append("\n");
             sb.Append("  StabilityPercentage: ").Append(StabilityPercentage).Append("\n");
             sb.Append("  ExternalId: ").Append(ExternalId).Append("\n");
@@ -418,6 +427,11 @@ namespace TestIT.ApiClient.Model
                     this.LastTestResultId == input.LastTestResultId ||
                     (this.LastTestResultId != null &&
                     this.LastTestResultId.Equals(input.LastTestResultId))
+                ) && 
+                (
+                    this.LastTestResultConfiguration == input.LastTestResultConfiguration ||
+                    (this.LastTestResultConfiguration != null &&
+                    this.LastTestResultConfiguration.Equals(input.LastTestResultConfiguration))
                 ) && 
                 (
                     this.LastTestResultOutcome == input.LastTestResultOutcome ||
@@ -550,6 +564,10 @@ namespace TestIT.ApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.LastTestResultId.GetHashCode();
                 }
+                if (this.LastTestResultConfiguration != null)
+                {
+                    hashCode = (hashCode * 59) + this.LastTestResultConfiguration.GetHashCode();
+                }
                 if (this.LastTestResultOutcome != null)
                 {
                     hashCode = (hashCode * 59) + this.LastTestResultOutcome.GetHashCode();
@@ -623,7 +641,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ExternalId (string) minLength
             if (this.ExternalId != null && this.ExternalId.Length < 1)

@@ -43,7 +43,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="id">id (required).</param>
         /// <param name="name">name (required).</param>
         /// <param name="type">type (required).</param>
-        public BackgroundJobAttachmentModel(Guid id = default(Guid), string name = default(string), string type = default(string))
+        /// <param name="size">size (required).</param>
+        public BackgroundJobAttachmentModel(Guid id = default(Guid), string name = default(string), string type = default(string), float size = default(float))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -58,6 +59,7 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("type is a required property for BackgroundJobAttachmentModel and cannot be null");
             }
             this.Type = type;
+            this.Size = size;
         }
 
         /// <summary>
@@ -79,6 +81,12 @@ namespace TestIT.ApiClient.Model
         public string Type { get; set; }
 
         /// <summary>
+        /// Gets or Sets Size
+        /// </summary>
+        [DataMember(Name = "size", IsRequired = true, EmitDefaultValue = true)]
+        public float Size { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -89,6 +97,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Size: ").Append(Size).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -138,6 +147,10 @@ namespace TestIT.ApiClient.Model
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.Size == input.Size ||
+                    this.Size.Equals(input.Size)
                 );
         }
 
@@ -162,6 +175,7 @@ namespace TestIT.ApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.Size.GetHashCode();
                 return hashCode;
             }
         }
@@ -171,7 +185,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

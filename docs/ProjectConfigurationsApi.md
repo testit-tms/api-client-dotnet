@@ -6,13 +6,13 @@ All URIs are relative to *http://localhost*
 |--------|--------------|-------------|
 | [**GetConfigurationsByProjectId**](ProjectConfigurationsApi.md#getconfigurationsbyprojectid) | **GET** /api/v2/projects/{projectId}/configurations | Get project configurations |
 
-<a name="getconfigurationsbyprojectid"></a>
+<a id="getconfigurationsbyprojectid"></a>
 # **GetConfigurationsByProjectId**
 > List&lt;ConfigurationModel&gt; GetConfigurationsByProjectId (string projectId)
 
 Get project configurations
 
-<br>Use case  <br>User sets project internal or global identifier  <br>User runs method execution  <br>System search project  <br>System search all configurations related to project  <br>System returns array of found configurations (listed in response model)
+ Use case   User sets project internal or global identifier   User runs method execution   System search project   System search all configurations related to project   System returns array of found configurations (listed in response model)
 
 ### Example
 ```csharp
@@ -102,10 +102,13 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Read permission for configurations required |  -  |
 | **404** | Project with provided ID was not found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

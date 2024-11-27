@@ -48,7 +48,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="locking">locking.</param>
         /// <param name="hasAutomaticDurationTimer">hasAutomaticDurationTimer.</param>
         /// <param name="attributes">attributes.</param>
-        public TestPlanChangedFieldsViewModel(StringChangedFieldWithDiffsViewModel name = default(StringChangedFieldWithDiffsViewModel), StringChangedFieldWithDiffsViewModel description = default(StringChangedFieldWithDiffsViewModel), StringChangedFieldViewModel productName = default(StringChangedFieldViewModel), StringChangedFieldViewModel build = default(StringChangedFieldViewModel), PeriodViewModelChangedFieldViewModel period = default(PeriodViewModelChangedFieldViewModel), StringChangedFieldViewModel status = default(StringChangedFieldViewModel), StringArrayChangedFieldViewModel tags = default(StringArrayChangedFieldViewModel), TestSuiteChangeViewModelChangedFieldViewModel testSuite = default(TestSuiteChangeViewModelChangedFieldViewModel), TestPointChangeViewModelChangedFieldViewModel testPoints = default(TestPointChangeViewModelChangedFieldViewModel), TestResultChangeViewModelChangedFieldViewModel testResults = default(TestResultChangeViewModelChangedFieldViewModel), BooleanChangedFieldViewModel locking = default(BooleanChangedFieldViewModel), BooleanNullableChangedFieldViewModel hasAutomaticDurationTimer = default(BooleanNullableChangedFieldViewModel), Dictionary<string, CustomAttributeChangeModel> attributes = default(Dictionary<string, CustomAttributeChangeModel>))
+        public TestPlanChangedFieldsViewModel(StringChangedFieldWithDiffsViewModel name = default(StringChangedFieldWithDiffsViewModel), StringChangedFieldWithDiffsViewModel description = default(StringChangedFieldWithDiffsViewModel), StringChangedFieldWithDiffsViewModel productName = default(StringChangedFieldWithDiffsViewModel), StringChangedFieldWithDiffsViewModel build = default(StringChangedFieldWithDiffsViewModel), PeriodViewModelChangedFieldViewModel period = default(PeriodViewModelChangedFieldViewModel), StringChangedFieldWithDiffsViewModel status = default(StringChangedFieldWithDiffsViewModel), StringArrayChangedFieldViewModel tags = default(StringArrayChangedFieldViewModel), TestSuiteChangeViewModelChangedFieldViewModel testSuite = default(TestSuiteChangeViewModelChangedFieldViewModel), TestPointChangeViewModelChangedFieldViewModel testPoints = default(TestPointChangeViewModelChangedFieldViewModel), TestResultChangeViewModelChangedFieldViewModel testResults = default(TestResultChangeViewModelChangedFieldViewModel), BooleanChangedFieldViewModel locking = default(BooleanChangedFieldViewModel), BooleanNullableChangedFieldViewModel hasAutomaticDurationTimer = default(BooleanNullableChangedFieldViewModel), Dictionary<string, CustomAttributeChangeModel> attributes = default(Dictionary<string, CustomAttributeChangeModel>))
         {
             this.Name = name;
             this.Description = description;
@@ -81,13 +81,13 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ProductName
         /// </summary>
         [DataMember(Name = "productName", EmitDefaultValue = true)]
-        public StringChangedFieldViewModel ProductName { get; set; }
+        public StringChangedFieldWithDiffsViewModel ProductName { get; set; }
 
         /// <summary>
         /// Gets or Sets Build
         /// </summary>
         [DataMember(Name = "build", EmitDefaultValue = true)]
-        public StringChangedFieldViewModel Build { get; set; }
+        public StringChangedFieldWithDiffsViewModel Build { get; set; }
 
         /// <summary>
         /// Gets or Sets Period
@@ -99,7 +99,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Status
         /// </summary>
         [DataMember(Name = "status", EmitDefaultValue = true)]
-        public StringChangedFieldViewModel Status { get; set; }
+        public StringChangedFieldWithDiffsViewModel Status { get; set; }
 
         /// <summary>
         /// Gets or Sets Tags
@@ -337,7 +337,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

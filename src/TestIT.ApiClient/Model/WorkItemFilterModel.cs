@@ -57,7 +57,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="isAutomated">Is result must consist of only manual/automated work items.</param>
         /// <param name="tags">Collection of tags.</param>
         /// <param name="autoTestIds">Collection of identifiers of linked autotests.</param>
-        public WorkItemFilterModel(string nameOrId = default(string), List<Guid> includeIds = default(List<Guid>), List<Guid> excludeIds = default(List<Guid>), List<Guid> projectIds = default(List<Guid>), string name = default(string), List<Guid> ids = default(List<Guid>), List<long> globalIds = default(List<long>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?), List<Guid> sectionIds = default(List<Guid>), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), List<WorkItemStates> states = default(List<WorkItemStates>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<WorkItemEntityTypes> types = default(List<WorkItemEntityTypes>), TestPointFilterModelWorkItemCreatedDate createdDate = default(TestPointFilterModelWorkItemCreatedDate), TestPointFilterModelWorkItemModifiedDate modifiedDate = default(TestPointFilterModelWorkItemModifiedDate), TestSuiteWorkItemsSearchModelDuration duration = default(TestSuiteWorkItemsSearchModelDuration), TestSuiteWorkItemsSearchModelMedianDuration medianDuration = default(TestSuiteWorkItemsSearchModelMedianDuration), bool? isAutomated = default(bool?), List<string> tags = default(List<string>), List<Guid> autoTestIds = default(List<Guid>))
+        /// <param name="workItemVersionIds">Collection of identifiers work items versions..</param>
+        public WorkItemFilterModel(string nameOrId = default(string), List<Guid> includeIds = default(List<Guid>), List<Guid> excludeIds = default(List<Guid>), List<Guid> projectIds = default(List<Guid>), string name = default(string), List<Guid> ids = default(List<Guid>), List<long> globalIds = default(List<long>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?), List<Guid> sectionIds = default(List<Guid>), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), List<WorkItemStates> states = default(List<WorkItemStates>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<WorkItemEntityTypes> types = default(List<WorkItemEntityTypes>), TestPointFilterModelWorkItemCreatedDate createdDate = default(TestPointFilterModelWorkItemCreatedDate), TestPointFilterModelWorkItemModifiedDate modifiedDate = default(TestPointFilterModelWorkItemModifiedDate), TestSuiteWorkItemsSearchModelDuration duration = default(TestSuiteWorkItemsSearchModelDuration), TestSuiteWorkItemsSearchModelMedianDuration medianDuration = default(TestSuiteWorkItemsSearchModelMedianDuration), bool? isAutomated = default(bool?), List<string> tags = default(List<string>), List<Guid> autoTestIds = default(List<Guid>), List<Guid> workItemVersionIds = default(List<Guid>))
         {
             this.NameOrId = nameOrId;
             this.IncludeIds = includeIds;
@@ -81,6 +82,7 @@ namespace TestIT.ApiClient.Model
             this.IsAutomated = isAutomated;
             this.Tags = tags;
             this.AutoTestIds = autoTestIds;
+            this.WorkItemVersionIds = workItemVersionIds;
         }
 
         /// <summary>
@@ -234,6 +236,13 @@ namespace TestIT.ApiClient.Model
         public List<Guid> AutoTestIds { get; set; }
 
         /// <summary>
+        /// Collection of identifiers work items versions.
+        /// </summary>
+        /// <value>Collection of identifiers work items versions.</value>
+        [DataMember(Name = "workItemVersionIds", EmitDefaultValue = true)]
+        public List<Guid> WorkItemVersionIds { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -263,6 +272,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  IsAutomated: ").Append(IsAutomated).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  AutoTestIds: ").Append(AutoTestIds).Append("\n");
+            sb.Append("  WorkItemVersionIds: ").Append(WorkItemVersionIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -421,6 +431,12 @@ namespace TestIT.ApiClient.Model
                     this.AutoTestIds != null &&
                     input.AutoTestIds != null &&
                     this.AutoTestIds.SequenceEqual(input.AutoTestIds)
+                ) && 
+                (
+                    this.WorkItemVersionIds == input.WorkItemVersionIds ||
+                    this.WorkItemVersionIds != null &&
+                    input.WorkItemVersionIds != null &&
+                    this.WorkItemVersionIds.SequenceEqual(input.WorkItemVersionIds)
                 );
         }
 
@@ -521,6 +537,10 @@ namespace TestIT.ApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.AutoTestIds.GetHashCode();
                 }
+                if (this.WorkItemVersionIds != null)
+                {
+                    hashCode = (hashCode * 59) + this.WorkItemVersionIds.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -530,7 +550,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)

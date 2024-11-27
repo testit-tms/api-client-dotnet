@@ -37,13 +37,15 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="configurationIds">Specifies a test result configuration IDs to search for.</param>
         /// <param name="outcomes">Specifies a test result outcomes to search for.</param>
+        /// <param name="statusCodes">Specifies a test result status codes to search for.</param>
         /// <param name="failureCategories">Specifies a test result failure categories to search for.</param>
         /// <param name="_namespace">Specifies a test result namespace to search for.</param>
         /// <param name="className">Specifies a test result class name to search for.</param>
-        public TestRunTestResultsSelectModelFilter(List<Guid> configurationIds = default(List<Guid>), List<TestResultOutcome> outcomes = default(List<TestResultOutcome>), List<FailureCategoryModel> failureCategories = default(List<FailureCategoryModel>), string _namespace = default(string), string className = default(string))
+        public TestRunTestResultsSelectModelFilter(List<Guid> configurationIds = default(List<Guid>), List<TestResultOutcome> outcomes = default(List<TestResultOutcome>), List<string> statusCodes = default(List<string>), List<FailureCategoryModel> failureCategories = default(List<FailureCategoryModel>), string _namespace = default(string), string className = default(string))
         {
             this.ConfigurationIds = configurationIds;
             this.Outcomes = outcomes;
+            this.StatusCodes = statusCodes;
             this.FailureCategories = failureCategories;
             this.Namespace = _namespace;
             this.ClassName = className;
@@ -61,7 +63,15 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Specifies a test result outcomes to search for</value>
         [DataMember(Name = "outcomes", EmitDefaultValue = true)]
+        [Obsolete]
         public List<TestResultOutcome> Outcomes { get; set; }
+
+        /// <summary>
+        /// Specifies a test result status codes to search for
+        /// </summary>
+        /// <value>Specifies a test result status codes to search for</value>
+        [DataMember(Name = "statusCodes", EmitDefaultValue = true)]
+        public List<string> StatusCodes { get; set; }
 
         /// <summary>
         /// Specifies a test result failure categories to search for
@@ -94,6 +104,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("class TestRunTestResultsSelectModelFilter {\n");
             sb.Append("  ConfigurationIds: ").Append(ConfigurationIds).Append("\n");
             sb.Append("  Outcomes: ").Append(Outcomes).Append("\n");
+            sb.Append("  StatusCodes: ").Append(StatusCodes).Append("\n");
             sb.Append("  FailureCategories: ").Append(FailureCategories).Append("\n");
             sb.Append("  Namespace: ").Append(Namespace).Append("\n");
             sb.Append("  ClassName: ").Append(ClassName).Append("\n");
@@ -145,6 +156,12 @@ namespace TestIT.ApiClient.Model
                     this.Outcomes.SequenceEqual(input.Outcomes)
                 ) && 
                 (
+                    this.StatusCodes == input.StatusCodes ||
+                    this.StatusCodes != null &&
+                    input.StatusCodes != null &&
+                    this.StatusCodes.SequenceEqual(input.StatusCodes)
+                ) && 
+                (
                     this.FailureCategories == input.FailureCategories ||
                     this.FailureCategories != null &&
                     input.FailureCategories != null &&
@@ -179,6 +196,10 @@ namespace TestIT.ApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.Outcomes.GetHashCode();
                 }
+                if (this.StatusCodes != null)
+                {
+                    hashCode = (hashCode * 59) + this.StatusCodes.GetHashCode();
+                }
                 if (this.FailureCategories != null)
                 {
                     hashCode = (hashCode * 59) + this.FailureCategories.GetHashCode();
@@ -200,7 +221,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Namespace (string) maxLength
             if (this.Namespace != null && this.Namespace.Length > 255)

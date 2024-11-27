@@ -57,7 +57,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="isDeleted">Is the test run is deleted (required).</param>
         /// <param name="autoTestsCount">Number of AutoTests run in the test run (required).</param>
         /// <param name="statistics">statistics (required).</param>
-        public TestRunShortGetModel(Guid id = default(Guid), string name = default(string), TestRunState state = default(TestRunState), DateTime createdDate = default(DateTime), DateTime? startedDate = default(DateTime?), DateTime? completedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), bool isDeleted = default(bool), int autoTestsCount = default(int), TestRunShortGetModelStatistics statistics = default(TestRunShortGetModelStatistics))
+        /// <param name="testResultsConfigurations">Test results configurations (required).</param>
+        public TestRunShortGetModel(Guid id = default(Guid), string name = default(string), TestRunState state = default(TestRunState), DateTime createdDate = default(DateTime), DateTime? startedDate = default(DateTime?), DateTime? completedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), bool isDeleted = default(bool), int autoTestsCount = default(int), TestRunShortGetModelStatistics statistics = default(TestRunShortGetModelStatistics), List<ConfigurationShortModel> testResultsConfigurations = default(List<ConfigurationShortModel>))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -77,6 +78,12 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("statistics is a required property for TestRunShortGetModel and cannot be null");
             }
             this.Statistics = statistics;
+            // to ensure "testResultsConfigurations" is required (not null)
+            if (testResultsConfigurations == null)
+            {
+                throw new ArgumentNullException("testResultsConfigurations is a required property for TestRunShortGetModel and cannot be null");
+            }
+            this.TestResultsConfigurations = testResultsConfigurations;
             this.StartedDate = startedDate;
             this.CompletedDate = completedDate;
             this.ModifiedById = modifiedById;
@@ -152,6 +159,13 @@ namespace TestIT.ApiClient.Model
         public TestRunShortGetModelStatistics Statistics { get; set; }
 
         /// <summary>
+        /// Test results configurations
+        /// </summary>
+        /// <value>Test results configurations</value>
+        [DataMember(Name = "testResultsConfigurations", IsRequired = true, EmitDefaultValue = true)]
+        public List<ConfigurationShortModel> TestResultsConfigurations { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -170,6 +184,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  AutoTestsCount: ").Append(AutoTestsCount).Append("\n");
             sb.Append("  Statistics: ").Append(Statistics).Append("\n");
+            sb.Append("  TestResultsConfigurations: ").Append(TestResultsConfigurations).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -256,6 +271,12 @@ namespace TestIT.ApiClient.Model
                     this.Statistics == input.Statistics ||
                     (this.Statistics != null &&
                     this.Statistics.Equals(input.Statistics))
+                ) && 
+                (
+                    this.TestResultsConfigurations == input.TestResultsConfigurations ||
+                    this.TestResultsConfigurations != null &&
+                    input.TestResultsConfigurations != null &&
+                    this.TestResultsConfigurations.SequenceEqual(input.TestResultsConfigurations)
                 );
         }
 
@@ -303,6 +324,10 @@ namespace TestIT.ApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.Statistics.GetHashCode();
                 }
+                if (this.TestResultsConfigurations != null)
+                {
+                    hashCode = (hashCode * 59) + this.TestResultsConfigurations.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -312,7 +337,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

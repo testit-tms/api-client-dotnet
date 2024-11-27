@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **IsDeleted** | **bool** | Is the test run is deleted | 
 **AutoTestsCount** | **int** | Number of AutoTests run in the test run | 
 **Statistics** | [**TestRunShortGetModelStatistics**](TestRunShortGetModelStatistics.md) |  | 
+**TestResultsConfigurations** | [**List&lt;ConfigurationShortModel&gt;**](ConfigurationShortModel.md) | Test results configurations | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

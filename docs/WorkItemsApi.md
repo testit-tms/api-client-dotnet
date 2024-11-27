@@ -30,13 +30,13 @@ All URIs are relative to *http://localhost*
 | [**RestoreWorkItem**](WorkItemsApi.md#restoreworkitem) | **POST** /api/v2/workItems/{id}/restore | Restore test case, checklist or shared steps from archive |
 | [**UpdateWorkItem**](WorkItemsApi.md#updateworkitem) | **PUT** /api/v2/workItems | Update Test Case, Checklist or Shared Step |
 
-<a name="apiv2workitemsidattachmentspost"></a>
+<a id="apiv2workitemsidattachmentspost"></a>
 # **ApiV2WorkItemsIdAttachmentsPost**
-> Guid ApiV2WorkItemsIdAttachmentsPost (Guid id, FileParameter file = null)
+> void ApiV2WorkItemsIdAttachmentsPost (Guid id, FileParameter file = null)
 
 Upload and link attachment to WorkItem
 
-<br>Use case  <br>User sets workItemId  <br>User attaches a file  <br>System creates attachment and links it to the work item  <br>System returns attachment identifier
+ Use case   User sets workItemId   User attaches a file   System creates attachment and links it to the work item   System returns attachment identifier
 
 ### Example
 ```csharp
@@ -70,8 +70,7 @@ namespace Example
             try
             {
                 // Upload and link attachment to WorkItem
-                Guid result = apiInstance.ApiV2WorkItemsIdAttachmentsPost(id, file);
-                Debug.WriteLine(result);
+                apiInstance.ApiV2WorkItemsIdAttachmentsPost(id, file);
             }
             catch (ApiException  e)
             {
@@ -91,10 +90,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Upload and link attachment to WorkItem
-    ApiResponse<Guid> response = apiInstance.ApiV2WorkItemsIdAttachmentsPostWithHttpInfo(id, file);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.ApiV2WorkItemsIdAttachmentsPostWithHttpInfo(id, file);
 }
 catch (ApiException e)
 {
@@ -113,7 +109,7 @@ catch (ApiException e)
 
 ### Return type
 
-**Guid**
+void (empty response body)
 
 ### Authorization
 
@@ -128,22 +124,24 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
+| **413** | Multipart body length limit exceeded (default constraint is one gigabyte) |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test result required |  -  |
 | **404** |  |  -  |
-| **413** | Multipart body length limit exceeded (default constraint is one gigabyte) |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
+| **200** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemsidchecklisttransformtotestcasepost"></a>
+<a id="apiv2workitemsidchecklisttransformtotestcasepost"></a>
 # **ApiV2WorkItemsIdCheckListTransformToTestCasePost**
 > WorkItemModel ApiV2WorkItemsIdCheckListTransformToTestCasePost (Guid id)
 
 Transform CheckList to TestCase
 
-<br>Use case  <br>User sets checklist identifier  <br>User runs method execution  <br>System transform CheckList to TestCase
+ Use case   User sets checklist identifier   User runs method execution   System transform CheckList to TestCase
 
 ### Example
 ```csharp
@@ -238,17 +236,18 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test library required |  -  |
 | **404** | Can&#39;t find CheckList with id |  -  |
-| **422** | Client Error |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemsidhistoryget"></a>
+<a id="apiv2workitemsidhistoryget"></a>
 # **ApiV2WorkItemsIdHistoryGet**
 > List&lt;WorkItemChangeModel&gt; ApiV2WorkItemsIdHistoryGet (Guid id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
 Get change history of WorkItem
 
-<br>Use case  <br>User sets work item identifier  <br>User runs method execution  <br>System return change history of WorkItem
+ Use case   User sets work item identifier   User runs method execution   System return change history of WorkItem
 
 ### Example
 ```csharp
@@ -353,16 +352,18 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
 | **404** | Can&#39;t find WorkItem with id |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemsidlikedelete"></a>
+<a id="apiv2workitemsidlikedelete"></a>
 # **ApiV2WorkItemsIdLikeDelete**
 > void ApiV2WorkItemsIdLikeDelete (Guid id)
 
 Delete like from WorkItem
 
-<br>Use case  <br>User sets WorkItem identifier  <br>User runs method execution  <br>System delete like from WorkItem
+ Use case   User sets WorkItem identifier   User runs method execution   System delete like from WorkItem
 
 ### Example
 ```csharp
@@ -451,16 +452,20 @@ void (empty response body)
 | **204** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemsidlikepost"></a>
+<a id="apiv2workitemsidlikepost"></a>
 # **ApiV2WorkItemsIdLikePost**
 > void ApiV2WorkItemsIdLikePost (Guid id)
 
 Set like to WorkItem
 
-<br>Use case  <br>User sets WorkItem identifier  <br>User runs method execution  <br>System set like to WorkItem
+ Use case   User sets WorkItem identifier   User runs method execution   System set like to WorkItem
 
 ### Example
 ```csharp
@@ -549,16 +554,20 @@ void (empty response body)
 | **200** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemsidlikescountget"></a>
+<a id="apiv2workitemsidlikescountget"></a>
 # **ApiV2WorkItemsIdLikesCountGet**
 > int ApiV2WorkItemsIdLikesCountGet (Guid id)
 
 Get likes count of WorkItem
 
-<br>Use case  <br>User sets WorkItem identifier  <br>User runs method execution  <br>System return likes count of WorkItem
+ Use case   User sets WorkItem identifier   User runs method execution   System return likes count of WorkItem
 
 ### Example
 ```csharp
@@ -652,16 +661,19 @@ catch (ApiException e)
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemsidlikesget"></a>
+<a id="apiv2workitemsidlikesget"></a>
 # **ApiV2WorkItemsIdLikesGet**
 > List&lt;WorkItemLikeModel&gt; ApiV2WorkItemsIdLikesGet (Guid id)
 
 Get likes of WorkItem
 
-<br>Use case  <br>User sets WorkItem identifier  <br>User runs method execution  <br>System return likes of WorkItem
+ Use case   User sets WorkItem identifier   User runs method execution   System return likes of WorkItem
 
 ### Example
 ```csharp
@@ -755,16 +767,19 @@ catch (ApiException e)
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemsidtestresultshistoryget"></a>
+<a id="apiv2workitemsidtestresultshistoryget"></a>
 # **ApiV2WorkItemsIdTestResultsHistoryGet**
-> List&lt;TestResultHistoryReportModel&gt; ApiV2WorkItemsIdTestResultsHistoryGet (Guid id, DateTime? from = null, DateTime? to = null, List<Guid> configurationIds = null, List<Guid> testPlanIds = null, List<Guid> userIds = null, List<string> outcomes = null, bool? isAutomated = null, bool? automated = null, List<Guid> testRunIds = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
+> List&lt;TestResultHistoryResponse&gt; ApiV2WorkItemsIdTestResultsHistoryGet (Guid id, DateTime? from = null, DateTime? to = null, List<Guid> configurationIds = null, List<Guid> testPlanIds = null, List<Guid> userIds = null, List<string> outcomes = null, bool? isAutomated = null, bool? automated = null, List<Guid> testRunIds = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
 Get test results history of WorkItem
 
-<br>Use case  <br>User sets WorkItem identifier  <br>User runs method execution  <br>System return test results history of WorkItem
+ Use case   User sets WorkItem identifier   User runs method execution   System return test results history of WorkItem
 
 ### Example
 ```csharp
@@ -811,7 +826,7 @@ namespace Example
             try
             {
                 // Get test results history of WorkItem
-                List<TestResultHistoryReportModel> result = apiInstance.ApiV2WorkItemsIdTestResultsHistoryGet(id, from, to, configurationIds, testPlanIds, userIds, outcomes, isAutomated, automated, testRunIds, skip, take, orderBy, searchField, searchValue);
+                List<TestResultHistoryResponse> result = apiInstance.ApiV2WorkItemsIdTestResultsHistoryGet(id, from, to, configurationIds, testPlanIds, userIds, outcomes, isAutomated, automated, testRunIds, skip, take, orderBy, searchField, searchValue);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -832,7 +847,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get test results history of WorkItem
-    ApiResponse<List<TestResultHistoryReportModel>> response = apiInstance.ApiV2WorkItemsIdTestResultsHistoryGetWithHttpInfo(id, from, to, configurationIds, testPlanIds, userIds, outcomes, isAutomated, automated, testRunIds, skip, take, orderBy, searchField, searchValue);
+    ApiResponse<List<TestResultHistoryResponse>> response = apiInstance.ApiV2WorkItemsIdTestResultsHistoryGetWithHttpInfo(id, from, to, configurationIds, testPlanIds, userIds, outcomes, isAutomated, automated, testRunIds, skip, take, orderBy, searchField, searchValue);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -867,7 +882,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;TestResultHistoryReportModel&gt;**](TestResultHistoryReportModel.md)
+[**List&lt;TestResultHistoryResponse&gt;**](TestResultHistoryResponse.md)
 
 ### Authorization
 
@@ -886,16 +901,19 @@ catch (ApiException e)
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemsidversionversionidactualpost"></a>
+<a id="apiv2workitemsidversionversionidactualpost"></a>
 # **ApiV2WorkItemsIdVersionVersionIdActualPost**
 > WorkItemModel ApiV2WorkItemsIdVersionVersionIdActualPost (Guid id, Guid versionId)
 
 Set WorkItem as actual
 
-<br>Use case  <br>User sets work item identifier  <br>User runs method execution  <br>System set WorkItem as actual
+ Use case   User sets work item identifier   User runs method execution   System set WorkItem as actual
 
 ### Example
 ```csharp
@@ -992,16 +1010,18 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test library required |  -  |
 | **404** | Can&#39;t find WorkItem with id |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemsmovepost"></a>
+<a id="apiv2workitemsmovepost"></a>
 # **ApiV2WorkItemsMovePost**
 > WorkItemShortModel ApiV2WorkItemsMovePost (ApiV2WorkItemsMovePostRequest apiV2WorkItemsMovePostRequest = null)
 
 Move WorkItem to another section
 
-<br>Use case  <br>User sets WorkItem identifier  <br>User runs method execution  <br>System move WorkItem to another section
+ Use case   User sets WorkItem identifier   User runs method execution   System move WorkItem to another section
 
 ### Example
 ```csharp
@@ -1095,12 +1115,15 @@ catch (ApiException e)
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test library required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemssearchpost"></a>
+<a id="apiv2workitemssearchpost"></a>
 # **ApiV2WorkItemsSearchPost**
-> List&lt;WorkItemShortModel&gt; ApiV2WorkItemsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = null)
+> List&lt;WorkItemShortModel&gt; ApiV2WorkItemsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, AddTestPointsWithSectionsRequest addTestPointsWithSectionsRequest = null)
 
 Search for work items
 
@@ -1135,12 +1158,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var apiV2ProjectsProjectIdWorkItemsSearchPostRequest = new ApiV2ProjectsProjectIdWorkItemsSearchPostRequest(); // ApiV2ProjectsProjectIdWorkItemsSearchPostRequest |  (optional) 
+            var addTestPointsWithSectionsRequest = new AddTestPointsWithSectionsRequest(); // AddTestPointsWithSectionsRequest |  (optional) 
 
             try
             {
                 // Search for work items
-                List<WorkItemShortModel> result = apiInstance.ApiV2WorkItemsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdWorkItemsSearchPostRequest);
+                List<WorkItemShortModel> result = apiInstance.ApiV2WorkItemsSearchPost(skip, take, orderBy, searchField, searchValue, addTestPointsWithSectionsRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1161,7 +1184,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for work items
-    ApiResponse<List<WorkItemShortModel>> response = apiInstance.ApiV2WorkItemsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdWorkItemsSearchPostRequest);
+    ApiResponse<List<WorkItemShortModel>> response = apiInstance.ApiV2WorkItemsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, addTestPointsWithSectionsRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1183,7 +1206,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **apiV2ProjectsProjectIdWorkItemsSearchPostRequest** | [**ApiV2ProjectsProjectIdWorkItemsSearchPostRequest**](ApiV2ProjectsProjectIdWorkItemsSearchPostRequest.md) |  | [optional]  |
+| **addTestPointsWithSectionsRequest** | [**AddTestPointsWithSectionsRequest**](AddTestPointsWithSectionsRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -1202,18 +1225,23 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **200** | OK |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
 | **403** | Test library read permission for all requested projects is required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemssharedstepidreferencessectionspost"></a>
+<a id="apiv2workitemssharedstepidreferencessectionspost"></a>
 # **ApiV2WorkItemsSharedStepIdReferencesSectionsPost**
 > List&lt;SharedStepReferenceSectionModel&gt; ApiV2WorkItemsSharedStepIdReferencesSectionsPost (Guid sharedStepId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest = null)
 
 Get SharedStep references in sections
 
-<br>Use case  <br>User sets SharedStep identifier  <br>User runs method execution  <br>System return SharedStep references
+ Use case   User sets SharedStep identifier   User runs method execution   System return SharedStep references
 
 ### Example
 ```csharp
@@ -1316,18 +1344,22 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Can&#39;t find SharedStep with id |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemssharedstepidreferencesworkitemspost"></a>
+<a id="apiv2workitemssharedstepidreferencesworkitemspost"></a>
 # **ApiV2WorkItemsSharedStepIdReferencesWorkItemsPost**
 > List&lt;SharedStepReferenceModel&gt; ApiV2WorkItemsSharedStepIdReferencesWorkItemsPost (Guid sharedStepId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest = null)
 
 Get SharedStep references in work items
 
-<br>Use case  <br>User sets SharedStep identifier  <br>User runs method execution  <br>System return SharedStep references
+ Use case   User sets SharedStep identifier   User runs method execution   System return SharedStep references
 
 ### Example
 ```csharp
@@ -1430,18 +1462,22 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Can&#39;t find SharedStep with id |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="apiv2workitemssharedstepssharedstepidreferencesget"></a>
+<a id="apiv2workitemssharedstepssharedstepidreferencesget"></a>
 # **ApiV2WorkItemsSharedStepsSharedStepIdReferencesGet**
 > List&lt;SharedStepReferenceModel&gt; ApiV2WorkItemsSharedStepsSharedStepIdReferencesGet (Guid sharedStepId)
 
 Get SharedStep references
 
-<br>Use case  <br>User sets SharedStep identifier  <br>User runs method execution  <br>System return SharedStep references
+ Use case   User sets SharedStep identifier   User runs method execution   System return SharedStep references
 
 ### Example
 ```csharp
@@ -1534,17 +1570,20 @@ catch (ApiException e)
 | **200** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Can&#39;t find SharedStep with id |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createworkitem"></a>
+<a id="createworkitem"></a>
 # **CreateWorkItem**
 > WorkItemModel CreateWorkItem (CreateWorkItemRequest createWorkItemRequest = null)
 
 Create Test Case, Checklist or Shared Step
 
-<br>Use case  <br>User sets work item properties (listed in request parameters)  <br>User runs method execution  <br>System creates work item by identifier  <br>System returns work item model (listed in response parameters)
+ Use case   User sets work item properties (listed in request parameters)   User runs method execution   System creates work item by identifier   System returns work item model (listed in response parameters)
 
 ### Example
 ```csharp
@@ -1635,20 +1674,22 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Successful operation |  -  |
-| **400** | &lt;br&gt;Field is required  &lt;br&gt;Priority is not a valid  &lt;br&gt;Tags must be set  &lt;br&gt;Duration should be a positive number  &lt;br&gt;Should be empty for CheckList  &lt;br&gt;Attribute value must be a valid guid for user scheme  &lt;br&gt;There is no option in ProjectAttributesScheme with such Id  &lt;br&gt;Attribute value must be a valid guid for options scheme |  -  |
+| **400** |  Field is required   Priority is not a valid   Tags must be set   Duration should be a positive number   Should be empty for CheckList   Attribute value must be a valid guid for user scheme   There is no option in ProjectAttributesScheme with such Id   Attribute value must be a valid guid for options scheme |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test library required |  -  |
-| **404** | &lt;br&gt;Can&#39;t find section  &lt;br&gt;Can&#39;t find project  &lt;br&gt;Can&#39;t find attachmentIds  &lt;br&gt;Project not found  &lt;br&gt;Can&#39;t attributesScheme  &lt;br&gt;Can&#39;t attribute  &lt;br&gt;AutoTestIds not exist in project |  -  |
+| **404** |  Can&#39;t find section   Can&#39;t find project   Can&#39;t find attachmentIds   Project not found   Can&#39;t attributesScheme   Can&#39;t attribute   AutoTestIds not exist in project |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleteallworkitemsfromautotest"></a>
+<a id="deleteallworkitemsfromautotest"></a>
 # **DeleteAllWorkItemsFromAutoTest**
 > void DeleteAllWorkItemsFromAutoTest (string id)
 
 Delete all links AutoTests from WorkItem by Id or GlobalId
 
-<br>Use case  <br>User sets work item identifier  <br>User runs method execution  <br>System search work item by identifier  <br>System search and delete all autotests, related to found work item  <br>System returns no content response
+ Use case   User sets work item identifier   User runs method execution   System search work item by identifier   System search and delete all autotests, related to found work item   System returns no content response
 
 ### Example
 ```csharp
@@ -1739,17 +1780,19 @@ void (empty response body)
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test library required |  -  |
 | **404** | Can&#39;t find a WorkItem with workItemId |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 | **200** | Successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleteworkitem"></a>
+<a id="deleteworkitem"></a>
 # **DeleteWorkItem**
 > void DeleteWorkItem (string id)
 
 Delete Test Case, Checklist or Shared Step by Id or GlobalId
 
-<br>Use case  <br>User sets work item identifier  <br>User runs method execution  <br>System deletes work item  <br>System returns no content response
+ Use case   User sets work item identifier   User runs method execution   System deletes work item   System returns no content response
 
 ### Example
 ```csharp
@@ -1840,17 +1883,18 @@ void (empty response body)
 | **401** | Unauthorized |  -  |
 | **403** | Delete permission for test library required |  -  |
 | **404** | Can&#39;t find a WorkItem with id |  -  |
+| **409** | Conflict |  -  |
 | **422** | Could not delete Shared Step that has references |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getautotestsforworkitem"></a>
+<a id="getautotestsforworkitem"></a>
 # **GetAutoTestsForWorkItem**
 > List&lt;AutoTestModel&gt; GetAutoTestsForWorkItem (string id)
 
 Get all AutoTests linked to WorkItem by Id or GlobalId
 
-<br>Use case  <br>User sets work item identifier  <br>User runs method execution  <br>System search work item by identifier  <br>System search all autotests, related to found work item  <br>System returns list of found autotests
+ Use case   User sets work item identifier   User runs method execution   System search work item by identifier   System search all autotests, related to found work item   System returns list of found autotests
 
 ### Example
 ```csharp
@@ -1945,10 +1989,12 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
 | **404** | Can&#39;t find WorkItem with workItemId |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getiterations"></a>
+<a id="getiterations"></a>
 # **GetIterations**
 > List&lt;IterationModel&gt; GetIterations (string id, Guid? versionId = null, int? versionNumber = null)
 
@@ -2047,20 +2093,22 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
-| **404** | Can&#39;t find workItem with id |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
+| **404** | Can&#39;t find workItem with id |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getworkitembyid"></a>
+<a id="getworkitembyid"></a>
 # **GetWorkItemById**
 > WorkItemModel GetWorkItemById (string id, Guid? versionId = null, int? versionNumber = null)
 
 Get Test Case, Checklist or Shared Step by Id or GlobalId
 
-<br>Use case  <br>User sets work item identifier  <br>[Optional] User sets work item version identifier  <br>[Optional] User sets work item version number  <br>User runs method execution  <br>System search work item by identifier  <br>[Optional] if User sets work item version identifier, system search work item version by identifier.  <br>[Optional] if user sets work item version number, system search work item version by number  <br>Otherwise, system search last work item version  <br>System returns work item 
+ Use case   User sets work item identifier   [Optional] User sets work item version identifier   [Optional] User sets work item version number   User runs method execution   System search work item by identifier   [Optional] if User sets work item version identifier, system search work item version by identifier.   [Optional] if user sets work item version number, system search work item version by number   Otherwise, system search last work item version   System returns work item 
 
 ### Example
 ```csharp
@@ -2159,16 +2207,18 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
 | **404** | Can&#39;t find workItem with id |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getworkitemchronology"></a>
+<a id="getworkitemchronology"></a>
 # **GetWorkItemChronology**
 > List&lt;TestResultChronologyModel&gt; GetWorkItemChronology (string id)
 
 Get WorkItem chronology by Id or GlobalId
 
-<br>Use case  <br>User sets work item identifier  <br>User runs method execution  <br>System search work item by identifier  <br>System search test results of all autotests, related to found work item  <br>System sort results by CompletedOn ascending, then by CreatedDate ascending  <br>System returns sorted collection of test results
+ Use case   User sets work item identifier   User runs method execution   System search work item by identifier   System search test results of all autotests, related to found work item   System sort results by CompletedOn ascending, then by CreatedDate ascending   System returns sorted collection of test results
 
 ### Example
 ```csharp
@@ -2263,16 +2313,18 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
 | **404** | Can&#39;t find WorkItem with workItemId |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getworkitemversions"></a>
+<a id="getworkitemversions"></a>
 # **GetWorkItemVersions**
 > List&lt;WorkItemVersionModel&gt; GetWorkItemVersions (string id, Guid? workItemVersionId = null, int? versionNumber = null)
 
 Get WorkItem versions
 
-<br>Use case  <br>User sets work item identifier  <br>[Optional] User sets work item version identifier  <br>User runs method execution  <br>System search work item by identifier  <br>                      [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item                    <br>System returns array of work item version models (listed in response example)
+ Use case   User sets work item identifier   [Optional] User sets work item version identifier   User runs method execution   System search work item by identifier                         [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item                     System returns array of work item version models (listed in response example)
 
 ### Example
 ```csharp
@@ -2371,10 +2423,12 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library required |  -  |
 | **404** | Can&#39;t find WorkItem with workItemId |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="purgeworkitem"></a>
+<a id="purgeworkitem"></a>
 # **PurgeWorkItem**
 > void PurgeWorkItem (string id)
 
@@ -2467,13 +2521,14 @@ void (empty response body)
 | **204** | No Content |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
-| **403** | Delete permission for test library is required |  -  |
+| **403** | Delete permission for the archive is required |  -  |
 | **404** | Not Found |  -  |
-| **422** | Client Error |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="restoreworkitem"></a>
+<a id="restoreworkitem"></a>
 # **RestoreWorkItem**
 > void RestoreWorkItem (string id)
 
@@ -2563,21 +2618,23 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
-| **403** | Update permission for test library is required |  -  |
+| **403** | Update permission for the archive is required |  -  |
 | **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updateworkitem"></a>
+<a id="updateworkitem"></a>
 # **UpdateWorkItem**
 > void UpdateWorkItem (UpdateWorkItemRequest updateWorkItemRequest = null)
 
 Update Test Case, Checklist or Shared Step
 
-<br>Use case  <br>User sets work item properties (listed in request parameters)  <br>User runs method execution  <br>System updates work item by identifier  <br>System returns updated work item model (listed in response parameters)
+ Use case   User sets work item properties (listed in request parameters)   User runs method execution   System updates work item by identifier   System returns updated work item model (listed in response parameters)
 
 ### Example
 ```csharp
@@ -2664,10 +2721,12 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
-| **400** | &lt;br&gt;Field is required  &lt;br&gt;Priority is not a valid  &lt;br&gt;duration should be a positive number  &lt;br&gt;should be empty for CheckList  &lt;br&gt;There is no option in ProjectAttributesScheme with such Id  &lt;br&gt;Attribute value must be a valid guid for options scheme |  -  |
+| **400** |  Field is required   Priority is not a valid   duration should be a positive number   should be empty for CheckList   There is no option in ProjectAttributesScheme with such Id   Attribute value must be a valid guid for options scheme |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test library required |  -  |
-| **404** | &lt;br&gt;WorkItem not found  &lt;br&gt;Can&#39;t find section  &lt;br&gt;Can&#39;t attributesScheme  &lt;br&gt;Can&#39;t attribute  &lt;br&gt;AutoTestIds not exist in project |  -  |
+| **404** |  WorkItem not found   Can&#39;t find section   Can&#39;t attributesScheme   Can&#39;t attribute   AutoTestIds not exist in project |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **SectionId** | **Guid** | Unique ID of section where work item the test point represents is located | 
 **SectionName** | **string** | Name of section where work item the test point represents is located | [optional] 
 **ProjectId** | **Guid** | Unique ID of the test point project | 
-**LastTestResult** | [**TestPointShortGetModelLastTestResult**](TestPointShortGetModelLastTestResult.md) |  | 
+**LastTestResult** | [**LastTestResultModel**](LastTestResultModel.md) |  | 
 **IterationId** | **Guid** | Unique ID of work item iteration the test point represents | 
 **WorkItemState** | **WorkItemState** |  | 
 **WorkItemCreatedById** | **Guid** | Unique ID of the work item creator | 

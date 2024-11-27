@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **Links** | [**List&lt;LinkModel&gt;**](LinkModel.md) |  | 
 **CustomParameters** | **Dictionary&lt;string, string&gt;** |  | [optional] 
 **Webhooks** | [**List&lt;NamedEntityModel&gt;**](NamedEntityModel.md) |  | 
+**RunCount** | **int** |  | 
 **Id** | **Guid** |  | 
 **Name** | **string** |  | 
 **Description** | **string** |  | [optional] 
