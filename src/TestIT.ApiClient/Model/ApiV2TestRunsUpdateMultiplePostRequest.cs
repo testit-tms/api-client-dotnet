@@ -41,10 +41,10 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="ApiV2TestRunsUpdateMultiplePostRequest" /> class.
         /// </summary>
         /// <param name="selectModel">selectModel (required).</param>
-        /// <param name="description">description.</param>
-        /// <param name="attachmentUpdateScheme">attachmentUpdateScheme (required).</param>
-        /// <param name="linkUpdateScheme">linkUpdateScheme (required).</param>
-        public ApiV2TestRunsUpdateMultiplePostRequest(TestRunSelectionModel selectModel = default(TestRunSelectionModel), string description = default(string), SetOfAttachmentIds attachmentUpdateScheme = default(SetOfAttachmentIds), SetOfLinks linkUpdateScheme = default(SetOfLinks))
+        /// <param name="description">Test run description.</param>
+        /// <param name="attachmentUpdateScheme">attachmentUpdateScheme.</param>
+        /// <param name="linkUpdateScheme">linkUpdateScheme.</param>
+        public ApiV2TestRunsUpdateMultiplePostRequest(UpdateMultipleTestRunsApiModelSelectModel selectModel = default(UpdateMultipleTestRunsApiModelSelectModel), string description = default(string), UpdateMultipleTestRunsApiModelAttachmentUpdateScheme attachmentUpdateScheme = default(UpdateMultipleTestRunsApiModelAttachmentUpdateScheme), UpdateMultipleTestRunsApiModelLinkUpdateScheme linkUpdateScheme = default(UpdateMultipleTestRunsApiModelLinkUpdateScheme))
         {
             // to ensure "selectModel" is required (not null)
             if (selectModel == null)
@@ -52,44 +52,35 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("selectModel is a required property for ApiV2TestRunsUpdateMultiplePostRequest and cannot be null");
             }
             this.SelectModel = selectModel;
-            // to ensure "attachmentUpdateScheme" is required (not null)
-            if (attachmentUpdateScheme == null)
-            {
-                throw new ArgumentNullException("attachmentUpdateScheme is a required property for ApiV2TestRunsUpdateMultiplePostRequest and cannot be null");
-            }
-            this.AttachmentUpdateScheme = attachmentUpdateScheme;
-            // to ensure "linkUpdateScheme" is required (not null)
-            if (linkUpdateScheme == null)
-            {
-                throw new ArgumentNullException("linkUpdateScheme is a required property for ApiV2TestRunsUpdateMultiplePostRequest and cannot be null");
-            }
-            this.LinkUpdateScheme = linkUpdateScheme;
             this.Description = description;
+            this.AttachmentUpdateScheme = attachmentUpdateScheme;
+            this.LinkUpdateScheme = linkUpdateScheme;
         }
 
         /// <summary>
         /// Gets or Sets SelectModel
         /// </summary>
         [DataMember(Name = "selectModel", IsRequired = true, EmitDefaultValue = true)]
-        public TestRunSelectionModel SelectModel { get; set; }
+        public UpdateMultipleTestRunsApiModelSelectModel SelectModel { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Test run description
         /// </summary>
+        /// <value>Test run description</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets AttachmentUpdateScheme
         /// </summary>
-        [DataMember(Name = "attachmentUpdateScheme", IsRequired = true, EmitDefaultValue = true)]
-        public SetOfAttachmentIds AttachmentUpdateScheme { get; set; }
+        [DataMember(Name = "attachmentUpdateScheme", EmitDefaultValue = true)]
+        public UpdateMultipleTestRunsApiModelAttachmentUpdateScheme AttachmentUpdateScheme { get; set; }
 
         /// <summary>
         /// Gets or Sets LinkUpdateScheme
         /// </summary>
-        [DataMember(Name = "linkUpdateScheme", IsRequired = true, EmitDefaultValue = true)]
-        public SetOfLinks LinkUpdateScheme { get; set; }
+        [DataMember(Name = "linkUpdateScheme", EmitDefaultValue = true)]
+        public UpdateMultipleTestRunsApiModelLinkUpdateScheme LinkUpdateScheme { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

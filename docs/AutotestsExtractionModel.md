@@ -1,10 +1,10 @@
-# TestIT.ApiClient.Model.AutotestsExtractionModel
+# TestIT.ApiClient.Model.AutoTestsExtractionModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Ids** | [**AutotestsExtractionModelIds**](AutotestsExtractionModelIds.md) |  | [optional] 
+**Ids** | [**GuidExtractionModel**](GuidExtractionModel.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

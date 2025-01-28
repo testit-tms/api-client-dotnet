@@ -36,7 +36,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Outcome
         /// </summary>
-        [DataMember(Name = "outcome", EmitDefaultValue = false)]
+        [DataMember(Name = "outcome", EmitDefaultValue = true)]
         public TestResultOutcome? Outcome { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TestResultUpdateV2Request" /> class.

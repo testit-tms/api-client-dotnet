@@ -44,22 +44,16 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedDate">modifiedDate.</param>
         /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
-        /// <param name="data">data (required).</param>
+        /// <param name="data">data.</param>
         /// <param name="projectId">projectId (required).</param>
         /// <param name="fieldsToShow">fieldsToShow.</param>
         /// <param name="name">name (required).</param>
         /// <param name="id">Unique ID of the entity (required).</param>
         /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
-        public FilterModel(DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), FilterModelData data = default(FilterModelData), Guid projectId = default(Guid), Object fieldsToShow = default(Object), string name = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
+        public FilterModel(DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), WorkItemSearchQueryModel data = default(WorkItemSearchQueryModel), Guid projectId = default(Guid), Object fieldsToShow = default(Object), string name = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
         {
             this.CreatedDate = createdDate;
             this.CreatedById = createdById;
-            // to ensure "data" is required (not null)
-            if (data == null)
-            {
-                throw new ArgumentNullException("data is a required property for FilterModel and cannot be null");
-            }
-            this.Data = data;
             this.ProjectId = projectId;
             // to ensure "name" is required (not null)
             if (name == null)
@@ -71,6 +65,7 @@ namespace TestIT.ApiClient.Model
             this.IsDeleted = isDeleted;
             this.ModifiedDate = modifiedDate;
             this.ModifiedById = modifiedById;
+            this.Data = data;
             this.FieldsToShow = fieldsToShow;
         }
 
@@ -101,8 +96,8 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
-        [DataMember(Name = "data", IsRequired = true, EmitDefaultValue = true)]
-        public FilterModelData Data { get; set; }
+        [DataMember(Name = "data", EmitDefaultValue = true)]
+        public WorkItemSearchQueryModel Data { get; set; }
 
         /// <summary>
         /// Gets or Sets ProjectId

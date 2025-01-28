@@ -11,7 +11,7 @@ All URIs are relative to *http://localhost*
 
 <a id="apiv2testpointsidtestrunsget"></a>
 # **ApiV2TestPointsIdTestRunsGet**
-> List&lt;TestRunModel&gt; ApiV2TestPointsIdTestRunsGet (Guid id)
+> List&lt;TestRunApiResult&gt; ApiV2TestPointsIdTestRunsGet (Guid id)
 
 Get all test runs which use test point
 
@@ -46,7 +46,7 @@ namespace Example
             try
             {
                 // Get all test runs which use test point
-                List<TestRunModel> result = apiInstance.ApiV2TestPointsIdTestRunsGet(id);
+                List<TestRunApiResult> result = apiInstance.ApiV2TestPointsIdTestRunsGet(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -67,7 +67,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get all test runs which use test point
-    ApiResponse<List<TestRunModel>> response = apiInstance.ApiV2TestPointsIdTestRunsGetWithHttpInfo(id);
+    ApiResponse<List<TestRunApiResult>> response = apiInstance.ApiV2TestPointsIdTestRunsGetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -88,7 +88,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;TestRunModel&gt;**](TestRunModel.md)
+[**List&lt;TestRunApiResult&gt;**](TestRunApiResult.md)
 
 ### Authorization
 
@@ -333,7 +333,7 @@ catch (ApiException e)
 
 <a id="apiv2testpointssearchpost"></a>
 # **ApiV2TestPointsSearchPost**
-> List&lt;TestPointShortGetModel&gt; ApiV2TestPointsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = null)
+> List&lt;TestPointShortResponseModel&gt; ApiV2TestPointsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = null)
 
 Search for test points
 
@@ -373,7 +373,7 @@ namespace Example
             try
             {
                 // Search for test points
-                List<TestPointShortGetModel> result = apiInstance.ApiV2TestPointsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2TestPointsSearchPostRequest);
+                List<TestPointShortResponseModel> result = apiInstance.ApiV2TestPointsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2TestPointsSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -394,7 +394,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for test points
-    ApiResponse<List<TestPointShortGetModel>> response = apiInstance.ApiV2TestPointsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2TestPointsSearchPostRequest);
+    ApiResponse<List<TestPointShortResponseModel>> response = apiInstance.ApiV2TestPointsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2TestPointsSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -420,7 +420,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;TestPointShortGetModel&gt;**](TestPointShortGetModel.md)
+[**List&lt;TestPointShortResponseModel&gt;**](TestPointShortResponseModel.md)
 
 ### Authorization
 

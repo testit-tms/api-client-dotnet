@@ -37,14 +37,16 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="name">name.</param>
         /// <param name="states">states.</param>
+        /// <param name="statusCodes">statusCodes.</param>
         /// <param name="startedDate">startedDate.</param>
         /// <param name="completedDate">completedDate.</param>
         /// <param name="createdByIds">createdByIds.</param>
         /// <param name="modifiedByIds">modifiedByIds.</param>
-        public ApiV2TestPlansIdTestRunsSearchPostRequest(string name = default(string), List<TestRunState> states = default(List<TestRunState>), DateTimeRangeSelectorModel startedDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel completedDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>))
+        public ApiV2TestPlansIdTestRunsSearchPostRequest(string name = default(string), List<TestRunState> states = default(List<TestRunState>), List<string> statusCodes = default(List<string>), DateTimeRangeSelectorModel startedDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel completedDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>))
         {
             this.Name = name;
             this.States = states;
+            this.StatusCodes = statusCodes;
             this.StartedDate = startedDate;
             this.CompletedDate = completedDate;
             this.CreatedByIds = createdByIds;
@@ -61,7 +63,14 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets States
         /// </summary>
         [DataMember(Name = "states", EmitDefaultValue = true)]
+        [Obsolete]
         public List<TestRunState> States { get; set; }
+
+        /// <summary>
+        /// Gets or Sets StatusCodes
+        /// </summary>
+        [DataMember(Name = "statusCodes", EmitDefaultValue = true)]
+        public List<string> StatusCodes { get; set; }
 
         /// <summary>
         /// Gets or Sets StartedDate
@@ -97,6 +106,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("class ApiV2TestPlansIdTestRunsSearchPostRequest {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  States: ").Append(States).Append("\n");
+            sb.Append("  StatusCodes: ").Append(StatusCodes).Append("\n");
             sb.Append("  StartedDate: ").Append(StartedDate).Append("\n");
             sb.Append("  CompletedDate: ").Append(CompletedDate).Append("\n");
             sb.Append("  CreatedByIds: ").Append(CreatedByIds).Append("\n");
@@ -148,6 +158,12 @@ namespace TestIT.ApiClient.Model
                     this.States.SequenceEqual(input.States)
                 ) && 
                 (
+                    this.StatusCodes == input.StatusCodes ||
+                    this.StatusCodes != null &&
+                    input.StatusCodes != null &&
+                    this.StatusCodes.SequenceEqual(input.StatusCodes)
+                ) && 
+                (
                     this.StartedDate == input.StartedDate ||
                     (this.StartedDate != null &&
                     this.StartedDate.Equals(input.StartedDate))
@@ -187,6 +203,10 @@ namespace TestIT.ApiClient.Model
                 if (this.States != null)
                 {
                     hashCode = (hashCode * 59) + this.States.GetHashCode();
+                }
+                if (this.StatusCodes != null)
+                {
+                    hashCode = (hashCode * 59) + this.StatusCodes.GetHashCode();
                 }
                 if (this.StartedDate != null)
                 {

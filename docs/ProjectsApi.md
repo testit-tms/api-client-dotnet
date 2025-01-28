@@ -1268,7 +1268,7 @@ catch (ApiException e)
 
 <a id="apiv2projectsidtestrunsfullget"></a>
 # **ApiV2ProjectsIdTestRunsFullGet**
-> List&lt;TestRunModel&gt; ApiV2ProjectsIdTestRunsFullGet (string id, bool? includeTestResults = null, bool? mustAggregateTestResults = null, bool? notStarted = null, bool? inProgress = null, bool? stopped = null, bool? completed = null, DateTime? createdDateFrom = null, DateTime? createdDateTo = null, Guid? testPlanId = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
+> List&lt;TestRunApiResult&gt; ApiV2ProjectsIdTestRunsFullGet (string id, bool? includeTestResults = null, bool? mustAggregateTestResults = null, bool? notStarted = null, bool? inProgress = null, bool? stopped = null, bool? completed = null, DateTime? createdDateFrom = null, DateTime? createdDateTo = null, Guid? testPlanId = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
 Get Project TestRuns full models
 
@@ -1301,8 +1301,8 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
-            var includeTestResults = false;  // bool? |  (optional)  (default to false)
-            var mustAggregateTestResults = true;  // bool? |  (optional)  (default to true)
+            var includeTestResults = true;  // bool? |  (optional) 
+            var mustAggregateTestResults = true;  // bool? |  (optional) 
             var notStarted = true;  // bool? |  (optional) 
             var inProgress = true;  // bool? |  (optional) 
             var stopped = true;  // bool? |  (optional) 
@@ -1319,7 +1319,7 @@ namespace Example
             try
             {
                 // Get Project TestRuns full models
-                List<TestRunModel> result = apiInstance.ApiV2ProjectsIdTestRunsFullGet(id, includeTestResults, mustAggregateTestResults, notStarted, inProgress, stopped, completed, createdDateFrom, createdDateTo, testPlanId, skip, take, orderBy, searchField, searchValue);
+                List<TestRunApiResult> result = apiInstance.ApiV2ProjectsIdTestRunsFullGet(id, includeTestResults, mustAggregateTestResults, notStarted, inProgress, stopped, completed, createdDateFrom, createdDateTo, testPlanId, skip, take, orderBy, searchField, searchValue);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1340,7 +1340,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get Project TestRuns full models
-    ApiResponse<List<TestRunModel>> response = apiInstance.ApiV2ProjectsIdTestRunsFullGetWithHttpInfo(id, includeTestResults, mustAggregateTestResults, notStarted, inProgress, stopped, completed, createdDateFrom, createdDateTo, testPlanId, skip, take, orderBy, searchField, searchValue);
+    ApiResponse<List<TestRunApiResult>> response = apiInstance.ApiV2ProjectsIdTestRunsFullGetWithHttpInfo(id, includeTestResults, mustAggregateTestResults, notStarted, inProgress, stopped, completed, createdDateFrom, createdDateTo, testPlanId, skip, take, orderBy, searchField, searchValue);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1358,8 +1358,8 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Project internal (UUID) or global (integer) identifier |  |
-| **includeTestResults** | **bool?** |  | [optional] [default to false] |
-| **mustAggregateTestResults** | **bool?** |  | [optional] [default to true] |
+| **includeTestResults** | **bool?** |  | [optional]  |
+| **mustAggregateTestResults** | **bool?** |  | [optional]  |
 | **notStarted** | **bool?** |  | [optional]  |
 | **inProgress** | **bool?** |  | [optional]  |
 | **stopped** | **bool?** |  | [optional]  |
@@ -1375,7 +1375,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;TestRunModel&gt;**](TestRunModel.md)
+[**List&lt;TestRunApiResult&gt;**](TestRunApiResult.md)
 
 ### Authorization
 
@@ -2471,7 +2471,7 @@ catch (ApiException e)
 
 <a id="gettestrunsbyprojectid"></a>
 # **GetTestRunsByProjectId**
-> List&lt;TestRunV2GetModel&gt; GetTestRunsByProjectId (string id, bool? notStarted = null, bool? inProgress = null, bool? stopped = null, bool? completed = null, DateTime? createdDateFrom = null, DateTime? createdDateTo = null, Guid? testPlanId = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
+> List&lt;TestRunV2ApiResult&gt; GetTestRunsByProjectId (string id, bool notStarted, bool inProgress, bool stopped, bool completed, DateTime? createdDateFrom = null, DateTime? createdDateTo = null, Guid? testPlanId = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
 Get project test runs
 
@@ -2504,10 +2504,10 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
-            var notStarted = true;  // bool? |  (optional) 
-            var inProgress = true;  // bool? |  (optional) 
-            var stopped = true;  // bool? |  (optional) 
-            var completed = true;  // bool? |  (optional) 
+            var notStarted = true;  // bool | 
+            var inProgress = true;  // bool | 
+            var stopped = true;  // bool | 
+            var completed = true;  // bool | 
             var createdDateFrom = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
             var createdDateTo = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
             var testPlanId = "testPlanId_example";  // Guid? |  (optional) 
@@ -2520,7 +2520,7 @@ namespace Example
             try
             {
                 // Get project test runs
-                List<TestRunV2GetModel> result = apiInstance.GetTestRunsByProjectId(id, notStarted, inProgress, stopped, completed, createdDateFrom, createdDateTo, testPlanId, skip, take, orderBy, searchField, searchValue);
+                List<TestRunV2ApiResult> result = apiInstance.GetTestRunsByProjectId(id, notStarted, inProgress, stopped, completed, createdDateFrom, createdDateTo, testPlanId, skip, take, orderBy, searchField, searchValue);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2541,7 +2541,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get project test runs
-    ApiResponse<List<TestRunV2GetModel>> response = apiInstance.GetTestRunsByProjectIdWithHttpInfo(id, notStarted, inProgress, stopped, completed, createdDateFrom, createdDateTo, testPlanId, skip, take, orderBy, searchField, searchValue);
+    ApiResponse<List<TestRunV2ApiResult>> response = apiInstance.GetTestRunsByProjectIdWithHttpInfo(id, notStarted, inProgress, stopped, completed, createdDateFrom, createdDateTo, testPlanId, skip, take, orderBy, searchField, searchValue);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -2559,10 +2559,10 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Project internal (UUID) or global (integer) identifier |  |
-| **notStarted** | **bool?** |  | [optional]  |
-| **inProgress** | **bool?** |  | [optional]  |
-| **stopped** | **bool?** |  | [optional]  |
-| **completed** | **bool?** |  | [optional]  |
+| **notStarted** | **bool** |  |  |
+| **inProgress** | **bool** |  |  |
+| **stopped** | **bool** |  |  |
+| **completed** | **bool** |  |  |
 | **createdDateFrom** | **DateTime?** |  | [optional]  |
 | **createdDateTo** | **DateTime?** |  | [optional]  |
 | **testPlanId** | **Guid?** |  | [optional]  |
@@ -2574,7 +2574,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;TestRunV2GetModel&gt;**](TestRunV2GetModel.md)
+[**List&lt;TestRunV2ApiResult&gt;**](TestRunV2ApiResult.md)
 
 ### Authorization
 

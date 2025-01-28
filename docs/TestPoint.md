@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **ConfigurationId** | **Guid?** |  | [optional] 
 **TestSuiteId** | **Guid** |  | 
 **Status** | **string** |  | [optional] 
-**StatusModel** | [**TestStatus**](TestStatus.md) |  | [optional] 
+**StatusModel** | [**TestStatusApiResult**](TestStatusApiResult.md) |  | [optional] 
 **LastTestResultId** | **Guid?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

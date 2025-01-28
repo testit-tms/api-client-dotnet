@@ -50,7 +50,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="duration">duration.</param>
         /// <param name="resultReasons">Specifies result reasons for searching test results.</param>
         /// <param name="testRunIds">Specifies a test result test run IDs to search for.</param>
-        public ApiV2TestResultsSearchPostRequest(List<Guid> configurationIds = default(List<Guid>), List<TestResultOutcome> outcomes = default(List<TestResultOutcome>), List<string> statusCodes = default(List<string>), List<FailureCategoryModel> failureCategories = default(List<FailureCategoryModel>), string _namespace = default(string), string className = default(string), List<long> autoTestGlobalIds = default(List<long>), string name = default(string), TestResultsFilterRequestCreatedDate createdDate = default(TestResultsFilterRequestCreatedDate), TestResultsFilterRequestModifiedDate modifiedDate = default(TestResultsFilterRequestModifiedDate), TestResultsFilterRequestStartedOn startedOn = default(TestResultsFilterRequestStartedOn), TestResultsFilterRequestCompletedOn completedOn = default(TestResultsFilterRequestCompletedOn), TestResultsFilterRequestDuration duration = default(TestResultsFilterRequestDuration), List<string> resultReasons = default(List<string>), List<Guid> testRunIds = default(List<Guid>))
+        public ApiV2TestResultsSearchPostRequest(List<Guid> configurationIds = default(List<Guid>), List<TestResultOutcome> outcomes = default(List<TestResultOutcome>), List<string> statusCodes = default(List<string>), List<FailureCategoryModel> failureCategories = default(List<FailureCategoryModel>), string _namespace = default(string), string className = default(string), List<long> autoTestGlobalIds = default(List<long>), string name = default(string), TestResultsFilterApiModelCreatedDate createdDate = default(TestResultsFilterApiModelCreatedDate), TestResultsFilterApiModelModifiedDate modifiedDate = default(TestResultsFilterApiModelModifiedDate), TestResultsFilterApiModelStartedOn startedOn = default(TestResultsFilterApiModelStartedOn), TestResultsFilterApiModelCompletedOn completedOn = default(TestResultsFilterApiModelCompletedOn), TestResultsFilterApiModelDuration duration = default(TestResultsFilterApiModelDuration), List<string> resultReasons = default(List<string>), List<Guid> testRunIds = default(List<Guid>))
         {
             this.ConfigurationIds = configurationIds;
             this.Outcomes = outcomes;
@@ -130,31 +130,31 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
-        public TestResultsFilterRequestCreatedDate CreatedDate { get; set; }
+        public TestResultsFilterApiModelCreatedDate CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
-        public TestResultsFilterRequestModifiedDate ModifiedDate { get; set; }
+        public TestResultsFilterApiModelModifiedDate ModifiedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets StartedOn
         /// </summary>
         [DataMember(Name = "startedOn", EmitDefaultValue = true)]
-        public TestResultsFilterRequestStartedOn StartedOn { get; set; }
+        public TestResultsFilterApiModelStartedOn StartedOn { get; set; }
 
         /// <summary>
         /// Gets or Sets CompletedOn
         /// </summary>
         [DataMember(Name = "completedOn", EmitDefaultValue = true)]
-        public TestResultsFilterRequestCompletedOn CompletedOn { get; set; }
+        public TestResultsFilterApiModelCompletedOn CompletedOn { get; set; }
 
         /// <summary>
         /// Gets or Sets Duration
         /// </summary>
         [DataMember(Name = "duration", EmitDefaultValue = true)]
-        public TestResultsFilterRequestDuration Duration { get; set; }
+        public TestResultsFilterApiModelDuration Duration { get; set; }
 
         /// <summary>
         /// Specifies result reasons for searching test results

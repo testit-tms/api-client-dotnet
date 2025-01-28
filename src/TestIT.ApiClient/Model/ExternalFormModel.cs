@@ -42,8 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="fields">fields (required).</param>
         /// <param name="possibleValues">possibleValues (required).</param>
-        /// <param name="links">links (required).</param>
-        public ExternalFormModel(List<ExternalFormFieldModel> fields = default(List<ExternalFormFieldModel>), Dictionary<string, List<ExternalFormAllowedValueModel>> possibleValues = default(Dictionary<string, List<ExternalFormAllowedValueModel>>), List<ExternalFormLinkModel> links = default(List<ExternalFormLinkModel>))
+        public ExternalFormModel(List<ExternalFormFieldModel> fields = default(List<ExternalFormFieldModel>), Dictionary<string, List<ExternalFormAllowedValueModel>> possibleValues = default(Dictionary<string, List<ExternalFormAllowedValueModel>>))
         {
             // to ensure "fields" is required (not null)
             if (fields == null)
@@ -57,12 +56,6 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("possibleValues is a required property for ExternalFormModel and cannot be null");
             }
             this.PossibleValues = possibleValues;
-            // to ensure "links" is required (not null)
-            if (links == null)
-            {
-                throw new ArgumentNullException("links is a required property for ExternalFormModel and cannot be null");
-            }
-            this.Links = links;
         }
 
         /// <summary>
@@ -78,12 +71,6 @@ namespace TestIT.ApiClient.Model
         public Dictionary<string, List<ExternalFormAllowedValueModel>> PossibleValues { get; set; }
 
         /// <summary>
-        /// Gets or Sets Links
-        /// </summary>
-        [DataMember(Name = "links", IsRequired = true, EmitDefaultValue = true)]
-        public List<ExternalFormLinkModel> Links { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -93,7 +80,6 @@ namespace TestIT.ApiClient.Model
             sb.Append("class ExternalFormModel {\n");
             sb.Append("  Fields: ").Append(Fields).Append("\n");
             sb.Append("  PossibleValues: ").Append(PossibleValues).Append("\n");
-            sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -140,12 +126,6 @@ namespace TestIT.ApiClient.Model
                     this.PossibleValues != null &&
                     input.PossibleValues != null &&
                     this.PossibleValues.SequenceEqual(input.PossibleValues)
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    this.Links != null &&
-                    input.Links != null &&
-                    this.Links.SequenceEqual(input.Links)
                 );
         }
 
@@ -165,10 +145,6 @@ namespace TestIT.ApiClient.Model
                 if (this.PossibleValues != null)
                 {
                     hashCode = (hashCode * 59) + this.PossibleValues.GetHashCode();
-                }
-                if (this.Links != null)
-                {
-                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
                 }
                 return hashCode;
             }

@@ -20,7 +20,7 @@ All URIs are relative to *http://localhost*
 
 <a id="addtestpointstotestsuite"></a>
 # **AddTestPointsToTestSuite**
-> void AddTestPointsToTestSuite (Guid id, AddTestPointsWithSectionsRequest addTestPointsWithSectionsRequest = null)
+> void AddTestPointsToTestSuite (Guid id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = null)
 
 Add test-points to test suite
 
@@ -51,12 +51,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
             var id = 1ed608bf-8ac9-4ffd-b91e-ebdbbdce6132;  // Guid | Test suite internal identifier
-            var addTestPointsWithSectionsRequest = new AddTestPointsWithSectionsRequest(); // AddTestPointsWithSectionsRequest | Filter object to retrieve work items for test-suite's project (optional) 
+            var apiV2ProjectsProjectIdWorkItemsSearchPostRequest = new ApiV2ProjectsProjectIdWorkItemsSearchPostRequest(); // ApiV2ProjectsProjectIdWorkItemsSearchPostRequest | Filter object to retrieve work items for test-suite's project (optional) 
 
             try
             {
                 // Add test-points to test suite
-                apiInstance.AddTestPointsToTestSuite(id, addTestPointsWithSectionsRequest);
+                apiInstance.AddTestPointsToTestSuite(id, apiV2ProjectsProjectIdWorkItemsSearchPostRequest);
             }
             catch (ApiException  e)
             {
@@ -76,7 +76,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Add test-points to test suite
-    apiInstance.AddTestPointsToTestSuiteWithHttpInfo(id, addTestPointsWithSectionsRequest);
+    apiInstance.AddTestPointsToTestSuiteWithHttpInfo(id, apiV2ProjectsProjectIdWorkItemsSearchPostRequest);
 }
 catch (ApiException e)
 {
@@ -91,7 +91,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid** | Test suite internal identifier |  |
-| **addTestPointsWithSectionsRequest** | [**AddTestPointsWithSectionsRequest**](AddTestPointsWithSectionsRequest.md) | Filter object to retrieve work items for test-suite&#39;s project | [optional]  |
+| **apiV2ProjectsProjectIdWorkItemsSearchPostRequest** | [**ApiV2ProjectsProjectIdWorkItemsSearchPostRequest**](ApiV2ProjectsProjectIdWorkItemsSearchPostRequest.md) | Filter object to retrieve work items for test-suite&#39;s project | [optional]  |
 
 ### Return type
 

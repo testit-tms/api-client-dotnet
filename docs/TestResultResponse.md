@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **StepComments** | [**List&lt;StepComment&gt;**](StepComment.md) |  | [optional] 
 **FailureClassIds** | **List&lt;Guid&gt;** |  | 
 **Outcome** | **TestResultOutcome** |  | [optional] 
-**Status** | [**TestStatus**](TestStatus.md) |  | [optional] 
+**Status** | [**TestStatusApiResult**](TestStatusApiResult.md) |  | [optional] 
 **Comment** | **string** |  | [optional] 
 **Links** | [**List&lt;Link&gt;**](Link.md) |  | [optional] 
 **StepResults** | [**List&lt;StepResult&gt;**](StepResult.md) |  | [optional] 

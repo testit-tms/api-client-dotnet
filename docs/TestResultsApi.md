@@ -644,7 +644,7 @@ catch (ApiException e)
 
 <a id="apiv2testresultsidput"></a>
 # **ApiV2TestResultsIdPut**
-> void ApiV2TestResultsIdPut (Guid id, TestResultUpdateV2Request testResultUpdateV2Request = null)
+> void ApiV2TestResultsIdPut (Guid id, ApiV2TestResultsIdPutRequest apiV2TestResultsIdPutRequest = null)
 
 Edit test result by ID
 
@@ -675,12 +675,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestResultsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // Guid | Test result unique ID
-            var testResultUpdateV2Request = new TestResultUpdateV2Request(); // TestResultUpdateV2Request |  (optional) 
+            var apiV2TestResultsIdPutRequest = new ApiV2TestResultsIdPutRequest(); // ApiV2TestResultsIdPutRequest |  (optional) 
 
             try
             {
                 // Edit test result by ID
-                apiInstance.ApiV2TestResultsIdPut(id, testResultUpdateV2Request);
+                apiInstance.ApiV2TestResultsIdPut(id, apiV2TestResultsIdPutRequest);
             }
             catch (ApiException  e)
             {
@@ -700,7 +700,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Edit test result by ID
-    apiInstance.ApiV2TestResultsIdPutWithHttpInfo(id, testResultUpdateV2Request);
+    apiInstance.ApiV2TestResultsIdPutWithHttpInfo(id, apiV2TestResultsIdPutRequest);
 }
 catch (ApiException e)
 {
@@ -715,7 +715,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid** | Test result unique ID |  |
-| **testResultUpdateV2Request** | [**TestResultUpdateV2Request**](TestResultUpdateV2Request.md) |  | [optional]  |
+| **apiV2TestResultsIdPutRequest** | [**ApiV2TestResultsIdPutRequest**](ApiV2TestResultsIdPutRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -964,7 +964,7 @@ catch (ApiException e)
 
 <a id="apiv2testresultsstatisticsfilterpost"></a>
 # **ApiV2TestResultsStatisticsFilterPost**
-> TestResultsStatisticsResponse ApiV2TestResultsStatisticsFilterPost (ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = null)
+> TestResultsStatisticsApiResult ApiV2TestResultsStatisticsFilterPost (ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = null)
 
 Search for test results and extract statistics
 
@@ -999,7 +999,7 @@ namespace Example
             try
             {
                 // Search for test results and extract statistics
-                TestResultsStatisticsResponse result = apiInstance.ApiV2TestResultsStatisticsFilterPost(apiV2TestResultsSearchPostRequest);
+                TestResultsStatisticsApiResult result = apiInstance.ApiV2TestResultsStatisticsFilterPost(apiV2TestResultsSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1020,7 +1020,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for test results and extract statistics
-    ApiResponse<TestResultsStatisticsResponse> response = apiInstance.ApiV2TestResultsStatisticsFilterPostWithHttpInfo(apiV2TestResultsSearchPostRequest);
+    ApiResponse<TestResultsStatisticsApiResult> response = apiInstance.ApiV2TestResultsStatisticsFilterPostWithHttpInfo(apiV2TestResultsSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1041,7 +1041,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**TestResultsStatisticsResponse**](TestResultsStatisticsResponse.md)
+[**TestResultsStatisticsApiResult**](TestResultsStatisticsApiResult.md)
 
 ### Authorization
 

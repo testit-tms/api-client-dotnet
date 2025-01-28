@@ -1,28 +1,29 @@
-# TestIT.ApiClient.Model.AutotestFilterModel
+# TestIT.ApiClient.Model.AutoTestFilterModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProjectIds** | **List&lt;Guid&gt;** | Specifies an autotest projects IDs to search for | [optional] 
-**ExternalIds** | **List&lt;string&gt;** | Specifies an autotest external IDs to search for | [optional] 
-**GlobalIds** | **List&lt;long&gt;** | Specifies an autotest global IDs to search for | [optional] 
-**Name** | **string** | Specifies an autotest name to search for | [optional] 
-**IsFlaky** | **bool?** | Specifies an autotest flaky status to search for | [optional] 
-**MustBeApproved** | **bool?** | Specifies an autotest unapproved changes status to search for | [optional] 
-**StabilityPercentage** | [**AutotestFilterModelStabilityPercentage**](AutotestFilterModelStabilityPercentage.md) |  | [optional] 
-**CreatedDate** | [**AutotestFilterModelCreatedDate**](AutotestFilterModelCreatedDate.md) |  | [optional] 
-**CreatedByIds** | **List&lt;Guid&gt;** | Specifies an autotest creator IDs to search for | [optional] 
-**ModifiedDate** | [**AutotestFilterModelModifiedDate**](AutotestFilterModelModifiedDate.md) |  | [optional] 
-**ModifiedByIds** | **List&lt;Guid&gt;** | Specifies an autotest last editor IDs to search for | [optional] 
-**IsDeleted** | **bool?** | Specifies an autotest deleted status to search for | [optional] 
-**Namespace** | **string** | Specifies an autotest namespace to search for | [optional] 
-**IsEmptyNamespace** | **bool?** | Specifies an autotest namespace name presence status to search for | [optional] 
-**ClassName** | **string** | Specifies an autotest class name to search for | [optional] 
-**IsEmptyClassName** | **bool?** | Specifies an autotest class name presence status to search for | [optional] 
+**ProjectIds** | **List&lt;Guid&gt;** |  | [optional] 
+**ExternalIds** | **List&lt;string&gt;** |  | [optional] 
+**GlobalIds** | **List&lt;long&gt;** |  | [optional] 
+**Name** | **string** |  | [optional] 
+**IsFlaky** | **bool?** |  | [optional] 
+**MustBeApproved** | **bool?** |  | [optional] 
+**StabilityPercentage** | [**Int64RangeSelectorModel**](Int64RangeSelectorModel.md) |  | [optional] 
+**CreatedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) |  | [optional] 
+**CreatedByIds** | **List&lt;Guid&gt;** |  | [optional] 
+**ModifiedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) |  | [optional] 
+**ModifiedByIds** | **List&lt;Guid&gt;** |  | [optional] 
+**IsDeleted** | **bool?** |  | [optional] 
+**Namespace** | **string** |  | [optional] 
+**IsEmptyNamespace** | **bool?** |  | [optional] 
+**ClassName** | **string** |  | [optional] 
+**IsEmptyClassName** | **bool?** |  | [optional] 
 **LastTestResultOutcome** | **AutotestResultOutcome** |  | [optional] 
-**ExternalKey** | **string** | Specifies an autotest external key to search for | [optional] 
-**LastTestResultConfigurationIds** | **List&lt;Guid&gt;** | Specifies an autotest configuration IDs of the last test result to search for | [optional] 
+**LastTestResultStatusCode** | **string** |  | [optional] 
+**ExternalKey** | **string** |  | [optional] 
+**LastTestResultConfigurationIds** | **List&lt;Guid&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

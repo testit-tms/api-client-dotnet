@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **AutoTestExternalIds** | **List&lt;string&gt;** | Specifies the external ID of the autotest. You can specify several IDs. | 
 **Description** | **string** | Specifies the test run description. | [optional] 
 **LaunchSource** | **string** | Specifies the test run launch source. | [optional] 
-**Attachments** | [**List&lt;AttachmentPutModel&gt;**](AttachmentPutModel.md) | Collection of attachment ids to relate to the test run | [optional] 
-**Links** | [**List&lt;LinkPostModel&gt;**](LinkPostModel.md) | Collection of links to relate to the test run | [optional] 
+**Attachments** | [**List&lt;AssignAttachmentApiModel&gt;**](AssignAttachmentApiModel.md) | Collection of attachment ids to relate to the test run | [optional] 
+**Links** | [**List&lt;CreateLinkApiModel&gt;**](CreateLinkApiModel.md) | Collection of links to relate to the test run | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

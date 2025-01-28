@@ -205,14 +205,14 @@ namespace TestIT.ApiClient.Model
         /// This property is used to link workitem with project
         /// </summary>
         /// <value>This property is used to link workitem with project</value>
-        /// <example>&quot;3e5a61f5-bb50-44f4-8898-6dda6d40fe23&quot;</example>
+        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
         /// Gets or Sets SectionId
         /// </summary>
-        /// <example>&quot;3e5a61f5-bb50-44f4-8898-6dda6d40fe23&quot;</example>
+        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
         [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid SectionId { get; set; }
 

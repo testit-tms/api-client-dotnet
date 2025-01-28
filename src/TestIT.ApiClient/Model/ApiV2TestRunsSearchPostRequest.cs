@@ -38,6 +38,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="projectIds">Specifies a test run project IDs to search for.</param>
         /// <param name="name">Specifies test run name.</param>
         /// <param name="states">Specifies a test run states to search for.</param>
+        /// <param name="statusCodes">Specifies a test run status codes to search for.</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="startedDate">startedDate.</param>
         /// <param name="createdByIds">Specifies a test run creator IDs to search for.</param>
@@ -45,14 +46,16 @@ namespace TestIT.ApiClient.Model
         /// <param name="isDeleted">Specifies a test run deleted status to search for.</param>
         /// <param name="autoTestsCount">autoTestsCount.</param>
         /// <param name="testResultsOutcome">Specifies test results outcomes.</param>
+        /// <param name="testResultsStatusCodes">Specifies test results status codes.</param>
         /// <param name="failureCategory">Specifies failure categories.</param>
         /// <param name="completedDate">completedDate.</param>
         /// <param name="testResultsConfigurationIds">Specifies a test result configuration IDs to search for.</param>
-        public ApiV2TestRunsSearchPostRequest(List<Guid> projectIds = default(List<Guid>), string name = default(string), List<TestRunState> states = default(List<TestRunState>), TestRunFilterModelCreatedDate createdDate = default(TestRunFilterModelCreatedDate), TestRunFilterModelStartedDate startedDate = default(TestRunFilterModelStartedDate), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?), TestRunFilterModelAutoTestsCount autoTestsCount = default(TestRunFilterModelAutoTestsCount), List<TestResultOutcome> testResultsOutcome = default(List<TestResultOutcome>), List<FailureCategoryModel> failureCategory = default(List<FailureCategoryModel>), TestRunFilterModelCompletedDate completedDate = default(TestRunFilterModelCompletedDate), List<Guid> testResultsConfigurationIds = default(List<Guid>))
+        public ApiV2TestRunsSearchPostRequest(List<Guid> projectIds = default(List<Guid>), string name = default(string), List<TestRunState> states = default(List<TestRunState>), List<string> statusCodes = default(List<string>), TestRunFilterApiModelCreatedDate createdDate = default(TestRunFilterApiModelCreatedDate), TestRunFilterApiModelStartedDate startedDate = default(TestRunFilterApiModelStartedDate), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?), TestRunFilterApiModelAutoTestsCount autoTestsCount = default(TestRunFilterApiModelAutoTestsCount), List<TestResultOutcome> testResultsOutcome = default(List<TestResultOutcome>), List<string> testResultsStatusCodes = default(List<string>), List<FailureCategory> failureCategory = default(List<FailureCategory>), TestRunFilterApiModelCompletedDate completedDate = default(TestRunFilterApiModelCompletedDate), List<Guid> testResultsConfigurationIds = default(List<Guid>))
         {
             this.ProjectIds = projectIds;
             this.Name = name;
             this.States = states;
+            this.StatusCodes = statusCodes;
             this.CreatedDate = createdDate;
             this.StartedDate = startedDate;
             this.CreatedByIds = createdByIds;
@@ -60,6 +63,7 @@ namespace TestIT.ApiClient.Model
             this.IsDeleted = isDeleted;
             this.AutoTestsCount = autoTestsCount;
             this.TestResultsOutcome = testResultsOutcome;
+            this.TestResultsStatusCodes = testResultsStatusCodes;
             this.FailureCategory = failureCategory;
             this.CompletedDate = completedDate;
             this.TestResultsConfigurationIds = testResultsConfigurationIds;
@@ -84,19 +88,27 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Specifies a test run states to search for</value>
         [DataMember(Name = "states", EmitDefaultValue = true)]
+        [Obsolete]
         public List<TestRunState> States { get; set; }
+
+        /// <summary>
+        /// Specifies a test run status codes to search for
+        /// </summary>
+        /// <value>Specifies a test run status codes to search for</value>
+        [DataMember(Name = "statusCodes", EmitDefaultValue = true)]
+        public List<string> StatusCodes { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
-        public TestRunFilterModelCreatedDate CreatedDate { get; set; }
+        public TestRunFilterApiModelCreatedDate CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets StartedDate
         /// </summary>
         [DataMember(Name = "startedDate", EmitDefaultValue = true)]
-        public TestRunFilterModelStartedDate StartedDate { get; set; }
+        public TestRunFilterApiModelStartedDate StartedDate { get; set; }
 
         /// <summary>
         /// Specifies a test run creator IDs to search for
@@ -123,27 +135,35 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets AutoTestsCount
         /// </summary>
         [DataMember(Name = "autoTestsCount", EmitDefaultValue = true)]
-        public TestRunFilterModelAutoTestsCount AutoTestsCount { get; set; }
+        public TestRunFilterApiModelAutoTestsCount AutoTestsCount { get; set; }
 
         /// <summary>
         /// Specifies test results outcomes
         /// </summary>
         /// <value>Specifies test results outcomes</value>
         [DataMember(Name = "testResultsOutcome", EmitDefaultValue = true)]
+        [Obsolete]
         public List<TestResultOutcome> TestResultsOutcome { get; set; }
+
+        /// <summary>
+        /// Specifies test results status codes
+        /// </summary>
+        /// <value>Specifies test results status codes</value>
+        [DataMember(Name = "testResultsStatusCodes", EmitDefaultValue = true)]
+        public List<string> TestResultsStatusCodes { get; set; }
 
         /// <summary>
         /// Specifies failure categories
         /// </summary>
         /// <value>Specifies failure categories</value>
         [DataMember(Name = "failureCategory", EmitDefaultValue = true)]
-        public List<FailureCategoryModel> FailureCategory { get; set; }
+        public List<FailureCategory> FailureCategory { get; set; }
 
         /// <summary>
         /// Gets or Sets CompletedDate
         /// </summary>
         [DataMember(Name = "completedDate", EmitDefaultValue = true)]
-        public TestRunFilterModelCompletedDate CompletedDate { get; set; }
+        public TestRunFilterApiModelCompletedDate CompletedDate { get; set; }
 
         /// <summary>
         /// Specifies a test result configuration IDs to search for
@@ -163,6 +183,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ProjectIds: ").Append(ProjectIds).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  States: ").Append(States).Append("\n");
+            sb.Append("  StatusCodes: ").Append(StatusCodes).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  StartedDate: ").Append(StartedDate).Append("\n");
             sb.Append("  CreatedByIds: ").Append(CreatedByIds).Append("\n");
@@ -170,6 +191,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  AutoTestsCount: ").Append(AutoTestsCount).Append("\n");
             sb.Append("  TestResultsOutcome: ").Append(TestResultsOutcome).Append("\n");
+            sb.Append("  TestResultsStatusCodes: ").Append(TestResultsStatusCodes).Append("\n");
             sb.Append("  FailureCategory: ").Append(FailureCategory).Append("\n");
             sb.Append("  CompletedDate: ").Append(CompletedDate).Append("\n");
             sb.Append("  TestResultsConfigurationIds: ").Append(TestResultsConfigurationIds).Append("\n");
@@ -226,6 +248,12 @@ namespace TestIT.ApiClient.Model
                     this.States.SequenceEqual(input.States)
                 ) && 
                 (
+                    this.StatusCodes == input.StatusCodes ||
+                    this.StatusCodes != null &&
+                    input.StatusCodes != null &&
+                    this.StatusCodes.SequenceEqual(input.StatusCodes)
+                ) && 
+                (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
@@ -262,6 +290,12 @@ namespace TestIT.ApiClient.Model
                     this.TestResultsOutcome != null &&
                     input.TestResultsOutcome != null &&
                     this.TestResultsOutcome.SequenceEqual(input.TestResultsOutcome)
+                ) && 
+                (
+                    this.TestResultsStatusCodes == input.TestResultsStatusCodes ||
+                    this.TestResultsStatusCodes != null &&
+                    input.TestResultsStatusCodes != null &&
+                    this.TestResultsStatusCodes.SequenceEqual(input.TestResultsStatusCodes)
                 ) && 
                 (
                     this.FailureCategory == input.FailureCategory ||
@@ -303,6 +337,10 @@ namespace TestIT.ApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.States.GetHashCode();
                 }
+                if (this.StatusCodes != null)
+                {
+                    hashCode = (hashCode * 59) + this.StatusCodes.GetHashCode();
+                }
                 if (this.CreatedDate != null)
                 {
                     hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
@@ -330,6 +368,10 @@ namespace TestIT.ApiClient.Model
                 if (this.TestResultsOutcome != null)
                 {
                     hashCode = (hashCode * 59) + this.TestResultsOutcome.GetHashCode();
+                }
+                if (this.TestResultsStatusCodes != null)
+                {
+                    hashCode = (hashCode * 59) + this.TestResultsStatusCodes.GetHashCode();
                 }
                 if (this.FailureCategory != null)
                 {

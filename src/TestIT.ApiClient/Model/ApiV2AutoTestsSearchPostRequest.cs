@@ -35,40 +35,25 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiV2AutoTestsSearchPostRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected ApiV2AutoTestsSearchPostRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ApiV2AutoTestsSearchPostRequest" /> class.
-        /// </summary>
-        /// <param name="filter">filter (required).</param>
-        /// <param name="includes">includes (required).</param>
-        public ApiV2AutoTestsSearchPostRequest(AutotestsSelectModelFilter filter = default(AutotestsSelectModelFilter), AutotestsSelectModelIncludes includes = default(AutotestsSelectModelIncludes))
+        /// <param name="filter">filter.</param>
+        /// <param name="includes">includes.</param>
+        public ApiV2AutoTestsSearchPostRequest(AutoTestSearchApiModelFilter filter = default(AutoTestSearchApiModelFilter), AutoTestSearchApiModelIncludes includes = default(AutoTestSearchApiModelIncludes))
         {
-            // to ensure "filter" is required (not null)
-            if (filter == null)
-            {
-                throw new ArgumentNullException("filter is a required property for ApiV2AutoTestsSearchPostRequest and cannot be null");
-            }
             this.Filter = filter;
-            // to ensure "includes" is required (not null)
-            if (includes == null)
-            {
-                throw new ArgumentNullException("includes is a required property for ApiV2AutoTestsSearchPostRequest and cannot be null");
-            }
             this.Includes = includes;
         }
 
         /// <summary>
         /// Gets or Sets Filter
         /// </summary>
-        [DataMember(Name = "filter", IsRequired = true, EmitDefaultValue = true)]
-        public AutotestsSelectModelFilter Filter { get; set; }
+        [DataMember(Name = "filter", EmitDefaultValue = true)]
+        public AutoTestSearchApiModelFilter Filter { get; set; }
 
         /// <summary>
         /// Gets or Sets Includes
         /// </summary>
-        [DataMember(Name = "includes", IsRequired = true, EmitDefaultValue = true)]
-        public AutotestsSelectModelIncludes Includes { get; set; }
+        [DataMember(Name = "includes", EmitDefaultValue = true)]
+        public AutoTestSearchApiModelIncludes Includes { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

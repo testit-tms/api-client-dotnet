@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SelectModel** | [**TestRunSelectionModel**](TestRunSelectionModel.md) |  | 
-**Description** | **string** |  | [optional] 
-**AttachmentUpdateScheme** | [**SetOfAttachmentIds**](SetOfAttachmentIds.md) |  | 
-**LinkUpdateScheme** | [**SetOfLinks**](SetOfLinks.md) |  | 
+**SelectModel** | [**UpdateMultipleTestRunsApiModelSelectModel**](UpdateMultipleTestRunsApiModelSelectModel.md) |  | 
+**Description** | **string** | Test run description | [optional] 
+**AttachmentUpdateScheme** | [**UpdateMultipleTestRunsApiModelAttachmentUpdateScheme**](UpdateMultipleTestRunsApiModelAttachmentUpdateScheme.md) |  | [optional] 
+**LinkUpdateScheme** | [**UpdateMultipleTestRunsApiModelLinkUpdateScheme**](UpdateMultipleTestRunsApiModelLinkUpdateScheme.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

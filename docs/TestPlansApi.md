@@ -38,7 +38,7 @@ All URIs are relative to *http://localhost*
 
 <a id="addtestpointswithsections"></a>
 # **AddTestPointsWithSections**
-> void AddTestPointsWithSections (string id, AddTestPointsWithSectionsRequest addTestPointsWithSectionsRequest = null)
+> void AddTestPointsWithSections (string id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = null)
 
 Add test-points to TestPlan with sections
 
@@ -69,12 +69,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
-            var addTestPointsWithSectionsRequest = new AddTestPointsWithSectionsRequest(); // AddTestPointsWithSectionsRequest | Filter object to retrieve work items for test-suite's project (optional) 
+            var apiV2ProjectsProjectIdWorkItemsSearchPostRequest = new ApiV2ProjectsProjectIdWorkItemsSearchPostRequest(); // ApiV2ProjectsProjectIdWorkItemsSearchPostRequest | Filter object to retrieve work items for test-suite's project (optional) 
 
             try
             {
                 // Add test-points to TestPlan with sections
-                apiInstance.AddTestPointsWithSections(id, addTestPointsWithSectionsRequest);
+                apiInstance.AddTestPointsWithSections(id, apiV2ProjectsProjectIdWorkItemsSearchPostRequest);
             }
             catch (ApiException  e)
             {
@@ -94,7 +94,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Add test-points to TestPlan with sections
-    apiInstance.AddTestPointsWithSectionsWithHttpInfo(id, addTestPointsWithSectionsRequest);
+    apiInstance.AddTestPointsWithSectionsWithHttpInfo(id, apiV2ProjectsProjectIdWorkItemsSearchPostRequest);
 }
 catch (ApiException e)
 {
@@ -109,7 +109,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
-| **addTestPointsWithSectionsRequest** | [**AddTestPointsWithSectionsRequest**](AddTestPointsWithSectionsRequest.md) | Filter object to retrieve work items for test-suite&#39;s project | [optional]  |
+| **apiV2ProjectsProjectIdWorkItemsSearchPostRequest** | [**ApiV2ProjectsProjectIdWorkItemsSearchPostRequest**](ApiV2ProjectsProjectIdWorkItemsSearchPostRequest.md) | Filter object to retrieve work items for test-suite&#39;s project | [optional]  |
 
 ### Return type
 
@@ -1216,7 +1216,7 @@ catch (ApiException e)
 
 <a id="apiv2testplansidtestpointslastresultsget"></a>
 # **ApiV2TestPlansIdTestPointsLastResultsGet**
-> List&lt;TestPointWithLastResultModel&gt; ApiV2TestPlansIdTestPointsLastResultsGet (string id, Guid? testerId = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
+> List&lt;TestPointWithLastResultResponseModel&gt; ApiV2TestPlansIdTestPointsLastResultsGet (string id, Guid? testerId = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
 Get TestPoints with last result from TestPlan
 
@@ -1259,7 +1259,7 @@ namespace Example
             try
             {
                 // Get TestPoints with last result from TestPlan
-                List<TestPointWithLastResultModel> result = apiInstance.ApiV2TestPlansIdTestPointsLastResultsGet(id, testerId, skip, take, orderBy, searchField, searchValue);
+                List<TestPointWithLastResultResponseModel> result = apiInstance.ApiV2TestPlansIdTestPointsLastResultsGet(id, testerId, skip, take, orderBy, searchField, searchValue);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1280,7 +1280,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get TestPoints with last result from TestPlan
-    ApiResponse<List<TestPointWithLastResultModel>> response = apiInstance.ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfo(id, testerId, skip, take, orderBy, searchField, searchValue);
+    ApiResponse<List<TestPointWithLastResultResponseModel>> response = apiInstance.ApiV2TestPlansIdTestPointsLastResultsGetWithHttpInfo(id, testerId, skip, take, orderBy, searchField, searchValue);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1307,7 +1307,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;TestPointWithLastResultModel&gt;**](TestPointWithLastResultModel.md)
+[**List&lt;TestPointWithLastResultResponseModel&gt;**](TestPointWithLastResultResponseModel.md)
 
 ### Authorization
 
@@ -1652,7 +1652,7 @@ catch (ApiException e)
 
 <a id="apiv2testplansidtestrunsget"></a>
 # **ApiV2TestPlansIdTestRunsGet**
-> List&lt;TestRunModel&gt; ApiV2TestPlansIdTestRunsGet (string id, bool? notStarted = null, bool? inProgress = null, bool? stopped = null, bool? completed = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
+> List&lt;TestRunApiResult&gt; ApiV2TestPlansIdTestRunsGet (string id, bool? notStarted = null, bool? inProgress = null, bool? stopped = null, bool? completed = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
 Get TestRuns of TestPlan
 
@@ -1698,7 +1698,7 @@ namespace Example
             try
             {
                 // Get TestRuns of TestPlan
-                List<TestRunModel> result = apiInstance.ApiV2TestPlansIdTestRunsGet(id, notStarted, inProgress, stopped, completed, skip, take, orderBy, searchField, searchValue);
+                List<TestRunApiResult> result = apiInstance.ApiV2TestPlansIdTestRunsGet(id, notStarted, inProgress, stopped, completed, skip, take, orderBy, searchField, searchValue);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1719,7 +1719,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get TestRuns of TestPlan
-    ApiResponse<List<TestRunModel>> response = apiInstance.ApiV2TestPlansIdTestRunsGetWithHttpInfo(id, notStarted, inProgress, stopped, completed, skip, take, orderBy, searchField, searchValue);
+    ApiResponse<List<TestRunApiResult>> response = apiInstance.ApiV2TestPlansIdTestRunsGetWithHttpInfo(id, notStarted, inProgress, stopped, completed, skip, take, orderBy, searchField, searchValue);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1749,7 +1749,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;TestRunModel&gt;**](TestRunModel.md)
+[**List&lt;TestRunApiResult&gt;**](TestRunApiResult.md)
 
 ### Authorization
 
@@ -1776,7 +1776,7 @@ catch (ApiException e)
 
 <a id="apiv2testplansidtestrunssearchpost"></a>
 # **ApiV2TestPlansIdTestRunsSearchPost**
-> List&lt;TestRunModel&gt; ApiV2TestPlansIdTestRunsSearchPost (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2TestPlansIdTestRunsSearchPostRequest apiV2TestPlansIdTestRunsSearchPostRequest = null)
+> List&lt;TestRunApiResult&gt; ApiV2TestPlansIdTestRunsSearchPost (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2TestPlansIdTestRunsSearchPostRequest apiV2TestPlansIdTestRunsSearchPostRequest = null)
 
 Search TestRuns of TestPlan
 
@@ -1819,7 +1819,7 @@ namespace Example
             try
             {
                 // Search TestRuns of TestPlan
-                List<TestRunModel> result = apiInstance.ApiV2TestPlansIdTestRunsSearchPost(id, skip, take, orderBy, searchField, searchValue, apiV2TestPlansIdTestRunsSearchPostRequest);
+                List<TestRunApiResult> result = apiInstance.ApiV2TestPlansIdTestRunsSearchPost(id, skip, take, orderBy, searchField, searchValue, apiV2TestPlansIdTestRunsSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1840,7 +1840,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search TestRuns of TestPlan
-    ApiResponse<List<TestRunModel>> response = apiInstance.ApiV2TestPlansIdTestRunsSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, apiV2TestPlansIdTestRunsSearchPostRequest);
+    ApiResponse<List<TestRunApiResult>> response = apiInstance.ApiV2TestPlansIdTestRunsSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, apiV2TestPlansIdTestRunsSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1867,7 +1867,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;TestRunModel&gt;**](TestRunModel.md)
+[**List&lt;TestRunApiResult&gt;**](TestRunApiResult.md)
 
 ### Authorization
 

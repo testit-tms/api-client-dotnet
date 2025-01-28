@@ -40,17 +40,18 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateTestPlanRequest" /> class.
         /// </summary>
-        /// <param name="tags">tags.</param>
-        /// <param name="name">name (required).</param>
-        /// <param name="startDate">Used for analytics.</param>
-        /// <param name="endDate">Used for analytics.</param>
-        /// <param name="description">description.</param>
-        /// <param name="build">build.</param>
-        /// <param name="projectId">projectId (required).</param>
-        /// <param name="productName">productName.</param>
-        /// <param name="hasAutomaticDurationTimer">hasAutomaticDurationTimer.</param>
-        /// <param name="attributes">attributes (required).</param>
-        public CreateTestPlanRequest(List<TagPostModel> tags = default(List<TagPostModel>), string name = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string description = default(string), string build = default(string), Guid projectId = default(Guid), string productName = default(string), bool? hasAutomaticDurationTimer = default(bool?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>))
+        /// <param name="tags">Test plan tag names collection.</param>
+        /// <param name="name">Test plan name (required).</param>
+        /// <param name="startDate">Date and time of test plan start.</param>
+        /// <param name="endDate">Date and time of test plan end.</param>
+        /// <param name="description">Test plan description.</param>
+        /// <param name="build">Build of the application on which test plan is executed.</param>
+        /// <param name="projectId">Project unique identifier (required).</param>
+        /// <param name="productName">Name of the testing product.</param>
+        /// <param name="hasAutomaticDurationTimer">Boolean flag defines if test plan has automatic duration timer.</param>
+        /// <param name="attributes">Key value pair of test plan custom attributes (required).</param>
+        /// <param name="testSuite">testSuite.</param>
+        public CreateTestPlanRequest(List<TagPostModel> tags = default(List<TagPostModel>), string name = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string description = default(string), string build = default(string), Guid projectId = default(Guid), string productName = default(string), bool? hasAutomaticDurationTimer = default(bool?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), TestSuiteTestPlanApiModel testSuite = default(TestSuiteTestPlanApiModel))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -72,77 +73,84 @@ namespace TestIT.ApiClient.Model
             this.Build = build;
             this.ProductName = productName;
             this.HasAutomaticDurationTimer = hasAutomaticDurationTimer;
+            this.TestSuite = testSuite;
         }
 
         /// <summary>
-        /// Gets or Sets Tags
+        /// Test plan tag names collection
         /// </summary>
+        /// <value>Test plan tag names collection</value>
         [DataMember(Name = "tags", EmitDefaultValue = true)]
         public List<TagPostModel> Tags { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Test plan name
         /// </summary>
-        /// <example>&quot;Base test plan&quot;</example>
+        /// <value>Test plan name</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Used for analytics
+        /// Date and time of test plan start
         /// </summary>
-        /// <value>Used for analytics</value>
-        /// <example>&quot;2024-11-21T11:05:56.558551500Z&quot;</example>
+        /// <value>Date and time of test plan start</value>
         [DataMember(Name = "startDate", EmitDefaultValue = true)]
         public DateTime? StartDate { get; set; }
 
         /// <summary>
-        /// Used for analytics
+        /// Date and time of test plan end
         /// </summary>
-        /// <value>Used for analytics</value>
-        /// <example>&quot;2024-11-21T11:05:56.558551500Z&quot;</example>
+        /// <value>Date and time of test plan end</value>
         [DataMember(Name = "endDate", EmitDefaultValue = true)]
         public DateTime? EndDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Test plan description
         /// </summary>
-        /// <example>&quot;This is a base test plan&quot;</example>
+        /// <value>Test plan description</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or Sets Build
+        /// Build of the application on which test plan is executed
         /// </summary>
-        /// <example>&quot;v.3.0.0-b94f3055&quot;</example>
+        /// <value>Build of the application on which test plan is executed</value>
         [DataMember(Name = "build", EmitDefaultValue = true)]
         public string Build { get; set; }
 
         /// <summary>
-        /// Gets or Sets ProjectId
+        /// Project unique identifier
         /// </summary>
-        /// <example>&quot;3e5a61f5-bb50-44f4-8898-6dda6d40fe23&quot;</example>
+        /// <value>Project unique identifier</value>
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
-        /// Gets or Sets ProductName
+        /// Name of the testing product
         /// </summary>
-        /// <example>&quot;Billing service&quot;</example>
+        /// <value>Name of the testing product</value>
         [DataMember(Name = "productName", EmitDefaultValue = true)]
         public string ProductName { get; set; }
 
         /// <summary>
-        /// Gets or Sets HasAutomaticDurationTimer
+        /// Boolean flag defines if test plan has automatic duration timer
         /// </summary>
-        /// <example>true</example>
+        /// <value>Boolean flag defines if test plan has automatic duration timer</value>
         [DataMember(Name = "hasAutomaticDurationTimer", EmitDefaultValue = true)]
         public bool? HasAutomaticDurationTimer { get; set; }
 
         /// <summary>
-        /// Gets or Sets Attributes
+        /// Key value pair of test plan custom attributes
         /// </summary>
+        /// <value>Key value pair of test plan custom attributes</value>
         [DataMember(Name = "attributes", IsRequired = true, EmitDefaultValue = true)]
         public Dictionary<string, Object> Attributes { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TestSuite
+        /// </summary>
+        [DataMember(Name = "testSuite", EmitDefaultValue = true)]
+        public TestSuiteTestPlanApiModel TestSuite { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -162,6 +170,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ProductName: ").Append(ProductName).Append("\n");
             sb.Append("  HasAutomaticDurationTimer: ").Append(HasAutomaticDurationTimer).Append("\n");
             sb.Append("  Attributes: ").Append(Attributes).Append("\n");
+            sb.Append("  TestSuite: ").Append(TestSuite).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -248,6 +257,11 @@ namespace TestIT.ApiClient.Model
                     this.Attributes != null &&
                     input.Attributes != null &&
                     this.Attributes.SequenceEqual(input.Attributes)
+                ) && 
+                (
+                    this.TestSuite == input.TestSuite ||
+                    (this.TestSuite != null &&
+                    this.TestSuite.Equals(input.TestSuite))
                 );
         }
 
@@ -299,6 +313,10 @@ namespace TestIT.ApiClient.Model
                 if (this.Attributes != null)
                 {
                     hashCode = (hashCode * 59) + this.Attributes.GetHashCode();
+                }
+                if (this.TestSuite != null)
+                {
+                    hashCode = (hashCode * 59) + this.TestSuite.GetHashCode();
                 }
                 return hashCode;
             }
