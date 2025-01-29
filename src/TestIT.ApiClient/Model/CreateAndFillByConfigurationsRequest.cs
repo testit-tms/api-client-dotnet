@@ -40,7 +40,6 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateAndFillByConfigurationsRequest" /> class.
         /// </summary>
-        /// <param name="testPointSelectors">Specifies an array of work items and configuration to create a test run for. (required).</param>
         /// <param name="projectId">Specifies the GUID of the project, in which a test run will be created. (required).</param>
         /// <param name="testPlanId">Specifies the GUID of the test plan, within which the test run will be created. (required).</param>
         /// <param name="name">Specifies the name of the test run..</param>
@@ -48,29 +47,23 @@ namespace TestIT.ApiClient.Model
         /// <param name="launchSource">Specifies the test run launch source..</param>
         /// <param name="attachments">Collection of attachment ids to relate to the test run.</param>
         /// <param name="links">Collection of links to relate to the test run.</param>
-        public CreateAndFillByConfigurationsRequest(List<TestPointSelector> testPointSelectors = default(List<TestPointSelector>), Guid projectId = default(Guid), Guid testPlanId = default(Guid), string name = default(string), string description = default(string), string launchSource = default(string), List<AttachmentPutModel> attachments = default(List<AttachmentPutModel>), List<LinkPostModel> links = default(List<LinkPostModel>))
+        /// <param name="testPointSelectors">Specifies an array of work items and configuration to create a test run for. (required).</param>
+        public CreateAndFillByConfigurationsRequest(Guid projectId = default(Guid), Guid testPlanId = default(Guid), string name = default(string), string description = default(string), string launchSource = default(string), List<AssignAttachmentApiModel> attachments = default(List<AssignAttachmentApiModel>), List<CreateLinkApiModel> links = default(List<CreateLinkApiModel>), List<TestPointSelector> testPointSelectors = default(List<TestPointSelector>))
         {
+            this.ProjectId = projectId;
+            this.TestPlanId = testPlanId;
             // to ensure "testPointSelectors" is required (not null)
             if (testPointSelectors == null)
             {
                 throw new ArgumentNullException("testPointSelectors is a required property for CreateAndFillByConfigurationsRequest and cannot be null");
             }
             this.TestPointSelectors = testPointSelectors;
-            this.ProjectId = projectId;
-            this.TestPlanId = testPlanId;
             this.Name = name;
             this.Description = description;
             this.LaunchSource = launchSource;
             this.Attachments = attachments;
             this.Links = links;
         }
-
-        /// <summary>
-        /// Specifies an array of work items and configuration to create a test run for.
-        /// </summary>
-        /// <value>Specifies an array of work items and configuration to create a test run for.</value>
-        [DataMember(Name = "testPointSelectors", IsRequired = true, EmitDefaultValue = true)]
-        public List<TestPointSelector> TestPointSelectors { get; set; }
 
         /// <summary>
         /// Specifies the GUID of the project, in which a test run will be created.
@@ -112,14 +105,21 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Collection of attachment ids to relate to the test run</value>
         [DataMember(Name = "attachments", EmitDefaultValue = true)]
-        public List<AttachmentPutModel> Attachments { get; set; }
+        public List<AssignAttachmentApiModel> Attachments { get; set; }
 
         /// <summary>
         /// Collection of links to relate to the test run
         /// </summary>
         /// <value>Collection of links to relate to the test run</value>
         [DataMember(Name = "links", EmitDefaultValue = true)]
-        public List<LinkPostModel> Links { get; set; }
+        public List<CreateLinkApiModel> Links { get; set; }
+
+        /// <summary>
+        /// Specifies an array of work items and configuration to create a test run for.
+        /// </summary>
+        /// <value>Specifies an array of work items and configuration to create a test run for.</value>
+        [DataMember(Name = "testPointSelectors", IsRequired = true, EmitDefaultValue = true)]
+        public List<TestPointSelector> TestPointSelectors { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -129,7 +129,6 @@ namespace TestIT.ApiClient.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class CreateAndFillByConfigurationsRequest {\n");
-            sb.Append("  TestPointSelectors: ").Append(TestPointSelectors).Append("\n");
             sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
             sb.Append("  TestPlanId: ").Append(TestPlanId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
@@ -137,6 +136,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  LaunchSource: ").Append(LaunchSource).Append("\n");
             sb.Append("  Attachments: ").Append(Attachments).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
+            sb.Append("  TestPointSelectors: ").Append(TestPointSelectors).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -173,12 +173,6 @@ namespace TestIT.ApiClient.Model
             }
             return 
                 (
-                    this.TestPointSelectors == input.TestPointSelectors ||
-                    this.TestPointSelectors != null &&
-                    input.TestPointSelectors != null &&
-                    this.TestPointSelectors.SequenceEqual(input.TestPointSelectors)
-                ) && 
-                (
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
@@ -214,6 +208,12 @@ namespace TestIT.ApiClient.Model
                     this.Links != null &&
                     input.Links != null &&
                     this.Links.SequenceEqual(input.Links)
+                ) && 
+                (
+                    this.TestPointSelectors == input.TestPointSelectors ||
+                    this.TestPointSelectors != null &&
+                    input.TestPointSelectors != null &&
+                    this.TestPointSelectors.SequenceEqual(input.TestPointSelectors)
                 );
         }
 
@@ -226,10 +226,6 @@ namespace TestIT.ApiClient.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.TestPointSelectors != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestPointSelectors.GetHashCode();
-                }
                 if (this.ProjectId != null)
                 {
                     hashCode = (hashCode * 59) + this.ProjectId.GetHashCode();
@@ -257,6 +253,10 @@ namespace TestIT.ApiClient.Model
                 if (this.Links != null)
                 {
                     hashCode = (hashCode * 59) + this.Links.GetHashCode();
+                }
+                if (this.TestPointSelectors != null)
+                {
+                    hashCode = (hashCode * 59) + this.TestPointSelectors.GetHashCode();
                 }
                 return hashCode;
             }

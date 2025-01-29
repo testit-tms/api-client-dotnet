@@ -27,16 +27,16 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// AutotestsExtractionModel
+    /// AutoTestsExtractionModel
     /// </summary>
-    [DataContract(Name = "AutotestsExtractionModel")]
-    public partial class AutotestsExtractionModel : IEquatable<AutotestsExtractionModel>, IValidatableObject
+    [DataContract(Name = "AutoTestsExtractionModel")]
+    public partial class AutoTestsExtractionModel : IEquatable<AutoTestsExtractionModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AutotestsExtractionModel" /> class.
+        /// Initializes a new instance of the <see cref="AutoTestsExtractionModel" /> class.
         /// </summary>
         /// <param name="ids">ids.</param>
-        public AutotestsExtractionModel(AutotestsExtractionModelIds ids = default(AutotestsExtractionModelIds))
+        public AutoTestsExtractionModel(GuidExtractionModel ids = default(GuidExtractionModel))
         {
             this.Ids = ids;
         }
@@ -45,7 +45,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Ids
         /// </summary>
         [DataMember(Name = "ids", EmitDefaultValue = true)]
-        public AutotestsExtractionModelIds Ids { get; set; }
+        public GuidExtractionModel Ids { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,7 +54,7 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AutotestsExtractionModel {\n");
+            sb.Append("class AutoTestsExtractionModel {\n");
             sb.Append("  Ids: ").Append(Ids).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -76,15 +76,15 @@ namespace TestIT.ApiClient.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AutotestsExtractionModel);
+            return this.Equals(input as AutoTestsExtractionModel);
         }
 
         /// <summary>
-        /// Returns true if AutotestsExtractionModel instances are equal
+        /// Returns true if AutoTestsExtractionModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of AutotestsExtractionModel to be compared</param>
+        /// <param name="input">Instance of AutoTestsExtractionModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AutotestsExtractionModel input)
+        public bool Equals(AutoTestsExtractionModel input)
         {
             if (input == null)
             {

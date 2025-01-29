@@ -63,8 +63,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedById">Unique ID of the project last editor.</param>
         /// <param name="globalId">Global ID of the project (required).</param>
         /// <param name="type">type (required).</param>
-        /// <param name="isFlakyAuto">Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically (required).</param>
-        public ProjectModel(Guid id = default(Guid), string description = default(string), string name = default(string), bool isFavorite = default(bool), List<CustomAttributeModel> attributesScheme = default(List<CustomAttributeModel>), List<CustomAttributeModel> testPlansAttributesScheme = default(List<CustomAttributeModel>), int? testCasesCount = default(int?), int? sharedStepsCount = default(int?), int? checkListsCount = default(int?), int? autoTestsCount = default(int?), bool isDeleted = default(bool), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), ProjectTypeModel type = default(ProjectTypeModel), bool isFlakyAuto = default(bool))
+        public ProjectModel(Guid id = default(Guid), string description = default(string), string name = default(string), bool isFavorite = default(bool), List<CustomAttributeModel> attributesScheme = default(List<CustomAttributeModel>), List<CustomAttributeModel> testPlansAttributesScheme = default(List<CustomAttributeModel>), int? testCasesCount = default(int?), int? sharedStepsCount = default(int?), int? checkListsCount = default(int?), int? autoTestsCount = default(int?), bool isDeleted = default(bool), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), ProjectTypeModel type = default(ProjectTypeModel))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -79,7 +78,6 @@ namespace TestIT.ApiClient.Model
             this.CreatedById = createdById;
             this.GlobalId = globalId;
             this.Type = type;
-            this.IsFlakyAuto = isFlakyAuto;
             this.Description = description;
             this.AttributesScheme = attributesScheme;
             this.TestPlansAttributesScheme = testPlansAttributesScheme;
@@ -204,14 +202,6 @@ namespace TestIT.ApiClient.Model
         public long GlobalId { get; set; }
 
         /// <summary>
-        /// Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically
-        /// </summary>
-        /// <value>Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically</value>
-        [DataMember(Name = "isFlakyAuto", IsRequired = true, EmitDefaultValue = true)]
-        [Obsolete]
-        public bool IsFlakyAuto { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -236,7 +226,6 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ModifiedById: ").Append(ModifiedById).Append("\n");
             sb.Append("  GlobalId: ").Append(GlobalId).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  IsFlakyAuto: ").Append(IsFlakyAuto).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -354,10 +343,6 @@ namespace TestIT.ApiClient.Model
                 (
                     this.Type == input.Type ||
                     this.Type.Equals(input.Type)
-                ) && 
-                (
-                    this.IsFlakyAuto == input.IsFlakyAuto ||
-                    this.IsFlakyAuto.Equals(input.IsFlakyAuto)
                 );
         }
 
@@ -426,7 +411,6 @@ namespace TestIT.ApiClient.Model
                 }
                 hashCode = (hashCode * 59) + this.GlobalId.GetHashCode();
                 hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                hashCode = (hashCode * 59) + this.IsFlakyAuto.GetHashCode();
                 return hashCode;
             }
         }

@@ -4,6 +4,7 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
+| [**ApiV2AutoTestsDelete**](AutoTestsApi.md#apiv2autotestsdelete) | **DELETE** /api/v2/autoTests | Delete autotests |
 | [**ApiV2AutoTestsFlakyBulkPost**](AutoTestsApi.md#apiv2autotestsflakybulkpost) | **POST** /api/v2/autoTests/flaky/bulk | Set \&quot;Flaky\&quot; status for multiple autotests |
 | [**ApiV2AutoTestsIdPatch**](AutoTestsApi.md#apiv2autotestsidpatch) | **PATCH** /api/v2/autoTests/{id} | Patch auto test |
 | [**ApiV2AutoTestsIdTestResultsSearchPost**](AutoTestsApi.md#apiv2autotestsidtestresultssearchpost) | **POST** /api/v2/autoTests/{id}/testResults/search | Get test results history for autotest |
@@ -24,9 +25,113 @@ All URIs are relative to *http://localhost*
 | [**UpdateAutoTest**](AutoTestsApi.md#updateautotest) | **PUT** /api/v2/autoTests | Update autotest |
 | [**UpdateMultiple**](AutoTestsApi.md#updatemultiple) | **PUT** /api/v2/autoTests/bulk | Update multiple autotests |
 
+<a id="apiv2autotestsdelete"></a>
+# **ApiV2AutoTestsDelete**
+> AutoTestBulkDeleteApiResult ApiV2AutoTestsDelete (ApiV2AutoTestsDeleteRequest apiV2AutoTestsDeleteRequest = null)
+
+Delete autotests
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
+
+namespace Example
+{
+    public class ApiV2AutoTestsDeleteExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new AutoTestsApi(httpClient, config, httpClientHandler);
+            var apiV2AutoTestsDeleteRequest = new ApiV2AutoTestsDeleteRequest(); // ApiV2AutoTestsDeleteRequest |  (optional) 
+
+            try
+            {
+                // Delete autotests
+                AutoTestBulkDeleteApiResult result = apiInstance.ApiV2AutoTestsDelete(apiV2AutoTestsDeleteRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AutoTestsApi.ApiV2AutoTestsDelete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2AutoTestsDeleteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete autotests
+    ApiResponse<AutoTestBulkDeleteApiResult> response = apiInstance.ApiV2AutoTestsDeleteWithHttpInfo(apiV2AutoTestsDeleteRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AutoTestsApi.ApiV2AutoTestsDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **apiV2AutoTestsDeleteRequest** | [**ApiV2AutoTestsDeleteRequest**](ApiV2AutoTestsDeleteRequest.md) |  | [optional]  |
+
+### Return type
+
+[**AutoTestBulkDeleteApiResult**](AutoTestBulkDeleteApiResult.md)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="apiv2autotestsflakybulkpost"></a>
 # **ApiV2AutoTestsFlakyBulkPost**
-> void ApiV2AutoTestsFlakyBulkPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, FlakyBulkModel flakyBulkModel = null)
+> void ApiV2AutoTestsFlakyBulkPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2AutoTestsFlakyBulkPostRequest apiV2AutoTestsFlakyBulkPostRequest = null)
 
 Set \"Flaky\" status for multiple autotests
 
@@ -63,12 +168,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var flakyBulkModel = new FlakyBulkModel(); // FlakyBulkModel |  (optional) 
+            var apiV2AutoTestsFlakyBulkPostRequest = new ApiV2AutoTestsFlakyBulkPostRequest(); // ApiV2AutoTestsFlakyBulkPostRequest |  (optional) 
 
             try
             {
                 // Set \"Flaky\" status for multiple autotests
-                apiInstance.ApiV2AutoTestsFlakyBulkPost(skip, take, orderBy, searchField, searchValue, flakyBulkModel);
+                apiInstance.ApiV2AutoTestsFlakyBulkPost(skip, take, orderBy, searchField, searchValue, apiV2AutoTestsFlakyBulkPostRequest);
             }
             catch (ApiException  e)
             {
@@ -88,7 +193,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Set \"Flaky\" status for multiple autotests
-    apiInstance.ApiV2AutoTestsFlakyBulkPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, flakyBulkModel);
+    apiInstance.ApiV2AutoTestsFlakyBulkPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2AutoTestsFlakyBulkPostRequest);
 }
 catch (ApiException e)
 {
@@ -107,7 +212,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **flakyBulkModel** | [**FlakyBulkModel**](FlakyBulkModel.md) |  | [optional]  |
+| **apiV2AutoTestsFlakyBulkPostRequest** | [**ApiV2AutoTestsFlakyBulkPostRequest**](ApiV2AutoTestsFlakyBulkPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -242,7 +347,7 @@ void (empty response body)
 
 <a id="apiv2autotestsidtestresultssearchpost"></a>
 # **ApiV2AutoTestsIdTestResultsSearchPost**
-> List&lt;AutotestResultHistoricalGetModel&gt; ApiV2AutoTestsIdTestResultsSearchPost (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, AutotestHistoricalResultSelectModel autotestHistoricalResultSelectModel = null)
+> List&lt;AutotestResultHistoricalGetModel&gt; ApiV2AutoTestsIdTestResultsSearchPost (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2AutoTestsIdTestResultsSearchPostRequest apiV2AutoTestsIdTestResultsSearchPostRequest = null)
 
 Get test results history for autotest
 
@@ -280,12 +385,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var autotestHistoricalResultSelectModel = new AutotestHistoricalResultSelectModel(); // AutotestHistoricalResultSelectModel |  (optional) 
+            var apiV2AutoTestsIdTestResultsSearchPostRequest = new ApiV2AutoTestsIdTestResultsSearchPostRequest(); // ApiV2AutoTestsIdTestResultsSearchPostRequest |  (optional) 
 
             try
             {
                 // Get test results history for autotest
-                List<AutotestResultHistoricalGetModel> result = apiInstance.ApiV2AutoTestsIdTestResultsSearchPost(id, skip, take, orderBy, searchField, searchValue, autotestHistoricalResultSelectModel);
+                List<AutotestResultHistoricalGetModel> result = apiInstance.ApiV2AutoTestsIdTestResultsSearchPost(id, skip, take, orderBy, searchField, searchValue, apiV2AutoTestsIdTestResultsSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -306,7 +411,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get test results history for autotest
-    ApiResponse<List<AutotestResultHistoricalGetModel>> response = apiInstance.ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, autotestHistoricalResultSelectModel);
+    ApiResponse<List<AutotestResultHistoricalGetModel>> response = apiInstance.ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, apiV2AutoTestsIdTestResultsSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -329,7 +434,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **autotestHistoricalResultSelectModel** | [**AutotestHistoricalResultSelectModel**](AutotestHistoricalResultSelectModel.md) |  | [optional]  |
+| **apiV2AutoTestsIdTestResultsSearchPostRequest** | [**ApiV2AutoTestsIdTestResultsSearchPostRequest**](ApiV2AutoTestsIdTestResultsSearchPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -570,7 +675,7 @@ void (empty response body)
 
 <a id="apiv2autotestssearchpost"></a>
 # **ApiV2AutoTestsSearchPost**
-> List&lt;AutoTestModel&gt; ApiV2AutoTestsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2AutoTestsSearchPostRequest apiV2AutoTestsSearchPostRequest = null)
+> List&lt;AutoTestApiResult&gt; ApiV2AutoTestsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2AutoTestsSearchPostRequest apiV2AutoTestsSearchPostRequest = null)
 
 Search for autotests
 
@@ -610,7 +715,7 @@ namespace Example
             try
             {
                 // Search for autotests
-                List<AutoTestModel> result = apiInstance.ApiV2AutoTestsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2AutoTestsSearchPostRequest);
+                List<AutoTestApiResult> result = apiInstance.ApiV2AutoTestsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2AutoTestsSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -631,7 +736,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for autotests
-    ApiResponse<List<AutoTestModel>> response = apiInstance.ApiV2AutoTestsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2AutoTestsSearchPostRequest);
+    ApiResponse<List<AutoTestApiResult>> response = apiInstance.ApiV2AutoTestsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2AutoTestsSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -657,7 +762,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;AutoTestModel&gt;**](AutoTestModel.md)
+[**List&lt;AutoTestApiResult&gt;**](AutoTestApiResult.md)
 
 ### Authorization
 
@@ -684,7 +789,7 @@ catch (ApiException e)
 
 <a id="createautotest"></a>
 # **CreateAutoTest**
-> AutoTestModel CreateAutoTest (AutoTestPostModel autoTestPostModel = null)
+> AutoTestModel CreateAutoTest (CreateAutoTestRequest createAutoTestRequest = null)
 
 Create autotest
 
@@ -716,12 +821,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new AutoTestsApi(httpClient, config, httpClientHandler);
-            var autoTestPostModel = new AutoTestPostModel(); // AutoTestPostModel |  (optional) 
+            var createAutoTestRequest = new CreateAutoTestRequest(); // CreateAutoTestRequest |  (optional) 
 
             try
             {
                 // Create autotest
-                AutoTestModel result = apiInstance.CreateAutoTest(autoTestPostModel);
+                AutoTestModel result = apiInstance.CreateAutoTest(createAutoTestRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -742,7 +847,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create autotest
-    ApiResponse<AutoTestModel> response = apiInstance.CreateAutoTestWithHttpInfo(autoTestPostModel);
+    ApiResponse<AutoTestModel> response = apiInstance.CreateAutoTestWithHttpInfo(createAutoTestRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -759,7 +864,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **autoTestPostModel** | [**AutoTestPostModel**](AutoTestPostModel.md) |  | [optional]  |
+| **createAutoTestRequest** | [**CreateAutoTestRequest**](CreateAutoTestRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -1790,7 +1895,7 @@ catch (ApiException e)
 
 <a id="linkautotesttoworkitem"></a>
 # **LinkAutoTestToWorkItem**
-> void LinkAutoTestToWorkItem (string id, WorkItemIdModel workItemIdModel = null)
+> void LinkAutoTestToWorkItem (string id, LinkAutoTestToWorkItemRequest linkAutoTestToWorkItemRequest = null)
 
 Link autotest with work items
 
@@ -1823,12 +1928,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new AutoTestsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Autotest internal (UUID) or global (integer) identifier
-            var workItemIdModel = new WorkItemIdModel(); // WorkItemIdModel |  (optional) 
+            var linkAutoTestToWorkItemRequest = new LinkAutoTestToWorkItemRequest(); // LinkAutoTestToWorkItemRequest |  (optional) 
 
             try
             {
                 // Link autotest with work items
-                apiInstance.LinkAutoTestToWorkItem(id, workItemIdModel);
+                apiInstance.LinkAutoTestToWorkItem(id, linkAutoTestToWorkItemRequest);
             }
             catch (ApiException  e)
             {
@@ -1848,7 +1953,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Link autotest with work items
-    apiInstance.LinkAutoTestToWorkItemWithHttpInfo(id, workItemIdModel);
+    apiInstance.LinkAutoTestToWorkItemWithHttpInfo(id, linkAutoTestToWorkItemRequest);
 }
 catch (ApiException e)
 {
@@ -1863,7 +1968,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Autotest internal (UUID) or global (integer) identifier |  |
-| **workItemIdModel** | [**WorkItemIdModel**](WorkItemIdModel.md) |  | [optional]  |
+| **linkAutoTestToWorkItemRequest** | [**LinkAutoTestToWorkItemRequest**](LinkAutoTestToWorkItemRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -1894,7 +1999,7 @@ void (empty response body)
 
 <a id="updateautotest"></a>
 # **UpdateAutoTest**
-> void UpdateAutoTest (AutoTestPutModel autoTestPutModel = null)
+> void UpdateAutoTest (UpdateAutoTestRequest updateAutoTestRequest = null)
 
 Update autotest
 
@@ -1926,12 +2031,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new AutoTestsApi(httpClient, config, httpClientHandler);
-            var autoTestPutModel = new AutoTestPutModel(); // AutoTestPutModel |  (optional) 
+            var updateAutoTestRequest = new UpdateAutoTestRequest(); // UpdateAutoTestRequest |  (optional) 
 
             try
             {
                 // Update autotest
-                apiInstance.UpdateAutoTest(autoTestPutModel);
+                apiInstance.UpdateAutoTest(updateAutoTestRequest);
             }
             catch (ApiException  e)
             {
@@ -1951,7 +2056,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update autotest
-    apiInstance.UpdateAutoTestWithHttpInfo(autoTestPutModel);
+    apiInstance.UpdateAutoTestWithHttpInfo(updateAutoTestRequest);
 }
 catch (ApiException e)
 {
@@ -1965,7 +2070,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **autoTestPutModel** | [**AutoTestPutModel**](AutoTestPutModel.md) |  | [optional]  |
+| **updateAutoTestRequest** | [**UpdateAutoTestRequest**](UpdateAutoTestRequest.md) |  | [optional]  |
 
 ### Return type
 

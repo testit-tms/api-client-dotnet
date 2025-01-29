@@ -31,7 +31,7 @@ All URIs are relative to *http://localhost*
 
 <a id="apiv2testrunsdelete"></a>
 # **ApiV2TestRunsDelete**
-> int ApiV2TestRunsDelete (TestRunSelectModel testRunSelectModel = null)
+> int ApiV2TestRunsDelete (ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = null)
 
 Delete multiple test runs
 
@@ -63,12 +63,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
-            var testRunSelectModel = new TestRunSelectModel(); // TestRunSelectModel |  (optional) 
+            var apiV2TestRunsDeleteRequest = new ApiV2TestRunsDeleteRequest(); // ApiV2TestRunsDeleteRequest |  (optional) 
 
             try
             {
                 // Delete multiple test runs
-                int result = apiInstance.ApiV2TestRunsDelete(testRunSelectModel);
+                int result = apiInstance.ApiV2TestRunsDelete(apiV2TestRunsDeleteRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -89,7 +89,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete multiple test runs
-    ApiResponse<int> response = apiInstance.ApiV2TestRunsDeleteWithHttpInfo(testRunSelectModel);
+    ApiResponse<int> response = apiInstance.ApiV2TestRunsDeleteWithHttpInfo(apiV2TestRunsDeleteRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -106,7 +106,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **testRunSelectModel** | [**TestRunSelectModel**](TestRunSelectModel.md) |  | [optional]  |
+| **apiV2TestRunsDeleteRequest** | [**ApiV2TestRunsDeleteRequest**](ApiV2TestRunsDeleteRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -445,7 +445,7 @@ void (empty response body)
 
 <a id="apiv2testrunsidrerunspost"></a>
 # **ApiV2TestRunsIdRerunsPost**
-> ManualRerunResultModel ApiV2TestRunsIdRerunsPost (Guid id, ApiV2TestRunsIdRerunsPostRequest apiV2TestRunsIdRerunsPostRequest = null)
+> ManualRerunApiResult ApiV2TestRunsIdRerunsPost (Guid id, ApiV2TestRunsIdRerunsPostRequest apiV2TestRunsIdRerunsPostRequest = null)
 
 Manual autotests rerun in test run
 
@@ -481,7 +481,7 @@ namespace Example
             try
             {
                 // Manual autotests rerun in test run
-                ManualRerunResultModel result = apiInstance.ApiV2TestRunsIdRerunsPost(id, apiV2TestRunsIdRerunsPostRequest);
+                ManualRerunApiResult result = apiInstance.ApiV2TestRunsIdRerunsPost(id, apiV2TestRunsIdRerunsPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -502,7 +502,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Manual autotests rerun in test run
-    ApiResponse<ManualRerunResultModel> response = apiInstance.ApiV2TestRunsIdRerunsPostWithHttpInfo(id, apiV2TestRunsIdRerunsPostRequest);
+    ApiResponse<ManualRerunApiResult> response = apiInstance.ApiV2TestRunsIdRerunsPostWithHttpInfo(id, apiV2TestRunsIdRerunsPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -524,7 +524,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**ManualRerunResultModel**](ManualRerunResultModel.md)
+[**ManualRerunApiResult**](ManualRerunApiResult.md)
 
 ### Authorization
 
@@ -653,7 +653,7 @@ void (empty response body)
 
 <a id="apiv2testrunsidstatisticsfilterpost"></a>
 # **ApiV2TestRunsIdStatisticsFilterPost**
-> TestResultsStatisticsGetModel ApiV2TestRunsIdStatisticsFilterPost (Guid id, ApiV2TestRunsIdStatisticsFilterPostRequest apiV2TestRunsIdStatisticsFilterPostRequest = null)
+> TestResultsStatisticsApiResult ApiV2TestRunsIdStatisticsFilterPost (Guid id, ApiV2TestRunsIdStatisticsFilterPostRequest apiV2TestRunsIdStatisticsFilterPostRequest = null)
 
 Search for the test run test results and build statistics
 
@@ -689,7 +689,7 @@ namespace Example
             try
             {
                 // Search for the test run test results and build statistics
-                TestResultsStatisticsGetModel result = apiInstance.ApiV2TestRunsIdStatisticsFilterPost(id, apiV2TestRunsIdStatisticsFilterPostRequest);
+                TestResultsStatisticsApiResult result = apiInstance.ApiV2TestRunsIdStatisticsFilterPost(id, apiV2TestRunsIdStatisticsFilterPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -710,7 +710,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for the test run test results and build statistics
-    ApiResponse<TestResultsStatisticsGetModel> response = apiInstance.ApiV2TestRunsIdStatisticsFilterPostWithHttpInfo(id, apiV2TestRunsIdStatisticsFilterPostRequest);
+    ApiResponse<TestResultsStatisticsApiResult> response = apiInstance.ApiV2TestRunsIdStatisticsFilterPostWithHttpInfo(id, apiV2TestRunsIdStatisticsFilterPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -732,7 +732,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**TestResultsStatisticsGetModel**](TestResultsStatisticsGetModel.md)
+[**TestResultsStatisticsApiResult**](TestResultsStatisticsApiResult.md)
 
 ### Authorization
 
@@ -1069,7 +1069,7 @@ catch (ApiException e)
 
 <a id="apiv2testrunspurgebulkpost"></a>
 # **ApiV2TestRunsPurgeBulkPost**
-> int ApiV2TestRunsPurgeBulkPost (ApiV2TestRunsPurgeBulkPostRequest apiV2TestRunsPurgeBulkPostRequest = null)
+> int ApiV2TestRunsPurgeBulkPost (ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = null)
 
 Permanently delete multiple test runs from archive
 
@@ -1101,12 +1101,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
-            var apiV2TestRunsPurgeBulkPostRequest = new ApiV2TestRunsPurgeBulkPostRequest(); // ApiV2TestRunsPurgeBulkPostRequest |  (optional) 
+            var apiV2TestRunsDeleteRequest = new ApiV2TestRunsDeleteRequest(); // ApiV2TestRunsDeleteRequest |  (optional) 
 
             try
             {
                 // Permanently delete multiple test runs from archive
-                int result = apiInstance.ApiV2TestRunsPurgeBulkPost(apiV2TestRunsPurgeBulkPostRequest);
+                int result = apiInstance.ApiV2TestRunsPurgeBulkPost(apiV2TestRunsDeleteRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1127,7 +1127,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Permanently delete multiple test runs from archive
-    ApiResponse<int> response = apiInstance.ApiV2TestRunsPurgeBulkPostWithHttpInfo(apiV2TestRunsPurgeBulkPostRequest);
+    ApiResponse<int> response = apiInstance.ApiV2TestRunsPurgeBulkPostWithHttpInfo(apiV2TestRunsDeleteRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1144,7 +1144,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiV2TestRunsPurgeBulkPostRequest** | [**ApiV2TestRunsPurgeBulkPostRequest**](ApiV2TestRunsPurgeBulkPostRequest.md) |  | [optional]  |
+| **apiV2TestRunsDeleteRequest** | [**ApiV2TestRunsDeleteRequest**](ApiV2TestRunsDeleteRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -1175,7 +1175,7 @@ catch (ApiException e)
 
 <a id="apiv2testrunsrestorebulkpost"></a>
 # **ApiV2TestRunsRestoreBulkPost**
-> int ApiV2TestRunsRestoreBulkPost (ApiV2TestRunsPurgeBulkPostRequest apiV2TestRunsPurgeBulkPostRequest = null)
+> int ApiV2TestRunsRestoreBulkPost (ApiV2TestRunsDeleteRequest apiV2TestRunsDeleteRequest = null)
 
 Restore multiple test runs from the archive
 
@@ -1207,12 +1207,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
-            var apiV2TestRunsPurgeBulkPostRequest = new ApiV2TestRunsPurgeBulkPostRequest(); // ApiV2TestRunsPurgeBulkPostRequest |  (optional) 
+            var apiV2TestRunsDeleteRequest = new ApiV2TestRunsDeleteRequest(); // ApiV2TestRunsDeleteRequest |  (optional) 
 
             try
             {
                 // Restore multiple test runs from the archive
-                int result = apiInstance.ApiV2TestRunsRestoreBulkPost(apiV2TestRunsPurgeBulkPostRequest);
+                int result = apiInstance.ApiV2TestRunsRestoreBulkPost(apiV2TestRunsDeleteRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1233,7 +1233,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Restore multiple test runs from the archive
-    ApiResponse<int> response = apiInstance.ApiV2TestRunsRestoreBulkPostWithHttpInfo(apiV2TestRunsPurgeBulkPostRequest);
+    ApiResponse<int> response = apiInstance.ApiV2TestRunsRestoreBulkPostWithHttpInfo(apiV2TestRunsDeleteRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1250,7 +1250,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiV2TestRunsPurgeBulkPostRequest** | [**ApiV2TestRunsPurgeBulkPostRequest**](ApiV2TestRunsPurgeBulkPostRequest.md) |  | [optional]  |
+| **apiV2TestRunsDeleteRequest** | [**ApiV2TestRunsDeleteRequest**](ApiV2TestRunsDeleteRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -1281,7 +1281,7 @@ catch (ApiException e)
 
 <a id="apiv2testrunssearchpost"></a>
 # **ApiV2TestRunsSearchPost**
-> List&lt;TestRunShortGetModel&gt; ApiV2TestRunsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2TestRunsSearchPostRequest apiV2TestRunsSearchPostRequest = null)
+> List&lt;TestRunShortApiResult&gt; ApiV2TestRunsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2TestRunsSearchPostRequest apiV2TestRunsSearchPostRequest = null)
 
 Search for test runs
 
@@ -1321,7 +1321,7 @@ namespace Example
             try
             {
                 // Search for test runs
-                List<TestRunShortGetModel> result = apiInstance.ApiV2TestRunsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2TestRunsSearchPostRequest);
+                List<TestRunShortApiResult> result = apiInstance.ApiV2TestRunsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2TestRunsSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1342,7 +1342,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for test runs
-    ApiResponse<List<TestRunShortGetModel>> response = apiInstance.ApiV2TestRunsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2TestRunsSearchPostRequest);
+    ApiResponse<List<TestRunShortApiResult>> response = apiInstance.ApiV2TestRunsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2TestRunsSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1368,7 +1368,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;TestRunShortGetModel&gt;**](TestRunShortGetModel.md)
+[**List&lt;TestRunShortApiResult&gt;**](TestRunShortApiResult.md)
 
 ### Authorization
 
@@ -1597,7 +1597,7 @@ void (empty response body)
 
 <a id="createandfillbyautotests"></a>
 # **CreateAndFillByAutoTests**
-> TestRunV2GetModel CreateAndFillByAutoTests (CreateAndFillByAutoTestsRequest createAndFillByAutoTestsRequest = null)
+> TestRunV2ApiResult CreateAndFillByAutoTests (CreateAndFillByAutoTestsRequest createAndFillByAutoTestsRequest = null)
 
 Create test runs based on autotests and configurations
 
@@ -1634,7 +1634,7 @@ namespace Example
             try
             {
                 // Create test runs based on autotests and configurations
-                TestRunV2GetModel result = apiInstance.CreateAndFillByAutoTests(createAndFillByAutoTestsRequest);
+                TestRunV2ApiResult result = apiInstance.CreateAndFillByAutoTests(createAndFillByAutoTestsRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1655,7 +1655,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create test runs based on autotests and configurations
-    ApiResponse<TestRunV2GetModel> response = apiInstance.CreateAndFillByAutoTestsWithHttpInfo(createAndFillByAutoTestsRequest);
+    ApiResponse<TestRunV2ApiResult> response = apiInstance.CreateAndFillByAutoTestsWithHttpInfo(createAndFillByAutoTestsRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1676,7 +1676,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**TestRunV2GetModel**](TestRunV2GetModel.md)
+[**TestRunV2ApiResult**](TestRunV2ApiResult.md)
 
 ### Authorization
 
@@ -1703,7 +1703,7 @@ catch (ApiException e)
 
 <a id="createandfillbyconfigurations"></a>
 # **CreateAndFillByConfigurations**
-> TestRunV2GetModel CreateAndFillByConfigurations (CreateAndFillByConfigurationsRequest createAndFillByConfigurationsRequest = null)
+> TestRunV2ApiResult CreateAndFillByConfigurations (CreateAndFillByConfigurationsRequest createAndFillByConfigurationsRequest = null)
 
 Create test runs picking the needed test points
 
@@ -1740,7 +1740,7 @@ namespace Example
             try
             {
                 // Create test runs picking the needed test points
-                TestRunV2GetModel result = apiInstance.CreateAndFillByConfigurations(createAndFillByConfigurationsRequest);
+                TestRunV2ApiResult result = apiInstance.CreateAndFillByConfigurations(createAndFillByConfigurationsRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1761,7 +1761,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create test runs picking the needed test points
-    ApiResponse<TestRunV2GetModel> response = apiInstance.CreateAndFillByConfigurationsWithHttpInfo(createAndFillByConfigurationsRequest);
+    ApiResponse<TestRunV2ApiResult> response = apiInstance.CreateAndFillByConfigurationsWithHttpInfo(createAndFillByConfigurationsRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1782,7 +1782,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**TestRunV2GetModel**](TestRunV2GetModel.md)
+[**TestRunV2ApiResult**](TestRunV2ApiResult.md)
 
 ### Authorization
 
@@ -1809,7 +1809,7 @@ catch (ApiException e)
 
 <a id="createandfillbyworkitems"></a>
 # **CreateAndFillByWorkItems**
-> TestRunV2GetModel CreateAndFillByWorkItems (CreateAndFillByWorkItemsRequest createAndFillByWorkItemsRequest = null)
+> TestRunV2ApiResult CreateAndFillByWorkItems (CreateAndFillByWorkItemsRequest createAndFillByWorkItemsRequest = null)
 
 Create test run based on configurations and work items
 
@@ -1846,7 +1846,7 @@ namespace Example
             try
             {
                 // Create test run based on configurations and work items
-                TestRunV2GetModel result = apiInstance.CreateAndFillByWorkItems(createAndFillByWorkItemsRequest);
+                TestRunV2ApiResult result = apiInstance.CreateAndFillByWorkItems(createAndFillByWorkItemsRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1867,7 +1867,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create test run based on configurations and work items
-    ApiResponse<TestRunV2GetModel> response = apiInstance.CreateAndFillByWorkItemsWithHttpInfo(createAndFillByWorkItemsRequest);
+    ApiResponse<TestRunV2ApiResult> response = apiInstance.CreateAndFillByWorkItemsWithHttpInfo(createAndFillByWorkItemsRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1888,7 +1888,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**TestRunV2GetModel**](TestRunV2GetModel.md)
+[**TestRunV2ApiResult**](TestRunV2ApiResult.md)
 
 ### Authorization
 
@@ -1915,7 +1915,7 @@ catch (ApiException e)
 
 <a id="createempty"></a>
 # **CreateEmpty**
-> TestRunV2GetModel CreateEmpty (TestRunV2PostShortModel testRunV2PostShortModel = null)
+> TestRunV2ApiResult CreateEmpty (CreateEmptyRequest createEmptyRequest = null)
 
 Create empty TestRun
 
@@ -1947,12 +1947,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
-            var testRunV2PostShortModel = new TestRunV2PostShortModel(); // TestRunV2PostShortModel |  (optional) 
+            var createEmptyRequest = new CreateEmptyRequest(); // CreateEmptyRequest |  (optional) 
 
             try
             {
                 // Create empty TestRun
-                TestRunV2GetModel result = apiInstance.CreateEmpty(testRunV2PostShortModel);
+                TestRunV2ApiResult result = apiInstance.CreateEmpty(createEmptyRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1973,7 +1973,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create empty TestRun
-    ApiResponse<TestRunV2GetModel> response = apiInstance.CreateEmptyWithHttpInfo(testRunV2PostShortModel);
+    ApiResponse<TestRunV2ApiResult> response = apiInstance.CreateEmptyWithHttpInfo(createEmptyRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1990,11 +1990,11 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **testRunV2PostShortModel** | [**TestRunV2PostShortModel**](TestRunV2PostShortModel.md) |  | [optional]  |
+| **createEmptyRequest** | [**CreateEmptyRequest**](CreateEmptyRequest.md) |  | [optional]  |
 
 ### Return type
 
-[**TestRunV2GetModel**](TestRunV2GetModel.md)
+[**TestRunV2ApiResult**](TestRunV2ApiResult.md)
 
 ### Authorization
 
@@ -2021,7 +2021,7 @@ catch (ApiException e)
 
 <a id="gettestrunbyid"></a>
 # **GetTestRunById**
-> TestRunV2GetModel GetTestRunById (Guid id)
+> TestRunV2ApiResult GetTestRunById (Guid id)
 
 Get TestRun by Id
 
@@ -2058,7 +2058,7 @@ namespace Example
             try
             {
                 // Get TestRun by Id
-                TestRunV2GetModel result = apiInstance.GetTestRunById(id);
+                TestRunV2ApiResult result = apiInstance.GetTestRunById(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2079,7 +2079,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get TestRun by Id
-    ApiResponse<TestRunV2GetModel> response = apiInstance.GetTestRunByIdWithHttpInfo(id);
+    ApiResponse<TestRunV2ApiResult> response = apiInstance.GetTestRunByIdWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -2100,7 +2100,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**TestRunV2GetModel**](TestRunV2GetModel.md)
+[**TestRunV2ApiResult**](TestRunV2ApiResult.md)
 
 ### Authorization
 
@@ -2439,7 +2439,7 @@ void (empty response body)
 
 <a id="updateempty"></a>
 # **UpdateEmpty**
-> void UpdateEmpty (TestRunV2PutModel testRunV2PutModel = null)
+> void UpdateEmpty (UpdateEmptyRequest updateEmptyRequest = null)
 
 Update empty TestRun
 
@@ -2471,12 +2471,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
-            var testRunV2PutModel = new TestRunV2PutModel(); // TestRunV2PutModel |  (optional) 
+            var updateEmptyRequest = new UpdateEmptyRequest(); // UpdateEmptyRequest |  (optional) 
 
             try
             {
                 // Update empty TestRun
-                apiInstance.UpdateEmpty(testRunV2PutModel);
+                apiInstance.UpdateEmpty(updateEmptyRequest);
             }
             catch (ApiException  e)
             {
@@ -2496,7 +2496,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update empty TestRun
-    apiInstance.UpdateEmptyWithHttpInfo(testRunV2PutModel);
+    apiInstance.UpdateEmptyWithHttpInfo(updateEmptyRequest);
 }
 catch (ApiException e)
 {
@@ -2510,7 +2510,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **testRunV2PutModel** | [**TestRunV2PutModel**](TestRunV2PutModel.md) |  | [optional]  |
+| **updateEmptyRequest** | [**UpdateEmptyRequest**](UpdateEmptyRequest.md) |  | [optional]  |
 
 ### Return type
 

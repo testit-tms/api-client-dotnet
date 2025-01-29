@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | [optional] 
 **States** | [**List&lt;TestRunState&gt;**](TestRunState.md) |  | [optional] 
+**StatusCodes** | **List&lt;string&gt;** |  | [optional] 
 **StartedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) |  | [optional] 
 **CompletedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) |  | [optional] 
 **CreatedByIds** | **List&lt;Guid&gt;** |  | [optional] 

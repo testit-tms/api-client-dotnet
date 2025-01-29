@@ -12,7 +12,7 @@ All URIs are relative to *http://localhost*
 
 <a id="apiv2projectsprojectidworkitemssearchgroupedpost"></a>
 # **ApiV2ProjectsProjectIdWorkItemsSearchGroupedPost**
-> List&lt;WorkItemGroupModel&gt; ApiV2ProjectsProjectIdWorkItemsSearchGroupedPost (string projectId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, WorkItemGroupGetModel workItemGroupGetModel = null)
+> List&lt;WorkItemGroupModel&gt; ApiV2ProjectsProjectIdWorkItemsSearchGroupedPost (string projectId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ProjectsProjectIdWorkItemsSearchGroupedPostRequest apiV2ProjectsProjectIdWorkItemsSearchGroupedPostRequest = null)
 
 Search for work items and group results by attribute
 
@@ -48,12 +48,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var workItemGroupGetModel = new WorkItemGroupGetModel(); // WorkItemGroupGetModel |  (optional) 
+            var apiV2ProjectsProjectIdWorkItemsSearchGroupedPostRequest = new ApiV2ProjectsProjectIdWorkItemsSearchGroupedPostRequest(); // ApiV2ProjectsProjectIdWorkItemsSearchGroupedPostRequest |  (optional) 
 
             try
             {
                 // Search for work items and group results by attribute
-                List<WorkItemGroupModel> result = apiInstance.ApiV2ProjectsProjectIdWorkItemsSearchGroupedPost(projectId, skip, take, orderBy, searchField, searchValue, workItemGroupGetModel);
+                List<WorkItemGroupModel> result = apiInstance.ApiV2ProjectsProjectIdWorkItemsSearchGroupedPost(projectId, skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdWorkItemsSearchGroupedPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -74,7 +74,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for work items and group results by attribute
-    ApiResponse<List<WorkItemGroupModel>> response = apiInstance.ApiV2ProjectsProjectIdWorkItemsSearchGroupedPostWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, workItemGroupGetModel);
+    ApiResponse<List<WorkItemGroupModel>> response = apiInstance.ApiV2ProjectsProjectIdWorkItemsSearchGroupedPostWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdWorkItemsSearchGroupedPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -97,7 +97,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **workItemGroupGetModel** | [**WorkItemGroupGetModel**](WorkItemGroupGetModel.md) |  | [optional]  |
+| **apiV2ProjectsProjectIdWorkItemsSearchGroupedPostRequest** | [**ApiV2ProjectsProjectIdWorkItemsSearchGroupedPostRequest**](ApiV2ProjectsProjectIdWorkItemsSearchGroupedPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -128,7 +128,7 @@ catch (ApiException e)
 
 <a id="apiv2projectsprojectidworkitemssearchidpost"></a>
 # **ApiV2ProjectsProjectIdWorkItemsSearchIdPost**
-> List&lt;Guid&gt; ApiV2ProjectsProjectIdWorkItemsSearchIdPost (string projectId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, WorkItemSelectModel workItemSelectModel = null)
+> List&lt;Guid&gt; ApiV2ProjectsProjectIdWorkItemsSearchIdPost (string projectId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = null)
 
 Search for work items and extract IDs only
 
@@ -164,12 +164,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var workItemSelectModel = new WorkItemSelectModel(); // WorkItemSelectModel |  (optional) 
+            var apiV2ProjectsProjectIdWorkItemsSearchPostRequest = new ApiV2ProjectsProjectIdWorkItemsSearchPostRequest(); // ApiV2ProjectsProjectIdWorkItemsSearchPostRequest |  (optional) 
 
             try
             {
                 // Search for work items and extract IDs only
-                List<Guid> result = apiInstance.ApiV2ProjectsProjectIdWorkItemsSearchIdPost(projectId, skip, take, orderBy, searchField, searchValue, workItemSelectModel);
+                List<Guid> result = apiInstance.ApiV2ProjectsProjectIdWorkItemsSearchIdPost(projectId, skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdWorkItemsSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -190,7 +190,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for work items and extract IDs only
-    ApiResponse<List<Guid>> response = apiInstance.ApiV2ProjectsProjectIdWorkItemsSearchIdPostWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, workItemSelectModel);
+    ApiResponse<List<Guid>> response = apiInstance.ApiV2ProjectsProjectIdWorkItemsSearchIdPostWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdWorkItemsSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -213,7 +213,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **workItemSelectModel** | [**WorkItemSelectModel**](WorkItemSelectModel.md) |  | [optional]  |
+| **apiV2ProjectsProjectIdWorkItemsSearchPostRequest** | [**ApiV2ProjectsProjectIdWorkItemsSearchPostRequest**](ApiV2ProjectsProjectIdWorkItemsSearchPostRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -244,7 +244,7 @@ catch (ApiException e)
 
 <a id="apiv2projectsprojectidworkitemssearchpost"></a>
 # **ApiV2ProjectsProjectIdWorkItemsSearchPost**
-> List&lt;WorkItemShortModel&gt; ApiV2ProjectsProjectIdWorkItemsSearchPost (string projectId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, WorkItemSelectModel workItemSelectModel = null)
+> List&lt;WorkItemShortModel&gt; ApiV2ProjectsProjectIdWorkItemsSearchPost (string projectId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = null)
 
 Search for work items
 
@@ -280,12 +280,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var workItemSelectModel = new WorkItemSelectModel(); // WorkItemSelectModel |  (optional) 
+            var apiV2ProjectsProjectIdWorkItemsSearchPostRequest = new ApiV2ProjectsProjectIdWorkItemsSearchPostRequest(); // ApiV2ProjectsProjectIdWorkItemsSearchPostRequest |  (optional) 
 
             try
             {
                 // Search for work items
-                List<WorkItemShortModel> result = apiInstance.ApiV2ProjectsProjectIdWorkItemsSearchPost(projectId, skip, take, orderBy, searchField, searchValue, workItemSelectModel);
+                List<WorkItemShortModel> result = apiInstance.ApiV2ProjectsProjectIdWorkItemsSearchPost(projectId, skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdWorkItemsSearchPostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -306,7 +306,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for work items
-    ApiResponse<List<WorkItemShortModel>> response = apiInstance.ApiV2ProjectsProjectIdWorkItemsSearchPostWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, workItemSelectModel);
+    ApiResponse<List<WorkItemShortModel>> response = apiInstance.ApiV2ProjectsProjectIdWorkItemsSearchPostWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdWorkItemsSearchPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -329,7 +329,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **workItemSelectModel** | [**WorkItemSelectModel**](WorkItemSelectModel.md) |  | [optional]  |
+| **apiV2ProjectsProjectIdWorkItemsSearchPostRequest** | [**ApiV2ProjectsProjectIdWorkItemsSearchPostRequest**](ApiV2ProjectsProjectIdWorkItemsSearchPostRequest.md) |  | [optional]  |
 
 ### Return type
 

@@ -35,25 +35,25 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiV2TestRunsIdRerunsPostRequest" /> class.
         /// </summary>
-        /// <param name="extractionModel">extractionModel.</param>
         /// <param name="filter">filter.</param>
-        public ApiV2TestRunsIdRerunsPostRequest(TestResultExtractionModel extractionModel = default(TestResultExtractionModel), TestResultsFilterModel filter = default(TestResultsFilterModel))
+        /// <param name="extractionModel">extractionModel.</param>
+        public ApiV2TestRunsIdRerunsPostRequest(TestResultsFilterApiModel filter = default(TestResultsFilterApiModel), TestResultsExtractionApiModel extractionModel = default(TestResultsExtractionApiModel))
         {
-            this.ExtractionModel = extractionModel;
             this.Filter = filter;
+            this.ExtractionModel = extractionModel;
         }
-
-        /// <summary>
-        /// Gets or Sets ExtractionModel
-        /// </summary>
-        [DataMember(Name = "extractionModel", EmitDefaultValue = true)]
-        public TestResultExtractionModel ExtractionModel { get; set; }
 
         /// <summary>
         /// Gets or Sets Filter
         /// </summary>
         [DataMember(Name = "filter", EmitDefaultValue = true)]
-        public TestResultsFilterModel Filter { get; set; }
+        public TestResultsFilterApiModel Filter { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ExtractionModel
+        /// </summary>
+        [DataMember(Name = "extractionModel", EmitDefaultValue = true)]
+        public TestResultsExtractionApiModel ExtractionModel { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -63,8 +63,8 @@ namespace TestIT.ApiClient.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class ApiV2TestRunsIdRerunsPostRequest {\n");
-            sb.Append("  ExtractionModel: ").Append(ExtractionModel).Append("\n");
             sb.Append("  Filter: ").Append(Filter).Append("\n");
+            sb.Append("  ExtractionModel: ").Append(ExtractionModel).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -101,14 +101,14 @@ namespace TestIT.ApiClient.Model
             }
             return 
                 (
-                    this.ExtractionModel == input.ExtractionModel ||
-                    (this.ExtractionModel != null &&
-                    this.ExtractionModel.Equals(input.ExtractionModel))
-                ) && 
-                (
                     this.Filter == input.Filter ||
                     (this.Filter != null &&
                     this.Filter.Equals(input.Filter))
+                ) && 
+                (
+                    this.ExtractionModel == input.ExtractionModel ||
+                    (this.ExtractionModel != null &&
+                    this.ExtractionModel.Equals(input.ExtractionModel))
                 );
         }
 
@@ -121,13 +121,13 @@ namespace TestIT.ApiClient.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ExtractionModel != null)
-                {
-                    hashCode = (hashCode * 59) + this.ExtractionModel.GetHashCode();
-                }
                 if (this.Filter != null)
                 {
                     hashCode = (hashCode * 59) + this.Filter.GetHashCode();
+                }
+                if (this.ExtractionModel != null)
+                {
+                    hashCode = (hashCode * 59) + this.ExtractionModel.GetHashCode();
                 }
                 return hashCode;
             }

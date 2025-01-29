@@ -40,19 +40,19 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateTestPlanRequest" /> class.
         /// </summary>
-        /// <param name="id">id (required).</param>
-        /// <param name="lockedById">lockedById.</param>
-        /// <param name="tags">tags.</param>
-        /// <param name="name">name (required).</param>
-        /// <param name="startDate">Used for analytics.</param>
-        /// <param name="endDate">Used for analytics.</param>
-        /// <param name="description">description.</param>
-        /// <param name="build">build.</param>
-        /// <param name="projectId">projectId (required).</param>
-        /// <param name="productName">productName.</param>
-        /// <param name="hasAutomaticDurationTimer">hasAutomaticDurationTimer.</param>
-        /// <param name="attributes">attributes (required).</param>
-        public UpdateTestPlanRequest(Guid id = default(Guid), Guid? lockedById = default(Guid?), List<TagPostModel> tags = default(List<TagPostModel>), string name = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string description = default(string), string build = default(string), Guid projectId = default(Guid), string productName = default(string), bool? hasAutomaticDurationTimer = default(bool?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>))
+        /// <param name="id">Test plan unique internal identifier (required).</param>
+        /// <param name="lockedById">User who locked test plan modification internal identifier.</param>
+        /// <param name="name">Test plan name (required).</param>
+        /// <param name="startDate">Date and time of test plan start.</param>
+        /// <param name="endDate">Date and time of test plan end.</param>
+        /// <param name="description">Test plan description.</param>
+        /// <param name="build">Build of the application on which test plan is executed.</param>
+        /// <param name="projectId">Project unique identifier (required).</param>
+        /// <param name="productName">Name of the testing product.</param>
+        /// <param name="hasAutomaticDurationTimer">Boolean flag defines if test plan has automatic duration timer.</param>
+        /// <param name="attributes">Key value pair of test plan custom attributes.</param>
+        /// <param name="tags">Test plan tag names collection.</param>
+        public UpdateTestPlanRequest(Guid id = default(Guid), Guid? lockedById = default(Guid?), string name = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string description = default(string), string build = default(string), Guid projectId = default(Guid), string productName = default(string), bool? hasAutomaticDurationTimer = default(bool?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<TagApiModel> tags = default(List<TagApiModel>))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -62,104 +62,100 @@ namespace TestIT.ApiClient.Model
             }
             this.Name = name;
             this.ProjectId = projectId;
-            // to ensure "attributes" is required (not null)
-            if (attributes == null)
-            {
-                throw new ArgumentNullException("attributes is a required property for UpdateTestPlanRequest and cannot be null");
-            }
-            this.Attributes = attributes;
             this.LockedById = lockedById;
-            this.Tags = tags;
             this.StartDate = startDate;
             this.EndDate = endDate;
             this.Description = description;
             this.Build = build;
             this.ProductName = productName;
             this.HasAutomaticDurationTimer = hasAutomaticDurationTimer;
+            this.Attributes = attributes;
+            this.Tags = tags;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Test plan unique internal identifier
         /// </summary>
-        /// <example>&quot;3e5a61f5-bb50-44f4-8898-6dda6d40fe23&quot;</example>
+        /// <value>Test plan unique internal identifier</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets LockedById
+        /// User who locked test plan modification internal identifier
         /// </summary>
+        /// <value>User who locked test plan modification internal identifier</value>
         [DataMember(Name = "lockedById", EmitDefaultValue = true)]
         public Guid? LockedById { get; set; }
 
         /// <summary>
-        /// Gets or Sets Tags
+        /// Test plan name
         /// </summary>
-        [DataMember(Name = "tags", EmitDefaultValue = true)]
-        public List<TagPostModel> Tags { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Name
-        /// </summary>
-        /// <example>&quot;Base test plan&quot;</example>
+        /// <value>Test plan name</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Used for analytics
+        /// Date and time of test plan start
         /// </summary>
-        /// <value>Used for analytics</value>
-        /// <example>&quot;2024-11-21T11:05:56.558551500Z&quot;</example>
+        /// <value>Date and time of test plan start</value>
         [DataMember(Name = "startDate", EmitDefaultValue = true)]
         public DateTime? StartDate { get; set; }
 
         /// <summary>
-        /// Used for analytics
+        /// Date and time of test plan end
         /// </summary>
-        /// <value>Used for analytics</value>
-        /// <example>&quot;2024-11-21T11:05:56.558551500Z&quot;</example>
+        /// <value>Date and time of test plan end</value>
         [DataMember(Name = "endDate", EmitDefaultValue = true)]
         public DateTime? EndDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Test plan description
         /// </summary>
-        /// <example>&quot;This is a base test plan&quot;</example>
+        /// <value>Test plan description</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or Sets Build
+        /// Build of the application on which test plan is executed
         /// </summary>
-        /// <example>&quot;v.3.0.0-b94f3055&quot;</example>
+        /// <value>Build of the application on which test plan is executed</value>
         [DataMember(Name = "build", EmitDefaultValue = true)]
         public string Build { get; set; }
 
         /// <summary>
-        /// Gets or Sets ProjectId
+        /// Project unique identifier
         /// </summary>
-        /// <example>&quot;3e5a61f5-bb50-44f4-8898-6dda6d40fe23&quot;</example>
+        /// <value>Project unique identifier</value>
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
-        /// Gets or Sets ProductName
+        /// Name of the testing product
         /// </summary>
-        /// <example>&quot;Billing service&quot;</example>
+        /// <value>Name of the testing product</value>
         [DataMember(Name = "productName", EmitDefaultValue = true)]
         public string ProductName { get; set; }
 
         /// <summary>
-        /// Gets or Sets HasAutomaticDurationTimer
+        /// Boolean flag defines if test plan has automatic duration timer
         /// </summary>
-        /// <example>true</example>
+        /// <value>Boolean flag defines if test plan has automatic duration timer</value>
         [DataMember(Name = "hasAutomaticDurationTimer", EmitDefaultValue = true)]
         public bool? HasAutomaticDurationTimer { get; set; }
 
         /// <summary>
-        /// Gets or Sets Attributes
+        /// Key value pair of test plan custom attributes
         /// </summary>
-        [DataMember(Name = "attributes", IsRequired = true, EmitDefaultValue = true)]
+        /// <value>Key value pair of test plan custom attributes</value>
+        [DataMember(Name = "attributes", EmitDefaultValue = true)]
         public Dictionary<string, Object> Attributes { get; set; }
+
+        /// <summary>
+        /// Test plan tag names collection
+        /// </summary>
+        /// <value>Test plan tag names collection</value>
+        [DataMember(Name = "tags", EmitDefaultValue = true)]
+        public List<TagApiModel> Tags { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -171,7 +167,6 @@ namespace TestIT.ApiClient.Model
             sb.Append("class UpdateTestPlanRequest {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  LockedById: ").Append(LockedById).Append("\n");
-            sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  StartDate: ").Append(StartDate).Append("\n");
             sb.Append("  EndDate: ").Append(EndDate).Append("\n");
@@ -181,6 +176,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ProductName: ").Append(ProductName).Append("\n");
             sb.Append("  HasAutomaticDurationTimer: ").Append(HasAutomaticDurationTimer).Append("\n");
             sb.Append("  Attributes: ").Append(Attributes).Append("\n");
+            sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -227,12 +223,6 @@ namespace TestIT.ApiClient.Model
                     this.LockedById.Equals(input.LockedById))
                 ) && 
                 (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
@@ -277,6 +267,12 @@ namespace TestIT.ApiClient.Model
                     this.Attributes != null &&
                     input.Attributes != null &&
                     this.Attributes.SequenceEqual(input.Attributes)
+                ) && 
+                (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
                 );
         }
 
@@ -296,10 +292,6 @@ namespace TestIT.ApiClient.Model
                 if (this.LockedById != null)
                 {
                     hashCode = (hashCode * 59) + this.LockedById.GetHashCode();
-                }
-                if (this.Tags != null)
-                {
-                    hashCode = (hashCode * 59) + this.Tags.GetHashCode();
                 }
                 if (this.Name != null)
                 {
@@ -336,6 +328,10 @@ namespace TestIT.ApiClient.Model
                 if (this.Attributes != null)
                 {
                     hashCode = (hashCode * 59) + this.Attributes.GetHashCode();
+                }
+                if (this.Tags != null)
+                {
+                    hashCode = (hashCode * 59) + this.Tags.GetHashCode();
                 }
                 return hashCode;
             }

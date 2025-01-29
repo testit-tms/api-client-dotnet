@@ -18,6 +18,7 @@
 | 4.6     | 2.6        |
 | 5.0     | 3.0        |
 | 5.2     | 3.1        |
+| Cloud   | 3.2        |
 
 <a name="frameworks-supported"></a>
 ## Frameworks supported
@@ -104,6 +105,7 @@ Class | Method | HTTP request | Description
 *AttachmentsApi* | [**ApiV2AttachmentsIdMetadataGet**](docs\AttachmentsApi.md#apiv2attachmentsidmetadataget) | **GET** /api/v2/attachments/{id}/metadata | Get attachment metadata
 *AttachmentsApi* | [**ApiV2AttachmentsOccupiedFileStorageSizeGet**](docs\AttachmentsApi.md#apiv2attachmentsoccupiedfilestoragesizeget) | **GET** /api/v2/attachments/occupiedFileStorageSize | Get size of attachments storage in bytes
 *AttachmentsApi* | [**ApiV2AttachmentsPost**](docs\AttachmentsApi.md#apiv2attachmentspost) | **POST** /api/v2/attachments | Upload new attachment file
+*AutoTestsApi* | [**ApiV2AutoTestsDelete**](docs\AutoTestsApi.md#apiv2autotestsdelete) | **DELETE** /api/v2/autoTests | Delete autotests
 *AutoTestsApi* | [**ApiV2AutoTestsFlakyBulkPost**](docs\AutoTestsApi.md#apiv2autotestsflakybulkpost) | **POST** /api/v2/autoTests/flaky/bulk | Set \"Flaky\" status for multiple autotests
 *AutoTestsApi* | [**ApiV2AutoTestsIdPatch**](docs\AutoTestsApi.md#apiv2autotestsidpatch) | **PATCH** /api/v2/autoTests/{id} | Patch auto test
 *AutoTestsApi* | [**ApiV2AutoTestsIdTestResultsSearchPost**](docs\AutoTestsApi.md#apiv2autotestsidtestresultssearchpost) | **POST** /api/v2/autoTests/{id}/testResults/search | Get test results history for autotest

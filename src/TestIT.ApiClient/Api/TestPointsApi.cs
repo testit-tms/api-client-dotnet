@@ -32,8 +32,8 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test point unique ID</param>
-        /// <returns>List&lt;TestRunModel&gt;</returns>
-        List<TestRunModel> ApiV2TestPointsIdTestRunsGet(Guid id);
+        /// <returns>List&lt;TestRunApiResult&gt;</returns>
+        List<TestRunApiResult> ApiV2TestPointsIdTestRunsGet(Guid id);
 
         /// <summary>
         /// Get all test runs which use test point
@@ -43,8 +43,8 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test point unique ID</param>
-        /// <returns>ApiResponse of List&lt;TestRunModel&gt;</returns>
-        ApiResponse<List<TestRunModel>> ApiV2TestPointsIdTestRunsGetWithHttpInfo(Guid id);
+        /// <returns>ApiResponse of List&lt;TestRunApiResult&gt;</returns>
+        ApiResponse<List<TestRunApiResult>> ApiV2TestPointsIdTestRunsGetWithHttpInfo(Guid id);
         /// <summary>
         /// Get work item represented by test point
         /// </summary>
@@ -101,8 +101,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="apiV2TestPointsSearchPostRequest"> (optional)</param>
-        /// <returns>List&lt;TestPointShortGetModel&gt;</returns>
-        List<TestPointShortGetModel> ApiV2TestPointsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest));
+        /// <returns>List&lt;TestPointShortResponseModel&gt;</returns>
+        List<TestPointShortResponseModel> ApiV2TestPointsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest));
 
         /// <summary>
         /// Search for test points
@@ -117,8 +117,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="apiV2TestPointsSearchPostRequest"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;TestPointShortGetModel&gt;</returns>
-        ApiResponse<List<TestPointShortGetModel>> ApiV2TestPointsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest));
+        /// <returns>ApiResponse of List&lt;TestPointShortResponseModel&gt;</returns>
+        ApiResponse<List<TestPointShortResponseModel>> ApiV2TestPointsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest));
         #endregion Synchronous Operations
     }
 
@@ -137,8 +137,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test point unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;TestRunModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TestRunModel>> ApiV2TestPointsIdTestRunsGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;TestRunApiResult&gt;</returns>
+        System.Threading.Tasks.Task<List<TestRunApiResult>> ApiV2TestPointsIdTestRunsGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get all test runs which use test point
@@ -149,8 +149,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test point unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;TestRunModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestRunModel>>> ApiV2TestPointsIdTestRunsGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;TestRunApiResult&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<TestRunApiResult>>> ApiV2TestPointsIdTestRunsGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get work item represented by test point
         /// </summary>
@@ -221,8 +221,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="apiV2TestPointsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;TestPointShortGetModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TestPointShortGetModel>> ApiV2TestPointsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;TestPointShortResponseModel&gt;</returns>
+        System.Threading.Tasks.Task<List<TestPointShortResponseModel>> ApiV2TestPointsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Search for test points
@@ -238,8 +238,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="apiV2TestPointsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;TestPointShortGetModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestPointShortGetModel>>> ApiV2TestPointsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;TestPointShortResponseModel&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<TestPointShortResponseModel>>> ApiV2TestPointsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -458,10 +458,10 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test point unique ID</param>
-        /// <returns>List&lt;TestRunModel&gt;</returns>
-        public List<TestRunModel> ApiV2TestPointsIdTestRunsGet(Guid id)
+        /// <returns>List&lt;TestRunApiResult&gt;</returns>
+        public List<TestRunApiResult> ApiV2TestPointsIdTestRunsGet(Guid id)
         {
-            TestIT.ApiClient.Client.ApiResponse<List<TestRunModel>> localVarResponse = ApiV2TestPointsIdTestRunsGetWithHttpInfo(id);
+            TestIT.ApiClient.Client.ApiResponse<List<TestRunApiResult>> localVarResponse = ApiV2TestPointsIdTestRunsGetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -470,8 +470,8 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test point unique ID</param>
-        /// <returns>ApiResponse of List&lt;TestRunModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<TestRunModel>> ApiV2TestPointsIdTestRunsGetWithHttpInfo(Guid id)
+        /// <returns>ApiResponse of List&lt;TestRunApiResult&gt;</returns>
+        public TestIT.ApiClient.Client.ApiResponse<List<TestRunApiResult>> ApiV2TestPointsIdTestRunsGetWithHttpInfo(Guid id)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -498,7 +498,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<TestRunModel>>("/api/v2/testPoints/{id}/testRuns", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<TestRunApiResult>>("/api/v2/testPoints/{id}/testRuns", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -515,10 +515,10 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test point unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;TestRunModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestRunModel>> ApiV2TestPointsIdTestRunsGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;TestRunApiResult&gt;</returns>
+        public async System.Threading.Tasks.Task<List<TestRunApiResult>> ApiV2TestPointsIdTestRunsGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<TestRunModel>> localVarResponse = await ApiV2TestPointsIdTestRunsGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<TestRunApiResult>> localVarResponse = await ApiV2TestPointsIdTestRunsGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -528,8 +528,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test point unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;TestRunModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestRunModel>>> ApiV2TestPointsIdTestRunsGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;TestRunApiResult&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestRunApiResult>>> ApiV2TestPointsIdTestRunsGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -559,7 +559,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<TestRunModel>>("/api/v2/testPoints/{id}/testRuns", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<TestRunApiResult>>("/api/v2/testPoints/{id}/testRuns", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -876,10 +876,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="apiV2TestPointsSearchPostRequest"> (optional)</param>
-        /// <returns>List&lt;TestPointShortGetModel&gt;</returns>
-        public List<TestPointShortGetModel> ApiV2TestPointsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest))
+        /// <returns>List&lt;TestPointShortResponseModel&gt;</returns>
+        public List<TestPointShortResponseModel> ApiV2TestPointsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<TestPointShortGetModel>> localVarResponse = ApiV2TestPointsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2TestPointsSearchPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<List<TestPointShortResponseModel>> localVarResponse = ApiV2TestPointsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2TestPointsSearchPostRequest);
             return localVarResponse.Data;
         }
 
@@ -893,8 +893,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="apiV2TestPointsSearchPostRequest"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;TestPointShortGetModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<TestPointShortGetModel>> ApiV2TestPointsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest))
+        /// <returns>ApiResponse of List&lt;TestPointShortResponseModel&gt;</returns>
+        public TestIT.ApiClient.Client.ApiResponse<List<TestPointShortResponseModel>> ApiV2TestPointsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -942,7 +942,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<List<TestPointShortGetModel>>("/api/v2/testPoints/search", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<List<TestPointShortResponseModel>>("/api/v2/testPoints/search", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -964,10 +964,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="apiV2TestPointsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;TestPointShortGetModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestPointShortGetModel>> ApiV2TestPointsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;TestPointShortResponseModel&gt;</returns>
+        public async System.Threading.Tasks.Task<List<TestPointShortResponseModel>> ApiV2TestPointsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<TestPointShortGetModel>> localVarResponse = await ApiV2TestPointsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, apiV2TestPointsSearchPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<TestPointShortResponseModel>> localVarResponse = await ApiV2TestPointsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, apiV2TestPointsSearchPostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -982,8 +982,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="apiV2TestPointsSearchPostRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;TestPointShortGetModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestPointShortGetModel>>> ApiV2TestPointsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;TestPointShortResponseModel&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestPointShortResponseModel>>> ApiV2TestPointsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = default(ApiV2TestPointsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1034,7 +1034,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<TestPointShortGetModel>>("/api/v2/testPoints/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<TestPointShortResponseModel>>("/api/v2/testPoints/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

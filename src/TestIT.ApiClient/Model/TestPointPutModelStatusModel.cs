@@ -32,6 +32,12 @@ namespace TestIT.ApiClient.Model
     [DataContract(Name = "TestPointPutModel_statusModel")]
     public partial class TestPointPutModelStatusModel : IEquatable<TestPointPutModelStatusModel>, IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets Type
+        /// </summary>
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
+        public TestStatusType Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPointPutModelStatusModel" /> class.
         /// </summary>
@@ -42,8 +48,12 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="id">id (required).</param>
         /// <param name="name">name (required).</param>
+        /// <param name="type">type (required).</param>
+        /// <param name="isBased">isBased (required).</param>
+        /// <param name="isDefault">isDefault (required).</param>
         /// <param name="code">code (required).</param>
-        public TestPointPutModelStatusModel(Guid id = default(Guid), string name = default(string), string code = default(string))
+        /// <param name="description">description.</param>
+        public TestPointPutModelStatusModel(Guid id = default(Guid), string name = default(string), TestStatusType type = default(TestStatusType), bool isBased = default(bool), bool isDefault = default(bool), string code = default(string), string description = default(string))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -52,12 +62,16 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("name is a required property for TestPointPutModelStatusModel and cannot be null");
             }
             this.Name = name;
+            this.Type = type;
+            this.IsBased = isBased;
+            this.IsDefault = isDefault;
             // to ensure "code" is required (not null)
             if (code == null)
             {
                 throw new ArgumentNullException("code is a required property for TestPointPutModelStatusModel and cannot be null");
             }
             this.Code = code;
+            this.Description = description;
         }
 
         /// <summary>
@@ -73,10 +87,28 @@ namespace TestIT.ApiClient.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or Sets IsBased
+        /// </summary>
+        [DataMember(Name = "isBased", IsRequired = true, EmitDefaultValue = true)]
+        public bool IsBased { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsDefault
+        /// </summary>
+        [DataMember(Name = "isDefault", IsRequired = true, EmitDefaultValue = true)]
+        public bool IsDefault { get; set; }
+
+        /// <summary>
         /// Gets or Sets Code
         /// </summary>
         [DataMember(Name = "code", IsRequired = true, EmitDefaultValue = true)]
         public string Code { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Description
+        /// </summary>
+        [DataMember(Name = "description", EmitDefaultValue = true)]
+        public string Description { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -88,7 +120,11 @@ namespace TestIT.ApiClient.Model
             sb.Append("class TestPointPutModelStatusModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  IsBased: ").Append(IsBased).Append("\n");
+            sb.Append("  IsDefault: ").Append(IsDefault).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
+            sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -135,9 +171,26 @@ namespace TestIT.ApiClient.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.Type == input.Type ||
+                    this.Type.Equals(input.Type)
+                ) && 
+                (
+                    this.IsBased == input.IsBased ||
+                    this.IsBased.Equals(input.IsBased)
+                ) && 
+                (
+                    this.IsDefault == input.IsDefault ||
+                    this.IsDefault.Equals(input.IsDefault)
+                ) && 
+                (
                     this.Code == input.Code ||
                     (this.Code != null &&
                     this.Code.Equals(input.Code))
+                ) && 
+                (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
                 );
         }
 
@@ -158,9 +211,16 @@ namespace TestIT.ApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.Type.GetHashCode();
+                hashCode = (hashCode * 59) + this.IsBased.GetHashCode();
+                hashCode = (hashCode * 59) + this.IsDefault.GetHashCode();
                 if (this.Code != null)
                 {
                     hashCode = (hashCode * 59) + this.Code.GetHashCode();
+                }
+                if (this.Description != null)
+                {
+                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
                 }
                 return hashCode;
             }

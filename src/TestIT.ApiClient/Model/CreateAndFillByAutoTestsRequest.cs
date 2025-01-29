@@ -48,7 +48,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="launchSource">Specifies the test run launch source..</param>
         /// <param name="attachments">Collection of attachment ids to relate to the test run.</param>
         /// <param name="links">Collection of links to relate to the test run.</param>
-        public CreateAndFillByAutoTestsRequest(Guid projectId = default(Guid), string name = default(string), List<Guid> configurationIds = default(List<Guid>), List<string> autoTestExternalIds = default(List<string>), string description = default(string), string launchSource = default(string), List<AttachmentPutModel> attachments = default(List<AttachmentPutModel>), List<LinkPostModel> links = default(List<LinkPostModel>))
+        public CreateAndFillByAutoTestsRequest(Guid projectId = default(Guid), string name = default(string), List<Guid> configurationIds = default(List<Guid>), List<string> autoTestExternalIds = default(List<string>), string description = default(string), string launchSource = default(string), List<AssignAttachmentApiModel> attachments = default(List<AssignAttachmentApiModel>), List<CreateLinkApiModel> links = default(List<CreateLinkApiModel>))
         {
             this.ProjectId = projectId;
             // to ensure "configurationIds" is required (not null)
@@ -117,14 +117,14 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Collection of attachment ids to relate to the test run</value>
         [DataMember(Name = "attachments", EmitDefaultValue = true)]
-        public List<AttachmentPutModel> Attachments { get; set; }
+        public List<AssignAttachmentApiModel> Attachments { get; set; }
 
         /// <summary>
         /// Collection of links to relate to the test run
         /// </summary>
         /// <value>Collection of links to relate to the test run</value>
         [DataMember(Name = "links", EmitDefaultValue = true)]
-        public List<LinkPostModel> Links { get; set; }
+        public List<CreateLinkApiModel> Links { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

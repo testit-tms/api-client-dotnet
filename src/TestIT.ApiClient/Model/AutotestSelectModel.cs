@@ -27,34 +27,29 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// AutotestSelectModel
+    /// AutoTestSelectModel
     /// </summary>
-    [DataContract(Name = "AutotestSelectModel")]
-    public partial class AutotestSelectModel : IEquatable<AutotestSelectModel>, IValidatableObject
+    [DataContract(Name = "AutoTestSelectModel")]
+    public partial class AutoTestSelectModel : IEquatable<AutoTestSelectModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AutotestSelectModel" /> class.
+        /// Initializes a new instance of the <see cref="AutoTestSelectModel" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected AutotestSelectModel() { }
+        protected AutoTestSelectModel() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="AutotestSelectModel" /> class.
+        /// Initializes a new instance of the <see cref="AutoTestSelectModel" /> class.
         /// </summary>
         /// <param name="filter">filter (required).</param>
-        /// <param name="extractionModel">extractionModel (required).</param>
-        public AutotestSelectModel(AutotestSelectModelFilter filter = default(AutotestSelectModelFilter), AutotestSelectModelExtractionModel extractionModel = default(AutotestSelectModelExtractionModel))
+        /// <param name="extractionModel">extractionModel.</param>
+        public AutoTestSelectModel(AutoTestSelectModelFilter filter = default(AutoTestSelectModelFilter), AutoTestsExtractionModel extractionModel = default(AutoTestsExtractionModel))
         {
             // to ensure "filter" is required (not null)
             if (filter == null)
             {
-                throw new ArgumentNullException("filter is a required property for AutotestSelectModel and cannot be null");
+                throw new ArgumentNullException("filter is a required property for AutoTestSelectModel and cannot be null");
             }
             this.Filter = filter;
-            // to ensure "extractionModel" is required (not null)
-            if (extractionModel == null)
-            {
-                throw new ArgumentNullException("extractionModel is a required property for AutotestSelectModel and cannot be null");
-            }
             this.ExtractionModel = extractionModel;
         }
 
@@ -62,13 +57,13 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Filter
         /// </summary>
         [DataMember(Name = "filter", IsRequired = true, EmitDefaultValue = true)]
-        public AutotestSelectModelFilter Filter { get; set; }
+        public AutoTestSelectModelFilter Filter { get; set; }
 
         /// <summary>
         /// Gets or Sets ExtractionModel
         /// </summary>
-        [DataMember(Name = "extractionModel", IsRequired = true, EmitDefaultValue = true)]
-        public AutotestSelectModelExtractionModel ExtractionModel { get; set; }
+        [DataMember(Name = "extractionModel", EmitDefaultValue = true)]
+        public AutoTestsExtractionModel ExtractionModel { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -77,7 +72,7 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AutotestSelectModel {\n");
+            sb.Append("class AutoTestSelectModel {\n");
             sb.Append("  Filter: ").Append(Filter).Append("\n");
             sb.Append("  ExtractionModel: ").Append(ExtractionModel).Append("\n");
             sb.Append("}\n");
@@ -100,15 +95,15 @@ namespace TestIT.ApiClient.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AutotestSelectModel);
+            return this.Equals(input as AutoTestSelectModel);
         }
 
         /// <summary>
-        /// Returns true if AutotestSelectModel instances are equal
+        /// Returns true if AutoTestSelectModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of AutotestSelectModel to be compared</param>
+        /// <param name="input">Instance of AutoTestSelectModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AutotestSelectModel input)
+        public bool Equals(AutoTestSelectModel input)
         {
             if (input == null)
             {
