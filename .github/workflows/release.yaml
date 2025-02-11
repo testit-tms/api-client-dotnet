@@ -50,7 +50,7 @@ jobs:
 
     steps:
       - name: Download artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: NuGet-package
           path: ${{ env.NUGET_DIR }}
