@@ -21,9 +21,9 @@ Name | Type | Description | Notes
 **WorkItemVersionId** | **Guid** | Unique ID of work item version the test point represents | 
 **WorkItemVersionNumber** | **int** | Number of work item version the test point represents | 
 **WorkItemMedianDuration** | **long?** | Median duration of work item the test point represents | [optional] 
-**Status** | **TestPointStatus** |  | 
-**StatusModel** | [**TestPointShortResponseModelStatusModel**](TestPointShortResponseModelStatusModel.md) |  | 
-**Priority** | **WorkItemPriorityModel** |  | 
+**Status** | **TestPointStatus** | Status of the test point | 
+**StatusModel** | [**TestStatusApiResult**](TestStatusApiResult.md) | Status of the test point | 
+**Priority** | **WorkItemPriorityModel** | Priority of the test point | 
 **IsAutomated** | **bool** | Indicates if the test point represents an autotest | 
 **Name** | **string** | Name of the test point | 
 **ConfigurationId** | **Guid** | Unique ID of the test point configuration | 
@@ -31,9 +31,9 @@ Name | Type | Description | Notes
 **SectionId** | **Guid** | Unique ID of section where work item the test point represents is located | 
 **SectionName** | **string** | Name of section where work item the test point represents is located | [optional] 
 **ProjectId** | **Guid** | Unique ID of the test point project | 
-**LastTestResult** | [**TestPointShortResponseModelLastTestResult**](TestPointShortResponseModelLastTestResult.md) |  | [optional] 
+**LastTestResult** | [**LastTestResultModel**](LastTestResultModel.md) | Model of the test point last test result | [optional] 
 **IterationId** | **Guid** | Unique ID of work item iteration the test point represents | 
-**WorkItemState** | **WorkItemState** |  | 
+**WorkItemState** | **WorkItemState** | Work item state | 
 **WorkItemCreatedById** | **Guid** | Unique ID of the work item creator | 
 **WorkItemCreatedDate** | **DateTime** | Creation date of work item | 
 **WorkItemModifiedById** | **Guid?** | Unique ID of the work item last editor | [optional] 

@@ -30,12 +30,13 @@ namespace TestIT.ApiClient.Model
     /// AutoTestStepResult
     /// </summary>
     [DataContract(Name = "AutoTestStepResult")]
-    public partial class AutoTestStepResult : IEquatable<AutoTestStepResult>, IValidatableObject
+    public partial class AutoTestStepResult : IValidatableObject
     {
 
         /// <summary>
-        /// Gets or Sets Outcome
+        /// Specifies the result of the autotest execution.
         /// </summary>
+        /// <value>Specifies the result of the autotest execution.</value>
         [DataMember(Name = "outcome", EmitDefaultValue = true)]
         public AvailableTestResultOutcome? Outcome { get; set; }
         /// <summary>
@@ -47,7 +48,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="startedOn">Step start date..</param>
         /// <param name="completedOn">Step end date..</param>
         /// <param name="duration">Expected or actual duration of the test run execution in milliseconds..</param>
-        /// <param name="outcome">outcome.</param>
+        /// <param name="outcome">Specifies the result of the autotest execution..</param>
         /// <param name="stepResults">Nested step results. The maximum nesting level is 15..</param>
         /// <param name="attachments">/// &lt;summary&gt;  Specifies an attachment GUID. Multiple values can be sent.  &lt;/summary&gt;.</param>
         /// <param name="parameters">\&quot;&lt;b&gt;parameter&lt;/b&gt;\&quot;: \&quot;&lt;b&gt;value&lt;/b&gt;\&quot; pair with arbitrary custom parameters. Multiple parameters can be sent..</param>
@@ -160,148 +161,22 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AutoTestStepResult);
-        }
-
-        /// <summary>
-        /// Returns true if AutoTestStepResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AutoTestStepResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AutoTestStepResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Title == input.Title ||
-                    (this.Title != null &&
-                    this.Title.Equals(input.Title))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Info == input.Info ||
-                    (this.Info != null &&
-                    this.Info.Equals(input.Info))
-                ) && 
-                (
-                    this.StartedOn == input.StartedOn ||
-                    (this.StartedOn != null &&
-                    this.StartedOn.Equals(input.StartedOn))
-                ) && 
-                (
-                    this.CompletedOn == input.CompletedOn ||
-                    (this.CompletedOn != null &&
-                    this.CompletedOn.Equals(input.CompletedOn))
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    (this.Duration != null &&
-                    this.Duration.Equals(input.Duration))
-                ) && 
-                (
-                    this.Outcome == input.Outcome ||
-                    this.Outcome.Equals(input.Outcome)
-                ) && 
-                (
-                    this.StepResults == input.StepResults ||
-                    this.StepResults != null &&
-                    input.StepResults != null &&
-                    this.StepResults.SequenceEqual(input.StepResults)
-                ) && 
-                (
-                    this.Attachments == input.Attachments ||
-                    this.Attachments != null &&
-                    input.Attachments != null &&
-                    this.Attachments.SequenceEqual(input.Attachments)
-                ) && 
-                (
-                    this.Parameters == input.Parameters ||
-                    this.Parameters != null &&
-                    input.Parameters != null &&
-                    this.Parameters.SequenceEqual(input.Parameters)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Title != null)
-                {
-                    hashCode = (hashCode * 59) + this.Title.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.Info != null)
-                {
-                    hashCode = (hashCode * 59) + this.Info.GetHashCode();
-                }
-                if (this.StartedOn != null)
-                {
-                    hashCode = (hashCode * 59) + this.StartedOn.GetHashCode();
-                }
-                if (this.CompletedOn != null)
-                {
-                    hashCode = (hashCode * 59) + this.CompletedOn.GetHashCode();
-                }
-                if (this.Duration != null)
-                {
-                    hashCode = (hashCode * 59) + this.Duration.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Outcome.GetHashCode();
-                if (this.StepResults != null)
-                {
-                    hashCode = (hashCode * 59) + this.StepResults.GetHashCode();
-                }
-                if (this.Attachments != null)
-                {
-                    hashCode = (hashCode * 59) + this.Attachments.GetHashCode();
-                }
-                if (this.Parameters != null)
-                {
-                    hashCode = (hashCode * 59) + this.Parameters.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Duration (long?) maximum
             if (this.Duration > (long?)43200000000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Duration, must be a value less than or equal to 43200000000.", new [] { "Duration" });
+                yield return new ValidationResult("Invalid value for Duration, must be a value less than or equal to 43200000000.", new [] { "Duration" });
             }
 
             // Duration (long?) minimum
             if (this.Duration < (long?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Duration, must be a value greater than or equal to 0.", new [] { "Duration" });
+                yield return new ValidationResult("Invalid value for Duration, must be a value greater than or equal to 0.", new [] { "Duration" });
             }
 
             yield break;

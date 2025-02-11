@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost*
 
 <a id="apiv2projectsprojectidsettingsautotestspost"></a>
 # **ApiV2ProjectsProjectIdSettingsAutotestsPost**
-> void ApiV2ProjectsProjectIdSettingsAutotestsPost (string projectId, ApiV2ProjectsProjectIdSettingsAutotestsPostRequest apiV2ProjectsProjectIdSettingsAutotestsPostRequest = null)
+> void ApiV2ProjectsProjectIdSettingsAutotestsPost (string projectId, AutoTestProjectSettingsPostModel autoTestProjectSettingsPostModel = null)
 
 Set autotest project settings.
 
@@ -40,12 +40,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectSettingsApi(httpClient, config, httpClientHandler);
             var projectId = "projectId_example";  // string | 
-            var apiV2ProjectsProjectIdSettingsAutotestsPostRequest = new ApiV2ProjectsProjectIdSettingsAutotestsPostRequest(); // ApiV2ProjectsProjectIdSettingsAutotestsPostRequest |  (optional) 
+            var autoTestProjectSettingsPostModel = new AutoTestProjectSettingsPostModel(); // AutoTestProjectSettingsPostModel |  (optional) 
 
             try
             {
                 // Set autotest project settings.
-                apiInstance.ApiV2ProjectsProjectIdSettingsAutotestsPost(projectId, apiV2ProjectsProjectIdSettingsAutotestsPostRequest);
+                apiInstance.ApiV2ProjectsProjectIdSettingsAutotestsPost(projectId, autoTestProjectSettingsPostModel);
             }
             catch (ApiException  e)
             {
@@ -65,7 +65,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Set autotest project settings.
-    apiInstance.ApiV2ProjectsProjectIdSettingsAutotestsPostWithHttpInfo(projectId, apiV2ProjectsProjectIdSettingsAutotestsPostRequest);
+    apiInstance.ApiV2ProjectsProjectIdSettingsAutotestsPostWithHttpInfo(projectId, autoTestProjectSettingsPostModel);
 }
 catch (ApiException e)
 {
@@ -80,7 +80,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **string** |  |  |
-| **apiV2ProjectsProjectIdSettingsAutotestsPostRequest** | [**ApiV2ProjectsProjectIdSettingsAutotestsPostRequest**](ApiV2ProjectsProjectIdSettingsAutotestsPostRequest.md) |  | [optional]  |
+| **autoTestProjectSettingsPostModel** | [**AutoTestProjectSettingsPostModel**](AutoTestProjectSettingsPostModel.md) |  | [optional]  |
 
 ### Return type
 

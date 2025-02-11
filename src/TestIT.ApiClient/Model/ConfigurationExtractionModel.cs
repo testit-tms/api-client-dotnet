@@ -30,30 +30,32 @@ namespace TestIT.ApiClient.Model
     /// ConfigurationExtractionModel
     /// </summary>
     [DataContract(Name = "ConfigurationExtractionModel")]
-    public partial class ConfigurationExtractionModel : IEquatable<ConfigurationExtractionModel>, IValidatableObject
+    public partial class ConfigurationExtractionModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ConfigurationExtractionModel" /> class.
         /// </summary>
-        /// <param name="ids">ids.</param>
-        /// <param name="projectIds">projectIds.</param>
-        public ConfigurationExtractionModel(ConfigurationExtractionModelIds ids = default(ConfigurationExtractionModelIds), ConfigurationExtractionModelProjectIds projectIds = default(ConfigurationExtractionModelProjectIds))
+        /// <param name="ids">Extraction parameters for configurations.</param>
+        /// <param name="projectIds">Extraction parameters for projects.</param>
+        public ConfigurationExtractionModel(GuidExtractionModel ids = default(GuidExtractionModel), GuidExtractionModel projectIds = default(GuidExtractionModel))
         {
             this.Ids = ids;
             this.ProjectIds = projectIds;
         }
 
         /// <summary>
-        /// Gets or Sets Ids
+        /// Extraction parameters for configurations
         /// </summary>
+        /// <value>Extraction parameters for configurations</value>
         [DataMember(Name = "ids", EmitDefaultValue = true)]
-        public ConfigurationExtractionModelIds Ids { get; set; }
+        public GuidExtractionModel Ids { get; set; }
 
         /// <summary>
-        /// Gets or Sets ProjectIds
+        /// Extraction parameters for projects
         /// </summary>
+        /// <value>Extraction parameters for projects</value>
         [DataMember(Name = "projectIds", EmitDefaultValue = true)]
-        public ConfigurationExtractionModelProjectIds ProjectIds { get; set; }
+        public GuidExtractionModel ProjectIds { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -79,66 +81,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ConfigurationExtractionModel);
-        }
-
-        /// <summary>
-        /// Returns true if ConfigurationExtractionModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ConfigurationExtractionModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ConfigurationExtractionModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Ids == input.Ids ||
-                    (this.Ids != null &&
-                    this.Ids.Equals(input.Ids))
-                ) && 
-                (
-                    this.ProjectIds == input.ProjectIds ||
-                    (this.ProjectIds != null &&
-                    this.ProjectIds.Equals(input.ProjectIds))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Ids != null)
-                {
-                    hashCode = (hashCode * 59) + this.Ids.GetHashCode();
-                }
-                if (this.ProjectIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProjectIds.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

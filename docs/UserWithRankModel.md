@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **IsDisabled** | **bool** |  | 
 **ProviderId** | **Guid?** |  | [optional] 
 **IsActiveStatusByEntity** | **bool** |  | 
-**UserRank** | [**UserWithRankModelUserRank**](UserWithRankModelUserRank.md) |  | 
+**UserRank** | [**UserRankModel**](UserRankModel.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

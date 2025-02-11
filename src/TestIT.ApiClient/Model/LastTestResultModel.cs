@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// LastTestResultModel
     /// </summary>
     [DataContract(Name = "LastTestResultModel")]
-    public partial class LastTestResultModel : IEquatable<LastTestResultModel>, IValidatableObject
+    public partial class LastTestResultModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="LastTestResultModel" /> class.
@@ -129,113 +129,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as LastTestResultModel);
-        }
-
-        /// <summary>
-        /// Returns true if LastTestResultModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of LastTestResultModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(LastTestResultModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.TestRunId == input.TestRunId ||
-                    (this.TestRunId != null &&
-                    this.TestRunId.Equals(input.TestRunId))
-                ) && 
-                (
-                    this.AutoTestId == input.AutoTestId ||
-                    (this.AutoTestId != null &&
-                    this.AutoTestId.Equals(input.AutoTestId))
-                ) && 
-                (
-                    this.Comment == input.Comment ||
-                    (this.Comment != null &&
-                    this.Comment.Equals(input.Comment))
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    this.Links != null &&
-                    input.Links != null &&
-                    this.Links.SequenceEqual(input.Links)
-                ) && 
-                (
-                    this.WorkItemVersionId == input.WorkItemVersionId ||
-                    (this.WorkItemVersionId != null &&
-                    this.WorkItemVersionId.Equals(input.WorkItemVersionId))
-                ) && 
-                (
-                    this.Attachments == input.Attachments ||
-                    this.Attachments != null &&
-                    input.Attachments != null &&
-                    this.Attachments.SequenceEqual(input.Attachments)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.TestRunId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestRunId.GetHashCode();
-                }
-                if (this.AutoTestId != null)
-                {
-                    hashCode = (hashCode * 59) + this.AutoTestId.GetHashCode();
-                }
-                if (this.Comment != null)
-                {
-                    hashCode = (hashCode * 59) + this.Comment.GetHashCode();
-                }
-                if (this.Links != null)
-                {
-                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
-                }
-                if (this.WorkItemVersionId != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItemVersionId.GetHashCode();
-                }
-                if (this.Attachments != null)
-                {
-                    hashCode = (hashCode * 59) + this.Attachments.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

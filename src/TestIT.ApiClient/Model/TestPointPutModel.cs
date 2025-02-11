@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// TestPointPutModel
     /// </summary>
     [DataContract(Name = "TestPointPutModel")]
-    public partial class TestPointPutModel : IEquatable<TestPointPutModel>, IValidatableObject
+    public partial class TestPointPutModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPointPutModel" /> class.
@@ -50,7 +50,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="lastTestResultId">lastTestResultId.</param>
         /// <param name="id">Unique ID of the entity (required).</param>
         /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
-        public TestPointPutModel(Guid? testerId = default(Guid?), Guid iterationId = default(Guid), Guid? workItemId = default(Guid?), Guid? configurationId = default(Guid?), Guid testSuiteId = default(Guid), string status = default(string), TestPointPutModelStatusModel statusModel = default(TestPointPutModelStatusModel), Guid? lastTestResultId = default(Guid?), Guid id = default(Guid), bool isDeleted = default(bool))
+        public TestPointPutModel(Guid? testerId = default(Guid?), Guid iterationId = default(Guid), Guid? workItemId = default(Guid?), Guid? configurationId = default(Guid?), Guid testSuiteId = default(Guid), string status = default(string), TestStatusModel statusModel = default(TestStatusModel), Guid? lastTestResultId = default(Guid?), Guid id = default(Guid), bool isDeleted = default(bool))
         {
             this.IterationId = iterationId;
             this.TestSuiteId = testSuiteId;
@@ -110,7 +110,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets StatusModel
         /// </summary>
         [DataMember(Name = "statusModel", IsRequired = true, EmitDefaultValue = true)]
-        public TestPointPutModelStatusModel StatusModel { get; set; }
+        public TestStatusModel StatusModel { get; set; }
 
         /// <summary>
         /// Gets or Sets LastTestResultId
@@ -164,134 +164,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestPointPutModel);
-        }
-
-        /// <summary>
-        /// Returns true if TestPointPutModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestPointPutModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestPointPutModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.TesterId == input.TesterId ||
-                    (this.TesterId != null &&
-                    this.TesterId.Equals(input.TesterId))
-                ) && 
-                (
-                    this.IterationId == input.IterationId ||
-                    (this.IterationId != null &&
-                    this.IterationId.Equals(input.IterationId))
-                ) && 
-                (
-                    this.WorkItemId == input.WorkItemId ||
-                    (this.WorkItemId != null &&
-                    this.WorkItemId.Equals(input.WorkItemId))
-                ) && 
-                (
-                    this.ConfigurationId == input.ConfigurationId ||
-                    (this.ConfigurationId != null &&
-                    this.ConfigurationId.Equals(input.ConfigurationId))
-                ) && 
-                (
-                    this.TestSuiteId == input.TestSuiteId ||
-                    (this.TestSuiteId != null &&
-                    this.TestSuiteId.Equals(input.TestSuiteId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.StatusModel == input.StatusModel ||
-                    (this.StatusModel != null &&
-                    this.StatusModel.Equals(input.StatusModel))
-                ) && 
-                (
-                    this.LastTestResultId == input.LastTestResultId ||
-                    (this.LastTestResultId != null &&
-                    this.LastTestResultId.Equals(input.LastTestResultId))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    this.IsDeleted.Equals(input.IsDeleted)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.TesterId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TesterId.GetHashCode();
-                }
-                if (this.IterationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.IterationId.GetHashCode();
-                }
-                if (this.WorkItemId != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItemId.GetHashCode();
-                }
-                if (this.ConfigurationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ConfigurationId.GetHashCode();
-                }
-                if (this.TestSuiteId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestSuiteId.GetHashCode();
-                }
-                if (this.Status != null)
-                {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                }
-                if (this.StatusModel != null)
-                {
-                    hashCode = (hashCode * 59) + this.StatusModel.GetHashCode();
-                }
-                if (this.LastTestResultId != null)
-                {
-                    hashCode = (hashCode * 59) + this.LastTestResultId.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

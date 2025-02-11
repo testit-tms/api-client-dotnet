@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// TestPointSelectModel
     /// </summary>
     [DataContract(Name = "TestPointSelectModel")]
-    public partial class TestPointSelectModel : IEquatable<TestPointSelectModel>, IValidatableObject
+    public partial class TestPointSelectModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPointSelectModel" /> class.
@@ -79,66 +79,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestPointSelectModel);
-        }
-
-        /// <summary>
-        /// Returns true if TestPointSelectModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestPointSelectModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestPointSelectModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Filter == input.Filter ||
-                    (this.Filter != null &&
-                    this.Filter.Equals(input.Filter))
-                ) && 
-                (
-                    this.ExtractionModel == input.ExtractionModel ||
-                    (this.ExtractionModel != null &&
-                    this.ExtractionModel.Equals(input.ExtractionModel))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Filter != null)
-                {
-                    hashCode = (hashCode * 59) + this.Filter.GetHashCode();
-                }
-                if (this.ExtractionModel != null)
-                {
-                    hashCode = (hashCode * 59) + this.ExtractionModel.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

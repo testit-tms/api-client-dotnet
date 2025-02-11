@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// TestResultFailureClassApiResult
     /// </summary>
     [DataContract(Name = "TestResultFailureClassApiResult")]
-    public partial class TestResultFailureClassApiResult : IEquatable<TestResultFailureClassApiResult>, IValidatableObject
+    public partial class TestResultFailureClassApiResult : IValidatableObject
     {
 
         /// <summary>
@@ -75,53 +75,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestResultFailureClassApiResult);
-        }
-
-        /// <summary>
-        /// Returns true if TestResultFailureClassApiResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestResultFailureClassApiResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestResultFailureClassApiResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.FailureCategory == input.FailureCategory ||
-                    this.FailureCategory.Equals(input.FailureCategory)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.FailureCategory.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

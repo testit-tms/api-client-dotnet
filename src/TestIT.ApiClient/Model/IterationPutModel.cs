@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// IterationPutModel
     /// </summary>
     [DataContract(Name = "IterationPutModel")]
-    public partial class IterationPutModel : IEquatable<IterationPutModel>, IValidatableObject
+    public partial class IterationPutModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="IterationPutModel" /> class.
@@ -62,7 +62,9 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;00000000-0000-0000-0000-000000000000&quot;</example>
+        /*
+        <example>00000000-0000-0000-0000-000000000000</example>
+        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
@@ -90,67 +92,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as IterationPutModel);
-        }
-
-        /// <summary>
-        /// Returns true if IterationPutModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of IterationPutModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(IterationPutModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Parameters == input.Parameters ||
-                    this.Parameters != null &&
-                    input.Parameters != null &&
-                    this.Parameters.SequenceEqual(input.Parameters)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Parameters != null)
-                {
-                    hashCode = (hashCode * 59) + this.Parameters.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

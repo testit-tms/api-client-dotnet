@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// AutoTestPostModel
     /// </summary>
     [DataContract(Name = "AutoTestPostModel")]
-    public partial class AutoTestPostModel : IEquatable<AutoTestPostModel>, IValidatableObject
+    public partial class AutoTestPostModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestPostModel" /> class.
@@ -47,7 +47,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="links">Collection of the autotest links.</param>
         /// <param name="projectId">Unique ID of the autotest project (required).</param>
         /// <param name="name">Name of the autotest (required).</param>
-        /// <param name="_namespace">Name of the autotest namespace.</param>
+        /// <param name="varNamespace">Name of the autotest namespace.</param>
         /// <param name="classname">Name of the autotest class.</param>
         /// <param name="steps">Collection of the autotest steps.</param>
         /// <param name="setup">Collection of the autotest setup steps.</param>
@@ -57,7 +57,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="labels">Collection of the autotest labels.</param>
         /// <param name="isFlaky">Indicates if the autotest is marked as flaky.</param>
         /// <param name="externalKey">External key of the autotest.</param>
-        public AutoTestPostModel(List<Guid> workItemIdsForLinkWithAutoTest = default(List<Guid>), bool? shouldCreateWorkItem = default(bool?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), string externalId = default(string), List<LinkPostModel> links = default(List<LinkPostModel>), Guid projectId = default(Guid), string name = default(string), string _namespace = default(string), string classname = default(string), List<AutoTestStepModel> steps = default(List<AutoTestStepModel>), List<AutoTestStepModel> setup = default(List<AutoTestStepModel>), List<AutoTestStepModel> teardown = default(List<AutoTestStepModel>), string title = default(string), string description = default(string), List<LabelPostModel> labels = default(List<LabelPostModel>), bool? isFlaky = default(bool?), string externalKey = default(string))
+        public AutoTestPostModel(List<Guid> workItemIdsForLinkWithAutoTest = default(List<Guid>), bool? shouldCreateWorkItem = default(bool?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), string externalId = default(string), List<LinkPostModel> links = default(List<LinkPostModel>), Guid projectId = default(Guid), string name = default(string), string varNamespace = default(string), string classname = default(string), List<AutoTestStepModel> steps = default(List<AutoTestStepModel>), List<AutoTestStepModel> setup = default(List<AutoTestStepModel>), List<AutoTestStepModel> teardown = default(List<AutoTestStepModel>), string title = default(string), string description = default(string), List<LabelPostModel> labels = default(List<LabelPostModel>), bool? isFlaky = default(bool?), string externalKey = default(string))
         {
             // to ensure "externalId" is required (not null)
             if (externalId == null)
@@ -76,7 +76,7 @@ namespace TestIT.ApiClient.Model
             this.ShouldCreateWorkItem = shouldCreateWorkItem;
             this.Attributes = attributes;
             this.Links = links;
-            this.Namespace = _namespace;
+            this.Namespace = varNamespace;
             this.Classname = classname;
             this.Steps = steps;
             this.Setup = setup;
@@ -246,219 +246,22 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AutoTestPostModel);
-        }
-
-        /// <summary>
-        /// Returns true if AutoTestPostModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AutoTestPostModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AutoTestPostModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.WorkItemIdsForLinkWithAutoTest == input.WorkItemIdsForLinkWithAutoTest ||
-                    this.WorkItemIdsForLinkWithAutoTest != null &&
-                    input.WorkItemIdsForLinkWithAutoTest != null &&
-                    this.WorkItemIdsForLinkWithAutoTest.SequenceEqual(input.WorkItemIdsForLinkWithAutoTest)
-                ) && 
-                (
-                    this.ShouldCreateWorkItem == input.ShouldCreateWorkItem ||
-                    (this.ShouldCreateWorkItem != null &&
-                    this.ShouldCreateWorkItem.Equals(input.ShouldCreateWorkItem))
-                ) && 
-                (
-                    this.Attributes == input.Attributes ||
-                    this.Attributes != null &&
-                    input.Attributes != null &&
-                    this.Attributes.SequenceEqual(input.Attributes)
-                ) && 
-                (
-                    this.ExternalId == input.ExternalId ||
-                    (this.ExternalId != null &&
-                    this.ExternalId.Equals(input.ExternalId))
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    this.Links != null &&
-                    input.Links != null &&
-                    this.Links.SequenceEqual(input.Links)
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Namespace == input.Namespace ||
-                    (this.Namespace != null &&
-                    this.Namespace.Equals(input.Namespace))
-                ) && 
-                (
-                    this.Classname == input.Classname ||
-                    (this.Classname != null &&
-                    this.Classname.Equals(input.Classname))
-                ) && 
-                (
-                    this.Steps == input.Steps ||
-                    this.Steps != null &&
-                    input.Steps != null &&
-                    this.Steps.SequenceEqual(input.Steps)
-                ) && 
-                (
-                    this.Setup == input.Setup ||
-                    this.Setup != null &&
-                    input.Setup != null &&
-                    this.Setup.SequenceEqual(input.Setup)
-                ) && 
-                (
-                    this.Teardown == input.Teardown ||
-                    this.Teardown != null &&
-                    input.Teardown != null &&
-                    this.Teardown.SequenceEqual(input.Teardown)
-                ) && 
-                (
-                    this.Title == input.Title ||
-                    (this.Title != null &&
-                    this.Title.Equals(input.Title))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Labels == input.Labels ||
-                    this.Labels != null &&
-                    input.Labels != null &&
-                    this.Labels.SequenceEqual(input.Labels)
-                ) && 
-                (
-                    this.IsFlaky == input.IsFlaky ||
-                    (this.IsFlaky != null &&
-                    this.IsFlaky.Equals(input.IsFlaky))
-                ) && 
-                (
-                    this.ExternalKey == input.ExternalKey ||
-                    (this.ExternalKey != null &&
-                    this.ExternalKey.Equals(input.ExternalKey))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.WorkItemIdsForLinkWithAutoTest != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItemIdsForLinkWithAutoTest.GetHashCode();
-                }
-                if (this.ShouldCreateWorkItem != null)
-                {
-                    hashCode = (hashCode * 59) + this.ShouldCreateWorkItem.GetHashCode();
-                }
-                if (this.Attributes != null)
-                {
-                    hashCode = (hashCode * 59) + this.Attributes.GetHashCode();
-                }
-                if (this.ExternalId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ExternalId.GetHashCode();
-                }
-                if (this.Links != null)
-                {
-                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
-                }
-                if (this.ProjectId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProjectId.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Namespace != null)
-                {
-                    hashCode = (hashCode * 59) + this.Namespace.GetHashCode();
-                }
-                if (this.Classname != null)
-                {
-                    hashCode = (hashCode * 59) + this.Classname.GetHashCode();
-                }
-                if (this.Steps != null)
-                {
-                    hashCode = (hashCode * 59) + this.Steps.GetHashCode();
-                }
-                if (this.Setup != null)
-                {
-                    hashCode = (hashCode * 59) + this.Setup.GetHashCode();
-                }
-                if (this.Teardown != null)
-                {
-                    hashCode = (hashCode * 59) + this.Teardown.GetHashCode();
-                }
-                if (this.Title != null)
-                {
-                    hashCode = (hashCode * 59) + this.Title.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.Labels != null)
-                {
-                    hashCode = (hashCode * 59) + this.Labels.GetHashCode();
-                }
-                if (this.IsFlaky != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsFlaky.GetHashCode();
-                }
-                if (this.ExternalKey != null)
-                {
-                    hashCode = (hashCode * 59) + this.ExternalKey.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ExternalId (string) minLength
             if (this.ExternalId != null && this.ExternalId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ExternalId, length must be greater than 1.", new [] { "ExternalId" });
+                yield return new ValidationResult("Invalid value for ExternalId, length must be greater than 1.", new [] { "ExternalId" });
             }
 
             // Name (string) minLength
             if (this.Name != null && this.Name.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
             }
 
             yield break;

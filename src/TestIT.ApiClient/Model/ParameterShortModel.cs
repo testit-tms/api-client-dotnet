@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// ParameterShortModel
     /// </summary>
     [DataContract(Name = "ParameterShortModel")]
-    public partial class ParameterShortModel : IEquatable<ParameterShortModel>, IValidatableObject
+    public partial class ParameterShortModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ParameterShortModel" /> class.
@@ -114,107 +114,34 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ParameterShortModel);
-        }
-
-        /// <summary>
-        /// Returns true if ParameterShortModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ParameterShortModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ParameterShortModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.ParameterKeyId == input.ParameterKeyId ||
-                    (this.ParameterKeyId != null &&
-                    this.ParameterKeyId.Equals(input.ParameterKeyId))
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.ParameterKeyId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParameterKeyId.GetHashCode();
-                }
-                if (this.Value != null)
-                {
-                    hashCode = (hashCode * 59) + this.Value.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Value (string) maxLength
             if (this.Value != null && this.Value.Length > 1500)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Value, length must be less than 1500.", new [] { "Value" });
+                yield return new ValidationResult("Invalid value for Value, length must be less than 1500.", new [] { "Value" });
             }
 
             // Value (string) minLength
             if (this.Value != null && this.Value.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Value, length must be greater than 0.", new [] { "Value" });
+                yield return new ValidationResult("Invalid value for Value, length must be greater than 0.", new [] { "Value" });
             }
 
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
             }
 
             // Name (string) minLength
             if (this.Name != null && this.Name.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
             }
 
             yield break;

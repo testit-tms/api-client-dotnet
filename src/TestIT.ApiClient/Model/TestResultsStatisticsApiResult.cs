@@ -30,46 +30,46 @@ namespace TestIT.ApiClient.Model
     /// TestResultsStatisticsApiResult
     /// </summary>
     [DataContract(Name = "TestResultsStatisticsApiResult")]
-    public partial class TestResultsStatisticsApiResult : IEquatable<TestResultsStatisticsApiResult>, IValidatableObject
+    public partial class TestResultsStatisticsApiResult : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestResultsStatisticsApiResult" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected TestResultsStatisticsApiResult() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TestResultsStatisticsApiResult" /> class.
-        /// </summary>
-        /// <param name="statuses">statuses (required).</param>
-        /// <param name="failureCategories">failureCategories (required).</param>
-        public TestResultsStatisticsApiResult(TestResultsStatisticsApiResultStatuses statuses = default(TestResultsStatisticsApiResultStatuses), TestResultsStatisticsApiResultFailureCategories failureCategories = default(TestResultsStatisticsApiResultFailureCategories))
+        public TestResultsStatisticsApiResult()
         {
-            // to ensure "statuses" is required (not null)
-            if (statuses == null)
-            {
-                throw new ArgumentNullException("statuses is a required property for TestResultsStatisticsApiResult and cannot be null");
-            }
-            this.Statuses = statuses;
-            // to ensure "failureCategories" is required (not null)
-            if (failureCategories == null)
-            {
-                throw new ArgumentNullException("failureCategories is a required property for TestResultsStatisticsApiResult and cannot be null");
-            }
-            this.FailureCategories = failureCategories;
         }
 
         /// <summary>
-        /// Gets or Sets Statuses
+        /// Test results counts aggregated by outcome
         /// </summary>
+        /// <value>Test results counts aggregated by outcome</value>
         [DataMember(Name = "statuses", IsRequired = true, EmitDefaultValue = true)]
-        public TestResultsStatisticsApiResultStatuses Statuses { get; set; }
+        public TestResultsStatisticsStatusesApiResult Statuses { get; private set; }
 
         /// <summary>
-        /// Gets or Sets FailureCategories
+        /// Returns false as Statuses should not be serialized given that it's read-only.
         /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeStatuses()
+        {
+            return false;
+        }
+        /// <summary>
+        /// Test results counts aggregated by result failure categories
+        /// </summary>
+        /// <value>Test results counts aggregated by result failure categories</value>
         [DataMember(Name = "failureCategories", IsRequired = true, EmitDefaultValue = true)]
-        public TestResultsStatisticsApiResultFailureCategories FailureCategories { get; set; }
+        public TestResultsStatisticsFailureCategoriesApiResult FailureCategories { get; private set; }
 
+        /// <summary>
+        /// Returns false as FailureCategories should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeFailureCategories()
+        {
+            return false;
+        }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -94,66 +94,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestResultsStatisticsApiResult);
-        }
-
-        /// <summary>
-        /// Returns true if TestResultsStatisticsApiResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestResultsStatisticsApiResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestResultsStatisticsApiResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Statuses == input.Statuses ||
-                    (this.Statuses != null &&
-                    this.Statuses.Equals(input.Statuses))
-                ) && 
-                (
-                    this.FailureCategories == input.FailureCategories ||
-                    (this.FailureCategories != null &&
-                    this.FailureCategories.Equals(input.FailureCategories))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Statuses != null)
-                {
-                    hashCode = (hashCode * 59) + this.Statuses.GetHashCode();
-                }
-                if (this.FailureCategories != null)
-                {
-                    hashCode = (hashCode * 59) + this.FailureCategories.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

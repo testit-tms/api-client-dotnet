@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// CustomAttributeOptionPostModel
     /// </summary>
     [DataContract(Name = "CustomAttributeOptionPostModel")]
-    public partial class CustomAttributeOptionPostModel : IEquatable<CustomAttributeOptionPostModel>, IValidatableObject
+    public partial class CustomAttributeOptionPostModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomAttributeOptionPostModel" /> class.
@@ -86,73 +86,22 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CustomAttributeOptionPostModel);
-        }
-
-        /// <summary>
-        /// Returns true if CustomAttributeOptionPostModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CustomAttributeOptionPostModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CustomAttributeOptionPostModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                ) && 
-                (
-                    this.IsDefault == input.IsDefault ||
-                    this.IsDefault.Equals(input.IsDefault)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Value != null)
-                {
-                    hashCode = (hashCode * 59) + this.Value.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsDefault.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Value (string) maxLength
             if (this.Value != null && this.Value.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Value, length must be less than 255.", new [] { "Value" });
+                yield return new ValidationResult("Invalid value for Value, length must be less than 255.", new [] { "Value" });
             }
 
             // Value (string) minLength
             if (this.Value != null && this.Value.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Value, length must be greater than 0.", new [] { "Value" });
+                yield return new ValidationResult("Invalid value for Value, length must be greater than 0.", new [] { "Value" });
             }
 
             yield break;

@@ -133,7 +133,7 @@ catch (ApiException e)
 
 <a id="apiv2projectsprojectidtestplansdeletebulkpost"></a>
 # **ApiV2ProjectsProjectIdTestPlansDeleteBulkPost**
-> List&lt;Guid&gt; ApiV2ProjectsProjectIdTestPlansDeleteBulkPost (string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = null)
+> List&lt;Guid&gt; ApiV2ProjectsProjectIdTestPlansDeleteBulkPost (string projectId, TestPlanSelectModel testPlanSelectModel = null)
 
 Delete multiple test plans
 
@@ -164,12 +164,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectTestPlansApi(httpClient, config, httpClientHandler);
             var projectId = "projectId_example";  // string | Unique or global ID of the project
-            var apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = new ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest(); // ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest |  (optional) 
+            var testPlanSelectModel = new TestPlanSelectModel(); // TestPlanSelectModel |  (optional) 
 
             try
             {
                 // Delete multiple test plans
-                List<Guid> result = apiInstance.ApiV2ProjectsProjectIdTestPlansDeleteBulkPost(projectId, apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest);
+                List<Guid> result = apiInstance.ApiV2ProjectsProjectIdTestPlansDeleteBulkPost(projectId, testPlanSelectModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -190,7 +190,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete multiple test plans
-    ApiResponse<List<Guid>> response = apiInstance.ApiV2ProjectsProjectIdTestPlansDeleteBulkPostWithHttpInfo(projectId, apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest);
+    ApiResponse<List<Guid>> response = apiInstance.ApiV2ProjectsProjectIdTestPlansDeleteBulkPostWithHttpInfo(projectId, testPlanSelectModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -208,7 +208,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **string** | Unique or global ID of the project |  |
-| **apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest** | [**ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest**](ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest.md) |  | [optional]  |
+| **testPlanSelectModel** | [**TestPlanSelectModel**](TestPlanSelectModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -347,7 +347,7 @@ catch (ApiException e)
 
 <a id="apiv2projectsprojectidtestplanspurgebulkpost"></a>
 # **ApiV2ProjectsProjectIdTestPlansPurgeBulkPost**
-> void ApiV2ProjectsProjectIdTestPlansPurgeBulkPost (string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = null)
+> void ApiV2ProjectsProjectIdTestPlansPurgeBulkPost (string projectId, TestPlanSelectModel testPlanSelectModel = null)
 
 Permanently delete multiple archived test plans
 
@@ -378,12 +378,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectTestPlansApi(httpClient, config, httpClientHandler);
             var projectId = "projectId_example";  // string | Unique or global ID of the project
-            var apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = new ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest(); // ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest |  (optional) 
+            var testPlanSelectModel = new TestPlanSelectModel(); // TestPlanSelectModel |  (optional) 
 
             try
             {
                 // Permanently delete multiple archived test plans
-                apiInstance.ApiV2ProjectsProjectIdTestPlansPurgeBulkPost(projectId, apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest);
+                apiInstance.ApiV2ProjectsProjectIdTestPlansPurgeBulkPost(projectId, testPlanSelectModel);
             }
             catch (ApiException  e)
             {
@@ -403,7 +403,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Permanently delete multiple archived test plans
-    apiInstance.ApiV2ProjectsProjectIdTestPlansPurgeBulkPostWithHttpInfo(projectId, apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest);
+    apiInstance.ApiV2ProjectsProjectIdTestPlansPurgeBulkPostWithHttpInfo(projectId, testPlanSelectModel);
 }
 catch (ApiException e)
 {
@@ -418,7 +418,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **string** | Unique or global ID of the project |  |
-| **apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest** | [**ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest**](ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest.md) |  | [optional]  |
+| **testPlanSelectModel** | [**TestPlanSelectModel**](TestPlanSelectModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -449,7 +449,7 @@ void (empty response body)
 
 <a id="apiv2projectsprojectidtestplansrestorebulkpost"></a>
 # **ApiV2ProjectsProjectIdTestPlansRestoreBulkPost**
-> List&lt;Guid&gt; ApiV2ProjectsProjectIdTestPlansRestoreBulkPost (string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = null)
+> List&lt;Guid&gt; ApiV2ProjectsProjectIdTestPlansRestoreBulkPost (string projectId, TestPlanSelectModel testPlanSelectModel = null)
 
 Restore multiple test plans
 
@@ -480,12 +480,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectTestPlansApi(httpClient, config, httpClientHandler);
             var projectId = "projectId_example";  // string | Unique or global ID of the project
-            var apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = new ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest(); // ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest |  (optional) 
+            var testPlanSelectModel = new TestPlanSelectModel(); // TestPlanSelectModel |  (optional) 
 
             try
             {
                 // Restore multiple test plans
-                List<Guid> result = apiInstance.ApiV2ProjectsProjectIdTestPlansRestoreBulkPost(projectId, apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest);
+                List<Guid> result = apiInstance.ApiV2ProjectsProjectIdTestPlansRestoreBulkPost(projectId, testPlanSelectModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -506,7 +506,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Restore multiple test plans
-    ApiResponse<List<Guid>> response = apiInstance.ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfo(projectId, apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest);
+    ApiResponse<List<Guid>> response = apiInstance.ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfo(projectId, testPlanSelectModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -524,7 +524,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **string** | Unique or global ID of the project |  |
-| **apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest** | [**ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest**](ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest.md) |  | [optional]  |
+| **testPlanSelectModel** | [**TestPlanSelectModel**](TestPlanSelectModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -555,7 +555,7 @@ catch (ApiException e)
 
 <a id="apiv2projectsprojectidtestplanssearchpost"></a>
 # **ApiV2ProjectsProjectIdTestPlansSearchPost**
-> List&lt;TestPlanWithAnalyticModel&gt; ApiV2ProjectsProjectIdTestPlansSearchPost (string projectId, bool? mustUpdateCache = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ProjectsProjectIdTestPlansSearchPostRequest apiV2ProjectsProjectIdTestPlansSearchPostRequest = null)
+> List&lt;TestPlanWithAnalyticModel&gt; ApiV2ProjectsProjectIdTestPlansSearchPost (string projectId, bool? mustUpdateCache = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ProjectTestPlansFilterModel projectTestPlansFilterModel = null)
 
 Get Project TestPlans with analytics
 
@@ -594,12 +594,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var apiV2ProjectsProjectIdTestPlansSearchPostRequest = new ApiV2ProjectsProjectIdTestPlansSearchPostRequest(); // ApiV2ProjectsProjectIdTestPlansSearchPostRequest |  (optional) 
+            var projectTestPlansFilterModel = new ProjectTestPlansFilterModel(); // ProjectTestPlansFilterModel |  (optional) 
 
             try
             {
                 // Get Project TestPlans with analytics
-                List<TestPlanWithAnalyticModel> result = apiInstance.ApiV2ProjectsProjectIdTestPlansSearchPost(projectId, mustUpdateCache, skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdTestPlansSearchPostRequest);
+                List<TestPlanWithAnalyticModel> result = apiInstance.ApiV2ProjectsProjectIdTestPlansSearchPost(projectId, mustUpdateCache, skip, take, orderBy, searchField, searchValue, projectTestPlansFilterModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -620,7 +620,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get Project TestPlans with analytics
-    ApiResponse<List<TestPlanWithAnalyticModel>> response = apiInstance.ApiV2ProjectsProjectIdTestPlansSearchPostWithHttpInfo(projectId, mustUpdateCache, skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdTestPlansSearchPostRequest);
+    ApiResponse<List<TestPlanWithAnalyticModel>> response = apiInstance.ApiV2ProjectsProjectIdTestPlansSearchPostWithHttpInfo(projectId, mustUpdateCache, skip, take, orderBy, searchField, searchValue, projectTestPlansFilterModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -644,7 +644,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **apiV2ProjectsProjectIdTestPlansSearchPostRequest** | [**ApiV2ProjectsProjectIdTestPlansSearchPostRequest**](ApiV2ProjectsProjectIdTestPlansSearchPostRequest.md) |  | [optional]  |
+| **projectTestPlansFilterModel** | [**ProjectTestPlansFilterModel**](ProjectTestPlansFilterModel.md) |  | [optional]  |
 
 ### Return type
 

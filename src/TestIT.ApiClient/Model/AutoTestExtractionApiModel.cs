@@ -30,22 +30,23 @@ namespace TestIT.ApiClient.Model
     /// AutoTestExtractionApiModel
     /// </summary>
     [DataContract(Name = "AutoTestExtractionApiModel")]
-    public partial class AutoTestExtractionApiModel : IEquatable<AutoTestExtractionApiModel>, IValidatableObject
+    public partial class AutoTestExtractionApiModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestExtractionApiModel" /> class.
         /// </summary>
-        /// <param name="ids">ids.</param>
-        public AutoTestExtractionApiModel(AutoTestExtractionApiModelIds ids = default(AutoTestExtractionApiModelIds))
+        /// <param name="ids">Extraction parameters for autotests.</param>
+        public AutoTestExtractionApiModel(GuidExtractionModel ids = default(GuidExtractionModel))
         {
             this.Ids = ids;
         }
 
         /// <summary>
-        /// Gets or Sets Ids
+        /// Extraction parameters for autotests
         /// </summary>
+        /// <value>Extraction parameters for autotests</value>
         [DataMember(Name = "ids", EmitDefaultValue = true)]
-        public AutoTestExtractionApiModelIds Ids { get; set; }
+        public GuidExtractionModel Ids { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -70,57 +71,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AutoTestExtractionApiModel);
-        }
-
-        /// <summary>
-        /// Returns true if AutoTestExtractionApiModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AutoTestExtractionApiModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AutoTestExtractionApiModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Ids == input.Ids ||
-                    (this.Ids != null &&
-                    this.Ids.Equals(input.Ids))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Ids != null)
-                {
-                    hashCode = (hashCode * 59) + this.Ids.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

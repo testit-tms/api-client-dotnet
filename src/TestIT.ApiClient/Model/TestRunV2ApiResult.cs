@@ -30,13 +30,15 @@ namespace TestIT.ApiClient.Model
     /// TestRunV2ApiResult
     /// </summary>
     [DataContract(Name = "TestRunV2ApiResult")]
-    public partial class TestRunV2ApiResult : IEquatable<TestRunV2ApiResult>, IValidatableObject
+    public partial class TestRunV2ApiResult : IValidatableObject
     {
 
         /// <summary>
-        /// Gets or Sets StateName
+        /// Test run state
         /// </summary>
+        /// <value>Test run state</value>
         [DataMember(Name = "stateName", IsRequired = true, EmitDefaultValue = true)]
+        [Obsolete]
         public TestRunState StateName { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TestRunV2ApiResult" /> class.
@@ -52,8 +54,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="launchSource">Test run launch source                Once launch source is specified it cannot be updated..</param>
         /// <param name="startedOn">Date and time of test run start.</param>
         /// <param name="completedOn">Date and time of test run end.</param>
-        /// <param name="stateName">stateName (required).</param>
-        /// <param name="status">status (required).</param>
+        /// <param name="stateName">Test run state (required).</param>
+        /// <param name="status">Test run status (required).</param>
         /// <param name="projectId">Project unique identifier                This property is used to link test run with project. (required).</param>
         /// <param name="testPlanId">Test plan unique identifier                This property is used to link test run with test plan..</param>
         /// <param name="testResults">Enumeration of test results related to test run.</param>
@@ -67,7 +69,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="customParameters">Customers test run parameters.</param>
         /// <param name="webhooks">Enabled webhooks (required).</param>
         /// <param name="runCount">Run count (required).</param>
-        public TestRunV2ApiResult(Guid id = default(Guid), string name = default(string), string description = default(string), string launchSource = default(string), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), TestRunState stateName = default(TestRunState), TestRunV2ApiResultStatus status = default(TestRunV2ApiResultStatus), Guid projectId = default(Guid), Guid? testPlanId = default(Guid?), List<TestResultV2GetModel> testResults = default(List<TestResultV2GetModel>), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string createdByUserName = default(string), List<AttachmentApiResult> attachments = default(List<AttachmentApiResult>), List<LinkApiResult> links = default(List<LinkApiResult>), Dictionary<string, string> customParameters = default(Dictionary<string, string>), List<NamedEntityApiModel> webhooks = default(List<NamedEntityApiModel>), int runCount = default(int))
+        public TestRunV2ApiResult(Guid id = default(Guid), string name = default(string), string description = default(string), string launchSource = default(string), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), TestRunState stateName = default(TestRunState), TestStatusApiResult status = default(TestStatusApiResult), Guid projectId = default(Guid), Guid? testPlanId = default(Guid?), List<TestResultV2GetModel> testResults = default(List<TestResultV2GetModel>), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string createdByUserName = default(string), List<AttachmentApiResult> attachments = default(List<AttachmentApiResult>), List<LinkApiResult> links = default(List<LinkApiResult>), Dictionary<string, string> customParameters = default(Dictionary<string, string>), List<NamedEntityApiModel> webhooks = default(List<NamedEntityApiModel>), int runCount = default(int))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -160,10 +162,11 @@ namespace TestIT.ApiClient.Model
         public DateTime? CompletedOn { get; set; }
 
         /// <summary>
-        /// Gets or Sets Status
+        /// Test run status
         /// </summary>
+        /// <value>Test run status</value>
         [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
-        public TestRunV2ApiResultStatus Status { get; set; }
+        public TestStatusApiResult Status { get; set; }
 
         /// <summary>
         /// Project unique identifier                This property is used to link test run with project.
@@ -299,234 +302,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestRunV2ApiResult);
-        }
-
-        /// <summary>
-        /// Returns true if TestRunV2ApiResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestRunV2ApiResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestRunV2ApiResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.LaunchSource == input.LaunchSource ||
-                    (this.LaunchSource != null &&
-                    this.LaunchSource.Equals(input.LaunchSource))
-                ) && 
-                (
-                    this.StartedOn == input.StartedOn ||
-                    (this.StartedOn != null &&
-                    this.StartedOn.Equals(input.StartedOn))
-                ) && 
-                (
-                    this.CompletedOn == input.CompletedOn ||
-                    (this.CompletedOn != null &&
-                    this.CompletedOn.Equals(input.CompletedOn))
-                ) && 
-                (
-                    this.StateName == input.StateName ||
-                    this.StateName.Equals(input.StateName)
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.TestPlanId == input.TestPlanId ||
-                    (this.TestPlanId != null &&
-                    this.TestPlanId.Equals(input.TestPlanId))
-                ) && 
-                (
-                    this.TestResults == input.TestResults ||
-                    this.TestResults != null &&
-                    input.TestResults != null &&
-                    this.TestResults.SequenceEqual(input.TestResults)
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.CreatedById == input.CreatedById ||
-                    (this.CreatedById != null &&
-                    this.CreatedById.Equals(input.CreatedById))
-                ) && 
-                (
-                    this.ModifiedById == input.ModifiedById ||
-                    (this.ModifiedById != null &&
-                    this.ModifiedById.Equals(input.ModifiedById))
-                ) && 
-                (
-                    this.CreatedByUserName == input.CreatedByUserName ||
-                    (this.CreatedByUserName != null &&
-                    this.CreatedByUserName.Equals(input.CreatedByUserName))
-                ) && 
-                (
-                    this.Attachments == input.Attachments ||
-                    this.Attachments != null &&
-                    input.Attachments != null &&
-                    this.Attachments.SequenceEqual(input.Attachments)
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    this.Links != null &&
-                    input.Links != null &&
-                    this.Links.SequenceEqual(input.Links)
-                ) && 
-                (
-                    this.CustomParameters == input.CustomParameters ||
-                    this.CustomParameters != null &&
-                    input.CustomParameters != null &&
-                    this.CustomParameters.SequenceEqual(input.CustomParameters)
-                ) && 
-                (
-                    this.Webhooks == input.Webhooks ||
-                    this.Webhooks != null &&
-                    input.Webhooks != null &&
-                    this.Webhooks.SequenceEqual(input.Webhooks)
-                ) && 
-                (
-                    this.RunCount == input.RunCount ||
-                    this.RunCount.Equals(input.RunCount)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.LaunchSource != null)
-                {
-                    hashCode = (hashCode * 59) + this.LaunchSource.GetHashCode();
-                }
-                if (this.StartedOn != null)
-                {
-                    hashCode = (hashCode * 59) + this.StartedOn.GetHashCode();
-                }
-                if (this.CompletedOn != null)
-                {
-                    hashCode = (hashCode * 59) + this.CompletedOn.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.StateName.GetHashCode();
-                if (this.Status != null)
-                {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                }
-                if (this.ProjectId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProjectId.GetHashCode();
-                }
-                if (this.TestPlanId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestPlanId.GetHashCode();
-                }
-                if (this.TestResults != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestResults.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                if (this.CreatedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedById.GetHashCode();
-                }
-                if (this.ModifiedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedById.GetHashCode();
-                }
-                if (this.CreatedByUserName != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedByUserName.GetHashCode();
-                }
-                if (this.Attachments != null)
-                {
-                    hashCode = (hashCode * 59) + this.Attachments.GetHashCode();
-                }
-                if (this.Links != null)
-                {
-                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
-                }
-                if (this.CustomParameters != null)
-                {
-                    hashCode = (hashCode * 59) + this.CustomParameters.GetHashCode();
-                }
-                if (this.Webhooks != null)
-                {
-                    hashCode = (hashCode * 59) + this.Webhooks.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.RunCount.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

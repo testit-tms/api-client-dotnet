@@ -161,9 +161,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets attribute template parameters (listed in request example)   User runs method execution   System creates attribute template   System returns attribute template model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2CustomAttributesTemplatesPostRequest"> (optional)</param>
+        /// <param name="customAttributeTemplatePostModel"> (optional)</param>
         /// <returns>CustomAttributeTemplateModel</returns>
-        CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesPost(ApiV2CustomAttributesTemplatesPostRequest apiV2CustomAttributesTemplatesPostRequest = default(ApiV2CustomAttributesTemplatesPostRequest));
+        CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesPost(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel));
 
         /// <summary>
         /// Create CustomAttributeTemplate
@@ -172,16 +172,16 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets attribute template parameters (listed in request example)   User runs method execution   System creates attribute template   System returns attribute template model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2CustomAttributesTemplatesPostRequest"> (optional)</param>
+        /// <param name="customAttributeTemplatePostModel"> (optional)</param>
         /// <returns>ApiResponse of CustomAttributeTemplateModel</returns>
-        ApiResponse<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesPostWithHttpInfo(ApiV2CustomAttributesTemplatesPostRequest apiV2CustomAttributesTemplatesPostRequest = default(ApiV2CustomAttributesTemplatesPostRequest));
+        ApiResponse<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesPostWithHttpInfo(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel));
         /// <summary>
         /// Update custom attributes template
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2CustomAttributesTemplatesPutRequest"> (optional)</param>
+        /// <param name="customAttributeTemplatePutModel"> (optional)</param>
         /// <returns></returns>
-        void ApiV2CustomAttributesTemplatesPut(ApiV2CustomAttributesTemplatesPutRequest apiV2CustomAttributesTemplatesPutRequest = default(ApiV2CustomAttributesTemplatesPutRequest));
+        void ApiV2CustomAttributesTemplatesPut(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel));
 
         /// <summary>
         /// Update custom attributes template
@@ -190,9 +190,9 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2CustomAttributesTemplatesPutRequest"> (optional)</param>
+        /// <param name="customAttributeTemplatePutModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2CustomAttributesTemplatesPutWithHttpInfo(ApiV2CustomAttributesTemplatesPutRequest apiV2CustomAttributesTemplatesPutRequest = default(ApiV2CustomAttributesTemplatesPutRequest));
+        ApiResponse<Object> ApiV2CustomAttributesTemplatesPutWithHttpInfo(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel));
         /// <summary>
         /// Search CustomAttributeTemplates
         /// </summary>
@@ -205,9 +205,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2CustomAttributesTemplatesSearchPostRequest"> (optional)</param>
+        /// <param name="customAttributeTemplateSearchQueryModel"> (optional)</param>
         /// <returns>List&lt;SearchCustomAttributeTemplateGetModel&gt;</returns>
-        List<SearchCustomAttributeTemplateGetModel> ApiV2CustomAttributesTemplatesSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2CustomAttributesTemplatesSearchPostRequest apiV2CustomAttributesTemplatesSearchPostRequest = default(ApiV2CustomAttributesTemplatesSearchPostRequest));
+        List<SearchCustomAttributeTemplateGetModel> ApiV2CustomAttributesTemplatesSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = default(CustomAttributeTemplateSearchQueryModel));
 
         /// <summary>
         /// Search CustomAttributeTemplates
@@ -221,9 +221,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2CustomAttributesTemplatesSearchPostRequest"> (optional)</param>
+        /// <param name="customAttributeTemplateSearchQueryModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;SearchCustomAttributeTemplateGetModel&gt;</returns>
-        ApiResponse<List<SearchCustomAttributeTemplateGetModel>> ApiV2CustomAttributesTemplatesSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2CustomAttributesTemplatesSearchPostRequest apiV2CustomAttributesTemplatesSearchPostRequest = default(ApiV2CustomAttributesTemplatesSearchPostRequest));
+        ApiResponse<List<SearchCustomAttributeTemplateGetModel>> ApiV2CustomAttributesTemplatesSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = default(CustomAttributeTemplateSearchQueryModel));
         #endregion Synchronous Operations
     }
 
@@ -243,7 +243,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="name"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomAttributeTemplateValidationResult</returns>
-        System.Threading.Tasks.Task<CustomAttributeTemplateValidationResult> ApiV2CustomAttributesTemplatesExistsGetAsync(string name = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CustomAttributeTemplateValidationResult> ApiV2CustomAttributesTemplatesExistsGetAsync(string name = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -255,7 +255,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="name"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomAttributeTemplateValidationResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomAttributeTemplateValidationResult>> ApiV2CustomAttributesTemplatesExistsGetWithHttpInfoAsync(string name = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CustomAttributeTemplateValidationResult>> ApiV2CustomAttributesTemplatesExistsGetWithHttpInfoAsync(string name = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Exclude CustomAttributes from CustomAttributeTemplate
         /// </summary>
@@ -267,7 +267,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="requestBody"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePostAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePostAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Exclude CustomAttributes from CustomAttributeTemplate
@@ -280,7 +280,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="requestBody"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePostWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePostWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Include CustomAttributes to CustomAttributeTemplate
         /// </summary>
@@ -292,7 +292,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="requestBody"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePostAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePostAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Include CustomAttributes to CustomAttributeTemplate
@@ -305,7 +305,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="requestBody"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePostWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePostWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete CustomAttributeTemplate
         /// </summary>
@@ -316,7 +316,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Attribute template internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete CustomAttributeTemplate
@@ -328,7 +328,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Attribute template internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get CustomAttributeTemplate by ID
         /// </summary>
@@ -339,7 +339,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomAttributeTemplateModel</returns>
-        System.Threading.Tasks.Task<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get CustomAttributeTemplate by ID
@@ -351,7 +351,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomAttributeTemplateModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get CustomAttributeTemplate by name
         /// </summary>
@@ -362,7 +362,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="name">CustomAttributeTemplate name for search</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomAttributeTemplateModel</returns>
-        System.Threading.Tasks.Task<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesNameGetAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesNameGetAsync(string name, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get CustomAttributeTemplate by name
@@ -374,7 +374,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="name">CustomAttributeTemplate name for search</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomAttributeTemplateModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesNameGetWithHttpInfoAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesNameGetWithHttpInfoAsync(string name, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Create CustomAttributeTemplate
         /// </summary>
@@ -382,10 +382,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets attribute template parameters (listed in request example)   User runs method execution   System creates attribute template   System returns attribute template model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2CustomAttributesTemplatesPostRequest"> (optional)</param>
+        /// <param name="customAttributeTemplatePostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomAttributeTemplateModel</returns>
-        System.Threading.Tasks.Task<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesPostAsync(ApiV2CustomAttributesTemplatesPostRequest apiV2CustomAttributesTemplatesPostRequest = default(ApiV2CustomAttributesTemplatesPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesPostAsync(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create CustomAttributeTemplate
@@ -394,10 +394,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets attribute template parameters (listed in request example)   User runs method execution   System creates attribute template   System returns attribute template model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2CustomAttributesTemplatesPostRequest"> (optional)</param>
+        /// <param name="customAttributeTemplatePostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomAttributeTemplateModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesPostWithHttpInfoAsync(ApiV2CustomAttributesTemplatesPostRequest apiV2CustomAttributesTemplatesPostRequest = default(ApiV2CustomAttributesTemplatesPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesPostWithHttpInfoAsync(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Update custom attributes template
         /// </summary>
@@ -405,10 +405,10 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2CustomAttributesTemplatesPutRequest"> (optional)</param>
+        /// <param name="customAttributeTemplatePutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesPutAsync(ApiV2CustomAttributesTemplatesPutRequest apiV2CustomAttributesTemplatesPutRequest = default(ApiV2CustomAttributesTemplatesPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesPutAsync(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update custom attributes template
@@ -417,10 +417,10 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2CustomAttributesTemplatesPutRequest"> (optional)</param>
+        /// <param name="customAttributeTemplatePutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2CustomAttributesTemplatesPutWithHttpInfoAsync(ApiV2CustomAttributesTemplatesPutRequest apiV2CustomAttributesTemplatesPutRequest = default(ApiV2CustomAttributesTemplatesPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2CustomAttributesTemplatesPutWithHttpInfoAsync(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Search CustomAttributeTemplates
         /// </summary>
@@ -433,10 +433,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2CustomAttributesTemplatesSearchPostRequest"> (optional)</param>
+        /// <param name="customAttributeTemplateSearchQueryModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;SearchCustomAttributeTemplateGetModel&gt;</returns>
-        System.Threading.Tasks.Task<List<SearchCustomAttributeTemplateGetModel>> ApiV2CustomAttributesTemplatesSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2CustomAttributesTemplatesSearchPostRequest apiV2CustomAttributesTemplatesSearchPostRequest = default(ApiV2CustomAttributesTemplatesSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<SearchCustomAttributeTemplateGetModel>> ApiV2CustomAttributesTemplatesSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = default(CustomAttributeTemplateSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Search CustomAttributeTemplates
@@ -450,10 +450,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2CustomAttributesTemplatesSearchPostRequest"> (optional)</param>
+        /// <param name="customAttributeTemplateSearchQueryModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;SearchCustomAttributeTemplateGetModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<SearchCustomAttributeTemplateGetModel>>> ApiV2CustomAttributesTemplatesSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2CustomAttributesTemplatesSearchPostRequest apiV2CustomAttributesTemplatesSearchPostRequest = default(ApiV2CustomAttributesTemplatesSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<SearchCustomAttributeTemplateGetModel>>> ApiV2CustomAttributesTemplatesSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = default(CustomAttributeTemplateSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -733,7 +733,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="name"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomAttributeTemplateValidationResult</returns>
-        public async System.Threading.Tasks.Task<CustomAttributeTemplateValidationResult> ApiV2CustomAttributesTemplatesExistsGetAsync(string name = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CustomAttributeTemplateValidationResult> ApiV2CustomAttributesTemplatesExistsGetAsync(string name = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<CustomAttributeTemplateValidationResult> localVarResponse = await ApiV2CustomAttributesTemplatesExistsGetWithHttpInfoAsync(name, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -746,7 +746,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="name"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomAttributeTemplateValidationResult)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<CustomAttributeTemplateValidationResult>> ApiV2CustomAttributesTemplatesExistsGetWithHttpInfoAsync(string name = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<CustomAttributeTemplateValidationResult>> ApiV2CustomAttributesTemplatesExistsGetWithHttpInfoAsync(string name = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -857,7 +857,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="requestBody"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePostAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePostAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePostWithHttpInfoAsync(id, requestBody, cancellationToken).ConfigureAwait(false);
         }
@@ -870,7 +870,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="requestBody"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePostWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2CustomAttributesTemplatesIdCustomAttributesExcludePostWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -980,7 +980,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="requestBody"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePostAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePostAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePostWithHttpInfoAsync(id, requestBody, cancellationToken).ConfigureAwait(false);
         }
@@ -993,7 +993,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="requestBody"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePostWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2CustomAttributesTemplatesIdCustomAttributesIncludePostWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1098,7 +1098,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Attribute template internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
@@ -1110,7 +1110,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Attribute template internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2CustomAttributesTemplatesIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1214,7 +1214,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomAttributeTemplateModel</returns>
-        public async System.Threading.Tasks.Task<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<CustomAttributeTemplateModel> localVarResponse = await ApiV2CustomAttributesTemplatesIdGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1227,7 +1227,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomAttributeTemplateModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1335,7 +1335,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="name">CustomAttributeTemplate name for search</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomAttributeTemplateModel</returns>
-        public async System.Threading.Tasks.Task<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesNameGetAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesNameGetAsync(string name, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<CustomAttributeTemplateModel> localVarResponse = await ApiV2CustomAttributesTemplatesNameGetWithHttpInfoAsync(name, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1348,7 +1348,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="name">CustomAttributeTemplate name for search</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomAttributeTemplateModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesNameGetWithHttpInfoAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesNameGetWithHttpInfoAsync(string name, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'name' is set
             if (name == null)
@@ -1397,11 +1397,11 @@ namespace TestIT.ApiClient.Api
         /// Create CustomAttributeTemplate  Use case   User sets attribute template parameters (listed in request example)   User runs method execution   System creates attribute template   System returns attribute template model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2CustomAttributesTemplatesPostRequest"> (optional)</param>
+        /// <param name="customAttributeTemplatePostModel"> (optional)</param>
         /// <returns>CustomAttributeTemplateModel</returns>
-        public CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesPost(ApiV2CustomAttributesTemplatesPostRequest apiV2CustomAttributesTemplatesPostRequest = default(ApiV2CustomAttributesTemplatesPostRequest))
+        public CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesPost(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<CustomAttributeTemplateModel> localVarResponse = ApiV2CustomAttributesTemplatesPostWithHttpInfo(apiV2CustomAttributesTemplatesPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<CustomAttributeTemplateModel> localVarResponse = ApiV2CustomAttributesTemplatesPostWithHttpInfo(customAttributeTemplatePostModel);
             return localVarResponse.Data;
         }
 
@@ -1409,9 +1409,9 @@ namespace TestIT.ApiClient.Api
         /// Create CustomAttributeTemplate  Use case   User sets attribute template parameters (listed in request example)   User runs method execution   System creates attribute template   System returns attribute template model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2CustomAttributesTemplatesPostRequest"> (optional)</param>
+        /// <param name="customAttributeTemplatePostModel"> (optional)</param>
         /// <returns>ApiResponse of CustomAttributeTemplateModel</returns>
-        public TestIT.ApiClient.Client.ApiResponse<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesPostWithHttpInfo(ApiV2CustomAttributesTemplatesPostRequest apiV2CustomAttributesTemplatesPostRequest = default(ApiV2CustomAttributesTemplatesPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesPostWithHttpInfo(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1430,7 +1430,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = apiV2CustomAttributesTemplatesPostRequest;
+            localVarRequestOptions.Data = customAttributeTemplatePostModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1454,12 +1454,12 @@ namespace TestIT.ApiClient.Api
         /// Create CustomAttributeTemplate  Use case   User sets attribute template parameters (listed in request example)   User runs method execution   System creates attribute template   System returns attribute template model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2CustomAttributesTemplatesPostRequest"> (optional)</param>
+        /// <param name="customAttributeTemplatePostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomAttributeTemplateModel</returns>
-        public async System.Threading.Tasks.Task<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesPostAsync(ApiV2CustomAttributesTemplatesPostRequest apiV2CustomAttributesTemplatesPostRequest = default(ApiV2CustomAttributesTemplatesPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CustomAttributeTemplateModel> ApiV2CustomAttributesTemplatesPostAsync(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<CustomAttributeTemplateModel> localVarResponse = await ApiV2CustomAttributesTemplatesPostWithHttpInfoAsync(apiV2CustomAttributesTemplatesPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<CustomAttributeTemplateModel> localVarResponse = await ApiV2CustomAttributesTemplatesPostWithHttpInfoAsync(customAttributeTemplatePostModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1467,10 +1467,10 @@ namespace TestIT.ApiClient.Api
         /// Create CustomAttributeTemplate  Use case   User sets attribute template parameters (listed in request example)   User runs method execution   System creates attribute template   System returns attribute template model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2CustomAttributesTemplatesPostRequest"> (optional)</param>
+        /// <param name="customAttributeTemplatePostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomAttributeTemplateModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesPostWithHttpInfoAsync(ApiV2CustomAttributesTemplatesPostRequest apiV2CustomAttributesTemplatesPostRequest = default(ApiV2CustomAttributesTemplatesPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<CustomAttributeTemplateModel>> ApiV2CustomAttributesTemplatesPostWithHttpInfoAsync(CustomAttributeTemplatePostModel customAttributeTemplatePostModel = default(CustomAttributeTemplatePostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1491,7 +1491,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = apiV2CustomAttributesTemplatesPostRequest;
+            localVarRequestOptions.Data = customAttributeTemplatePostModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1516,20 +1516,20 @@ namespace TestIT.ApiClient.Api
         /// Update custom attributes template 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2CustomAttributesTemplatesPutRequest"> (optional)</param>
+        /// <param name="customAttributeTemplatePutModel"> (optional)</param>
         /// <returns></returns>
-        public void ApiV2CustomAttributesTemplatesPut(ApiV2CustomAttributesTemplatesPutRequest apiV2CustomAttributesTemplatesPutRequest = default(ApiV2CustomAttributesTemplatesPutRequest))
+        public void ApiV2CustomAttributesTemplatesPut(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel))
         {
-            ApiV2CustomAttributesTemplatesPutWithHttpInfo(apiV2CustomAttributesTemplatesPutRequest);
+            ApiV2CustomAttributesTemplatesPutWithHttpInfo(customAttributeTemplatePutModel);
         }
 
         /// <summary>
         /// Update custom attributes template 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2CustomAttributesTemplatesPutRequest"> (optional)</param>
+        /// <param name="customAttributeTemplatePutModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2CustomAttributesTemplatesPutWithHttpInfo(ApiV2CustomAttributesTemplatesPutRequest apiV2CustomAttributesTemplatesPutRequest = default(ApiV2CustomAttributesTemplatesPutRequest))
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2CustomAttributesTemplatesPutWithHttpInfo(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1548,7 +1548,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = apiV2CustomAttributesTemplatesPutRequest;
+            localVarRequestOptions.Data = customAttributeTemplatePutModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1572,22 +1572,22 @@ namespace TestIT.ApiClient.Api
         /// Update custom attributes template 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2CustomAttributesTemplatesPutRequest"> (optional)</param>
+        /// <param name="customAttributeTemplatePutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesPutAsync(ApiV2CustomAttributesTemplatesPutRequest apiV2CustomAttributesTemplatesPutRequest = default(ApiV2CustomAttributesTemplatesPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2CustomAttributesTemplatesPutAsync(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await ApiV2CustomAttributesTemplatesPutWithHttpInfoAsync(apiV2CustomAttributesTemplatesPutRequest, cancellationToken).ConfigureAwait(false);
+            await ApiV2CustomAttributesTemplatesPutWithHttpInfoAsync(customAttributeTemplatePutModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Update custom attributes template 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2CustomAttributesTemplatesPutRequest"> (optional)</param>
+        /// <param name="customAttributeTemplatePutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2CustomAttributesTemplatesPutWithHttpInfoAsync(ApiV2CustomAttributesTemplatesPutRequest apiV2CustomAttributesTemplatesPutRequest = default(ApiV2CustomAttributesTemplatesPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2CustomAttributesTemplatesPutWithHttpInfoAsync(CustomAttributeTemplatePutModel customAttributeTemplatePutModel = default(CustomAttributeTemplatePutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1608,7 +1608,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = apiV2CustomAttributesTemplatesPutRequest;
+            localVarRequestOptions.Data = customAttributeTemplatePutModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1638,11 +1638,11 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2CustomAttributesTemplatesSearchPostRequest"> (optional)</param>
+        /// <param name="customAttributeTemplateSearchQueryModel"> (optional)</param>
         /// <returns>List&lt;SearchCustomAttributeTemplateGetModel&gt;</returns>
-        public List<SearchCustomAttributeTemplateGetModel> ApiV2CustomAttributesTemplatesSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2CustomAttributesTemplatesSearchPostRequest apiV2CustomAttributesTemplatesSearchPostRequest = default(ApiV2CustomAttributesTemplatesSearchPostRequest))
+        public List<SearchCustomAttributeTemplateGetModel> ApiV2CustomAttributesTemplatesSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = default(CustomAttributeTemplateSearchQueryModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<SearchCustomAttributeTemplateGetModel>> localVarResponse = ApiV2CustomAttributesTemplatesSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2CustomAttributesTemplatesSearchPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<List<SearchCustomAttributeTemplateGetModel>> localVarResponse = ApiV2CustomAttributesTemplatesSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, customAttributeTemplateSearchQueryModel);
             return localVarResponse.Data;
         }
 
@@ -1655,9 +1655,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2CustomAttributesTemplatesSearchPostRequest"> (optional)</param>
+        /// <param name="customAttributeTemplateSearchQueryModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;SearchCustomAttributeTemplateGetModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<SearchCustomAttributeTemplateGetModel>> ApiV2CustomAttributesTemplatesSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2CustomAttributesTemplatesSearchPostRequest apiV2CustomAttributesTemplatesSearchPostRequest = default(ApiV2CustomAttributesTemplatesSearchPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<List<SearchCustomAttributeTemplateGetModel>> ApiV2CustomAttributesTemplatesSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = default(CustomAttributeTemplateSearchQueryModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1696,7 +1696,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = apiV2CustomAttributesTemplatesSearchPostRequest;
+            localVarRequestOptions.Data = customAttributeTemplateSearchQueryModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1725,12 +1725,12 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2CustomAttributesTemplatesSearchPostRequest"> (optional)</param>
+        /// <param name="customAttributeTemplateSearchQueryModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;SearchCustomAttributeTemplateGetModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<SearchCustomAttributeTemplateGetModel>> ApiV2CustomAttributesTemplatesSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2CustomAttributesTemplatesSearchPostRequest apiV2CustomAttributesTemplatesSearchPostRequest = default(ApiV2CustomAttributesTemplatesSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<SearchCustomAttributeTemplateGetModel>> ApiV2CustomAttributesTemplatesSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = default(CustomAttributeTemplateSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<SearchCustomAttributeTemplateGetModel>> localVarResponse = await ApiV2CustomAttributesTemplatesSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, apiV2CustomAttributesTemplatesSearchPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<SearchCustomAttributeTemplateGetModel>> localVarResponse = await ApiV2CustomAttributesTemplatesSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, customAttributeTemplateSearchQueryModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1743,10 +1743,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2CustomAttributesTemplatesSearchPostRequest"> (optional)</param>
+        /// <param name="customAttributeTemplateSearchQueryModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;SearchCustomAttributeTemplateGetModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<SearchCustomAttributeTemplateGetModel>>> ApiV2CustomAttributesTemplatesSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2CustomAttributesTemplatesSearchPostRequest apiV2CustomAttributesTemplatesSearchPostRequest = default(ApiV2CustomAttributesTemplatesSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<SearchCustomAttributeTemplateGetModel>>> ApiV2CustomAttributesTemplatesSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = default(CustomAttributeTemplateSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1787,7 +1787,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = apiV2CustomAttributesTemplatesSearchPostRequest;
+            localVarRequestOptions.Data = customAttributeTemplateSearchQueryModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))

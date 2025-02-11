@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **LastTestRunId** | **Guid?** | Unique ID of the autotest last test run | [optional] 
 **LastTestRunName** | **string** | Name of the autotest last test run | [optional] 
 **LastTestResultId** | **Guid?** | Unique ID of the autotest last test result | [optional] 
-**LastTestResultConfiguration** | [**AutoTestLastTestResultConfiguration**](AutoTestLastTestResultConfiguration.md) |  | [optional] 
+**LastTestResultConfiguration** | [**ConfigurationShort**](ConfigurationShort.md) | Configuration of the autotest last test result | [optional] 
 **LastTestResultOutcome** | **string** | Outcome of the autotest last test result | [optional] 
 **StabilityPercentage** | **int?** | Stability percentage of the autotest | [optional] 
 

@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// PublicTestRunModel
     /// </summary>
     [DataContract(Name = "PublicTestRunModel")]
-    public partial class PublicTestRunModel : IEquatable<PublicTestRunModel>, IValidatableObject
+    public partial class PublicTestRunModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PublicTestRunModel" /> class.
@@ -199,156 +199,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as PublicTestRunModel);
-        }
-
-        /// <summary>
-        /// Returns true if PublicTestRunModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of PublicTestRunModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(PublicTestRunModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.TestRunId == input.TestRunId ||
-                    (this.TestRunId != null &&
-                    this.TestRunId.Equals(input.TestRunId))
-                ) && 
-                (
-                    this.TestPlanId == input.TestPlanId ||
-                    (this.TestPlanId != null &&
-                    this.TestPlanId.Equals(input.TestPlanId))
-                ) && 
-                (
-                    this.TestPlanGlobalId == input.TestPlanGlobalId ||
-                    this.TestPlanGlobalId.Equals(input.TestPlanGlobalId)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ProductName == input.ProductName ||
-                    (this.ProductName != null &&
-                    this.ProductName.Equals(input.ProductName))
-                ) && 
-                (
-                    this.Build == input.Build ||
-                    (this.Build != null &&
-                    this.Build.Equals(input.Build))
-                ) && 
-                (
-                    this.Configurations == input.Configurations ||
-                    this.Configurations != null &&
-                    input.Configurations != null &&
-                    this.Configurations.SequenceEqual(input.Configurations)
-                ) && 
-                (
-                    this.AutoTests == input.AutoTests ||
-                    this.AutoTests != null &&
-                    input.AutoTests != null &&
-                    this.AutoTests.SequenceEqual(input.AutoTests)
-                ) && 
-                (
-                    this.TestPoints == input.TestPoints ||
-                    this.TestPoints != null &&
-                    input.TestPoints != null &&
-                    this.TestPoints.SequenceEqual(input.TestPoints)
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.CustomParameters == input.CustomParameters ||
-                    this.CustomParameters != null &&
-                    input.CustomParameters != null &&
-                    this.CustomParameters.SequenceEqual(input.CustomParameters)
-                ) && 
-                (
-                    this.TestRunDescription == input.TestRunDescription ||
-                    (this.TestRunDescription != null &&
-                    this.TestRunDescription.Equals(input.TestRunDescription))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.TestRunId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestRunId.GetHashCode();
-                }
-                if (this.TestPlanId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestPlanId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.TestPlanGlobalId.GetHashCode();
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.ProductName != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProductName.GetHashCode();
-                }
-                if (this.Build != null)
-                {
-                    hashCode = (hashCode * 59) + this.Build.GetHashCode();
-                }
-                if (this.Configurations != null)
-                {
-                    hashCode = (hashCode * 59) + this.Configurations.GetHashCode();
-                }
-                if (this.AutoTests != null)
-                {
-                    hashCode = (hashCode * 59) + this.AutoTests.GetHashCode();
-                }
-                if (this.TestPoints != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestPoints.GetHashCode();
-                }
-                if (this.Status != null)
-                {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                }
-                if (this.CustomParameters != null)
-                {
-                    hashCode = (hashCode * 59) + this.CustomParameters.GetHashCode();
-                }
-                if (this.TestRunDescription != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestRunDescription.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

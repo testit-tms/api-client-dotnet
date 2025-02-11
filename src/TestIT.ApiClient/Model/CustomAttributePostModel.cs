@@ -30,12 +30,13 @@ namespace TestIT.ApiClient.Model
     /// CustomAttributePostModel
     /// </summary>
     [DataContract(Name = "CustomAttributePostModel")]
-    public partial class CustomAttributePostModel : IEquatable<CustomAttributePostModel>, IValidatableObject
+    public partial class CustomAttributePostModel : IValidatableObject
     {
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Type of attribute
         /// </summary>
+        /// <value>Type of attribute</value>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public CustomAttributeTypesEnum Type { get; set; }
         /// <summary>
@@ -47,7 +48,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="CustomAttributePostModel" /> class.
         /// </summary>
         /// <param name="options">Collection of attribute options     Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only.</param>
-        /// <param name="type">type (required).</param>
+        /// <param name="type">Type of attribute (required).</param>
         /// <param name="name">Name of the attribute (required).</param>
         /// <param name="isEnabled">Indicates if the attribute is enabled (required).</param>
         /// <param name="isRequired">Indicates if the attribute value is mandatory to specify (required).</param>
@@ -130,98 +131,22 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CustomAttributePostModel);
-        }
-
-        /// <summary>
-        /// Returns true if CustomAttributePostModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CustomAttributePostModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CustomAttributePostModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Options == input.Options ||
-                    this.Options != null &&
-                    input.Options != null &&
-                    this.Options.SequenceEqual(input.Options)
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    this.Type.Equals(input.Type)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.IsEnabled == input.IsEnabled ||
-                    this.IsEnabled.Equals(input.IsEnabled)
-                ) && 
-                (
-                    this.IsRequired == input.IsRequired ||
-                    this.IsRequired.Equals(input.IsRequired)
-                ) && 
-                (
-                    this.IsGlobal == input.IsGlobal ||
-                    this.IsGlobal.Equals(input.IsGlobal)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Options != null)
-                {
-                    hashCode = (hashCode * 59) + this.Options.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsEnabled.GetHashCode();
-                hashCode = (hashCode * 59) + this.IsRequired.GetHashCode();
-                hashCode = (hashCode * 59) + this.IsGlobal.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
             }
 
             // Name (string) minLength
             if (this.Name != null && this.Name.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
             }
 
             yield break;

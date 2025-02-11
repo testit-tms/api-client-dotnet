@@ -20,7 +20,7 @@ All URIs are relative to *http://localhost*
 
 <a id="addtestpointstotestsuite"></a>
 # **AddTestPointsToTestSuite**
-> void AddTestPointsToTestSuite (Guid id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = null)
+> void AddTestPointsToTestSuite (Guid id, WorkItemSelectModel workItemSelectModel = null)
 
 Add test-points to test suite
 
@@ -51,12 +51,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
             var id = 1ed608bf-8ac9-4ffd-b91e-ebdbbdce6132;  // Guid | Test suite internal identifier
-            var apiV2ProjectsProjectIdWorkItemsSearchPostRequest = new ApiV2ProjectsProjectIdWorkItemsSearchPostRequest(); // ApiV2ProjectsProjectIdWorkItemsSearchPostRequest | Filter object to retrieve work items for test-suite's project (optional) 
+            var workItemSelectModel = new WorkItemSelectModel(); // WorkItemSelectModel | Filter object to retrieve work items for test-suite's project (optional) 
 
             try
             {
                 // Add test-points to test suite
-                apiInstance.AddTestPointsToTestSuite(id, apiV2ProjectsProjectIdWorkItemsSearchPostRequest);
+                apiInstance.AddTestPointsToTestSuite(id, workItemSelectModel);
             }
             catch (ApiException  e)
             {
@@ -76,7 +76,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Add test-points to test suite
-    apiInstance.AddTestPointsToTestSuiteWithHttpInfo(id, apiV2ProjectsProjectIdWorkItemsSearchPostRequest);
+    apiInstance.AddTestPointsToTestSuiteWithHttpInfo(id, workItemSelectModel);
 }
 catch (ApiException e)
 {
@@ -91,7 +91,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid** | Test suite internal identifier |  |
-| **apiV2ProjectsProjectIdWorkItemsSearchPostRequest** | [**ApiV2ProjectsProjectIdWorkItemsSearchPostRequest**](ApiV2ProjectsProjectIdWorkItemsSearchPostRequest.md) | Filter object to retrieve work items for test-suite&#39;s project | [optional]  |
+| **workItemSelectModel** | [**WorkItemSelectModel**](WorkItemSelectModel.md) | Filter object to retrieve work items for test-suite&#39;s project | [optional]  |
 
 ### Return type
 
@@ -428,7 +428,7 @@ void (empty response body)
 
 <a id="apiv2testsuitespost"></a>
 # **ApiV2TestSuitesPost**
-> TestSuiteV2GetModel ApiV2TestSuitesPost (ApiV2TestSuitesPostRequest apiV2TestSuitesPostRequest = null)
+> TestSuiteV2GetModel ApiV2TestSuitesPost (TestSuiteV2PostModel testSuiteV2PostModel = null)
 
 Create test suite
 
@@ -458,12 +458,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
-            var apiV2TestSuitesPostRequest = new ApiV2TestSuitesPostRequest(); // ApiV2TestSuitesPostRequest |  (optional) 
+            var testSuiteV2PostModel = new TestSuiteV2PostModel(); // TestSuiteV2PostModel |  (optional) 
 
             try
             {
                 // Create test suite
-                TestSuiteV2GetModel result = apiInstance.ApiV2TestSuitesPost(apiV2TestSuitesPostRequest);
+                TestSuiteV2GetModel result = apiInstance.ApiV2TestSuitesPost(testSuiteV2PostModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -484,7 +484,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create test suite
-    ApiResponse<TestSuiteV2GetModel> response = apiInstance.ApiV2TestSuitesPostWithHttpInfo(apiV2TestSuitesPostRequest);
+    ApiResponse<TestSuiteV2GetModel> response = apiInstance.ApiV2TestSuitesPostWithHttpInfo(testSuiteV2PostModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -501,7 +501,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiV2TestSuitesPostRequest** | [**ApiV2TestSuitesPostRequest**](ApiV2TestSuitesPostRequest.md) |  | [optional]  |
+| **testSuiteV2PostModel** | [**TestSuiteV2PostModel**](TestSuiteV2PostModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -532,7 +532,7 @@ catch (ApiException e)
 
 <a id="apiv2testsuitesput"></a>
 # **ApiV2TestSuitesPut**
-> void ApiV2TestSuitesPut (ApiV2TestSuitesPutRequest apiV2TestSuitesPutRequest = null)
+> void ApiV2TestSuitesPut (TestSuiteV2PutModel testSuiteV2PutModel = null)
 
 Edit test suite
 
@@ -562,12 +562,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestSuitesApi(httpClient, config, httpClientHandler);
-            var apiV2TestSuitesPutRequest = new ApiV2TestSuitesPutRequest(); // ApiV2TestSuitesPutRequest |  (optional) 
+            var testSuiteV2PutModel = new TestSuiteV2PutModel(); // TestSuiteV2PutModel |  (optional) 
 
             try
             {
                 // Edit test suite
-                apiInstance.ApiV2TestSuitesPut(apiV2TestSuitesPutRequest);
+                apiInstance.ApiV2TestSuitesPut(testSuiteV2PutModel);
             }
             catch (ApiException  e)
             {
@@ -587,7 +587,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Edit test suite
-    apiInstance.ApiV2TestSuitesPutWithHttpInfo(apiV2TestSuitesPutRequest);
+    apiInstance.ApiV2TestSuitesPutWithHttpInfo(testSuiteV2PutModel);
 }
 catch (ApiException e)
 {
@@ -601,7 +601,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiV2TestSuitesPutRequest** | [**ApiV2TestSuitesPutRequest**](ApiV2TestSuitesPutRequest.md) |  | [optional]  |
+| **testSuiteV2PutModel** | [**TestSuiteV2PutModel**](TestSuiteV2PutModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -1159,7 +1159,7 @@ catch (ApiException e)
 
 <a id="searchworkitems"></a>
 # **SearchWorkItems**
-> List&lt;WorkItemShortModel&gt; SearchWorkItems (Guid id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, SearchWorkItemsRequest searchWorkItemsRequest = null)
+> List&lt;WorkItemShortModel&gt; SearchWorkItems (Guid id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, TestSuiteWorkItemsSearchModel testSuiteWorkItemsSearchModel = null)
 
 Search WorkItems
 
@@ -1197,12 +1197,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var searchWorkItemsRequest = new SearchWorkItemsRequest(); // SearchWorkItemsRequest |  (optional) 
+            var testSuiteWorkItemsSearchModel = new TestSuiteWorkItemsSearchModel(); // TestSuiteWorkItemsSearchModel |  (optional) 
 
             try
             {
                 // Search WorkItems
-                List<WorkItemShortModel> result = apiInstance.SearchWorkItems(id, skip, take, orderBy, searchField, searchValue, searchWorkItemsRequest);
+                List<WorkItemShortModel> result = apiInstance.SearchWorkItems(id, skip, take, orderBy, searchField, searchValue, testSuiteWorkItemsSearchModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1223,7 +1223,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search WorkItems
-    ApiResponse<List<WorkItemShortModel>> response = apiInstance.SearchWorkItemsWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, searchWorkItemsRequest);
+    ApiResponse<List<WorkItemShortModel>> response = apiInstance.SearchWorkItemsWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, testSuiteWorkItemsSearchModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1246,7 +1246,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **searchWorkItemsRequest** | [**SearchWorkItemsRequest**](SearchWorkItemsRequest.md) |  | [optional]  |
+| **testSuiteWorkItemsSearchModel** | [**TestSuiteWorkItemsSearchModel**](TestSuiteWorkItemsSearchModel.md) |  | [optional]  |
 
 ### Return type
 

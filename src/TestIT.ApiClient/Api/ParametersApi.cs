@@ -172,9 +172,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ParametersSearchPostRequest"> (optional)</param>
+        /// <param name="parameterFilterModel"> (optional)</param>
         /// <returns>List&lt;ParameterGroupModel&gt;</returns>
-        List<ParameterGroupModel> ApiV2ParametersSearchGroupsPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ParametersSearchPostRequest apiV2ParametersSearchPostRequest = default(ApiV2ParametersSearchPostRequest));
+        List<ParameterGroupModel> ApiV2ParametersSearchGroupsPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ParameterFilterModel parameterFilterModel = default(ParameterFilterModel));
 
         /// <summary>
         /// Search for parameters as group
@@ -188,9 +188,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ParametersSearchPostRequest"> (optional)</param>
+        /// <param name="parameterFilterModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;ParameterGroupModel&gt;</returns>
-        ApiResponse<List<ParameterGroupModel>> ApiV2ParametersSearchGroupsPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ParametersSearchPostRequest apiV2ParametersSearchPostRequest = default(ApiV2ParametersSearchPostRequest));
+        ApiResponse<List<ParameterGroupModel>> ApiV2ParametersSearchGroupsPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ParameterFilterModel parameterFilterModel = default(ParameterFilterModel));
         /// <summary>
         /// Search for parameters
         /// </summary>
@@ -200,9 +200,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ParametersSearchPostRequest"> (optional)</param>
+        /// <param name="parameterFilterModel"> (optional)</param>
         /// <returns>List&lt;ParameterModel&gt;</returns>
-        List<ParameterModel> ApiV2ParametersSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ParametersSearchPostRequest apiV2ParametersSearchPostRequest = default(ApiV2ParametersSearchPostRequest));
+        List<ParameterModel> ApiV2ParametersSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ParameterFilterModel parameterFilterModel = default(ParameterFilterModel));
 
         /// <summary>
         /// Search for parameters
@@ -216,9 +216,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ParametersSearchPostRequest"> (optional)</param>
+        /// <param name="parameterFilterModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;ParameterModel&gt;</returns>
-        ApiResponse<List<ParameterModel>> ApiV2ParametersSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ParametersSearchPostRequest apiV2ParametersSearchPostRequest = default(ApiV2ParametersSearchPostRequest));
+        ApiResponse<List<ParameterModel>> ApiV2ParametersSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ParameterFilterModel parameterFilterModel = default(ParameterFilterModel));
         /// <summary>
         /// Create parameter
         /// </summary>
@@ -226,9 +226,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets parameter model (listed in the request example)   User runs method execution   System creates parameter   System returns parameter model
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createParameterRequest"> (optional)</param>
+        /// <param name="parameterPostModel"> (optional)</param>
         /// <returns>ParameterModel</returns>
-        ParameterModel CreateParameter(CreateParameterRequest createParameterRequest = default(CreateParameterRequest));
+        ParameterModel CreateParameter(ParameterPostModel parameterPostModel = default(ParameterPostModel));
 
         /// <summary>
         /// Create parameter
@@ -237,9 +237,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets parameter model (listed in the request example)   User runs method execution   System creates parameter   System returns parameter model
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createParameterRequest"> (optional)</param>
+        /// <param name="parameterPostModel"> (optional)</param>
         /// <returns>ApiResponse of ParameterModel</returns>
-        ApiResponse<ParameterModel> CreateParameterWithHttpInfo(CreateParameterRequest createParameterRequest = default(CreateParameterRequest));
+        ApiResponse<ParameterModel> CreateParameterWithHttpInfo(ParameterPostModel parameterPostModel = default(ParameterPostModel));
         /// <summary>
         /// Delete parameter by name
         /// </summary>
@@ -362,9 +362,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets parameter updated properties(listed in the request example)   User runs method execution   System updated parameter using updated properties   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateParameterRequest"> (optional)</param>
+        /// <param name="parameterPutModel"> (optional)</param>
         /// <returns></returns>
-        void UpdateParameter(UpdateParameterRequest updateParameterRequest = default(UpdateParameterRequest));
+        void UpdateParameter(ParameterPutModel parameterPutModel = default(ParameterPutModel));
 
         /// <summary>
         /// Update parameter
@@ -373,9 +373,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets parameter updated properties(listed in the request example)   User runs method execution   System updated parameter using updated properties   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateParameterRequest"> (optional)</param>
+        /// <param name="parameterPutModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateParameterWithHttpInfo(UpdateParameterRequest updateParameterRequest = default(UpdateParameterRequest));
+        ApiResponse<Object> UpdateParameterWithHttpInfo(ParameterPutModel parameterPutModel = default(ParameterPutModel));
         #endregion Synchronous Operations
     }
 
@@ -395,7 +395,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="parameterPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ParameterModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ParameterModel>> ApiV2ParametersBulkPostAsync(List<ParameterPostModel> parameterPostModel = default(List<ParameterPostModel>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ParameterModel>> ApiV2ParametersBulkPostAsync(List<ParameterPostModel> parameterPostModel = default(List<ParameterPostModel>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create multiple parameters
@@ -407,7 +407,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="parameterPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ParameterModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ParameterModel>>> ApiV2ParametersBulkPostWithHttpInfoAsync(List<ParameterPostModel> parameterPostModel = default(List<ParameterPostModel>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ParameterModel>>> ApiV2ParametersBulkPostWithHttpInfoAsync(List<ParameterPostModel> parameterPostModel = default(List<ParameterPostModel>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Update multiple parameters
         /// </summary>
@@ -418,7 +418,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="parameterPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2ParametersBulkPutAsync(List<ParameterPutModel> parameterPutModel = default(List<ParameterPutModel>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2ParametersBulkPutAsync(List<ParameterPutModel> parameterPutModel = default(List<ParameterPutModel>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update multiple parameters
@@ -430,7 +430,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="parameterPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ParametersBulkPutWithHttpInfoAsync(List<ParameterPutModel> parameterPutModel = default(List<ParameterPutModel>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ParametersBulkPutWithHttpInfoAsync(List<ParameterPutModel> parameterPutModel = default(List<ParameterPutModel>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get parameters as group
         /// </summary>
@@ -447,7 +447,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ParameterGroupModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ParameterGroupModel>> ApiV2ParametersGroupsGetAsync(bool? isDeleted = default(bool?), List<Guid> parameterKeyIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ParameterGroupModel>> ApiV2ParametersGroupsGetAsync(bool? isDeleted = default(bool?), List<Guid> parameterKeyIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get parameters as group
@@ -465,7 +465,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ParameterGroupModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ParameterGroupModel>>> ApiV2ParametersGroupsGetWithHttpInfoAsync(bool? isDeleted = default(bool?), List<Guid> parameterKeyIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ParameterGroupModel>>> ApiV2ParametersGroupsGetWithHttpInfoAsync(bool? isDeleted = default(bool?), List<Guid> parameterKeyIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Check existence parameter key in system
         /// </summary>
@@ -476,7 +476,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="name"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of bool</returns>
-        System.Threading.Tasks.Task<bool> ApiV2ParametersKeyNameNameExistsGetAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<bool> ApiV2ParametersKeyNameNameExistsGetAsync(string name, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Check existence parameter key in system
@@ -488,7 +488,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="name"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (bool)</returns>
-        System.Threading.Tasks.Task<ApiResponse<bool>> ApiV2ParametersKeyNameNameExistsGetWithHttpInfoAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<bool>> ApiV2ParametersKeyNameNameExistsGetWithHttpInfoAsync(string name, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get all parameter key values
         /// </summary>
@@ -499,7 +499,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="key">Parameter key (string format)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        System.Threading.Tasks.Task<List<string>> ApiV2ParametersKeyValuesGetAsync(string key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<string>> ApiV2ParametersKeyValuesGetAsync(string key, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get all parameter key values
@@ -511,7 +511,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="key">Parameter key (string format)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<string>>> ApiV2ParametersKeyValuesGetWithHttpInfoAsync(string key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<string>>> ApiV2ParametersKeyValuesGetWithHttpInfoAsync(string key, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get all parameter keys
         /// </summary>
@@ -521,7 +521,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        System.Threading.Tasks.Task<List<string>> ApiV2ParametersKeysGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<string>> ApiV2ParametersKeysGetAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get all parameter keys
@@ -532,7 +532,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<string>>> ApiV2ParametersKeysGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<string>>> ApiV2ParametersKeysGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Search for parameters as group
         /// </summary>
@@ -545,10 +545,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ParametersSearchPostRequest"> (optional)</param>
+        /// <param name="parameterFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ParameterGroupModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ParameterGroupModel>> ApiV2ParametersSearchGroupsPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ParametersSearchPostRequest apiV2ParametersSearchPostRequest = default(ApiV2ParametersSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ParameterGroupModel>> ApiV2ParametersSearchGroupsPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ParameterFilterModel parameterFilterModel = default(ParameterFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Search for parameters as group
@@ -562,10 +562,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ParametersSearchPostRequest"> (optional)</param>
+        /// <param name="parameterFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ParameterGroupModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ParameterGroupModel>>> ApiV2ParametersSearchGroupsPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ParametersSearchPostRequest apiV2ParametersSearchPostRequest = default(ApiV2ParametersSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ParameterGroupModel>>> ApiV2ParametersSearchGroupsPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ParameterFilterModel parameterFilterModel = default(ParameterFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Search for parameters
         /// </summary>
@@ -578,10 +578,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ParametersSearchPostRequest"> (optional)</param>
+        /// <param name="parameterFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ParameterModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ParameterModel>> ApiV2ParametersSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ParametersSearchPostRequest apiV2ParametersSearchPostRequest = default(ApiV2ParametersSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ParameterModel>> ApiV2ParametersSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ParameterFilterModel parameterFilterModel = default(ParameterFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Search for parameters
@@ -595,10 +595,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ParametersSearchPostRequest"> (optional)</param>
+        /// <param name="parameterFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ParameterModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ParameterModel>>> ApiV2ParametersSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ParametersSearchPostRequest apiV2ParametersSearchPostRequest = default(ApiV2ParametersSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ParameterModel>>> ApiV2ParametersSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ParameterFilterModel parameterFilterModel = default(ParameterFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Create parameter
         /// </summary>
@@ -606,10 +606,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets parameter model (listed in the request example)   User runs method execution   System creates parameter   System returns parameter model
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createParameterRequest"> (optional)</param>
+        /// <param name="parameterPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ParameterModel</returns>
-        System.Threading.Tasks.Task<ParameterModel> CreateParameterAsync(CreateParameterRequest createParameterRequest = default(CreateParameterRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ParameterModel> CreateParameterAsync(ParameterPostModel parameterPostModel = default(ParameterPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create parameter
@@ -618,10 +618,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets parameter model (listed in the request example)   User runs method execution   System creates parameter   System returns parameter model
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createParameterRequest"> (optional)</param>
+        /// <param name="parameterPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ParameterModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ParameterModel>> CreateParameterWithHttpInfoAsync(CreateParameterRequest createParameterRequest = default(CreateParameterRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ParameterModel>> CreateParameterWithHttpInfoAsync(ParameterPostModel parameterPostModel = default(ParameterPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete parameter by name
         /// </summary>
@@ -632,7 +632,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="name">Name of the parameter</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteByNameAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteByNameAsync(string name, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete parameter by name
@@ -644,7 +644,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="name">Name of the parameter</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteByNameWithHttpInfoAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteByNameWithHttpInfoAsync(string name, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete parameters by parameter key identifier
         /// </summary>
@@ -655,7 +655,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="keyId">Identifier of the parameter key</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteByParameterKeyIdAsync(Guid keyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteByParameterKeyIdAsync(Guid keyId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete parameters by parameter key identifier
@@ -667,7 +667,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="keyId">Identifier of the parameter key</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteByParameterKeyIdWithHttpInfoAsync(Guid keyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteByParameterKeyIdWithHttpInfoAsync(Guid keyId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete parameter
         /// </summary>
@@ -678,7 +678,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Parameter internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteParameterAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteParameterAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete parameter
@@ -690,7 +690,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Parameter internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteParameterWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteParameterWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get all parameters
         /// </summary>
@@ -706,7 +706,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ParameterModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ParameterModel>> GetAllParametersAsync(bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ParameterModel>> GetAllParametersAsync(bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get all parameters
@@ -723,7 +723,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ParameterModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ParameterModel>>> GetAllParametersWithHttpInfoAsync(bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ParameterModel>>> GetAllParametersWithHttpInfoAsync(bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get parameter by ID
         /// </summary>
@@ -734,7 +734,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Parameter internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ParameterModel</returns>
-        System.Threading.Tasks.Task<ParameterModel> GetParameterByIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ParameterModel> GetParameterByIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get parameter by ID
@@ -746,7 +746,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Parameter internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ParameterModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ParameterModel>> GetParameterByIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ParameterModel>> GetParameterByIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Update parameter
         /// </summary>
@@ -754,10 +754,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets parameter updated properties(listed in the request example)   User runs method execution   System updated parameter using updated properties   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateParameterRequest"> (optional)</param>
+        /// <param name="parameterPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateParameterAsync(UpdateParameterRequest updateParameterRequest = default(UpdateParameterRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task UpdateParameterAsync(ParameterPutModel parameterPutModel = default(ParameterPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update parameter
@@ -766,10 +766,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets parameter updated properties(listed in the request example)   User runs method execution   System updated parameter using updated properties   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateParameterRequest"> (optional)</param>
+        /// <param name="parameterPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateParameterWithHttpInfoAsync(UpdateParameterRequest updateParameterRequest = default(UpdateParameterRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateParameterWithHttpInfoAsync(ParameterPutModel parameterPutModel = default(ParameterPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1047,7 +1047,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="parameterPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ParameterModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ParameterModel>> ApiV2ParametersBulkPostAsync(List<ParameterPostModel> parameterPostModel = default(List<ParameterPostModel>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ParameterModel>> ApiV2ParametersBulkPostAsync(List<ParameterPostModel> parameterPostModel = default(List<ParameterPostModel>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<List<ParameterModel>> localVarResponse = await ApiV2ParametersBulkPostWithHttpInfoAsync(parameterPostModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1060,7 +1060,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="parameterPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ParameterModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ParameterModel>>> ApiV2ParametersBulkPostWithHttpInfoAsync(List<ParameterPostModel> parameterPostModel = default(List<ParameterPostModel>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ParameterModel>>> ApiV2ParametersBulkPostWithHttpInfoAsync(List<ParameterPostModel> parameterPostModel = default(List<ParameterPostModel>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1165,7 +1165,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="parameterPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2ParametersBulkPutAsync(List<ParameterPutModel> parameterPutModel = default(List<ParameterPutModel>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2ParametersBulkPutAsync(List<ParameterPutModel> parameterPutModel = default(List<ParameterPutModel>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await ApiV2ParametersBulkPutWithHttpInfoAsync(parameterPutModel, cancellationToken).ConfigureAwait(false);
         }
@@ -1177,7 +1177,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="parameterPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ParametersBulkPutWithHttpInfoAsync(List<ParameterPutModel> parameterPutModel = default(List<ParameterPutModel>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ParametersBulkPutWithHttpInfoAsync(List<ParameterPutModel> parameterPutModel = default(List<ParameterPutModel>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1327,7 +1327,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ParameterGroupModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ParameterGroupModel>> ApiV2ParametersGroupsGetAsync(bool? isDeleted = default(bool?), List<Guid> parameterKeyIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ParameterGroupModel>> ApiV2ParametersGroupsGetAsync(bool? isDeleted = default(bool?), List<Guid> parameterKeyIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<List<ParameterGroupModel>> localVarResponse = await ApiV2ParametersGroupsGetWithHttpInfoAsync(isDeleted, parameterKeyIds, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1346,7 +1346,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ParameterGroupModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ParameterGroupModel>>> ApiV2ParametersGroupsGetWithHttpInfoAsync(bool? isDeleted = default(bool?), List<Guid> parameterKeyIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ParameterGroupModel>>> ApiV2ParametersGroupsGetWithHttpInfoAsync(bool? isDeleted = default(bool?), List<Guid> parameterKeyIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1481,7 +1481,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="name"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of bool</returns>
-        public async System.Threading.Tasks.Task<bool> ApiV2ParametersKeyNameNameExistsGetAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<bool> ApiV2ParametersKeyNameNameExistsGetAsync(string name, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<bool> localVarResponse = await ApiV2ParametersKeyNameNameExistsGetWithHttpInfoAsync(name, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1494,7 +1494,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="name"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (bool)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<bool>> ApiV2ParametersKeyNameNameExistsGetWithHttpInfoAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<bool>> ApiV2ParametersKeyNameNameExistsGetWithHttpInfoAsync(string name, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'name' is set
             if (name == null)
@@ -1606,7 +1606,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="key">Parameter key (string format)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        public async System.Threading.Tasks.Task<List<string>> ApiV2ParametersKeyValuesGetAsync(string key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<string>> ApiV2ParametersKeyValuesGetAsync(string key, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<List<string>> localVarResponse = await ApiV2ParametersKeyValuesGetWithHttpInfoAsync(key, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1619,7 +1619,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="key">Parameter key (string format)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<string>>> ApiV2ParametersKeyValuesGetWithHttpInfoAsync(string key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<string>>> ApiV2ParametersKeyValuesGetWithHttpInfoAsync(string key, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'key' is set
             if (key == null)
@@ -1723,7 +1723,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        public async System.Threading.Tasks.Task<List<string>> ApiV2ParametersKeysGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<string>> ApiV2ParametersKeysGetAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<List<string>> localVarResponse = await ApiV2ParametersKeysGetWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1735,7 +1735,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<string>>> ApiV2ParametersKeysGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<string>>> ApiV2ParametersKeysGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1784,11 +1784,11 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ParametersSearchPostRequest"> (optional)</param>
+        /// <param name="parameterFilterModel"> (optional)</param>
         /// <returns>List&lt;ParameterGroupModel&gt;</returns>
-        public List<ParameterGroupModel> ApiV2ParametersSearchGroupsPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ParametersSearchPostRequest apiV2ParametersSearchPostRequest = default(ApiV2ParametersSearchPostRequest))
+        public List<ParameterGroupModel> ApiV2ParametersSearchGroupsPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ParameterFilterModel parameterFilterModel = default(ParameterFilterModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<ParameterGroupModel>> localVarResponse = ApiV2ParametersSearchGroupsPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2ParametersSearchPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<List<ParameterGroupModel>> localVarResponse = ApiV2ParametersSearchGroupsPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, parameterFilterModel);
             return localVarResponse.Data;
         }
 
@@ -1801,9 +1801,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ParametersSearchPostRequest"> (optional)</param>
+        /// <param name="parameterFilterModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;ParameterGroupModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<ParameterGroupModel>> ApiV2ParametersSearchGroupsPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ParametersSearchPostRequest apiV2ParametersSearchPostRequest = default(ApiV2ParametersSearchPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<List<ParameterGroupModel>> ApiV2ParametersSearchGroupsPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ParameterFilterModel parameterFilterModel = default(ParameterFilterModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1842,7 +1842,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = apiV2ParametersSearchPostRequest;
+            localVarRequestOptions.Data = parameterFilterModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1871,12 +1871,12 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ParametersSearchPostRequest"> (optional)</param>
+        /// <param name="parameterFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ParameterGroupModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ParameterGroupModel>> ApiV2ParametersSearchGroupsPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ParametersSearchPostRequest apiV2ParametersSearchPostRequest = default(ApiV2ParametersSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ParameterGroupModel>> ApiV2ParametersSearchGroupsPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ParameterFilterModel parameterFilterModel = default(ParameterFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<ParameterGroupModel>> localVarResponse = await ApiV2ParametersSearchGroupsPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, apiV2ParametersSearchPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<ParameterGroupModel>> localVarResponse = await ApiV2ParametersSearchGroupsPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, parameterFilterModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1889,10 +1889,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ParametersSearchPostRequest"> (optional)</param>
+        /// <param name="parameterFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ParameterGroupModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ParameterGroupModel>>> ApiV2ParametersSearchGroupsPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ParametersSearchPostRequest apiV2ParametersSearchPostRequest = default(ApiV2ParametersSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ParameterGroupModel>>> ApiV2ParametersSearchGroupsPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ParameterFilterModel parameterFilterModel = default(ParameterFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1933,7 +1933,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = apiV2ParametersSearchPostRequest;
+            localVarRequestOptions.Data = parameterFilterModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1963,11 +1963,11 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ParametersSearchPostRequest"> (optional)</param>
+        /// <param name="parameterFilterModel"> (optional)</param>
         /// <returns>List&lt;ParameterModel&gt;</returns>
-        public List<ParameterModel> ApiV2ParametersSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ParametersSearchPostRequest apiV2ParametersSearchPostRequest = default(ApiV2ParametersSearchPostRequest))
+        public List<ParameterModel> ApiV2ParametersSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ParameterFilterModel parameterFilterModel = default(ParameterFilterModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<ParameterModel>> localVarResponse = ApiV2ParametersSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2ParametersSearchPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<List<ParameterModel>> localVarResponse = ApiV2ParametersSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, parameterFilterModel);
             return localVarResponse.Data;
         }
 
@@ -1980,9 +1980,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ParametersSearchPostRequest"> (optional)</param>
+        /// <param name="parameterFilterModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;ParameterModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<ParameterModel>> ApiV2ParametersSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ParametersSearchPostRequest apiV2ParametersSearchPostRequest = default(ApiV2ParametersSearchPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<List<ParameterModel>> ApiV2ParametersSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ParameterFilterModel parameterFilterModel = default(ParameterFilterModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -2021,7 +2021,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = apiV2ParametersSearchPostRequest;
+            localVarRequestOptions.Data = parameterFilterModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2050,12 +2050,12 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ParametersSearchPostRequest"> (optional)</param>
+        /// <param name="parameterFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ParameterModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ParameterModel>> ApiV2ParametersSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ParametersSearchPostRequest apiV2ParametersSearchPostRequest = default(ApiV2ParametersSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ParameterModel>> ApiV2ParametersSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ParameterFilterModel parameterFilterModel = default(ParameterFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<ParameterModel>> localVarResponse = await ApiV2ParametersSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, apiV2ParametersSearchPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<ParameterModel>> localVarResponse = await ApiV2ParametersSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, parameterFilterModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2068,10 +2068,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ParametersSearchPostRequest"> (optional)</param>
+        /// <param name="parameterFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ParameterModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ParameterModel>>> ApiV2ParametersSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ParametersSearchPostRequest apiV2ParametersSearchPostRequest = default(ApiV2ParametersSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ParameterModel>>> ApiV2ParametersSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ParameterFilterModel parameterFilterModel = default(ParameterFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2112,7 +2112,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = apiV2ParametersSearchPostRequest;
+            localVarRequestOptions.Data = parameterFilterModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2137,11 +2137,11 @@ namespace TestIT.ApiClient.Api
         /// Create parameter  Use case   User sets parameter model (listed in the request example)   User runs method execution   System creates parameter   System returns parameter model
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createParameterRequest"> (optional)</param>
+        /// <param name="parameterPostModel"> (optional)</param>
         /// <returns>ParameterModel</returns>
-        public ParameterModel CreateParameter(CreateParameterRequest createParameterRequest = default(CreateParameterRequest))
+        public ParameterModel CreateParameter(ParameterPostModel parameterPostModel = default(ParameterPostModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<ParameterModel> localVarResponse = CreateParameterWithHttpInfo(createParameterRequest);
+            TestIT.ApiClient.Client.ApiResponse<ParameterModel> localVarResponse = CreateParameterWithHttpInfo(parameterPostModel);
             return localVarResponse.Data;
         }
 
@@ -2149,9 +2149,9 @@ namespace TestIT.ApiClient.Api
         /// Create parameter  Use case   User sets parameter model (listed in the request example)   User runs method execution   System creates parameter   System returns parameter model
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createParameterRequest"> (optional)</param>
+        /// <param name="parameterPostModel"> (optional)</param>
         /// <returns>ApiResponse of ParameterModel</returns>
-        public TestIT.ApiClient.Client.ApiResponse<ParameterModel> CreateParameterWithHttpInfo(CreateParameterRequest createParameterRequest = default(CreateParameterRequest))
+        public TestIT.ApiClient.Client.ApiResponse<ParameterModel> CreateParameterWithHttpInfo(ParameterPostModel parameterPostModel = default(ParameterPostModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -2170,7 +2170,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = createParameterRequest;
+            localVarRequestOptions.Data = parameterPostModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2194,12 +2194,12 @@ namespace TestIT.ApiClient.Api
         /// Create parameter  Use case   User sets parameter model (listed in the request example)   User runs method execution   System creates parameter   System returns parameter model
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createParameterRequest"> (optional)</param>
+        /// <param name="parameterPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ParameterModel</returns>
-        public async System.Threading.Tasks.Task<ParameterModel> CreateParameterAsync(CreateParameterRequest createParameterRequest = default(CreateParameterRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ParameterModel> CreateParameterAsync(ParameterPostModel parameterPostModel = default(ParameterPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<ParameterModel> localVarResponse = await CreateParameterWithHttpInfoAsync(createParameterRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<ParameterModel> localVarResponse = await CreateParameterWithHttpInfoAsync(parameterPostModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2207,10 +2207,10 @@ namespace TestIT.ApiClient.Api
         /// Create parameter  Use case   User sets parameter model (listed in the request example)   User runs method execution   System creates parameter   System returns parameter model
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createParameterRequest"> (optional)</param>
+        /// <param name="parameterPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ParameterModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<ParameterModel>> CreateParameterWithHttpInfoAsync(CreateParameterRequest createParameterRequest = default(CreateParameterRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<ParameterModel>> CreateParameterWithHttpInfoAsync(ParameterPostModel parameterPostModel = default(ParameterPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2231,7 +2231,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = createParameterRequest;
+            localVarRequestOptions.Data = parameterPostModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2318,7 +2318,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="name">Name of the parameter</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteByNameAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteByNameAsync(string name, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await DeleteByNameWithHttpInfoAsync(name, cancellationToken).ConfigureAwait(false);
         }
@@ -2330,7 +2330,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="name">Name of the parameter</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteByNameWithHttpInfoAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteByNameWithHttpInfoAsync(string name, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'name' is set
             if (name == null)
@@ -2437,7 +2437,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="keyId">Identifier of the parameter key</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteByParameterKeyIdAsync(Guid keyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteByParameterKeyIdAsync(Guid keyId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await DeleteByParameterKeyIdWithHttpInfoAsync(keyId, cancellationToken).ConfigureAwait(false);
         }
@@ -2449,7 +2449,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="keyId">Identifier of the parameter key</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteByParameterKeyIdWithHttpInfoAsync(Guid keyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteByParameterKeyIdWithHttpInfoAsync(Guid keyId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2552,7 +2552,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Parameter internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteParameterAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteParameterAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await DeleteParameterWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
@@ -2564,7 +2564,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Parameter internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteParameterWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteParameterWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2706,7 +2706,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ParameterModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ParameterModel>> GetAllParametersAsync(bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ParameterModel>> GetAllParametersAsync(bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<List<ParameterModel>> localVarResponse = await GetAllParametersWithHttpInfoAsync(isDeleted, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2724,7 +2724,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ParameterModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ParameterModel>>> GetAllParametersWithHttpInfoAsync(bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ParameterModel>>> GetAllParametersWithHttpInfoAsync(bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2851,7 +2851,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Parameter internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ParameterModel</returns>
-        public async System.Threading.Tasks.Task<ParameterModel> GetParameterByIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ParameterModel> GetParameterByIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<ParameterModel> localVarResponse = await GetParameterByIdWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2864,7 +2864,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Parameter internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ParameterModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<ParameterModel>> GetParameterByIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<ParameterModel>> GetParameterByIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2909,20 +2909,20 @@ namespace TestIT.ApiClient.Api
         /// Update parameter  Use case   User sets parameter updated properties(listed in the request example)   User runs method execution   System updated parameter using updated properties   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateParameterRequest"> (optional)</param>
+        /// <param name="parameterPutModel"> (optional)</param>
         /// <returns></returns>
-        public void UpdateParameter(UpdateParameterRequest updateParameterRequest = default(UpdateParameterRequest))
+        public void UpdateParameter(ParameterPutModel parameterPutModel = default(ParameterPutModel))
         {
-            UpdateParameterWithHttpInfo(updateParameterRequest);
+            UpdateParameterWithHttpInfo(parameterPutModel);
         }
 
         /// <summary>
         /// Update parameter  Use case   User sets parameter updated properties(listed in the request example)   User runs method execution   System updated parameter using updated properties   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateParameterRequest"> (optional)</param>
+        /// <param name="parameterPutModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> UpdateParameterWithHttpInfo(UpdateParameterRequest updateParameterRequest = default(UpdateParameterRequest))
+        public TestIT.ApiClient.Client.ApiResponse<Object> UpdateParameterWithHttpInfo(ParameterPutModel parameterPutModel = default(ParameterPutModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -2941,7 +2941,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = updateParameterRequest;
+            localVarRequestOptions.Data = parameterPutModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2965,22 +2965,22 @@ namespace TestIT.ApiClient.Api
         /// Update parameter  Use case   User sets parameter updated properties(listed in the request example)   User runs method execution   System updated parameter using updated properties   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateParameterRequest"> (optional)</param>
+        /// <param name="parameterPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateParameterAsync(UpdateParameterRequest updateParameterRequest = default(UpdateParameterRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task UpdateParameterAsync(ParameterPutModel parameterPutModel = default(ParameterPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await UpdateParameterWithHttpInfoAsync(updateParameterRequest, cancellationToken).ConfigureAwait(false);
+            await UpdateParameterWithHttpInfoAsync(parameterPutModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Update parameter  Use case   User sets parameter updated properties(listed in the request example)   User runs method execution   System updated parameter using updated properties   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateParameterRequest"> (optional)</param>
+        /// <param name="parameterPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> UpdateParameterWithHttpInfoAsync(UpdateParameterRequest updateParameterRequest = default(UpdateParameterRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> UpdateParameterWithHttpInfoAsync(ParameterPutModel parameterPutModel = default(ParameterPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -3001,7 +3001,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = updateParameterRequest;
+            localVarRequestOptions.Data = parameterPutModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))

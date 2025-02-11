@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// TestResultV2ShortModel
     /// </summary>
     [DataContract(Name = "TestResultV2ShortModel")]
-    public partial class TestResultV2ShortModel : IEquatable<TestResultV2ShortModel>, IValidatableObject
+    public partial class TestResultV2ShortModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestResultV2ShortModel" /> class.
@@ -59,7 +59,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="attachments">attachments.</param>
         /// <param name="parameters">parameters.</param>
         /// <param name="properties">properties.</param>
-        public TestResultV2ShortModel(Guid id = default(Guid), Guid configurationId = default(Guid), Guid workItemVersionId = default(Guid), Guid? autoTestId = default(Guid?), string message = default(string), string traces = default(string), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), Guid? runByUserId = default(Guid?), Guid? stoppedByUserId = default(Guid?), Guid? testPointId = default(Guid?), TestPointRelatedToTestResult testPoint = default(TestPointRelatedToTestResult), Guid testRunId = default(Guid), string outcome = default(string), string comment = default(string), List<LinkModel> links = default(List<LinkModel>), List<AttachmentModel> attachments = default(List<AttachmentModel>), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, string> properties = default(Dictionary<string, string>))
+        public TestResultV2ShortModel(Guid id = default(Guid), Guid configurationId = default(Guid), Guid workItemVersionId = default(Guid), Guid? autoTestId = default(Guid?), string message = default(string), string traces = default(string), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), Guid? runByUserId = default(Guid?), Guid? stoppedByUserId = default(Guid?), Guid? testPointId = default(Guid?), TestPointShortModel testPoint = default(TestPointShortModel), Guid testRunId = default(Guid), string outcome = default(string), string comment = default(string), List<LinkModel> links = default(List<LinkModel>), List<AttachmentModel> attachments = default(List<AttachmentModel>), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, string> properties = default(Dictionary<string, string>))
         {
             this.Id = id;
             this.ConfigurationId = configurationId;
@@ -90,77 +90,99 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
+        /*
+        <example>cbb88fe6-c193-48e9-9e37-323fbc38de5f</example>
+        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets ConfigurationId
         /// </summary>
-        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
+        /*
+        <example>cbb88fe6-c193-48e9-9e37-323fbc38de5f</example>
+        */
         [DataMember(Name = "configurationId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ConfigurationId { get; set; }
 
         /// <summary>
         /// Gets or Sets WorkItemVersionId
         /// </summary>
-        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
+        /*
+        <example>cbb88fe6-c193-48e9-9e37-323fbc38de5f</example>
+        */
         [DataMember(Name = "workItemVersionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid WorkItemVersionId { get; set; }
 
         /// <summary>
         /// Gets or Sets AutoTestId
         /// </summary>
-        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
+        /*
+        <example>cbb88fe6-c193-48e9-9e37-323fbc38de5f</example>
+        */
         [DataMember(Name = "autoTestId", EmitDefaultValue = true)]
         public Guid? AutoTestId { get; set; }
 
         /// <summary>
         /// Gets or Sets Message
         /// </summary>
-        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
+        /*
+        <example>cbb88fe6-c193-48e9-9e37-323fbc38de5f</example>
+        */
         [DataMember(Name = "message", EmitDefaultValue = true)]
         public string Message { get; set; }
 
         /// <summary>
         /// Gets or Sets Traces
         /// </summary>
-        /// <example>&quot;Exception in thread main java.lang.NullPointerException at com.example.myproject.MyTest.HealtCheck()&quot;</example>
+        /*
+        <example>Exception in thread main java.lang.NullPointerException at com.example.myproject.MyTest.HealtCheck()</example>
+        */
         [DataMember(Name = "traces", EmitDefaultValue = true)]
         public string Traces { get; set; }
 
         /// <summary>
         /// Gets or Sets StartedOn
         /// </summary>
-        /// <example>&quot;2025-01-24T10:05:02.127835600Z&quot;</example>
+        /*
+        <example>2025-02-09T16:32:03.068992100Z</example>
+        */
         [DataMember(Name = "startedOn", EmitDefaultValue = true)]
         public DateTime? StartedOn { get; set; }
 
         /// <summary>
         /// Gets or Sets CompletedOn
         /// </summary>
-        /// <example>&quot;2025-01-24T10:05:02.127835600Z&quot;</example>
+        /*
+        <example>2025-02-09T16:32:03.068992100Z</example>
+        */
         [DataMember(Name = "completedOn", EmitDefaultValue = true)]
         public DateTime? CompletedOn { get; set; }
 
         /// <summary>
         /// Gets or Sets RunByUserId
         /// </summary>
-        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
+        /*
+        <example>cbb88fe6-c193-48e9-9e37-323fbc38de5f</example>
+        */
         [DataMember(Name = "runByUserId", EmitDefaultValue = true)]
         public Guid? RunByUserId { get; set; }
 
         /// <summary>
         /// Gets or Sets StoppedByUserId
         /// </summary>
-        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
+        /*
+        <example>cbb88fe6-c193-48e9-9e37-323fbc38de5f</example>
+        */
         [DataMember(Name = "stoppedByUserId", EmitDefaultValue = true)]
         public Guid? StoppedByUserId { get; set; }
 
         /// <summary>
         /// Gets or Sets TestPointId
         /// </summary>
-        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
+        /*
+        <example>cbb88fe6-c193-48e9-9e37-323fbc38de5f</example>
+        */
         [DataMember(Name = "testPointId", EmitDefaultValue = true)]
         public Guid? TestPointId { get; set; }
 
@@ -168,12 +190,14 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets TestPoint
         /// </summary>
         [DataMember(Name = "testPoint", EmitDefaultValue = true)]
-        public TestPointRelatedToTestResult TestPoint { get; set; }
+        public TestPointShortModel TestPoint { get; set; }
 
         /// <summary>
         /// Gets or Sets TestRunId
         /// </summary>
-        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
+        /*
+        <example>cbb88fe6-c193-48e9-9e37-323fbc38de5f</example>
+        */
         [DataMember(Name = "testRunId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestRunId { get; set; }
 
@@ -181,14 +205,18 @@ namespace TestIT.ApiClient.Model
         /// Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped
         /// </summary>
         /// <value>Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped</value>
-        /// <example>&quot;Passed&quot;</example>
+        /*
+        <example>Passed</example>
+        */
         [DataMember(Name = "outcome", IsRequired = true, EmitDefaultValue = true)]
         public string Outcome { get; set; }
 
         /// <summary>
         /// Gets or Sets Comment
         /// </summary>
-        /// <example>&quot;my first comment&quot;</example>
+        /*
+        <example>my first comment</example>
+        */
         [DataMember(Name = "comment", EmitDefaultValue = true)]
         public string Comment { get; set; }
 
@@ -257,223 +285,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestResultV2ShortModel);
-        }
-
-        /// <summary>
-        /// Returns true if TestResultV2ShortModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestResultV2ShortModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestResultV2ShortModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.ConfigurationId == input.ConfigurationId ||
-                    (this.ConfigurationId != null &&
-                    this.ConfigurationId.Equals(input.ConfigurationId))
-                ) && 
-                (
-                    this.WorkItemVersionId == input.WorkItemVersionId ||
-                    (this.WorkItemVersionId != null &&
-                    this.WorkItemVersionId.Equals(input.WorkItemVersionId))
-                ) && 
-                (
-                    this.AutoTestId == input.AutoTestId ||
-                    (this.AutoTestId != null &&
-                    this.AutoTestId.Equals(input.AutoTestId))
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.Traces == input.Traces ||
-                    (this.Traces != null &&
-                    this.Traces.Equals(input.Traces))
-                ) && 
-                (
-                    this.StartedOn == input.StartedOn ||
-                    (this.StartedOn != null &&
-                    this.StartedOn.Equals(input.StartedOn))
-                ) && 
-                (
-                    this.CompletedOn == input.CompletedOn ||
-                    (this.CompletedOn != null &&
-                    this.CompletedOn.Equals(input.CompletedOn))
-                ) && 
-                (
-                    this.RunByUserId == input.RunByUserId ||
-                    (this.RunByUserId != null &&
-                    this.RunByUserId.Equals(input.RunByUserId))
-                ) && 
-                (
-                    this.StoppedByUserId == input.StoppedByUserId ||
-                    (this.StoppedByUserId != null &&
-                    this.StoppedByUserId.Equals(input.StoppedByUserId))
-                ) && 
-                (
-                    this.TestPointId == input.TestPointId ||
-                    (this.TestPointId != null &&
-                    this.TestPointId.Equals(input.TestPointId))
-                ) && 
-                (
-                    this.TestPoint == input.TestPoint ||
-                    (this.TestPoint != null &&
-                    this.TestPoint.Equals(input.TestPoint))
-                ) && 
-                (
-                    this.TestRunId == input.TestRunId ||
-                    (this.TestRunId != null &&
-                    this.TestRunId.Equals(input.TestRunId))
-                ) && 
-                (
-                    this.Outcome == input.Outcome ||
-                    (this.Outcome != null &&
-                    this.Outcome.Equals(input.Outcome))
-                ) && 
-                (
-                    this.Comment == input.Comment ||
-                    (this.Comment != null &&
-                    this.Comment.Equals(input.Comment))
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    this.Links != null &&
-                    input.Links != null &&
-                    this.Links.SequenceEqual(input.Links)
-                ) && 
-                (
-                    this.Attachments == input.Attachments ||
-                    this.Attachments != null &&
-                    input.Attachments != null &&
-                    this.Attachments.SequenceEqual(input.Attachments)
-                ) && 
-                (
-                    this.Parameters == input.Parameters ||
-                    this.Parameters != null &&
-                    input.Parameters != null &&
-                    this.Parameters.SequenceEqual(input.Parameters)
-                ) && 
-                (
-                    this.Properties == input.Properties ||
-                    this.Properties != null &&
-                    input.Properties != null &&
-                    this.Properties.SequenceEqual(input.Properties)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.ConfigurationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ConfigurationId.GetHashCode();
-                }
-                if (this.WorkItemVersionId != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItemVersionId.GetHashCode();
-                }
-                if (this.AutoTestId != null)
-                {
-                    hashCode = (hashCode * 59) + this.AutoTestId.GetHashCode();
-                }
-                if (this.Message != null)
-                {
-                    hashCode = (hashCode * 59) + this.Message.GetHashCode();
-                }
-                if (this.Traces != null)
-                {
-                    hashCode = (hashCode * 59) + this.Traces.GetHashCode();
-                }
-                if (this.StartedOn != null)
-                {
-                    hashCode = (hashCode * 59) + this.StartedOn.GetHashCode();
-                }
-                if (this.CompletedOn != null)
-                {
-                    hashCode = (hashCode * 59) + this.CompletedOn.GetHashCode();
-                }
-                if (this.RunByUserId != null)
-                {
-                    hashCode = (hashCode * 59) + this.RunByUserId.GetHashCode();
-                }
-                if (this.StoppedByUserId != null)
-                {
-                    hashCode = (hashCode * 59) + this.StoppedByUserId.GetHashCode();
-                }
-                if (this.TestPointId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestPointId.GetHashCode();
-                }
-                if (this.TestPoint != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestPoint.GetHashCode();
-                }
-                if (this.TestRunId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestRunId.GetHashCode();
-                }
-                if (this.Outcome != null)
-                {
-                    hashCode = (hashCode * 59) + this.Outcome.GetHashCode();
-                }
-                if (this.Comment != null)
-                {
-                    hashCode = (hashCode * 59) + this.Comment.GetHashCode();
-                }
-                if (this.Links != null)
-                {
-                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
-                }
-                if (this.Attachments != null)
-                {
-                    hashCode = (hashCode * 59) + this.Attachments.GetHashCode();
-                }
-                if (this.Parameters != null)
-                {
-                    hashCode = (hashCode * 59) + this.Parameters.GetHashCode();
-                }
-                if (this.Properties != null)
-                {
-                    hashCode = (hashCode * 59) + this.Properties.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

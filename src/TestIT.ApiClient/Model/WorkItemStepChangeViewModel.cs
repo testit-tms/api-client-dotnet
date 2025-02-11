@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// WorkItemStepChangeViewModel
     /// </summary>
     [DataContract(Name = "WorkItemStepChangeViewModel")]
-    public partial class WorkItemStepChangeViewModel : IEquatable<WorkItemStepChangeViewModel>, IValidatableObject
+    public partial class WorkItemStepChangeViewModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemStepChangeViewModel" /> class.
@@ -47,7 +47,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="index">index (required).</param>
         /// <param name="workItemId">workItemId.</param>
         /// <param name="workItem">workItem (required).</param>
-        public WorkItemStepChangeViewModel(string action = default(string), string expected = default(string), string comments = default(string), string testData = default(string), int index = default(int), Guid? workItemId = default(Guid?), WorkItemStepChangeViewModelWorkItem workItem = default(WorkItemStepChangeViewModelWorkItem))
+        public WorkItemStepChangeViewModel(string action = default(string), string expected = default(string), string comments = default(string), string testData = default(string), int index = default(int), Guid? workItemId = default(Guid?), SharedStepChangeViewModel workItem = default(SharedStepChangeViewModel))
         {
             // to ensure "action" is required (not null)
             if (action == null)
@@ -123,7 +123,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets WorkItem
         /// </summary>
         [DataMember(Name = "workItem", IsRequired = true, EmitDefaultValue = true)]
-        public WorkItemStepChangeViewModelWorkItem WorkItem { get; set; }
+        public SharedStepChangeViewModel WorkItem { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -154,107 +154,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as WorkItemStepChangeViewModel);
-        }
-
-        /// <summary>
-        /// Returns true if WorkItemStepChangeViewModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of WorkItemStepChangeViewModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(WorkItemStepChangeViewModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Action == input.Action ||
-                    (this.Action != null &&
-                    this.Action.Equals(input.Action))
-                ) && 
-                (
-                    this.Expected == input.Expected ||
-                    (this.Expected != null &&
-                    this.Expected.Equals(input.Expected))
-                ) && 
-                (
-                    this.Comments == input.Comments ||
-                    (this.Comments != null &&
-                    this.Comments.Equals(input.Comments))
-                ) && 
-                (
-                    this.TestData == input.TestData ||
-                    (this.TestData != null &&
-                    this.TestData.Equals(input.TestData))
-                ) && 
-                (
-                    this.Index == input.Index ||
-                    this.Index.Equals(input.Index)
-                ) && 
-                (
-                    this.WorkItemId == input.WorkItemId ||
-                    (this.WorkItemId != null &&
-                    this.WorkItemId.Equals(input.WorkItemId))
-                ) && 
-                (
-                    this.WorkItem == input.WorkItem ||
-                    (this.WorkItem != null &&
-                    this.WorkItem.Equals(input.WorkItem))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Action != null)
-                {
-                    hashCode = (hashCode * 59) + this.Action.GetHashCode();
-                }
-                if (this.Expected != null)
-                {
-                    hashCode = (hashCode * 59) + this.Expected.GetHashCode();
-                }
-                if (this.Comments != null)
-                {
-                    hashCode = (hashCode * 59) + this.Comments.GetHashCode();
-                }
-                if (this.TestData != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestData.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Index.GetHashCode();
-                if (this.WorkItemId != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItemId.GetHashCode();
-                }
-                if (this.WorkItem != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItem.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -37,9 +37,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest"> (optional)</param>
+        /// <param name="projectCustomAttributesTemplatesFilterModel"> (optional)</param>
         /// <returns>List&lt;ProjectCustomAttributeTemplateGetModel&gt;</returns>
-        List<ProjectCustomAttributeTemplateGetModel> ApiV2ProjectsProjectIdAttributesTemplatesSearchPost(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest = default(ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest));
+        List<ProjectCustomAttributeTemplateGetModel> ApiV2ProjectsProjectIdAttributesTemplatesSearchPost(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default(ProjectCustomAttributesTemplatesFilterModel));
 
         /// <summary>
         /// Search for custom attributes templates
@@ -54,9 +54,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest"> (optional)</param>
+        /// <param name="projectCustomAttributesTemplatesFilterModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;ProjectCustomAttributeTemplateGetModel&gt;</returns>
-        ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfo(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest = default(ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest));
+        ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfo(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default(ProjectCustomAttributesTemplatesFilterModel));
         /// <summary>
         /// Delete CustomAttributeTemplate from Project
         /// </summary>
@@ -125,10 +125,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest"> (optional)</param>
+        /// <param name="projectCustomAttributesTemplatesFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ProjectCustomAttributeTemplateGetModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest = default(ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default(ProjectCustomAttributesTemplatesFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Search for custom attributes templates
@@ -143,10 +143,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest"> (optional)</param>
+        /// <param name="projectCustomAttributesTemplatesFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ProjectCustomAttributeTemplateGetModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ProjectCustomAttributeTemplateGetModel>>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfoAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest = default(ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ProjectCustomAttributeTemplateGetModel>>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfoAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default(ProjectCustomAttributesTemplatesFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete CustomAttributeTemplate from Project
         /// </summary>
@@ -158,7 +158,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDeleteAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDeleteAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete CustomAttributeTemplate from Project
@@ -171,7 +171,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDeleteWithHttpInfoAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDeleteWithHttpInfoAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Add CustomAttributeTemplate to Project
         /// </summary>
@@ -183,7 +183,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPostAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPostAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Add CustomAttributeTemplate to Project
@@ -196,7 +196,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPostWithHttpInfoAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPostWithHttpInfoAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -420,11 +420,11 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest"> (optional)</param>
+        /// <param name="projectCustomAttributesTemplatesFilterModel"> (optional)</param>
         /// <returns>List&lt;ProjectCustomAttributeTemplateGetModel&gt;</returns>
-        public List<ProjectCustomAttributeTemplateGetModel> ApiV2ProjectsProjectIdAttributesTemplatesSearchPost(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest = default(ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest))
+        public List<ProjectCustomAttributeTemplateGetModel> ApiV2ProjectsProjectIdAttributesTemplatesSearchPost(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default(ProjectCustomAttributesTemplatesFilterModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> localVarResponse = ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> localVarResponse = ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, projectCustomAttributesTemplatesFilterModel);
             return localVarResponse.Data;
         }
 
@@ -438,9 +438,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest"> (optional)</param>
+        /// <param name="projectCustomAttributesTemplatesFilterModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;ProjectCustomAttributeTemplateGetModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfo(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest = default(ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfo(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default(ProjectCustomAttributesTemplatesFilterModel))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -484,7 +484,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest;
+            localVarRequestOptions.Data = projectCustomAttributesTemplatesFilterModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -514,12 +514,12 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest"> (optional)</param>
+        /// <param name="projectCustomAttributesTemplatesFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ProjectCustomAttributeTemplateGetModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest = default(ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default(ProjectCustomAttributesTemplatesFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> localVarResponse = await ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfoAsync(projectId, skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> localVarResponse = await ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfoAsync(projectId, skip, take, orderBy, searchField, searchValue, projectCustomAttributesTemplatesFilterModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -533,10 +533,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest"> (optional)</param>
+        /// <param name="projectCustomAttributesTemplatesFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ProjectCustomAttributeTemplateGetModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfoAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest = default(ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfoAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default(ProjectCustomAttributesTemplatesFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -582,7 +582,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest;
+            localVarRequestOptions.Data = projectCustomAttributesTemplatesFilterModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -673,7 +673,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDeleteAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDeleteAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDeleteWithHttpInfoAsync(projectId, templateId, cancellationToken).ConfigureAwait(false);
         }
@@ -686,7 +686,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDeleteWithHttpInfoAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDeleteWithHttpInfoAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -802,7 +802,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPostAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPostAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPostWithHttpInfoAsync(projectId, templateId, cancellationToken).ConfigureAwait(false);
         }
@@ -815,7 +815,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPostWithHttpInfoAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPostWithHttpInfoAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)

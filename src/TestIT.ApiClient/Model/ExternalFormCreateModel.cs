@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// ExternalFormCreateModel
     /// </summary>
     [DataContract(Name = "ExternalFormCreateModel")]
-    public partial class ExternalFormCreateModel : IEquatable<ExternalFormCreateModel>, IValidatableObject
+    public partial class ExternalFormCreateModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ExternalFormCreateModel" /> class.
@@ -122,88 +122,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ExternalFormCreateModel);
-        }
-
-        /// <summary>
-        /// Returns true if ExternalFormCreateModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ExternalFormCreateModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ExternalFormCreateModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.PossibleValues == input.PossibleValues ||
-                    this.PossibleValues != null &&
-                    input.PossibleValues != null &&
-                    this.PossibleValues.SequenceEqual(input.PossibleValues)
-                ) && 
-                (
-                    this.Fields == input.Fields ||
-                    this.Fields != null &&
-                    input.Fields != null &&
-                    this.Fields.SequenceEqual(input.Fields)
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    this.Links != null &&
-                    input.Links != null &&
-                    this.Links.SequenceEqual(input.Links)
-                ) && 
-                (
-                    this.Values == input.Values ||
-                    this.Values != null &&
-                    input.Values != null &&
-                    this.Values.SequenceEqual(input.Values)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.PossibleValues != null)
-                {
-                    hashCode = (hashCode * 59) + this.PossibleValues.GetHashCode();
-                }
-                if (this.Fields != null)
-                {
-                    hashCode = (hashCode * 59) + this.Fields.GetHashCode();
-                }
-                if (this.Links != null)
-                {
-                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
-                }
-                if (this.Values != null)
-                {
-                    hashCode = (hashCode * 59) + this.Values.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

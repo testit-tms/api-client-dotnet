@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// ConfigurationByParametersModel
     /// </summary>
     [DataContract(Name = "ConfigurationByParametersModel")]
-    public partial class ConfigurationByParametersModel : IEquatable<ConfigurationByParametersModel>, IValidatableObject
+    public partial class ConfigurationByParametersModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ConfigurationByParametersModel" /> class.
@@ -57,7 +57,9 @@ namespace TestIT.ApiClient.Model
         /// This property is used to link configuration with project
         /// </summary>
         /// <value>This property is used to link configuration with project</value>
-        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
+        /*
+        <example>cbb88fe6-c193-48e9-9e37-323fbc38de5f</example>
+        */
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
@@ -91,67 +93,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ConfigurationByParametersModel);
-        }
-
-        /// <summary>
-        /// Returns true if ConfigurationByParametersModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ConfigurationByParametersModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ConfigurationByParametersModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.ParameterIds == input.ParameterIds ||
-                    this.ParameterIds != null &&
-                    input.ParameterIds != null &&
-                    this.ParameterIds.SequenceEqual(input.ParameterIds)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.ProjectId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProjectId.GetHashCode();
-                }
-                if (this.ParameterIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParameterIds.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// AutoTestSearchIncludeApiModel
     /// </summary>
     [DataContract(Name = "AutoTestSearchIncludeApiModel")]
-    public partial class AutoTestSearchIncludeApiModel : IEquatable<AutoTestSearchIncludeApiModel>, IValidatableObject
+    public partial class AutoTestSearchIncludeApiModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestSearchIncludeApiModel" /> class.
@@ -91,75 +91,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AutoTestSearchIncludeApiModel);
-        }
-
-        /// <summary>
-        /// Returns true if AutoTestSearchIncludeApiModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AutoTestSearchIncludeApiModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AutoTestSearchIncludeApiModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.IncludeSteps == input.IncludeSteps ||
-                    (this.IncludeSteps != null &&
-                    this.IncludeSteps.Equals(input.IncludeSteps))
-                ) && 
-                (
-                    this.IncludeLinks == input.IncludeLinks ||
-                    (this.IncludeLinks != null &&
-                    this.IncludeLinks.Equals(input.IncludeLinks))
-                ) && 
-                (
-                    this.IncludeLabels == input.IncludeLabels ||
-                    (this.IncludeLabels != null &&
-                    this.IncludeLabels.Equals(input.IncludeLabels))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.IncludeSteps != null)
-                {
-                    hashCode = (hashCode * 59) + this.IncludeSteps.GetHashCode();
-                }
-                if (this.IncludeLinks != null)
-                {
-                    hashCode = (hashCode * 59) + this.IncludeLinks.GetHashCode();
-                }
-                if (this.IncludeLabels != null)
-                {
-                    hashCode = (hashCode * 59) + this.IncludeLabels.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// TestRunAnalyticApiResult
     /// </summary>
     [DataContract(Name = "TestRunAnalyticApiResult")]
-    public partial class TestRunAnalyticApiResult : IEquatable<TestRunAnalyticApiResult>, IValidatableObject
+    public partial class TestRunAnalyticApiResult : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestRunAnalyticApiResult" /> class.
@@ -108,78 +108,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestRunAnalyticApiResult);
-        }
-
-        /// <summary>
-        /// Returns true if TestRunAnalyticApiResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestRunAnalyticApiResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestRunAnalyticApiResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.CountGroupByStatus == input.CountGroupByStatus ||
-                    this.CountGroupByStatus != null &&
-                    input.CountGroupByStatus != null &&
-                    this.CountGroupByStatus.SequenceEqual(input.CountGroupByStatus)
-                ) && 
-                (
-                    this.CountGroupByStatusType == input.CountGroupByStatusType ||
-                    this.CountGroupByStatusType != null &&
-                    input.CountGroupByStatusType != null &&
-                    this.CountGroupByStatusType.SequenceEqual(input.CountGroupByStatusType)
-                ) && 
-                (
-                    this.CountGroupByFailureClass == input.CountGroupByFailureClass ||
-                    this.CountGroupByFailureClass != null &&
-                    input.CountGroupByFailureClass != null &&
-                    this.CountGroupByFailureClass.SequenceEqual(input.CountGroupByFailureClass)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.CountGroupByStatus != null)
-                {
-                    hashCode = (hashCode * 59) + this.CountGroupByStatus.GetHashCode();
-                }
-                if (this.CountGroupByStatusType != null)
-                {
-                    hashCode = (hashCode * 59) + this.CountGroupByStatusType.GetHashCode();
-                }
-                if (this.CountGroupByFailureClass != null)
-                {
-                    hashCode = (hashCode * 59) + this.CountGroupByFailureClass.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// WebhooksDeleteRequest
     /// </summary>
     [DataContract(Name = "WebhooksDeleteRequest")]
-    public partial class WebhooksDeleteRequest : IEquatable<WebhooksDeleteRequest>, IValidatableObject
+    public partial class WebhooksDeleteRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhooksDeleteRequest" /> class.
@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="filter">filter (required).</param>
         /// <param name="extractor">extractor (required).</param>
-        public WebhooksDeleteRequest(WebhooksDeleteRequestFilter filter = default(WebhooksDeleteRequestFilter), WebhooksDeleteRequestExtractor extractor = default(WebhooksDeleteRequestExtractor))
+        public WebhooksDeleteRequest(WebhooksDeleteFilterRequest filter = default(WebhooksDeleteFilterRequest), WebhooksExtractionRequest extractor = default(WebhooksExtractionRequest))
         {
             // to ensure "filter" is required (not null)
             if (filter == null)
@@ -62,13 +62,13 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Filter
         /// </summary>
         [DataMember(Name = "filter", IsRequired = true, EmitDefaultValue = true)]
-        public WebhooksDeleteRequestFilter Filter { get; set; }
+        public WebhooksDeleteFilterRequest Filter { get; set; }
 
         /// <summary>
         /// Gets or Sets Extractor
         /// </summary>
         [DataMember(Name = "extractor", IsRequired = true, EmitDefaultValue = true)]
-        public WebhooksDeleteRequestExtractor Extractor { get; set; }
+        public WebhooksExtractionRequest Extractor { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -94,66 +94,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as WebhooksDeleteRequest);
-        }
-
-        /// <summary>
-        /// Returns true if WebhooksDeleteRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of WebhooksDeleteRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(WebhooksDeleteRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Filter == input.Filter ||
-                    (this.Filter != null &&
-                    this.Filter.Equals(input.Filter))
-                ) && 
-                (
-                    this.Extractor == input.Extractor ||
-                    (this.Extractor != null &&
-                    this.Extractor.Equals(input.Extractor))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Filter != null)
-                {
-                    hashCode = (hashCode * 59) + this.Filter.GetHashCode();
-                }
-                if (this.Extractor != null)
-                {
-                    hashCode = (hashCode * 59) + this.Extractor.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

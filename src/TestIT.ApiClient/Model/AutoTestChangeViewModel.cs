@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// AutoTestChangeViewModel
     /// </summary>
     [DataContract(Name = "AutoTestChangeViewModel")]
-    public partial class AutoTestChangeViewModel : IEquatable<AutoTestChangeViewModel>, IValidatableObject
+    public partial class AutoTestChangeViewModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestChangeViewModel" /> class.
@@ -107,80 +107,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AutoTestChangeViewModel);
-        }
-
-        /// <summary>
-        /// Returns true if AutoTestChangeViewModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AutoTestChangeViewModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AutoTestChangeViewModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.ExternalId == input.ExternalId ||
-                    (this.ExternalId != null &&
-                    this.ExternalId.Equals(input.ExternalId))
-                ) && 
-                (
-                    this.GlobalId == input.GlobalId ||
-                    this.GlobalId.Equals(input.GlobalId)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.ProjectId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProjectId.GetHashCode();
-                }
-                if (this.ExternalId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ExternalId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.GlobalId.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

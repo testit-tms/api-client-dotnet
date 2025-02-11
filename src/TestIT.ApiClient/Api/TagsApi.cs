@@ -34,9 +34,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets collection of tags internal (guid format) identifiers   System searches and deletes a collection of tags
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TagsDeleteRequest"> (optional)</param>
+        /// <param name="tagSelectModel"> (optional)</param>
         /// <returns></returns>
-        void ApiV2TagsDelete(ApiV2TagsDeleteRequest apiV2TagsDeleteRequest = default(ApiV2TagsDeleteRequest));
+        void ApiV2TagsDelete(TagSelectModel tagSelectModel = default(TagSelectModel));
 
         /// <summary>
         /// Delete tags
@@ -45,9 +45,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets collection of tags internal (guid format) identifiers   System searches and deletes a collection of tags
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TagsDeleteRequest"> (optional)</param>
+        /// <param name="tagSelectModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2TagsDeleteWithHttpInfo(ApiV2TagsDeleteRequest apiV2TagsDeleteRequest = default(ApiV2TagsDeleteRequest));
+        ApiResponse<Object> ApiV2TagsDeleteWithHttpInfo(TagSelectModel tagSelectModel = default(TagSelectModel));
         /// <summary>
         /// Get all Tags
         /// </summary>
@@ -97,9 +97,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets tag model (listed in the request example)   User runs method execution   System creates tag   System returns tag model (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TagsPostRequest"> (optional)</param>
+        /// <param name="tagPostModel"> (optional)</param>
         /// <returns>TagModel</returns>
-        TagModel ApiV2TagsPost(ApiV2TagsPostRequest apiV2TagsPostRequest = default(ApiV2TagsPostRequest));
+        TagModel ApiV2TagsPost(TagPostModel tagPostModel = default(TagPostModel));
 
         /// <summary>
         /// Create tag
@@ -108,9 +108,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets tag model (listed in the request example)   User runs method execution   System creates tag   System returns tag model (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TagsPostRequest"> (optional)</param>
+        /// <param name="tagPostModel"> (optional)</param>
         /// <returns>ApiResponse of TagModel</returns>
-        ApiResponse<TagModel> ApiV2TagsPostWithHttpInfo(ApiV2TagsPostRequest apiV2TagsPostRequest = default(ApiV2TagsPostRequest));
+        ApiResponse<TagModel> ApiV2TagsPostWithHttpInfo(TagPostModel tagPostModel = default(TagPostModel));
         /// <summary>
         /// Update tag
         /// </summary>
@@ -119,9 +119,9 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
-        /// <param name="apiV2TagsPutRequest"> (optional)</param>
+        /// <param name="tagPutModel"> (optional)</param>
         /// <returns>TagModel</returns>
-        TagModel ApiV2TagsPut(Guid? id = default(Guid?), ApiV2TagsPutRequest apiV2TagsPutRequest = default(ApiV2TagsPutRequest));
+        TagModel ApiV2TagsPut(Guid? id = default(Guid?), TagPutModel tagPutModel = default(TagPutModel));
 
         /// <summary>
         /// Update tag
@@ -131,9 +131,9 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
-        /// <param name="apiV2TagsPutRequest"> (optional)</param>
+        /// <param name="tagPutModel"> (optional)</param>
         /// <returns>ApiResponse of TagModel</returns>
-        ApiResponse<TagModel> ApiV2TagsPutWithHttpInfo(Guid? id = default(Guid?), ApiV2TagsPutRequest apiV2TagsPutRequest = default(ApiV2TagsPutRequest));
+        ApiResponse<TagModel> ApiV2TagsPutWithHttpInfo(Guid? id = default(Guid?), TagPutModel tagPutModel = default(TagPutModel));
         /// <summary>
         /// Search tags
         /// </summary>
@@ -208,10 +208,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets collection of tags internal (guid format) identifiers   System searches and deletes a collection of tags
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TagsDeleteRequest"> (optional)</param>
+        /// <param name="tagSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2TagsDeleteAsync(ApiV2TagsDeleteRequest apiV2TagsDeleteRequest = default(ApiV2TagsDeleteRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2TagsDeleteAsync(TagSelectModel tagSelectModel = default(TagSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete tags
@@ -220,10 +220,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets collection of tags internal (guid format) identifiers   System searches and deletes a collection of tags
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TagsDeleteRequest"> (optional)</param>
+        /// <param name="tagSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TagsDeleteWithHttpInfoAsync(ApiV2TagsDeleteRequest apiV2TagsDeleteRequest = default(ApiV2TagsDeleteRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TagsDeleteWithHttpInfoAsync(TagSelectModel tagSelectModel = default(TagSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get all Tags
         /// </summary>
@@ -234,7 +234,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TagModel&gt;</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<List<TagModel>> ApiV2TagsGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TagModel>> ApiV2TagsGetAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get all Tags
@@ -246,7 +246,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TagModel&gt;)</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<List<TagModel>>> ApiV2TagsGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TagModel>>> ApiV2TagsGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete tag
         /// </summary>
@@ -257,7 +257,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Tag internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2TagsIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2TagsIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete tag
@@ -269,7 +269,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Tag internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TagsIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TagsIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Create tag
         /// </summary>
@@ -277,10 +277,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets tag model (listed in the request example)   User runs method execution   System creates tag   System returns tag model (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TagsPostRequest"> (optional)</param>
+        /// <param name="tagPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TagModel</returns>
-        System.Threading.Tasks.Task<TagModel> ApiV2TagsPostAsync(ApiV2TagsPostRequest apiV2TagsPostRequest = default(ApiV2TagsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TagModel> ApiV2TagsPostAsync(TagPostModel tagPostModel = default(TagPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create tag
@@ -289,10 +289,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets tag model (listed in the request example)   User runs method execution   System creates tag   System returns tag model (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TagsPostRequest"> (optional)</param>
+        /// <param name="tagPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TagModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TagModel>> ApiV2TagsPostWithHttpInfoAsync(ApiV2TagsPostRequest apiV2TagsPostRequest = default(ApiV2TagsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TagModel>> ApiV2TagsPostWithHttpInfoAsync(TagPostModel tagPostModel = default(TagPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Update tag
         /// </summary>
@@ -301,10 +301,10 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
-        /// <param name="apiV2TagsPutRequest"> (optional)</param>
+        /// <param name="tagPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TagModel</returns>
-        System.Threading.Tasks.Task<TagModel> ApiV2TagsPutAsync(Guid? id = default(Guid?), ApiV2TagsPutRequest apiV2TagsPutRequest = default(ApiV2TagsPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TagModel> ApiV2TagsPutAsync(Guid? id = default(Guid?), TagPutModel tagPutModel = default(TagPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update tag
@@ -314,10 +314,10 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
-        /// <param name="apiV2TagsPutRequest"> (optional)</param>
+        /// <param name="tagPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TagModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TagModel>> ApiV2TagsPutWithHttpInfoAsync(Guid? id = default(Guid?), ApiV2TagsPutRequest apiV2TagsPutRequest = default(ApiV2TagsPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TagModel>> ApiV2TagsPutWithHttpInfoAsync(Guid? id = default(Guid?), TagPutModel tagPutModel = default(TagPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Search tags
         /// </summary>
@@ -332,7 +332,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TagModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TagModel>> ApiV2TagsSearchGetAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TagModel>> ApiV2TagsSearchGetAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Search tags
@@ -348,7 +348,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TagModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TagModel>>> ApiV2TagsSearchGetWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TagModel>>> ApiV2TagsSearchGetWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get all Tags that are used in TestPlans
         /// </summary>
@@ -363,7 +363,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TagModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TagModel>> ApiV2TagsTestPlansTagsGetAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TagModel>> ApiV2TagsTestPlansTagsGetAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get all Tags that are used in TestPlans
@@ -379,7 +379,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TagModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TagModel>>> ApiV2TagsTestPlansTagsGetWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TagModel>>> ApiV2TagsTestPlansTagsGetWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -597,20 +597,20 @@ namespace TestIT.ApiClient.Api
         /// Delete tags  Use case   User sets collection of tags internal (guid format) identifiers   System searches and deletes a collection of tags
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TagsDeleteRequest"> (optional)</param>
+        /// <param name="tagSelectModel"> (optional)</param>
         /// <returns></returns>
-        public void ApiV2TagsDelete(ApiV2TagsDeleteRequest apiV2TagsDeleteRequest = default(ApiV2TagsDeleteRequest))
+        public void ApiV2TagsDelete(TagSelectModel tagSelectModel = default(TagSelectModel))
         {
-            ApiV2TagsDeleteWithHttpInfo(apiV2TagsDeleteRequest);
+            ApiV2TagsDeleteWithHttpInfo(tagSelectModel);
         }
 
         /// <summary>
         /// Delete tags  Use case   User sets collection of tags internal (guid format) identifiers   System searches and deletes a collection of tags
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TagsDeleteRequest"> (optional)</param>
+        /// <param name="tagSelectModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2TagsDeleteWithHttpInfo(ApiV2TagsDeleteRequest apiV2TagsDeleteRequest = default(ApiV2TagsDeleteRequest))
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2TagsDeleteWithHttpInfo(TagSelectModel tagSelectModel = default(TagSelectModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -632,7 +632,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = apiV2TagsDeleteRequest;
+            localVarRequestOptions.Data = tagSelectModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -656,22 +656,22 @@ namespace TestIT.ApiClient.Api
         /// Delete tags  Use case   User sets collection of tags internal (guid format) identifiers   System searches and deletes a collection of tags
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TagsDeleteRequest"> (optional)</param>
+        /// <param name="tagSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2TagsDeleteAsync(ApiV2TagsDeleteRequest apiV2TagsDeleteRequest = default(ApiV2TagsDeleteRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2TagsDeleteAsync(TagSelectModel tagSelectModel = default(TagSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await ApiV2TagsDeleteWithHttpInfoAsync(apiV2TagsDeleteRequest, cancellationToken).ConfigureAwait(false);
+            await ApiV2TagsDeleteWithHttpInfoAsync(tagSelectModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Delete tags  Use case   User sets collection of tags internal (guid format) identifiers   System searches and deletes a collection of tags
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TagsDeleteRequest"> (optional)</param>
+        /// <param name="tagSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2TagsDeleteWithHttpInfoAsync(ApiV2TagsDeleteRequest apiV2TagsDeleteRequest = default(ApiV2TagsDeleteRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2TagsDeleteWithHttpInfoAsync(TagSelectModel tagSelectModel = default(TagSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -695,7 +695,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = apiV2TagsDeleteRequest;
+            localVarRequestOptions.Data = tagSelectModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -778,7 +778,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TagModel&gt;</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<List<TagModel>> ApiV2TagsGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TagModel>> ApiV2TagsGetAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<List<TagModel>> localVarResponse = await ApiV2TagsGetWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -791,7 +791,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TagModel&gt;)</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TagModel>>> ApiV2TagsGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TagModel>>> ApiV2TagsGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -893,7 +893,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Tag internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2TagsIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2TagsIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await ApiV2TagsIdDeleteWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
@@ -905,7 +905,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Tag internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2TagsIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2TagsIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -950,11 +950,11 @@ namespace TestIT.ApiClient.Api
         /// Create tag  Use case   User sets tag model (listed in the request example)   User runs method execution   System creates tag   System returns tag model (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TagsPostRequest"> (optional)</param>
+        /// <param name="tagPostModel"> (optional)</param>
         /// <returns>TagModel</returns>
-        public TagModel ApiV2TagsPost(ApiV2TagsPostRequest apiV2TagsPostRequest = default(ApiV2TagsPostRequest))
+        public TagModel ApiV2TagsPost(TagPostModel tagPostModel = default(TagPostModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<TagModel> localVarResponse = ApiV2TagsPostWithHttpInfo(apiV2TagsPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<TagModel> localVarResponse = ApiV2TagsPostWithHttpInfo(tagPostModel);
             return localVarResponse.Data;
         }
 
@@ -962,9 +962,9 @@ namespace TestIT.ApiClient.Api
         /// Create tag  Use case   User sets tag model (listed in the request example)   User runs method execution   System creates tag   System returns tag model (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TagsPostRequest"> (optional)</param>
+        /// <param name="tagPostModel"> (optional)</param>
         /// <returns>ApiResponse of TagModel</returns>
-        public TestIT.ApiClient.Client.ApiResponse<TagModel> ApiV2TagsPostWithHttpInfo(ApiV2TagsPostRequest apiV2TagsPostRequest = default(ApiV2TagsPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<TagModel> ApiV2TagsPostWithHttpInfo(TagPostModel tagPostModel = default(TagPostModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -986,7 +986,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = apiV2TagsPostRequest;
+            localVarRequestOptions.Data = tagPostModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1010,12 +1010,12 @@ namespace TestIT.ApiClient.Api
         /// Create tag  Use case   User sets tag model (listed in the request example)   User runs method execution   System creates tag   System returns tag model (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TagsPostRequest"> (optional)</param>
+        /// <param name="tagPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TagModel</returns>
-        public async System.Threading.Tasks.Task<TagModel> ApiV2TagsPostAsync(ApiV2TagsPostRequest apiV2TagsPostRequest = default(ApiV2TagsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TagModel> ApiV2TagsPostAsync(TagPostModel tagPostModel = default(TagPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<TagModel> localVarResponse = await ApiV2TagsPostWithHttpInfoAsync(apiV2TagsPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<TagModel> localVarResponse = await ApiV2TagsPostWithHttpInfoAsync(tagPostModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1023,10 +1023,10 @@ namespace TestIT.ApiClient.Api
         /// Create tag  Use case   User sets tag model (listed in the request example)   User runs method execution   System creates tag   System returns tag model (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TagsPostRequest"> (optional)</param>
+        /// <param name="tagPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TagModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TagModel>> ApiV2TagsPostWithHttpInfoAsync(ApiV2TagsPostRequest apiV2TagsPostRequest = default(ApiV2TagsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TagModel>> ApiV2TagsPostWithHttpInfoAsync(TagPostModel tagPostModel = default(TagPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1050,7 +1050,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = apiV2TagsPostRequest;
+            localVarRequestOptions.Data = tagPostModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1076,11 +1076,11 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
-        /// <param name="apiV2TagsPutRequest"> (optional)</param>
+        /// <param name="tagPutModel"> (optional)</param>
         /// <returns>TagModel</returns>
-        public TagModel ApiV2TagsPut(Guid? id = default(Guid?), ApiV2TagsPutRequest apiV2TagsPutRequest = default(ApiV2TagsPutRequest))
+        public TagModel ApiV2TagsPut(Guid? id = default(Guid?), TagPutModel tagPutModel = default(TagPutModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<TagModel> localVarResponse = ApiV2TagsPutWithHttpInfo(id, apiV2TagsPutRequest);
+            TestIT.ApiClient.Client.ApiResponse<TagModel> localVarResponse = ApiV2TagsPutWithHttpInfo(id, tagPutModel);
             return localVarResponse.Data;
         }
 
@@ -1089,9 +1089,9 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
-        /// <param name="apiV2TagsPutRequest"> (optional)</param>
+        /// <param name="tagPutModel"> (optional)</param>
         /// <returns>ApiResponse of TagModel</returns>
-        public TestIT.ApiClient.Client.ApiResponse<TagModel> ApiV2TagsPutWithHttpInfo(Guid? id = default(Guid?), ApiV2TagsPutRequest apiV2TagsPutRequest = default(ApiV2TagsPutRequest))
+        public TestIT.ApiClient.Client.ApiResponse<TagModel> ApiV2TagsPutWithHttpInfo(Guid? id = default(Guid?), TagPutModel tagPutModel = default(TagPutModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1117,7 +1117,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "id", id));
             }
-            localVarRequestOptions.Data = apiV2TagsPutRequest;
+            localVarRequestOptions.Data = tagPutModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1142,12 +1142,12 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
-        /// <param name="apiV2TagsPutRequest"> (optional)</param>
+        /// <param name="tagPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TagModel</returns>
-        public async System.Threading.Tasks.Task<TagModel> ApiV2TagsPutAsync(Guid? id = default(Guid?), ApiV2TagsPutRequest apiV2TagsPutRequest = default(ApiV2TagsPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TagModel> ApiV2TagsPutAsync(Guid? id = default(Guid?), TagPutModel tagPutModel = default(TagPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<TagModel> localVarResponse = await ApiV2TagsPutWithHttpInfoAsync(id, apiV2TagsPutRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<TagModel> localVarResponse = await ApiV2TagsPutWithHttpInfoAsync(id, tagPutModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1156,10 +1156,10 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
-        /// <param name="apiV2TagsPutRequest"> (optional)</param>
+        /// <param name="tagPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TagModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TagModel>> ApiV2TagsPutWithHttpInfoAsync(Guid? id = default(Guid?), ApiV2TagsPutRequest apiV2TagsPutRequest = default(ApiV2TagsPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TagModel>> ApiV2TagsPutWithHttpInfoAsync(Guid? id = default(Guid?), TagPutModel tagPutModel = default(TagPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1187,7 +1187,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "id", id));
             }
-            localVarRequestOptions.Data = apiV2TagsPutRequest;
+            localVarRequestOptions.Data = tagPutModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1302,7 +1302,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TagModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TagModel>> ApiV2TagsSearchGetAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TagModel>> ApiV2TagsSearchGetAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<List<TagModel>> localVarResponse = await ApiV2TagsSearchGetWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1319,7 +1319,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TagModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TagModel>>> ApiV2TagsSearchGetWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TagModel>>> ApiV2TagsSearchGetWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1473,7 +1473,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TagModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TagModel>> ApiV2TagsTestPlansTagsGetAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TagModel>> ApiV2TagsTestPlansTagsGetAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<List<TagModel>> localVarResponse = await ApiV2TagsTestPlansTagsGetWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1490,7 +1490,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TagModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TagModel>>> ApiV2TagsTestPlansTagsGetWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TagModel>>> ApiV2TagsTestPlansTagsGetWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();

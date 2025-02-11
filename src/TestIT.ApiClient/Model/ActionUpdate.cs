@@ -55,7 +55,6 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         [EnumMember(Value = "ClearAll")]
         ClearAll = 4
-
     }
 
 }

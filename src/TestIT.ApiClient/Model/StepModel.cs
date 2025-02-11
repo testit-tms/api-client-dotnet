@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// StepModel
     /// </summary>
     [DataContract(Name = "StepModel")]
-    public partial class StepModel : IEquatable<StepModel>, IValidatableObject
+    public partial class StepModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StepModel" /> class.
@@ -40,14 +40,14 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="StepModel" /> class.
         /// </summary>
-        /// <param name="workItem">workItem.</param>
+        /// <param name="workItem">Nested shared steps are allowed.</param>
         /// <param name="id">id (required).</param>
         /// <param name="action">action.</param>
         /// <param name="expected">expected.</param>
         /// <param name="testData">testData.</param>
         /// <param name="comments">comments.</param>
         /// <param name="workItemId">workItemId.</param>
-        public StepModel(SectionSharedStep workItem = default(SectionSharedStep), Guid id = default(Guid), string action = default(string), string expected = default(string), string testData = default(string), string comments = default(string), Guid? workItemId = default(Guid?))
+        public StepModel(SharedStepModel workItem = default(SharedStepModel), Guid id = default(Guid), string action = default(string), string expected = default(string), string testData = default(string), string comments = default(string), Guid? workItemId = default(Guid?))
         {
             this.Id = id;
             this.WorkItem = workItem;
@@ -59,50 +59,63 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Gets or Sets WorkItem
+        /// Nested shared steps are allowed
         /// </summary>
+        /// <value>Nested shared steps are allowed</value>
         [DataMember(Name = "workItem", EmitDefaultValue = true)]
-        public SectionSharedStep WorkItem { get; set; }
+        public SharedStepModel WorkItem { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
+        /*
+        <example>cbb88fe6-c193-48e9-9e37-323fbc38de5f</example>
+        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Action
         /// </summary>
-        /// <example>&quot;User press the button&quot;</example>
+        /*
+        <example>User press the button</example>
+        */
         [DataMember(Name = "action", EmitDefaultValue = true)]
         public string Action { get; set; }
 
         /// <summary>
         /// Gets or Sets Expected
         /// </summary>
-        /// <example>&quot;System makes a beeeep sound&quot;</example>
+        /*
+        <example>System makes a beeeep sound</example>
+        */
         [DataMember(Name = "expected", EmitDefaultValue = true)]
         public string Expected { get; set; }
 
         /// <summary>
         /// Gets or Sets TestData
         /// </summary>
-        /// <example>&quot;Some variables values&quot;</example>
+        /*
+        <example>Some variables values</example>
+        */
         [DataMember(Name = "testData", EmitDefaultValue = true)]
         public string TestData { get; set; }
 
         /// <summary>
         /// Gets or Sets Comments
         /// </summary>
-        /// <example>&quot;Comment on what to look for&quot;</example>
+        /*
+        <example>Comment on what to look for</example>
+        */
         [DataMember(Name = "comments", EmitDefaultValue = true)]
         public string Comments { get; set; }
 
         /// <summary>
         /// Gets or Sets WorkItemId
         /// </summary>
-        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
+        /*
+        <example>cbb88fe6-c193-48e9-9e37-323fbc38de5f</example>
+        */
         [DataMember(Name = "workItemId", EmitDefaultValue = true)]
         public Guid? WorkItemId { get; set; }
 
@@ -135,111 +148,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as StepModel);
-        }
-
-        /// <summary>
-        /// Returns true if StepModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of StepModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(StepModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.WorkItem == input.WorkItem ||
-                    (this.WorkItem != null &&
-                    this.WorkItem.Equals(input.WorkItem))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Action == input.Action ||
-                    (this.Action != null &&
-                    this.Action.Equals(input.Action))
-                ) && 
-                (
-                    this.Expected == input.Expected ||
-                    (this.Expected != null &&
-                    this.Expected.Equals(input.Expected))
-                ) && 
-                (
-                    this.TestData == input.TestData ||
-                    (this.TestData != null &&
-                    this.TestData.Equals(input.TestData))
-                ) && 
-                (
-                    this.Comments == input.Comments ||
-                    (this.Comments != null &&
-                    this.Comments.Equals(input.Comments))
-                ) && 
-                (
-                    this.WorkItemId == input.WorkItemId ||
-                    (this.WorkItemId != null &&
-                    this.WorkItemId.Equals(input.WorkItemId))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.WorkItem != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItem.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.Action != null)
-                {
-                    hashCode = (hashCode * 59) + this.Action.GetHashCode();
-                }
-                if (this.Expected != null)
-                {
-                    hashCode = (hashCode * 59) + this.Expected.GetHashCode();
-                }
-                if (this.TestData != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestData.GetHashCode();
-                }
-                if (this.Comments != null)
-                {
-                    hashCode = (hashCode * 59) + this.Comments.GetHashCode();
-                }
-                if (this.WorkItemId != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItemId.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -219,7 +219,7 @@ catch (ApiException e)
 
 <a id="apiv2testpointssearchidpost"></a>
 # **ApiV2TestPointsSearchIdPost**
-> List&lt;Guid&gt; ApiV2TestPointsSearchIdPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = null)
+> List&lt;Guid&gt; ApiV2TestPointsSearchIdPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, TestPointFilterRequestModel testPointFilterRequestModel = null)
 
 Search for test points and extract IDs only
 
@@ -254,12 +254,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var apiV2TestPointsSearchPostRequest = new ApiV2TestPointsSearchPostRequest(); // ApiV2TestPointsSearchPostRequest |  (optional) 
+            var testPointFilterRequestModel = new TestPointFilterRequestModel(); // TestPointFilterRequestModel |  (optional) 
 
             try
             {
                 // Search for test points and extract IDs only
-                List<Guid> result = apiInstance.ApiV2TestPointsSearchIdPost(skip, take, orderBy, searchField, searchValue, apiV2TestPointsSearchPostRequest);
+                List<Guid> result = apiInstance.ApiV2TestPointsSearchIdPost(skip, take, orderBy, searchField, searchValue, testPointFilterRequestModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -280,7 +280,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for test points and extract IDs only
-    ApiResponse<List<Guid>> response = apiInstance.ApiV2TestPointsSearchIdPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2TestPointsSearchPostRequest);
+    ApiResponse<List<Guid>> response = apiInstance.ApiV2TestPointsSearchIdPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, testPointFilterRequestModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -302,7 +302,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **apiV2TestPointsSearchPostRequest** | [**ApiV2TestPointsSearchPostRequest**](ApiV2TestPointsSearchPostRequest.md) |  | [optional]  |
+| **testPointFilterRequestModel** | [**TestPointFilterRequestModel**](TestPointFilterRequestModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -333,7 +333,7 @@ catch (ApiException e)
 
 <a id="apiv2testpointssearchpost"></a>
 # **ApiV2TestPointsSearchPost**
-> List&lt;TestPointShortResponseModel&gt; ApiV2TestPointsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2TestPointsSearchPostRequest apiV2TestPointsSearchPostRequest = null)
+> List&lt;TestPointShortResponseModel&gt; ApiV2TestPointsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, TestPointFilterRequestModel testPointFilterRequestModel = null)
 
 Search for test points
 
@@ -368,12 +368,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var apiV2TestPointsSearchPostRequest = new ApiV2TestPointsSearchPostRequest(); // ApiV2TestPointsSearchPostRequest |  (optional) 
+            var testPointFilterRequestModel = new TestPointFilterRequestModel(); // TestPointFilterRequestModel |  (optional) 
 
             try
             {
                 // Search for test points
-                List<TestPointShortResponseModel> result = apiInstance.ApiV2TestPointsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2TestPointsSearchPostRequest);
+                List<TestPointShortResponseModel> result = apiInstance.ApiV2TestPointsSearchPost(skip, take, orderBy, searchField, searchValue, testPointFilterRequestModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -394,7 +394,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for test points
-    ApiResponse<List<TestPointShortResponseModel>> response = apiInstance.ApiV2TestPointsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2TestPointsSearchPostRequest);
+    ApiResponse<List<TestPointShortResponseModel>> response = apiInstance.ApiV2TestPointsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, testPointFilterRequestModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -416,7 +416,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **apiV2TestPointsSearchPostRequest** | [**ApiV2TestPointsSearchPostRequest**](ApiV2TestPointsSearchPostRequest.md) |  | [optional]  |
+| **testPointFilterRequestModel** | [**TestPointFilterRequestModel**](TestPointFilterRequestModel.md) |  | [optional]  |
 
 ### Return type
 

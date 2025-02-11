@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** | Unique ID of the attribute | 
 **Options** | [**List&lt;CustomAttributeOptionModel&gt;**](CustomAttributeOptionModel.md) | Collection of the attribute options | 
-**Type** | **CustomAttributeTypesEnum** |  | 
+**Type** | **CustomAttributeTypesEnum** | Type of the attribute | 
 **IsDeleted** | **bool** | Indicates if the attribute is deleted | 
 **Name** | **string** | Name of the attribute | 
 **IsEnabled** | **bool** | Indicates if the attribute is enabled | 

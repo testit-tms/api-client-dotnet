@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// TestResultsStatisticsFailureCategoriesApiResult
     /// </summary>
     [DataContract(Name = "TestResultsStatisticsFailureCategoriesApiResult")]
-    public partial class TestResultsStatisticsFailureCategoriesApiResult : IEquatable<TestResultsStatisticsFailureCategoriesApiResult>, IValidatableObject
+    public partial class TestResultsStatisticsFailureCategoriesApiResult : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestResultsStatisticsFailureCategoriesApiResult" /> class.
@@ -96,63 +96,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestResultsStatisticsFailureCategoriesApiResult);
-        }
-
-        /// <summary>
-        /// Returns true if TestResultsStatisticsFailureCategoriesApiResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestResultsStatisticsFailureCategoriesApiResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestResultsStatisticsFailureCategoriesApiResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.InfrastructureDefect == input.InfrastructureDefect ||
-                    this.InfrastructureDefect.Equals(input.InfrastructureDefect)
-                ) && 
-                (
-                    this.ProductDefect == input.ProductDefect ||
-                    this.ProductDefect.Equals(input.ProductDefect)
-                ) && 
-                (
-                    this.TestDefect == input.TestDefect ||
-                    this.TestDefect.Equals(input.TestDefect)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.InfrastructureDefect.GetHashCode();
-                hashCode = (hashCode * 59) + this.ProductDefect.GetHashCode();
-                hashCode = (hashCode * 59) + this.TestDefect.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

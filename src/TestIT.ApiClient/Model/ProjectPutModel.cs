@@ -30,12 +30,13 @@ namespace TestIT.ApiClient.Model
     /// ProjectPutModel
     /// </summary>
     [DataContract(Name = "ProjectPutModel")]
-    public partial class ProjectPutModel : IEquatable<ProjectPutModel>, IValidatableObject
+    public partial class ProjectPutModel : IValidatableObject
     {
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Type of the project
         /// </summary>
+        /// <value>Type of the project</value>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public ProjectTypeModel Type { get; set; }
         /// <summary>
@@ -50,7 +51,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="description">Description of the project.</param>
         /// <param name="name">Name of the project (required).</param>
         /// <param name="isFavorite">Indicates if the project is marked as favorite.</param>
-        /// <param name="type">type (required).</param>
+        /// <param name="type">Type of the project (required).</param>
         public ProjectPutModel(Guid id = default(Guid), string description = default(string), string name = default(string), bool? isFavorite = default(bool?), ProjectTypeModel type = default(ProjectTypeModel))
         {
             this.Id = id;
@@ -120,94 +121,16 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ProjectPutModel);
-        }
-
-        /// <summary>
-        /// Returns true if ProjectPutModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ProjectPutModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ProjectPutModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.IsFavorite == input.IsFavorite ||
-                    (this.IsFavorite != null &&
-                    this.IsFavorite.Equals(input.IsFavorite))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    this.Type.Equals(input.Type)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.IsFavorite != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsFavorite.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) minLength
             if (this.Name != null && this.Name.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
             }
 
             yield break;

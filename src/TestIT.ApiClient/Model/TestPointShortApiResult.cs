@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// TestPointShortApiResult
     /// </summary>
     [DataContract(Name = "TestPointShortApiResult")]
-    public partial class TestPointShortApiResult : IEquatable<TestPointShortApiResult>, IValidatableObject
+    public partial class TestPointShortApiResult : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPointShortApiResult" /> class.
@@ -45,12 +45,12 @@ namespace TestIT.ApiClient.Model
         /// <param name="workItemId">Workitem to which test point relates unique identifier.</param>
         /// <param name="configurationId">Configuration to which test point relates unique identifier.</param>
         /// <param name="status">Test point status   Applies one of these values: Blocked, NoResults, Failed, Passed.</param>
-        /// <param name="statusModel">statusModel (required).</param>
+        /// <param name="statusModel">Test point status (required).</param>
         /// <param name="lastTestResultId">Last test result unique identifier.</param>
         /// <param name="iterationId">Iteration unique identifier (required).</param>
         /// <param name="workItemMedianDuration">Median duration of work item the test point represents.</param>
         /// <param name="testSuiteId">Test suite to which test point relates unique identifier (required).</param>
-        public TestPointShortApiResult(Guid id = default(Guid), Guid? testerId = default(Guid?), Guid? workItemId = default(Guid?), Guid? configurationId = default(Guid?), string status = default(string), TestPointShortApiResultStatusModel statusModel = default(TestPointShortApiResultStatusModel), Guid? lastTestResultId = default(Guid?), Guid iterationId = default(Guid), long? workItemMedianDuration = default(long?), Guid testSuiteId = default(Guid))
+        public TestPointShortApiResult(Guid id = default(Guid), Guid? testerId = default(Guid?), Guid? workItemId = default(Guid?), Guid? configurationId = default(Guid?), string status = default(string), TestStatusApiResult statusModel = default(TestStatusApiResult), Guid? lastTestResultId = default(Guid?), Guid iterationId = default(Guid), long? workItemMedianDuration = default(long?), Guid testSuiteId = default(Guid))
         {
             this.Id = id;
             // to ensure "statusModel" is required (not null)
@@ -101,16 +101,19 @@ namespace TestIT.ApiClient.Model
         /// Test point status   Applies one of these values: Blocked, NoResults, Failed, Passed
         /// </summary>
         /// <value>Test point status   Applies one of these values: Blocked, NoResults, Failed, Passed</value>
-        /// <example>&quot;NoResult&quot;</example>
+        /*
+        <example>NoResult</example>
+        */
         [DataMember(Name = "status", EmitDefaultValue = true)]
         [Obsolete]
         public string Status { get; set; }
 
         /// <summary>
-        /// Gets or Sets StatusModel
+        /// Test point status
         /// </summary>
+        /// <value>Test point status</value>
         [DataMember(Name = "statusModel", IsRequired = true, EmitDefaultValue = true)]
-        public TestPointShortApiResultStatusModel StatusModel { get; set; }
+        public TestStatusApiResult StatusModel { get; set; }
 
         /// <summary>
         /// Last test result unique identifier
@@ -172,138 +175,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestPointShortApiResult);
-        }
-
-        /// <summary>
-        /// Returns true if TestPointShortApiResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestPointShortApiResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestPointShortApiResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.TesterId == input.TesterId ||
-                    (this.TesterId != null &&
-                    this.TesterId.Equals(input.TesterId))
-                ) && 
-                (
-                    this.WorkItemId == input.WorkItemId ||
-                    (this.WorkItemId != null &&
-                    this.WorkItemId.Equals(input.WorkItemId))
-                ) && 
-                (
-                    this.ConfigurationId == input.ConfigurationId ||
-                    (this.ConfigurationId != null &&
-                    this.ConfigurationId.Equals(input.ConfigurationId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.StatusModel == input.StatusModel ||
-                    (this.StatusModel != null &&
-                    this.StatusModel.Equals(input.StatusModel))
-                ) && 
-                (
-                    this.LastTestResultId == input.LastTestResultId ||
-                    (this.LastTestResultId != null &&
-                    this.LastTestResultId.Equals(input.LastTestResultId))
-                ) && 
-                (
-                    this.IterationId == input.IterationId ||
-                    (this.IterationId != null &&
-                    this.IterationId.Equals(input.IterationId))
-                ) && 
-                (
-                    this.WorkItemMedianDuration == input.WorkItemMedianDuration ||
-                    (this.WorkItemMedianDuration != null &&
-                    this.WorkItemMedianDuration.Equals(input.WorkItemMedianDuration))
-                ) && 
-                (
-                    this.TestSuiteId == input.TestSuiteId ||
-                    (this.TestSuiteId != null &&
-                    this.TestSuiteId.Equals(input.TestSuiteId))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.TesterId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TesterId.GetHashCode();
-                }
-                if (this.WorkItemId != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItemId.GetHashCode();
-                }
-                if (this.ConfigurationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ConfigurationId.GetHashCode();
-                }
-                if (this.Status != null)
-                {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                }
-                if (this.StatusModel != null)
-                {
-                    hashCode = (hashCode * 59) + this.StatusModel.GetHashCode();
-                }
-                if (this.LastTestResultId != null)
-                {
-                    hashCode = (hashCode * 59) + this.LastTestResultId.GetHashCode();
-                }
-                if (this.IterationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.IterationId.GetHashCode();
-                }
-                if (this.WorkItemMedianDuration != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItemMedianDuration.GetHashCode();
-                }
-                if (this.TestSuiteId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestSuiteId.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -49,7 +49,6 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         [EnumMember(Value = "SharedSteps")]
         SharedSteps = 3
-
     }
 
 }

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Filter** | [**WebhooksDeleteRequestFilter**](WebhooksDeleteRequestFilter.md) |  | 
-**Extractor** | [**WebhooksDeleteRequestExtractor**](WebhooksDeleteRequestExtractor.md) |  | 
+**Filter** | [**WebhooksDeleteFilterRequest**](WebhooksDeleteFilterRequest.md) |  | 
+**Extractor** | [**WebhooksExtractionRequest**](WebhooksExtractionRequest.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// PeriodViewModel
     /// </summary>
     [DataContract(Name = "PeriodViewModel")]
-    public partial class PeriodViewModel : IEquatable<PeriodViewModel>, IValidatableObject
+    public partial class PeriodViewModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PeriodViewModel" /> class.
@@ -79,66 +79,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as PeriodViewModel);
-        }
-
-        /// <summary>
-        /// Returns true if PeriodViewModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of PeriodViewModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(PeriodViewModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.StartDate == input.StartDate ||
-                    (this.StartDate != null &&
-                    this.StartDate.Equals(input.StartDate))
-                ) && 
-                (
-                    this.EndDate == input.EndDate ||
-                    (this.EndDate != null &&
-                    this.EndDate.Equals(input.EndDate))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.StartDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.StartDate.GetHashCode();
-                }
-                if (this.EndDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.EndDate.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

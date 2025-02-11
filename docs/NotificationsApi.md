@@ -435,7 +435,7 @@ void (empty response body)
 
 <a id="apiv2notificationssearchpost"></a>
 # **ApiV2NotificationsSearchPost**
-> List&lt;NotificationModel&gt; ApiV2NotificationsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2NotificationsSearchPostRequest apiV2NotificationsSearchPostRequest = null)
+> List&lt;NotificationModel&gt; ApiV2NotificationsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, NotificationQueryFilterModel notificationQueryFilterModel = null)
 
 Search Notifications for current User
 
@@ -472,12 +472,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var apiV2NotificationsSearchPostRequest = new ApiV2NotificationsSearchPostRequest(); // ApiV2NotificationsSearchPostRequest |  (optional) 
+            var notificationQueryFilterModel = new NotificationQueryFilterModel(); // NotificationQueryFilterModel |  (optional) 
 
             try
             {
                 // Search Notifications for current User
-                List<NotificationModel> result = apiInstance.ApiV2NotificationsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2NotificationsSearchPostRequest);
+                List<NotificationModel> result = apiInstance.ApiV2NotificationsSearchPost(skip, take, orderBy, searchField, searchValue, notificationQueryFilterModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -498,7 +498,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search Notifications for current User
-    ApiResponse<List<NotificationModel>> response = apiInstance.ApiV2NotificationsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2NotificationsSearchPostRequest);
+    ApiResponse<List<NotificationModel>> response = apiInstance.ApiV2NotificationsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, notificationQueryFilterModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -520,7 +520,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **apiV2NotificationsSearchPostRequest** | [**ApiV2NotificationsSearchPostRequest**](ApiV2NotificationsSearchPostRequest.md) |  | [optional]  |
+| **notificationQueryFilterModel** | [**NotificationQueryFilterModel**](NotificationQueryFilterModel.md) |  | [optional]  |
 
 ### Return type
 

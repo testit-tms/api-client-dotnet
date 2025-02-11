@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | Name of the webhook | 
-**EventType** | **WebHookEventTypeModel** |  | 
+**EventType** | **WebHookEventTypeModel** | Type of event which triggers the webhook | 
 **Description** | **string** | Description of the webhook | [optional] 
 **Url** | **string** | Url to which the webhook sends request | 
-**RequestType** | **RequestTypeModel** |  | 
+**RequestType** | **RequestTypeModel** | Method which the webhook uses | 
 **ShouldSendBody** | **bool** | Indicates if the webhook sends body | 
 **Headers** | **Dictionary&lt;string, string&gt;** | Collection of headers which the webhook sends | [optional] 
 **QueryParameters** | **Dictionary&lt;string, string&gt;** | Collection of query parameters which the webhook sends | [optional] 

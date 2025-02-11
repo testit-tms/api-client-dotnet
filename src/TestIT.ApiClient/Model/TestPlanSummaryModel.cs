@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// TestPlanSummaryModel
     /// </summary>
     [DataContract(Name = "TestPlanSummaryModel")]
-    public partial class TestPlanSummaryModel : IEquatable<TestPlanSummaryModel>, IValidatableObject
+    public partial class TestPlanSummaryModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPlanSummaryModel" /> class.
@@ -129,87 +129,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestPlanSummaryModel);
-        }
-
-        /// <summary>
-        /// Returns true if TestPlanSummaryModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestPlanSummaryModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestPlanSummaryModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.TotalTestPointsCount == input.TotalTestPointsCount ||
-                    this.TotalTestPointsCount.Equals(input.TotalTestPointsCount)
-                ) && 
-                (
-                    this.ManualTestPointsCount == input.ManualTestPointsCount ||
-                    this.ManualTestPointsCount.Equals(input.ManualTestPointsCount)
-                ) && 
-                (
-                    this.AutomatedTestPointsCount == input.AutomatedTestPointsCount ||
-                    this.AutomatedTestPointsCount.Equals(input.AutomatedTestPointsCount)
-                ) && 
-                (
-                    this.CompletedTestPointsCount == input.CompletedTestPointsCount ||
-                    this.CompletedTestPointsCount.Equals(input.CompletedTestPointsCount)
-                ) && 
-                (
-                    this.DefectsCount == input.DefectsCount ||
-                    this.DefectsCount.Equals(input.DefectsCount)
-                ) && 
-                (
-                    this.PlannedTestPointsDuration == input.PlannedTestPointsDuration ||
-                    this.PlannedTestPointsDuration.Equals(input.PlannedTestPointsDuration)
-                ) && 
-                (
-                    this.SpentTestPointsDuration == input.SpentTestPointsDuration ||
-                    (this.SpentTestPointsDuration != null &&
-                    this.SpentTestPointsDuration.Equals(input.SpentTestPointsDuration))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.TotalTestPointsCount.GetHashCode();
-                hashCode = (hashCode * 59) + this.ManualTestPointsCount.GetHashCode();
-                hashCode = (hashCode * 59) + this.AutomatedTestPointsCount.GetHashCode();
-                hashCode = (hashCode * 59) + this.CompletedTestPointsCount.GetHashCode();
-                hashCode = (hashCode * 59) + this.DefectsCount.GetHashCode();
-                hashCode = (hashCode * 59) + this.PlannedTestPointsDuration.GetHashCode();
-                if (this.SpentTestPointsDuration != null)
-                {
-                    hashCode = (hashCode * 59) + this.SpentTestPointsDuration.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

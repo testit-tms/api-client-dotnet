@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// AutoTestAverageDurationModel
     /// </summary>
     [DataContract(Name = "AutoTestAverageDurationModel")]
-    public partial class AutoTestAverageDurationModel : IEquatable<AutoTestAverageDurationModel>, IValidatableObject
+    public partial class AutoTestAverageDurationModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestAverageDurationModel" /> class.
@@ -51,14 +51,18 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets PassedAverageDuration
         /// </summary>
-        /// <example>2.5555</example>
+        /*
+        <example>2.5555</example>
+        */
         [DataMember(Name = "passedAverageDuration", IsRequired = true, EmitDefaultValue = true)]
         public double PassedAverageDuration { get; set; }
 
         /// <summary>
         /// Gets or Sets FailedAverageDuration
         /// </summary>
-        /// <example>2.5555</example>
+        /*
+        <example>2.5555</example>
+        */
         [DataMember(Name = "failedAverageDuration", IsRequired = true, EmitDefaultValue = true)]
         public double FailedAverageDuration { get; set; }
 
@@ -86,58 +90,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AutoTestAverageDurationModel);
-        }
-
-        /// <summary>
-        /// Returns true if AutoTestAverageDurationModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AutoTestAverageDurationModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AutoTestAverageDurationModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.PassedAverageDuration == input.PassedAverageDuration ||
-                    this.PassedAverageDuration.Equals(input.PassedAverageDuration)
-                ) && 
-                (
-                    this.FailedAverageDuration == input.FailedAverageDuration ||
-                    this.FailedAverageDuration.Equals(input.FailedAverageDuration)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.PassedAverageDuration.GetHashCode();
-                hashCode = (hashCode * 59) + this.FailedAverageDuration.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

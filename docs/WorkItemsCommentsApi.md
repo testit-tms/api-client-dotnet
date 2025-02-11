@@ -114,7 +114,7 @@ void (empty response body)
 
 <a id="apiv2workitemscommentspost"></a>
 # **ApiV2WorkItemsCommentsPost**
-> WorkItemCommentModel ApiV2WorkItemsCommentsPost (ApiV2WorkItemsCommentsPostRequest apiV2WorkItemsCommentsPostRequest = null)
+> WorkItemCommentModel ApiV2WorkItemsCommentsPost (WorkItemCommentPostModel workItemCommentPostModel = null)
 
 Create WorkItem comment
 
@@ -146,12 +146,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsCommentsApi(httpClient, config, httpClientHandler);
-            var apiV2WorkItemsCommentsPostRequest = new ApiV2WorkItemsCommentsPostRequest(); // ApiV2WorkItemsCommentsPostRequest |  (optional) 
+            var workItemCommentPostModel = new WorkItemCommentPostModel(); // WorkItemCommentPostModel |  (optional) 
 
             try
             {
                 // Create WorkItem comment
-                WorkItemCommentModel result = apiInstance.ApiV2WorkItemsCommentsPost(apiV2WorkItemsCommentsPostRequest);
+                WorkItemCommentModel result = apiInstance.ApiV2WorkItemsCommentsPost(workItemCommentPostModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -172,7 +172,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create WorkItem comment
-    ApiResponse<WorkItemCommentModel> response = apiInstance.ApiV2WorkItemsCommentsPostWithHttpInfo(apiV2WorkItemsCommentsPostRequest);
+    ApiResponse<WorkItemCommentModel> response = apiInstance.ApiV2WorkItemsCommentsPostWithHttpInfo(workItemCommentPostModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -189,7 +189,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiV2WorkItemsCommentsPostRequest** | [**ApiV2WorkItemsCommentsPostRequest**](ApiV2WorkItemsCommentsPostRequest.md) |  | [optional]  |
+| **workItemCommentPostModel** | [**WorkItemCommentPostModel**](WorkItemCommentPostModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -220,7 +220,7 @@ catch (ApiException e)
 
 <a id="apiv2workitemscommentsput"></a>
 # **ApiV2WorkItemsCommentsPut**
-> void ApiV2WorkItemsCommentsPut (ApiV2WorkItemsCommentsPutRequest apiV2WorkItemsCommentsPutRequest = null)
+> void ApiV2WorkItemsCommentsPut (WorkItemCommentPutModel workItemCommentPutModel = null)
 
 Update work item comment
 
@@ -250,12 +250,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsCommentsApi(httpClient, config, httpClientHandler);
-            var apiV2WorkItemsCommentsPutRequest = new ApiV2WorkItemsCommentsPutRequest(); // ApiV2WorkItemsCommentsPutRequest |  (optional) 
+            var workItemCommentPutModel = new WorkItemCommentPutModel(); // WorkItemCommentPutModel |  (optional) 
 
             try
             {
                 // Update work item comment
-                apiInstance.ApiV2WorkItemsCommentsPut(apiV2WorkItemsCommentsPutRequest);
+                apiInstance.ApiV2WorkItemsCommentsPut(workItemCommentPutModel);
             }
             catch (ApiException  e)
             {
@@ -275,7 +275,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update work item comment
-    apiInstance.ApiV2WorkItemsCommentsPutWithHttpInfo(apiV2WorkItemsCommentsPutRequest);
+    apiInstance.ApiV2WorkItemsCommentsPutWithHttpInfo(workItemCommentPutModel);
 }
 catch (ApiException e)
 {
@@ -289,7 +289,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiV2WorkItemsCommentsPutRequest** | [**ApiV2WorkItemsCommentsPutRequest**](ApiV2WorkItemsCommentsPutRequest.md) |  | [optional]  |
+| **workItemCommentPutModel** | [**WorkItemCommentPutModel**](WorkItemCommentPutModel.md) |  | [optional]  |
 
 ### Return type
 

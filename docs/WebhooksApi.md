@@ -17,7 +17,7 @@ All URIs are relative to *http://localhost*
 
 <a id="apiv2webhooksdelete"></a>
 # **ApiV2WebhooksDelete**
-> void ApiV2WebhooksDelete (ApiV2WebhooksDeleteRequest apiV2WebhooksDeleteRequest = null)
+> void ApiV2WebhooksDelete (WebhooksDeleteRequest webhooksDeleteRequest = null)
 
 
 
@@ -47,11 +47,11 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WebhooksApi(httpClient, config, httpClientHandler);
-            var apiV2WebhooksDeleteRequest = new ApiV2WebhooksDeleteRequest(); // ApiV2WebhooksDeleteRequest |  (optional) 
+            var webhooksDeleteRequest = new WebhooksDeleteRequest(); // WebhooksDeleteRequest |  (optional) 
 
             try
             {
-                apiInstance.ApiV2WebhooksDelete(apiV2WebhooksDeleteRequest);
+                apiInstance.ApiV2WebhooksDelete(webhooksDeleteRequest);
             }
             catch (ApiException  e)
             {
@@ -70,7 +70,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    apiInstance.ApiV2WebhooksDeleteWithHttpInfo(apiV2WebhooksDeleteRequest);
+    apiInstance.ApiV2WebhooksDeleteWithHttpInfo(webhooksDeleteRequest);
 }
 catch (ApiException e)
 {
@@ -84,7 +84,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiV2WebhooksDeleteRequest** | [**ApiV2WebhooksDeleteRequest**](ApiV2WebhooksDeleteRequest.md) |  | [optional]  |
+| **webhooksDeleteRequest** | [**WebhooksDeleteRequest**](WebhooksDeleteRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -424,7 +424,7 @@ catch (ApiException e)
 
 <a id="apiv2webhooksidput"></a>
 # **ApiV2WebhooksIdPut**
-> WebHookModel ApiV2WebhooksIdPut (Guid id, ApiV2WebhooksPostRequest apiV2WebhooksPostRequest = null)
+> WebHookModel ApiV2WebhooksIdPut (Guid id, WebHookPostModel webHookPostModel = null)
 
 Edit webhook by ID
 
@@ -455,12 +455,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WebhooksApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // Guid | Webhook unique ID
-            var apiV2WebhooksPostRequest = new ApiV2WebhooksPostRequest(); // ApiV2WebhooksPostRequest |  (optional) 
+            var webHookPostModel = new WebHookPostModel(); // WebHookPostModel |  (optional) 
 
             try
             {
                 // Edit webhook by ID
-                WebHookModel result = apiInstance.ApiV2WebhooksIdPut(id, apiV2WebhooksPostRequest);
+                WebHookModel result = apiInstance.ApiV2WebhooksIdPut(id, webHookPostModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -481,7 +481,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Edit webhook by ID
-    ApiResponse<WebHookModel> response = apiInstance.ApiV2WebhooksIdPutWithHttpInfo(id, apiV2WebhooksPostRequest);
+    ApiResponse<WebHookModel> response = apiInstance.ApiV2WebhooksIdPutWithHttpInfo(id, webHookPostModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -499,7 +499,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid** | Webhook unique ID |  |
-| **apiV2WebhooksPostRequest** | [**ApiV2WebhooksPostRequest**](ApiV2WebhooksPostRequest.md) |  | [optional]  |
+| **webHookPostModel** | [**WebHookPostModel**](WebHookPostModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -530,7 +530,7 @@ catch (ApiException e)
 
 <a id="apiv2webhookspost"></a>
 # **ApiV2WebhooksPost**
-> WebHookModel ApiV2WebhooksPost (ApiV2WebhooksPostRequest apiV2WebhooksPostRequest = null)
+> WebHookModel ApiV2WebhooksPost (WebHookPostModel webHookPostModel = null)
 
 Create webhook
 
@@ -560,12 +560,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WebhooksApi(httpClient, config, httpClientHandler);
-            var apiV2WebhooksPostRequest = new ApiV2WebhooksPostRequest(); // ApiV2WebhooksPostRequest |  (optional) 
+            var webHookPostModel = new WebHookPostModel(); // WebHookPostModel |  (optional) 
 
             try
             {
                 // Create webhook
-                WebHookModel result = apiInstance.ApiV2WebhooksPost(apiV2WebhooksPostRequest);
+                WebHookModel result = apiInstance.ApiV2WebhooksPost(webHookPostModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -586,7 +586,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create webhook
-    ApiResponse<WebHookModel> response = apiInstance.ApiV2WebhooksPostWithHttpInfo(apiV2WebhooksPostRequest);
+    ApiResponse<WebHookModel> response = apiInstance.ApiV2WebhooksPostWithHttpInfo(webHookPostModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -603,7 +603,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiV2WebhooksPostRequest** | [**ApiV2WebhooksPostRequest**](ApiV2WebhooksPostRequest.md) |  | [optional]  |
+| **webHookPostModel** | [**WebHookPostModel**](WebHookPostModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -634,7 +634,7 @@ catch (ApiException e)
 
 <a id="apiv2webhooksput"></a>
 # **ApiV2WebhooksPut**
-> WebhooksUpdateResponse ApiV2WebhooksPut (ApiV2WebhooksPutRequest apiV2WebhooksPutRequest = null)
+> WebhooksUpdateResponse ApiV2WebhooksPut (WebhooksUpdateRequest webhooksUpdateRequest = null)
 
 
 
@@ -664,11 +664,11 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WebhooksApi(httpClient, config, httpClientHandler);
-            var apiV2WebhooksPutRequest = new ApiV2WebhooksPutRequest(); // ApiV2WebhooksPutRequest |  (optional) 
+            var webhooksUpdateRequest = new WebhooksUpdateRequest(); // WebhooksUpdateRequest |  (optional) 
 
             try
             {
-                WebhooksUpdateResponse result = apiInstance.ApiV2WebhooksPut(apiV2WebhooksPutRequest);
+                WebhooksUpdateResponse result = apiInstance.ApiV2WebhooksPut(webhooksUpdateRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -688,7 +688,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<WebhooksUpdateResponse> response = apiInstance.ApiV2WebhooksPutWithHttpInfo(apiV2WebhooksPutRequest);
+    ApiResponse<WebhooksUpdateResponse> response = apiInstance.ApiV2WebhooksPutWithHttpInfo(webhooksUpdateRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -705,7 +705,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiV2WebhooksPutRequest** | [**ApiV2WebhooksPutRequest**](ApiV2WebhooksPutRequest.md) |  | [optional]  |
+| **webhooksUpdateRequest** | [**WebhooksUpdateRequest**](WebhooksUpdateRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -736,7 +736,7 @@ catch (ApiException e)
 
 <a id="apiv2webhookssearchpost"></a>
 # **ApiV2WebhooksSearchPost**
-> List&lt;WebHookModel&gt; ApiV2WebhooksSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2WebhooksSearchPostRequest apiV2WebhooksSearchPostRequest = null)
+> List&lt;WebHookModel&gt; ApiV2WebhooksSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, SearchWebhooksQueryModel searchWebhooksQueryModel = null)
 
 Search for webhooks
 
@@ -771,12 +771,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var apiV2WebhooksSearchPostRequest = new ApiV2WebhooksSearchPostRequest(); // ApiV2WebhooksSearchPostRequest |  (optional) 
+            var searchWebhooksQueryModel = new SearchWebhooksQueryModel(); // SearchWebhooksQueryModel |  (optional) 
 
             try
             {
                 // Search for webhooks
-                List<WebHookModel> result = apiInstance.ApiV2WebhooksSearchPost(skip, take, orderBy, searchField, searchValue, apiV2WebhooksSearchPostRequest);
+                List<WebHookModel> result = apiInstance.ApiV2WebhooksSearchPost(skip, take, orderBy, searchField, searchValue, searchWebhooksQueryModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -797,7 +797,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for webhooks
-    ApiResponse<List<WebHookModel>> response = apiInstance.ApiV2WebhooksSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2WebhooksSearchPostRequest);
+    ApiResponse<List<WebHookModel>> response = apiInstance.ApiV2WebhooksSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, searchWebhooksQueryModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -819,7 +819,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **apiV2WebhooksSearchPostRequest** | [**ApiV2WebhooksSearchPostRequest**](ApiV2WebhooksSearchPostRequest.md) |  | [optional]  |
+| **searchWebhooksQueryModel** | [**SearchWebhooksQueryModel**](SearchWebhooksQueryModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -956,7 +956,7 @@ catch (ApiException e)
 
 <a id="apiv2webhookstestpost"></a>
 # **ApiV2WebhooksTestPost**
-> WebhookResponse ApiV2WebhooksTestPost (ApiV2WebhooksTestPostRequest apiV2WebhooksTestPostRequest = null)
+> WebhookResponse ApiV2WebhooksTestPost (WebHookTestModel webHookTestModel = null)
 
 Test webhook's url
 
@@ -986,12 +986,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WebhooksApi(httpClient, config, httpClientHandler);
-            var apiV2WebhooksTestPostRequest = new ApiV2WebhooksTestPostRequest(); // ApiV2WebhooksTestPostRequest |  (optional) 
+            var webHookTestModel = new WebHookTestModel(); // WebHookTestModel |  (optional) 
 
             try
             {
                 // Test webhook's url
-                WebhookResponse result = apiInstance.ApiV2WebhooksTestPost(apiV2WebhooksTestPostRequest);
+                WebhookResponse result = apiInstance.ApiV2WebhooksTestPost(webHookTestModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1012,7 +1012,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Test webhook's url
-    ApiResponse<WebhookResponse> response = apiInstance.ApiV2WebhooksTestPostWithHttpInfo(apiV2WebhooksTestPostRequest);
+    ApiResponse<WebhookResponse> response = apiInstance.ApiV2WebhooksTestPostWithHttpInfo(webHookTestModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1029,7 +1029,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiV2WebhooksTestPostRequest** | [**ApiV2WebhooksTestPostRequest**](ApiV2WebhooksTestPostRequest.md) |  | [optional]  |
+| **webHookTestModel** | [**WebHookTestModel**](WebHookTestModel.md) |  | [optional]  |
 
 ### Return type
 

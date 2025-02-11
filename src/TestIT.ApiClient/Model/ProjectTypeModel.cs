@@ -43,7 +43,6 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         [EnumMember(Value = "Demo")]
         Demo = 2
-
     }
 
 }

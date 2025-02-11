@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// TestPlanSelectModel
     /// </summary>
     [DataContract(Name = "TestPlanSelectModel")]
-    public partial class TestPlanSelectModel : IEquatable<TestPlanSelectModel>, IValidatableObject
+    public partial class TestPlanSelectModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPlanSelectModel" /> class.
@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="filter">filter (required).</param>
         /// <param name="extractionModel">extractionModel.</param>
-        public TestPlanSelectModel(ApiV2ProjectsProjectIdTestPlansSearchPostRequest filter = default(ApiV2ProjectsProjectIdTestPlansSearchPostRequest), TestPlanExtractionModel extractionModel = default(TestPlanExtractionModel))
+        public TestPlanSelectModel(ProjectTestPlansFilterModel filter = default(ProjectTestPlansFilterModel), TestPlanExtractionModel extractionModel = default(TestPlanExtractionModel))
         {
             // to ensure "filter" is required (not null)
             if (filter == null)
@@ -57,7 +57,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Filter
         /// </summary>
         [DataMember(Name = "filter", IsRequired = true, EmitDefaultValue = true)]
-        public ApiV2ProjectsProjectIdTestPlansSearchPostRequest Filter { get; set; }
+        public ProjectTestPlansFilterModel Filter { get; set; }
 
         /// <summary>
         /// Gets or Sets ExtractionModel
@@ -89,66 +89,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestPlanSelectModel);
-        }
-
-        /// <summary>
-        /// Returns true if TestPlanSelectModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestPlanSelectModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestPlanSelectModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Filter == input.Filter ||
-                    (this.Filter != null &&
-                    this.Filter.Equals(input.Filter))
-                ) && 
-                (
-                    this.ExtractionModel == input.ExtractionModel ||
-                    (this.ExtractionModel != null &&
-                    this.ExtractionModel.Equals(input.ExtractionModel))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Filter != null)
-                {
-                    hashCode = (hashCode * 59) + this.Filter.GetHashCode();
-                }
-                if (this.ExtractionModel != null)
-                {
-                    hashCode = (hashCode * 59) + this.ExtractionModel.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

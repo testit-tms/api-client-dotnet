@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// TestResultsFilterApiModel
     /// </summary>
     [DataContract(Name = "TestResultsFilterApiModel")]
-    public partial class TestResultsFilterApiModel : IEquatable<TestResultsFilterApiModel>, IValidatableObject
+    public partial class TestResultsFilterApiModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestResultsFilterApiModel" /> class.
@@ -39,24 +39,24 @@ namespace TestIT.ApiClient.Model
         /// <param name="outcomes">Specifies a test result outcomes to search for.</param>
         /// <param name="statusCodes">Specifies a test result status codes to search for.</param>
         /// <param name="failureCategories">Specifies a test result failure categories to search for.</param>
-        /// <param name="_namespace">Specifies a test result namespace to search for.</param>
+        /// <param name="varNamespace">Specifies a test result namespace to search for.</param>
         /// <param name="className">Specifies a test result class name to search for.</param>
         /// <param name="autoTestGlobalIds">Specifies an autotest global IDs to search results for.</param>
         /// <param name="name">Specifies an autotest name to search results for.</param>
-        /// <param name="createdDate">createdDate.</param>
-        /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="startedOn">startedOn.</param>
-        /// <param name="completedOn">completedOn.</param>
-        /// <param name="duration">duration.</param>
+        /// <param name="createdDate">Specifies a test result creation date and time range to search for.</param>
+        /// <param name="modifiedDate">Specifies a test result modified date and time range to search for.</param>
+        /// <param name="startedOn">Specifies a test result started on date and time range to search for.</param>
+        /// <param name="completedOn">Specifies a test result completed on date and time range to search for.</param>
+        /// <param name="duration">Specifies a test result duration range to search for.</param>
         /// <param name="resultReasons">Specifies result reasons for searching test results.</param>
         /// <param name="testRunIds">Specifies a test result test run IDs to search for.</param>
-        public TestResultsFilterApiModel(List<Guid> configurationIds = default(List<Guid>), List<TestResultOutcome> outcomes = default(List<TestResultOutcome>), List<string> statusCodes = default(List<string>), List<FailureCategoryModel> failureCategories = default(List<FailureCategoryModel>), string _namespace = default(string), string className = default(string), List<long> autoTestGlobalIds = default(List<long>), string name = default(string), TestResultsFilterApiModelCreatedDate createdDate = default(TestResultsFilterApiModelCreatedDate), TestResultsFilterApiModelModifiedDate modifiedDate = default(TestResultsFilterApiModelModifiedDate), TestResultsFilterApiModelStartedOn startedOn = default(TestResultsFilterApiModelStartedOn), TestResultsFilterApiModelCompletedOn completedOn = default(TestResultsFilterApiModelCompletedOn), TestResultsFilterApiModelDuration duration = default(TestResultsFilterApiModelDuration), List<string> resultReasons = default(List<string>), List<Guid> testRunIds = default(List<Guid>))
+        public TestResultsFilterApiModel(List<Guid> configurationIds = default(List<Guid>), List<TestResultOutcome> outcomes = default(List<TestResultOutcome>), List<string> statusCodes = default(List<string>), List<FailureCategoryModel> failureCategories = default(List<FailureCategoryModel>), string varNamespace = default(string), string className = default(string), List<long> autoTestGlobalIds = default(List<long>), string name = default(string), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel startedOn = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel completedOn = default(DateTimeRangeSelectorModel), Int64RangeSelectorModel duration = default(Int64RangeSelectorModel), List<string> resultReasons = default(List<string>), List<Guid> testRunIds = default(List<Guid>))
         {
             this.ConfigurationIds = configurationIds;
             this.Outcomes = outcomes;
             this.StatusCodes = statusCodes;
             this.FailureCategories = failureCategories;
-            this.Namespace = _namespace;
+            this.Namespace = varNamespace;
             this.ClassName = className;
             this.AutoTestGlobalIds = autoTestGlobalIds;
             this.Name = name;
@@ -127,34 +127,39 @@ namespace TestIT.ApiClient.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedDate
+        /// Specifies a test result creation date and time range to search for
         /// </summary>
+        /// <value>Specifies a test result creation date and time range to search for</value>
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
-        public TestResultsFilterApiModelCreatedDate CreatedDate { get; set; }
+        public DateTimeRangeSelectorModel CreatedDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets ModifiedDate
+        /// Specifies a test result modified date and time range to search for
         /// </summary>
+        /// <value>Specifies a test result modified date and time range to search for</value>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
-        public TestResultsFilterApiModelModifiedDate ModifiedDate { get; set; }
+        public DateTimeRangeSelectorModel ModifiedDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets StartedOn
+        /// Specifies a test result started on date and time range to search for
         /// </summary>
+        /// <value>Specifies a test result started on date and time range to search for</value>
         [DataMember(Name = "startedOn", EmitDefaultValue = true)]
-        public TestResultsFilterApiModelStartedOn StartedOn { get; set; }
+        public DateTimeRangeSelectorModel StartedOn { get; set; }
 
         /// <summary>
-        /// Gets or Sets CompletedOn
+        /// Specifies a test result completed on date and time range to search for
         /// </summary>
+        /// <value>Specifies a test result completed on date and time range to search for</value>
         [DataMember(Name = "completedOn", EmitDefaultValue = true)]
-        public TestResultsFilterApiModelCompletedOn CompletedOn { get; set; }
+        public DateTimeRangeSelectorModel CompletedOn { get; set; }
 
         /// <summary>
-        /// Gets or Sets Duration
+        /// Specifies a test result duration range to search for
         /// </summary>
+        /// <value>Specifies a test result duration range to search for</value>
         [DataMember(Name = "duration", EmitDefaultValue = true)]
-        public TestResultsFilterApiModelDuration Duration { get; set; }
+        public Int64RangeSelectorModel Duration { get; set; }
 
         /// <summary>
         /// Specifies result reasons for searching test results
@@ -207,213 +212,34 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestResultsFilterApiModel);
-        }
-
-        /// <summary>
-        /// Returns true if TestResultsFilterApiModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestResultsFilterApiModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestResultsFilterApiModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.ConfigurationIds == input.ConfigurationIds ||
-                    this.ConfigurationIds != null &&
-                    input.ConfigurationIds != null &&
-                    this.ConfigurationIds.SequenceEqual(input.ConfigurationIds)
-                ) && 
-                (
-                    this.Outcomes == input.Outcomes ||
-                    this.Outcomes != null &&
-                    input.Outcomes != null &&
-                    this.Outcomes.SequenceEqual(input.Outcomes)
-                ) && 
-                (
-                    this.StatusCodes == input.StatusCodes ||
-                    this.StatusCodes != null &&
-                    input.StatusCodes != null &&
-                    this.StatusCodes.SequenceEqual(input.StatusCodes)
-                ) && 
-                (
-                    this.FailureCategories == input.FailureCategories ||
-                    this.FailureCategories != null &&
-                    input.FailureCategories != null &&
-                    this.FailureCategories.SequenceEqual(input.FailureCategories)
-                ) && 
-                (
-                    this.Namespace == input.Namespace ||
-                    (this.Namespace != null &&
-                    this.Namespace.Equals(input.Namespace))
-                ) && 
-                (
-                    this.ClassName == input.ClassName ||
-                    (this.ClassName != null &&
-                    this.ClassName.Equals(input.ClassName))
-                ) && 
-                (
-                    this.AutoTestGlobalIds == input.AutoTestGlobalIds ||
-                    this.AutoTestGlobalIds != null &&
-                    input.AutoTestGlobalIds != null &&
-                    this.AutoTestGlobalIds.SequenceEqual(input.AutoTestGlobalIds)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.StartedOn == input.StartedOn ||
-                    (this.StartedOn != null &&
-                    this.StartedOn.Equals(input.StartedOn))
-                ) && 
-                (
-                    this.CompletedOn == input.CompletedOn ||
-                    (this.CompletedOn != null &&
-                    this.CompletedOn.Equals(input.CompletedOn))
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    (this.Duration != null &&
-                    this.Duration.Equals(input.Duration))
-                ) && 
-                (
-                    this.ResultReasons == input.ResultReasons ||
-                    this.ResultReasons != null &&
-                    input.ResultReasons != null &&
-                    this.ResultReasons.SequenceEqual(input.ResultReasons)
-                ) && 
-                (
-                    this.TestRunIds == input.TestRunIds ||
-                    this.TestRunIds != null &&
-                    input.TestRunIds != null &&
-                    this.TestRunIds.SequenceEqual(input.TestRunIds)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.ConfigurationIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.ConfigurationIds.GetHashCode();
-                }
-                if (this.Outcomes != null)
-                {
-                    hashCode = (hashCode * 59) + this.Outcomes.GetHashCode();
-                }
-                if (this.StatusCodes != null)
-                {
-                    hashCode = (hashCode * 59) + this.StatusCodes.GetHashCode();
-                }
-                if (this.FailureCategories != null)
-                {
-                    hashCode = (hashCode * 59) + this.FailureCategories.GetHashCode();
-                }
-                if (this.Namespace != null)
-                {
-                    hashCode = (hashCode * 59) + this.Namespace.GetHashCode();
-                }
-                if (this.ClassName != null)
-                {
-                    hashCode = (hashCode * 59) + this.ClassName.GetHashCode();
-                }
-                if (this.AutoTestGlobalIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.AutoTestGlobalIds.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                if (this.StartedOn != null)
-                {
-                    hashCode = (hashCode * 59) + this.StartedOn.GetHashCode();
-                }
-                if (this.CompletedOn != null)
-                {
-                    hashCode = (hashCode * 59) + this.CompletedOn.GetHashCode();
-                }
-                if (this.Duration != null)
-                {
-                    hashCode = (hashCode * 59) + this.Duration.GetHashCode();
-                }
-                if (this.ResultReasons != null)
-                {
-                    hashCode = (hashCode * 59) + this.ResultReasons.GetHashCode();
-                }
-                if (this.TestRunIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestRunIds.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Namespace (string) maxLength
             if (this.Namespace != null && this.Namespace.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Namespace, length must be less than 255.", new [] { "Namespace" });
+                yield return new ValidationResult("Invalid value for Namespace, length must be less than 255.", new [] { "Namespace" });
             }
 
             // Namespace (string) minLength
             if (this.Namespace != null && this.Namespace.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Namespace, length must be greater than 0.", new [] { "Namespace" });
+                yield return new ValidationResult("Invalid value for Namespace, length must be greater than 0.", new [] { "Namespace" });
             }
 
             // ClassName (string) maxLength
             if (this.ClassName != null && this.ClassName.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ClassName, length must be less than 255.", new [] { "ClassName" });
+                yield return new ValidationResult("Invalid value for ClassName, length must be less than 255.", new [] { "ClassName" });
             }
 
             // ClassName (string) minLength
             if (this.ClassName != null && this.ClassName.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ClassName, length must be greater than 0.", new [] { "ClassName" });
+                yield return new ValidationResult("Invalid value for ClassName, length must be greater than 0.", new [] { "ClassName" });
             }
 
             yield break;

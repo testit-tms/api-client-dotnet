@@ -30,18 +30,20 @@ namespace TestIT.ApiClient.Model
     /// WebHookModel
     /// </summary>
     [DataContract(Name = "WebHookModel")]
-    public partial class WebHookModel : IEquatable<WebHookModel>, IValidatableObject
+    public partial class WebHookModel : IValidatableObject
     {
 
         /// <summary>
-        /// Gets or Sets EventType
+        /// Type of event which triggers the webhook
         /// </summary>
+        /// <value>Type of event which triggers the webhook</value>
         [DataMember(Name = "eventType", IsRequired = true, EmitDefaultValue = true)]
         public WebHookEventTypeModel EventType { get; set; }
 
         /// <summary>
-        /// Gets or Sets RequestType
+        /// Method which the webhook uses
         /// </summary>
+        /// <value>Method which the webhook uses</value>
         [DataMember(Name = "requestType", IsRequired = true, EmitDefaultValue = true)]
         public RequestTypeModel RequestType { get; set; }
         /// <summary>
@@ -53,10 +55,10 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="WebHookModel" /> class.
         /// </summary>
         /// <param name="name">Name of the webhook (required).</param>
-        /// <param name="eventType">eventType (required).</param>
+        /// <param name="eventType">Type of event which triggers the webhook (required).</param>
         /// <param name="description">Description of the webhook.</param>
         /// <param name="url">Url to which the webhook sends request (required).</param>
-        /// <param name="requestType">requestType (required).</param>
+        /// <param name="requestType">Method which the webhook uses (required).</param>
         /// <param name="shouldSendBody">Indicates if the webhook sends body (required).</param>
         /// <param name="headers">Collection of headers which the webhook sends.</param>
         /// <param name="queryParameters">Collection of query parameters which the webhook sends.</param>
@@ -284,207 +286,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as WebHookModel);
-        }
-
-        /// <summary>
-        /// Returns true if WebHookModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of WebHookModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(WebHookModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.EventType == input.EventType ||
-                    this.EventType.Equals(input.EventType)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.RequestType == input.RequestType ||
-                    this.RequestType.Equals(input.RequestType)
-                ) && 
-                (
-                    this.ShouldSendBody == input.ShouldSendBody ||
-                    this.ShouldSendBody.Equals(input.ShouldSendBody)
-                ) && 
-                (
-                    this.Headers == input.Headers ||
-                    this.Headers != null &&
-                    input.Headers != null &&
-                    this.Headers.SequenceEqual(input.Headers)
-                ) && 
-                (
-                    this.QueryParameters == input.QueryParameters ||
-                    this.QueryParameters != null &&
-                    input.QueryParameters != null &&
-                    this.QueryParameters.SequenceEqual(input.QueryParameters)
-                ) && 
-                (
-                    this.IsEnabled == input.IsEnabled ||
-                    this.IsEnabled.Equals(input.IsEnabled)
-                ) && 
-                (
-                    this.ShouldSendCustomBody == input.ShouldSendCustomBody ||
-                    this.ShouldSendCustomBody.Equals(input.ShouldSendCustomBody)
-                ) && 
-                (
-                    this.CustomBody == input.CustomBody ||
-                    (this.CustomBody != null &&
-                    this.CustomBody.Equals(input.CustomBody))
-                ) && 
-                (
-                    this.CustomBodyMediaType == input.CustomBodyMediaType ||
-                    (this.CustomBodyMediaType != null &&
-                    this.CustomBodyMediaType.Equals(input.CustomBodyMediaType))
-                ) && 
-                (
-                    this.ShouldReplaceParameters == input.ShouldReplaceParameters ||
-                    this.ShouldReplaceParameters.Equals(input.ShouldReplaceParameters)
-                ) && 
-                (
-                    this.ShouldEscapeParameters == input.ShouldEscapeParameters ||
-                    this.ShouldEscapeParameters.Equals(input.ShouldEscapeParameters)
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.CreatedById == input.CreatedById ||
-                    (this.CreatedById != null &&
-                    this.CreatedById.Equals(input.CreatedById))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.ModifiedById == input.ModifiedById ||
-                    (this.ModifiedById != null &&
-                    this.ModifiedById.Equals(input.ModifiedById))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    this.IsDeleted.Equals(input.IsDeleted)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.EventType.GetHashCode();
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.Url != null)
-                {
-                    hashCode = (hashCode * 59) + this.Url.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.RequestType.GetHashCode();
-                hashCode = (hashCode * 59) + this.ShouldSendBody.GetHashCode();
-                if (this.Headers != null)
-                {
-                    hashCode = (hashCode * 59) + this.Headers.GetHashCode();
-                }
-                if (this.QueryParameters != null)
-                {
-                    hashCode = (hashCode * 59) + this.QueryParameters.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsEnabled.GetHashCode();
-                hashCode = (hashCode * 59) + this.ShouldSendCustomBody.GetHashCode();
-                if (this.CustomBody != null)
-                {
-                    hashCode = (hashCode * 59) + this.CustomBody.GetHashCode();
-                }
-                if (this.CustomBodyMediaType != null)
-                {
-                    hashCode = (hashCode * 59) + this.CustomBodyMediaType.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.ShouldReplaceParameters.GetHashCode();
-                hashCode = (hashCode * 59) + this.ShouldEscapeParameters.GetHashCode();
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.CreatedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedById.GetHashCode();
-                }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                if (this.ModifiedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedById.GetHashCode();
-                }
-                if (this.ProjectId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProjectId.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

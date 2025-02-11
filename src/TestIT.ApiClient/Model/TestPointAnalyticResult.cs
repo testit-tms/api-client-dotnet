@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// TestPointAnalyticResult
     /// </summary>
     [DataContract(Name = "TestPointAnalyticResult")]
-    public partial class TestPointAnalyticResult : IEquatable<TestPointAnalyticResult>, IValidatableObject
+    public partial class TestPointAnalyticResult : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPointAnalyticResult" /> class.
@@ -136,98 +136,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestPointAnalyticResult);
-        }
-
-        /// <summary>
-        /// Returns true if TestPointAnalyticResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestPointAnalyticResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestPointAnalyticResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.CountGroupByStatus == input.CountGroupByStatus ||
-                    this.CountGroupByStatus != null &&
-                    input.CountGroupByStatus != null &&
-                    this.CountGroupByStatus.SequenceEqual(input.CountGroupByStatus)
-                ) && 
-                (
-                    this.SumGroupByTester == input.SumGroupByTester ||
-                    this.SumGroupByTester != null &&
-                    input.SumGroupByTester != null &&
-                    this.SumGroupByTester.SequenceEqual(input.SumGroupByTester)
-                ) && 
-                (
-                    this.CountGroupByTester == input.CountGroupByTester ||
-                    this.CountGroupByTester != null &&
-                    input.CountGroupByTester != null &&
-                    this.CountGroupByTester.SequenceEqual(input.CountGroupByTester)
-                ) && 
-                (
-                    this.CountGroupByTestSuite == input.CountGroupByTestSuite ||
-                    this.CountGroupByTestSuite != null &&
-                    input.CountGroupByTestSuite != null &&
-                    this.CountGroupByTestSuite.SequenceEqual(input.CountGroupByTestSuite)
-                ) && 
-                (
-                    this.CountGroupByTesterAndStatus == input.CountGroupByTesterAndStatus ||
-                    this.CountGroupByTesterAndStatus != null &&
-                    input.CountGroupByTesterAndStatus != null &&
-                    this.CountGroupByTesterAndStatus.SequenceEqual(input.CountGroupByTesterAndStatus)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.CountGroupByStatus != null)
-                {
-                    hashCode = (hashCode * 59) + this.CountGroupByStatus.GetHashCode();
-                }
-                if (this.SumGroupByTester != null)
-                {
-                    hashCode = (hashCode * 59) + this.SumGroupByTester.GetHashCode();
-                }
-                if (this.CountGroupByTester != null)
-                {
-                    hashCode = (hashCode * 59) + this.CountGroupByTester.GetHashCode();
-                }
-                if (this.CountGroupByTestSuite != null)
-                {
-                    hashCode = (hashCode * 59) + this.CountGroupByTestSuite.GetHashCode();
-                }
-                if (this.CountGroupByTesterAndStatus != null)
-                {
-                    hashCode = (hashCode * 59) + this.CountGroupByTesterAndStatus.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

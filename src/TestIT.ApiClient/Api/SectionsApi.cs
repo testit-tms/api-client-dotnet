@@ -57,9 +57,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets section properties (listed in request example)   User runs method execution   System creates section property values   System returns section (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createSectionRequest"> (optional)</param>
+        /// <param name="sectionPostModel"> (optional)</param>
         /// <returns>SectionWithStepsModel</returns>
-        SectionWithStepsModel CreateSection(CreateSectionRequest createSectionRequest = default(CreateSectionRequest));
+        SectionWithStepsModel CreateSection(SectionPostModel sectionPostModel = default(SectionPostModel));
 
         /// <summary>
         /// Create section
@@ -68,9 +68,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets section properties (listed in request example)   User runs method execution   System creates section property values   System returns section (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createSectionRequest"> (optional)</param>
+        /// <param name="sectionPostModel"> (optional)</param>
         /// <returns>ApiResponse of SectionWithStepsModel</returns>
-        ApiResponse<SectionWithStepsModel> CreateSectionWithHttpInfo(CreateSectionRequest createSectionRequest = default(CreateSectionRequest));
+        ApiResponse<SectionWithStepsModel> CreateSectionWithHttpInfo(SectionPostModel sectionPostModel = default(SectionPostModel));
         /// <summary>
         /// Delete section
         /// </summary>
@@ -158,9 +158,9 @@ namespace TestIT.ApiClient.Api
         /// Move section with all work items into another section
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="moveRequest"> (optional)</param>
+        /// <param name="sectionMoveModel"> (optional)</param>
         /// <returns></returns>
-        void Move(MoveRequest moveRequest = default(MoveRequest));
+        void Move(SectionMoveModel sectionMoveModel = default(SectionMoveModel));
 
         /// <summary>
         /// Move section with all work items into another section
@@ -169,9 +169,9 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="moveRequest"> (optional)</param>
+        /// <param name="sectionMoveModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> MoveWithHttpInfo(MoveRequest moveRequest = default(MoveRequest));
+        ApiResponse<Object> MoveWithHttpInfo(SectionMoveModel sectionMoveModel = default(SectionMoveModel));
         /// <summary>
         /// Rename section
         /// </summary>
@@ -179,9 +179,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets section identifier and new name (listed in request example)   User runs method execution   System search section by the identifier   System updates section name using the new name   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="renameRequest"> (optional)</param>
+        /// <param name="sectionRenameModel"> (optional)</param>
         /// <returns></returns>
-        void Rename(RenameRequest renameRequest = default(RenameRequest));
+        void Rename(SectionRenameModel sectionRenameModel = default(SectionRenameModel));
 
         /// <summary>
         /// Rename section
@@ -190,9 +190,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets section identifier and new name (listed in request example)   User runs method execution   System search section by the identifier   System updates section name using the new name   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="renameRequest"> (optional)</param>
+        /// <param name="sectionRenameModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RenameWithHttpInfo(RenameRequest renameRequest = default(RenameRequest));
+        ApiResponse<Object> RenameWithHttpInfo(SectionRenameModel sectionRenameModel = default(SectionRenameModel));
         /// <summary>
         /// Update section
         /// </summary>
@@ -200,9 +200,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets section properties (listed in request example)   User runs method execution   System search section by the identifier   System updates section using the property values   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateSectionRequest"> (optional)</param>
+        /// <param name="sectionPutModel"> (optional)</param>
         /// <returns></returns>
-        void UpdateSection(UpdateSectionRequest updateSectionRequest = default(UpdateSectionRequest));
+        void UpdateSection(SectionPutModel sectionPutModel = default(SectionPutModel));
 
         /// <summary>
         /// Update section
@@ -211,9 +211,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets section properties (listed in request example)   User runs method execution   System search section by the identifier   System updates section using the property values   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateSectionRequest"> (optional)</param>
+        /// <param name="sectionPutModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateSectionWithHttpInfo(UpdateSectionRequest updateSectionRequest = default(UpdateSectionRequest));
+        ApiResponse<Object> UpdateSectionWithHttpInfo(SectionPutModel sectionPutModel = default(SectionPutModel));
         #endregion Synchronous Operations
     }
 
@@ -234,7 +234,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="operation"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2SectionsIdPatchAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2SectionsIdPatchAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Patch section
@@ -247,7 +247,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="operation"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2SectionsIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2SectionsIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Create section
         /// </summary>
@@ -255,10 +255,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets section properties (listed in request example)   User runs method execution   System creates section property values   System returns section (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createSectionRequest"> (optional)</param>
+        /// <param name="sectionPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SectionWithStepsModel</returns>
-        System.Threading.Tasks.Task<SectionWithStepsModel> CreateSectionAsync(CreateSectionRequest createSectionRequest = default(CreateSectionRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SectionWithStepsModel> CreateSectionAsync(SectionPostModel sectionPostModel = default(SectionPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create section
@@ -267,10 +267,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets section properties (listed in request example)   User runs method execution   System creates section property values   System returns section (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createSectionRequest"> (optional)</param>
+        /// <param name="sectionPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SectionWithStepsModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SectionWithStepsModel>> CreateSectionWithHttpInfoAsync(CreateSectionRequest createSectionRequest = default(CreateSectionRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SectionWithStepsModel>> CreateSectionWithHttpInfoAsync(SectionPostModel sectionPostModel = default(SectionPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete section
         /// </summary>
@@ -281,7 +281,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Section internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteSectionAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteSectionAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete section
@@ -293,7 +293,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Section internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSectionWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSectionWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get section
         /// </summary>
@@ -305,7 +305,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SectionWithStepsModel</returns>
-        System.Threading.Tasks.Task<SectionWithStepsModel> GetSectionByIdAsync(Guid id, DeletionState? isDeleted = default(DeletionState?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SectionWithStepsModel> GetSectionByIdAsync(Guid id, DeletionState? isDeleted = default(DeletionState?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get section
@@ -318,7 +318,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SectionWithStepsModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SectionWithStepsModel>> GetSectionByIdWithHttpInfoAsync(Guid id, DeletionState? isDeleted = default(DeletionState?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SectionWithStepsModel>> GetSectionByIdWithHttpInfoAsync(Guid id, DeletionState? isDeleted = default(DeletionState?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get section work items
         /// </summary>
@@ -338,7 +338,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WorkItemShortModel&gt;</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<List<WorkItemShortModel>> GetWorkItemsBySectionIdAsync(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<WorkItemShortModel>> GetWorkItemsBySectionIdAsync(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get section work items
@@ -359,7 +359,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<List<WorkItemShortModel>>> GetWorkItemsBySectionIdWithHttpInfoAsync(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<WorkItemShortModel>>> GetWorkItemsBySectionIdWithHttpInfoAsync(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Move section with all work items into another section
         /// </summary>
@@ -367,10 +367,10 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="moveRequest"> (optional)</param>
+        /// <param name="sectionMoveModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task MoveAsync(MoveRequest moveRequest = default(MoveRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task MoveAsync(SectionMoveModel sectionMoveModel = default(SectionMoveModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Move section with all work items into another section
@@ -379,10 +379,10 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="moveRequest"> (optional)</param>
+        /// <param name="sectionMoveModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> MoveWithHttpInfoAsync(MoveRequest moveRequest = default(MoveRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> MoveWithHttpInfoAsync(SectionMoveModel sectionMoveModel = default(SectionMoveModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Rename section
         /// </summary>
@@ -390,10 +390,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets section identifier and new name (listed in request example)   User runs method execution   System search section by the identifier   System updates section name using the new name   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="renameRequest"> (optional)</param>
+        /// <param name="sectionRenameModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RenameAsync(RenameRequest renameRequest = default(RenameRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task RenameAsync(SectionRenameModel sectionRenameModel = default(SectionRenameModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Rename section
@@ -402,10 +402,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets section identifier and new name (listed in request example)   User runs method execution   System search section by the identifier   System updates section name using the new name   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="renameRequest"> (optional)</param>
+        /// <param name="sectionRenameModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RenameWithHttpInfoAsync(RenameRequest renameRequest = default(RenameRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RenameWithHttpInfoAsync(SectionRenameModel sectionRenameModel = default(SectionRenameModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Update section
         /// </summary>
@@ -413,10 +413,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets section properties (listed in request example)   User runs method execution   System search section by the identifier   System updates section using the property values   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateSectionRequest"> (optional)</param>
+        /// <param name="sectionPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateSectionAsync(UpdateSectionRequest updateSectionRequest = default(UpdateSectionRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task UpdateSectionAsync(SectionPutModel sectionPutModel = default(SectionPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update section
@@ -425,10 +425,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets section properties (listed in request example)   User runs method execution   System search section by the identifier   System updates section using the property values   System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateSectionRequest"> (optional)</param>
+        /// <param name="sectionPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateSectionWithHttpInfoAsync(UpdateSectionRequest updateSectionRequest = default(UpdateSectionRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateSectionWithHttpInfoAsync(SectionPutModel sectionPutModel = default(SectionPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -709,7 +709,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="operation"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2SectionsIdPatchAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2SectionsIdPatchAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await ApiV2SectionsIdPatchWithHttpInfoAsync(id, operation, cancellationToken).ConfigureAwait(false);
         }
@@ -722,7 +722,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="operation"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2SectionsIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2SectionsIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -769,11 +769,11 @@ namespace TestIT.ApiClient.Api
         /// Create section  Use case   User sets section properties (listed in request example)   User runs method execution   System creates section property values   System returns section (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createSectionRequest"> (optional)</param>
+        /// <param name="sectionPostModel"> (optional)</param>
         /// <returns>SectionWithStepsModel</returns>
-        public SectionWithStepsModel CreateSection(CreateSectionRequest createSectionRequest = default(CreateSectionRequest))
+        public SectionWithStepsModel CreateSection(SectionPostModel sectionPostModel = default(SectionPostModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<SectionWithStepsModel> localVarResponse = CreateSectionWithHttpInfo(createSectionRequest);
+            TestIT.ApiClient.Client.ApiResponse<SectionWithStepsModel> localVarResponse = CreateSectionWithHttpInfo(sectionPostModel);
             return localVarResponse.Data;
         }
 
@@ -781,9 +781,9 @@ namespace TestIT.ApiClient.Api
         /// Create section  Use case   User sets section properties (listed in request example)   User runs method execution   System creates section property values   System returns section (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createSectionRequest"> (optional)</param>
+        /// <param name="sectionPostModel"> (optional)</param>
         /// <returns>ApiResponse of SectionWithStepsModel</returns>
-        public TestIT.ApiClient.Client.ApiResponse<SectionWithStepsModel> CreateSectionWithHttpInfo(CreateSectionRequest createSectionRequest = default(CreateSectionRequest))
+        public TestIT.ApiClient.Client.ApiResponse<SectionWithStepsModel> CreateSectionWithHttpInfo(SectionPostModel sectionPostModel = default(SectionPostModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -802,7 +802,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = createSectionRequest;
+            localVarRequestOptions.Data = sectionPostModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -826,12 +826,12 @@ namespace TestIT.ApiClient.Api
         /// Create section  Use case   User sets section properties (listed in request example)   User runs method execution   System creates section property values   System returns section (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createSectionRequest"> (optional)</param>
+        /// <param name="sectionPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SectionWithStepsModel</returns>
-        public async System.Threading.Tasks.Task<SectionWithStepsModel> CreateSectionAsync(CreateSectionRequest createSectionRequest = default(CreateSectionRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SectionWithStepsModel> CreateSectionAsync(SectionPostModel sectionPostModel = default(SectionPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<SectionWithStepsModel> localVarResponse = await CreateSectionWithHttpInfoAsync(createSectionRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<SectionWithStepsModel> localVarResponse = await CreateSectionWithHttpInfoAsync(sectionPostModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -839,10 +839,10 @@ namespace TestIT.ApiClient.Api
         /// Create section  Use case   User sets section properties (listed in request example)   User runs method execution   System creates section property values   System returns section (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createSectionRequest"> (optional)</param>
+        /// <param name="sectionPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SectionWithStepsModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<SectionWithStepsModel>> CreateSectionWithHttpInfoAsync(CreateSectionRequest createSectionRequest = default(CreateSectionRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<SectionWithStepsModel>> CreateSectionWithHttpInfoAsync(SectionPostModel sectionPostModel = default(SectionPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -863,7 +863,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = createSectionRequest;
+            localVarRequestOptions.Data = sectionPostModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -946,7 +946,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Section internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteSectionAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteSectionAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await DeleteSectionWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
@@ -958,7 +958,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Section internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteSectionWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteSectionWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1069,7 +1069,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SectionWithStepsModel</returns>
-        public async System.Threading.Tasks.Task<SectionWithStepsModel> GetSectionByIdAsync(Guid id, DeletionState? isDeleted = default(DeletionState?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SectionWithStepsModel> GetSectionByIdAsync(Guid id, DeletionState? isDeleted = default(DeletionState?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<SectionWithStepsModel> localVarResponse = await GetSectionByIdWithHttpInfoAsync(id, isDeleted, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1083,7 +1083,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SectionWithStepsModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<SectionWithStepsModel>> GetSectionByIdWithHttpInfoAsync(Guid id, DeletionState? isDeleted = default(DeletionState?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<SectionWithStepsModel>> GetSectionByIdWithHttpInfoAsync(Guid id, DeletionState? isDeleted = default(DeletionState?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1250,7 +1250,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WorkItemShortModel&gt;</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<List<WorkItemShortModel>> GetWorkItemsBySectionIdAsync(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<WorkItemShortModel>> GetWorkItemsBySectionIdAsync(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = await GetWorkItemsBySectionIdWithHttpInfoAsync(id, isDeleted, tagNames, includeIterations, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1272,7 +1272,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>>> GetWorkItemsBySectionIdWithHttpInfoAsync(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>>> GetWorkItemsBySectionIdWithHttpInfoAsync(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1349,20 +1349,20 @@ namespace TestIT.ApiClient.Api
         /// Move section with all work items into another section 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="moveRequest"> (optional)</param>
+        /// <param name="sectionMoveModel"> (optional)</param>
         /// <returns></returns>
-        public void Move(MoveRequest moveRequest = default(MoveRequest))
+        public void Move(SectionMoveModel sectionMoveModel = default(SectionMoveModel))
         {
-            MoveWithHttpInfo(moveRequest);
+            MoveWithHttpInfo(sectionMoveModel);
         }
 
         /// <summary>
         /// Move section with all work items into another section 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="moveRequest"> (optional)</param>
+        /// <param name="sectionMoveModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> MoveWithHttpInfo(MoveRequest moveRequest = default(MoveRequest))
+        public TestIT.ApiClient.Client.ApiResponse<Object> MoveWithHttpInfo(SectionMoveModel sectionMoveModel = default(SectionMoveModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1381,7 +1381,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = moveRequest;
+            localVarRequestOptions.Data = sectionMoveModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1405,22 +1405,22 @@ namespace TestIT.ApiClient.Api
         /// Move section with all work items into another section 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="moveRequest"> (optional)</param>
+        /// <param name="sectionMoveModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task MoveAsync(MoveRequest moveRequest = default(MoveRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task MoveAsync(SectionMoveModel sectionMoveModel = default(SectionMoveModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await MoveWithHttpInfoAsync(moveRequest, cancellationToken).ConfigureAwait(false);
+            await MoveWithHttpInfoAsync(sectionMoveModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Move section with all work items into another section 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="moveRequest"> (optional)</param>
+        /// <param name="sectionMoveModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> MoveWithHttpInfoAsync(MoveRequest moveRequest = default(MoveRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> MoveWithHttpInfoAsync(SectionMoveModel sectionMoveModel = default(SectionMoveModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1441,7 +1441,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = moveRequest;
+            localVarRequestOptions.Data = sectionMoveModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1466,20 +1466,20 @@ namespace TestIT.ApiClient.Api
         /// Rename section  Use case   User sets section identifier and new name (listed in request example)   User runs method execution   System search section by the identifier   System updates section name using the new name   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="renameRequest"> (optional)</param>
+        /// <param name="sectionRenameModel"> (optional)</param>
         /// <returns></returns>
-        public void Rename(RenameRequest renameRequest = default(RenameRequest))
+        public void Rename(SectionRenameModel sectionRenameModel = default(SectionRenameModel))
         {
-            RenameWithHttpInfo(renameRequest);
+            RenameWithHttpInfo(sectionRenameModel);
         }
 
         /// <summary>
         /// Rename section  Use case   User sets section identifier and new name (listed in request example)   User runs method execution   System search section by the identifier   System updates section name using the new name   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="renameRequest"> (optional)</param>
+        /// <param name="sectionRenameModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> RenameWithHttpInfo(RenameRequest renameRequest = default(RenameRequest))
+        public TestIT.ApiClient.Client.ApiResponse<Object> RenameWithHttpInfo(SectionRenameModel sectionRenameModel = default(SectionRenameModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1498,7 +1498,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = renameRequest;
+            localVarRequestOptions.Data = sectionRenameModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1522,22 +1522,22 @@ namespace TestIT.ApiClient.Api
         /// Rename section  Use case   User sets section identifier and new name (listed in request example)   User runs method execution   System search section by the identifier   System updates section name using the new name   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="renameRequest"> (optional)</param>
+        /// <param name="sectionRenameModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RenameAsync(RenameRequest renameRequest = default(RenameRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task RenameAsync(SectionRenameModel sectionRenameModel = default(SectionRenameModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await RenameWithHttpInfoAsync(renameRequest, cancellationToken).ConfigureAwait(false);
+            await RenameWithHttpInfoAsync(sectionRenameModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Rename section  Use case   User sets section identifier and new name (listed in request example)   User runs method execution   System search section by the identifier   System updates section name using the new name   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="renameRequest"> (optional)</param>
+        /// <param name="sectionRenameModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> RenameWithHttpInfoAsync(RenameRequest renameRequest = default(RenameRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> RenameWithHttpInfoAsync(SectionRenameModel sectionRenameModel = default(SectionRenameModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1558,7 +1558,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = renameRequest;
+            localVarRequestOptions.Data = sectionRenameModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1583,20 +1583,20 @@ namespace TestIT.ApiClient.Api
         /// Update section  Use case   User sets section properties (listed in request example)   User runs method execution   System search section by the identifier   System updates section using the property values   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateSectionRequest"> (optional)</param>
+        /// <param name="sectionPutModel"> (optional)</param>
         /// <returns></returns>
-        public void UpdateSection(UpdateSectionRequest updateSectionRequest = default(UpdateSectionRequest))
+        public void UpdateSection(SectionPutModel sectionPutModel = default(SectionPutModel))
         {
-            UpdateSectionWithHttpInfo(updateSectionRequest);
+            UpdateSectionWithHttpInfo(sectionPutModel);
         }
 
         /// <summary>
         /// Update section  Use case   User sets section properties (listed in request example)   User runs method execution   System search section by the identifier   System updates section using the property values   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateSectionRequest"> (optional)</param>
+        /// <param name="sectionPutModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> UpdateSectionWithHttpInfo(UpdateSectionRequest updateSectionRequest = default(UpdateSectionRequest))
+        public TestIT.ApiClient.Client.ApiResponse<Object> UpdateSectionWithHttpInfo(SectionPutModel sectionPutModel = default(SectionPutModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1615,7 +1615,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = updateSectionRequest;
+            localVarRequestOptions.Data = sectionPutModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1639,22 +1639,22 @@ namespace TestIT.ApiClient.Api
         /// Update section  Use case   User sets section properties (listed in request example)   User runs method execution   System search section by the identifier   System updates section using the property values   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateSectionRequest"> (optional)</param>
+        /// <param name="sectionPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateSectionAsync(UpdateSectionRequest updateSectionRequest = default(UpdateSectionRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task UpdateSectionAsync(SectionPutModel sectionPutModel = default(SectionPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await UpdateSectionWithHttpInfoAsync(updateSectionRequest, cancellationToken).ConfigureAwait(false);
+            await UpdateSectionWithHttpInfoAsync(sectionPutModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Update section  Use case   User sets section properties (listed in request example)   User runs method execution   System search section by the identifier   System updates section using the property values   System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateSectionRequest"> (optional)</param>
+        /// <param name="sectionPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> UpdateSectionWithHttpInfoAsync(UpdateSectionRequest updateSectionRequest = default(UpdateSectionRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> UpdateSectionWithHttpInfoAsync(SectionPutModel sectionPutModel = default(SectionPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1675,7 +1675,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = updateSectionRequest;
+            localVarRequestOptions.Data = sectionPutModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))

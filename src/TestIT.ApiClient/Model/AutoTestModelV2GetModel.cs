@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// AutoTestModelV2GetModel
     /// </summary>
     [DataContract(Name = "AutoTestModelV2GetModel")]
-    public partial class AutoTestModelV2GetModel : IEquatable<AutoTestModelV2GetModel>, IValidatableObject
+    public partial class AutoTestModelV2GetModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestModelV2GetModel" /> class.
@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="links">links.</param>
         /// <param name="projectId">This property is used to link autotest with project (required).</param>
         /// <param name="name">name (required).</param>
-        /// <param name="_namespace">_namespace.</param>
+        /// <param name="varNamespace">varNamespace.</param>
         /// <param name="classname">classname.</param>
         /// <param name="steps">steps.</param>
         /// <param name="setup">setup.</param>
@@ -58,7 +58,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="externalKey">externalKey.</param>
         /// <param name="id">Unique ID of the entity (required).</param>
         /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
-        public AutoTestModelV2GetModel(string externalId = default(string), List<LinkModel> links = default(List<LinkModel>), Guid projectId = default(Guid), string name = default(string), string _namespace = default(string), string classname = default(string), List<AutoTestStepModel> steps = default(List<AutoTestStepModel>), List<AutoTestStepModel> setup = default(List<AutoTestStepModel>), List<AutoTestStepModel> teardown = default(List<AutoTestStepModel>), long globalId = default(long), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), List<LabelShortModel> labels = default(List<LabelShortModel>), string externalKey = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
+        public AutoTestModelV2GetModel(string externalId = default(string), List<LinkModel> links = default(List<LinkModel>), Guid projectId = default(Guid), string name = default(string), string varNamespace = default(string), string classname = default(string), List<AutoTestStepModel> steps = default(List<AutoTestStepModel>), List<AutoTestStepModel> setup = default(List<AutoTestStepModel>), List<AutoTestStepModel> teardown = default(List<AutoTestStepModel>), long globalId = default(long), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), List<LabelShortModel> labels = default(List<LabelShortModel>), string externalKey = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
         {
             // to ensure "externalId" is required (not null)
             if (externalId == null)
@@ -78,7 +78,7 @@ namespace TestIT.ApiClient.Model
             this.Id = id;
             this.IsDeleted = isDeleted;
             this.Links = links;
-            this.Namespace = _namespace;
+            this.Namespace = varNamespace;
             this.Classname = classname;
             this.Steps = steps;
             this.Setup = setup;
@@ -94,7 +94,9 @@ namespace TestIT.ApiClient.Model
         /// This property is used to set autotest identifier from client system
         /// </summary>
         /// <value>This property is used to set autotest identifier from client system</value>
-        /// <example>&quot;10001&quot;</example>
+        /*
+        <example>10001</example>
+        */
         [DataMember(Name = "externalId", IsRequired = true, EmitDefaultValue = true)]
         public string ExternalId { get; set; }
 
@@ -108,28 +110,36 @@ namespace TestIT.ApiClient.Model
         /// This property is used to link autotest with project
         /// </summary>
         /// <value>This property is used to link autotest with project</value>
-        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
+        /*
+        <example>cbb88fe6-c193-48e9-9e37-323fbc38de5f</example>
+        */
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /// <example>&quot;WorkItem valid creation test&quot;</example>
+        /*
+        <example>WorkItem valid creation test</example>
+        */
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Namespace
         /// </summary>
-        /// <example>&quot;UnitTest.Core&quot;</example>
+        /*
+        <example>UnitTest.Core</example>
+        */
         [DataMember(Name = "namespace", EmitDefaultValue = true)]
         public string Namespace { get; set; }
 
         /// <summary>
         /// Gets or Sets Classname
         /// </summary>
-        /// <example>&quot;WorkItemServiceTest.cs&quot;</example>
+        /*
+        <example>WorkItemServiceTest.cs</example>
+        */
         [DataMember(Name = "classname", EmitDefaultValue = true)]
         public string Classname { get; set; }
 
@@ -154,35 +164,45 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets GlobalId
         /// </summary>
-        /// <example>1000</example>
+        /*
+        <example>1000</example>
+        */
         [DataMember(Name = "globalId", IsRequired = true, EmitDefaultValue = true)]
         public long GlobalId { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        /// <example>&quot;2025-01-24T10:05:02.127835600Z&quot;</example>
+        /*
+        <example>2025-02-09T16:32:03.068992100Z</example>
+        */
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
         public DateTime? CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        /// <example>&quot;2025-01-24T10:05:02.127835600Z&quot;</example>
+        /*
+        <example>2025-02-09T16:32:03.068992100Z</example>
+        */
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
+        /*
+        <example>cbb88fe6-c193-48e9-9e37-323fbc38de5f</example>
+        */
         [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
-        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
+        /*
+        <example>cbb88fe6-c193-48e9-9e37-323fbc38de5f</example>
+        */
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
@@ -252,207 +272,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AutoTestModelV2GetModel);
-        }
-
-        /// <summary>
-        /// Returns true if AutoTestModelV2GetModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AutoTestModelV2GetModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AutoTestModelV2GetModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.ExternalId == input.ExternalId ||
-                    (this.ExternalId != null &&
-                    this.ExternalId.Equals(input.ExternalId))
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    this.Links != null &&
-                    input.Links != null &&
-                    this.Links.SequenceEqual(input.Links)
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Namespace == input.Namespace ||
-                    (this.Namespace != null &&
-                    this.Namespace.Equals(input.Namespace))
-                ) && 
-                (
-                    this.Classname == input.Classname ||
-                    (this.Classname != null &&
-                    this.Classname.Equals(input.Classname))
-                ) && 
-                (
-                    this.Steps == input.Steps ||
-                    this.Steps != null &&
-                    input.Steps != null &&
-                    this.Steps.SequenceEqual(input.Steps)
-                ) && 
-                (
-                    this.Setup == input.Setup ||
-                    this.Setup != null &&
-                    input.Setup != null &&
-                    this.Setup.SequenceEqual(input.Setup)
-                ) && 
-                (
-                    this.Teardown == input.Teardown ||
-                    this.Teardown != null &&
-                    input.Teardown != null &&
-                    this.Teardown.SequenceEqual(input.Teardown)
-                ) && 
-                (
-                    this.GlobalId == input.GlobalId ||
-                    this.GlobalId.Equals(input.GlobalId)
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.CreatedById == input.CreatedById ||
-                    (this.CreatedById != null &&
-                    this.CreatedById.Equals(input.CreatedById))
-                ) && 
-                (
-                    this.ModifiedById == input.ModifiedById ||
-                    (this.ModifiedById != null &&
-                    this.ModifiedById.Equals(input.ModifiedById))
-                ) && 
-                (
-                    this.Labels == input.Labels ||
-                    this.Labels != null &&
-                    input.Labels != null &&
-                    this.Labels.SequenceEqual(input.Labels)
-                ) && 
-                (
-                    this.ExternalKey == input.ExternalKey ||
-                    (this.ExternalKey != null &&
-                    this.ExternalKey.Equals(input.ExternalKey))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    this.IsDeleted.Equals(input.IsDeleted)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.ExternalId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ExternalId.GetHashCode();
-                }
-                if (this.Links != null)
-                {
-                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
-                }
-                if (this.ProjectId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProjectId.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Namespace != null)
-                {
-                    hashCode = (hashCode * 59) + this.Namespace.GetHashCode();
-                }
-                if (this.Classname != null)
-                {
-                    hashCode = (hashCode * 59) + this.Classname.GetHashCode();
-                }
-                if (this.Steps != null)
-                {
-                    hashCode = (hashCode * 59) + this.Steps.GetHashCode();
-                }
-                if (this.Setup != null)
-                {
-                    hashCode = (hashCode * 59) + this.Setup.GetHashCode();
-                }
-                if (this.Teardown != null)
-                {
-                    hashCode = (hashCode * 59) + this.Teardown.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.GlobalId.GetHashCode();
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                if (this.CreatedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedById.GetHashCode();
-                }
-                if (this.ModifiedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedById.GetHashCode();
-                }
-                if (this.Labels != null)
-                {
-                    hashCode = (hashCode * 59) + this.Labels.GetHashCode();
-                }
-                if (this.ExternalKey != null)
-                {
-                    hashCode = (hashCode * 59) + this.ExternalKey.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

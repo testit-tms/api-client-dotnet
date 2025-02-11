@@ -73,7 +73,6 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         [EnumMember(Value = "CustomAttribute")]
         CustomAttribute = 7
-
     }
 
 }

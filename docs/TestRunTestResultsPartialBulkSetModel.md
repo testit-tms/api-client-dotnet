@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Selector** | [**TestRunTestResultsPartialBulkSetModelSelector**](TestRunTestResultsPartialBulkSetModelSelector.md) |  | [optional] 
+**Selector** | [**TestRunTestResultsSelectModel**](TestRunTestResultsSelectModel.md) | Object with filters and extraction parameters | [optional] 
 **ResultReasonIds** | **List&lt;Guid&gt;** | Unique IDs of result reasons to be assigned to test results | [optional] 
 **Links** | [**List&lt;LinkPostModel&gt;**](LinkPostModel.md) | Collection of links to be assigned to test results | [optional] 
 **Comment** | **string** | Comment to be added to test results | [optional] 

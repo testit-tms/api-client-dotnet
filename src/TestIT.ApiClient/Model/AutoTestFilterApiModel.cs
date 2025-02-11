@@ -30,12 +30,13 @@ namespace TestIT.ApiClient.Model
     /// AutoTestFilterApiModel
     /// </summary>
     [DataContract(Name = "AutoTestFilterApiModel")]
-    public partial class AutoTestFilterApiModel : IEquatable<AutoTestFilterApiModel>, IValidatableObject
+    public partial class AutoTestFilterApiModel : IValidatableObject
     {
 
         /// <summary>
-        /// Gets or Sets LastTestResultOutcome
+        /// Specifies an autotest outcome of the last test result to search for
         /// </summary>
+        /// <value>Specifies an autotest outcome of the last test result to search for</value>
         [DataMember(Name = "lastTestResultOutcome", EmitDefaultValue = true)]
         public AutotestResultOutcome? LastTestResultOutcome { get; set; }
         /// <summary>
@@ -47,21 +48,21 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">Specifies an autotest name to search for.</param>
         /// <param name="isFlaky">Specifies an autotest flaky status to search for.</param>
         /// <param name="mustBeApproved">Specifies an autotest unapproved changes status to search for.</param>
-        /// <param name="stabilityPercentage">stabilityPercentage.</param>
-        /// <param name="createdDate">createdDate.</param>
+        /// <param name="stabilityPercentage">Specifies an autotest range of stability percentage to search for.</param>
+        /// <param name="createdDate">Specifies an autotest range of creation date to search for.</param>
         /// <param name="createdByIds">Specifies an autotest creator IDs to search for.</param>
-        /// <param name="modifiedDate">modifiedDate.</param>
+        /// <param name="modifiedDate">Specifies an autotest range of last modification date to search for.</param>
         /// <param name="modifiedByIds">Specifies an autotest last editor IDs to search for.</param>
         /// <param name="isDeleted">Specifies an autotest deleted status to search for.</param>
-        /// <param name="_namespace">Specifies an autotest namespace to search for.</param>
+        /// <param name="varNamespace">Specifies an autotest namespace to search for.</param>
         /// <param name="isEmptyNamespace">Specifies an autotest namespace name presence status to search for.</param>
         /// <param name="className">Specifies an autotest class name to search for.</param>
         /// <param name="isEmptyClassName">Specifies an autotest class name presence status to search for.</param>
-        /// <param name="lastTestResultOutcome">lastTestResultOutcome.</param>
+        /// <param name="lastTestResultOutcome">Specifies an autotest outcome of the last test result to search for.</param>
         /// <param name="lastTestResultStatusCode">Specifies an autotest status code of the last test result to search for.</param>
         /// <param name="externalKey">Specifies an autotest external key to search for.</param>
         /// <param name="lastTestResultConfigurationIds">Specifies an autotest configuration IDs of the last test result to search for.</param>
-        public AutoTestFilterApiModel(List<Guid> projectIds = default(List<Guid>), List<string> externalIds = default(List<string>), List<long> globalIds = default(List<long>), string name = default(string), bool? isFlaky = default(bool?), bool? mustBeApproved = default(bool?), AutoTestFilterApiModelStabilityPercentage stabilityPercentage = default(AutoTestFilterApiModelStabilityPercentage), AutoTestFilterApiModelCreatedDate createdDate = default(AutoTestFilterApiModelCreatedDate), List<Guid> createdByIds = default(List<Guid>), AutoTestFilterApiModelModifiedDate modifiedDate = default(AutoTestFilterApiModelModifiedDate), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?), string _namespace = default(string), bool? isEmptyNamespace = default(bool?), string className = default(string), bool? isEmptyClassName = default(bool?), AutotestResultOutcome? lastTestResultOutcome = default(AutotestResultOutcome?), string lastTestResultStatusCode = default(string), string externalKey = default(string), List<Guid> lastTestResultConfigurationIds = default(List<Guid>))
+        public AutoTestFilterApiModel(List<Guid> projectIds = default(List<Guid>), List<string> externalIds = default(List<string>), List<long> globalIds = default(List<long>), string name = default(string), bool? isFlaky = default(bool?), bool? mustBeApproved = default(bool?), Int64RangeSelectorModel stabilityPercentage = default(Int64RangeSelectorModel), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?), string varNamespace = default(string), bool? isEmptyNamespace = default(bool?), string className = default(string), bool? isEmptyClassName = default(bool?), AutotestResultOutcome? lastTestResultOutcome = default(AutotestResultOutcome?), string lastTestResultStatusCode = default(string), string externalKey = default(string), List<Guid> lastTestResultConfigurationIds = default(List<Guid>))
         {
             this.ProjectIds = projectIds;
             this.ExternalIds = externalIds;
@@ -75,7 +76,7 @@ namespace TestIT.ApiClient.Model
             this.ModifiedDate = modifiedDate;
             this.ModifiedByIds = modifiedByIds;
             this.IsDeleted = isDeleted;
-            this.Namespace = _namespace;
+            this.Namespace = varNamespace;
             this.IsEmptyNamespace = isEmptyNamespace;
             this.ClassName = className;
             this.IsEmptyClassName = isEmptyClassName;
@@ -128,16 +129,18 @@ namespace TestIT.ApiClient.Model
         public bool? MustBeApproved { get; set; }
 
         /// <summary>
-        /// Gets or Sets StabilityPercentage
+        /// Specifies an autotest range of stability percentage to search for
         /// </summary>
+        /// <value>Specifies an autotest range of stability percentage to search for</value>
         [DataMember(Name = "stabilityPercentage", EmitDefaultValue = true)]
-        public AutoTestFilterApiModelStabilityPercentage StabilityPercentage { get; set; }
+        public Int64RangeSelectorModel StabilityPercentage { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedDate
+        /// Specifies an autotest range of creation date to search for
         /// </summary>
+        /// <value>Specifies an autotest range of creation date to search for</value>
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
-        public AutoTestFilterApiModelCreatedDate CreatedDate { get; set; }
+        public DateTimeRangeSelectorModel CreatedDate { get; set; }
 
         /// <summary>
         /// Specifies an autotest creator IDs to search for
@@ -147,10 +150,11 @@ namespace TestIT.ApiClient.Model
         public List<Guid> CreatedByIds { get; set; }
 
         /// <summary>
-        /// Gets or Sets ModifiedDate
+        /// Specifies an autotest range of last modification date to search for
         /// </summary>
+        /// <value>Specifies an autotest range of last modification date to search for</value>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
-        public AutoTestFilterApiModelModifiedDate ModifiedDate { get; set; }
+        public DateTimeRangeSelectorModel ModifiedDate { get; set; }
 
         /// <summary>
         /// Specifies an autotest last editor IDs to search for
@@ -257,241 +261,22 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AutoTestFilterApiModel);
-        }
-
-        /// <summary>
-        /// Returns true if AutoTestFilterApiModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AutoTestFilterApiModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AutoTestFilterApiModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.ProjectIds == input.ProjectIds ||
-                    this.ProjectIds != null &&
-                    input.ProjectIds != null &&
-                    this.ProjectIds.SequenceEqual(input.ProjectIds)
-                ) && 
-                (
-                    this.ExternalIds == input.ExternalIds ||
-                    this.ExternalIds != null &&
-                    input.ExternalIds != null &&
-                    this.ExternalIds.SequenceEqual(input.ExternalIds)
-                ) && 
-                (
-                    this.GlobalIds == input.GlobalIds ||
-                    this.GlobalIds != null &&
-                    input.GlobalIds != null &&
-                    this.GlobalIds.SequenceEqual(input.GlobalIds)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.IsFlaky == input.IsFlaky ||
-                    (this.IsFlaky != null &&
-                    this.IsFlaky.Equals(input.IsFlaky))
-                ) && 
-                (
-                    this.MustBeApproved == input.MustBeApproved ||
-                    (this.MustBeApproved != null &&
-                    this.MustBeApproved.Equals(input.MustBeApproved))
-                ) && 
-                (
-                    this.StabilityPercentage == input.StabilityPercentage ||
-                    (this.StabilityPercentage != null &&
-                    this.StabilityPercentage.Equals(input.StabilityPercentage))
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.CreatedByIds == input.CreatedByIds ||
-                    this.CreatedByIds != null &&
-                    input.CreatedByIds != null &&
-                    this.CreatedByIds.SequenceEqual(input.CreatedByIds)
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.ModifiedByIds == input.ModifiedByIds ||
-                    this.ModifiedByIds != null &&
-                    input.ModifiedByIds != null &&
-                    this.ModifiedByIds.SequenceEqual(input.ModifiedByIds)
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    (this.IsDeleted != null &&
-                    this.IsDeleted.Equals(input.IsDeleted))
-                ) && 
-                (
-                    this.Namespace == input.Namespace ||
-                    (this.Namespace != null &&
-                    this.Namespace.Equals(input.Namespace))
-                ) && 
-                (
-                    this.IsEmptyNamespace == input.IsEmptyNamespace ||
-                    (this.IsEmptyNamespace != null &&
-                    this.IsEmptyNamespace.Equals(input.IsEmptyNamespace))
-                ) && 
-                (
-                    this.ClassName == input.ClassName ||
-                    (this.ClassName != null &&
-                    this.ClassName.Equals(input.ClassName))
-                ) && 
-                (
-                    this.IsEmptyClassName == input.IsEmptyClassName ||
-                    (this.IsEmptyClassName != null &&
-                    this.IsEmptyClassName.Equals(input.IsEmptyClassName))
-                ) && 
-                (
-                    this.LastTestResultOutcome == input.LastTestResultOutcome ||
-                    this.LastTestResultOutcome.Equals(input.LastTestResultOutcome)
-                ) && 
-                (
-                    this.LastTestResultStatusCode == input.LastTestResultStatusCode ||
-                    (this.LastTestResultStatusCode != null &&
-                    this.LastTestResultStatusCode.Equals(input.LastTestResultStatusCode))
-                ) && 
-                (
-                    this.ExternalKey == input.ExternalKey ||
-                    (this.ExternalKey != null &&
-                    this.ExternalKey.Equals(input.ExternalKey))
-                ) && 
-                (
-                    this.LastTestResultConfigurationIds == input.LastTestResultConfigurationIds ||
-                    this.LastTestResultConfigurationIds != null &&
-                    input.LastTestResultConfigurationIds != null &&
-                    this.LastTestResultConfigurationIds.SequenceEqual(input.LastTestResultConfigurationIds)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.ProjectIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProjectIds.GetHashCode();
-                }
-                if (this.ExternalIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.ExternalIds.GetHashCode();
-                }
-                if (this.GlobalIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.GlobalIds.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.IsFlaky != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsFlaky.GetHashCode();
-                }
-                if (this.MustBeApproved != null)
-                {
-                    hashCode = (hashCode * 59) + this.MustBeApproved.GetHashCode();
-                }
-                if (this.StabilityPercentage != null)
-                {
-                    hashCode = (hashCode * 59) + this.StabilityPercentage.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.CreatedByIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedByIds.GetHashCode();
-                }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                if (this.ModifiedByIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedByIds.GetHashCode();
-                }
-                if (this.IsDeleted != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                }
-                if (this.Namespace != null)
-                {
-                    hashCode = (hashCode * 59) + this.Namespace.GetHashCode();
-                }
-                if (this.IsEmptyNamespace != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsEmptyNamespace.GetHashCode();
-                }
-                if (this.ClassName != null)
-                {
-                    hashCode = (hashCode * 59) + this.ClassName.GetHashCode();
-                }
-                if (this.IsEmptyClassName != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsEmptyClassName.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.LastTestResultOutcome.GetHashCode();
-                if (this.LastTestResultStatusCode != null)
-                {
-                    hashCode = (hashCode * 59) + this.LastTestResultStatusCode.GetHashCode();
-                }
-                if (this.ExternalKey != null)
-                {
-                    hashCode = (hashCode * 59) + this.ExternalKey.GetHashCode();
-                }
-                if (this.LastTestResultConfigurationIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.LastTestResultConfigurationIds.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
             }
 
             // Name (string) minLength
             if (this.Name != null && this.Name.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
             }
 
             yield break;

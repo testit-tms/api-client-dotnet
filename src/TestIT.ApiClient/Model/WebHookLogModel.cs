@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// WebHookLogModel
     /// </summary>
     [DataContract(Name = "WebHookLogModel")]
-    public partial class WebHookLogModel : IEquatable<WebHookLogModel>, IValidatableObject
+    public partial class WebHookLogModel : IValidatableObject
     {
 
         /// <summary>
@@ -231,185 +231,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as WebHookLogModel);
-        }
-
-        /// <summary>
-        /// Returns true if WebHookLogModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of WebHookLogModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(WebHookLogModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.WebHookName == input.WebHookName ||
-                    (this.WebHookName != null &&
-                    this.WebHookName.Equals(input.WebHookName))
-                ) && 
-                (
-                    this.EventType == input.EventType ||
-                    this.EventType.Equals(input.EventType)
-                ) && 
-                (
-                    this.WebHookId == input.WebHookId ||
-                    (this.WebHookId != null &&
-                    this.WebHookId.Equals(input.WebHookId))
-                ) && 
-                (
-                    this.RequestBody == input.RequestBody ||
-                    (this.RequestBody != null &&
-                    this.RequestBody.Equals(input.RequestBody))
-                ) && 
-                (
-                    this.RequestMeta == input.RequestMeta ||
-                    (this.RequestMeta != null &&
-                    this.RequestMeta.Equals(input.RequestMeta))
-                ) && 
-                (
-                    this.ResponseStatusCode == input.ResponseStatusCode ||
-                    this.ResponseStatusCode.Equals(input.ResponseStatusCode)
-                ) && 
-                (
-                    this.ResponseBody == input.ResponseBody ||
-                    (this.ResponseBody != null &&
-                    this.ResponseBody.Equals(input.ResponseBody))
-                ) && 
-                (
-                    this.ResponseMeta == input.ResponseMeta ||
-                    (this.ResponseMeta != null &&
-                    this.ResponseMeta.Equals(input.ResponseMeta))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.RequestType == input.RequestType ||
-                    this.RequestType.Equals(input.RequestType)
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.CreatedById == input.CreatedById ||
-                    (this.CreatedById != null &&
-                    this.CreatedById.Equals(input.CreatedById))
-                ) && 
-                (
-                    this.ModifiedById == input.ModifiedById ||
-                    (this.ModifiedById != null &&
-                    this.ModifiedById.Equals(input.ModifiedById))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    this.IsDeleted.Equals(input.IsDeleted)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.WebHookName != null)
-                {
-                    hashCode = (hashCode * 59) + this.WebHookName.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.EventType.GetHashCode();
-                if (this.WebHookId != null)
-                {
-                    hashCode = (hashCode * 59) + this.WebHookId.GetHashCode();
-                }
-                if (this.RequestBody != null)
-                {
-                    hashCode = (hashCode * 59) + this.RequestBody.GetHashCode();
-                }
-                if (this.RequestMeta != null)
-                {
-                    hashCode = (hashCode * 59) + this.RequestMeta.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.ResponseStatusCode.GetHashCode();
-                if (this.ResponseBody != null)
-                {
-                    hashCode = (hashCode * 59) + this.ResponseBody.GetHashCode();
-                }
-                if (this.ResponseMeta != null)
-                {
-                    hashCode = (hashCode * 59) + this.ResponseMeta.GetHashCode();
-                }
-                if (this.ProjectId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProjectId.GetHashCode();
-                }
-                if (this.Url != null)
-                {
-                    hashCode = (hashCode * 59) + this.Url.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.RequestType.GetHashCode();
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                if (this.CreatedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedById.GetHashCode();
-                }
-                if (this.ModifiedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedById.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

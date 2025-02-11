@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// UpdateMultipleTestRunsApiModel
     /// </summary>
     [DataContract(Name = "UpdateMultipleTestRunsApiModel")]
-    public partial class UpdateMultipleTestRunsApiModel : IEquatable<UpdateMultipleTestRunsApiModel>, IValidatableObject
+    public partial class UpdateMultipleTestRunsApiModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateMultipleTestRunsApiModel" /> class.
@@ -40,11 +40,11 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateMultipleTestRunsApiModel" /> class.
         /// </summary>
-        /// <param name="selectModel">selectModel (required).</param>
+        /// <param name="selectModel">Test run selection model (required).</param>
         /// <param name="description">Test run description.</param>
-        /// <param name="attachmentUpdateScheme">attachmentUpdateScheme.</param>
-        /// <param name="linkUpdateScheme">linkUpdateScheme.</param>
-        public UpdateMultipleTestRunsApiModel(UpdateMultipleTestRunsApiModelSelectModel selectModel = default(UpdateMultipleTestRunsApiModelSelectModel), string description = default(string), UpdateMultipleTestRunsApiModelAttachmentUpdateScheme attachmentUpdateScheme = default(UpdateMultipleTestRunsApiModelAttachmentUpdateScheme), UpdateMultipleTestRunsApiModelLinkUpdateScheme linkUpdateScheme = default(UpdateMultipleTestRunsApiModelLinkUpdateScheme))
+        /// <param name="attachmentUpdateScheme">Set of attachment ids.</param>
+        /// <param name="linkUpdateScheme">Set of links.</param>
+        public UpdateMultipleTestRunsApiModel(TestRunSelectApiModel selectModel = default(TestRunSelectApiModel), string description = default(string), UpdateMultipleAttachmentsApiModel attachmentUpdateScheme = default(UpdateMultipleAttachmentsApiModel), UpdateMultipleLinksApiModel linkUpdateScheme = default(UpdateMultipleLinksApiModel))
         {
             // to ensure "selectModel" is required (not null)
             if (selectModel == null)
@@ -58,10 +58,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Gets or Sets SelectModel
+        /// Test run selection model
         /// </summary>
+        /// <value>Test run selection model</value>
         [DataMember(Name = "selectModel", IsRequired = true, EmitDefaultValue = true)]
-        public UpdateMultipleTestRunsApiModelSelectModel SelectModel { get; set; }
+        public TestRunSelectApiModel SelectModel { get; set; }
 
         /// <summary>
         /// Test run description
@@ -71,16 +72,18 @@ namespace TestIT.ApiClient.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or Sets AttachmentUpdateScheme
+        /// Set of attachment ids
         /// </summary>
+        /// <value>Set of attachment ids</value>
         [DataMember(Name = "attachmentUpdateScheme", EmitDefaultValue = true)]
-        public UpdateMultipleTestRunsApiModelAttachmentUpdateScheme AttachmentUpdateScheme { get; set; }
+        public UpdateMultipleAttachmentsApiModel AttachmentUpdateScheme { get; set; }
 
         /// <summary>
-        /// Gets or Sets LinkUpdateScheme
+        /// Set of links
         /// </summary>
+        /// <value>Set of links</value>
         [DataMember(Name = "linkUpdateScheme", EmitDefaultValue = true)]
-        public UpdateMultipleTestRunsApiModelLinkUpdateScheme LinkUpdateScheme { get; set; }
+        public UpdateMultipleLinksApiModel LinkUpdateScheme { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -108,84 +111,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as UpdateMultipleTestRunsApiModel);
-        }
-
-        /// <summary>
-        /// Returns true if UpdateMultipleTestRunsApiModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of UpdateMultipleTestRunsApiModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(UpdateMultipleTestRunsApiModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.SelectModel == input.SelectModel ||
-                    (this.SelectModel != null &&
-                    this.SelectModel.Equals(input.SelectModel))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.AttachmentUpdateScheme == input.AttachmentUpdateScheme ||
-                    (this.AttachmentUpdateScheme != null &&
-                    this.AttachmentUpdateScheme.Equals(input.AttachmentUpdateScheme))
-                ) && 
-                (
-                    this.LinkUpdateScheme == input.LinkUpdateScheme ||
-                    (this.LinkUpdateScheme != null &&
-                    this.LinkUpdateScheme.Equals(input.LinkUpdateScheme))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.SelectModel != null)
-                {
-                    hashCode = (hashCode * 59) + this.SelectModel.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.AttachmentUpdateScheme != null)
-                {
-                    hashCode = (hashCode * 59) + this.AttachmentUpdateScheme.GetHashCode();
-                }
-                if (this.LinkUpdateScheme != null)
-                {
-                    hashCode = (hashCode * 59) + this.LinkUpdateScheme.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

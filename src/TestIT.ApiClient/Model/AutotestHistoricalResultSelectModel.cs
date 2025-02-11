@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// AutotestHistoricalResultSelectModel
     /// </summary>
     [DataContract(Name = "AutotestHistoricalResultSelectModel")]
-    public partial class AutotestHistoricalResultSelectModel : IEquatable<AutotestHistoricalResultSelectModel>, IValidatableObject
+    public partial class AutotestHistoricalResultSelectModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AutotestHistoricalResultSelectModel" /> class.
@@ -124,127 +124,22 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AutotestHistoricalResultSelectModel);
-        }
-
-        /// <summary>
-        /// Returns true if AutotestHistoricalResultSelectModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AutotestHistoricalResultSelectModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AutotestHistoricalResultSelectModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Outcomes == input.Outcomes ||
-                    this.Outcomes != null &&
-                    input.Outcomes != null &&
-                    this.Outcomes.SequenceEqual(input.Outcomes)
-                ) && 
-                (
-                    this.TestPlanIds == input.TestPlanIds ||
-                    this.TestPlanIds != null &&
-                    input.TestPlanIds != null &&
-                    this.TestPlanIds.SequenceEqual(input.TestPlanIds)
-                ) && 
-                (
-                    this.TestRunIds == input.TestRunIds ||
-                    this.TestRunIds != null &&
-                    input.TestRunIds != null &&
-                    this.TestRunIds.SequenceEqual(input.TestRunIds)
-                ) && 
-                (
-                    this.ConfigurationIds == input.ConfigurationIds ||
-                    this.ConfigurationIds != null &&
-                    input.ConfigurationIds != null &&
-                    this.ConfigurationIds.SequenceEqual(input.ConfigurationIds)
-                ) && 
-                (
-                    this.LaunchSource == input.LaunchSource ||
-                    (this.LaunchSource != null &&
-                    this.LaunchSource.Equals(input.LaunchSource))
-                ) && 
-                (
-                    this.UserIds == input.UserIds ||
-                    this.UserIds != null &&
-                    input.UserIds != null &&
-                    this.UserIds.SequenceEqual(input.UserIds)
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    (this.Duration != null &&
-                    this.Duration.Equals(input.Duration))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Outcomes != null)
-                {
-                    hashCode = (hashCode * 59) + this.Outcomes.GetHashCode();
-                }
-                if (this.TestPlanIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestPlanIds.GetHashCode();
-                }
-                if (this.TestRunIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestRunIds.GetHashCode();
-                }
-                if (this.ConfigurationIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.ConfigurationIds.GetHashCode();
-                }
-                if (this.LaunchSource != null)
-                {
-                    hashCode = (hashCode * 59) + this.LaunchSource.GetHashCode();
-                }
-                if (this.UserIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.UserIds.GetHashCode();
-                }
-                if (this.Duration != null)
-                {
-                    hashCode = (hashCode * 59) + this.Duration.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // LaunchSource (string) maxLength
             if (this.LaunchSource != null && this.LaunchSource.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for LaunchSource, length must be less than 255.", new [] { "LaunchSource" });
+                yield return new ValidationResult("Invalid value for LaunchSource, length must be less than 255.", new [] { "LaunchSource" });
             }
 
             // LaunchSource (string) minLength
             if (this.LaunchSource != null && this.LaunchSource.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for LaunchSource, length must be greater than 0.", new [] { "LaunchSource" });
+                yield return new ValidationResult("Invalid value for LaunchSource, length must be greater than 0.", new [] { "LaunchSource" });
             }
 
             yield break;

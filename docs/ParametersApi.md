@@ -661,7 +661,7 @@ This endpoint does not need any parameter.
 
 <a id="apiv2parameterssearchgroupspost"></a>
 # **ApiV2ParametersSearchGroupsPost**
-> List&lt;ParameterGroupModel&gt; ApiV2ParametersSearchGroupsPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ParametersSearchPostRequest apiV2ParametersSearchPostRequest = null)
+> List&lt;ParameterGroupModel&gt; ApiV2ParametersSearchGroupsPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ParameterFilterModel parameterFilterModel = null)
 
 Search for parameters as group
 
@@ -696,12 +696,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var apiV2ParametersSearchPostRequest = new ApiV2ParametersSearchPostRequest(); // ApiV2ParametersSearchPostRequest |  (optional) 
+            var parameterFilterModel = new ParameterFilterModel(); // ParameterFilterModel |  (optional) 
 
             try
             {
                 // Search for parameters as group
-                List<ParameterGroupModel> result = apiInstance.ApiV2ParametersSearchGroupsPost(skip, take, orderBy, searchField, searchValue, apiV2ParametersSearchPostRequest);
+                List<ParameterGroupModel> result = apiInstance.ApiV2ParametersSearchGroupsPost(skip, take, orderBy, searchField, searchValue, parameterFilterModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -722,7 +722,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for parameters as group
-    ApiResponse<List<ParameterGroupModel>> response = apiInstance.ApiV2ParametersSearchGroupsPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2ParametersSearchPostRequest);
+    ApiResponse<List<ParameterGroupModel>> response = apiInstance.ApiV2ParametersSearchGroupsPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, parameterFilterModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -744,7 +744,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **apiV2ParametersSearchPostRequest** | [**ApiV2ParametersSearchPostRequest**](ApiV2ParametersSearchPostRequest.md) |  | [optional]  |
+| **parameterFilterModel** | [**ParameterFilterModel**](ParameterFilterModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -775,7 +775,7 @@ catch (ApiException e)
 
 <a id="apiv2parameterssearchpost"></a>
 # **ApiV2ParametersSearchPost**
-> List&lt;ParameterModel&gt; ApiV2ParametersSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ParametersSearchPostRequest apiV2ParametersSearchPostRequest = null)
+> List&lt;ParameterModel&gt; ApiV2ParametersSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ParameterFilterModel parameterFilterModel = null)
 
 Search for parameters
 
@@ -810,12 +810,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var apiV2ParametersSearchPostRequest = new ApiV2ParametersSearchPostRequest(); // ApiV2ParametersSearchPostRequest |  (optional) 
+            var parameterFilterModel = new ParameterFilterModel(); // ParameterFilterModel |  (optional) 
 
             try
             {
                 // Search for parameters
-                List<ParameterModel> result = apiInstance.ApiV2ParametersSearchPost(skip, take, orderBy, searchField, searchValue, apiV2ParametersSearchPostRequest);
+                List<ParameterModel> result = apiInstance.ApiV2ParametersSearchPost(skip, take, orderBy, searchField, searchValue, parameterFilterModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -836,7 +836,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for parameters
-    ApiResponse<List<ParameterModel>> response = apiInstance.ApiV2ParametersSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2ParametersSearchPostRequest);
+    ApiResponse<List<ParameterModel>> response = apiInstance.ApiV2ParametersSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, parameterFilterModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -858,7 +858,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **apiV2ParametersSearchPostRequest** | [**ApiV2ParametersSearchPostRequest**](ApiV2ParametersSearchPostRequest.md) |  | [optional]  |
+| **parameterFilterModel** | [**ParameterFilterModel**](ParameterFilterModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -889,7 +889,7 @@ catch (ApiException e)
 
 <a id="createparameter"></a>
 # **CreateParameter**
-> ParameterModel CreateParameter (CreateParameterRequest createParameterRequest = null)
+> ParameterModel CreateParameter (ParameterPostModel parameterPostModel = null)
 
 Create parameter
 
@@ -921,12 +921,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ParametersApi(httpClient, config, httpClientHandler);
-            var createParameterRequest = new CreateParameterRequest(); // CreateParameterRequest |  (optional) 
+            var parameterPostModel = new ParameterPostModel(); // ParameterPostModel |  (optional) 
 
             try
             {
                 // Create parameter
-                ParameterModel result = apiInstance.CreateParameter(createParameterRequest);
+                ParameterModel result = apiInstance.CreateParameter(parameterPostModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -947,7 +947,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create parameter
-    ApiResponse<ParameterModel> response = apiInstance.CreateParameterWithHttpInfo(createParameterRequest);
+    ApiResponse<ParameterModel> response = apiInstance.CreateParameterWithHttpInfo(parameterPostModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -964,7 +964,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **createParameterRequest** | [**CreateParameterRequest**](CreateParameterRequest.md) |  | [optional]  |
+| **parameterPostModel** | [**ParameterPostModel**](ParameterPostModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -1524,7 +1524,7 @@ catch (ApiException e)
 
 <a id="updateparameter"></a>
 # **UpdateParameter**
-> void UpdateParameter (UpdateParameterRequest updateParameterRequest = null)
+> void UpdateParameter (ParameterPutModel parameterPutModel = null)
 
 Update parameter
 
@@ -1556,12 +1556,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ParametersApi(httpClient, config, httpClientHandler);
-            var updateParameterRequest = new UpdateParameterRequest(); // UpdateParameterRequest |  (optional) 
+            var parameterPutModel = new ParameterPutModel(); // ParameterPutModel |  (optional) 
 
             try
             {
                 // Update parameter
-                apiInstance.UpdateParameter(updateParameterRequest);
+                apiInstance.UpdateParameter(parameterPutModel);
             }
             catch (ApiException  e)
             {
@@ -1581,7 +1581,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update parameter
-    apiInstance.UpdateParameterWithHttpInfo(updateParameterRequest);
+    apiInstance.UpdateParameterWithHttpInfo(parameterPutModel);
 }
 catch (ApiException e)
 {
@@ -1595,7 +1595,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **updateParameterRequest** | [**UpdateParameterRequest**](UpdateParameterRequest.md) |  | [optional]  |
+| **parameterPutModel** | [**ParameterPutModel**](ParameterPutModel.md) |  | [optional]  |
 
 ### Return type
 

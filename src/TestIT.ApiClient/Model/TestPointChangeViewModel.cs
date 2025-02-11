@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// TestPointChangeViewModel
     /// </summary>
     [DataContract(Name = "TestPointChangeViewModel")]
-    public partial class TestPointChangeViewModel : IEquatable<TestPointChangeViewModel>, IValidatableObject
+    public partial class TestPointChangeViewModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPointChangeViewModel" /> class.
@@ -93,71 +93,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestPointChangeViewModel);
-        }
-
-        /// <summary>
-        /// Returns true if TestPointChangeViewModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestPointChangeViewModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestPointChangeViewModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
-                ) && 
-                (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
-                ) && 
-                (
-                    this.TestPointCount == input.TestPointCount ||
-                    this.TestPointCount.Equals(input.TestPointCount)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.UserId != null)
-                {
-                    hashCode = (hashCode * 59) + this.UserId.GetHashCode();
-                }
-                if (this.UserName != null)
-                {
-                    hashCode = (hashCode * 59) + this.UserName.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.TestPointCount.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

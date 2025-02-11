@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// TestPlanChangedFieldsViewModel
     /// </summary>
     [DataContract(Name = "TestPlanChangedFieldsViewModel")]
-    public partial class TestPlanChangedFieldsViewModel : IEquatable<TestPlanChangedFieldsViewModel>, IValidatableObject
+    public partial class TestPlanChangedFieldsViewModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPlanChangedFieldsViewModel" /> class.
@@ -178,166 +178,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestPlanChangedFieldsViewModel);
-        }
-
-        /// <summary>
-        /// Returns true if TestPlanChangedFieldsViewModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestPlanChangedFieldsViewModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestPlanChangedFieldsViewModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.ProductName == input.ProductName ||
-                    (this.ProductName != null &&
-                    this.ProductName.Equals(input.ProductName))
-                ) && 
-                (
-                    this.Build == input.Build ||
-                    (this.Build != null &&
-                    this.Build.Equals(input.Build))
-                ) && 
-                (
-                    this.Period == input.Period ||
-                    (this.Period != null &&
-                    this.Period.Equals(input.Period))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    (this.Tags != null &&
-                    this.Tags.Equals(input.Tags))
-                ) && 
-                (
-                    this.TestSuite == input.TestSuite ||
-                    (this.TestSuite != null &&
-                    this.TestSuite.Equals(input.TestSuite))
-                ) && 
-                (
-                    this.TestPoints == input.TestPoints ||
-                    (this.TestPoints != null &&
-                    this.TestPoints.Equals(input.TestPoints))
-                ) && 
-                (
-                    this.TestResults == input.TestResults ||
-                    (this.TestResults != null &&
-                    this.TestResults.Equals(input.TestResults))
-                ) && 
-                (
-                    this.Locking == input.Locking ||
-                    (this.Locking != null &&
-                    this.Locking.Equals(input.Locking))
-                ) && 
-                (
-                    this.HasAutomaticDurationTimer == input.HasAutomaticDurationTimer ||
-                    (this.HasAutomaticDurationTimer != null &&
-                    this.HasAutomaticDurationTimer.Equals(input.HasAutomaticDurationTimer))
-                ) && 
-                (
-                    this.Attributes == input.Attributes ||
-                    this.Attributes != null &&
-                    input.Attributes != null &&
-                    this.Attributes.SequenceEqual(input.Attributes)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.ProductName != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProductName.GetHashCode();
-                }
-                if (this.Build != null)
-                {
-                    hashCode = (hashCode * 59) + this.Build.GetHashCode();
-                }
-                if (this.Period != null)
-                {
-                    hashCode = (hashCode * 59) + this.Period.GetHashCode();
-                }
-                if (this.Status != null)
-                {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                }
-                if (this.Tags != null)
-                {
-                    hashCode = (hashCode * 59) + this.Tags.GetHashCode();
-                }
-                if (this.TestSuite != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestSuite.GetHashCode();
-                }
-                if (this.TestPoints != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestPoints.GetHashCode();
-                }
-                if (this.TestResults != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestResults.GetHashCode();
-                }
-                if (this.Locking != null)
-                {
-                    hashCode = (hashCode * 59) + this.Locking.GetHashCode();
-                }
-                if (this.HasAutomaticDurationTimer != null)
-                {
-                    hashCode = (hashCode * 59) + this.HasAutomaticDurationTimer.GetHashCode();
-                }
-                if (this.Attributes != null)
-                {
-                    hashCode = (hashCode * 59) + this.Attributes.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

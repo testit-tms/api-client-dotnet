@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// ParameterGroupModel
     /// </summary>
     [DataContract(Name = "ParameterGroupModel")]
-    public partial class ParameterGroupModel : IEquatable<ParameterGroupModel>, IValidatableObject
+    public partial class ParameterGroupModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ParameterGroupModel" /> class.
@@ -103,76 +103,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ParameterGroupModel);
-        }
-
-        /// <summary>
-        /// Returns true if ParameterGroupModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ParameterGroupModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ParameterGroupModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Values == input.Values ||
-                    this.Values != null &&
-                    input.Values != null &&
-                    this.Values.SequenceEqual(input.Values)
-                ) && 
-                (
-                    this.ParameterKeyId == input.ParameterKeyId ||
-                    (this.ParameterKeyId != null &&
-                    this.ParameterKeyId.Equals(input.ParameterKeyId))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Values != null)
-                {
-                    hashCode = (hashCode * 59) + this.Values.GetHashCode();
-                }
-                if (this.ParameterKeyId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParameterKeyId.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

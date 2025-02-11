@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// ExternalFormFieldModel
     /// </summary>
     [DataContract(Name = "ExternalFormFieldModel")]
-    public partial class ExternalFormFieldModel : IEquatable<ExternalFormFieldModel>, IValidatableObject
+    public partial class ExternalFormFieldModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ExternalFormFieldModel" /> class.
@@ -192,170 +192,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ExternalFormFieldModel);
-        }
-
-        /// <summary>
-        /// Returns true if ExternalFormFieldModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ExternalFormFieldModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ExternalFormFieldModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.FieldId == input.FieldId ||
-                    (this.FieldId != null &&
-                    this.FieldId.Equals(input.FieldId))
-                ) && 
-                (
-                    this.FieldName == input.FieldName ||
-                    (this.FieldName != null &&
-                    this.FieldName.Equals(input.FieldName))
-                ) && 
-                (
-                    this.HelpText == input.HelpText ||
-                    (this.HelpText != null &&
-                    this.HelpText.Equals(input.HelpText))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.ArrayValuesType == input.ArrayValuesType ||
-                    (this.ArrayValuesType != null &&
-                    this.ArrayValuesType.Equals(input.ArrayValuesType))
-                ) && 
-                (
-                    this.DefaultValue == input.DefaultValue ||
-                    (this.DefaultValue != null &&
-                    this.DefaultValue.Equals(input.DefaultValue))
-                ) && 
-                (
-                    this.IsCustomValueAllowed == input.IsCustomValueAllowed ||
-                    this.IsCustomValueAllowed.Equals(input.IsCustomValueAllowed)
-                ) && 
-                (
-                    this.AutoCompleteUrl == input.AutoCompleteUrl ||
-                    (this.AutoCompleteUrl != null &&
-                    this.AutoCompleteUrl.Equals(input.AutoCompleteUrl))
-                ) && 
-                (
-                    this.ControlType == input.ControlType ||
-                    (this.ControlType != null &&
-                    this.ControlType.Equals(input.ControlType))
-                ) && 
-                (
-                    this.MinLength == input.MinLength ||
-                    (this.MinLength != null &&
-                    this.MinLength.Equals(input.MinLength))
-                ) && 
-                (
-                    this.MaxLength == input.MaxLength ||
-                    (this.MaxLength != null &&
-                    this.MaxLength.Equals(input.MaxLength))
-                ) && 
-                (
-                    this.IsRequired == input.IsRequired ||
-                    (this.IsRequired != null &&
-                    this.IsRequired.Equals(input.IsRequired))
-                ) && 
-                (
-                    this.Min == input.Min ||
-                    (this.Min != null &&
-                    this.Min.Equals(input.Min))
-                ) && 
-                (
-                    this.Max == input.Max ||
-                    (this.Max != null &&
-                    this.Max.Equals(input.Max))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.FieldId != null)
-                {
-                    hashCode = (hashCode * 59) + this.FieldId.GetHashCode();
-                }
-                if (this.FieldName != null)
-                {
-                    hashCode = (hashCode * 59) + this.FieldName.GetHashCode();
-                }
-                if (this.HelpText != null)
-                {
-                    hashCode = (hashCode * 59) + this.HelpText.GetHashCode();
-                }
-                if (this.Type != null)
-                {
-                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                }
-                if (this.ArrayValuesType != null)
-                {
-                    hashCode = (hashCode * 59) + this.ArrayValuesType.GetHashCode();
-                }
-                if (this.DefaultValue != null)
-                {
-                    hashCode = (hashCode * 59) + this.DefaultValue.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsCustomValueAllowed.GetHashCode();
-                if (this.AutoCompleteUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.AutoCompleteUrl.GetHashCode();
-                }
-                if (this.ControlType != null)
-                {
-                    hashCode = (hashCode * 59) + this.ControlType.GetHashCode();
-                }
-                if (this.MinLength != null)
-                {
-                    hashCode = (hashCode * 59) + this.MinLength.GetHashCode();
-                }
-                if (this.MaxLength != null)
-                {
-                    hashCode = (hashCode * 59) + this.MaxLength.GetHashCode();
-                }
-                if (this.IsRequired != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsRequired.GetHashCode();
-                }
-                if (this.Min != null)
-                {
-                    hashCode = (hashCode * 59) + this.Min.GetHashCode();
-                }
-                if (this.Max != null)
-                {
-                    hashCode = (hashCode * 59) + this.Max.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

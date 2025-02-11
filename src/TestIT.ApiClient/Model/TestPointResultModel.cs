@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// TestPointResultModel
     /// </summary>
     [DataContract(Name = "TestPointResultModel")]
-    public partial class TestPointResultModel : IEquatable<TestPointResultModel>, IValidatableObject
+    public partial class TestPointResultModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPointResultModel" /> class.
@@ -124,113 +124,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestPointResultModel);
-        }
-
-        /// <summary>
-        /// Returns true if TestPointResultModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestPointResultModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestPointResultModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.TestPointId == input.TestPointId ||
-                    (this.TestPointId != null &&
-                    this.TestPointId.Equals(input.TestPointId))
-                ) && 
-                (
-                    this.AggregatedOutcome == input.AggregatedOutcome ||
-                    (this.AggregatedOutcome != null &&
-                    this.AggregatedOutcome.Equals(input.AggregatedOutcome))
-                ) && 
-                (
-                    this.WorkItemGlobalId == input.WorkItemGlobalId ||
-                    (this.WorkItemGlobalId != null &&
-                    this.WorkItemGlobalId.Equals(input.WorkItemGlobalId))
-                ) && 
-                (
-                    this.WorkItemName == input.WorkItemName ||
-                    (this.WorkItemName != null &&
-                    this.WorkItemName.Equals(input.WorkItemName))
-                ) && 
-                (
-                    this.ConfigurationName == input.ConfigurationName ||
-                    (this.ConfigurationName != null &&
-                    this.ConfigurationName.Equals(input.ConfigurationName))
-                ) && 
-                (
-                    this.TestResults == input.TestResults ||
-                    this.TestResults != null &&
-                    input.TestResults != null &&
-                    this.TestResults.SequenceEqual(input.TestResults)
-                ) && 
-                (
-                    this.Attachments == input.Attachments ||
-                    this.Attachments != null &&
-                    input.Attachments != null &&
-                    this.Attachments.SequenceEqual(input.Attachments)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.TestPointId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestPointId.GetHashCode();
-                }
-                if (this.AggregatedOutcome != null)
-                {
-                    hashCode = (hashCode * 59) + this.AggregatedOutcome.GetHashCode();
-                }
-                if (this.WorkItemGlobalId != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItemGlobalId.GetHashCode();
-                }
-                if (this.WorkItemName != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItemName.GetHashCode();
-                }
-                if (this.ConfigurationName != null)
-                {
-                    hashCode = (hashCode * 59) + this.ConfigurationName.GetHashCode();
-                }
-                if (this.TestResults != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestResults.GetHashCode();
-                }
-                if (this.Attachments != null)
-                {
-                    hashCode = (hashCode * 59) + this.Attachments.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

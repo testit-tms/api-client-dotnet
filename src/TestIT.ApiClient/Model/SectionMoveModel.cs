@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// SectionMoveModel
     /// </summary>
     [DataContract(Name = "SectionMoveModel")]
-    public partial class SectionMoveModel : IEquatable<SectionMoveModel>, IValidatableObject
+    public partial class SectionMoveModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SectionMoveModel" /> class.
@@ -106,84 +106,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as SectionMoveModel);
-        }
-
-        /// <summary>
-        /// Returns true if SectionMoveModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of SectionMoveModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SectionMoveModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.OldParentId == input.OldParentId ||
-                    (this.OldParentId != null &&
-                    this.OldParentId.Equals(input.OldParentId))
-                ) && 
-                (
-                    this.ParentId == input.ParentId ||
-                    (this.ParentId != null &&
-                    this.ParentId.Equals(input.ParentId))
-                ) && 
-                (
-                    this.NextSectionId == input.NextSectionId ||
-                    (this.NextSectionId != null &&
-                    this.NextSectionId.Equals(input.NextSectionId))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.OldParentId != null)
-                {
-                    hashCode = (hashCode * 59) + this.OldParentId.GetHashCode();
-                }
-                if (this.ParentId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParentId.GetHashCode();
-                }
-                if (this.NextSectionId != null)
-                {
-                    hashCode = (hashCode * 59) + this.NextSectionId.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

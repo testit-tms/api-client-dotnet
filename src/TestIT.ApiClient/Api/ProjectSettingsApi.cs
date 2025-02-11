@@ -32,9 +32,9 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
-        /// <param name="apiV2ProjectsProjectIdSettingsAutotestsPostRequest"> (optional)</param>
+        /// <param name="autoTestProjectSettingsPostModel"> (optional)</param>
         /// <returns></returns>
-        void ApiV2ProjectsProjectIdSettingsAutotestsPost(string projectId, ApiV2ProjectsProjectIdSettingsAutotestsPostRequest apiV2ProjectsProjectIdSettingsAutotestsPostRequest = default(ApiV2ProjectsProjectIdSettingsAutotestsPostRequest));
+        void ApiV2ProjectsProjectIdSettingsAutotestsPost(string projectId, AutoTestProjectSettingsPostModel autoTestProjectSettingsPostModel = default(AutoTestProjectSettingsPostModel));
 
         /// <summary>
         /// Set autotest project settings.
@@ -44,9 +44,9 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
-        /// <param name="apiV2ProjectsProjectIdSettingsAutotestsPostRequest"> (optional)</param>
+        /// <param name="autoTestProjectSettingsPostModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2ProjectsProjectIdSettingsAutotestsPostWithHttpInfo(string projectId, ApiV2ProjectsProjectIdSettingsAutotestsPostRequest apiV2ProjectsProjectIdSettingsAutotestsPostRequest = default(ApiV2ProjectsProjectIdSettingsAutotestsPostRequest));
+        ApiResponse<Object> ApiV2ProjectsProjectIdSettingsAutotestsPostWithHttpInfo(string projectId, AutoTestProjectSettingsPostModel autoTestProjectSettingsPostModel = default(AutoTestProjectSettingsPostModel));
         /// <summary>
         /// Get autotest project settings.
         /// </summary>
@@ -82,10 +82,10 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
-        /// <param name="apiV2ProjectsProjectIdSettingsAutotestsPostRequest"> (optional)</param>
+        /// <param name="autoTestProjectSettingsPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2ProjectsProjectIdSettingsAutotestsPostAsync(string projectId, ApiV2ProjectsProjectIdSettingsAutotestsPostRequest apiV2ProjectsProjectIdSettingsAutotestsPostRequest = default(ApiV2ProjectsProjectIdSettingsAutotestsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2ProjectsProjectIdSettingsAutotestsPostAsync(string projectId, AutoTestProjectSettingsPostModel autoTestProjectSettingsPostModel = default(AutoTestProjectSettingsPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Set autotest project settings.
@@ -95,10 +95,10 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
-        /// <param name="apiV2ProjectsProjectIdSettingsAutotestsPostRequest"> (optional)</param>
+        /// <param name="autoTestProjectSettingsPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsProjectIdSettingsAutotestsPostWithHttpInfoAsync(string projectId, ApiV2ProjectsProjectIdSettingsAutotestsPostRequest apiV2ProjectsProjectIdSettingsAutotestsPostRequest = default(ApiV2ProjectsProjectIdSettingsAutotestsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsProjectIdSettingsAutotestsPostWithHttpInfoAsync(string projectId, AutoTestProjectSettingsPostModel autoTestProjectSettingsPostModel = default(AutoTestProjectSettingsPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get autotest project settings.
         /// </summary>
@@ -109,7 +109,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AutoTestProjectSettingsGetModel</returns>
-        System.Threading.Tasks.Task<AutoTestProjectSettingsGetModel> GetAutotestProjectSettingsAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AutoTestProjectSettingsGetModel> GetAutotestProjectSettingsAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get autotest project settings.
@@ -121,7 +121,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AutoTestProjectSettingsGetModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AutoTestProjectSettingsGetModel>> GetAutotestProjectSettingsWithHttpInfoAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AutoTestProjectSettingsGetModel>> GetAutotestProjectSettingsWithHttpInfoAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -340,11 +340,11 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
-        /// <param name="apiV2ProjectsProjectIdSettingsAutotestsPostRequest"> (optional)</param>
+        /// <param name="autoTestProjectSettingsPostModel"> (optional)</param>
         /// <returns></returns>
-        public void ApiV2ProjectsProjectIdSettingsAutotestsPost(string projectId, ApiV2ProjectsProjectIdSettingsAutotestsPostRequest apiV2ProjectsProjectIdSettingsAutotestsPostRequest = default(ApiV2ProjectsProjectIdSettingsAutotestsPostRequest))
+        public void ApiV2ProjectsProjectIdSettingsAutotestsPost(string projectId, AutoTestProjectSettingsPostModel autoTestProjectSettingsPostModel = default(AutoTestProjectSettingsPostModel))
         {
-            ApiV2ProjectsProjectIdSettingsAutotestsPostWithHttpInfo(projectId, apiV2ProjectsProjectIdSettingsAutotestsPostRequest);
+            ApiV2ProjectsProjectIdSettingsAutotestsPostWithHttpInfo(projectId, autoTestProjectSettingsPostModel);
         }
 
         /// <summary>
@@ -352,9 +352,9 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
-        /// <param name="apiV2ProjectsProjectIdSettingsAutotestsPostRequest"> (optional)</param>
+        /// <param name="autoTestProjectSettingsPostModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2ProjectsProjectIdSettingsAutotestsPostWithHttpInfo(string projectId, ApiV2ProjectsProjectIdSettingsAutotestsPostRequest apiV2ProjectsProjectIdSettingsAutotestsPostRequest = default(ApiV2ProjectsProjectIdSettingsAutotestsPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2ProjectsProjectIdSettingsAutotestsPostWithHttpInfo(string projectId, AutoTestProjectSettingsPostModel autoTestProjectSettingsPostModel = default(AutoTestProjectSettingsPostModel))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -378,7 +378,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.Data = apiV2ProjectsProjectIdSettingsAutotestsPostRequest;
+            localVarRequestOptions.Data = autoTestProjectSettingsPostModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -403,12 +403,12 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
-        /// <param name="apiV2ProjectsProjectIdSettingsAutotestsPostRequest"> (optional)</param>
+        /// <param name="autoTestProjectSettingsPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2ProjectsProjectIdSettingsAutotestsPostAsync(string projectId, ApiV2ProjectsProjectIdSettingsAutotestsPostRequest apiV2ProjectsProjectIdSettingsAutotestsPostRequest = default(ApiV2ProjectsProjectIdSettingsAutotestsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2ProjectsProjectIdSettingsAutotestsPostAsync(string projectId, AutoTestProjectSettingsPostModel autoTestProjectSettingsPostModel = default(AutoTestProjectSettingsPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await ApiV2ProjectsProjectIdSettingsAutotestsPostWithHttpInfoAsync(projectId, apiV2ProjectsProjectIdSettingsAutotestsPostRequest, cancellationToken).ConfigureAwait(false);
+            await ApiV2ProjectsProjectIdSettingsAutotestsPostWithHttpInfoAsync(projectId, autoTestProjectSettingsPostModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -416,10 +416,10 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
-        /// <param name="apiV2ProjectsProjectIdSettingsAutotestsPostRequest"> (optional)</param>
+        /// <param name="autoTestProjectSettingsPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdSettingsAutotestsPostWithHttpInfoAsync(string projectId, ApiV2ProjectsProjectIdSettingsAutotestsPostRequest apiV2ProjectsProjectIdSettingsAutotestsPostRequest = default(ApiV2ProjectsProjectIdSettingsAutotestsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdSettingsAutotestsPostWithHttpInfoAsync(string projectId, AutoTestProjectSettingsPostModel autoTestProjectSettingsPostModel = default(AutoTestProjectSettingsPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -445,7 +445,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.Data = apiV2ProjectsProjectIdSettingsAutotestsPostRequest;
+            localVarRequestOptions.Data = autoTestProjectSettingsPostModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -533,7 +533,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AutoTestProjectSettingsGetModel</returns>
-        public async System.Threading.Tasks.Task<AutoTestProjectSettingsGetModel> GetAutotestProjectSettingsAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AutoTestProjectSettingsGetModel> GetAutotestProjectSettingsAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<AutoTestProjectSettingsGetModel> localVarResponse = await GetAutotestProjectSettingsWithHttpInfoAsync(projectId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -546,7 +546,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AutoTestProjectSettingsGetModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<AutoTestProjectSettingsGetModel>> GetAutotestProjectSettingsWithHttpInfoAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<AutoTestProjectSettingsGetModel>> GetAutotestProjectSettingsWithHttpInfoAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)

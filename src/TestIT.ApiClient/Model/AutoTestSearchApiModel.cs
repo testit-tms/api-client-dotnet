@@ -30,30 +30,32 @@ namespace TestIT.ApiClient.Model
     /// AutoTestSearchApiModel
     /// </summary>
     [DataContract(Name = "AutoTestSearchApiModel")]
-    public partial class AutoTestSearchApiModel : IEquatable<AutoTestSearchApiModel>, IValidatableObject
+    public partial class AutoTestSearchApiModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestSearchApiModel" /> class.
         /// </summary>
-        /// <param name="filter">filter.</param>
-        /// <param name="includes">includes.</param>
-        public AutoTestSearchApiModel(AutoTestSearchApiModelFilter filter = default(AutoTestSearchApiModelFilter), AutoTestSearchApiModelIncludes includes = default(AutoTestSearchApiModelIncludes))
+        /// <param name="filter">Object containing different filters to adjust search.</param>
+        /// <param name="includes">Object specifying data to be included.</param>
+        public AutoTestSearchApiModel(AutoTestFilterApiModel filter = default(AutoTestFilterApiModel), AutoTestSearchIncludeApiModel includes = default(AutoTestSearchIncludeApiModel))
         {
             this.Filter = filter;
             this.Includes = includes;
         }
 
         /// <summary>
-        /// Gets or Sets Filter
+        /// Object containing different filters to adjust search
         /// </summary>
+        /// <value>Object containing different filters to adjust search</value>
         [DataMember(Name = "filter", EmitDefaultValue = true)]
-        public AutoTestSearchApiModelFilter Filter { get; set; }
+        public AutoTestFilterApiModel Filter { get; set; }
 
         /// <summary>
-        /// Gets or Sets Includes
+        /// Object specifying data to be included
         /// </summary>
+        /// <value>Object specifying data to be included</value>
         [DataMember(Name = "includes", EmitDefaultValue = true)]
-        public AutoTestSearchApiModelIncludes Includes { get; set; }
+        public AutoTestSearchIncludeApiModel Includes { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -79,66 +81,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AutoTestSearchApiModel);
-        }
-
-        /// <summary>
-        /// Returns true if AutoTestSearchApiModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AutoTestSearchApiModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AutoTestSearchApiModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Filter == input.Filter ||
-                    (this.Filter != null &&
-                    this.Filter.Equals(input.Filter))
-                ) && 
-                (
-                    this.Includes == input.Includes ||
-                    (this.Includes != null &&
-                    this.Includes.Equals(input.Includes))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Filter != null)
-                {
-                    hashCode = (hashCode * 59) + this.Filter.GetHashCode();
-                }
-                if (this.Includes != null)
-                {
-                    hashCode = (hashCode * 59) + this.Includes.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

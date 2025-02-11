@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// ProjectsFilterModel
     /// </summary>
     [DataContract(Name = "ProjectsFilterModel")]
-    public partial class ProjectsFilterModel : IEquatable<ProjectsFilterModel>, IValidatableObject
+    public partial class ProjectsFilterModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectsFilterModel" /> class.
@@ -38,15 +38,15 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">Specifies a project name to search for.</param>
         /// <param name="isFavorite">Specifies a project favorite status to search for.</param>
         /// <param name="isDeleted">Specifies a project deleted status to search for.</param>
-        /// <param name="testCasesCount">testCasesCount.</param>
-        /// <param name="checklistsCount">checklistsCount.</param>
-        /// <param name="sharedStepsCount">sharedStepsCount.</param>
-        /// <param name="autotestsCount">autotestsCount.</param>
+        /// <param name="testCasesCount">Specifies a project range of test cases count to search for.</param>
+        /// <param name="checklistsCount">Specifies a project range of checklists count to search for.</param>
+        /// <param name="sharedStepsCount">Specifies a project range of shared steps count to search for.</param>
+        /// <param name="autotestsCount">Specifies a project range of autotests count to search for.</param>
         /// <param name="globalIds">Specifies a project global IDs to search for.</param>
-        /// <param name="createdDate">createdDate.</param>
+        /// <param name="createdDate">Specifies a project range of creation date to search for.</param>
         /// <param name="createdByIds">Specifies an autotest creator IDs to search for.</param>
         /// <param name="types">Collection of project types to search for.</param>
-        public ProjectsFilterModel(string name = default(string), bool? isFavorite = default(bool?), bool? isDeleted = default(bool?), ProjectsFilterModelTestCasesCount testCasesCount = default(ProjectsFilterModelTestCasesCount), ProjectsFilterModelChecklistsCount checklistsCount = default(ProjectsFilterModelChecklistsCount), ProjectsFilterModelSharedStepsCount sharedStepsCount = default(ProjectsFilterModelSharedStepsCount), ProjectsFilterModelAutotestsCount autotestsCount = default(ProjectsFilterModelAutotestsCount), List<long> globalIds = default(List<long>), ProjectsFilterModelCreatedDate createdDate = default(ProjectsFilterModelCreatedDate), List<Guid> createdByIds = default(List<Guid>), List<ProjectTypeModel> types = default(List<ProjectTypeModel>))
+        public ProjectsFilterModel(string name = default(string), bool? isFavorite = default(bool?), bool? isDeleted = default(bool?), Int32RangeSelectorModel testCasesCount = default(Int32RangeSelectorModel), Int32RangeSelectorModel checklistsCount = default(Int32RangeSelectorModel), Int32RangeSelectorModel sharedStepsCount = default(Int32RangeSelectorModel), Int32RangeSelectorModel autotestsCount = default(Int32RangeSelectorModel), List<long> globalIds = default(List<long>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), List<ProjectTypeModel> types = default(List<ProjectTypeModel>))
         {
             this.Name = name;
             this.IsFavorite = isFavorite;
@@ -83,28 +83,32 @@ namespace TestIT.ApiClient.Model
         public bool? IsDeleted { get; set; }
 
         /// <summary>
-        /// Gets or Sets TestCasesCount
+        /// Specifies a project range of test cases count to search for
         /// </summary>
+        /// <value>Specifies a project range of test cases count to search for</value>
         [DataMember(Name = "testCasesCount", EmitDefaultValue = true)]
-        public ProjectsFilterModelTestCasesCount TestCasesCount { get; set; }
+        public Int32RangeSelectorModel TestCasesCount { get; set; }
 
         /// <summary>
-        /// Gets or Sets ChecklistsCount
+        /// Specifies a project range of checklists count to search for
         /// </summary>
+        /// <value>Specifies a project range of checklists count to search for</value>
         [DataMember(Name = "checklistsCount", EmitDefaultValue = true)]
-        public ProjectsFilterModelChecklistsCount ChecklistsCount { get; set; }
+        public Int32RangeSelectorModel ChecklistsCount { get; set; }
 
         /// <summary>
-        /// Gets or Sets SharedStepsCount
+        /// Specifies a project range of shared steps count to search for
         /// </summary>
+        /// <value>Specifies a project range of shared steps count to search for</value>
         [DataMember(Name = "sharedStepsCount", EmitDefaultValue = true)]
-        public ProjectsFilterModelSharedStepsCount SharedStepsCount { get; set; }
+        public Int32RangeSelectorModel SharedStepsCount { get; set; }
 
         /// <summary>
-        /// Gets or Sets AutotestsCount
+        /// Specifies a project range of autotests count to search for
         /// </summary>
+        /// <value>Specifies a project range of autotests count to search for</value>
         [DataMember(Name = "autotestsCount", EmitDefaultValue = true)]
-        public ProjectsFilterModelAutotestsCount AutotestsCount { get; set; }
+        public Int32RangeSelectorModel AutotestsCount { get; set; }
 
         /// <summary>
         /// Specifies a project global IDs to search for
@@ -114,10 +118,11 @@ namespace TestIT.ApiClient.Model
         public List<long> GlobalIds { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedDate
+        /// Specifies a project range of creation date to search for
         /// </summary>
+        /// <value>Specifies a project range of creation date to search for</value>
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
-        public ProjectsFilterModelCreatedDate CreatedDate { get; set; }
+        public DateTimeRangeSelectorModel CreatedDate { get; set; }
 
         /// <summary>
         /// Specifies an autotest creator IDs to search for
@@ -166,161 +171,22 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ProjectsFilterModel);
-        }
-
-        /// <summary>
-        /// Returns true if ProjectsFilterModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ProjectsFilterModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ProjectsFilterModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.IsFavorite == input.IsFavorite ||
-                    (this.IsFavorite != null &&
-                    this.IsFavorite.Equals(input.IsFavorite))
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    (this.IsDeleted != null &&
-                    this.IsDeleted.Equals(input.IsDeleted))
-                ) && 
-                (
-                    this.TestCasesCount == input.TestCasesCount ||
-                    (this.TestCasesCount != null &&
-                    this.TestCasesCount.Equals(input.TestCasesCount))
-                ) && 
-                (
-                    this.ChecklistsCount == input.ChecklistsCount ||
-                    (this.ChecklistsCount != null &&
-                    this.ChecklistsCount.Equals(input.ChecklistsCount))
-                ) && 
-                (
-                    this.SharedStepsCount == input.SharedStepsCount ||
-                    (this.SharedStepsCount != null &&
-                    this.SharedStepsCount.Equals(input.SharedStepsCount))
-                ) && 
-                (
-                    this.AutotestsCount == input.AutotestsCount ||
-                    (this.AutotestsCount != null &&
-                    this.AutotestsCount.Equals(input.AutotestsCount))
-                ) && 
-                (
-                    this.GlobalIds == input.GlobalIds ||
-                    this.GlobalIds != null &&
-                    input.GlobalIds != null &&
-                    this.GlobalIds.SequenceEqual(input.GlobalIds)
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.CreatedByIds == input.CreatedByIds ||
-                    this.CreatedByIds != null &&
-                    input.CreatedByIds != null &&
-                    this.CreatedByIds.SequenceEqual(input.CreatedByIds)
-                ) && 
-                (
-                    this.Types == input.Types ||
-                    this.Types != null &&
-                    input.Types != null &&
-                    this.Types.SequenceEqual(input.Types)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.IsFavorite != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsFavorite.GetHashCode();
-                }
-                if (this.IsDeleted != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                }
-                if (this.TestCasesCount != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestCasesCount.GetHashCode();
-                }
-                if (this.ChecklistsCount != null)
-                {
-                    hashCode = (hashCode * 59) + this.ChecklistsCount.GetHashCode();
-                }
-                if (this.SharedStepsCount != null)
-                {
-                    hashCode = (hashCode * 59) + this.SharedStepsCount.GetHashCode();
-                }
-                if (this.AutotestsCount != null)
-                {
-                    hashCode = (hashCode * 59) + this.AutotestsCount.GetHashCode();
-                }
-                if (this.GlobalIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.GlobalIds.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.CreatedByIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedByIds.GetHashCode();
-                }
-                if (this.Types != null)
-                {
-                    hashCode = (hashCode * 59) + this.Types.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
             }
 
             // Name (string) minLength
             if (this.Name != null && this.Name.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
             }
 
             yield break;

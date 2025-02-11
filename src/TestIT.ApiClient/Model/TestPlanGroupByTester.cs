@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// TestPlanGroupByTester
     /// </summary>
     [DataContract(Name = "TestPlanGroupByTester")]
-    public partial class TestPlanGroupByTester : IEquatable<TestPlanGroupByTester>, IValidatableObject
+    public partial class TestPlanGroupByTester : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPlanGroupByTester" /> class.
@@ -84,62 +84,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestPlanGroupByTester);
-        }
-
-        /// <summary>
-        /// Returns true if TestPlanGroupByTester instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestPlanGroupByTester to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestPlanGroupByTester input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    this.Value.Equals(input.Value)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.UserId != null)
-                {
-                    hashCode = (hashCode * 59) + this.UserId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Value.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

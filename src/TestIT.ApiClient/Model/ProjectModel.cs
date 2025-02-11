@@ -30,12 +30,13 @@ namespace TestIT.ApiClient.Model
     /// ProjectModel
     /// </summary>
     [DataContract(Name = "ProjectModel")]
-    public partial class ProjectModel : IEquatable<ProjectModel>, IValidatableObject
+    public partial class ProjectModel : IValidatableObject
     {
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Type of the project
         /// </summary>
+        /// <value>Type of the project</value>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public ProjectTypeModel Type { get; set; }
         /// <summary>
@@ -62,8 +63,9 @@ namespace TestIT.ApiClient.Model
         /// <param name="createdById">Unique ID of the project creator (required).</param>
         /// <param name="modifiedById">Unique ID of the project last editor.</param>
         /// <param name="globalId">Global ID of the project (required).</param>
-        /// <param name="type">type (required).</param>
-        public ProjectModel(Guid id = default(Guid), string description = default(string), string name = default(string), bool isFavorite = default(bool), List<CustomAttributeModel> attributesScheme = default(List<CustomAttributeModel>), List<CustomAttributeModel> testPlansAttributesScheme = default(List<CustomAttributeModel>), int? testCasesCount = default(int?), int? sharedStepsCount = default(int?), int? checkListsCount = default(int?), int? autoTestsCount = default(int?), bool isDeleted = default(bool), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), ProjectTypeModel type = default(ProjectTypeModel))
+        /// <param name="type">Type of the project (required).</param>
+        /// <param name="isFlakyAuto">Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically (required).</param>
+        public ProjectModel(Guid id = default(Guid), string description = default(string), string name = default(string), bool isFavorite = default(bool), List<CustomAttributeModel> attributesScheme = default(List<CustomAttributeModel>), List<CustomAttributeModel> testPlansAttributesScheme = default(List<CustomAttributeModel>), int? testCasesCount = default(int?), int? sharedStepsCount = default(int?), int? checkListsCount = default(int?), int? autoTestsCount = default(int?), bool isDeleted = default(bool), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), ProjectTypeModel type = default(ProjectTypeModel), bool isFlakyAuto = default(bool))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -78,6 +80,7 @@ namespace TestIT.ApiClient.Model
             this.CreatedById = createdById;
             this.GlobalId = globalId;
             this.Type = type;
+            this.IsFlakyAuto = isFlakyAuto;
             this.Description = description;
             this.AttributesScheme = attributesScheme;
             this.TestPlansAttributesScheme = testPlansAttributesScheme;
@@ -202,6 +205,14 @@ namespace TestIT.ApiClient.Model
         public long GlobalId { get; set; }
 
         /// <summary>
+        /// Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically
+        /// </summary>
+        /// <value>Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically</value>
+        [DataMember(Name = "isFlakyAuto", IsRequired = true, EmitDefaultValue = true)]
+        [Obsolete]
+        public bool IsFlakyAuto { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -226,6 +237,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ModifiedById: ").Append(ModifiedById).Append("\n");
             sb.Append("  GlobalId: ").Append(GlobalId).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  IsFlakyAuto: ").Append(IsFlakyAuto).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -240,187 +252,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ProjectModel);
-        }
-
-        /// <summary>
-        /// Returns true if ProjectModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ProjectModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ProjectModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.IsFavorite == input.IsFavorite ||
-                    this.IsFavorite.Equals(input.IsFavorite)
-                ) && 
-                (
-                    this.AttributesScheme == input.AttributesScheme ||
-                    this.AttributesScheme != null &&
-                    input.AttributesScheme != null &&
-                    this.AttributesScheme.SequenceEqual(input.AttributesScheme)
-                ) && 
-                (
-                    this.TestPlansAttributesScheme == input.TestPlansAttributesScheme ||
-                    this.TestPlansAttributesScheme != null &&
-                    input.TestPlansAttributesScheme != null &&
-                    this.TestPlansAttributesScheme.SequenceEqual(input.TestPlansAttributesScheme)
-                ) && 
-                (
-                    this.TestCasesCount == input.TestCasesCount ||
-                    (this.TestCasesCount != null &&
-                    this.TestCasesCount.Equals(input.TestCasesCount))
-                ) && 
-                (
-                    this.SharedStepsCount == input.SharedStepsCount ||
-                    (this.SharedStepsCount != null &&
-                    this.SharedStepsCount.Equals(input.SharedStepsCount))
-                ) && 
-                (
-                    this.CheckListsCount == input.CheckListsCount ||
-                    (this.CheckListsCount != null &&
-                    this.CheckListsCount.Equals(input.CheckListsCount))
-                ) && 
-                (
-                    this.AutoTestsCount == input.AutoTestsCount ||
-                    (this.AutoTestsCount != null &&
-                    this.AutoTestsCount.Equals(input.AutoTestsCount))
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    this.IsDeleted.Equals(input.IsDeleted)
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.CreatedById == input.CreatedById ||
-                    (this.CreatedById != null &&
-                    this.CreatedById.Equals(input.CreatedById))
-                ) && 
-                (
-                    this.ModifiedById == input.ModifiedById ||
-                    (this.ModifiedById != null &&
-                    this.ModifiedById.Equals(input.ModifiedById))
-                ) && 
-                (
-                    this.GlobalId == input.GlobalId ||
-                    this.GlobalId.Equals(input.GlobalId)
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    this.Type.Equals(input.Type)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsFavorite.GetHashCode();
-                if (this.AttributesScheme != null)
-                {
-                    hashCode = (hashCode * 59) + this.AttributesScheme.GetHashCode();
-                }
-                if (this.TestPlansAttributesScheme != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestPlansAttributesScheme.GetHashCode();
-                }
-                if (this.TestCasesCount != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestCasesCount.GetHashCode();
-                }
-                if (this.SharedStepsCount != null)
-                {
-                    hashCode = (hashCode * 59) + this.SharedStepsCount.GetHashCode();
-                }
-                if (this.CheckListsCount != null)
-                {
-                    hashCode = (hashCode * 59) + this.CheckListsCount.GetHashCode();
-                }
-                if (this.AutoTestsCount != null)
-                {
-                    hashCode = (hashCode * 59) + this.AutoTestsCount.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                if (this.CreatedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedById.GetHashCode();
-                }
-                if (this.ModifiedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedById.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.GlobalId.GetHashCode();
-                hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

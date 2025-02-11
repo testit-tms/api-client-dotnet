@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// PublicTestPointModel
     /// </summary>
     [DataContract(Name = "PublicTestPointModel")]
-    public partial class PublicTestPointModel : IEquatable<PublicTestPointModel>, IValidatableObject
+    public partial class PublicTestPointModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PublicTestPointModel" /> class.
@@ -120,100 +120,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as PublicTestPointModel);
-        }
-
-        /// <summary>
-        /// Returns true if PublicTestPointModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of PublicTestPointModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(PublicTestPointModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.ConfigurationId == input.ConfigurationId ||
-                    (this.ConfigurationId != null &&
-                    this.ConfigurationId.Equals(input.ConfigurationId))
-                ) && 
-                (
-                    this.ConfigurationGlobalId == input.ConfigurationGlobalId ||
-                    this.ConfigurationGlobalId.Equals(input.ConfigurationGlobalId)
-                ) && 
-                (
-                    this.AutoTestIds == input.AutoTestIds ||
-                    this.AutoTestIds != null &&
-                    input.AutoTestIds != null &&
-                    this.AutoTestIds.SequenceEqual(input.AutoTestIds)
-                ) && 
-                (
-                    this.IterationId == input.IterationId ||
-                    (this.IterationId != null &&
-                    this.IterationId.Equals(input.IterationId))
-                ) && 
-                (
-                    this.ParameterModels == input.ParameterModels ||
-                    this.ParameterModels != null &&
-                    input.ParameterModels != null &&
-                    this.ParameterModels.SequenceEqual(input.ParameterModels)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.ConfigurationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ConfigurationId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.ConfigurationGlobalId.GetHashCode();
-                if (this.AutoTestIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.AutoTestIds.GetHashCode();
-                }
-                if (this.IterationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.IterationId.GetHashCode();
-                }
-                if (this.ParameterModels != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParameterModels.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

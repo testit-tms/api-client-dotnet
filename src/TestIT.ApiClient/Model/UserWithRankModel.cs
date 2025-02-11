@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// UserWithRankModel
     /// </summary>
     [DataContract(Name = "UserWithRankModel")]
-    public partial class UserWithRankModel : IEquatable<UserWithRankModel>, IValidatableObject
+    public partial class UserWithRankModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UserWithRankModel" /> class.
@@ -54,7 +54,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="providerId">providerId.</param>
         /// <param name="isActiveStatusByEntity">isActiveStatusByEntity (required).</param>
         /// <param name="userRank">userRank (required).</param>
-        public UserWithRankModel(Guid id = default(Guid), string firstName = default(string), string lastName = default(string), string middleName = default(string), string userName = default(string), string displayName = default(string), string userType = default(string), string avatarUrl = default(string), string avatarMetadata = default(string), bool isDeleted = default(bool), bool isDisabled = default(bool), Guid? providerId = default(Guid?), bool isActiveStatusByEntity = default(bool), UserWithRankModelUserRank userRank = default(UserWithRankModelUserRank))
+        public UserWithRankModel(Guid id = default(Guid), string firstName = default(string), string lastName = default(string), string middleName = default(string), string userName = default(string), string displayName = default(string), string userType = default(string), string avatarUrl = default(string), string avatarMetadata = default(string), bool isDeleted = default(bool), bool isDisabled = default(bool), Guid? providerId = default(Guid?), bool isActiveStatusByEntity = default(bool), UserRankModel userRank = default(UserRankModel))
         {
             this.Id = id;
             // to ensure "firstName" is required (not null)
@@ -199,7 +199,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets UserRank
         /// </summary>
         [DataMember(Name = "userRank", IsRequired = true, EmitDefaultValue = true)]
-        public UserWithRankModelUserRank UserRank { get; set; }
+        public UserRankModel UserRank { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -237,162 +237,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as UserWithRankModel);
-        }
-
-        /// <summary>
-        /// Returns true if UserWithRankModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of UserWithRankModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(UserWithRankModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.FirstName == input.FirstName ||
-                    (this.FirstName != null &&
-                    this.FirstName.Equals(input.FirstName))
-                ) && 
-                (
-                    this.LastName == input.LastName ||
-                    (this.LastName != null &&
-                    this.LastName.Equals(input.LastName))
-                ) && 
-                (
-                    this.MiddleName == input.MiddleName ||
-                    (this.MiddleName != null &&
-                    this.MiddleName.Equals(input.MiddleName))
-                ) && 
-                (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
-                ) && 
-                (
-                    this.DisplayName == input.DisplayName ||
-                    (this.DisplayName != null &&
-                    this.DisplayName.Equals(input.DisplayName))
-                ) && 
-                (
-                    this.UserType == input.UserType ||
-                    (this.UserType != null &&
-                    this.UserType.Equals(input.UserType))
-                ) && 
-                (
-                    this.AvatarUrl == input.AvatarUrl ||
-                    (this.AvatarUrl != null &&
-                    this.AvatarUrl.Equals(input.AvatarUrl))
-                ) && 
-                (
-                    this.AvatarMetadata == input.AvatarMetadata ||
-                    (this.AvatarMetadata != null &&
-                    this.AvatarMetadata.Equals(input.AvatarMetadata))
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    this.IsDeleted.Equals(input.IsDeleted)
-                ) && 
-                (
-                    this.IsDisabled == input.IsDisabled ||
-                    this.IsDisabled.Equals(input.IsDisabled)
-                ) && 
-                (
-                    this.ProviderId == input.ProviderId ||
-                    (this.ProviderId != null &&
-                    this.ProviderId.Equals(input.ProviderId))
-                ) && 
-                (
-                    this.IsActiveStatusByEntity == input.IsActiveStatusByEntity ||
-                    this.IsActiveStatusByEntity.Equals(input.IsActiveStatusByEntity)
-                ) && 
-                (
-                    this.UserRank == input.UserRank ||
-                    (this.UserRank != null &&
-                    this.UserRank.Equals(input.UserRank))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.FirstName != null)
-                {
-                    hashCode = (hashCode * 59) + this.FirstName.GetHashCode();
-                }
-                if (this.LastName != null)
-                {
-                    hashCode = (hashCode * 59) + this.LastName.GetHashCode();
-                }
-                if (this.MiddleName != null)
-                {
-                    hashCode = (hashCode * 59) + this.MiddleName.GetHashCode();
-                }
-                if (this.UserName != null)
-                {
-                    hashCode = (hashCode * 59) + this.UserName.GetHashCode();
-                }
-                if (this.DisplayName != null)
-                {
-                    hashCode = (hashCode * 59) + this.DisplayName.GetHashCode();
-                }
-                if (this.UserType != null)
-                {
-                    hashCode = (hashCode * 59) + this.UserType.GetHashCode();
-                }
-                if (this.AvatarUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.AvatarUrl.GetHashCode();
-                }
-                if (this.AvatarMetadata != null)
-                {
-                    hashCode = (hashCode * 59) + this.AvatarMetadata.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                hashCode = (hashCode * 59) + this.IsDisabled.GetHashCode();
-                if (this.ProviderId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProviderId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsActiveStatusByEntity.GetHashCode();
-                if (this.UserRank != null)
-                {
-                    hashCode = (hashCode * 59) + this.UserRank.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Links** | [**List&lt;LinkPostModel&gt;**](LinkPostModel.md) | Specifies the links in the autotest. | [optional] 
 **FailureReasonNames** | [**List&lt;FailureCategoryModel&gt;**](FailureCategoryModel.md) | Specifies the cause of autotest failure. | [optional] 
 **AutoTestExternalId** | **string** | Specifies the external ID of the autotest, which was specified when the test run was created. | 
-**Outcome** | **AvailableTestResultOutcome** |  | 
+**Outcome** | **AvailableTestResultOutcome** | Specifies the result of the autotest execution. | 
 **Message** | **string** | A comment for the result. | [optional] 
 **Traces** | **string** | An extended comment or a stack trace. | [optional] 
 **StartedOn** | **DateTime?** | Test run start date. | [optional] 

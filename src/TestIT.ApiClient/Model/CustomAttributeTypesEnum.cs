@@ -67,7 +67,6 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         [EnumMember(Value = "checkbox")]
         Checkbox = 6
-
     }
 
 }

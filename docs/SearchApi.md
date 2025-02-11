@@ -8,7 +8,7 @@ All URIs are relative to *http://localhost*
 
 <a id="apiv2searchglobalsearchpost"></a>
 # **ApiV2SearchGlobalSearchPost**
-> GlobalSearchResponse ApiV2SearchGlobalSearchPost (ApiV2SearchGlobalSearchPostRequest apiV2SearchGlobalSearchPostRequest = null)
+> GlobalSearchResponse ApiV2SearchGlobalSearchPost (GlobalSearchRequest globalSearchRequest = null)
 
 
 
@@ -38,11 +38,11 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new SearchApi(httpClient, config, httpClientHandler);
-            var apiV2SearchGlobalSearchPostRequest = new ApiV2SearchGlobalSearchPostRequest(); // ApiV2SearchGlobalSearchPostRequest |  (optional) 
+            var globalSearchRequest = new GlobalSearchRequest(); // GlobalSearchRequest |  (optional) 
 
             try
             {
-                GlobalSearchResponse result = apiInstance.ApiV2SearchGlobalSearchPost(apiV2SearchGlobalSearchPostRequest);
+                GlobalSearchResponse result = apiInstance.ApiV2SearchGlobalSearchPost(globalSearchRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -62,7 +62,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<GlobalSearchResponse> response = apiInstance.ApiV2SearchGlobalSearchPostWithHttpInfo(apiV2SearchGlobalSearchPostRequest);
+    ApiResponse<GlobalSearchResponse> response = apiInstance.ApiV2SearchGlobalSearchPostWithHttpInfo(globalSearchRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -79,7 +79,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiV2SearchGlobalSearchPostRequest** | [**ApiV2SearchGlobalSearchPostRequest**](ApiV2SearchGlobalSearchPostRequest.md) |  | [optional]  |
+| **globalSearchRequest** | [**GlobalSearchRequest**](GlobalSearchRequest.md) |  | [optional]  |
 
 ### Return type
 

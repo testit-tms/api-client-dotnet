@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// TestPlanChangeModel
     /// </summary>
     [DataContract(Name = "TestPlanChangeModel")]
-    public partial class TestPlanChangeModel : IEquatable<TestPlanChangeModel>, IValidatableObject
+    public partial class TestPlanChangeModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPlanChangeModel" /> class.
@@ -45,7 +45,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="testPlanChangedFields">testPlanChangedFields (required).</param>
         /// <param name="createdById">createdById (required).</param>
         /// <param name="createdDate">createdDate.</param>
-        public TestPlanChangeModel(Guid id = default(Guid), Guid testPlanId = default(Guid), TestPlanChangeModelTestPlanChangedFields testPlanChangedFields = default(TestPlanChangeModelTestPlanChangedFields), Guid createdById = default(Guid), DateTime? createdDate = default(DateTime?))
+        public TestPlanChangeModel(Guid id = default(Guid), Guid testPlanId = default(Guid), TestPlanChangedFieldsViewModel testPlanChangedFields = default(TestPlanChangedFieldsViewModel), Guid createdById = default(Guid), DateTime? createdDate = default(DateTime?))
         {
             this.Id = id;
             this.TestPlanId = testPlanId;
@@ -75,7 +75,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets TestPlanChangedFields
         /// </summary>
         [DataMember(Name = "testPlanChangedFields", IsRequired = true, EmitDefaultValue = true)]
-        public TestPlanChangeModelTestPlanChangedFields TestPlanChangedFields { get; set; }
+        public TestPlanChangedFieldsViewModel TestPlanChangedFields { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
@@ -116,93 +116,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestPlanChangeModel);
-        }
-
-        /// <summary>
-        /// Returns true if TestPlanChangeModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestPlanChangeModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestPlanChangeModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.TestPlanId == input.TestPlanId ||
-                    (this.TestPlanId != null &&
-                    this.TestPlanId.Equals(input.TestPlanId))
-                ) && 
-                (
-                    this.TestPlanChangedFields == input.TestPlanChangedFields ||
-                    (this.TestPlanChangedFields != null &&
-                    this.TestPlanChangedFields.Equals(input.TestPlanChangedFields))
-                ) && 
-                (
-                    this.CreatedById == input.CreatedById ||
-                    (this.CreatedById != null &&
-                    this.CreatedById.Equals(input.CreatedById))
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.TestPlanId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestPlanId.GetHashCode();
-                }
-                if (this.TestPlanChangedFields != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestPlanChangedFields.GetHashCode();
-                }
-                if (this.CreatedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedById.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

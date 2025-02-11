@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// AutoTestBulkDeleteApiModel
     /// </summary>
     [DataContract(Name = "AutoTestBulkDeleteApiModel")]
-    public partial class AutoTestBulkDeleteApiModel : IEquatable<AutoTestBulkDeleteApiModel>, IValidatableObject
+    public partial class AutoTestBulkDeleteApiModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestBulkDeleteApiModel" /> class.
@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="AutoTestBulkDeleteApiModel" /> class.
         /// </summary>
         /// <param name="autoTestSelect">autoTestSelect (required).</param>
-        public AutoTestBulkDeleteApiModel(AutoTestBulkDeleteApiModelAutoTestSelect autoTestSelect = default(AutoTestBulkDeleteApiModelAutoTestSelect))
+        public AutoTestBulkDeleteApiModel(AutoTestSelectModel autoTestSelect = default(AutoTestSelectModel))
         {
             // to ensure "autoTestSelect" is required (not null)
             if (autoTestSelect == null)
@@ -55,7 +55,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets AutoTestSelect
         /// </summary>
         [DataMember(Name = "autoTestSelect", IsRequired = true, EmitDefaultValue = true)]
-        public AutoTestBulkDeleteApiModelAutoTestSelect AutoTestSelect { get; set; }
+        public AutoTestSelectModel AutoTestSelect { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -80,57 +80,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AutoTestBulkDeleteApiModel);
-        }
-
-        /// <summary>
-        /// Returns true if AutoTestBulkDeleteApiModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AutoTestBulkDeleteApiModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AutoTestBulkDeleteApiModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.AutoTestSelect == input.AutoTestSelect ||
-                    (this.AutoTestSelect != null &&
-                    this.AutoTestSelect.Equals(input.AutoTestSelect))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.AutoTestSelect != null)
-                {
-                    hashCode = (hashCode * 59) + this.AutoTestSelect.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

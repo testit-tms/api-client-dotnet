@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// CreateDefectApiModel
     /// </summary>
     [DataContract(Name = "CreateDefectApiModel")]
-    public partial class CreateDefectApiModel : IEquatable<CreateDefectApiModel>, IValidatableObject
+    public partial class CreateDefectApiModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateDefectApiModel" /> class.
@@ -41,8 +41,8 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="CreateDefectApiModel" /> class.
         /// </summary>
         /// <param name="testResultIds">Linked test result IDs (required).</param>
-        /// <param name="form">form (required).</param>
-        public CreateDefectApiModel(List<Guid> testResultIds = default(List<Guid>), CreateDefectApiModelForm form = default(CreateDefectApiModelForm))
+        /// <param name="form">External form definition (required).</param>
+        public CreateDefectApiModel(List<Guid> testResultIds = default(List<Guid>), ExternalFormCreateModel form = default(ExternalFormCreateModel))
         {
             // to ensure "testResultIds" is required (not null)
             if (testResultIds == null)
@@ -66,10 +66,11 @@ namespace TestIT.ApiClient.Model
         public List<Guid> TestResultIds { get; set; }
 
         /// <summary>
-        /// Gets or Sets Form
+        /// External form definition
         /// </summary>
+        /// <value>External form definition</value>
         [DataMember(Name = "form", IsRequired = true, EmitDefaultValue = true)]
-        public CreateDefectApiModelForm Form { get; set; }
+        public ExternalFormCreateModel Form { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -95,67 +96,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CreateDefectApiModel);
-        }
-
-        /// <summary>
-        /// Returns true if CreateDefectApiModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CreateDefectApiModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CreateDefectApiModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.TestResultIds == input.TestResultIds ||
-                    this.TestResultIds != null &&
-                    input.TestResultIds != null &&
-                    this.TestResultIds.SequenceEqual(input.TestResultIds)
-                ) && 
-                (
-                    this.Form == input.Form ||
-                    (this.Form != null &&
-                    this.Form.Equals(input.Form))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.TestResultIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestResultIds.GetHashCode();
-                }
-                if (this.Form != null)
-                {
-                    hashCode = (hashCode * 59) + this.Form.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

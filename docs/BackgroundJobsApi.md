@@ -526,7 +526,7 @@ catch (ApiException e)
 
 <a id="apiv2backgroundjobssearchpost"></a>
 # **ApiV2BackgroundJobsSearchPost**
-> List&lt;BackgroundJobGetModel&gt; ApiV2BackgroundJobsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2BackgroundJobsSearchPostRequest apiV2BackgroundJobsSearchPostRequest = null)
+> List&lt;BackgroundJobGetModel&gt; ApiV2BackgroundJobsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, BackgroundJobFilterModel backgroundJobFilterModel = null)
 
 Search for user background jobs
 
@@ -561,12 +561,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var apiV2BackgroundJobsSearchPostRequest = new ApiV2BackgroundJobsSearchPostRequest(); // ApiV2BackgroundJobsSearchPostRequest |  (optional) 
+            var backgroundJobFilterModel = new BackgroundJobFilterModel(); // BackgroundJobFilterModel |  (optional) 
 
             try
             {
                 // Search for user background jobs
-                List<BackgroundJobGetModel> result = apiInstance.ApiV2BackgroundJobsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2BackgroundJobsSearchPostRequest);
+                List<BackgroundJobGetModel> result = apiInstance.ApiV2BackgroundJobsSearchPost(skip, take, orderBy, searchField, searchValue, backgroundJobFilterModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -587,7 +587,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for user background jobs
-    ApiResponse<List<BackgroundJobGetModel>> response = apiInstance.ApiV2BackgroundJobsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2BackgroundJobsSearchPostRequest);
+    ApiResponse<List<BackgroundJobGetModel>> response = apiInstance.ApiV2BackgroundJobsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, backgroundJobFilterModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -609,7 +609,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **apiV2BackgroundJobsSearchPostRequest** | [**ApiV2BackgroundJobsSearchPostRequest**](ApiV2BackgroundJobsSearchPostRequest.md) |  | [optional]  |
+| **backgroundJobFilterModel** | [**BackgroundJobFilterModel**](BackgroundJobFilterModel.md) |  | [optional]  |
 
 ### Return type
 

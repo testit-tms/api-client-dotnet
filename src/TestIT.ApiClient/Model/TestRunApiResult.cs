@@ -30,13 +30,14 @@ namespace TestIT.ApiClient.Model
     /// TestRunApiResult
     /// </summary>
     [DataContract(Name = "TestRunApiResult")]
-    public partial class TestRunApiResult : IEquatable<TestRunApiResult>, IValidatableObject
+    public partial class TestRunApiResult : IValidatableObject
     {
 
         /// <summary>
         /// Gets or Sets StateName
         /// </summary>
         [DataMember(Name = "stateName", IsRequired = true, EmitDefaultValue = true)]
+        [Obsolete]
         public TestRunState StateName { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TestRunApiResult" /> class.
@@ -72,7 +73,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="createdByUserName">createdByUserName.</param>
-        public TestRunApiResult(Guid id = default(Guid), bool isDeleted = default(bool), DateTime? startedDate = default(DateTime?), DateTime? completedDate = default(DateTime?), string build = default(string), string description = default(string), TestRunState stateName = default(TestRunState), TestResultApiResultStatus status = default(TestResultApiResultStatus), Guid projectId = default(Guid), Guid? testPlanId = default(Guid?), Guid? runByUserId = default(Guid?), Guid? stoppedByUserId = default(Guid?), string name = default(string), string launchSource = default(string), List<AutoTestApiResult> autoTests = default(List<AutoTestApiResult>), int autoTestsCount = default(int), List<Guid> testSuiteIds = default(List<Guid>), bool isAutomated = default(bool), TestRunApiResultAnalytic analytic = default(TestRunApiResultAnalytic), List<TestResultApiResult> testResults = default(List<TestResultApiResult>), TestPlanApiResult testPlan = default(TestPlanApiResult), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string createdByUserName = default(string))
+        public TestRunApiResult(Guid id = default(Guid), bool isDeleted = default(bool), DateTime? startedDate = default(DateTime?), DateTime? completedDate = default(DateTime?), string build = default(string), string description = default(string), TestRunState stateName = default(TestRunState), TestStatusApiResult status = default(TestStatusApiResult), Guid projectId = default(Guid), Guid? testPlanId = default(Guid?), Guid? runByUserId = default(Guid?), Guid? stoppedByUserId = default(Guid?), string name = default(string), string launchSource = default(string), List<AutoTestApiResult> autoTests = default(List<AutoTestApiResult>), int autoTestsCount = default(int), List<Guid> testSuiteIds = default(List<Guid>), bool isAutomated = default(bool), TestRunAnalyticApiResult analytic = default(TestRunAnalyticApiResult), List<TestResultApiResult> testResults = default(List<TestResultApiResult>), TestPlanApiResult testPlan = default(TestPlanApiResult), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string createdByUserName = default(string))
         {
             this.Id = id;
             this.IsDeleted = isDeleted;
@@ -174,7 +175,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Status
         /// </summary>
         [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
-        public TestResultApiResultStatus Status { get; set; }
+        public TestStatusApiResult Status { get; set; }
 
         /// <summary>
         /// Gets or Sets ProjectId
@@ -240,7 +241,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Analytic
         /// </summary>
         [DataMember(Name = "analytic", IsRequired = true, EmitDefaultValue = true)]
-        public TestRunApiResultAnalytic Analytic { get; set; }
+        public TestRunAnalyticApiResult Analytic { get; set; }
 
         /// <summary>
         /// Gets or Sets TestResults
@@ -332,269 +333,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestRunApiResult);
-        }
-
-        /// <summary>
-        /// Returns true if TestRunApiResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestRunApiResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestRunApiResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    this.IsDeleted.Equals(input.IsDeleted)
-                ) && 
-                (
-                    this.StartedDate == input.StartedDate ||
-                    (this.StartedDate != null &&
-                    this.StartedDate.Equals(input.StartedDate))
-                ) && 
-                (
-                    this.CompletedDate == input.CompletedDate ||
-                    (this.CompletedDate != null &&
-                    this.CompletedDate.Equals(input.CompletedDate))
-                ) && 
-                (
-                    this.Build == input.Build ||
-                    (this.Build != null &&
-                    this.Build.Equals(input.Build))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.StateName == input.StateName ||
-                    this.StateName.Equals(input.StateName)
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.TestPlanId == input.TestPlanId ||
-                    (this.TestPlanId != null &&
-                    this.TestPlanId.Equals(input.TestPlanId))
-                ) && 
-                (
-                    this.RunByUserId == input.RunByUserId ||
-                    (this.RunByUserId != null &&
-                    this.RunByUserId.Equals(input.RunByUserId))
-                ) && 
-                (
-                    this.StoppedByUserId == input.StoppedByUserId ||
-                    (this.StoppedByUserId != null &&
-                    this.StoppedByUserId.Equals(input.StoppedByUserId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.LaunchSource == input.LaunchSource ||
-                    (this.LaunchSource != null &&
-                    this.LaunchSource.Equals(input.LaunchSource))
-                ) && 
-                (
-                    this.AutoTests == input.AutoTests ||
-                    this.AutoTests != null &&
-                    input.AutoTests != null &&
-                    this.AutoTests.SequenceEqual(input.AutoTests)
-                ) && 
-                (
-                    this.AutoTestsCount == input.AutoTestsCount ||
-                    this.AutoTestsCount.Equals(input.AutoTestsCount)
-                ) && 
-                (
-                    this.TestSuiteIds == input.TestSuiteIds ||
-                    this.TestSuiteIds != null &&
-                    input.TestSuiteIds != null &&
-                    this.TestSuiteIds.SequenceEqual(input.TestSuiteIds)
-                ) && 
-                (
-                    this.IsAutomated == input.IsAutomated ||
-                    this.IsAutomated.Equals(input.IsAutomated)
-                ) && 
-                (
-                    this.Analytic == input.Analytic ||
-                    (this.Analytic != null &&
-                    this.Analytic.Equals(input.Analytic))
-                ) && 
-                (
-                    this.TestResults == input.TestResults ||
-                    this.TestResults != null &&
-                    input.TestResults != null &&
-                    this.TestResults.SequenceEqual(input.TestResults)
-                ) && 
-                (
-                    this.TestPlan == input.TestPlan ||
-                    (this.TestPlan != null &&
-                    this.TestPlan.Equals(input.TestPlan))
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.CreatedById == input.CreatedById ||
-                    (this.CreatedById != null &&
-                    this.CreatedById.Equals(input.CreatedById))
-                ) && 
-                (
-                    this.ModifiedById == input.ModifiedById ||
-                    (this.ModifiedById != null &&
-                    this.ModifiedById.Equals(input.ModifiedById))
-                ) && 
-                (
-                    this.CreatedByUserName == input.CreatedByUserName ||
-                    (this.CreatedByUserName != null &&
-                    this.CreatedByUserName.Equals(input.CreatedByUserName))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                if (this.StartedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.StartedDate.GetHashCode();
-                }
-                if (this.CompletedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CompletedDate.GetHashCode();
-                }
-                if (this.Build != null)
-                {
-                    hashCode = (hashCode * 59) + this.Build.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.StateName.GetHashCode();
-                if (this.Status != null)
-                {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                }
-                if (this.ProjectId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProjectId.GetHashCode();
-                }
-                if (this.TestPlanId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestPlanId.GetHashCode();
-                }
-                if (this.RunByUserId != null)
-                {
-                    hashCode = (hashCode * 59) + this.RunByUserId.GetHashCode();
-                }
-                if (this.StoppedByUserId != null)
-                {
-                    hashCode = (hashCode * 59) + this.StoppedByUserId.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.LaunchSource != null)
-                {
-                    hashCode = (hashCode * 59) + this.LaunchSource.GetHashCode();
-                }
-                if (this.AutoTests != null)
-                {
-                    hashCode = (hashCode * 59) + this.AutoTests.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.AutoTestsCount.GetHashCode();
-                if (this.TestSuiteIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestSuiteIds.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsAutomated.GetHashCode();
-                if (this.Analytic != null)
-                {
-                    hashCode = (hashCode * 59) + this.Analytic.GetHashCode();
-                }
-                if (this.TestResults != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestResults.GetHashCode();
-                }
-                if (this.TestPlan != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestPlan.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                if (this.CreatedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedById.GetHashCode();
-                }
-                if (this.ModifiedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedById.GetHashCode();
-                }
-                if (this.CreatedByUserName != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedByUserName.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

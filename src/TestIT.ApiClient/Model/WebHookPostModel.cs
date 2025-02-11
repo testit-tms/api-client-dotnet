@@ -30,18 +30,20 @@ namespace TestIT.ApiClient.Model
     /// WebHookPostModel
     /// </summary>
     [DataContract(Name = "WebHookPostModel")]
-    public partial class WebHookPostModel : IEquatable<WebHookPostModel>, IValidatableObject
+    public partial class WebHookPostModel : IValidatableObject
     {
 
         /// <summary>
-        /// Gets or Sets EventType
+        /// Type of event which triggers the webhook
         /// </summary>
+        /// <value>Type of event which triggers the webhook</value>
         [DataMember(Name = "eventType", IsRequired = true, EmitDefaultValue = true)]
         public WebHookEventTypeModel EventType { get; set; }
 
         /// <summary>
-        /// Gets or Sets RequestType
+        /// Request method of the webhook
         /// </summary>
+        /// <value>Request method of the webhook</value>
         [DataMember(Name = "requestType", IsRequired = true, EmitDefaultValue = true)]
         public RequestTypeModel RequestType { get; set; }
         /// <summary>
@@ -53,10 +55,10 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="WebHookPostModel" /> class.
         /// </summary>
         /// <param name="projectId">Unique ID of the webhook project (required).</param>
-        /// <param name="eventType">eventType (required).</param>
+        /// <param name="eventType">Type of event which triggers the webhook (required).</param>
         /// <param name="description">Description of the webhook.</param>
         /// <param name="url">Request URL of the webhook (required).</param>
-        /// <param name="requestType">requestType (required).</param>
+        /// <param name="requestType">Request method of the webhook (required).</param>
         /// <param name="shouldSendBody">Indicates if the webhook sends body (required).</param>
         /// <param name="headers">Collection of the webhook headers (required).</param>
         /// <param name="queryParameters">Collection of the webhook query parameters (required).</param>
@@ -224,165 +226,28 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as WebHookPostModel);
-        }
-
-        /// <summary>
-        /// Returns true if WebHookPostModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of WebHookPostModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(WebHookPostModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.EventType == input.EventType ||
-                    this.EventType.Equals(input.EventType)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.RequestType == input.RequestType ||
-                    this.RequestType.Equals(input.RequestType)
-                ) && 
-                (
-                    this.ShouldSendBody == input.ShouldSendBody ||
-                    this.ShouldSendBody.Equals(input.ShouldSendBody)
-                ) && 
-                (
-                    this.Headers == input.Headers ||
-                    this.Headers != null &&
-                    input.Headers != null &&
-                    this.Headers.SequenceEqual(input.Headers)
-                ) && 
-                (
-                    this.QueryParameters == input.QueryParameters ||
-                    this.QueryParameters != null &&
-                    input.QueryParameters != null &&
-                    this.QueryParameters.SequenceEqual(input.QueryParameters)
-                ) && 
-                (
-                    this.IsEnabled == input.IsEnabled ||
-                    this.IsEnabled.Equals(input.IsEnabled)
-                ) && 
-                (
-                    this.ShouldSendCustomBody == input.ShouldSendCustomBody ||
-                    this.ShouldSendCustomBody.Equals(input.ShouldSendCustomBody)
-                ) && 
-                (
-                    this.CustomBody == input.CustomBody ||
-                    (this.CustomBody != null &&
-                    this.CustomBody.Equals(input.CustomBody))
-                ) && 
-                (
-                    this.ShouldReplaceParameters == input.ShouldReplaceParameters ||
-                    this.ShouldReplaceParameters.Equals(input.ShouldReplaceParameters)
-                ) && 
-                (
-                    this.ShouldEscapeParameters == input.ShouldEscapeParameters ||
-                    this.ShouldEscapeParameters.Equals(input.ShouldEscapeParameters)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.ProjectId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProjectId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.EventType.GetHashCode();
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.Url != null)
-                {
-                    hashCode = (hashCode * 59) + this.Url.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.RequestType.GetHashCode();
-                hashCode = (hashCode * 59) + this.ShouldSendBody.GetHashCode();
-                if (this.Headers != null)
-                {
-                    hashCode = (hashCode * 59) + this.Headers.GetHashCode();
-                }
-                if (this.QueryParameters != null)
-                {
-                    hashCode = (hashCode * 59) + this.QueryParameters.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsEnabled.GetHashCode();
-                hashCode = (hashCode * 59) + this.ShouldSendCustomBody.GetHashCode();
-                if (this.CustomBody != null)
-                {
-                    hashCode = (hashCode * 59) + this.CustomBody.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.ShouldReplaceParameters.GetHashCode();
-                hashCode = (hashCode * 59) + this.ShouldEscapeParameters.GetHashCode();
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Url (string) minLength
             if (this.Url != null && this.Url.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Url, length must be greater than 1.", new [] { "Url" });
+                yield return new ValidationResult("Invalid value for Url, length must be greater than 1.", new [] { "Url" });
             }
 
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
             }
 
             // Name (string) minLength
             if (this.Name != null && this.Name.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
             }
 
             yield break;

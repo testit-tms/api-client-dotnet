@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// TestPointSelector
     /// </summary>
     [DataContract(Name = "TestPointSelector")]
-    public partial class TestPointSelector : IEquatable<TestPointSelector>, IValidatableObject
+    public partial class TestPointSelector : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPointSelector" /> class.
@@ -91,67 +91,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestPointSelector);
-        }
-
-        /// <summary>
-        /// Returns true if TestPointSelector instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestPointSelector to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestPointSelector input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.ConfigurationId == input.ConfigurationId ||
-                    (this.ConfigurationId != null &&
-                    this.ConfigurationId.Equals(input.ConfigurationId))
-                ) && 
-                (
-                    this.WorkItemIds == input.WorkItemIds ||
-                    this.WorkItemIds != null &&
-                    input.WorkItemIds != null &&
-                    this.WorkItemIds.SequenceEqual(input.WorkItemIds)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.ConfigurationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ConfigurationId.GetHashCode();
-                }
-                if (this.WorkItemIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItemIds.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }
