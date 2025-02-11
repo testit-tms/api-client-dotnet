@@ -39,7 +39,7 @@ jobs:
           ${{ env.PROJECT_DIR }}
 
       - name: Save artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: NuGet-package
           path: ${{ env.NUGET_DIR }}/*.nupkg
