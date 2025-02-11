@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// TestResultApiResult
     /// </summary>
     [DataContract(Name = "TestResultApiResult")]
-    public partial class TestResultApiResult : IEquatable<TestResultApiResult>, IValidatableObject
+    public partial class TestResultApiResult : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestResultApiResult" /> class.
@@ -73,7 +73,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="isDeleted">isDeleted (required).</param>
-        public TestResultApiResult(Guid id = default(Guid), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? durationInMs = default(long?), string traces = default(string), string failureType = default(string), string message = default(string), Guid? runByUserId = default(Guid?), Guid? stoppedByUserId = default(Guid?), string outcome = default(string), Guid? autoTestId = default(Guid?), Guid? testPointId = default(Guid?), Guid testRunId = default(Guid), Guid configurationId = default(Guid), TestResultApiResultStatus status = default(TestResultApiResultStatus), TestPointShortApiResult testPoint = default(TestPointShortApiResult), AutoTestModel autoTest = default(AutoTestModel), List<AutoTestStepResultsApiResult> autoTestStepResults = default(List<AutoTestStepResultsApiResult>), List<AutoTestStepResultsApiResult> setupResults = default(List<AutoTestStepResultsApiResult>), List<AutoTestStepResultsApiResult> teardownResults = default(List<AutoTestStepResultsApiResult>), Guid? workItemVersionId = default(Guid?), int? workItemVersionNumber = default(int?), List<AttachmentApiResult> attachments = default(List<AttachmentApiResult>), List<LinkApiResult> links = default(List<LinkApiResult>), List<TestResultFailureClassApiResult> failureClasses = default(List<TestResultFailureClassApiResult>), List<StepCommentApiResult> stepComments = default(List<StepCommentApiResult>), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, string> properties = default(Dictionary<string, string>), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), bool isDeleted = default(bool))
+        public TestResultApiResult(Guid id = default(Guid), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? durationInMs = default(long?), string traces = default(string), string failureType = default(string), string message = default(string), Guid? runByUserId = default(Guid?), Guid? stoppedByUserId = default(Guid?), string outcome = default(string), Guid? autoTestId = default(Guid?), Guid? testPointId = default(Guid?), Guid testRunId = default(Guid), Guid configurationId = default(Guid), TestStatusApiResult status = default(TestStatusApiResult), TestPointShortApiResult testPoint = default(TestPointShortApiResult), AutoTestApiResult autoTest = default(AutoTestApiResult), List<AutoTestStepResultsApiResult> autoTestStepResults = default(List<AutoTestStepResultsApiResult>), List<AutoTestStepResultsApiResult> setupResults = default(List<AutoTestStepResultsApiResult>), List<AutoTestStepResultsApiResult> teardownResults = default(List<AutoTestStepResultsApiResult>), Guid? workItemVersionId = default(Guid?), int? workItemVersionNumber = default(int?), List<AttachmentApiResult> attachments = default(List<AttachmentApiResult>), List<LinkApiResult> links = default(List<LinkApiResult>), List<TestResultFailureClassApiResult> failureClasses = default(List<TestResultFailureClassApiResult>), List<StepCommentApiResult> stepComments = default(List<StepCommentApiResult>), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, string> properties = default(Dictionary<string, string>), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), bool isDeleted = default(bool))
         {
             this.Id = id;
             // to ensure "outcome" is required (not null)
@@ -223,7 +223,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Status
         /// </summary>
         [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
-        public TestResultApiResultStatus Status { get; set; }
+        public TestStatusApiResult Status { get; set; }
 
         /// <summary>
         /// Gets or Sets TestPoint
@@ -235,7 +235,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets AutoTest
         /// </summary>
         [DataMember(Name = "autoTest", EmitDefaultValue = true)]
-        public AutoTestModel AutoTest { get; set; }
+        public AutoTestApiResult AutoTest { get; set; }
 
         /// <summary>
         /// Gets or Sets AutoTestStepResults
@@ -388,350 +388,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestResultApiResult);
-        }
-
-        /// <summary>
-        /// Returns true if TestResultApiResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestResultApiResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestResultApiResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.StartedOn == input.StartedOn ||
-                    (this.StartedOn != null &&
-                    this.StartedOn.Equals(input.StartedOn))
-                ) && 
-                (
-                    this.CompletedOn == input.CompletedOn ||
-                    (this.CompletedOn != null &&
-                    this.CompletedOn.Equals(input.CompletedOn))
-                ) && 
-                (
-                    this.DurationInMs == input.DurationInMs ||
-                    (this.DurationInMs != null &&
-                    this.DurationInMs.Equals(input.DurationInMs))
-                ) && 
-                (
-                    this.Traces == input.Traces ||
-                    (this.Traces != null &&
-                    this.Traces.Equals(input.Traces))
-                ) && 
-                (
-                    this.FailureType == input.FailureType ||
-                    (this.FailureType != null &&
-                    this.FailureType.Equals(input.FailureType))
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.RunByUserId == input.RunByUserId ||
-                    (this.RunByUserId != null &&
-                    this.RunByUserId.Equals(input.RunByUserId))
-                ) && 
-                (
-                    this.StoppedByUserId == input.StoppedByUserId ||
-                    (this.StoppedByUserId != null &&
-                    this.StoppedByUserId.Equals(input.StoppedByUserId))
-                ) && 
-                (
-                    this.Outcome == input.Outcome ||
-                    (this.Outcome != null &&
-                    this.Outcome.Equals(input.Outcome))
-                ) && 
-                (
-                    this.AutoTestId == input.AutoTestId ||
-                    (this.AutoTestId != null &&
-                    this.AutoTestId.Equals(input.AutoTestId))
-                ) && 
-                (
-                    this.TestPointId == input.TestPointId ||
-                    (this.TestPointId != null &&
-                    this.TestPointId.Equals(input.TestPointId))
-                ) && 
-                (
-                    this.TestRunId == input.TestRunId ||
-                    (this.TestRunId != null &&
-                    this.TestRunId.Equals(input.TestRunId))
-                ) && 
-                (
-                    this.ConfigurationId == input.ConfigurationId ||
-                    (this.ConfigurationId != null &&
-                    this.ConfigurationId.Equals(input.ConfigurationId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.TestPoint == input.TestPoint ||
-                    (this.TestPoint != null &&
-                    this.TestPoint.Equals(input.TestPoint))
-                ) && 
-                (
-                    this.AutoTest == input.AutoTest ||
-                    (this.AutoTest != null &&
-                    this.AutoTest.Equals(input.AutoTest))
-                ) && 
-                (
-                    this.AutoTestStepResults == input.AutoTestStepResults ||
-                    this.AutoTestStepResults != null &&
-                    input.AutoTestStepResults != null &&
-                    this.AutoTestStepResults.SequenceEqual(input.AutoTestStepResults)
-                ) && 
-                (
-                    this.SetupResults == input.SetupResults ||
-                    this.SetupResults != null &&
-                    input.SetupResults != null &&
-                    this.SetupResults.SequenceEqual(input.SetupResults)
-                ) && 
-                (
-                    this.TeardownResults == input.TeardownResults ||
-                    this.TeardownResults != null &&
-                    input.TeardownResults != null &&
-                    this.TeardownResults.SequenceEqual(input.TeardownResults)
-                ) && 
-                (
-                    this.WorkItemVersionId == input.WorkItemVersionId ||
-                    (this.WorkItemVersionId != null &&
-                    this.WorkItemVersionId.Equals(input.WorkItemVersionId))
-                ) && 
-                (
-                    this.WorkItemVersionNumber == input.WorkItemVersionNumber ||
-                    (this.WorkItemVersionNumber != null &&
-                    this.WorkItemVersionNumber.Equals(input.WorkItemVersionNumber))
-                ) && 
-                (
-                    this.Attachments == input.Attachments ||
-                    this.Attachments != null &&
-                    input.Attachments != null &&
-                    this.Attachments.SequenceEqual(input.Attachments)
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    this.Links != null &&
-                    input.Links != null &&
-                    this.Links.SequenceEqual(input.Links)
-                ) && 
-                (
-                    this.FailureClasses == input.FailureClasses ||
-                    this.FailureClasses != null &&
-                    input.FailureClasses != null &&
-                    this.FailureClasses.SequenceEqual(input.FailureClasses)
-                ) && 
-                (
-                    this.StepComments == input.StepComments ||
-                    this.StepComments != null &&
-                    input.StepComments != null &&
-                    this.StepComments.SequenceEqual(input.StepComments)
-                ) && 
-                (
-                    this.Parameters == input.Parameters ||
-                    this.Parameters != null &&
-                    input.Parameters != null &&
-                    this.Parameters.SequenceEqual(input.Parameters)
-                ) && 
-                (
-                    this.Properties == input.Properties ||
-                    this.Properties != null &&
-                    input.Properties != null &&
-                    this.Properties.SequenceEqual(input.Properties)
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.CreatedById == input.CreatedById ||
-                    (this.CreatedById != null &&
-                    this.CreatedById.Equals(input.CreatedById))
-                ) && 
-                (
-                    this.ModifiedById == input.ModifiedById ||
-                    (this.ModifiedById != null &&
-                    this.ModifiedById.Equals(input.ModifiedById))
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    this.IsDeleted.Equals(input.IsDeleted)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.StartedOn != null)
-                {
-                    hashCode = (hashCode * 59) + this.StartedOn.GetHashCode();
-                }
-                if (this.CompletedOn != null)
-                {
-                    hashCode = (hashCode * 59) + this.CompletedOn.GetHashCode();
-                }
-                if (this.DurationInMs != null)
-                {
-                    hashCode = (hashCode * 59) + this.DurationInMs.GetHashCode();
-                }
-                if (this.Traces != null)
-                {
-                    hashCode = (hashCode * 59) + this.Traces.GetHashCode();
-                }
-                if (this.FailureType != null)
-                {
-                    hashCode = (hashCode * 59) + this.FailureType.GetHashCode();
-                }
-                if (this.Message != null)
-                {
-                    hashCode = (hashCode * 59) + this.Message.GetHashCode();
-                }
-                if (this.RunByUserId != null)
-                {
-                    hashCode = (hashCode * 59) + this.RunByUserId.GetHashCode();
-                }
-                if (this.StoppedByUserId != null)
-                {
-                    hashCode = (hashCode * 59) + this.StoppedByUserId.GetHashCode();
-                }
-                if (this.Outcome != null)
-                {
-                    hashCode = (hashCode * 59) + this.Outcome.GetHashCode();
-                }
-                if (this.AutoTestId != null)
-                {
-                    hashCode = (hashCode * 59) + this.AutoTestId.GetHashCode();
-                }
-                if (this.TestPointId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestPointId.GetHashCode();
-                }
-                if (this.TestRunId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestRunId.GetHashCode();
-                }
-                if (this.ConfigurationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ConfigurationId.GetHashCode();
-                }
-                if (this.Status != null)
-                {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                }
-                if (this.TestPoint != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestPoint.GetHashCode();
-                }
-                if (this.AutoTest != null)
-                {
-                    hashCode = (hashCode * 59) + this.AutoTest.GetHashCode();
-                }
-                if (this.AutoTestStepResults != null)
-                {
-                    hashCode = (hashCode * 59) + this.AutoTestStepResults.GetHashCode();
-                }
-                if (this.SetupResults != null)
-                {
-                    hashCode = (hashCode * 59) + this.SetupResults.GetHashCode();
-                }
-                if (this.TeardownResults != null)
-                {
-                    hashCode = (hashCode * 59) + this.TeardownResults.GetHashCode();
-                }
-                if (this.WorkItemVersionId != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItemVersionId.GetHashCode();
-                }
-                if (this.WorkItemVersionNumber != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItemVersionNumber.GetHashCode();
-                }
-                if (this.Attachments != null)
-                {
-                    hashCode = (hashCode * 59) + this.Attachments.GetHashCode();
-                }
-                if (this.Links != null)
-                {
-                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
-                }
-                if (this.FailureClasses != null)
-                {
-                    hashCode = (hashCode * 59) + this.FailureClasses.GetHashCode();
-                }
-                if (this.StepComments != null)
-                {
-                    hashCode = (hashCode * 59) + this.StepComments.GetHashCode();
-                }
-                if (this.Parameters != null)
-                {
-                    hashCode = (hashCode * 59) + this.Parameters.GetHashCode();
-                }
-                if (this.Properties != null)
-                {
-                    hashCode = (hashCode * 59) + this.Properties.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                if (this.CreatedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedById.GetHashCode();
-                }
-                if (this.ModifiedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedById.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

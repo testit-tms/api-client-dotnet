@@ -30,12 +30,13 @@ namespace TestIT.ApiClient.Model
     /// LinkApiResult
     /// </summary>
     [DataContract(Name = "LinkApiResult")]
-    public partial class LinkApiResult : IEquatable<LinkApiResult>, IValidatableObject
+    public partial class LinkApiResult : IValidatableObject
     {
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Specifies the type of the link.
         /// </summary>
+        /// <value>Specifies the type of the link.</value>
         [DataMember(Name = "type", EmitDefaultValue = true)]
         public LinkType? Type { get; set; }
         /// <summary>
@@ -50,7 +51,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="title">Link name..</param>
         /// <param name="url">Address can be specified without protocol, but necessarily with the domain. (required).</param>
         /// <param name="description">Link description..</param>
-        /// <param name="type">type.</param>
+        /// <param name="type">Specifies the type of the link..</param>
         /// <param name="hasInfo">Flag defines if link relates to integrated jira service (required).</param>
         public LinkApiResult(Guid? id = default(Guid?), string title = default(string), string url = default(string), string description = default(string), LinkType? type = default(LinkType?), bool hasInfo = default(bool))
         {
@@ -130,94 +131,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as LinkApiResult);
-        }
-
-        /// <summary>
-        /// Returns true if LinkApiResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of LinkApiResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(LinkApiResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Title == input.Title ||
-                    (this.Title != null &&
-                    this.Title.Equals(input.Title))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    this.Type.Equals(input.Type)
-                ) && 
-                (
-                    this.HasInfo == input.HasInfo ||
-                    this.HasInfo.Equals(input.HasInfo)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.Title != null)
-                {
-                    hashCode = (hashCode * 59) + this.Title.GetHashCode();
-                }
-                if (this.Url != null)
-                {
-                    hashCode = (hashCode * 59) + this.Url.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                hashCode = (hashCode * 59) + this.HasInfo.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

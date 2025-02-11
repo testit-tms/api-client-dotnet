@@ -30,15 +30,15 @@ namespace TestIT.ApiClient.Model
     /// Rules for different level entities inclusion/exclusion
     /// </summary>
     [DataContract(Name = "WorkItemExtractionModel")]
-    public partial class WorkItemExtractionModel : IEquatable<WorkItemExtractionModel>, IValidatableObject
+    public partial class WorkItemExtractionModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemExtractionModel" /> class.
         /// </summary>
-        /// <param name="projectIds">projectIds.</param>
-        /// <param name="ids">ids.</param>
-        /// <param name="sectionIds">sectionIds.</param>
-        public WorkItemExtractionModel(ConfigurationExtractionModelProjectIds projectIds = default(ConfigurationExtractionModelProjectIds), WorkItemExtractionModelIds ids = default(WorkItemExtractionModelIds), WorkItemExtractionModelSectionIds sectionIds = default(WorkItemExtractionModelSectionIds))
+        /// <param name="projectIds">Extraction parameters for projects.</param>
+        /// <param name="ids">Extraction parameters for work items.</param>
+        /// <param name="sectionIds">Extraction parameters for sections.</param>
+        public WorkItemExtractionModel(GuidExtractionModel projectIds = default(GuidExtractionModel), GuidExtractionModel ids = default(GuidExtractionModel), GuidExtractionModel sectionIds = default(GuidExtractionModel))
         {
             this.ProjectIds = projectIds;
             this.Ids = ids;
@@ -46,22 +46,25 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Gets or Sets ProjectIds
+        /// Extraction parameters for projects
         /// </summary>
+        /// <value>Extraction parameters for projects</value>
         [DataMember(Name = "projectIds", EmitDefaultValue = true)]
-        public ConfigurationExtractionModelProjectIds ProjectIds { get; set; }
+        public GuidExtractionModel ProjectIds { get; set; }
 
         /// <summary>
-        /// Gets or Sets Ids
+        /// Extraction parameters for work items
         /// </summary>
+        /// <value>Extraction parameters for work items</value>
         [DataMember(Name = "ids", EmitDefaultValue = true)]
-        public WorkItemExtractionModelIds Ids { get; set; }
+        public GuidExtractionModel Ids { get; set; }
 
         /// <summary>
-        /// Gets or Sets SectionIds
+        /// Extraction parameters for sections
         /// </summary>
+        /// <value>Extraction parameters for sections</value>
         [DataMember(Name = "sectionIds", EmitDefaultValue = true)]
-        public WorkItemExtractionModelSectionIds SectionIds { get; set; }
+        public GuidExtractionModel SectionIds { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -88,75 +91,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as WorkItemExtractionModel);
-        }
-
-        /// <summary>
-        /// Returns true if WorkItemExtractionModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of WorkItemExtractionModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(WorkItemExtractionModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.ProjectIds == input.ProjectIds ||
-                    (this.ProjectIds != null &&
-                    this.ProjectIds.Equals(input.ProjectIds))
-                ) && 
-                (
-                    this.Ids == input.Ids ||
-                    (this.Ids != null &&
-                    this.Ids.Equals(input.Ids))
-                ) && 
-                (
-                    this.SectionIds == input.SectionIds ||
-                    (this.SectionIds != null &&
-                    this.SectionIds.Equals(input.SectionIds))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.ProjectIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProjectIds.GetHashCode();
-                }
-                if (this.Ids != null)
-                {
-                    hashCode = (hashCode * 59) + this.Ids.GetHashCode();
-                }
-                if (this.SectionIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.SectionIds.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

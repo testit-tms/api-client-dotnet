@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// Model containing options to filter test runs
     /// </summary>
     [DataContract(Name = "TestRunSelectApiModel")]
-    public partial class TestRunSelectApiModel : IEquatable<TestRunSelectApiModel>, IValidatableObject
+    public partial class TestRunSelectApiModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestRunSelectApiModel" /> class.
@@ -41,8 +41,8 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="TestRunSelectApiModel" /> class.
         /// </summary>
         /// <param name="filter">filter (required).</param>
-        /// <param name="extractionModel">extractionModel (required).</param>
-        public TestRunSelectApiModel(ApiV2TestRunsSearchPostRequest filter = default(ApiV2TestRunsSearchPostRequest), TestRunSelectApiModelExtractionModel extractionModel = default(TestRunSelectApiModelExtractionModel))
+        /// <param name="extractionModel">Rules for different level entities inclusion/exclusion (required).</param>
+        public TestRunSelectApiModel(TestRunFilterApiModel filter = default(TestRunFilterApiModel), TestRunExtractionApiModel extractionModel = default(TestRunExtractionApiModel))
         {
             // to ensure "filter" is required (not null)
             if (filter == null)
@@ -62,13 +62,14 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Filter
         /// </summary>
         [DataMember(Name = "filter", IsRequired = true, EmitDefaultValue = true)]
-        public ApiV2TestRunsSearchPostRequest Filter { get; set; }
+        public TestRunFilterApiModel Filter { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExtractionModel
+        /// Rules for different level entities inclusion/exclusion
         /// </summary>
+        /// <value>Rules for different level entities inclusion/exclusion</value>
         [DataMember(Name = "extractionModel", IsRequired = true, EmitDefaultValue = true)]
-        public TestRunSelectApiModelExtractionModel ExtractionModel { get; set; }
+        public TestRunExtractionApiModel ExtractionModel { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -94,66 +95,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestRunSelectApiModel);
-        }
-
-        /// <summary>
-        /// Returns true if TestRunSelectApiModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestRunSelectApiModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestRunSelectApiModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Filter == input.Filter ||
-                    (this.Filter != null &&
-                    this.Filter.Equals(input.Filter))
-                ) && 
-                (
-                    this.ExtractionModel == input.ExtractionModel ||
-                    (this.ExtractionModel != null &&
-                    this.ExtractionModel.Equals(input.ExtractionModel))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Filter != null)
-                {
-                    hashCode = (hashCode * 59) + this.Filter.GetHashCode();
-                }
-                if (this.ExtractionModel != null)
-                {
-                    hashCode = (hashCode * 59) + this.ExtractionModel.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

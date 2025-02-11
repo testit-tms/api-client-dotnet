@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// StringChangedFieldWithDiffsViewModel
     /// </summary>
     [DataContract(Name = "StringChangedFieldWithDiffsViewModel")]
-    public partial class StringChangedFieldWithDiffsViewModel : IEquatable<StringChangedFieldWithDiffsViewModel>, IValidatableObject
+    public partial class StringChangedFieldWithDiffsViewModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StringChangedFieldWithDiffsViewModel" /> class.
@@ -88,75 +88,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as StringChangedFieldWithDiffsViewModel);
-        }
-
-        /// <summary>
-        /// Returns true if StringChangedFieldWithDiffsViewModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of StringChangedFieldWithDiffsViewModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(StringChangedFieldWithDiffsViewModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.DiffValue == input.DiffValue ||
-                    (this.DiffValue != null &&
-                    this.DiffValue.Equals(input.DiffValue))
-                ) && 
-                (
-                    this.OldValue == input.OldValue ||
-                    (this.OldValue != null &&
-                    this.OldValue.Equals(input.OldValue))
-                ) && 
-                (
-                    this.NewValue == input.NewValue ||
-                    (this.NewValue != null &&
-                    this.NewValue.Equals(input.NewValue))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.DiffValue != null)
-                {
-                    hashCode = (hashCode * 59) + this.DiffValue.GetHashCode();
-                }
-                if (this.OldValue != null)
-                {
-                    hashCode = (hashCode * 59) + this.OldValue.GetHashCode();
-                }
-                if (this.NewValue != null)
-                {
-                    hashCode = (hashCode * 59) + this.NewValue.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

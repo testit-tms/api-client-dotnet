@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// GlobalCustomAttributeUpdateModel
     /// </summary>
     [DataContract(Name = "GlobalCustomAttributeUpdateModel")]
-    public partial class GlobalCustomAttributeUpdateModel : IEquatable<GlobalCustomAttributeUpdateModel>, IValidatableObject
+    public partial class GlobalCustomAttributeUpdateModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GlobalCustomAttributeUpdateModel" /> class.
@@ -111,96 +111,22 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as GlobalCustomAttributeUpdateModel);
-        }
-
-        /// <summary>
-        /// Returns true if GlobalCustomAttributeUpdateModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of GlobalCustomAttributeUpdateModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(GlobalCustomAttributeUpdateModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Options == input.Options ||
-                    this.Options != null &&
-                    input.Options != null &&
-                    this.Options.SequenceEqual(input.Options)
-                ) && 
-                (
-                    this.IsEnabled == input.IsEnabled ||
-                    (this.IsEnabled != null &&
-                    this.IsEnabled.Equals(input.IsEnabled))
-                ) && 
-                (
-                    this.IsRequired == input.IsRequired ||
-                    (this.IsRequired != null &&
-                    this.IsRequired.Equals(input.IsRequired))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Options != null)
-                {
-                    hashCode = (hashCode * 59) + this.Options.GetHashCode();
-                }
-                if (this.IsEnabled != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsEnabled.GetHashCode();
-                }
-                if (this.IsRequired != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsRequired.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
             }
 
             // Name (string) minLength
             if (this.Name != null && this.Name.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
             }
 
             yield break;

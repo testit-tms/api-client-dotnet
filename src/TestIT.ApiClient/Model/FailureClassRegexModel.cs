@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// FailureClassRegexModel
     /// </summary>
     [DataContract(Name = "FailureClassRegexModel")]
-    public partial class FailureClassRegexModel : IEquatable<FailureClassRegexModel>, IValidatableObject
+    public partial class FailureClassRegexModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FailureClassRegexModel" /> class.
@@ -109,80 +109,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as FailureClassRegexModel);
-        }
-
-        /// <summary>
-        /// Returns true if FailureClassRegexModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of FailureClassRegexModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(FailureClassRegexModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.RegexText == input.RegexText ||
-                    (this.RegexText != null &&
-                    this.RegexText.Equals(input.RegexText))
-                ) && 
-                (
-                    this.FailureClassId == input.FailureClassId ||
-                    (this.FailureClassId != null &&
-                    this.FailureClassId.Equals(input.FailureClassId))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    this.IsDeleted.Equals(input.IsDeleted)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.RegexText != null)
-                {
-                    hashCode = (hashCode * 59) + this.RegexText.GetHashCode();
-                }
-                if (this.FailureClassId != null)
-                {
-                    hashCode = (hashCode * 59) + this.FailureClassId.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

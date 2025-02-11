@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Filter** | [**AutoTestSearchApiModelFilter**](AutoTestSearchApiModelFilter.md) |  | [optional] 
-**Includes** | [**AutoTestSearchApiModelIncludes**](AutoTestSearchApiModelIncludes.md) |  | [optional] 
+**Filter** | [**AutoTestFilterApiModel**](AutoTestFilterApiModel.md) | Object containing different filters to adjust search | [optional] 
+**Includes** | [**AutoTestSearchIncludeApiModel**](AutoTestSearchIncludeApiModel.md) | Object specifying data to be included | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

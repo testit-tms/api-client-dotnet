@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// TestPoint
     /// </summary>
     [DataContract(Name = "TestPoint")]
-    public partial class TestPoint : IEquatable<TestPoint>, IValidatableObject
+    public partial class TestPoint : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPoint" /> class.
@@ -159,134 +159,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestPoint);
-        }
-
-        /// <summary>
-        /// Returns true if TestPoint instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestPoint to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestPoint input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    this.IsDeleted.Equals(input.IsDeleted)
-                ) && 
-                (
-                    this.TesterId == input.TesterId ||
-                    (this.TesterId != null &&
-                    this.TesterId.Equals(input.TesterId))
-                ) && 
-                (
-                    this.IterationId == input.IterationId ||
-                    (this.IterationId != null &&
-                    this.IterationId.Equals(input.IterationId))
-                ) && 
-                (
-                    this.WorkItemId == input.WorkItemId ||
-                    (this.WorkItemId != null &&
-                    this.WorkItemId.Equals(input.WorkItemId))
-                ) && 
-                (
-                    this.ConfigurationId == input.ConfigurationId ||
-                    (this.ConfigurationId != null &&
-                    this.ConfigurationId.Equals(input.ConfigurationId))
-                ) && 
-                (
-                    this.TestSuiteId == input.TestSuiteId ||
-                    (this.TestSuiteId != null &&
-                    this.TestSuiteId.Equals(input.TestSuiteId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.StatusModel == input.StatusModel ||
-                    (this.StatusModel != null &&
-                    this.StatusModel.Equals(input.StatusModel))
-                ) && 
-                (
-                    this.LastTestResultId == input.LastTestResultId ||
-                    (this.LastTestResultId != null &&
-                    this.LastTestResultId.Equals(input.LastTestResultId))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                if (this.TesterId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TesterId.GetHashCode();
-                }
-                if (this.IterationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.IterationId.GetHashCode();
-                }
-                if (this.WorkItemId != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItemId.GetHashCode();
-                }
-                if (this.ConfigurationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ConfigurationId.GetHashCode();
-                }
-                if (this.TestSuiteId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestSuiteId.GetHashCode();
-                }
-                if (this.Status != null)
-                {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                }
-                if (this.StatusModel != null)
-                {
-                    hashCode = (hashCode * 59) + this.StatusModel.GetHashCode();
-                }
-                if (this.LastTestResultId != null)
-                {
-                    hashCode = (hashCode * 59) + this.LastTestResultId.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

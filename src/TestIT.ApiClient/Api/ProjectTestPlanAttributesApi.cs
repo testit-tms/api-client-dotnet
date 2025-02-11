@@ -104,9 +104,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchAttributesInProjectRequest"> (optional)</param>
+        /// <param name="projectAttributesFilterModel"> (optional)</param>
         /// <returns>List&lt;CustomAttributeGetModel&gt;</returns>
-        List<CustomAttributeGetModel> SearchTestPlanAttributesInProject(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAttributesInProjectRequest searchAttributesInProjectRequest = default(SearchAttributesInProjectRequest));
+        List<CustomAttributeGetModel> SearchTestPlanAttributesInProject(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectAttributesFilterModel projectAttributesFilterModel = default(ProjectAttributesFilterModel));
 
         /// <summary>
         /// Search for attributes used in the project test plans
@@ -121,9 +121,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchAttributesInProjectRequest"> (optional)</param>
+        /// <param name="projectAttributesFilterModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;CustomAttributeGetModel&gt;</returns>
-        ApiResponse<List<CustomAttributeGetModel>> SearchTestPlanAttributesInProjectWithHttpInfo(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAttributesInProjectRequest searchAttributesInProjectRequest = default(SearchAttributesInProjectRequest));
+        ApiResponse<List<CustomAttributeGetModel>> SearchTestPlanAttributesInProjectWithHttpInfo(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectAttributesFilterModel projectAttributesFilterModel = default(ProjectAttributesFilterModel));
         /// <summary>
         /// Update attribute of project&#39;s test plans
         /// </summary>
@@ -132,9 +132,9 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="updateCustomAttributeTestPlanProjectRelationsRequest"> (optional)</param>
+        /// <param name="customAttributeTestPlanProjectRelationPutModel"> (optional)</param>
         /// <returns></returns>
-        void UpdateCustomAttributeTestPlanProjectRelations(string projectId, UpdateCustomAttributeTestPlanProjectRelationsRequest updateCustomAttributeTestPlanProjectRelationsRequest = default(UpdateCustomAttributeTestPlanProjectRelationsRequest));
+        void UpdateCustomAttributeTestPlanProjectRelations(string projectId, CustomAttributeTestPlanProjectRelationPutModel customAttributeTestPlanProjectRelationPutModel = default(CustomAttributeTestPlanProjectRelationPutModel));
 
         /// <summary>
         /// Update attribute of project&#39;s test plans
@@ -144,9 +144,9 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="updateCustomAttributeTestPlanProjectRelationsRequest"> (optional)</param>
+        /// <param name="customAttributeTestPlanProjectRelationPutModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfo(string projectId, UpdateCustomAttributeTestPlanProjectRelationsRequest updateCustomAttributeTestPlanProjectRelationsRequest = default(UpdateCustomAttributeTestPlanProjectRelationsRequest));
+        ApiResponse<Object> UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfo(string projectId, CustomAttributeTestPlanProjectRelationPutModel customAttributeTestPlanProjectRelationPutModel = default(CustomAttributeTestPlanProjectRelationPutModel));
         #endregion Synchronous Operations
     }
 
@@ -167,7 +167,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="requestBody"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CreateCustomAttributeTestPlanProjectRelationsAsync(string projectId, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task CreateCustomAttributeTestPlanProjectRelationsAsync(string projectId, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Add attributes to project&#39;s test plans
@@ -180,7 +180,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="requestBody"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CreateCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(string projectId, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> CreateCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(string projectId, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete attribute from project&#39;s test plans
         /// </summary>
@@ -192,7 +192,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="attributeId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteCustomAttributeTestPlanProjectRelationsAsync(string projectId, Guid attributeId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteCustomAttributeTestPlanProjectRelationsAsync(string projectId, Guid attributeId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete attribute from project&#39;s test plans
@@ -205,7 +205,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="attributeId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(string projectId, Guid attributeId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(string projectId, Guid attributeId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get project&#39;s test plan attributes
         /// </summary>
@@ -216,7 +216,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CustomAttributeModel&gt;</returns>
-        System.Threading.Tasks.Task<List<CustomAttributeModel>> GetCustomAttributeTestPlanProjectRelationsAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<CustomAttributeModel>> GetCustomAttributeTestPlanProjectRelationsAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get project&#39;s test plan attributes
@@ -228,7 +228,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CustomAttributeModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<CustomAttributeModel>>> GetCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<CustomAttributeModel>>> GetCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Search for attributes used in the project test plans
         /// </summary>
@@ -242,10 +242,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchAttributesInProjectRequest"> (optional)</param>
+        /// <param name="projectAttributesFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CustomAttributeGetModel&gt;</returns>
-        System.Threading.Tasks.Task<List<CustomAttributeGetModel>> SearchTestPlanAttributesInProjectAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAttributesInProjectRequest searchAttributesInProjectRequest = default(SearchAttributesInProjectRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<CustomAttributeGetModel>> SearchTestPlanAttributesInProjectAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectAttributesFilterModel projectAttributesFilterModel = default(ProjectAttributesFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Search for attributes used in the project test plans
@@ -260,10 +260,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchAttributesInProjectRequest"> (optional)</param>
+        /// <param name="projectAttributesFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CustomAttributeGetModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<CustomAttributeGetModel>>> SearchTestPlanAttributesInProjectWithHttpInfoAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAttributesInProjectRequest searchAttributesInProjectRequest = default(SearchAttributesInProjectRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<CustomAttributeGetModel>>> SearchTestPlanAttributesInProjectWithHttpInfoAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectAttributesFilterModel projectAttributesFilterModel = default(ProjectAttributesFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Update attribute of project&#39;s test plans
         /// </summary>
@@ -272,10 +272,10 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="updateCustomAttributeTestPlanProjectRelationsRequest"> (optional)</param>
+        /// <param name="customAttributeTestPlanProjectRelationPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateCustomAttributeTestPlanProjectRelationsAsync(string projectId, UpdateCustomAttributeTestPlanProjectRelationsRequest updateCustomAttributeTestPlanProjectRelationsRequest = default(UpdateCustomAttributeTestPlanProjectRelationsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task UpdateCustomAttributeTestPlanProjectRelationsAsync(string projectId, CustomAttributeTestPlanProjectRelationPutModel customAttributeTestPlanProjectRelationPutModel = default(CustomAttributeTestPlanProjectRelationPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update attribute of project&#39;s test plans
@@ -285,10 +285,10 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="updateCustomAttributeTestPlanProjectRelationsRequest"> (optional)</param>
+        /// <param name="customAttributeTestPlanProjectRelationPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(string projectId, UpdateCustomAttributeTestPlanProjectRelationsRequest updateCustomAttributeTestPlanProjectRelationsRequest = default(UpdateCustomAttributeTestPlanProjectRelationsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(string projectId, CustomAttributeTestPlanProjectRelationPutModel customAttributeTestPlanProjectRelationPutModel = default(CustomAttributeTestPlanProjectRelationPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -573,7 +573,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="requestBody"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CreateCustomAttributeTestPlanProjectRelationsAsync(string projectId, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task CreateCustomAttributeTestPlanProjectRelationsAsync(string projectId, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await CreateCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(projectId, requestBody, cancellationToken).ConfigureAwait(false);
         }
@@ -586,7 +586,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="requestBody"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> CreateCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(string projectId, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> CreateCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(string projectId, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -703,7 +703,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="attributeId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteCustomAttributeTestPlanProjectRelationsAsync(string projectId, Guid attributeId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteCustomAttributeTestPlanProjectRelationsAsync(string projectId, Guid attributeId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await DeleteCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(projectId, attributeId, cancellationToken).ConfigureAwait(false);
         }
@@ -716,7 +716,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="attributeId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(string projectId, Guid attributeId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(string projectId, Guid attributeId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -829,7 +829,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CustomAttributeModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<CustomAttributeModel>> GetCustomAttributeTestPlanProjectRelationsAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<CustomAttributeModel>> GetCustomAttributeTestPlanProjectRelationsAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeModel>> localVarResponse = await GetCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(projectId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -842,7 +842,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CustomAttributeModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeModel>>> GetCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeModel>>> GetCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -897,11 +897,11 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchAttributesInProjectRequest"> (optional)</param>
+        /// <param name="projectAttributesFilterModel"> (optional)</param>
         /// <returns>List&lt;CustomAttributeGetModel&gt;</returns>
-        public List<CustomAttributeGetModel> SearchTestPlanAttributesInProject(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAttributesInProjectRequest searchAttributesInProjectRequest = default(SearchAttributesInProjectRequest))
+        public List<CustomAttributeGetModel> SearchTestPlanAttributesInProject(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectAttributesFilterModel projectAttributesFilterModel = default(ProjectAttributesFilterModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeGetModel>> localVarResponse = SearchTestPlanAttributesInProjectWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, searchAttributesInProjectRequest);
+            TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeGetModel>> localVarResponse = SearchTestPlanAttributesInProjectWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
             return localVarResponse.Data;
         }
 
@@ -915,9 +915,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchAttributesInProjectRequest"> (optional)</param>
+        /// <param name="projectAttributesFilterModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;CustomAttributeGetModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeGetModel>> SearchTestPlanAttributesInProjectWithHttpInfo(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAttributesInProjectRequest searchAttributesInProjectRequest = default(SearchAttributesInProjectRequest))
+        public TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeGetModel>> SearchTestPlanAttributesInProjectWithHttpInfo(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectAttributesFilterModel projectAttributesFilterModel = default(ProjectAttributesFilterModel))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -961,7 +961,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = searchAttributesInProjectRequest;
+            localVarRequestOptions.Data = projectAttributesFilterModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -991,12 +991,12 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchAttributesInProjectRequest"> (optional)</param>
+        /// <param name="projectAttributesFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CustomAttributeGetModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<CustomAttributeGetModel>> SearchTestPlanAttributesInProjectAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAttributesInProjectRequest searchAttributesInProjectRequest = default(SearchAttributesInProjectRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<CustomAttributeGetModel>> SearchTestPlanAttributesInProjectAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectAttributesFilterModel projectAttributesFilterModel = default(ProjectAttributesFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeGetModel>> localVarResponse = await SearchTestPlanAttributesInProjectWithHttpInfoAsync(projectId, skip, take, orderBy, searchField, searchValue, searchAttributesInProjectRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeGetModel>> localVarResponse = await SearchTestPlanAttributesInProjectWithHttpInfoAsync(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1010,10 +1010,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchAttributesInProjectRequest"> (optional)</param>
+        /// <param name="projectAttributesFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CustomAttributeGetModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeGetModel>>> SearchTestPlanAttributesInProjectWithHttpInfoAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchAttributesInProjectRequest searchAttributesInProjectRequest = default(SearchAttributesInProjectRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeGetModel>>> SearchTestPlanAttributesInProjectWithHttpInfoAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectAttributesFilterModel projectAttributesFilterModel = default(ProjectAttributesFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -1059,7 +1059,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = searchAttributesInProjectRequest;
+            localVarRequestOptions.Data = projectAttributesFilterModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1085,11 +1085,11 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="updateCustomAttributeTestPlanProjectRelationsRequest"> (optional)</param>
+        /// <param name="customAttributeTestPlanProjectRelationPutModel"> (optional)</param>
         /// <returns></returns>
-        public void UpdateCustomAttributeTestPlanProjectRelations(string projectId, UpdateCustomAttributeTestPlanProjectRelationsRequest updateCustomAttributeTestPlanProjectRelationsRequest = default(UpdateCustomAttributeTestPlanProjectRelationsRequest))
+        public void UpdateCustomAttributeTestPlanProjectRelations(string projectId, CustomAttributeTestPlanProjectRelationPutModel customAttributeTestPlanProjectRelationPutModel = default(CustomAttributeTestPlanProjectRelationPutModel))
         {
-            UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfo(projectId, updateCustomAttributeTestPlanProjectRelationsRequest);
+            UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfo(projectId, customAttributeTestPlanProjectRelationPutModel);
         }
 
         /// <summary>
@@ -1097,9 +1097,9 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="updateCustomAttributeTestPlanProjectRelationsRequest"> (optional)</param>
+        /// <param name="customAttributeTestPlanProjectRelationPutModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfo(string projectId, UpdateCustomAttributeTestPlanProjectRelationsRequest updateCustomAttributeTestPlanProjectRelationsRequest = default(UpdateCustomAttributeTestPlanProjectRelationsRequest))
+        public TestIT.ApiClient.Client.ApiResponse<Object> UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfo(string projectId, CustomAttributeTestPlanProjectRelationPutModel customAttributeTestPlanProjectRelationPutModel = default(CustomAttributeTestPlanProjectRelationPutModel))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -1123,7 +1123,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.Data = updateCustomAttributeTestPlanProjectRelationsRequest;
+            localVarRequestOptions.Data = customAttributeTestPlanProjectRelationPutModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1148,12 +1148,12 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="updateCustomAttributeTestPlanProjectRelationsRequest"> (optional)</param>
+        /// <param name="customAttributeTestPlanProjectRelationPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateCustomAttributeTestPlanProjectRelationsAsync(string projectId, UpdateCustomAttributeTestPlanProjectRelationsRequest updateCustomAttributeTestPlanProjectRelationsRequest = default(UpdateCustomAttributeTestPlanProjectRelationsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task UpdateCustomAttributeTestPlanProjectRelationsAsync(string projectId, CustomAttributeTestPlanProjectRelationPutModel customAttributeTestPlanProjectRelationPutModel = default(CustomAttributeTestPlanProjectRelationPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(projectId, updateCustomAttributeTestPlanProjectRelationsRequest, cancellationToken).ConfigureAwait(false);
+            await UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(projectId, customAttributeTestPlanProjectRelationPutModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1161,10 +1161,10 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
-        /// <param name="updateCustomAttributeTestPlanProjectRelationsRequest"> (optional)</param>
+        /// <param name="customAttributeTestPlanProjectRelationPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(string projectId, UpdateCustomAttributeTestPlanProjectRelationsRequest updateCustomAttributeTestPlanProjectRelationsRequest = default(UpdateCustomAttributeTestPlanProjectRelationsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfoAsync(string projectId, CustomAttributeTestPlanProjectRelationPutModel customAttributeTestPlanProjectRelationPutModel = default(CustomAttributeTestPlanProjectRelationPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -1190,7 +1190,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.Data = updateCustomAttributeTestPlanProjectRelationsRequest;
+            localVarRequestOptions.Data = customAttributeTestPlanProjectRelationPutModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))

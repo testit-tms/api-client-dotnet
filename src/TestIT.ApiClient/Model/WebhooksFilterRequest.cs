@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// WebhooksFilterRequest
     /// </summary>
     [DataContract(Name = "WebhooksFilterRequest")]
-    public partial class WebhooksFilterRequest : IEquatable<WebhooksFilterRequest>, IValidatableObject
+    public partial class WebhooksFilterRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhooksFilterRequest" /> class.
@@ -101,98 +101,22 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as WebhooksFilterRequest);
-        }
-
-        /// <summary>
-        /// Returns true if WebhooksFilterRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of WebhooksFilterRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(WebhooksFilterRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.EventTypes == input.EventTypes ||
-                    this.EventTypes != null &&
-                    input.EventTypes != null &&
-                    this.EventTypes.SequenceEqual(input.EventTypes)
-                ) && 
-                (
-                    this.Methods == input.Methods ||
-                    this.Methods != null &&
-                    input.Methods != null &&
-                    this.Methods.SequenceEqual(input.Methods)
-                ) && 
-                (
-                    this.ProjectIds == input.ProjectIds ||
-                    this.ProjectIds != null &&
-                    input.ProjectIds != null &&
-                    this.ProjectIds.SequenceEqual(input.ProjectIds)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.EventTypes != null)
-                {
-                    hashCode = (hashCode * 59) + this.EventTypes.GetHashCode();
-                }
-                if (this.Methods != null)
-                {
-                    hashCode = (hashCode * 59) + this.Methods.GetHashCode();
-                }
-                if (this.ProjectIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProjectIds.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
             }
 
             // Name (string) minLength
             if (this.Name != null && this.Name.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
             }
 
             yield break;

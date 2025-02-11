@@ -30,18 +30,20 @@ namespace TestIT.ApiClient.Model
     /// WorkItemShortModel
     /// </summary>
     [DataContract(Name = "WorkItemShortModel")]
-    public partial class WorkItemShortModel : IEquatable<WorkItemShortModel>, IValidatableObject
+    public partial class WorkItemShortModel : IValidatableObject
     {
 
         /// <summary>
-        /// Gets or Sets State
+        /// The current state of Work Item
         /// </summary>
+        /// <value>The current state of Work Item</value>
         [DataMember(Name = "state", IsRequired = true, EmitDefaultValue = true)]
         public WorkItemStates State { get; set; }
 
         /// <summary>
-        /// Gets or Sets Priority
+        /// Work Item priority level
         /// </summary>
+        /// <value>Work Item priority level</value>
         [DataMember(Name = "priority", IsRequired = true, EmitDefaultValue = true)]
         public WorkItemPriorityModel Priority { get; set; }
         /// <summary>
@@ -69,8 +71,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedById">Unique identifier of user who applied the latest modification of Work Item.</param>
         /// <param name="createdDate">Date and time of Work Item creation.</param>
         /// <param name="modifiedDate">Date and time of the latest modification of Work Item.</param>
-        /// <param name="state">state (required).</param>
-        /// <param name="priority">priority (required).</param>
+        /// <param name="state">The current state of Work Item (required).</param>
+        /// <param name="priority">Work Item priority level (required).</param>
         /// <param name="isDeleted">Flag determining whether Work Item is deleted (required).</param>
         /// <param name="tagNames">Array of tag names of Work Item.</param>
         /// <param name="iterations">Set of iterations related to Work Item (required).</param>
@@ -152,7 +154,9 @@ namespace TestIT.ApiClient.Model
         /// Work Item name
         /// </summary>
         /// <value>Work Item name</value>
-        /// <example>&quot;Performance test&quot;</example>
+        /*
+        <example>Performance test</example>
+        */
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -160,7 +164,9 @@ namespace TestIT.ApiClient.Model
         /// Work Item type. Possible values: CheckLists, SharedSteps, TestCases
         /// </summary>
         /// <value>Work Item type. Possible values: CheckLists, SharedSteps, TestCases</value>
-        /// <example>&quot;TestCases&quot;</example>
+        /*
+        <example>TestCases</example>
+        */
         [DataMember(Name = "entityTypeName", IsRequired = true, EmitDefaultValue = true)]
         public string EntityTypeName { get; set; }
 
@@ -182,7 +188,9 @@ namespace TestIT.ApiClient.Model
         /// Section name of Work Item
         /// </summary>
         /// <value>Section name of Work Item</value>
-        /// <example>&quot;Performance tests section&quot;</example>
+        /*
+        <example>Performance tests section</example>
+        */
         [DataMember(Name = "sectionName", IsRequired = true, EmitDefaultValue = true)]
         public string SectionName { get; set; }
 
@@ -322,248 +330,28 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as WorkItemShortModel);
-        }
-
-        /// <summary>
-        /// Returns true if WorkItemShortModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of WorkItemShortModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(WorkItemShortModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.VersionId == input.VersionId ||
-                    (this.VersionId != null &&
-                    this.VersionId.Equals(input.VersionId))
-                ) && 
-                (
-                    this.VersionNumber == input.VersionNumber ||
-                    this.VersionNumber.Equals(input.VersionNumber)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.EntityTypeName == input.EntityTypeName ||
-                    (this.EntityTypeName != null &&
-                    this.EntityTypeName.Equals(input.EntityTypeName))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.SectionId == input.SectionId ||
-                    (this.SectionId != null &&
-                    this.SectionId.Equals(input.SectionId))
-                ) && 
-                (
-                    this.SectionName == input.SectionName ||
-                    (this.SectionName != null &&
-                    this.SectionName.Equals(input.SectionName))
-                ) && 
-                (
-                    this.IsAutomated == input.IsAutomated ||
-                    this.IsAutomated.Equals(input.IsAutomated)
-                ) && 
-                (
-                    this.GlobalId == input.GlobalId ||
-                    this.GlobalId.Equals(input.GlobalId)
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    this.Duration.Equals(input.Duration)
-                ) && 
-                (
-                    this.MedianDuration == input.MedianDuration ||
-                    (this.MedianDuration != null &&
-                    this.MedianDuration.Equals(input.MedianDuration))
-                ) && 
-                (
-                    this.Attributes == input.Attributes ||
-                    this.Attributes != null &&
-                    input.Attributes != null &&
-                    this.Attributes.SequenceEqual(input.Attributes)
-                ) && 
-                (
-                    this.CreatedById == input.CreatedById ||
-                    (this.CreatedById != null &&
-                    this.CreatedById.Equals(input.CreatedById))
-                ) && 
-                (
-                    this.ModifiedById == input.ModifiedById ||
-                    (this.ModifiedById != null &&
-                    this.ModifiedById.Equals(input.ModifiedById))
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.State == input.State ||
-                    this.State.Equals(input.State)
-                ) && 
-                (
-                    this.Priority == input.Priority ||
-                    this.Priority.Equals(input.Priority)
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    this.IsDeleted.Equals(input.IsDeleted)
-                ) && 
-                (
-                    this.TagNames == input.TagNames ||
-                    this.TagNames != null &&
-                    input.TagNames != null &&
-                    this.TagNames.SequenceEqual(input.TagNames)
-                ) && 
-                (
-                    this.Iterations == input.Iterations ||
-                    this.Iterations != null &&
-                    input.Iterations != null &&
-                    this.Iterations.SequenceEqual(input.Iterations)
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    this.Links != null &&
-                    input.Links != null &&
-                    this.Links.SequenceEqual(input.Links)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.VersionId != null)
-                {
-                    hashCode = (hashCode * 59) + this.VersionId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.VersionNumber.GetHashCode();
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.EntityTypeName != null)
-                {
-                    hashCode = (hashCode * 59) + this.EntityTypeName.GetHashCode();
-                }
-                if (this.ProjectId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProjectId.GetHashCode();
-                }
-                if (this.SectionId != null)
-                {
-                    hashCode = (hashCode * 59) + this.SectionId.GetHashCode();
-                }
-                if (this.SectionName != null)
-                {
-                    hashCode = (hashCode * 59) + this.SectionName.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsAutomated.GetHashCode();
-                hashCode = (hashCode * 59) + this.GlobalId.GetHashCode();
-                hashCode = (hashCode * 59) + this.Duration.GetHashCode();
-                if (this.MedianDuration != null)
-                {
-                    hashCode = (hashCode * 59) + this.MedianDuration.GetHashCode();
-                }
-                if (this.Attributes != null)
-                {
-                    hashCode = (hashCode * 59) + this.Attributes.GetHashCode();
-                }
-                if (this.CreatedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedById.GetHashCode();
-                }
-                if (this.ModifiedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedById.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.State.GetHashCode();
-                hashCode = (hashCode * 59) + this.Priority.GetHashCode();
-                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                if (this.TagNames != null)
-                {
-                    hashCode = (hashCode * 59) + this.TagNames.GetHashCode();
-                }
-                if (this.Iterations != null)
-                {
-                    hashCode = (hashCode * 59) + this.Iterations.GetHashCode();
-                }
-                if (this.Links != null)
-                {
-                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) minLength
             if (this.Name != null && this.Name.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
             }
 
             // EntityTypeName (string) minLength
             if (this.EntityTypeName != null && this.EntityTypeName.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EntityTypeName, length must be greater than 1.", new [] { "EntityTypeName" });
+                yield return new ValidationResult("Invalid value for EntityTypeName, length must be greater than 1.", new [] { "EntityTypeName" });
             }
 
             // SectionName (string) minLength
             if (this.SectionName != null && this.SectionName.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SectionName, length must be greater than 1.", new [] { "SectionName" });
+                yield return new ValidationResult("Invalid value for SectionName, length must be greater than 1.", new [] { "SectionName" });
             }
 
             yield break;

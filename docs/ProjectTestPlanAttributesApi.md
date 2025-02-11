@@ -326,7 +326,7 @@ catch (ApiException e)
 
 <a id="searchtestplanattributesinproject"></a>
 # **SearchTestPlanAttributesInProject**
-> List&lt;CustomAttributeGetModel&gt; SearchTestPlanAttributesInProject (string projectId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, SearchAttributesInProjectRequest searchAttributesInProjectRequest = null)
+> List&lt;CustomAttributeGetModel&gt; SearchTestPlanAttributesInProject (string projectId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ProjectAttributesFilterModel projectAttributesFilterModel = null)
 
 Search for attributes used in the project test plans
 
@@ -362,12 +362,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var searchAttributesInProjectRequest = new SearchAttributesInProjectRequest(); // SearchAttributesInProjectRequest |  (optional) 
+            var projectAttributesFilterModel = new ProjectAttributesFilterModel(); // ProjectAttributesFilterModel |  (optional) 
 
             try
             {
                 // Search for attributes used in the project test plans
-                List<CustomAttributeGetModel> result = apiInstance.SearchTestPlanAttributesInProject(projectId, skip, take, orderBy, searchField, searchValue, searchAttributesInProjectRequest);
+                List<CustomAttributeGetModel> result = apiInstance.SearchTestPlanAttributesInProject(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -388,7 +388,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for attributes used in the project test plans
-    ApiResponse<List<CustomAttributeGetModel>> response = apiInstance.SearchTestPlanAttributesInProjectWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, searchAttributesInProjectRequest);
+    ApiResponse<List<CustomAttributeGetModel>> response = apiInstance.SearchTestPlanAttributesInProjectWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -411,7 +411,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **searchAttributesInProjectRequest** | [**SearchAttributesInProjectRequest**](SearchAttributesInProjectRequest.md) |  | [optional]  |
+| **projectAttributesFilterModel** | [**ProjectAttributesFilterModel**](ProjectAttributesFilterModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -442,7 +442,7 @@ catch (ApiException e)
 
 <a id="updatecustomattributetestplanprojectrelations"></a>
 # **UpdateCustomAttributeTestPlanProjectRelations**
-> void UpdateCustomAttributeTestPlanProjectRelations (string projectId, UpdateCustomAttributeTestPlanProjectRelationsRequest updateCustomAttributeTestPlanProjectRelationsRequest = null)
+> void UpdateCustomAttributeTestPlanProjectRelations (string projectId, CustomAttributeTestPlanProjectRelationPutModel customAttributeTestPlanProjectRelationPutModel = null)
 
 Update attribute of project's test plans
 
@@ -475,12 +475,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectTestPlanAttributesApi(httpClient, config, httpClientHandler);
             var projectId = "projectId_example";  // string | Project internal (UUID) or global (integer) identifier
-            var updateCustomAttributeTestPlanProjectRelationsRequest = new UpdateCustomAttributeTestPlanProjectRelationsRequest(); // UpdateCustomAttributeTestPlanProjectRelationsRequest |  (optional) 
+            var customAttributeTestPlanProjectRelationPutModel = new CustomAttributeTestPlanProjectRelationPutModel(); // CustomAttributeTestPlanProjectRelationPutModel |  (optional) 
 
             try
             {
                 // Update attribute of project's test plans
-                apiInstance.UpdateCustomAttributeTestPlanProjectRelations(projectId, updateCustomAttributeTestPlanProjectRelationsRequest);
+                apiInstance.UpdateCustomAttributeTestPlanProjectRelations(projectId, customAttributeTestPlanProjectRelationPutModel);
             }
             catch (ApiException  e)
             {
@@ -500,7 +500,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update attribute of project's test plans
-    apiInstance.UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfo(projectId, updateCustomAttributeTestPlanProjectRelationsRequest);
+    apiInstance.UpdateCustomAttributeTestPlanProjectRelationsWithHttpInfo(projectId, customAttributeTestPlanProjectRelationPutModel);
 }
 catch (ApiException e)
 {
@@ -515,7 +515,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **string** | Project internal (UUID) or global (integer) identifier |  |
-| **updateCustomAttributeTestPlanProjectRelationsRequest** | [**UpdateCustomAttributeTestPlanProjectRelationsRequest**](UpdateCustomAttributeTestPlanProjectRelationsRequest.md) |  | [optional]  |
+| **customAttributeTestPlanProjectRelationPutModel** | [**CustomAttributeTestPlanProjectRelationPutModel**](CustomAttributeTestPlanProjectRelationPutModel.md) |  | [optional]  |
 
 ### Return type
 

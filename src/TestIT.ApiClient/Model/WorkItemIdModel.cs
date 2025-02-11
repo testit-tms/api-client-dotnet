@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// WorkItemIdModel
     /// </summary>
     [DataContract(Name = "WorkItemIdModel")]
-    public partial class WorkItemIdModel : IEquatable<WorkItemIdModel>, IValidatableObject
+    public partial class WorkItemIdModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemIdModel" /> class.
@@ -55,7 +55,9 @@ namespace TestIT.ApiClient.Model
         /// Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format
         /// </summary>
         /// <value>Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format</value>
-        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
+        /*
+        <example>cbb88fe6-c193-48e9-9e37-323fbc38de5f</example>
+        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
@@ -82,62 +84,16 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as WorkItemIdModel);
-        }
-
-        /// <summary>
-        /// Returns true if WorkItemIdModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of WorkItemIdModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(WorkItemIdModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Id (string) minLength
             if (this.Id != null && this.Id.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Id, length must be greater than 1.", new [] { "Id" });
+                yield return new ValidationResult("Invalid value for Id, length must be greater than 1.", new [] { "Id" });
             }
 
             yield break;

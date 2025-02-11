@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** |  | 
 **TestPlanId** | **Guid** |  | 
-**TestPlanChangedFields** | [**TestPlanChangeModelTestPlanChangedFields**](TestPlanChangeModelTestPlanChangedFields.md) |  | 
+**TestPlanChangedFields** | [**TestPlanChangedFieldsViewModel**](TestPlanChangedFieldsViewModel.md) |  | 
 **CreatedById** | **Guid** |  | 
 **CreatedDate** | **DateTime?** |  | [optional] 
 

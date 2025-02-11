@@ -38,7 +38,7 @@ All URIs are relative to *http://localhost*
 
 <a id="addtestpointswithsections"></a>
 # **AddTestPointsWithSections**
-> void AddTestPointsWithSections (string id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = null)
+> void AddTestPointsWithSections (string id, WorkItemSelectModel workItemSelectModel = null)
 
 Add test-points to TestPlan with sections
 
@@ -69,12 +69,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
-            var apiV2ProjectsProjectIdWorkItemsSearchPostRequest = new ApiV2ProjectsProjectIdWorkItemsSearchPostRequest(); // ApiV2ProjectsProjectIdWorkItemsSearchPostRequest | Filter object to retrieve work items for test-suite's project (optional) 
+            var workItemSelectModel = new WorkItemSelectModel(); // WorkItemSelectModel | Filter object to retrieve work items for test-suite's project (optional) 
 
             try
             {
                 // Add test-points to TestPlan with sections
-                apiInstance.AddTestPointsWithSections(id, apiV2ProjectsProjectIdWorkItemsSearchPostRequest);
+                apiInstance.AddTestPointsWithSections(id, workItemSelectModel);
             }
             catch (ApiException  e)
             {
@@ -94,7 +94,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Add test-points to TestPlan with sections
-    apiInstance.AddTestPointsWithSectionsWithHttpInfo(id, apiV2ProjectsProjectIdWorkItemsSearchPostRequest);
+    apiInstance.AddTestPointsWithSectionsWithHttpInfo(id, workItemSelectModel);
 }
 catch (ApiException e)
 {
@@ -109,7 +109,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
-| **apiV2ProjectsProjectIdWorkItemsSearchPostRequest** | [**ApiV2ProjectsProjectIdWorkItemsSearchPostRequest**](ApiV2ProjectsProjectIdWorkItemsSearchPostRequest.md) | Filter object to retrieve work items for test-suite&#39;s project | [optional]  |
+| **workItemSelectModel** | [**WorkItemSelectModel**](WorkItemSelectModel.md) | Filter object to retrieve work items for test-suite&#39;s project | [optional]  |
 
 ### Return type
 
@@ -562,7 +562,7 @@ catch (ApiException e)
 
 <a id="apiv2testplansidexporttestpointsxlsxpost"></a>
 # **ApiV2TestPlansIdExportTestPointsXlsxPost**
-> void ApiV2TestPlansIdExportTestPointsXlsxPost (string id, long? timeZoneOffsetInMinutes = null, ApiV2TestPlansIdExportTestPointsXlsxPostRequest apiV2TestPlansIdExportTestPointsXlsxPostRequest = null)
+> void ApiV2TestPlansIdExportTestPointsXlsxPost (string id, long? timeZoneOffsetInMinutes = null, GetXlsxTestPointsByTestPlanModel getXlsxTestPointsByTestPlanModel = null)
 
 Export TestPoints from TestPlan in xls format
 
@@ -596,12 +596,12 @@ namespace Example
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
             var timeZoneOffsetInMinutes = 789L;  // long? |  (optional) 
-            var apiV2TestPlansIdExportTestPointsXlsxPostRequest = new ApiV2TestPlansIdExportTestPointsXlsxPostRequest(); // ApiV2TestPlansIdExportTestPointsXlsxPostRequest |  (optional) 
+            var getXlsxTestPointsByTestPlanModel = new GetXlsxTestPointsByTestPlanModel(); // GetXlsxTestPointsByTestPlanModel |  (optional) 
 
             try
             {
                 // Export TestPoints from TestPlan in xls format
-                apiInstance.ApiV2TestPlansIdExportTestPointsXlsxPost(id, timeZoneOffsetInMinutes, apiV2TestPlansIdExportTestPointsXlsxPostRequest);
+                apiInstance.ApiV2TestPlansIdExportTestPointsXlsxPost(id, timeZoneOffsetInMinutes, getXlsxTestPointsByTestPlanModel);
             }
             catch (ApiException  e)
             {
@@ -621,7 +621,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Export TestPoints from TestPlan in xls format
-    apiInstance.ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(id, timeZoneOffsetInMinutes, apiV2TestPlansIdExportTestPointsXlsxPostRequest);
+    apiInstance.ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(id, timeZoneOffsetInMinutes, getXlsxTestPointsByTestPlanModel);
 }
 catch (ApiException e)
 {
@@ -637,7 +637,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
 | **timeZoneOffsetInMinutes** | **long?** |  | [optional]  |
-| **apiV2TestPlansIdExportTestPointsXlsxPostRequest** | [**ApiV2TestPlansIdExportTestPointsXlsxPostRequest**](ApiV2TestPlansIdExportTestPointsXlsxPostRequest.md) |  | [optional]  |
+| **getXlsxTestPointsByTestPlanModel** | [**GetXlsxTestPointsByTestPlanModel**](GetXlsxTestPointsByTestPlanModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -1438,7 +1438,7 @@ void (empty response body)
 
 <a id="apiv2testplansidtestpointstesterdelete"></a>
 # **ApiV2TestPlansIdTestPointsTesterDelete**
-> List&lt;Guid&gt; ApiV2TestPlansIdTestPointsTesterDelete (string id, ApiV2TestPlansIdTestPointsTesterUserIdPostRequest apiV2TestPlansIdTestPointsTesterUserIdPostRequest = null)
+> List&lt;Guid&gt; ApiV2TestPlansIdTestPointsTesterDelete (string id, TestPointSelectModel testPointSelectModel = null)
 
 Unassign users from multiple test points
 
@@ -1469,12 +1469,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Unique or global ID of the test plan
-            var apiV2TestPlansIdTestPointsTesterUserIdPostRequest = new ApiV2TestPlansIdTestPointsTesterUserIdPostRequest(); // ApiV2TestPlansIdTestPointsTesterUserIdPostRequest |  (optional) 
+            var testPointSelectModel = new TestPointSelectModel(); // TestPointSelectModel |  (optional) 
 
             try
             {
                 // Unassign users from multiple test points
-                List<Guid> result = apiInstance.ApiV2TestPlansIdTestPointsTesterDelete(id, apiV2TestPlansIdTestPointsTesterUserIdPostRequest);
+                List<Guid> result = apiInstance.ApiV2TestPlansIdTestPointsTesterDelete(id, testPointSelectModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1495,7 +1495,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Unassign users from multiple test points
-    ApiResponse<List<Guid>> response = apiInstance.ApiV2TestPlansIdTestPointsTesterDeleteWithHttpInfo(id, apiV2TestPlansIdTestPointsTesterUserIdPostRequest);
+    ApiResponse<List<Guid>> response = apiInstance.ApiV2TestPlansIdTestPointsTesterDeleteWithHttpInfo(id, testPointSelectModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1513,7 +1513,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Unique or global ID of the test plan |  |
-| **apiV2TestPlansIdTestPointsTesterUserIdPostRequest** | [**ApiV2TestPlansIdTestPointsTesterUserIdPostRequest**](ApiV2TestPlansIdTestPointsTesterUserIdPostRequest.md) |  | [optional]  |
+| **testPointSelectModel** | [**TestPointSelectModel**](TestPointSelectModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -1544,7 +1544,7 @@ catch (ApiException e)
 
 <a id="apiv2testplansidtestpointstesteruseridpost"></a>
 # **ApiV2TestPlansIdTestPointsTesterUserIdPost**
-> List&lt;Guid&gt; ApiV2TestPlansIdTestPointsTesterUserIdPost (string id, Guid userId, ApiV2TestPlansIdTestPointsTesterUserIdPostRequest apiV2TestPlansIdTestPointsTesterUserIdPostRequest = null)
+> List&lt;Guid&gt; ApiV2TestPlansIdTestPointsTesterUserIdPost (string id, Guid userId, TestPointSelectModel testPointSelectModel = null)
 
 Assign user as a tester to multiple test points
 
@@ -1576,12 +1576,12 @@ namespace Example
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Unique or global ID of the test plan
             var userId = "userId_example";  // Guid | Unique ID of the user
-            var apiV2TestPlansIdTestPointsTesterUserIdPostRequest = new ApiV2TestPlansIdTestPointsTesterUserIdPostRequest(); // ApiV2TestPlansIdTestPointsTesterUserIdPostRequest |  (optional) 
+            var testPointSelectModel = new TestPointSelectModel(); // TestPointSelectModel |  (optional) 
 
             try
             {
                 // Assign user as a tester to multiple test points
-                List<Guid> result = apiInstance.ApiV2TestPlansIdTestPointsTesterUserIdPost(id, userId, apiV2TestPlansIdTestPointsTesterUserIdPostRequest);
+                List<Guid> result = apiInstance.ApiV2TestPlansIdTestPointsTesterUserIdPost(id, userId, testPointSelectModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1602,7 +1602,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Assign user as a tester to multiple test points
-    ApiResponse<List<Guid>> response = apiInstance.ApiV2TestPlansIdTestPointsTesterUserIdPostWithHttpInfo(id, userId, apiV2TestPlansIdTestPointsTesterUserIdPostRequest);
+    ApiResponse<List<Guid>> response = apiInstance.ApiV2TestPlansIdTestPointsTesterUserIdPostWithHttpInfo(id, userId, testPointSelectModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1621,7 +1621,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Unique or global ID of the test plan |  |
 | **userId** | **Guid** | Unique ID of the user |  |
-| **apiV2TestPlansIdTestPointsTesterUserIdPostRequest** | [**ApiV2TestPlansIdTestPointsTesterUserIdPostRequest**](ApiV2TestPlansIdTestPointsTesterUserIdPostRequest.md) |  | [optional]  |
+| **testPointSelectModel** | [**TestPointSelectModel**](TestPointSelectModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -1776,7 +1776,7 @@ catch (ApiException e)
 
 <a id="apiv2testplansidtestrunssearchpost"></a>
 # **ApiV2TestPlansIdTestRunsSearchPost**
-> List&lt;TestRunApiResult&gt; ApiV2TestPlansIdTestRunsSearchPost (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2TestPlansIdTestRunsSearchPostRequest apiV2TestPlansIdTestRunsSearchPostRequest = null)
+> List&lt;TestRunApiResult&gt; ApiV2TestPlansIdTestRunsSearchPost (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, SearchTestRunsApiModel searchTestRunsApiModel = null)
 
 Search TestRuns of TestPlan
 
@@ -1814,12 +1814,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var apiV2TestPlansIdTestRunsSearchPostRequest = new ApiV2TestPlansIdTestRunsSearchPostRequest(); // ApiV2TestPlansIdTestRunsSearchPostRequest |  (optional) 
+            var searchTestRunsApiModel = new SearchTestRunsApiModel(); // SearchTestRunsApiModel |  (optional) 
 
             try
             {
                 // Search TestRuns of TestPlan
-                List<TestRunApiResult> result = apiInstance.ApiV2TestPlansIdTestRunsSearchPost(id, skip, take, orderBy, searchField, searchValue, apiV2TestPlansIdTestRunsSearchPostRequest);
+                List<TestRunApiResult> result = apiInstance.ApiV2TestPlansIdTestRunsSearchPost(id, skip, take, orderBy, searchField, searchValue, searchTestRunsApiModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1840,7 +1840,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search TestRuns of TestPlan
-    ApiResponse<List<TestRunApiResult>> response = apiInstance.ApiV2TestPlansIdTestRunsSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, apiV2TestPlansIdTestRunsSearchPostRequest);
+    ApiResponse<List<TestRunApiResult>> response = apiInstance.ApiV2TestPlansIdTestRunsSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, searchTestRunsApiModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1863,7 +1863,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **apiV2TestPlansIdTestRunsSearchPostRequest** | [**ApiV2TestPlansIdTestRunsSearchPostRequest**](ApiV2TestPlansIdTestRunsSearchPostRequest.md) |  | [optional]  |
+| **searchTestRunsApiModel** | [**SearchTestRunsApiModel**](SearchTestRunsApiModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -2415,7 +2415,7 @@ void (empty response body)
 
 <a id="createtestplan"></a>
 # **CreateTestPlan**
-> TestPlanModel CreateTestPlan (CreateTestPlanRequest createTestPlanRequest = null)
+> TestPlanModel CreateTestPlan (CreateTestPlanApiModel createTestPlanApiModel = null)
 
 Create TestPlan
 
@@ -2447,12 +2447,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var createTestPlanRequest = new CreateTestPlanRequest(); // CreateTestPlanRequest |  (optional) 
+            var createTestPlanApiModel = new CreateTestPlanApiModel(); // CreateTestPlanApiModel |  (optional) 
 
             try
             {
                 // Create TestPlan
-                TestPlanModel result = apiInstance.CreateTestPlan(createTestPlanRequest);
+                TestPlanModel result = apiInstance.CreateTestPlan(createTestPlanApiModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2473,7 +2473,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create TestPlan
-    ApiResponse<TestPlanModel> response = apiInstance.CreateTestPlanWithHttpInfo(createTestPlanRequest);
+    ApiResponse<TestPlanModel> response = apiInstance.CreateTestPlanWithHttpInfo(createTestPlanApiModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -2490,7 +2490,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **createTestPlanRequest** | [**CreateTestPlanRequest**](CreateTestPlanRequest.md) |  | [optional]  |
+| **createTestPlanApiModel** | [**CreateTestPlanApiModel**](CreateTestPlanApiModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -3242,7 +3242,7 @@ void (empty response body)
 
 <a id="updatetestplan"></a>
 # **UpdateTestPlan**
-> void UpdateTestPlan (UpdateTestPlanRequest updateTestPlanRequest = null)
+> void UpdateTestPlan (UpdateTestPlanApiModel updateTestPlanApiModel = null)
 
 Update TestPlan
 
@@ -3274,12 +3274,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var updateTestPlanRequest = new UpdateTestPlanRequest(); // UpdateTestPlanRequest |  (optional) 
+            var updateTestPlanApiModel = new UpdateTestPlanApiModel(); // UpdateTestPlanApiModel |  (optional) 
 
             try
             {
                 // Update TestPlan
-                apiInstance.UpdateTestPlan(updateTestPlanRequest);
+                apiInstance.UpdateTestPlan(updateTestPlanApiModel);
             }
             catch (ApiException  e)
             {
@@ -3299,7 +3299,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update TestPlan
-    apiInstance.UpdateTestPlanWithHttpInfo(updateTestPlanRequest);
+    apiInstance.UpdateTestPlanWithHttpInfo(updateTestPlanApiModel);
 }
 catch (ApiException e)
 {
@@ -3313,7 +3313,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **updateTestPlanRequest** | [**UpdateTestPlanRequest**](UpdateTestPlanRequest.md) |  | [optional]  |
+| **updateTestPlanApiModel** | [**UpdateTestPlanApiModel**](UpdateTestPlanApiModel.md) |  | [optional]  |
 
 ### Return type
 

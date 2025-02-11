@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// SharedStepModel
     /// </summary>
     [DataContract(Name = "SharedStepModel")]
-    public partial class SharedStepModel : IEquatable<SharedStepModel>, IValidatableObject
+    public partial class SharedStepModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SharedStepModel" /> class.
@@ -67,21 +67,27 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets VersionId
         /// </summary>
-        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
+        /*
+        <example>cbb88fe6-c193-48e9-9e37-323fbc38de5f</example>
+        */
         [DataMember(Name = "versionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid VersionId { get; set; }
 
         /// <summary>
         /// Gets or Sets GlobalId
         /// </summary>
-        /// <example>1000</example>
+        /*
+        <example>1000</example>
+        */
         [DataMember(Name = "globalId", IsRequired = true, EmitDefaultValue = true)]
         public long GlobalId { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /// <example>&quot;First step&quot;</example>
+        /*
+        <example>First step</example>
+        */
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -95,7 +101,9 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets IsDeleted
         /// </summary>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
@@ -126,86 +134,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as SharedStepModel);
-        }
-
-        /// <summary>
-        /// Returns true if SharedStepModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of SharedStepModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SharedStepModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.VersionId == input.VersionId ||
-                    (this.VersionId != null &&
-                    this.VersionId.Equals(input.VersionId))
-                ) && 
-                (
-                    this.GlobalId == input.GlobalId ||
-                    this.GlobalId.Equals(input.GlobalId)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Steps == input.Steps ||
-                    this.Steps != null &&
-                    input.Steps != null &&
-                    this.Steps.SequenceEqual(input.Steps)
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    this.IsDeleted.Equals(input.IsDeleted)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.VersionId != null)
-                {
-                    hashCode = (hashCode * 59) + this.VersionId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.GlobalId.GetHashCode();
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Steps != null)
-                {
-                    hashCode = (hashCode * 59) + this.Steps.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

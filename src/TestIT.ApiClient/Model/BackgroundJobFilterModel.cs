@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// BackgroundJobFilterModel
     /// </summary>
     [DataContract(Name = "BackgroundJobFilterModel")]
-    public partial class BackgroundJobFilterModel : IEquatable<BackgroundJobFilterModel>, IValidatableObject
+    public partial class BackgroundJobFilterModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BackgroundJobFilterModel" /> class.
@@ -106,95 +106,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as BackgroundJobFilterModel);
-        }
-
-        /// <summary>
-        /// Returns true if BackgroundJobFilterModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of BackgroundJobFilterModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(BackgroundJobFilterModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Types == input.Types ||
-                    this.Types != null &&
-                    input.Types != null &&
-                    this.Types.SequenceEqual(input.Types)
-                ) && 
-                (
-                    this.States == input.States ||
-                    this.States != null &&
-                    input.States != null &&
-                    this.States.SequenceEqual(input.States)
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    (this.IsDeleted != null &&
-                    this.IsDeleted.Equals(input.IsDeleted))
-                ) && 
-                (
-                    this.StartDate == input.StartDate ||
-                    (this.StartDate != null &&
-                    this.StartDate.Equals(input.StartDate))
-                ) && 
-                (
-                    this.EndDate == input.EndDate ||
-                    (this.EndDate != null &&
-                    this.EndDate.Equals(input.EndDate))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Types != null)
-                {
-                    hashCode = (hashCode * 59) + this.Types.GetHashCode();
-                }
-                if (this.States != null)
-                {
-                    hashCode = (hashCode * 59) + this.States.GetHashCode();
-                }
-                if (this.IsDeleted != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                }
-                if (this.StartDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.StartDate.GetHashCode();
-                }
-                if (this.EndDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.EndDate.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

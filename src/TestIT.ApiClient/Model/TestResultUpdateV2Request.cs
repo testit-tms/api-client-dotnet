@@ -30,13 +30,14 @@ namespace TestIT.ApiClient.Model
     /// TestResultUpdateV2Request
     /// </summary>
     [DataContract(Name = "TestResultUpdateV2Request")]
-    public partial class TestResultUpdateV2Request : IEquatable<TestResultUpdateV2Request>, IValidatableObject
+    public partial class TestResultUpdateV2Request : IValidatableObject
     {
 
         /// <summary>
         /// Gets or Sets Outcome
         /// </summary>
         [DataMember(Name = "outcome", EmitDefaultValue = true)]
+        [Obsolete]
         public TestResultOutcome? Outcome { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TestResultUpdateV2Request" /> class.
@@ -188,188 +189,22 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestResultUpdateV2Request);
-        }
-
-        /// <summary>
-        /// Returns true if TestResultUpdateV2Request instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestResultUpdateV2Request to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestResultUpdateV2Request input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.FailureClassIds == input.FailureClassIds ||
-                    this.FailureClassIds != null &&
-                    input.FailureClassIds != null &&
-                    this.FailureClassIds.SequenceEqual(input.FailureClassIds)
-                ) && 
-                (
-                    this.Outcome == input.Outcome ||
-                    this.Outcome.Equals(input.Outcome)
-                ) && 
-                (
-                    this.StatusCode == input.StatusCode ||
-                    (this.StatusCode != null &&
-                    this.StatusCode.Equals(input.StatusCode))
-                ) && 
-                (
-                    this.Comment == input.Comment ||
-                    (this.Comment != null &&
-                    this.Comment.Equals(input.Comment))
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    this.Links != null &&
-                    input.Links != null &&
-                    this.Links.SequenceEqual(input.Links)
-                ) && 
-                (
-                    this.StepResults == input.StepResults ||
-                    this.StepResults != null &&
-                    input.StepResults != null &&
-                    this.StepResults.SequenceEqual(input.StepResults)
-                ) && 
-                (
-                    this.Attachments == input.Attachments ||
-                    this.Attachments != null &&
-                    input.Attachments != null &&
-                    this.Attachments.SequenceEqual(input.Attachments)
-                ) && 
-                (
-                    this.DurationInMs == input.DurationInMs ||
-                    (this.DurationInMs != null &&
-                    this.DurationInMs.Equals(input.DurationInMs))
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    (this.Duration != null &&
-                    this.Duration.Equals(input.Duration))
-                ) && 
-                (
-                    this.StepComments == input.StepComments ||
-                    this.StepComments != null &&
-                    input.StepComments != null &&
-                    this.StepComments.SequenceEqual(input.StepComments)
-                ) && 
-                (
-                    this.SetupResults == input.SetupResults ||
-                    this.SetupResults != null &&
-                    input.SetupResults != null &&
-                    this.SetupResults.SequenceEqual(input.SetupResults)
-                ) && 
-                (
-                    this.TeardownResults == input.TeardownResults ||
-                    this.TeardownResults != null &&
-                    input.TeardownResults != null &&
-                    this.TeardownResults.SequenceEqual(input.TeardownResults)
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.Trace == input.Trace ||
-                    (this.Trace != null &&
-                    this.Trace.Equals(input.Trace))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.FailureClassIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.FailureClassIds.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Outcome.GetHashCode();
-                if (this.StatusCode != null)
-                {
-                    hashCode = (hashCode * 59) + this.StatusCode.GetHashCode();
-                }
-                if (this.Comment != null)
-                {
-                    hashCode = (hashCode * 59) + this.Comment.GetHashCode();
-                }
-                if (this.Links != null)
-                {
-                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
-                }
-                if (this.StepResults != null)
-                {
-                    hashCode = (hashCode * 59) + this.StepResults.GetHashCode();
-                }
-                if (this.Attachments != null)
-                {
-                    hashCode = (hashCode * 59) + this.Attachments.GetHashCode();
-                }
-                if (this.DurationInMs != null)
-                {
-                    hashCode = (hashCode * 59) + this.DurationInMs.GetHashCode();
-                }
-                if (this.Duration != null)
-                {
-                    hashCode = (hashCode * 59) + this.Duration.GetHashCode();
-                }
-                if (this.StepComments != null)
-                {
-                    hashCode = (hashCode * 59) + this.StepComments.GetHashCode();
-                }
-                if (this.SetupResults != null)
-                {
-                    hashCode = (hashCode * 59) + this.SetupResults.GetHashCode();
-                }
-                if (this.TeardownResults != null)
-                {
-                    hashCode = (hashCode * 59) + this.TeardownResults.GetHashCode();
-                }
-                if (this.Message != null)
-                {
-                    hashCode = (hashCode * 59) + this.Message.GetHashCode();
-                }
-                if (this.Trace != null)
-                {
-                    hashCode = (hashCode * 59) + this.Trace.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // DurationInMs (long?) minimum
             if (this.DurationInMs < (long?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DurationInMs, must be a value greater than or equal to 0.", new [] { "DurationInMs" });
+                yield return new ValidationResult("Invalid value for DurationInMs, must be a value greater than or equal to 0.", new [] { "DurationInMs" });
             }
 
             // Duration (long?) minimum
             if (this.Duration < (long?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Duration, must be a value greater than or equal to 0.", new [] { "Duration" });
+                yield return new ValidationResult("Invalid value for Duration, must be a value greater than or equal to 0.", new [] { "Duration" });
             }
 
             yield break;

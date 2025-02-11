@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// SharedStepReferenceSectionModel
     /// </summary>
     [DataContract(Name = "SharedStepReferenceSectionModel")]
-    public partial class SharedStepReferenceSectionModel : IEquatable<SharedStepReferenceSectionModel>, IValidatableObject
+    public partial class SharedStepReferenceSectionModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SharedStepReferenceSectionModel" /> class.
@@ -70,63 +70,81 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
+        /*
+        <example>cbb88fe6-c193-48e9-9e37-323fbc38de5f</example>
+        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /// <example>&quot;Basic template&quot;</example>
+        /*
+        <example>Basic template</example>
+        */
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets HasThisSharedStepAsPrecondition
         /// </summary>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "hasThisSharedStepAsPrecondition", IsRequired = true, EmitDefaultValue = true)]
         public bool HasThisSharedStepAsPrecondition { get; set; }
 
         /// <summary>
         /// Gets or Sets HasThisSharedStepAsPostcondition
         /// </summary>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "hasThisSharedStepAsPostcondition", IsRequired = true, EmitDefaultValue = true)]
         public bool HasThisSharedStepAsPostcondition { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
         /// </summary>
-        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
+        /*
+        <example>cbb88fe6-c193-48e9-9e37-323fbc38de5f</example>
+        */
         [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
-        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
+        /*
+        <example>cbb88fe6-c193-48e9-9e37-323fbc38de5f</example>
+        */
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        /// <example>&quot;2025-01-24T10:05:02.127835600Z&quot;</example>
+        /*
+        <example>2025-02-09T16:32:03.068992100Z</example>
+        */
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
         public DateTime? CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        /// <example>&quot;2025-01-24T10:05:02.127835600Z&quot;</example>
+        /*
+        <example>2025-02-09T16:32:03.068992100Z</example>
+        */
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets IsDeleted
         /// </summary>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
@@ -161,117 +179,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as SharedStepReferenceSectionModel);
-        }
-
-        /// <summary>
-        /// Returns true if SharedStepReferenceSectionModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of SharedStepReferenceSectionModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SharedStepReferenceSectionModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.HasThisSharedStepAsPrecondition == input.HasThisSharedStepAsPrecondition ||
-                    this.HasThisSharedStepAsPrecondition.Equals(input.HasThisSharedStepAsPrecondition)
-                ) && 
-                (
-                    this.HasThisSharedStepAsPostcondition == input.HasThisSharedStepAsPostcondition ||
-                    this.HasThisSharedStepAsPostcondition.Equals(input.HasThisSharedStepAsPostcondition)
-                ) && 
-                (
-                    this.CreatedById == input.CreatedById ||
-                    (this.CreatedById != null &&
-                    this.CreatedById.Equals(input.CreatedById))
-                ) && 
-                (
-                    this.ModifiedById == input.ModifiedById ||
-                    (this.ModifiedById != null &&
-                    this.ModifiedById.Equals(input.ModifiedById))
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    this.IsDeleted.Equals(input.IsDeleted)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.HasThisSharedStepAsPrecondition.GetHashCode();
-                hashCode = (hashCode * 59) + this.HasThisSharedStepAsPostcondition.GetHashCode();
-                if (this.CreatedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedById.GetHashCode();
-                }
-                if (this.ModifiedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedById.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

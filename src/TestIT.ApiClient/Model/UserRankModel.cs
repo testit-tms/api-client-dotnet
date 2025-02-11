@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// UserRankModel
     /// </summary>
     [DataContract(Name = "UserRankModel")]
-    public partial class UserRankModel : IEquatable<UserRankModel>, IValidatableObject
+    public partial class UserRankModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UserRankModel" /> class.
@@ -129,83 +129,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as UserRankModel);
-        }
-
-        /// <summary>
-        /// Returns true if UserRankModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of UserRankModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(UserRankModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Score == input.Score ||
-                    this.Score.Equals(input.Score)
-                ) && 
-                (
-                    this.WorkItemsCreated == input.WorkItemsCreated ||
-                    this.WorkItemsCreated.Equals(input.WorkItemsCreated)
-                ) && 
-                (
-                    this.PassedTestPoints == input.PassedTestPoints ||
-                    this.PassedTestPoints.Equals(input.PassedTestPoints)
-                ) && 
-                (
-                    this.FailedTestPoints == input.FailedTestPoints ||
-                    this.FailedTestPoints.Equals(input.FailedTestPoints)
-                ) && 
-                (
-                    this.SkippedTestPoints == input.SkippedTestPoints ||
-                    this.SkippedTestPoints.Equals(input.SkippedTestPoints)
-                ) && 
-                (
-                    this.BlockedTestPoints == input.BlockedTestPoints ||
-                    this.BlockedTestPoints.Equals(input.BlockedTestPoints)
-                ) && 
-                (
-                    this.LevelAvatarEnabled == input.LevelAvatarEnabled ||
-                    this.LevelAvatarEnabled.Equals(input.LevelAvatarEnabled)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Score.GetHashCode();
-                hashCode = (hashCode * 59) + this.WorkItemsCreated.GetHashCode();
-                hashCode = (hashCode * 59) + this.PassedTestPoints.GetHashCode();
-                hashCode = (hashCode * 59) + this.FailedTestPoints.GetHashCode();
-                hashCode = (hashCode * 59) + this.SkippedTestPoints.GetHashCode();
-                hashCode = (hashCode * 59) + this.BlockedTestPoints.GetHashCode();
-                hashCode = (hashCode * 59) + this.LevelAvatarEnabled.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

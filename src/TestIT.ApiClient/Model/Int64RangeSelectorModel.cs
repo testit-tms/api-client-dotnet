@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// Int64RangeSelectorModel
     /// </summary>
     [DataContract(Name = "Int64RangeSelectorModel")]
-    public partial class Int64RangeSelectorModel : IEquatable<Int64RangeSelectorModel>, IValidatableObject
+    public partial class Int64RangeSelectorModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Int64RangeSelectorModel" /> class.
@@ -79,66 +79,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as Int64RangeSelectorModel);
-        }
-
-        /// <summary>
-        /// Returns true if Int64RangeSelectorModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of Int64RangeSelectorModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(Int64RangeSelectorModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.From == input.From ||
-                    (this.From != null &&
-                    this.From.Equals(input.From))
-                ) && 
-                (
-                    this.To == input.To ||
-                    (this.To != null &&
-                    this.To.Equals(input.To))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.From != null)
-                {
-                    hashCode = (hashCode * 59) + this.From.GetHashCode();
-                }
-                if (this.To != null)
-                {
-                    hashCode = (hashCode * 59) + this.To.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -136,7 +136,7 @@ void (empty response body)
 
 <a id="apiv2projectsdemopost"></a>
 # **ApiV2ProjectsDemoPost**
-> ProjectModel ApiV2ProjectsDemoPost (CreateProjectRequest createProjectRequest = null)
+> ProjectModel ApiV2ProjectsDemoPost (ProjectPostModel projectPostModel = null)
 
 
 
@@ -166,11 +166,11 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
-            var createProjectRequest = new CreateProjectRequest(); // CreateProjectRequest |  (optional) 
+            var projectPostModel = new ProjectPostModel(); // ProjectPostModel |  (optional) 
 
             try
             {
-                ProjectModel result = apiInstance.ApiV2ProjectsDemoPost(createProjectRequest);
+                ProjectModel result = apiInstance.ApiV2ProjectsDemoPost(projectPostModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -190,7 +190,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<ProjectModel> response = apiInstance.ApiV2ProjectsDemoPostWithHttpInfo(createProjectRequest);
+    ApiResponse<ProjectModel> response = apiInstance.ApiV2ProjectsDemoPostWithHttpInfo(projectPostModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -207,7 +207,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **createProjectRequest** | [**CreateProjectRequest**](CreateProjectRequest.md) |  | [optional]  |
+| **projectPostModel** | [**ProjectPostModel**](ProjectPostModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -1058,7 +1058,7 @@ void (empty response body)
 
 <a id="apiv2projectsidtestplansattributeput"></a>
 # **ApiV2ProjectsIdTestPlansAttributePut**
-> void ApiV2ProjectsIdTestPlansAttributePut (string id, UpdateCustomAttributeTestPlanProjectRelationsRequest updateCustomAttributeTestPlanProjectRelationsRequest = null)
+> void ApiV2ProjectsIdTestPlansAttributePut (string id, CustomAttributeTestPlanProjectRelationPutModel customAttributeTestPlanProjectRelationPutModel = null)
 
 Update attribute of project's test plans
 
@@ -1091,12 +1091,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | Project internal (UUID) or global (integer) identifier
-            var updateCustomAttributeTestPlanProjectRelationsRequest = new UpdateCustomAttributeTestPlanProjectRelationsRequest(); // UpdateCustomAttributeTestPlanProjectRelationsRequest |  (optional) 
+            var customAttributeTestPlanProjectRelationPutModel = new CustomAttributeTestPlanProjectRelationPutModel(); // CustomAttributeTestPlanProjectRelationPutModel |  (optional) 
 
             try
             {
                 // Update attribute of project's test plans
-                apiInstance.ApiV2ProjectsIdTestPlansAttributePut(id, updateCustomAttributeTestPlanProjectRelationsRequest);
+                apiInstance.ApiV2ProjectsIdTestPlansAttributePut(id, customAttributeTestPlanProjectRelationPutModel);
             }
             catch (ApiException  e)
             {
@@ -1116,7 +1116,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update attribute of project's test plans
-    apiInstance.ApiV2ProjectsIdTestPlansAttributePutWithHttpInfo(id, updateCustomAttributeTestPlanProjectRelationsRequest);
+    apiInstance.ApiV2ProjectsIdTestPlansAttributePutWithHttpInfo(id, customAttributeTestPlanProjectRelationPutModel);
 }
 catch (ApiException e)
 {
@@ -1131,7 +1131,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Project internal (UUID) or global (integer) identifier |  |
-| **updateCustomAttributeTestPlanProjectRelationsRequest** | [**UpdateCustomAttributeTestPlanProjectRelationsRequest**](UpdateCustomAttributeTestPlanProjectRelationsRequest.md) |  | [optional]  |
+| **customAttributeTestPlanProjectRelationPutModel** | [**CustomAttributeTestPlanProjectRelationPutModel**](CustomAttributeTestPlanProjectRelationPutModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -1504,7 +1504,7 @@ catch (ApiException e)
 
 <a id="apiv2projectspurgebulkpost"></a>
 # **ApiV2ProjectsPurgeBulkPost**
-> long ApiV2ProjectsPurgeBulkPost (ApiV2ProjectsRestoreBulkPostRequest apiV2ProjectsRestoreBulkPostRequest = null)
+> long ApiV2ProjectsPurgeBulkPost (ProjectSelectModel projectSelectModel = null)
 
 Purge multiple projects
 
@@ -1534,12 +1534,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
-            var apiV2ProjectsRestoreBulkPostRequest = new ApiV2ProjectsRestoreBulkPostRequest(); // ApiV2ProjectsRestoreBulkPostRequest |  (optional) 
+            var projectSelectModel = new ProjectSelectModel(); // ProjectSelectModel |  (optional) 
 
             try
             {
                 // Purge multiple projects
-                long result = apiInstance.ApiV2ProjectsPurgeBulkPost(apiV2ProjectsRestoreBulkPostRequest);
+                long result = apiInstance.ApiV2ProjectsPurgeBulkPost(projectSelectModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1560,7 +1560,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Purge multiple projects
-    ApiResponse<long> response = apiInstance.ApiV2ProjectsPurgeBulkPostWithHttpInfo(apiV2ProjectsRestoreBulkPostRequest);
+    ApiResponse<long> response = apiInstance.ApiV2ProjectsPurgeBulkPostWithHttpInfo(projectSelectModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1577,7 +1577,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiV2ProjectsRestoreBulkPostRequest** | [**ApiV2ProjectsRestoreBulkPostRequest**](ApiV2ProjectsRestoreBulkPostRequest.md) |  | [optional]  |
+| **projectSelectModel** | [**ProjectSelectModel**](ProjectSelectModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -1608,7 +1608,7 @@ catch (ApiException e)
 
 <a id="apiv2projectsrestorebulkpost"></a>
 # **ApiV2ProjectsRestoreBulkPost**
-> long ApiV2ProjectsRestoreBulkPost (ApiV2ProjectsRestoreBulkPostRequest apiV2ProjectsRestoreBulkPostRequest = null)
+> long ApiV2ProjectsRestoreBulkPost (ProjectSelectModel projectSelectModel = null)
 
 Restore multiple projects
 
@@ -1638,12 +1638,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
-            var apiV2ProjectsRestoreBulkPostRequest = new ApiV2ProjectsRestoreBulkPostRequest(); // ApiV2ProjectsRestoreBulkPostRequest |  (optional) 
+            var projectSelectModel = new ProjectSelectModel(); // ProjectSelectModel |  (optional) 
 
             try
             {
                 // Restore multiple projects
-                long result = apiInstance.ApiV2ProjectsRestoreBulkPost(apiV2ProjectsRestoreBulkPostRequest);
+                long result = apiInstance.ApiV2ProjectsRestoreBulkPost(projectSelectModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1664,7 +1664,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Restore multiple projects
-    ApiResponse<long> response = apiInstance.ApiV2ProjectsRestoreBulkPostWithHttpInfo(apiV2ProjectsRestoreBulkPostRequest);
+    ApiResponse<long> response = apiInstance.ApiV2ProjectsRestoreBulkPostWithHttpInfo(projectSelectModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1681,7 +1681,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiV2ProjectsRestoreBulkPostRequest** | [**ApiV2ProjectsRestoreBulkPostRequest**](ApiV2ProjectsRestoreBulkPostRequest.md) |  | [optional]  |
+| **projectSelectModel** | [**ProjectSelectModel**](ProjectSelectModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -1712,7 +1712,7 @@ catch (ApiException e)
 
 <a id="apiv2projectssearchpost"></a>
 # **ApiV2ProjectsSearchPost**
-> List&lt;ProjectShortModel&gt; ApiV2ProjectsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ProjectsSearchPostRequest apiV2ProjectsSearchPostRequest = null)
+> List&lt;ProjectShortModel&gt; ApiV2ProjectsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ProjectsFilterModel projectsFilterModel = null)
 
 Search for projects
 
@@ -1747,12 +1747,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var apiV2ProjectsSearchPostRequest = new ApiV2ProjectsSearchPostRequest(); // ApiV2ProjectsSearchPostRequest |  (optional) 
+            var projectsFilterModel = new ProjectsFilterModel(); // ProjectsFilterModel |  (optional) 
 
             try
             {
                 // Search for projects
-                List<ProjectShortModel> result = apiInstance.ApiV2ProjectsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2ProjectsSearchPostRequest);
+                List<ProjectShortModel> result = apiInstance.ApiV2ProjectsSearchPost(skip, take, orderBy, searchField, searchValue, projectsFilterModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1773,7 +1773,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for projects
-    ApiResponse<List<ProjectShortModel>> response = apiInstance.ApiV2ProjectsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2ProjectsSearchPostRequest);
+    ApiResponse<List<ProjectShortModel>> response = apiInstance.ApiV2ProjectsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, projectsFilterModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1795,7 +1795,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **apiV2ProjectsSearchPostRequest** | [**ApiV2ProjectsSearchPostRequest**](ApiV2ProjectsSearchPostRequest.md) |  | [optional]  |
+| **projectsFilterModel** | [**ProjectsFilterModel**](ProjectsFilterModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -1826,7 +1826,7 @@ catch (ApiException e)
 
 <a id="createproject"></a>
 # **CreateProject**
-> ProjectModel CreateProject (CreateProjectRequest createProjectRequest = null)
+> ProjectModel CreateProject (ProjectPostModel projectPostModel = null)
 
 Create project
 
@@ -1858,12 +1858,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
-            var createProjectRequest = new CreateProjectRequest(); // CreateProjectRequest |  (optional) 
+            var projectPostModel = new ProjectPostModel(); // ProjectPostModel |  (optional) 
 
             try
             {
                 // Create project
-                ProjectModel result = apiInstance.CreateProject(createProjectRequest);
+                ProjectModel result = apiInstance.CreateProject(projectPostModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1884,7 +1884,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create project
-    ApiResponse<ProjectModel> response = apiInstance.CreateProjectWithHttpInfo(createProjectRequest);
+    ApiResponse<ProjectModel> response = apiInstance.CreateProjectWithHttpInfo(projectPostModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1901,7 +1901,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **createProjectRequest** | [**CreateProjectRequest**](CreateProjectRequest.md) |  | [optional]  |
+| **projectPostModel** | [**ProjectPostModel**](ProjectPostModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -2601,7 +2601,7 @@ catch (ApiException e)
 
 <a id="updateproject"></a>
 # **UpdateProject**
-> void UpdateProject (UpdateProjectRequest updateProjectRequest = null)
+> void UpdateProject (ProjectPutModel projectPutModel = null)
 
 Update project
 
@@ -2633,12 +2633,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
-            var updateProjectRequest = new UpdateProjectRequest(); // UpdateProjectRequest |  (optional) 
+            var projectPutModel = new ProjectPutModel(); // ProjectPutModel |  (optional) 
 
             try
             {
                 // Update project
-                apiInstance.UpdateProject(updateProjectRequest);
+                apiInstance.UpdateProject(projectPutModel);
             }
             catch (ApiException  e)
             {
@@ -2658,7 +2658,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update project
-    apiInstance.UpdateProjectWithHttpInfo(updateProjectRequest);
+    apiInstance.UpdateProjectWithHttpInfo(projectPutModel);
 }
 catch (ApiException e)
 {
@@ -2672,7 +2672,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **updateProjectRequest** | [**UpdateProjectRequest**](UpdateProjectRequest.md) |  | [optional]  |
+| **projectPutModel** | [**ProjectPutModel**](ProjectPutModel.md) |  | [optional]  |
 
 ### Return type
 

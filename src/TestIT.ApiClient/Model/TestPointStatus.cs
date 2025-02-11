@@ -67,7 +67,6 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         [EnumMember(Value = "NoResults")]
         NoResults = 6
-
     }
 
 }

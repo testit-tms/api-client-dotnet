@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// AutoTestProjectSettingsPostModel
     /// </summary>
     [DataContract(Name = "AutoTestProjectSettingsPostModel")]
-    public partial class AutoTestProjectSettingsPostModel : IEquatable<AutoTestProjectSettingsPostModel>, IValidatableObject
+    public partial class AutoTestProjectSettingsPostModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestProjectSettingsPostModel" /> class.
@@ -116,108 +116,46 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AutoTestProjectSettingsPostModel);
-        }
-
-        /// <summary>
-        /// Returns true if AutoTestProjectSettingsPostModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AutoTestProjectSettingsPostModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AutoTestProjectSettingsPostModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.IsFlakyAuto == input.IsFlakyAuto ||
-                    this.IsFlakyAuto.Equals(input.IsFlakyAuto)
-                ) && 
-                (
-                    this.FlakyStabilityPercentage == input.FlakyStabilityPercentage ||
-                    this.FlakyStabilityPercentage.Equals(input.FlakyStabilityPercentage)
-                ) && 
-                (
-                    this.FlakyTestRunCount == input.FlakyTestRunCount ||
-                    this.FlakyTestRunCount.Equals(input.FlakyTestRunCount)
-                ) && 
-                (
-                    this.RerunEnabled == input.RerunEnabled ||
-                    this.RerunEnabled.Equals(input.RerunEnabled)
-                ) && 
-                (
-                    this.RerunAttemptsCount == input.RerunAttemptsCount ||
-                    this.RerunAttemptsCount.Equals(input.RerunAttemptsCount)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.IsFlakyAuto.GetHashCode();
-                hashCode = (hashCode * 59) + this.FlakyStabilityPercentage.GetHashCode();
-                hashCode = (hashCode * 59) + this.FlakyTestRunCount.GetHashCode();
-                hashCode = (hashCode * 59) + this.RerunEnabled.GetHashCode();
-                hashCode = (hashCode * 59) + this.RerunAttemptsCount.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // FlakyStabilityPercentage (int) maximum
             if (this.FlakyStabilityPercentage > (int)100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for FlakyStabilityPercentage, must be a value less than or equal to 100.", new [] { "FlakyStabilityPercentage" });
+                yield return new ValidationResult("Invalid value for FlakyStabilityPercentage, must be a value less than or equal to 100.", new [] { "FlakyStabilityPercentage" });
             }
 
             // FlakyStabilityPercentage (int) minimum
             if (this.FlakyStabilityPercentage < (int)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for FlakyStabilityPercentage, must be a value greater than or equal to 0.", new [] { "FlakyStabilityPercentage" });
+                yield return new ValidationResult("Invalid value for FlakyStabilityPercentage, must be a value greater than or equal to 0.", new [] { "FlakyStabilityPercentage" });
             }
 
             // FlakyTestRunCount (int) maximum
             if (this.FlakyTestRunCount > (int)1000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for FlakyTestRunCount, must be a value less than or equal to 1000.", new [] { "FlakyTestRunCount" });
+                yield return new ValidationResult("Invalid value for FlakyTestRunCount, must be a value less than or equal to 1000.", new [] { "FlakyTestRunCount" });
             }
 
             // FlakyTestRunCount (int) minimum
             if (this.FlakyTestRunCount < (int)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for FlakyTestRunCount, must be a value greater than or equal to 1.", new [] { "FlakyTestRunCount" });
+                yield return new ValidationResult("Invalid value for FlakyTestRunCount, must be a value greater than or equal to 1.", new [] { "FlakyTestRunCount" });
             }
 
             // RerunAttemptsCount (int) maximum
             if (this.RerunAttemptsCount > (int)10)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RerunAttemptsCount, must be a value less than or equal to 10.", new [] { "RerunAttemptsCount" });
+                yield return new ValidationResult("Invalid value for RerunAttemptsCount, must be a value less than or equal to 10.", new [] { "RerunAttemptsCount" });
             }
 
             // RerunAttemptsCount (int) minimum
             if (this.RerunAttemptsCount < (int)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RerunAttemptsCount, must be a value greater than or equal to 1.", new [] { "RerunAttemptsCount" });
+                yield return new ValidationResult("Invalid value for RerunAttemptsCount, must be a value greater than or equal to 1.", new [] { "RerunAttemptsCount" });
             }
 
             yield break;

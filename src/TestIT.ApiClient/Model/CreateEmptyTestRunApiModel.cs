@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// CreateEmptyTestRunApiModel
     /// </summary>
     [DataContract(Name = "CreateEmptyTestRunApiModel")]
-    public partial class CreateEmptyTestRunApiModel : IEquatable<CreateEmptyTestRunApiModel>, IValidatableObject
+    public partial class CreateEmptyTestRunApiModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEmptyTestRunApiModel" /> class.
@@ -126,104 +126,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CreateEmptyTestRunApiModel);
-        }
-
-        /// <summary>
-        /// Returns true if CreateEmptyTestRunApiModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CreateEmptyTestRunApiModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CreateEmptyTestRunApiModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.LaunchSource == input.LaunchSource ||
-                    (this.LaunchSource != null &&
-                    this.LaunchSource.Equals(input.LaunchSource))
-                ) && 
-                (
-                    this.Attachments == input.Attachments ||
-                    this.Attachments != null &&
-                    input.Attachments != null &&
-                    this.Attachments.SequenceEqual(input.Attachments)
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    this.Links != null &&
-                    input.Links != null &&
-                    this.Links.SequenceEqual(input.Links)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.ProjectId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProjectId.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.LaunchSource != null)
-                {
-                    hashCode = (hashCode * 59) + this.LaunchSource.GetHashCode();
-                }
-                if (this.Attachments != null)
-                {
-                    hashCode = (hashCode * 59) + this.Attachments.GetHashCode();
-                }
-                if (this.Links != null)
-                {
-                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

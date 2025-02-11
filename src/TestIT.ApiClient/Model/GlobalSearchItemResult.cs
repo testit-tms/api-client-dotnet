@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// GlobalSearchItemResult
     /// </summary>
     [DataContract(Name = "GlobalSearchItemResult")]
-    public partial class GlobalSearchItemResult : IEquatable<GlobalSearchItemResult>, IValidatableObject
+    public partial class GlobalSearchItemResult : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GlobalSearchItemResult" /> class.
@@ -121,89 +121,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as GlobalSearchItemResult);
-        }
-
-        /// <summary>
-        /// Returns true if GlobalSearchItemResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of GlobalSearchItemResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(GlobalSearchItemResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                ) && 
-                (
-                    this.ResourceId == input.ResourceId ||
-                    (this.ResourceId != null &&
-                    this.ResourceId.Equals(input.ResourceId))
-                ) && 
-                (
-                    this.GlobalId == input.GlobalId ||
-                    (this.GlobalId != null &&
-                    this.GlobalId.Equals(input.GlobalId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ProjectGlobalId == input.ProjectGlobalId ||
-                    this.ProjectGlobalId.Equals(input.ProjectGlobalId)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.ResourceType != null)
-                {
-                    hashCode = (hashCode * 59) + this.ResourceType.GetHashCode();
-                }
-                if (this.ResourceId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ResourceId.GetHashCode();
-                }
-                if (this.GlobalId != null)
-                {
-                    hashCode = (hashCode * 59) + this.GlobalId.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.ProjectGlobalId.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

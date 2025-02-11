@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// TestResultChronologyModel
     /// </summary>
     [DataContract(Name = "TestResultChronologyModel")]
-    public partial class TestResultChronologyModel : IEquatable<TestResultChronologyModel>, IValidatableObject
+    public partial class TestResultChronologyModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestResultChronologyModel" /> class.
@@ -51,7 +51,9 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Outcome
         /// </summary>
-        /// <example>&quot;Passed&quot;</example>
+        /*
+        <example>Passed</example>
+        */
         [DataMember(Name = "outcome", EmitDefaultValue = true)]
         public string Outcome { get; set; }
 
@@ -85,62 +87,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestResultChronologyModel);
-        }
-
-        /// <summary>
-        /// Returns true if TestResultChronologyModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestResultChronologyModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestResultChronologyModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Outcome == input.Outcome ||
-                    (this.Outcome != null &&
-                    this.Outcome.Equals(input.Outcome))
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    this.Count.Equals(input.Count)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Outcome != null)
-                {
-                    hashCode = (hashCode * 59) + this.Outcome.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Count.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

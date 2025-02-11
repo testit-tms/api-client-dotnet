@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// WebhookResponse
     /// </summary>
     [DataContract(Name = "WebhookResponse")]
-    public partial class WebhookResponse : IEquatable<WebhookResponse>, IValidatableObject
+    public partial class WebhookResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookResponse" /> class.
@@ -135,98 +135,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as WebhookResponse);
-        }
-
-        /// <summary>
-        /// Returns true if WebhookResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of WebhookResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(WebhookResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Uri == input.Uri ||
-                    (this.Uri != null &&
-                    this.Uri.Equals(input.Uri))
-                ) && 
-                (
-                    this.StatusCode == input.StatusCode ||
-                    this.StatusCode.Equals(input.StatusCode)
-                ) && 
-                (
-                    this.RequestBody == input.RequestBody ||
-                    (this.RequestBody != null &&
-                    this.RequestBody.Equals(input.RequestBody))
-                ) && 
-                (
-                    this.RequestMeta == input.RequestMeta ||
-                    (this.RequestMeta != null &&
-                    this.RequestMeta.Equals(input.RequestMeta))
-                ) && 
-                (
-                    this.ResponseBody == input.ResponseBody ||
-                    (this.ResponseBody != null &&
-                    this.ResponseBody.Equals(input.ResponseBody))
-                ) && 
-                (
-                    this.ResponseMeta == input.ResponseMeta ||
-                    (this.ResponseMeta != null &&
-                    this.ResponseMeta.Equals(input.ResponseMeta))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Uri != null)
-                {
-                    hashCode = (hashCode * 59) + this.Uri.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.StatusCode.GetHashCode();
-                if (this.RequestBody != null)
-                {
-                    hashCode = (hashCode * 59) + this.RequestBody.GetHashCode();
-                }
-                if (this.RequestMeta != null)
-                {
-                    hashCode = (hashCode * 59) + this.RequestMeta.GetHashCode();
-                }
-                if (this.ResponseBody != null)
-                {
-                    hashCode = (hashCode * 59) + this.ResponseBody.GetHashCode();
-                }
-                if (this.ResponseMeta != null)
-                {
-                    hashCode = (hashCode * 59) + this.ResponseMeta.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

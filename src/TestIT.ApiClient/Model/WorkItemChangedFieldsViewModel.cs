@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// WorkItemChangedFieldsViewModel
     /// </summary>
     [DataContract(Name = "WorkItemChangedFieldsViewModel")]
-    public partial class WorkItemChangedFieldsViewModel : IEquatable<WorkItemChangedFieldsViewModel>, IValidatableObject
+    public partial class WorkItemChangedFieldsViewModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemChangedFieldsViewModel" /> class.
@@ -60,7 +60,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="globalId">globalId (required).</param>
         /// <param name="versionNumber">versionNumber (required).</param>
         /// <param name="entityTypeName">entityTypeName (required).</param>
-        public WorkItemChangedFieldsViewModel(StringChangedFieldWithDiffsViewModel name = default(StringChangedFieldWithDiffsViewModel), WorkItemChangedFieldsViewModelIsDeleted isDeleted = default(WorkItemChangedFieldsViewModelIsDeleted), WorkItemChangedFieldsViewModelProjectId projectId = default(WorkItemChangedFieldsViewModelProjectId), WorkItemChangedFieldsViewModelIsDeleted isAutomated = default(WorkItemChangedFieldsViewModelIsDeleted), WorkItemChangedFieldsViewModelProjectId sectionId = default(WorkItemChangedFieldsViewModelProjectId), StringChangedFieldWithDiffsViewModel description = default(StringChangedFieldWithDiffsViewModel), WorkItemChangedFieldsViewModelState state = default(WorkItemChangedFieldsViewModelState), WorkItemChangedFieldsViewModelState priority = default(WorkItemChangedFieldsViewModelState), WorkItemChangedFieldsViewModelDuration duration = default(WorkItemChangedFieldsViewModelDuration), Dictionary<string, WorkItemChangedAttributeViewModel> attributes = default(Dictionary<string, WorkItemChangedAttributeViewModel>), WorkItemChangedFieldsViewModelSteps steps = default(WorkItemChangedFieldsViewModelSteps), WorkItemChangedFieldsViewModelSteps preconditionSteps = default(WorkItemChangedFieldsViewModelSteps), WorkItemChangedFieldsViewModelSteps postconditionSteps = default(WorkItemChangedFieldsViewModelSteps), WorkItemChangedFieldsViewModelAutoTests autoTests = default(WorkItemChangedFieldsViewModelAutoTests), WorkItemChangedFieldsViewModelAttachments attachments = default(WorkItemChangedFieldsViewModelAttachments), WorkItemChangedFieldsViewModelTags tags = default(WorkItemChangedFieldsViewModelTags), WorkItemChangedFieldsViewModelLinks links = default(WorkItemChangedFieldsViewModelLinks), WorkItemChangedFieldsViewModelGlobalId globalId = default(WorkItemChangedFieldsViewModelGlobalId), WorkItemChangedFieldsViewModelDuration versionNumber = default(WorkItemChangedFieldsViewModelDuration), WorkItemChangedFieldsViewModelState entityTypeName = default(WorkItemChangedFieldsViewModelState))
+        public WorkItemChangedFieldsViewModel(StringChangedFieldWithDiffsViewModel name = default(StringChangedFieldWithDiffsViewModel), BooleanChangedFieldViewModel isDeleted = default(BooleanChangedFieldViewModel), GuidChangedFieldViewModel projectId = default(GuidChangedFieldViewModel), BooleanChangedFieldViewModel isAutomated = default(BooleanChangedFieldViewModel), GuidChangedFieldViewModel sectionId = default(GuidChangedFieldViewModel), StringChangedFieldWithDiffsViewModel description = default(StringChangedFieldWithDiffsViewModel), StringChangedFieldViewModel state = default(StringChangedFieldViewModel), StringChangedFieldViewModel priority = default(StringChangedFieldViewModel), Int32ChangedFieldViewModel duration = default(Int32ChangedFieldViewModel), Dictionary<string, WorkItemChangedAttributeViewModel> attributes = default(Dictionary<string, WorkItemChangedAttributeViewModel>), WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel steps = default(WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel), WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel preconditionSteps = default(WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel), WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel postconditionSteps = default(WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel), AutoTestChangeViewModelArrayChangedFieldViewModel autoTests = default(AutoTestChangeViewModelArrayChangedFieldViewModel), AttachmentChangeViewModelArrayChangedFieldViewModel attachments = default(AttachmentChangeViewModelArrayChangedFieldViewModel), StringArrayChangedFieldViewModel tags = default(StringArrayChangedFieldViewModel), WorkItemLinkChangeViewModelArrayChangedFieldViewModel links = default(WorkItemLinkChangeViewModelArrayChangedFieldViewModel), Int64ChangedFieldViewModel globalId = default(Int64ChangedFieldViewModel), Int32ChangedFieldViewModel versionNumber = default(Int32ChangedFieldViewModel), StringChangedFieldViewModel entityTypeName = default(StringChangedFieldViewModel))
         {
             // to ensure "isDeleted" is required (not null)
             if (isDeleted == null)
@@ -184,25 +184,25 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets IsDeleted
         /// </summary>
         [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
-        public WorkItemChangedFieldsViewModelIsDeleted IsDeleted { get; set; }
+        public BooleanChangedFieldViewModel IsDeleted { get; set; }
 
         /// <summary>
         /// Gets or Sets ProjectId
         /// </summary>
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
-        public WorkItemChangedFieldsViewModelProjectId ProjectId { get; set; }
+        public GuidChangedFieldViewModel ProjectId { get; set; }
 
         /// <summary>
         /// Gets or Sets IsAutomated
         /// </summary>
         [DataMember(Name = "isAutomated", IsRequired = true, EmitDefaultValue = true)]
-        public WorkItemChangedFieldsViewModelIsDeleted IsAutomated { get; set; }
+        public BooleanChangedFieldViewModel IsAutomated { get; set; }
 
         /// <summary>
         /// Gets or Sets SectionId
         /// </summary>
         [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = true)]
-        public WorkItemChangedFieldsViewModelProjectId SectionId { get; set; }
+        public GuidChangedFieldViewModel SectionId { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
@@ -214,19 +214,19 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets State
         /// </summary>
         [DataMember(Name = "state", IsRequired = true, EmitDefaultValue = true)]
-        public WorkItemChangedFieldsViewModelState State { get; set; }
+        public StringChangedFieldViewModel State { get; set; }
 
         /// <summary>
         /// Gets or Sets Priority
         /// </summary>
         [DataMember(Name = "priority", IsRequired = true, EmitDefaultValue = true)]
-        public WorkItemChangedFieldsViewModelState Priority { get; set; }
+        public StringChangedFieldViewModel Priority { get; set; }
 
         /// <summary>
         /// Gets or Sets Duration
         /// </summary>
         [DataMember(Name = "duration", IsRequired = true, EmitDefaultValue = true)]
-        public WorkItemChangedFieldsViewModelDuration Duration { get; set; }
+        public Int32ChangedFieldViewModel Duration { get; set; }
 
         /// <summary>
         /// Gets or Sets Attributes
@@ -238,61 +238,61 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Steps
         /// </summary>
         [DataMember(Name = "steps", IsRequired = true, EmitDefaultValue = true)]
-        public WorkItemChangedFieldsViewModelSteps Steps { get; set; }
+        public WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel Steps { get; set; }
 
         /// <summary>
         /// Gets or Sets PreconditionSteps
         /// </summary>
         [DataMember(Name = "preconditionSteps", IsRequired = true, EmitDefaultValue = true)]
-        public WorkItemChangedFieldsViewModelSteps PreconditionSteps { get; set; }
+        public WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel PreconditionSteps { get; set; }
 
         /// <summary>
         /// Gets or Sets PostconditionSteps
         /// </summary>
         [DataMember(Name = "postconditionSteps", IsRequired = true, EmitDefaultValue = true)]
-        public WorkItemChangedFieldsViewModelSteps PostconditionSteps { get; set; }
+        public WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel PostconditionSteps { get; set; }
 
         /// <summary>
         /// Gets or Sets AutoTests
         /// </summary>
         [DataMember(Name = "autoTests", IsRequired = true, EmitDefaultValue = true)]
-        public WorkItemChangedFieldsViewModelAutoTests AutoTests { get; set; }
+        public AutoTestChangeViewModelArrayChangedFieldViewModel AutoTests { get; set; }
 
         /// <summary>
         /// Gets or Sets Attachments
         /// </summary>
         [DataMember(Name = "attachments", IsRequired = true, EmitDefaultValue = true)]
-        public WorkItemChangedFieldsViewModelAttachments Attachments { get; set; }
+        public AttachmentChangeViewModelArrayChangedFieldViewModel Attachments { get; set; }
 
         /// <summary>
         /// Gets or Sets Tags
         /// </summary>
         [DataMember(Name = "tags", IsRequired = true, EmitDefaultValue = true)]
-        public WorkItemChangedFieldsViewModelTags Tags { get; set; }
+        public StringArrayChangedFieldViewModel Tags { get; set; }
 
         /// <summary>
         /// Gets or Sets Links
         /// </summary>
         [DataMember(Name = "links", IsRequired = true, EmitDefaultValue = true)]
-        public WorkItemChangedFieldsViewModelLinks Links { get; set; }
+        public WorkItemLinkChangeViewModelArrayChangedFieldViewModel Links { get; set; }
 
         /// <summary>
         /// Gets or Sets GlobalId
         /// </summary>
         [DataMember(Name = "globalId", IsRequired = true, EmitDefaultValue = true)]
-        public WorkItemChangedFieldsViewModelGlobalId GlobalId { get; set; }
+        public Int64ChangedFieldViewModel GlobalId { get; set; }
 
         /// <summary>
         /// Gets or Sets VersionNumber
         /// </summary>
         [DataMember(Name = "versionNumber", IsRequired = true, EmitDefaultValue = true)]
-        public WorkItemChangedFieldsViewModelDuration VersionNumber { get; set; }
+        public Int32ChangedFieldViewModel VersionNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets EntityTypeName
         /// </summary>
         [DataMember(Name = "entityTypeName", IsRequired = true, EmitDefaultValue = true)]
-        public WorkItemChangedFieldsViewModelState EntityTypeName { get; set; }
+        public StringChangedFieldViewModel EntityTypeName { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -336,229 +336,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as WorkItemChangedFieldsViewModel);
-        }
-
-        /// <summary>
-        /// Returns true if WorkItemChangedFieldsViewModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of WorkItemChangedFieldsViewModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(WorkItemChangedFieldsViewModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    (this.IsDeleted != null &&
-                    this.IsDeleted.Equals(input.IsDeleted))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.IsAutomated == input.IsAutomated ||
-                    (this.IsAutomated != null &&
-                    this.IsAutomated.Equals(input.IsAutomated))
-                ) && 
-                (
-                    this.SectionId == input.SectionId ||
-                    (this.SectionId != null &&
-                    this.SectionId.Equals(input.SectionId))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.State == input.State ||
-                    (this.State != null &&
-                    this.State.Equals(input.State))
-                ) && 
-                (
-                    this.Priority == input.Priority ||
-                    (this.Priority != null &&
-                    this.Priority.Equals(input.Priority))
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    (this.Duration != null &&
-                    this.Duration.Equals(input.Duration))
-                ) && 
-                (
-                    this.Attributes == input.Attributes ||
-                    this.Attributes != null &&
-                    input.Attributes != null &&
-                    this.Attributes.SequenceEqual(input.Attributes)
-                ) && 
-                (
-                    this.Steps == input.Steps ||
-                    (this.Steps != null &&
-                    this.Steps.Equals(input.Steps))
-                ) && 
-                (
-                    this.PreconditionSteps == input.PreconditionSteps ||
-                    (this.PreconditionSteps != null &&
-                    this.PreconditionSteps.Equals(input.PreconditionSteps))
-                ) && 
-                (
-                    this.PostconditionSteps == input.PostconditionSteps ||
-                    (this.PostconditionSteps != null &&
-                    this.PostconditionSteps.Equals(input.PostconditionSteps))
-                ) && 
-                (
-                    this.AutoTests == input.AutoTests ||
-                    (this.AutoTests != null &&
-                    this.AutoTests.Equals(input.AutoTests))
-                ) && 
-                (
-                    this.Attachments == input.Attachments ||
-                    (this.Attachments != null &&
-                    this.Attachments.Equals(input.Attachments))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    (this.Tags != null &&
-                    this.Tags.Equals(input.Tags))
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    (this.Links != null &&
-                    this.Links.Equals(input.Links))
-                ) && 
-                (
-                    this.GlobalId == input.GlobalId ||
-                    (this.GlobalId != null &&
-                    this.GlobalId.Equals(input.GlobalId))
-                ) && 
-                (
-                    this.VersionNumber == input.VersionNumber ||
-                    (this.VersionNumber != null &&
-                    this.VersionNumber.Equals(input.VersionNumber))
-                ) && 
-                (
-                    this.EntityTypeName == input.EntityTypeName ||
-                    (this.EntityTypeName != null &&
-                    this.EntityTypeName.Equals(input.EntityTypeName))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.IsDeleted != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                }
-                if (this.ProjectId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProjectId.GetHashCode();
-                }
-                if (this.IsAutomated != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsAutomated.GetHashCode();
-                }
-                if (this.SectionId != null)
-                {
-                    hashCode = (hashCode * 59) + this.SectionId.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.State != null)
-                {
-                    hashCode = (hashCode * 59) + this.State.GetHashCode();
-                }
-                if (this.Priority != null)
-                {
-                    hashCode = (hashCode * 59) + this.Priority.GetHashCode();
-                }
-                if (this.Duration != null)
-                {
-                    hashCode = (hashCode * 59) + this.Duration.GetHashCode();
-                }
-                if (this.Attributes != null)
-                {
-                    hashCode = (hashCode * 59) + this.Attributes.GetHashCode();
-                }
-                if (this.Steps != null)
-                {
-                    hashCode = (hashCode * 59) + this.Steps.GetHashCode();
-                }
-                if (this.PreconditionSteps != null)
-                {
-                    hashCode = (hashCode * 59) + this.PreconditionSteps.GetHashCode();
-                }
-                if (this.PostconditionSteps != null)
-                {
-                    hashCode = (hashCode * 59) + this.PostconditionSteps.GetHashCode();
-                }
-                if (this.AutoTests != null)
-                {
-                    hashCode = (hashCode * 59) + this.AutoTests.GetHashCode();
-                }
-                if (this.Attachments != null)
-                {
-                    hashCode = (hashCode * 59) + this.Attachments.GetHashCode();
-                }
-                if (this.Tags != null)
-                {
-                    hashCode = (hashCode * 59) + this.Tags.GetHashCode();
-                }
-                if (this.Links != null)
-                {
-                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
-                }
-                if (this.GlobalId != null)
-                {
-                    hashCode = (hashCode * 59) + this.GlobalId.GetHashCode();
-                }
-                if (this.VersionNumber != null)
-                {
-                    hashCode = (hashCode * 59) + this.VersionNumber.GetHashCode();
-                }
-                if (this.EntityTypeName != null)
-                {
-                    hashCode = (hashCode * 59) + this.EntityTypeName.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

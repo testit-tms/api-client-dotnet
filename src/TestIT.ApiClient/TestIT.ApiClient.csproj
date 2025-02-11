@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>10</LangVersion>
-    <Version>3.2.0</Version>
+    <Version>4.0.0-TMS-5.2.2</Version>
     <Nullable>enable</Nullable>
     <IsPackable>true</IsPackable>
     <Title>Test IT API client</Title>
@@ -27,7 +27,7 @@
   <ItemGroup>
     <PackageReference Include="JsonSubTypes" Version="2.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="Polly" Version="7.2.3" />
+    <PackageReference Include="Polly" Version="8.1.0" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 

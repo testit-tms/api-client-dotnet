@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// SharedStepReferencesQueryFilterModel
     /// </summary>
     [DataContract(Name = "SharedStepReferencesQueryFilterModel")]
-    public partial class SharedStepReferencesQueryFilterModel : IEquatable<SharedStepReferencesQueryFilterModel>, IValidatableObject
+    public partial class SharedStepReferencesQueryFilterModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SharedStepReferencesQueryFilterModel" /> class.
@@ -43,11 +43,11 @@ namespace TestIT.ApiClient.Model
         /// <param name="states">Collection of states of work item.</param>
         /// <param name="priorities">Collection of priorities of work item.</param>
         /// <param name="entityTypes">Collection of types of work item   Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;.</param>
-        /// <param name="createdDate">createdDate.</param>
-        /// <param name="modifiedDate">modifiedDate.</param>
+        /// <param name="createdDate">Date and time of work item creation.</param>
+        /// <param name="modifiedDate">Date and time of work item last modification.</param>
         /// <param name="isAutomated">Is result must consist of only manual/automated work items.</param>
         /// <param name="tags">Collection of tags.</param>
-        public SharedStepReferencesQueryFilterModel(string name = default(string), List<long> globalIds = default(List<long>), List<Guid> sectionIds = default(List<Guid>), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), List<WorkItemStates> states = default(List<WorkItemStates>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<string> entityTypes = default(List<string>), SharedStepReferenceSectionsQueryFilterModelCreatedDate createdDate = default(SharedStepReferenceSectionsQueryFilterModelCreatedDate), SharedStepReferenceSectionsQueryFilterModelModifiedDate modifiedDate = default(SharedStepReferenceSectionsQueryFilterModelModifiedDate), bool? isAutomated = default(bool?), List<string> tags = default(List<string>))
+        public SharedStepReferencesQueryFilterModel(string name = default(string), List<long> globalIds = default(List<long>), List<Guid> sectionIds = default(List<Guid>), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), List<WorkItemStates> states = default(List<WorkItemStates>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<string> entityTypes = default(List<string>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), bool? isAutomated = default(bool?), List<string> tags = default(List<string>))
         {
             this.Name = name;
             this.GlobalIds = globalIds;
@@ -120,16 +120,18 @@ namespace TestIT.ApiClient.Model
         public List<string> EntityTypes { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedDate
+        /// Date and time of work item creation
         /// </summary>
+        /// <value>Date and time of work item creation</value>
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
-        public SharedStepReferenceSectionsQueryFilterModelCreatedDate CreatedDate { get; set; }
+        public DateTimeRangeSelectorModel CreatedDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets ModifiedDate
+        /// Date and time of work item last modification
         /// </summary>
+        /// <value>Date and time of work item last modification</value>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
-        public SharedStepReferenceSectionsQueryFilterModelModifiedDate ModifiedDate { get; set; }
+        public DateTimeRangeSelectorModel ModifiedDate { get; set; }
 
         /// <summary>
         /// Is result must consist of only manual/automated work items
@@ -179,164 +181,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as SharedStepReferencesQueryFilterModel);
-        }
-
-        /// <summary>
-        /// Returns true if SharedStepReferencesQueryFilterModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of SharedStepReferencesQueryFilterModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SharedStepReferencesQueryFilterModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.GlobalIds == input.GlobalIds ||
-                    this.GlobalIds != null &&
-                    input.GlobalIds != null &&
-                    this.GlobalIds.SequenceEqual(input.GlobalIds)
-                ) && 
-                (
-                    this.SectionIds == input.SectionIds ||
-                    this.SectionIds != null &&
-                    input.SectionIds != null &&
-                    this.SectionIds.SequenceEqual(input.SectionIds)
-                ) && 
-                (
-                    this.CreatedByIds == input.CreatedByIds ||
-                    this.CreatedByIds != null &&
-                    input.CreatedByIds != null &&
-                    this.CreatedByIds.SequenceEqual(input.CreatedByIds)
-                ) && 
-                (
-                    this.ModifiedByIds == input.ModifiedByIds ||
-                    this.ModifiedByIds != null &&
-                    input.ModifiedByIds != null &&
-                    this.ModifiedByIds.SequenceEqual(input.ModifiedByIds)
-                ) && 
-                (
-                    this.States == input.States ||
-                    this.States != null &&
-                    input.States != null &&
-                    this.States.SequenceEqual(input.States)
-                ) && 
-                (
-                    this.Priorities == input.Priorities ||
-                    this.Priorities != null &&
-                    input.Priorities != null &&
-                    this.Priorities.SequenceEqual(input.Priorities)
-                ) && 
-                (
-                    this.EntityTypes == input.EntityTypes ||
-                    this.EntityTypes != null &&
-                    input.EntityTypes != null &&
-                    this.EntityTypes.SequenceEqual(input.EntityTypes)
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.IsAutomated == input.IsAutomated ||
-                    (this.IsAutomated != null &&
-                    this.IsAutomated.Equals(input.IsAutomated))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.GlobalIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.GlobalIds.GetHashCode();
-                }
-                if (this.SectionIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.SectionIds.GetHashCode();
-                }
-                if (this.CreatedByIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedByIds.GetHashCode();
-                }
-                if (this.ModifiedByIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedByIds.GetHashCode();
-                }
-                if (this.States != null)
-                {
-                    hashCode = (hashCode * 59) + this.States.GetHashCode();
-                }
-                if (this.Priorities != null)
-                {
-                    hashCode = (hashCode * 59) + this.Priorities.GetHashCode();
-                }
-                if (this.EntityTypes != null)
-                {
-                    hashCode = (hashCode * 59) + this.EntityTypes.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                if (this.IsAutomated != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsAutomated.GetHashCode();
-                }
-                if (this.Tags != null)
-                {
-                    hashCode = (hashCode * 59) + this.Tags.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

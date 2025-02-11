@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// Collection of filters to apply to search
     /// </summary>
     [DataContract(Name = "WorkItemLocalFilterModel")]
-    public partial class WorkItemLocalFilterModel : IEquatable<WorkItemLocalFilterModel>, IValidatableObject
+    public partial class WorkItemLocalFilterModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemLocalFilterModel" /> class.
@@ -46,15 +46,15 @@ namespace TestIT.ApiClient.Model
         /// <param name="states">Collection of states of work item.</param>
         /// <param name="priorities">Collection of priorities of work item.</param>
         /// <param name="types">Collection of types of work item.</param>
-        /// <param name="createdDate">createdDate.</param>
-        /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="duration">duration.</param>
-        /// <param name="medianDuration">medianDuration.</param>
+        /// <param name="createdDate">Specifies a work item range of creation date to search for.</param>
+        /// <param name="modifiedDate">Specifies a work item range of last modification date to search for.</param>
+        /// <param name="duration">Specifies a work item duration range to search for.</param>
+        /// <param name="medianDuration">Specifies a work item median duration range to search for.</param>
         /// <param name="isAutomated">Is result must consist of only manual/automated work items.</param>
         /// <param name="tags">Collection of tags.</param>
         /// <param name="autoTestIds">Collection of identifiers of linked autotests.</param>
         /// <param name="workItemVersionIds">Collection of identifiers work items versions..</param>
-        public WorkItemLocalFilterModel(string name = default(string), List<Guid> ids = default(List<Guid>), List<long> globalIds = default(List<long>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?), List<Guid> sectionIds = default(List<Guid>), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), List<WorkItemStates> states = default(List<WorkItemStates>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<WorkItemEntityTypes> types = default(List<WorkItemEntityTypes>), TestPointFilterModelWorkItemCreatedDate createdDate = default(TestPointFilterModelWorkItemCreatedDate), TestPointFilterModelWorkItemModifiedDate modifiedDate = default(TestPointFilterModelWorkItemModifiedDate), TestSuiteWorkItemsSearchModelDuration duration = default(TestSuiteWorkItemsSearchModelDuration), TestSuiteWorkItemsSearchModelMedianDuration medianDuration = default(TestSuiteWorkItemsSearchModelMedianDuration), bool? isAutomated = default(bool?), List<string> tags = default(List<string>), List<Guid> autoTestIds = default(List<Guid>), List<Guid> workItemVersionIds = default(List<Guid>))
+        public WorkItemLocalFilterModel(string name = default(string), List<Guid> ids = default(List<Guid>), List<long> globalIds = default(List<long>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?), List<Guid> sectionIds = default(List<Guid>), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), List<WorkItemStates> states = default(List<WorkItemStates>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<WorkItemEntityTypes> types = default(List<WorkItemEntityTypes>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), Int32RangeSelectorModel duration = default(Int32RangeSelectorModel), Int64RangeSelectorModel medianDuration = default(Int64RangeSelectorModel), bool? isAutomated = default(bool?), List<string> tags = default(List<string>), List<Guid> autoTestIds = default(List<Guid>), List<Guid> workItemVersionIds = default(List<Guid>))
         {
             this.Name = name;
             this.Ids = ids;
@@ -155,28 +155,32 @@ namespace TestIT.ApiClient.Model
         public List<WorkItemEntityTypes> Types { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedDate
+        /// Specifies a work item range of creation date to search for
         /// </summary>
+        /// <value>Specifies a work item range of creation date to search for</value>
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
-        public TestPointFilterModelWorkItemCreatedDate CreatedDate { get; set; }
+        public DateTimeRangeSelectorModel CreatedDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets ModifiedDate
+        /// Specifies a work item range of last modification date to search for
         /// </summary>
+        /// <value>Specifies a work item range of last modification date to search for</value>
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
-        public TestPointFilterModelWorkItemModifiedDate ModifiedDate { get; set; }
+        public DateTimeRangeSelectorModel ModifiedDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets Duration
+        /// Specifies a work item duration range to search for
         /// </summary>
+        /// <value>Specifies a work item duration range to search for</value>
         [DataMember(Name = "duration", EmitDefaultValue = true)]
-        public TestSuiteWorkItemsSearchModelDuration Duration { get; set; }
+        public Int32RangeSelectorModel Duration { get; set; }
 
         /// <summary>
-        /// Gets or Sets MedianDuration
+        /// Specifies a work item median duration range to search for
         /// </summary>
+        /// <value>Specifies a work item median duration range to search for</value>
         [DataMember(Name = "medianDuration", EmitDefaultValue = true)]
-        public TestSuiteWorkItemsSearchModelMedianDuration MedianDuration { get; set; }
+        public Int64RangeSelectorModel MedianDuration { get; set; }
 
         /// <summary>
         /// Is result must consist of only manual/automated work items
@@ -247,242 +251,22 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as WorkItemLocalFilterModel);
-        }
-
-        /// <summary>
-        /// Returns true if WorkItemLocalFilterModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of WorkItemLocalFilterModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(WorkItemLocalFilterModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Ids == input.Ids ||
-                    this.Ids != null &&
-                    input.Ids != null &&
-                    this.Ids.SequenceEqual(input.Ids)
-                ) && 
-                (
-                    this.GlobalIds == input.GlobalIds ||
-                    this.GlobalIds != null &&
-                    input.GlobalIds != null &&
-                    this.GlobalIds.SequenceEqual(input.GlobalIds)
-                ) && 
-                (
-                    this.Attributes == input.Attributes ||
-                    this.Attributes != null &&
-                    input.Attributes != null &&
-                    this.Attributes.SequenceEqual(input.Attributes)
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    (this.IsDeleted != null &&
-                    this.IsDeleted.Equals(input.IsDeleted))
-                ) && 
-                (
-                    this.SectionIds == input.SectionIds ||
-                    this.SectionIds != null &&
-                    input.SectionIds != null &&
-                    this.SectionIds.SequenceEqual(input.SectionIds)
-                ) && 
-                (
-                    this.CreatedByIds == input.CreatedByIds ||
-                    this.CreatedByIds != null &&
-                    input.CreatedByIds != null &&
-                    this.CreatedByIds.SequenceEqual(input.CreatedByIds)
-                ) && 
-                (
-                    this.ModifiedByIds == input.ModifiedByIds ||
-                    this.ModifiedByIds != null &&
-                    input.ModifiedByIds != null &&
-                    this.ModifiedByIds.SequenceEqual(input.ModifiedByIds)
-                ) && 
-                (
-                    this.States == input.States ||
-                    this.States != null &&
-                    input.States != null &&
-                    this.States.SequenceEqual(input.States)
-                ) && 
-                (
-                    this.Priorities == input.Priorities ||
-                    this.Priorities != null &&
-                    input.Priorities != null &&
-                    this.Priorities.SequenceEqual(input.Priorities)
-                ) && 
-                (
-                    this.Types == input.Types ||
-                    this.Types != null &&
-                    input.Types != null &&
-                    this.Types.SequenceEqual(input.Types)
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    (this.Duration != null &&
-                    this.Duration.Equals(input.Duration))
-                ) && 
-                (
-                    this.MedianDuration == input.MedianDuration ||
-                    (this.MedianDuration != null &&
-                    this.MedianDuration.Equals(input.MedianDuration))
-                ) && 
-                (
-                    this.IsAutomated == input.IsAutomated ||
-                    (this.IsAutomated != null &&
-                    this.IsAutomated.Equals(input.IsAutomated))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.AutoTestIds == input.AutoTestIds ||
-                    this.AutoTestIds != null &&
-                    input.AutoTestIds != null &&
-                    this.AutoTestIds.SequenceEqual(input.AutoTestIds)
-                ) && 
-                (
-                    this.WorkItemVersionIds == input.WorkItemVersionIds ||
-                    this.WorkItemVersionIds != null &&
-                    input.WorkItemVersionIds != null &&
-                    this.WorkItemVersionIds.SequenceEqual(input.WorkItemVersionIds)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Ids != null)
-                {
-                    hashCode = (hashCode * 59) + this.Ids.GetHashCode();
-                }
-                if (this.GlobalIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.GlobalIds.GetHashCode();
-                }
-                if (this.Attributes != null)
-                {
-                    hashCode = (hashCode * 59) + this.Attributes.GetHashCode();
-                }
-                if (this.IsDeleted != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                }
-                if (this.SectionIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.SectionIds.GetHashCode();
-                }
-                if (this.CreatedByIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedByIds.GetHashCode();
-                }
-                if (this.ModifiedByIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedByIds.GetHashCode();
-                }
-                if (this.States != null)
-                {
-                    hashCode = (hashCode * 59) + this.States.GetHashCode();
-                }
-                if (this.Priorities != null)
-                {
-                    hashCode = (hashCode * 59) + this.Priorities.GetHashCode();
-                }
-                if (this.Types != null)
-                {
-                    hashCode = (hashCode * 59) + this.Types.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                if (this.Duration != null)
-                {
-                    hashCode = (hashCode * 59) + this.Duration.GetHashCode();
-                }
-                if (this.MedianDuration != null)
-                {
-                    hashCode = (hashCode * 59) + this.MedianDuration.GetHashCode();
-                }
-                if (this.IsAutomated != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsAutomated.GetHashCode();
-                }
-                if (this.Tags != null)
-                {
-                    hashCode = (hashCode * 59) + this.Tags.GetHashCode();
-                }
-                if (this.AutoTestIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.AutoTestIds.GetHashCode();
-                }
-                if (this.WorkItemVersionIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItemVersionIds.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
             }
 
             // Name (string) minLength
             if (this.Name != null && this.Name.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
             }
 
             yield break;

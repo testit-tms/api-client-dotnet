@@ -67,7 +67,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ConfigurationModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ConfigurationModel>> GetConfigurationsByProjectIdAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ConfigurationModel>> GetConfigurationsByProjectIdAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get project configurations
@@ -79,7 +79,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ConfigurationModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ConfigurationModel>>> GetConfigurationsByProjectIdWithHttpInfoAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ConfigurationModel>>> GetConfigurationsByProjectIdWithHttpInfoAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -360,7 +360,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ConfigurationModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ConfigurationModel>> GetConfigurationsByProjectIdAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ConfigurationModel>> GetConfigurationsByProjectIdAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<List<ConfigurationModel>> localVarResponse = await GetConfigurationsByProjectIdWithHttpInfoAsync(projectId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -373,7 +373,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ConfigurationModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ConfigurationModel>>> GetConfigurationsByProjectIdWithHttpInfoAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ConfigurationModel>>> GetConfigurationsByProjectIdWithHttpInfoAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)

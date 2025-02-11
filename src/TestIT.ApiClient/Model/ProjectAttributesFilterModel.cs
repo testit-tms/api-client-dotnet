@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// ProjectAttributesFilterModel
     /// </summary>
     [DataContract(Name = "ProjectAttributesFilterModel")]
-    public partial class ProjectAttributesFilterModel : IEquatable<ProjectAttributesFilterModel>, IValidatableObject
+    public partial class ProjectAttributesFilterModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectAttributesFilterModel" /> class.
@@ -126,94 +126,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ProjectAttributesFilterModel);
-        }
-
-        /// <summary>
-        /// Returns true if ProjectAttributesFilterModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ProjectAttributesFilterModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ProjectAttributesFilterModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.IsRequired == input.IsRequired ||
-                    (this.IsRequired != null &&
-                    this.IsRequired.Equals(input.IsRequired))
-                ) && 
-                (
-                    this.IsGlobal == input.IsGlobal ||
-                    (this.IsGlobal != null &&
-                    this.IsGlobal.Equals(input.IsGlobal))
-                ) && 
-                (
-                    this.Types == input.Types ||
-                    this.Types != null &&
-                    input.Types != null &&
-                    this.Types.SequenceEqual(input.Types)
-                ) && 
-                (
-                    this.IsEnabled == input.IsEnabled ||
-                    (this.IsEnabled != null &&
-                    this.IsEnabled.Equals(input.IsEnabled))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.IsRequired != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsRequired.GetHashCode();
-                }
-                if (this.IsGlobal != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsGlobal.GetHashCode();
-                }
-                if (this.Types != null)
-                {
-                    hashCode = (hashCode * 59) + this.Types.GetHashCode();
-                }
-                if (this.IsEnabled != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsEnabled.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

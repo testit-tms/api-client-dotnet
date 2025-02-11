@@ -61,7 +61,6 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         [EnumMember(Value = "Blocked")]
         Blocked = 5
-
     }
 
 }

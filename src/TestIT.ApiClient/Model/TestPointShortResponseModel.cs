@@ -30,24 +30,28 @@ namespace TestIT.ApiClient.Model
     /// TestPointShortResponseModel
     /// </summary>
     [DataContract(Name = "TestPointShortResponseModel")]
-    public partial class TestPointShortResponseModel : IEquatable<TestPointShortResponseModel>, IValidatableObject
+    public partial class TestPointShortResponseModel : IValidatableObject
     {
 
         /// <summary>
-        /// Gets or Sets Status
+        /// Status of the test point
         /// </summary>
+        /// <value>Status of the test point</value>
         [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
+        [Obsolete]
         public TestPointStatus Status { get; set; }
 
         /// <summary>
-        /// Gets or Sets Priority
+        /// Priority of the test point
         /// </summary>
+        /// <value>Priority of the test point</value>
         [DataMember(Name = "priority", IsRequired = true, EmitDefaultValue = true)]
         public WorkItemPriorityModel Priority { get; set; }
 
         /// <summary>
-        /// Gets or Sets WorkItemState
+        /// Work item state
         /// </summary>
+        /// <value>Work item state</value>
         [DataMember(Name = "workItemState", IsRequired = true, EmitDefaultValue = true)]
         public WorkItemState WorkItemState { get; set; }
         /// <summary>
@@ -75,9 +79,9 @@ namespace TestIT.ApiClient.Model
         /// <param name="workItemVersionId">Unique ID of work item version the test point represents (required).</param>
         /// <param name="workItemVersionNumber">Number of work item version the test point represents (required).</param>
         /// <param name="workItemMedianDuration">Median duration of work item the test point represents.</param>
-        /// <param name="status">status (required).</param>
-        /// <param name="statusModel">statusModel (required).</param>
-        /// <param name="priority">priority (required).</param>
+        /// <param name="status">Status of the test point (required).</param>
+        /// <param name="statusModel">Status of the test point (required).</param>
+        /// <param name="priority">Priority of the test point (required).</param>
         /// <param name="isAutomated">Indicates if the test point represents an autotest (required).</param>
         /// <param name="name">Name of the test point (required).</param>
         /// <param name="configurationId">Unique ID of the test point configuration (required).</param>
@@ -85,14 +89,14 @@ namespace TestIT.ApiClient.Model
         /// <param name="sectionId">Unique ID of section where work item the test point represents is located (required).</param>
         /// <param name="sectionName">Name of section where work item the test point represents is located.</param>
         /// <param name="projectId">Unique ID of the test point project (required).</param>
-        /// <param name="lastTestResult">lastTestResult.</param>
+        /// <param name="lastTestResult">Model of the test point last test result.</param>
         /// <param name="iterationId">Unique ID of work item iteration the test point represents (required).</param>
-        /// <param name="workItemState">workItemState (required).</param>
+        /// <param name="workItemState">Work item state (required).</param>
         /// <param name="workItemCreatedById">Unique ID of the work item creator (required).</param>
         /// <param name="workItemCreatedDate">Creation date of work item (required).</param>
         /// <param name="workItemModifiedById">Unique ID of the work item last editor.</param>
         /// <param name="workItemModifiedDate">Modified date of work item.</param>
-        public TestPointShortResponseModel(Guid id = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), Guid? testerId = default(Guid?), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<string> tags = default(List<string>), List<string> links = default(List<string>), Guid testSuiteId = default(Guid), string testSuiteName = default(string), Guid workItemId = default(Guid), long workItemGlobalId = default(long), Guid workItemVersionId = default(Guid), int workItemVersionNumber = default(int), long? workItemMedianDuration = default(long?), TestPointStatus status = default(TestPointStatus), TestPointShortResponseModelStatusModel statusModel = default(TestPointShortResponseModelStatusModel), WorkItemPriorityModel priority = default(WorkItemPriorityModel), bool isAutomated = default(bool), string name = default(string), Guid configurationId = default(Guid), int duration = default(int), Guid sectionId = default(Guid), string sectionName = default(string), Guid projectId = default(Guid), TestPointShortResponseModelLastTestResult lastTestResult = default(TestPointShortResponseModelLastTestResult), Guid iterationId = default(Guid), WorkItemState workItemState = default(WorkItemState), Guid workItemCreatedById = default(Guid), DateTime workItemCreatedDate = default(DateTime), Guid? workItemModifiedById = default(Guid?), DateTime? workItemModifiedDate = default(DateTime?))
+        public TestPointShortResponseModel(Guid id = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), Guid? testerId = default(Guid?), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<string> tags = default(List<string>), List<string> links = default(List<string>), Guid testSuiteId = default(Guid), string testSuiteName = default(string), Guid workItemId = default(Guid), long workItemGlobalId = default(long), Guid workItemVersionId = default(Guid), int workItemVersionNumber = default(int), long? workItemMedianDuration = default(long?), TestPointStatus status = default(TestPointStatus), TestStatusApiResult statusModel = default(TestStatusApiResult), WorkItemPriorityModel priority = default(WorkItemPriorityModel), bool isAutomated = default(bool), string name = default(string), Guid configurationId = default(Guid), int duration = default(int), Guid sectionId = default(Guid), string sectionName = default(string), Guid projectId = default(Guid), LastTestResultModel lastTestResult = default(LastTestResultModel), Guid iterationId = default(Guid), WorkItemState workItemState = default(WorkItemState), Guid workItemCreatedById = default(Guid), DateTime workItemCreatedDate = default(DateTime), Guid? workItemModifiedById = default(Guid?), DateTime? workItemModifiedDate = default(DateTime?))
         {
             this.Id = id;
             this.CreatedDate = createdDate;
@@ -280,10 +284,11 @@ namespace TestIT.ApiClient.Model
         public long? WorkItemMedianDuration { get; set; }
 
         /// <summary>
-        /// Gets or Sets StatusModel
+        /// Status of the test point
         /// </summary>
+        /// <value>Status of the test point</value>
         [DataMember(Name = "statusModel", IsRequired = true, EmitDefaultValue = true)]
-        public TestPointShortResponseModelStatusModel StatusModel { get; set; }
+        public TestStatusApiResult StatusModel { get; set; }
 
         /// <summary>
         /// Indicates if the test point represents an autotest
@@ -335,10 +340,11 @@ namespace TestIT.ApiClient.Model
         public Guid ProjectId { get; set; }
 
         /// <summary>
-        /// Gets or Sets LastTestResult
+        /// Model of the test point last test result
         /// </summary>
+        /// <value>Model of the test point last test result</value>
         [DataMember(Name = "lastTestResult", EmitDefaultValue = true)]
-        public TestPointShortResponseModelLastTestResult LastTestResult { get; set; }
+        public LastTestResultModel LastTestResult { get; set; }
 
         /// <summary>
         /// Unique ID of work item iteration the test point represents
@@ -431,330 +437,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestPointShortResponseModel);
-        }
-
-        /// <summary>
-        /// Returns true if TestPointShortResponseModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestPointShortResponseModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestPointShortResponseModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.CreatedById == input.CreatedById ||
-                    (this.CreatedById != null &&
-                    this.CreatedById.Equals(input.CreatedById))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.ModifiedById == input.ModifiedById ||
-                    (this.ModifiedById != null &&
-                    this.ModifiedById.Equals(input.ModifiedById))
-                ) && 
-                (
-                    this.TesterId == input.TesterId ||
-                    (this.TesterId != null &&
-                    this.TesterId.Equals(input.TesterId))
-                ) && 
-                (
-                    this.Parameters == input.Parameters ||
-                    this.Parameters != null &&
-                    input.Parameters != null &&
-                    this.Parameters.SequenceEqual(input.Parameters)
-                ) && 
-                (
-                    this.Attributes == input.Attributes ||
-                    this.Attributes != null &&
-                    input.Attributes != null &&
-                    this.Attributes.SequenceEqual(input.Attributes)
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    this.Links != null &&
-                    input.Links != null &&
-                    this.Links.SequenceEqual(input.Links)
-                ) && 
-                (
-                    this.TestSuiteId == input.TestSuiteId ||
-                    (this.TestSuiteId != null &&
-                    this.TestSuiteId.Equals(input.TestSuiteId))
-                ) && 
-                (
-                    this.TestSuiteName == input.TestSuiteName ||
-                    (this.TestSuiteName != null &&
-                    this.TestSuiteName.Equals(input.TestSuiteName))
-                ) && 
-                (
-                    this.WorkItemId == input.WorkItemId ||
-                    (this.WorkItemId != null &&
-                    this.WorkItemId.Equals(input.WorkItemId))
-                ) && 
-                (
-                    this.WorkItemGlobalId == input.WorkItemGlobalId ||
-                    this.WorkItemGlobalId.Equals(input.WorkItemGlobalId)
-                ) && 
-                (
-                    this.WorkItemVersionId == input.WorkItemVersionId ||
-                    (this.WorkItemVersionId != null &&
-                    this.WorkItemVersionId.Equals(input.WorkItemVersionId))
-                ) && 
-                (
-                    this.WorkItemVersionNumber == input.WorkItemVersionNumber ||
-                    this.WorkItemVersionNumber.Equals(input.WorkItemVersionNumber)
-                ) && 
-                (
-                    this.WorkItemMedianDuration == input.WorkItemMedianDuration ||
-                    (this.WorkItemMedianDuration != null &&
-                    this.WorkItemMedianDuration.Equals(input.WorkItemMedianDuration))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    this.Status.Equals(input.Status)
-                ) && 
-                (
-                    this.StatusModel == input.StatusModel ||
-                    (this.StatusModel != null &&
-                    this.StatusModel.Equals(input.StatusModel))
-                ) && 
-                (
-                    this.Priority == input.Priority ||
-                    this.Priority.Equals(input.Priority)
-                ) && 
-                (
-                    this.IsAutomated == input.IsAutomated ||
-                    this.IsAutomated.Equals(input.IsAutomated)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ConfigurationId == input.ConfigurationId ||
-                    (this.ConfigurationId != null &&
-                    this.ConfigurationId.Equals(input.ConfigurationId))
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    this.Duration.Equals(input.Duration)
-                ) && 
-                (
-                    this.SectionId == input.SectionId ||
-                    (this.SectionId != null &&
-                    this.SectionId.Equals(input.SectionId))
-                ) && 
-                (
-                    this.SectionName == input.SectionName ||
-                    (this.SectionName != null &&
-                    this.SectionName.Equals(input.SectionName))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.LastTestResult == input.LastTestResult ||
-                    (this.LastTestResult != null &&
-                    this.LastTestResult.Equals(input.LastTestResult))
-                ) && 
-                (
-                    this.IterationId == input.IterationId ||
-                    (this.IterationId != null &&
-                    this.IterationId.Equals(input.IterationId))
-                ) && 
-                (
-                    this.WorkItemState == input.WorkItemState ||
-                    this.WorkItemState.Equals(input.WorkItemState)
-                ) && 
-                (
-                    this.WorkItemCreatedById == input.WorkItemCreatedById ||
-                    (this.WorkItemCreatedById != null &&
-                    this.WorkItemCreatedById.Equals(input.WorkItemCreatedById))
-                ) && 
-                (
-                    this.WorkItemCreatedDate == input.WorkItemCreatedDate ||
-                    (this.WorkItemCreatedDate != null &&
-                    this.WorkItemCreatedDate.Equals(input.WorkItemCreatedDate))
-                ) && 
-                (
-                    this.WorkItemModifiedById == input.WorkItemModifiedById ||
-                    (this.WorkItemModifiedById != null &&
-                    this.WorkItemModifiedById.Equals(input.WorkItemModifiedById))
-                ) && 
-                (
-                    this.WorkItemModifiedDate == input.WorkItemModifiedDate ||
-                    (this.WorkItemModifiedDate != null &&
-                    this.WorkItemModifiedDate.Equals(input.WorkItemModifiedDate))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.CreatedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedById.GetHashCode();
-                }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                if (this.ModifiedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedById.GetHashCode();
-                }
-                if (this.TesterId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TesterId.GetHashCode();
-                }
-                if (this.Parameters != null)
-                {
-                    hashCode = (hashCode * 59) + this.Parameters.GetHashCode();
-                }
-                if (this.Attributes != null)
-                {
-                    hashCode = (hashCode * 59) + this.Attributes.GetHashCode();
-                }
-                if (this.Tags != null)
-                {
-                    hashCode = (hashCode * 59) + this.Tags.GetHashCode();
-                }
-                if (this.Links != null)
-                {
-                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
-                }
-                if (this.TestSuiteId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestSuiteId.GetHashCode();
-                }
-                if (this.TestSuiteName != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestSuiteName.GetHashCode();
-                }
-                if (this.WorkItemId != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItemId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.WorkItemGlobalId.GetHashCode();
-                if (this.WorkItemVersionId != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItemVersionId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.WorkItemVersionNumber.GetHashCode();
-                if (this.WorkItemMedianDuration != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItemMedianDuration.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                if (this.StatusModel != null)
-                {
-                    hashCode = (hashCode * 59) + this.StatusModel.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Priority.GetHashCode();
-                hashCode = (hashCode * 59) + this.IsAutomated.GetHashCode();
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.ConfigurationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ConfigurationId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Duration.GetHashCode();
-                if (this.SectionId != null)
-                {
-                    hashCode = (hashCode * 59) + this.SectionId.GetHashCode();
-                }
-                if (this.SectionName != null)
-                {
-                    hashCode = (hashCode * 59) + this.SectionName.GetHashCode();
-                }
-                if (this.ProjectId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProjectId.GetHashCode();
-                }
-                if (this.LastTestResult != null)
-                {
-                    hashCode = (hashCode * 59) + this.LastTestResult.GetHashCode();
-                }
-                if (this.IterationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.IterationId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.WorkItemState.GetHashCode();
-                if (this.WorkItemCreatedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItemCreatedById.GetHashCode();
-                }
-                if (this.WorkItemCreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItemCreatedDate.GetHashCode();
-                }
-                if (this.WorkItemModifiedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItemModifiedById.GetHashCode();
-                }
-                if (this.WorkItemModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItemModifiedDate.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

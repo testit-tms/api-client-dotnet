@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// NotificationQueryFilterModel
     /// </summary>
     [DataContract(Name = "NotificationQueryFilterModel")]
-    public partial class NotificationQueryFilterModel : IEquatable<NotificationQueryFilterModel>, IValidatableObject
+    public partial class NotificationQueryFilterModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="NotificationQueryFilterModel" /> class.
@@ -88,76 +88,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as NotificationQueryFilterModel);
-        }
-
-        /// <summary>
-        /// Returns true if NotificationQueryFilterModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of NotificationQueryFilterModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(NotificationQueryFilterModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Types == input.Types ||
-                    this.Types != null &&
-                    input.Types != null &&
-                    this.Types.SequenceEqual(input.Types)
-                ) && 
-                (
-                    this.IsRead == input.IsRead ||
-                    (this.IsRead != null &&
-                    this.IsRead.Equals(input.IsRead))
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Types != null)
-                {
-                    hashCode = (hashCode * 59) + this.Types.GetHashCode();
-                }
-                if (this.IsRead != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsRead.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

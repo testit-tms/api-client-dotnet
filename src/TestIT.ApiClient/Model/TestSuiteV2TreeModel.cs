@@ -30,12 +30,13 @@ namespace TestIT.ApiClient.Model
     /// TestSuiteV2TreeModel
     /// </summary>
     [DataContract(Name = "TestSuiteV2TreeModel")]
-    public partial class TestSuiteV2TreeModel : IEquatable<TestSuiteV2TreeModel>, IValidatableObject
+    public partial class TestSuiteV2TreeModel : IValidatableObject
     {
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Type of the test suite
         /// </summary>
+        /// <value>Type of the test suite</value>
         [DataMember(Name = "type", EmitDefaultValue = true)]
         public TestSuiteType? Type { get; set; }
         /// <summary>
@@ -52,7 +53,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="parentId">Unique ID of the parent test suite in hierarchy.</param>
         /// <param name="testPlanId">Unique ID of test plan to which the test suite belongs (required).</param>
         /// <param name="name">Name of the test suite (required).</param>
-        /// <param name="type">type.</param>
+        /// <param name="type">Type of the test suite.</param>
         /// <param name="saveStructure">Indicates if the test suite retains section tree structure.</param>
         /// <param name="autoRefresh">Indicates if scheduled auto refresh is enabled for the test suite.</param>
         public TestSuiteV2TreeModel(List<TestSuiteV2TreeModel> children = default(List<TestSuiteV2TreeModel>), Guid id = default(Guid), DateTime? refreshDate = default(DateTime?), Guid? parentId = default(Guid?), Guid testPlanId = default(Guid), string name = default(string), TestSuiteType? type = default(TestSuiteType?), bool? saveStructure = default(bool?), bool? autoRefresh = default(bool?))
@@ -161,137 +162,22 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestSuiteV2TreeModel);
-        }
-
-        /// <summary>
-        /// Returns true if TestSuiteV2TreeModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestSuiteV2TreeModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestSuiteV2TreeModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Children == input.Children ||
-                    this.Children != null &&
-                    input.Children != null &&
-                    this.Children.SequenceEqual(input.Children)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.RefreshDate == input.RefreshDate ||
-                    (this.RefreshDate != null &&
-                    this.RefreshDate.Equals(input.RefreshDate))
-                ) && 
-                (
-                    this.ParentId == input.ParentId ||
-                    (this.ParentId != null &&
-                    this.ParentId.Equals(input.ParentId))
-                ) && 
-                (
-                    this.TestPlanId == input.TestPlanId ||
-                    (this.TestPlanId != null &&
-                    this.TestPlanId.Equals(input.TestPlanId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    this.Type.Equals(input.Type)
-                ) && 
-                (
-                    this.SaveStructure == input.SaveStructure ||
-                    (this.SaveStructure != null &&
-                    this.SaveStructure.Equals(input.SaveStructure))
-                ) && 
-                (
-                    this.AutoRefresh == input.AutoRefresh ||
-                    (this.AutoRefresh != null &&
-                    this.AutoRefresh.Equals(input.AutoRefresh))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Children != null)
-                {
-                    hashCode = (hashCode * 59) + this.Children.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.RefreshDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.RefreshDate.GetHashCode();
-                }
-                if (this.ParentId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParentId.GetHashCode();
-                }
-                if (this.TestPlanId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestPlanId.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                if (this.SaveStructure != null)
-                {
-                    hashCode = (hashCode * 59) + this.SaveStructure.GetHashCode();
-                }
-                if (this.AutoRefresh != null)
-                {
-                    hashCode = (hashCode * 59) + this.AutoRefresh.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
             }
 
             // Name (string) minLength
             if (this.Name != null && this.Name.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
             }
 
             yield break;

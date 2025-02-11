@@ -31,9 +31,9 @@ namespace TestIT.ApiClient.Api
         /// Create configurations by parameters
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsCreateByParametersPostRequest"> (optional)</param>
+        /// <param name="configurationByParametersModel"> (optional)</param>
         /// <returns>List&lt;Guid&gt;</returns>
-        List<Guid> ApiV2ConfigurationsCreateByParametersPost(ApiV2ConfigurationsCreateByParametersPostRequest apiV2ConfigurationsCreateByParametersPostRequest = default(ApiV2ConfigurationsCreateByParametersPostRequest));
+        List<Guid> ApiV2ConfigurationsCreateByParametersPost(ConfigurationByParametersModel configurationByParametersModel = default(ConfigurationByParametersModel));
 
         /// <summary>
         /// Create configurations by parameters
@@ -42,16 +42,16 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsCreateByParametersPostRequest"> (optional)</param>
+        /// <param name="configurationByParametersModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
-        ApiResponse<List<Guid>> ApiV2ConfigurationsCreateByParametersPostWithHttpInfo(ApiV2ConfigurationsCreateByParametersPostRequest apiV2ConfigurationsCreateByParametersPostRequest = default(ApiV2ConfigurationsCreateByParametersPostRequest));
+        ApiResponse<List<Guid>> ApiV2ConfigurationsCreateByParametersPostWithHttpInfo(ConfigurationByParametersModel configurationByParametersModel = default(ConfigurationByParametersModel));
         /// <summary>
         /// Delete multiple configurations
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="configurationSelectModel"> (optional)</param>
         /// <returns>int</returns>
-        int ApiV2ConfigurationsDeleteBulkPost(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest));
+        int ApiV2ConfigurationsDeleteBulkPost(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel));
 
         /// <summary>
         /// Delete multiple configurations
@@ -60,9 +60,9 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="configurationSelectModel"> (optional)</param>
         /// <returns>ApiResponse of int</returns>
-        ApiResponse<int> ApiV2ConfigurationsDeleteBulkPostWithHttpInfo(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest));
+        ApiResponse<int> ApiV2ConfigurationsDeleteBulkPostWithHttpInfo(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel));
         /// <summary>
         /// Delete configuration
         /// </summary>
@@ -144,9 +144,9 @@ namespace TestIT.ApiClient.Api
         /// Permanently delete multiple archived configurations
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="configurationSelectModel"> (optional)</param>
         /// <returns></returns>
-        void ApiV2ConfigurationsPurgeBulkPost(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest));
+        void ApiV2ConfigurationsPurgeBulkPost(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel));
 
         /// <summary>
         /// Permanently delete multiple archived configurations
@@ -155,16 +155,16 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="configurationSelectModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2ConfigurationsPurgeBulkPostWithHttpInfo(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest));
+        ApiResponse<Object> ApiV2ConfigurationsPurgeBulkPostWithHttpInfo(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel));
         /// <summary>
         /// Edit configuration
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPutRequest"> (optional)</param>
+        /// <param name="configurationPutModel"> (optional)</param>
         /// <returns></returns>
-        void ApiV2ConfigurationsPut(ApiV2ConfigurationsPutRequest apiV2ConfigurationsPutRequest = default(ApiV2ConfigurationsPutRequest));
+        void ApiV2ConfigurationsPut(ConfigurationPutModel configurationPutModel = default(ConfigurationPutModel));
 
         /// <summary>
         /// Edit configuration
@@ -173,16 +173,16 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPutRequest"> (optional)</param>
+        /// <param name="configurationPutModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2ConfigurationsPutWithHttpInfo(ApiV2ConfigurationsPutRequest apiV2ConfigurationsPutRequest = default(ApiV2ConfigurationsPutRequest));
+        ApiResponse<Object> ApiV2ConfigurationsPutWithHttpInfo(ConfigurationPutModel configurationPutModel = default(ConfigurationPutModel));
         /// <summary>
         /// Restore multiple configurations from the archive
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="configurationSelectModel"> (optional)</param>
         /// <returns>int</returns>
-        int ApiV2ConfigurationsRestoreBulkPost(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest));
+        int ApiV2ConfigurationsRestoreBulkPost(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel));
 
         /// <summary>
         /// Restore multiple configurations from the archive
@@ -191,9 +191,9 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="configurationSelectModel"> (optional)</param>
         /// <returns>ApiResponse of int</returns>
-        ApiResponse<int> ApiV2ConfigurationsRestoreBulkPostWithHttpInfo(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest));
+        ApiResponse<int> ApiV2ConfigurationsRestoreBulkPostWithHttpInfo(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel));
         /// <summary>
         /// Search for configurations
         /// </summary>
@@ -203,9 +203,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ConfigurationsSearchPostRequest">Model containing all the filters (optional)</param>
+        /// <param name="configurationFilterModel">Model containing all the filters (optional)</param>
         /// <returns>List&lt;ConfigurationModel&gt;</returns>
-        List<ConfigurationModel> ApiV2ConfigurationsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ConfigurationsSearchPostRequest apiV2ConfigurationsSearchPostRequest = default(ApiV2ConfigurationsSearchPostRequest));
+        List<ConfigurationModel> ApiV2ConfigurationsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ConfigurationFilterModel configurationFilterModel = default(ConfigurationFilterModel));
 
         /// <summary>
         /// Search for configurations
@@ -219,9 +219,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ConfigurationsSearchPostRequest">Model containing all the filters (optional)</param>
+        /// <param name="configurationFilterModel">Model containing all the filters (optional)</param>
         /// <returns>ApiResponse of List&lt;ConfigurationModel&gt;</returns>
-        ApiResponse<List<ConfigurationModel>> ApiV2ConfigurationsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ConfigurationsSearchPostRequest apiV2ConfigurationsSearchPostRequest = default(ApiV2ConfigurationsSearchPostRequest));
+        ApiResponse<List<ConfigurationModel>> ApiV2ConfigurationsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ConfigurationFilterModel configurationFilterModel = default(ConfigurationFilterModel));
         /// <summary>
         /// Create Configuration
         /// </summary>
@@ -229,9 +229,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets configuration model (listed in the request example)   User runs method execution   System creates configuration   System returns created configuration (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createConfigurationRequest"> (optional)</param>
+        /// <param name="configurationPostModel"> (optional)</param>
         /// <returns>ConfigurationModel</returns>
-        ConfigurationModel CreateConfiguration(CreateConfigurationRequest createConfigurationRequest = default(CreateConfigurationRequest));
+        ConfigurationModel CreateConfiguration(ConfigurationPostModel configurationPostModel = default(ConfigurationPostModel));
 
         /// <summary>
         /// Create Configuration
@@ -240,9 +240,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets configuration model (listed in the request example)   User runs method execution   System creates configuration   System returns created configuration (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createConfigurationRequest"> (optional)</param>
+        /// <param name="configurationPostModel"> (optional)</param>
         /// <returns>ApiResponse of ConfigurationModel</returns>
-        ApiResponse<ConfigurationModel> CreateConfigurationWithHttpInfo(CreateConfigurationRequest createConfigurationRequest = default(CreateConfigurationRequest));
+        ApiResponse<ConfigurationModel> CreateConfigurationWithHttpInfo(ConfigurationPostModel configurationPostModel = default(ConfigurationPostModel));
         /// <summary>
         /// Get configuration by internal or global ID
         /// </summary>
@@ -280,10 +280,10 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsCreateByParametersPostRequest"> (optional)</param>
+        /// <param name="configurationByParametersModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Guid&gt;</returns>
-        System.Threading.Tasks.Task<List<Guid>> ApiV2ConfigurationsCreateByParametersPostAsync(ApiV2ConfigurationsCreateByParametersPostRequest apiV2ConfigurationsCreateByParametersPostRequest = default(ApiV2ConfigurationsCreateByParametersPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<Guid>> ApiV2ConfigurationsCreateByParametersPostAsync(ConfigurationByParametersModel configurationByParametersModel = default(ConfigurationByParametersModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create configurations by parameters
@@ -292,10 +292,10 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsCreateByParametersPostRequest"> (optional)</param>
+        /// <param name="configurationByParametersModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Guid>>> ApiV2ConfigurationsCreateByParametersPostWithHttpInfoAsync(ApiV2ConfigurationsCreateByParametersPostRequest apiV2ConfigurationsCreateByParametersPostRequest = default(ApiV2ConfigurationsCreateByParametersPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Guid>>> ApiV2ConfigurationsCreateByParametersPostWithHttpInfoAsync(ConfigurationByParametersModel configurationByParametersModel = default(ConfigurationByParametersModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete multiple configurations
         /// </summary>
@@ -303,10 +303,10 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="configurationSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of int</returns>
-        System.Threading.Tasks.Task<int> ApiV2ConfigurationsDeleteBulkPostAsync(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<int> ApiV2ConfigurationsDeleteBulkPostAsync(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete multiple configurations
@@ -315,10 +315,10 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="configurationSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (int)</returns>
-        System.Threading.Tasks.Task<ApiResponse<int>> ApiV2ConfigurationsDeleteBulkPostWithHttpInfoAsync(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<int>> ApiV2ConfigurationsDeleteBulkPostWithHttpInfoAsync(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete configuration
         /// </summary>
@@ -329,7 +329,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the configuration</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2ConfigurationsIdDeleteAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2ConfigurationsIdDeleteAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete configuration
@@ -341,7 +341,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the configuration</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ConfigurationsIdDeleteWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ConfigurationsIdDeleteWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Patch configuration
         /// </summary>
@@ -353,7 +353,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="operation"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2ConfigurationsIdPatchAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2ConfigurationsIdPatchAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Patch configuration
@@ -366,7 +366,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="operation"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ConfigurationsIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ConfigurationsIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Permanently delete configuration from archive
         /// </summary>
@@ -377,7 +377,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the configuration</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2ConfigurationsIdPurgePostAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2ConfigurationsIdPurgePostAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Permanently delete configuration from archive
@@ -389,7 +389,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the configuration</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ConfigurationsIdPurgePostWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ConfigurationsIdPurgePostWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Restore configuration from the archive
         /// </summary>
@@ -400,7 +400,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the configuration</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2ConfigurationsIdRestorePostAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2ConfigurationsIdRestorePostAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Restore configuration from the archive
@@ -412,7 +412,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the configuration</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ConfigurationsIdRestorePostWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ConfigurationsIdRestorePostWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Permanently delete multiple archived configurations
         /// </summary>
@@ -420,10 +420,10 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="configurationSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2ConfigurationsPurgeBulkPostAsync(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2ConfigurationsPurgeBulkPostAsync(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Permanently delete multiple archived configurations
@@ -432,10 +432,10 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="configurationSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ConfigurationsPurgeBulkPostWithHttpInfoAsync(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ConfigurationsPurgeBulkPostWithHttpInfoAsync(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Edit configuration
         /// </summary>
@@ -443,10 +443,10 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPutRequest"> (optional)</param>
+        /// <param name="configurationPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2ConfigurationsPutAsync(ApiV2ConfigurationsPutRequest apiV2ConfigurationsPutRequest = default(ApiV2ConfigurationsPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2ConfigurationsPutAsync(ConfigurationPutModel configurationPutModel = default(ConfigurationPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Edit configuration
@@ -455,10 +455,10 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPutRequest"> (optional)</param>
+        /// <param name="configurationPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ConfigurationsPutWithHttpInfoAsync(ApiV2ConfigurationsPutRequest apiV2ConfigurationsPutRequest = default(ApiV2ConfigurationsPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ConfigurationsPutWithHttpInfoAsync(ConfigurationPutModel configurationPutModel = default(ConfigurationPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Restore multiple configurations from the archive
         /// </summary>
@@ -466,10 +466,10 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="configurationSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of int</returns>
-        System.Threading.Tasks.Task<int> ApiV2ConfigurationsRestoreBulkPostAsync(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<int> ApiV2ConfigurationsRestoreBulkPostAsync(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Restore multiple configurations from the archive
@@ -478,10 +478,10 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="configurationSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (int)</returns>
-        System.Threading.Tasks.Task<ApiResponse<int>> ApiV2ConfigurationsRestoreBulkPostWithHttpInfoAsync(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<int>> ApiV2ConfigurationsRestoreBulkPostWithHttpInfoAsync(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Search for configurations
         /// </summary>
@@ -494,10 +494,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ConfigurationsSearchPostRequest">Model containing all the filters (optional)</param>
+        /// <param name="configurationFilterModel">Model containing all the filters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ConfigurationModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ConfigurationModel>> ApiV2ConfigurationsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ConfigurationsSearchPostRequest apiV2ConfigurationsSearchPostRequest = default(ApiV2ConfigurationsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ConfigurationModel>> ApiV2ConfigurationsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ConfigurationFilterModel configurationFilterModel = default(ConfigurationFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Search for configurations
@@ -511,10 +511,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ConfigurationsSearchPostRequest">Model containing all the filters (optional)</param>
+        /// <param name="configurationFilterModel">Model containing all the filters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ConfigurationModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ConfigurationModel>>> ApiV2ConfigurationsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ConfigurationsSearchPostRequest apiV2ConfigurationsSearchPostRequest = default(ApiV2ConfigurationsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ConfigurationModel>>> ApiV2ConfigurationsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ConfigurationFilterModel configurationFilterModel = default(ConfigurationFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Create Configuration
         /// </summary>
@@ -522,10 +522,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets configuration model (listed in the request example)   User runs method execution   System creates configuration   System returns created configuration (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createConfigurationRequest"> (optional)</param>
+        /// <param name="configurationPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConfigurationModel</returns>
-        System.Threading.Tasks.Task<ConfigurationModel> CreateConfigurationAsync(CreateConfigurationRequest createConfigurationRequest = default(CreateConfigurationRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ConfigurationModel> CreateConfigurationAsync(ConfigurationPostModel configurationPostModel = default(ConfigurationPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Configuration
@@ -534,10 +534,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets configuration model (listed in the request example)   User runs method execution   System creates configuration   System returns created configuration (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createConfigurationRequest"> (optional)</param>
+        /// <param name="configurationPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConfigurationModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConfigurationModel>> CreateConfigurationWithHttpInfoAsync(CreateConfigurationRequest createConfigurationRequest = default(CreateConfigurationRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ConfigurationModel>> CreateConfigurationWithHttpInfoAsync(ConfigurationPostModel configurationPostModel = default(ConfigurationPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get configuration by internal or global ID
         /// </summary>
@@ -548,7 +548,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Configuration internal (guid format) or global (integer format) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConfigurationModel</returns>
-        System.Threading.Tasks.Task<ConfigurationModel> GetConfigurationByIdAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ConfigurationModel> GetConfigurationByIdAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get configuration by internal or global ID
@@ -560,7 +560,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Configuration internal (guid format) or global (integer format) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConfigurationModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConfigurationModel>> GetConfigurationByIdWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ConfigurationModel>> GetConfigurationByIdWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -778,11 +778,11 @@ namespace TestIT.ApiClient.Api
         /// Create configurations by parameters 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsCreateByParametersPostRequest"> (optional)</param>
+        /// <param name="configurationByParametersModel"> (optional)</param>
         /// <returns>List&lt;Guid&gt;</returns>
-        public List<Guid> ApiV2ConfigurationsCreateByParametersPost(ApiV2ConfigurationsCreateByParametersPostRequest apiV2ConfigurationsCreateByParametersPostRequest = default(ApiV2ConfigurationsCreateByParametersPostRequest))
+        public List<Guid> ApiV2ConfigurationsCreateByParametersPost(ConfigurationByParametersModel configurationByParametersModel = default(ConfigurationByParametersModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<Guid>> localVarResponse = ApiV2ConfigurationsCreateByParametersPostWithHttpInfo(apiV2ConfigurationsCreateByParametersPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<List<Guid>> localVarResponse = ApiV2ConfigurationsCreateByParametersPostWithHttpInfo(configurationByParametersModel);
             return localVarResponse.Data;
         }
 
@@ -790,9 +790,9 @@ namespace TestIT.ApiClient.Api
         /// Create configurations by parameters 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsCreateByParametersPostRequest"> (optional)</param>
+        /// <param name="configurationByParametersModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<Guid>> ApiV2ConfigurationsCreateByParametersPostWithHttpInfo(ApiV2ConfigurationsCreateByParametersPostRequest apiV2ConfigurationsCreateByParametersPostRequest = default(ApiV2ConfigurationsCreateByParametersPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<List<Guid>> ApiV2ConfigurationsCreateByParametersPostWithHttpInfo(ConfigurationByParametersModel configurationByParametersModel = default(ConfigurationByParametersModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -811,7 +811,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = apiV2ConfigurationsCreateByParametersPostRequest;
+            localVarRequestOptions.Data = configurationByParametersModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -835,12 +835,12 @@ namespace TestIT.ApiClient.Api
         /// Create configurations by parameters 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsCreateByParametersPostRequest"> (optional)</param>
+        /// <param name="configurationByParametersModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Guid&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Guid>> ApiV2ConfigurationsCreateByParametersPostAsync(ApiV2ConfigurationsCreateByParametersPostRequest apiV2ConfigurationsCreateByParametersPostRequest = default(ApiV2ConfigurationsCreateByParametersPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<Guid>> ApiV2ConfigurationsCreateByParametersPostAsync(ConfigurationByParametersModel configurationByParametersModel = default(ConfigurationByParametersModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<Guid>> localVarResponse = await ApiV2ConfigurationsCreateByParametersPostWithHttpInfoAsync(apiV2ConfigurationsCreateByParametersPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<Guid>> localVarResponse = await ApiV2ConfigurationsCreateByParametersPostWithHttpInfoAsync(configurationByParametersModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -848,10 +848,10 @@ namespace TestIT.ApiClient.Api
         /// Create configurations by parameters 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsCreateByParametersPostRequest"> (optional)</param>
+        /// <param name="configurationByParametersModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<Guid>>> ApiV2ConfigurationsCreateByParametersPostWithHttpInfoAsync(ApiV2ConfigurationsCreateByParametersPostRequest apiV2ConfigurationsCreateByParametersPostRequest = default(ApiV2ConfigurationsCreateByParametersPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<Guid>>> ApiV2ConfigurationsCreateByParametersPostWithHttpInfoAsync(ConfigurationByParametersModel configurationByParametersModel = default(ConfigurationByParametersModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -872,7 +872,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = apiV2ConfigurationsCreateByParametersPostRequest;
+            localVarRequestOptions.Data = configurationByParametersModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -897,11 +897,11 @@ namespace TestIT.ApiClient.Api
         /// Delete multiple configurations 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="configurationSelectModel"> (optional)</param>
         /// <returns>int</returns>
-        public int ApiV2ConfigurationsDeleteBulkPost(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest))
+        public int ApiV2ConfigurationsDeleteBulkPost(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<int> localVarResponse = ApiV2ConfigurationsDeleteBulkPostWithHttpInfo(apiV2ConfigurationsPurgeBulkPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<int> localVarResponse = ApiV2ConfigurationsDeleteBulkPostWithHttpInfo(configurationSelectModel);
             return localVarResponse.Data;
         }
 
@@ -909,9 +909,9 @@ namespace TestIT.ApiClient.Api
         /// Delete multiple configurations 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="configurationSelectModel"> (optional)</param>
         /// <returns>ApiResponse of int</returns>
-        public TestIT.ApiClient.Client.ApiResponse<int> ApiV2ConfigurationsDeleteBulkPostWithHttpInfo(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<int> ApiV2ConfigurationsDeleteBulkPostWithHttpInfo(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -930,7 +930,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = apiV2ConfigurationsPurgeBulkPostRequest;
+            localVarRequestOptions.Data = configurationSelectModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -954,12 +954,12 @@ namespace TestIT.ApiClient.Api
         /// Delete multiple configurations 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="configurationSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of int</returns>
-        public async System.Threading.Tasks.Task<int> ApiV2ConfigurationsDeleteBulkPostAsync(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<int> ApiV2ConfigurationsDeleteBulkPostAsync(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<int> localVarResponse = await ApiV2ConfigurationsDeleteBulkPostWithHttpInfoAsync(apiV2ConfigurationsPurgeBulkPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<int> localVarResponse = await ApiV2ConfigurationsDeleteBulkPostWithHttpInfoAsync(configurationSelectModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -967,10 +967,10 @@ namespace TestIT.ApiClient.Api
         /// Delete multiple configurations 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="configurationSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (int)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<int>> ApiV2ConfigurationsDeleteBulkPostWithHttpInfoAsync(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<int>> ApiV2ConfigurationsDeleteBulkPostWithHttpInfoAsync(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -991,7 +991,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = apiV2ConfigurationsPurgeBulkPostRequest;
+            localVarRequestOptions.Data = configurationSelectModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1078,7 +1078,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the configuration</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2ConfigurationsIdDeleteAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2ConfigurationsIdDeleteAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await ApiV2ConfigurationsIdDeleteWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
@@ -1090,7 +1090,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the configuration</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ConfigurationsIdDeleteWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ConfigurationsIdDeleteWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1202,7 +1202,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="operation"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2ConfigurationsIdPatchAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2ConfigurationsIdPatchAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await ApiV2ConfigurationsIdPatchWithHttpInfoAsync(id, operation, cancellationToken).ConfigureAwait(false);
         }
@@ -1215,7 +1215,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="operation"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ConfigurationsIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ConfigurationsIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1324,7 +1324,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the configuration</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2ConfigurationsIdPurgePostAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2ConfigurationsIdPurgePostAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await ApiV2ConfigurationsIdPurgePostWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
@@ -1336,7 +1336,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the configuration</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ConfigurationsIdPurgePostWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ConfigurationsIdPurgePostWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1447,7 +1447,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the configuration</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2ConfigurationsIdRestorePostAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2ConfigurationsIdRestorePostAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await ApiV2ConfigurationsIdRestorePostWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
@@ -1459,7 +1459,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the configuration</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ConfigurationsIdRestorePostWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ConfigurationsIdRestorePostWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1508,20 +1508,20 @@ namespace TestIT.ApiClient.Api
         /// Permanently delete multiple archived configurations 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="configurationSelectModel"> (optional)</param>
         /// <returns></returns>
-        public void ApiV2ConfigurationsPurgeBulkPost(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest))
+        public void ApiV2ConfigurationsPurgeBulkPost(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel))
         {
-            ApiV2ConfigurationsPurgeBulkPostWithHttpInfo(apiV2ConfigurationsPurgeBulkPostRequest);
+            ApiV2ConfigurationsPurgeBulkPostWithHttpInfo(configurationSelectModel);
         }
 
         /// <summary>
         /// Permanently delete multiple archived configurations 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="configurationSelectModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2ConfigurationsPurgeBulkPostWithHttpInfo(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2ConfigurationsPurgeBulkPostWithHttpInfo(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1540,7 +1540,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = apiV2ConfigurationsPurgeBulkPostRequest;
+            localVarRequestOptions.Data = configurationSelectModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1564,22 +1564,22 @@ namespace TestIT.ApiClient.Api
         /// Permanently delete multiple archived configurations 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="configurationSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2ConfigurationsPurgeBulkPostAsync(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2ConfigurationsPurgeBulkPostAsync(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await ApiV2ConfigurationsPurgeBulkPostWithHttpInfoAsync(apiV2ConfigurationsPurgeBulkPostRequest, cancellationToken).ConfigureAwait(false);
+            await ApiV2ConfigurationsPurgeBulkPostWithHttpInfoAsync(configurationSelectModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Permanently delete multiple archived configurations 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="configurationSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ConfigurationsPurgeBulkPostWithHttpInfoAsync(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ConfigurationsPurgeBulkPostWithHttpInfoAsync(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1600,7 +1600,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = apiV2ConfigurationsPurgeBulkPostRequest;
+            localVarRequestOptions.Data = configurationSelectModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1625,20 +1625,20 @@ namespace TestIT.ApiClient.Api
         /// Edit configuration 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPutRequest"> (optional)</param>
+        /// <param name="configurationPutModel"> (optional)</param>
         /// <returns></returns>
-        public void ApiV2ConfigurationsPut(ApiV2ConfigurationsPutRequest apiV2ConfigurationsPutRequest = default(ApiV2ConfigurationsPutRequest))
+        public void ApiV2ConfigurationsPut(ConfigurationPutModel configurationPutModel = default(ConfigurationPutModel))
         {
-            ApiV2ConfigurationsPutWithHttpInfo(apiV2ConfigurationsPutRequest);
+            ApiV2ConfigurationsPutWithHttpInfo(configurationPutModel);
         }
 
         /// <summary>
         /// Edit configuration 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPutRequest"> (optional)</param>
+        /// <param name="configurationPutModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2ConfigurationsPutWithHttpInfo(ApiV2ConfigurationsPutRequest apiV2ConfigurationsPutRequest = default(ApiV2ConfigurationsPutRequest))
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2ConfigurationsPutWithHttpInfo(ConfigurationPutModel configurationPutModel = default(ConfigurationPutModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1657,7 +1657,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = apiV2ConfigurationsPutRequest;
+            localVarRequestOptions.Data = configurationPutModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1681,22 +1681,22 @@ namespace TestIT.ApiClient.Api
         /// Edit configuration 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPutRequest"> (optional)</param>
+        /// <param name="configurationPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2ConfigurationsPutAsync(ApiV2ConfigurationsPutRequest apiV2ConfigurationsPutRequest = default(ApiV2ConfigurationsPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2ConfigurationsPutAsync(ConfigurationPutModel configurationPutModel = default(ConfigurationPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await ApiV2ConfigurationsPutWithHttpInfoAsync(apiV2ConfigurationsPutRequest, cancellationToken).ConfigureAwait(false);
+            await ApiV2ConfigurationsPutWithHttpInfoAsync(configurationPutModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Edit configuration 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPutRequest"> (optional)</param>
+        /// <param name="configurationPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ConfigurationsPutWithHttpInfoAsync(ApiV2ConfigurationsPutRequest apiV2ConfigurationsPutRequest = default(ApiV2ConfigurationsPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ConfigurationsPutWithHttpInfoAsync(ConfigurationPutModel configurationPutModel = default(ConfigurationPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1717,7 +1717,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = apiV2ConfigurationsPutRequest;
+            localVarRequestOptions.Data = configurationPutModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1742,11 +1742,11 @@ namespace TestIT.ApiClient.Api
         /// Restore multiple configurations from the archive 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="configurationSelectModel"> (optional)</param>
         /// <returns>int</returns>
-        public int ApiV2ConfigurationsRestoreBulkPost(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest))
+        public int ApiV2ConfigurationsRestoreBulkPost(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<int> localVarResponse = ApiV2ConfigurationsRestoreBulkPostWithHttpInfo(apiV2ConfigurationsPurgeBulkPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<int> localVarResponse = ApiV2ConfigurationsRestoreBulkPostWithHttpInfo(configurationSelectModel);
             return localVarResponse.Data;
         }
 
@@ -1754,9 +1754,9 @@ namespace TestIT.ApiClient.Api
         /// Restore multiple configurations from the archive 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="configurationSelectModel"> (optional)</param>
         /// <returns>ApiResponse of int</returns>
-        public TestIT.ApiClient.Client.ApiResponse<int> ApiV2ConfigurationsRestoreBulkPostWithHttpInfo(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<int> ApiV2ConfigurationsRestoreBulkPostWithHttpInfo(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1775,7 +1775,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = apiV2ConfigurationsPurgeBulkPostRequest;
+            localVarRequestOptions.Data = configurationSelectModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1799,12 +1799,12 @@ namespace TestIT.ApiClient.Api
         /// Restore multiple configurations from the archive 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="configurationSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of int</returns>
-        public async System.Threading.Tasks.Task<int> ApiV2ConfigurationsRestoreBulkPostAsync(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<int> ApiV2ConfigurationsRestoreBulkPostAsync(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<int> localVarResponse = await ApiV2ConfigurationsRestoreBulkPostWithHttpInfoAsync(apiV2ConfigurationsPurgeBulkPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<int> localVarResponse = await ApiV2ConfigurationsRestoreBulkPostWithHttpInfoAsync(configurationSelectModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1812,10 +1812,10 @@ namespace TestIT.ApiClient.Api
         /// Restore multiple configurations from the archive 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2ConfigurationsPurgeBulkPostRequest"> (optional)</param>
+        /// <param name="configurationSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (int)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<int>> ApiV2ConfigurationsRestoreBulkPostWithHttpInfoAsync(ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = default(ApiV2ConfigurationsPurgeBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<int>> ApiV2ConfigurationsRestoreBulkPostWithHttpInfoAsync(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1836,7 +1836,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = apiV2ConfigurationsPurgeBulkPostRequest;
+            localVarRequestOptions.Data = configurationSelectModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1866,11 +1866,11 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ConfigurationsSearchPostRequest">Model containing all the filters (optional)</param>
+        /// <param name="configurationFilterModel">Model containing all the filters (optional)</param>
         /// <returns>List&lt;ConfigurationModel&gt;</returns>
-        public List<ConfigurationModel> ApiV2ConfigurationsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ConfigurationsSearchPostRequest apiV2ConfigurationsSearchPostRequest = default(ApiV2ConfigurationsSearchPostRequest))
+        public List<ConfigurationModel> ApiV2ConfigurationsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ConfigurationFilterModel configurationFilterModel = default(ConfigurationFilterModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<ConfigurationModel>> localVarResponse = ApiV2ConfigurationsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2ConfigurationsSearchPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<List<ConfigurationModel>> localVarResponse = ApiV2ConfigurationsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, configurationFilterModel);
             return localVarResponse.Data;
         }
 
@@ -1883,9 +1883,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ConfigurationsSearchPostRequest">Model containing all the filters (optional)</param>
+        /// <param name="configurationFilterModel">Model containing all the filters (optional)</param>
         /// <returns>ApiResponse of List&lt;ConfigurationModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<ConfigurationModel>> ApiV2ConfigurationsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ConfigurationsSearchPostRequest apiV2ConfigurationsSearchPostRequest = default(ApiV2ConfigurationsSearchPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<List<ConfigurationModel>> ApiV2ConfigurationsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ConfigurationFilterModel configurationFilterModel = default(ConfigurationFilterModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1924,7 +1924,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = apiV2ConfigurationsSearchPostRequest;
+            localVarRequestOptions.Data = configurationFilterModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1953,12 +1953,12 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ConfigurationsSearchPostRequest">Model containing all the filters (optional)</param>
+        /// <param name="configurationFilterModel">Model containing all the filters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ConfigurationModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ConfigurationModel>> ApiV2ConfigurationsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ConfigurationsSearchPostRequest apiV2ConfigurationsSearchPostRequest = default(ApiV2ConfigurationsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ConfigurationModel>> ApiV2ConfigurationsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ConfigurationFilterModel configurationFilterModel = default(ConfigurationFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<ConfigurationModel>> localVarResponse = await ApiV2ConfigurationsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, apiV2ConfigurationsSearchPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<ConfigurationModel>> localVarResponse = await ApiV2ConfigurationsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, configurationFilterModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1971,10 +1971,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ConfigurationsSearchPostRequest">Model containing all the filters (optional)</param>
+        /// <param name="configurationFilterModel">Model containing all the filters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ConfigurationModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ConfigurationModel>>> ApiV2ConfigurationsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ConfigurationsSearchPostRequest apiV2ConfigurationsSearchPostRequest = default(ApiV2ConfigurationsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ConfigurationModel>>> ApiV2ConfigurationsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ConfigurationFilterModel configurationFilterModel = default(ConfigurationFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2015,7 +2015,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = apiV2ConfigurationsSearchPostRequest;
+            localVarRequestOptions.Data = configurationFilterModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2040,11 +2040,11 @@ namespace TestIT.ApiClient.Api
         /// Create Configuration  Use case   User sets configuration model (listed in the request example)   User runs method execution   System creates configuration   System returns created configuration (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createConfigurationRequest"> (optional)</param>
+        /// <param name="configurationPostModel"> (optional)</param>
         /// <returns>ConfigurationModel</returns>
-        public ConfigurationModel CreateConfiguration(CreateConfigurationRequest createConfigurationRequest = default(CreateConfigurationRequest))
+        public ConfigurationModel CreateConfiguration(ConfigurationPostModel configurationPostModel = default(ConfigurationPostModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<ConfigurationModel> localVarResponse = CreateConfigurationWithHttpInfo(createConfigurationRequest);
+            TestIT.ApiClient.Client.ApiResponse<ConfigurationModel> localVarResponse = CreateConfigurationWithHttpInfo(configurationPostModel);
             return localVarResponse.Data;
         }
 
@@ -2052,9 +2052,9 @@ namespace TestIT.ApiClient.Api
         /// Create Configuration  Use case   User sets configuration model (listed in the request example)   User runs method execution   System creates configuration   System returns created configuration (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createConfigurationRequest"> (optional)</param>
+        /// <param name="configurationPostModel"> (optional)</param>
         /// <returns>ApiResponse of ConfigurationModel</returns>
-        public TestIT.ApiClient.Client.ApiResponse<ConfigurationModel> CreateConfigurationWithHttpInfo(CreateConfigurationRequest createConfigurationRequest = default(CreateConfigurationRequest))
+        public TestIT.ApiClient.Client.ApiResponse<ConfigurationModel> CreateConfigurationWithHttpInfo(ConfigurationPostModel configurationPostModel = default(ConfigurationPostModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -2073,7 +2073,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = createConfigurationRequest;
+            localVarRequestOptions.Data = configurationPostModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2097,12 +2097,12 @@ namespace TestIT.ApiClient.Api
         /// Create Configuration  Use case   User sets configuration model (listed in the request example)   User runs method execution   System creates configuration   System returns created configuration (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createConfigurationRequest"> (optional)</param>
+        /// <param name="configurationPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConfigurationModel</returns>
-        public async System.Threading.Tasks.Task<ConfigurationModel> CreateConfigurationAsync(CreateConfigurationRequest createConfigurationRequest = default(CreateConfigurationRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ConfigurationModel> CreateConfigurationAsync(ConfigurationPostModel configurationPostModel = default(ConfigurationPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<ConfigurationModel> localVarResponse = await CreateConfigurationWithHttpInfoAsync(createConfigurationRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<ConfigurationModel> localVarResponse = await CreateConfigurationWithHttpInfoAsync(configurationPostModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2110,10 +2110,10 @@ namespace TestIT.ApiClient.Api
         /// Create Configuration  Use case   User sets configuration model (listed in the request example)   User runs method execution   System creates configuration   System returns created configuration (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createConfigurationRequest"> (optional)</param>
+        /// <param name="configurationPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConfigurationModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<ConfigurationModel>> CreateConfigurationWithHttpInfoAsync(CreateConfigurationRequest createConfigurationRequest = default(CreateConfigurationRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<ConfigurationModel>> CreateConfigurationWithHttpInfoAsync(ConfigurationPostModel configurationPostModel = default(ConfigurationPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2134,7 +2134,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = createConfigurationRequest;
+            localVarRequestOptions.Data = configurationPostModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2222,7 +2222,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Configuration internal (guid format) or global (integer format) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConfigurationModel</returns>
-        public async System.Threading.Tasks.Task<ConfigurationModel> GetConfigurationByIdAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ConfigurationModel> GetConfigurationByIdAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<ConfigurationModel> localVarResponse = await GetConfigurationByIdWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2235,7 +2235,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Configuration internal (guid format) or global (integer format) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConfigurationModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<ConfigurationModel>> GetConfigurationByIdWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<ConfigurationModel>> GetConfigurationByIdWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)

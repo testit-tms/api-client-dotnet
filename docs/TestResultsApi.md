@@ -22,7 +22,7 @@ All URIs are relative to *http://localhost*
 
 <a id="apiv2testresultsexternalprojectsexternalprojectiddefectsexternalformspost"></a>
 # **ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPost**
-> GetExternalFormApiResult ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPost (Guid externalProjectId, ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequest apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequest = null)
+> GetExternalFormApiResult ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPost (Guid externalProjectId, TestResultsSelectApiModel testResultsSelectApiModel = null)
 
 
 
@@ -53,11 +53,11 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestResultsApi(httpClient, config, httpClientHandler);
             var externalProjectId = "externalProjectId_example";  // Guid | 
-            var apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequest = new ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequest(); // ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequest |  (optional) 
+            var testResultsSelectApiModel = new TestResultsSelectApiModel(); // TestResultsSelectApiModel |  (optional) 
 
             try
             {
-                GetExternalFormApiResult result = apiInstance.ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPost(externalProjectId, apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequest);
+                GetExternalFormApiResult result = apiInstance.ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPost(externalProjectId, testResultsSelectApiModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -77,7 +77,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<GetExternalFormApiResult> response = apiInstance.ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostWithHttpInfo(externalProjectId, apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequest);
+    ApiResponse<GetExternalFormApiResult> response = apiInstance.ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostWithHttpInfo(externalProjectId, testResultsSelectApiModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -95,7 +95,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **externalProjectId** | **Guid** |  |  |
-| **apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequest** | [**ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequest**](ApiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequest.md) |  | [optional]  |
+| **testResultsSelectApiModel** | [**TestResultsSelectApiModel**](TestResultsSelectApiModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -126,7 +126,7 @@ catch (ApiException e)
 
 <a id="apiv2testresultsexternalprojectsexternalprojectiddefectspost"></a>
 # **ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPost**
-> DefectApiModel ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPost (Guid externalProjectId, ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequest apiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequest = null)
+> DefectApiModel ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPost (Guid externalProjectId, CreateDefectApiModel createDefectApiModel = null)
 
 
 
@@ -157,11 +157,11 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestResultsApi(httpClient, config, httpClientHandler);
             var externalProjectId = "externalProjectId_example";  // Guid | 
-            var apiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequest = new ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequest(); // ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequest |  (optional) 
+            var createDefectApiModel = new CreateDefectApiModel(); // CreateDefectApiModel |  (optional) 
 
             try
             {
-                DefectApiModel result = apiInstance.ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPost(externalProjectId, apiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequest);
+                DefectApiModel result = apiInstance.ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPost(externalProjectId, createDefectApiModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -181,7 +181,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<DefectApiModel> response = apiInstance.ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPostWithHttpInfo(externalProjectId, apiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequest);
+    ApiResponse<DefectApiModel> response = apiInstance.ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPostWithHttpInfo(externalProjectId, createDefectApiModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -199,7 +199,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **externalProjectId** | **Guid** |  |  |
-| **apiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequest** | [**ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequest**](ApiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequest.md) |  | [optional]  |
+| **createDefectApiModel** | [**CreateDefectApiModel**](CreateDefectApiModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -644,7 +644,7 @@ catch (ApiException e)
 
 <a id="apiv2testresultsidput"></a>
 # **ApiV2TestResultsIdPut**
-> void ApiV2TestResultsIdPut (Guid id, ApiV2TestResultsIdPutRequest apiV2TestResultsIdPutRequest = null)
+> void ApiV2TestResultsIdPut (Guid id, TestResultUpdateV2Request testResultUpdateV2Request = null)
 
 Edit test result by ID
 
@@ -675,12 +675,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestResultsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // Guid | Test result unique ID
-            var apiV2TestResultsIdPutRequest = new ApiV2TestResultsIdPutRequest(); // ApiV2TestResultsIdPutRequest |  (optional) 
+            var testResultUpdateV2Request = new TestResultUpdateV2Request(); // TestResultUpdateV2Request |  (optional) 
 
             try
             {
                 // Edit test result by ID
-                apiInstance.ApiV2TestResultsIdPut(id, apiV2TestResultsIdPutRequest);
+                apiInstance.ApiV2TestResultsIdPut(id, testResultUpdateV2Request);
             }
             catch (ApiException  e)
             {
@@ -700,7 +700,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Edit test result by ID
-    apiInstance.ApiV2TestResultsIdPutWithHttpInfo(id, apiV2TestResultsIdPutRequest);
+    apiInstance.ApiV2TestResultsIdPutWithHttpInfo(id, testResultUpdateV2Request);
 }
 catch (ApiException e)
 {
@@ -715,7 +715,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid** | Test result unique ID |  |
-| **apiV2TestResultsIdPutRequest** | [**ApiV2TestResultsIdPutRequest**](ApiV2TestResultsIdPutRequest.md) |  | [optional]  |
+| **testResultUpdateV2Request** | [**TestResultUpdateV2Request**](TestResultUpdateV2Request.md) |  | [optional]  |
 
 ### Return type
 
@@ -850,7 +850,7 @@ catch (ApiException e)
 
 <a id="apiv2testresultssearchpost"></a>
 # **ApiV2TestResultsSearchPost**
-> List&lt;TestResultShortResponse&gt; ApiV2TestResultsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = null)
+> List&lt;TestResultShortResponse&gt; ApiV2TestResultsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, TestResultsFilterApiModel testResultsFilterApiModel = null)
 
 Search for test results
 
@@ -885,12 +885,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var apiV2TestResultsSearchPostRequest = new ApiV2TestResultsSearchPostRequest(); // ApiV2TestResultsSearchPostRequest |  (optional) 
+            var testResultsFilterApiModel = new TestResultsFilterApiModel(); // TestResultsFilterApiModel |  (optional) 
 
             try
             {
                 // Search for test results
-                List<TestResultShortResponse> result = apiInstance.ApiV2TestResultsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2TestResultsSearchPostRequest);
+                List<TestResultShortResponse> result = apiInstance.ApiV2TestResultsSearchPost(skip, take, orderBy, searchField, searchValue, testResultsFilterApiModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -911,7 +911,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for test results
-    ApiResponse<List<TestResultShortResponse>> response = apiInstance.ApiV2TestResultsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2TestResultsSearchPostRequest);
+    ApiResponse<List<TestResultShortResponse>> response = apiInstance.ApiV2TestResultsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, testResultsFilterApiModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -933,7 +933,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **apiV2TestResultsSearchPostRequest** | [**ApiV2TestResultsSearchPostRequest**](ApiV2TestResultsSearchPostRequest.md) |  | [optional]  |
+| **testResultsFilterApiModel** | [**TestResultsFilterApiModel**](TestResultsFilterApiModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -964,7 +964,7 @@ catch (ApiException e)
 
 <a id="apiv2testresultsstatisticsfilterpost"></a>
 # **ApiV2TestResultsStatisticsFilterPost**
-> TestResultsStatisticsApiResult ApiV2TestResultsStatisticsFilterPost (ApiV2TestResultsSearchPostRequest apiV2TestResultsSearchPostRequest = null)
+> TestResultsStatisticsApiResult ApiV2TestResultsStatisticsFilterPost (TestResultsFilterApiModel testResultsFilterApiModel = null)
 
 Search for test results and extract statistics
 
@@ -994,12 +994,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestResultsApi(httpClient, config, httpClientHandler);
-            var apiV2TestResultsSearchPostRequest = new ApiV2TestResultsSearchPostRequest(); // ApiV2TestResultsSearchPostRequest |  (optional) 
+            var testResultsFilterApiModel = new TestResultsFilterApiModel(); // TestResultsFilterApiModel |  (optional) 
 
             try
             {
                 // Search for test results and extract statistics
-                TestResultsStatisticsApiResult result = apiInstance.ApiV2TestResultsStatisticsFilterPost(apiV2TestResultsSearchPostRequest);
+                TestResultsStatisticsApiResult result = apiInstance.ApiV2TestResultsStatisticsFilterPost(testResultsFilterApiModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1020,7 +1020,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for test results and extract statistics
-    ApiResponse<TestResultsStatisticsApiResult> response = apiInstance.ApiV2TestResultsStatisticsFilterPostWithHttpInfo(apiV2TestResultsSearchPostRequest);
+    ApiResponse<TestResultsStatisticsApiResult> response = apiInstance.ApiV2TestResultsStatisticsFilterPostWithHttpInfo(testResultsFilterApiModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1037,7 +1037,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiV2TestResultsSearchPostRequest** | [**ApiV2TestResultsSearchPostRequest**](ApiV2TestResultsSearchPostRequest.md) |  | [optional]  |
+| **testResultsFilterApiModel** | [**TestResultsFilterApiModel**](TestResultsFilterApiModel.md) |  | [optional]  |
 
 ### Return type
 

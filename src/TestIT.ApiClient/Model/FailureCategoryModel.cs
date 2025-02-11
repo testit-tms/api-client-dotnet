@@ -61,7 +61,6 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         [EnumMember(Value = "NoAnalytics")]
         NoAnalytics = 5
-
     }
 
 }

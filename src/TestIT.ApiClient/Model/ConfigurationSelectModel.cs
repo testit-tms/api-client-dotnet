@@ -30,30 +30,32 @@ namespace TestIT.ApiClient.Model
     /// ConfigurationSelectModel
     /// </summary>
     [DataContract(Name = "ConfigurationSelectModel")]
-    public partial class ConfigurationSelectModel : IEquatable<ConfigurationSelectModel>, IValidatableObject
+    public partial class ConfigurationSelectModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ConfigurationSelectModel" /> class.
         /// </summary>
-        /// <param name="filter">filter.</param>
-        /// <param name="extractionModel">extractionModel.</param>
-        public ConfigurationSelectModel(ConfigurationSelectModelFilter filter = default(ConfigurationSelectModelFilter), ConfigurationSelectModelExtractionModel extractionModel = default(ConfigurationSelectModelExtractionModel))
+        /// <param name="filter">Configuration filters collection.</param>
+        /// <param name="extractionModel">Rules for configurations extraction.</param>
+        public ConfigurationSelectModel(ConfigurationFilterModel filter = default(ConfigurationFilterModel), ConfigurationExtractionModel extractionModel = default(ConfigurationExtractionModel))
         {
             this.Filter = filter;
             this.ExtractionModel = extractionModel;
         }
 
         /// <summary>
-        /// Gets or Sets Filter
+        /// Configuration filters collection
         /// </summary>
+        /// <value>Configuration filters collection</value>
         [DataMember(Name = "filter", EmitDefaultValue = true)]
-        public ConfigurationSelectModelFilter Filter { get; set; }
+        public ConfigurationFilterModel Filter { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExtractionModel
+        /// Rules for configurations extraction
         /// </summary>
+        /// <value>Rules for configurations extraction</value>
         [DataMember(Name = "extractionModel", EmitDefaultValue = true)]
-        public ConfigurationSelectModelExtractionModel ExtractionModel { get; set; }
+        public ConfigurationExtractionModel ExtractionModel { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -79,66 +81,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ConfigurationSelectModel);
-        }
-
-        /// <summary>
-        /// Returns true if ConfigurationSelectModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ConfigurationSelectModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ConfigurationSelectModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Filter == input.Filter ||
-                    (this.Filter != null &&
-                    this.Filter.Equals(input.Filter))
-                ) && 
-                (
-                    this.ExtractionModel == input.ExtractionModel ||
-                    (this.ExtractionModel != null &&
-                    this.ExtractionModel.Equals(input.ExtractionModel))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Filter != null)
-                {
-                    hashCode = (hashCode * 59) + this.Filter.GetHashCode();
-                }
-                if (this.ExtractionModel != null)
-                {
-                    hashCode = (hashCode * 59) + this.ExtractionModel.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

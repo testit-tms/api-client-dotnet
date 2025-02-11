@@ -1017,7 +1017,7 @@ catch (ApiException e)
 
 <a id="apiv2workitemsmovepost"></a>
 # **ApiV2WorkItemsMovePost**
-> WorkItemShortModel ApiV2WorkItemsMovePost (ApiV2WorkItemsMovePostRequest apiV2WorkItemsMovePostRequest = null)
+> WorkItemShortModel ApiV2WorkItemsMovePost (WorkItemMovePostModel workItemMovePostModel = null)
 
 Move WorkItem to another section
 
@@ -1049,12 +1049,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
-            var apiV2WorkItemsMovePostRequest = new ApiV2WorkItemsMovePostRequest(); // ApiV2WorkItemsMovePostRequest |  (optional) 
+            var workItemMovePostModel = new WorkItemMovePostModel(); // WorkItemMovePostModel |  (optional) 
 
             try
             {
                 // Move WorkItem to another section
-                WorkItemShortModel result = apiInstance.ApiV2WorkItemsMovePost(apiV2WorkItemsMovePostRequest);
+                WorkItemShortModel result = apiInstance.ApiV2WorkItemsMovePost(workItemMovePostModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1075,7 +1075,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Move WorkItem to another section
-    ApiResponse<WorkItemShortModel> response = apiInstance.ApiV2WorkItemsMovePostWithHttpInfo(apiV2WorkItemsMovePostRequest);
+    ApiResponse<WorkItemShortModel> response = apiInstance.ApiV2WorkItemsMovePostWithHttpInfo(workItemMovePostModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1092,7 +1092,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiV2WorkItemsMovePostRequest** | [**ApiV2WorkItemsMovePostRequest**](ApiV2WorkItemsMovePostRequest.md) |  | [optional]  |
+| **workItemMovePostModel** | [**WorkItemMovePostModel**](WorkItemMovePostModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -1123,7 +1123,7 @@ catch (ApiException e)
 
 <a id="apiv2workitemssearchpost"></a>
 # **ApiV2WorkItemsSearchPost**
-> List&lt;WorkItemShortModel&gt; ApiV2WorkItemsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = null)
+> List&lt;WorkItemShortModel&gt; ApiV2WorkItemsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, WorkItemSelectModel workItemSelectModel = null)
 
 Search for work items
 
@@ -1158,12 +1158,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var apiV2ProjectsProjectIdWorkItemsSearchPostRequest = new ApiV2ProjectsProjectIdWorkItemsSearchPostRequest(); // ApiV2ProjectsProjectIdWorkItemsSearchPostRequest |  (optional) 
+            var workItemSelectModel = new WorkItemSelectModel(); // WorkItemSelectModel |  (optional) 
 
             try
             {
                 // Search for work items
-                List<WorkItemShortModel> result = apiInstance.ApiV2WorkItemsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdWorkItemsSearchPostRequest);
+                List<WorkItemShortModel> result = apiInstance.ApiV2WorkItemsSearchPost(skip, take, orderBy, searchField, searchValue, workItemSelectModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1184,7 +1184,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for work items
-    ApiResponse<List<WorkItemShortModel>> response = apiInstance.ApiV2WorkItemsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdWorkItemsSearchPostRequest);
+    ApiResponse<List<WorkItemShortModel>> response = apiInstance.ApiV2WorkItemsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, workItemSelectModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1206,7 +1206,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **apiV2ProjectsProjectIdWorkItemsSearchPostRequest** | [**ApiV2ProjectsProjectIdWorkItemsSearchPostRequest**](ApiV2ProjectsProjectIdWorkItemsSearchPostRequest.md) |  | [optional]  |
+| **workItemSelectModel** | [**WorkItemSelectModel**](WorkItemSelectModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -1237,7 +1237,7 @@ catch (ApiException e)
 
 <a id="apiv2workitemssharedstepidreferencessectionspost"></a>
 # **ApiV2WorkItemsSharedStepIdReferencesSectionsPost**
-> List&lt;SharedStepReferenceSectionModel&gt; ApiV2WorkItemsSharedStepIdReferencesSectionsPost (Guid sharedStepId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest = null)
+> List&lt;SharedStepReferenceSectionModel&gt; ApiV2WorkItemsSharedStepIdReferencesSectionsPost (Guid sharedStepId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, SharedStepReferenceSectionsQueryFilterModel sharedStepReferenceSectionsQueryFilterModel = null)
 
 Get SharedStep references in sections
 
@@ -1275,12 +1275,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest = new ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest(); // ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest |  (optional) 
+            var sharedStepReferenceSectionsQueryFilterModel = new SharedStepReferenceSectionsQueryFilterModel(); // SharedStepReferenceSectionsQueryFilterModel |  (optional) 
 
             try
             {
                 // Get SharedStep references in sections
-                List<SharedStepReferenceSectionModel> result = apiInstance.ApiV2WorkItemsSharedStepIdReferencesSectionsPost(sharedStepId, skip, take, orderBy, searchField, searchValue, apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest);
+                List<SharedStepReferenceSectionModel> result = apiInstance.ApiV2WorkItemsSharedStepIdReferencesSectionsPost(sharedStepId, skip, take, orderBy, searchField, searchValue, sharedStepReferenceSectionsQueryFilterModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1301,7 +1301,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get SharedStep references in sections
-    ApiResponse<List<SharedStepReferenceSectionModel>> response = apiInstance.ApiV2WorkItemsSharedStepIdReferencesSectionsPostWithHttpInfo(sharedStepId, skip, take, orderBy, searchField, searchValue, apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest);
+    ApiResponse<List<SharedStepReferenceSectionModel>> response = apiInstance.ApiV2WorkItemsSharedStepIdReferencesSectionsPostWithHttpInfo(sharedStepId, skip, take, orderBy, searchField, searchValue, sharedStepReferenceSectionsQueryFilterModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1324,7 +1324,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest** | [**ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest**](ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest.md) |  | [optional]  |
+| **sharedStepReferenceSectionsQueryFilterModel** | [**SharedStepReferenceSectionsQueryFilterModel**](SharedStepReferenceSectionsQueryFilterModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -1355,7 +1355,7 @@ catch (ApiException e)
 
 <a id="apiv2workitemssharedstepidreferencesworkitemspost"></a>
 # **ApiV2WorkItemsSharedStepIdReferencesWorkItemsPost**
-> List&lt;SharedStepReferenceModel&gt; ApiV2WorkItemsSharedStepIdReferencesWorkItemsPost (Guid sharedStepId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest = null)
+> List&lt;SharedStepReferenceModel&gt; ApiV2WorkItemsSharedStepIdReferencesWorkItemsPost (Guid sharedStepId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, SharedStepReferencesQueryFilterModel sharedStepReferencesQueryFilterModel = null)
 
 Get SharedStep references in work items
 
@@ -1393,12 +1393,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest = new ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest(); // ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest |  (optional) 
+            var sharedStepReferencesQueryFilterModel = new SharedStepReferencesQueryFilterModel(); // SharedStepReferencesQueryFilterModel |  (optional) 
 
             try
             {
                 // Get SharedStep references in work items
-                List<SharedStepReferenceModel> result = apiInstance.ApiV2WorkItemsSharedStepIdReferencesWorkItemsPost(sharedStepId, skip, take, orderBy, searchField, searchValue, apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest);
+                List<SharedStepReferenceModel> result = apiInstance.ApiV2WorkItemsSharedStepIdReferencesWorkItemsPost(sharedStepId, skip, take, orderBy, searchField, searchValue, sharedStepReferencesQueryFilterModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1419,7 +1419,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get SharedStep references in work items
-    ApiResponse<List<SharedStepReferenceModel>> response = apiInstance.ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostWithHttpInfo(sharedStepId, skip, take, orderBy, searchField, searchValue, apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest);
+    ApiResponse<List<SharedStepReferenceModel>> response = apiInstance.ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostWithHttpInfo(sharedStepId, skip, take, orderBy, searchField, searchValue, sharedStepReferencesQueryFilterModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1442,7 +1442,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest** | [**ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest**](ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest.md) |  | [optional]  |
+| **sharedStepReferencesQueryFilterModel** | [**SharedStepReferencesQueryFilterModel**](SharedStepReferencesQueryFilterModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -1579,7 +1579,7 @@ catch (ApiException e)
 
 <a id="createworkitem"></a>
 # **CreateWorkItem**
-> WorkItemModel CreateWorkItem (CreateWorkItemRequest createWorkItemRequest = null)
+> WorkItemModel CreateWorkItem (WorkItemPostModel workItemPostModel = null)
 
 Create Test Case, Checklist or Shared Step
 
@@ -1611,12 +1611,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
-            var createWorkItemRequest = new CreateWorkItemRequest(); // CreateWorkItemRequest |  (optional) 
+            var workItemPostModel = new WorkItemPostModel(); // WorkItemPostModel |  (optional) 
 
             try
             {
                 // Create Test Case, Checklist or Shared Step
-                WorkItemModel result = apiInstance.CreateWorkItem(createWorkItemRequest);
+                WorkItemModel result = apiInstance.CreateWorkItem(workItemPostModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1637,7 +1637,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create Test Case, Checklist or Shared Step
-    ApiResponse<WorkItemModel> response = apiInstance.CreateWorkItemWithHttpInfo(createWorkItemRequest);
+    ApiResponse<WorkItemModel> response = apiInstance.CreateWorkItemWithHttpInfo(workItemPostModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1654,7 +1654,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **createWorkItemRequest** | [**CreateWorkItemRequest**](CreateWorkItemRequest.md) |  | [optional]  |
+| **workItemPostModel** | [**WorkItemPostModel**](WorkItemPostModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -2630,7 +2630,7 @@ void (empty response body)
 
 <a id="updateworkitem"></a>
 # **UpdateWorkItem**
-> void UpdateWorkItem (UpdateWorkItemRequest updateWorkItemRequest = null)
+> void UpdateWorkItem (WorkItemPutModel workItemPutModel = null)
 
 Update Test Case, Checklist or Shared Step
 
@@ -2662,12 +2662,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
-            var updateWorkItemRequest = new UpdateWorkItemRequest(); // UpdateWorkItemRequest |  (optional) 
+            var workItemPutModel = new WorkItemPutModel(); // WorkItemPutModel |  (optional) 
 
             try
             {
                 // Update Test Case, Checklist or Shared Step
-                apiInstance.UpdateWorkItem(updateWorkItemRequest);
+                apiInstance.UpdateWorkItem(workItemPutModel);
             }
             catch (ApiException  e)
             {
@@ -2687,7 +2687,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update Test Case, Checklist or Shared Step
-    apiInstance.UpdateWorkItemWithHttpInfo(updateWorkItemRequest);
+    apiInstance.UpdateWorkItemWithHttpInfo(workItemPutModel);
 }
 catch (ApiException e)
 {
@@ -2701,7 +2701,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **updateWorkItemRequest** | [**UpdateWorkItemRequest**](UpdateWorkItemRequest.md) |  | [optional]  |
+| **workItemPutModel** | [**WorkItemPutModel**](WorkItemPutModel.md) |  | [optional]  |
 
 ### Return type
 

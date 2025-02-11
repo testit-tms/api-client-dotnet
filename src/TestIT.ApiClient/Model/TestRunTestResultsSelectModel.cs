@@ -30,30 +30,32 @@ namespace TestIT.ApiClient.Model
     /// TestRunTestResultsSelectModel
     /// </summary>
     [DataContract(Name = "TestRunTestResultsSelectModel")]
-    public partial class TestRunTestResultsSelectModel : IEquatable<TestRunTestResultsSelectModel>, IValidatableObject
+    public partial class TestRunTestResultsSelectModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestRunTestResultsSelectModel" /> class.
         /// </summary>
-        /// <param name="filter">filter.</param>
-        /// <param name="testResultIdsExtractionModel">testResultIdsExtractionModel.</param>
-        public TestRunTestResultsSelectModel(TestRunTestResultsSelectModelFilter filter = default(TestRunTestResultsSelectModelFilter), TestRunTestResultsSelectModelTestResultIdsExtractionModel testResultIdsExtractionModel = default(TestRunTestResultsSelectModelTestResultIdsExtractionModel))
+        /// <param name="filter">Collection of filters to apply to search.</param>
+        /// <param name="testResultIdsExtractionModel">Rules to include and exclude certain entities in result.</param>
+        public TestRunTestResultsSelectModel(TestResultsLocalFilterModel filter = default(TestResultsLocalFilterModel), GuidExtractionModel testResultIdsExtractionModel = default(GuidExtractionModel))
         {
             this.Filter = filter;
             this.TestResultIdsExtractionModel = testResultIdsExtractionModel;
         }
 
         /// <summary>
-        /// Gets or Sets Filter
+        /// Collection of filters to apply to search
         /// </summary>
+        /// <value>Collection of filters to apply to search</value>
         [DataMember(Name = "filter", EmitDefaultValue = true)]
-        public TestRunTestResultsSelectModelFilter Filter { get; set; }
+        public TestResultsLocalFilterModel Filter { get; set; }
 
         /// <summary>
-        /// Gets or Sets TestResultIdsExtractionModel
+        /// Rules to include and exclude certain entities in result
         /// </summary>
+        /// <value>Rules to include and exclude certain entities in result</value>
         [DataMember(Name = "testResultIdsExtractionModel", EmitDefaultValue = true)]
-        public TestRunTestResultsSelectModelTestResultIdsExtractionModel TestResultIdsExtractionModel { get; set; }
+        public GuidExtractionModel TestResultIdsExtractionModel { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -79,66 +81,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestRunTestResultsSelectModel);
-        }
-
-        /// <summary>
-        /// Returns true if TestRunTestResultsSelectModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestRunTestResultsSelectModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestRunTestResultsSelectModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Filter == input.Filter ||
-                    (this.Filter != null &&
-                    this.Filter.Equals(input.Filter))
-                ) && 
-                (
-                    this.TestResultIdsExtractionModel == input.TestResultIdsExtractionModel ||
-                    (this.TestResultIdsExtractionModel != null &&
-                    this.TestResultIdsExtractionModel.Equals(input.TestResultIdsExtractionModel))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Filter != null)
-                {
-                    hashCode = (hashCode * 59) + this.Filter.GetHashCode();
-                }
-                if (this.TestResultIdsExtractionModel != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestResultIdsExtractionModel.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

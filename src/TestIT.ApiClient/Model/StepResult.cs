@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// StepResult
     /// </summary>
     [DataContract(Name = "StepResult")]
-    public partial class StepResult : IEquatable<StepResult>, IValidatableObject
+    public partial class StepResult : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StepResult" /> class.
@@ -116,94 +116,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as StepResult);
-        }
-
-        /// <summary>
-        /// Returns true if StepResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of StepResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(StepResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.StepId == input.StepId ||
-                    (this.StepId != null &&
-                    this.StepId.Equals(input.StepId))
-                ) && 
-                (
-                    this.Outcome == input.Outcome ||
-                    (this.Outcome != null &&
-                    this.Outcome.Equals(input.Outcome))
-                ) && 
-                (
-                    this.SharedStepVersionId == input.SharedStepVersionId ||
-                    (this.SharedStepVersionId != null &&
-                    this.SharedStepVersionId.Equals(input.SharedStepVersionId))
-                ) && 
-                (
-                    this.SharedStepResults == input.SharedStepResults ||
-                    this.SharedStepResults != null &&
-                    input.SharedStepResults != null &&
-                    this.SharedStepResults.SequenceEqual(input.SharedStepResults)
-                ) && 
-                (
-                    this.Comment == input.Comment ||
-                    (this.Comment != null &&
-                    this.Comment.Equals(input.Comment))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.StepId != null)
-                {
-                    hashCode = (hashCode * 59) + this.StepId.GetHashCode();
-                }
-                if (this.Outcome != null)
-                {
-                    hashCode = (hashCode * 59) + this.Outcome.GetHashCode();
-                }
-                if (this.SharedStepVersionId != null)
-                {
-                    hashCode = (hashCode * 59) + this.SharedStepVersionId.GetHashCode();
-                }
-                if (this.SharedStepResults != null)
-                {
-                    hashCode = (hashCode * 59) + this.SharedStepResults.GetHashCode();
-                }
-                if (this.Comment != null)
-                {
-                    hashCode = (hashCode * 59) + this.Comment.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

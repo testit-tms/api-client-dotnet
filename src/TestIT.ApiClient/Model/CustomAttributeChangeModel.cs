@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// CustomAttributeChangeModel
     /// </summary>
     [DataContract(Name = "CustomAttributeChangeModel")]
-    public partial class CustomAttributeChangeModel : IEquatable<CustomAttributeChangeModel>, IValidatableObject
+    public partial class CustomAttributeChangeModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomAttributeChangeModel" /> class.
@@ -106,93 +106,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CustomAttributeChangeModel);
-        }
-
-        /// <summary>
-        /// Returns true if CustomAttributeChangeModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CustomAttributeChangeModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CustomAttributeChangeModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.OldAttributeName == input.OldAttributeName ||
-                    (this.OldAttributeName != null &&
-                    this.OldAttributeName.Equals(input.OldAttributeName))
-                ) && 
-                (
-                    this.NewAttributeName == input.NewAttributeName ||
-                    (this.NewAttributeName != null &&
-                    this.NewAttributeName.Equals(input.NewAttributeName))
-                ) && 
-                (
-                    this.OldValue == input.OldValue ||
-                    (this.OldValue != null &&
-                    this.OldValue.Equals(input.OldValue))
-                ) && 
-                (
-                    this.NewValue == input.NewValue ||
-                    (this.NewValue != null &&
-                    this.NewValue.Equals(input.NewValue))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Type != null)
-                {
-                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                }
-                if (this.OldAttributeName != null)
-                {
-                    hashCode = (hashCode * 59) + this.OldAttributeName.GetHashCode();
-                }
-                if (this.NewAttributeName != null)
-                {
-                    hashCode = (hashCode * 59) + this.NewAttributeName.GetHashCode();
-                }
-                if (this.OldValue != null)
-                {
-                    hashCode = (hashCode * 59) + this.OldValue.GetHashCode();
-                }
-                if (this.NewValue != null)
-                {
-                    hashCode = (hashCode * 59) + this.NewValue.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

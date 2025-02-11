@@ -49,7 +49,6 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         [EnumMember(Value = "Delete")]
         Delete = 3
-
     }
 
 }

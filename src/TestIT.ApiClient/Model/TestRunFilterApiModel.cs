@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// TestRunFilterApiModel
     /// </summary>
     [DataContract(Name = "TestRunFilterApiModel")]
-    public partial class TestRunFilterApiModel : IEquatable<TestRunFilterApiModel>, IValidatableObject
+    public partial class TestRunFilterApiModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestRunFilterApiModel" /> class.
@@ -39,18 +39,18 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">Specifies test run name.</param>
         /// <param name="states">Specifies a test run states to search for.</param>
         /// <param name="statusCodes">Specifies a test run status codes to search for.</param>
-        /// <param name="createdDate">createdDate.</param>
-        /// <param name="startedDate">startedDate.</param>
+        /// <param name="createdDate">Specifies a test run range of created date to search for.</param>
+        /// <param name="startedDate">Specifies a test run range of started date to search for.</param>
         /// <param name="createdByIds">Specifies a test run creator IDs to search for.</param>
         /// <param name="modifiedByIds">Specifies a test run last editor IDs to search for.</param>
         /// <param name="isDeleted">Specifies a test run deleted status to search for.</param>
-        /// <param name="autoTestsCount">autoTestsCount.</param>
+        /// <param name="autoTestsCount">Number of autoTests run in the test run.</param>
         /// <param name="testResultsOutcome">Specifies test results outcomes.</param>
         /// <param name="testResultsStatusCodes">Specifies test results status codes.</param>
         /// <param name="failureCategory">Specifies failure categories.</param>
-        /// <param name="completedDate">completedDate.</param>
+        /// <param name="completedDate">Specifies a test run range of completed date to search for.</param>
         /// <param name="testResultsConfigurationIds">Specifies a test result configuration IDs to search for.</param>
-        public TestRunFilterApiModel(List<Guid> projectIds = default(List<Guid>), string name = default(string), List<TestRunState> states = default(List<TestRunState>), List<string> statusCodes = default(List<string>), TestRunFilterApiModelCreatedDate createdDate = default(TestRunFilterApiModelCreatedDate), TestRunFilterApiModelStartedDate startedDate = default(TestRunFilterApiModelStartedDate), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?), TestRunFilterApiModelAutoTestsCount autoTestsCount = default(TestRunFilterApiModelAutoTestsCount), List<TestResultOutcome> testResultsOutcome = default(List<TestResultOutcome>), List<string> testResultsStatusCodes = default(List<string>), List<FailureCategory> failureCategory = default(List<FailureCategory>), TestRunFilterApiModelCompletedDate completedDate = default(TestRunFilterApiModelCompletedDate), List<Guid> testResultsConfigurationIds = default(List<Guid>))
+        public TestRunFilterApiModel(List<Guid> projectIds = default(List<Guid>), string name = default(string), List<TestRunState> states = default(List<TestRunState>), List<string> statusCodes = default(List<string>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel startedDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?), Int32RangeSelectorModel autoTestsCount = default(Int32RangeSelectorModel), List<TestResultOutcome> testResultsOutcome = default(List<TestResultOutcome>), List<string> testResultsStatusCodes = default(List<string>), List<FailureCategory> failureCategory = default(List<FailureCategory>), DateTimeRangeSelectorModel completedDate = default(DateTimeRangeSelectorModel), List<Guid> testResultsConfigurationIds = default(List<Guid>))
         {
             this.ProjectIds = projectIds;
             this.Name = name;
@@ -99,16 +99,18 @@ namespace TestIT.ApiClient.Model
         public List<string> StatusCodes { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedDate
+        /// Specifies a test run range of created date to search for
         /// </summary>
+        /// <value>Specifies a test run range of created date to search for</value>
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
-        public TestRunFilterApiModelCreatedDate CreatedDate { get; set; }
+        public DateTimeRangeSelectorModel CreatedDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets StartedDate
+        /// Specifies a test run range of started date to search for
         /// </summary>
+        /// <value>Specifies a test run range of started date to search for</value>
         [DataMember(Name = "startedDate", EmitDefaultValue = true)]
-        public TestRunFilterApiModelStartedDate StartedDate { get; set; }
+        public DateTimeRangeSelectorModel StartedDate { get; set; }
 
         /// <summary>
         /// Specifies a test run creator IDs to search for
@@ -132,10 +134,11 @@ namespace TestIT.ApiClient.Model
         public bool? IsDeleted { get; set; }
 
         /// <summary>
-        /// Gets or Sets AutoTestsCount
+        /// Number of autoTests run in the test run
         /// </summary>
+        /// <value>Number of autoTests run in the test run</value>
         [DataMember(Name = "autoTestsCount", EmitDefaultValue = true)]
-        public TestRunFilterApiModelAutoTestsCount AutoTestsCount { get; set; }
+        public Int32RangeSelectorModel AutoTestsCount { get; set; }
 
         /// <summary>
         /// Specifies test results outcomes
@@ -160,10 +163,11 @@ namespace TestIT.ApiClient.Model
         public List<FailureCategory> FailureCategory { get; set; }
 
         /// <summary>
-        /// Gets or Sets CompletedDate
+        /// Specifies a test run range of completed date to search for
         /// </summary>
+        /// <value>Specifies a test run range of completed date to search for</value>
         [DataMember(Name = "completedDate", EmitDefaultValue = true)]
-        public TestRunFilterApiModelCompletedDate CompletedDate { get; set; }
+        public DateTimeRangeSelectorModel CompletedDate { get; set; }
 
         /// <summary>
         /// Specifies a test result configuration IDs to search for
@@ -209,192 +213,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestRunFilterApiModel);
-        }
-
-        /// <summary>
-        /// Returns true if TestRunFilterApiModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestRunFilterApiModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestRunFilterApiModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.ProjectIds == input.ProjectIds ||
-                    this.ProjectIds != null &&
-                    input.ProjectIds != null &&
-                    this.ProjectIds.SequenceEqual(input.ProjectIds)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.States == input.States ||
-                    this.States != null &&
-                    input.States != null &&
-                    this.States.SequenceEqual(input.States)
-                ) && 
-                (
-                    this.StatusCodes == input.StatusCodes ||
-                    this.StatusCodes != null &&
-                    input.StatusCodes != null &&
-                    this.StatusCodes.SequenceEqual(input.StatusCodes)
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.StartedDate == input.StartedDate ||
-                    (this.StartedDate != null &&
-                    this.StartedDate.Equals(input.StartedDate))
-                ) && 
-                (
-                    this.CreatedByIds == input.CreatedByIds ||
-                    this.CreatedByIds != null &&
-                    input.CreatedByIds != null &&
-                    this.CreatedByIds.SequenceEqual(input.CreatedByIds)
-                ) && 
-                (
-                    this.ModifiedByIds == input.ModifiedByIds ||
-                    this.ModifiedByIds != null &&
-                    input.ModifiedByIds != null &&
-                    this.ModifiedByIds.SequenceEqual(input.ModifiedByIds)
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    (this.IsDeleted != null &&
-                    this.IsDeleted.Equals(input.IsDeleted))
-                ) && 
-                (
-                    this.AutoTestsCount == input.AutoTestsCount ||
-                    (this.AutoTestsCount != null &&
-                    this.AutoTestsCount.Equals(input.AutoTestsCount))
-                ) && 
-                (
-                    this.TestResultsOutcome == input.TestResultsOutcome ||
-                    this.TestResultsOutcome != null &&
-                    input.TestResultsOutcome != null &&
-                    this.TestResultsOutcome.SequenceEqual(input.TestResultsOutcome)
-                ) && 
-                (
-                    this.TestResultsStatusCodes == input.TestResultsStatusCodes ||
-                    this.TestResultsStatusCodes != null &&
-                    input.TestResultsStatusCodes != null &&
-                    this.TestResultsStatusCodes.SequenceEqual(input.TestResultsStatusCodes)
-                ) && 
-                (
-                    this.FailureCategory == input.FailureCategory ||
-                    this.FailureCategory != null &&
-                    input.FailureCategory != null &&
-                    this.FailureCategory.SequenceEqual(input.FailureCategory)
-                ) && 
-                (
-                    this.CompletedDate == input.CompletedDate ||
-                    (this.CompletedDate != null &&
-                    this.CompletedDate.Equals(input.CompletedDate))
-                ) && 
-                (
-                    this.TestResultsConfigurationIds == input.TestResultsConfigurationIds ||
-                    this.TestResultsConfigurationIds != null &&
-                    input.TestResultsConfigurationIds != null &&
-                    this.TestResultsConfigurationIds.SequenceEqual(input.TestResultsConfigurationIds)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.ProjectIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProjectIds.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.States != null)
-                {
-                    hashCode = (hashCode * 59) + this.States.GetHashCode();
-                }
-                if (this.StatusCodes != null)
-                {
-                    hashCode = (hashCode * 59) + this.StatusCodes.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.StartedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.StartedDate.GetHashCode();
-                }
-                if (this.CreatedByIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedByIds.GetHashCode();
-                }
-                if (this.ModifiedByIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedByIds.GetHashCode();
-                }
-                if (this.IsDeleted != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                }
-                if (this.AutoTestsCount != null)
-                {
-                    hashCode = (hashCode * 59) + this.AutoTestsCount.GetHashCode();
-                }
-                if (this.TestResultsOutcome != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestResultsOutcome.GetHashCode();
-                }
-                if (this.TestResultsStatusCodes != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestResultsStatusCodes.GetHashCode();
-                }
-                if (this.FailureCategory != null)
-                {
-                    hashCode = (hashCode * 59) + this.FailureCategory.GetHashCode();
-                }
-                if (this.CompletedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CompletedDate.GetHashCode();
-                }
-                if (this.TestResultsConfigurationIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestResultsConfigurationIds.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

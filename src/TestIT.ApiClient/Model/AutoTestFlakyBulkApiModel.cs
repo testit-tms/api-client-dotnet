@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// AutoTestFlakyBulkApiModel
     /// </summary>
     [DataContract(Name = "AutoTestFlakyBulkApiModel")]
-    public partial class AutoTestFlakyBulkApiModel : IEquatable<AutoTestFlakyBulkApiModel>, IValidatableObject
+    public partial class AutoTestFlakyBulkApiModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestFlakyBulkApiModel" /> class.
@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="autoTestSelect">autoTestSelect (required).</param>
         /// <param name="value">Are autotests flaky (required).</param>
-        public AutoTestFlakyBulkApiModel(AutoTestFlakyBulkApiModelAutoTestSelect autoTestSelect = default(AutoTestFlakyBulkApiModelAutoTestSelect), bool value = default(bool))
+        public AutoTestFlakyBulkApiModel(AutoTestSelectApiModel autoTestSelect = default(AutoTestSelectApiModel), bool value = default(bool))
         {
             // to ensure "autoTestSelect" is required (not null)
             if (autoTestSelect == null)
@@ -57,7 +57,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets AutoTestSelect
         /// </summary>
         [DataMember(Name = "autoTestSelect", IsRequired = true, EmitDefaultValue = true)]
-        public AutoTestFlakyBulkApiModelAutoTestSelect AutoTestSelect { get; set; }
+        public AutoTestSelectApiModel AutoTestSelect { get; set; }
 
         /// <summary>
         /// Are autotests flaky
@@ -90,62 +90,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AutoTestFlakyBulkApiModel);
-        }
-
-        /// <summary>
-        /// Returns true if AutoTestFlakyBulkApiModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AutoTestFlakyBulkApiModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AutoTestFlakyBulkApiModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.AutoTestSelect == input.AutoTestSelect ||
-                    (this.AutoTestSelect != null &&
-                    this.AutoTestSelect.Equals(input.AutoTestSelect))
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    this.Value.Equals(input.Value)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.AutoTestSelect != null)
-                {
-                    hashCode = (hashCode * 59) + this.AutoTestSelect.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Value.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// AutoTestNamespaceModel
     /// </summary>
     [DataContract(Name = "AutoTestNamespaceModel")]
-    public partial class AutoTestNamespaceModel : IEquatable<AutoTestNamespaceModel>, IValidatableObject
+    public partial class AutoTestNamespaceModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestNamespaceModel" /> class.
@@ -46,7 +46,9 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /// <example>&quot;WebApi.Core.Tests&quot;</example>
+        /*
+        <example>WebApi.Core.Tests</example>
+        */
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -80,67 +82,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AutoTestNamespaceModel);
-        }
-
-        /// <summary>
-        /// Returns true if AutoTestNamespaceModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AutoTestNamespaceModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AutoTestNamespaceModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Classes == input.Classes ||
-                    this.Classes != null &&
-                    input.Classes != null &&
-                    this.Classes.SequenceEqual(input.Classes)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Classes != null)
-                {
-                    hashCode = (hashCode * 59) + this.Classes.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// ExternalFormModel
     /// </summary>
     [DataContract(Name = "ExternalFormModel")]
-    public partial class ExternalFormModel : IEquatable<ExternalFormModel>, IValidatableObject
+    public partial class ExternalFormModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ExternalFormModel" /> class.
@@ -94,68 +94,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ExternalFormModel);
-        }
-
-        /// <summary>
-        /// Returns true if ExternalFormModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ExternalFormModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ExternalFormModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Fields == input.Fields ||
-                    this.Fields != null &&
-                    input.Fields != null &&
-                    this.Fields.SequenceEqual(input.Fields)
-                ) && 
-                (
-                    this.PossibleValues == input.PossibleValues ||
-                    this.PossibleValues != null &&
-                    input.PossibleValues != null &&
-                    this.PossibleValues.SequenceEqual(input.PossibleValues)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Fields != null)
-                {
-                    hashCode = (hashCode * 59) + this.Fields.GetHashCode();
-                }
-                if (this.PossibleValues != null)
-                {
-                    hashCode = (hashCode * 59) + this.PossibleValues.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// GetXlsxTestPointsByTestPlanModel
     /// </summary>
     [DataContract(Name = "GetXlsxTestPointsByTestPlanModel")]
-    public partial class GetXlsxTestPointsByTestPlanModel : IEquatable<GetXlsxTestPointsByTestPlanModel>, IValidatableObject
+    public partial class GetXlsxTestPointsByTestPlanModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetXlsxTestPointsByTestPlanModel" /> class.
@@ -192,128 +192,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as GetXlsxTestPointsByTestPlanModel);
-        }
-
-        /// <summary>
-        /// Returns true if GetXlsxTestPointsByTestPlanModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of GetXlsxTestPointsByTestPlanModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(GetXlsxTestPointsByTestPlanModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.IncludeName == input.IncludeName ||
-                    this.IncludeName.Equals(input.IncludeName)
-                ) && 
-                (
-                    this.IncludeSection == input.IncludeSection ||
-                    this.IncludeSection.Equals(input.IncludeSection)
-                ) && 
-                (
-                    this.IncludePriority == input.IncludePriority ||
-                    this.IncludePriority.Equals(input.IncludePriority)
-                ) && 
-                (
-                    this.IncludeAutomated == input.IncludeAutomated ||
-                    this.IncludeAutomated.Equals(input.IncludeAutomated)
-                ) && 
-                (
-                    this.IncludeStatus == input.IncludeStatus ||
-                    this.IncludeStatus.Equals(input.IncludeStatus)
-                ) && 
-                (
-                    this.IncludeDuration == input.IncludeDuration ||
-                    this.IncludeDuration.Equals(input.IncludeDuration)
-                ) && 
-                (
-                    this.IncludeCreationDate == input.IncludeCreationDate ||
-                    this.IncludeCreationDate.Equals(input.IncludeCreationDate)
-                ) && 
-                (
-                    this.IncludeAuthor == input.IncludeAuthor ||
-                    this.IncludeAuthor.Equals(input.IncludeAuthor)
-                ) && 
-                (
-                    this.IncludeModificationDate == input.IncludeModificationDate ||
-                    this.IncludeModificationDate.Equals(input.IncludeModificationDate)
-                ) && 
-                (
-                    this.IncludeModifiedBy == input.IncludeModifiedBy ||
-                    this.IncludeModifiedBy.Equals(input.IncludeModifiedBy)
-                ) && 
-                (
-                    this.IncludeTags == input.IncludeTags ||
-                    this.IncludeTags.Equals(input.IncludeTags)
-                ) && 
-                (
-                    this.IncludeIterations == input.IncludeIterations ||
-                    this.IncludeIterations.Equals(input.IncludeIterations)
-                ) && 
-                (
-                    this.CustomAttributesIds == input.CustomAttributesIds ||
-                    this.CustomAttributesIds != null &&
-                    input.CustomAttributesIds != null &&
-                    this.CustomAttributesIds.SequenceEqual(input.CustomAttributesIds)
-                ) && 
-                (
-                    this.ConfigurationIds == input.ConfigurationIds ||
-                    this.ConfigurationIds != null &&
-                    input.ConfigurationIds != null &&
-                    this.ConfigurationIds.SequenceEqual(input.ConfigurationIds)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.IncludeName.GetHashCode();
-                hashCode = (hashCode * 59) + this.IncludeSection.GetHashCode();
-                hashCode = (hashCode * 59) + this.IncludePriority.GetHashCode();
-                hashCode = (hashCode * 59) + this.IncludeAutomated.GetHashCode();
-                hashCode = (hashCode * 59) + this.IncludeStatus.GetHashCode();
-                hashCode = (hashCode * 59) + this.IncludeDuration.GetHashCode();
-                hashCode = (hashCode * 59) + this.IncludeCreationDate.GetHashCode();
-                hashCode = (hashCode * 59) + this.IncludeAuthor.GetHashCode();
-                hashCode = (hashCode * 59) + this.IncludeModificationDate.GetHashCode();
-                hashCode = (hashCode * 59) + this.IncludeModifiedBy.GetHashCode();
-                hashCode = (hashCode * 59) + this.IncludeTags.GetHashCode();
-                hashCode = (hashCode * 59) + this.IncludeIterations.GetHashCode();
-                if (this.CustomAttributesIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.CustomAttributesIds.GetHashCode();
-                }
-                if (this.ConfigurationIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.ConfigurationIds.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

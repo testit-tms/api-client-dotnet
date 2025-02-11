@@ -265,9 +265,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets WorkItem identifier   User runs method execution   System move WorkItem to another section
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2WorkItemsMovePostRequest"> (optional)</param>
+        /// <param name="workItemMovePostModel"> (optional)</param>
         /// <returns>WorkItemShortModel</returns>
-        WorkItemShortModel ApiV2WorkItemsMovePost(ApiV2WorkItemsMovePostRequest apiV2WorkItemsMovePostRequest = default(ApiV2WorkItemsMovePostRequest));
+        WorkItemShortModel ApiV2WorkItemsMovePost(WorkItemMovePostModel workItemMovePostModel = default(WorkItemMovePostModel));
 
         /// <summary>
         /// Move WorkItem to another section
@@ -276,9 +276,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets WorkItem identifier   User runs method execution   System move WorkItem to another section
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2WorkItemsMovePostRequest"> (optional)</param>
+        /// <param name="workItemMovePostModel"> (optional)</param>
         /// <returns>ApiResponse of WorkItemShortModel</returns>
-        ApiResponse<WorkItemShortModel> ApiV2WorkItemsMovePostWithHttpInfo(ApiV2WorkItemsMovePostRequest apiV2WorkItemsMovePostRequest = default(ApiV2WorkItemsMovePostRequest));
+        ApiResponse<WorkItemShortModel> ApiV2WorkItemsMovePostWithHttpInfo(WorkItemMovePostModel workItemMovePostModel = default(WorkItemMovePostModel));
         /// <summary>
         /// Search for work items
         /// </summary>
@@ -288,9 +288,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest"> (optional)</param>
+        /// <param name="workItemSelectModel"> (optional)</param>
         /// <returns>List&lt;WorkItemShortModel&gt;</returns>
-        List<WorkItemShortModel> ApiV2WorkItemsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest));
+        List<WorkItemShortModel> ApiV2WorkItemsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel));
 
         /// <summary>
         /// Search for work items
@@ -304,9 +304,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest"> (optional)</param>
+        /// <param name="workItemSelectModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;WorkItemShortModel&gt;</returns>
-        ApiResponse<List<WorkItemShortModel>> ApiV2WorkItemsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest));
+        ApiResponse<List<WorkItemShortModel>> ApiV2WorkItemsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel));
         /// <summary>
         /// Get SharedStep references in sections
         /// </summary>
@@ -320,9 +320,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest"> (optional)</param>
+        /// <param name="sharedStepReferenceSectionsQueryFilterModel"> (optional)</param>
         /// <returns>List&lt;SharedStepReferenceSectionModel&gt;</returns>
-        List<SharedStepReferenceSectionModel> ApiV2WorkItemsSharedStepIdReferencesSectionsPost(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest = default(ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest));
+        List<SharedStepReferenceSectionModel> ApiV2WorkItemsSharedStepIdReferencesSectionsPost(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SharedStepReferenceSectionsQueryFilterModel sharedStepReferenceSectionsQueryFilterModel = default(SharedStepReferenceSectionsQueryFilterModel));
 
         /// <summary>
         /// Get SharedStep references in sections
@@ -337,9 +337,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest"> (optional)</param>
+        /// <param name="sharedStepReferenceSectionsQueryFilterModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;SharedStepReferenceSectionModel&gt;</returns>
-        ApiResponse<List<SharedStepReferenceSectionModel>> ApiV2WorkItemsSharedStepIdReferencesSectionsPostWithHttpInfo(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest = default(ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest));
+        ApiResponse<List<SharedStepReferenceSectionModel>> ApiV2WorkItemsSharedStepIdReferencesSectionsPostWithHttpInfo(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SharedStepReferenceSectionsQueryFilterModel sharedStepReferenceSectionsQueryFilterModel = default(SharedStepReferenceSectionsQueryFilterModel));
         /// <summary>
         /// Get SharedStep references in work items
         /// </summary>
@@ -353,9 +353,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest"> (optional)</param>
+        /// <param name="sharedStepReferencesQueryFilterModel"> (optional)</param>
         /// <returns>List&lt;SharedStepReferenceModel&gt;</returns>
-        List<SharedStepReferenceModel> ApiV2WorkItemsSharedStepIdReferencesWorkItemsPost(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest = default(ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest));
+        List<SharedStepReferenceModel> ApiV2WorkItemsSharedStepIdReferencesWorkItemsPost(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SharedStepReferencesQueryFilterModel sharedStepReferencesQueryFilterModel = default(SharedStepReferencesQueryFilterModel));
 
         /// <summary>
         /// Get SharedStep references in work items
@@ -370,9 +370,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest"> (optional)</param>
+        /// <param name="sharedStepReferencesQueryFilterModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;SharedStepReferenceModel&gt;</returns>
-        ApiResponse<List<SharedStepReferenceModel>> ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostWithHttpInfo(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest = default(ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest));
+        ApiResponse<List<SharedStepReferenceModel>> ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostWithHttpInfo(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SharedStepReferencesQueryFilterModel sharedStepReferencesQueryFilterModel = default(SharedStepReferencesQueryFilterModel));
         /// <summary>
         /// Get SharedStep references
         /// </summary>
@@ -403,9 +403,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets work item properties (listed in request parameters)   User runs method execution   System creates work item by identifier   System returns work item model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkItemRequest"> (optional)</param>
+        /// <param name="workItemPostModel"> (optional)</param>
         /// <returns>WorkItemModel</returns>
-        WorkItemModel CreateWorkItem(CreateWorkItemRequest createWorkItemRequest = default(CreateWorkItemRequest));
+        WorkItemModel CreateWorkItem(WorkItemPostModel workItemPostModel = default(WorkItemPostModel));
 
         /// <summary>
         /// Create Test Case, Checklist or Shared Step
@@ -414,9 +414,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets work item properties (listed in request parameters)   User runs method execution   System creates work item by identifier   System returns work item model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkItemRequest"> (optional)</param>
+        /// <param name="workItemPostModel"> (optional)</param>
         /// <returns>ApiResponse of WorkItemModel</returns>
-        ApiResponse<WorkItemModel> CreateWorkItemWithHttpInfo(CreateWorkItemRequest createWorkItemRequest = default(CreateWorkItemRequest));
+        ApiResponse<WorkItemModel> CreateWorkItemWithHttpInfo(WorkItemPostModel workItemPostModel = default(WorkItemPostModel));
         /// <summary>
         /// Delete all links AutoTests from WorkItem by Id or GlobalId
         /// </summary>
@@ -616,9 +616,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets work item properties (listed in request parameters)   User runs method execution   System updates work item by identifier   System returns updated work item model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateWorkItemRequest"> (optional)</param>
+        /// <param name="workItemPutModel"> (optional)</param>
         /// <returns></returns>
-        void UpdateWorkItem(UpdateWorkItemRequest updateWorkItemRequest = default(UpdateWorkItemRequest));
+        void UpdateWorkItem(WorkItemPutModel workItemPutModel = default(WorkItemPutModel));
 
         /// <summary>
         /// Update Test Case, Checklist or Shared Step
@@ -627,9 +627,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets work item properties (listed in request parameters)   User runs method execution   System updates work item by identifier   System returns updated work item model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateWorkItemRequest"> (optional)</param>
+        /// <param name="workItemPutModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateWorkItemWithHttpInfo(UpdateWorkItemRequest updateWorkItemRequest = default(UpdateWorkItemRequest));
+        ApiResponse<Object> UpdateWorkItemWithHttpInfo(WorkItemPutModel workItemPutModel = default(WorkItemPutModel));
         #endregion Synchronous Operations
     }
 
@@ -650,7 +650,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="file">Select file (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2WorkItemsIdAttachmentsPostAsync(Guid id, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2WorkItemsIdAttachmentsPostAsync(Guid id, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Upload and link attachment to WorkItem
@@ -663,7 +663,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="file">Select file (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2WorkItemsIdAttachmentsPostWithHttpInfoAsync(Guid id, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2WorkItemsIdAttachmentsPostWithHttpInfoAsync(Guid id, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Transform CheckList to TestCase
         /// </summary>
@@ -674,7 +674,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkItemModel</returns>
-        System.Threading.Tasks.Task<WorkItemModel> ApiV2WorkItemsIdCheckListTransformToTestCasePostAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WorkItemModel> ApiV2WorkItemsIdCheckListTransformToTestCasePostAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Transform CheckList to TestCase
@@ -686,7 +686,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkItemModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkItemModel>> ApiV2WorkItemsIdCheckListTransformToTestCasePostWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WorkItemModel>> ApiV2WorkItemsIdCheckListTransformToTestCasePostWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get change history of WorkItem
         /// </summary>
@@ -702,7 +702,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WorkItemChangeModel&gt;</returns>
-        System.Threading.Tasks.Task<List<WorkItemChangeModel>> ApiV2WorkItemsIdHistoryGetAsync(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<WorkItemChangeModel>> ApiV2WorkItemsIdHistoryGetAsync(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get change history of WorkItem
@@ -719,7 +719,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WorkItemChangeModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<WorkItemChangeModel>>> ApiV2WorkItemsIdHistoryGetWithHttpInfoAsync(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<WorkItemChangeModel>>> ApiV2WorkItemsIdHistoryGetWithHttpInfoAsync(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete like from WorkItem
         /// </summary>
@@ -730,7 +730,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2WorkItemsIdLikeDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2WorkItemsIdLikeDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete like from WorkItem
@@ -742,7 +742,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2WorkItemsIdLikeDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2WorkItemsIdLikeDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Set like to WorkItem
         /// </summary>
@@ -753,7 +753,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2WorkItemsIdLikePostAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2WorkItemsIdLikePostAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Set like to WorkItem
@@ -765,7 +765,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2WorkItemsIdLikePostWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2WorkItemsIdLikePostWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get likes count of WorkItem
         /// </summary>
@@ -776,7 +776,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of int</returns>
-        System.Threading.Tasks.Task<int> ApiV2WorkItemsIdLikesCountGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<int> ApiV2WorkItemsIdLikesCountGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get likes count of WorkItem
@@ -788,7 +788,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (int)</returns>
-        System.Threading.Tasks.Task<ApiResponse<int>> ApiV2WorkItemsIdLikesCountGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<int>> ApiV2WorkItemsIdLikesCountGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get likes of WorkItem
         /// </summary>
@@ -799,7 +799,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WorkItemLikeModel&gt;</returns>
-        System.Threading.Tasks.Task<List<WorkItemLikeModel>> ApiV2WorkItemsIdLikesGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<WorkItemLikeModel>> ApiV2WorkItemsIdLikesGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get likes of WorkItem
@@ -811,7 +811,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WorkItemLikeModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<WorkItemLikeModel>>> ApiV2WorkItemsIdLikesGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<WorkItemLikeModel>>> ApiV2WorkItemsIdLikesGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get test results history of WorkItem
         /// </summary>
@@ -836,7 +836,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestResultHistoryResponse&gt;</returns>
-        System.Threading.Tasks.Task<List<TestResultHistoryResponse>> ApiV2WorkItemsIdTestResultsHistoryGetAsync(Guid id, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<Guid> configurationIds = default(List<Guid>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> userIds = default(List<Guid>), List<string> outcomes = default(List<string>), bool? isAutomated = default(bool?), bool? automated = default(bool?), List<Guid> testRunIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TestResultHistoryResponse>> ApiV2WorkItemsIdTestResultsHistoryGetAsync(Guid id, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<Guid> configurationIds = default(List<Guid>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> userIds = default(List<Guid>), List<string> outcomes = default(List<string>), bool? isAutomated = default(bool?), bool? automated = default(bool?), List<Guid> testRunIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get test results history of WorkItem
@@ -862,7 +862,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestResultHistoryResponse&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestResultHistoryResponse>>> ApiV2WorkItemsIdTestResultsHistoryGetWithHttpInfoAsync(Guid id, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<Guid> configurationIds = default(List<Guid>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> userIds = default(List<Guid>), List<string> outcomes = default(List<string>), bool? isAutomated = default(bool?), bool? automated = default(bool?), List<Guid> testRunIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TestResultHistoryResponse>>> ApiV2WorkItemsIdTestResultsHistoryGetWithHttpInfoAsync(Guid id, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<Guid> configurationIds = default(List<Guid>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> userIds = default(List<Guid>), List<string> outcomes = default(List<string>), bool? isAutomated = default(bool?), bool? automated = default(bool?), List<Guid> testRunIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Set WorkItem as actual
         /// </summary>
@@ -874,7 +874,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="versionId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkItemModel</returns>
-        System.Threading.Tasks.Task<WorkItemModel> ApiV2WorkItemsIdVersionVersionIdActualPostAsync(Guid id, Guid versionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WorkItemModel> ApiV2WorkItemsIdVersionVersionIdActualPostAsync(Guid id, Guid versionId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Set WorkItem as actual
@@ -887,7 +887,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="versionId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkItemModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkItemModel>> ApiV2WorkItemsIdVersionVersionIdActualPostWithHttpInfoAsync(Guid id, Guid versionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WorkItemModel>> ApiV2WorkItemsIdVersionVersionIdActualPostWithHttpInfoAsync(Guid id, Guid versionId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Move WorkItem to another section
         /// </summary>
@@ -895,10 +895,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets WorkItem identifier   User runs method execution   System move WorkItem to another section
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2WorkItemsMovePostRequest"> (optional)</param>
+        /// <param name="workItemMovePostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkItemShortModel</returns>
-        System.Threading.Tasks.Task<WorkItemShortModel> ApiV2WorkItemsMovePostAsync(ApiV2WorkItemsMovePostRequest apiV2WorkItemsMovePostRequest = default(ApiV2WorkItemsMovePostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WorkItemShortModel> ApiV2WorkItemsMovePostAsync(WorkItemMovePostModel workItemMovePostModel = default(WorkItemMovePostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Move WorkItem to another section
@@ -907,10 +907,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets WorkItem identifier   User runs method execution   System move WorkItem to another section
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2WorkItemsMovePostRequest"> (optional)</param>
+        /// <param name="workItemMovePostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkItemShortModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkItemShortModel>> ApiV2WorkItemsMovePostWithHttpInfoAsync(ApiV2WorkItemsMovePostRequest apiV2WorkItemsMovePostRequest = default(ApiV2WorkItemsMovePostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WorkItemShortModel>> ApiV2WorkItemsMovePostWithHttpInfoAsync(WorkItemMovePostModel workItemMovePostModel = default(WorkItemMovePostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Search for work items
         /// </summary>
@@ -923,10 +923,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest"> (optional)</param>
+        /// <param name="workItemSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WorkItemShortModel&gt;</returns>
-        System.Threading.Tasks.Task<List<WorkItemShortModel>> ApiV2WorkItemsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<WorkItemShortModel>> ApiV2WorkItemsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Search for work items
@@ -940,10 +940,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest"> (optional)</param>
+        /// <param name="workItemSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<WorkItemShortModel>>> ApiV2WorkItemsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<WorkItemShortModel>>> ApiV2WorkItemsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get SharedStep references in sections
         /// </summary>
@@ -957,10 +957,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest"> (optional)</param>
+        /// <param name="sharedStepReferenceSectionsQueryFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;SharedStepReferenceSectionModel&gt;</returns>
-        System.Threading.Tasks.Task<List<SharedStepReferenceSectionModel>> ApiV2WorkItemsSharedStepIdReferencesSectionsPostAsync(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest = default(ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<SharedStepReferenceSectionModel>> ApiV2WorkItemsSharedStepIdReferencesSectionsPostAsync(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SharedStepReferenceSectionsQueryFilterModel sharedStepReferenceSectionsQueryFilterModel = default(SharedStepReferenceSectionsQueryFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get SharedStep references in sections
@@ -975,10 +975,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest"> (optional)</param>
+        /// <param name="sharedStepReferenceSectionsQueryFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;SharedStepReferenceSectionModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<SharedStepReferenceSectionModel>>> ApiV2WorkItemsSharedStepIdReferencesSectionsPostWithHttpInfoAsync(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest = default(ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<SharedStepReferenceSectionModel>>> ApiV2WorkItemsSharedStepIdReferencesSectionsPostWithHttpInfoAsync(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SharedStepReferenceSectionsQueryFilterModel sharedStepReferenceSectionsQueryFilterModel = default(SharedStepReferenceSectionsQueryFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get SharedStep references in work items
         /// </summary>
@@ -992,10 +992,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest"> (optional)</param>
+        /// <param name="sharedStepReferencesQueryFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;SharedStepReferenceModel&gt;</returns>
-        System.Threading.Tasks.Task<List<SharedStepReferenceModel>> ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostAsync(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest = default(ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<SharedStepReferenceModel>> ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostAsync(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SharedStepReferencesQueryFilterModel sharedStepReferencesQueryFilterModel = default(SharedStepReferencesQueryFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get SharedStep references in work items
@@ -1010,10 +1010,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest"> (optional)</param>
+        /// <param name="sharedStepReferencesQueryFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;SharedStepReferenceModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<SharedStepReferenceModel>>> ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostWithHttpInfoAsync(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest = default(ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<SharedStepReferenceModel>>> ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostWithHttpInfoAsync(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SharedStepReferencesQueryFilterModel sharedStepReferencesQueryFilterModel = default(SharedStepReferencesQueryFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get SharedStep references
         /// </summary>
@@ -1025,7 +1025,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;SharedStepReferenceModel&gt;</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<List<SharedStepReferenceModel>> ApiV2WorkItemsSharedStepsSharedStepIdReferencesGetAsync(Guid sharedStepId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<SharedStepReferenceModel>> ApiV2WorkItemsSharedStepsSharedStepIdReferencesGetAsync(Guid sharedStepId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get SharedStep references
@@ -1038,7 +1038,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;SharedStepReferenceModel&gt;)</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<List<SharedStepReferenceModel>>> ApiV2WorkItemsSharedStepsSharedStepIdReferencesGetWithHttpInfoAsync(Guid sharedStepId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<SharedStepReferenceModel>>> ApiV2WorkItemsSharedStepsSharedStepIdReferencesGetWithHttpInfoAsync(Guid sharedStepId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Create Test Case, Checklist or Shared Step
         /// </summary>
@@ -1046,10 +1046,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets work item properties (listed in request parameters)   User runs method execution   System creates work item by identifier   System returns work item model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkItemRequest"> (optional)</param>
+        /// <param name="workItemPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkItemModel</returns>
-        System.Threading.Tasks.Task<WorkItemModel> CreateWorkItemAsync(CreateWorkItemRequest createWorkItemRequest = default(CreateWorkItemRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WorkItemModel> CreateWorkItemAsync(WorkItemPostModel workItemPostModel = default(WorkItemPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Test Case, Checklist or Shared Step
@@ -1058,10 +1058,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets work item properties (listed in request parameters)   User runs method execution   System creates work item by identifier   System returns work item model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkItemRequest"> (optional)</param>
+        /// <param name="workItemPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkItemModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkItemModel>> CreateWorkItemWithHttpInfoAsync(CreateWorkItemRequest createWorkItemRequest = default(CreateWorkItemRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WorkItemModel>> CreateWorkItemWithHttpInfoAsync(WorkItemPostModel workItemPostModel = default(WorkItemPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete all links AutoTests from WorkItem by Id or GlobalId
         /// </summary>
@@ -1072,7 +1072,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteAllWorkItemsFromAutoTestAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteAllWorkItemsFromAutoTestAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete all links AutoTests from WorkItem by Id or GlobalId
@@ -1084,7 +1084,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteAllWorkItemsFromAutoTestWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteAllWorkItemsFromAutoTestWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete Test Case, Checklist or Shared Step by Id or GlobalId
         /// </summary>
@@ -1095,7 +1095,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteWorkItemAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteWorkItemAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete Test Case, Checklist or Shared Step by Id or GlobalId
@@ -1107,7 +1107,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get all AutoTests linked to WorkItem by Id or GlobalId
         /// </summary>
@@ -1118,7 +1118,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AutoTestModel&gt;</returns>
-        System.Threading.Tasks.Task<List<AutoTestModel>> GetAutoTestsForWorkItemAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<AutoTestModel>> GetAutoTestsForWorkItemAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get all AutoTests linked to WorkItem by Id or GlobalId
@@ -1130,7 +1130,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AutoTestModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<AutoTestModel>>> GetAutoTestsForWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<AutoTestModel>>> GetAutoTestsForWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get iterations by work item Id or GlobalId
         /// </summary>
@@ -1143,7 +1143,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;IterationModel&gt;</returns>
-        System.Threading.Tasks.Task<List<IterationModel>> GetIterationsAsync(string id, Guid? versionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<IterationModel>> GetIterationsAsync(string id, Guid? versionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get iterations by work item Id or GlobalId
@@ -1157,7 +1157,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;IterationModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<IterationModel>>> GetIterationsWithHttpInfoAsync(string id, Guid? versionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<IterationModel>>> GetIterationsWithHttpInfoAsync(string id, Guid? versionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get Test Case, Checklist or Shared Step by Id or GlobalId
         /// </summary>
@@ -1170,7 +1170,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkItemModel</returns>
-        System.Threading.Tasks.Task<WorkItemModel> GetWorkItemByIdAsync(string id, Guid? versionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WorkItemModel> GetWorkItemByIdAsync(string id, Guid? versionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Test Case, Checklist or Shared Step by Id or GlobalId
@@ -1184,7 +1184,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkItemModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkItemModel>> GetWorkItemByIdWithHttpInfoAsync(string id, Guid? versionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WorkItemModel>> GetWorkItemByIdWithHttpInfoAsync(string id, Guid? versionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get WorkItem chronology by Id or GlobalId
         /// </summary>
@@ -1195,7 +1195,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestResultChronologyModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TestResultChronologyModel>> GetWorkItemChronologyAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TestResultChronologyModel>> GetWorkItemChronologyAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get WorkItem chronology by Id or GlobalId
@@ -1207,7 +1207,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestResultChronologyModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestResultChronologyModel>>> GetWorkItemChronologyWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TestResultChronologyModel>>> GetWorkItemChronologyWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get WorkItem versions
         /// </summary>
@@ -1220,7 +1220,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="versionNumber">WorkItem version (integer format)  number\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WorkItemVersionModel&gt;</returns>
-        System.Threading.Tasks.Task<List<WorkItemVersionModel>> GetWorkItemVersionsAsync(string id, Guid? workItemVersionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<WorkItemVersionModel>> GetWorkItemVersionsAsync(string id, Guid? workItemVersionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get WorkItem versions
@@ -1234,7 +1234,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="versionNumber">WorkItem version (integer format)  number\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WorkItemVersionModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<WorkItemVersionModel>>> GetWorkItemVersionsWithHttpInfoAsync(string id, Guid? workItemVersionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<WorkItemVersionModel>>> GetWorkItemVersionsWithHttpInfoAsync(string id, Guid? workItemVersionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Permanently delete test case, checklist or shared steps from archive
         /// </summary>
@@ -1245,7 +1245,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the work item</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task PurgeWorkItemAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task PurgeWorkItemAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Permanently delete test case, checklist or shared steps from archive
@@ -1257,7 +1257,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the work item</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> PurgeWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> PurgeWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Restore test case, checklist or shared steps from archive
         /// </summary>
@@ -1268,7 +1268,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the work item</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RestoreWorkItemAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task RestoreWorkItemAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Restore test case, checklist or shared steps from archive
@@ -1280,7 +1280,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the work item</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RestoreWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RestoreWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Update Test Case, Checklist or Shared Step
         /// </summary>
@@ -1288,10 +1288,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets work item properties (listed in request parameters)   User runs method execution   System updates work item by identifier   System returns updated work item model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateWorkItemRequest"> (optional)</param>
+        /// <param name="workItemPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateWorkItemAsync(UpdateWorkItemRequest updateWorkItemRequest = default(UpdateWorkItemRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task UpdateWorkItemAsync(WorkItemPutModel workItemPutModel = default(WorkItemPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Test Case, Checklist or Shared Step
@@ -1300,10 +1300,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets work item properties (listed in request parameters)   User runs method execution   System updates work item by identifier   System returns updated work item model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateWorkItemRequest"> (optional)</param>
+        /// <param name="workItemPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateWorkItemWithHttpInfoAsync(UpdateWorkItemRequest updateWorkItemRequest = default(UpdateWorkItemRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateWorkItemWithHttpInfoAsync(WorkItemPutModel workItemPutModel = default(WorkItemPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1587,7 +1587,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="file">Select file (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2WorkItemsIdAttachmentsPostAsync(Guid id, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2WorkItemsIdAttachmentsPostAsync(Guid id, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await ApiV2WorkItemsIdAttachmentsPostWithHttpInfoAsync(id, file, cancellationToken).ConfigureAwait(false);
         }
@@ -1600,7 +1600,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="file">Select file (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2WorkItemsIdAttachmentsPostWithHttpInfoAsync(Guid id, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2WorkItemsIdAttachmentsPostWithHttpInfoAsync(Guid id, FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1709,7 +1709,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkItemModel</returns>
-        public async System.Threading.Tasks.Task<WorkItemModel> ApiV2WorkItemsIdCheckListTransformToTestCasePostAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WorkItemModel> ApiV2WorkItemsIdCheckListTransformToTestCasePostAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<WorkItemModel> localVarResponse = await ApiV2WorkItemsIdCheckListTransformToTestCasePostWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1722,7 +1722,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkItemModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<WorkItemModel>> ApiV2WorkItemsIdCheckListTransformToTestCasePostWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<WorkItemModel>> ApiV2WorkItemsIdCheckListTransformToTestCasePostWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1861,7 +1861,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WorkItemChangeModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<WorkItemChangeModel>> ApiV2WorkItemsIdHistoryGetAsync(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<WorkItemChangeModel>> ApiV2WorkItemsIdHistoryGetAsync(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<List<WorkItemChangeModel>> localVarResponse = await ApiV2WorkItemsIdHistoryGetWithHttpInfoAsync(id, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1879,7 +1879,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WorkItemChangeModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<WorkItemChangeModel>>> ApiV2WorkItemsIdHistoryGetWithHttpInfoAsync(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<WorkItemChangeModel>>> ApiV2WorkItemsIdHistoryGetWithHttpInfoAsync(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2002,7 +2002,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2WorkItemsIdLikeDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2WorkItemsIdLikeDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await ApiV2WorkItemsIdLikeDeleteWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
@@ -2014,7 +2014,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2WorkItemsIdLikeDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2WorkItemsIdLikeDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2117,7 +2117,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2WorkItemsIdLikePostAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2WorkItemsIdLikePostAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await ApiV2WorkItemsIdLikePostWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
@@ -2129,7 +2129,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2WorkItemsIdLikePostWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2WorkItemsIdLikePostWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2233,7 +2233,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of int</returns>
-        public async System.Threading.Tasks.Task<int> ApiV2WorkItemsIdLikesCountGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<int> ApiV2WorkItemsIdLikesCountGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<int> localVarResponse = await ApiV2WorkItemsIdLikesCountGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2246,7 +2246,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (int)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<int>> ApiV2WorkItemsIdLikesCountGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<int>> ApiV2WorkItemsIdLikesCountGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2350,7 +2350,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WorkItemLikeModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<WorkItemLikeModel>> ApiV2WorkItemsIdLikesGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<WorkItemLikeModel>> ApiV2WorkItemsIdLikesGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<List<WorkItemLikeModel>> localVarResponse = await ApiV2WorkItemsIdLikesGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2363,7 +2363,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WorkItemLikeModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<WorkItemLikeModel>>> ApiV2WorkItemsIdLikesGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<WorkItemLikeModel>>> ApiV2WorkItemsIdLikesGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2565,7 +2565,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestResultHistoryResponse&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestResultHistoryResponse>> ApiV2WorkItemsIdTestResultsHistoryGetAsync(Guid id, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<Guid> configurationIds = default(List<Guid>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> userIds = default(List<Guid>), List<string> outcomes = default(List<string>), bool? isAutomated = default(bool?), bool? automated = default(bool?), List<Guid> testRunIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TestResultHistoryResponse>> ApiV2WorkItemsIdTestResultsHistoryGetAsync(Guid id, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<Guid> configurationIds = default(List<Guid>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> userIds = default(List<Guid>), List<string> outcomes = default(List<string>), bool? isAutomated = default(bool?), bool? automated = default(bool?), List<Guid> testRunIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<List<TestResultHistoryResponse>> localVarResponse = await ApiV2WorkItemsIdTestResultsHistoryGetWithHttpInfoAsync(id, from, to, configurationIds, testPlanIds, userIds, outcomes, isAutomated, automated, testRunIds, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2592,7 +2592,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestResultHistoryResponse&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestResultHistoryResponse>>> ApiV2WorkItemsIdTestResultsHistoryGetWithHttpInfoAsync(Guid id, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<Guid> configurationIds = default(List<Guid>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> userIds = default(List<Guid>), List<string> outcomes = default(List<string>), bool? isAutomated = default(bool?), bool? automated = default(bool?), List<Guid> testRunIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestResultHistoryResponse>>> ApiV2WorkItemsIdTestResultsHistoryGetWithHttpInfoAsync(Guid id, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<Guid> configurationIds = default(List<Guid>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> userIds = default(List<Guid>), List<string> outcomes = default(List<string>), bool? isAutomated = default(bool?), bool? automated = default(bool?), List<Guid> testRunIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2756,7 +2756,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="versionId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkItemModel</returns>
-        public async System.Threading.Tasks.Task<WorkItemModel> ApiV2WorkItemsIdVersionVersionIdActualPostAsync(Guid id, Guid versionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WorkItemModel> ApiV2WorkItemsIdVersionVersionIdActualPostAsync(Guid id, Guid versionId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<WorkItemModel> localVarResponse = await ApiV2WorkItemsIdVersionVersionIdActualPostWithHttpInfoAsync(id, versionId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2770,7 +2770,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="versionId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkItemModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<WorkItemModel>> ApiV2WorkItemsIdVersionVersionIdActualPostWithHttpInfoAsync(Guid id, Guid versionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<WorkItemModel>> ApiV2WorkItemsIdVersionVersionIdActualPostWithHttpInfoAsync(Guid id, Guid versionId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2816,11 +2816,11 @@ namespace TestIT.ApiClient.Api
         /// Move WorkItem to another section  Use case   User sets WorkItem identifier   User runs method execution   System move WorkItem to another section
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2WorkItemsMovePostRequest"> (optional)</param>
+        /// <param name="workItemMovePostModel"> (optional)</param>
         /// <returns>WorkItemShortModel</returns>
-        public WorkItemShortModel ApiV2WorkItemsMovePost(ApiV2WorkItemsMovePostRequest apiV2WorkItemsMovePostRequest = default(ApiV2WorkItemsMovePostRequest))
+        public WorkItemShortModel ApiV2WorkItemsMovePost(WorkItemMovePostModel workItemMovePostModel = default(WorkItemMovePostModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<WorkItemShortModel> localVarResponse = ApiV2WorkItemsMovePostWithHttpInfo(apiV2WorkItemsMovePostRequest);
+            TestIT.ApiClient.Client.ApiResponse<WorkItemShortModel> localVarResponse = ApiV2WorkItemsMovePostWithHttpInfo(workItemMovePostModel);
             return localVarResponse.Data;
         }
 
@@ -2828,9 +2828,9 @@ namespace TestIT.ApiClient.Api
         /// Move WorkItem to another section  Use case   User sets WorkItem identifier   User runs method execution   System move WorkItem to another section
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2WorkItemsMovePostRequest"> (optional)</param>
+        /// <param name="workItemMovePostModel"> (optional)</param>
         /// <returns>ApiResponse of WorkItemShortModel</returns>
-        public TestIT.ApiClient.Client.ApiResponse<WorkItemShortModel> ApiV2WorkItemsMovePostWithHttpInfo(ApiV2WorkItemsMovePostRequest apiV2WorkItemsMovePostRequest = default(ApiV2WorkItemsMovePostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<WorkItemShortModel> ApiV2WorkItemsMovePostWithHttpInfo(WorkItemMovePostModel workItemMovePostModel = default(WorkItemMovePostModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -2849,7 +2849,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = apiV2WorkItemsMovePostRequest;
+            localVarRequestOptions.Data = workItemMovePostModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2873,12 +2873,12 @@ namespace TestIT.ApiClient.Api
         /// Move WorkItem to another section  Use case   User sets WorkItem identifier   User runs method execution   System move WorkItem to another section
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2WorkItemsMovePostRequest"> (optional)</param>
+        /// <param name="workItemMovePostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkItemShortModel</returns>
-        public async System.Threading.Tasks.Task<WorkItemShortModel> ApiV2WorkItemsMovePostAsync(ApiV2WorkItemsMovePostRequest apiV2WorkItemsMovePostRequest = default(ApiV2WorkItemsMovePostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WorkItemShortModel> ApiV2WorkItemsMovePostAsync(WorkItemMovePostModel workItemMovePostModel = default(WorkItemMovePostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<WorkItemShortModel> localVarResponse = await ApiV2WorkItemsMovePostWithHttpInfoAsync(apiV2WorkItemsMovePostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<WorkItemShortModel> localVarResponse = await ApiV2WorkItemsMovePostWithHttpInfoAsync(workItemMovePostModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2886,10 +2886,10 @@ namespace TestIT.ApiClient.Api
         /// Move WorkItem to another section  Use case   User sets WorkItem identifier   User runs method execution   System move WorkItem to another section
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2WorkItemsMovePostRequest"> (optional)</param>
+        /// <param name="workItemMovePostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkItemShortModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<WorkItemShortModel>> ApiV2WorkItemsMovePostWithHttpInfoAsync(ApiV2WorkItemsMovePostRequest apiV2WorkItemsMovePostRequest = default(ApiV2WorkItemsMovePostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<WorkItemShortModel>> ApiV2WorkItemsMovePostWithHttpInfoAsync(WorkItemMovePostModel workItemMovePostModel = default(WorkItemMovePostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2910,7 +2910,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = apiV2WorkItemsMovePostRequest;
+            localVarRequestOptions.Data = workItemMovePostModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2940,11 +2940,11 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest"> (optional)</param>
+        /// <param name="workItemSelectModel"> (optional)</param>
         /// <returns>List&lt;WorkItemShortModel&gt;</returns>
-        public List<WorkItemShortModel> ApiV2WorkItemsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest))
+        public List<WorkItemShortModel> ApiV2WorkItemsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = ApiV2WorkItemsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdWorkItemsSearchPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = ApiV2WorkItemsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, workItemSelectModel);
             return localVarResponse.Data;
         }
 
@@ -2957,9 +2957,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest"> (optional)</param>
+        /// <param name="workItemSelectModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;WorkItemShortModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>> ApiV2WorkItemsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>> ApiV2WorkItemsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -2998,7 +2998,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = apiV2ProjectsProjectIdWorkItemsSearchPostRequest;
+            localVarRequestOptions.Data = workItemSelectModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3027,12 +3027,12 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest"> (optional)</param>
+        /// <param name="workItemSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WorkItemShortModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<WorkItemShortModel>> ApiV2WorkItemsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<WorkItemShortModel>> ApiV2WorkItemsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = await ApiV2WorkItemsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdWorkItemsSearchPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = await ApiV2WorkItemsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, workItemSelectModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3045,10 +3045,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest"> (optional)</param>
+        /// <param name="workItemSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>>> ApiV2WorkItemsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>>> ApiV2WorkItemsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -3089,7 +3089,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = apiV2ProjectsProjectIdWorkItemsSearchPostRequest;
+            localVarRequestOptions.Data = workItemSelectModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3120,11 +3120,11 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest"> (optional)</param>
+        /// <param name="sharedStepReferenceSectionsQueryFilterModel"> (optional)</param>
         /// <returns>List&lt;SharedStepReferenceSectionModel&gt;</returns>
-        public List<SharedStepReferenceSectionModel> ApiV2WorkItemsSharedStepIdReferencesSectionsPost(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest = default(ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest))
+        public List<SharedStepReferenceSectionModel> ApiV2WorkItemsSharedStepIdReferencesSectionsPost(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SharedStepReferenceSectionsQueryFilterModel sharedStepReferenceSectionsQueryFilterModel = default(SharedStepReferenceSectionsQueryFilterModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<SharedStepReferenceSectionModel>> localVarResponse = ApiV2WorkItemsSharedStepIdReferencesSectionsPostWithHttpInfo(sharedStepId, skip, take, orderBy, searchField, searchValue, apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<List<SharedStepReferenceSectionModel>> localVarResponse = ApiV2WorkItemsSharedStepIdReferencesSectionsPostWithHttpInfo(sharedStepId, skip, take, orderBy, searchField, searchValue, sharedStepReferenceSectionsQueryFilterModel);
             return localVarResponse.Data;
         }
 
@@ -3138,9 +3138,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest"> (optional)</param>
+        /// <param name="sharedStepReferenceSectionsQueryFilterModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;SharedStepReferenceSectionModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<SharedStepReferenceSectionModel>> ApiV2WorkItemsSharedStepIdReferencesSectionsPostWithHttpInfo(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest = default(ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<List<SharedStepReferenceSectionModel>> ApiV2WorkItemsSharedStepIdReferencesSectionsPostWithHttpInfo(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SharedStepReferenceSectionsQueryFilterModel sharedStepReferenceSectionsQueryFilterModel = default(SharedStepReferenceSectionsQueryFilterModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -3180,7 +3180,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest;
+            localVarRequestOptions.Data = sharedStepReferenceSectionsQueryFilterModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3210,12 +3210,12 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest"> (optional)</param>
+        /// <param name="sharedStepReferenceSectionsQueryFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;SharedStepReferenceSectionModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<SharedStepReferenceSectionModel>> ApiV2WorkItemsSharedStepIdReferencesSectionsPostAsync(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest = default(ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<SharedStepReferenceSectionModel>> ApiV2WorkItemsSharedStepIdReferencesSectionsPostAsync(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SharedStepReferenceSectionsQueryFilterModel sharedStepReferenceSectionsQueryFilterModel = default(SharedStepReferenceSectionsQueryFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<SharedStepReferenceSectionModel>> localVarResponse = await ApiV2WorkItemsSharedStepIdReferencesSectionsPostWithHttpInfoAsync(sharedStepId, skip, take, orderBy, searchField, searchValue, apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<SharedStepReferenceSectionModel>> localVarResponse = await ApiV2WorkItemsSharedStepIdReferencesSectionsPostWithHttpInfoAsync(sharedStepId, skip, take, orderBy, searchField, searchValue, sharedStepReferenceSectionsQueryFilterModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3229,10 +3229,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest"> (optional)</param>
+        /// <param name="sharedStepReferenceSectionsQueryFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;SharedStepReferenceSectionModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<SharedStepReferenceSectionModel>>> ApiV2WorkItemsSharedStepIdReferencesSectionsPostWithHttpInfoAsync(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest = default(ApiV2WorkItemsSharedStepIdReferencesSectionsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<SharedStepReferenceSectionModel>>> ApiV2WorkItemsSharedStepIdReferencesSectionsPostWithHttpInfoAsync(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SharedStepReferenceSectionsQueryFilterModel sharedStepReferenceSectionsQueryFilterModel = default(SharedStepReferenceSectionsQueryFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -3274,7 +3274,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = apiV2WorkItemsSharedStepIdReferencesSectionsPostRequest;
+            localVarRequestOptions.Data = sharedStepReferenceSectionsQueryFilterModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3305,11 +3305,11 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest"> (optional)</param>
+        /// <param name="sharedStepReferencesQueryFilterModel"> (optional)</param>
         /// <returns>List&lt;SharedStepReferenceModel&gt;</returns>
-        public List<SharedStepReferenceModel> ApiV2WorkItemsSharedStepIdReferencesWorkItemsPost(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest = default(ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest))
+        public List<SharedStepReferenceModel> ApiV2WorkItemsSharedStepIdReferencesWorkItemsPost(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SharedStepReferencesQueryFilterModel sharedStepReferencesQueryFilterModel = default(SharedStepReferencesQueryFilterModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<SharedStepReferenceModel>> localVarResponse = ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostWithHttpInfo(sharedStepId, skip, take, orderBy, searchField, searchValue, apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<List<SharedStepReferenceModel>> localVarResponse = ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostWithHttpInfo(sharedStepId, skip, take, orderBy, searchField, searchValue, sharedStepReferencesQueryFilterModel);
             return localVarResponse.Data;
         }
 
@@ -3323,9 +3323,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest"> (optional)</param>
+        /// <param name="sharedStepReferencesQueryFilterModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;SharedStepReferenceModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<SharedStepReferenceModel>> ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostWithHttpInfo(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest = default(ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<List<SharedStepReferenceModel>> ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostWithHttpInfo(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SharedStepReferencesQueryFilterModel sharedStepReferencesQueryFilterModel = default(SharedStepReferencesQueryFilterModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -3365,7 +3365,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest;
+            localVarRequestOptions.Data = sharedStepReferencesQueryFilterModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3395,12 +3395,12 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest"> (optional)</param>
+        /// <param name="sharedStepReferencesQueryFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;SharedStepReferenceModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<SharedStepReferenceModel>> ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostAsync(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest = default(ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<SharedStepReferenceModel>> ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostAsync(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SharedStepReferencesQueryFilterModel sharedStepReferencesQueryFilterModel = default(SharedStepReferencesQueryFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<SharedStepReferenceModel>> localVarResponse = await ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostWithHttpInfoAsync(sharedStepId, skip, take, orderBy, searchField, searchValue, apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<SharedStepReferenceModel>> localVarResponse = await ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostWithHttpInfoAsync(sharedStepId, skip, take, orderBy, searchField, searchValue, sharedStepReferencesQueryFilterModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3414,10 +3414,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest"> (optional)</param>
+        /// <param name="sharedStepReferencesQueryFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;SharedStepReferenceModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<SharedStepReferenceModel>>> ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostWithHttpInfoAsync(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest = default(ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<SharedStepReferenceModel>>> ApiV2WorkItemsSharedStepIdReferencesWorkItemsPostWithHttpInfoAsync(Guid sharedStepId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SharedStepReferencesQueryFilterModel sharedStepReferencesQueryFilterModel = default(SharedStepReferencesQueryFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -3459,7 +3459,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = apiV2WorkItemsSharedStepIdReferencesWorkItemsPostRequest;
+            localVarRequestOptions.Data = sharedStepReferencesQueryFilterModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3546,7 +3546,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;SharedStepReferenceModel&gt;</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<List<SharedStepReferenceModel>> ApiV2WorkItemsSharedStepsSharedStepIdReferencesGetAsync(Guid sharedStepId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<SharedStepReferenceModel>> ApiV2WorkItemsSharedStepsSharedStepIdReferencesGetAsync(Guid sharedStepId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<List<SharedStepReferenceModel>> localVarResponse = await ApiV2WorkItemsSharedStepsSharedStepIdReferencesGetWithHttpInfoAsync(sharedStepId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -3560,7 +3560,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;SharedStepReferenceModel&gt;)</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<SharedStepReferenceModel>>> ApiV2WorkItemsSharedStepsSharedStepIdReferencesGetWithHttpInfoAsync(Guid sharedStepId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<SharedStepReferenceModel>>> ApiV2WorkItemsSharedStepsSharedStepIdReferencesGetWithHttpInfoAsync(Guid sharedStepId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -3605,11 +3605,11 @@ namespace TestIT.ApiClient.Api
         /// Create Test Case, Checklist or Shared Step  Use case   User sets work item properties (listed in request parameters)   User runs method execution   System creates work item by identifier   System returns work item model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkItemRequest"> (optional)</param>
+        /// <param name="workItemPostModel"> (optional)</param>
         /// <returns>WorkItemModel</returns>
-        public WorkItemModel CreateWorkItem(CreateWorkItemRequest createWorkItemRequest = default(CreateWorkItemRequest))
+        public WorkItemModel CreateWorkItem(WorkItemPostModel workItemPostModel = default(WorkItemPostModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<WorkItemModel> localVarResponse = CreateWorkItemWithHttpInfo(createWorkItemRequest);
+            TestIT.ApiClient.Client.ApiResponse<WorkItemModel> localVarResponse = CreateWorkItemWithHttpInfo(workItemPostModel);
             return localVarResponse.Data;
         }
 
@@ -3617,9 +3617,9 @@ namespace TestIT.ApiClient.Api
         /// Create Test Case, Checklist or Shared Step  Use case   User sets work item properties (listed in request parameters)   User runs method execution   System creates work item by identifier   System returns work item model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkItemRequest"> (optional)</param>
+        /// <param name="workItemPostModel"> (optional)</param>
         /// <returns>ApiResponse of WorkItemModel</returns>
-        public TestIT.ApiClient.Client.ApiResponse<WorkItemModel> CreateWorkItemWithHttpInfo(CreateWorkItemRequest createWorkItemRequest = default(CreateWorkItemRequest))
+        public TestIT.ApiClient.Client.ApiResponse<WorkItemModel> CreateWorkItemWithHttpInfo(WorkItemPostModel workItemPostModel = default(WorkItemPostModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -3638,7 +3638,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = createWorkItemRequest;
+            localVarRequestOptions.Data = workItemPostModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3662,12 +3662,12 @@ namespace TestIT.ApiClient.Api
         /// Create Test Case, Checklist or Shared Step  Use case   User sets work item properties (listed in request parameters)   User runs method execution   System creates work item by identifier   System returns work item model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkItemRequest"> (optional)</param>
+        /// <param name="workItemPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkItemModel</returns>
-        public async System.Threading.Tasks.Task<WorkItemModel> CreateWorkItemAsync(CreateWorkItemRequest createWorkItemRequest = default(CreateWorkItemRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WorkItemModel> CreateWorkItemAsync(WorkItemPostModel workItemPostModel = default(WorkItemPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<WorkItemModel> localVarResponse = await CreateWorkItemWithHttpInfoAsync(createWorkItemRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<WorkItemModel> localVarResponse = await CreateWorkItemWithHttpInfoAsync(workItemPostModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3675,10 +3675,10 @@ namespace TestIT.ApiClient.Api
         /// Create Test Case, Checklist or Shared Step  Use case   User sets work item properties (listed in request parameters)   User runs method execution   System creates work item by identifier   System returns work item model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkItemRequest"> (optional)</param>
+        /// <param name="workItemPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkItemModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<WorkItemModel>> CreateWorkItemWithHttpInfoAsync(CreateWorkItemRequest createWorkItemRequest = default(CreateWorkItemRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<WorkItemModel>> CreateWorkItemWithHttpInfoAsync(WorkItemPostModel workItemPostModel = default(WorkItemPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -3699,7 +3699,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = createWorkItemRequest;
+            localVarRequestOptions.Data = workItemPostModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3786,7 +3786,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteAllWorkItemsFromAutoTestAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteAllWorkItemsFromAutoTestAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await DeleteAllWorkItemsFromAutoTestWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
@@ -3798,7 +3798,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteAllWorkItemsFromAutoTestWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteAllWorkItemsFromAutoTestWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3909,7 +3909,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteWorkItemAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteWorkItemAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await DeleteWorkItemWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
@@ -3921,7 +3921,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4033,7 +4033,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AutoTestModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<AutoTestModel>> GetAutoTestsForWorkItemAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<AutoTestModel>> GetAutoTestsForWorkItemAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<List<AutoTestModel>> localVarResponse = await GetAutoTestsForWorkItemWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -4046,7 +4046,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AutoTestModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<AutoTestModel>>> GetAutoTestsForWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<AutoTestModel>>> GetAutoTestsForWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4172,7 +4172,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;IterationModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<IterationModel>> GetIterationsAsync(string id, Guid? versionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<IterationModel>> GetIterationsAsync(string id, Guid? versionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<List<IterationModel>> localVarResponse = await GetIterationsWithHttpInfoAsync(id, versionId, versionNumber, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -4187,7 +4187,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;IterationModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<IterationModel>>> GetIterationsWithHttpInfoAsync(string id, Guid? versionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<IterationModel>>> GetIterationsWithHttpInfoAsync(string id, Guid? versionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4321,7 +4321,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkItemModel</returns>
-        public async System.Threading.Tasks.Task<WorkItemModel> GetWorkItemByIdAsync(string id, Guid? versionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WorkItemModel> GetWorkItemByIdAsync(string id, Guid? versionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<WorkItemModel> localVarResponse = await GetWorkItemByIdWithHttpInfoAsync(id, versionId, versionNumber, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -4336,7 +4336,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkItemModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<WorkItemModel>> GetWorkItemByIdWithHttpInfoAsync(string id, Guid? versionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<WorkItemModel>> GetWorkItemByIdWithHttpInfoAsync(string id, Guid? versionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4456,7 +4456,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestResultChronologyModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestResultChronologyModel>> GetWorkItemChronologyAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TestResultChronologyModel>> GetWorkItemChronologyAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<List<TestResultChronologyModel>> localVarResponse = await GetWorkItemChronologyWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -4469,7 +4469,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestResultChronologyModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestResultChronologyModel>>> GetWorkItemChronologyWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestResultChronologyModel>>> GetWorkItemChronologyWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4595,7 +4595,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="versionNumber">WorkItem version (integer format)  number\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WorkItemVersionModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<WorkItemVersionModel>> GetWorkItemVersionsAsync(string id, Guid? workItemVersionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<WorkItemVersionModel>> GetWorkItemVersionsAsync(string id, Guid? workItemVersionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<List<WorkItemVersionModel>> localVarResponse = await GetWorkItemVersionsWithHttpInfoAsync(id, workItemVersionId, versionNumber, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -4610,7 +4610,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="versionNumber">WorkItem version (integer format)  number\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WorkItemVersionModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<WorkItemVersionModel>>> GetWorkItemVersionsWithHttpInfoAsync(string id, Guid? workItemVersionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<WorkItemVersionModel>>> GetWorkItemVersionsWithHttpInfoAsync(string id, Guid? workItemVersionId = default(Guid?), int? versionNumber = default(int?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4729,7 +4729,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the work item</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task PurgeWorkItemAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task PurgeWorkItemAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await PurgeWorkItemWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
@@ -4741,7 +4741,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the work item</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> PurgeWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> PurgeWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4852,7 +4852,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the work item</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RestoreWorkItemAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task RestoreWorkItemAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await RestoreWorkItemWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
@@ -4864,7 +4864,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the work item</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> RestoreWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> RestoreWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4913,20 +4913,20 @@ namespace TestIT.ApiClient.Api
         /// Update Test Case, Checklist or Shared Step  Use case   User sets work item properties (listed in request parameters)   User runs method execution   System updates work item by identifier   System returns updated work item model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateWorkItemRequest"> (optional)</param>
+        /// <param name="workItemPutModel"> (optional)</param>
         /// <returns></returns>
-        public void UpdateWorkItem(UpdateWorkItemRequest updateWorkItemRequest = default(UpdateWorkItemRequest))
+        public void UpdateWorkItem(WorkItemPutModel workItemPutModel = default(WorkItemPutModel))
         {
-            UpdateWorkItemWithHttpInfo(updateWorkItemRequest);
+            UpdateWorkItemWithHttpInfo(workItemPutModel);
         }
 
         /// <summary>
         /// Update Test Case, Checklist or Shared Step  Use case   User sets work item properties (listed in request parameters)   User runs method execution   System updates work item by identifier   System returns updated work item model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateWorkItemRequest"> (optional)</param>
+        /// <param name="workItemPutModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> UpdateWorkItemWithHttpInfo(UpdateWorkItemRequest updateWorkItemRequest = default(UpdateWorkItemRequest))
+        public TestIT.ApiClient.Client.ApiResponse<Object> UpdateWorkItemWithHttpInfo(WorkItemPutModel workItemPutModel = default(WorkItemPutModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -4945,7 +4945,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = updateWorkItemRequest;
+            localVarRequestOptions.Data = workItemPutModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4969,22 +4969,22 @@ namespace TestIT.ApiClient.Api
         /// Update Test Case, Checklist or Shared Step  Use case   User sets work item properties (listed in request parameters)   User runs method execution   System updates work item by identifier   System returns updated work item model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateWorkItemRequest"> (optional)</param>
+        /// <param name="workItemPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateWorkItemAsync(UpdateWorkItemRequest updateWorkItemRequest = default(UpdateWorkItemRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task UpdateWorkItemAsync(WorkItemPutModel workItemPutModel = default(WorkItemPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await UpdateWorkItemWithHttpInfoAsync(updateWorkItemRequest, cancellationToken).ConfigureAwait(false);
+            await UpdateWorkItemWithHttpInfoAsync(workItemPutModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Update Test Case, Checklist or Shared Step  Use case   User sets work item properties (listed in request parameters)   User runs method execution   System updates work item by identifier   System returns updated work item model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateWorkItemRequest"> (optional)</param>
+        /// <param name="workItemPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> UpdateWorkItemWithHttpInfoAsync(UpdateWorkItemRequest updateWorkItemRequest = default(UpdateWorkItemRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> UpdateWorkItemWithHttpInfoAsync(WorkItemPutModel workItemPutModel = default(WorkItemPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -5005,7 +5005,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = updateWorkItemRequest;
+            localVarRequestOptions.Data = workItemPutModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))

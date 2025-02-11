@@ -5,25 +5,25 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | [**StringChangedFieldWithDiffsViewModel**](StringChangedFieldWithDiffsViewModel.md) |  | [optional] 
-**IsDeleted** | [**WorkItemChangedFieldsViewModelIsDeleted**](WorkItemChangedFieldsViewModelIsDeleted.md) |  | 
-**ProjectId** | [**WorkItemChangedFieldsViewModelProjectId**](WorkItemChangedFieldsViewModelProjectId.md) |  | 
-**IsAutomated** | [**WorkItemChangedFieldsViewModelIsDeleted**](WorkItemChangedFieldsViewModelIsDeleted.md) |  | 
-**SectionId** | [**WorkItemChangedFieldsViewModelProjectId**](WorkItemChangedFieldsViewModelProjectId.md) |  | 
+**IsDeleted** | [**BooleanChangedFieldViewModel**](BooleanChangedFieldViewModel.md) |  | 
+**ProjectId** | [**GuidChangedFieldViewModel**](GuidChangedFieldViewModel.md) |  | 
+**IsAutomated** | [**BooleanChangedFieldViewModel**](BooleanChangedFieldViewModel.md) |  | 
+**SectionId** | [**GuidChangedFieldViewModel**](GuidChangedFieldViewModel.md) |  | 
 **Description** | [**StringChangedFieldWithDiffsViewModel**](StringChangedFieldWithDiffsViewModel.md) |  | [optional] 
-**State** | [**WorkItemChangedFieldsViewModelState**](WorkItemChangedFieldsViewModelState.md) |  | 
-**Priority** | [**WorkItemChangedFieldsViewModelState**](WorkItemChangedFieldsViewModelState.md) |  | 
-**Duration** | [**WorkItemChangedFieldsViewModelDuration**](WorkItemChangedFieldsViewModelDuration.md) |  | 
+**State** | [**StringChangedFieldViewModel**](StringChangedFieldViewModel.md) |  | 
+**Priority** | [**StringChangedFieldViewModel**](StringChangedFieldViewModel.md) |  | 
+**Duration** | [**Int32ChangedFieldViewModel**](Int32ChangedFieldViewModel.md) |  | 
 **Attributes** | [**Dictionary&lt;string, WorkItemChangedAttributeViewModel&gt;**](WorkItemChangedAttributeViewModel.md) |  | 
-**Steps** | [**WorkItemChangedFieldsViewModelSteps**](WorkItemChangedFieldsViewModelSteps.md) |  | 
-**PreconditionSteps** | [**WorkItemChangedFieldsViewModelSteps**](WorkItemChangedFieldsViewModelSteps.md) |  | 
-**PostconditionSteps** | [**WorkItemChangedFieldsViewModelSteps**](WorkItemChangedFieldsViewModelSteps.md) |  | 
-**AutoTests** | [**WorkItemChangedFieldsViewModelAutoTests**](WorkItemChangedFieldsViewModelAutoTests.md) |  | 
-**Attachments** | [**WorkItemChangedFieldsViewModelAttachments**](WorkItemChangedFieldsViewModelAttachments.md) |  | 
-**Tags** | [**WorkItemChangedFieldsViewModelTags**](WorkItemChangedFieldsViewModelTags.md) |  | 
-**Links** | [**WorkItemChangedFieldsViewModelLinks**](WorkItemChangedFieldsViewModelLinks.md) |  | 
-**GlobalId** | [**WorkItemChangedFieldsViewModelGlobalId**](WorkItemChangedFieldsViewModelGlobalId.md) |  | 
-**VersionNumber** | [**WorkItemChangedFieldsViewModelDuration**](WorkItemChangedFieldsViewModelDuration.md) |  | 
-**EntityTypeName** | [**WorkItemChangedFieldsViewModelState**](WorkItemChangedFieldsViewModelState.md) |  | 
+**Steps** | [**WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel**](WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel.md) |  | 
+**PreconditionSteps** | [**WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel**](WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel.md) |  | 
+**PostconditionSteps** | [**WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel**](WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel.md) |  | 
+**AutoTests** | [**AutoTestChangeViewModelArrayChangedFieldViewModel**](AutoTestChangeViewModelArrayChangedFieldViewModel.md) |  | 
+**Attachments** | [**AttachmentChangeViewModelArrayChangedFieldViewModel**](AttachmentChangeViewModelArrayChangedFieldViewModel.md) |  | 
+**Tags** | [**StringArrayChangedFieldViewModel**](StringArrayChangedFieldViewModel.md) |  | 
+**Links** | [**WorkItemLinkChangeViewModelArrayChangedFieldViewModel**](WorkItemLinkChangeViewModelArrayChangedFieldViewModel.md) |  | 
+**GlobalId** | [**Int64ChangedFieldViewModel**](Int64ChangedFieldViewModel.md) |  | 
+**VersionNumber** | [**Int32ChangedFieldViewModel**](Int32ChangedFieldViewModel.md) |  | 
+**EntityTypeName** | [**StringChangedFieldViewModel**](StringChangedFieldViewModel.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

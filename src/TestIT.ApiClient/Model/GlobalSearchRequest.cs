@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// GlobalSearchRequest
     /// </summary>
     [DataContract(Name = "GlobalSearchRequest")]
-    public partial class GlobalSearchRequest : IEquatable<GlobalSearchRequest>, IValidatableObject
+    public partial class GlobalSearchRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GlobalSearchRequest" /> class.
@@ -107,76 +107,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as GlobalSearchRequest);
-        }
-
-        /// <summary>
-        /// Returns true if GlobalSearchRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of GlobalSearchRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(GlobalSearchRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Query == input.Query ||
-                    (this.Query != null &&
-                    this.Query.Equals(input.Query))
-                ) && 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                ) && 
-                (
-                    this.Take == input.Take ||
-                    this.Take.Equals(input.Take)
-                ) && 
-                (
-                    this.Skip == input.Skip ||
-                    this.Skip.Equals(input.Skip)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Query != null)
-                {
-                    hashCode = (hashCode * 59) + this.Query.GetHashCode();
-                }
-                if (this.ResourceType != null)
-                {
-                    hashCode = (hashCode * 59) + this.ResourceType.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Take.GetHashCode();
-                hashCode = (hashCode * 59) + this.Skip.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

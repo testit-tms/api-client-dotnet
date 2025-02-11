@@ -30,12 +30,13 @@ namespace TestIT.ApiClient.Model
     /// CustomAttributeModel
     /// </summary>
     [DataContract(Name = "CustomAttributeModel")]
-    public partial class CustomAttributeModel : IEquatable<CustomAttributeModel>, IValidatableObject
+    public partial class CustomAttributeModel : IValidatableObject
     {
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Type of the attribute
         /// </summary>
+        /// <value>Type of the attribute</value>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public CustomAttributeTypesEnum Type { get; set; }
         /// <summary>
@@ -48,7 +49,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="id">Unique ID of the attribute (required).</param>
         /// <param name="options">Collection of the attribute options     Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only (required).</param>
-        /// <param name="type">type (required).</param>
+        /// <param name="type">Type of the attribute (required).</param>
         /// <param name="isDeleted">Indicates if the attribute is deleted (required).</param>
         /// <param name="name">Name of the attribute (required).</param>
         /// <param name="isEnabled">Indicates if the attribute is enabled (required).</param>
@@ -155,112 +156,22 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CustomAttributeModel);
-        }
-
-        /// <summary>
-        /// Returns true if CustomAttributeModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CustomAttributeModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CustomAttributeModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Options == input.Options ||
-                    this.Options != null &&
-                    input.Options != null &&
-                    this.Options.SequenceEqual(input.Options)
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    this.Type.Equals(input.Type)
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    this.IsDeleted.Equals(input.IsDeleted)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.IsEnabled == input.IsEnabled ||
-                    this.IsEnabled.Equals(input.IsEnabled)
-                ) && 
-                (
-                    this.IsRequired == input.IsRequired ||
-                    this.IsRequired.Equals(input.IsRequired)
-                ) && 
-                (
-                    this.IsGlobal == input.IsGlobal ||
-                    this.IsGlobal.Equals(input.IsGlobal)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.Options != null)
-                {
-                    hashCode = (hashCode * 59) + this.Options.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsEnabled.GetHashCode();
-                hashCode = (hashCode * 59) + this.IsRequired.GetHashCode();
-                hashCode = (hashCode * 59) + this.IsGlobal.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
             }
 
             // Name (string) minLength
             if (this.Name != null && this.Name.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
             }
 
             yield break;

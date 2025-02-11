@@ -18,6 +18,7 @@ using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Net.Http;
+using System.Net.Security;
 
 namespace TestIT.ApiClient.Client
 {
@@ -32,7 +33,7 @@ namespace TestIT.ApiClient.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "3.2.0";
+        public const string Version = "3.2.1";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -70,6 +71,8 @@ namespace TestIT.ApiClient.Client
         /// </summary>
         private string _basePath;
 
+        private bool _useDefaultCredentials = false;
+
         /// <summary>
         /// Gets or sets the API key based on the authentication name.
         /// This is the key and value comprising the "secret" for accessing an API.
@@ -105,11 +108,11 @@ namespace TestIT.ApiClient.Client
         /// <summary>
         /// Initializes a new instance of the <see cref="Configuration" /> class
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
         public Configuration()
         {
             Proxy = null;
-            UserAgent = WebUtility.UrlEncode("OpenAPI-Generator/3.2.0/csharp");
+            UserAgent = WebUtility.UrlEncode("OpenAPI-Generator/3.2.1/csharp");
             BasePath = "http://localhost";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -134,7 +137,7 @@ namespace TestIT.ApiClient.Client
         /// <summary>
         /// Initializes a new instance of the <see cref="Configuration" /> class
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
         public Configuration(
             IDictionary<string, string> defaultHeaders,
             IDictionary<string, string> apiKey,
@@ -175,9 +178,19 @@ namespace TestIT.ApiClient.Client
         /// <summary>
         /// Gets or sets the base path for API access.
         /// </summary>
-        public virtual string BasePath {
+        public virtual string BasePath 
+        {
             get { return _basePath; }
             set { _basePath = value; }
+        }
+
+        /// <summary>
+        /// Determine whether or not the "default credentials" (e.g. the user account under which the current process is running) will be sent along to the server. The default is false.
+        /// </summary>
+        public virtual bool UseDefaultCredentials
+        {
+            get { return _useDefaultCredentials; }
+            set { _useDefaultCredentials = value; }
         }
 
         /// <summary>
@@ -444,7 +457,7 @@ namespace TestIT.ApiClient.Client
         /// <return>The operation server URL.</return>
         public string GetOperationServerUrl(string operation, int index, Dictionary<string, string> inputVariables)
         {
-            if (OperationServers.TryGetValue(operation, out var operationServer))
+            if (operation != null && OperationServers.TryGetValue(operation, out var operationServer))
             {
                 return GetServerUrl(operationServer, index, inputVariables);
             }
@@ -503,6 +516,11 @@ namespace TestIT.ApiClient.Client
 
             return url;
         }
+        
+        /// <summary>
+        /// Gets and Sets the RemoteCertificateValidationCallback
+        /// </summary>
+        public RemoteCertificateValidationCallback RemoteCertificateValidationCallback { get; set; }
 
         #endregion Properties
 
@@ -517,7 +535,7 @@ namespace TestIT.ApiClient.Client
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: v2.0\n";
-            report += "    SDK Package Version: 3.2.0\n";
+            report += "    SDK Package Version: 3.2.1\n";
 
             return report;
         }
@@ -579,6 +597,8 @@ namespace TestIT.ApiClient.Client
                 TempFolderPath = second.TempFolderPath ?? first.TempFolderPath,
                 DateTimeFormat = second.DateTimeFormat ?? first.DateTimeFormat,
                 ClientCertificates = second.ClientCertificates ?? first.ClientCertificates,
+                UseDefaultCredentials = second.UseDefaultCredentials,
+                RemoteCertificateValidationCallback = second.RemoteCertificateValidationCallback ?? first.RemoteCertificateValidationCallback,
             };
             return config;
         }

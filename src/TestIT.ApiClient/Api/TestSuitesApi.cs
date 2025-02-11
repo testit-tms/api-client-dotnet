@@ -32,9 +32,9 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal identifier</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
+        /// <param name="workItemSelectModel">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
         /// <returns></returns>
-        void AddTestPointsToTestSuite(Guid id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest));
+        void AddTestPointsToTestSuite(Guid id, WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel));
 
         /// <summary>
         /// Add test-points to test suite
@@ -44,9 +44,9 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal identifier</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
+        /// <param name="workItemSelectModel">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> AddTestPointsToTestSuiteWithHttpInfo(Guid id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest));
+        ApiResponse<Object> AddTestPointsToTestSuiteWithHttpInfo(Guid id, WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel));
         /// <summary>
         /// Patch test suite
         /// </summary>
@@ -112,9 +112,9 @@ namespace TestIT.ApiClient.Api
         /// Create test suite
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TestSuitesPostRequest"> (optional)</param>
+        /// <param name="testSuiteV2PostModel"> (optional)</param>
         /// <returns>TestSuiteV2GetModel</returns>
-        TestSuiteV2GetModel ApiV2TestSuitesPost(ApiV2TestSuitesPostRequest apiV2TestSuitesPostRequest = default(ApiV2TestSuitesPostRequest));
+        TestSuiteV2GetModel ApiV2TestSuitesPost(TestSuiteV2PostModel testSuiteV2PostModel = default(TestSuiteV2PostModel));
 
         /// <summary>
         /// Create test suite
@@ -123,16 +123,16 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TestSuitesPostRequest"> (optional)</param>
+        /// <param name="testSuiteV2PostModel"> (optional)</param>
         /// <returns>ApiResponse of TestSuiteV2GetModel</returns>
-        ApiResponse<TestSuiteV2GetModel> ApiV2TestSuitesPostWithHttpInfo(ApiV2TestSuitesPostRequest apiV2TestSuitesPostRequest = default(ApiV2TestSuitesPostRequest));
+        ApiResponse<TestSuiteV2GetModel> ApiV2TestSuitesPostWithHttpInfo(TestSuiteV2PostModel testSuiteV2PostModel = default(TestSuiteV2PostModel));
         /// <summary>
         /// Edit test suite
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TestSuitesPutRequest"> (optional)</param>
+        /// <param name="testSuiteV2PutModel"> (optional)</param>
         /// <returns></returns>
-        void ApiV2TestSuitesPut(ApiV2TestSuitesPutRequest apiV2TestSuitesPutRequest = default(ApiV2TestSuitesPutRequest));
+        void ApiV2TestSuitesPut(TestSuiteV2PutModel testSuiteV2PutModel = default(TestSuiteV2PutModel));
 
         /// <summary>
         /// Edit test suite
@@ -141,9 +141,9 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TestSuitesPutRequest"> (optional)</param>
+        /// <param name="testSuiteV2PutModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2TestSuitesPutWithHttpInfo(ApiV2TestSuitesPutRequest apiV2TestSuitesPutRequest = default(ApiV2TestSuitesPutRequest));
+        ApiResponse<Object> ApiV2TestSuitesPutWithHttpInfo(TestSuiteV2PutModel testSuiteV2PutModel = default(TestSuiteV2PutModel));
         /// <summary>
         /// Delete TestSuite
         /// </summary>
@@ -262,10 +262,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchWorkItemsRequest"> (optional)</param>
+        /// <param name="testSuiteWorkItemsSearchModel"> (optional)</param>
         /// <returns>List&lt;WorkItemShortModel&gt;</returns>
         [Obsolete]
-        List<WorkItemShortModel> SearchWorkItems(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchWorkItemsRequest searchWorkItemsRequest = default(SearchWorkItemsRequest));
+        List<WorkItemShortModel> SearchWorkItems(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestSuiteWorkItemsSearchModel testSuiteWorkItemsSearchModel = default(TestSuiteWorkItemsSearchModel));
 
         /// <summary>
         /// Search WorkItems
@@ -280,10 +280,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchWorkItemsRequest"> (optional)</param>
+        /// <param name="testSuiteWorkItemsSearchModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;WorkItemShortModel&gt;</returns>
         [Obsolete]
-        ApiResponse<List<WorkItemShortModel>> SearchWorkItemsWithHttpInfo(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchWorkItemsRequest searchWorkItemsRequest = default(SearchWorkItemsRequest));
+        ApiResponse<List<WorkItemShortModel>> SearchWorkItemsWithHttpInfo(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestSuiteWorkItemsSearchModel testSuiteWorkItemsSearchModel = default(TestSuiteWorkItemsSearchModel));
         /// <summary>
         /// Set Configurations By TestSuite Id
         /// </summary>
@@ -324,10 +324,10 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal identifier</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
+        /// <param name="workItemSelectModel">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task AddTestPointsToTestSuiteAsync(Guid id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task AddTestPointsToTestSuiteAsync(Guid id, WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Add test-points to test suite
@@ -337,10 +337,10 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal identifier</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
+        /// <param name="workItemSelectModel">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> AddTestPointsToTestSuiteWithHttpInfoAsync(Guid id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> AddTestPointsToTestSuiteWithHttpInfoAsync(Guid id, WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Patch test suite
         /// </summary>
@@ -352,7 +352,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="operation"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2TestSuitesIdPatchAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2TestSuitesIdPatchAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Patch test suite
@@ -365,7 +365,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="operation"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestSuitesIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestSuitesIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Refresh test suite. Only dynamic test suites are supported by this method
         /// </summary>
@@ -376,7 +376,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test Suite internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2TestSuitesIdRefreshPostAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2TestSuitesIdRefreshPostAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Refresh test suite. Only dynamic test suites are supported by this method
@@ -388,7 +388,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test Suite internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestSuitesIdRefreshPostWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestSuitesIdRefreshPostWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Set work items for test suite
         /// </summary>
@@ -400,7 +400,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="requestBody"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2TestSuitesIdWorkItemsPostAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2TestSuitesIdWorkItemsPostAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Set work items for test suite
@@ -413,7 +413,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="requestBody"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestSuitesIdWorkItemsPostWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestSuitesIdWorkItemsPostWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Create test suite
         /// </summary>
@@ -421,10 +421,10 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TestSuitesPostRequest"> (optional)</param>
+        /// <param name="testSuiteV2PostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestSuiteV2GetModel</returns>
-        System.Threading.Tasks.Task<TestSuiteV2GetModel> ApiV2TestSuitesPostAsync(ApiV2TestSuitesPostRequest apiV2TestSuitesPostRequest = default(ApiV2TestSuitesPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TestSuiteV2GetModel> ApiV2TestSuitesPostAsync(TestSuiteV2PostModel testSuiteV2PostModel = default(TestSuiteV2PostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create test suite
@@ -433,10 +433,10 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TestSuitesPostRequest"> (optional)</param>
+        /// <param name="testSuiteV2PostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestSuiteV2GetModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TestSuiteV2GetModel>> ApiV2TestSuitesPostWithHttpInfoAsync(ApiV2TestSuitesPostRequest apiV2TestSuitesPostRequest = default(ApiV2TestSuitesPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TestSuiteV2GetModel>> ApiV2TestSuitesPostWithHttpInfoAsync(TestSuiteV2PostModel testSuiteV2PostModel = default(TestSuiteV2PostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Edit test suite
         /// </summary>
@@ -444,10 +444,10 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TestSuitesPutRequest"> (optional)</param>
+        /// <param name="testSuiteV2PutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2TestSuitesPutAsync(ApiV2TestSuitesPutRequest apiV2TestSuitesPutRequest = default(ApiV2TestSuitesPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2TestSuitesPutAsync(TestSuiteV2PutModel testSuiteV2PutModel = default(TestSuiteV2PutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Edit test suite
@@ -456,10 +456,10 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TestSuitesPutRequest"> (optional)</param>
+        /// <param name="testSuiteV2PutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestSuitesPutWithHttpInfoAsync(ApiV2TestSuitesPutRequest apiV2TestSuitesPutRequest = default(ApiV2TestSuitesPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestSuitesPutWithHttpInfoAsync(TestSuiteV2PutModel testSuiteV2PutModel = default(TestSuiteV2PutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete TestSuite
         /// </summary>
@@ -470,7 +470,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteTestSuiteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteTestSuiteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete TestSuite
@@ -482,7 +482,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteTestSuiteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteTestSuiteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get Configurations By Id
         /// </summary>
@@ -493,7 +493,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ConfigurationModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ConfigurationModel>> GetConfigurationsByTestSuiteIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ConfigurationModel>> GetConfigurationsByTestSuiteIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Configurations By Id
@@ -505,7 +505,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ConfigurationModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ConfigurationModel>>> GetConfigurationsByTestSuiteIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ConfigurationModel>>> GetConfigurationsByTestSuiteIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get TestPoints By Id
         /// </summary>
@@ -516,7 +516,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestPointByTestSuiteModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TestPointByTestSuiteModel>> GetTestPointsByIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TestPointByTestSuiteModel>> GetTestPointsByIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get TestPoints By Id
@@ -528,7 +528,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPointByTestSuiteModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestPointByTestSuiteModel>>> GetTestPointsByIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TestPointByTestSuiteModel>>> GetTestPointsByIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get TestResults By Id
         /// </summary>
@@ -539,7 +539,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestResultV2ShortModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TestResultV2ShortModel>> GetTestResultsByIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TestResultV2ShortModel>> GetTestResultsByIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get TestResults By Id
@@ -551,7 +551,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestResultV2ShortModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestResultV2ShortModel>>> GetTestResultsByIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TestResultV2ShortModel>>> GetTestResultsByIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get TestSuite by Id
         /// </summary>
@@ -562,7 +562,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestSuiteV2GetModel</returns>
-        System.Threading.Tasks.Task<TestSuiteV2GetModel> GetTestSuiteByIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TestSuiteV2GetModel> GetTestSuiteByIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get TestSuite by Id
@@ -574,7 +574,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestSuiteV2GetModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TestSuiteV2GetModel>> GetTestSuiteByIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TestSuiteV2GetModel>> GetTestSuiteByIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Search WorkItems
         /// </summary>
@@ -588,11 +588,11 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchWorkItemsRequest"> (optional)</param>
+        /// <param name="testSuiteWorkItemsSearchModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WorkItemShortModel&gt;</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<List<WorkItemShortModel>> SearchWorkItemsAsync(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchWorkItemsRequest searchWorkItemsRequest = default(SearchWorkItemsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<WorkItemShortModel>> SearchWorkItemsAsync(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestSuiteWorkItemsSearchModel testSuiteWorkItemsSearchModel = default(TestSuiteWorkItemsSearchModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Search WorkItems
@@ -607,11 +607,11 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchWorkItemsRequest"> (optional)</param>
+        /// <param name="testSuiteWorkItemsSearchModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<List<WorkItemShortModel>>> SearchWorkItemsWithHttpInfoAsync(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchWorkItemsRequest searchWorkItemsRequest = default(SearchWorkItemsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<WorkItemShortModel>>> SearchWorkItemsWithHttpInfoAsync(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestSuiteWorkItemsSearchModel testSuiteWorkItemsSearchModel = default(TestSuiteWorkItemsSearchModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Set Configurations By TestSuite Id
         /// </summary>
@@ -623,7 +623,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="requestBody">Collection of configuration identifiers\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task SetConfigurationsByTestSuiteIdAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task SetConfigurationsByTestSuiteIdAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Set Configurations By TestSuite Id
@@ -636,7 +636,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="requestBody">Collection of configuration identifiers\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SetConfigurationsByTestSuiteIdWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> SetConfigurationsByTestSuiteIdWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -855,11 +855,11 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal identifier</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
+        /// <param name="workItemSelectModel">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
         /// <returns></returns>
-        public void AddTestPointsToTestSuite(Guid id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest))
+        public void AddTestPointsToTestSuite(Guid id, WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel))
         {
-            AddTestPointsToTestSuiteWithHttpInfo(id, apiV2ProjectsProjectIdWorkItemsSearchPostRequest);
+            AddTestPointsToTestSuiteWithHttpInfo(id, workItemSelectModel);
         }
 
         /// <summary>
@@ -867,9 +867,9 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal identifier</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
+        /// <param name="workItemSelectModel">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> AddTestPointsToTestSuiteWithHttpInfo(Guid id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<Object> AddTestPointsToTestSuiteWithHttpInfo(Guid id, WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -889,7 +889,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = apiV2ProjectsProjectIdWorkItemsSearchPostRequest;
+            localVarRequestOptions.Data = workItemSelectModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -914,12 +914,12 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal identifier</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
+        /// <param name="workItemSelectModel">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task AddTestPointsToTestSuiteAsync(Guid id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task AddTestPointsToTestSuiteAsync(Guid id, WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await AddTestPointsToTestSuiteWithHttpInfoAsync(id, apiV2ProjectsProjectIdWorkItemsSearchPostRequest, cancellationToken).ConfigureAwait(false);
+            await AddTestPointsToTestSuiteWithHttpInfoAsync(id, workItemSelectModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -927,10 +927,10 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal identifier</param>
-        /// <param name="apiV2ProjectsProjectIdWorkItemsSearchPostRequest">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
+        /// <param name="workItemSelectModel">Filter object to retrieve work items for test-suite&#39;s project (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> AddTestPointsToTestSuiteWithHttpInfoAsync(Guid id, ApiV2ProjectsProjectIdWorkItemsSearchPostRequest apiV2ProjectsProjectIdWorkItemsSearchPostRequest = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> AddTestPointsToTestSuiteWithHttpInfoAsync(Guid id, WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -952,7 +952,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = apiV2ProjectsProjectIdWorkItemsSearchPostRequest;
+            localVarRequestOptions.Data = workItemSelectModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1040,7 +1040,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="operation"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2TestSuitesIdPatchAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2TestSuitesIdPatchAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await ApiV2TestSuitesIdPatchWithHttpInfoAsync(id, operation, cancellationToken).ConfigureAwait(false);
         }
@@ -1053,7 +1053,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="operation"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2TestSuitesIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2TestSuitesIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1158,7 +1158,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test Suite internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2TestSuitesIdRefreshPostAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2TestSuitesIdRefreshPostAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await ApiV2TestSuitesIdRefreshPostWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
@@ -1170,7 +1170,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test Suite internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2TestSuitesIdRefreshPostWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2TestSuitesIdRefreshPostWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1278,7 +1278,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="requestBody"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2TestSuitesIdWorkItemsPostAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2TestSuitesIdWorkItemsPostAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await ApiV2TestSuitesIdWorkItemsPostWithHttpInfoAsync(id, requestBody, cancellationToken).ConfigureAwait(false);
         }
@@ -1291,7 +1291,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="requestBody"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2TestSuitesIdWorkItemsPostWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2TestSuitesIdWorkItemsPostWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1338,11 +1338,11 @@ namespace TestIT.ApiClient.Api
         /// Create test suite 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TestSuitesPostRequest"> (optional)</param>
+        /// <param name="testSuiteV2PostModel"> (optional)</param>
         /// <returns>TestSuiteV2GetModel</returns>
-        public TestSuiteV2GetModel ApiV2TestSuitesPost(ApiV2TestSuitesPostRequest apiV2TestSuitesPostRequest = default(ApiV2TestSuitesPostRequest))
+        public TestSuiteV2GetModel ApiV2TestSuitesPost(TestSuiteV2PostModel testSuiteV2PostModel = default(TestSuiteV2PostModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<TestSuiteV2GetModel> localVarResponse = ApiV2TestSuitesPostWithHttpInfo(apiV2TestSuitesPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<TestSuiteV2GetModel> localVarResponse = ApiV2TestSuitesPostWithHttpInfo(testSuiteV2PostModel);
             return localVarResponse.Data;
         }
 
@@ -1350,9 +1350,9 @@ namespace TestIT.ApiClient.Api
         /// Create test suite 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TestSuitesPostRequest"> (optional)</param>
+        /// <param name="testSuiteV2PostModel"> (optional)</param>
         /// <returns>ApiResponse of TestSuiteV2GetModel</returns>
-        public TestIT.ApiClient.Client.ApiResponse<TestSuiteV2GetModel> ApiV2TestSuitesPostWithHttpInfo(ApiV2TestSuitesPostRequest apiV2TestSuitesPostRequest = default(ApiV2TestSuitesPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<TestSuiteV2GetModel> ApiV2TestSuitesPostWithHttpInfo(TestSuiteV2PostModel testSuiteV2PostModel = default(TestSuiteV2PostModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1371,7 +1371,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = apiV2TestSuitesPostRequest;
+            localVarRequestOptions.Data = testSuiteV2PostModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1395,12 +1395,12 @@ namespace TestIT.ApiClient.Api
         /// Create test suite 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TestSuitesPostRequest"> (optional)</param>
+        /// <param name="testSuiteV2PostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestSuiteV2GetModel</returns>
-        public async System.Threading.Tasks.Task<TestSuiteV2GetModel> ApiV2TestSuitesPostAsync(ApiV2TestSuitesPostRequest apiV2TestSuitesPostRequest = default(ApiV2TestSuitesPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestSuiteV2GetModel> ApiV2TestSuitesPostAsync(TestSuiteV2PostModel testSuiteV2PostModel = default(TestSuiteV2PostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<TestSuiteV2GetModel> localVarResponse = await ApiV2TestSuitesPostWithHttpInfoAsync(apiV2TestSuitesPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<TestSuiteV2GetModel> localVarResponse = await ApiV2TestSuitesPostWithHttpInfoAsync(testSuiteV2PostModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1408,10 +1408,10 @@ namespace TestIT.ApiClient.Api
         /// Create test suite 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TestSuitesPostRequest"> (optional)</param>
+        /// <param name="testSuiteV2PostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestSuiteV2GetModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TestSuiteV2GetModel>> ApiV2TestSuitesPostWithHttpInfoAsync(ApiV2TestSuitesPostRequest apiV2TestSuitesPostRequest = default(ApiV2TestSuitesPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TestSuiteV2GetModel>> ApiV2TestSuitesPostWithHttpInfoAsync(TestSuiteV2PostModel testSuiteV2PostModel = default(TestSuiteV2PostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1432,7 +1432,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = apiV2TestSuitesPostRequest;
+            localVarRequestOptions.Data = testSuiteV2PostModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1457,20 +1457,20 @@ namespace TestIT.ApiClient.Api
         /// Edit test suite 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TestSuitesPutRequest"> (optional)</param>
+        /// <param name="testSuiteV2PutModel"> (optional)</param>
         /// <returns></returns>
-        public void ApiV2TestSuitesPut(ApiV2TestSuitesPutRequest apiV2TestSuitesPutRequest = default(ApiV2TestSuitesPutRequest))
+        public void ApiV2TestSuitesPut(TestSuiteV2PutModel testSuiteV2PutModel = default(TestSuiteV2PutModel))
         {
-            ApiV2TestSuitesPutWithHttpInfo(apiV2TestSuitesPutRequest);
+            ApiV2TestSuitesPutWithHttpInfo(testSuiteV2PutModel);
         }
 
         /// <summary>
         /// Edit test suite 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TestSuitesPutRequest"> (optional)</param>
+        /// <param name="testSuiteV2PutModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2TestSuitesPutWithHttpInfo(ApiV2TestSuitesPutRequest apiV2TestSuitesPutRequest = default(ApiV2TestSuitesPutRequest))
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2TestSuitesPutWithHttpInfo(TestSuiteV2PutModel testSuiteV2PutModel = default(TestSuiteV2PutModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1489,7 +1489,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = apiV2TestSuitesPutRequest;
+            localVarRequestOptions.Data = testSuiteV2PutModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1513,22 +1513,22 @@ namespace TestIT.ApiClient.Api
         /// Edit test suite 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TestSuitesPutRequest"> (optional)</param>
+        /// <param name="testSuiteV2PutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2TestSuitesPutAsync(ApiV2TestSuitesPutRequest apiV2TestSuitesPutRequest = default(ApiV2TestSuitesPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2TestSuitesPutAsync(TestSuiteV2PutModel testSuiteV2PutModel = default(TestSuiteV2PutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await ApiV2TestSuitesPutWithHttpInfoAsync(apiV2TestSuitesPutRequest, cancellationToken).ConfigureAwait(false);
+            await ApiV2TestSuitesPutWithHttpInfoAsync(testSuiteV2PutModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Edit test suite 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiV2TestSuitesPutRequest"> (optional)</param>
+        /// <param name="testSuiteV2PutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2TestSuitesPutWithHttpInfoAsync(ApiV2TestSuitesPutRequest apiV2TestSuitesPutRequest = default(ApiV2TestSuitesPutRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2TestSuitesPutWithHttpInfoAsync(TestSuiteV2PutModel testSuiteV2PutModel = default(TestSuiteV2PutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1549,7 +1549,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = apiV2TestSuitesPutRequest;
+            localVarRequestOptions.Data = testSuiteV2PutModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1632,7 +1632,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteTestSuiteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteTestSuiteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await DeleteTestSuiteWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
@@ -1644,7 +1644,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteTestSuiteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteTestSuiteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1748,7 +1748,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ConfigurationModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ConfigurationModel>> GetConfigurationsByTestSuiteIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ConfigurationModel>> GetConfigurationsByTestSuiteIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<List<ConfigurationModel>> localVarResponse = await GetConfigurationsByTestSuiteIdWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1761,7 +1761,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ConfigurationModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ConfigurationModel>>> GetConfigurationsByTestSuiteIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ConfigurationModel>>> GetConfigurationsByTestSuiteIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1865,7 +1865,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestPointByTestSuiteModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestPointByTestSuiteModel>> GetTestPointsByIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TestPointByTestSuiteModel>> GetTestPointsByIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<List<TestPointByTestSuiteModel>> localVarResponse = await GetTestPointsByIdWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1878,7 +1878,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPointByTestSuiteModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestPointByTestSuiteModel>>> GetTestPointsByIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestPointByTestSuiteModel>>> GetTestPointsByIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1982,7 +1982,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestResultV2ShortModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestResultV2ShortModel>> GetTestResultsByIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TestResultV2ShortModel>> GetTestResultsByIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<List<TestResultV2ShortModel>> localVarResponse = await GetTestResultsByIdWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1995,7 +1995,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestResultV2ShortModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestResultV2ShortModel>>> GetTestResultsByIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestResultV2ShortModel>>> GetTestResultsByIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2099,7 +2099,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestSuiteV2GetModel</returns>
-        public async System.Threading.Tasks.Task<TestSuiteV2GetModel> GetTestSuiteByIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestSuiteV2GetModel> GetTestSuiteByIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<TestSuiteV2GetModel> localVarResponse = await GetTestSuiteByIdWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2112,7 +2112,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestSuiteV2GetModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TestSuiteV2GetModel>> GetTestSuiteByIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TestSuiteV2GetModel>> GetTestSuiteByIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2163,12 +2163,12 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchWorkItemsRequest"> (optional)</param>
+        /// <param name="testSuiteWorkItemsSearchModel"> (optional)</param>
         /// <returns>List&lt;WorkItemShortModel&gt;</returns>
         [Obsolete]
-        public List<WorkItemShortModel> SearchWorkItems(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchWorkItemsRequest searchWorkItemsRequest = default(SearchWorkItemsRequest))
+        public List<WorkItemShortModel> SearchWorkItems(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestSuiteWorkItemsSearchModel testSuiteWorkItemsSearchModel = default(TestSuiteWorkItemsSearchModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = SearchWorkItemsWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, searchWorkItemsRequest);
+            TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = SearchWorkItemsWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, testSuiteWorkItemsSearchModel);
             return localVarResponse.Data;
         }
 
@@ -2182,10 +2182,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchWorkItemsRequest"> (optional)</param>
+        /// <param name="testSuiteWorkItemsSearchModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;WorkItemShortModel&gt;</returns>
         [Obsolete]
-        public TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>> SearchWorkItemsWithHttpInfo(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchWorkItemsRequest searchWorkItemsRequest = default(SearchWorkItemsRequest))
+        public TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>> SearchWorkItemsWithHttpInfo(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestSuiteWorkItemsSearchModel testSuiteWorkItemsSearchModel = default(TestSuiteWorkItemsSearchModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -2225,7 +2225,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = searchWorkItemsRequest;
+            localVarRequestOptions.Data = testSuiteWorkItemsSearchModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2255,13 +2255,13 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchWorkItemsRequest"> (optional)</param>
+        /// <param name="testSuiteWorkItemsSearchModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WorkItemShortModel&gt;</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<List<WorkItemShortModel>> SearchWorkItemsAsync(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchWorkItemsRequest searchWorkItemsRequest = default(SearchWorkItemsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<WorkItemShortModel>> SearchWorkItemsAsync(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestSuiteWorkItemsSearchModel testSuiteWorkItemsSearchModel = default(TestSuiteWorkItemsSearchModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = await SearchWorkItemsWithHttpInfoAsync(id, skip, take, orderBy, searchField, searchValue, searchWorkItemsRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = await SearchWorkItemsWithHttpInfoAsync(id, skip, take, orderBy, searchField, searchValue, testSuiteWorkItemsSearchModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2275,11 +2275,11 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="searchWorkItemsRequest"> (optional)</param>
+        /// <param name="testSuiteWorkItemsSearchModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>>> SearchWorkItemsWithHttpInfoAsync(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), SearchWorkItemsRequest searchWorkItemsRequest = default(SearchWorkItemsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>>> SearchWorkItemsWithHttpInfoAsync(Guid id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), TestSuiteWorkItemsSearchModel testSuiteWorkItemsSearchModel = default(TestSuiteWorkItemsSearchModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2321,7 +2321,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = searchWorkItemsRequest;
+            localVarRequestOptions.Data = testSuiteWorkItemsSearchModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2409,7 +2409,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="requestBody">Collection of configuration identifiers\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task SetConfigurationsByTestSuiteIdAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task SetConfigurationsByTestSuiteIdAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await SetConfigurationsByTestSuiteIdWithHttpInfoAsync(id, requestBody, cancellationToken).ConfigureAwait(false);
         }
@@ -2422,7 +2422,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="requestBody">Collection of configuration identifiers\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> SetConfigurationsByTestSuiteIdWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> SetConfigurationsByTestSuiteIdWithHttpInfoAsync(Guid id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();

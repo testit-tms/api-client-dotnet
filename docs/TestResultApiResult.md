@@ -18,9 +18,9 @@ Name | Type | Description | Notes
 **TestPointId** | **Guid?** |  | [optional] 
 **TestRunId** | **Guid** |  | 
 **ConfigurationId** | **Guid** |  | 
-**Status** | [**TestResultApiResultStatus**](TestResultApiResultStatus.md) |  | 
+**Status** | [**TestStatusApiResult**](TestStatusApiResult.md) |  | 
 **TestPoint** | [**TestPointShortApiResult**](TestPointShortApiResult.md) |  | [optional] 
-**AutoTest** | [**AutoTestModel**](AutoTestModel.md) |  | [optional] 
+**AutoTest** | [**AutoTestApiResult**](AutoTestApiResult.md) |  | [optional] 
 **AutoTestStepResults** | [**List&lt;AutoTestStepResultsApiResult&gt;**](AutoTestStepResultsApiResult.md) |  | [optional] 
 **SetupResults** | [**List&lt;AutoTestStepResultsApiResult&gt;**](AutoTestStepResultsApiResult.md) |  | [optional] 
 **TeardownResults** | [**List&lt;AutoTestStepResultsApiResult&gt;**](AutoTestStepResultsApiResult.md) |  | [optional] 

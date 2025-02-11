@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// WorkItemVersionModel
     /// </summary>
     [DataContract(Name = "WorkItemVersionModel")]
-    public partial class WorkItemVersionModel : IEquatable<WorkItemVersionModel>, IValidatableObject
+    public partial class WorkItemVersionModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemVersionModel" /> class.
@@ -56,7 +56,9 @@ namespace TestIT.ApiClient.Model
         /// used for versioning changes in workitem
         /// </summary>
         /// <value>used for versioning changes in workitem</value>
-        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
+        /*
+        <example>cbb88fe6-c193-48e9-9e37-323fbc38de5f</example>
+        */
         [DataMember(Name = "versionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid VersionId { get; set; }
 
@@ -64,21 +66,27 @@ namespace TestIT.ApiClient.Model
         /// used for define chronology of workitem state in each version
         /// </summary>
         /// <value>used for define chronology of workitem state in each version</value>
-        /// <example>10</example>
+        /*
+        <example>10</example>
+        */
         [DataMember(Name = "versionNumber", IsRequired = true, EmitDefaultValue = true)]
         public int VersionNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        /// <example>&quot;2025-01-24T10:05:02.127835600Z&quot;</example>
+        /*
+        <example>2025-02-09T16:32:03.068992100Z</example>
+        */
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedById
         /// </summary>
-        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
+        /*
+        <example>cbb88fe6-c193-48e9-9e37-323fbc38de5f</example>
+        */
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
 
@@ -108,80 +116,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as WorkItemVersionModel);
-        }
-
-        /// <summary>
-        /// Returns true if WorkItemVersionModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of WorkItemVersionModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(WorkItemVersionModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.VersionId == input.VersionId ||
-                    (this.VersionId != null &&
-                    this.VersionId.Equals(input.VersionId))
-                ) && 
-                (
-                    this.VersionNumber == input.VersionNumber ||
-                    this.VersionNumber.Equals(input.VersionNumber)
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.ModifiedById == input.ModifiedById ||
-                    (this.ModifiedById != null &&
-                    this.ModifiedById.Equals(input.ModifiedById))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.VersionId != null)
-                {
-                    hashCode = (hashCode * 59) + this.VersionId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.VersionNumber.GetHashCode();
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                if (this.ModifiedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedById.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

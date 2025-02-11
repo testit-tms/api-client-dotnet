@@ -30,12 +30,13 @@ namespace TestIT.ApiClient.Model
     /// LinkModel
     /// </summary>
     [DataContract(Name = "LinkModel")]
-    public partial class LinkModel : IEquatable<LinkModel>, IValidatableObject
+    public partial class LinkModel : IValidatableObject
     {
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Specifies the type of the link.
         /// </summary>
+        /// <value>Specifies the type of the link.</value>
         [DataMember(Name = "type", EmitDefaultValue = true)]
         public LinkType? Type { get; set; }
         /// <summary>
@@ -50,7 +51,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="title">Link name..</param>
         /// <param name="url">Address can be specified without protocol, but necessarily with the domain. (required).</param>
         /// <param name="description">Link description..</param>
-        /// <param name="type">type.</param>
+        /// <param name="type">Specifies the type of the link..</param>
         /// <param name="hasInfo">hasInfo (required).</param>
         public LinkModel(Guid? id = default(Guid?), string title = default(string), string url = default(string), string description = default(string), LinkType? type = default(LinkType?), bool hasInfo = default(bool))
         {
@@ -70,7 +71,9 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;fb516995-884f-41a9-b5a8-a9c663b12497&quot;</example>
+        /*
+        <example>cbb88fe6-c193-48e9-9e37-323fbc38de5f</example>
+        */
         [DataMember(Name = "id", EmitDefaultValue = true)]
         public Guid? Id { get; set; }
 
@@ -129,99 +132,16 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as LinkModel);
-        }
-
-        /// <summary>
-        /// Returns true if LinkModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of LinkModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(LinkModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Title == input.Title ||
-                    (this.Title != null &&
-                    this.Title.Equals(input.Title))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    this.Type.Equals(input.Type)
-                ) && 
-                (
-                    this.HasInfo == input.HasInfo ||
-                    this.HasInfo.Equals(input.HasInfo)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.Title != null)
-                {
-                    hashCode = (hashCode * 59) + this.Title.GetHashCode();
-                }
-                if (this.Url != null)
-                {
-                    hashCode = (hashCode * 59) + this.Url.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                hashCode = (hashCode * 59) + this.HasInfo.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Url (string) minLength
             if (this.Url != null && this.Url.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Url, length must be greater than 1.", new [] { "Url" });
+                yield return new ValidationResult("Invalid value for Url, length must be greater than 1.", new [] { "Url" });
             }
 
             yield break;

@@ -30,12 +30,13 @@ namespace TestIT.ApiClient.Model
     /// TestSuiteTestPlanApiModel
     /// </summary>
     [DataContract(Name = "TestSuiteTestPlanApiModel")]
-    public partial class TestSuiteTestPlanApiModel : IEquatable<TestSuiteTestPlanApiModel>, IValidatableObject
+    public partial class TestSuiteTestPlanApiModel : IValidatableObject
     {
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Type of the test suite
         /// </summary>
+        /// <value>Type of the test suite</value>
         [DataMember(Name = "type", EmitDefaultValue = true)]
         public TestSuiteType? Type { get; set; }
         /// <summary>
@@ -48,10 +49,10 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="name">Test suite nane (required).</param>
         /// <param name="configurationIds">Configuration identifiers. Empty configurations means using default configurations.</param>
-        /// <param name="type">type.</param>
+        /// <param name="type">Type of the test suite.</param>
         /// <param name="saveStructure">Indicates if the test suite retains section tree structure.</param>
-        /// <param name="workItemsSelector">workItemsSelector (required).</param>
-        public TestSuiteTestPlanApiModel(string name = default(string), List<Guid> configurationIds = default(List<Guid>), TestSuiteType? type = default(TestSuiteType?), bool? saveStructure = default(bool?), ApiV2ProjectsProjectIdWorkItemsSearchPostRequest workItemsSelector = default(ApiV2ProjectsProjectIdWorkItemsSearchPostRequest))
+        /// <param name="workItemsSelector">Model containing options to filter work items (required).</param>
+        public TestSuiteTestPlanApiModel(string name = default(string), List<Guid> configurationIds = default(List<Guid>), TestSuiteType? type = default(TestSuiteType?), bool? saveStructure = default(bool?), WorkItemSelectModel workItemsSelector = default(WorkItemSelectModel))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -92,10 +93,11 @@ namespace TestIT.ApiClient.Model
         public bool? SaveStructure { get; set; }
 
         /// <summary>
-        /// Gets or Sets WorkItemsSelector
+        /// Model containing options to filter work items
         /// </summary>
+        /// <value>Model containing options to filter work items</value>
         [DataMember(Name = "workItemsSelector", IsRequired = true, EmitDefaultValue = true)]
-        public ApiV2ProjectsProjectIdWorkItemsSearchPostRequest WorkItemsSelector { get; set; }
+        public WorkItemSelectModel WorkItemsSelector { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -124,101 +126,22 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestSuiteTestPlanApiModel);
-        }
-
-        /// <summary>
-        /// Returns true if TestSuiteTestPlanApiModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestSuiteTestPlanApiModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestSuiteTestPlanApiModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ConfigurationIds == input.ConfigurationIds ||
-                    this.ConfigurationIds != null &&
-                    input.ConfigurationIds != null &&
-                    this.ConfigurationIds.SequenceEqual(input.ConfigurationIds)
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    this.Type.Equals(input.Type)
-                ) && 
-                (
-                    this.SaveStructure == input.SaveStructure ||
-                    (this.SaveStructure != null &&
-                    this.SaveStructure.Equals(input.SaveStructure))
-                ) && 
-                (
-                    this.WorkItemsSelector == input.WorkItemsSelector ||
-                    (this.WorkItemsSelector != null &&
-                    this.WorkItemsSelector.Equals(input.WorkItemsSelector))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.ConfigurationIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.ConfigurationIds.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                if (this.SaveStructure != null)
-                {
-                    hashCode = (hashCode * 59) + this.SaveStructure.GetHashCode();
-                }
-                if (this.WorkItemsSelector != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkItemsSelector.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
             }
 
             // Name (string) minLength
             if (this.Name != null && this.Name.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
             }
 
             yield break;

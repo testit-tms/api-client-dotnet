@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// GetExternalFormApiResult
     /// </summary>
     [DataContract(Name = "GetExternalFormApiResult")]
-    public partial class GetExternalFormApiResult : IEquatable<GetExternalFormApiResult>, IValidatableObject
+    public partial class GetExternalFormApiResult : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetExternalFormApiResult" /> class.
@@ -41,8 +41,8 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="GetExternalFormApiResult" /> class.
         /// </summary>
         /// <param name="testResultIds">Linked test result IDs (required).</param>
-        /// <param name="form">form (required).</param>
-        public GetExternalFormApiResult(List<Guid> testResultIds = default(List<Guid>), GetExternalFormApiResultForm form = default(GetExternalFormApiResultForm))
+        /// <param name="form">External form definition (required).</param>
+        public GetExternalFormApiResult(List<Guid> testResultIds = default(List<Guid>), ExternalFormModel form = default(ExternalFormModel))
         {
             // to ensure "testResultIds" is required (not null)
             if (testResultIds == null)
@@ -66,10 +66,11 @@ namespace TestIT.ApiClient.Model
         public List<Guid> TestResultIds { get; set; }
 
         /// <summary>
-        /// Gets or Sets Form
+        /// External form definition
         /// </summary>
+        /// <value>External form definition</value>
         [DataMember(Name = "form", IsRequired = true, EmitDefaultValue = true)]
-        public GetExternalFormApiResultForm Form { get; set; }
+        public ExternalFormModel Form { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -95,67 +96,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as GetExternalFormApiResult);
-        }
-
-        /// <summary>
-        /// Returns true if GetExternalFormApiResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of GetExternalFormApiResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(GetExternalFormApiResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.TestResultIds == input.TestResultIds ||
-                    this.TestResultIds != null &&
-                    input.TestResultIds != null &&
-                    this.TestResultIds.SequenceEqual(input.TestResultIds)
-                ) && 
-                (
-                    this.Form == input.Form ||
-                    (this.Form != null &&
-                    this.Form.Equals(input.Form))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.TestResultIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestResultIds.GetHashCode();
-                }
-                if (this.Form != null)
-                {
-                    hashCode = (hashCode * 59) + this.Form.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

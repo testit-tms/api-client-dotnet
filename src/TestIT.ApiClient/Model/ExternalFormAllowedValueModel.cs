@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// ExternalFormAllowedValueModel
     /// </summary>
     [DataContract(Name = "ExternalFormAllowedValueModel")]
-    public partial class ExternalFormAllowedValueModel : IEquatable<ExternalFormAllowedValueModel>, IValidatableObject
+    public partial class ExternalFormAllowedValueModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ExternalFormAllowedValueModel" /> class.
@@ -102,80 +102,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ExternalFormAllowedValueModel);
-        }
-
-        /// <summary>
-        /// Returns true if ExternalFormAllowedValueModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ExternalFormAllowedValueModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ExternalFormAllowedValueModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ParentId == input.ParentId ||
-                    (this.ParentId != null &&
-                    this.ParentId.Equals(input.ParentId))
-                ) && 
-                (
-                    this.HasChildren == input.HasChildren ||
-                    this.HasChildren.Equals(input.HasChildren)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.ParentId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParentId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.HasChildren.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

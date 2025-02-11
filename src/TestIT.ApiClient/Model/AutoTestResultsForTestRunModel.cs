@@ -30,12 +30,13 @@ namespace TestIT.ApiClient.Model
     /// AutoTestResultsForTestRunModel
     /// </summary>
     [DataContract(Name = "AutoTestResultsForTestRunModel")]
-    public partial class AutoTestResultsForTestRunModel : IEquatable<AutoTestResultsForTestRunModel>, IValidatableObject
+    public partial class AutoTestResultsForTestRunModel : IValidatableObject
     {
 
         /// <summary>
-        /// Gets or Sets Outcome
+        /// Specifies the result of the autotest execution.
         /// </summary>
+        /// <value>Specifies the result of the autotest execution.</value>
         [DataMember(Name = "outcome", IsRequired = true, EmitDefaultValue = true)]
         public AvailableTestResultOutcome Outcome { get; set; }
         /// <summary>
@@ -50,7 +51,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="links">Specifies the links in the autotest..</param>
         /// <param name="failureReasonNames">Specifies the cause of autotest failure..</param>
         /// <param name="autoTestExternalId">Specifies the external ID of the autotest, which was specified when the test run was created. (required).</param>
-        /// <param name="outcome">outcome (required).</param>
+        /// <param name="outcome">Specifies the result of the autotest execution. (required).</param>
         /// <param name="message">A comment for the result..</param>
         /// <param name="traces">An extended comment or a stack trace..</param>
         /// <param name="startedOn">Test run start date..</param>
@@ -230,213 +231,28 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AutoTestResultsForTestRunModel);
-        }
-
-        /// <summary>
-        /// Returns true if AutoTestResultsForTestRunModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AutoTestResultsForTestRunModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AutoTestResultsForTestRunModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.ConfigurationId == input.ConfigurationId ||
-                    (this.ConfigurationId != null &&
-                    this.ConfigurationId.Equals(input.ConfigurationId))
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    this.Links != null &&
-                    input.Links != null &&
-                    this.Links.SequenceEqual(input.Links)
-                ) && 
-                (
-                    this.FailureReasonNames == input.FailureReasonNames ||
-                    this.FailureReasonNames != null &&
-                    input.FailureReasonNames != null &&
-                    this.FailureReasonNames.SequenceEqual(input.FailureReasonNames)
-                ) && 
-                (
-                    this.AutoTestExternalId == input.AutoTestExternalId ||
-                    (this.AutoTestExternalId != null &&
-                    this.AutoTestExternalId.Equals(input.AutoTestExternalId))
-                ) && 
-                (
-                    this.Outcome == input.Outcome ||
-                    this.Outcome.Equals(input.Outcome)
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.Traces == input.Traces ||
-                    (this.Traces != null &&
-                    this.Traces.Equals(input.Traces))
-                ) && 
-                (
-                    this.StartedOn == input.StartedOn ||
-                    (this.StartedOn != null &&
-                    this.StartedOn.Equals(input.StartedOn))
-                ) && 
-                (
-                    this.CompletedOn == input.CompletedOn ||
-                    (this.CompletedOn != null &&
-                    this.CompletedOn.Equals(input.CompletedOn))
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    (this.Duration != null &&
-                    this.Duration.Equals(input.Duration))
-                ) && 
-                (
-                    this.Attachments == input.Attachments ||
-                    this.Attachments != null &&
-                    input.Attachments != null &&
-                    this.Attachments.SequenceEqual(input.Attachments)
-                ) && 
-                (
-                    this.Parameters == input.Parameters ||
-                    this.Parameters != null &&
-                    input.Parameters != null &&
-                    this.Parameters.SequenceEqual(input.Parameters)
-                ) && 
-                (
-                    this.Properties == input.Properties ||
-                    this.Properties != null &&
-                    input.Properties != null &&
-                    this.Properties.SequenceEqual(input.Properties)
-                ) && 
-                (
-                    this.StepResults == input.StepResults ||
-                    this.StepResults != null &&
-                    input.StepResults != null &&
-                    this.StepResults.SequenceEqual(input.StepResults)
-                ) && 
-                (
-                    this.SetupResults == input.SetupResults ||
-                    this.SetupResults != null &&
-                    input.SetupResults != null &&
-                    this.SetupResults.SequenceEqual(input.SetupResults)
-                ) && 
-                (
-                    this.TeardownResults == input.TeardownResults ||
-                    this.TeardownResults != null &&
-                    input.TeardownResults != null &&
-                    this.TeardownResults.SequenceEqual(input.TeardownResults)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.ConfigurationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ConfigurationId.GetHashCode();
-                }
-                if (this.Links != null)
-                {
-                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
-                }
-                if (this.FailureReasonNames != null)
-                {
-                    hashCode = (hashCode * 59) + this.FailureReasonNames.GetHashCode();
-                }
-                if (this.AutoTestExternalId != null)
-                {
-                    hashCode = (hashCode * 59) + this.AutoTestExternalId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Outcome.GetHashCode();
-                if (this.Message != null)
-                {
-                    hashCode = (hashCode * 59) + this.Message.GetHashCode();
-                }
-                if (this.Traces != null)
-                {
-                    hashCode = (hashCode * 59) + this.Traces.GetHashCode();
-                }
-                if (this.StartedOn != null)
-                {
-                    hashCode = (hashCode * 59) + this.StartedOn.GetHashCode();
-                }
-                if (this.CompletedOn != null)
-                {
-                    hashCode = (hashCode * 59) + this.CompletedOn.GetHashCode();
-                }
-                if (this.Duration != null)
-                {
-                    hashCode = (hashCode * 59) + this.Duration.GetHashCode();
-                }
-                if (this.Attachments != null)
-                {
-                    hashCode = (hashCode * 59) + this.Attachments.GetHashCode();
-                }
-                if (this.Parameters != null)
-                {
-                    hashCode = (hashCode * 59) + this.Parameters.GetHashCode();
-                }
-                if (this.Properties != null)
-                {
-                    hashCode = (hashCode * 59) + this.Properties.GetHashCode();
-                }
-                if (this.StepResults != null)
-                {
-                    hashCode = (hashCode * 59) + this.StepResults.GetHashCode();
-                }
-                if (this.SetupResults != null)
-                {
-                    hashCode = (hashCode * 59) + this.SetupResults.GetHashCode();
-                }
-                if (this.TeardownResults != null)
-                {
-                    hashCode = (hashCode * 59) + this.TeardownResults.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // AutoTestExternalId (string) minLength
             if (this.AutoTestExternalId != null && this.AutoTestExternalId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AutoTestExternalId, length must be greater than 1.", new [] { "AutoTestExternalId" });
+                yield return new ValidationResult("Invalid value for AutoTestExternalId, length must be greater than 1.", new [] { "AutoTestExternalId" });
             }
 
             // Duration (long?) maximum
             if (this.Duration > (long?)43200000000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Duration, must be a value less than or equal to 43200000000.", new [] { "Duration" });
+                yield return new ValidationResult("Invalid value for Duration, must be a value less than or equal to 43200000000.", new [] { "Duration" });
             }
 
             // Duration (long?) minimum
             if (this.Duration < (long?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Duration, must be a value greater than or equal to 0.", new [] { "Duration" });
+                yield return new ValidationResult("Invalid value for Duration, must be a value greater than or equal to 0.", new [] { "Duration" });
             }
 
             yield break;

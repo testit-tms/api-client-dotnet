@@ -19,7 +19,7 @@ All URIs are relative to *http://localhost*
 
 <a id="apiv2configurationscreatebyparameterspost"></a>
 # **ApiV2ConfigurationsCreateByParametersPost**
-> List&lt;Guid&gt; ApiV2ConfigurationsCreateByParametersPost (ApiV2ConfigurationsCreateByParametersPostRequest apiV2ConfigurationsCreateByParametersPostRequest = null)
+> List&lt;Guid&gt; ApiV2ConfigurationsCreateByParametersPost (ConfigurationByParametersModel configurationByParametersModel = null)
 
 Create configurations by parameters
 
@@ -49,12 +49,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ConfigurationsApi(httpClient, config, httpClientHandler);
-            var apiV2ConfigurationsCreateByParametersPostRequest = new ApiV2ConfigurationsCreateByParametersPostRequest(); // ApiV2ConfigurationsCreateByParametersPostRequest |  (optional) 
+            var configurationByParametersModel = new ConfigurationByParametersModel(); // ConfigurationByParametersModel |  (optional) 
 
             try
             {
                 // Create configurations by parameters
-                List<Guid> result = apiInstance.ApiV2ConfigurationsCreateByParametersPost(apiV2ConfigurationsCreateByParametersPostRequest);
+                List<Guid> result = apiInstance.ApiV2ConfigurationsCreateByParametersPost(configurationByParametersModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -75,7 +75,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create configurations by parameters
-    ApiResponse<List<Guid>> response = apiInstance.ApiV2ConfigurationsCreateByParametersPostWithHttpInfo(apiV2ConfigurationsCreateByParametersPostRequest);
+    ApiResponse<List<Guid>> response = apiInstance.ApiV2ConfigurationsCreateByParametersPostWithHttpInfo(configurationByParametersModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -92,7 +92,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiV2ConfigurationsCreateByParametersPostRequest** | [**ApiV2ConfigurationsCreateByParametersPostRequest**](ApiV2ConfigurationsCreateByParametersPostRequest.md) |  | [optional]  |
+| **configurationByParametersModel** | [**ConfigurationByParametersModel**](ConfigurationByParametersModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -123,7 +123,7 @@ catch (ApiException e)
 
 <a id="apiv2configurationsdeletebulkpost"></a>
 # **ApiV2ConfigurationsDeleteBulkPost**
-> int ApiV2ConfigurationsDeleteBulkPost (ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = null)
+> int ApiV2ConfigurationsDeleteBulkPost (ConfigurationSelectModel configurationSelectModel = null)
 
 Delete multiple configurations
 
@@ -153,12 +153,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ConfigurationsApi(httpClient, config, httpClientHandler);
-            var apiV2ConfigurationsPurgeBulkPostRequest = new ApiV2ConfigurationsPurgeBulkPostRequest(); // ApiV2ConfigurationsPurgeBulkPostRequest |  (optional) 
+            var configurationSelectModel = new ConfigurationSelectModel(); // ConfigurationSelectModel |  (optional) 
 
             try
             {
                 // Delete multiple configurations
-                int result = apiInstance.ApiV2ConfigurationsDeleteBulkPost(apiV2ConfigurationsPurgeBulkPostRequest);
+                int result = apiInstance.ApiV2ConfigurationsDeleteBulkPost(configurationSelectModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -179,7 +179,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete multiple configurations
-    ApiResponse<int> response = apiInstance.ApiV2ConfigurationsDeleteBulkPostWithHttpInfo(apiV2ConfigurationsPurgeBulkPostRequest);
+    ApiResponse<int> response = apiInstance.ApiV2ConfigurationsDeleteBulkPostWithHttpInfo(configurationSelectModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -196,7 +196,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiV2ConfigurationsPurgeBulkPostRequest** | [**ApiV2ConfigurationsPurgeBulkPostRequest**](ApiV2ConfigurationsPurgeBulkPostRequest.md) |  | [optional]  |
+| **configurationSelectModel** | [**ConfigurationSelectModel**](ConfigurationSelectModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -631,7 +631,7 @@ void (empty response body)
 
 <a id="apiv2configurationspurgebulkpost"></a>
 # **ApiV2ConfigurationsPurgeBulkPost**
-> void ApiV2ConfigurationsPurgeBulkPost (ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = null)
+> void ApiV2ConfigurationsPurgeBulkPost (ConfigurationSelectModel configurationSelectModel = null)
 
 Permanently delete multiple archived configurations
 
@@ -661,12 +661,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ConfigurationsApi(httpClient, config, httpClientHandler);
-            var apiV2ConfigurationsPurgeBulkPostRequest = new ApiV2ConfigurationsPurgeBulkPostRequest(); // ApiV2ConfigurationsPurgeBulkPostRequest |  (optional) 
+            var configurationSelectModel = new ConfigurationSelectModel(); // ConfigurationSelectModel |  (optional) 
 
             try
             {
                 // Permanently delete multiple archived configurations
-                apiInstance.ApiV2ConfigurationsPurgeBulkPost(apiV2ConfigurationsPurgeBulkPostRequest);
+                apiInstance.ApiV2ConfigurationsPurgeBulkPost(configurationSelectModel);
             }
             catch (ApiException  e)
             {
@@ -686,7 +686,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Permanently delete multiple archived configurations
-    apiInstance.ApiV2ConfigurationsPurgeBulkPostWithHttpInfo(apiV2ConfigurationsPurgeBulkPostRequest);
+    apiInstance.ApiV2ConfigurationsPurgeBulkPostWithHttpInfo(configurationSelectModel);
 }
 catch (ApiException e)
 {
@@ -700,7 +700,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiV2ConfigurationsPurgeBulkPostRequest** | [**ApiV2ConfigurationsPurgeBulkPostRequest**](ApiV2ConfigurationsPurgeBulkPostRequest.md) |  | [optional]  |
+| **configurationSelectModel** | [**ConfigurationSelectModel**](ConfigurationSelectModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -731,7 +731,7 @@ void (empty response body)
 
 <a id="apiv2configurationsput"></a>
 # **ApiV2ConfigurationsPut**
-> void ApiV2ConfigurationsPut (ApiV2ConfigurationsPutRequest apiV2ConfigurationsPutRequest = null)
+> void ApiV2ConfigurationsPut (ConfigurationPutModel configurationPutModel = null)
 
 Edit configuration
 
@@ -761,12 +761,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ConfigurationsApi(httpClient, config, httpClientHandler);
-            var apiV2ConfigurationsPutRequest = new ApiV2ConfigurationsPutRequest(); // ApiV2ConfigurationsPutRequest |  (optional) 
+            var configurationPutModel = new ConfigurationPutModel(); // ConfigurationPutModel |  (optional) 
 
             try
             {
                 // Edit configuration
-                apiInstance.ApiV2ConfigurationsPut(apiV2ConfigurationsPutRequest);
+                apiInstance.ApiV2ConfigurationsPut(configurationPutModel);
             }
             catch (ApiException  e)
             {
@@ -786,7 +786,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Edit configuration
-    apiInstance.ApiV2ConfigurationsPutWithHttpInfo(apiV2ConfigurationsPutRequest);
+    apiInstance.ApiV2ConfigurationsPutWithHttpInfo(configurationPutModel);
 }
 catch (ApiException e)
 {
@@ -800,7 +800,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiV2ConfigurationsPutRequest** | [**ApiV2ConfigurationsPutRequest**](ApiV2ConfigurationsPutRequest.md) |  | [optional]  |
+| **configurationPutModel** | [**ConfigurationPutModel**](ConfigurationPutModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -831,7 +831,7 @@ void (empty response body)
 
 <a id="apiv2configurationsrestorebulkpost"></a>
 # **ApiV2ConfigurationsRestoreBulkPost**
-> int ApiV2ConfigurationsRestoreBulkPost (ApiV2ConfigurationsPurgeBulkPostRequest apiV2ConfigurationsPurgeBulkPostRequest = null)
+> int ApiV2ConfigurationsRestoreBulkPost (ConfigurationSelectModel configurationSelectModel = null)
 
 Restore multiple configurations from the archive
 
@@ -861,12 +861,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ConfigurationsApi(httpClient, config, httpClientHandler);
-            var apiV2ConfigurationsPurgeBulkPostRequest = new ApiV2ConfigurationsPurgeBulkPostRequest(); // ApiV2ConfigurationsPurgeBulkPostRequest |  (optional) 
+            var configurationSelectModel = new ConfigurationSelectModel(); // ConfigurationSelectModel |  (optional) 
 
             try
             {
                 // Restore multiple configurations from the archive
-                int result = apiInstance.ApiV2ConfigurationsRestoreBulkPost(apiV2ConfigurationsPurgeBulkPostRequest);
+                int result = apiInstance.ApiV2ConfigurationsRestoreBulkPost(configurationSelectModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -887,7 +887,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Restore multiple configurations from the archive
-    ApiResponse<int> response = apiInstance.ApiV2ConfigurationsRestoreBulkPostWithHttpInfo(apiV2ConfigurationsPurgeBulkPostRequest);
+    ApiResponse<int> response = apiInstance.ApiV2ConfigurationsRestoreBulkPostWithHttpInfo(configurationSelectModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -904,7 +904,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiV2ConfigurationsPurgeBulkPostRequest** | [**ApiV2ConfigurationsPurgeBulkPostRequest**](ApiV2ConfigurationsPurgeBulkPostRequest.md) |  | [optional]  |
+| **configurationSelectModel** | [**ConfigurationSelectModel**](ConfigurationSelectModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -935,7 +935,7 @@ catch (ApiException e)
 
 <a id="apiv2configurationssearchpost"></a>
 # **ApiV2ConfigurationsSearchPost**
-> List&lt;ConfigurationModel&gt; ApiV2ConfigurationsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ConfigurationsSearchPostRequest apiV2ConfigurationsSearchPostRequest = null)
+> List&lt;ConfigurationModel&gt; ApiV2ConfigurationsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ConfigurationFilterModel configurationFilterModel = null)
 
 Search for configurations
 
@@ -970,12 +970,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var apiV2ConfigurationsSearchPostRequest = new ApiV2ConfigurationsSearchPostRequest(); // ApiV2ConfigurationsSearchPostRequest | Model containing all the filters (optional) 
+            var configurationFilterModel = new ConfigurationFilterModel(); // ConfigurationFilterModel | Model containing all the filters (optional) 
 
             try
             {
                 // Search for configurations
-                List<ConfigurationModel> result = apiInstance.ApiV2ConfigurationsSearchPost(skip, take, orderBy, searchField, searchValue, apiV2ConfigurationsSearchPostRequest);
+                List<ConfigurationModel> result = apiInstance.ApiV2ConfigurationsSearchPost(skip, take, orderBy, searchField, searchValue, configurationFilterModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -996,7 +996,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for configurations
-    ApiResponse<List<ConfigurationModel>> response = apiInstance.ApiV2ConfigurationsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2ConfigurationsSearchPostRequest);
+    ApiResponse<List<ConfigurationModel>> response = apiInstance.ApiV2ConfigurationsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, configurationFilterModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1018,7 +1018,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **apiV2ConfigurationsSearchPostRequest** | [**ApiV2ConfigurationsSearchPostRequest**](ApiV2ConfigurationsSearchPostRequest.md) | Model containing all the filters | [optional]  |
+| **configurationFilterModel** | [**ConfigurationFilterModel**](ConfigurationFilterModel.md) | Model containing all the filters | [optional]  |
 
 ### Return type
 
@@ -1049,7 +1049,7 @@ catch (ApiException e)
 
 <a id="createconfiguration"></a>
 # **CreateConfiguration**
-> ConfigurationModel CreateConfiguration (CreateConfigurationRequest createConfigurationRequest = null)
+> ConfigurationModel CreateConfiguration (ConfigurationPostModel configurationPostModel = null)
 
 Create Configuration
 
@@ -1081,12 +1081,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ConfigurationsApi(httpClient, config, httpClientHandler);
-            var createConfigurationRequest = new CreateConfigurationRequest(); // CreateConfigurationRequest |  (optional) 
+            var configurationPostModel = new ConfigurationPostModel(); // ConfigurationPostModel |  (optional) 
 
             try
             {
                 // Create Configuration
-                ConfigurationModel result = apiInstance.CreateConfiguration(createConfigurationRequest);
+                ConfigurationModel result = apiInstance.CreateConfiguration(configurationPostModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1107,7 +1107,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create Configuration
-    ApiResponse<ConfigurationModel> response = apiInstance.CreateConfigurationWithHttpInfo(createConfigurationRequest);
+    ApiResponse<ConfigurationModel> response = apiInstance.CreateConfigurationWithHttpInfo(configurationPostModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1124,7 +1124,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **createConfigurationRequest** | [**CreateConfigurationRequest**](CreateConfigurationRequest.md) |  | [optional]  |
+| **configurationPostModel** | [**ConfigurationPostModel**](ConfigurationPostModel.md) |  | [optional]  |
 
 ### Return type
 

@@ -67,9 +67,9 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="testPlanSelectModel"> (optional)</param>
         /// <returns>List&lt;Guid&gt;</returns>
-        List<Guid> ApiV2ProjectsProjectIdTestPlansDeleteBulkPost(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest));
+        List<Guid> ApiV2ProjectsProjectIdTestPlansDeleteBulkPost(string projectId, TestPlanSelectModel testPlanSelectModel = default(TestPlanSelectModel));
 
         /// <summary>
         /// Delete multiple test plans
@@ -79,9 +79,9 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="testPlanSelectModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
-        ApiResponse<List<Guid>> ApiV2ProjectsProjectIdTestPlansDeleteBulkPostWithHttpInfo(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest));
+        ApiResponse<List<Guid>> ApiV2ProjectsProjectIdTestPlansDeleteBulkPostWithHttpInfo(string projectId, TestPlanSelectModel testPlanSelectModel = default(TestPlanSelectModel));
         /// <summary>
         /// Checks if TestPlan exists with the specified name exists for the project
         /// </summary>
@@ -110,9 +110,9 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="testPlanSelectModel"> (optional)</param>
         /// <returns></returns>
-        void ApiV2ProjectsProjectIdTestPlansPurgeBulkPost(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest));
+        void ApiV2ProjectsProjectIdTestPlansPurgeBulkPost(string projectId, TestPlanSelectModel testPlanSelectModel = default(TestPlanSelectModel));
 
         /// <summary>
         /// Permanently delete multiple archived test plans
@@ -122,17 +122,17 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="testPlanSelectModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2ProjectsProjectIdTestPlansPurgeBulkPostWithHttpInfo(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest));
+        ApiResponse<Object> ApiV2ProjectsProjectIdTestPlansPurgeBulkPostWithHttpInfo(string projectId, TestPlanSelectModel testPlanSelectModel = default(TestPlanSelectModel));
         /// <summary>
         /// Restore multiple test plans
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="testPlanSelectModel"> (optional)</param>
         /// <returns>List&lt;Guid&gt;</returns>
-        List<Guid> ApiV2ProjectsProjectIdTestPlansRestoreBulkPost(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest));
+        List<Guid> ApiV2ProjectsProjectIdTestPlansRestoreBulkPost(string projectId, TestPlanSelectModel testPlanSelectModel = default(TestPlanSelectModel));
 
         /// <summary>
         /// Restore multiple test plans
@@ -142,9 +142,9 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="testPlanSelectModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
-        ApiResponse<List<Guid>> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfo(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest));
+        ApiResponse<List<Guid>> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfo(string projectId, TestPlanSelectModel testPlanSelectModel = default(TestPlanSelectModel));
         /// <summary>
         /// Get Project TestPlans with analytics
         /// </summary>
@@ -159,9 +159,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansSearchPostRequest"> (optional)</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
         /// <returns>List&lt;TestPlanWithAnalyticModel&gt;</returns>
-        List<TestPlanWithAnalyticModel> ApiV2ProjectsProjectIdTestPlansSearchPost(string projectId, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdTestPlansSearchPostRequest apiV2ProjectsProjectIdTestPlansSearchPostRequest = default(ApiV2ProjectsProjectIdTestPlansSearchPostRequest));
+        List<TestPlanWithAnalyticModel> ApiV2ProjectsProjectIdTestPlansSearchPost(string projectId, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel));
 
         /// <summary>
         /// Get Project TestPlans with analytics
@@ -177,9 +177,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansSearchPostRequest"> (optional)</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;TestPlanWithAnalyticModel&gt;</returns>
-        ApiResponse<List<TestPlanWithAnalyticModel>> ApiV2ProjectsProjectIdTestPlansSearchPostWithHttpInfo(string projectId, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdTestPlansSearchPostRequest apiV2ProjectsProjectIdTestPlansSearchPostRequest = default(ApiV2ProjectsProjectIdTestPlansSearchPostRequest));
+        ApiResponse<List<TestPlanWithAnalyticModel>> ApiV2ProjectsProjectIdTestPlansSearchPostWithHttpInfo(string projectId, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel));
         #endregion Synchronous Operations
     }
 
@@ -206,7 +206,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestPlanWithAnalyticModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TestPlanWithAnalyticModel>> ApiV2ProjectsProjectIdTestPlansAnalyticsGetAsync(Guid projectId, bool? isDeleted = default(bool?), bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TestPlanWithAnalyticModel>> ApiV2ProjectsProjectIdTestPlansAnalyticsGetAsync(Guid projectId, bool? isDeleted = default(bool?), bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get TestPlans analytics
@@ -225,7 +225,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPlanWithAnalyticModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestPlanWithAnalyticModel>>> ApiV2ProjectsProjectIdTestPlansAnalyticsGetWithHttpInfoAsync(Guid projectId, bool? isDeleted = default(bool?), bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TestPlanWithAnalyticModel>>> ApiV2ProjectsProjectIdTestPlansAnalyticsGetWithHttpInfoAsync(Guid projectId, bool? isDeleted = default(bool?), bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete multiple test plans
         /// </summary>
@@ -234,10 +234,10 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="testPlanSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Guid&gt;</returns>
-        System.Threading.Tasks.Task<List<Guid>> ApiV2ProjectsProjectIdTestPlansDeleteBulkPostAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<Guid>> ApiV2ProjectsProjectIdTestPlansDeleteBulkPostAsync(string projectId, TestPlanSelectModel testPlanSelectModel = default(TestPlanSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete multiple test plans
@@ -247,10 +247,10 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="testPlanSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Guid>>> ApiV2ProjectsProjectIdTestPlansDeleteBulkPostWithHttpInfoAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Guid>>> ApiV2ProjectsProjectIdTestPlansDeleteBulkPostWithHttpInfoAsync(string projectId, TestPlanSelectModel testPlanSelectModel = default(TestPlanSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Checks if TestPlan exists with the specified name exists for the project
         /// </summary>
@@ -262,7 +262,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="name">TestPlan name to check</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of bool</returns>
-        System.Threading.Tasks.Task<bool> ApiV2ProjectsProjectIdTestPlansNameExistsGetAsync(Guid projectId, string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<bool> ApiV2ProjectsProjectIdTestPlansNameExistsGetAsync(Guid projectId, string name, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Checks if TestPlan exists with the specified name exists for the project
@@ -275,7 +275,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="name">TestPlan name to check</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (bool)</returns>
-        System.Threading.Tasks.Task<ApiResponse<bool>> ApiV2ProjectsProjectIdTestPlansNameExistsGetWithHttpInfoAsync(Guid projectId, string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<bool>> ApiV2ProjectsProjectIdTestPlansNameExistsGetWithHttpInfoAsync(Guid projectId, string name, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Permanently delete multiple archived test plans
         /// </summary>
@@ -284,10 +284,10 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="testPlanSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2ProjectsProjectIdTestPlansPurgeBulkPostAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2ProjectsProjectIdTestPlansPurgeBulkPostAsync(string projectId, TestPlanSelectModel testPlanSelectModel = default(TestPlanSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Permanently delete multiple archived test plans
@@ -297,10 +297,10 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="testPlanSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsProjectIdTestPlansPurgeBulkPostWithHttpInfoAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsProjectIdTestPlansPurgeBulkPostWithHttpInfoAsync(string projectId, TestPlanSelectModel testPlanSelectModel = default(TestPlanSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Restore multiple test plans
         /// </summary>
@@ -309,10 +309,10 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="testPlanSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Guid&gt;</returns>
-        System.Threading.Tasks.Task<List<Guid>> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<Guid>> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostAsync(string projectId, TestPlanSelectModel testPlanSelectModel = default(TestPlanSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Restore multiple test plans
@@ -322,10 +322,10 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="testPlanSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Guid>>> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfoAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Guid>>> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfoAsync(string projectId, TestPlanSelectModel testPlanSelectModel = default(TestPlanSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get Project TestPlans with analytics
         /// </summary>
@@ -340,10 +340,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansSearchPostRequest"> (optional)</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestPlanWithAnalyticModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TestPlanWithAnalyticModel>> ApiV2ProjectsProjectIdTestPlansSearchPostAsync(string projectId, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdTestPlansSearchPostRequest apiV2ProjectsProjectIdTestPlansSearchPostRequest = default(ApiV2ProjectsProjectIdTestPlansSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TestPlanWithAnalyticModel>> ApiV2ProjectsProjectIdTestPlansSearchPostAsync(string projectId, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Project TestPlans with analytics
@@ -359,10 +359,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansSearchPostRequest"> (optional)</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPlanWithAnalyticModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestPlanWithAnalyticModel>>> ApiV2ProjectsProjectIdTestPlansSearchPostWithHttpInfoAsync(string projectId, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdTestPlansSearchPostRequest apiV2ProjectsProjectIdTestPlansSearchPostRequest = default(ApiV2ProjectsProjectIdTestPlansSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TestPlanWithAnalyticModel>>> ApiV2ProjectsProjectIdTestPlansSearchPostWithHttpInfoAsync(string projectId, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -688,7 +688,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestPlanWithAnalyticModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestPlanWithAnalyticModel>> ApiV2ProjectsProjectIdTestPlansAnalyticsGetAsync(Guid projectId, bool? isDeleted = default(bool?), bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TestPlanWithAnalyticModel>> ApiV2ProjectsProjectIdTestPlansAnalyticsGetAsync(Guid projectId, bool? isDeleted = default(bool?), bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>> localVarResponse = await ApiV2ProjectsProjectIdTestPlansAnalyticsGetWithHttpInfoAsync(projectId, isDeleted, mustUpdateCache, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -708,7 +708,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPlanWithAnalyticModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>>> ApiV2ProjectsProjectIdTestPlansAnalyticsGetWithHttpInfoAsync(Guid projectId, bool? isDeleted = default(bool?), bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>>> ApiV2ProjectsProjectIdTestPlansAnalyticsGetWithHttpInfoAsync(Guid projectId, bool? isDeleted = default(bool?), bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -782,11 +782,11 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="testPlanSelectModel"> (optional)</param>
         /// <returns>List&lt;Guid&gt;</returns>
-        public List<Guid> ApiV2ProjectsProjectIdTestPlansDeleteBulkPost(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest))
+        public List<Guid> ApiV2ProjectsProjectIdTestPlansDeleteBulkPost(string projectId, TestPlanSelectModel testPlanSelectModel = default(TestPlanSelectModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<Guid>> localVarResponse = ApiV2ProjectsProjectIdTestPlansDeleteBulkPostWithHttpInfo(projectId, apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<List<Guid>> localVarResponse = ApiV2ProjectsProjectIdTestPlansDeleteBulkPostWithHttpInfo(projectId, testPlanSelectModel);
             return localVarResponse.Data;
         }
 
@@ -795,9 +795,9 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="testPlanSelectModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<Guid>> ApiV2ProjectsProjectIdTestPlansDeleteBulkPostWithHttpInfo(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<List<Guid>> ApiV2ProjectsProjectIdTestPlansDeleteBulkPostWithHttpInfo(string projectId, TestPlanSelectModel testPlanSelectModel = default(TestPlanSelectModel))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -821,7 +821,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.Data = apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest;
+            localVarRequestOptions.Data = testPlanSelectModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -846,12 +846,12 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="testPlanSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Guid&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Guid>> ApiV2ProjectsProjectIdTestPlansDeleteBulkPostAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<Guid>> ApiV2ProjectsProjectIdTestPlansDeleteBulkPostAsync(string projectId, TestPlanSelectModel testPlanSelectModel = default(TestPlanSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<Guid>> localVarResponse = await ApiV2ProjectsProjectIdTestPlansDeleteBulkPostWithHttpInfoAsync(projectId, apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<Guid>> localVarResponse = await ApiV2ProjectsProjectIdTestPlansDeleteBulkPostWithHttpInfoAsync(projectId, testPlanSelectModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -860,10 +860,10 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="testPlanSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<Guid>>> ApiV2ProjectsProjectIdTestPlansDeleteBulkPostWithHttpInfoAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<Guid>>> ApiV2ProjectsProjectIdTestPlansDeleteBulkPostWithHttpInfoAsync(string projectId, TestPlanSelectModel testPlanSelectModel = default(TestPlanSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -889,7 +889,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.Data = apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest;
+            localVarRequestOptions.Data = testPlanSelectModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -981,7 +981,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="name">TestPlan name to check</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of bool</returns>
-        public async System.Threading.Tasks.Task<bool> ApiV2ProjectsProjectIdTestPlansNameExistsGetAsync(Guid projectId, string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<bool> ApiV2ProjectsProjectIdTestPlansNameExistsGetAsync(Guid projectId, string name, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<bool> localVarResponse = await ApiV2ProjectsProjectIdTestPlansNameExistsGetWithHttpInfoAsync(projectId, name, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -995,7 +995,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="name">TestPlan name to check</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (bool)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<bool>> ApiV2ProjectsProjectIdTestPlansNameExistsGetWithHttpInfoAsync(Guid projectId, string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<bool>> ApiV2ProjectsProjectIdTestPlansNameExistsGetWithHttpInfoAsync(Guid projectId, string name, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'name' is set
             if (name == null)
@@ -1046,11 +1046,11 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="testPlanSelectModel"> (optional)</param>
         /// <returns></returns>
-        public void ApiV2ProjectsProjectIdTestPlansPurgeBulkPost(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest))
+        public void ApiV2ProjectsProjectIdTestPlansPurgeBulkPost(string projectId, TestPlanSelectModel testPlanSelectModel = default(TestPlanSelectModel))
         {
-            ApiV2ProjectsProjectIdTestPlansPurgeBulkPostWithHttpInfo(projectId, apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest);
+            ApiV2ProjectsProjectIdTestPlansPurgeBulkPostWithHttpInfo(projectId, testPlanSelectModel);
         }
 
         /// <summary>
@@ -1058,9 +1058,9 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="testPlanSelectModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2ProjectsProjectIdTestPlansPurgeBulkPostWithHttpInfo(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2ProjectsProjectIdTestPlansPurgeBulkPostWithHttpInfo(string projectId, TestPlanSelectModel testPlanSelectModel = default(TestPlanSelectModel))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -1084,7 +1084,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.Data = apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest;
+            localVarRequestOptions.Data = testPlanSelectModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1109,12 +1109,12 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="testPlanSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2ProjectsProjectIdTestPlansPurgeBulkPostAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2ProjectsProjectIdTestPlansPurgeBulkPostAsync(string projectId, TestPlanSelectModel testPlanSelectModel = default(TestPlanSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await ApiV2ProjectsProjectIdTestPlansPurgeBulkPostWithHttpInfoAsync(projectId, apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest, cancellationToken).ConfigureAwait(false);
+            await ApiV2ProjectsProjectIdTestPlansPurgeBulkPostWithHttpInfoAsync(projectId, testPlanSelectModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1122,10 +1122,10 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="testPlanSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdTestPlansPurgeBulkPostWithHttpInfoAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdTestPlansPurgeBulkPostWithHttpInfoAsync(string projectId, TestPlanSelectModel testPlanSelectModel = default(TestPlanSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -1151,7 +1151,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.Data = apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest;
+            localVarRequestOptions.Data = testPlanSelectModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1177,11 +1177,11 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="testPlanSelectModel"> (optional)</param>
         /// <returns>List&lt;Guid&gt;</returns>
-        public List<Guid> ApiV2ProjectsProjectIdTestPlansRestoreBulkPost(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest))
+        public List<Guid> ApiV2ProjectsProjectIdTestPlansRestoreBulkPost(string projectId, TestPlanSelectModel testPlanSelectModel = default(TestPlanSelectModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<Guid>> localVarResponse = ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfo(projectId, apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<List<Guid>> localVarResponse = ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfo(projectId, testPlanSelectModel);
             return localVarResponse.Data;
         }
 
@@ -1190,9 +1190,9 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="testPlanSelectModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<Guid>> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfo(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<List<Guid>> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfo(string projectId, TestPlanSelectModel testPlanSelectModel = default(TestPlanSelectModel))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -1216,7 +1216,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.Data = apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest;
+            localVarRequestOptions.Data = testPlanSelectModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1241,12 +1241,12 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="testPlanSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Guid&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Guid>> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<Guid>> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostAsync(string projectId, TestPlanSelectModel testPlanSelectModel = default(TestPlanSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<Guid>> localVarResponse = await ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfoAsync(projectId, apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<Guid>> localVarResponse = await ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfoAsync(projectId, testPlanSelectModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1255,10 +1255,10 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Unique or global ID of the project</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest"> (optional)</param>
+        /// <param name="testPlanSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<Guid>>> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfoAsync(string projectId, ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest = default(ApiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<Guid>>> ApiV2ProjectsProjectIdTestPlansRestoreBulkPostWithHttpInfoAsync(string projectId, TestPlanSelectModel testPlanSelectModel = default(TestPlanSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -1284,7 +1284,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.Data = apiV2ProjectsProjectIdTestPlansDeleteBulkPostRequest;
+            localVarRequestOptions.Data = testPlanSelectModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1316,11 +1316,11 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansSearchPostRequest"> (optional)</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
         /// <returns>List&lt;TestPlanWithAnalyticModel&gt;</returns>
-        public List<TestPlanWithAnalyticModel> ApiV2ProjectsProjectIdTestPlansSearchPost(string projectId, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdTestPlansSearchPostRequest apiV2ProjectsProjectIdTestPlansSearchPostRequest = default(ApiV2ProjectsProjectIdTestPlansSearchPostRequest))
+        public List<TestPlanWithAnalyticModel> ApiV2ProjectsProjectIdTestPlansSearchPost(string projectId, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>> localVarResponse = ApiV2ProjectsProjectIdTestPlansSearchPostWithHttpInfo(projectId, mustUpdateCache, skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdTestPlansSearchPostRequest);
+            TestIT.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>> localVarResponse = ApiV2ProjectsProjectIdTestPlansSearchPostWithHttpInfo(projectId, mustUpdateCache, skip, take, orderBy, searchField, searchValue, projectTestPlansFilterModel);
             return localVarResponse.Data;
         }
 
@@ -1335,9 +1335,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansSearchPostRequest"> (optional)</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;TestPlanWithAnalyticModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>> ApiV2ProjectsProjectIdTestPlansSearchPostWithHttpInfo(string projectId, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdTestPlansSearchPostRequest apiV2ProjectsProjectIdTestPlansSearchPostRequest = default(ApiV2ProjectsProjectIdTestPlansSearchPostRequest))
+        public TestIT.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>> ApiV2ProjectsProjectIdTestPlansSearchPostWithHttpInfo(string projectId, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -1385,7 +1385,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = apiV2ProjectsProjectIdTestPlansSearchPostRequest;
+            localVarRequestOptions.Data = projectTestPlansFilterModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1416,12 +1416,12 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansSearchPostRequest"> (optional)</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestPlanWithAnalyticModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestPlanWithAnalyticModel>> ApiV2ProjectsProjectIdTestPlansSearchPostAsync(string projectId, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdTestPlansSearchPostRequest apiV2ProjectsProjectIdTestPlansSearchPostRequest = default(ApiV2ProjectsProjectIdTestPlansSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TestPlanWithAnalyticModel>> ApiV2ProjectsProjectIdTestPlansSearchPostAsync(string projectId, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>> localVarResponse = await ApiV2ProjectsProjectIdTestPlansSearchPostWithHttpInfoAsync(projectId, mustUpdateCache, skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdTestPlansSearchPostRequest, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>> localVarResponse = await ApiV2ProjectsProjectIdTestPlansSearchPostWithHttpInfoAsync(projectId, mustUpdateCache, skip, take, orderBy, searchField, searchValue, projectTestPlansFilterModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1436,10 +1436,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="apiV2ProjectsProjectIdTestPlansSearchPostRequest"> (optional)</param>
+        /// <param name="projectTestPlansFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestPlanWithAnalyticModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>>> ApiV2ProjectsProjectIdTestPlansSearchPostWithHttpInfoAsync(string projectId, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ApiV2ProjectsProjectIdTestPlansSearchPostRequest apiV2ProjectsProjectIdTestPlansSearchPostRequest = default(ApiV2ProjectsProjectIdTestPlansSearchPostRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestPlanWithAnalyticModel>>> ApiV2ProjectsProjectIdTestPlansSearchPostWithHttpInfoAsync(string projectId, bool? mustUpdateCache = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectTestPlansFilterModel projectTestPlansFilterModel = default(ProjectTestPlansFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -1489,7 +1489,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = apiV2ProjectsProjectIdTestPlansSearchPostRequest;
+            localVarRequestOptions.Data = projectTestPlansFilterModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))

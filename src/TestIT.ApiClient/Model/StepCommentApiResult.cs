@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// StepCommentApiResult
     /// </summary>
     [DataContract(Name = "StepCommentApiResult")]
-    public partial class StepCommentApiResult : IEquatable<StepCommentApiResult>, IValidatableObject
+    public partial class StepCommentApiResult : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StepCommentApiResult" /> class.
@@ -161,139 +161,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as StepCommentApiResult);
-        }
-
-        /// <summary>
-        /// Returns true if StepCommentApiResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of StepCommentApiResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(StepCommentApiResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Text == input.Text ||
-                    (this.Text != null &&
-                    this.Text.Equals(input.Text))
-                ) && 
-                (
-                    this.StepId == input.StepId ||
-                    (this.StepId != null &&
-                    this.StepId.Equals(input.StepId))
-                ) && 
-                (
-                    this.ParentStepId == input.ParentStepId ||
-                    (this.ParentStepId != null &&
-                    this.ParentStepId.Equals(input.ParentStepId))
-                ) && 
-                (
-                    this.Attachments == input.Attachments ||
-                    this.Attachments != null &&
-                    input.Attachments != null &&
-                    this.Attachments.SequenceEqual(input.Attachments)
-                ) && 
-                (
-                    this.TestResultId == input.TestResultId ||
-                    (this.TestResultId != null &&
-                    this.TestResultId.Equals(input.TestResultId))
-                ) && 
-                (
-                    this.CreatedById == input.CreatedById ||
-                    (this.CreatedById != null &&
-                    this.CreatedById.Equals(input.CreatedById))
-                ) && 
-                (
-                    this.ModifiedById == input.ModifiedById ||
-                    (this.ModifiedById != null &&
-                    this.ModifiedById.Equals(input.ModifiedById))
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.Text != null)
-                {
-                    hashCode = (hashCode * 59) + this.Text.GetHashCode();
-                }
-                if (this.StepId != null)
-                {
-                    hashCode = (hashCode * 59) + this.StepId.GetHashCode();
-                }
-                if (this.ParentStepId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParentStepId.GetHashCode();
-                }
-                if (this.Attachments != null)
-                {
-                    hashCode = (hashCode * 59) + this.Attachments.GetHashCode();
-                }
-                if (this.TestResultId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestResultId.GetHashCode();
-                }
-                if (this.CreatedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedById.GetHashCode();
-                }
-                if (this.ModifiedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedById.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

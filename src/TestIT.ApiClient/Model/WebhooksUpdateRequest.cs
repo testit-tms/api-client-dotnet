@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// WebhooksUpdateRequest
     /// </summary>
     [DataContract(Name = "WebhooksUpdateRequest")]
-    public partial class WebhooksUpdateRequest : IEquatable<WebhooksUpdateRequest>, IValidatableObject
+    public partial class WebhooksUpdateRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhooksUpdateRequest" /> class.
@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="filter">filter (required).</param>
         /// <param name="model">model (required).</param>
         /// <param name="extractor">extractor (required).</param>
-        public WebhooksUpdateRequest(WebhooksUpdateRequestFilter filter = default(WebhooksUpdateRequestFilter), WebhooksUpdateRequestModel model = default(WebhooksUpdateRequestModel), WebhooksDeleteRequestExtractor extractor = default(WebhooksDeleteRequestExtractor))
+        public WebhooksUpdateRequest(WebhooksFilterRequest filter = default(WebhooksFilterRequest), WebhookBulkUpdateApiModel model = default(WebhookBulkUpdateApiModel), WebhooksExtractionRequest extractor = default(WebhooksExtractionRequest))
         {
             // to ensure "filter" is required (not null)
             if (filter == null)
@@ -69,19 +69,19 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Filter
         /// </summary>
         [DataMember(Name = "filter", IsRequired = true, EmitDefaultValue = true)]
-        public WebhooksUpdateRequestFilter Filter { get; set; }
+        public WebhooksFilterRequest Filter { get; set; }
 
         /// <summary>
         /// Gets or Sets Model
         /// </summary>
         [DataMember(Name = "model", IsRequired = true, EmitDefaultValue = true)]
-        public WebhooksUpdateRequestModel Model { get; set; }
+        public WebhookBulkUpdateApiModel Model { get; set; }
 
         /// <summary>
         /// Gets or Sets Extractor
         /// </summary>
         [DataMember(Name = "extractor", IsRequired = true, EmitDefaultValue = true)]
-        public WebhooksDeleteRequestExtractor Extractor { get; set; }
+        public WebhooksExtractionRequest Extractor { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -108,75 +108,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as WebhooksUpdateRequest);
-        }
-
-        /// <summary>
-        /// Returns true if WebhooksUpdateRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of WebhooksUpdateRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(WebhooksUpdateRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Filter == input.Filter ||
-                    (this.Filter != null &&
-                    this.Filter.Equals(input.Filter))
-                ) && 
-                (
-                    this.Model == input.Model ||
-                    (this.Model != null &&
-                    this.Model.Equals(input.Model))
-                ) && 
-                (
-                    this.Extractor == input.Extractor ||
-                    (this.Extractor != null &&
-                    this.Extractor.Equals(input.Extractor))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Filter != null)
-                {
-                    hashCode = (hashCode * 59) + this.Filter.GetHashCode();
-                }
-                if (this.Model != null)
-                {
-                    hashCode = (hashCode * 59) + this.Model.GetHashCode();
-                }
-                if (this.Extractor != null)
-                {
-                    hashCode = (hashCode * 59) + this.Extractor.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

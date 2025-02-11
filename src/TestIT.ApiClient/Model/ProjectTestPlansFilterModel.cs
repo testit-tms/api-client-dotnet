@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// ProjectTestPlansFilterModel
     /// </summary>
     [DataContract(Name = "ProjectTestPlansFilterModel")]
-    public partial class ProjectTestPlansFilterModel : IEquatable<ProjectTestPlansFilterModel>, IValidatableObject
+    public partial class ProjectTestPlansFilterModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectTestPlansFilterModel" /> class.
@@ -205,245 +205,58 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ProjectTestPlansFilterModel);
-        }
-
-        /// <summary>
-        /// Returns true if ProjectTestPlansFilterModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ProjectTestPlansFilterModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ProjectTestPlansFilterModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Build == input.Build ||
-                    (this.Build != null &&
-                    this.Build.Equals(input.Build))
-                ) && 
-                (
-                    this.ProductName == input.ProductName ||
-                    (this.ProductName != null &&
-                    this.ProductName.Equals(input.ProductName))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    this.Status != null &&
-                    input.Status != null &&
-                    this.Status.SequenceEqual(input.Status)
-                ) && 
-                (
-                    this.GlobalIds == input.GlobalIds ||
-                    this.GlobalIds != null &&
-                    input.GlobalIds != null &&
-                    this.GlobalIds.SequenceEqual(input.GlobalIds)
-                ) && 
-                (
-                    this.IsLocked == input.IsLocked ||
-                    (this.IsLocked != null &&
-                    this.IsLocked.Equals(input.IsLocked))
-                ) && 
-                (
-                    this.LockedDate == input.LockedDate ||
-                    (this.LockedDate != null &&
-                    this.LockedDate.Equals(input.LockedDate))
-                ) && 
-                (
-                    this.AutomaticDurationTimer == input.AutomaticDurationTimer ||
-                    this.AutomaticDurationTimer != null &&
-                    input.AutomaticDurationTimer != null &&
-                    this.AutomaticDurationTimer.SequenceEqual(input.AutomaticDurationTimer)
-                ) && 
-                (
-                    this.CreatedByIds == input.CreatedByIds ||
-                    this.CreatedByIds != null &&
-                    input.CreatedByIds != null &&
-                    this.CreatedByIds.SequenceEqual(input.CreatedByIds)
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.StartDate == input.StartDate ||
-                    (this.StartDate != null &&
-                    this.StartDate.Equals(input.StartDate))
-                ) && 
-                (
-                    this.EndDate == input.EndDate ||
-                    (this.EndDate != null &&
-                    this.EndDate.Equals(input.EndDate))
-                ) && 
-                (
-                    this.TagNames == input.TagNames ||
-                    this.TagNames != null &&
-                    input.TagNames != null &&
-                    this.TagNames.SequenceEqual(input.TagNames)
-                ) && 
-                (
-                    this.Attributes == input.Attributes ||
-                    this.Attributes != null &&
-                    input.Attributes != null &&
-                    this.Attributes.SequenceEqual(input.Attributes)
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    (this.IsDeleted != null &&
-                    this.IsDeleted.Equals(input.IsDeleted))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.Build != null)
-                {
-                    hashCode = (hashCode * 59) + this.Build.GetHashCode();
-                }
-                if (this.ProductName != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProductName.GetHashCode();
-                }
-                if (this.Status != null)
-                {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                }
-                if (this.GlobalIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.GlobalIds.GetHashCode();
-                }
-                if (this.IsLocked != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsLocked.GetHashCode();
-                }
-                if (this.LockedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.LockedDate.GetHashCode();
-                }
-                if (this.AutomaticDurationTimer != null)
-                {
-                    hashCode = (hashCode * 59) + this.AutomaticDurationTimer.GetHashCode();
-                }
-                if (this.CreatedByIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedByIds.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.StartDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.StartDate.GetHashCode();
-                }
-                if (this.EndDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.EndDate.GetHashCode();
-                }
-                if (this.TagNames != null)
-                {
-                    hashCode = (hashCode * 59) + this.TagNames.GetHashCode();
-                }
-                if (this.Attributes != null)
-                {
-                    hashCode = (hashCode * 59) + this.Attributes.GetHashCode();
-                }
-                if (this.IsDeleted != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
             }
 
             // Name (string) minLength
             if (this.Name != null && this.Name.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
             }
 
             // Description (string) maxLength
             if (this.Description != null && this.Description.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Description, length must be less than 255.", new [] { "Description" });
+                yield return new ValidationResult("Invalid value for Description, length must be less than 255.", new [] { "Description" });
             }
 
             // Description (string) minLength
             if (this.Description != null && this.Description.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Description, length must be greater than 0.", new [] { "Description" });
+                yield return new ValidationResult("Invalid value for Description, length must be greater than 0.", new [] { "Description" });
             }
 
             // Build (string) maxLength
             if (this.Build != null && this.Build.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Build, length must be less than 255.", new [] { "Build" });
+                yield return new ValidationResult("Invalid value for Build, length must be less than 255.", new [] { "Build" });
             }
 
             // Build (string) minLength
             if (this.Build != null && this.Build.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Build, length must be greater than 0.", new [] { "Build" });
+                yield return new ValidationResult("Invalid value for Build, length must be greater than 0.", new [] { "Build" });
             }
 
             // ProductName (string) maxLength
             if (this.ProductName != null && this.ProductName.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ProductName, length must be less than 255.", new [] { "ProductName" });
+                yield return new ValidationResult("Invalid value for ProductName, length must be less than 255.", new [] { "ProductName" });
             }
 
             // ProductName (string) minLength
             if (this.ProductName != null && this.ProductName.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ProductName, length must be greater than 0.", new [] { "ProductName" });
+                yield return new ValidationResult("Invalid value for ProductName, length must be greater than 0.", new [] { "ProductName" });
             }
 
             yield break;

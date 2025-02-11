@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// AutoTestModel
     /// </summary>
     [DataContract(Name = "AutoTestModel")]
-    public partial class AutoTestModel : IEquatable<AutoTestModel>, IValidatableObject
+    public partial class AutoTestModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestModel" /> class.
@@ -51,14 +51,14 @@ namespace TestIT.ApiClient.Model
         /// <param name="lastTestRunId">Unique ID of the autotest last test run.</param>
         /// <param name="lastTestRunName">Name of the autotest last test run.</param>
         /// <param name="lastTestResultId">Unique ID of the autotest last test result.</param>
-        /// <param name="lastTestResultConfiguration">lastTestResultConfiguration.</param>
+        /// <param name="lastTestResultConfiguration">Configuration of the autotest last test result.</param>
         /// <param name="lastTestResultOutcome">Outcome of the autotest last test result.</param>
         /// <param name="stabilityPercentage">Stability percentage of the autotest.</param>
         /// <param name="externalId">External ID of the autotest (required).</param>
         /// <param name="links">Collection of the autotest links.</param>
         /// <param name="projectId">Unique ID of the autotest project (required).</param>
         /// <param name="name">Name of the autotest (required).</param>
-        /// <param name="_namespace">Name of the autotest namespace.</param>
+        /// <param name="varNamespace">Name of the autotest namespace.</param>
         /// <param name="classname">Name of the autotest class.</param>
         /// <param name="steps">Collection of the autotest steps.</param>
         /// <param name="setup">Collection of the autotest setup steps.</param>
@@ -68,7 +68,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="labels">Collection of the autotest labels.</param>
         /// <param name="isFlaky">Indicates if the autotest is marked as flaky.</param>
         /// <param name="externalKey">External key of the autotest.</param>
-        public AutoTestModel(long globalId = default(long), bool isDeleted = default(bool), bool mustBeApproved = default(bool), Guid id = default(Guid), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), Guid? lastTestRunId = default(Guid?), string lastTestRunName = default(string), Guid? lastTestResultId = default(Guid?), AutoTestModelLastTestResultConfiguration lastTestResultConfiguration = default(AutoTestModelLastTestResultConfiguration), string lastTestResultOutcome = default(string), int? stabilityPercentage = default(int?), string externalId = default(string), List<LinkPutModel> links = default(List<LinkPutModel>), Guid projectId = default(Guid), string name = default(string), string _namespace = default(string), string classname = default(string), List<AutoTestStepModel> steps = default(List<AutoTestStepModel>), List<AutoTestStepModel> setup = default(List<AutoTestStepModel>), List<AutoTestStepModel> teardown = default(List<AutoTestStepModel>), string title = default(string), string description = default(string), List<LabelShortModel> labels = default(List<LabelShortModel>), bool? isFlaky = default(bool?), string externalKey = default(string))
+        public AutoTestModel(long globalId = default(long), bool isDeleted = default(bool), bool mustBeApproved = default(bool), Guid id = default(Guid), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), Guid? lastTestRunId = default(Guid?), string lastTestRunName = default(string), Guid? lastTestResultId = default(Guid?), ConfigurationShortModel lastTestResultConfiguration = default(ConfigurationShortModel), string lastTestResultOutcome = default(string), int? stabilityPercentage = default(int?), string externalId = default(string), List<LinkPutModel> links = default(List<LinkPutModel>), Guid projectId = default(Guid), string name = default(string), string varNamespace = default(string), string classname = default(string), List<AutoTestStepModel> steps = default(List<AutoTestStepModel>), List<AutoTestStepModel> setup = default(List<AutoTestStepModel>), List<AutoTestStepModel> teardown = default(List<AutoTestStepModel>), string title = default(string), string description = default(string), List<LabelShortModel> labels = default(List<LabelShortModel>), bool? isFlaky = default(bool?), string externalKey = default(string))
         {
             this.GlobalId = globalId;
             this.IsDeleted = isDeleted;
@@ -98,7 +98,7 @@ namespace TestIT.ApiClient.Model
             this.LastTestResultOutcome = lastTestResultOutcome;
             this.StabilityPercentage = stabilityPercentage;
             this.Links = links;
-            this.Namespace = _namespace;
+            this.Namespace = varNamespace;
             this.Classname = classname;
             this.Steps = steps;
             this.Setup = setup;
@@ -188,10 +188,11 @@ namespace TestIT.ApiClient.Model
         public Guid? LastTestResultId { get; set; }
 
         /// <summary>
-        /// Gets or Sets LastTestResultConfiguration
+        /// Configuration of the autotest last test result
         /// </summary>
+        /// <value>Configuration of the autotest last test result</value>
         [DataMember(Name = "lastTestResultConfiguration", EmitDefaultValue = true)]
-        public AutoTestModelLastTestResultConfiguration LastTestResultConfiguration { get; set; }
+        public ConfigurationShortModel LastTestResultConfiguration { get; set; }
 
         /// <summary>
         /// Outcome of the autotest last test result
@@ -355,304 +356,22 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AutoTestModel);
-        }
-
-        /// <summary>
-        /// Returns true if AutoTestModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AutoTestModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AutoTestModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.GlobalId == input.GlobalId ||
-                    this.GlobalId.Equals(input.GlobalId)
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    this.IsDeleted.Equals(input.IsDeleted)
-                ) && 
-                (
-                    this.MustBeApproved == input.MustBeApproved ||
-                    this.MustBeApproved.Equals(input.MustBeApproved)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.CreatedById == input.CreatedById ||
-                    (this.CreatedById != null &&
-                    this.CreatedById.Equals(input.CreatedById))
-                ) && 
-                (
-                    this.ModifiedById == input.ModifiedById ||
-                    (this.ModifiedById != null &&
-                    this.ModifiedById.Equals(input.ModifiedById))
-                ) && 
-                (
-                    this.LastTestRunId == input.LastTestRunId ||
-                    (this.LastTestRunId != null &&
-                    this.LastTestRunId.Equals(input.LastTestRunId))
-                ) && 
-                (
-                    this.LastTestRunName == input.LastTestRunName ||
-                    (this.LastTestRunName != null &&
-                    this.LastTestRunName.Equals(input.LastTestRunName))
-                ) && 
-                (
-                    this.LastTestResultId == input.LastTestResultId ||
-                    (this.LastTestResultId != null &&
-                    this.LastTestResultId.Equals(input.LastTestResultId))
-                ) && 
-                (
-                    this.LastTestResultConfiguration == input.LastTestResultConfiguration ||
-                    (this.LastTestResultConfiguration != null &&
-                    this.LastTestResultConfiguration.Equals(input.LastTestResultConfiguration))
-                ) && 
-                (
-                    this.LastTestResultOutcome == input.LastTestResultOutcome ||
-                    (this.LastTestResultOutcome != null &&
-                    this.LastTestResultOutcome.Equals(input.LastTestResultOutcome))
-                ) && 
-                (
-                    this.StabilityPercentage == input.StabilityPercentage ||
-                    (this.StabilityPercentage != null &&
-                    this.StabilityPercentage.Equals(input.StabilityPercentage))
-                ) && 
-                (
-                    this.ExternalId == input.ExternalId ||
-                    (this.ExternalId != null &&
-                    this.ExternalId.Equals(input.ExternalId))
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    this.Links != null &&
-                    input.Links != null &&
-                    this.Links.SequenceEqual(input.Links)
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Namespace == input.Namespace ||
-                    (this.Namespace != null &&
-                    this.Namespace.Equals(input.Namespace))
-                ) && 
-                (
-                    this.Classname == input.Classname ||
-                    (this.Classname != null &&
-                    this.Classname.Equals(input.Classname))
-                ) && 
-                (
-                    this.Steps == input.Steps ||
-                    this.Steps != null &&
-                    input.Steps != null &&
-                    this.Steps.SequenceEqual(input.Steps)
-                ) && 
-                (
-                    this.Setup == input.Setup ||
-                    this.Setup != null &&
-                    input.Setup != null &&
-                    this.Setup.SequenceEqual(input.Setup)
-                ) && 
-                (
-                    this.Teardown == input.Teardown ||
-                    this.Teardown != null &&
-                    input.Teardown != null &&
-                    this.Teardown.SequenceEqual(input.Teardown)
-                ) && 
-                (
-                    this.Title == input.Title ||
-                    (this.Title != null &&
-                    this.Title.Equals(input.Title))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Labels == input.Labels ||
-                    this.Labels != null &&
-                    input.Labels != null &&
-                    this.Labels.SequenceEqual(input.Labels)
-                ) && 
-                (
-                    this.IsFlaky == input.IsFlaky ||
-                    (this.IsFlaky != null &&
-                    this.IsFlaky.Equals(input.IsFlaky))
-                ) && 
-                (
-                    this.ExternalKey == input.ExternalKey ||
-                    (this.ExternalKey != null &&
-                    this.ExternalKey.Equals(input.ExternalKey))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.GlobalId.GetHashCode();
-                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                hashCode = (hashCode * 59) + this.MustBeApproved.GetHashCode();
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                if (this.CreatedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedById.GetHashCode();
-                }
-                if (this.ModifiedById != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedById.GetHashCode();
-                }
-                if (this.LastTestRunId != null)
-                {
-                    hashCode = (hashCode * 59) + this.LastTestRunId.GetHashCode();
-                }
-                if (this.LastTestRunName != null)
-                {
-                    hashCode = (hashCode * 59) + this.LastTestRunName.GetHashCode();
-                }
-                if (this.LastTestResultId != null)
-                {
-                    hashCode = (hashCode * 59) + this.LastTestResultId.GetHashCode();
-                }
-                if (this.LastTestResultConfiguration != null)
-                {
-                    hashCode = (hashCode * 59) + this.LastTestResultConfiguration.GetHashCode();
-                }
-                if (this.LastTestResultOutcome != null)
-                {
-                    hashCode = (hashCode * 59) + this.LastTestResultOutcome.GetHashCode();
-                }
-                if (this.StabilityPercentage != null)
-                {
-                    hashCode = (hashCode * 59) + this.StabilityPercentage.GetHashCode();
-                }
-                if (this.ExternalId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ExternalId.GetHashCode();
-                }
-                if (this.Links != null)
-                {
-                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
-                }
-                if (this.ProjectId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProjectId.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Namespace != null)
-                {
-                    hashCode = (hashCode * 59) + this.Namespace.GetHashCode();
-                }
-                if (this.Classname != null)
-                {
-                    hashCode = (hashCode * 59) + this.Classname.GetHashCode();
-                }
-                if (this.Steps != null)
-                {
-                    hashCode = (hashCode * 59) + this.Steps.GetHashCode();
-                }
-                if (this.Setup != null)
-                {
-                    hashCode = (hashCode * 59) + this.Setup.GetHashCode();
-                }
-                if (this.Teardown != null)
-                {
-                    hashCode = (hashCode * 59) + this.Teardown.GetHashCode();
-                }
-                if (this.Title != null)
-                {
-                    hashCode = (hashCode * 59) + this.Title.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.Labels != null)
-                {
-                    hashCode = (hashCode * 59) + this.Labels.GetHashCode();
-                }
-                if (this.IsFlaky != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsFlaky.GetHashCode();
-                }
-                if (this.ExternalKey != null)
-                {
-                    hashCode = (hashCode * 59) + this.ExternalKey.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ExternalId (string) minLength
             if (this.ExternalId != null && this.ExternalId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ExternalId, length must be greater than 1.", new [] { "ExternalId" });
+                yield return new ValidationResult("Invalid value for ExternalId, length must be greater than 1.", new [] { "ExternalId" });
             }
 
             // Name (string) minLength
             if (this.Name != null && this.Name.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
             }
 
             yield break;

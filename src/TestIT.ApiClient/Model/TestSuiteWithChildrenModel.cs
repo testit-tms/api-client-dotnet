@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// TestSuiteWithChildrenModel
     /// </summary>
     [DataContract(Name = "TestSuiteWithChildrenModel")]
-    public partial class TestSuiteWithChildrenModel : IEquatable<TestSuiteWithChildrenModel>, IValidatableObject
+    public partial class TestSuiteWithChildrenModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestSuiteWithChildrenModel" /> class.
@@ -136,108 +136,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestSuiteWithChildrenModel);
-        }
-
-        /// <summary>
-        /// Returns true if TestSuiteWithChildrenModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestSuiteWithChildrenModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestSuiteWithChildrenModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Children == input.Children ||
-                    this.Children != null &&
-                    input.Children != null &&
-                    this.Children.SequenceEqual(input.Children)
-                ) && 
-                (
-                    this.TesterId == input.TesterId ||
-                    (this.TesterId != null &&
-                    this.TesterId.Equals(input.TesterId))
-                ) && 
-                (
-                    this.ParentId == input.ParentId ||
-                    (this.ParentId != null &&
-                    this.ParentId.Equals(input.ParentId))
-                ) && 
-                (
-                    this.TestPlanId == input.TestPlanId ||
-                    (this.TestPlanId != null &&
-                    this.TestPlanId.Equals(input.TestPlanId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    this.IsDeleted.Equals(input.IsDeleted)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Children != null)
-                {
-                    hashCode = (hashCode * 59) + this.Children.GetHashCode();
-                }
-                if (this.TesterId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TesterId.GetHashCode();
-                }
-                if (this.ParentId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParentId.GetHashCode();
-                }
-                if (this.TestPlanId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TestPlanId.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

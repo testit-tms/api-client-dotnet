@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// TestResultsStatisticsStatusesApiResult
     /// </summary>
     [DataContract(Name = "TestResultsStatisticsStatusesApiResult")]
-    public partial class TestResultsStatisticsStatusesApiResult : IEquatable<TestResultsStatisticsStatusesApiResult>, IValidatableObject
+    public partial class TestResultsStatisticsStatusesApiResult : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestResultsStatisticsStatusesApiResult" /> class.
@@ -128,78 +128,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TestResultsStatisticsStatusesApiResult);
-        }
-
-        /// <summary>
-        /// Returns true if TestResultsStatisticsStatusesApiResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TestResultsStatisticsStatusesApiResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TestResultsStatisticsStatusesApiResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.InProgress == input.InProgress ||
-                    this.InProgress.Equals(input.InProgress)
-                ) && 
-                (
-                    this.Passed == input.Passed ||
-                    this.Passed.Equals(input.Passed)
-                ) && 
-                (
-                    this.Failed == input.Failed ||
-                    this.Failed.Equals(input.Failed)
-                ) && 
-                (
-                    this.Skipped == input.Skipped ||
-                    this.Skipped.Equals(input.Skipped)
-                ) && 
-                (
-                    this.Blocked == input.Blocked ||
-                    this.Blocked.Equals(input.Blocked)
-                ) && 
-                (
-                    this.Incomplete == input.Incomplete ||
-                    this.Incomplete.Equals(input.Incomplete)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.InProgress.GetHashCode();
-                hashCode = (hashCode * 59) + this.Passed.GetHashCode();
-                hashCode = (hashCode * 59) + this.Failed.GetHashCode();
-                hashCode = (hashCode * 59) + this.Skipped.GetHashCode();
-                hashCode = (hashCode * 59) + this.Blocked.GetHashCode();
-                hashCode = (hashCode * 59) + this.Incomplete.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

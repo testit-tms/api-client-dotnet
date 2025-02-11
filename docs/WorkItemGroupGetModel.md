@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SelectModel** | [**WorkItemGroupGetModelSelectModel**](WorkItemGroupGetModelSelectModel.md) |  | [optional] 
+**SelectModel** | [**WorkItemLocalSelectModel**](WorkItemLocalSelectModel.md) | Model containing options to filter work items | [optional] 
 **GroupType** | **WorkItemGroupType** |  | 
 **CustomAttributeId** | **Guid?** |  | [optional] 
 

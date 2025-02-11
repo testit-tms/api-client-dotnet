@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Build** | **string** |  | 
 **Description** | **string** |  | [optional] 
 **StateName** | **TestRunState** |  | 
-**Status** | [**TestResultApiResultStatus**](TestResultApiResultStatus.md) |  | 
+**Status** | [**TestStatusApiResult**](TestStatusApiResult.md) |  | 
 **ProjectId** | **Guid** |  | 
 **TestPlanId** | **Guid?** |  | [optional] 
 **RunByUserId** | **Guid?** |  | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **AutoTestsCount** | **int** |  | 
 **TestSuiteIds** | **List&lt;Guid&gt;** |  | 
 **IsAutomated** | **bool** |  | 
-**Analytic** | [**TestRunApiResultAnalytic**](TestRunApiResultAnalytic.md) |  | 
+**Analytic** | [**TestRunAnalyticApiResult**](TestRunAnalyticApiResult.md) |  | 
 **TestResults** | [**List&lt;TestResultApiResult&gt;**](TestResultApiResult.md) |  | 
 **TestPlan** | [**TestPlanApiResult**](TestPlanApiResult.md) |  | [optional] 
 **CreatedDate** | **DateTime** |  | 

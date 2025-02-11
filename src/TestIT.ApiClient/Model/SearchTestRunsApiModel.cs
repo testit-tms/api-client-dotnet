@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// SearchTestRunsApiModel
     /// </summary>
     [DataContract(Name = "SearchTestRunsApiModel")]
-    public partial class SearchTestRunsApiModel : IEquatable<SearchTestRunsApiModel>, IValidatableObject
+    public partial class SearchTestRunsApiModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchTestRunsApiModel" /> class.
@@ -125,126 +125,22 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as SearchTestRunsApiModel);
-        }
-
-        /// <summary>
-        /// Returns true if SearchTestRunsApiModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of SearchTestRunsApiModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SearchTestRunsApiModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.States == input.States ||
-                    this.States != null &&
-                    input.States != null &&
-                    this.States.SequenceEqual(input.States)
-                ) && 
-                (
-                    this.StatusCodes == input.StatusCodes ||
-                    this.StatusCodes != null &&
-                    input.StatusCodes != null &&
-                    this.StatusCodes.SequenceEqual(input.StatusCodes)
-                ) && 
-                (
-                    this.StartedDate == input.StartedDate ||
-                    (this.StartedDate != null &&
-                    this.StartedDate.Equals(input.StartedDate))
-                ) && 
-                (
-                    this.CompletedDate == input.CompletedDate ||
-                    (this.CompletedDate != null &&
-                    this.CompletedDate.Equals(input.CompletedDate))
-                ) && 
-                (
-                    this.CreatedByIds == input.CreatedByIds ||
-                    this.CreatedByIds != null &&
-                    input.CreatedByIds != null &&
-                    this.CreatedByIds.SequenceEqual(input.CreatedByIds)
-                ) && 
-                (
-                    this.ModifiedByIds == input.ModifiedByIds ||
-                    this.ModifiedByIds != null &&
-                    input.ModifiedByIds != null &&
-                    this.ModifiedByIds.SequenceEqual(input.ModifiedByIds)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.States != null)
-                {
-                    hashCode = (hashCode * 59) + this.States.GetHashCode();
-                }
-                if (this.StatusCodes != null)
-                {
-                    hashCode = (hashCode * 59) + this.StatusCodes.GetHashCode();
-                }
-                if (this.StartedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.StartedDate.GetHashCode();
-                }
-                if (this.CompletedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CompletedDate.GetHashCode();
-                }
-                if (this.CreatedByIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedByIds.GetHashCode();
-                }
-                if (this.ModifiedByIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedByIds.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
             }
 
             // Name (string) minLength
             if (this.Name != null && this.Name.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
             }
 
             yield break;

@@ -30,7 +30,7 @@ namespace TestIT.ApiClient.Model
     /// Model containing options to filter work items
     /// </summary>
     [DataContract(Name = "WorkItemSelectModel")]
-    public partial class WorkItemSelectModel : IEquatable<WorkItemSelectModel>, IValidatableObject
+    public partial class WorkItemSelectModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemSelectModel" /> class.
@@ -40,9 +40,9 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemSelectModel" /> class.
         /// </summary>
-        /// <param name="filter">filter (required).</param>
-        /// <param name="extractionModel">extractionModel.</param>
-        public WorkItemSelectModel(WorkItemSelectModelFilter filter = default(WorkItemSelectModelFilter), WorkItemLocalSelectModelExtractionModel extractionModel = default(WorkItemLocalSelectModelExtractionModel))
+        /// <param name="filter">Collection of filters to apply to search (required).</param>
+        /// <param name="extractionModel">Rules for different level entities inclusion/exclusion.</param>
+        public WorkItemSelectModel(WorkItemFilterModel filter = default(WorkItemFilterModel), WorkItemExtractionModel extractionModel = default(WorkItemExtractionModel))
         {
             // to ensure "filter" is required (not null)
             if (filter == null)
@@ -54,16 +54,18 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Gets or Sets Filter
+        /// Collection of filters to apply to search
         /// </summary>
+        /// <value>Collection of filters to apply to search</value>
         [DataMember(Name = "filter", IsRequired = true, EmitDefaultValue = true)]
-        public WorkItemSelectModelFilter Filter { get; set; }
+        public WorkItemFilterModel Filter { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExtractionModel
+        /// Rules for different level entities inclusion/exclusion
         /// </summary>
+        /// <value>Rules for different level entities inclusion/exclusion</value>
         [DataMember(Name = "extractionModel", EmitDefaultValue = true)]
-        public WorkItemLocalSelectModelExtractionModel ExtractionModel { get; set; }
+        public WorkItemExtractionModel ExtractionModel { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -89,66 +91,11 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as WorkItemSelectModel);
-        }
-
-        /// <summary>
-        /// Returns true if WorkItemSelectModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of WorkItemSelectModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(WorkItemSelectModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Filter == input.Filter ||
-                    (this.Filter != null &&
-                    this.Filter.Equals(input.Filter))
-                ) && 
-                (
-                    this.ExtractionModel == input.ExtractionModel ||
-                    (this.ExtractionModel != null &&
-                    this.ExtractionModel.Equals(input.ExtractionModel))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Filter != null)
-                {
-                    hashCode = (hashCode * 59) + this.Filter.GetHashCode();
-                }
-                if (this.ExtractionModel != null)
-                {
-                    hashCode = (hashCode * 59) + this.ExtractionModel.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

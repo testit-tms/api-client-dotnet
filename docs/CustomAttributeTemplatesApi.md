@@ -640,7 +640,7 @@ catch (ApiException e)
 
 <a id="apiv2customattributestemplatespost"></a>
 # **ApiV2CustomAttributesTemplatesPost**
-> CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesPost (ApiV2CustomAttributesTemplatesPostRequest apiV2CustomAttributesTemplatesPostRequest = null)
+> CustomAttributeTemplateModel ApiV2CustomAttributesTemplatesPost (CustomAttributeTemplatePostModel customAttributeTemplatePostModel = null)
 
 Create CustomAttributeTemplate
 
@@ -672,12 +672,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CustomAttributeTemplatesApi(httpClient, config, httpClientHandler);
-            var apiV2CustomAttributesTemplatesPostRequest = new ApiV2CustomAttributesTemplatesPostRequest(); // ApiV2CustomAttributesTemplatesPostRequest |  (optional) 
+            var customAttributeTemplatePostModel = new CustomAttributeTemplatePostModel(); // CustomAttributeTemplatePostModel |  (optional) 
 
             try
             {
                 // Create CustomAttributeTemplate
-                CustomAttributeTemplateModel result = apiInstance.ApiV2CustomAttributesTemplatesPost(apiV2CustomAttributesTemplatesPostRequest);
+                CustomAttributeTemplateModel result = apiInstance.ApiV2CustomAttributesTemplatesPost(customAttributeTemplatePostModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -698,7 +698,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create CustomAttributeTemplate
-    ApiResponse<CustomAttributeTemplateModel> response = apiInstance.ApiV2CustomAttributesTemplatesPostWithHttpInfo(apiV2CustomAttributesTemplatesPostRequest);
+    ApiResponse<CustomAttributeTemplateModel> response = apiInstance.ApiV2CustomAttributesTemplatesPostWithHttpInfo(customAttributeTemplatePostModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -715,7 +715,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiV2CustomAttributesTemplatesPostRequest** | [**ApiV2CustomAttributesTemplatesPostRequest**](ApiV2CustomAttributesTemplatesPostRequest.md) |  | [optional]  |
+| **customAttributeTemplatePostModel** | [**CustomAttributeTemplatePostModel**](CustomAttributeTemplatePostModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -746,7 +746,7 @@ catch (ApiException e)
 
 <a id="apiv2customattributestemplatesput"></a>
 # **ApiV2CustomAttributesTemplatesPut**
-> void ApiV2CustomAttributesTemplatesPut (ApiV2CustomAttributesTemplatesPutRequest apiV2CustomAttributesTemplatesPutRequest = null)
+> void ApiV2CustomAttributesTemplatesPut (CustomAttributeTemplatePutModel customAttributeTemplatePutModel = null)
 
 Update custom attributes template
 
@@ -776,12 +776,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CustomAttributeTemplatesApi(httpClient, config, httpClientHandler);
-            var apiV2CustomAttributesTemplatesPutRequest = new ApiV2CustomAttributesTemplatesPutRequest(); // ApiV2CustomAttributesTemplatesPutRequest |  (optional) 
+            var customAttributeTemplatePutModel = new CustomAttributeTemplatePutModel(); // CustomAttributeTemplatePutModel |  (optional) 
 
             try
             {
                 // Update custom attributes template
-                apiInstance.ApiV2CustomAttributesTemplatesPut(apiV2CustomAttributesTemplatesPutRequest);
+                apiInstance.ApiV2CustomAttributesTemplatesPut(customAttributeTemplatePutModel);
             }
             catch (ApiException  e)
             {
@@ -801,7 +801,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update custom attributes template
-    apiInstance.ApiV2CustomAttributesTemplatesPutWithHttpInfo(apiV2CustomAttributesTemplatesPutRequest);
+    apiInstance.ApiV2CustomAttributesTemplatesPutWithHttpInfo(customAttributeTemplatePutModel);
 }
 catch (ApiException e)
 {
@@ -815,7 +815,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiV2CustomAttributesTemplatesPutRequest** | [**ApiV2CustomAttributesTemplatesPutRequest**](ApiV2CustomAttributesTemplatesPutRequest.md) |  | [optional]  |
+| **customAttributeTemplatePutModel** | [**CustomAttributeTemplatePutModel**](CustomAttributeTemplatePutModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -846,7 +846,7 @@ void (empty response body)
 
 <a id="apiv2customattributestemplatessearchpost"></a>
 # **ApiV2CustomAttributesTemplatesSearchPost**
-> List&lt;SearchCustomAttributeTemplateGetModel&gt; ApiV2CustomAttributesTemplatesSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2CustomAttributesTemplatesSearchPostRequest apiV2CustomAttributesTemplatesSearchPostRequest = null)
+> List&lt;SearchCustomAttributeTemplateGetModel&gt; ApiV2CustomAttributesTemplatesSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, CustomAttributeTemplateSearchQueryModel customAttributeTemplateSearchQueryModel = null)
 
 Search CustomAttributeTemplates
 
@@ -883,12 +883,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var apiV2CustomAttributesTemplatesSearchPostRequest = new ApiV2CustomAttributesTemplatesSearchPostRequest(); // ApiV2CustomAttributesTemplatesSearchPostRequest |  (optional) 
+            var customAttributeTemplateSearchQueryModel = new CustomAttributeTemplateSearchQueryModel(); // CustomAttributeTemplateSearchQueryModel |  (optional) 
 
             try
             {
                 // Search CustomAttributeTemplates
-                List<SearchCustomAttributeTemplateGetModel> result = apiInstance.ApiV2CustomAttributesTemplatesSearchPost(skip, take, orderBy, searchField, searchValue, apiV2CustomAttributesTemplatesSearchPostRequest);
+                List<SearchCustomAttributeTemplateGetModel> result = apiInstance.ApiV2CustomAttributesTemplatesSearchPost(skip, take, orderBy, searchField, searchValue, customAttributeTemplateSearchQueryModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -909,7 +909,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search CustomAttributeTemplates
-    ApiResponse<List<SearchCustomAttributeTemplateGetModel>> response = apiInstance.ApiV2CustomAttributesTemplatesSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, apiV2CustomAttributesTemplatesSearchPostRequest);
+    ApiResponse<List<SearchCustomAttributeTemplateGetModel>> response = apiInstance.ApiV2CustomAttributesTemplatesSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, customAttributeTemplateSearchQueryModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -931,7 +931,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **apiV2CustomAttributesTemplatesSearchPostRequest** | [**ApiV2CustomAttributesTemplatesSearchPostRequest**](ApiV2CustomAttributesTemplatesSearchPostRequest.md) |  | [optional]  |
+| **customAttributeTemplateSearchQueryModel** | [**CustomAttributeTemplateSearchQueryModel**](CustomAttributeTemplateSearchQueryModel.md) |  | [optional]  |
 
 ### Return type
 

@@ -21,8 +21,8 @@ Name | Type | Description | Notes
 **ModifiedById** | **Guid?** | Unique identifier of user who applied the latest modification of Work Item | [optional] 
 **CreatedDate** | **DateTime?** | Date and time of Work Item creation | [optional] 
 **ModifiedDate** | **DateTime?** | Date and time of the latest modification of Work Item | [optional] 
-**State** | **WorkItemStates** |  | 
-**Priority** | **WorkItemPriorityModel** |  | 
+**State** | **WorkItemStates** | The current state of Work Item | 
+**Priority** | **WorkItemPriorityModel** | Work Item priority level | 
 **IsDeleted** | **bool** | Flag determining whether Work Item is deleted | 
 **TagNames** | **List&lt;string&gt;** | Array of tag names of Work Item | [optional] 
 **Iterations** | [**List&lt;IterationModel&gt;**](IterationModel.md) | Set of iterations related to Work Item | 

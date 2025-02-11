@@ -14,7 +14,7 @@ All URIs are relative to *http://localhost*
 
 <a id="apiv2tagsdelete"></a>
 # **ApiV2TagsDelete**
-> void ApiV2TagsDelete (ApiV2TagsDeleteRequest apiV2TagsDeleteRequest = null)
+> void ApiV2TagsDelete (TagSelectModel tagSelectModel = null)
 
 Delete tags
 
@@ -46,12 +46,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TagsApi(httpClient, config, httpClientHandler);
-            var apiV2TagsDeleteRequest = new ApiV2TagsDeleteRequest(); // ApiV2TagsDeleteRequest |  (optional) 
+            var tagSelectModel = new TagSelectModel(); // TagSelectModel |  (optional) 
 
             try
             {
                 // Delete tags
-                apiInstance.ApiV2TagsDelete(apiV2TagsDeleteRequest);
+                apiInstance.ApiV2TagsDelete(tagSelectModel);
             }
             catch (ApiException  e)
             {
@@ -71,7 +71,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete tags
-    apiInstance.ApiV2TagsDeleteWithHttpInfo(apiV2TagsDeleteRequest);
+    apiInstance.ApiV2TagsDeleteWithHttpInfo(tagSelectModel);
 }
 catch (ApiException e)
 {
@@ -85,7 +85,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiV2TagsDeleteRequest** | [**ApiV2TagsDeleteRequest**](ApiV2TagsDeleteRequest.md) |  | [optional]  |
+| **tagSelectModel** | [**TagSelectModel**](TagSelectModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -319,7 +319,7 @@ void (empty response body)
 
 <a id="apiv2tagspost"></a>
 # **ApiV2TagsPost**
-> TagModel ApiV2TagsPost (ApiV2TagsPostRequest apiV2TagsPostRequest = null)
+> TagModel ApiV2TagsPost (TagPostModel tagPostModel = null)
 
 Create tag
 
@@ -351,12 +351,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TagsApi(httpClient, config, httpClientHandler);
-            var apiV2TagsPostRequest = new ApiV2TagsPostRequest(); // ApiV2TagsPostRequest |  (optional) 
+            var tagPostModel = new TagPostModel(); // TagPostModel |  (optional) 
 
             try
             {
                 // Create tag
-                TagModel result = apiInstance.ApiV2TagsPost(apiV2TagsPostRequest);
+                TagModel result = apiInstance.ApiV2TagsPost(tagPostModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -377,7 +377,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create tag
-    ApiResponse<TagModel> response = apiInstance.ApiV2TagsPostWithHttpInfo(apiV2TagsPostRequest);
+    ApiResponse<TagModel> response = apiInstance.ApiV2TagsPostWithHttpInfo(tagPostModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -394,7 +394,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiV2TagsPostRequest** | [**ApiV2TagsPostRequest**](ApiV2TagsPostRequest.md) |  | [optional]  |
+| **tagPostModel** | [**TagPostModel**](TagPostModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -425,7 +425,7 @@ catch (ApiException e)
 
 <a id="apiv2tagsput"></a>
 # **ApiV2TagsPut**
-> TagModel ApiV2TagsPut (Guid? id = null, ApiV2TagsPutRequest apiV2TagsPutRequest = null)
+> TagModel ApiV2TagsPut (Guid? id = null, TagPutModel tagPutModel = null)
 
 Update tag
 
@@ -458,12 +458,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TagsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // Guid? |  (optional) 
-            var apiV2TagsPutRequest = new ApiV2TagsPutRequest(); // ApiV2TagsPutRequest |  (optional) 
+            var tagPutModel = new TagPutModel(); // TagPutModel |  (optional) 
 
             try
             {
                 // Update tag
-                TagModel result = apiInstance.ApiV2TagsPut(id, apiV2TagsPutRequest);
+                TagModel result = apiInstance.ApiV2TagsPut(id, tagPutModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -484,7 +484,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update tag
-    ApiResponse<TagModel> response = apiInstance.ApiV2TagsPutWithHttpInfo(id, apiV2TagsPutRequest);
+    ApiResponse<TagModel> response = apiInstance.ApiV2TagsPutWithHttpInfo(id, tagPutModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -502,7 +502,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid?** |  | [optional]  |
-| **apiV2TagsPutRequest** | [**ApiV2TagsPutRequest**](ApiV2TagsPutRequest.md) |  | [optional]  |
+| **tagPutModel** | [**TagPutModel**](TagPutModel.md) |  | [optional]  |
 
 ### Return type
 

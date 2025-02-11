@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 
 <a id="apiv2projectsprojectidattributestemplatessearchpost"></a>
 # **ApiV2ProjectsProjectIdAttributesTemplatesSearchPost**
-> List&lt;ProjectCustomAttributeTemplateGetModel&gt; ApiV2ProjectsProjectIdAttributesTemplatesSearchPost (string projectId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest = null)
+> List&lt;ProjectCustomAttributeTemplateGetModel&gt; ApiV2ProjectsProjectIdAttributesTemplatesSearchPost (string projectId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = null)
 
 Search for custom attributes templates
 
@@ -46,12 +46,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest = new ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest(); // ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest |  (optional) 
+            var projectCustomAttributesTemplatesFilterModel = new ProjectCustomAttributesTemplatesFilterModel(); // ProjectCustomAttributesTemplatesFilterModel |  (optional) 
 
             try
             {
                 // Search for custom attributes templates
-                List<ProjectCustomAttributeTemplateGetModel> result = apiInstance.ApiV2ProjectsProjectIdAttributesTemplatesSearchPost(projectId, skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest);
+                List<ProjectCustomAttributeTemplateGetModel> result = apiInstance.ApiV2ProjectsProjectIdAttributesTemplatesSearchPost(projectId, skip, take, orderBy, searchField, searchValue, projectCustomAttributesTemplatesFilterModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -72,7 +72,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for custom attributes templates
-    ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> response = apiInstance.ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest);
+    ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> response = apiInstance.ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, projectCustomAttributesTemplatesFilterModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -95,7 +95,7 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **apiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest** | [**ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest**](ApiV2ProjectsProjectIdAttributesTemplatesSearchPostRequest.md) |  | [optional]  |
+| **projectCustomAttributesTemplatesFilterModel** | [**ProjectCustomAttributesTemplatesFilterModel**](ProjectCustomAttributesTemplatesFilterModel.md) |  | [optional]  |
 
 ### Return type
 

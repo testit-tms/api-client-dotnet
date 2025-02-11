@@ -119,7 +119,7 @@ void (empty response body)
 
 <a id="createsection"></a>
 # **CreateSection**
-> SectionWithStepsModel CreateSection (CreateSectionRequest createSectionRequest = null)
+> SectionWithStepsModel CreateSection (SectionPostModel sectionPostModel = null)
 
 Create section
 
@@ -151,12 +151,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new SectionsApi(httpClient, config, httpClientHandler);
-            var createSectionRequest = new CreateSectionRequest(); // CreateSectionRequest |  (optional) 
+            var sectionPostModel = new SectionPostModel(); // SectionPostModel |  (optional) 
 
             try
             {
                 // Create section
-                SectionWithStepsModel result = apiInstance.CreateSection(createSectionRequest);
+                SectionWithStepsModel result = apiInstance.CreateSection(sectionPostModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -177,7 +177,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create section
-    ApiResponse<SectionWithStepsModel> response = apiInstance.CreateSectionWithHttpInfo(createSectionRequest);
+    ApiResponse<SectionWithStepsModel> response = apiInstance.CreateSectionWithHttpInfo(sectionPostModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -194,7 +194,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **createSectionRequest** | [**CreateSectionRequest**](CreateSectionRequest.md) |  | [optional]  |
+| **sectionPostModel** | [**SectionPostModel**](SectionPostModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -557,7 +557,7 @@ catch (ApiException e)
 
 <a id="move"></a>
 # **Move**
-> void Move (MoveRequest moveRequest = null)
+> void Move (SectionMoveModel sectionMoveModel = null)
 
 Move section with all work items into another section
 
@@ -587,12 +587,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new SectionsApi(httpClient, config, httpClientHandler);
-            var moveRequest = new MoveRequest(); // MoveRequest |  (optional) 
+            var sectionMoveModel = new SectionMoveModel(); // SectionMoveModel |  (optional) 
 
             try
             {
                 // Move section with all work items into another section
-                apiInstance.Move(moveRequest);
+                apiInstance.Move(sectionMoveModel);
             }
             catch (ApiException  e)
             {
@@ -612,7 +612,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Move section with all work items into another section
-    apiInstance.MoveWithHttpInfo(moveRequest);
+    apiInstance.MoveWithHttpInfo(sectionMoveModel);
 }
 catch (ApiException e)
 {
@@ -626,7 +626,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **moveRequest** | [**MoveRequest**](MoveRequest.md) |  | [optional]  |
+| **sectionMoveModel** | [**SectionMoveModel**](SectionMoveModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -657,7 +657,7 @@ void (empty response body)
 
 <a id="rename"></a>
 # **Rename**
-> void Rename (RenameRequest renameRequest = null)
+> void Rename (SectionRenameModel sectionRenameModel = null)
 
 Rename section
 
@@ -689,12 +689,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new SectionsApi(httpClient, config, httpClientHandler);
-            var renameRequest = new RenameRequest(); // RenameRequest |  (optional) 
+            var sectionRenameModel = new SectionRenameModel(); // SectionRenameModel |  (optional) 
 
             try
             {
                 // Rename section
-                apiInstance.Rename(renameRequest);
+                apiInstance.Rename(sectionRenameModel);
             }
             catch (ApiException  e)
             {
@@ -714,7 +714,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Rename section
-    apiInstance.RenameWithHttpInfo(renameRequest);
+    apiInstance.RenameWithHttpInfo(sectionRenameModel);
 }
 catch (ApiException e)
 {
@@ -728,7 +728,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **renameRequest** | [**RenameRequest**](RenameRequest.md) |  | [optional]  |
+| **sectionRenameModel** | [**SectionRenameModel**](SectionRenameModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -759,7 +759,7 @@ void (empty response body)
 
 <a id="updatesection"></a>
 # **UpdateSection**
-> void UpdateSection (UpdateSectionRequest updateSectionRequest = null)
+> void UpdateSection (SectionPutModel sectionPutModel = null)
 
 Update section
 
@@ -791,12 +791,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new SectionsApi(httpClient, config, httpClientHandler);
-            var updateSectionRequest = new UpdateSectionRequest(); // UpdateSectionRequest |  (optional) 
+            var sectionPutModel = new SectionPutModel(); // SectionPutModel |  (optional) 
 
             try
             {
                 // Update section
-                apiInstance.UpdateSection(updateSectionRequest);
+                apiInstance.UpdateSection(sectionPutModel);
             }
             catch (ApiException  e)
             {
@@ -816,7 +816,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update section
-    apiInstance.UpdateSectionWithHttpInfo(updateSectionRequest);
+    apiInstance.UpdateSectionWithHttpInfo(sectionPutModel);
 }
 catch (ApiException e)
 {
@@ -830,7 +830,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **updateSectionRequest** | [**UpdateSectionRequest**](UpdateSectionRequest.md) |  | [optional]  |
+| **sectionPutModel** | [**SectionPutModel**](SectionPutModel.md) |  | [optional]  |
 
 ### Return type
 
