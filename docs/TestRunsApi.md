@@ -445,7 +445,7 @@ void (empty response body)
 
 <a id="apiv2testrunsidrerunspost"></a>
 # **ApiV2TestRunsIdRerunsPost**
-> ManualRerunApiResult ApiV2TestRunsIdRerunsPost (Guid id, ManualRerunSelectApiModel manualRerunSelectApiModel = null)
+> ManualRerunApiResult ApiV2TestRunsIdRerunsPost (Guid id, ManualRerunSelectTestResultsApiModel manualRerunSelectTestResultsApiModel = null)
 
 Manual autotests rerun in test run
 
@@ -476,12 +476,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // Guid | 
-            var manualRerunSelectApiModel = new ManualRerunSelectApiModel(); // ManualRerunSelectApiModel |  (optional) 
+            var manualRerunSelectTestResultsApiModel = new ManualRerunSelectTestResultsApiModel(); // ManualRerunSelectTestResultsApiModel |  (optional) 
 
             try
             {
                 // Manual autotests rerun in test run
-                ManualRerunApiResult result = apiInstance.ApiV2TestRunsIdRerunsPost(id, manualRerunSelectApiModel);
+                ManualRerunApiResult result = apiInstance.ApiV2TestRunsIdRerunsPost(id, manualRerunSelectTestResultsApiModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -502,7 +502,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Manual autotests rerun in test run
-    ApiResponse<ManualRerunApiResult> response = apiInstance.ApiV2TestRunsIdRerunsPostWithHttpInfo(id, manualRerunSelectApiModel);
+    ApiResponse<ManualRerunApiResult> response = apiInstance.ApiV2TestRunsIdRerunsPostWithHttpInfo(id, manualRerunSelectTestResultsApiModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -520,7 +520,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid** |  |  |
-| **manualRerunSelectApiModel** | [**ManualRerunSelectApiModel**](ManualRerunSelectApiModel.md) |  | [optional]  |
+| **manualRerunSelectTestResultsApiModel** | [**ManualRerunSelectTestResultsApiModel**](ManualRerunSelectTestResultsApiModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -759,7 +759,7 @@ catch (ApiException e)
 
 <a id="apiv2testrunsidtestpointsresultsget"></a>
 # **ApiV2TestRunsIdTestPointsResultsGet**
-> List&lt;TestPointResultModel&gt; ApiV2TestRunsIdTestPointsResultsGet (Guid id)
+> List&lt;TestPointResultApiResult&gt; ApiV2TestRunsIdTestPointsResultsGet (Guid id)
 
 Get test results from the test run grouped by test points
 
@@ -794,7 +794,7 @@ namespace Example
             try
             {
                 // Get test results from the test run grouped by test points
-                List<TestPointResultModel> result = apiInstance.ApiV2TestRunsIdTestPointsResultsGet(id);
+                List<TestPointResultApiResult> result = apiInstance.ApiV2TestRunsIdTestPointsResultsGet(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -815,7 +815,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get test results from the test run grouped by test points
-    ApiResponse<List<TestPointResultModel>> response = apiInstance.ApiV2TestRunsIdTestPointsResultsGetWithHttpInfo(id);
+    ApiResponse<List<TestPointResultApiResult>> response = apiInstance.ApiV2TestRunsIdTestPointsResultsGetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -836,7 +836,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;TestPointResultModel&gt;**](TestPointResultModel.md)
+[**List&lt;TestPointResultApiResult&gt;**](TestPointResultApiResult.md)
 
 ### Authorization
 

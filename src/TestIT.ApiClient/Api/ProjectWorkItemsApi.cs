@@ -97,9 +97,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
-        /// <returns>List&lt;WorkItemShortModel&gt;</returns>
-        List<WorkItemShortModel> ApiV2ProjectsProjectIdWorkItemsSearchPost(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel));
+        /// <param name="workItemSelectApiModel"> (optional)</param>
+        /// <returns>List&lt;WorkItemShortApiResult&gt;</returns>
+        List<WorkItemShortApiResult> ApiV2ProjectsProjectIdWorkItemsSearchPost(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel));
 
         /// <summary>
         /// Search for work items
@@ -114,9 +114,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;WorkItemShortModel&gt;</returns>
-        ApiResponse<List<WorkItemShortModel>> ApiV2ProjectsProjectIdWorkItemsSearchPostWithHttpInfo(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel));
+        /// <param name="workItemSelectApiModel"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;WorkItemShortApiResult&gt;</returns>
+        ApiResponse<List<WorkItemShortApiResult>> ApiV2ProjectsProjectIdWorkItemsSearchPostWithHttpInfo(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel));
         /// <summary>
         /// Get WorkItems Tags
         /// </summary>
@@ -271,10 +271,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="workItemSelectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;WorkItemShortModel&gt;</returns>
-        System.Threading.Tasks.Task<List<WorkItemShortModel>> ApiV2ProjectsProjectIdWorkItemsSearchPostAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;WorkItemShortApiResult&gt;</returns>
+        System.Threading.Tasks.Task<List<WorkItemShortApiResult>> ApiV2ProjectsProjectIdWorkItemsSearchPostAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Search for work items
@@ -289,10 +289,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="workItemSelectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<WorkItemShortModel>>> ApiV2ProjectsProjectIdWorkItemsSearchPostWithHttpInfoAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;WorkItemShortApiResult&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<WorkItemShortApiResult>>> ApiV2ProjectsProjectIdWorkItemsSearchPostWithHttpInfoAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get WorkItems Tags
         /// </summary>
@@ -968,11 +968,11 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
-        /// <returns>List&lt;WorkItemShortModel&gt;</returns>
-        public List<WorkItemShortModel> ApiV2ProjectsProjectIdWorkItemsSearchPost(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel))
+        /// <param name="workItemSelectApiModel"> (optional)</param>
+        /// <returns>List&lt;WorkItemShortApiResult&gt;</returns>
+        public List<WorkItemShortApiResult> ApiV2ProjectsProjectIdWorkItemsSearchPost(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = ApiV2ProjectsProjectIdWorkItemsSearchPostWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, workItemSelectModel);
+            TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortApiResult>> localVarResponse = ApiV2ProjectsProjectIdWorkItemsSearchPostWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, workItemSelectApiModel);
             return localVarResponse.Data;
         }
 
@@ -986,9 +986,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;WorkItemShortModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>> ApiV2ProjectsProjectIdWorkItemsSearchPostWithHttpInfo(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel))
+        /// <param name="workItemSelectApiModel"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;WorkItemShortApiResult&gt;</returns>
+        public TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortApiResult>> ApiV2ProjectsProjectIdWorkItemsSearchPostWithHttpInfo(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -1032,7 +1032,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = workItemSelectModel;
+            localVarRequestOptions.Data = workItemSelectApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1041,7 +1041,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<List<WorkItemShortModel>>("/api/v2/projects/{projectId}/workItems/search", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<List<WorkItemShortApiResult>>("/api/v2/projects/{projectId}/workItems/search", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1062,12 +1062,12 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="workItemSelectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;WorkItemShortModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<WorkItemShortModel>> ApiV2ProjectsProjectIdWorkItemsSearchPostAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;WorkItemShortApiResult&gt;</returns>
+        public async System.Threading.Tasks.Task<List<WorkItemShortApiResult>> ApiV2ProjectsProjectIdWorkItemsSearchPostAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = await ApiV2ProjectsProjectIdWorkItemsSearchPostWithHttpInfoAsync(projectId, skip, take, orderBy, searchField, searchValue, workItemSelectModel, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortApiResult>> localVarResponse = await ApiV2ProjectsProjectIdWorkItemsSearchPostWithHttpInfoAsync(projectId, skip, take, orderBy, searchField, searchValue, workItemSelectApiModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1081,10 +1081,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="workItemSelectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>>> ApiV2ProjectsProjectIdWorkItemsSearchPostWithHttpInfoAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;WorkItemShortApiResult&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortApiResult>>> ApiV2ProjectsProjectIdWorkItemsSearchPostWithHttpInfoAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -1130,7 +1130,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = workItemSelectModel;
+            localVarRequestOptions.Data = workItemSelectApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1140,7 +1140,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<WorkItemShortModel>>("/api/v2/projects/{projectId}/workItems/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<WorkItemShortApiResult>>("/api/v2/projects/{projectId}/workItems/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

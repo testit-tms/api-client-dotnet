@@ -17,7 +17,7 @@ All URIs are relative to *http://localhost*
 
 <a id="apiv2webhooksdelete"></a>
 # **ApiV2WebhooksDelete**
-> void ApiV2WebhooksDelete (WebhooksDeleteRequest webhooksDeleteRequest = null)
+> void ApiV2WebhooksDelete (WebhooksDeleteApiModel webhooksDeleteApiModel = null)
 
 
 
@@ -47,11 +47,11 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WebhooksApi(httpClient, config, httpClientHandler);
-            var webhooksDeleteRequest = new WebhooksDeleteRequest(); // WebhooksDeleteRequest |  (optional) 
+            var webhooksDeleteApiModel = new WebhooksDeleteApiModel(); // WebhooksDeleteApiModel |  (optional) 
 
             try
             {
-                apiInstance.ApiV2WebhooksDelete(webhooksDeleteRequest);
+                apiInstance.ApiV2WebhooksDelete(webhooksDeleteApiModel);
             }
             catch (ApiException  e)
             {
@@ -70,7 +70,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    apiInstance.ApiV2WebhooksDeleteWithHttpInfo(webhooksDeleteRequest);
+    apiInstance.ApiV2WebhooksDeleteWithHttpInfo(webhooksDeleteApiModel);
 }
 catch (ApiException e)
 {
@@ -84,7 +84,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **webhooksDeleteRequest** | [**WebhooksDeleteRequest**](WebhooksDeleteRequest.md) |  | [optional]  |
+| **webhooksDeleteApiModel** | [**WebhooksDeleteApiModel**](WebhooksDeleteApiModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -634,7 +634,7 @@ catch (ApiException e)
 
 <a id="apiv2webhooksput"></a>
 # **ApiV2WebhooksPut**
-> WebhooksUpdateResponse ApiV2WebhooksPut (WebhooksUpdateRequest webhooksUpdateRequest = null)
+> WebhooksUpdateApiResult ApiV2WebhooksPut (WebhooksUpdateApiModel webhooksUpdateApiModel = null)
 
 
 
@@ -664,11 +664,11 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WebhooksApi(httpClient, config, httpClientHandler);
-            var webhooksUpdateRequest = new WebhooksUpdateRequest(); // WebhooksUpdateRequest |  (optional) 
+            var webhooksUpdateApiModel = new WebhooksUpdateApiModel(); // WebhooksUpdateApiModel |  (optional) 
 
             try
             {
-                WebhooksUpdateResponse result = apiInstance.ApiV2WebhooksPut(webhooksUpdateRequest);
+                WebhooksUpdateApiResult result = apiInstance.ApiV2WebhooksPut(webhooksUpdateApiModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -688,7 +688,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<WebhooksUpdateResponse> response = apiInstance.ApiV2WebhooksPutWithHttpInfo(webhooksUpdateRequest);
+    ApiResponse<WebhooksUpdateApiResult> response = apiInstance.ApiV2WebhooksPutWithHttpInfo(webhooksUpdateApiModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -705,11 +705,11 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **webhooksUpdateRequest** | [**WebhooksUpdateRequest**](WebhooksUpdateRequest.md) |  | [optional]  |
+| **webhooksUpdateApiModel** | [**WebhooksUpdateApiModel**](WebhooksUpdateApiModel.md) |  | [optional]  |
 
 ### Return type
 
-[**WebhooksUpdateResponse**](WebhooksUpdateResponse.md)
+[**WebhooksUpdateApiResult**](WebhooksUpdateApiResult.md)
 
 ### Authorization
 

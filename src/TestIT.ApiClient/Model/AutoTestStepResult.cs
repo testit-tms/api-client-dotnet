@@ -52,7 +52,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="stepResults">Nested step results. The maximum nesting level is 15..</param>
         /// <param name="attachments">/// &lt;summary&gt;  Specifies an attachment GUID. Multiple values can be sent.  &lt;/summary&gt;.</param>
         /// <param name="parameters">\&quot;&lt;b&gt;parameter&lt;/b&gt;\&quot;: \&quot;&lt;b&gt;value&lt;/b&gt;\&quot; pair with arbitrary custom parameters. Multiple parameters can be sent..</param>
-        public AutoTestStepResult(string title = default(string), string description = default(string), string info = default(string), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? duration = default(long?), AvailableTestResultOutcome? outcome = default(AvailableTestResultOutcome?), List<AutoTestStepResult> stepResults = default(List<AutoTestStepResult>), List<Attachment> attachments = default(List<Attachment>), Dictionary<string, string> parameters = default(Dictionary<string, string>))
+        public AutoTestStepResult(string title = default(string), string description = default(string), string info = default(string), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? duration = default(long?), AvailableTestResultOutcome? outcome = default(AvailableTestResultOutcome?), List<AutoTestStepResult> stepResults = default(List<AutoTestStepResult>), List<AttachmentApiResult> attachments = default(List<AttachmentApiResult>), Dictionary<string, string> parameters = default(Dictionary<string, string>))
         {
             this.Title = title;
             this.Description = description;
@@ -120,7 +120,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>/// &lt;summary&gt;  Specifies an attachment GUID. Multiple values can be sent.  &lt;/summary&gt;</value>
         [DataMember(Name = "attachments", EmitDefaultValue = true)]
-        public List<Attachment> Attachments { get; set; }
+        public List<AttachmentApiResult> Attachments { get; set; }
 
         /// <summary>
         /// \&quot;&lt;b&gt;parameter&lt;/b&gt;\&quot;: \&quot;&lt;b&gt;value&lt;/b&gt;\&quot; pair with arbitrary custom parameters. Multiple parameters can be sent.

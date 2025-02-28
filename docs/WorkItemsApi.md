@@ -13,6 +13,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2WorkItemsIdLikesGet**](WorkItemsApi.md#apiv2workitemsidlikesget) | **GET** /api/v2/workItems/{id}/likes | Get likes of WorkItem |
 | [**ApiV2WorkItemsIdTestResultsHistoryGet**](WorkItemsApi.md#apiv2workitemsidtestresultshistoryget) | **GET** /api/v2/workItems/{id}/testResults/history | Get test results history of WorkItem |
 | [**ApiV2WorkItemsIdVersionVersionIdActualPost**](WorkItemsApi.md#apiv2workitemsidversionversionidactualpost) | **POST** /api/v2/workItems/{id}/version/{versionId}/actual | Set WorkItem as actual |
+| [**ApiV2WorkItemsLinksUrlsSearchPost**](WorkItemsApi.md#apiv2workitemslinksurlssearchpost) | **POST** /api/v2/workItems/links/urls/search |  |
 | [**ApiV2WorkItemsMovePost**](WorkItemsApi.md#apiv2workitemsmovepost) | **POST** /api/v2/workItems/move | Move WorkItem to another section |
 | [**ApiV2WorkItemsSearchPost**](WorkItemsApi.md#apiv2workitemssearchpost) | **POST** /api/v2/workItems/search | Search for work items |
 | [**ApiV2WorkItemsSharedStepIdReferencesSectionsPost**](WorkItemsApi.md#apiv2workitemssharedstepidreferencessectionspost) | **POST** /api/v2/workItems/{sharedStepId}/references/sections | Get SharedStep references in sections |
@@ -775,7 +776,7 @@ catch (ApiException e)
 
 <a id="apiv2workitemsidtestresultshistoryget"></a>
 # **ApiV2WorkItemsIdTestResultsHistoryGet**
-> List&lt;TestResultHistoryResponse&gt; ApiV2WorkItemsIdTestResultsHistoryGet (Guid id, DateTime? from = null, DateTime? to = null, List<Guid> configurationIds = null, List<Guid> testPlanIds = null, List<Guid> userIds = null, List<string> outcomes = null, bool? isAutomated = null, bool? automated = null, List<Guid> testRunIds = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
+> List&lt;TestResultHistoryReportApiResult&gt; ApiV2WorkItemsIdTestResultsHistoryGet (Guid id, DateTime? from = null, DateTime? to = null, List<Guid> configurationIds = null, List<Guid> testPlanIds = null, List<Guid> userIds = null, List<string> outcomes = null, List<string> statusCodes = null, bool? isAutomated = null, bool? automated = null, List<Guid> testRunIds = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
 Get test results history of WorkItem
 
@@ -814,6 +815,7 @@ namespace Example
             var testPlanIds = new List<Guid>(); // List<Guid> | Identifiers of test plans which contain test results (optional) 
             var userIds = new List<Guid>(); // List<Guid> | Identifiers of users who set test results (optional) 
             var outcomes = new List<string>(); // List<string> | List of outcomes of test results (optional) 
+            var statusCodes = new List<string>(); // List<string> | List of status codes of test results (optional) 
             var isAutomated = true;  // bool? | OBSOLETE: Use `Automated` instead (optional) 
             var automated = true;  // bool? | If result must consist of only manual/automated test results (optional) 
             var testRunIds = new List<Guid>(); // List<Guid> | Identifiers of test runs which contain test results (optional) 
@@ -826,7 +828,7 @@ namespace Example
             try
             {
                 // Get test results history of WorkItem
-                List<TestResultHistoryResponse> result = apiInstance.ApiV2WorkItemsIdTestResultsHistoryGet(id, from, to, configurationIds, testPlanIds, userIds, outcomes, isAutomated, automated, testRunIds, skip, take, orderBy, searchField, searchValue);
+                List<TestResultHistoryReportApiResult> result = apiInstance.ApiV2WorkItemsIdTestResultsHistoryGet(id, from, to, configurationIds, testPlanIds, userIds, outcomes, statusCodes, isAutomated, automated, testRunIds, skip, take, orderBy, searchField, searchValue);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -847,7 +849,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get test results history of WorkItem
-    ApiResponse<List<TestResultHistoryResponse>> response = apiInstance.ApiV2WorkItemsIdTestResultsHistoryGetWithHttpInfo(id, from, to, configurationIds, testPlanIds, userIds, outcomes, isAutomated, automated, testRunIds, skip, take, orderBy, searchField, searchValue);
+    ApiResponse<List<TestResultHistoryReportApiResult>> response = apiInstance.ApiV2WorkItemsIdTestResultsHistoryGetWithHttpInfo(id, from, to, configurationIds, testPlanIds, userIds, outcomes, statusCodes, isAutomated, automated, testRunIds, skip, take, orderBy, searchField, searchValue);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -871,6 +873,7 @@ catch (ApiException e)
 | **testPlanIds** | [**List&lt;Guid&gt;**](Guid.md) | Identifiers of test plans which contain test results | [optional]  |
 | **userIds** | [**List&lt;Guid&gt;**](Guid.md) | Identifiers of users who set test results | [optional]  |
 | **outcomes** | [**List&lt;string&gt;**](string.md) | List of outcomes of test results | [optional]  |
+| **statusCodes** | [**List&lt;string&gt;**](string.md) | List of status codes of test results | [optional]  |
 | **isAutomated** | **bool?** | OBSOLETE: Use &#x60;Automated&#x60; instead | [optional]  |
 | **automated** | **bool?** | If result must consist of only manual/automated test results | [optional]  |
 | **testRunIds** | [**List&lt;Guid&gt;**](Guid.md) | Identifiers of test runs which contain test results | [optional]  |
@@ -882,7 +885,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;TestResultHistoryResponse&gt;**](TestResultHistoryResponse.md)
+[**List&lt;TestResultHistoryReportApiResult&gt;**](TestResultHistoryReportApiResult.md)
 
 ### Authorization
 
@@ -1015,6 +1018,118 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="apiv2workitemslinksurlssearchpost"></a>
+# **ApiV2WorkItemsLinksUrlsSearchPost**
+> SearchWorkItemLinkUrlsApiResult ApiV2WorkItemsLinksUrlsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, WorkItemLinkUrlApiModel workItemLinkUrlApiModel = null)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
+
+namespace Example
+{
+    public class ApiV2WorkItemsLinksUrlsSearchPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
+            var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
+            var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
+            var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
+            var searchField = "searchField_example";  // string | Property name for searching (optional) 
+            var searchValue = "searchValue_example";  // string | Value for searching (optional) 
+            var workItemLinkUrlApiModel = new WorkItemLinkUrlApiModel(); // WorkItemLinkUrlApiModel |  (optional) 
+
+            try
+            {
+                SearchWorkItemLinkUrlsApiResult result = apiInstance.ApiV2WorkItemsLinksUrlsSearchPost(skip, take, orderBy, searchField, searchValue, workItemLinkUrlApiModel);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WorkItemsApi.ApiV2WorkItemsLinksUrlsSearchPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2WorkItemsLinksUrlsSearchPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<SearchWorkItemLinkUrlsApiResult> response = apiInstance.ApiV2WorkItemsLinksUrlsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, workItemLinkUrlApiModel);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkItemsApi.ApiV2WorkItemsLinksUrlsSearchPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **skip** | **int?** | Amount of items to be skipped (offset) | [optional]  |
+| **take** | **int?** | Amount of items to be taken (limit) | [optional]  |
+| **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
+| **searchField** | **string** | Property name for searching | [optional]  |
+| **searchValue** | **string** | Value for searching | [optional]  |
+| **workItemLinkUrlApiModel** | [**WorkItemLinkUrlApiModel**](WorkItemLinkUrlApiModel.md) |  | [optional]  |
+
+### Return type
+
+[**SearchWorkItemLinkUrlsApiResult**](SearchWorkItemLinkUrlsApiResult.md)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="apiv2workitemsmovepost"></a>
 # **ApiV2WorkItemsMovePost**
 > WorkItemShortModel ApiV2WorkItemsMovePost (WorkItemMovePostModel workItemMovePostModel = null)
@@ -1123,7 +1238,7 @@ catch (ApiException e)
 
 <a id="apiv2workitemssearchpost"></a>
 # **ApiV2WorkItemsSearchPost**
-> List&lt;WorkItemShortModel&gt; ApiV2WorkItemsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, WorkItemSelectModel workItemSelectModel = null)
+> List&lt;WorkItemShortApiResult&gt; ApiV2WorkItemsSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, WorkItemSelectApiModel workItemSelectApiModel = null)
 
 Search for work items
 
@@ -1158,12 +1273,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var workItemSelectModel = new WorkItemSelectModel(); // WorkItemSelectModel |  (optional) 
+            var workItemSelectApiModel = new WorkItemSelectApiModel(); // WorkItemSelectApiModel |  (optional) 
 
             try
             {
                 // Search for work items
-                List<WorkItemShortModel> result = apiInstance.ApiV2WorkItemsSearchPost(skip, take, orderBy, searchField, searchValue, workItemSelectModel);
+                List<WorkItemShortApiResult> result = apiInstance.ApiV2WorkItemsSearchPost(skip, take, orderBy, searchField, searchValue, workItemSelectApiModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1184,7 +1299,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for work items
-    ApiResponse<List<WorkItemShortModel>> response = apiInstance.ApiV2WorkItemsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, workItemSelectModel);
+    ApiResponse<List<WorkItemShortApiResult>> response = apiInstance.ApiV2WorkItemsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, workItemSelectApiModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1206,11 +1321,11 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **workItemSelectModel** | [**WorkItemSelectModel**](WorkItemSelectModel.md) |  | [optional]  |
+| **workItemSelectApiModel** | [**WorkItemSelectApiModel**](WorkItemSelectApiModel.md) |  | [optional]  |
 
 ### Return type
 
-[**List&lt;WorkItemShortModel&gt;**](WorkItemShortModel.md)
+[**List&lt;WorkItemShortApiResult&gt;**](WorkItemShortApiResult.md)
 
 ### Authorization
 

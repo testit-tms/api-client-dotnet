@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **CompletedOn** | **DateTime?** | Date when the test result has been completed | [optional] 
 **Duration** | **long?** | Time which it took to run the test | [optional] 
 **Links** | [**List&lt;LinkShort&gt;**](LinkShort.md) | Collection of links attached to the test result | 
-**Attachments** | [**List&lt;Attachment&gt;**](Attachment.md) | Collection of files attached to the test result | 
+**Attachments** | [**List&lt;AttachmentApiResult&gt;**](AttachmentApiResult.md) | Collection of files attached to the test result | 
 **RerunCompletedCount** | **int** | Run count | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

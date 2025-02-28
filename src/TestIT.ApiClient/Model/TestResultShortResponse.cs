@@ -59,7 +59,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="links">Collection of links attached to the test result (required).</param>
         /// <param name="attachments">Collection of files attached to the test result (required).</param>
         /// <param name="rerunCompletedCount">Run count (required).</param>
-        public TestResultShortResponse(Guid id = default(Guid), string name = default(string), long autotestGlobalId = default(long), Guid testRunId = default(Guid), Guid configurationId = default(Guid), string configurationName = default(string), string outcome = default(string), TestStatusApiResult status = default(TestStatusApiResult), List<AutoTestResultReasonShort> resultReasons = default(List<AutoTestResultReasonShort>), string comment = default(string), DateTime date = default(DateTime), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? duration = default(long?), List<LinkShort> links = default(List<LinkShort>), List<Attachment> attachments = default(List<Attachment>), int rerunCompletedCount = default(int))
+        public TestResultShortResponse(Guid id = default(Guid), string name = default(string), long autotestGlobalId = default(long), Guid testRunId = default(Guid), Guid configurationId = default(Guid), string configurationName = default(string), string outcome = default(string), TestStatusApiResult status = default(TestStatusApiResult), List<AutoTestResultReasonShort> resultReasons = default(List<AutoTestResultReasonShort>), string comment = default(string), DateTime date = default(DateTime), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? duration = default(long?), List<LinkShort> links = default(List<LinkShort>), List<AttachmentApiResult> attachments = default(List<AttachmentApiResult>), int rerunCompletedCount = default(int))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -232,7 +232,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Collection of files attached to the test result</value>
         [DataMember(Name = "attachments", IsRequired = true, EmitDefaultValue = true)]
-        public List<Attachment> Attachments { get; set; }
+        public List<AttachmentApiResult> Attachments { get; set; }
 
         /// <summary>
         /// Run count

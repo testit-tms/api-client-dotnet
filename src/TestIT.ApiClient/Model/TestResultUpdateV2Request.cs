@@ -56,7 +56,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="teardownResults">teardownResults.</param>
         /// <param name="message">message.</param>
         /// <param name="trace">trace.</param>
-        public TestResultUpdateV2Request(List<Guid> failureClassIds = default(List<Guid>), TestResultOutcome? outcome = default(TestResultOutcome?), string statusCode = default(string), string comment = default(string), List<Link> links = default(List<Link>), List<StepResult> stepResults = default(List<StepResult>), List<AttachmentUpdateRequest> attachments = default(List<AttachmentUpdateRequest>), long? durationInMs = default(long?), long? duration = default(long?), List<TestResultStepCommentUpdateRequest> stepComments = default(List<TestResultStepCommentUpdateRequest>), List<AttachmentPutModelAutoTestStepResultsModel> setupResults = default(List<AttachmentPutModelAutoTestStepResultsModel>), List<AttachmentPutModelAutoTestStepResultsModel> teardownResults = default(List<AttachmentPutModelAutoTestStepResultsModel>), string message = default(string), string trace = default(string))
+        public TestResultUpdateV2Request(List<Guid> failureClassIds = default(List<Guid>), TestResultOutcome? outcome = default(TestResultOutcome?), string statusCode = default(string), string comment = default(string), List<Link> links = default(List<Link>), List<StepResultApiModel> stepResults = default(List<StepResultApiModel>), List<AttachmentUpdateRequest> attachments = default(List<AttachmentUpdateRequest>), long? durationInMs = default(long?), long? duration = default(long?), List<TestResultStepCommentUpdateRequest> stepComments = default(List<TestResultStepCommentUpdateRequest>), List<AttachmentPutModelAutoTestStepResultsModel> setupResults = default(List<AttachmentPutModelAutoTestStepResultsModel>), List<AttachmentPutModelAutoTestStepResultsModel> teardownResults = default(List<AttachmentPutModelAutoTestStepResultsModel>), string message = default(string), string trace = default(string))
         {
             this.FailureClassIds = failureClassIds;
             this.Outcome = outcome;
@@ -102,7 +102,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets StepResults
         /// </summary>
         [DataMember(Name = "stepResults", EmitDefaultValue = true)]
-        public List<StepResult> StepResults { get; set; }
+        public List<StepResultApiModel> StepResults { get; set; }
 
         /// <summary>
         /// Gets or Sets Attachments

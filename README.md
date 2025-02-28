@@ -19,47 +19,7 @@
 | 5.0     | 3.0             |
 | 5.2     | 3.1             |
 | 5.2.2   | 4.0.0-TMS-5.2.2 |
-
-<a name="frameworks-supported"></a>
-## Frameworks supported
-- .NET Core >=1.0
-- .NET Framework >=4.6
-
-<a name="installation"></a>
-## Installation
-
-### NuGet CLI
-```
-Install-Package TestIt.ApiClient
-```
-
-### .NET CLI
-```
-dotnet package add TestIt.ApiClient
-```
-
-<a name="examples"></a>
-## Examples
-
-Please follow the [installation](#installation) instruction and execute the following C## Getting Started
-
-### Compatibility
-
-| Test IT | API Client |
-|---------|------------|
-| 3.3     | 1.0        |
-| 3.4     | 1.1        |
-| 3.5     | 1.2        |
-| 3.9     | 2.0        |
-| 4.0     | 2.1        |
-| 4.2     | 2.2        |
-| 4.3     | 2.3        |
-| 4.4     | 2.4        |
-| 4.5     | 2.5        |
-| 4.6     | 2.6        |
-| 5.0     | 3.0        |
-| 5.2     | 3.1        |
-| Cloud   | 3.2        |
+| Cloud   | 4.1.0-TMS-CLOUD |
 
 <a name="frameworks-supported"></a>
 ## Frameworks supported
@@ -399,6 +359,7 @@ Class | Method | HTTP request | Description
 *WorkItemsApi* | [**ApiV2WorkItemsIdLikesGet**](docs/WorkItemsApi.md#apiv2workitemsidlikesget) | **GET** /api/v2/workItems/{id}/likes | Get likes of WorkItem
 *WorkItemsApi* | [**ApiV2WorkItemsIdTestResultsHistoryGet**](docs/WorkItemsApi.md#apiv2workitemsidtestresultshistoryget) | **GET** /api/v2/workItems/{id}/testResults/history | Get test results history of WorkItem
 *WorkItemsApi* | [**ApiV2WorkItemsIdVersionVersionIdActualPost**](docs/WorkItemsApi.md#apiv2workitemsidversionversionidactualpost) | **POST** /api/v2/workItems/{id}/version/{versionId}/actual | Set WorkItem as actual
+*WorkItemsApi* | [**ApiV2WorkItemsLinksUrlsSearchPost**](docs/WorkItemsApi.md#apiv2workitemslinksurlssearchpost) | **POST** /api/v2/workItems/links/urls/search | 
 *WorkItemsApi* | [**ApiV2WorkItemsMovePost**](docs/WorkItemsApi.md#apiv2workitemsmovepost) | **POST** /api/v2/workItems/move | Move WorkItem to another section
 *WorkItemsApi* | [**ApiV2WorkItemsSearchPost**](docs/WorkItemsApi.md#apiv2workitemssearchpost) | **POST** /api/v2/workItems/search | Search for work items
 *WorkItemsApi* | [**ApiV2WorkItemsSharedStepIdReferencesSectionsPost**](docs/WorkItemsApi.md#apiv2workitemssharedstepidreferencessectionspost) | **POST** /api/v2/workItems/{sharedStepId}/references/sections | Get SharedStep references in sections

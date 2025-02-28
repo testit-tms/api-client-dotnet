@@ -41,6 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="TestPointShortApiResult" /> class.
         /// </summary>
         /// <param name="id">Test point unique internal identifier (required).</param>
+        /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
         /// <param name="testerId">Tester who is responded for the test unique internal identifier.</param>
         /// <param name="workItemId">Workitem to which test point relates unique identifier.</param>
         /// <param name="configurationId">Configuration to which test point relates unique identifier.</param>
@@ -50,9 +51,10 @@ namespace TestIT.ApiClient.Model
         /// <param name="iterationId">Iteration unique identifier (required).</param>
         /// <param name="workItemMedianDuration">Median duration of work item the test point represents.</param>
         /// <param name="testSuiteId">Test suite to which test point relates unique identifier (required).</param>
-        public TestPointShortApiResult(Guid id = default(Guid), Guid? testerId = default(Guid?), Guid? workItemId = default(Guid?), Guid? configurationId = default(Guid?), string status = default(string), TestStatusApiResult statusModel = default(TestStatusApiResult), Guid? lastTestResultId = default(Guid?), Guid iterationId = default(Guid), long? workItemMedianDuration = default(long?), Guid testSuiteId = default(Guid))
+        public TestPointShortApiResult(Guid id = default(Guid), bool isDeleted = default(bool), Guid? testerId = default(Guid?), Guid? workItemId = default(Guid?), Guid? configurationId = default(Guid?), string status = default(string), TestStatusApiResult statusModel = default(TestStatusApiResult), Guid? lastTestResultId = default(Guid?), Guid iterationId = default(Guid), long? workItemMedianDuration = default(long?), Guid testSuiteId = default(Guid))
         {
             this.Id = id;
+            this.IsDeleted = isDeleted;
             // to ensure "statusModel" is required (not null)
             if (statusModel == null)
             {
@@ -75,6 +77,13 @@ namespace TestIT.ApiClient.Model
         /// <value>Test point unique internal identifier</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
+
+        /// <summary>
+        /// Indicates if the entity is deleted
+        /// </summary>
+        /// <value>Indicates if the entity is deleted</value>
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
+        public bool IsDeleted { get; set; }
 
         /// <summary>
         /// Tester who is responded for the test unique internal identifier
@@ -152,6 +161,7 @@ namespace TestIT.ApiClient.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class TestPointShortApiResult {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  TesterId: ").Append(TesterId).Append("\n");
             sb.Append("  WorkItemId: ").Append(WorkItemId).Append("\n");
             sb.Append("  ConfigurationId: ").Append(ConfigurationId).Append("\n");

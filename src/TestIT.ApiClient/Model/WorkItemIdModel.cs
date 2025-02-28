@@ -56,7 +56,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format</value>
         /*
-        <example>cbb88fe6-c193-48e9-9e37-323fbc38de5f</example>
+        <example>ec70e9ad-f280-4a70-be0c-3d9ee96fc70f</example>
         */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }

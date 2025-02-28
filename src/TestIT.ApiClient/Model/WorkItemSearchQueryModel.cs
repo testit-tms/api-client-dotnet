@@ -36,6 +36,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="WorkItemSearchQueryModel" /> class.
         /// </summary>
         /// <param name="projectIds">Collection of project identifiers.</param>
+        /// <param name="links">Specifies a work item filter by its links.</param>
         /// <param name="name">Name of work item.</param>
         /// <param name="ids">Specifies a work item unique IDs to search for.</param>
         /// <param name="globalIds">Collection of global (integer) identifiers.</param>
@@ -55,9 +56,10 @@ namespace TestIT.ApiClient.Model
         /// <param name="tags">Collection of tags.</param>
         /// <param name="autoTestIds">Collection of identifiers of linked autotests.</param>
         /// <param name="workItemVersionIds">Collection of identifiers work items versions..</param>
-        public WorkItemSearchQueryModel(List<Guid> projectIds = default(List<Guid>), string name = default(string), List<Guid> ids = default(List<Guid>), List<long> globalIds = default(List<long>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?), List<Guid> sectionIds = default(List<Guid>), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), List<WorkItemStates> states = default(List<WorkItemStates>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<WorkItemEntityTypes> types = default(List<WorkItemEntityTypes>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), Int32RangeSelectorModel duration = default(Int32RangeSelectorModel), Int64RangeSelectorModel medianDuration = default(Int64RangeSelectorModel), bool? isAutomated = default(bool?), List<string> tags = default(List<string>), List<Guid> autoTestIds = default(List<Guid>), List<Guid> workItemVersionIds = default(List<Guid>))
+        public WorkItemSearchQueryModel(List<Guid> projectIds = default(List<Guid>), WorkItemLinkFilterModel links = default(WorkItemLinkFilterModel), string name = default(string), List<Guid> ids = default(List<Guid>), List<long> globalIds = default(List<long>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?), List<Guid> sectionIds = default(List<Guid>), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), List<WorkItemStates> states = default(List<WorkItemStates>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<WorkItemEntityTypes> types = default(List<WorkItemEntityTypes>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), Int32RangeSelectorModel duration = default(Int32RangeSelectorModel), Int64RangeSelectorModel medianDuration = default(Int64RangeSelectorModel), bool? isAutomated = default(bool?), List<string> tags = default(List<string>), List<Guid> autoTestIds = default(List<Guid>), List<Guid> workItemVersionIds = default(List<Guid>))
         {
             this.ProjectIds = projectIds;
+            this.Links = links;
             this.Name = name;
             this.Ids = ids;
             this.GlobalIds = globalIds;
@@ -85,6 +87,13 @@ namespace TestIT.ApiClient.Model
         /// <value>Collection of project identifiers</value>
         [DataMember(Name = "projectIds", EmitDefaultValue = true)]
         public List<Guid> ProjectIds { get; set; }
+
+        /// <summary>
+        /// Specifies a work item filter by its links
+        /// </summary>
+        /// <value>Specifies a work item filter by its links</value>
+        [DataMember(Name = "links", EmitDefaultValue = true)]
+        public WorkItemLinkFilterModel Links { get; set; }
 
         /// <summary>
         /// Name of work item
@@ -228,6 +237,7 @@ namespace TestIT.ApiClient.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class WorkItemSearchQueryModel {\n");
             sb.Append("  ProjectIds: ").Append(ProjectIds).Append("\n");
+            sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Ids: ").Append(Ids).Append("\n");
             sb.Append("  GlobalIds: ").Append(GlobalIds).Append("\n");
