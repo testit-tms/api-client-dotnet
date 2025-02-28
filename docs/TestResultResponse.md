@@ -9,14 +9,14 @@ Name | Type | Description | Notes
 **ModifiedDate** | **DateTime?** |  | [optional] 
 **CreatedById** | **Guid** |  | 
 **ModifiedById** | **Guid?** |  | [optional] 
-**StepComments** | [**List&lt;StepComment&gt;**](StepComment.md) |  | [optional] 
+**StepComments** | [**List&lt;StepCommentApiModel&gt;**](StepCommentApiModel.md) |  | [optional] 
 **FailureClassIds** | **List&lt;Guid&gt;** |  | 
 **Outcome** | **TestResultOutcome** |  | [optional] 
 **Status** | [**TestStatusApiResult**](TestStatusApiResult.md) |  | [optional] 
 **Comment** | **string** |  | [optional] 
 **Links** | [**List&lt;Link&gt;**](Link.md) |  | [optional] 
-**StepResults** | [**List&lt;StepResult&gt;**](StepResult.md) |  | [optional] 
-**Attachments** | [**List&lt;Attachment&gt;**](Attachment.md) |  | [optional] 
+**StepResults** | [**List&lt;StepResultApiModel&gt;**](StepResultApiModel.md) |  | [optional] 
+**Attachments** | [**List&lt;AttachmentApiResult&gt;**](AttachmentApiResult.md) |  | [optional] 
 **AutoTestId** | **Guid?** |  | [optional] 
 **ConfigurationId** | **Guid** |  | 
 **StartedOn** | **DateTime?** |  | [optional] 

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** | Test point unique internal identifier | 
+**IsDeleted** | **bool** | Indicates if the entity is deleted | 
 **TesterId** | **Guid?** | Tester who is responded for the test unique internal identifier | [optional] 
 **WorkItemId** | **Guid?** | Workitem to which test point relates unique identifier | [optional] 
 **ConfigurationId** | **Guid?** | Configuration to which test point relates unique identifier | [optional] 

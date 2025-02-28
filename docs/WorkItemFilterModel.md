@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **IncludeIds** | **List&lt;Guid&gt;** | Collection of identifiers of work items which need to be included in result regardless of filtering | [optional] 
 **ExcludeIds** | **List&lt;Guid&gt;** | Collection of identifiers of work items which need to be excluded from result regardless of filtering | [optional] 
 **ProjectIds** | **List&lt;Guid&gt;** | Collection of project identifiers | [optional] 
+**Links** | [**WorkItemLinkFilterModel**](WorkItemLinkFilterModel.md) | Specifies a work item filter by its links | [optional] 
 **Name** | **string** | Name of work item | [optional] 
 **Ids** | **List&lt;Guid&gt;** | Specifies a work item unique IDs to search for | [optional] 
 **GlobalIds** | **List&lt;long&gt;** | Collection of global (integer) identifiers | [optional] 

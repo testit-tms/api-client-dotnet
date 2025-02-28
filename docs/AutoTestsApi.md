@@ -347,7 +347,7 @@ void (empty response body)
 
 <a id="apiv2autotestsidtestresultssearchpost"></a>
 # **ApiV2AutoTestsIdTestResultsSearchPost**
-> List&lt;AutotestResultHistoricalGetModel&gt; ApiV2AutoTestsIdTestResultsSearchPost (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, AutotestHistoricalResultSelectModel autotestHistoricalResultSelectModel = null)
+> List&lt;AutoTestResultHistoryApiResult&gt; ApiV2AutoTestsIdTestResultsSearchPost (string id, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = null)
 
 Get test results history for autotest
 
@@ -385,12 +385,12 @@ namespace Example
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
             var searchField = "searchField_example";  // string | Property name for searching (optional) 
             var searchValue = "searchValue_example";  // string | Value for searching (optional) 
-            var autotestHistoricalResultSelectModel = new AutotestHistoricalResultSelectModel(); // AutotestHistoricalResultSelectModel |  (optional) 
+            var autoTestResultHistorySelectApiModel = new AutoTestResultHistorySelectApiModel(); // AutoTestResultHistorySelectApiModel |  (optional) 
 
             try
             {
                 // Get test results history for autotest
-                List<AutotestResultHistoricalGetModel> result = apiInstance.ApiV2AutoTestsIdTestResultsSearchPost(id, skip, take, orderBy, searchField, searchValue, autotestHistoricalResultSelectModel);
+                List<AutoTestResultHistoryApiResult> result = apiInstance.ApiV2AutoTestsIdTestResultsSearchPost(id, skip, take, orderBy, searchField, searchValue, autoTestResultHistorySelectApiModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -411,7 +411,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get test results history for autotest
-    ApiResponse<List<AutotestResultHistoricalGetModel>> response = apiInstance.ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, autotestHistoricalResultSelectModel);
+    ApiResponse<List<AutoTestResultHistoryApiResult>> response = apiInstance.ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, autoTestResultHistorySelectApiModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -434,11 +434,11 @@ catch (ApiException e)
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
 | **searchField** | **string** | Property name for searching | [optional]  |
 | **searchValue** | **string** | Value for searching | [optional]  |
-| **autotestHistoricalResultSelectModel** | [**AutotestHistoricalResultSelectModel**](AutotestHistoricalResultSelectModel.md) |  | [optional]  |
+| **autoTestResultHistorySelectApiModel** | [**AutoTestResultHistorySelectApiModel**](AutoTestResultHistorySelectApiModel.md) |  | [optional]  |
 
 ### Return type
 
-[**List&lt;AutotestResultHistoricalGetModel&gt;**](AutotestResultHistoricalGetModel.md)
+[**List&lt;AutoTestResultHistoryApiResult&gt;**](AutoTestResultHistoryApiResult.md)
 
 ### Authorization
 
@@ -1679,7 +1679,7 @@ catch (ApiException e)
 
 <a id="gettestruns"></a>
 # **GetTestRuns**
-> List&lt;TestRunShortModel&gt; GetTestRuns (string id)
+> List&lt;TestRunByAutoTestApiResult&gt; GetTestRuns (string id)
 
 Get completed tests runs for autotests
 
@@ -1716,7 +1716,7 @@ namespace Example
             try
             {
                 // Get completed tests runs for autotests
-                List<TestRunShortModel> result = apiInstance.GetTestRuns(id);
+                List<TestRunByAutoTestApiResult> result = apiInstance.GetTestRuns(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1737,7 +1737,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get completed tests runs for autotests
-    ApiResponse<List<TestRunShortModel>> response = apiInstance.GetTestRunsWithHttpInfo(id);
+    ApiResponse<List<TestRunByAutoTestApiResult>> response = apiInstance.GetTestRunsWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1758,7 +1758,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;TestRunShortModel&gt;**](TestRunShortModel.md)
+[**List&lt;TestRunByAutoTestApiResult&gt;**](TestRunByAutoTestApiResult.md)
 
 ### Authorization
 

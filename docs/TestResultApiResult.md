@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **Attachments** | [**List&lt;AttachmentApiResult&gt;**](AttachmentApiResult.md) |  | 
 **Links** | [**List&lt;LinkApiResult&gt;**](LinkApiResult.md) |  | 
 **FailureClasses** | [**List&lt;TestResultFailureClassApiResult&gt;**](TestResultFailureClassApiResult.md) |  | 
-**StepComments** | [**List&lt;StepCommentApiResult&gt;**](StepCommentApiResult.md) |  | [optional] 
+**StepComments** | [**List&lt;StepCommentApiModel&gt;**](StepCommentApiModel.md) |  | [optional] 
 **Parameters** | **Dictionary&lt;string, string&gt;** |  | [optional] 
 **Properties** | **Dictionary&lt;string, string&gt;** |  | [optional] 
 **CreatedDate** | **DateTime** |  | 

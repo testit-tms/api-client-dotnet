@@ -81,7 +81,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="workItemVersionNumber">workItemVersionNumber.</param>
         /// <param name="parameters">parameters.</param>
         /// <param name="properties">properties.</param>
-        public TestResultResponse(Guid id = default(Guid), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), List<StepComment> stepComments = default(List<StepComment>), List<Guid> failureClassIds = default(List<Guid>), TestResultOutcome? outcome = default(TestResultOutcome?), TestStatusApiResult status = default(TestStatusApiResult), string comment = default(string), List<Link> links = default(List<Link>), List<StepResult> stepResults = default(List<StepResult>), List<Attachment> attachments = default(List<Attachment>), Guid? autoTestId = default(Guid?), Guid configurationId = default(Guid), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? durationInMs = default(long?), string traces = default(string), string failureType = default(string), string message = default(string), Guid? runByUserId = default(Guid?), Guid? stoppedByUserId = default(Guid?), Guid testPointId = default(Guid), Guid testRunId = default(Guid), TestPoint testPoint = default(TestPoint), AutoTest autoTest = default(AutoTest), List<AutoTestStepResult> autoTestStepResults = default(List<AutoTestStepResult>), List<AutoTestStepResult> setupResults = default(List<AutoTestStepResult>), List<AutoTestStepResult> teardownResults = default(List<AutoTestStepResult>), Guid workItemVersionId = default(Guid), int? workItemVersionNumber = default(int?), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, string> properties = default(Dictionary<string, string>))
+        public TestResultResponse(Guid id = default(Guid), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), List<StepCommentApiModel> stepComments = default(List<StepCommentApiModel>), List<Guid> failureClassIds = default(List<Guid>), TestResultOutcome? outcome = default(TestResultOutcome?), TestStatusApiResult status = default(TestStatusApiResult), string comment = default(string), List<Link> links = default(List<Link>), List<StepResultApiModel> stepResults = default(List<StepResultApiModel>), List<AttachmentApiResult> attachments = default(List<AttachmentApiResult>), Guid? autoTestId = default(Guid?), Guid configurationId = default(Guid), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? durationInMs = default(long?), string traces = default(string), string failureType = default(string), string message = default(string), Guid? runByUserId = default(Guid?), Guid? stoppedByUserId = default(Guid?), Guid testPointId = default(Guid), Guid testRunId = default(Guid), TestPoint testPoint = default(TestPoint), AutoTest autoTest = default(AutoTest), List<AutoTestStepResult> autoTestStepResults = default(List<AutoTestStepResult>), List<AutoTestStepResult> setupResults = default(List<AutoTestStepResult>), List<AutoTestStepResult> teardownResults = default(List<AutoTestStepResult>), Guid workItemVersionId = default(Guid), int? workItemVersionNumber = default(int?), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, string> properties = default(Dictionary<string, string>))
         {
             this.Id = id;
             this.CreatedDate = createdDate;
@@ -158,7 +158,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets StepComments
         /// </summary>
         [DataMember(Name = "stepComments", EmitDefaultValue = true)]
-        public List<StepComment> StepComments { get; set; }
+        public List<StepCommentApiModel> StepComments { get; set; }
 
         /// <summary>
         /// Gets or Sets FailureClassIds
@@ -188,13 +188,13 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets StepResults
         /// </summary>
         [DataMember(Name = "stepResults", EmitDefaultValue = true)]
-        public List<StepResult> StepResults { get; set; }
+        public List<StepResultApiModel> StepResults { get; set; }
 
         /// <summary>
         /// Gets or Sets Attachments
         /// </summary>
         [DataMember(Name = "attachments", EmitDefaultValue = true)]
-        public List<Attachment> Attachments { get; set; }
+        public List<AttachmentApiResult> Attachments { get; set; }
 
         /// <summary>
         /// Gets or Sets AutoTestId

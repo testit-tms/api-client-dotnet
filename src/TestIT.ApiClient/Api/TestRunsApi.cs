@@ -113,9 +113,9 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="manualRerunSelectApiModel"> (optional)</param>
+        /// <param name="manualRerunSelectTestResultsApiModel"> (optional)</param>
         /// <returns>ManualRerunApiResult</returns>
-        ManualRerunApiResult ApiV2TestRunsIdRerunsPost(Guid id, ManualRerunSelectApiModel manualRerunSelectApiModel = default(ManualRerunSelectApiModel));
+        ManualRerunApiResult ApiV2TestRunsIdRerunsPost(Guid id, ManualRerunSelectTestResultsApiModel manualRerunSelectTestResultsApiModel = default(ManualRerunSelectTestResultsApiModel));
 
         /// <summary>
         /// Manual autotests rerun in test run
@@ -125,9 +125,9 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="manualRerunSelectApiModel"> (optional)</param>
+        /// <param name="manualRerunSelectTestResultsApiModel"> (optional)</param>
         /// <returns>ApiResponse of ManualRerunApiResult</returns>
-        ApiResponse<ManualRerunApiResult> ApiV2TestRunsIdRerunsPostWithHttpInfo(Guid id, ManualRerunSelectApiModel manualRerunSelectApiModel = default(ManualRerunSelectApiModel));
+        ApiResponse<ManualRerunApiResult> ApiV2TestRunsIdRerunsPostWithHttpInfo(Guid id, ManualRerunSelectTestResultsApiModel manualRerunSelectTestResultsApiModel = default(ManualRerunSelectTestResultsApiModel));
         /// <summary>
         /// Restore test run from the archive
         /// </summary>
@@ -174,8 +174,8 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test run unique ID</param>
-        /// <returns>List&lt;TestPointResultModel&gt;</returns>
-        List<TestPointResultModel> ApiV2TestRunsIdTestPointsResultsGet(Guid id);
+        /// <returns>List&lt;TestPointResultApiResult&gt;</returns>
+        List<TestPointResultApiResult> ApiV2TestRunsIdTestPointsResultsGet(Guid id);
 
         /// <summary>
         /// Get test results from the test run grouped by test points
@@ -185,8 +185,8 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test run unique ID</param>
-        /// <returns>ApiResponse of List&lt;TestPointResultModel&gt;</returns>
-        ApiResponse<List<TestPointResultModel>> ApiV2TestRunsIdTestPointsResultsGetWithHttpInfo(Guid id);
+        /// <returns>ApiResponse of List&lt;TestPointResultApiResult&gt;</returns>
+        ApiResponse<List<TestPointResultApiResult>> ApiV2TestRunsIdTestPointsResultsGetWithHttpInfo(Guid id);
         /// <summary>
         /// Partial edit of multiple test results in the test run
         /// </summary>
@@ -634,10 +634,10 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="manualRerunSelectApiModel"> (optional)</param>
+        /// <param name="manualRerunSelectTestResultsApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ManualRerunApiResult</returns>
-        System.Threading.Tasks.Task<ManualRerunApiResult> ApiV2TestRunsIdRerunsPostAsync(Guid id, ManualRerunSelectApiModel manualRerunSelectApiModel = default(ManualRerunSelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ManualRerunApiResult> ApiV2TestRunsIdRerunsPostAsync(Guid id, ManualRerunSelectTestResultsApiModel manualRerunSelectTestResultsApiModel = default(ManualRerunSelectTestResultsApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Manual autotests rerun in test run
@@ -647,10 +647,10 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="manualRerunSelectApiModel"> (optional)</param>
+        /// <param name="manualRerunSelectTestResultsApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ManualRerunApiResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ManualRerunApiResult>> ApiV2TestRunsIdRerunsPostWithHttpInfoAsync(Guid id, ManualRerunSelectApiModel manualRerunSelectApiModel = default(ManualRerunSelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ManualRerunApiResult>> ApiV2TestRunsIdRerunsPostWithHttpInfoAsync(Guid id, ManualRerunSelectTestResultsApiModel manualRerunSelectTestResultsApiModel = default(ManualRerunSelectTestResultsApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Restore test run from the archive
         /// </summary>
@@ -708,8 +708,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test run unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;TestPointResultModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TestPointResultModel>> ApiV2TestRunsIdTestPointsResultsGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;TestPointResultApiResult&gt;</returns>
+        System.Threading.Tasks.Task<List<TestPointResultApiResult>> ApiV2TestRunsIdTestPointsResultsGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get test results from the test run grouped by test points
@@ -720,8 +720,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test run unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;TestPointResultModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestPointResultModel>>> ApiV2TestRunsIdTestPointsResultsGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;TestPointResultApiResult&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<TestPointResultApiResult>>> ApiV2TestRunsIdTestPointsResultsGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Partial edit of multiple test results in the test run
         /// </summary>
@@ -1788,11 +1788,11 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="manualRerunSelectApiModel"> (optional)</param>
+        /// <param name="manualRerunSelectTestResultsApiModel"> (optional)</param>
         /// <returns>ManualRerunApiResult</returns>
-        public ManualRerunApiResult ApiV2TestRunsIdRerunsPost(Guid id, ManualRerunSelectApiModel manualRerunSelectApiModel = default(ManualRerunSelectApiModel))
+        public ManualRerunApiResult ApiV2TestRunsIdRerunsPost(Guid id, ManualRerunSelectTestResultsApiModel manualRerunSelectTestResultsApiModel = default(ManualRerunSelectTestResultsApiModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<ManualRerunApiResult> localVarResponse = ApiV2TestRunsIdRerunsPostWithHttpInfo(id, manualRerunSelectApiModel);
+            TestIT.ApiClient.Client.ApiResponse<ManualRerunApiResult> localVarResponse = ApiV2TestRunsIdRerunsPostWithHttpInfo(id, manualRerunSelectTestResultsApiModel);
             return localVarResponse.Data;
         }
 
@@ -1801,9 +1801,9 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="manualRerunSelectApiModel"> (optional)</param>
+        /// <param name="manualRerunSelectTestResultsApiModel"> (optional)</param>
         /// <returns>ApiResponse of ManualRerunApiResult</returns>
-        public TestIT.ApiClient.Client.ApiResponse<ManualRerunApiResult> ApiV2TestRunsIdRerunsPostWithHttpInfo(Guid id, ManualRerunSelectApiModel manualRerunSelectApiModel = default(ManualRerunSelectApiModel))
+        public TestIT.ApiClient.Client.ApiResponse<ManualRerunApiResult> ApiV2TestRunsIdRerunsPostWithHttpInfo(Guid id, ManualRerunSelectTestResultsApiModel manualRerunSelectTestResultsApiModel = default(ManualRerunSelectTestResultsApiModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1823,7 +1823,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = manualRerunSelectApiModel;
+            localVarRequestOptions.Data = manualRerunSelectTestResultsApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1848,12 +1848,12 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="manualRerunSelectApiModel"> (optional)</param>
+        /// <param name="manualRerunSelectTestResultsApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ManualRerunApiResult</returns>
-        public async System.Threading.Tasks.Task<ManualRerunApiResult> ApiV2TestRunsIdRerunsPostAsync(Guid id, ManualRerunSelectApiModel manualRerunSelectApiModel = default(ManualRerunSelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ManualRerunApiResult> ApiV2TestRunsIdRerunsPostAsync(Guid id, ManualRerunSelectTestResultsApiModel manualRerunSelectTestResultsApiModel = default(ManualRerunSelectTestResultsApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<ManualRerunApiResult> localVarResponse = await ApiV2TestRunsIdRerunsPostWithHttpInfoAsync(id, manualRerunSelectApiModel, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<ManualRerunApiResult> localVarResponse = await ApiV2TestRunsIdRerunsPostWithHttpInfoAsync(id, manualRerunSelectTestResultsApiModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1862,10 +1862,10 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="manualRerunSelectApiModel"> (optional)</param>
+        /// <param name="manualRerunSelectTestResultsApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ManualRerunApiResult)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<ManualRerunApiResult>> ApiV2TestRunsIdRerunsPostWithHttpInfoAsync(Guid id, ManualRerunSelectApiModel manualRerunSelectApiModel = default(ManualRerunSelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<ManualRerunApiResult>> ApiV2TestRunsIdRerunsPostWithHttpInfoAsync(Guid id, ManualRerunSelectTestResultsApiModel manualRerunSelectTestResultsApiModel = default(ManualRerunSelectTestResultsApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1887,7 +1887,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = manualRerunSelectApiModel;
+            localVarRequestOptions.Data = manualRerunSelectTestResultsApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2153,10 +2153,10 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test run unique ID</param>
-        /// <returns>List&lt;TestPointResultModel&gt;</returns>
-        public List<TestPointResultModel> ApiV2TestRunsIdTestPointsResultsGet(Guid id)
+        /// <returns>List&lt;TestPointResultApiResult&gt;</returns>
+        public List<TestPointResultApiResult> ApiV2TestRunsIdTestPointsResultsGet(Guid id)
         {
-            TestIT.ApiClient.Client.ApiResponse<List<TestPointResultModel>> localVarResponse = ApiV2TestRunsIdTestPointsResultsGetWithHttpInfo(id);
+            TestIT.ApiClient.Client.ApiResponse<List<TestPointResultApiResult>> localVarResponse = ApiV2TestRunsIdTestPointsResultsGetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -2165,8 +2165,8 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test run unique ID</param>
-        /// <returns>ApiResponse of List&lt;TestPointResultModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<TestPointResultModel>> ApiV2TestRunsIdTestPointsResultsGetWithHttpInfo(Guid id)
+        /// <returns>ApiResponse of List&lt;TestPointResultApiResult&gt;</returns>
+        public TestIT.ApiClient.Client.ApiResponse<List<TestPointResultApiResult>> ApiV2TestRunsIdTestPointsResultsGetWithHttpInfo(Guid id)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -2193,7 +2193,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<TestPointResultModel>>("/api/v2/testRuns/{id}/testPoints/results", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<TestPointResultApiResult>>("/api/v2/testRuns/{id}/testPoints/results", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2210,10 +2210,10 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test run unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;TestPointResultModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestPointResultModel>> ApiV2TestRunsIdTestPointsResultsGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;TestPointResultApiResult&gt;</returns>
+        public async System.Threading.Tasks.Task<List<TestPointResultApiResult>> ApiV2TestRunsIdTestPointsResultsGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<TestPointResultModel>> localVarResponse = await ApiV2TestRunsIdTestPointsResultsGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<TestPointResultApiResult>> localVarResponse = await ApiV2TestRunsIdTestPointsResultsGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2223,8 +2223,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test run unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;TestPointResultModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestPointResultModel>>> ApiV2TestRunsIdTestPointsResultsGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;TestPointResultApiResult&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestPointResultApiResult>>> ApiV2TestRunsIdTestPointsResultsGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2254,7 +2254,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<TestPointResultModel>>("/api/v2/testRuns/{id}/testPoints/results", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<TestPointResultApiResult>>("/api/v2/testRuns/{id}/testPoints/results", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

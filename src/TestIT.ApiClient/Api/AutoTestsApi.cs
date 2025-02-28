@@ -112,9 +112,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="autotestHistoricalResultSelectModel"> (optional)</param>
-        /// <returns>List&lt;AutotestResultHistoricalGetModel&gt;</returns>
-        List<AutotestResultHistoricalGetModel> ApiV2AutoTestsIdTestResultsSearchPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestHistoricalResultSelectModel autotestHistoricalResultSelectModel = default(AutotestHistoricalResultSelectModel));
+        /// <param name="autoTestResultHistorySelectApiModel"> (optional)</param>
+        /// <returns>List&lt;AutoTestResultHistoryApiResult&gt;</returns>
+        List<AutoTestResultHistoryApiResult> ApiV2AutoTestsIdTestResultsSearchPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = default(AutoTestResultHistorySelectApiModel));
 
         /// <summary>
         /// Get test results history for autotest
@@ -129,9 +129,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="autotestHistoricalResultSelectModel"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;AutotestResultHistoricalGetModel&gt;</returns>
-        ApiResponse<List<AutotestResultHistoricalGetModel>> ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestHistoricalResultSelectModel autotestHistoricalResultSelectModel = default(AutotestHistoricalResultSelectModel));
+        /// <param name="autoTestResultHistorySelectApiModel"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;AutoTestResultHistoryApiResult&gt;</returns>
+        ApiResponse<List<AutoTestResultHistoryApiResult>> ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = default(AutoTestResultHistorySelectApiModel));
         /// <summary>
         /// Get identifiers of changed linked work items
         /// </summary>
@@ -431,8 +431,8 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
-        /// <returns>List&lt;TestRunShortModel&gt;</returns>
-        List<TestRunShortModel> GetTestRuns(string id);
+        /// <returns>List&lt;TestRunByAutoTestApiResult&gt;</returns>
+        List<TestRunByAutoTestApiResult> GetTestRuns(string id);
 
         /// <summary>
         /// Get completed tests runs for autotests
@@ -442,8 +442,8 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
-        /// <returns>ApiResponse of List&lt;TestRunShortModel&gt;</returns>
-        ApiResponse<List<TestRunShortModel>> GetTestRunsWithHttpInfo(string id);
+        /// <returns>ApiResponse of List&lt;TestRunByAutoTestApiResult&gt;</returns>
+        ApiResponse<List<TestRunByAutoTestApiResult>> GetTestRunsWithHttpInfo(string id);
         /// <summary>
         /// Get work items linked to autotest
         /// </summary>
@@ -637,10 +637,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="autotestHistoricalResultSelectModel"> (optional)</param>
+        /// <param name="autoTestResultHistorySelectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;AutotestResultHistoricalGetModel&gt;</returns>
-        System.Threading.Tasks.Task<List<AutotestResultHistoricalGetModel>> ApiV2AutoTestsIdTestResultsSearchPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestHistoricalResultSelectModel autotestHistoricalResultSelectModel = default(AutotestHistoricalResultSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;AutoTestResultHistoryApiResult&gt;</returns>
+        System.Threading.Tasks.Task<List<AutoTestResultHistoryApiResult>> ApiV2AutoTestsIdTestResultsSearchPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = default(AutoTestResultHistorySelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get test results history for autotest
@@ -655,10 +655,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="autotestHistoricalResultSelectModel"> (optional)</param>
+        /// <param name="autoTestResultHistorySelectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;AutotestResultHistoricalGetModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<AutotestResultHistoricalGetModel>>> ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestHistoricalResultSelectModel autotestHistoricalResultSelectModel = default(AutotestHistoricalResultSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;AutoTestResultHistoryApiResult&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<AutoTestResultHistoryApiResult>>> ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = default(AutoTestResultHistorySelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get identifiers of changed linked work items
         /// </summary>
@@ -987,8 +987,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;TestRunShortModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TestRunShortModel>> GetTestRunsAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;TestRunByAutoTestApiResult&gt;</returns>
+        System.Threading.Tasks.Task<List<TestRunByAutoTestApiResult>> GetTestRunsAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get completed tests runs for autotests
@@ -999,8 +999,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;TestRunShortModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestRunShortModel>>> GetTestRunsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;TestRunByAutoTestApiResult&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<TestRunByAutoTestApiResult>>> GetTestRunsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get work items linked to autotest
         /// </summary>
@@ -1741,11 +1741,11 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="autotestHistoricalResultSelectModel"> (optional)</param>
-        /// <returns>List&lt;AutotestResultHistoricalGetModel&gt;</returns>
-        public List<AutotestResultHistoricalGetModel> ApiV2AutoTestsIdTestResultsSearchPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestHistoricalResultSelectModel autotestHistoricalResultSelectModel = default(AutotestHistoricalResultSelectModel))
+        /// <param name="autoTestResultHistorySelectApiModel"> (optional)</param>
+        /// <returns>List&lt;AutoTestResultHistoryApiResult&gt;</returns>
+        public List<AutoTestResultHistoryApiResult> ApiV2AutoTestsIdTestResultsSearchPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = default(AutoTestResultHistorySelectApiModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<AutotestResultHistoricalGetModel>> localVarResponse = ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, autotestHistoricalResultSelectModel);
+            TestIT.ApiClient.Client.ApiResponse<List<AutoTestResultHistoryApiResult>> localVarResponse = ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, autoTestResultHistorySelectApiModel);
             return localVarResponse.Data;
         }
 
@@ -1759,9 +1759,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="autotestHistoricalResultSelectModel"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;AutotestResultHistoricalGetModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<AutotestResultHistoricalGetModel>> ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestHistoricalResultSelectModel autotestHistoricalResultSelectModel = default(AutotestHistoricalResultSelectModel))
+        /// <param name="autoTestResultHistorySelectApiModel"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;AutoTestResultHistoryApiResult&gt;</returns>
+        public TestIT.ApiClient.Client.ApiResponse<List<AutoTestResultHistoryApiResult>> ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = default(AutoTestResultHistorySelectApiModel))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1805,7 +1805,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = autotestHistoricalResultSelectModel;
+            localVarRequestOptions.Data = autoTestResultHistorySelectApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1814,7 +1814,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<List<AutotestResultHistoricalGetModel>>("/api/v2/autoTests/{id}/testResults/search", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<List<AutoTestResultHistoryApiResult>>("/api/v2/autoTests/{id}/testResults/search", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1835,12 +1835,12 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="autotestHistoricalResultSelectModel"> (optional)</param>
+        /// <param name="autoTestResultHistorySelectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;AutotestResultHistoricalGetModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<AutotestResultHistoricalGetModel>> ApiV2AutoTestsIdTestResultsSearchPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestHistoricalResultSelectModel autotestHistoricalResultSelectModel = default(AutotestHistoricalResultSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;AutoTestResultHistoryApiResult&gt;</returns>
+        public async System.Threading.Tasks.Task<List<AutoTestResultHistoryApiResult>> ApiV2AutoTestsIdTestResultsSearchPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = default(AutoTestResultHistorySelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<AutotestResultHistoricalGetModel>> localVarResponse = await ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfoAsync(id, skip, take, orderBy, searchField, searchValue, autotestHistoricalResultSelectModel, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<AutoTestResultHistoryApiResult>> localVarResponse = await ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfoAsync(id, skip, take, orderBy, searchField, searchValue, autoTestResultHistorySelectApiModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1854,10 +1854,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="autotestHistoricalResultSelectModel"> (optional)</param>
+        /// <param name="autoTestResultHistorySelectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;AutotestResultHistoricalGetModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<AutotestResultHistoricalGetModel>>> ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutotestHistoricalResultSelectModel autotestHistoricalResultSelectModel = default(AutotestHistoricalResultSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;AutoTestResultHistoryApiResult&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<AutoTestResultHistoryApiResult>>> ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = default(AutoTestResultHistorySelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1903,7 +1903,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = autotestHistoricalResultSelectModel;
+            localVarRequestOptions.Data = autoTestResultHistorySelectApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1913,7 +1913,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<AutotestResultHistoricalGetModel>>("/api/v2/autoTests/{id}/testResults/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<AutoTestResultHistoryApiResult>>("/api/v2/autoTests/{id}/testResults/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -3644,10 +3644,10 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
-        /// <returns>List&lt;TestRunShortModel&gt;</returns>
-        public List<TestRunShortModel> GetTestRuns(string id)
+        /// <returns>List&lt;TestRunByAutoTestApiResult&gt;</returns>
+        public List<TestRunByAutoTestApiResult> GetTestRuns(string id)
         {
-            TestIT.ApiClient.Client.ApiResponse<List<TestRunShortModel>> localVarResponse = GetTestRunsWithHttpInfo(id);
+            TestIT.ApiClient.Client.ApiResponse<List<TestRunByAutoTestApiResult>> localVarResponse = GetTestRunsWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -3656,8 +3656,8 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
-        /// <returns>ApiResponse of List&lt;TestRunShortModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<TestRunShortModel>> GetTestRunsWithHttpInfo(string id)
+        /// <returns>ApiResponse of List&lt;TestRunByAutoTestApiResult&gt;</returns>
+        public TestIT.ApiClient.Client.ApiResponse<List<TestRunByAutoTestApiResult>> GetTestRunsWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3688,7 +3688,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<TestRunShortModel>>("/api/v2/autoTests/{id}/testRuns", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<TestRunByAutoTestApiResult>>("/api/v2/autoTests/{id}/testRuns", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3705,10 +3705,10 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;TestRunShortModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestRunShortModel>> GetTestRunsAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;TestRunByAutoTestApiResult&gt;</returns>
+        public async System.Threading.Tasks.Task<List<TestRunByAutoTestApiResult>> GetTestRunsAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<TestRunShortModel>> localVarResponse = await GetTestRunsWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<TestRunByAutoTestApiResult>> localVarResponse = await GetTestRunsWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3718,8 +3718,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;TestRunShortModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestRunShortModel>>> GetTestRunsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;TestRunByAutoTestApiResult&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestRunByAutoTestApiResult>>> GetTestRunsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3753,7 +3753,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<TestRunShortModel>>("/api/v2/autoTests/{id}/testRuns", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<TestRunByAutoTestApiResult>>("/api/v2/autoTests/{id}/testRuns", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

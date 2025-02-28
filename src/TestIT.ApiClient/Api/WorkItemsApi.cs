@@ -200,6 +200,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="testPlanIds">Identifiers of test plans which contain test results (optional)</param>
         /// <param name="userIds">Identifiers of users who set test results (optional)</param>
         /// <param name="outcomes">List of outcomes of test results (optional)</param>
+        /// <param name="statusCodes">List of status codes of test results (optional)</param>
         /// <param name="isAutomated">OBSOLETE: Use &#x60;Automated&#x60; instead (optional)</param>
         /// <param name="automated">If result must consist of only manual/automated test results (optional)</param>
         /// <param name="testRunIds">Identifiers of test runs which contain test results (optional)</param>
@@ -208,8 +209,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <returns>List&lt;TestResultHistoryResponse&gt;</returns>
-        List<TestResultHistoryResponse> ApiV2WorkItemsIdTestResultsHistoryGet(Guid id, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<Guid> configurationIds = default(List<Guid>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> userIds = default(List<Guid>), List<string> outcomes = default(List<string>), bool? isAutomated = default(bool?), bool? automated = default(bool?), List<Guid> testRunIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
+        /// <returns>List&lt;TestResultHistoryReportApiResult&gt;</returns>
+        List<TestResultHistoryReportApiResult> ApiV2WorkItemsIdTestResultsHistoryGet(Guid id, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<Guid> configurationIds = default(List<Guid>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> userIds = default(List<Guid>), List<string> outcomes = default(List<string>), List<string> statusCodes = default(List<string>), bool? isAutomated = default(bool?), bool? automated = default(bool?), List<Guid> testRunIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
 
         /// <summary>
         /// Get test results history of WorkItem
@@ -225,6 +226,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="testPlanIds">Identifiers of test plans which contain test results (optional)</param>
         /// <param name="userIds">Identifiers of users who set test results (optional)</param>
         /// <param name="outcomes">List of outcomes of test results (optional)</param>
+        /// <param name="statusCodes">List of status codes of test results (optional)</param>
         /// <param name="isAutomated">OBSOLETE: Use &#x60;Automated&#x60; instead (optional)</param>
         /// <param name="automated">If result must consist of only manual/automated test results (optional)</param>
         /// <param name="testRunIds">Identifiers of test runs which contain test results (optional)</param>
@@ -233,8 +235,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <returns>ApiResponse of List&lt;TestResultHistoryResponse&gt;</returns>
-        ApiResponse<List<TestResultHistoryResponse>> ApiV2WorkItemsIdTestResultsHistoryGetWithHttpInfo(Guid id, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<Guid> configurationIds = default(List<Guid>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> userIds = default(List<Guid>), List<string> outcomes = default(List<string>), bool? isAutomated = default(bool?), bool? automated = default(bool?), List<Guid> testRunIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
+        /// <returns>ApiResponse of List&lt;TestResultHistoryReportApiResult&gt;</returns>
+        ApiResponse<List<TestResultHistoryReportApiResult>> ApiV2WorkItemsIdTestResultsHistoryGetWithHttpInfo(Guid id, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<Guid> configurationIds = default(List<Guid>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> userIds = default(List<Guid>), List<string> outcomes = default(List<string>), List<string> statusCodes = default(List<string>), bool? isAutomated = default(bool?), bool? automated = default(bool?), List<Guid> testRunIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
         /// <summary>
         /// Set WorkItem as actual
         /// </summary>
@@ -258,6 +260,34 @@ namespace TestIT.ApiClient.Api
         /// <param name="versionId"></param>
         /// <returns>ApiResponse of WorkItemModel</returns>
         ApiResponse<WorkItemModel> ApiV2WorkItemsIdVersionVersionIdActualPostWithHttpInfo(Guid id, Guid versionId);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="workItemLinkUrlApiModel"> (optional)</param>
+        /// <returns>SearchWorkItemLinkUrlsApiResult</returns>
+        SearchWorkItemLinkUrlsApiResult ApiV2WorkItemsLinksUrlsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemLinkUrlApiModel workItemLinkUrlApiModel = default(WorkItemLinkUrlApiModel));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="workItemLinkUrlApiModel"> (optional)</param>
+        /// <returns>ApiResponse of SearchWorkItemLinkUrlsApiResult</returns>
+        ApiResponse<SearchWorkItemLinkUrlsApiResult> ApiV2WorkItemsLinksUrlsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemLinkUrlApiModel workItemLinkUrlApiModel = default(WorkItemLinkUrlApiModel));
         /// <summary>
         /// Move WorkItem to another section
         /// </summary>
@@ -288,9 +318,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
-        /// <returns>List&lt;WorkItemShortModel&gt;</returns>
-        List<WorkItemShortModel> ApiV2WorkItemsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel));
+        /// <param name="workItemSelectApiModel"> (optional)</param>
+        /// <returns>List&lt;WorkItemShortApiResult&gt;</returns>
+        List<WorkItemShortApiResult> ApiV2WorkItemsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel));
 
         /// <summary>
         /// Search for work items
@@ -304,9 +334,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;WorkItemShortModel&gt;</returns>
-        ApiResponse<List<WorkItemShortModel>> ApiV2WorkItemsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel));
+        /// <param name="workItemSelectApiModel"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;WorkItemShortApiResult&gt;</returns>
+        ApiResponse<List<WorkItemShortApiResult>> ApiV2WorkItemsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel));
         /// <summary>
         /// Get SharedStep references in sections
         /// </summary>
@@ -826,6 +856,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="testPlanIds">Identifiers of test plans which contain test results (optional)</param>
         /// <param name="userIds">Identifiers of users who set test results (optional)</param>
         /// <param name="outcomes">List of outcomes of test results (optional)</param>
+        /// <param name="statusCodes">List of status codes of test results (optional)</param>
         /// <param name="isAutomated">OBSOLETE: Use &#x60;Automated&#x60; instead (optional)</param>
         /// <param name="automated">If result must consist of only manual/automated test results (optional)</param>
         /// <param name="testRunIds">Identifiers of test runs which contain test results (optional)</param>
@@ -835,8 +866,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;TestResultHistoryResponse&gt;</returns>
-        System.Threading.Tasks.Task<List<TestResultHistoryResponse>> ApiV2WorkItemsIdTestResultsHistoryGetAsync(Guid id, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<Guid> configurationIds = default(List<Guid>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> userIds = default(List<Guid>), List<string> outcomes = default(List<string>), bool? isAutomated = default(bool?), bool? automated = default(bool?), List<Guid> testRunIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;TestResultHistoryReportApiResult&gt;</returns>
+        System.Threading.Tasks.Task<List<TestResultHistoryReportApiResult>> ApiV2WorkItemsIdTestResultsHistoryGetAsync(Guid id, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<Guid> configurationIds = default(List<Guid>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> userIds = default(List<Guid>), List<string> outcomes = default(List<string>), List<string> statusCodes = default(List<string>), bool? isAutomated = default(bool?), bool? automated = default(bool?), List<Guid> testRunIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get test results history of WorkItem
@@ -852,6 +883,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="testPlanIds">Identifiers of test plans which contain test results (optional)</param>
         /// <param name="userIds">Identifiers of users who set test results (optional)</param>
         /// <param name="outcomes">List of outcomes of test results (optional)</param>
+        /// <param name="statusCodes">List of status codes of test results (optional)</param>
         /// <param name="isAutomated">OBSOLETE: Use &#x60;Automated&#x60; instead (optional)</param>
         /// <param name="automated">If result must consist of only manual/automated test results (optional)</param>
         /// <param name="testRunIds">Identifiers of test runs which contain test results (optional)</param>
@@ -861,8 +893,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;TestResultHistoryResponse&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestResultHistoryResponse>>> ApiV2WorkItemsIdTestResultsHistoryGetWithHttpInfoAsync(Guid id, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<Guid> configurationIds = default(List<Guid>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> userIds = default(List<Guid>), List<string> outcomes = default(List<string>), bool? isAutomated = default(bool?), bool? automated = default(bool?), List<Guid> testRunIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;TestResultHistoryReportApiResult&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<TestResultHistoryReportApiResult>>> ApiV2WorkItemsIdTestResultsHistoryGetWithHttpInfoAsync(Guid id, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<Guid> configurationIds = default(List<Guid>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> userIds = default(List<Guid>), List<string> outcomes = default(List<string>), List<string> statusCodes = default(List<string>), bool? isAutomated = default(bool?), bool? automated = default(bool?), List<Guid> testRunIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Set WorkItem as actual
         /// </summary>
@@ -888,6 +920,39 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkItemModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<WorkItemModel>> ApiV2WorkItemsIdVersionVersionIdActualPostWithHttpInfoAsync(Guid id, Guid versionId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="workItemLinkUrlApiModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SearchWorkItemLinkUrlsApiResult</returns>
+        System.Threading.Tasks.Task<SearchWorkItemLinkUrlsApiResult> ApiV2WorkItemsLinksUrlsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemLinkUrlApiModel workItemLinkUrlApiModel = default(WorkItemLinkUrlApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="workItemLinkUrlApiModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SearchWorkItemLinkUrlsApiResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SearchWorkItemLinkUrlsApiResult>> ApiV2WorkItemsLinksUrlsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemLinkUrlApiModel workItemLinkUrlApiModel = default(WorkItemLinkUrlApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Move WorkItem to another section
         /// </summary>
@@ -923,10 +988,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="workItemSelectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;WorkItemShortModel&gt;</returns>
-        System.Threading.Tasks.Task<List<WorkItemShortModel>> ApiV2WorkItemsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;WorkItemShortApiResult&gt;</returns>
+        System.Threading.Tasks.Task<List<WorkItemShortApiResult>> ApiV2WorkItemsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Search for work items
@@ -940,10 +1005,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="workItemSelectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<WorkItemShortModel>>> ApiV2WorkItemsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;WorkItemShortApiResult&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<WorkItemShortApiResult>>> ApiV2WorkItemsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get SharedStep references in sections
         /// </summary>
@@ -2415,6 +2480,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="testPlanIds">Identifiers of test plans which contain test results (optional)</param>
         /// <param name="userIds">Identifiers of users who set test results (optional)</param>
         /// <param name="outcomes">List of outcomes of test results (optional)</param>
+        /// <param name="statusCodes">List of status codes of test results (optional)</param>
         /// <param name="isAutomated">OBSOLETE: Use &#x60;Automated&#x60; instead (optional)</param>
         /// <param name="automated">If result must consist of only manual/automated test results (optional)</param>
         /// <param name="testRunIds">Identifiers of test runs which contain test results (optional)</param>
@@ -2423,10 +2489,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <returns>List&lt;TestResultHistoryResponse&gt;</returns>
-        public List<TestResultHistoryResponse> ApiV2WorkItemsIdTestResultsHistoryGet(Guid id, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<Guid> configurationIds = default(List<Guid>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> userIds = default(List<Guid>), List<string> outcomes = default(List<string>), bool? isAutomated = default(bool?), bool? automated = default(bool?), List<Guid> testRunIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
+        /// <returns>List&lt;TestResultHistoryReportApiResult&gt;</returns>
+        public List<TestResultHistoryReportApiResult> ApiV2WorkItemsIdTestResultsHistoryGet(Guid id, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<Guid> configurationIds = default(List<Guid>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> userIds = default(List<Guid>), List<string> outcomes = default(List<string>), List<string> statusCodes = default(List<string>), bool? isAutomated = default(bool?), bool? automated = default(bool?), List<Guid> testRunIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<TestResultHistoryResponse>> localVarResponse = ApiV2WorkItemsIdTestResultsHistoryGetWithHttpInfo(id, from, to, configurationIds, testPlanIds, userIds, outcomes, isAutomated, automated, testRunIds, skip, take, orderBy, searchField, searchValue);
+            TestIT.ApiClient.Client.ApiResponse<List<TestResultHistoryReportApiResult>> localVarResponse = ApiV2WorkItemsIdTestResultsHistoryGetWithHttpInfo(id, from, to, configurationIds, testPlanIds, userIds, outcomes, statusCodes, isAutomated, automated, testRunIds, skip, take, orderBy, searchField, searchValue);
             return localVarResponse.Data;
         }
 
@@ -2441,6 +2507,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="testPlanIds">Identifiers of test plans which contain test results (optional)</param>
         /// <param name="userIds">Identifiers of users who set test results (optional)</param>
         /// <param name="outcomes">List of outcomes of test results (optional)</param>
+        /// <param name="statusCodes">List of status codes of test results (optional)</param>
         /// <param name="isAutomated">OBSOLETE: Use &#x60;Automated&#x60; instead (optional)</param>
         /// <param name="automated">If result must consist of only manual/automated test results (optional)</param>
         /// <param name="testRunIds">Identifiers of test runs which contain test results (optional)</param>
@@ -2449,8 +2516,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <returns>ApiResponse of List&lt;TestResultHistoryResponse&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<TestResultHistoryResponse>> ApiV2WorkItemsIdTestResultsHistoryGetWithHttpInfo(Guid id, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<Guid> configurationIds = default(List<Guid>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> userIds = default(List<Guid>), List<string> outcomes = default(List<string>), bool? isAutomated = default(bool?), bool? automated = default(bool?), List<Guid> testRunIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
+        /// <returns>ApiResponse of List&lt;TestResultHistoryReportApiResult&gt;</returns>
+        public TestIT.ApiClient.Client.ApiResponse<List<TestResultHistoryReportApiResult>> ApiV2WorkItemsIdTestResultsHistoryGetWithHttpInfo(Guid id, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<Guid> configurationIds = default(List<Guid>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> userIds = default(List<Guid>), List<string> outcomes = default(List<string>), List<string> statusCodes = default(List<string>), bool? isAutomated = default(bool?), bool? automated = default(bool?), List<Guid> testRunIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -2493,6 +2560,10 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("multi", "outcomes", outcomes));
             }
+            if (statusCodes != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("multi", "statusCodes", statusCodes));
+            }
             if (isAutomated != null)
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "isAutomated", isAutomated));
@@ -2533,7 +2604,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<TestResultHistoryResponse>>("/api/v2/workItems/{id}/testResults/history", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<TestResultHistoryReportApiResult>>("/api/v2/workItems/{id}/testResults/history", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2555,6 +2626,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="testPlanIds">Identifiers of test plans which contain test results (optional)</param>
         /// <param name="userIds">Identifiers of users who set test results (optional)</param>
         /// <param name="outcomes">List of outcomes of test results (optional)</param>
+        /// <param name="statusCodes">List of status codes of test results (optional)</param>
         /// <param name="isAutomated">OBSOLETE: Use &#x60;Automated&#x60; instead (optional)</param>
         /// <param name="automated">If result must consist of only manual/automated test results (optional)</param>
         /// <param name="testRunIds">Identifiers of test runs which contain test results (optional)</param>
@@ -2564,10 +2636,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;TestResultHistoryResponse&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestResultHistoryResponse>> ApiV2WorkItemsIdTestResultsHistoryGetAsync(Guid id, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<Guid> configurationIds = default(List<Guid>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> userIds = default(List<Guid>), List<string> outcomes = default(List<string>), bool? isAutomated = default(bool?), bool? automated = default(bool?), List<Guid> testRunIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;TestResultHistoryReportApiResult&gt;</returns>
+        public async System.Threading.Tasks.Task<List<TestResultHistoryReportApiResult>> ApiV2WorkItemsIdTestResultsHistoryGetAsync(Guid id, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<Guid> configurationIds = default(List<Guid>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> userIds = default(List<Guid>), List<string> outcomes = default(List<string>), List<string> statusCodes = default(List<string>), bool? isAutomated = default(bool?), bool? automated = default(bool?), List<Guid> testRunIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<TestResultHistoryResponse>> localVarResponse = await ApiV2WorkItemsIdTestResultsHistoryGetWithHttpInfoAsync(id, from, to, configurationIds, testPlanIds, userIds, outcomes, isAutomated, automated, testRunIds, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<TestResultHistoryReportApiResult>> localVarResponse = await ApiV2WorkItemsIdTestResultsHistoryGetWithHttpInfoAsync(id, from, to, configurationIds, testPlanIds, userIds, outcomes, statusCodes, isAutomated, automated, testRunIds, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2582,6 +2654,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="testPlanIds">Identifiers of test plans which contain test results (optional)</param>
         /// <param name="userIds">Identifiers of users who set test results (optional)</param>
         /// <param name="outcomes">List of outcomes of test results (optional)</param>
+        /// <param name="statusCodes">List of status codes of test results (optional)</param>
         /// <param name="isAutomated">OBSOLETE: Use &#x60;Automated&#x60; instead (optional)</param>
         /// <param name="automated">If result must consist of only manual/automated test results (optional)</param>
         /// <param name="testRunIds">Identifiers of test runs which contain test results (optional)</param>
@@ -2591,8 +2664,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;TestResultHistoryResponse&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestResultHistoryResponse>>> ApiV2WorkItemsIdTestResultsHistoryGetWithHttpInfoAsync(Guid id, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<Guid> configurationIds = default(List<Guid>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> userIds = default(List<Guid>), List<string> outcomes = default(List<string>), bool? isAutomated = default(bool?), bool? automated = default(bool?), List<Guid> testRunIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;TestResultHistoryReportApiResult&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestResultHistoryReportApiResult>>> ApiV2WorkItemsIdTestResultsHistoryGetWithHttpInfoAsync(Guid id, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<Guid> configurationIds = default(List<Guid>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> userIds = default(List<Guid>), List<string> outcomes = default(List<string>), List<string> statusCodes = default(List<string>), bool? isAutomated = default(bool?), bool? automated = default(bool?), List<Guid> testRunIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2637,6 +2710,10 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("multi", "outcomes", outcomes));
             }
+            if (statusCodes != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("multi", "statusCodes", statusCodes));
+            }
             if (isAutomated != null)
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "isAutomated", isAutomated));
@@ -2678,7 +2755,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<TestResultHistoryResponse>>("/api/v2/workItems/{id}/testResults/history", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<TestResultHistoryReportApiResult>>("/api/v2/workItems/{id}/testResults/history", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2813,6 +2890,185 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="workItemLinkUrlApiModel"> (optional)</param>
+        /// <returns>SearchWorkItemLinkUrlsApiResult</returns>
+        public SearchWorkItemLinkUrlsApiResult ApiV2WorkItemsLinksUrlsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemLinkUrlApiModel workItemLinkUrlApiModel = default(WorkItemLinkUrlApiModel))
+        {
+            TestIT.ApiClient.Client.ApiResponse<SearchWorkItemLinkUrlsApiResult> localVarResponse = ApiV2WorkItemsLinksUrlsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, workItemLinkUrlApiModel);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="workItemLinkUrlApiModel"> (optional)</param>
+        /// <returns>ApiResponse of SearchWorkItemLinkUrlsApiResult</returns>
+        public TestIT.ApiClient.Client.ApiResponse<SearchWorkItemLinkUrlsApiResult> ApiV2WorkItemsLinksUrlsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemLinkUrlApiModel workItemLinkUrlApiModel = default(WorkItemLinkUrlApiModel))
+        {
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (skip != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
+            }
+            if (take != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
+            }
+            if (orderBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
+            }
+            if (searchField != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
+            }
+            if (searchValue != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
+            }
+            localVarRequestOptions.Data = workItemLinkUrlApiModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<SearchWorkItemLinkUrlsApiResult>("/api/v2/workItems/links/urls/search", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2WorkItemsLinksUrlsSearchPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="workItemLinkUrlApiModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SearchWorkItemLinkUrlsApiResult</returns>
+        public async System.Threading.Tasks.Task<SearchWorkItemLinkUrlsApiResult> ApiV2WorkItemsLinksUrlsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemLinkUrlApiModel workItemLinkUrlApiModel = default(WorkItemLinkUrlApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            TestIT.ApiClient.Client.ApiResponse<SearchWorkItemLinkUrlsApiResult> localVarResponse = await ApiV2WorkItemsLinksUrlsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, workItemLinkUrlApiModel, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="workItemLinkUrlApiModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SearchWorkItemLinkUrlsApiResult)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<SearchWorkItemLinkUrlsApiResult>> ApiV2WorkItemsLinksUrlsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemLinkUrlApiModel workItemLinkUrlApiModel = default(WorkItemLinkUrlApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (skip != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
+            }
+            if (take != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
+            }
+            if (orderBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
+            }
+            if (searchField != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
+            }
+            if (searchValue != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
+            }
+            localVarRequestOptions.Data = workItemLinkUrlApiModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<SearchWorkItemLinkUrlsApiResult>("/api/v2/workItems/links/urls/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2WorkItemsLinksUrlsSearchPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Move WorkItem to another section  Use case   User sets WorkItem identifier   User runs method execution   System move WorkItem to another section
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
@@ -2940,11 +3196,11 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
-        /// <returns>List&lt;WorkItemShortModel&gt;</returns>
-        public List<WorkItemShortModel> ApiV2WorkItemsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel))
+        /// <param name="workItemSelectApiModel"> (optional)</param>
+        /// <returns>List&lt;WorkItemShortApiResult&gt;</returns>
+        public List<WorkItemShortApiResult> ApiV2WorkItemsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = ApiV2WorkItemsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, workItemSelectModel);
+            TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortApiResult>> localVarResponse = ApiV2WorkItemsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, workItemSelectApiModel);
             return localVarResponse.Data;
         }
 
@@ -2957,9 +3213,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;WorkItemShortModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>> ApiV2WorkItemsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel))
+        /// <param name="workItemSelectApiModel"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;WorkItemShortApiResult&gt;</returns>
+        public TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortApiResult>> ApiV2WorkItemsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -2998,7 +3254,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = workItemSelectModel;
+            localVarRequestOptions.Data = workItemSelectApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3007,7 +3263,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<List<WorkItemShortModel>>("/api/v2/workItems/search", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<List<WorkItemShortApiResult>>("/api/v2/workItems/search", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3027,12 +3283,12 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="workItemSelectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;WorkItemShortModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<WorkItemShortModel>> ApiV2WorkItemsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;WorkItemShortApiResult&gt;</returns>
+        public async System.Threading.Tasks.Task<List<WorkItemShortApiResult>> ApiV2WorkItemsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = await ApiV2WorkItemsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, workItemSelectModel, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortApiResult>> localVarResponse = await ApiV2WorkItemsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, workItemSelectApiModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3045,10 +3301,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <param name="workItemSelectModel"> (optional)</param>
+        /// <param name="workItemSelectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>>> ApiV2WorkItemsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectModel workItemSelectModel = default(WorkItemSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;WorkItemShortApiResult&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortApiResult>>> ApiV2WorkItemsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -3089,7 +3345,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
             }
-            localVarRequestOptions.Data = workItemSelectModel;
+            localVarRequestOptions.Data = workItemSelectApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3099,7 +3355,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<WorkItemShortModel>>("/api/v2/workItems/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<WorkItemShortApiResult>>("/api/v2/workItems/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
