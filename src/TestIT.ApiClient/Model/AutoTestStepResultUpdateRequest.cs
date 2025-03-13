@@ -52,7 +52,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="stepResults">Nested step results. The maximum nesting level is 15..</param>
         /// <param name="attachments">/// &lt;summary&gt;  Specifies an attachment GUID. Multiple values can be sent.  &lt;/summary&gt;.</param>
         /// <param name="parameters">\&quot;&lt;b&gt;parameter&lt;/b&gt;\&quot;: \&quot;&lt;b&gt;value&lt;/b&gt;\&quot; pair with arbitrary custom parameters. Multiple parameters can be sent..</param>
-        public AutoTestStepResultUpdateRequest(string title = default(string), string description = default(string), string info = default(string), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? duration = default(long?), AvailableTestResultOutcome? outcome = default(AvailableTestResultOutcome?), List<AttachmentPutModelAutoTestStepResultsModel> stepResults = default(List<AttachmentPutModelAutoTestStepResultsModel>), List<AttachmentUpdateRequest> attachments = default(List<AttachmentUpdateRequest>), Dictionary<string, string> parameters = default(Dictionary<string, string>))
+        public AutoTestStepResultUpdateRequest(string title = default(string), string description = default(string), string info = default(string), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? duration = default(long?), AvailableTestResultOutcome? outcome = default(AvailableTestResultOutcome?), List<AutoTestStepResultUpdateRequest> stepResults = default(List<AutoTestStepResultUpdateRequest>), List<AttachmentUpdateRequest> attachments = default(List<AttachmentUpdateRequest>), Dictionary<string, string> parameters = default(Dictionary<string, string>))
         {
             this.Title = title;
             this.Description = description;
@@ -113,7 +113,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Nested step results. The maximum nesting level is 15.</value>
         [DataMember(Name = "stepResults", EmitDefaultValue = true)]
-        public List<AttachmentPutModelAutoTestStepResultsModel> StepResults { get; set; }
+        public List<AutoTestStepResultUpdateRequest> StepResults { get; set; }
 
         /// <summary>
         /// /// &lt;summary&gt;  Specifies an attachment GUID. Multiple values can be sent.  &lt;/summary&gt;

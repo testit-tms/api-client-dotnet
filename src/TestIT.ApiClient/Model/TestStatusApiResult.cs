@@ -49,11 +49,10 @@ namespace TestIT.ApiClient.Model
         /// <param name="id">id (required).</param>
         /// <param name="name">name (required).</param>
         /// <param name="type">type (required).</param>
-        /// <param name="isBased">isBased (required).</param>
-        /// <param name="isDefault">isDefault (required).</param>
+        /// <param name="isSystem">isSystem (required).</param>
         /// <param name="code">code (required).</param>
         /// <param name="description">description.</param>
-        public TestStatusApiResult(Guid id = default(Guid), string name = default(string), TestStatusType type = default(TestStatusType), bool isBased = default(bool), bool isDefault = default(bool), string code = default(string), string description = default(string))
+        public TestStatusApiResult(Guid id = default(Guid), string name = default(string), TestStatusType type = default(TestStatusType), bool isSystem = default(bool), string code = default(string), string description = default(string))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -63,8 +62,7 @@ namespace TestIT.ApiClient.Model
             }
             this.Name = name;
             this.Type = type;
-            this.IsBased = isBased;
-            this.IsDefault = isDefault;
+            this.IsSystem = isSystem;
             // to ensure "code" is required (not null)
             if (code == null)
             {
@@ -87,16 +85,10 @@ namespace TestIT.ApiClient.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsBased
+        /// Gets or Sets IsSystem
         /// </summary>
-        [DataMember(Name = "isBased", IsRequired = true, EmitDefaultValue = true)]
-        public bool IsBased { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IsDefault
-        /// </summary>
-        [DataMember(Name = "isDefault", IsRequired = true, EmitDefaultValue = true)]
-        public bool IsDefault { get; set; }
+        [DataMember(Name = "isSystem", IsRequired = true, EmitDefaultValue = true)]
+        public bool IsSystem { get; set; }
 
         /// <summary>
         /// Gets or Sets Code
@@ -121,8 +113,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  IsBased: ").Append(IsBased).Append("\n");
-            sb.Append("  IsDefault: ").Append(IsDefault).Append("\n");
+            sb.Append("  IsSystem: ").Append(IsSystem).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("}\n");
