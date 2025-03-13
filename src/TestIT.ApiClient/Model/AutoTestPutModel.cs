@@ -91,7 +91,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Used for search autotest. If value is null or equals Guid mask filled with zeros, search will be executed using ExternalId</value>
         /*
-        <example>ec70e9ad-f280-4a70-be0c-3d9ee96fc70f</example>
+        <example>10a4eac4-6a5f-45dd-bdac-d93de38811e4</example>
         */
         [DataMember(Name = "id", EmitDefaultValue = true)]
         public Guid? Id { get; set; }
