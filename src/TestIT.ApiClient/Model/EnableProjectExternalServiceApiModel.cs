@@ -27,39 +27,26 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// WorkItemIdModel
+    /// EnableProjectExternalServiceApiModel
     /// </summary>
-    [DataContract(Name = "WorkItemIdModel")]
-    public partial class WorkItemIdModel : IValidatableObject
+    [DataContract(Name = "EnableProjectExternalServiceApiModel")]
+    public partial class EnableProjectExternalServiceApiModel : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkItemIdModel" /> class.
+        /// Initializes a new instance of the <see cref="EnableProjectExternalServiceApiModel" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected WorkItemIdModel() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WorkItemIdModel" /> class.
-        /// </summary>
-        /// <param name="id">Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format (required).</param>
-        public WorkItemIdModel(string id = default(string))
+        /// <param name="settings">External service settings.</param>
+        public EnableProjectExternalServiceApiModel(Object settings = default(Object))
         {
-            // to ensure "id" is required (not null)
-            if (id == null)
-            {
-                throw new ArgumentNullException("id is a required property for WorkItemIdModel and cannot be null");
-            }
-            this.Id = id;
+            this.Settings = settings;
         }
 
         /// <summary>
-        /// Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format
+        /// External service settings
         /// </summary>
-        /// <value>Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format</value>
-        /*
-        <example>10a4eac4-6a5f-45dd-bdac-d93de38811e4</example>
-        */
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
-        public string Id { get; set; }
+        /// <value>External service settings</value>
+        [DataMember(Name = "settings", EmitDefaultValue = true)]
+        public Object Settings { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -68,8 +55,8 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WorkItemIdModel {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("class EnableProjectExternalServiceApiModel {\n");
+            sb.Append("  Settings: ").Append(Settings).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,12 +77,6 @@ namespace TestIT.ApiClient.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // Id (string) minLength
-            if (this.Id != null && this.Id.Length < 1)
-            {
-                yield return new ValidationResult("Invalid value for Id, length must be greater than 1.", new [] { "Id" });
-            }
-
             yield break;
         }
     }

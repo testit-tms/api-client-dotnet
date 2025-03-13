@@ -73,6 +73,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <returns>TestResultResponse</returns>
+        [Obsolete]
         TestResultResponse ApiV2TestResultsIdAggregatedGet(Guid id);
 
         /// <summary>
@@ -84,6 +85,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <returns>ApiResponse of TestResultResponse</returns>
+        [Obsolete]
         ApiResponse<TestResultResponse> ApiV2TestResultsIdAggregatedGetWithHttpInfo(Guid id);
         /// <summary>
         /// Attach file to the test result
@@ -417,6 +419,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestResultResponse</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<TestResultResponse> ApiV2TestResultsIdAggregatedGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
@@ -429,6 +432,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestResultResponse)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<TestResultResponse>> ApiV2TestResultsIdAggregatedGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Attach file to the test result
@@ -1207,6 +1211,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <returns>TestResultResponse</returns>
+        [Obsolete]
         public TestResultResponse ApiV2TestResultsIdAggregatedGet(Guid id)
         {
             TestIT.ApiClient.Client.ApiResponse<TestResultResponse> localVarResponse = ApiV2TestResultsIdAggregatedGetWithHttpInfo(id);
@@ -1219,6 +1224,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <returns>ApiResponse of TestResultResponse</returns>
+        [Obsolete]
         public TestIT.ApiClient.Client.ApiResponse<TestResultResponse> ApiV2TestResultsIdAggregatedGetWithHttpInfo(Guid id)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1264,6 +1270,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestResultResponse</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<TestResultResponse> ApiV2TestResultsIdAggregatedGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             TestIT.ApiClient.Client.ApiResponse<TestResultResponse> localVarResponse = await ApiV2TestResultsIdAggregatedGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
@@ -1277,6 +1284,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestResultResponse)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TestResultResponse>> ApiV2TestResultsIdAggregatedGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
