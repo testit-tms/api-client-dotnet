@@ -136,7 +136,7 @@ void (empty response body)
 
 <a id="apiv2projectsdemopost"></a>
 # **ApiV2ProjectsDemoPost**
-> ProjectModel ApiV2ProjectsDemoPost (ProjectPostModel projectPostModel = null)
+> DemoProjectApiResult ApiV2ProjectsDemoPost (CreateProjectApiModel createProjectApiModel = null)
 
 
 
@@ -166,11 +166,11 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
-            var projectPostModel = new ProjectPostModel(); // ProjectPostModel |  (optional) 
+            var createProjectApiModel = new CreateProjectApiModel(); // CreateProjectApiModel |  (optional) 
 
             try
             {
-                ProjectModel result = apiInstance.ApiV2ProjectsDemoPost(projectPostModel);
+                DemoProjectApiResult result = apiInstance.ApiV2ProjectsDemoPost(createProjectApiModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -190,7 +190,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<ProjectModel> response = apiInstance.ApiV2ProjectsDemoPostWithHttpInfo(projectPostModel);
+    ApiResponse<DemoProjectApiResult> response = apiInstance.ApiV2ProjectsDemoPostWithHttpInfo(createProjectApiModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -207,11 +207,11 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **projectPostModel** | [**ProjectPostModel**](ProjectPostModel.md) |  | [optional]  |
+| **createProjectApiModel** | [**CreateProjectApiModel**](CreateProjectApiModel.md) |  | [optional]  |
 
 ### Return type
 
-[**ProjectModel**](ProjectModel.md)
+[**DemoProjectApiResult**](DemoProjectApiResult.md)
 
 ### Authorization
 
@@ -1826,7 +1826,7 @@ catch (ApiException e)
 
 <a id="createproject"></a>
 # **CreateProject**
-> ProjectModel CreateProject (ProjectPostModel projectPostModel = null)
+> ProjectModel CreateProject (CreateProjectApiModel createProjectApiModel = null)
 
 Create project
 
@@ -1858,12 +1858,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
-            var projectPostModel = new ProjectPostModel(); // ProjectPostModel |  (optional) 
+            var createProjectApiModel = new CreateProjectApiModel(); // CreateProjectApiModel |  (optional) 
 
             try
             {
                 // Create project
-                ProjectModel result = apiInstance.CreateProject(projectPostModel);
+                ProjectModel result = apiInstance.CreateProject(createProjectApiModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1884,7 +1884,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create project
-    ApiResponse<ProjectModel> response = apiInstance.CreateProjectWithHttpInfo(projectPostModel);
+    ApiResponse<ProjectModel> response = apiInstance.CreateProjectWithHttpInfo(createProjectApiModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1901,7 +1901,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **projectPostModel** | [**ProjectPostModel**](ProjectPostModel.md) |  | [optional]  |
+| **createProjectApiModel** | [**CreateProjectApiModel**](CreateProjectApiModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -2601,7 +2601,7 @@ catch (ApiException e)
 
 <a id="updateproject"></a>
 # **UpdateProject**
-> void UpdateProject (ProjectPutModel projectPutModel = null)
+> void UpdateProject (UpdateProjectApiModel updateProjectApiModel = null)
 
 Update project
 
@@ -2633,12 +2633,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
-            var projectPutModel = new ProjectPutModel(); // ProjectPutModel |  (optional) 
+            var updateProjectApiModel = new UpdateProjectApiModel(); // UpdateProjectApiModel |  (optional) 
 
             try
             {
                 // Update project
-                apiInstance.UpdateProject(projectPutModel);
+                apiInstance.UpdateProject(updateProjectApiModel);
             }
             catch (ApiException  e)
             {
@@ -2658,7 +2658,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update project
-    apiInstance.UpdateProjectWithHttpInfo(projectPutModel);
+    apiInstance.UpdateProjectWithHttpInfo(updateProjectApiModel);
 }
 catch (ApiException e)
 {
@@ -2672,7 +2672,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **projectPutModel** | [**ProjectPutModel**](ProjectPutModel.md) |  | [optional]  |
+| **updateProjectApiModel** | [**UpdateProjectApiModel**](UpdateProjectApiModel.md) |  | [optional]  |
 
 ### Return type
 

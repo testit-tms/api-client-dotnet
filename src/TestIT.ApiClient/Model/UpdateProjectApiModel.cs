@@ -27,43 +27,36 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// ProjectPutModel
+    /// UpdateProjectApiModel
     /// </summary>
-    [DataContract(Name = "ProjectPutModel")]
-    public partial class ProjectPutModel : IValidatableObject
+    [DataContract(Name = "UpdateProjectApiModel")]
+    public partial class UpdateProjectApiModel : IValidatableObject
     {
-
         /// <summary>
-        /// Type of the project
-        /// </summary>
-        /// <value>Type of the project</value>
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
-        public ProjectTypeModel Type { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ProjectPutModel" /> class.
+        /// Initializes a new instance of the <see cref="UpdateProjectApiModel" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ProjectPutModel() { }
+        protected UpdateProjectApiModel() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProjectPutModel" /> class.
+        /// Initializes a new instance of the <see cref="UpdateProjectApiModel" /> class.
         /// </summary>
         /// <param name="id">Unique ID of the project (required).</param>
-        /// <param name="description">Description of the project.</param>
         /// <param name="name">Name of the project (required).</param>
+        /// <param name="description">Description of the project.</param>
         /// <param name="isFavorite">Indicates if the project is marked as favorite.</param>
-        /// <param name="type">Type of the project (required).</param>
-        public ProjectPutModel(Guid id = default(Guid), string description = default(string), string name = default(string), bool? isFavorite = default(bool?), ProjectTypeModel type = default(ProjectTypeModel))
+        /// <param name="workflowId">Identifier of the workflow project should use.</param>
+        public UpdateProjectApiModel(Guid id = default(Guid), string name = default(string), string description = default(string), bool? isFavorite = default(bool?), Guid? workflowId = default(Guid?))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
             if (name == null)
             {
-                throw new ArgumentNullException("name is a required property for ProjectPutModel and cannot be null");
+                throw new ArgumentNullException("name is a required property for UpdateProjectApiModel and cannot be null");
             }
             this.Name = name;
-            this.Type = type;
             this.Description = description;
             this.IsFavorite = isFavorite;
+            this.WorkflowId = workflowId;
         }
 
         /// <summary>
@@ -74,18 +67,18 @@ namespace TestIT.ApiClient.Model
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Description of the project
-        /// </summary>
-        /// <value>Description of the project</value>
-        [DataMember(Name = "description", EmitDefaultValue = true)]
-        public string Description { get; set; }
-
-        /// <summary>
         /// Name of the project
         /// </summary>
         /// <value>Name of the project</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Description of the project
+        /// </summary>
+        /// <value>Description of the project</value>
+        [DataMember(Name = "description", EmitDefaultValue = true)]
+        public string Description { get; set; }
 
         /// <summary>
         /// Indicates if the project is marked as favorite
@@ -95,18 +88,25 @@ namespace TestIT.ApiClient.Model
         public bool? IsFavorite { get; set; }
 
         /// <summary>
+        /// Identifier of the workflow project should use
+        /// </summary>
+        /// <value>Identifier of the workflow project should use</value>
+        [DataMember(Name = "workflowId", EmitDefaultValue = true)]
+        public Guid? WorkflowId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ProjectPutModel {\n");
+            sb.Append("class UpdateProjectApiModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  IsFavorite: ").Append(IsFavorite).Append("\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  WorkflowId: ").Append(WorkflowId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

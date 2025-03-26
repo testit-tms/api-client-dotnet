@@ -1,12 +1,12 @@
-# TestIT.ApiClient.Model.ProjectPostModel
+# TestIT.ApiClient.Model.GenerateWorkItemPreviewsApiModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Description** | **string** | Description of the project | [optional] 
-**Name** | **string** | Name of the project | 
-**IsFavorite** | **bool?** | Indicates if the project is marked as favorite | [optional] 
+**ExternalServiceId** | **Guid** |  | 
+**TaskKey** | **string** |  | 
+**SectionId** | **Guid** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

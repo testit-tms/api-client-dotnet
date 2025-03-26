@@ -27,40 +27,35 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// ProjectPostModel
+    /// CreateProjectApiModel
     /// </summary>
-    [DataContract(Name = "ProjectPostModel")]
-    public partial class ProjectPostModel : IValidatableObject
+    [DataContract(Name = "CreateProjectApiModel")]
+    public partial class CreateProjectApiModel : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProjectPostModel" /> class.
+        /// Initializes a new instance of the <see cref="CreateProjectApiModel" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ProjectPostModel() { }
+        protected CreateProjectApiModel() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProjectPostModel" /> class.
+        /// Initializes a new instance of the <see cref="CreateProjectApiModel" /> class.
         /// </summary>
-        /// <param name="description">Description of the project.</param>
         /// <param name="name">Name of the project (required).</param>
+        /// <param name="description">Description of the project.</param>
         /// <param name="isFavorite">Indicates if the project is marked as favorite.</param>
-        public ProjectPostModel(string description = default(string), string name = default(string), bool? isFavorite = default(bool?))
+        /// <param name="workflowId">Identifier of the workflow project should use.</param>
+        public CreateProjectApiModel(string name = default(string), string description = default(string), bool? isFavorite = default(bool?), Guid? workflowId = default(Guid?))
         {
             // to ensure "name" is required (not null)
             if (name == null)
             {
-                throw new ArgumentNullException("name is a required property for ProjectPostModel and cannot be null");
+                throw new ArgumentNullException("name is a required property for CreateProjectApiModel and cannot be null");
             }
             this.Name = name;
             this.Description = description;
             this.IsFavorite = isFavorite;
+            this.WorkflowId = workflowId;
         }
-
-        /// <summary>
-        /// Description of the project
-        /// </summary>
-        /// <value>Description of the project</value>
-        [DataMember(Name = "description", EmitDefaultValue = true)]
-        public string Description { get; set; }
 
         /// <summary>
         /// Name of the project
@@ -70,11 +65,25 @@ namespace TestIT.ApiClient.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// Description of the project
+        /// </summary>
+        /// <value>Description of the project</value>
+        [DataMember(Name = "description", EmitDefaultValue = true)]
+        public string Description { get; set; }
+
+        /// <summary>
         /// Indicates if the project is marked as favorite
         /// </summary>
         /// <value>Indicates if the project is marked as favorite</value>
         [DataMember(Name = "isFavorite", EmitDefaultValue = true)]
         public bool? IsFavorite { get; set; }
+
+        /// <summary>
+        /// Identifier of the workflow project should use
+        /// </summary>
+        /// <value>Identifier of the workflow project should use</value>
+        [DataMember(Name = "workflowId", EmitDefaultValue = true)]
+        public Guid? WorkflowId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -83,10 +92,11 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ProjectPostModel {\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("class CreateProjectApiModel {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  IsFavorite: ").Append(IsFavorite).Append("\n");
+            sb.Append("  WorkflowId: ").Append(WorkflowId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -27,47 +27,51 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// ConfigurationByParametersModel
+    /// CreateWorkItemPreviewsApiModel
     /// </summary>
-    [DataContract(Name = "ConfigurationByParametersModel")]
-    public partial class ConfigurationByParametersModel : IValidatableObject
+    [DataContract(Name = "CreateWorkItemPreviewsApiModel")]
+    public partial class CreateWorkItemPreviewsApiModel : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConfigurationByParametersModel" /> class.
+        /// Initializes a new instance of the <see cref="CreateWorkItemPreviewsApiModel" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ConfigurationByParametersModel() { }
+        protected CreateWorkItemPreviewsApiModel() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConfigurationByParametersModel" /> class.
+        /// Initializes a new instance of the <see cref="CreateWorkItemPreviewsApiModel" /> class.
         /// </summary>
-        /// <param name="projectId">This property is used to link configuration with project (required).</param>
-        /// <param name="parameterIds">parameterIds (required).</param>
-        public ConfigurationByParametersModel(Guid projectId = default(Guid), List<Guid> parameterIds = default(List<Guid>))
+        /// <param name="sectionId">sectionId (required).</param>
+        /// <param name="previews">previews (required).</param>
+        /// <param name="attributes">attributes.</param>
+        public CreateWorkItemPreviewsApiModel(Guid sectionId = default(Guid), List<WorkItemPreviewApiModel> previews = default(List<WorkItemPreviewApiModel>), Dictionary<string, Object> attributes = default(Dictionary<string, Object>))
         {
-            this.ProjectId = projectId;
-            // to ensure "parameterIds" is required (not null)
-            if (parameterIds == null)
+            this.SectionId = sectionId;
+            // to ensure "previews" is required (not null)
+            if (previews == null)
             {
-                throw new ArgumentNullException("parameterIds is a required property for ConfigurationByParametersModel and cannot be null");
+                throw new ArgumentNullException("previews is a required property for CreateWorkItemPreviewsApiModel and cannot be null");
             }
-            this.ParameterIds = parameterIds;
+            this.Previews = previews;
+            this.Attributes = attributes;
         }
 
         /// <summary>
-        /// This property is used to link configuration with project
+        /// Gets or Sets SectionId
         /// </summary>
-        /// <value>This property is used to link configuration with project</value>
-        /*
-        <example>0812e703-0018-4836-886c-a8b12648d919</example>
-        */
-        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
-        public Guid ProjectId { get; set; }
+        [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = true)]
+        public Guid SectionId { get; set; }
 
         /// <summary>
-        /// Gets or Sets ParameterIds
+        /// Gets or Sets Previews
         /// </summary>
-        [DataMember(Name = "parameterIds", IsRequired = true, EmitDefaultValue = true)]
-        public List<Guid> ParameterIds { get; set; }
+        [DataMember(Name = "previews", IsRequired = true, EmitDefaultValue = true)]
+        public List<WorkItemPreviewApiModel> Previews { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Attributes
+        /// </summary>
+        [DataMember(Name = "attributes", EmitDefaultValue = true)]
+        public Dictionary<string, Object> Attributes { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -76,9 +80,10 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ConfigurationByParametersModel {\n");
-            sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
-            sb.Append("  ParameterIds: ").Append(ParameterIds).Append("\n");
+            sb.Append("class CreateWorkItemPreviewsApiModel {\n");
+            sb.Append("  SectionId: ").Append(SectionId).Append("\n");
+            sb.Append("  Previews: ").Append(Previews).Append("\n");
+            sb.Append("  Attributes: ").Append(Attributes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
