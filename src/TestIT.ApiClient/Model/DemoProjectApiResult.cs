@@ -27,47 +27,49 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// ConfigurationByParametersModel
+    /// DemoProjectApiResult
     /// </summary>
-    [DataContract(Name = "ConfigurationByParametersModel")]
-    public partial class ConfigurationByParametersModel : IValidatableObject
+    [DataContract(Name = "DemoProjectApiResult")]
+    public partial class DemoProjectApiResult : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConfigurationByParametersModel" /> class.
+        /// Initializes a new instance of the <see cref="DemoProjectApiResult" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ConfigurationByParametersModel() { }
+        protected DemoProjectApiResult() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConfigurationByParametersModel" /> class.
+        /// Initializes a new instance of the <see cref="DemoProjectApiResult" /> class.
         /// </summary>
-        /// <param name="projectId">This property is used to link configuration with project (required).</param>
-        /// <param name="parameterIds">parameterIds (required).</param>
-        public ConfigurationByParametersModel(Guid projectId = default(Guid), List<Guid> parameterIds = default(List<Guid>))
+        /// <param name="projectId">Demo project ID (required).</param>
+        /// <param name="projectGlobalId">Demo project global ID (required).</param>
+        /// <param name="jobId">Job ID (required).</param>
+        public DemoProjectApiResult(Guid projectId = default(Guid), long projectGlobalId = default(long), Guid jobId = default(Guid))
         {
             this.ProjectId = projectId;
-            // to ensure "parameterIds" is required (not null)
-            if (parameterIds == null)
-            {
-                throw new ArgumentNullException("parameterIds is a required property for ConfigurationByParametersModel and cannot be null");
-            }
-            this.ParameterIds = parameterIds;
+            this.ProjectGlobalId = projectGlobalId;
+            this.JobId = jobId;
         }
 
         /// <summary>
-        /// This property is used to link configuration with project
+        /// Demo project ID
         /// </summary>
-        /// <value>This property is used to link configuration with project</value>
-        /*
-        <example>0812e703-0018-4836-886c-a8b12648d919</example>
-        */
+        /// <value>Demo project ID</value>
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
-        /// Gets or Sets ParameterIds
+        /// Demo project global ID
         /// </summary>
-        [DataMember(Name = "parameterIds", IsRequired = true, EmitDefaultValue = true)]
-        public List<Guid> ParameterIds { get; set; }
+        /// <value>Demo project global ID</value>
+        [DataMember(Name = "projectGlobalId", IsRequired = true, EmitDefaultValue = true)]
+        public long ProjectGlobalId { get; set; }
+
+        /// <summary>
+        /// Job ID
+        /// </summary>
+        /// <value>Job ID</value>
+        [DataMember(Name = "jobId", IsRequired = true, EmitDefaultValue = true)]
+        public Guid JobId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -76,9 +78,10 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ConfigurationByParametersModel {\n");
+            sb.Append("class DemoProjectApiResult {\n");
             sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
-            sb.Append("  ParameterIds: ").Append(ParameterIds).Append("\n");
+            sb.Append("  ProjectGlobalId: ").Append(ProjectGlobalId).Append("\n");
+            sb.Append("  JobId: ").Append(JobId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

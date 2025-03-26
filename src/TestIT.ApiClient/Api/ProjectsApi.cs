@@ -54,9 +54,9 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPostModel"> (optional)</param>
-        /// <returns>ProjectModel</returns>
-        ProjectModel ApiV2ProjectsDemoPost(ProjectPostModel projectPostModel = default(ProjectPostModel));
+        /// <param name="createProjectApiModel"> (optional)</param>
+        /// <returns>DemoProjectApiResult</returns>
+        DemoProjectApiResult ApiV2ProjectsDemoPost(CreateProjectApiModel createProjectApiModel = default(CreateProjectApiModel));
 
         /// <summary>
         /// 
@@ -65,9 +65,9 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPostModel"> (optional)</param>
-        /// <returns>ApiResponse of ProjectModel</returns>
-        ApiResponse<ProjectModel> ApiV2ProjectsDemoPostWithHttpInfo(ProjectPostModel projectPostModel = default(ProjectPostModel));
+        /// <param name="createProjectApiModel"> (optional)</param>
+        /// <returns>ApiResponse of DemoProjectApiResult</returns>
+        ApiResponse<DemoProjectApiResult> ApiV2ProjectsDemoPostWithHttpInfo(CreateProjectApiModel createProjectApiModel = default(CreateProjectApiModel));
         /// <summary>
         /// Archive project
         /// </summary>
@@ -413,9 +413,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets project parameters (listed in request example) and runs method execution   System creates project   System returns project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPostModel"> (optional)</param>
+        /// <param name="createProjectApiModel"> (optional)</param>
         /// <returns>ProjectModel</returns>
-        ProjectModel CreateProject(ProjectPostModel projectPostModel = default(ProjectPostModel));
+        ProjectModel CreateProject(CreateProjectApiModel createProjectApiModel = default(CreateProjectApiModel));
 
         /// <summary>
         /// Create project
@@ -424,9 +424,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets project parameters (listed in request example) and runs method execution   System creates project   System returns project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPostModel"> (optional)</param>
+        /// <param name="createProjectApiModel"> (optional)</param>
         /// <returns>ApiResponse of ProjectModel</returns>
-        ApiResponse<ProjectModel> CreateProjectWithHttpInfo(ProjectPostModel projectPostModel = default(ProjectPostModel));
+        ApiResponse<ProjectModel> CreateProjectWithHttpInfo(CreateProjectApiModel createProjectApiModel = default(CreateProjectApiModel));
         /// <summary>
         /// Delete all autotests from project
         /// </summary>
@@ -597,9 +597,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets project parameters (listed in request example) and runs method execution   System updates project   System returns updated project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPutModel"> (optional)</param>
+        /// <param name="updateProjectApiModel"> (optional)</param>
         /// <returns></returns>
-        void UpdateProject(ProjectPutModel projectPutModel = default(ProjectPutModel));
+        void UpdateProject(UpdateProjectApiModel updateProjectApiModel = default(UpdateProjectApiModel));
 
         /// <summary>
         /// Update project
@@ -608,9 +608,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets project parameters (listed in request example) and runs method execution   System updates project   System returns updated project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPutModel"> (optional)</param>
+        /// <param name="updateProjectApiModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateProjectWithHttpInfo(ProjectPutModel projectPutModel = default(ProjectPutModel));
+        ApiResponse<Object> UpdateProjectWithHttpInfo(UpdateProjectApiModel updateProjectApiModel = default(UpdateProjectApiModel));
         #endregion Synchronous Operations
     }
 
@@ -652,10 +652,10 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPostModel"> (optional)</param>
+        /// <param name="createProjectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ProjectModel</returns>
-        System.Threading.Tasks.Task<ProjectModel> ApiV2ProjectsDemoPostAsync(ProjectPostModel projectPostModel = default(ProjectPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of DemoProjectApiResult</returns>
+        System.Threading.Tasks.Task<DemoProjectApiResult> ApiV2ProjectsDemoPostAsync(CreateProjectApiModel createProjectApiModel = default(CreateProjectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -664,10 +664,10 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPostModel"> (optional)</param>
+        /// <param name="createProjectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ProjectModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ProjectModel>> ApiV2ProjectsDemoPostWithHttpInfoAsync(ProjectPostModel projectPostModel = default(ProjectPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (DemoProjectApiResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DemoProjectApiResult>> ApiV2ProjectsDemoPostWithHttpInfoAsync(CreateProjectApiModel createProjectApiModel = default(CreateProjectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Archive project
         /// </summary>
@@ -1070,10 +1070,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets project parameters (listed in request example) and runs method execution   System creates project   System returns project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPostModel"> (optional)</param>
+        /// <param name="createProjectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ProjectModel</returns>
-        System.Threading.Tasks.Task<ProjectModel> CreateProjectAsync(ProjectPostModel projectPostModel = default(ProjectPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ProjectModel> CreateProjectAsync(CreateProjectApiModel createProjectApiModel = default(CreateProjectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create project
@@ -1082,10 +1082,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets project parameters (listed in request example) and runs method execution   System creates project   System returns project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPostModel"> (optional)</param>
+        /// <param name="createProjectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ProjectModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ProjectModel>> CreateProjectWithHttpInfoAsync(ProjectPostModel projectPostModel = default(ProjectPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ProjectModel>> CreateProjectWithHttpInfoAsync(CreateProjectApiModel createProjectApiModel = default(CreateProjectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete all autotests from project
         /// </summary>
@@ -1271,10 +1271,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets project parameters (listed in request example) and runs method execution   System updates project   System returns updated project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPutModel"> (optional)</param>
+        /// <param name="updateProjectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateProjectAsync(ProjectPutModel projectPutModel = default(ProjectPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task UpdateProjectAsync(UpdateProjectApiModel updateProjectApiModel = default(UpdateProjectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update project
@@ -1283,10 +1283,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case   User sets project parameters (listed in request example) and runs method execution   System updates project   System returns updated project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPutModel"> (optional)</param>
+        /// <param name="updateProjectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateProjectWithHttpInfoAsync(ProjectPutModel projectPutModel = default(ProjectPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateProjectWithHttpInfoAsync(UpdateProjectApiModel updateProjectApiModel = default(UpdateProjectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1635,11 +1635,11 @@ namespace TestIT.ApiClient.Api
         ///  
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPostModel"> (optional)</param>
-        /// <returns>ProjectModel</returns>
-        public ProjectModel ApiV2ProjectsDemoPost(ProjectPostModel projectPostModel = default(ProjectPostModel))
+        /// <param name="createProjectApiModel"> (optional)</param>
+        /// <returns>DemoProjectApiResult</returns>
+        public DemoProjectApiResult ApiV2ProjectsDemoPost(CreateProjectApiModel createProjectApiModel = default(CreateProjectApiModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<ProjectModel> localVarResponse = ApiV2ProjectsDemoPostWithHttpInfo(projectPostModel);
+            TestIT.ApiClient.Client.ApiResponse<DemoProjectApiResult> localVarResponse = ApiV2ProjectsDemoPostWithHttpInfo(createProjectApiModel);
             return localVarResponse.Data;
         }
 
@@ -1647,9 +1647,9 @@ namespace TestIT.ApiClient.Api
         ///  
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPostModel"> (optional)</param>
-        /// <returns>ApiResponse of ProjectModel</returns>
-        public TestIT.ApiClient.Client.ApiResponse<ProjectModel> ApiV2ProjectsDemoPostWithHttpInfo(ProjectPostModel projectPostModel = default(ProjectPostModel))
+        /// <param name="createProjectApiModel"> (optional)</param>
+        /// <returns>ApiResponse of DemoProjectApiResult</returns>
+        public TestIT.ApiClient.Client.ApiResponse<DemoProjectApiResult> ApiV2ProjectsDemoPostWithHttpInfo(CreateProjectApiModel createProjectApiModel = default(CreateProjectApiModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1668,7 +1668,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = projectPostModel;
+            localVarRequestOptions.Data = createProjectApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1677,7 +1677,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<ProjectModel>("/api/v2/projects/demo", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<DemoProjectApiResult>("/api/v2/projects/demo", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1692,12 +1692,12 @@ namespace TestIT.ApiClient.Api
         ///  
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPostModel"> (optional)</param>
+        /// <param name="createProjectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ProjectModel</returns>
-        public async System.Threading.Tasks.Task<ProjectModel> ApiV2ProjectsDemoPostAsync(ProjectPostModel projectPostModel = default(ProjectPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of DemoProjectApiResult</returns>
+        public async System.Threading.Tasks.Task<DemoProjectApiResult> ApiV2ProjectsDemoPostAsync(CreateProjectApiModel createProjectApiModel = default(CreateProjectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<ProjectModel> localVarResponse = await ApiV2ProjectsDemoPostWithHttpInfoAsync(projectPostModel, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<DemoProjectApiResult> localVarResponse = await ApiV2ProjectsDemoPostWithHttpInfoAsync(createProjectApiModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1705,10 +1705,10 @@ namespace TestIT.ApiClient.Api
         ///  
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPostModel"> (optional)</param>
+        /// <param name="createProjectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ProjectModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<ProjectModel>> ApiV2ProjectsDemoPostWithHttpInfoAsync(ProjectPostModel projectPostModel = default(ProjectPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (DemoProjectApiResult)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<DemoProjectApiResult>> ApiV2ProjectsDemoPostWithHttpInfoAsync(CreateProjectApiModel createProjectApiModel = default(CreateProjectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1729,7 +1729,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = projectPostModel;
+            localVarRequestOptions.Data = createProjectApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1739,7 +1739,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<ProjectModel>("/api/v2/projects/demo", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<DemoProjectApiResult>("/api/v2/projects/demo", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -3859,11 +3859,11 @@ namespace TestIT.ApiClient.Api
         /// Create project  Use case   User sets project parameters (listed in request example) and runs method execution   System creates project   System returns project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPostModel"> (optional)</param>
+        /// <param name="createProjectApiModel"> (optional)</param>
         /// <returns>ProjectModel</returns>
-        public ProjectModel CreateProject(ProjectPostModel projectPostModel = default(ProjectPostModel))
+        public ProjectModel CreateProject(CreateProjectApiModel createProjectApiModel = default(CreateProjectApiModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<ProjectModel> localVarResponse = CreateProjectWithHttpInfo(projectPostModel);
+            TestIT.ApiClient.Client.ApiResponse<ProjectModel> localVarResponse = CreateProjectWithHttpInfo(createProjectApiModel);
             return localVarResponse.Data;
         }
 
@@ -3871,9 +3871,9 @@ namespace TestIT.ApiClient.Api
         /// Create project  Use case   User sets project parameters (listed in request example) and runs method execution   System creates project   System returns project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPostModel"> (optional)</param>
+        /// <param name="createProjectApiModel"> (optional)</param>
         /// <returns>ApiResponse of ProjectModel</returns>
-        public TestIT.ApiClient.Client.ApiResponse<ProjectModel> CreateProjectWithHttpInfo(ProjectPostModel projectPostModel = default(ProjectPostModel))
+        public TestIT.ApiClient.Client.ApiResponse<ProjectModel> CreateProjectWithHttpInfo(CreateProjectApiModel createProjectApiModel = default(CreateProjectApiModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -3892,7 +3892,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = projectPostModel;
+            localVarRequestOptions.Data = createProjectApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3916,12 +3916,12 @@ namespace TestIT.ApiClient.Api
         /// Create project  Use case   User sets project parameters (listed in request example) and runs method execution   System creates project   System returns project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPostModel"> (optional)</param>
+        /// <param name="createProjectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ProjectModel</returns>
-        public async System.Threading.Tasks.Task<ProjectModel> CreateProjectAsync(ProjectPostModel projectPostModel = default(ProjectPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ProjectModel> CreateProjectAsync(CreateProjectApiModel createProjectApiModel = default(CreateProjectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<ProjectModel> localVarResponse = await CreateProjectWithHttpInfoAsync(projectPostModel, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<ProjectModel> localVarResponse = await CreateProjectWithHttpInfoAsync(createProjectApiModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3929,10 +3929,10 @@ namespace TestIT.ApiClient.Api
         /// Create project  Use case   User sets project parameters (listed in request example) and runs method execution   System creates project   System returns project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPostModel"> (optional)</param>
+        /// <param name="createProjectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ProjectModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<ProjectModel>> CreateProjectWithHttpInfoAsync(ProjectPostModel projectPostModel = default(ProjectPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<ProjectModel>> CreateProjectWithHttpInfoAsync(CreateProjectApiModel createProjectApiModel = default(CreateProjectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -3953,7 +3953,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = projectPostModel;
+            localVarRequestOptions.Data = createProjectApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4932,20 +4932,20 @@ namespace TestIT.ApiClient.Api
         /// Update project  Use case   User sets project parameters (listed in request example) and runs method execution   System updates project   System returns updated project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPutModel"> (optional)</param>
+        /// <param name="updateProjectApiModel"> (optional)</param>
         /// <returns></returns>
-        public void UpdateProject(ProjectPutModel projectPutModel = default(ProjectPutModel))
+        public void UpdateProject(UpdateProjectApiModel updateProjectApiModel = default(UpdateProjectApiModel))
         {
-            UpdateProjectWithHttpInfo(projectPutModel);
+            UpdateProjectWithHttpInfo(updateProjectApiModel);
         }
 
         /// <summary>
         /// Update project  Use case   User sets project parameters (listed in request example) and runs method execution   System updates project   System returns updated project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPutModel"> (optional)</param>
+        /// <param name="updateProjectApiModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> UpdateProjectWithHttpInfo(ProjectPutModel projectPutModel = default(ProjectPutModel))
+        public TestIT.ApiClient.Client.ApiResponse<Object> UpdateProjectWithHttpInfo(UpdateProjectApiModel updateProjectApiModel = default(UpdateProjectApiModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -4964,7 +4964,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = projectPutModel;
+            localVarRequestOptions.Data = updateProjectApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4988,22 +4988,22 @@ namespace TestIT.ApiClient.Api
         /// Update project  Use case   User sets project parameters (listed in request example) and runs method execution   System updates project   System returns updated project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPutModel"> (optional)</param>
+        /// <param name="updateProjectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateProjectAsync(ProjectPutModel projectPutModel = default(ProjectPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task UpdateProjectAsync(UpdateProjectApiModel updateProjectApiModel = default(UpdateProjectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await UpdateProjectWithHttpInfoAsync(projectPutModel, cancellationToken).ConfigureAwait(false);
+            await UpdateProjectWithHttpInfoAsync(updateProjectApiModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Update project  Use case   User sets project parameters (listed in request example) and runs method execution   System updates project   System returns updated project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectPutModel"> (optional)</param>
+        /// <param name="updateProjectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> UpdateProjectWithHttpInfoAsync(ProjectPutModel projectPutModel = default(ProjectPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> UpdateProjectWithHttpInfoAsync(UpdateProjectApiModel updateProjectApiModel = default(UpdateProjectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -5024,7 +5024,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = projectPutModel;
+            localVarRequestOptions.Data = updateProjectApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))

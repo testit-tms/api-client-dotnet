@@ -27,47 +27,35 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// ConfigurationByParametersModel
+    /// GenerateWorkItemPreviewsApiResult
     /// </summary>
-    [DataContract(Name = "ConfigurationByParametersModel")]
-    public partial class ConfigurationByParametersModel : IValidatableObject
+    [DataContract(Name = "GenerateWorkItemPreviewsApiResult")]
+    public partial class GenerateWorkItemPreviewsApiResult : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConfigurationByParametersModel" /> class.
+        /// Initializes a new instance of the <see cref="GenerateWorkItemPreviewsApiResult" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ConfigurationByParametersModel() { }
+        protected GenerateWorkItemPreviewsApiResult() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConfigurationByParametersModel" /> class.
+        /// Initializes a new instance of the <see cref="GenerateWorkItemPreviewsApiResult" /> class.
         /// </summary>
-        /// <param name="projectId">This property is used to link configuration with project (required).</param>
-        /// <param name="parameterIds">parameterIds (required).</param>
-        public ConfigurationByParametersModel(Guid projectId = default(Guid), List<Guid> parameterIds = default(List<Guid>))
+        /// <param name="previews">previews (required).</param>
+        public GenerateWorkItemPreviewsApiResult(List<WorkItemPreviewApiModel> previews = default(List<WorkItemPreviewApiModel>))
         {
-            this.ProjectId = projectId;
-            // to ensure "parameterIds" is required (not null)
-            if (parameterIds == null)
+            // to ensure "previews" is required (not null)
+            if (previews == null)
             {
-                throw new ArgumentNullException("parameterIds is a required property for ConfigurationByParametersModel and cannot be null");
+                throw new ArgumentNullException("previews is a required property for GenerateWorkItemPreviewsApiResult and cannot be null");
             }
-            this.ParameterIds = parameterIds;
+            this.Previews = previews;
         }
 
         /// <summary>
-        /// This property is used to link configuration with project
+        /// Gets or Sets Previews
         /// </summary>
-        /// <value>This property is used to link configuration with project</value>
-        /*
-        <example>0812e703-0018-4836-886c-a8b12648d919</example>
-        */
-        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
-        public Guid ProjectId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ParameterIds
-        /// </summary>
-        [DataMember(Name = "parameterIds", IsRequired = true, EmitDefaultValue = true)]
-        public List<Guid> ParameterIds { get; set; }
+        [DataMember(Name = "previews", IsRequired = true, EmitDefaultValue = true)]
+        public List<WorkItemPreviewApiModel> Previews { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -76,9 +64,8 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ConfigurationByParametersModel {\n");
-            sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
-            sb.Append("  ParameterIds: ").Append(ParameterIds).Append("\n");
+            sb.Append("class GenerateWorkItemPreviewsApiResult {\n");
+            sb.Append("  Previews: ").Append(Previews).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

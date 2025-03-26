@@ -27,85 +27,61 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// SharedStepModel
+    /// WorkItemPreviewApiModel
     /// </summary>
-    [DataContract(Name = "SharedStepModel")]
-    public partial class SharedStepModel : IValidatableObject
+    [DataContract(Name = "WorkItemPreviewApiModel")]
+    public partial class WorkItemPreviewApiModel : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SharedStepModel" /> class.
+        /// Initializes a new instance of the <see cref="WorkItemPreviewApiModel" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected SharedStepModel() { }
+        protected WorkItemPreviewApiModel() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="SharedStepModel" /> class.
+        /// Initializes a new instance of the <see cref="WorkItemPreviewApiModel" /> class.
         /// </summary>
-        /// <param name="versionId">versionId (required).</param>
-        /// <param name="globalId">globalId (required).</param>
         /// <param name="name">name (required).</param>
-        /// <param name="steps">steps (required).</param>
-        /// <param name="isDeleted">isDeleted (required).</param>
-        public SharedStepModel(Guid versionId = default(Guid), long globalId = default(long), string name = default(string), List<StepModel> steps = default(List<StepModel>), bool isDeleted = default(bool))
+        /// <param name="action">action (required).</param>
+        /// <param name="expected">expected (required).</param>
+        public WorkItemPreviewApiModel(string name = default(string), string action = default(string), string expected = default(string))
         {
-            this.VersionId = versionId;
-            this.GlobalId = globalId;
             // to ensure "name" is required (not null)
             if (name == null)
             {
-                throw new ArgumentNullException("name is a required property for SharedStepModel and cannot be null");
+                throw new ArgumentNullException("name is a required property for WorkItemPreviewApiModel and cannot be null");
             }
             this.Name = name;
-            // to ensure "steps" is required (not null)
-            if (steps == null)
+            // to ensure "action" is required (not null)
+            if (action == null)
             {
-                throw new ArgumentNullException("steps is a required property for SharedStepModel and cannot be null");
+                throw new ArgumentNullException("action is a required property for WorkItemPreviewApiModel and cannot be null");
             }
-            this.Steps = steps;
-            this.IsDeleted = isDeleted;
+            this.Action = action;
+            // to ensure "expected" is required (not null)
+            if (expected == null)
+            {
+                throw new ArgumentNullException("expected is a required property for WorkItemPreviewApiModel and cannot be null");
+            }
+            this.Expected = expected;
         }
-
-        /// <summary>
-        /// Gets or Sets VersionId
-        /// </summary>
-        /*
-        <example>0812e703-0018-4836-886c-a8b12648d919</example>
-        */
-        [DataMember(Name = "versionId", IsRequired = true, EmitDefaultValue = true)]
-        public Guid VersionId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets GlobalId
-        /// </summary>
-        /*
-        <example>1000</example>
-        */
-        [DataMember(Name = "globalId", IsRequired = true, EmitDefaultValue = true)]
-        public long GlobalId { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /*
-        <example>First step</example>
-        */
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Steps
+        /// Gets or Sets Action
         /// </summary>
-        [DataMember(Name = "steps", IsRequired = true, EmitDefaultValue = true)]
-        [Obsolete]
-        public List<StepModel> Steps { get; set; }
+        [DataMember(Name = "action", IsRequired = true, EmitDefaultValue = true)]
+        public string Action { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDeleted
+        /// Gets or Sets Expected
         /// </summary>
-        /*
-        <example>true</example>
-        */
-        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
-        public bool IsDeleted { get; set; }
+        [DataMember(Name = "expected", IsRequired = true, EmitDefaultValue = true)]
+        public string Expected { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -114,12 +90,10 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class SharedStepModel {\n");
-            sb.Append("  VersionId: ").Append(VersionId).Append("\n");
-            sb.Append("  GlobalId: ").Append(GlobalId).Append("\n");
+            sb.Append("class WorkItemPreviewApiModel {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Steps: ").Append(Steps).Append("\n");
-            sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
+            sb.Append("  Action: ").Append(Action).Append("\n");
+            sb.Append("  Expected: ").Append(Expected).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
