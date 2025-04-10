@@ -1,15 +1,11 @@
-# TestIT.ApiClient.Model.TestStatusApiResult
+# TestIT.ApiClient.Model.Page
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | 
-**Name** | **string** |  | 
-**Type** | **TestStatusType** | Collection of possible status types | 
-**IsSystem** | **bool** |  | 
-**Code** | **string** |  | 
-**Description** | **string** |  | [optional] 
+**Skip** | **int** |  | 
+**Take** | **int** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

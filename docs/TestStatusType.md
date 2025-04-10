@@ -1,4 +1,5 @@
 # TestIT.ApiClient.Model.TestStatusType
+Collection of possible status types
 
 ## Properties
 
