@@ -27,41 +27,22 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// Collection of possible status types
+    /// Defines LogicalOperator
     /// </summary>
-    /// <value>Collection of possible status types</value>
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum TestStatusType
+    public enum LogicalOperator
     {
         /// <summary>
-        /// Enum Pending for value: Pending
+        /// Enum And for value: And
         /// </summary>
-        [EnumMember(Value = "Pending")]
-        Pending = 1,
+        [EnumMember(Value = "And")]
+        And = 1,
 
         /// <summary>
-        /// Enum InProgress for value: InProgress
+        /// Enum Or for value: Or
         /// </summary>
-        [EnumMember(Value = "InProgress")]
-        InProgress = 2,
-
-        /// <summary>
-        /// Enum Succeeded for value: Succeeded
-        /// </summary>
-        [EnumMember(Value = "Succeeded")]
-        Succeeded = 3,
-
-        /// <summary>
-        /// Enum Failed for value: Failed
-        /// </summary>
-        [EnumMember(Value = "Failed")]
-        Failed = 4,
-
-        /// <summary>
-        /// Enum Incomplete for value: Incomplete
-        /// </summary>
-        [EnumMember(Value = "Incomplete")]
-        Incomplete = 5
+        [EnumMember(Value = "Or")]
+        Or = 2
     }
 
 }

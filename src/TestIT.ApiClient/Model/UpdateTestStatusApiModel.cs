@@ -27,62 +27,43 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// TestStatusCreateModel
+    /// UpdateTestStatusApiModel
     /// </summary>
-    [DataContract(Name = "TestStatusCreateModel")]
-    public partial class TestStatusCreateModel : IValidatableObject
+    [DataContract(Name = "UpdateTestStatusApiModel")]
+    public partial class UpdateTestStatusApiModel : IValidatableObject
     {
-
         /// <summary>
-        /// Gets or Sets Type
-        /// </summary>
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
-        public TestStatusType Type { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TestStatusCreateModel" /> class.
+        /// Initializes a new instance of the <see cref="UpdateTestStatusApiModel" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected TestStatusCreateModel() { }
+        protected UpdateTestStatusApiModel() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="TestStatusCreateModel" /> class.
+        /// Initializes a new instance of the <see cref="UpdateTestStatusApiModel" /> class.
         /// </summary>
-        /// <param name="name">name (required).</param>
-        /// <param name="type">type (required).</param>
-        /// <param name="code">code (required).</param>
-        /// <param name="description">description.</param>
-        public TestStatusCreateModel(string name = default(string), TestStatusType type = default(TestStatusType), string code = default(string), string description = default(string))
+        /// <param name="name">Name of the status, must be unique (required).</param>
+        /// <param name="description">Optional description of the status.</param>
+        public UpdateTestStatusApiModel(string name = default(string), string description = default(string))
         {
             // to ensure "name" is required (not null)
             if (name == null)
             {
-                throw new ArgumentNullException("name is a required property for TestStatusCreateModel and cannot be null");
+                throw new ArgumentNullException("name is a required property for UpdateTestStatusApiModel and cannot be null");
             }
             this.Name = name;
-            this.Type = type;
-            // to ensure "code" is required (not null)
-            if (code == null)
-            {
-                throw new ArgumentNullException("code is a required property for TestStatusCreateModel and cannot be null");
-            }
-            this.Code = code;
             this.Description = description;
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name of the status, must be unique
         /// </summary>
+        /// <value>Name of the status, must be unique</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Code
+        /// Optional description of the status
         /// </summary>
-        [DataMember(Name = "code", IsRequired = true, EmitDefaultValue = true)]
-        public string Code { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Description
-        /// </summary>
+        /// <value>Optional description of the status</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
@@ -93,10 +74,8 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class TestStatusCreateModel {\n");
+            sb.Append("class UpdateTestStatusApiModel {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -128,18 +107,6 @@ namespace TestIT.ApiClient.Model
             if (this.Name != null && this.Name.Length < 0)
             {
                 yield return new ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
-            }
-
-            // Code (string) maxLength
-            if (this.Code != null && this.Code.Length > 100)
-            {
-                yield return new ValidationResult("Invalid value for Code, length must be less than 100.", new [] { "Code" });
-            }
-
-            // Code (string) minLength
-            if (this.Code != null && this.Code.Length < 0)
-            {
-                yield return new ValidationResult("Invalid value for Code, length must be greater than 0.", new [] { "Code" });
             }
 
             // Description (string) maxLength
