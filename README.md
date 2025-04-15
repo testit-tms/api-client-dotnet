@@ -19,6 +19,7 @@
 | 5.0     | 3.0             |
 | 5.2     | 3.1             |
 | 5.2.2   | 4.0.0-TMS-5.2.2 |
+| 5.3     | 5.0.1-TMS-5.3   |
 | Cloud   | 5.0.0-TMS-CLOUD |
 
 <a name="frameworks-supported"></a>
