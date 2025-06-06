@@ -37,8 +37,9 @@ namespace TestIT.ApiClient.Model
         /// Specifies the result of the autotest execution.
         /// </summary>
         /// <value>Specifies the result of the autotest execution.</value>
-        [DataMember(Name = "outcome", IsRequired = true, EmitDefaultValue = true)]
-        public AvailableTestResultOutcome Outcome { get; set; }
+        [DataMember(Name = "outcome", EmitDefaultValue = true)]
+        [Obsolete]
+        public AvailableTestResultOutcome? Outcome { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestResultsForTestRunModel" /> class.
         /// </summary>
@@ -51,7 +52,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="links">Specifies the links in the autotest..</param>
         /// <param name="failureReasonNames">Specifies the cause of autotest failure..</param>
         /// <param name="autoTestExternalId">Specifies the external ID of the autotest, which was specified when the test run was created. (required).</param>
-        /// <param name="outcome">Specifies the result of the autotest execution. (required).</param>
+        /// <param name="outcome">Specifies the result of the autotest execution..</param>
+        /// <param name="statusCode">Specifies the result of the autotest execution..</param>
         /// <param name="message">A comment for the result..</param>
         /// <param name="traces">An extended comment or a stack trace..</param>
         /// <param name="startedOn">Test run start date..</param>
@@ -63,7 +65,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="stepResults">Specifies the results of individual steps..</param>
         /// <param name="setupResults">Specifies the results of setup steps. For information on supported values, see the &#x60;stepResults&#x60; parameter above..</param>
         /// <param name="teardownResults">Specifies the results of the teardown steps. For information on supported values, see the &#x60;stepResults&#x60; parameter above..</param>
-        public AutoTestResultsForTestRunModel(Guid configurationId = default(Guid), List<LinkPostModel> links = default(List<LinkPostModel>), List<FailureCategoryModel> failureReasonNames = default(List<FailureCategoryModel>), string autoTestExternalId = default(string), AvailableTestResultOutcome outcome = default(AvailableTestResultOutcome), string message = default(string), string traces = default(string), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? duration = default(long?), List<AttachmentPutModel> attachments = default(List<AttachmentPutModel>), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, string> properties = default(Dictionary<string, string>), List<AttachmentPutModelAutoTestStepResultsModel> stepResults = default(List<AttachmentPutModelAutoTestStepResultsModel>), List<AttachmentPutModelAutoTestStepResultsModel> setupResults = default(List<AttachmentPutModelAutoTestStepResultsModel>), List<AttachmentPutModelAutoTestStepResultsModel> teardownResults = default(List<AttachmentPutModelAutoTestStepResultsModel>))
+        public AutoTestResultsForTestRunModel(Guid configurationId = default(Guid), List<LinkPostModel> links = default(List<LinkPostModel>), List<FailureCategoryModel> failureReasonNames = default(List<FailureCategoryModel>), string autoTestExternalId = default(string), AvailableTestResultOutcome? outcome = default(AvailableTestResultOutcome?), string statusCode = default(string), string message = default(string), string traces = default(string), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? duration = default(long?), List<AttachmentPutModel> attachments = default(List<AttachmentPutModel>), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, string> properties = default(Dictionary<string, string>), List<AttachmentPutModelAutoTestStepResultsModel> stepResults = default(List<AttachmentPutModelAutoTestStepResultsModel>), List<AttachmentPutModelAutoTestStepResultsModel> setupResults = default(List<AttachmentPutModelAutoTestStepResultsModel>), List<AttachmentPutModelAutoTestStepResultsModel> teardownResults = default(List<AttachmentPutModelAutoTestStepResultsModel>))
         {
             this.ConfigurationId = configurationId;
             // to ensure "autoTestExternalId" is required (not null)
@@ -72,9 +74,10 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("autoTestExternalId is a required property for AutoTestResultsForTestRunModel and cannot be null");
             }
             this.AutoTestExternalId = autoTestExternalId;
-            this.Outcome = outcome;
             this.Links = links;
             this.FailureReasonNames = failureReasonNames;
+            this.Outcome = outcome;
+            this.StatusCode = statusCode;
             this.Message = message;
             this.Traces = traces;
             this.StartedOn = startedOn;
@@ -115,6 +118,13 @@ namespace TestIT.ApiClient.Model
         /// <value>Specifies the external ID of the autotest, which was specified when the test run was created.</value>
         [DataMember(Name = "autoTestExternalId", IsRequired = true, EmitDefaultValue = true)]
         public string AutoTestExternalId { get; set; }
+
+        /// <summary>
+        /// Specifies the result of the autotest execution.
+        /// </summary>
+        /// <value>Specifies the result of the autotest execution.</value>
+        [DataMember(Name = "statusCode", EmitDefaultValue = true)]
+        public string StatusCode { get; set; }
 
         /// <summary>
         /// A comment for the result.
@@ -206,6 +216,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  FailureReasonNames: ").Append(FailureReasonNames).Append("\n");
             sb.Append("  AutoTestExternalId: ").Append(AutoTestExternalId).Append("\n");
             sb.Append("  Outcome: ").Append(Outcome).Append("\n");
+            sb.Append("  StatusCode: ").Append(StatusCode).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("  Traces: ").Append(Traces).Append("\n");
             sb.Append("  StartedOn: ").Append(StartedOn).Append("\n");

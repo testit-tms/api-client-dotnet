@@ -40,7 +40,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEmptyTestRunApiModel" /> class.
         /// </summary>
-        /// <param name="projectId">Project unique identifier                This property is to link test run with a project (required).</param>
+        /// <param name="projectId">Project unique identifier              This property is to link test run with a project (required).</param>
         /// <param name="name">Test run name.</param>
         /// <param name="description">Test run description.</param>
         /// <param name="launchSource">Test run launch source.</param>
@@ -57,9 +57,9 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Project unique identifier                This property is to link test run with a project
+        /// Project unique identifier              This property is to link test run with a project
         /// </summary>
-        /// <value>Project unique identifier                This property is to link test run with a project</value>
+        /// <value>Project unique identifier              This property is to link test run with a project</value>
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 

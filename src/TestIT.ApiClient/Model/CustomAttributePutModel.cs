@@ -48,7 +48,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="CustomAttributePutModel" /> class.
         /// </summary>
         /// <param name="id">Unique ID of the attribute (required).</param>
-        /// <param name="options">Collection of the attribute options     Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only.</param>
+        /// <param name="options">Collection of the attribute options   Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only.</param>
         /// <param name="type">Type of the attribute (required).</param>
         /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
         /// <param name="name">Name of the attribute (required).</param>
@@ -80,9 +80,9 @@ namespace TestIT.ApiClient.Model
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Collection of the attribute options     Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only
+        /// Collection of the attribute options   Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only
         /// </summary>
-        /// <value>Collection of the attribute options     Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only</value>
+        /// <value>Collection of the attribute options   Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only</value>
         [DataMember(Name = "options", EmitDefaultValue = true)]
         public List<CustomAttributeOptionModel> Options { get; set; }
 

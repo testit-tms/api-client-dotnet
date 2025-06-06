@@ -40,62 +40,22 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TagModel" /> class.
         /// </summary>
-        /// <param name="id">id (required).</param>
         /// <param name="name">name (required).</param>
-        /// <param name="createdDate">createdDate (required).</param>
-        /// <param name="modifiedDate">modifiedDate.</param>
-        /// <param name="createdById">createdById (required).</param>
-        /// <param name="modifiedById">modifiedById.</param>
-        public TagModel(Guid id = default(Guid), string name = default(string), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?))
+        public TagModel(string name = default(string))
         {
-            this.Id = id;
             // to ensure "name" is required (not null)
             if (name == null)
             {
                 throw new ArgumentNullException("name is a required property for TagModel and cannot be null");
             }
             this.Name = name;
-            this.CreatedDate = createdDate;
-            this.CreatedById = createdById;
-            this.ModifiedDate = modifiedDate;
-            this.ModifiedById = modifiedById;
         }
-
-        /// <summary>
-        /// Gets or Sets Id
-        /// </summary>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
-        public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CreatedDate
-        /// </summary>
-        [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
-        public DateTime CreatedDate { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ModifiedDate
-        /// </summary>
-        [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
-        public DateTime? ModifiedDate { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CreatedById
-        /// </summary>
-        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
-        public Guid CreatedById { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ModifiedById
-        /// </summary>
-        [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
-        public Guid? ModifiedById { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -105,12 +65,7 @@ namespace TestIT.ApiClient.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class TagModel {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
-            sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
-            sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
-            sb.Append("  ModifiedById: ").Append(ModifiedById).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -131,10 +86,16 @@ namespace TestIT.ApiClient.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // Name (string) minLength
-            if (this.Name != null && this.Name.Length < 1)
+            // Name (string) maxLength
+            if (this.Name != null && this.Name.Length > 255)
             {
-                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+            }
+
+            // Name (string) minLength
+            if (this.Name != null && this.Name.Length < 0)
+            {
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
             }
 
             yield break;

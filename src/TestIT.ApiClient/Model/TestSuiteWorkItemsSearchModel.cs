@@ -36,7 +36,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="TestSuiteWorkItemsSearchModel" /> class.
         /// </summary>
         /// <param name="tagNames">Collection of tags.</param>
-        /// <param name="entityTypes">Collection of types of work item   Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;.</param>
+        /// <param name="entityTypes">Collection of types of work item  Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;.</param>
         /// <param name="nameOrId">Name or identifier (UUID) of work item.</param>
         /// <param name="includeIds">Collection of identifiers of work items which need to be included in result regardless of filtering.</param>
         /// <param name="excludeIds">Collection of identifiers of work items which need to be excluded from result regardless of filtering.</param>
@@ -52,6 +52,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedByIds">Collection of identifiers of users who applied last modification to work item.</param>
         /// <param name="states">Collection of states of work item.</param>
         /// <param name="priorities">Collection of priorities of work item.</param>
+        /// <param name="sourceTypes">Collection of priorities of work item.</param>
         /// <param name="types">Collection of types of work item.</param>
         /// <param name="createdDate">Specifies a work item range of creation date to search for.</param>
         /// <param name="modifiedDate">Specifies a work item range of last modification date to search for.</param>
@@ -61,7 +62,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="tags">Collection of tags.</param>
         /// <param name="autoTestIds">Collection of identifiers of linked autotests.</param>
         /// <param name="workItemVersionIds">Collection of identifiers work items versions..</param>
-        public TestSuiteWorkItemsSearchModel(List<string> tagNames = default(List<string>), List<WorkItemEntityTypes> entityTypes = default(List<WorkItemEntityTypes>), string nameOrId = default(string), List<Guid> includeIds = default(List<Guid>), List<Guid> excludeIds = default(List<Guid>), List<Guid> projectIds = default(List<Guid>), WorkItemLinkFilterModel links = default(WorkItemLinkFilterModel), string name = default(string), List<Guid> ids = default(List<Guid>), List<long> globalIds = default(List<long>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?), List<Guid> sectionIds = default(List<Guid>), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), List<WorkItemStates> states = default(List<WorkItemStates>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<WorkItemEntityTypes> types = default(List<WorkItemEntityTypes>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), Int32RangeSelectorModel duration = default(Int32RangeSelectorModel), Int64RangeSelectorModel medianDuration = default(Int64RangeSelectorModel), bool? isAutomated = default(bool?), List<string> tags = default(List<string>), List<Guid> autoTestIds = default(List<Guid>), List<Guid> workItemVersionIds = default(List<Guid>))
+        public TestSuiteWorkItemsSearchModel(List<string> tagNames = default(List<string>), List<WorkItemEntityTypes> entityTypes = default(List<WorkItemEntityTypes>), string nameOrId = default(string), List<Guid> includeIds = default(List<Guid>), List<Guid> excludeIds = default(List<Guid>), List<Guid> projectIds = default(List<Guid>), WorkItemLinkFilterModel links = default(WorkItemLinkFilterModel), string name = default(string), List<Guid> ids = default(List<Guid>), List<long> globalIds = default(List<long>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?), List<Guid> sectionIds = default(List<Guid>), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), List<WorkItemStates> states = default(List<WorkItemStates>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<WorkItemSourceTypeModel> sourceTypes = default(List<WorkItemSourceTypeModel>), List<WorkItemEntityTypes> types = default(List<WorkItemEntityTypes>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), Int32RangeSelectorModel duration = default(Int32RangeSelectorModel), Int64RangeSelectorModel medianDuration = default(Int64RangeSelectorModel), bool? isAutomated = default(bool?), List<string> tags = default(List<string>), List<Guid> autoTestIds = default(List<Guid>), List<Guid> workItemVersionIds = default(List<Guid>))
         {
             this.TagNames = tagNames;
             this.EntityTypes = entityTypes;
@@ -80,6 +81,7 @@ namespace TestIT.ApiClient.Model
             this.ModifiedByIds = modifiedByIds;
             this.States = states;
             this.Priorities = priorities;
+            this.SourceTypes = sourceTypes;
             this.Types = types;
             this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
@@ -100,9 +102,9 @@ namespace TestIT.ApiClient.Model
         public List<string> TagNames { get; set; }
 
         /// <summary>
-        /// Collection of types of work item   Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;
+        /// Collection of types of work item  Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;
         /// </summary>
-        /// <value>Collection of types of work item   Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;</value>
+        /// <value>Collection of types of work item  Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;</value>
         [DataMember(Name = "entityTypes", EmitDefaultValue = true)]
         [Obsolete]
         public List<WorkItemEntityTypes> EntityTypes { get; set; }
@@ -213,6 +215,13 @@ namespace TestIT.ApiClient.Model
         public List<WorkItemPriorityModel> Priorities { get; set; }
 
         /// <summary>
+        /// Collection of priorities of work item
+        /// </summary>
+        /// <value>Collection of priorities of work item</value>
+        [DataMember(Name = "sourceTypes", EmitDefaultValue = true)]
+        public List<WorkItemSourceTypeModel> SourceTypes { get; set; }
+
+        /// <summary>
         /// Collection of types of work item
         /// </summary>
         /// <value>Collection of types of work item</value>
@@ -300,6 +309,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ModifiedByIds: ").Append(ModifiedByIds).Append("\n");
             sb.Append("  States: ").Append(States).Append("\n");
             sb.Append("  Priorities: ").Append(Priorities).Append("\n");
+            sb.Append("  SourceTypes: ").Append(SourceTypes).Append("\n");
             sb.Append("  Types: ").Append(Types).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");

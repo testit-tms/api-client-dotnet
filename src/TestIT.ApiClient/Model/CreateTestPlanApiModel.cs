@@ -51,7 +51,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="hasAutomaticDurationTimer">Boolean flag defines if test plan has automatic duration timer.</param>
         /// <param name="attributes">Key value pair of test plan custom attributes (required).</param>
         /// <param name="testSuite">testSuite.</param>
-        public CreateTestPlanApiModel(List<TagPostModel> tags = default(List<TagPostModel>), string name = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string description = default(string), string build = default(string), Guid projectId = default(Guid), string productName = default(string), bool? hasAutomaticDurationTimer = default(bool?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), TestSuiteTestPlanApiModel testSuite = default(TestSuiteTestPlanApiModel))
+        public CreateTestPlanApiModel(List<TagApiModel> tags = default(List<TagApiModel>), string name = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string description = default(string), string build = default(string), Guid projectId = default(Guid), string productName = default(string), bool? hasAutomaticDurationTimer = default(bool?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), TestSuiteTestPlanApiModel testSuite = default(TestSuiteTestPlanApiModel))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -81,7 +81,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Test plan tag names collection</value>
         [DataMember(Name = "tags", EmitDefaultValue = true)]
-        public List<TagPostModel> Tags { get; set; }
+        public List<TagApiModel> Tags { get; set; }
 
         /// <summary>
         /// Test plan name

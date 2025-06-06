@@ -43,6 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="statuses">Specifies a test point statuses to search for.</param>
         /// <param name="statusCodes">Specifies a test point status codes to search for.</param>
         /// <param name="priorities">Specifies a test point priorities to search for.</param>
+        /// <param name="sourceTypes">Specifies a test point source types to search for.</param>
         /// <param name="isAutomated">Specifies a test point automation status to search for.</param>
         /// <param name="name">Specifies a test point name to search for.</param>
         /// <param name="configurationIds">Specifies a test point configuration IDs to search for.</param>
@@ -59,7 +60,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="workItemCreatedByIds">Specifies a work item creator IDs to search for.</param>
         /// <param name="workItemModifiedDate">Specifies a work item range of last modification date to search for.</param>
         /// <param name="workItemModifiedByIds">Specifies a work item last editor IDs to search for.</param>
-        public TestPointFilterRequestModel(List<Guid> testPlanIds = default(List<Guid>), List<Guid> testSuiteIds = default(List<Guid>), List<long> workItemGlobalIds = default(List<long>), Int64RangeSelectorModel workItemMedianDuration = default(Int64RangeSelectorModel), bool? workItemIsDeleted = default(bool?), List<TestPointStatus> statuses = default(List<TestPointStatus>), List<string> statusCodes = default(List<string>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), bool? isAutomated = default(bool?), string name = default(string), List<Guid> configurationIds = default(List<Guid>), List<Guid> testerIds = default(List<Guid>), Int64RangeSelectorModel duration = default(Int64RangeSelectorModel), List<Guid> sectionIds = default(List<Guid>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), List<Guid> modifiedByIds = default(List<Guid>), List<string> tags = default(List<string>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), DateTimeRangeSelectorModel workItemCreatedDate = default(DateTimeRangeSelectorModel), List<Guid> workItemCreatedByIds = default(List<Guid>), DateTimeRangeSelectorModel workItemModifiedDate = default(DateTimeRangeSelectorModel), List<Guid> workItemModifiedByIds = default(List<Guid>))
+        public TestPointFilterRequestModel(List<Guid> testPlanIds = default(List<Guid>), List<Guid> testSuiteIds = default(List<Guid>), List<long> workItemGlobalIds = default(List<long>), Int64RangeSelectorModel workItemMedianDuration = default(Int64RangeSelectorModel), bool? workItemIsDeleted = default(bool?), List<TestPointStatus> statuses = default(List<TestPointStatus>), List<string> statusCodes = default(List<string>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<WorkItemSourceTypeModel> sourceTypes = default(List<WorkItemSourceTypeModel>), bool? isAutomated = default(bool?), string name = default(string), List<Guid> configurationIds = default(List<Guid>), List<Guid> testerIds = default(List<Guid>), Int64RangeSelectorModel duration = default(Int64RangeSelectorModel), List<Guid> sectionIds = default(List<Guid>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), List<Guid> modifiedByIds = default(List<Guid>), List<string> tags = default(List<string>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), DateTimeRangeSelectorModel workItemCreatedDate = default(DateTimeRangeSelectorModel), List<Guid> workItemCreatedByIds = default(List<Guid>), DateTimeRangeSelectorModel workItemModifiedDate = default(DateTimeRangeSelectorModel), List<Guid> workItemModifiedByIds = default(List<Guid>))
         {
             this.TestPlanIds = testPlanIds;
             this.TestSuiteIds = testSuiteIds;
@@ -69,6 +70,7 @@ namespace TestIT.ApiClient.Model
             this.Statuses = statuses;
             this.StatusCodes = statusCodes;
             this.Priorities = priorities;
+            this.SourceTypes = sourceTypes;
             this.IsAutomated = isAutomated;
             this.Name = name;
             this.ConfigurationIds = configurationIds;
@@ -143,6 +145,13 @@ namespace TestIT.ApiClient.Model
         /// <value>Specifies a test point priorities to search for</value>
         [DataMember(Name = "priorities", EmitDefaultValue = true)]
         public List<WorkItemPriorityModel> Priorities { get; set; }
+
+        /// <summary>
+        /// Specifies a test point source types to search for
+        /// </summary>
+        /// <value>Specifies a test point source types to search for</value>
+        [DataMember(Name = "sourceTypes", EmitDefaultValue = true)]
+        public List<WorkItemSourceTypeModel> SourceTypes { get; set; }
 
         /// <summary>
         /// Specifies a test point automation status to search for
@@ -272,6 +281,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Statuses: ").Append(Statuses).Append("\n");
             sb.Append("  StatusCodes: ").Append(StatusCodes).Append("\n");
             sb.Append("  Priorities: ").Append(Priorities).Append("\n");
+            sb.Append("  SourceTypes: ").Append(SourceTypes).Append("\n");
             sb.Append("  IsAutomated: ").Append(IsAutomated).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  ConfigurationIds: ").Append(ConfigurationIds).Append("\n");

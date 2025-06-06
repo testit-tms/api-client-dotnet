@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** |  | 
 **Name** | **string** |  | 
-**Type** | **TestStatusType** |  | 
+**Type** | **TestStatusApiType** | Collection of possible status types | 
 **IsSystem** | **bool** |  | 
 **Code** | **string** |  | 
 **Description** | **string** |  | [optional] 

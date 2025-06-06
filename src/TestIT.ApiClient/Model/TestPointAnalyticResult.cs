@@ -45,7 +45,9 @@ namespace TestIT.ApiClient.Model
         /// <param name="countGroupByTester">countGroupByTester (required).</param>
         /// <param name="countGroupByTestSuite">countGroupByTestSuite (required).</param>
         /// <param name="countGroupByTesterAndStatus">countGroupByTesterAndStatus (required).</param>
-        public TestPointAnalyticResult(List<TestPlanGroupByStatus> countGroupByStatus = default(List<TestPlanGroupByStatus>), List<TestPlanGroupByTester> sumGroupByTester = default(List<TestPlanGroupByTester>), List<TestPlanGroupByTester> countGroupByTester = default(List<TestPlanGroupByTester>), List<TestPlanGroupByTestSuite> countGroupByTestSuite = default(List<TestPlanGroupByTestSuite>), List<TestPlanGroupByTesterAndStatus> countGroupByTesterAndStatus = default(List<TestPlanGroupByTesterAndStatus>))
+        /// <param name="countGroupByStatusCode">countGroupByStatusCode (required).</param>
+        /// <param name="countGroupByTesterAndStatusCode">countGroupByTesterAndStatusCode (required).</param>
+        public TestPointAnalyticResult(List<TestPlanGroupByStatus> countGroupByStatus = default(List<TestPlanGroupByStatus>), List<TestPlanGroupByTester> sumGroupByTester = default(List<TestPlanGroupByTester>), List<TestPlanGroupByTester> countGroupByTester = default(List<TestPlanGroupByTester>), List<TestPlanGroupByTestSuite> countGroupByTestSuite = default(List<TestPlanGroupByTestSuite>), List<TestPlanGroupByTesterAndStatus> countGroupByTesterAndStatus = default(List<TestPlanGroupByTesterAndStatus>), List<TestPlanGroupByStatusCode> countGroupByStatusCode = default(List<TestPlanGroupByStatusCode>), List<TestPlanGroupByTesterAndStatusCode> countGroupByTesterAndStatusCode = default(List<TestPlanGroupByTesterAndStatusCode>))
         {
             // to ensure "countGroupByStatus" is required (not null)
             if (countGroupByStatus == null)
@@ -77,12 +79,25 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("countGroupByTesterAndStatus is a required property for TestPointAnalyticResult and cannot be null");
             }
             this.CountGroupByTesterAndStatus = countGroupByTesterAndStatus;
+            // to ensure "countGroupByStatusCode" is required (not null)
+            if (countGroupByStatusCode == null)
+            {
+                throw new ArgumentNullException("countGroupByStatusCode is a required property for TestPointAnalyticResult and cannot be null");
+            }
+            this.CountGroupByStatusCode = countGroupByStatusCode;
+            // to ensure "countGroupByTesterAndStatusCode" is required (not null)
+            if (countGroupByTesterAndStatusCode == null)
+            {
+                throw new ArgumentNullException("countGroupByTesterAndStatusCode is a required property for TestPointAnalyticResult and cannot be null");
+            }
+            this.CountGroupByTesterAndStatusCode = countGroupByTesterAndStatusCode;
         }
 
         /// <summary>
         /// Gets or Sets CountGroupByStatus
         /// </summary>
         [DataMember(Name = "countGroupByStatus", IsRequired = true, EmitDefaultValue = true)]
+        [Obsolete]
         public List<TestPlanGroupByStatus> CountGroupByStatus { get; set; }
 
         /// <summary>
@@ -107,7 +122,20 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CountGroupByTesterAndStatus
         /// </summary>
         [DataMember(Name = "countGroupByTesterAndStatus", IsRequired = true, EmitDefaultValue = true)]
+        [Obsolete]
         public List<TestPlanGroupByTesterAndStatus> CountGroupByTesterAndStatus { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CountGroupByStatusCode
+        /// </summary>
+        [DataMember(Name = "countGroupByStatusCode", IsRequired = true, EmitDefaultValue = true)]
+        public List<TestPlanGroupByStatusCode> CountGroupByStatusCode { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CountGroupByTesterAndStatusCode
+        /// </summary>
+        [DataMember(Name = "countGroupByTesterAndStatusCode", IsRequired = true, EmitDefaultValue = true)]
+        public List<TestPlanGroupByTesterAndStatusCode> CountGroupByTesterAndStatusCode { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -122,6 +150,8 @@ namespace TestIT.ApiClient.Model
             sb.Append("  CountGroupByTester: ").Append(CountGroupByTester).Append("\n");
             sb.Append("  CountGroupByTestSuite: ").Append(CountGroupByTestSuite).Append("\n");
             sb.Append("  CountGroupByTesterAndStatus: ").Append(CountGroupByTesterAndStatus).Append("\n");
+            sb.Append("  CountGroupByStatusCode: ").Append(CountGroupByStatusCode).Append("\n");
+            sb.Append("  CountGroupByTesterAndStatusCode: ").Append(CountGroupByTesterAndStatusCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

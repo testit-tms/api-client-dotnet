@@ -50,6 +50,12 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         [DataMember(Name = "priority", IsRequired = true, EmitDefaultValue = true)]
         public WorkItemPriorityModel Priority { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SourceType
+        /// </summary>
+        [DataMember(Name = "sourceType", IsRequired = true, EmitDefaultValue = true)]
+        public WorkItemSourceTypeModel SourceType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemModel" /> class.
         /// </summary>
@@ -80,6 +86,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="description">description.</param>
         /// <param name="state">state (required).</param>
         /// <param name="priority">priority (required).</param>
+        /// <param name="sourceType">sourceType (required).</param>
         /// <param name="steps">steps (required).</param>
         /// <param name="preconditionSteps">preconditionSteps (required).</param>
         /// <param name="postconditionSteps">postconditionSteps (required).</param>
@@ -88,7 +95,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="tags">tags (required).</param>
         /// <param name="links">links (required).</param>
         /// <param name="name">name (required).</param>
-        public WorkItemModel(Guid versionId = default(Guid), long medianDuration = default(long), bool isDeleted = default(bool), Guid projectId = default(Guid), WorkItemEntityTypes entityTypeName = default(WorkItemEntityTypes), bool isAutomated = default(bool), List<AutoTestModel> autoTests = default(List<AutoTestModel>), List<AttachmentModel> attachments = default(List<AttachmentModel>), List<StepModel> sectionPreconditionSteps = default(List<StepModel>), List<StepModel> sectionPostconditionSteps = default(List<StepModel>), int versionNumber = default(int), List<IterationModel> iterations = default(List<IterationModel>), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), Guid id = default(Guid), Guid sectionId = default(Guid), string description = default(string), WorkItemStates state = default(WorkItemStates), WorkItemPriorityModel priority = default(WorkItemPriorityModel), List<StepModel> steps = default(List<StepModel>), List<StepModel> preconditionSteps = default(List<StepModel>), List<StepModel> postconditionSteps = default(List<StepModel>), int duration = default(int), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<TagPutModel> tags = default(List<TagPutModel>), List<LinkModel> links = default(List<LinkModel>), string name = default(string))
+        public WorkItemModel(Guid versionId = default(Guid), long medianDuration = default(long), bool isDeleted = default(bool), Guid projectId = default(Guid), WorkItemEntityTypes entityTypeName = default(WorkItemEntityTypes), bool isAutomated = default(bool), List<AutoTestModel> autoTests = default(List<AutoTestModel>), List<AttachmentModel> attachments = default(List<AttachmentModel>), List<StepModel> sectionPreconditionSteps = default(List<StepModel>), List<StepModel> sectionPostconditionSteps = default(List<StepModel>), int versionNumber = default(int), List<IterationModel> iterations = default(List<IterationModel>), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), Guid id = default(Guid), Guid sectionId = default(Guid), string description = default(string), WorkItemStates state = default(WorkItemStates), WorkItemPriorityModel priority = default(WorkItemPriorityModel), WorkItemSourceTypeModel sourceType = default(WorkItemSourceTypeModel), List<StepModel> steps = default(List<StepModel>), List<StepModel> preconditionSteps = default(List<StepModel>), List<StepModel> postconditionSteps = default(List<StepModel>), int duration = default(int), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<TagModel> tags = default(List<TagModel>), List<LinkModel> links = default(List<LinkModel>), string name = default(string))
         {
             this.VersionId = versionId;
             this.MedianDuration = medianDuration;
@@ -104,6 +111,7 @@ namespace TestIT.ApiClient.Model
             this.SectionId = sectionId;
             this.State = state;
             this.Priority = priority;
+            this.SourceType = sourceType;
             // to ensure "steps" is required (not null)
             if (steps == null)
             {
@@ -162,7 +170,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>used for versioning changes in workitem</value>
         /*
-        <example>0812e703-0018-4836-886c-a8b12648d919</example>
+        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
         */
         [DataMember(Name = "versionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid VersionId { get; set; }
@@ -190,7 +198,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ProjectId
         /// </summary>
         /*
-        <example>0812e703-0018-4836-886c-a8b12648d919</example>
+        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
         */
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
@@ -248,7 +256,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         /*
-        <example>2025-03-26T01:30:14.071822900Z</example>
+        <example>2025-06-06T07:34:33.374853800Z</example>
         */
         [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
@@ -257,7 +265,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ModifiedDate
         /// </summary>
         /*
-        <example>2025-03-26T01:30:14.071822900Z</example>
+        <example>2025-06-06T07:34:33.374853800Z</example>
         */
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
@@ -266,7 +274,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CreatedById
         /// </summary>
         /*
-        <example>0812e703-0018-4836-886c-a8b12648d919</example>
+        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
         */
         [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
@@ -275,7 +283,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ModifiedById
         /// </summary>
         /*
-        <example>0812e703-0018-4836-886c-a8b12648d919</example>
+        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
         */
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
@@ -293,7 +301,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Id
         /// </summary>
         /*
-        <example>0812e703-0018-4836-886c-a8b12648d919</example>
+        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
         */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
@@ -302,7 +310,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets SectionId
         /// </summary>
         /*
-        <example>0812e703-0018-4836-886c-a8b12648d919</example>
+        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
         */
         [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid SectionId { get; set; }
@@ -353,7 +361,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Tags
         /// </summary>
         [DataMember(Name = "tags", IsRequired = true, EmitDefaultValue = true)]
-        public List<TagPutModel> Tags { get; set; }
+        public List<TagModel> Tags { get; set; }
 
         /// <summary>
         /// Gets or Sets Links
@@ -400,6 +408,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("  Priority: ").Append(Priority).Append("\n");
+            sb.Append("  SourceType: ").Append(SourceType).Append("\n");
             sb.Append("  Steps: ").Append(Steps).Append("\n");
             sb.Append("  PreconditionSteps: ").Append(PreconditionSteps).Append("\n");
             sb.Append("  PostconditionSteps: ").Append(PostconditionSteps).Append("\n");

@@ -50,9 +50,10 @@ namespace TestIT.ApiClient.Model
         /// <param name="autoTests">autoTests (required).</param>
         /// <param name="testPoints">testPoints (required).</param>
         /// <param name="status">status (required).</param>
+        /// <param name="statusModel">statusModel (required).</param>
         /// <param name="customParameters">customParameters.</param>
         /// <param name="testRunDescription">testRunDescription.</param>
-        public PublicTestRunModel(Guid testRunId = default(Guid), Guid? testPlanId = default(Guid?), long testPlanGlobalId = default(long), string name = default(string), string productName = default(string), string build = default(string), List<ConfigurationModel> configurations = default(List<ConfigurationModel>), List<AutoTestModel> autoTests = default(List<AutoTestModel>), List<PublicTestPointModel> testPoints = default(List<PublicTestPointModel>), string status = default(string), Dictionary<string, string> customParameters = default(Dictionary<string, string>), string testRunDescription = default(string))
+        public PublicTestRunModel(Guid testRunId = default(Guid), Guid? testPlanId = default(Guid?), long testPlanGlobalId = default(long), string name = default(string), string productName = default(string), string build = default(string), List<ConfigurationModel> configurations = default(List<ConfigurationModel>), List<AutoTestModel> autoTests = default(List<AutoTestModel>), List<PublicTestPointModel> testPoints = default(List<PublicTestPointModel>), string status = default(string), TestStatusModel statusModel = default(TestStatusModel), Dictionary<string, string> customParameters = default(Dictionary<string, string>), string testRunDescription = default(string))
         {
             this.TestRunId = testRunId;
             this.TestPlanGlobalId = testPlanGlobalId;
@@ -86,6 +87,12 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("status is a required property for PublicTestRunModel and cannot be null");
             }
             this.Status = status;
+            // to ensure "statusModel" is required (not null)
+            if (statusModel == null)
+            {
+                throw new ArgumentNullException("statusModel is a required property for PublicTestRunModel and cannot be null");
+            }
+            this.StatusModel = statusModel;
             this.TestPlanId = testPlanId;
             this.ProductName = productName;
             this.Build = build;
@@ -151,7 +158,14 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Status
         /// </summary>
         [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
+        [Obsolete]
         public string Status { get; set; }
+
+        /// <summary>
+        /// Gets or Sets StatusModel
+        /// </summary>
+        [DataMember(Name = "statusModel", IsRequired = true, EmitDefaultValue = true)]
+        public TestStatusModel StatusModel { get; set; }
 
         /// <summary>
         /// Gets or Sets CustomParameters
@@ -183,6 +197,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  AutoTests: ").Append(AutoTests).Append("\n");
             sb.Append("  TestPoints: ").Append(TestPoints).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  StatusModel: ").Append(StatusModel).Append("\n");
             sb.Append("  CustomParameters: ").Append(CustomParameters).Append("\n");
             sb.Append("  TestRunDescription: ").Append(TestRunDescription).Append("\n");
             sb.Append("}\n");

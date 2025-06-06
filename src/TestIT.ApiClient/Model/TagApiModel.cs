@@ -88,9 +88,9 @@ namespace TestIT.ApiClient.Model
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
-            if (this.Name != null && this.Name.Length > 30)
+            if (this.Name != null && this.Name.Length > 255)
             {
-                yield return new ValidationResult("Invalid value for Name, length must be less than 30.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
             }
 
             // Name (string) minLength
