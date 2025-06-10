@@ -77,11 +77,6 @@ namespace TestIT.ApiClient.Model
             this.Id = id;
             this.CreatedDate = createdDate;
             this.CreatedById = createdById;
-            // to ensure "lastTestResultStatus" is required (not null)
-            if (lastTestResultStatus == null)
-            {
-                throw new ArgumentNullException("lastTestResultStatus is a required property for AutoTestModel and cannot be null");
-            }
             this.LastTestResultStatus = lastTestResultStatus;
             // to ensure "externalId" is required (not null)
             if (externalId == null)
@@ -213,7 +208,7 @@ namespace TestIT.ApiClient.Model
         /// Status of the autotest last test result
         /// </summary>
         /// <value>Status of the autotest last test result</value>
-        [DataMember(Name = "lastTestResultStatus", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "lastTestResultStatus", EmitDefaultValue = true)]
         public TestStatusModel LastTestResultStatus { get; set; }
 
         /// <summary>
