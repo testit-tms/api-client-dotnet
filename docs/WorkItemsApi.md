@@ -37,7 +37,7 @@ All URIs are relative to *http://localhost*
 
 Upload and link attachment to WorkItem
 
- Use case   User sets workItemId   User attaches a file   System creates attachment and links it to the work item   System returns attachment identifier
+ Use case  User sets workItemId  User attaches a file  System creates attachment and links it to the work item  System returns attachment identifier
 
 ### Example
 ```csharp
@@ -142,7 +142,7 @@ void (empty response body)
 
 Transform CheckList to TestCase
 
- Use case   User sets checklist identifier   User runs method execution   System transform CheckList to TestCase
+ Use case  User sets checklist identifier  User runs method execution  System transform CheckList to TestCase
 
 ### Example
 ```csharp
@@ -248,7 +248,7 @@ catch (ApiException e)
 
 Get change history of WorkItem
 
- Use case   User sets work item identifier   User runs method execution   System return change history of WorkItem
+ Use case  User sets work item identifier  User runs method execution  System return change history of WorkItem
 
 ### Example
 ```csharp
@@ -364,7 +364,7 @@ catch (ApiException e)
 
 Delete like from WorkItem
 
- Use case   User sets WorkItem identifier   User runs method execution   System delete like from WorkItem
+ Use case  User sets WorkItem identifier  User runs method execution  System delete like from WorkItem
 
 ### Example
 ```csharp
@@ -466,7 +466,7 @@ void (empty response body)
 
 Set like to WorkItem
 
- Use case   User sets WorkItem identifier   User runs method execution   System set like to WorkItem
+ Use case  User sets WorkItem identifier  User runs method execution  System set like to WorkItem
 
 ### Example
 ```csharp
@@ -568,7 +568,7 @@ void (empty response body)
 
 Get likes count of WorkItem
 
- Use case   User sets WorkItem identifier   User runs method execution   System return likes count of WorkItem
+ Use case  User sets WorkItem identifier  User runs method execution  System return likes count of WorkItem
 
 ### Example
 ```csharp
@@ -674,7 +674,7 @@ catch (ApiException e)
 
 Get likes of WorkItem
 
- Use case   User sets WorkItem identifier   User runs method execution   System return likes of WorkItem
+ Use case  User sets WorkItem identifier  User runs method execution  System return likes of WorkItem
 
 ### Example
 ```csharp
@@ -780,7 +780,7 @@ catch (ApiException e)
 
 Get test results history of WorkItem
 
- Use case   User sets WorkItem identifier   User runs method execution   System return test results history of WorkItem
+ Use case  User sets WorkItem identifier  User runs method execution  System return test results history of WorkItem
 
 ### Example
 ```csharp
@@ -916,7 +916,7 @@ catch (ApiException e)
 
 Set WorkItem as actual
 
- Use case   User sets work item identifier   User runs method execution   System set WorkItem as actual
+ Use case  User sets work item identifier  User runs method execution  System set WorkItem as actual
 
 ### Example
 ```csharp
@@ -1136,7 +1136,7 @@ catch (ApiException e)
 
 Move WorkItem to another section
 
- Use case   User sets WorkItem identifier   User runs method execution   System move WorkItem to another section
+ Use case  User sets WorkItem identifier  User runs method execution  System move WorkItem to another section
 
 ### Example
 ```csharp
@@ -1356,7 +1356,7 @@ catch (ApiException e)
 
 Get SharedStep references in sections
 
- Use case   User sets SharedStep identifier   User runs method execution   System return SharedStep references
+ Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
 
 ### Example
 ```csharp
@@ -1474,7 +1474,7 @@ catch (ApiException e)
 
 Get SharedStep references in work items
 
- Use case   User sets SharedStep identifier   User runs method execution   System return SharedStep references
+ Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
 
 ### Example
 ```csharp
@@ -1592,7 +1592,7 @@ catch (ApiException e)
 
 Get SharedStep references
 
- Use case   User sets SharedStep identifier   User runs method execution   System return SharedStep references
+ Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
 
 ### Example
 ```csharp
@@ -1694,11 +1694,11 @@ catch (ApiException e)
 
 <a id="createworkitem"></a>
 # **CreateWorkItem**
-> WorkItemModel CreateWorkItem (WorkItemPostModel workItemPostModel = null)
+> WorkItemModel CreateWorkItem (CreateWorkItemApiModel createWorkItemApiModel = null)
 
 Create Test Case, Checklist or Shared Step
 
- Use case   User sets work item properties (listed in request parameters)   User runs method execution   System creates work item by identifier   System returns work item model (listed in response parameters)
+ Use case  User sets work item properties (listed in request parameters)  User runs method execution  System creates work item by identifier  System returns work item model (listed in response parameters)
 
 ### Example
 ```csharp
@@ -1726,12 +1726,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
-            var workItemPostModel = new WorkItemPostModel(); // WorkItemPostModel |  (optional) 
+            var createWorkItemApiModel = new CreateWorkItemApiModel(); // CreateWorkItemApiModel |  (optional) 
 
             try
             {
                 // Create Test Case, Checklist or Shared Step
-                WorkItemModel result = apiInstance.CreateWorkItem(workItemPostModel);
+                WorkItemModel result = apiInstance.CreateWorkItem(createWorkItemApiModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1752,7 +1752,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create Test Case, Checklist or Shared Step
-    ApiResponse<WorkItemModel> response = apiInstance.CreateWorkItemWithHttpInfo(workItemPostModel);
+    ApiResponse<WorkItemModel> response = apiInstance.CreateWorkItemWithHttpInfo(createWorkItemApiModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1769,7 +1769,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **workItemPostModel** | [**WorkItemPostModel**](WorkItemPostModel.md) |  | [optional]  |
+| **createWorkItemApiModel** | [**CreateWorkItemApiModel**](CreateWorkItemApiModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -1789,10 +1789,10 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Successful operation |  -  |
-| **400** |  Field is required   Priority is not a valid   Tags must be set   Duration should be a positive number   Should be empty for CheckList   Attribute value must be a valid guid for user scheme   There is no option in ProjectAttributesScheme with such Id   Attribute value must be a valid guid for options scheme |  -  |
+| **400** |  Field is required  Priority is not a valid  Tags must be set  Duration should be a positive number  Should be empty for CheckList  Attribute value must be a valid guid for user scheme  There is no option in ProjectAttributesScheme with such Id  Attribute value must be a valid guid for options scheme |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test library required |  -  |
-| **404** |  Can&#39;t find section   Can&#39;t find project   Can&#39;t find attachmentIds   Project not found   Can&#39;t attributesScheme   Can&#39;t attribute   AutoTestIds not exist in project |  -  |
+| **404** |  Can&#39;t find section  Can&#39;t find project  Can&#39;t find attachmentIds  Project not found  Can&#39;t attributesScheme  Can&#39;t attribute  AutoTestIds not exist in project |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
 
@@ -1804,7 +1804,7 @@ catch (ApiException e)
 
 Delete all links AutoTests from WorkItem by Id or GlobalId
 
- Use case   User sets work item identifier   User runs method execution   System search work item by identifier   System search and delete all autotests, related to found work item   System returns no content response
+ Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search and delete all autotests, related to found work item  System returns no content response
 
 ### Example
 ```csharp
@@ -1832,7 +1832,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or  global(integer format) identifier\"
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or global(integer format) identifier\"
 
             try
             {
@@ -1871,7 +1871,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | WorkItem internal (guid format) or  global(integer format) identifier\&quot; |  |
+| **id** | **string** | WorkItem internal (guid format) or global(integer format) identifier\&quot; |  |
 
 ### Return type
 
@@ -1907,7 +1907,7 @@ void (empty response body)
 
 Delete Test Case, Checklist or Shared Step by Id or GlobalId
 
- Use case   User sets work item identifier   User runs method execution   System deletes work item   System returns no content response
+ Use case  User sets work item identifier  User runs method execution  System deletes work item  System returns no content response
 
 ### Example
 ```csharp
@@ -1935,7 +1935,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or  global(integer format) identifier\"
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or global(integer format) identifier\"
 
             try
             {
@@ -1974,7 +1974,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | WorkItem internal (guid format) or  global(integer format) identifier\&quot; |  |
+| **id** | **string** | WorkItem internal (guid format) or global(integer format) identifier\&quot; |  |
 
 ### Return type
 
@@ -2009,7 +2009,7 @@ void (empty response body)
 
 Get all AutoTests linked to WorkItem by Id or GlobalId
 
- Use case   User sets work item identifier   User runs method execution   System search work item by identifier   System search all autotests, related to found work item   System returns list of found autotests
+ Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search all autotests, related to found work item  System returns list of found autotests
 
 ### Example
 ```csharp
@@ -2037,7 +2037,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or  global(integer format) identifier\"
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or global(integer format) identifier\"
 
             try
             {
@@ -2080,7 +2080,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | WorkItem internal (guid format) or  global(integer format) identifier\&quot; |  |
+| **id** | **string** | WorkItem internal (guid format) or global(integer format) identifier\&quot; |  |
 
 ### Return type
 
@@ -2141,7 +2141,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or  global(integer format) identifier\"
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or global(integer format) identifier\"
             var versionId = 00000000-0000-0000-0000-000000000000;  // Guid? | WorkItem version (guid format) identifier (optional) 
             var versionNumber = 0;  // int? | WorkItem version number (0 is the last version)\" (optional) 
 
@@ -2186,7 +2186,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | WorkItem internal (guid format) or  global(integer format) identifier\&quot; |  |
+| **id** | **string** | WorkItem internal (guid format) or global(integer format) identifier\&quot; |  |
 | **versionId** | **Guid?** | WorkItem version (guid format) identifier | [optional]  |
 | **versionNumber** | **int?** | WorkItem version number (0 is the last version)\&quot; | [optional]  |
 
@@ -2223,7 +2223,7 @@ catch (ApiException e)
 
 Get Test Case, Checklist or Shared Step by Id or GlobalId
 
- Use case   User sets work item identifier   [Optional] User sets work item version identifier   [Optional] User sets work item version number   User runs method execution   System search work item by identifier   [Optional] if User sets work item version identifier, system search work item version by identifier.   [Optional] if user sets work item version number, system search work item version by number   Otherwise, system search last work item version   System returns work item 
+ Use case  User sets work item identifier  [Optional] User sets work item version identifier  [Optional] User sets work item version number  User runs method execution  System search work item by identifier  [Optional] if User sets work item version identifier, system search work item version by identifier.  [Optional] if user sets work item version number, system search work item version by number  Otherwise, system search last work item version  System returns work item
 
 ### Example
 ```csharp
@@ -2251,7 +2251,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or  global(integer format) identifier\"
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or global(integer format) identifier\"
             var versionId = 00000000-0000-0000-0000-000000000000;  // Guid? | WorkItem version (guid format) identifier\" (optional) 
             var versionNumber = 0;  // int? | WorkItem version number (0 is the last version)\" (optional) 
 
@@ -2296,7 +2296,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | WorkItem internal (guid format) or  global(integer format) identifier\&quot; |  |
+| **id** | **string** | WorkItem internal (guid format) or global(integer format) identifier\&quot; |  |
 | **versionId** | **Guid?** | WorkItem version (guid format) identifier\&quot; | [optional]  |
 | **versionNumber** | **int?** | WorkItem version number (0 is the last version)\&quot; | [optional]  |
 
@@ -2333,7 +2333,7 @@ catch (ApiException e)
 
 Get WorkItem chronology by Id or GlobalId
 
- Use case   User sets work item identifier   User runs method execution   System search work item by identifier   System search test results of all autotests, related to found work item   System sort results by CompletedOn ascending, then by CreatedDate ascending   System returns sorted collection of test results
+ Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search test results of all autotests, related to found work item  System sort results by CompletedOn ascending, then by CreatedDate ascending  System returns sorted collection of test results
 
 ### Example
 ```csharp
@@ -2439,7 +2439,7 @@ catch (ApiException e)
 
 Get WorkItem versions
 
- Use case   User sets work item identifier   [Optional] User sets work item version identifier   User runs method execution   System search work item by identifier                         [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item                     System returns array of work item version models (listed in response example)
+ Use case  User sets work item identifier  [Optional] User sets work item version identifier  User runs method execution  System search work item by identifier  [Optional] If User set work item version identifier, System search work item version by version identifier                     Otherwise, system search all version of work item  System returns array of work item version models (listed in response example)
 
 ### Example
 ```csharp
@@ -2467,9 +2467,9 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or  global(integer format) identifier\"
-            var workItemVersionId = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid? | WorkItem version (guid format)  identifier\" (optional) 
-            var versionNumber = 1;  // int? | WorkItem version (integer format)  number\" (optional) 
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or global(integer format) identifier\"
+            var workItemVersionId = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid? | WorkItem version (guid format) identifier\" (optional) 
+            var versionNumber = 1;  // int? | WorkItem version (integer format) number\" (optional) 
 
             try
             {
@@ -2512,9 +2512,9 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | WorkItem internal (guid format) or  global(integer format) identifier\&quot; |  |
-| **workItemVersionId** | **Guid?** | WorkItem version (guid format)  identifier\&quot; | [optional]  |
-| **versionNumber** | **int?** | WorkItem version (integer format)  number\&quot; | [optional]  |
+| **id** | **string** | WorkItem internal (guid format) or global(integer format) identifier\&quot; |  |
+| **workItemVersionId** | **Guid?** | WorkItem version (guid format) identifier\&quot; | [optional]  |
+| **versionNumber** | **int?** | WorkItem version (integer format) number\&quot; | [optional]  |
 
 ### Return type
 
@@ -2745,11 +2745,11 @@ void (empty response body)
 
 <a id="updateworkitem"></a>
 # **UpdateWorkItem**
-> void UpdateWorkItem (WorkItemPutModel workItemPutModel = null)
+> void UpdateWorkItem (UpdateWorkItemApiModel updateWorkItemApiModel = null)
 
 Update Test Case, Checklist or Shared Step
 
- Use case   User sets work item properties (listed in request parameters)   User runs method execution   System updates work item by identifier   System returns updated work item model (listed in response parameters)
+ Use case  User sets work item properties (listed in request parameters)  User runs method execution  System updates work item by identifier  System returns updated work item model (listed in response parameters)
 
 ### Example
 ```csharp
@@ -2777,12 +2777,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
-            var workItemPutModel = new WorkItemPutModel(); // WorkItemPutModel |  (optional) 
+            var updateWorkItemApiModel = new UpdateWorkItemApiModel(); // UpdateWorkItemApiModel |  (optional) 
 
             try
             {
                 // Update Test Case, Checklist or Shared Step
-                apiInstance.UpdateWorkItem(workItemPutModel);
+                apiInstance.UpdateWorkItem(updateWorkItemApiModel);
             }
             catch (ApiException  e)
             {
@@ -2802,7 +2802,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update Test Case, Checklist or Shared Step
-    apiInstance.UpdateWorkItemWithHttpInfo(workItemPutModel);
+    apiInstance.UpdateWorkItemWithHttpInfo(updateWorkItemApiModel);
 }
 catch (ApiException e)
 {
@@ -2816,7 +2816,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **workItemPutModel** | [**WorkItemPutModel**](WorkItemPutModel.md) |  | [optional]  |
+| **updateWorkItemApiModel** | [**UpdateWorkItemApiModel**](UpdateWorkItemApiModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -2836,10 +2836,10 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
-| **400** |  Field is required   Priority is not a valid   duration should be a positive number   should be empty for CheckList   There is no option in ProjectAttributesScheme with such Id   Attribute value must be a valid guid for options scheme |  -  |
+| **400** |  Field is required  Priority is not a valid  duration should be a positive number  should be empty for CheckList  There is no option in ProjectAttributesScheme with such Id  Attribute value must be a valid guid for options scheme |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test library required |  -  |
-| **404** |  WorkItem not found   Can&#39;t find section   Can&#39;t attributesScheme   Can&#39;t attribute   AutoTestIds not exist in project |  -  |
+| **404** |  WorkItem not found  Can&#39;t find section  Can&#39;t attributesScheme  Can&#39;t attribute  AutoTestIds not exist in project |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
 

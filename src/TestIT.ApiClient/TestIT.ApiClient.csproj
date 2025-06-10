@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>10</LangVersion>
-    <Version>5.0.1-TMS-5.3</Version>
+    <Version>5.1.0-TMS-CLOUD</Version>
     <Nullable>enable</Nullable>
     <IsPackable>true</IsPackable>
     <Title>Test IT API client</Title>

@@ -26,12 +26,13 @@ Name | Type | Description | Notes
 **Description** | **string** |  | [optional] 
 **State** | **WorkItemStates** |  | 
 **Priority** | **WorkItemPriorityModel** |  | 
+**SourceType** | **WorkItemSourceTypeModel** |  | 
 **Steps** | [**List&lt;StepModel&gt;**](StepModel.md) |  | 
 **PreconditionSteps** | [**List&lt;StepModel&gt;**](StepModel.md) |  | 
 **PostconditionSteps** | [**List&lt;StepModel&gt;**](StepModel.md) |  | 
 **Duration** | **int** |  | 
 **Attributes** | **Dictionary&lt;string, Object&gt;** |  | 
-**Tags** | [**List&lt;TagPutModel&gt;**](TagPutModel.md) |  | 
+**Tags** | [**List&lt;TagModel&gt;**](TagModel.md) |  | 
 **Links** | [**List&lt;LinkModel&gt;**](LinkModel.md) |  | 
 **Name** | **string** |  | 
 

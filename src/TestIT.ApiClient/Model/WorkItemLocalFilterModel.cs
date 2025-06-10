@@ -45,6 +45,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedByIds">Collection of identifiers of users who applied last modification to work item.</param>
         /// <param name="states">Collection of states of work item.</param>
         /// <param name="priorities">Collection of priorities of work item.</param>
+        /// <param name="sourceTypes">Collection of priorities of work item.</param>
         /// <param name="types">Collection of types of work item.</param>
         /// <param name="createdDate">Specifies a work item range of creation date to search for.</param>
         /// <param name="modifiedDate">Specifies a work item range of last modification date to search for.</param>
@@ -54,7 +55,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="tags">Collection of tags.</param>
         /// <param name="autoTestIds">Collection of identifiers of linked autotests.</param>
         /// <param name="workItemVersionIds">Collection of identifiers work items versions..</param>
-        public WorkItemLocalFilterModel(string name = default(string), List<Guid> ids = default(List<Guid>), List<long> globalIds = default(List<long>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?), List<Guid> sectionIds = default(List<Guid>), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), List<WorkItemStates> states = default(List<WorkItemStates>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<WorkItemEntityTypes> types = default(List<WorkItemEntityTypes>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), Int32RangeSelectorModel duration = default(Int32RangeSelectorModel), Int64RangeSelectorModel medianDuration = default(Int64RangeSelectorModel), bool? isAutomated = default(bool?), List<string> tags = default(List<string>), List<Guid> autoTestIds = default(List<Guid>), List<Guid> workItemVersionIds = default(List<Guid>))
+        public WorkItemLocalFilterModel(string name = default(string), List<Guid> ids = default(List<Guid>), List<long> globalIds = default(List<long>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?), List<Guid> sectionIds = default(List<Guid>), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), List<WorkItemStates> states = default(List<WorkItemStates>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<WorkItemSourceTypeModel> sourceTypes = default(List<WorkItemSourceTypeModel>), List<WorkItemEntityTypes> types = default(List<WorkItemEntityTypes>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), Int32RangeSelectorModel duration = default(Int32RangeSelectorModel), Int64RangeSelectorModel medianDuration = default(Int64RangeSelectorModel), bool? isAutomated = default(bool?), List<string> tags = default(List<string>), List<Guid> autoTestIds = default(List<Guid>), List<Guid> workItemVersionIds = default(List<Guid>))
         {
             this.Name = name;
             this.Ids = ids;
@@ -66,6 +67,7 @@ namespace TestIT.ApiClient.Model
             this.ModifiedByIds = modifiedByIds;
             this.States = states;
             this.Priorities = priorities;
+            this.SourceTypes = sourceTypes;
             this.Types = types;
             this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
@@ -148,6 +150,13 @@ namespace TestIT.ApiClient.Model
         public List<WorkItemPriorityModel> Priorities { get; set; }
 
         /// <summary>
+        /// Collection of priorities of work item
+        /// </summary>
+        /// <value>Collection of priorities of work item</value>
+        [DataMember(Name = "sourceTypes", EmitDefaultValue = true)]
+        public List<WorkItemSourceTypeModel> SourceTypes { get; set; }
+
+        /// <summary>
         /// Collection of types of work item
         /// </summary>
         /// <value>Collection of types of work item</value>
@@ -228,6 +237,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ModifiedByIds: ").Append(ModifiedByIds).Append("\n");
             sb.Append("  States: ").Append(States).Append("\n");
             sb.Append("  Priorities: ").Append(Priorities).Append("\n");
+            sb.Append("  SourceTypes: ").Append(SourceTypes).Append("\n");
             sb.Append("  Types: ").Append(Types).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");

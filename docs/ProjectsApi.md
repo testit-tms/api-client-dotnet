@@ -21,6 +21,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2ProjectsPurgeBulkPost**](ProjectsApi.md#apiv2projectspurgebulkpost) | **POST** /api/v2/projects/purge/bulk | Purge multiple projects |
 | [**ApiV2ProjectsRestoreBulkPost**](ProjectsApi.md#apiv2projectsrestorebulkpost) | **POST** /api/v2/projects/restore/bulk | Restore multiple projects |
 | [**ApiV2ProjectsSearchPost**](ProjectsApi.md#apiv2projectssearchpost) | **POST** /api/v2/projects/search | Search for projects |
+| [**ApiV2ProjectsShortsPost**](ProjectsApi.md#apiv2projectsshortspost) | **POST** /api/v2/projects/shorts | Get projects short models |
 | [**CreateProject**](ProjectsApi.md#createproject) | **POST** /api/v2/projects | Create project |
 | [**DeleteProjectAutoTests**](ProjectsApi.md#deleteprojectautotests) | **DELETE** /api/v2/projects/{id}/autoTests | Delete all autotests from project |
 | [**GetAllProjects**](ProjectsApi.md#getallprojects) | **GET** /api/v2/projects | Get all projects |
@@ -36,7 +37,7 @@ All URIs are relative to *http://localhost*
 
 Add global attributes to project
 
- Use case   User sets project internal or global identifier and attributes identifiers   System search project   System relates global attributes with project   System returns no content response
+ Use case  User sets project internal or global identifier and attributes identifiers  System search project  System relates global attributes with project  System returns no content response
 
 ### Example
 ```csharp
@@ -125,7 +126,7 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
-| **400** |   Attributes must be global  |  -  |
+| **400** |  Attributes must be global |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Project admin permission for project settings is required |  -  |
 | **404** | Project with provided ID was not found |  -  |
@@ -548,7 +549,7 @@ void (empty response body)
 
 Get Project filters
 
- Use case   User sets project internal or global identifier    User runs method execution   System returns project filters
+ Use case  User sets project internal or global identifier  User runs method execution  System returns project filters
 
 ### Example
 ```csharp
@@ -958,7 +959,7 @@ void (empty response body)
 
 Delete attribute from project's test plans
 
- Use case   User sets project internal or global identifier and attribute identifier   User runs method execution   System updates project and delete attribute from project for test plans   System returns no content response
+ Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
 
 ### Example
 ```csharp
@@ -1062,7 +1063,7 @@ void (empty response body)
 
 Update attribute of project's test plans
 
- Use case   User sets project internal or global identifier and attribute model   User runs method execution   System updates project and project attribute for test plan   System returns no content response
+ Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
 
 ### Example
 ```csharp
@@ -1166,7 +1167,7 @@ void (empty response body)
 
 Get active Project TestRuns
 
- Use case   User sets project internal or global identifier    User runs method execution   System returns active testruns
+ Use case  User sets project internal or global identifier  User runs method execution  System returns active testruns
 
 ### Example
 ```csharp
@@ -1272,7 +1273,7 @@ catch (ApiException e)
 
 Get Project TestRuns full models
 
- Use case   User sets project internal or global identifier    User sets query params    User runs method execution   System returns project test runs full models
+ Use case  User sets project internal or global identifier  User sets query params  User runs method execution  System returns project test runs full models
 
 ### Example
 ```csharp
@@ -1824,13 +1825,119 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="apiv2projectsshortspost"></a>
+# **ApiV2ProjectsShortsPost**
+> ProjectShortApiResultReply ApiV2ProjectsShortsPost (GetShortProjectsApiModel getShortProjectsApiModel = null)
+
+Get projects short models
+
+ Use case  User sets query params  User runs method execution  System return projects short models
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
+
+namespace Example
+{
+    public class ApiV2ProjectsShortsPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
+            var getShortProjectsApiModel = new GetShortProjectsApiModel(); // GetShortProjectsApiModel |  (optional) 
+
+            try
+            {
+                // Get projects short models
+                ProjectShortApiResultReply result = apiInstance.ApiV2ProjectsShortsPost(getShortProjectsApiModel);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsShortsPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2ProjectsShortsPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get projects short models
+    ApiResponse<ProjectShortApiResultReply> response = apiInstance.ApiV2ProjectsShortsPostWithHttpInfo(getShortProjectsApiModel);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectsApi.ApiV2ProjectsShortsPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **getShortProjectsApiModel** | [**GetShortProjectsApiModel**](GetShortProjectsApiModel.md) |  | [optional]  |
+
+### Return type
+
+[**ProjectShortApiResultReply**](ProjectShortApiResultReply.md)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="createproject"></a>
 # **CreateProject**
 > ProjectModel CreateProject (CreateProjectApiModel createProjectApiModel = null)
 
 Create project
 
- Use case   User sets project parameters (listed in request example) and runs method execution   System creates project   System returns project model (example listed in response parameters)
+ Use case  User sets project parameters (listed in request example) and runs method execution  System creates project  System returns project model (example listed in response parameters)
 
 ### Example
 ```csharp
@@ -2036,7 +2143,7 @@ void (empty response body)
 
 Get all projects
 
- Use case   [Optional] User sets isDeleted field value   [Optional] If User sets isDeleted field value as true, System search all deleted projects   [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted   If User did not set isDeleted field value, System search all projects   System returns array of all found projects(listed in response model)
+ Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted projects  [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted  If User did not set isDeleted field value, System search all projects  System returns array of all found projects(listed in response model)
 
 ### Example
 ```csharp
@@ -2154,7 +2261,7 @@ catch (ApiException e)
 
 Get namespaces of autotests in project
 
- Use case   User sets project internal or global identifier and runs method execution   System search project   System search all autotest related to the project   System returns array of autotest with namespaces and classnames (listed in response)
+ Use case  User sets project internal or global identifier and runs method execution  System search project  System search all autotest related to the project  System returns array of autotest with namespaces and classnames (listed in response)
 
 ### Example
 ```csharp
@@ -2260,7 +2367,7 @@ catch (ApiException e)
 
 Get project by ID
 
- Use case   User sets project internal or global identifier and runs method execution   System search project   System returns project (example listed in response parameters)
+ Use case  User sets project internal or global identifier and runs method execution  System search project  System returns project (example listed in response parameters)
 
 ### Example
 ```csharp
@@ -2367,7 +2474,7 @@ catch (ApiException e)
 
 Get project test plans
 
- Use case   User sets project internal or global identifier   [Optional] User sets isDeleted field value   User runs method execution   System search project   [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project   [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted   [Optional] If User did not set isDeleted field value, System search all v related to project   System returns array of found test plans (listed in response model)
+ Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project  [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all v related to project  System returns array of found test plans (listed in response model)
 
 ### Example
 ```csharp
@@ -2475,7 +2582,7 @@ catch (ApiException e)
 
 Get project test runs
 
- Use case   User sets project internal or global identifier   User runs method execution   System search project   System search all test runs related to project   System returns array of found test runs (listed in response model)
+ Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all test runs related to project  System returns array of found test runs (listed in response model)
 
 ### Example
 ```csharp
@@ -2605,7 +2712,7 @@ catch (ApiException e)
 
 Update project
 
- Use case   User sets project parameters (listed in request example) and runs method execution   System updates project   System returns updated project model (example listed in response parameters)
+ Use case  User sets project parameters (listed in request example) and runs method execution  System updates project  System returns updated project model (example listed in response parameters)
 
 ### Example
 ```csharp
@@ -2692,7 +2799,7 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
-| **400** |  - ID is invalid   - Field is required |  -  |
+| **400** |  - ID is invalid  - Field is required |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for projects is required |  -  |
 | **404** | Project with provided ID was not found |  -  |

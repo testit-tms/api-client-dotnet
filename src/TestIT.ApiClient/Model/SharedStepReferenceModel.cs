@@ -38,6 +38,12 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         [DataMember(Name = "priority", IsRequired = true, EmitDefaultValue = true)]
         public WorkItemPriorityModel Priority { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SourceType
+        /// </summary>
+        [DataMember(Name = "sourceType", IsRequired = true, EmitDefaultValue = true)]
+        public WorkItemSourceTypeModel SourceType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SharedStepReferenceModel" /> class.
         /// </summary>
@@ -59,12 +65,13 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedDate">modifiedDate.</param>
         /// <param name="state">state (required).</param>
         /// <param name="priority">priority (required).</param>
+        /// <param name="sourceType">sourceType (required).</param>
         /// <param name="isDeleted">isDeleted (required).</param>
         /// <param name="versionId">used for versioning changes in workitem (required).</param>
         /// <param name="isAutomated">isAutomated (required).</param>
         /// <param name="sectionId">sectionId (required).</param>
         /// <param name="tags">tags.</param>
-        public SharedStepReferenceModel(Guid id = default(Guid), long globalId = default(long), string name = default(string), string entityTypeName = default(string), bool hasThisSharedStepAsStep = default(bool), bool hasThisSharedStepAsPrecondition = default(bool), bool hasThisSharedStepAsPostcondition = default(bool), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), string state = default(string), WorkItemPriorityModel priority = default(WorkItemPriorityModel), bool isDeleted = default(bool), Guid versionId = default(Guid), bool isAutomated = default(bool), Guid sectionId = default(Guid), List<TagModel> tags = default(List<TagModel>))
+        public SharedStepReferenceModel(Guid id = default(Guid), long globalId = default(long), string name = default(string), string entityTypeName = default(string), bool hasThisSharedStepAsStep = default(bool), bool hasThisSharedStepAsPrecondition = default(bool), bool hasThisSharedStepAsPostcondition = default(bool), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), string state = default(string), WorkItemPriorityModel priority = default(WorkItemPriorityModel), WorkItemSourceTypeModel sourceType = default(WorkItemSourceTypeModel), bool isDeleted = default(bool), Guid versionId = default(Guid), bool isAutomated = default(bool), Guid sectionId = default(Guid), List<TagModel> tags = default(List<TagModel>))
         {
             this.Id = id;
             this.GlobalId = globalId;
@@ -91,6 +98,7 @@ namespace TestIT.ApiClient.Model
             }
             this.State = state;
             this.Priority = priority;
+            this.SourceType = sourceType;
             this.IsDeleted = isDeleted;
             this.VersionId = versionId;
             this.IsAutomated = isAutomated;
@@ -105,7 +113,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Id
         /// </summary>
         /*
-        <example>0812e703-0018-4836-886c-a8b12648d919</example>
+        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
         */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
@@ -168,7 +176,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CreatedById
         /// </summary>
         /*
-        <example>0812e703-0018-4836-886c-a8b12648d919</example>
+        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
         */
         [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
@@ -177,7 +185,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ModifiedById
         /// </summary>
         /*
-        <example>0812e703-0018-4836-886c-a8b12648d919</example>
+        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
         */
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
@@ -186,7 +194,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         /*
-        <example>2025-03-26T01:30:14.071822900Z</example>
+        <example>2025-06-06T07:34:33.374853800Z</example>
         */
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
         public DateTime? CreatedDate { get; set; }
@@ -195,7 +203,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ModifiedDate
         /// </summary>
         /*
-        <example>2025-03-26T01:30:14.071822900Z</example>
+        <example>2025-06-06T07:34:33.374853800Z</example>
         */
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
@@ -223,7 +231,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>used for versioning changes in workitem</value>
         /*
-        <example>0812e703-0018-4836-886c-a8b12648d919</example>
+        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
         */
         [DataMember(Name = "versionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid VersionId { get; set; }
@@ -241,7 +249,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets SectionId
         /// </summary>
         /*
-        <example>0812e703-0018-4836-886c-a8b12648d919</example>
+        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
         */
         [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid SectionId { get; set; }
@@ -273,6 +281,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
             sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("  Priority: ").Append(Priority).Append("\n");
+            sb.Append("  SourceType: ").Append(SourceType).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  VersionId: ").Append(VersionId).Append("\n");
             sb.Append("  IsAutomated: ").Append(IsAutomated).Append("\n");

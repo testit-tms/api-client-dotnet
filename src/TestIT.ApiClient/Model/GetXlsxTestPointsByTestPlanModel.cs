@@ -43,6 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="includeName">includeName (required).</param>
         /// <param name="includeSection">includeSection (required).</param>
         /// <param name="includePriority">includePriority (required).</param>
+        /// <param name="includeSourceType">includeSourceType (required).</param>
         /// <param name="includeAutomated">includeAutomated (required).</param>
         /// <param name="includeStatus">includeStatus (required).</param>
         /// <param name="includeDuration">includeDuration (required).</param>
@@ -54,11 +55,12 @@ namespace TestIT.ApiClient.Model
         /// <param name="includeIterations">includeIterations (required).</param>
         /// <param name="customAttributesIds">customAttributesIds.</param>
         /// <param name="configurationIds">configurationIds.</param>
-        public GetXlsxTestPointsByTestPlanModel(bool includeName = default(bool), bool includeSection = default(bool), bool includePriority = default(bool), bool includeAutomated = default(bool), bool includeStatus = default(bool), bool includeDuration = default(bool), bool includeCreationDate = default(bool), bool includeAuthor = default(bool), bool includeModificationDate = default(bool), bool includeModifiedBy = default(bool), bool includeTags = default(bool), bool includeIterations = default(bool), List<Guid> customAttributesIds = default(List<Guid>), List<Guid> configurationIds = default(List<Guid>))
+        public GetXlsxTestPointsByTestPlanModel(bool includeName = default(bool), bool includeSection = default(bool), bool includePriority = default(bool), bool includeSourceType = default(bool), bool includeAutomated = default(bool), bool includeStatus = default(bool), bool includeDuration = default(bool), bool includeCreationDate = default(bool), bool includeAuthor = default(bool), bool includeModificationDate = default(bool), bool includeModifiedBy = default(bool), bool includeTags = default(bool), bool includeIterations = default(bool), List<Guid> customAttributesIds = default(List<Guid>), List<Guid> configurationIds = default(List<Guid>))
         {
             this.IncludeName = includeName;
             this.IncludeSection = includeSection;
             this.IncludePriority = includePriority;
+            this.IncludeSourceType = includeSourceType;
             this.IncludeAutomated = includeAutomated;
             this.IncludeStatus = includeStatus;
             this.IncludeDuration = includeDuration;
@@ -89,6 +91,12 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         [DataMember(Name = "includePriority", IsRequired = true, EmitDefaultValue = true)]
         public bool IncludePriority { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IncludeSourceType
+        /// </summary>
+        [DataMember(Name = "includeSourceType", IsRequired = true, EmitDefaultValue = true)]
+        public bool IncludeSourceType { get; set; }
 
         /// <summary>
         /// Gets or Sets IncludeAutomated
@@ -167,6 +175,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  IncludeName: ").Append(IncludeName).Append("\n");
             sb.Append("  IncludeSection: ").Append(IncludeSection).Append("\n");
             sb.Append("  IncludePriority: ").Append(IncludePriority).Append("\n");
+            sb.Append("  IncludeSourceType: ").Append(IncludeSourceType).Append("\n");
             sb.Append("  IncludeAutomated: ").Append(IncludeAutomated).Append("\n");
             sb.Append("  IncludeStatus: ").Append(IncludeStatus).Append("\n");
             sb.Append("  IncludeDuration: ").Append(IncludeDuration).Append("\n");

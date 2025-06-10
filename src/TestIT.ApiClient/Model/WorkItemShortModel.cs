@@ -46,6 +46,13 @@ namespace TestIT.ApiClient.Model
         /// <value>Work Item priority level</value>
         [DataMember(Name = "priority", IsRequired = true, EmitDefaultValue = true)]
         public WorkItemPriorityModel Priority { get; set; }
+
+        /// <summary>
+        /// Work Item source type
+        /// </summary>
+        /// <value>Work Item source type</value>
+        [DataMember(Name = "sourceType", IsRequired = true, EmitDefaultValue = true)]
+        public WorkItemSourceTypeModel SourceType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkItemShortModel" /> class.
         /// </summary>
@@ -73,11 +80,12 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedDate">Date and time of the latest modification of Work Item.</param>
         /// <param name="state">The current state of Work Item (required).</param>
         /// <param name="priority">Work Item priority level (required).</param>
+        /// <param name="sourceType">Work Item source type (required).</param>
         /// <param name="isDeleted">Flag determining whether Work Item is deleted (required).</param>
         /// <param name="tagNames">Array of tag names of Work Item.</param>
         /// <param name="iterations">Set of iterations related to Work Item (required).</param>
         /// <param name="links">Set of links related to Work Item (required).</param>
-        public WorkItemShortModel(Guid id = default(Guid), Guid versionId = default(Guid), int versionNumber = default(int), string name = default(string), string entityTypeName = default(string), Guid projectId = default(Guid), Guid sectionId = default(Guid), string sectionName = default(string), bool isAutomated = default(bool), long globalId = default(long), int duration = default(int), long? medianDuration = default(long?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), WorkItemStates state = default(WorkItemStates), WorkItemPriorityModel priority = default(WorkItemPriorityModel), bool isDeleted = default(bool), List<string> tagNames = default(List<string>), List<IterationModel> iterations = default(List<IterationModel>), List<LinkShortModel> links = default(List<LinkShortModel>))
+        public WorkItemShortModel(Guid id = default(Guid), Guid versionId = default(Guid), int versionNumber = default(int), string name = default(string), string entityTypeName = default(string), Guid projectId = default(Guid), Guid sectionId = default(Guid), string sectionName = default(string), bool isAutomated = default(bool), long globalId = default(long), int duration = default(int), long? medianDuration = default(long?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), WorkItemStates state = default(WorkItemStates), WorkItemPriorityModel priority = default(WorkItemPriorityModel), WorkItemSourceTypeModel sourceType = default(WorkItemSourceTypeModel), bool isDeleted = default(bool), List<string> tagNames = default(List<string>), List<IterationModel> iterations = default(List<IterationModel>), List<LinkShortModel> links = default(List<LinkShortModel>))
         {
             this.Id = id;
             this.VersionId = versionId;
@@ -108,6 +116,7 @@ namespace TestIT.ApiClient.Model
             this.CreatedById = createdById;
             this.State = state;
             this.Priority = priority;
+            this.SourceType = sourceType;
             this.IsDeleted = isDeleted;
             // to ensure "iterations" is required (not null)
             if (iterations == null)
@@ -312,6 +321,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
             sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("  Priority: ").Append(Priority).Append("\n");
+            sb.Append("  SourceType: ").Append(SourceType).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  TagNames: ").Append(TagNames).Append("\n");
             sb.Append("  Iterations: ").Append(Iterations).Append("\n");

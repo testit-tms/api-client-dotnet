@@ -51,13 +51,13 @@ namespace TestIT.ApiClient.Model
         /// <param name="id">Test run unique identifier (required).</param>
         /// <param name="name">Test run name (required).</param>
         /// <param name="description">Test run description.</param>
-        /// <param name="launchSource">Test run launch source                Once launch source is specified it cannot be updated..</param>
+        /// <param name="launchSource">Test run launch source              Once launch source is specified it cannot be updated..</param>
         /// <param name="startedOn">Date and time of test run start.</param>
         /// <param name="completedOn">Date and time of test run end.</param>
         /// <param name="stateName">Test run state (required).</param>
         /// <param name="status">Test run status (required).</param>
-        /// <param name="projectId">Project unique identifier                This property is used to link test run with project. (required).</param>
-        /// <param name="testPlanId">Test plan unique identifier                This property is used to link test run with test plan..</param>
+        /// <param name="projectId">Project unique identifier              This property is used to link test run with project. (required).</param>
+        /// <param name="testPlanId">Test plan unique identifier              This property is used to link test run with test plan..</param>
         /// <param name="testResults">Enumeration of test results related to test run.</param>
         /// <param name="createdDate">Date and time of test run creation (required).</param>
         /// <param name="modifiedDate">Date and time of last test run  modification.</param>
@@ -141,9 +141,9 @@ namespace TestIT.ApiClient.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// Test run launch source                Once launch source is specified it cannot be updated.
+        /// Test run launch source              Once launch source is specified it cannot be updated.
         /// </summary>
-        /// <value>Test run launch source                Once launch source is specified it cannot be updated.</value>
+        /// <value>Test run launch source              Once launch source is specified it cannot be updated.</value>
         [DataMember(Name = "launchSource", EmitDefaultValue = true)]
         public string LaunchSource { get; set; }
 
@@ -169,16 +169,16 @@ namespace TestIT.ApiClient.Model
         public TestStatusApiResult Status { get; set; }
 
         /// <summary>
-        /// Project unique identifier                This property is used to link test run with project.
+        /// Project unique identifier              This property is used to link test run with project.
         /// </summary>
-        /// <value>Project unique identifier                This property is used to link test run with project.</value>
+        /// <value>Project unique identifier              This property is used to link test run with project.</value>
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 
         /// <summary>
-        /// Test plan unique identifier                This property is used to link test run with test plan.
+        /// Test plan unique identifier              This property is used to link test run with test plan.
         /// </summary>
-        /// <value>Test plan unique identifier                This property is used to link test run with test plan.</value>
+        /// <value>Test plan unique identifier              This property is used to link test run with test plan.</value>
         [DataMember(Name = "testPlanId", EmitDefaultValue = true)]
         public Guid? TestPlanId { get; set; }
 

@@ -121,30 +121,30 @@ namespace TestIT.ApiClient.Api
         /// Get WorkItems Tags
         /// </summary>
         /// <remarks>
-        ///  Use case   User sets project internal identifier    User runs method execution   System returns work items tags
+        ///  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
-        /// <returns>List&lt;TagShortModel&gt;</returns>
-        List<TagShortModel> ApiV2ProjectsProjectIdWorkItemsTagsGet(Guid projectId, bool? isDeleted = default(bool?));
+        /// <returns>List&lt;TagShortApiResult&gt;</returns>
+        List<TagShortApiResult> ApiV2ProjectsProjectIdWorkItemsTagsGet(Guid projectId, bool? isDeleted = default(bool?));
 
         /// <summary>
         /// Get WorkItems Tags
         /// </summary>
         /// <remarks>
-        ///  Use case   User sets project internal identifier    User runs method execution   System returns work items tags
+        ///  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;TagShortModel&gt;</returns>
-        ApiResponse<List<TagShortModel>> ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfo(Guid projectId, bool? isDeleted = default(bool?));
+        /// <returns>ApiResponse of List&lt;TagShortApiResult&gt;</returns>
+        ApiResponse<List<TagShortApiResult>> ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfo(Guid projectId, bool? isDeleted = default(bool?));
         /// <summary>
         /// Get project work items
         /// </summary>
         /// <remarks>
-        ///  Use case   User sets project internal or global identifier   [Optional] User sets isDeleted field value   User runs method execution   System search project   [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project   [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted   If User did not set isDeleted field value, System search all  workitems related to project   System returns array of found workitems (listed in response model)
+        ///  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -164,7 +164,7 @@ namespace TestIT.ApiClient.Api
         /// Get project work items
         /// </summary>
         /// <remarks>
-        ///  Use case   User sets project internal or global identifier   [Optional] User sets isDeleted field value   User runs method execution   System search project   [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project   [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted   If User did not set isDeleted field value, System search all  workitems related to project   System returns array of found workitems (listed in response model)
+        ///  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -297,32 +297,32 @@ namespace TestIT.ApiClient.Api
         /// Get WorkItems Tags
         /// </summary>
         /// <remarks>
-        ///  Use case   User sets project internal identifier    User runs method execution   System returns work items tags
+        ///  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;TagShortModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TagShortModel>> ApiV2ProjectsProjectIdWorkItemsTagsGetAsync(Guid projectId, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;TagShortApiResult&gt;</returns>
+        System.Threading.Tasks.Task<List<TagShortApiResult>> ApiV2ProjectsProjectIdWorkItemsTagsGetAsync(Guid projectId, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get WorkItems Tags
         /// </summary>
         /// <remarks>
-        ///  Use case   User sets project internal identifier    User runs method execution   System returns work items tags
+        ///  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;TagShortModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TagShortModel>>> ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfoAsync(Guid projectId, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;TagShortApiResult&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<TagShortApiResult>>> ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfoAsync(Guid projectId, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get project work items
         /// </summary>
         /// <remarks>
-        ///  Use case   User sets project internal or global identifier   [Optional] User sets isDeleted field value   User runs method execution   System search project   [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project   [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted   If User did not set isDeleted field value, System search all  workitems related to project   System returns array of found workitems (listed in response model)
+        ///  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -343,7 +343,7 @@ namespace TestIT.ApiClient.Api
         /// Get project work items
         /// </summary>
         /// <remarks>
-        ///  Use case   User sets project internal or global identifier   [Optional] User sets isDeleted field value   User runs method execution   System search project   [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project   [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted   If User did not set isDeleted field value, System search all  workitems related to project   System returns array of found workitems (listed in response model)
+        ///  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1152,26 +1152,26 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get WorkItems Tags  Use case   User sets project internal identifier    User runs method execution   System returns work items tags
+        /// Get WorkItems Tags  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
-        /// <returns>List&lt;TagShortModel&gt;</returns>
-        public List<TagShortModel> ApiV2ProjectsProjectIdWorkItemsTagsGet(Guid projectId, bool? isDeleted = default(bool?))
+        /// <returns>List&lt;TagShortApiResult&gt;</returns>
+        public List<TagShortApiResult> ApiV2ProjectsProjectIdWorkItemsTagsGet(Guid projectId, bool? isDeleted = default(bool?))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<TagShortModel>> localVarResponse = ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfo(projectId, isDeleted);
+            TestIT.ApiClient.Client.ApiResponse<List<TagShortApiResult>> localVarResponse = ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfo(projectId, isDeleted);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get WorkItems Tags  Use case   User sets project internal identifier    User runs method execution   System returns work items tags
+        /// Get WorkItems Tags  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;TagShortModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<TagShortModel>> ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfo(Guid projectId, bool? isDeleted = default(bool?))
+        /// <returns>ApiResponse of List&lt;TagShortApiResult&gt;</returns>
+        public TestIT.ApiClient.Client.ApiResponse<List<TagShortApiResult>> ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfo(Guid projectId, bool? isDeleted = default(bool?))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1202,7 +1202,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<TagShortModel>>("/api/v2/projects/{projectId}/workItems/tags", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<TagShortApiResult>>("/api/v2/projects/{projectId}/workItems/tags", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1214,28 +1214,28 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get WorkItems Tags  Use case   User sets project internal identifier    User runs method execution   System returns work items tags
+        /// Get WorkItems Tags  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;TagShortModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TagShortModel>> ApiV2ProjectsProjectIdWorkItemsTagsGetAsync(Guid projectId, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;TagShortApiResult&gt;</returns>
+        public async System.Threading.Tasks.Task<List<TagShortApiResult>> ApiV2ProjectsProjectIdWorkItemsTagsGetAsync(Guid projectId, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<TagShortModel>> localVarResponse = await ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfoAsync(projectId, isDeleted, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<TagShortApiResult>> localVarResponse = await ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfoAsync(projectId, isDeleted, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get WorkItems Tags  Use case   User sets project internal identifier    User runs method execution   System returns work items tags
+        /// Get WorkItems Tags  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;TagShortModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TagShortModel>>> ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfoAsync(Guid projectId, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;TagShortApiResult&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TagShortApiResult>>> ApiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfoAsync(Guid projectId, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1269,7 +1269,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<TagShortModel>>("/api/v2/projects/{projectId}/workItems/tags", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<TagShortApiResult>>("/api/v2/projects/{projectId}/workItems/tags", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1281,7 +1281,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project work items  Use case   User sets project internal or global identifier   [Optional] User sets isDeleted field value   User runs method execution   System search project   [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project   [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted   If User did not set isDeleted field value, System search all  workitems related to project   System returns array of found workitems (listed in response model)
+        /// Get project work items  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1302,7 +1302,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project work items  Use case   User sets project internal or global identifier   [Optional] User sets isDeleted field value   User runs method execution   System search project   [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project   [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted   If User did not set isDeleted field value, System search all  workitems related to project   System returns array of found workitems (listed in response model)
+        /// Get project work items  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1391,7 +1391,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project work items  Use case   User sets project internal or global identifier   [Optional] User sets isDeleted field value   User runs method execution   System search project   [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project   [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted   If User did not set isDeleted field value, System search all  workitems related to project   System returns array of found workitems (listed in response model)
+        /// Get project work items  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1413,7 +1413,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project work items  Use case   User sets project internal or global identifier   [Optional] User sets isDeleted field value   User runs method execution   System search project   [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project   [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted   If User did not set isDeleted field value, System search all  workitems related to project   System returns array of found workitems (listed in response model)
+        /// Get project work items  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>

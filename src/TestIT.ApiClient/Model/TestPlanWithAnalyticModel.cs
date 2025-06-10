@@ -69,7 +69,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="productName">productName.</param>
         /// <param name="hasAutomaticDurationTimer">hasAutomaticDurationTimer.</param>
         /// <param name="attributes">attributes (required).</param>
-        public TestPlanWithAnalyticModel(TestPointAnalyticResult analytic = default(TestPointAnalyticResult), TestPlanStatusModel status = default(TestPlanStatusModel), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), bool isDeleted = default(bool), DateTime? lockedDate = default(DateTime?), Guid id = default(Guid), Guid? lockedById = default(Guid?), List<TagPostModel> tags = default(List<TagPostModel>), string name = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string description = default(string), string build = default(string), Guid projectId = default(Guid), string productName = default(string), bool? hasAutomaticDurationTimer = default(bool?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>))
+        public TestPlanWithAnalyticModel(TestPointAnalyticResult analytic = default(TestPointAnalyticResult), TestPlanStatusModel status = default(TestPlanStatusModel), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), bool isDeleted = default(bool), DateTime? lockedDate = default(DateTime?), Guid id = default(Guid), Guid? lockedById = default(Guid?), List<TagModel> tags = default(List<TagModel>), string name = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string description = default(string), string build = default(string), Guid projectId = default(Guid), string productName = default(string), bool? hasAutomaticDurationTimer = default(bool?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>))
         {
             // to ensure "analytic" is required (not null)
             if (analytic == null)
@@ -122,7 +122,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Set when test plan is starter (status changed to: In Progress)</value>
         /*
-        <example>2025-03-26T01:30:14.071822900Z</example>
+        <example>2025-06-06T07:34:33.374853800Z</example>
         */
         [DataMember(Name = "startedOn", EmitDefaultValue = true)]
         public DateTime? StartedOn { get; set; }
@@ -132,7 +132,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>set when test plan status is completed (status changed to: Completed)</value>
         /*
-        <example>2025-03-26T01:30:14.071822900Z</example>
+        <example>2025-06-06T07:34:33.374853800Z</example>
         */
         [DataMember(Name = "completedOn", EmitDefaultValue = true)]
         public DateTime? CompletedOn { get; set; }
@@ -141,7 +141,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         /*
-        <example>2025-03-26T01:30:14.071822900Z</example>
+        <example>2025-06-06T07:34:33.374853800Z</example>
         */
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
         public DateTime? CreatedDate { get; set; }
@@ -150,7 +150,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ModifiedDate
         /// </summary>
         /*
-        <example>2025-03-26T01:30:14.071822900Z</example>
+        <example>2025-06-06T07:34:33.374853800Z</example>
         */
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
@@ -159,7 +159,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CreatedById
         /// </summary>
         /*
-        <example>0812e703-0018-4836-886c-a8b12648d919</example>
+        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
         */
         [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
@@ -168,7 +168,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ModifiedById
         /// </summary>
         /*
-        <example>0812e703-0018-4836-886c-a8b12648d919</example>
+        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
         */
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
@@ -196,7 +196,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets LockedDate
         /// </summary>
         /*
-        <example>2025-03-26T01:30:14.071822900Z</example>
+        <example>2025-06-06T07:34:33.374853800Z</example>
         */
         [DataMember(Name = "lockedDate", EmitDefaultValue = true)]
         public DateTime? LockedDate { get; set; }
@@ -205,7 +205,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Id
         /// </summary>
         /*
-        <example>0812e703-0018-4836-886c-a8b12648d919</example>
+        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
         */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
@@ -220,7 +220,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Tags
         /// </summary>
         [DataMember(Name = "tags", EmitDefaultValue = true)]
-        public List<TagPostModel> Tags { get; set; }
+        public List<TagModel> Tags { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -236,7 +236,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Used for analytics</value>
         /*
-        <example>2025-03-26T01:30:14.071822900Z</example>
+        <example>2025-06-06T07:34:33.374853800Z</example>
         */
         [DataMember(Name = "startDate", EmitDefaultValue = true)]
         public DateTime? StartDate { get; set; }
@@ -246,7 +246,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Used for analytics</value>
         /*
-        <example>2025-03-26T01:30:14.071822900Z</example>
+        <example>2025-06-06T07:34:33.374853800Z</example>
         */
         [DataMember(Name = "endDate", EmitDefaultValue = true)]
         public DateTime? EndDate { get; set; }
@@ -273,7 +273,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ProjectId
         /// </summary>
         /*
-        <example>0812e703-0018-4836-886c-a8b12648d919</example>
+        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
         */
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }

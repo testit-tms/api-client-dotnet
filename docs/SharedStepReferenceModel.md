@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **ModifiedDate** | **DateTime?** |  | [optional] 
 **State** | **string** |  | 
 **Priority** | **WorkItemPriorityModel** |  | 
+**SourceType** | **WorkItemSourceTypeModel** |  | 
 **IsDeleted** | **bool** |  | 
 **VersionId** | **Guid** | used for versioning changes in workitem | 
 **IsAutomated** | **bool** |  | 

@@ -34,10 +34,11 @@ namespace TestIT.ApiClient.Model
     {
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Collection of possible status types
         /// </summary>
+        /// <value>Collection of possible status types</value>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
-        public TestStatusType Type { get; set; }
+        public TestStatusApiType Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TestStatusApiResult" /> class.
         /// </summary>
@@ -48,11 +49,11 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="id">id (required).</param>
         /// <param name="name">name (required).</param>
-        /// <param name="type">type (required).</param>
+        /// <param name="type">Collection of possible status types (required).</param>
         /// <param name="isSystem">isSystem (required).</param>
         /// <param name="code">code (required).</param>
         /// <param name="description">description.</param>
-        public TestStatusApiResult(Guid id = default(Guid), string name = default(string), TestStatusType type = default(TestStatusType), bool isSystem = default(bool), string code = default(string), string description = default(string))
+        public TestStatusApiResult(Guid id = default(Guid), string name = default(string), TestStatusApiType type = default(TestStatusApiType), bool isSystem = default(bool), string code = default(string), string description = default(string))
         {
             this.Id = id;
             // to ensure "name" is required (not null)

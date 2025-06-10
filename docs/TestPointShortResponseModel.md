@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **Status** | **TestPointStatus** | Status of the test point | 
 **StatusModel** | [**TestStatusApiResult**](TestStatusApiResult.md) | Status of the test point | 
 **Priority** | **WorkItemPriorityModel** | Priority of the test point | 
+**SourceType** | **WorkItemSourceTypeModel** | Source type of the test point | 
 **IsAutomated** | **bool** | Indicates if the test point represents an autotest | 
 **Name** | **string** | Name of the test point | 
 **ConfigurationId** | **Guid** | Unique ID of the test point configuration | 

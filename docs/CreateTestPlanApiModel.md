@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Tags** | [**List&lt;TagPostModel&gt;**](TagPostModel.md) | Test plan tag names collection | [optional] 
+**Tags** | [**List&lt;TagApiModel&gt;**](TagApiModel.md) | Test plan tag names collection | [optional] 
 **Name** | **string** | Test plan name | 
 **StartDate** | **DateTime?** | Date and time of test plan start | [optional] 
 **EndDate** | **DateTime?** | Date and time of test plan end | [optional] 

@@ -38,6 +38,12 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         [DataMember(Name = "priority", IsRequired = true, EmitDefaultValue = true)]
         public WorkItemPriorityModel Priority { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SourceType
+        /// </summary>
+        [DataMember(Name = "sourceType", IsRequired = true, EmitDefaultValue = true)]
+        public WorkItemSourceTypeModel SourceType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPointWithLastResultResponseModel" /> class.
         /// </summary>
@@ -68,10 +74,11 @@ namespace TestIT.ApiClient.Model
         /// <param name="tagNames">tagNames.</param>
         /// <param name="duration">duration (required).</param>
         /// <param name="priority">priority (required).</param>
+        /// <param name="sourceType">sourceType (required).</param>
         /// <param name="testSuiteNameBreadCrumbs">testSuiteNameBreadCrumbs.</param>
         /// <param name="groupCount">groupCount.</param>
         /// <param name="iteration">iteration.</param>
-        public TestPointWithLastResultResponseModel(Guid id = default(Guid), string workItemName = default(string), bool isAutomated = default(bool), Guid? testerId = default(Guid?), Guid workItemId = default(Guid), Guid? configurationId = default(Guid?), Guid testSuiteId = default(Guid), LastTestResultModel lastTestResult = default(LastTestResultModel), string status = default(string), TestStatusApiResult statusModel = default(TestStatusApiResult), long? workItemGlobalId = default(long?), string workItemEntityTypeName = default(string), Guid sectionId = default(Guid), string sectionName = default(string), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<string> tagNames = default(List<string>), int duration = default(int), WorkItemPriorityModel priority = default(WorkItemPriorityModel), List<string> testSuiteNameBreadCrumbs = default(List<string>), int? groupCount = default(int?), IterationModel iteration = default(IterationModel))
+        public TestPointWithLastResultResponseModel(Guid id = default(Guid), string workItemName = default(string), bool isAutomated = default(bool), Guid? testerId = default(Guid?), Guid workItemId = default(Guid), Guid? configurationId = default(Guid?), Guid testSuiteId = default(Guid), LastTestResultModel lastTestResult = default(LastTestResultModel), string status = default(string), TestStatusApiResult statusModel = default(TestStatusApiResult), long? workItemGlobalId = default(long?), string workItemEntityTypeName = default(string), Guid sectionId = default(Guid), string sectionName = default(string), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<string> tagNames = default(List<string>), int duration = default(int), WorkItemPriorityModel priority = default(WorkItemPriorityModel), WorkItemSourceTypeModel sourceType = default(WorkItemSourceTypeModel), List<string> testSuiteNameBreadCrumbs = default(List<string>), int? groupCount = default(int?), IterationModel iteration = default(IterationModel))
         {
             this.Id = id;
             this.IsAutomated = isAutomated;
@@ -81,6 +88,7 @@ namespace TestIT.ApiClient.Model
             this.CreatedById = createdById;
             this.Duration = duration;
             this.Priority = priority;
+            this.SourceType = sourceType;
             this.WorkItemName = workItemName;
             this.TesterId = testerId;
             this.ConfigurationId = configurationId;
@@ -275,6 +283,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  TagNames: ").Append(TagNames).Append("\n");
             sb.Append("  Duration: ").Append(Duration).Append("\n");
             sb.Append("  Priority: ").Append(Priority).Append("\n");
+            sb.Append("  SourceType: ").Append(SourceType).Append("\n");
             sb.Append("  TestSuiteNameBreadCrumbs: ").Append(TestSuiteNameBreadCrumbs).Append("\n");
             sb.Append("  GroupCount: ").Append(GroupCount).Append("\n");
             sb.Append("  Iteration: ").Append(Iteration).Append("\n");

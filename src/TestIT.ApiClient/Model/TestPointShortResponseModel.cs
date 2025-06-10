@@ -49,6 +49,13 @@ namespace TestIT.ApiClient.Model
         public WorkItemPriorityModel Priority { get; set; }
 
         /// <summary>
+        /// Source type of the test point
+        /// </summary>
+        /// <value>Source type of the test point</value>
+        [DataMember(Name = "sourceType", IsRequired = true, EmitDefaultValue = true)]
+        public WorkItemSourceTypeModel SourceType { get; set; }
+
+        /// <summary>
         /// Work item state
         /// </summary>
         /// <value>Work item state</value>
@@ -82,6 +89,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="status">Status of the test point (required).</param>
         /// <param name="statusModel">Status of the test point (required).</param>
         /// <param name="priority">Priority of the test point (required).</param>
+        /// <param name="sourceType">Source type of the test point (required).</param>
         /// <param name="isAutomated">Indicates if the test point represents an autotest (required).</param>
         /// <param name="name">Name of the test point (required).</param>
         /// <param name="configurationId">Unique ID of the test point configuration (required).</param>
@@ -96,7 +104,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="workItemCreatedDate">Creation date of work item (required).</param>
         /// <param name="workItemModifiedById">Unique ID of the work item last editor.</param>
         /// <param name="workItemModifiedDate">Modified date of work item.</param>
-        public TestPointShortResponseModel(Guid id = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), Guid? testerId = default(Guid?), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<string> tags = default(List<string>), List<string> links = default(List<string>), Guid testSuiteId = default(Guid), string testSuiteName = default(string), Guid workItemId = default(Guid), long workItemGlobalId = default(long), Guid workItemVersionId = default(Guid), int workItemVersionNumber = default(int), long? workItemMedianDuration = default(long?), TestPointStatus status = default(TestPointStatus), TestStatusApiResult statusModel = default(TestStatusApiResult), WorkItemPriorityModel priority = default(WorkItemPriorityModel), bool isAutomated = default(bool), string name = default(string), Guid configurationId = default(Guid), int duration = default(int), Guid sectionId = default(Guid), string sectionName = default(string), Guid projectId = default(Guid), LastTestResultModel lastTestResult = default(LastTestResultModel), Guid iterationId = default(Guid), WorkItemState workItemState = default(WorkItemState), Guid workItemCreatedById = default(Guid), DateTime workItemCreatedDate = default(DateTime), Guid? workItemModifiedById = default(Guid?), DateTime? workItemModifiedDate = default(DateTime?))
+        public TestPointShortResponseModel(Guid id = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), Guid? testerId = default(Guid?), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<string> tags = default(List<string>), List<string> links = default(List<string>), Guid testSuiteId = default(Guid), string testSuiteName = default(string), Guid workItemId = default(Guid), long workItemGlobalId = default(long), Guid workItemVersionId = default(Guid), int workItemVersionNumber = default(int), long? workItemMedianDuration = default(long?), TestPointStatus status = default(TestPointStatus), TestStatusApiResult statusModel = default(TestStatusApiResult), WorkItemPriorityModel priority = default(WorkItemPriorityModel), WorkItemSourceTypeModel sourceType = default(WorkItemSourceTypeModel), bool isAutomated = default(bool), string name = default(string), Guid configurationId = default(Guid), int duration = default(int), Guid sectionId = default(Guid), string sectionName = default(string), Guid projectId = default(Guid), LastTestResultModel lastTestResult = default(LastTestResultModel), Guid iterationId = default(Guid), WorkItemState workItemState = default(WorkItemState), Guid workItemCreatedById = default(Guid), DateTime workItemCreatedDate = default(DateTime), Guid? workItemModifiedById = default(Guid?), DateTime? workItemModifiedDate = default(DateTime?))
         {
             this.Id = id;
             this.CreatedDate = createdDate;
@@ -138,6 +146,7 @@ namespace TestIT.ApiClient.Model
             }
             this.StatusModel = statusModel;
             this.Priority = priority;
+            this.SourceType = sourceType;
             this.IsAutomated = isAutomated;
             // to ensure "name" is required (not null)
             if (name == null)
@@ -409,6 +418,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  StatusModel: ").Append(StatusModel).Append("\n");
             sb.Append("  Priority: ").Append(Priority).Append("\n");
+            sb.Append("  SourceType: ").Append(SourceType).Append("\n");
             sb.Append("  IsAutomated: ").Append(IsAutomated).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  ConfigurationId: ").Append(ConfigurationId).Append("\n");

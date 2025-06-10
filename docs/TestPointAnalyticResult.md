@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **CountGroupByTester** | [**List&lt;TestPlanGroupByTester&gt;**](TestPlanGroupByTester.md) |  | 
 **CountGroupByTestSuite** | [**List&lt;TestPlanGroupByTestSuite&gt;**](TestPlanGroupByTestSuite.md) |  | 
 **CountGroupByTesterAndStatus** | [**List&lt;TestPlanGroupByTesterAndStatus&gt;**](TestPlanGroupByTesterAndStatus.md) |  | 
+**CountGroupByStatusCode** | [**List&lt;TestPlanGroupByStatusCode&gt;**](TestPlanGroupByStatusCode.md) |  | 
+**CountGroupByTesterAndStatusCode** | [**List&lt;TestPlanGroupByTesterAndStatusCode&gt;**](TestPlanGroupByTesterAndStatusCode.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
