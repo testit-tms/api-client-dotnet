@@ -27,43 +27,48 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// GenerateWorkItemPreviewsApiResult
+    /// PreviewsIssueLinkApiResult
     /// </summary>
-    [DataContract(Name = "GenerateWorkItemPreviewsApiResult")]
-    public partial class GenerateWorkItemPreviewsApiResult : IValidatableObject
+    [DataContract(Name = "PreviewsIssueLinkApiResult")]
+    public partial class PreviewsIssueLinkApiResult : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GenerateWorkItemPreviewsApiResult" /> class.
+        /// Initializes a new instance of the <see cref="PreviewsIssueLinkApiResult" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected GenerateWorkItemPreviewsApiResult() { }
+        protected PreviewsIssueLinkApiResult() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="GenerateWorkItemPreviewsApiResult" /> class.
+        /// Initializes a new instance of the <see cref="PreviewsIssueLinkApiResult" /> class.
         /// </summary>
-        /// <param name="previews">previews (required).</param>
-        /// <param name="link">link.</param>
-        public GenerateWorkItemPreviewsApiResult(List<WorkItemPreviewApiModel> previews = default(List<WorkItemPreviewApiModel>), PreviewsIssueLinkApiResult link = default(PreviewsIssueLinkApiResult))
+        /// <param name="title">title (required).</param>
+        /// <param name="url">url (required).</param>
+        public PreviewsIssueLinkApiResult(string title = default(string), string url = default(string))
         {
-            // to ensure "previews" is required (not null)
-            if (previews == null)
+            // to ensure "title" is required (not null)
+            if (title == null)
             {
-                throw new ArgumentNullException("previews is a required property for GenerateWorkItemPreviewsApiResult and cannot be null");
+                throw new ArgumentNullException("title is a required property for PreviewsIssueLinkApiResult and cannot be null");
             }
-            this.Previews = previews;
-            this.Link = link;
+            this.Title = title;
+            // to ensure "url" is required (not null)
+            if (url == null)
+            {
+                throw new ArgumentNullException("url is a required property for PreviewsIssueLinkApiResult and cannot be null");
+            }
+            this.Url = url;
         }
 
         /// <summary>
-        /// Gets or Sets Previews
+        /// Gets or Sets Title
         /// </summary>
-        [DataMember(Name = "previews", IsRequired = true, EmitDefaultValue = true)]
-        public List<WorkItemPreviewApiModel> Previews { get; set; }
+        [DataMember(Name = "title", IsRequired = true, EmitDefaultValue = true)]
+        public string Title { get; set; }
 
         /// <summary>
-        /// Gets or Sets Link
+        /// Gets or Sets Url
         /// </summary>
-        [DataMember(Name = "link", EmitDefaultValue = true)]
-        public PreviewsIssueLinkApiResult Link { get; set; }
+        [DataMember(Name = "url", IsRequired = true, EmitDefaultValue = true)]
+        public string Url { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -72,9 +77,9 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class GenerateWorkItemPreviewsApiResult {\n");
-            sb.Append("  Previews: ").Append(Previews).Append("\n");
-            sb.Append("  Link: ").Append(Link).Append("\n");
+            sb.Append("class PreviewsIssueLinkApiResult {\n");
+            sb.Append("  Title: ").Append(Title).Append("\n");
+            sb.Append("  Url: ").Append(Url).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
