@@ -230,7 +230,7 @@ void (empty response body)
 
 <a id="apiv2parametersgroupsget"></a>
 # **ApiV2ParametersGroupsGet**
-> List&lt;ParameterGroupApiResult&gt; ApiV2ParametersGroupsGet (List<Guid> parameterKeyIds = null, string name = null, bool? isDeleted = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
+> List&lt;ParameterGroupApiResult&gt; ApiV2ParametersGroupsGet (List<Guid> parameterKeyIds = null, string name = null, bool? isDeleted = null, List<Guid> projectIds = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
 Get parameters as group
 
@@ -265,6 +265,7 @@ namespace Example
             var parameterKeyIds = new List<Guid>(); // List<Guid> |  (optional) 
             var name = "name_example";  // string |  (optional) 
             var isDeleted = true;  // bool? |  (optional) 
+            var projectIds = new List<Guid>(); // List<Guid> |  (optional) 
             var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
             var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
@@ -274,7 +275,7 @@ namespace Example
             try
             {
                 // Get parameters as group
-                List<ParameterGroupApiResult> result = apiInstance.ApiV2ParametersGroupsGet(parameterKeyIds, name, isDeleted, skip, take, orderBy, searchField, searchValue);
+                List<ParameterGroupApiResult> result = apiInstance.ApiV2ParametersGroupsGet(parameterKeyIds, name, isDeleted, projectIds, skip, take, orderBy, searchField, searchValue);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -295,7 +296,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get parameters as group
-    ApiResponse<List<ParameterGroupApiResult>> response = apiInstance.ApiV2ParametersGroupsGetWithHttpInfo(parameterKeyIds, name, isDeleted, skip, take, orderBy, searchField, searchValue);
+    ApiResponse<List<ParameterGroupApiResult>> response = apiInstance.ApiV2ParametersGroupsGetWithHttpInfo(parameterKeyIds, name, isDeleted, projectIds, skip, take, orderBy, searchField, searchValue);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -315,6 +316,7 @@ catch (ApiException e)
 | **parameterKeyIds** | [**List&lt;Guid&gt;**](Guid.md) |  | [optional]  |
 | **name** | **string** |  | [optional]  |
 | **isDeleted** | **bool?** |  | [optional]  |
+| **projectIds** | [**List&lt;Guid&gt;**](Guid.md) |  | [optional]  |
 | **skip** | **int?** | Amount of items to be skipped (offset) | [optional]  |
 | **take** | **int?** | Amount of items to be taken (limit) | [optional]  |
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
@@ -562,7 +564,7 @@ catch (ApiException e)
 
 <a id="apiv2parameterskeysget"></a>
 # **ApiV2ParametersKeysGet**
-> List&lt;string&gt; ApiV2ParametersKeysGet ()
+> List&lt;string&gt; ApiV2ParametersKeysGet (List<Guid> projectIds = null)
 
 Get all parameter keys
 
@@ -594,11 +596,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ParametersApi(httpClient, config, httpClientHandler);
+            var projectIds = new List<Guid>(); // List<Guid> |  (optional) 
 
             try
             {
                 // Get all parameter keys
-                List<string> result = apiInstance.ApiV2ParametersKeysGet();
+                List<string> result = apiInstance.ApiV2ParametersKeysGet(projectIds);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -619,7 +622,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get all parameter keys
-    ApiResponse<List<string>> response = apiInstance.ApiV2ParametersKeysGetWithHttpInfo();
+    ApiResponse<List<string>> response = apiInstance.ApiV2ParametersKeysGetWithHttpInfo(projectIds);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -633,7 +636,11 @@ catch (ApiException e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **projectIds** | [**List&lt;Guid&gt;**](Guid.md) |  | [optional]  |
+
 ### Return type
 
 **List<string>**

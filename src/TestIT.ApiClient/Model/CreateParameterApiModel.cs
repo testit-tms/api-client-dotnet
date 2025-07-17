@@ -42,7 +42,8 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="name">Key of the parameter (required).</param>
         /// <param name="value">Value of the parameter (required).</param>
-        public CreateParameterApiModel(string name = default(string), string value = default(string))
+        /// <param name="projectIds">List of projects where parameter should be available.</param>
+        public CreateParameterApiModel(string name = default(string), string value = default(string), List<Guid> projectIds = default(List<Guid>))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -56,6 +57,7 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("value is a required property for CreateParameterApiModel and cannot be null");
             }
             this.Value = value;
+            this.ProjectIds = projectIds;
         }
 
         /// <summary>
@@ -73,6 +75,13 @@ namespace TestIT.ApiClient.Model
         public string Value { get; set; }
 
         /// <summary>
+        /// List of projects where parameter should be available
+        /// </summary>
+        /// <value>List of projects where parameter should be available</value>
+        [DataMember(Name = "projectIds", EmitDefaultValue = true)]
+        public List<Guid> ProjectIds { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -82,6 +91,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("class CreateParameterApiModel {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  ProjectIds: ").Append(ProjectIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

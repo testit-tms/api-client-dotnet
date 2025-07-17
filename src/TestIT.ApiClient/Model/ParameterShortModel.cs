@@ -44,7 +44,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="parameterKeyId">parameterKeyId (required).</param>
         /// <param name="value">Value of the parameter (required).</param>
         /// <param name="name">Key of the parameter (required).</param>
-        public ParameterShortModel(Guid id = default(Guid), Guid parameterKeyId = default(Guid), string value = default(string), string name = default(string))
+        /// <param name="projectIds">projectIds (required).</param>
+        public ParameterShortModel(Guid id = default(Guid), Guid parameterKeyId = default(Guid), string value = default(string), string name = default(string), List<Guid> projectIds = default(List<Guid>))
         {
             this.Id = id;
             this.ParameterKeyId = parameterKeyId;
@@ -60,6 +61,12 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("name is a required property for ParameterShortModel and cannot be null");
             }
             this.Name = name;
+            // to ensure "projectIds" is required (not null)
+            if (projectIds == null)
+            {
+                throw new ArgumentNullException("projectIds is a required property for ParameterShortModel and cannot be null");
+            }
+            this.ProjectIds = projectIds;
         }
 
         /// <summary>
@@ -89,6 +96,12 @@ namespace TestIT.ApiClient.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or Sets ProjectIds
+        /// </summary>
+        [DataMember(Name = "projectIds", IsRequired = true, EmitDefaultValue = true)]
+        public List<Guid> ProjectIds { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -100,6 +113,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ParameterKeyId: ").Append(ParameterKeyId).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  ProjectIds: ").Append(ProjectIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -131,8 +131,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="customAttributeSearchQueryModel"> (optional)</param>
-        /// <returns>List&lt;CustomAttributeModel&gt;</returns>
-        List<CustomAttributeModel> ApiV2CustomAttributesSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeSearchQueryModel customAttributeSearchQueryModel = default(CustomAttributeSearchQueryModel));
+        /// <returns>List&lt;CustomAttributeSearchResponseModel&gt;</returns>
+        List<CustomAttributeSearchResponseModel> ApiV2CustomAttributesSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeSearchQueryModel customAttributeSearchQueryModel = default(CustomAttributeSearchQueryModel));
 
         /// <summary>
         /// Search for attributes
@@ -147,8 +147,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="customAttributeSearchQueryModel"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;CustomAttributeModel&gt;</returns>
-        ApiResponse<List<CustomAttributeModel>> ApiV2CustomAttributesSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeSearchQueryModel customAttributeSearchQueryModel = default(CustomAttributeSearchQueryModel));
+        /// <returns>ApiResponse of List&lt;CustomAttributeSearchResponseModel&gt;</returns>
+        ApiResponse<List<CustomAttributeSearchResponseModel>> ApiV2CustomAttributesSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeSearchQueryModel customAttributeSearchQueryModel = default(CustomAttributeSearchQueryModel));
         #endregion Synchronous Operations
     }
 
@@ -291,8 +291,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="customAttributeSearchQueryModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;CustomAttributeModel&gt;</returns>
-        System.Threading.Tasks.Task<List<CustomAttributeModel>> ApiV2CustomAttributesSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeSearchQueryModel customAttributeSearchQueryModel = default(CustomAttributeSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;CustomAttributeSearchResponseModel&gt;</returns>
+        System.Threading.Tasks.Task<List<CustomAttributeSearchResponseModel>> ApiV2CustomAttributesSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeSearchQueryModel customAttributeSearchQueryModel = default(CustomAttributeSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Search for attributes
@@ -308,8 +308,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="customAttributeSearchQueryModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;CustomAttributeModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<CustomAttributeModel>>> ApiV2CustomAttributesSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeSearchQueryModel customAttributeSearchQueryModel = default(CustomAttributeSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;CustomAttributeSearchResponseModel&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<CustomAttributeSearchResponseModel>>> ApiV2CustomAttributesSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeSearchQueryModel customAttributeSearchQueryModel = default(CustomAttributeSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1144,10 +1144,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="customAttributeSearchQueryModel"> (optional)</param>
-        /// <returns>List&lt;CustomAttributeModel&gt;</returns>
-        public List<CustomAttributeModel> ApiV2CustomAttributesSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeSearchQueryModel customAttributeSearchQueryModel = default(CustomAttributeSearchQueryModel))
+        /// <returns>List&lt;CustomAttributeSearchResponseModel&gt;</returns>
+        public List<CustomAttributeSearchResponseModel> ApiV2CustomAttributesSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeSearchQueryModel customAttributeSearchQueryModel = default(CustomAttributeSearchQueryModel))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeModel>> localVarResponse = ApiV2CustomAttributesSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, customAttributeSearchQueryModel);
+            TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeSearchResponseModel>> localVarResponse = ApiV2CustomAttributesSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, customAttributeSearchQueryModel);
             return localVarResponse.Data;
         }
 
@@ -1161,8 +1161,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="customAttributeSearchQueryModel"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;CustomAttributeModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeModel>> ApiV2CustomAttributesSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeSearchQueryModel customAttributeSearchQueryModel = default(CustomAttributeSearchQueryModel))
+        /// <returns>ApiResponse of List&lt;CustomAttributeSearchResponseModel&gt;</returns>
+        public TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeSearchResponseModel>> ApiV2CustomAttributesSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeSearchQueryModel customAttributeSearchQueryModel = default(CustomAttributeSearchQueryModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1210,7 +1210,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<List<CustomAttributeModel>>("/api/v2/customAttributes/search", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<List<CustomAttributeSearchResponseModel>>("/api/v2/customAttributes/search", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1232,10 +1232,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="customAttributeSearchQueryModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;CustomAttributeModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<CustomAttributeModel>> ApiV2CustomAttributesSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeSearchQueryModel customAttributeSearchQueryModel = default(CustomAttributeSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;CustomAttributeSearchResponseModel&gt;</returns>
+        public async System.Threading.Tasks.Task<List<CustomAttributeSearchResponseModel>> ApiV2CustomAttributesSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeSearchQueryModel customAttributeSearchQueryModel = default(CustomAttributeSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeModel>> localVarResponse = await ApiV2CustomAttributesSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, customAttributeSearchQueryModel, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeSearchResponseModel>> localVarResponse = await ApiV2CustomAttributesSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, customAttributeSearchQueryModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1250,8 +1250,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="customAttributeSearchQueryModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;CustomAttributeModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeModel>>> ApiV2CustomAttributesSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeSearchQueryModel customAttributeSearchQueryModel = default(CustomAttributeSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;CustomAttributeSearchResponseModel&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeSearchResponseModel>>> ApiV2CustomAttributesSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), CustomAttributeSearchQueryModel customAttributeSearchQueryModel = default(CustomAttributeSearchQueryModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1302,7 +1302,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<CustomAttributeModel>>("/api/v2/customAttributes/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<CustomAttributeSearchResponseModel>>("/api/v2/customAttributes/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

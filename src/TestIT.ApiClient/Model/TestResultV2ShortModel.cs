@@ -91,7 +91,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Id
         /// </summary>
         /*
-        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
+        <example>71fc9e23-7df3-46d9-8fb7-9fe0f1bc3b11</example>
         */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
@@ -100,7 +100,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ConfigurationId
         /// </summary>
         /*
-        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
+        <example>71fc9e23-7df3-46d9-8fb7-9fe0f1bc3b11</example>
         */
         [DataMember(Name = "configurationId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ConfigurationId { get; set; }
@@ -109,7 +109,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets WorkItemVersionId
         /// </summary>
         /*
-        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
+        <example>71fc9e23-7df3-46d9-8fb7-9fe0f1bc3b11</example>
         */
         [DataMember(Name = "workItemVersionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid WorkItemVersionId { get; set; }
@@ -118,7 +118,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets AutoTestId
         /// </summary>
         /*
-        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
+        <example>71fc9e23-7df3-46d9-8fb7-9fe0f1bc3b11</example>
         */
         [DataMember(Name = "autoTestId", EmitDefaultValue = true)]
         public Guid? AutoTestId { get; set; }
@@ -127,7 +127,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Message
         /// </summary>
         /*
-        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
+        <example>71fc9e23-7df3-46d9-8fb7-9fe0f1bc3b11</example>
         */
         [DataMember(Name = "message", EmitDefaultValue = true)]
         public string Message { get; set; }
@@ -145,7 +145,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets StartedOn
         /// </summary>
         /*
-        <example>2025-06-06T07:34:33.374853800Z</example>
+        <example>2025-07-02T01:21:48.400744200Z</example>
         */
         [DataMember(Name = "startedOn", EmitDefaultValue = true)]
         public DateTime? StartedOn { get; set; }
@@ -154,7 +154,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CompletedOn
         /// </summary>
         /*
-        <example>2025-06-06T07:34:33.374853800Z</example>
+        <example>2025-07-02T01:21:48.400744200Z</example>
         */
         [DataMember(Name = "completedOn", EmitDefaultValue = true)]
         public DateTime? CompletedOn { get; set; }
@@ -163,7 +163,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets RunByUserId
         /// </summary>
         /*
-        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
+        <example>71fc9e23-7df3-46d9-8fb7-9fe0f1bc3b11</example>
         */
         [DataMember(Name = "runByUserId", EmitDefaultValue = true)]
         public Guid? RunByUserId { get; set; }
@@ -172,7 +172,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets StoppedByUserId
         /// </summary>
         /*
-        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
+        <example>71fc9e23-7df3-46d9-8fb7-9fe0f1bc3b11</example>
         */
         [DataMember(Name = "stoppedByUserId", EmitDefaultValue = true)]
         public Guid? StoppedByUserId { get; set; }
@@ -181,7 +181,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets TestPointId
         /// </summary>
         /*
-        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
+        <example>71fc9e23-7df3-46d9-8fb7-9fe0f1bc3b11</example>
         */
         [DataMember(Name = "testPointId", EmitDefaultValue = true)]
         public Guid? TestPointId { get; set; }
@@ -196,7 +196,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets TestRunId
         /// </summary>
         /*
-        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
+        <example>71fc9e23-7df3-46d9-8fb7-9fe0f1bc3b11</example>
         */
         [DataMember(Name = "testRunId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestRunId { get; set; }

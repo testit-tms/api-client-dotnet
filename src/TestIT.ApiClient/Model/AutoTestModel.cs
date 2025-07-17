@@ -53,7 +53,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="lastTestResultId">Unique ID of the autotest last test result.</param>
         /// <param name="lastTestResultConfiguration">Configuration of the autotest last test result.</param>
         /// <param name="lastTestResultOutcome">Outcome of the autotest last test result.</param>
-        /// <param name="lastTestResultStatus">Status of the autotest last test result (required).</param>
+        /// <param name="lastTestResultStatus">Status of the autotest last test result.</param>
         /// <param name="stabilityPercentage">Stability percentage of the autotest.</param>
         /// <param name="externalId">External ID of the autotest (required).</param>
         /// <param name="links">Collection of the autotest links.</param>
@@ -77,7 +77,6 @@ namespace TestIT.ApiClient.Model
             this.Id = id;
             this.CreatedDate = createdDate;
             this.CreatedById = createdById;
-            this.LastTestResultStatus = lastTestResultStatus;
             // to ensure "externalId" is required (not null)
             if (externalId == null)
             {
@@ -98,6 +97,7 @@ namespace TestIT.ApiClient.Model
             this.LastTestResultId = lastTestResultId;
             this.LastTestResultConfiguration = lastTestResultConfiguration;
             this.LastTestResultOutcome = lastTestResultOutcome;
+            this.LastTestResultStatus = lastTestResultStatus;
             this.StabilityPercentage = stabilityPercentage;
             this.Links = links;
             this.Namespace = varNamespace;

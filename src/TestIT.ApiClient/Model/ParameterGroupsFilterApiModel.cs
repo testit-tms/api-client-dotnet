@@ -38,11 +38,13 @@ namespace TestIT.ApiClient.Model
         /// <param name="parameterKeyIds">parameterKeyIds.</param>
         /// <param name="name">name.</param>
         /// <param name="isDeleted">isDeleted.</param>
-        public ParameterGroupsFilterApiModel(List<Guid> parameterKeyIds = default(List<Guid>), string name = default(string), bool? isDeleted = default(bool?))
+        /// <param name="projectIds">projectIds.</param>
+        public ParameterGroupsFilterApiModel(List<Guid> parameterKeyIds = default(List<Guid>), string name = default(string), bool? isDeleted = default(bool?), List<Guid> projectIds = default(List<Guid>))
         {
             this.ParameterKeyIds = parameterKeyIds;
             this.Name = name;
             this.IsDeleted = isDeleted;
+            this.ProjectIds = projectIds;
         }
 
         /// <summary>
@@ -64,6 +66,12 @@ namespace TestIT.ApiClient.Model
         public bool? IsDeleted { get; set; }
 
         /// <summary>
+        /// Gets or Sets ProjectIds
+        /// </summary>
+        [DataMember(Name = "projectIds", EmitDefaultValue = true)]
+        public List<Guid> ProjectIds { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -74,6 +82,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ParameterKeyIds: ").Append(ParameterKeyIds).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
+            sb.Append("  ProjectIds: ").Append(ProjectIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
