@@ -43,7 +43,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="parameterKeyId">parameterKeyId (required).</param>
         /// <param name="name">name (required).</param>
         /// <param name="values">values (required).</param>
-        public ParameterGroupApiResult(Guid parameterKeyId = default(Guid), string name = default(string), Dictionary<string, string> values = default(Dictionary<string, string>))
+        /// <param name="projectIds">projectIds (required).</param>
+        public ParameterGroupApiResult(Guid parameterKeyId = default(Guid), string name = default(string), Dictionary<string, string> values = default(Dictionary<string, string>), List<Guid> projectIds = default(List<Guid>))
         {
             this.ParameterKeyId = parameterKeyId;
             // to ensure "name" is required (not null)
@@ -58,6 +59,12 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("values is a required property for ParameterGroupApiResult and cannot be null");
             }
             this.Values = values;
+            // to ensure "projectIds" is required (not null)
+            if (projectIds == null)
+            {
+                throw new ArgumentNullException("projectIds is a required property for ParameterGroupApiResult and cannot be null");
+            }
+            this.ProjectIds = projectIds;
         }
 
         /// <summary>
@@ -79,6 +86,12 @@ namespace TestIT.ApiClient.Model
         public Dictionary<string, string> Values { get; set; }
 
         /// <summary>
+        /// Gets or Sets ProjectIds
+        /// </summary>
+        [DataMember(Name = "projectIds", IsRequired = true, EmitDefaultValue = true)]
+        public List<Guid> ProjectIds { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -89,6 +102,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ParameterKeyId: ").Append(ParameterKeyId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Values: ").Append(Values).Append("\n");
+            sb.Append("  ProjectIds: ").Append(ProjectIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

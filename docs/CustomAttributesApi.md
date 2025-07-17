@@ -531,7 +531,7 @@ catch (ApiException e)
 
 <a id="apiv2customattributessearchpost"></a>
 # **ApiV2CustomAttributesSearchPost**
-> List&lt;CustomAttributeModel&gt; ApiV2CustomAttributesSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, CustomAttributeSearchQueryModel customAttributeSearchQueryModel = null)
+> List&lt;CustomAttributeSearchResponseModel&gt; ApiV2CustomAttributesSearchPost (int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, CustomAttributeSearchQueryModel customAttributeSearchQueryModel = null)
 
 Search for attributes
 
@@ -571,7 +571,7 @@ namespace Example
             try
             {
                 // Search for attributes
-                List<CustomAttributeModel> result = apiInstance.ApiV2CustomAttributesSearchPost(skip, take, orderBy, searchField, searchValue, customAttributeSearchQueryModel);
+                List<CustomAttributeSearchResponseModel> result = apiInstance.ApiV2CustomAttributesSearchPost(skip, take, orderBy, searchField, searchValue, customAttributeSearchQueryModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -592,7 +592,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for attributes
-    ApiResponse<List<CustomAttributeModel>> response = apiInstance.ApiV2CustomAttributesSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, customAttributeSearchQueryModel);
+    ApiResponse<List<CustomAttributeSearchResponseModel>> response = apiInstance.ApiV2CustomAttributesSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, customAttributeSearchQueryModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -618,7 +618,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;CustomAttributeModel&gt;**](CustomAttributeModel.md)
+[**List&lt;CustomAttributeSearchResponseModel&gt;**](CustomAttributeSearchResponseModel.md)
 
 ### Authorization
 

@@ -43,7 +43,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="id">ID&#39;s of the parameter (required).</param>
         /// <param name="name">Key of the parameter (required).</param>
         /// <param name="value">Value of the parameter (required).</param>
-        public UpdateParameterApiModel(Guid id = default(Guid), string name = default(string), string value = default(string))
+        /// <param name="projectIds">List of projects where parameter should be available.</param>
+        public UpdateParameterApiModel(Guid id = default(Guid), string name = default(string), string value = default(string), List<Guid> projectIds = default(List<Guid>))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -58,6 +59,7 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("value is a required property for UpdateParameterApiModel and cannot be null");
             }
             this.Value = value;
+            this.ProjectIds = projectIds;
         }
 
         /// <summary>
@@ -82,6 +84,13 @@ namespace TestIT.ApiClient.Model
         public string Value { get; set; }
 
         /// <summary>
+        /// List of projects where parameter should be available
+        /// </summary>
+        /// <value>List of projects where parameter should be available</value>
+        [DataMember(Name = "projectIds", EmitDefaultValue = true)]
+        public List<Guid> ProjectIds { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -92,6 +101,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  ProjectIds: ").Append(ProjectIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -79,13 +79,14 @@ namespace TestIT.ApiClient.Api
         /// <param name="parameterKeyIds"> (optional)</param>
         /// <param name="name"> (optional)</param>
         /// <param name="isDeleted"> (optional)</param>
+        /// <param name="projectIds"> (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>List&lt;ParameterGroupApiResult&gt;</returns>
-        List<ParameterGroupApiResult> ApiV2ParametersGroupsGet(List<Guid> parameterKeyIds = default(List<Guid>), string name = default(string), bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
+        List<ParameterGroupApiResult> ApiV2ParametersGroupsGet(List<Guid> parameterKeyIds = default(List<Guid>), string name = default(string), bool? isDeleted = default(bool?), List<Guid> projectIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
 
         /// <summary>
         /// Get parameters as group
@@ -97,13 +98,14 @@ namespace TestIT.ApiClient.Api
         /// <param name="parameterKeyIds"> (optional)</param>
         /// <param name="name"> (optional)</param>
         /// <param name="isDeleted"> (optional)</param>
+        /// <param name="projectIds"> (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>ApiResponse of List&lt;ParameterGroupApiResult&gt;</returns>
-        ApiResponse<List<ParameterGroupApiResult>> ApiV2ParametersGroupsGetWithHttpInfo(List<Guid> parameterKeyIds = default(List<Guid>), string name = default(string), bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
+        ApiResponse<List<ParameterGroupApiResult>> ApiV2ParametersGroupsGetWithHttpInfo(List<Guid> parameterKeyIds = default(List<Guid>), string name = default(string), bool? isDeleted = default(bool?), List<Guid> projectIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
         /// <summary>
         /// Check existence parameter key in system
         /// </summary>
@@ -153,8 +155,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case  User runs method execution  System search all parameter keys  System returns parameter keys
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectIds"> (optional)</param>
         /// <returns>List&lt;string&gt;</returns>
-        List<string> ApiV2ParametersKeysGet();
+        List<string> ApiV2ParametersKeysGet(List<Guid> projectIds = default(List<Guid>));
 
         /// <summary>
         /// Get all parameter keys
@@ -163,8 +166,9 @@ namespace TestIT.ApiClient.Api
         ///  Use case  User runs method execution  System search all parameter keys  System returns parameter keys
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectIds"> (optional)</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        ApiResponse<List<string>> ApiV2ParametersKeysGetWithHttpInfo();
+        ApiResponse<List<string>> ApiV2ParametersKeysGetWithHttpInfo(List<Guid> projectIds = default(List<Guid>));
         /// <summary>
         /// Search for parameters as group
         /// </summary>
@@ -443,6 +447,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="parameterKeyIds"> (optional)</param>
         /// <param name="name"> (optional)</param>
         /// <param name="isDeleted"> (optional)</param>
+        /// <param name="projectIds"> (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -450,7 +455,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ParameterGroupApiResult&gt;</returns>
-        System.Threading.Tasks.Task<List<ParameterGroupApiResult>> ApiV2ParametersGroupsGetAsync(List<Guid> parameterKeyIds = default(List<Guid>), string name = default(string), bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ParameterGroupApiResult>> ApiV2ParametersGroupsGetAsync(List<Guid> parameterKeyIds = default(List<Guid>), string name = default(string), bool? isDeleted = default(bool?), List<Guid> projectIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get parameters as group
@@ -462,6 +467,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="parameterKeyIds"> (optional)</param>
         /// <param name="name"> (optional)</param>
         /// <param name="isDeleted"> (optional)</param>
+        /// <param name="projectIds"> (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -469,7 +475,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ParameterGroupApiResult&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ParameterGroupApiResult>>> ApiV2ParametersGroupsGetWithHttpInfoAsync(List<Guid> parameterKeyIds = default(List<Guid>), string name = default(string), bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ParameterGroupApiResult>>> ApiV2ParametersGroupsGetWithHttpInfoAsync(List<Guid> parameterKeyIds = default(List<Guid>), string name = default(string), bool? isDeleted = default(bool?), List<Guid> projectIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Check existence parameter key in system
         /// </summary>
@@ -523,9 +529,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case  User runs method execution  System search all parameter keys  System returns parameter keys
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectIds"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        System.Threading.Tasks.Task<List<string>> ApiV2ParametersKeysGetAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<string>> ApiV2ParametersKeysGetAsync(List<Guid> projectIds = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get all parameter keys
@@ -534,9 +541,10 @@ namespace TestIT.ApiClient.Api
         ///  Use case  User runs method execution  System search all parameter keys  System returns parameter keys
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectIds"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<string>>> ApiV2ParametersKeysGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<string>>> ApiV2ParametersKeysGetWithHttpInfoAsync(List<Guid> projectIds = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Search for parameters as group
         /// </summary>
@@ -1230,15 +1238,16 @@ namespace TestIT.ApiClient.Api
         /// <param name="parameterKeyIds"> (optional)</param>
         /// <param name="name"> (optional)</param>
         /// <param name="isDeleted"> (optional)</param>
+        /// <param name="projectIds"> (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>List&lt;ParameterGroupApiResult&gt;</returns>
-        public List<ParameterGroupApiResult> ApiV2ParametersGroupsGet(List<Guid> parameterKeyIds = default(List<Guid>), string name = default(string), bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
+        public List<ParameterGroupApiResult> ApiV2ParametersGroupsGet(List<Guid> parameterKeyIds = default(List<Guid>), string name = default(string), bool? isDeleted = default(bool?), List<Guid> projectIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<ParameterGroupApiResult>> localVarResponse = ApiV2ParametersGroupsGetWithHttpInfo(parameterKeyIds, name, isDeleted, skip, take, orderBy, searchField, searchValue);
+            TestIT.ApiClient.Client.ApiResponse<List<ParameterGroupApiResult>> localVarResponse = ApiV2ParametersGroupsGetWithHttpInfo(parameterKeyIds, name, isDeleted, projectIds, skip, take, orderBy, searchField, searchValue);
             return localVarResponse.Data;
         }
 
@@ -1249,13 +1258,14 @@ namespace TestIT.ApiClient.Api
         /// <param name="parameterKeyIds"> (optional)</param>
         /// <param name="name"> (optional)</param>
         /// <param name="isDeleted"> (optional)</param>
+        /// <param name="projectIds"> (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>ApiResponse of List&lt;ParameterGroupApiResult&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<ParameterGroupApiResult>> ApiV2ParametersGroupsGetWithHttpInfo(List<Guid> parameterKeyIds = default(List<Guid>), string name = default(string), bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
+        public TestIT.ApiClient.Client.ApiResponse<List<ParameterGroupApiResult>> ApiV2ParametersGroupsGetWithHttpInfo(List<Guid> parameterKeyIds = default(List<Guid>), string name = default(string), bool? isDeleted = default(bool?), List<Guid> projectIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1284,6 +1294,10 @@ namespace TestIT.ApiClient.Api
             if (isDeleted != null)
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "isDeleted", isDeleted));
+            }
+            if (projectIds != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("multi", "projectIds", projectIds));
             }
             if (skip != null)
             {
@@ -1331,6 +1345,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="parameterKeyIds"> (optional)</param>
         /// <param name="name"> (optional)</param>
         /// <param name="isDeleted"> (optional)</param>
+        /// <param name="projectIds"> (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -1338,9 +1353,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ParameterGroupApiResult&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ParameterGroupApiResult>> ApiV2ParametersGroupsGetAsync(List<Guid> parameterKeyIds = default(List<Guid>), string name = default(string), bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ParameterGroupApiResult>> ApiV2ParametersGroupsGetAsync(List<Guid> parameterKeyIds = default(List<Guid>), string name = default(string), bool? isDeleted = default(bool?), List<Guid> projectIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<ParameterGroupApiResult>> localVarResponse = await ApiV2ParametersGroupsGetWithHttpInfoAsync(parameterKeyIds, name, isDeleted, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<ParameterGroupApiResult>> localVarResponse = await ApiV2ParametersGroupsGetWithHttpInfoAsync(parameterKeyIds, name, isDeleted, projectIds, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1351,6 +1366,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="parameterKeyIds"> (optional)</param>
         /// <param name="name"> (optional)</param>
         /// <param name="isDeleted"> (optional)</param>
+        /// <param name="projectIds"> (optional)</param>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
         /// <param name="take">Amount of items to be taken (limit) (optional)</param>
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
@@ -1358,7 +1374,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ParameterGroupApiResult&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ParameterGroupApiResult>>> ApiV2ParametersGroupsGetWithHttpInfoAsync(List<Guid> parameterKeyIds = default(List<Guid>), string name = default(string), bool? isDeleted = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ParameterGroupApiResult>>> ApiV2ParametersGroupsGetWithHttpInfoAsync(List<Guid> parameterKeyIds = default(List<Guid>), string name = default(string), bool? isDeleted = default(bool?), List<Guid> projectIds = default(List<Guid>), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1389,6 +1405,10 @@ namespace TestIT.ApiClient.Api
             if (isDeleted != null)
             {
                 localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "isDeleted", isDeleted));
+            }
+            if (projectIds != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("multi", "projectIds", projectIds));
             }
             if (skip != null)
             {
@@ -1684,10 +1704,11 @@ namespace TestIT.ApiClient.Api
         /// Get all parameter keys  Use case  User runs method execution  System search all parameter keys  System returns parameter keys
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectIds"> (optional)</param>
         /// <returns>List&lt;string&gt;</returns>
-        public List<string> ApiV2ParametersKeysGet()
+        public List<string> ApiV2ParametersKeysGet(List<Guid> projectIds = default(List<Guid>))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<string>> localVarResponse = ApiV2ParametersKeysGetWithHttpInfo();
+            TestIT.ApiClient.Client.ApiResponse<List<string>> localVarResponse = ApiV2ParametersKeysGetWithHttpInfo(projectIds);
             return localVarResponse.Data;
         }
 
@@ -1695,8 +1716,9 @@ namespace TestIT.ApiClient.Api
         /// Get all parameter keys  Use case  User runs method execution  System search all parameter keys  System returns parameter keys
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectIds"> (optional)</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<string>> ApiV2ParametersKeysGetWithHttpInfo()
+        public TestIT.ApiClient.Client.ApiResponse<List<string>> ApiV2ParametersKeysGetWithHttpInfo(List<Guid> projectIds = default(List<Guid>))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1714,6 +1736,10 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
+            if (projectIds != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("multi", "projectIds", projectIds));
+            }
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1737,11 +1763,12 @@ namespace TestIT.ApiClient.Api
         /// Get all parameter keys  Use case  User runs method execution  System search all parameter keys  System returns parameter keys
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectIds"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        public async System.Threading.Tasks.Task<List<string>> ApiV2ParametersKeysGetAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<string>> ApiV2ParametersKeysGetAsync(List<Guid> projectIds = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<string>> localVarResponse = await ApiV2ParametersKeysGetWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<string>> localVarResponse = await ApiV2ParametersKeysGetWithHttpInfoAsync(projectIds, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1749,9 +1776,10 @@ namespace TestIT.ApiClient.Api
         /// Get all parameter keys  Use case  User runs method execution  System search all parameter keys  System returns parameter keys
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectIds"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<string>>> ApiV2ParametersKeysGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<string>>> ApiV2ParametersKeysGetWithHttpInfoAsync(List<Guid> projectIds = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1771,6 +1799,10 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
+            if (projectIds != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("multi", "projectIds", projectIds));
+            }
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))

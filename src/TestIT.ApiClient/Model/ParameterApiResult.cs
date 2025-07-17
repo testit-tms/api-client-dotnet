@@ -49,7 +49,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedDate">modifiedDate.</param>
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="isDeleted">isDeleted (required).</param>
-        public ParameterApiResult(Guid id = default(Guid), Guid parameterKeyId = default(Guid), string name = default(string), string value = default(string), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), bool isDeleted = default(bool))
+        /// <param name="projectIds">projectIds (required).</param>
+        public ParameterApiResult(Guid id = default(Guid), Guid parameterKeyId = default(Guid), string name = default(string), string value = default(string), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), bool isDeleted = default(bool), List<Guid> projectIds = default(List<Guid>))
         {
             this.Id = id;
             this.ParameterKeyId = parameterKeyId;
@@ -68,6 +69,12 @@ namespace TestIT.ApiClient.Model
             this.CreatedDate = createdDate;
             this.CreatedById = createdById;
             this.IsDeleted = isDeleted;
+            // to ensure "projectIds" is required (not null)
+            if (projectIds == null)
+            {
+                throw new ArgumentNullException("projectIds is a required property for ParameterApiResult and cannot be null");
+            }
+            this.ProjectIds = projectIds;
             this.ModifiedDate = modifiedDate;
             this.ModifiedById = modifiedById;
         }
@@ -127,6 +134,12 @@ namespace TestIT.ApiClient.Model
         public bool IsDeleted { get; set; }
 
         /// <summary>
+        /// Gets or Sets ProjectIds
+        /// </summary>
+        [DataMember(Name = "projectIds", IsRequired = true, EmitDefaultValue = true)]
+        public List<Guid> ProjectIds { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -143,6 +156,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
             sb.Append("  ModifiedById: ").Append(ModifiedById).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
+            sb.Append("  ProjectIds: ").Append(ProjectIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

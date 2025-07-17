@@ -78,7 +78,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Name
         /// </summary>
         /*
-        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
+        <example>71fc9e23-7df3-46d9-8fb7-9fe0f1bc3b11</example>
         */
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
@@ -87,7 +87,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ProjectId
         /// </summary>
         /*
-        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
+        <example>71fc9e23-7df3-46d9-8fb7-9fe0f1bc3b11</example>
         */
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
@@ -96,7 +96,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ParentId
         /// </summary>
         /*
-        <example>46d46ea1-c7b0-40a9-884e-43f618d54d44</example>
+        <example>71fc9e23-7df3-46d9-8fb7-9fe0f1bc3b11</example>
         */
         [DataMember(Name = "parentId", EmitDefaultValue = true)]
         public Guid? ParentId { get; set; }

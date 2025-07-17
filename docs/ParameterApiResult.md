@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **ModifiedDate** | **DateTime?** |  | [optional] 
 **ModifiedById** | **Guid?** |  | [optional] 
 **IsDeleted** | **bool** |  | 
+**ProjectIds** | **List&lt;Guid&gt;** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
