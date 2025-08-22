@@ -66,7 +66,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets TestSuiteId
         /// </summary>
         /*
-        <example>b5eaaa61-e35a-4ef5-b1c6-4860cb17ff06</example>
+        <example>d15f0af1-5416-44d9-88eb-9d8535332da1</example>
         */
         [DataMember(Name = "testSuiteId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestSuiteId { get; set; }
