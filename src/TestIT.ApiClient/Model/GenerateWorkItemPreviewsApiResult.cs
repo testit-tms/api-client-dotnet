@@ -41,8 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="GenerateWorkItemPreviewsApiResult" /> class.
         /// </summary>
         /// <param name="previews">previews (required).</param>
-        /// <param name="link">link.</param>
-        public GenerateWorkItemPreviewsApiResult(List<WorkItemPreviewApiModel> previews = default(List<WorkItemPreviewApiModel>), PreviewsIssueLinkApiResult link = default(PreviewsIssueLinkApiResult))
+        public GenerateWorkItemPreviewsApiResult(List<WorkItemPreviewApiModel> previews = default(List<WorkItemPreviewApiModel>))
         {
             // to ensure "previews" is required (not null)
             if (previews == null)
@@ -50,7 +49,6 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("previews is a required property for GenerateWorkItemPreviewsApiResult and cannot be null");
             }
             this.Previews = previews;
-            this.Link = link;
         }
 
         /// <summary>
@@ -58,12 +56,6 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         [DataMember(Name = "previews", IsRequired = true, EmitDefaultValue = true)]
         public List<WorkItemPreviewApiModel> Previews { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Link
-        /// </summary>
-        [DataMember(Name = "link", EmitDefaultValue = true)]
-        public PreviewsIssueLinkApiResult Link { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -74,7 +66,6 @@ namespace TestIT.ApiClient.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class GenerateWorkItemPreviewsApiResult {\n");
             sb.Append("  Previews: ").Append(Previews).Append("\n");
-            sb.Append("  Link: ").Append(Link).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

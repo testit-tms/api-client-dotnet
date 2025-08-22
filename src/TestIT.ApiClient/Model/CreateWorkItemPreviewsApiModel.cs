@@ -43,8 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="sectionId">sectionId (required).</param>
         /// <param name="previews">previews (required).</param>
         /// <param name="attributes">attributes.</param>
-        /// <param name="link">link.</param>
-        public CreateWorkItemPreviewsApiModel(Guid sectionId = default(Guid), List<WorkItemPreviewApiModel> previews = default(List<WorkItemPreviewApiModel>), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), PreviewsIssueLinkApiModel link = default(PreviewsIssueLinkApiModel))
+        public CreateWorkItemPreviewsApiModel(Guid sectionId = default(Guid), List<WorkItemPreviewApiModel> previews = default(List<WorkItemPreviewApiModel>), Dictionary<string, Object> attributes = default(Dictionary<string, Object>))
         {
             this.SectionId = sectionId;
             // to ensure "previews" is required (not null)
@@ -54,7 +53,6 @@ namespace TestIT.ApiClient.Model
             }
             this.Previews = previews;
             this.Attributes = attributes;
-            this.Link = link;
         }
 
         /// <summary>
@@ -76,12 +74,6 @@ namespace TestIT.ApiClient.Model
         public Dictionary<string, Object> Attributes { get; set; }
 
         /// <summary>
-        /// Gets or Sets Link
-        /// </summary>
-        [DataMember(Name = "link", EmitDefaultValue = true)]
-        public PreviewsIssueLinkApiModel Link { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -92,7 +84,6 @@ namespace TestIT.ApiClient.Model
             sb.Append("  SectionId: ").Append(SectionId).Append("\n");
             sb.Append("  Previews: ").Append(Previews).Append("\n");
             sb.Append("  Attributes: ").Append(Attributes).Append("\n");
-            sb.Append("  Link: ").Append(Link).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
