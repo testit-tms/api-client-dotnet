@@ -27,61 +27,45 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// FailureClassRegexModel
+    /// UpdateFailureClassRegexApiModel
     /// </summary>
-    [DataContract(Name = "FailureClassRegexModel")]
-    public partial class FailureClassRegexModel : IValidatableObject
+    [DataContract(Name = "UpdateFailureClassRegexApiModel")]
+    public partial class UpdateFailureClassRegexApiModel : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="FailureClassRegexModel" /> class.
+        /// Initializes a new instance of the <see cref="UpdateFailureClassRegexApiModel" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected FailureClassRegexModel() { }
+        protected UpdateFailureClassRegexApiModel() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="FailureClassRegexModel" /> class.
+        /// Initializes a new instance of the <see cref="UpdateFailureClassRegexApiModel" /> class.
         /// </summary>
-        /// <param name="regexText">regexText (required).</param>
-        /// <param name="failureClassId">failureClassId.</param>
-        /// <param name="id">Unique ID of the entity (required).</param>
-        /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
-        public FailureClassRegexModel(string regexText = default(string), Guid? failureClassId = default(Guid?), Guid id = default(Guid), bool isDeleted = default(bool))
+        /// <param name="id">Regex unique identifier (required).</param>
+        /// <param name="regexText">Regex value (required).</param>
+        public UpdateFailureClassRegexApiModel(Guid id = default(Guid), string regexText = default(string))
         {
+            this.Id = id;
             // to ensure "regexText" is required (not null)
             if (regexText == null)
             {
-                throw new ArgumentNullException("regexText is a required property for FailureClassRegexModel and cannot be null");
+                throw new ArgumentNullException("regexText is a required property for UpdateFailureClassRegexApiModel and cannot be null");
             }
             this.RegexText = regexText;
-            this.Id = id;
-            this.IsDeleted = isDeleted;
-            this.FailureClassId = failureClassId;
         }
 
         /// <summary>
-        /// Gets or Sets RegexText
+        /// Regex unique identifier
         /// </summary>
-        [DataMember(Name = "regexText", IsRequired = true, EmitDefaultValue = true)]
-        public string RegexText { get; set; }
-
-        /// <summary>
-        /// Gets or Sets FailureClassId
-        /// </summary>
-        [DataMember(Name = "failureClassId", EmitDefaultValue = true)]
-        public Guid? FailureClassId { get; set; }
-
-        /// <summary>
-        /// Unique ID of the entity
-        /// </summary>
-        /// <value>Unique ID of the entity</value>
+        /// <value>Regex unique identifier</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Indicates if the entity is deleted
+        /// Regex value
         /// </summary>
-        /// <value>Indicates if the entity is deleted</value>
-        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
-        public bool IsDeleted { get; set; }
+        /// <value>Regex value</value>
+        [DataMember(Name = "regexText", IsRequired = true, EmitDefaultValue = true)]
+        public string RegexText { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -90,11 +74,9 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class FailureClassRegexModel {\n");
-            sb.Append("  RegexText: ").Append(RegexText).Append("\n");
-            sb.Append("  FailureClassId: ").Append(FailureClassId).Append("\n");
+            sb.Append("class UpdateFailureClassRegexApiModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
+            sb.Append("  RegexText: ").Append(RegexText).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,6 +97,12 @@ namespace TestIT.ApiClient.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // RegexText (string) minLength
+            if (this.RegexText != null && this.RegexText.Length < 1)
+            {
+                yield return new ValidationResult("Invalid value for RegexText, length must be greater than 1.", new [] { "RegexText" });
+            }
+
             yield break;
         }
     }

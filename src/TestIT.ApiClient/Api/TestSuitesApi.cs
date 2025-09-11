@@ -236,8 +236,8 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
-        /// <returns>TestSuiteV2GetModel</returns>
-        TestSuiteV2GetModel GetTestSuiteById(Guid id);
+        /// <returns>TestSuiteApiResult</returns>
+        TestSuiteApiResult GetTestSuiteById(Guid id);
 
         /// <summary>
         /// Get TestSuite by Id
@@ -247,8 +247,8 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
-        /// <returns>ApiResponse of TestSuiteV2GetModel</returns>
-        ApiResponse<TestSuiteV2GetModel> GetTestSuiteByIdWithHttpInfo(Guid id);
+        /// <returns>ApiResponse of TestSuiteApiResult</returns>
+        ApiResponse<TestSuiteApiResult> GetTestSuiteByIdWithHttpInfo(Guid id);
         /// <summary>
         /// Search WorkItems
         /// </summary>
@@ -561,8 +561,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TestSuiteV2GetModel</returns>
-        System.Threading.Tasks.Task<TestSuiteV2GetModel> GetTestSuiteByIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of TestSuiteApiResult</returns>
+        System.Threading.Tasks.Task<TestSuiteApiResult> GetTestSuiteByIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get TestSuite by Id
@@ -573,8 +573,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TestSuiteV2GetModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TestSuiteV2GetModel>> GetTestSuiteByIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (TestSuiteApiResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TestSuiteApiResult>> GetTestSuiteByIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Search WorkItems
         /// </summary>
@@ -2041,10 +2041,10 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
-        /// <returns>TestSuiteV2GetModel</returns>
-        public TestSuiteV2GetModel GetTestSuiteById(Guid id)
+        /// <returns>TestSuiteApiResult</returns>
+        public TestSuiteApiResult GetTestSuiteById(Guid id)
         {
-            TestIT.ApiClient.Client.ApiResponse<TestSuiteV2GetModel> localVarResponse = GetTestSuiteByIdWithHttpInfo(id);
+            TestIT.ApiClient.Client.ApiResponse<TestSuiteApiResult> localVarResponse = GetTestSuiteByIdWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -2053,8 +2053,8 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
-        /// <returns>ApiResponse of TestSuiteV2GetModel</returns>
-        public TestIT.ApiClient.Client.ApiResponse<TestSuiteV2GetModel> GetTestSuiteByIdWithHttpInfo(Guid id)
+        /// <returns>ApiResponse of TestSuiteApiResult</returns>
+        public TestIT.ApiClient.Client.ApiResponse<TestSuiteApiResult> GetTestSuiteByIdWithHttpInfo(Guid id)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -2081,7 +2081,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<TestSuiteV2GetModel>("/api/v2/testSuites/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<TestSuiteApiResult>("/api/v2/testSuites/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2098,10 +2098,10 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TestSuiteV2GetModel</returns>
-        public async System.Threading.Tasks.Task<TestSuiteV2GetModel> GetTestSuiteByIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of TestSuiteApiResult</returns>
+        public async System.Threading.Tasks.Task<TestSuiteApiResult> GetTestSuiteByIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<TestSuiteV2GetModel> localVarResponse = await GetTestSuiteByIdWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<TestSuiteApiResult> localVarResponse = await GetTestSuiteByIdWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2111,8 +2111,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test suite internal (guid format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TestSuiteV2GetModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TestSuiteV2GetModel>> GetTestSuiteByIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (TestSuiteApiResult)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TestSuiteApiResult>> GetTestSuiteByIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2142,7 +2142,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<TestSuiteV2GetModel>("/api/v2/testSuites/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TestSuiteApiResult>("/api/v2/testSuites/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

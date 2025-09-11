@@ -1,18 +1,19 @@
-# TestIT.ApiClient.Model.FailureClassModel
+# TestIT.ApiClient.Model.AutotestResultReasonShortGetModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**IsDeleted** | **bool** |  | 
+**FailureCategory** | **AvailableFailureCategory** |  | 
+**FailureCategoryId** | **int** |  | 
 **Name** | **string** |  | [optional] 
-**FailureCategory** | **FailureCategoryModel** |  | 
+**RegexCount** | **int** |  | 
+**Id** | **Guid** |  | 
 **CreatedDate** | **DateTime** |  | 
-**ModifiedDate** | **DateTime?** |  | [optional] 
 **CreatedById** | **Guid** |  | 
+**ModifiedDate** | **DateTime?** |  | [optional] 
 **ModifiedById** | **Guid?** |  | [optional] 
-**FailureClassRegexes** | [**List&lt;FailureClassRegexModel&gt;**](FailureClassRegexModel.md) |  | [optional] 
-**Id** | **Guid** | Unique ID of the entity | 
-**IsDeleted** | **bool** | Indicates if the entity is deleted | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

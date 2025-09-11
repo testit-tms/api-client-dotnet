@@ -464,7 +464,7 @@ namespace TestIT.ApiClient.Api
         /// Get last modification date of test plan&#39;s test results
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test plan unique or global ID</param>
+        /// <param name="id"></param>
         /// <returns></returns>
         void ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet(string id);
 
@@ -475,7 +475,7 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test plan unique or global ID</param>
+        /// <param name="id"></param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfo(string id);
         /// <summary>
@@ -635,8 +635,8 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int format) identifier</param>
-        /// <returns>List&lt;TestSuiteV2TreeModel&gt;</returns>
-        List<TestSuiteV2TreeModel> GetTestSuitesById(string id);
+        /// <returns>List&lt;TestSuiteHierarchyApiResult&gt;</returns>
+        List<TestSuiteHierarchyApiResult> GetTestSuitesById(string id);
 
         /// <summary>
         /// Get TestSuites Tree By Id
@@ -646,8 +646,8 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int format) identifier</param>
-        /// <returns>ApiResponse of List&lt;TestSuiteV2TreeModel&gt;</returns>
-        ApiResponse<List<TestSuiteV2TreeModel>> GetTestSuitesByIdWithHttpInfo(string id);
+        /// <returns>ApiResponse of List&lt;TestSuiteHierarchyApiResult&gt;</returns>
+        ApiResponse<List<TestSuiteHierarchyApiResult>> GetTestSuitesByIdWithHttpInfo(string id);
         /// <summary>
         /// Pause TestPlan
         /// </summary>
@@ -1245,7 +1245,7 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test plan unique or global ID</param>
+        /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -1257,7 +1257,7 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test plan unique or global ID</param>
+        /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -1433,8 +1433,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int format) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;TestSuiteV2TreeModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TestSuiteV2TreeModel>> GetTestSuitesByIdAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;TestSuiteHierarchyApiResult&gt;</returns>
+        System.Threading.Tasks.Task<List<TestSuiteHierarchyApiResult>> GetTestSuitesByIdAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get TestSuites Tree By Id
@@ -1445,8 +1445,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int format) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;TestSuiteV2TreeModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestSuiteV2TreeModel>>> GetTestSuitesByIdWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;TestSuiteHierarchyApiResult&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<TestSuiteHierarchyApiResult>>> GetTestSuitesByIdWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Pause TestPlan
         /// </summary>
@@ -4366,7 +4366,7 @@ namespace TestIT.ApiClient.Api
         /// Get last modification date of test plan&#39;s test results 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test plan unique or global ID</param>
+        /// <param name="id"></param>
         /// <returns></returns>
         public void ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet(string id)
         {
@@ -4377,7 +4377,7 @@ namespace TestIT.ApiClient.Api
         /// Get last modification date of test plan&#39;s test results 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test plan unique or global ID</param>
+        /// <param name="id"></param>
         /// <returns>ApiResponse of Object(void)</returns>
         public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfo(string id)
         {
@@ -4425,7 +4425,7 @@ namespace TestIT.ApiClient.Api
         /// Get last modification date of test plan&#39;s test results 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test plan unique or global ID</param>
+        /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
@@ -4437,7 +4437,7 @@ namespace TestIT.ApiClient.Api
         /// Get last modification date of test plan&#39;s test results 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Test plan unique or global ID</param>
+        /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
@@ -5359,10 +5359,10 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int format) identifier</param>
-        /// <returns>List&lt;TestSuiteV2TreeModel&gt;</returns>
-        public List<TestSuiteV2TreeModel> GetTestSuitesById(string id)
+        /// <returns>List&lt;TestSuiteHierarchyApiResult&gt;</returns>
+        public List<TestSuiteHierarchyApiResult> GetTestSuitesById(string id)
         {
-            TestIT.ApiClient.Client.ApiResponse<List<TestSuiteV2TreeModel>> localVarResponse = GetTestSuitesByIdWithHttpInfo(id);
+            TestIT.ApiClient.Client.ApiResponse<List<TestSuiteHierarchyApiResult>> localVarResponse = GetTestSuitesByIdWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -5371,8 +5371,8 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int format) identifier</param>
-        /// <returns>ApiResponse of List&lt;TestSuiteV2TreeModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<TestSuiteV2TreeModel>> GetTestSuitesByIdWithHttpInfo(string id)
+        /// <returns>ApiResponse of List&lt;TestSuiteHierarchyApiResult&gt;</returns>
+        public TestIT.ApiClient.Client.ApiResponse<List<TestSuiteHierarchyApiResult>> GetTestSuitesByIdWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -5403,7 +5403,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<TestSuiteV2TreeModel>>("/api/v2/testPlans/{id}/testSuites", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<TestSuiteHierarchyApiResult>>("/api/v2/testPlans/{id}/testSuites", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -5420,10 +5420,10 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int format) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;TestSuiteV2TreeModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestSuiteV2TreeModel>> GetTestSuitesByIdAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;TestSuiteHierarchyApiResult&gt;</returns>
+        public async System.Threading.Tasks.Task<List<TestSuiteHierarchyApiResult>> GetTestSuitesByIdAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<TestSuiteV2TreeModel>> localVarResponse = await GetTestSuitesByIdWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<TestSuiteHierarchyApiResult>> localVarResponse = await GetTestSuitesByIdWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -5433,8 +5433,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test plan internal (guid format) or global (int format) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;TestSuiteV2TreeModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestSuiteV2TreeModel>>> GetTestSuitesByIdWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;TestSuiteHierarchyApiResult&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestSuiteHierarchyApiResult>>> GetTestSuitesByIdWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -5468,7 +5468,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<TestSuiteV2TreeModel>>("/api/v2/testPlans/{id}/testSuites", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<TestSuiteHierarchyApiResult>>("/api/v2/testPlans/{id}/testSuites", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

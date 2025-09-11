@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **WorkItemIdsForLinkWithAutoTest** | **List&lt;Guid&gt;** | Specifies the IDs of work items to link your autotest to. You can specify several IDs. | [optional] 
+**WorkItemIds** | **List&lt;Guid&gt;** | Specifies the IDs of work items to link your autotest to. You can specify several IDs. | [optional] 
 **ShouldCreateWorkItem** | **bool?** | Creates a test case linked to the autotest. | [optional] 
 **Attributes** | **Dictionary&lt;string, Object&gt;** | Key value pair of custom work item attributes | [optional] 
 **ExternalId** | **string** | External ID of the autotest | 

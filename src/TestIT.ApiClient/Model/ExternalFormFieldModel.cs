@@ -54,7 +54,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="isRequired">isRequired.</param>
         /// <param name="min">min.</param>
         /// <param name="max">max.</param>
-        public ExternalFormFieldModel(string fieldId = default(string), string fieldName = default(string), string helpText = default(string), string type = default(string), string arrayValuesType = default(string), Object defaultValue = default(Object), bool isCustomValueAllowed = default(bool), string autoCompleteUrl = default(string), string controlType = default(string), int? minLength = default(int?), int? maxLength = default(int?), bool? isRequired = default(bool?), Object min = default(Object), Object max = default(Object))
+        public ExternalFormFieldModel(string fieldId = default(string), string fieldName = default(string), string helpText = default(string), string type = default(string), string arrayValuesType = default(string), Object defaultValue = default(Object), bool isCustomValueAllowed = default(bool), string autoCompleteUrl = default(string), string controlType = default(string), double? minLength = default(double?), double? maxLength = default(double?), bool? isRequired = default(bool?), Object min = default(Object), Object max = default(Object))
         {
             this.IsCustomValueAllowed = isCustomValueAllowed;
             this.FieldId = fieldId;
@@ -130,13 +130,13 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets MinLength
         /// </summary>
         [DataMember(Name = "minLength", EmitDefaultValue = true)]
-        public int? MinLength { get; set; }
+        public double? MinLength { get; set; }
 
         /// <summary>
         /// Gets or Sets MaxLength
         /// </summary>
         [DataMember(Name = "maxLength", EmitDefaultValue = true)]
-        public int? MaxLength { get; set; }
+        public double? MaxLength { get; set; }
 
         /// <summary>
         /// Gets or Sets IsRequired

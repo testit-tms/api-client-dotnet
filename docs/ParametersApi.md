@@ -564,7 +564,7 @@ catch (ApiException e)
 
 <a id="apiv2parameterskeysget"></a>
 # **ApiV2ParametersKeysGet**
-> List&lt;string&gt; ApiV2ParametersKeysGet (List<Guid> projectIds = null)
+> List&lt;string&gt; ApiV2ParametersKeysGet (List<Guid> projectIds = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
 Get all parameter keys
 
@@ -597,11 +597,16 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ParametersApi(httpClient, config, httpClientHandler);
             var projectIds = new List<Guid>(); // List<Guid> |  (optional) 
+            var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
+            var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
+            var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
+            var searchField = "searchField_example";  // string | Property name for searching (optional) 
+            var searchValue = "searchValue_example";  // string | Value for searching (optional) 
 
             try
             {
                 // Get all parameter keys
-                List<string> result = apiInstance.ApiV2ParametersKeysGet(projectIds);
+                List<string> result = apiInstance.ApiV2ParametersKeysGet(projectIds, skip, take, orderBy, searchField, searchValue);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -622,7 +627,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get all parameter keys
-    ApiResponse<List<string>> response = apiInstance.ApiV2ParametersKeysGetWithHttpInfo(projectIds);
+    ApiResponse<List<string>> response = apiInstance.ApiV2ParametersKeysGetWithHttpInfo(projectIds, skip, take, orderBy, searchField, searchValue);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -640,6 +645,11 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectIds** | [**List&lt;Guid&gt;**](Guid.md) |  | [optional]  |
+| **skip** | **int?** | Amount of items to be skipped (offset) | [optional]  |
+| **take** | **int?** | Amount of items to be taken (limit) | [optional]  |
+| **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
+| **searchField** | **string** | Property name for searching | [optional]  |
+| **searchValue** | **string** | Value for searching | [optional]  |
 
 ### Return type
 
@@ -658,7 +668,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
+| **200** | Successful operation |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |

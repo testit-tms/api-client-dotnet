@@ -42,6 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="id">Used for search autotest. If value is null or equals Guid mask filled with zeros, search will be executed using ExternalId.</param>
         /// <param name="workItemIdsForLinkWithAutoTest">workItemIdsForLinkWithAutoTest.</param>
+        /// <param name="workItemIds">workItemIds.</param>
         /// <param name="externalId">External ID of the autotest (required).</param>
         /// <param name="links">Collection of the autotest links.</param>
         /// <param name="projectId">Unique ID of the autotest project (required).</param>
@@ -56,7 +57,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="labels">Collection of the autotest labels.</param>
         /// <param name="isFlaky">Indicates if the autotest is marked as flaky.</param>
         /// <param name="externalKey">External key of the autotest.</param>
-        public AutoTestPutModel(Guid? id = default(Guid?), List<Guid> workItemIdsForLinkWithAutoTest = default(List<Guid>), string externalId = default(string), List<LinkPutModel> links = default(List<LinkPutModel>), Guid projectId = default(Guid), string name = default(string), string varNamespace = default(string), string classname = default(string), List<AutoTestStepModel> steps = default(List<AutoTestStepModel>), List<AutoTestStepModel> setup = default(List<AutoTestStepModel>), List<AutoTestStepModel> teardown = default(List<AutoTestStepModel>), string title = default(string), string description = default(string), List<LabelPostModel> labels = default(List<LabelPostModel>), bool? isFlaky = default(bool?), string externalKey = default(string))
+        public AutoTestPutModel(Guid? id = default(Guid?), List<Guid> workItemIdsForLinkWithAutoTest = default(List<Guid>), List<Guid> workItemIds = default(List<Guid>), string externalId = default(string), List<LinkPutModel> links = default(List<LinkPutModel>), Guid projectId = default(Guid), string name = default(string), string varNamespace = default(string), string classname = default(string), List<AutoTestStepModel> steps = default(List<AutoTestStepModel>), List<AutoTestStepModel> setup = default(List<AutoTestStepModel>), List<AutoTestStepModel> teardown = default(List<AutoTestStepModel>), string title = default(string), string description = default(string), List<LabelPostModel> labels = default(List<LabelPostModel>), bool? isFlaky = default(bool?), string externalKey = default(string))
         {
             // to ensure "externalId" is required (not null)
             if (externalId == null)
@@ -73,6 +74,7 @@ namespace TestIT.ApiClient.Model
             this.Name = name;
             this.Id = id;
             this.WorkItemIdsForLinkWithAutoTest = workItemIdsForLinkWithAutoTest;
+            this.WorkItemIds = workItemIds;
             this.Links = links;
             this.Namespace = varNamespace;
             this.Classname = classname;
@@ -91,7 +93,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Used for search autotest. If value is null or equals Guid mask filled with zeros, search will be executed using ExternalId</value>
         /*
-        <example>b5eaaa61-e35a-4ef5-b1c6-4860cb17ff06</example>
+        <example>11efe696-4879-4f01-a99f-b7ffaf4885a2</example>
         */
         [DataMember(Name = "id", EmitDefaultValue = true)]
         public Guid? Id { get; set; }
@@ -100,7 +102,14 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets WorkItemIdsForLinkWithAutoTest
         /// </summary>
         [DataMember(Name = "workItemIdsForLinkWithAutoTest", EmitDefaultValue = true)]
+        [Obsolete]
         public List<Guid> WorkItemIdsForLinkWithAutoTest { get; set; }
+
+        /// <summary>
+        /// Gets or Sets WorkItemIds
+        /// </summary>
+        [DataMember(Name = "workItemIds", EmitDefaultValue = true)]
+        public List<Guid> WorkItemIds { get; set; }
 
         /// <summary>
         /// External ID of the autotest
@@ -210,6 +219,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("class AutoTestPutModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  WorkItemIdsForLinkWithAutoTest: ").Append(WorkItemIdsForLinkWithAutoTest).Append("\n");
+            sb.Append("  WorkItemIds: ").Append(WorkItemIds).Append("\n");
             sb.Append("  ExternalId: ").Append(ExternalId).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
