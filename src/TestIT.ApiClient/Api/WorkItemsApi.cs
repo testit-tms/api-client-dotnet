@@ -310,6 +310,24 @@ namespace TestIT.ApiClient.Api
         /// <returns>ApiResponse of WorkItemShortModel</returns>
         ApiResponse<WorkItemShortModel> ApiV2WorkItemsMovePostWithHttpInfo(WorkItemMovePostModel workItemMovePostModel = default(WorkItemMovePostModel));
         /// <summary>
+        /// Creates work item
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createWorkItemApiModel"> (optional)</param>
+        /// <returns>WorkItemApiResult</returns>
+        WorkItemApiResult ApiV2WorkItemsPost(CreateWorkItemApiModel createWorkItemApiModel = default(CreateWorkItemApiModel));
+
+        /// <summary>
+        /// Creates work item
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createWorkItemApiModel"> (optional)</param>
+        /// <returns>ApiResponse of WorkItemApiResult</returns>
+        ApiResponse<WorkItemApiResult> ApiV2WorkItemsPostWithHttpInfo(CreateWorkItemApiModel createWorkItemApiModel = default(CreateWorkItemApiModel));
+        /// <summary>
         /// Search for work items
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
@@ -426,27 +444,6 @@ namespace TestIT.ApiClient.Api
         /// <returns>ApiResponse of List&lt;SharedStepReferenceModel&gt;</returns>
         [Obsolete]
         ApiResponse<List<SharedStepReferenceModel>> ApiV2WorkItemsSharedStepsSharedStepIdReferencesGetWithHttpInfo(Guid sharedStepId);
-        /// <summary>
-        /// Create Test Case, Checklist or Shared Step
-        /// </summary>
-        /// <remarks>
-        ///  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System creates work item by identifier  System returns work item model (listed in response parameters)
-        /// </remarks>
-        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkItemApiModel"> (optional)</param>
-        /// <returns>WorkItemModel</returns>
-        WorkItemModel CreateWorkItem(CreateWorkItemApiModel createWorkItemApiModel = default(CreateWorkItemApiModel));
-
-        /// <summary>
-        /// Create Test Case, Checklist or Shared Step
-        /// </summary>
-        /// <remarks>
-        ///  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System creates work item by identifier  System returns work item model (listed in response parameters)
-        /// </remarks>
-        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkItemApiModel"> (optional)</param>
-        /// <returns>ApiResponse of WorkItemModel</returns>
-        ApiResponse<WorkItemModel> CreateWorkItemWithHttpInfo(CreateWorkItemApiModel createWorkItemApiModel = default(CreateWorkItemApiModel));
         /// <summary>
         /// Delete all links AutoTests from WorkItem by Id or GlobalId
         /// </summary>
@@ -979,6 +976,29 @@ namespace TestIT.ApiClient.Api
         /// <returns>Task of ApiResponse (WorkItemShortModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<WorkItemShortModel>> ApiV2WorkItemsMovePostWithHttpInfoAsync(WorkItemMovePostModel workItemMovePostModel = default(WorkItemMovePostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
+        /// Creates work item
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createWorkItemApiModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WorkItemApiResult</returns>
+        System.Threading.Tasks.Task<WorkItemApiResult> ApiV2WorkItemsPostAsync(CreateWorkItemApiModel createWorkItemApiModel = default(CreateWorkItemApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Creates work item
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createWorkItemApiModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WorkItemApiResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<WorkItemApiResult>> ApiV2WorkItemsPostWithHttpInfoAsync(CreateWorkItemApiModel createWorkItemApiModel = default(CreateWorkItemApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
         /// Search for work items
         /// </summary>
         /// <remarks>
@@ -1106,29 +1126,6 @@ namespace TestIT.ApiClient.Api
         /// <returns>Task of ApiResponse (List&lt;SharedStepReferenceModel&gt;)</returns>
         [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<List<SharedStepReferenceModel>>> ApiV2WorkItemsSharedStepsSharedStepIdReferencesGetWithHttpInfoAsync(Guid sharedStepId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-        /// <summary>
-        /// Create Test Case, Checklist or Shared Step
-        /// </summary>
-        /// <remarks>
-        ///  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System creates work item by identifier  System returns work item model (listed in response parameters)
-        /// </remarks>
-        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkItemApiModel"> (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkItemModel</returns>
-        System.Threading.Tasks.Task<WorkItemModel> CreateWorkItemAsync(CreateWorkItemApiModel createWorkItemApiModel = default(CreateWorkItemApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Create Test Case, Checklist or Shared Step
-        /// </summary>
-        /// <remarks>
-        ///  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System creates work item by identifier  System returns work item model (listed in response parameters)
-        /// </remarks>
-        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkItemApiModel"> (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkItemModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkItemModel>> CreateWorkItemWithHttpInfoAsync(CreateWorkItemApiModel createWorkItemApiModel = default(CreateWorkItemApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete all links AutoTests from WorkItem by Id or GlobalId
         /// </summary>
@@ -3192,6 +3189,125 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
+        /// Creates work item 
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createWorkItemApiModel"> (optional)</param>
+        /// <returns>WorkItemApiResult</returns>
+        public WorkItemApiResult ApiV2WorkItemsPost(CreateWorkItemApiModel createWorkItemApiModel = default(CreateWorkItemApiModel))
+        {
+            TestIT.ApiClient.Client.ApiResponse<WorkItemApiResult> localVarResponse = ApiV2WorkItemsPostWithHttpInfo(createWorkItemApiModel);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Creates work item 
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createWorkItemApiModel"> (optional)</param>
+        /// <returns>ApiResponse of WorkItemApiResult</returns>
+        public TestIT.ApiClient.Client.ApiResponse<WorkItemApiResult> ApiV2WorkItemsPostWithHttpInfo(CreateWorkItemApiModel createWorkItemApiModel = default(CreateWorkItemApiModel))
+        {
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = createWorkItemApiModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<WorkItemApiResult>("/api/v2/workItems", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2WorkItemsPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Creates work item 
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createWorkItemApiModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WorkItemApiResult</returns>
+        public async System.Threading.Tasks.Task<WorkItemApiResult> ApiV2WorkItemsPostAsync(CreateWorkItemApiModel createWorkItemApiModel = default(CreateWorkItemApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            TestIT.ApiClient.Client.ApiResponse<WorkItemApiResult> localVarResponse = await ApiV2WorkItemsPostWithHttpInfoAsync(createWorkItemApiModel, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Creates work item 
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createWorkItemApiModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WorkItemApiResult)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<WorkItemApiResult>> ApiV2WorkItemsPostWithHttpInfoAsync(CreateWorkItemApiModel createWorkItemApiModel = default(CreateWorkItemApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = createWorkItemApiModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<WorkItemApiResult>("/api/v2/workItems", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2WorkItemsPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Search for work items 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
@@ -3855,125 +3971,6 @@ namespace TestIT.ApiClient.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2WorkItemsSharedStepsSharedStepIdReferencesGet", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Create Test Case, Checklist or Shared Step  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System creates work item by identifier  System returns work item model (listed in response parameters)
-        /// </summary>
-        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkItemApiModel"> (optional)</param>
-        /// <returns>WorkItemModel</returns>
-        public WorkItemModel CreateWorkItem(CreateWorkItemApiModel createWorkItemApiModel = default(CreateWorkItemApiModel))
-        {
-            TestIT.ApiClient.Client.ApiResponse<WorkItemModel> localVarResponse = CreateWorkItemWithHttpInfo(createWorkItemApiModel);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Create Test Case, Checklist or Shared Step  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System creates work item by identifier  System returns work item model (listed in response parameters)
-        /// </summary>
-        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkItemApiModel"> (optional)</param>
-        /// <returns>ApiResponse of WorkItemModel</returns>
-        public TestIT.ApiClient.Client.ApiResponse<WorkItemModel> CreateWorkItemWithHttpInfo(CreateWorkItemApiModel createWorkItemApiModel = default(CreateWorkItemApiModel))
-        {
-            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = createWorkItemApiModel;
-
-            // authentication (Bearer or PrivateToken) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<WorkItemModel>("/api/v2/workItems", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("CreateWorkItem", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Create Test Case, Checklist or Shared Step  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System creates work item by identifier  System returns work item model (listed in response parameters)
-        /// </summary>
-        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkItemApiModel"> (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkItemModel</returns>
-        public async System.Threading.Tasks.Task<WorkItemModel> CreateWorkItemAsync(CreateWorkItemApiModel createWorkItemApiModel = default(CreateWorkItemApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-        {
-            TestIT.ApiClient.Client.ApiResponse<WorkItemModel> localVarResponse = await CreateWorkItemWithHttpInfoAsync(createWorkItemApiModel, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Create Test Case, Checklist or Shared Step  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System creates work item by identifier  System returns work item model (listed in response parameters)
-        /// </summary>
-        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkItemApiModel"> (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkItemModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<WorkItemModel>> CreateWorkItemWithHttpInfoAsync(CreateWorkItemApiModel createWorkItemApiModel = default(CreateWorkItemApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-        {
-
-            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-
-            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = createWorkItemApiModel;
-
-            // authentication (Bearer or PrivateToken) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.PostAsync<WorkItemModel>("/api/v2/workItems", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("CreateWorkItem", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

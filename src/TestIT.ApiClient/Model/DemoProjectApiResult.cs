@@ -40,29 +40,11 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DemoProjectApiResult" /> class.
         /// </summary>
-        /// <param name="projectId">Demo project ID (required).</param>
-        /// <param name="projectGlobalId">Demo project global ID (required).</param>
         /// <param name="jobId">Job ID (required).</param>
-        public DemoProjectApiResult(Guid projectId = default(Guid), long projectGlobalId = default(long), Guid jobId = default(Guid))
+        public DemoProjectApiResult(Guid jobId = default(Guid))
         {
-            this.ProjectId = projectId;
-            this.ProjectGlobalId = projectGlobalId;
             this.JobId = jobId;
         }
-
-        /// <summary>
-        /// Demo project ID
-        /// </summary>
-        /// <value>Demo project ID</value>
-        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
-        public Guid ProjectId { get; set; }
-
-        /// <summary>
-        /// Demo project global ID
-        /// </summary>
-        /// <value>Demo project global ID</value>
-        [DataMember(Name = "projectGlobalId", IsRequired = true, EmitDefaultValue = true)]
-        public long ProjectGlobalId { get; set; }
 
         /// <summary>
         /// Job ID
@@ -79,8 +61,6 @@ namespace TestIT.ApiClient.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class DemoProjectApiResult {\n");
-            sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
-            sb.Append("  ProjectGlobalId: ").Append(ProjectGlobalId).Append("\n");
             sb.Append("  JobId: ").Append(JobId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

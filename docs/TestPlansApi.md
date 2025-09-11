@@ -1924,7 +1924,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | Test plan unique or global ID
+            var id = "id_example";  // string | 
 
             try
             {
@@ -1963,7 +1963,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan unique or global ID |  |
+| **id** | **string** |  |  |
 
 ### Return type
 
@@ -1982,14 +1982,13 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Last modification date does not exist |  -  |
+| **204** | No Content |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
-| **403** | Read permission for test plan is required |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
-| **200** | Last modification date exists |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2085,15 +2084,13 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Created |  -  |
+| **200** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
 | **404** | TestPlan not found |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
-| **200** | Successful operation |  -  |
-| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2718,19 +2715,18 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
-| **404** | Can&#39;t find a Project with id |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
+| **404** | Can&#39;t find a Project with id |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
-| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="gettestsuitesbyid"></a>
 # **GetTestSuitesById**
-> List&lt;TestSuiteV2TreeModel&gt; GetTestSuitesById (string id)
+> List&lt;TestSuiteHierarchyApiResult&gt; GetTestSuitesById (string id)
 
 Get TestSuites Tree By Id
 
@@ -2767,7 +2763,7 @@ namespace Example
             try
             {
                 // Get TestSuites Tree By Id
-                List<TestSuiteV2TreeModel> result = apiInstance.GetTestSuitesById(id);
+                List<TestSuiteHierarchyApiResult> result = apiInstance.GetTestSuitesById(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2788,7 +2784,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get TestSuites Tree By Id
-    ApiResponse<List<TestSuiteV2TreeModel>> response = apiInstance.GetTestSuitesByIdWithHttpInfo(id);
+    ApiResponse<List<TestSuiteHierarchyApiResult>> response = apiInstance.GetTestSuitesByIdWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -2809,7 +2805,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;TestSuiteV2TreeModel&gt;**](TestSuiteV2TreeModel.md)
+[**List&lt;TestSuiteHierarchyApiResult&gt;**](TestSuiteHierarchyApiResult.md)
 
 ### Authorization
 

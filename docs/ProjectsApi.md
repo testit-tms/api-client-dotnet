@@ -137,7 +137,7 @@ void (empty response body)
 
 <a id="apiv2projectsdemopost"></a>
 # **ApiV2ProjectsDemoPost**
-> DemoProjectApiResult ApiV2ProjectsDemoPost (CreateProjectApiModel createProjectApiModel = null)
+> DemoProjectApiResult ApiV2ProjectsDemoPost ()
 
 
 
@@ -167,11 +167,10 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectsApi(httpClient, config, httpClientHandler);
-            var createProjectApiModel = new CreateProjectApiModel(); // CreateProjectApiModel |  (optional) 
 
             try
             {
-                DemoProjectApiResult result = apiInstance.ApiV2ProjectsDemoPost(createProjectApiModel);
+                DemoProjectApiResult result = apiInstance.ApiV2ProjectsDemoPost();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -191,7 +190,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<DemoProjectApiResult> response = apiInstance.ApiV2ProjectsDemoPostWithHttpInfo(createProjectApiModel);
+    ApiResponse<DemoProjectApiResult> response = apiInstance.ApiV2ProjectsDemoPostWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -205,11 +204,7 @@ catch (ApiException e)
 ```
 
 ### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **createProjectApiModel** | [**CreateProjectApiModel**](CreateProjectApiModel.md) |  | [optional]  |
-
+This endpoint does not need any parameter.
 ### Return type
 
 [**DemoProjectApiResult**](DemoProjectApiResult.md)
@@ -220,14 +215,14 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Created |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
@@ -339,7 +334,7 @@ void (empty response body)
 
 <a id="apiv2projectsidfailureclassesget"></a>
 # **ApiV2ProjectsIdFailureClassesGet**
-> List&lt;FailureClassModel&gt; ApiV2ProjectsIdFailureClassesGet (string id, bool? isDeleted = null)
+> List&lt;AutoTestResultReasonProjectApiResult&gt; ApiV2ProjectsIdFailureClassesGet (string id, bool? isDeleted = null)
 
 Get failure classes
 
@@ -375,7 +370,7 @@ namespace Example
             try
             {
                 // Get failure classes
-                List<FailureClassModel> result = apiInstance.ApiV2ProjectsIdFailureClassesGet(id, isDeleted);
+                List<AutoTestResultReasonProjectApiResult> result = apiInstance.ApiV2ProjectsIdFailureClassesGet(id, isDeleted);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -396,7 +391,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get failure classes
-    ApiResponse<List<FailureClassModel>> response = apiInstance.ApiV2ProjectsIdFailureClassesGetWithHttpInfo(id, isDeleted);
+    ApiResponse<List<AutoTestResultReasonProjectApiResult>> response = apiInstance.ApiV2ProjectsIdFailureClassesGetWithHttpInfo(id, isDeleted);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -418,7 +413,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;FailureClassModel&gt;**](FailureClassModel.md)
+[**List&lt;AutoTestResultReasonProjectApiResult&gt;**](AutoTestResultReasonProjectApiResult.md)
 
 ### Authorization
 
@@ -1933,7 +1928,7 @@ catch (ApiException e)
 
 <a id="createproject"></a>
 # **CreateProject**
-> ProjectModel CreateProject (CreateProjectApiModel createProjectApiModel = null)
+> ProjectApiResult CreateProject (CreateProjectApiModel createProjectApiModel = null)
 
 Create project
 
@@ -1970,7 +1965,7 @@ namespace Example
             try
             {
                 // Create project
-                ProjectModel result = apiInstance.CreateProject(createProjectApiModel);
+                ProjectApiResult result = apiInstance.CreateProject(createProjectApiModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1991,7 +1986,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create project
-    ApiResponse<ProjectModel> response = apiInstance.CreateProjectWithHttpInfo(createProjectApiModel);
+    ApiResponse<ProjectApiResult> response = apiInstance.CreateProjectWithHttpInfo(createProjectApiModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -2012,7 +2007,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**ProjectModel**](ProjectModel.md)
+[**ProjectApiResult**](ProjectApiResult.md)
 
 ### Authorization
 
@@ -2458,13 +2453,12 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **404** | Project with provided ID was not found |  -  |
 | **400** | ID is invalid |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for projects is required |  -  |
+| **404** | Project with provided ID was not found |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
-| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

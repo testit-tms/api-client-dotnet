@@ -1052,7 +1052,7 @@ catch (ApiException e)
 
 <a id="gettestsuitebyid"></a>
 # **GetTestSuiteById**
-> TestSuiteV2GetModel GetTestSuiteById (Guid id)
+> TestSuiteApiResult GetTestSuiteById (Guid id)
 
 Get TestSuite by Id
 
@@ -1089,7 +1089,7 @@ namespace Example
             try
             {
                 // Get TestSuite by Id
-                TestSuiteV2GetModel result = apiInstance.GetTestSuiteById(id);
+                TestSuiteApiResult result = apiInstance.GetTestSuiteById(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1110,7 +1110,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get TestSuite by Id
-    ApiResponse<TestSuiteV2GetModel> response = apiInstance.GetTestSuiteByIdWithHttpInfo(id);
+    ApiResponse<TestSuiteApiResult> response = apiInstance.GetTestSuiteByIdWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1131,7 +1131,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**TestSuiteV2GetModel**](TestSuiteV2GetModel.md)
+[**TestSuiteApiResult**](TestSuiteApiResult.md)
 
 ### Authorization
 
@@ -1147,13 +1147,12 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
-| **404** |  Can&#39;t find a TestSuite with id! |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test plan required |  -  |
+| **404** |  Can&#39;t find a TestSuite with id! |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
-| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

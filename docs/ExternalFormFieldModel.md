@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **IsCustomValueAllowed** | **bool** |  | 
 **AutoCompleteUrl** | **string** |  | [optional] 
 **ControlType** | **string** |  | [optional] 
-**MinLength** | **int?** |  | [optional] 
-**MaxLength** | **int?** |  | [optional] 
+**MinLength** | **double?** |  | [optional] 
+**MaxLength** | **double?** |  | [optional] 
 **IsRequired** | **bool?** |  | [optional] 
 **Min** | **Object** |  | [optional] 
 **Max** | **Object** |  | [optional] 
