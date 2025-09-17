@@ -35,25 +35,36 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestPlanTestPointsAutoTestsRerunApiModel" /> class.
         /// </summary>
-        /// <param name="filter">filter.</param>
-        /// <param name="extractionModel">extractionModel.</param>
-        public TestPlanTestPointsAutoTestsRerunApiModel(TestPlanTestPointsSearchApiModel filter = default(TestPlanTestPointsSearchApiModel), TestPlanTestPointsExtractionApiModel extractionModel = default(TestPlanTestPointsExtractionApiModel))
+        /// <param name="filter">Test points filters..</param>
+        /// <param name="extractionModel">Test points extraction model..</param>
+        /// <param name="webhookIds">Webhook ids to rerun..</param>
+        public TestPlanTestPointsAutoTestsRerunApiModel(TestPlanTestPointsSearchApiModel filter = default(TestPlanTestPointsSearchApiModel), TestPlanTestPointsExtractionApiModel extractionModel = default(TestPlanTestPointsExtractionApiModel), List<Guid> webhookIds = default(List<Guid>))
         {
             this.Filter = filter;
             this.ExtractionModel = extractionModel;
+            this.WebhookIds = webhookIds;
         }
 
         /// <summary>
-        /// Gets or Sets Filter
+        /// Test points filters.
         /// </summary>
+        /// <value>Test points filters.</value>
         [DataMember(Name = "filter", EmitDefaultValue = true)]
         public TestPlanTestPointsSearchApiModel Filter { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExtractionModel
+        /// Test points extraction model.
         /// </summary>
+        /// <value>Test points extraction model.</value>
         [DataMember(Name = "extractionModel", EmitDefaultValue = true)]
         public TestPlanTestPointsExtractionApiModel ExtractionModel { get; set; }
+
+        /// <summary>
+        /// Webhook ids to rerun.
+        /// </summary>
+        /// <value>Webhook ids to rerun.</value>
+        [DataMember(Name = "webhookIds", EmitDefaultValue = true)]
+        public List<Guid> WebhookIds { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -65,6 +76,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("class TestPlanTestPointsAutoTestsRerunApiModel {\n");
             sb.Append("  Filter: ").Append(Filter).Append("\n");
             sb.Append("  ExtractionModel: ").Append(ExtractionModel).Append("\n");
+            sb.Append("  WebhookIds: ").Append(WebhookIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

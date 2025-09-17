@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **IsAutomated** | **bool?** | Specifies a test point automation status to search for | [optional] 
 **Name** | **string** | Specifies a test point name to search for | [optional] 
 **ConfigurationIds** | **List&lt;Guid&gt;** | Specifies a test point configuration IDs to search for | [optional] 
-**TesterIds** | **List&lt;Guid&gt;** | Specifies a test point assigned user IDs to search for | [optional] 
+**TesterIds** | **List&lt;Guid?&gt;** | Specifies a test point assigned user IDs to search for | [optional] 
 **Duration** | [**Int64RangeSelectorModel**](Int64RangeSelectorModel.md) | Specifies a test point range of duration to search for | [optional] 
 **SectionIds** | **List&lt;Guid&gt;** | Specifies a test point work item section IDs to search for | [optional] 
 **CreatedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) | Specifies a test point range of creation date to search for | [optional] 

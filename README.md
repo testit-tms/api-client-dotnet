@@ -22,7 +22,7 @@
 | 5.3     | 5.0.1-TMS-5.3   |
 | 5.4     | 5.2.0-TMS-5.4   |
 | 5.4.1   | 5.2.2-TMS-5.4.1 |
-| Cloud   | 5.2.2           |
+| Cloud   | 5.2.3           |
 
 <a name="frameworks-supported"></a>
 ## Frameworks supported
@@ -200,6 +200,8 @@ Class | Method | HTTP request | Description
 *ProjectTestPlanAttributesApi* | [**GetCustomAttributeTestPlanProjectRelations**](docs/ProjectTestPlanAttributesApi.md#getcustomattributetestplanprojectrelations) | **GET** /api/v2/projects/{projectId}/testPlans/attributes | Get project's test plan attributes
 *ProjectTestPlanAttributesApi* | [**SearchTestPlanAttributesInProject**](docs/ProjectTestPlanAttributesApi.md#searchtestplanattributesinproject) | **POST** /api/v2/projects/{projectId}/testPlans/attributes/search | Search for attributes used in the project test plans
 *ProjectTestPlanAttributesApi* | [**UpdateCustomAttributeTestPlanProjectRelations**](docs/ProjectTestPlanAttributesApi.md#updatecustomattributetestplanprojectrelations) | **PUT** /api/v2/projects/{projectId}/testPlans/attributes | Update attribute of project's test plans
+*ProjectTestPlanTestPointsApi* | [**ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPost**](docs/ProjectTestPlanTestPointsApi.md#apiv2projectsprojectidtestplanstestplanidtestpointsautotestsrerunpost) | **POST** /api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/autotests/rerun | Rerun autotests.
+*ProjectTestPlanTestPointsApi* | [**ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPost**](docs/ProjectTestPlanTestPointsApi.md#apiv2projectsprojectidtestplanstestplanidtestpointsautotestsrunpost) | **POST** /api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/autotests/run | Run autotests.
 *ProjectTestPlansApi* | [**ApiV2ProjectsProjectIdTestPlansAnalyticsGet**](docs/ProjectTestPlansApi.md#apiv2projectsprojectidtestplansanalyticsget) | **GET** /api/v2/projects/{projectId}/testPlans/analytics | Get TestPlans analytics
 *ProjectTestPlansApi* | [**ApiV2ProjectsProjectIdTestPlansDeleteBulkPost**](docs/ProjectTestPlansApi.md#apiv2projectsprojectidtestplansdeletebulkpost) | **POST** /api/v2/projects/{projectId}/testPlans/delete/bulk | Delete multiple test plans
 *ProjectTestPlansApi* | [**ApiV2ProjectsProjectIdTestPlansNameExistsGet**](docs/ProjectTestPlansApi.md#apiv2projectsprojectidtestplansnameexistsget) | **GET** /api/v2/projects/{projectId}/testPlans/{name}/exists | Checks if TestPlan exists with the specified name exists for the project
@@ -209,10 +211,10 @@ Class | Method | HTTP request | Description
 *ProjectWorkItemsApi* | [**ApiV2ProjectsProjectIdWorkItemsSearchGroupedPost**](docs/ProjectWorkItemsApi.md#apiv2projectsprojectidworkitemssearchgroupedpost) | **POST** /api/v2/projects/{projectId}/workItems/search/grouped | Search for work items and group results by attribute
 *ProjectWorkItemsApi* | [**ApiV2ProjectsProjectIdWorkItemsSearchIdPost**](docs/ProjectWorkItemsApi.md#apiv2projectsprojectidworkitemssearchidpost) | **POST** /api/v2/projects/{projectId}/workItems/search/id | Search for work items and extract IDs only
 *ProjectWorkItemsApi* | [**ApiV2ProjectsProjectIdWorkItemsSearchPost**](docs/ProjectWorkItemsApi.md#apiv2projectsprojectidworkitemssearchpost) | **POST** /api/v2/projects/{projectId}/workItems/search | Search for work items
+*ProjectWorkItemsApi* | [**ApiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPost**](docs/ProjectWorkItemsApi.md#apiv2projectsprojectidworkitemssearchworkitemidindexpost) | **POST** /api/v2/projects/{projectId}/workItems/search/{workItemId}/index | Get work item index (position) in a collection by its id.
 *ProjectWorkItemsApi* | [**ApiV2ProjectsProjectIdWorkItemsTagsGet**](docs/ProjectWorkItemsApi.md#apiv2projectsprojectidworkitemstagsget) | **GET** /api/v2/projects/{projectId}/workItems/tags | Get WorkItems Tags
 *ProjectWorkItemsApi* | [**GetWorkItemsByProjectId**](docs/ProjectWorkItemsApi.md#getworkitemsbyprojectid) | **GET** /api/v2/projects/{projectId}/workItems | Get project work items
 *ProjectsApi* | [**AddGlobaAttributesToProject**](docs/ProjectsApi.md#addglobaattributestoproject) | **POST** /api/v2/projects/{id}/globalAttributes | Add global attributes to project
-*ProjectsApi* | [**ApiV2ProjectsDemoPost**](docs/ProjectsApi.md#apiv2projectsdemopost) | **POST** /api/v2/projects/demo | 
 *ProjectsApi* | [**ApiV2ProjectsIdDelete**](docs/ProjectsApi.md#apiv2projectsiddelete) | **DELETE** /api/v2/projects/{id} | Archive project
 *ProjectsApi* | [**ApiV2ProjectsIdFailureClassesGet**](docs/ProjectsApi.md#apiv2projectsidfailureclassesget) | **GET** /api/v2/projects/{id}/failureClasses | Get failure classes
 *ProjectsApi* | [**ApiV2ProjectsIdFavoritePut**](docs/ProjectsApi.md#apiv2projectsidfavoriteput) | **PUT** /api/v2/projects/{id}/favorite | Mark Project as favorite
@@ -326,6 +328,13 @@ Class | Method | HTTP request | Description
 *TestRunsApi* | [**StartTestRun**](docs/TestRunsApi.md#starttestrun) | **POST** /api/v2/testRuns/{id}/start | Start TestRun
 *TestRunsApi* | [**StopTestRun**](docs/TestRunsApi.md#stoptestrun) | **POST** /api/v2/testRuns/{id}/stop | Stop TestRun
 *TestRunsApi* | [**UpdateEmpty**](docs/TestRunsApi.md#updateempty) | **PUT** /api/v2/testRuns | Update empty TestRun
+*TestStatusesApi* | [**ApiV2TestStatusesCodeCodeExistsGet**](docs/TestStatusesApi.md#apiv2teststatusescodecodeexistsget) | **GET** /api/v2/testStatuses/code/{code}/exists | 
+*TestStatusesApi* | [**ApiV2TestStatusesIdDelete**](docs/TestStatusesApi.md#apiv2teststatusesiddelete) | **DELETE** /api/v2/testStatuses/{id} | 
+*TestStatusesApi* | [**ApiV2TestStatusesIdGet**](docs/TestStatusesApi.md#apiv2teststatusesidget) | **GET** /api/v2/testStatuses/{id} | 
+*TestStatusesApi* | [**ApiV2TestStatusesIdPut**](docs/TestStatusesApi.md#apiv2teststatusesidput) | **PUT** /api/v2/testStatuses/{id} | 
+*TestStatusesApi* | [**ApiV2TestStatusesNameNameExistsGet**](docs/TestStatusesApi.md#apiv2teststatusesnamenameexistsget) | **GET** /api/v2/testStatuses/name/{name}/exists | 
+*TestStatusesApi* | [**ApiV2TestStatusesPost**](docs/TestStatusesApi.md#apiv2teststatusespost) | **POST** /api/v2/testStatuses | 
+*TestStatusesApi* | [**ApiV2TestStatusesSearchPost**](docs/TestStatusesApi.md#apiv2teststatusessearchpost) | **POST** /api/v2/testStatuses/search | 
 *TestSuitesApi* | [**AddTestPointsToTestSuite**](docs/TestSuitesApi.md#addtestpointstotestsuite) | **POST** /api/v2/testSuites/{id}/test-points | Add test-points to test suite
 *TestSuitesApi* | [**ApiV2TestSuitesIdPatch**](docs/TestSuitesApi.md#apiv2testsuitesidpatch) | **PATCH** /api/v2/testSuites/{id} | Patch test suite
 *TestSuitesApi* | [**ApiV2TestSuitesIdRefreshPost**](docs/TestSuitesApi.md#apiv2testsuitesidrefreshpost) | **POST** /api/v2/testSuites/{id}/refresh | Refresh test suite. Only dynamic test suites are supported by this method
@@ -350,7 +359,7 @@ Class | Method | HTTP request | Description
 *WebhooksApi* | [**ApiV2WebhooksSearchPost**](docs/WebhooksApi.md#apiv2webhookssearchpost) | **POST** /api/v2/webhooks/search | Search for webhooks
 *WebhooksApi* | [**ApiV2WebhooksSpecialVariablesGet**](docs/WebhooksApi.md#apiv2webhooksspecialvariablesget) | **GET** /api/v2/webhooks/specialVariables | Get special variables for webhook event type
 *WebhooksApi* | [**ApiV2WebhooksTestPost**](docs/WebhooksApi.md#apiv2webhookstestpost) | **POST** /api/v2/webhooks/test | Test webhook's url
-*WebhooksLogsApi* | [**ApiV2WebhooksLogsGet**](docs/WebhooksLogsApi.md#apiv2webhookslogsget) | **GET** /api/v2/webhooks/logs | Get all webhook logs
+*WebhooksLogsApi* | [**ApiV2WebhooksLogsGet**](docs/WebhooksLogsApi.md#apiv2webhookslogsget) | **GET** /api/v2/webhooks/logs | Get last webhook logs
 *WebhooksLogsApi* | [**ApiV2WebhooksLogsIdDelete**](docs/WebhooksLogsApi.md#apiv2webhookslogsiddelete) | **DELETE** /api/v2/webhooks/logs/{id} | Delete webhook log by ID
 *WebhooksLogsApi* | [**ApiV2WebhooksLogsIdGet**](docs/WebhooksLogsApi.md#apiv2webhookslogsidget) | **GET** /api/v2/webhooks/logs/{id} | Get webhook log by ID
 *WorkItemsApi* | [**ApiV2WorkItemsIdAttachmentsPost**](docs/WorkItemsApi.md#apiv2workitemsidattachmentspost) | **POST** /api/v2/workItems/{id}/attachments | Upload and link attachment to WorkItem
@@ -384,6 +393,14 @@ Class | Method | HTTP request | Description
 *WorkItemsCommentsApi* | [**ApiV2WorkItemsCommentsPut**](docs/WorkItemsCommentsApi.md#apiv2workitemscommentsput) | **PUT** /api/v2/workItems/comments | Update work item comment
 *WorkItemsCommentsApi* | [**ApiV2WorkItemsIdCommentsCountGet**](docs/WorkItemsCommentsApi.md#apiv2workitemsidcommentscountget) | **GET** /api/v2/workItems/{id}/comments/count | Get work item comments count
 *WorkItemsCommentsApi* | [**ApiV2WorkItemsIdCommentsGet**](docs/WorkItemsCommentsApi.md#apiv2workitemsidcommentsget) | **GET** /api/v2/workItems/{id}/comments | Get work item comments
+*WorkflowsApi* | [**ApiV2WorkflowsIdDelete**](docs/WorkflowsApi.md#apiv2workflowsiddelete) | **DELETE** /api/v2/workflows/{id} | 
+*WorkflowsApi* | [**ApiV2WorkflowsIdGet**](docs/WorkflowsApi.md#apiv2workflowsidget) | **GET** /api/v2/workflows/{id} | 
+*WorkflowsApi* | [**ApiV2WorkflowsIdPatch**](docs/WorkflowsApi.md#apiv2workflowsidpatch) | **PATCH** /api/v2/workflows/{id} | 
+*WorkflowsApi* | [**ApiV2WorkflowsIdProjectsSearchPost**](docs/WorkflowsApi.md#apiv2workflowsidprojectssearchpost) | **POST** /api/v2/workflows/{id}/projects/search | 
+*WorkflowsApi* | [**ApiV2WorkflowsIdPut**](docs/WorkflowsApi.md#apiv2workflowsidput) | **PUT** /api/v2/workflows/{id} | 
+*WorkflowsApi* | [**ApiV2WorkflowsNameNameExistsGet**](docs/WorkflowsApi.md#apiv2workflowsnamenameexistsget) | **GET** /api/v2/workflows/name/{name}/exists | 
+*WorkflowsApi* | [**ApiV2WorkflowsPost**](docs/WorkflowsApi.md#apiv2workflowspost) | **POST** /api/v2/workflows | 
+*WorkflowsApi* | [**ApiV2WorkflowsSearchPost**](docs/WorkflowsApi.md#apiv2workflowssearchpost) | **POST** /api/v2/workflows/search | 
 
 
 <a id="documentation-for-models"></a>

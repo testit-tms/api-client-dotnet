@@ -31,7 +31,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPlans analytics
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal identifier  User sets query params  User runs method execution  System return analytics
+        ///   Use case    User sets project internal identifier    User sets query params    User runs method execution    System return analytics
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -49,7 +49,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPlans analytics
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal identifier  User sets query params  User runs method execution  System return analytics
+        ///   Use case    User sets project internal identifier    User sets query params    User runs method execution    System return analytics
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -86,7 +86,7 @@ namespace TestIT.ApiClient.Api
         /// Checks if TestPlan exists with the specified name exists for the project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User runs method execution  System purge delete project workitems
+        ///   Use case    User sets project internal or global identifier    User runs method execution    System purge delete project workitems
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -98,7 +98,7 @@ namespace TestIT.ApiClient.Api
         /// Checks if TestPlan exists with the specified name exists for the project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User runs method execution  System purge delete project workitems
+        ///   Use case    User sets project internal or global identifier    User runs method execution    System purge delete project workitems
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -149,7 +149,7 @@ namespace TestIT.ApiClient.Api
         /// Get Project TestPlans with analytics
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User sets request body  User runs method execution  System returns project testplans with analytics
+        ///   Use case    User sets project internal or global identifier    User sets request body    User runs method execution    System returns project testplans with analytics
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -167,7 +167,7 @@ namespace TestIT.ApiClient.Api
         /// Get Project TestPlans with analytics
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User sets request body  User runs method execution  System returns project testplans with analytics
+        ///   Use case    User sets project internal or global identifier    User sets request body    User runs method execution    System returns project testplans with analytics
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -193,7 +193,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPlans analytics
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal identifier  User sets query params  User runs method execution  System return analytics
+        ///   Use case    User sets project internal identifier    User sets query params    User runs method execution    System return analytics
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -212,7 +212,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestPlans analytics
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal identifier  User sets query params  User runs method execution  System return analytics
+        ///   Use case    User sets project internal identifier    User sets query params    User runs method execution    System return analytics
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -255,7 +255,7 @@ namespace TestIT.ApiClient.Api
         /// Checks if TestPlan exists with the specified name exists for the project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User runs method execution  System purge delete project workitems
+        ///   Use case    User sets project internal or global identifier    User runs method execution    System purge delete project workitems
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -268,7 +268,7 @@ namespace TestIT.ApiClient.Api
         /// Checks if TestPlan exists with the specified name exists for the project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User runs method execution  System purge delete project workitems
+        ///   Use case    User sets project internal or global identifier    User runs method execution    System purge delete project workitems
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -330,7 +330,7 @@ namespace TestIT.ApiClient.Api
         /// Get Project TestPlans with analytics
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User sets request body  User runs method execution  System returns project testplans with analytics
+        ///   Use case    User sets project internal or global identifier    User sets request body    User runs method execution    System returns project testplans with analytics
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -349,7 +349,7 @@ namespace TestIT.ApiClient.Api
         /// Get Project TestPlans with analytics
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User sets request body  User runs method execution  System returns project testplans with analytics
+        ///   Use case    User sets project internal or global identifier    User sets request body    User runs method execution    System returns project testplans with analytics
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -577,7 +577,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPlans analytics  Use case  User sets project internal identifier  User sets query params  User runs method execution  System return analytics
+        /// Get TestPlans analytics   Use case    User sets project internal identifier    User sets query params    User runs method execution    System return analytics
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -596,7 +596,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPlans analytics  Use case  User sets project internal identifier  User sets query params  User runs method execution  System return analytics
+        /// Get TestPlans analytics   Use case    User sets project internal identifier    User sets query params    User runs method execution    System return analytics
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -675,7 +675,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPlans analytics  Use case  User sets project internal identifier  User sets query params  User runs method execution  System return analytics
+        /// Get TestPlans analytics   Use case    User sets project internal identifier    User sets query params    User runs method execution    System return analytics
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -695,7 +695,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestPlans analytics  Use case  User sets project internal identifier  User sets query params  User runs method execution  System return analytics
+        /// Get TestPlans analytics   Use case    User sets project internal identifier    User sets query params    User runs method execution    System return analytics
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -911,7 +911,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Checks if TestPlan exists with the specified name exists for the project  Use case  User sets project internal or global identifier  User runs method execution  System purge delete project workitems
+        /// Checks if TestPlan exists with the specified name exists for the project   Use case    User sets project internal or global identifier    User runs method execution    System purge delete project workitems
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -924,7 +924,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Checks if TestPlan exists with the specified name exists for the project  Use case  User sets project internal or global identifier  User runs method execution  System purge delete project workitems
+        /// Checks if TestPlan exists with the specified name exists for the project   Use case    User sets project internal or global identifier    User runs method execution    System purge delete project workitems
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -974,7 +974,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Checks if TestPlan exists with the specified name exists for the project  Use case  User sets project internal or global identifier  User runs method execution  System purge delete project workitems
+        /// Checks if TestPlan exists with the specified name exists for the project   Use case    User sets project internal or global identifier    User runs method execution    System purge delete project workitems
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -988,7 +988,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Checks if TestPlan exists with the specified name exists for the project  Use case  User sets project internal or global identifier  User runs method execution  System purge delete project workitems
+        /// Checks if TestPlan exists with the specified name exists for the project   Use case    User sets project internal or global identifier    User runs method execution    System purge delete project workitems
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1306,7 +1306,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Project TestPlans with analytics  Use case  User sets project internal or global identifier  User sets request body  User runs method execution  System returns project testplans with analytics
+        /// Get Project TestPlans with analytics   Use case    User sets project internal or global identifier    User sets request body    User runs method execution    System returns project testplans with analytics
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1325,7 +1325,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Project TestPlans with analytics  Use case  User sets project internal or global identifier  User sets request body  User runs method execution  System returns project testplans with analytics
+        /// Get Project TestPlans with analytics   Use case    User sets project internal or global identifier    User sets request body    User runs method execution    System returns project testplans with analytics
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1406,7 +1406,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Project TestPlans with analytics  Use case  User sets project internal or global identifier  User sets request body  User runs method execution  System returns project testplans with analytics
+        /// Get Project TestPlans with analytics   Use case    User sets project internal or global identifier    User sets request body    User runs method execution    System returns project testplans with analytics
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1426,7 +1426,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Project TestPlans with analytics  Use case  User sets project internal or global identifier  User sets request body  User runs method execution  System returns project testplans with analytics
+        /// Get Project TestPlans with analytics   Use case    User sets project internal or global identifier    User sets request body    User runs method execution    System returns project testplans with analytics
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>

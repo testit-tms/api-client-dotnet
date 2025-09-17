@@ -44,7 +44,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">name (required).</param>
         /// <param name="isSystem">isSystem (required).</param>
         /// <param name="isDefault">isDefault (required).</param>
-        public WorkflowShortApiResult(Guid id = default(Guid), string name = default(string), bool isSystem = default(bool), bool isDefault = default(bool))
+        /// <param name="projects">projects (required).</param>
+        public WorkflowShortApiResult(Guid id = default(Guid), string name = default(string), bool isSystem = default(bool), bool isDefault = default(bool), WorkflowProjectApiResultApiCollectionPreview projects = default(WorkflowProjectApiResultApiCollectionPreview))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -55,6 +56,12 @@ namespace TestIT.ApiClient.Model
             this.Name = name;
             this.IsSystem = isSystem;
             this.IsDefault = isDefault;
+            // to ensure "projects" is required (not null)
+            if (projects == null)
+            {
+                throw new ArgumentNullException("projects is a required property for WorkflowShortApiResult and cannot be null");
+            }
+            this.Projects = projects;
         }
 
         /// <summary>
@@ -82,6 +89,12 @@ namespace TestIT.ApiClient.Model
         public bool IsDefault { get; set; }
 
         /// <summary>
+        /// Gets or Sets Projects
+        /// </summary>
+        [DataMember(Name = "projects", IsRequired = true, EmitDefaultValue = true)]
+        public WorkflowProjectApiResultApiCollectionPreview Projects { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -93,6 +106,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  IsSystem: ").Append(IsSystem).Append("\n");
             sb.Append("  IsDefault: ").Append(IsDefault).Append("\n");
+            sb.Append("  Projects: ").Append(Projects).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -118,10 +118,42 @@ namespace TestIT.ApiClient.Api
         /// <returns>ApiResponse of List&lt;WorkItemShortApiResult&gt;</returns>
         ApiResponse<List<WorkItemShortApiResult>> ApiV2ProjectsProjectIdWorkItemsSearchPostWithHttpInfo(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel));
         /// <summary>
+        /// Get work item index (position) in a collection by its id.
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="workItemId"></param>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="workItemSelectApiModel"> (optional)</param>
+        /// <returns>WorkItemIndexApiResult</returns>
+        WorkItemIndexApiResult ApiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPost(string projectId, Guid workItemId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel));
+
+        /// <summary>
+        /// Get work item index (position) in a collection by its id.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="workItemId"></param>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="workItemSelectApiModel"> (optional)</param>
+        /// <returns>ApiResponse of WorkItemIndexApiResult</returns>
+        ApiResponse<WorkItemIndexApiResult> ApiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPostWithHttpInfo(string projectId, Guid workItemId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel));
+        /// <summary>
         /// Get WorkItems Tags
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
+        ///   Use case    User sets project internal identifier    User runs method execution    System returns work items tags
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -133,7 +165,7 @@ namespace TestIT.ApiClient.Api
         /// Get WorkItems Tags
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
+        ///   Use case    User sets project internal identifier    User runs method execution    System returns work items tags
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -144,7 +176,7 @@ namespace TestIT.ApiClient.Api
         /// Get project work items
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
+        ///   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project    [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted    If User did not set isDeleted field value, System search all  workitems related to project    System returns array of found workitems (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -164,7 +196,7 @@ namespace TestIT.ApiClient.Api
         /// Get project work items
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
+        ///   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project    [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted    If User did not set isDeleted field value, System search all  workitems related to project    System returns array of found workitems (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -294,10 +326,47 @@ namespace TestIT.ApiClient.Api
         /// <returns>Task of ApiResponse (List&lt;WorkItemShortApiResult&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<WorkItemShortApiResult>>> ApiV2ProjectsProjectIdWorkItemsSearchPostWithHttpInfoAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
+        /// Get work item index (position) in a collection by its id.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="workItemId"></param>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="workItemSelectApiModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WorkItemIndexApiResult</returns>
+        System.Threading.Tasks.Task<WorkItemIndexApiResult> ApiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPostAsync(string projectId, Guid workItemId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get work item index (position) in a collection by its id.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="workItemId"></param>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="workItemSelectApiModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WorkItemIndexApiResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<WorkItemIndexApiResult>> ApiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPostWithHttpInfoAsync(string projectId, Guid workItemId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
         /// Get WorkItems Tags
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
+        ///   Use case    User sets project internal identifier    User runs method execution    System returns work items tags
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -310,7 +379,7 @@ namespace TestIT.ApiClient.Api
         /// Get WorkItems Tags
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
+        ///   Use case    User sets project internal identifier    User runs method execution    System returns work items tags
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -322,7 +391,7 @@ namespace TestIT.ApiClient.Api
         /// Get project work items
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
+        ///   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project    [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted    If User did not set isDeleted field value, System search all  workitems related to project    System returns array of found workitems (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -343,7 +412,7 @@ namespace TestIT.ApiClient.Api
         /// Get project work items
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
+        ///   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project    [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted    If User did not set isDeleted field value, System search all  workitems related to project    System returns array of found workitems (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1152,7 +1221,206 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get WorkItems Tags  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
+        /// Get work item index (position) in a collection by its id. 
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="workItemId"></param>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="workItemSelectApiModel"> (optional)</param>
+        /// <returns>WorkItemIndexApiResult</returns>
+        public WorkItemIndexApiResult ApiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPost(string projectId, Guid workItemId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel))
+        {
+            TestIT.ApiClient.Client.ApiResponse<WorkItemIndexApiResult> localVarResponse = ApiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPostWithHttpInfo(projectId, workItemId, skip, take, orderBy, searchField, searchValue, workItemSelectApiModel);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get work item index (position) in a collection by its id. 
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="workItemId"></param>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="workItemSelectApiModel"> (optional)</param>
+        /// <returns>ApiResponse of WorkItemIndexApiResult</returns>
+        public TestIT.ApiClient.Client.ApiResponse<WorkItemIndexApiResult> ApiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPostWithHttpInfo(string projectId, Guid workItemId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel))
+        {
+            // verify the required parameter 'projectId' is set
+            if (projectId == null)
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectWorkItemsApi->ApiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPost");
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workItemId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(workItemId)); // path parameter
+            if (skip != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
+            }
+            if (take != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
+            }
+            if (orderBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
+            }
+            if (searchField != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
+            }
+            if (searchValue != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
+            }
+            localVarRequestOptions.Data = workItemSelectApiModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<WorkItemIndexApiResult>("/api/v2/projects/{projectId}/workItems/search/{workItemId}/index", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get work item index (position) in a collection by its id. 
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="workItemId"></param>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="workItemSelectApiModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WorkItemIndexApiResult</returns>
+        public async System.Threading.Tasks.Task<WorkItemIndexApiResult> ApiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPostAsync(string projectId, Guid workItemId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            TestIT.ApiClient.Client.ApiResponse<WorkItemIndexApiResult> localVarResponse = await ApiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPostWithHttpInfoAsync(projectId, workItemId, skip, take, orderBy, searchField, searchValue, workItemSelectApiModel, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get work item index (position) in a collection by its id. 
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="workItemId"></param>
+        /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
+        /// <param name="take">Amount of items to be taken (limit) (optional)</param>
+        /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
+        /// <param name="searchField">Property name for searching (optional)</param>
+        /// <param name="searchValue">Value for searching (optional)</param>
+        /// <param name="workItemSelectApiModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WorkItemIndexApiResult)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<WorkItemIndexApiResult>> ApiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPostWithHttpInfoAsync(string projectId, Guid workItemId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), WorkItemSelectApiModel workItemSelectApiModel = default(WorkItemSelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'projectId' is set
+            if (projectId == null)
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectWorkItemsApi->ApiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPost");
+
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workItemId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(workItemId)); // path parameter
+            if (skip != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Skip", skip));
+            }
+            if (take != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "Take", take));
+            }
+            if (orderBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "OrderBy", orderBy));
+            }
+            if (searchField != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchField", searchField));
+            }
+            if (searchValue != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(TestIT.ApiClient.Client.ClientUtils.ParameterToMultiMap("", "SearchValue", searchValue));
+            }
+            localVarRequestOptions.Data = workItemSelectApiModel;
+
+            // authentication (Bearer or PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<WorkItemIndexApiResult>("/api/v2/projects/{projectId}/workItems/search/{workItemId}/index", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get WorkItems Tags   Use case    User sets project internal identifier    User runs method execution    System returns work items tags
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -1165,7 +1433,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get WorkItems Tags  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
+        /// Get WorkItems Tags   Use case    User sets project internal identifier    User runs method execution    System returns work items tags
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -1214,7 +1482,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get WorkItems Tags  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
+        /// Get WorkItems Tags   Use case    User sets project internal identifier    User runs method execution    System returns work items tags
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -1228,7 +1496,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get WorkItems Tags  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
+        /// Get WorkItems Tags   Use case    User sets project internal identifier    User runs method execution    System returns work items tags
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -1281,7 +1549,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project work items  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
+        /// Get project work items   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project    [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted    If User did not set isDeleted field value, System search all  workitems related to project    System returns array of found workitems (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1302,7 +1570,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project work items  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
+        /// Get project work items   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project    [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted    If User did not set isDeleted field value, System search all  workitems related to project    System returns array of found workitems (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1391,7 +1659,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project work items  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
+        /// Get project work items   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project    [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted    If User did not set isDeleted field value, System search all  workitems related to project    System returns array of found workitems (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1413,7 +1681,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project work items  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
+        /// Get project work items   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project    [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted    If User did not set isDeleted field value, System search all  workitems related to project    System returns array of found workitems (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>

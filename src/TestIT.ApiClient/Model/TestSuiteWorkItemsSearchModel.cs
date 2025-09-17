@@ -36,7 +36,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="TestSuiteWorkItemsSearchModel" /> class.
         /// </summary>
         /// <param name="tagNames">Collection of tags.</param>
-        /// <param name="entityTypes">Collection of types of work item  Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;.</param>
+        /// <param name="entityTypes">Collection of types of work item    Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;.</param>
         /// <param name="nameOrId">Name or identifier (UUID) of work item.</param>
         /// <param name="includeIds">Collection of identifiers of work items which need to be included in result regardless of filtering.</param>
         /// <param name="excludeIds">Collection of identifiers of work items which need to be excluded from result regardless of filtering.</param>
@@ -102,9 +102,9 @@ namespace TestIT.ApiClient.Model
         public List<string> TagNames { get; set; }
 
         /// <summary>
-        /// Collection of types of work item  Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;
+        /// Collection of types of work item    Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;
         /// </summary>
-        /// <value>Collection of types of work item  Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;</value>
+        /// <value>Collection of types of work item    Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;</value>
         [DataMember(Name = "entityTypes", EmitDefaultValue = true)]
         [Obsolete]
         public List<WorkItemEntityTypes> EntityTypes { get; set; }

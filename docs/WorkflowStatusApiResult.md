@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Code** | **string** |  | 
 **Type** | **TestStatusApiType** | Collection of possible status types | 
-**Description** | **string** |  | [optional] 
+**Description** | **string** |  | 
 **IsSystem** | **bool** |  | 
 **Priority** | **int** |  | 
 

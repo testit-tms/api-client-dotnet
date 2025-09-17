@@ -45,7 +45,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="testerId">Tester who is responded for the test unique internal identifier.</param>
         /// <param name="workItemId">Workitem to which test point relates unique identifier.</param>
         /// <param name="configurationId">Configuration to which test point relates unique identifier.</param>
-        /// <param name="status">Test point status  Applies one of these values: Blocked, NoResults, Failed, Passed.</param>
+        /// <param name="status">Test point status    Applies one of these values: Blocked, NoResults, Failed, Passed.</param>
         /// <param name="lastTestResultId">Last test result unique identifier.</param>
         /// <param name="iterationId">Iteration unique identifier (required).</param>
         /// <param name="workItemMedianDuration">Median duration of work item the test point represents.</param>
@@ -66,7 +66,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets TestSuiteId
         /// </summary>
         /*
-        <example>11efe696-4879-4f01-a99f-b7ffaf4885a2</example>
+        <example>4d8bbb9d-960f-43d3-ac7b-2fce97c1fc4a</example>
         */
         [DataMember(Name = "testSuiteId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestSuiteId { get; set; }
@@ -100,9 +100,9 @@ namespace TestIT.ApiClient.Model
         public Guid? ConfigurationId { get; set; }
 
         /// <summary>
-        /// Test point status  Applies one of these values: Blocked, NoResults, Failed, Passed
+        /// Test point status    Applies one of these values: Blocked, NoResults, Failed, Passed
         /// </summary>
-        /// <value>Test point status  Applies one of these values: Blocked, NoResults, Failed, Passed</value>
+        /// <value>Test point status    Applies one of these values: Blocked, NoResults, Failed, Passed</value>
         /*
         <example>NoResult</example>
         */

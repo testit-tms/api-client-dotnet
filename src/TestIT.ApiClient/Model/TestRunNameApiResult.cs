@@ -27,58 +27,45 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// CustomAttributeOptionApiResult
+    /// TestRunNameApiResult
     /// </summary>
-    [DataContract(Name = "CustomAttributeOptionApiResult")]
-    public partial class CustomAttributeOptionApiResult : IValidatableObject
+    [DataContract(Name = "TestRunNameApiResult")]
+    public partial class TestRunNameApiResult : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomAttributeOptionApiResult" /> class.
+        /// Initializes a new instance of the <see cref="TestRunNameApiResult" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected CustomAttributeOptionApiResult() { }
+        protected TestRunNameApiResult() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomAttributeOptionApiResult" /> class.
+        /// Initializes a new instance of the <see cref="TestRunNameApiResult" /> class.
         /// </summary>
-        /// <param name="id">Unique ID of the attribute option (required).</param>
-        /// <param name="isDeleted">Indicates if the attributes option is deleted (required).</param>
-        /// <param name="value">Value of the attribute option.</param>
-        /// <param name="isDefault">Indicates if the attribute option is used by default (required).</param>
-        public CustomAttributeOptionApiResult(Guid id = default(Guid), bool isDeleted = default(bool), string value = default(string), bool isDefault = default(bool))
+        /// <param name="id">Test run id. (required).</param>
+        /// <param name="name">Test run name. (required).</param>
+        public TestRunNameApiResult(Guid id = default(Guid), string name = default(string))
         {
             this.Id = id;
-            this.IsDeleted = isDeleted;
-            this.IsDefault = isDefault;
-            this.Value = value;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for TestRunNameApiResult and cannot be null");
+            }
+            this.Name = name;
         }
 
         /// <summary>
-        /// Unique ID of the attribute option
+        /// Test run id.
         /// </summary>
-        /// <value>Unique ID of the attribute option</value>
+        /// <value>Test run id.</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Indicates if the attributes option is deleted
+        /// Test run name.
         /// </summary>
-        /// <value>Indicates if the attributes option is deleted</value>
-        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
-        public bool IsDeleted { get; set; }
-
-        /// <summary>
-        /// Value of the attribute option
-        /// </summary>
-        /// <value>Value of the attribute option</value>
-        [DataMember(Name = "value", EmitDefaultValue = true)]
-        public string Value { get; set; }
-
-        /// <summary>
-        /// Indicates if the attribute option is used by default
-        /// </summary>
-        /// <value>Indicates if the attribute option is used by default</value>
-        [DataMember(Name = "isDefault", IsRequired = true, EmitDefaultValue = true)]
-        public bool IsDefault { get; set; }
+        /// <value>Test run name.</value>
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        public string Name { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -87,11 +74,9 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CustomAttributeOptionApiResult {\n");
+            sb.Append("class TestRunNameApiResult {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
-            sb.Append("  Value: ").Append(Value).Append("\n");
-            sb.Append("  IsDefault: ").Append(IsDefault).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

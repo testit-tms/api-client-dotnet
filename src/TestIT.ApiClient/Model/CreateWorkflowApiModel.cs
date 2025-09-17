@@ -43,7 +43,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">name (required).</param>
         /// <param name="isDefault">isDefault.</param>
         /// <param name="statuses">statuses (required).</param>
-        public CreateWorkflowApiModel(string name = default(string), bool? isDefault = default(bool?), List<WorkflowStatusApiModel> statuses = default(List<WorkflowStatusApiModel>))
+        /// <param name="projectIds">projectIds.</param>
+        public CreateWorkflowApiModel(string name = default(string), bool? isDefault = default(bool?), List<WorkflowStatusApiModel> statuses = default(List<WorkflowStatusApiModel>), List<Guid> projectIds = default(List<Guid>))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -58,6 +59,7 @@ namespace TestIT.ApiClient.Model
             }
             this.Statuses = statuses;
             this.IsDefault = isDefault;
+            this.ProjectIds = projectIds;
         }
 
         /// <summary>
@@ -79,6 +81,12 @@ namespace TestIT.ApiClient.Model
         public List<WorkflowStatusApiModel> Statuses { get; set; }
 
         /// <summary>
+        /// Gets or Sets ProjectIds
+        /// </summary>
+        [DataMember(Name = "projectIds", EmitDefaultValue = true)]
+        public List<Guid> ProjectIds { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -89,6 +97,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  IsDefault: ").Append(IsDefault).Append("\n");
             sb.Append("  Statuses: ").Append(Statuses).Append("\n");
+            sb.Append("  ProjectIds: ").Append(ProjectIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ApiV2WebhooksLogsGet**](WebhooksLogsApi.md#apiv2webhookslogsget) | **GET** /api/v2/webhooks/logs | Get all webhook logs |
+| [**ApiV2WebhooksLogsGet**](WebhooksLogsApi.md#apiv2webhookslogsget) | **GET** /api/v2/webhooks/logs | Get last webhook logs |
 | [**ApiV2WebhooksLogsIdDelete**](WebhooksLogsApi.md#apiv2webhookslogsiddelete) | **DELETE** /api/v2/webhooks/logs/{id} | Delete webhook log by ID |
 | [**ApiV2WebhooksLogsIdGet**](WebhooksLogsApi.md#apiv2webhookslogsidget) | **GET** /api/v2/webhooks/logs/{id} | Get webhook log by ID |
 
 <a id="apiv2webhookslogsget"></a>
 # **ApiV2WebhooksLogsGet**
-> List&lt;WebHookLogModel&gt; ApiV2WebhooksLogsGet (Guid? projectId = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
+> List&lt;WebhookLogApiResult&gt; ApiV2WebhooksLogsGet (Guid? projectId = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
-Get all webhook logs
+Get last webhook logs
 
 ### Example
 ```csharp
@@ -49,8 +49,8 @@ namespace Example
 
             try
             {
-                // Get all webhook logs
-                List<WebHookLogModel> result = apiInstance.ApiV2WebhooksLogsGet(projectId, skip, take, orderBy, searchField, searchValue);
+                // Get last webhook logs
+                List<WebhookLogApiResult> result = apiInstance.ApiV2WebhooksLogsGet(projectId, skip, take, orderBy, searchField, searchValue);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -70,8 +70,8 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get all webhook logs
-    ApiResponse<List<WebHookLogModel>> response = apiInstance.ApiV2WebhooksLogsGetWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue);
+    // Get last webhook logs
+    ApiResponse<List<WebhookLogApiResult>> response = apiInstance.ApiV2WebhooksLogsGetWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -97,7 +97,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;WebHookLogModel&gt;**](WebHookLogModel.md)
+[**List&lt;WebhookLogApiResult&gt;**](WebhookLogApiResult.md)
 
 ### Authorization
 
@@ -113,13 +113,12 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
-| **404** | Not Found |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
-| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -216,7 +215,7 @@ void (empty response body)
 | **204** | No Content |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
-| **403** | System administrator permissions are required |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
@@ -225,7 +224,7 @@ void (empty response body)
 
 <a id="apiv2webhookslogsidget"></a>
 # **ApiV2WebhooksLogsIdGet**
-> WebHookLogModel ApiV2WebhooksLogsIdGet (Guid id)
+> WebhookLogApiResult ApiV2WebhooksLogsIdGet (Guid id)
 
 Get webhook log by ID
 
@@ -260,7 +259,7 @@ namespace Example
             try
             {
                 // Get webhook log by ID
-                WebHookLogModel result = apiInstance.ApiV2WebhooksLogsIdGet(id);
+                WebhookLogApiResult result = apiInstance.ApiV2WebhooksLogsIdGet(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -281,7 +280,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get webhook log by ID
-    ApiResponse<WebHookLogModel> response = apiInstance.ApiV2WebhooksLogsIdGetWithHttpInfo(id);
+    ApiResponse<WebhookLogApiResult> response = apiInstance.ApiV2WebhooksLogsIdGetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -302,7 +301,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**WebHookLogModel**](WebHookLogModel.md)
+[**WebhookLogApiResult**](WebhookLogApiResult.md)
 
 ### Authorization
 
@@ -318,13 +317,12 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **404** | Not Found |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
-| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
