@@ -27,46 +27,40 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// Defines CustomAttributeType
+    /// Defines ExternalIssueApiField
     /// </summary>
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum CustomAttributeType
+    public enum ExternalIssueApiField
     {
         /// <summary>
-        /// Enum String for value: string
+        /// Enum Id for value: Id
         /// </summary>
-        [EnumMember(Value = "string")]
-        String = 1,
+        [EnumMember(Value = "Id")]
+        Id = 1,
 
         /// <summary>
-        /// Enum Datetime for value: datetime
+        /// Enum Type for value: Type
         /// </summary>
-        [EnumMember(Value = "datetime")]
-        Datetime = 2,
+        [EnumMember(Value = "Type")]
+        Type = 2,
 
         /// <summary>
-        /// Enum Options for value: options
+        /// Enum Priority for value: Priority
         /// </summary>
-        [EnumMember(Value = "options")]
-        Options = 3,
+        [EnumMember(Value = "Priority")]
+        Priority = 3,
 
         /// <summary>
-        /// Enum User for value: user
+        /// Enum Status for value: Status
         /// </summary>
-        [EnumMember(Value = "user")]
-        User = 4,
+        [EnumMember(Value = "Status")]
+        Status = 4,
 
         /// <summary>
-        /// Enum MultipleOptions for value: multipleOptions
+        /// Enum Assignee for value: Assignee
         /// </summary>
-        [EnumMember(Value = "multipleOptions")]
-        MultipleOptions = 5,
-
-        /// <summary>
-        /// Enum Checkbox for value: checkbox
-        /// </summary>
-        [EnumMember(Value = "checkbox")]
-        Checkbox = 6
+        [EnumMember(Value = "Assignee")]
+        Assignee = 5
     }
 
 }

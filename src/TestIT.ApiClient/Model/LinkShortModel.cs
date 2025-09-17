@@ -42,8 +42,9 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="id">id (required).</param>
         /// <param name="title">title (required).</param>
+        /// <param name="type">type.</param>
         /// <param name="url">url (required).</param>
-        public LinkShortModel(Guid id = default(Guid), string title = default(string), string url = default(string))
+        public LinkShortModel(Guid id = default(Guid), string title = default(string), string type = default(string), string url = default(string))
         {
             this.Id = id;
             // to ensure "title" is required (not null)
@@ -58,6 +59,7 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("url is a required property for LinkShortModel and cannot be null");
             }
             this.Url = url;
+            this.Type = type;
         }
 
         /// <summary>
@@ -71,6 +73,12 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         [DataMember(Name = "title", IsRequired = true, EmitDefaultValue = true)]
         public string Title { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Type
+        /// </summary>
+        [DataMember(Name = "type", EmitDefaultValue = true)]
+        public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
@@ -88,6 +96,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("class LinkShortModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Title: ").Append(Title).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

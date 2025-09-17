@@ -123,7 +123,7 @@ void (empty response body)
 
 Create section
 
- Use case  User sets section properties (listed in request example)  User runs method execution  System creates section property values  System returns section (listed in response example)
+  Use case    User sets section properties (listed in request example)    User runs method execution    System creates section property values    System returns section (listed in response example)
 
 ### Example
 ```csharp
@@ -229,7 +229,7 @@ catch (ApiException e)
 
 Delete section
 
- Use case  User sets section identifier  User runs method execution  System search section by the identifier  System search and delete nested sections of the found section  System search and delete workitems related to the found nested sections  System deletes initial section and related workitem  System returns no content response
+  Use case    User sets section identifier    User runs method execution    System search section by the identifier    System search and delete nested sections of the found section    System search and delete workitems related to the found nested sections    System deletes initial section and related workitem    System returns no content response
 
 ### Example
 ```csharp
@@ -331,7 +331,7 @@ void (empty response body)
 
 Get section
 
- Use case  User sets section internal (guid format) identifier  User runs method execution  System search section by the section identifier  [Optional] If isDeleted flag equals false, deleted work items are not being searched.             If true, deleted work items are also being searched, null for all work items.  System returns section
+  Use case    User sets section internal (guid format) identifier    User runs method execution    System search section by the section identifier    [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.    System returns section
 
 ### Example
 ```csharp
@@ -439,7 +439,7 @@ catch (ApiException e)
 
 Get section work items
 
- Use case  User sets section identifier  User runs method execution  System search section by the identifier  System search work items related to the section  [Optional] If isDeleted flag equals false, deleted work items are not being searched.             If true, deleted work items are also being searched, null for all work items.  System returns work item collection
+  Use case    User sets section identifier    User runs method execution    System search section by the identifier    System search work items related to the section    [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.    System returns work item collection
 
 ### Example
 ```csharp
@@ -546,7 +546,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  * Pagination-Skip - Skipped amount of items <br>  * Pagination-Take - Taken items <br>  * Pagination-Pages - Expected number of pages <br>  * Pagination-Total-Items - Total count of items <br>  |
-| **400** |  - &#x60;orderBy&#x60; statement must have one &#x60;.&#x60; and no &#x60;,&#x60; symbols  - &#x60;orderBy&#x60; statement has invalid length  - &#x60;orderBy&#x60; statement must have UUID as attribute key  - Search field was not found |  -  |
+| **400** |   - &#x60;orderBy&#x60; statement must have one &#x60;.&#x60; and no &#x60;,&#x60; symbols    - &#x60;orderBy&#x60; statement has invalid length    - &#x60;orderBy&#x60; statement must have UUID as attribute key    - Search field was not found |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library is required |  -  |
 | **404** | Section with provided ID was not found |  -  |
@@ -661,7 +661,7 @@ void (empty response body)
 
 Rename section
 
- Use case  User sets section identifier and new name (listed in request example)  User runs method execution  System search section by the identifier  System updates section name using the new name  System returns no content response
+  Use case    User sets section identifier and new name (listed in request example)    User runs method execution    System search section by the identifier    System updates section name using the new name    System returns no content response
 
 ### Example
 ```csharp
@@ -763,7 +763,7 @@ void (empty response body)
 
 Update section
 
- Use case  User sets section properties (listed in request example)  User runs method execution  System search section by the identifier  System updates section using the property values  System returns no content response
+  Use case    User sets section properties (listed in request example)    User runs method execution    System search section by the identifier    System updates section using the property values    System returns no content response
 
 ### Example
 ```csharp
@@ -850,12 +850,12 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
-| **400** |  - ID is invalid  - Root section cannot be create |  -  |
+| **400** |   - ID is invalid    - Root section cannot be create |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test library is required |  -  |
-| **404** |  - Section cannot be found  - Parent section cannot be found  - Project cannot be found |  -  |
+| **404** |   - Section cannot be found    - Parent section cannot be found    - Project cannot be found |  -  |
 | **409** | Section with the same name already exists in the parent section |  -  |
-| **422** |  - Root section cannot be edited  - Parent ID cannot be changed  - Project ID cannot be changed |  -  |
+| **422** |   - Root section cannot be edited    - Parent ID cannot be changed    - Project ID cannot be changed |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

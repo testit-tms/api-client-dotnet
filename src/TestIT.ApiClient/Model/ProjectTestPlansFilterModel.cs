@@ -51,7 +51,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="tagNames">tagNames.</param>
         /// <param name="attributes">attributes.</param>
         /// <param name="isDeleted">isDeleted.</param>
-        public ProjectTestPlansFilterModel(string name = default(string), string description = default(string), string build = default(string), string productName = default(string), List<TestPlanStatusModel> status = default(List<TestPlanStatusModel>), List<long> globalIds = default(List<long>), bool? isLocked = default(bool?), DateTimeRangeSelectorModel lockedDate = default(DateTimeRangeSelectorModel), List<bool> automaticDurationTimer = default(List<bool>), List<Guid> createdByIds = default(List<Guid>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel startDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel endDate = default(DateTimeRangeSelectorModel), List<string> tagNames = default(List<string>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?))
+        public ProjectTestPlansFilterModel(string name = default(string), string description = default(string), string build = default(string), string productName = default(string), List<TestPlanStatusModel> status = default(List<TestPlanStatusModel>), List<long> globalIds = default(List<long>), bool? isLocked = default(bool?), DateTimeRangeSelectorModel lockedDate = default(DateTimeRangeSelectorModel), List<bool?> automaticDurationTimer = default(List<bool?>), List<Guid> createdByIds = default(List<Guid>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel startDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel endDate = default(DateTimeRangeSelectorModel), List<string> tagNames = default(List<string>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?))
         {
             this.Name = name;
             this.Description = description;
@@ -123,7 +123,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets AutomaticDurationTimer
         /// </summary>
         [DataMember(Name = "automaticDurationTimer", EmitDefaultValue = true)]
-        public List<bool> AutomaticDurationTimer { get; set; }
+        public List<bool?> AutomaticDurationTimer { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedByIds

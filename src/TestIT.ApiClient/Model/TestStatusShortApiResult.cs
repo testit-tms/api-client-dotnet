@@ -32,6 +32,13 @@ namespace TestIT.ApiClient.Model
     [DataContract(Name = "TestStatusShortApiResult")]
     public partial class TestStatusShortApiResult : IValidatableObject
     {
+
+        /// <summary>
+        /// Collection of possible status types
+        /// </summary>
+        /// <value>Collection of possible status types</value>
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
+        public TestStatusApiType Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TestStatusShortApiResult" /> class.
         /// </summary>
@@ -43,7 +50,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="id">id (required).</param>
         /// <param name="name">name (required).</param>
         /// <param name="code">code (required).</param>
-        public TestStatusShortApiResult(Guid id = default(Guid), string name = default(string), string code = default(string))
+        /// <param name="type">Collection of possible status types (required).</param>
+        public TestStatusShortApiResult(Guid id = default(Guid), string name = default(string), string code = default(string), TestStatusApiType type = default(TestStatusApiType))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -58,6 +66,7 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("code is a required property for TestStatusShortApiResult and cannot be null");
             }
             this.Code = code;
+            this.Type = type;
         }
 
         /// <summary>
@@ -89,6 +98,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

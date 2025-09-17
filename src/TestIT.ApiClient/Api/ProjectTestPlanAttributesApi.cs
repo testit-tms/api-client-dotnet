@@ -31,7 +31,7 @@ namespace TestIT.ApiClient.Api
         /// Add attributes to project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attributes identifiers  User runs method execution  System updates project and add attributes to project for test plans  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attributes identifiers    User runs method execution    System updates project and add attributes to project for test plans    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Api
         /// Add attributes to project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attributes identifiers  User runs method execution  System updates project and add attributes to project for test plans  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attributes identifiers    User runs method execution    System updates project and add attributes to project for test plans    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -54,7 +54,7 @@ namespace TestIT.ApiClient.Api
         /// Delete attribute from project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -66,7 +66,7 @@ namespace TestIT.ApiClient.Api
         /// Delete attribute from project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -77,7 +77,7 @@ namespace TestIT.ApiClient.Api
         /// Get project&#39;s test plan attributes
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System returns project for test plans attributes by project identifier
+        ///   Use case    User runs method execution    System returns project for test plans attributes by project identifier
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -88,7 +88,7 @@ namespace TestIT.ApiClient.Api
         /// Get project&#39;s test plan attributes
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System returns project for test plans attributes by project identifier
+        ///   Use case    User runs method execution    System returns project for test plans attributes by project identifier
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -128,7 +128,7 @@ namespace TestIT.ApiClient.Api
         /// Update attribute of project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -140,7 +140,7 @@ namespace TestIT.ApiClient.Api
         /// Update attribute of project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -160,7 +160,7 @@ namespace TestIT.ApiClient.Api
         /// Add attributes to project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attributes identifiers  User runs method execution  System updates project and add attributes to project for test plans  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attributes identifiers    User runs method execution    System updates project and add attributes to project for test plans    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -173,7 +173,7 @@ namespace TestIT.ApiClient.Api
         /// Add attributes to project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attributes identifiers  User runs method execution  System updates project and add attributes to project for test plans  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attributes identifiers    User runs method execution    System updates project and add attributes to project for test plans    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -185,7 +185,7 @@ namespace TestIT.ApiClient.Api
         /// Delete attribute from project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -198,7 +198,7 @@ namespace TestIT.ApiClient.Api
         /// Delete attribute from project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -210,7 +210,7 @@ namespace TestIT.ApiClient.Api
         /// Get project&#39;s test plan attributes
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System returns project for test plans attributes by project identifier
+        ///   Use case    User runs method execution    System returns project for test plans attributes by project identifier
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -222,7 +222,7 @@ namespace TestIT.ApiClient.Api
         /// Get project&#39;s test plan attributes
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System returns project for test plans attributes by project identifier
+        ///   Use case    User runs method execution    System returns project for test plans attributes by project identifier
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -268,7 +268,7 @@ namespace TestIT.ApiClient.Api
         /// Update attribute of project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -281,7 +281,7 @@ namespace TestIT.ApiClient.Api
         /// Update attribute of project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -503,7 +503,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Add attributes to project&#39;s test plans  Use case  User sets project internal or global identifier and attributes identifiers  User runs method execution  System updates project and add attributes to project for test plans  System returns no content response
+        /// Add attributes to project&#39;s test plans   Use case    User sets project internal or global identifier and attributes identifiers    User runs method execution    System updates project and add attributes to project for test plans    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -515,7 +515,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Add attributes to project&#39;s test plans  Use case  User sets project internal or global identifier and attributes identifiers  User runs method execution  System updates project and add attributes to project for test plans  System returns no content response
+        /// Add attributes to project&#39;s test plans   Use case    User sets project internal or global identifier and attributes identifiers    User runs method execution    System updates project and add attributes to project for test plans    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -566,7 +566,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Add attributes to project&#39;s test plans  Use case  User sets project internal or global identifier and attributes identifiers  User runs method execution  System updates project and add attributes to project for test plans  System returns no content response
+        /// Add attributes to project&#39;s test plans   Use case    User sets project internal or global identifier and attributes identifiers    User runs method execution    System updates project and add attributes to project for test plans    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -579,7 +579,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Add attributes to project&#39;s test plans  Use case  User sets project internal or global identifier and attributes identifiers  User runs method execution  System updates project and add attributes to project for test plans  System returns no content response
+        /// Add attributes to project&#39;s test plans   Use case    User sets project internal or global identifier and attributes identifiers    User runs method execution    System updates project and add attributes to project for test plans    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -634,7 +634,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete attribute from project&#39;s test plans  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+        /// Delete attribute from project&#39;s test plans   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -646,7 +646,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete attribute from project&#39;s test plans  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+        /// Delete attribute from project&#39;s test plans   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -696,7 +696,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete attribute from project&#39;s test plans  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+        /// Delete attribute from project&#39;s test plans   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -709,7 +709,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete attribute from project&#39;s test plans  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+        /// Delete attribute from project&#39;s test plans   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -763,7 +763,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project&#39;s test plan attributes  Use case  User runs method execution  System returns project for test plans attributes by project identifier
+        /// Get project&#39;s test plan attributes   Use case    User runs method execution    System returns project for test plans attributes by project identifier
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -775,7 +775,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project&#39;s test plan attributes  Use case  User runs method execution  System returns project for test plans attributes by project identifier
+        /// Get project&#39;s test plan attributes   Use case    User runs method execution    System returns project for test plans attributes by project identifier
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -823,7 +823,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project&#39;s test plan attributes  Use case  User runs method execution  System returns project for test plans attributes by project identifier
+        /// Get project&#39;s test plan attributes   Use case    User runs method execution    System returns project for test plans attributes by project identifier
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -836,7 +836,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project&#39;s test plan attributes  Use case  User runs method execution  System returns project for test plans attributes by project identifier
+        /// Get project&#39;s test plan attributes   Use case    User runs method execution    System returns project for test plans attributes by project identifier
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1081,7 +1081,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update attribute of project&#39;s test plans  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+        /// Update attribute of project&#39;s test plans   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1093,7 +1093,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update attribute of project&#39;s test plans  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+        /// Update attribute of project&#39;s test plans   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1144,7 +1144,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update attribute of project&#39;s test plans  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+        /// Update attribute of project&#39;s test plans   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1157,7 +1157,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update attribute of project&#39;s test plans  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+        /// Update attribute of project&#39;s test plans   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>

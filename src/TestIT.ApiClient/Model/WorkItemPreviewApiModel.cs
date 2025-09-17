@@ -41,9 +41,9 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="WorkItemPreviewApiModel" /> class.
         /// </summary>
         /// <param name="name">name (required).</param>
-        /// <param name="action">action (required).</param>
-        /// <param name="expected">expected (required).</param>
-        public WorkItemPreviewApiModel(string name = default(string), string action = default(string), string expected = default(string))
+        /// <param name="description">description (required).</param>
+        /// <param name="steps">steps (required).</param>
+        public WorkItemPreviewApiModel(string name = default(string), string description = default(string), List<WorkItemPreviewStepApiModel> steps = default(List<WorkItemPreviewStepApiModel>))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -51,18 +51,18 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("name is a required property for WorkItemPreviewApiModel and cannot be null");
             }
             this.Name = name;
-            // to ensure "action" is required (not null)
-            if (action == null)
+            // to ensure "description" is required (not null)
+            if (description == null)
             {
-                throw new ArgumentNullException("action is a required property for WorkItemPreviewApiModel and cannot be null");
+                throw new ArgumentNullException("description is a required property for WorkItemPreviewApiModel and cannot be null");
             }
-            this.Action = action;
-            // to ensure "expected" is required (not null)
-            if (expected == null)
+            this.Description = description;
+            // to ensure "steps" is required (not null)
+            if (steps == null)
             {
-                throw new ArgumentNullException("expected is a required property for WorkItemPreviewApiModel and cannot be null");
+                throw new ArgumentNullException("steps is a required property for WorkItemPreviewApiModel and cannot be null");
             }
-            this.Expected = expected;
+            this.Steps = steps;
         }
 
         /// <summary>
@@ -72,16 +72,16 @@ namespace TestIT.ApiClient.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Action
+        /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "action", IsRequired = true, EmitDefaultValue = true)]
-        public string Action { get; set; }
+        [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
+        public string Description { get; set; }
 
         /// <summary>
-        /// Gets or Sets Expected
+        /// Gets or Sets Steps
         /// </summary>
-        [DataMember(Name = "expected", IsRequired = true, EmitDefaultValue = true)]
-        public string Expected { get; set; }
+        [DataMember(Name = "steps", IsRequired = true, EmitDefaultValue = true)]
+        public List<WorkItemPreviewStepApiModel> Steps { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -92,8 +92,8 @@ namespace TestIT.ApiClient.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class WorkItemPreviewApiModel {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Action: ").Append(Action).Append("\n");
-            sb.Append("  Expected: ").Append(Expected).Append("\n");
+            sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  Steps: ").Append(Steps).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -114,6 +114,18 @@ namespace TestIT.ApiClient.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Name (string) minLength
+            if (this.Name != null && this.Name.Length < 1)
+            {
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+            }
+
+            // Description (string) minLength
+            if (this.Description != null && this.Description.Length < 1)
+            {
+                yield return new ValidationResult("Invalid value for Description, length must be greater than 1.", new [] { "Description" });
+            }
+
             yield break;
         }
     }

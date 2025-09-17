@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **GlobalIds** | **List&lt;long&gt;** |  | [optional] 
 **IsLocked** | **bool?** |  | [optional] 
 **LockedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) |  | [optional] 
-**AutomaticDurationTimer** | **List&lt;bool&gt;** |  | [optional] 
+**AutomaticDurationTimer** | **List&lt;bool?&gt;** |  | [optional] 
 **CreatedByIds** | **List&lt;Guid&gt;** |  | [optional] 
 **CreatedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) |  | [optional] 
 **StartDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) |  | [optional] 

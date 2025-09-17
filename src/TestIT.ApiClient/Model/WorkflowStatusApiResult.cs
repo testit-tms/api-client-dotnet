@@ -51,7 +51,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">name (required).</param>
         /// <param name="code">code (required).</param>
         /// <param name="type">Collection of possible status types (required).</param>
-        /// <param name="description">description.</param>
+        /// <param name="description">description (required).</param>
         /// <param name="isSystem">isSystem (required).</param>
         /// <param name="priority">priority (required).</param>
         public WorkflowStatusApiResult(Guid id = default(Guid), string name = default(string), string code = default(string), TestStatusApiType type = default(TestStatusApiType), string description = default(string), bool isSystem = default(bool), int priority = default(int))
@@ -70,9 +70,14 @@ namespace TestIT.ApiClient.Model
             }
             this.Code = code;
             this.Type = type;
+            // to ensure "description" is required (not null)
+            if (description == null)
+            {
+                throw new ArgumentNullException("description is a required property for WorkflowStatusApiResult and cannot be null");
+            }
+            this.Description = description;
             this.IsSystem = isSystem;
             this.Priority = priority;
-            this.Description = description;
         }
 
         /// <summary>
@@ -96,7 +101,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = true)]
+        [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>

@@ -27,31 +27,33 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// WebHookLogModel
+    /// WebhookLogApiResult
     /// </summary>
-    [DataContract(Name = "WebHookLogModel")]
-    public partial class WebHookLogModel : IValidatableObject
+    [DataContract(Name = "WebhookLogApiResult")]
+    public partial class WebhookLogApiResult : IValidatableObject
     {
 
         /// <summary>
         /// Gets or Sets EventType
         /// </summary>
         [DataMember(Name = "eventType", IsRequired = true, EmitDefaultValue = true)]
-        public WebHookEventTypeModel EventType { get; set; }
+        public WebHookEventType EventType { get; set; }
 
         /// <summary>
         /// Gets or Sets RequestType
         /// </summary>
         [DataMember(Name = "requestType", IsRequired = true, EmitDefaultValue = true)]
-        public RequestTypeModel RequestType { get; set; }
+        public RequestType RequestType { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WebHookLogModel" /> class.
+        /// Initializes a new instance of the <see cref="WebhookLogApiResult" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WebHookLogModel() { }
+        protected WebhookLogApiResult() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WebHookLogModel" /> class.
+        /// Initializes a new instance of the <see cref="WebhookLogApiResult" /> class.
         /// </summary>
+        /// <param name="id">id (required).</param>
+        /// <param name="isDeleted">isDeleted (required).</param>
         /// <param name="webHookName">webHookName (required).</param>
         /// <param name="eventType">eventType (required).</param>
         /// <param name="webHookId">webHookId (required).</param>
@@ -67,14 +69,14 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedDate">modifiedDate.</param>
         /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
-        /// <param name="id">Unique ID of the entity (required).</param>
-        /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
-        public WebHookLogModel(string webHookName = default(string), WebHookEventTypeModel eventType = default(WebHookEventTypeModel), Guid webHookId = default(Guid), string requestBody = default(string), string requestMeta = default(string), int responseStatusCode = default(int), string responseBody = default(string), string responseMeta = default(string), Guid projectId = default(Guid), string url = default(string), RequestTypeModel requestType = default(RequestTypeModel), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), Guid id = default(Guid), bool isDeleted = default(bool))
+        public WebhookLogApiResult(Guid id = default(Guid), bool isDeleted = default(bool), string webHookName = default(string), WebHookEventType eventType = default(WebHookEventType), Guid webHookId = default(Guid), string requestBody = default(string), string requestMeta = default(string), int responseStatusCode = default(int), string responseBody = default(string), string responseMeta = default(string), Guid projectId = default(Guid), string url = default(string), RequestType requestType = default(RequestType), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?))
         {
+            this.Id = id;
+            this.IsDeleted = isDeleted;
             // to ensure "webHookName" is required (not null)
             if (webHookName == null)
             {
-                throw new ArgumentNullException("webHookName is a required property for WebHookLogModel and cannot be null");
+                throw new ArgumentNullException("webHookName is a required property for WebhookLogApiResult and cannot be null");
             }
             this.WebHookName = webHookName;
             this.EventType = eventType;
@@ -84,13 +86,11 @@ namespace TestIT.ApiClient.Model
             // to ensure "url" is required (not null)
             if (url == null)
             {
-                throw new ArgumentNullException("url is a required property for WebHookLogModel and cannot be null");
+                throw new ArgumentNullException("url is a required property for WebhookLogApiResult and cannot be null");
             }
             this.Url = url;
             this.RequestType = requestType;
             this.CreatedById = createdById;
-            this.Id = id;
-            this.IsDeleted = isDeleted;
             this.RequestBody = requestBody;
             this.RequestMeta = requestMeta;
             this.ResponseBody = responseBody;
@@ -99,6 +99,18 @@ namespace TestIT.ApiClient.Model
             this.ModifiedDate = modifiedDate;
             this.ModifiedById = modifiedById;
         }
+
+        /// <summary>
+        /// Gets or Sets Id
+        /// </summary>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
+        public Guid Id { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsDeleted
+        /// </summary>
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
+        public bool IsDeleted { get; set; }
 
         /// <summary>
         /// Gets or Sets WebHookName
@@ -179,27 +191,15 @@ namespace TestIT.ApiClient.Model
         public Guid? ModifiedById { get; set; }
 
         /// <summary>
-        /// Unique ID of the entity
-        /// </summary>
-        /// <value>Unique ID of the entity</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
-        public Guid Id { get; set; }
-
-        /// <summary>
-        /// Indicates if the entity is deleted
-        /// </summary>
-        /// <value>Indicates if the entity is deleted</value>
-        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
-        public bool IsDeleted { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WebHookLogModel {\n");
+            sb.Append("class WebhookLogApiResult {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  WebHookName: ").Append(WebHookName).Append("\n");
             sb.Append("  EventType: ").Append(EventType).Append("\n");
             sb.Append("  WebHookId: ").Append(WebHookId).Append("\n");
@@ -215,8 +215,6 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
             sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
             sb.Append("  ModifiedById: ").Append(ModifiedById).Append("\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

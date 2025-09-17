@@ -38,7 +38,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">name.</param>
         /// <param name="isDeleted">isDeleted.</param>
         /// <param name="projectIds">projectIds.</param>
-        public ParametersFilterApiModel(string name = default(string), bool? isDeleted = default(bool?), List<Guid> projectIds = default(List<Guid>))
+        public ParametersFilterApiModel(string name = default(string), bool? isDeleted = default(bool?), List<Guid?> projectIds = default(List<Guid?>))
         {
             this.Name = name;
             this.IsDeleted = isDeleted;
@@ -61,7 +61,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ProjectIds
         /// </summary>
         [DataMember(Name = "projectIds", EmitDefaultValue = true)]
-        public List<Guid> ProjectIds { get; set; }
+        public List<Guid?> ProjectIds { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
