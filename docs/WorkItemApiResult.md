@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **AutoTests** | [**List&lt;AutoTestModel&gt;**](AutoTestModel.md) | Automated tests associated with the work item | 
 **Attachments** | [**List&lt;AttachmentModel&gt;**](AttachmentModel.md) | Files attached to the work item | 
 **Links** | [**List&lt;LinkModel&gt;**](LinkModel.md) | Set of links related to the work item | 
+**ExternalIssues** | [**List&lt;ExternalIssueApiResult&gt;**](ExternalIssueApiResult.md) | Set of external issues related to the work item | 
 **CreatedDate** | **DateTime** | Creation date of the work item | 
 **CreatedById** | **Guid** | Unique identifier of the work item creator | 
 **ModifiedDate** | **DateTime?** | Modification date of the work item | [optional] 

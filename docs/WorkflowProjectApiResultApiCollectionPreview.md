@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**List&lt;WorkflowProjectApiResult&gt;**](WorkflowProjectApiResult.md) |  | 
-**TotalCount** | **int** |  | 
+**Data** | [**List&lt;WorkflowProjectApiResult&gt;**](WorkflowProjectApiResult.md) | Preview items | 
+**TotalCount** | **int** | Total count | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

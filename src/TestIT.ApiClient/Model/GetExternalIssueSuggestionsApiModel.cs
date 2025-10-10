@@ -34,8 +34,9 @@ namespace TestIT.ApiClient.Model
     {
 
         /// <summary>
-        /// Gets or Sets Field
+        /// Field of external issue metadata to get
         /// </summary>
+        /// <value>Field of external issue metadata to get</value>
         [DataMember(Name = "field", IsRequired = true, EmitDefaultValue = true)]
         public ExternalIssueApiField Field { get; set; }
         /// <summary>
@@ -46,23 +47,28 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GetExternalIssueSuggestionsApiModel" /> class.
         /// </summary>
-        /// <param name="field">field (required).</param>
-        /// <param name="inquiry">inquiry (required).</param>
-        public GetExternalIssueSuggestionsApiModel(ExternalIssueApiField field = default(ExternalIssueApiField), Inquiry inquiry = default(Inquiry))
+        /// <param name="field">Field of external issue metadata to get (required).</param>
+        /// <param name="projectIds">List of project identifiers where external issue is available.</param>
+        /// <param name="inquiry">Inquiry.</param>
+        public GetExternalIssueSuggestionsApiModel(ExternalIssueApiField field = default(ExternalIssueApiField), List<Guid> projectIds = default(List<Guid>), Inquiry inquiry = default(Inquiry))
         {
             this.Field = field;
-            // to ensure "inquiry" is required (not null)
-            if (inquiry == null)
-            {
-                throw new ArgumentNullException("inquiry is a required property for GetExternalIssueSuggestionsApiModel and cannot be null");
-            }
+            this.ProjectIds = projectIds;
             this.Inquiry = inquiry;
         }
 
         /// <summary>
-        /// Gets or Sets Inquiry
+        /// List of project identifiers where external issue is available
         /// </summary>
-        [DataMember(Name = "inquiry", IsRequired = true, EmitDefaultValue = true)]
+        /// <value>List of project identifiers where external issue is available</value>
+        [DataMember(Name = "projectIds", EmitDefaultValue = true)]
+        public List<Guid> ProjectIds { get; set; }
+
+        /// <summary>
+        /// Inquiry
+        /// </summary>
+        /// <value>Inquiry</value>
+        [DataMember(Name = "inquiry", EmitDefaultValue = true)]
         public Inquiry Inquiry { get; set; }
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace TestIT.ApiClient.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class GetExternalIssueSuggestionsApiModel {\n");
             sb.Append("  Field: ").Append(Field).Append("\n");
+            sb.Append("  ProjectIds: ").Append(ProjectIds).Append("\n");
             sb.Append("  Inquiry: ").Append(Inquiry).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

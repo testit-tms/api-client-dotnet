@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="GlobalCustomAttributeUpdateModel" /> class.
         /// </summary>
         /// <param name="name">Name of attribute (required).</param>
-        /// <param name="options">Collection of attribute options      Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only.</param>
+        /// <param name="options">Collection of attribute options   Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only.</param>
         /// <param name="isEnabled">Indicates whether the attribute is available.</param>
         /// <param name="isRequired">Indicates whether the attribute value is mandatory to specify.</param>
         public GlobalCustomAttributeUpdateModel(string name = default(string), List<CustomAttributeOptionModel> options = default(List<CustomAttributeOptionModel>), bool? isEnabled = default(bool?), bool? isRequired = default(bool?))
@@ -65,9 +65,9 @@ namespace TestIT.ApiClient.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Collection of attribute options      Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only
+        /// Collection of attribute options   Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only
         /// </summary>
-        /// <value>Collection of attribute options      Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only</value>
+        /// <value>Collection of attribute options   Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only</value>
         [DataMember(Name = "options", EmitDefaultValue = true)]
         public List<CustomAttributeOptionModel> Options { get; set; }
 

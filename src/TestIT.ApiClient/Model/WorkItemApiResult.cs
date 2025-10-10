@@ -94,12 +94,13 @@ namespace TestIT.ApiClient.Model
         /// <param name="autoTests">Automated tests associated with the work item (required).</param>
         /// <param name="attachments">Files attached to the work item (required).</param>
         /// <param name="links">Set of links related to the work item (required).</param>
+        /// <param name="externalIssues">Set of external issues related to the work item (required).</param>
         /// <param name="createdDate">Creation date of the work item (required).</param>
         /// <param name="createdById">Unique identifier of the work item creator (required).</param>
         /// <param name="modifiedDate">Modification date of the work item.</param>
         /// <param name="modifiedById">Unique identifier of the work item modifier.</param>
         /// <param name="isDeleted">Indicates whether the work item is marked as deleted (required).</param>
-        public WorkItemApiResult(Guid id = default(Guid), long globalId = default(long), Guid versionId = default(Guid), int versionNumber = default(int), Guid projectId = default(Guid), Guid sectionId = default(Guid), string name = default(string), string description = default(string), WorkItemSourceTypeApiModel sourceType = default(WorkItemSourceTypeApiModel), WorkItemEntityTypeApiModel entityTypeName = default(WorkItemEntityTypeApiModel), int duration = default(int), long medianDuration = default(long), WorkItemStateApiModel state = default(WorkItemStateApiModel), WorkItemPriorityApiModel priority = default(WorkItemPriorityApiModel), bool isAutomated = default(bool), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<TagModel> tags = default(List<TagModel>), List<StepModel> sectionPreconditionSteps = default(List<StepModel>), List<StepModel> sectionPostconditionSteps = default(List<StepModel>), List<StepModel> preconditionSteps = default(List<StepModel>), List<StepModel> steps = default(List<StepModel>), List<StepModel> postconditionSteps = default(List<StepModel>), List<IterationModel> iterations = default(List<IterationModel>), List<AutoTestModel> autoTests = default(List<AutoTestModel>), List<AttachmentModel> attachments = default(List<AttachmentModel>), List<LinkModel> links = default(List<LinkModel>), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), bool isDeleted = default(bool))
+        public WorkItemApiResult(Guid id = default(Guid), long globalId = default(long), Guid versionId = default(Guid), int versionNumber = default(int), Guid projectId = default(Guid), Guid sectionId = default(Guid), string name = default(string), string description = default(string), WorkItemSourceTypeApiModel sourceType = default(WorkItemSourceTypeApiModel), WorkItemEntityTypeApiModel entityTypeName = default(WorkItemEntityTypeApiModel), int duration = default(int), long medianDuration = default(long), WorkItemStateApiModel state = default(WorkItemStateApiModel), WorkItemPriorityApiModel priority = default(WorkItemPriorityApiModel), bool isAutomated = default(bool), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<TagModel> tags = default(List<TagModel>), List<StepModel> sectionPreconditionSteps = default(List<StepModel>), List<StepModel> sectionPostconditionSteps = default(List<StepModel>), List<StepModel> preconditionSteps = default(List<StepModel>), List<StepModel> steps = default(List<StepModel>), List<StepModel> postconditionSteps = default(List<StepModel>), List<IterationModel> iterations = default(List<IterationModel>), List<AutoTestModel> autoTests = default(List<AutoTestModel>), List<AttachmentModel> attachments = default(List<AttachmentModel>), List<LinkModel> links = default(List<LinkModel>), List<ExternalIssueApiResult> externalIssues = default(List<ExternalIssueApiResult>), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), bool isDeleted = default(bool))
         {
             this.Id = id;
             this.GlobalId = globalId;
@@ -186,6 +187,12 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("links is a required property for WorkItemApiResult and cannot be null");
             }
             this.Links = links;
+            // to ensure "externalIssues" is required (not null)
+            if (externalIssues == null)
+            {
+                throw new ArgumentNullException("externalIssues is a required property for WorkItemApiResult and cannot be null");
+            }
+            this.ExternalIssues = externalIssues;
             this.CreatedDate = createdDate;
             this.CreatedById = createdById;
             this.IsDeleted = isDeleted;
@@ -348,6 +355,13 @@ namespace TestIT.ApiClient.Model
         public List<LinkModel> Links { get; set; }
 
         /// <summary>
+        /// Set of external issues related to the work item
+        /// </summary>
+        /// <value>Set of external issues related to the work item</value>
+        [DataMember(Name = "externalIssues", IsRequired = true, EmitDefaultValue = true)]
+        public List<ExternalIssueApiResult> ExternalIssues { get; set; }
+
+        /// <summary>
         /// Creation date of the work item
         /// </summary>
         /// <value>Creation date of the work item</value>
@@ -416,6 +430,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  AutoTests: ").Append(AutoTests).Append("\n");
             sb.Append("  Attachments: ").Append(Attachments).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
+            sb.Append("  ExternalIssues: ").Append(ExternalIssues).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
             sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");

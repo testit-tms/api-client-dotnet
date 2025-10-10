@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **CreatedById** | **Guid** |  | 
 **ModifiedById** | **Guid?** |  | [optional] 
 **GlobalId** | **long** |  | 
+**ExternalIssues** | [**List&lt;ExternalIssueModel&gt;**](ExternalIssueModel.md) |  | 
 **Id** | **Guid** |  | 
 **SectionId** | **Guid** |  | 
 **Description** | **string** |  | [optional] 
