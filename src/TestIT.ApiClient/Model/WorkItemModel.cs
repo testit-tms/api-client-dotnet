@@ -81,6 +81,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="globalId">globalId (required).</param>
+        /// <param name="externalIssues">externalIssues (required).</param>
         /// <param name="id">id (required).</param>
         /// <param name="sectionId">sectionId (required).</param>
         /// <param name="description">description.</param>
@@ -95,7 +96,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="tags">tags (required).</param>
         /// <param name="links">links (required).</param>
         /// <param name="name">name (required).</param>
-        public WorkItemModel(Guid versionId = default(Guid), long medianDuration = default(long), bool isDeleted = default(bool), Guid projectId = default(Guid), WorkItemEntityTypes entityTypeName = default(WorkItemEntityTypes), bool isAutomated = default(bool), List<AutoTestModel> autoTests = default(List<AutoTestModel>), List<AttachmentModel> attachments = default(List<AttachmentModel>), List<StepModel> sectionPreconditionSteps = default(List<StepModel>), List<StepModel> sectionPostconditionSteps = default(List<StepModel>), int versionNumber = default(int), List<IterationModel> iterations = default(List<IterationModel>), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), Guid id = default(Guid), Guid sectionId = default(Guid), string description = default(string), WorkItemStates state = default(WorkItemStates), WorkItemPriorityModel priority = default(WorkItemPriorityModel), WorkItemSourceTypeModel sourceType = default(WorkItemSourceTypeModel), List<StepModel> steps = default(List<StepModel>), List<StepModel> preconditionSteps = default(List<StepModel>), List<StepModel> postconditionSteps = default(List<StepModel>), int duration = default(int), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<TagModel> tags = default(List<TagModel>), List<LinkModel> links = default(List<LinkModel>), string name = default(string))
+        public WorkItemModel(Guid versionId = default(Guid), long medianDuration = default(long), bool isDeleted = default(bool), Guid projectId = default(Guid), WorkItemEntityTypes entityTypeName = default(WorkItemEntityTypes), bool isAutomated = default(bool), List<AutoTestModel> autoTests = default(List<AutoTestModel>), List<AttachmentModel> attachments = default(List<AttachmentModel>), List<StepModel> sectionPreconditionSteps = default(List<StepModel>), List<StepModel> sectionPostconditionSteps = default(List<StepModel>), int versionNumber = default(int), List<IterationModel> iterations = default(List<IterationModel>), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), List<ExternalIssueModel> externalIssues = default(List<ExternalIssueModel>), Guid id = default(Guid), Guid sectionId = default(Guid), string description = default(string), WorkItemStates state = default(WorkItemStates), WorkItemPriorityModel priority = default(WorkItemPriorityModel), WorkItemSourceTypeModel sourceType = default(WorkItemSourceTypeModel), List<StepModel> steps = default(List<StepModel>), List<StepModel> preconditionSteps = default(List<StepModel>), List<StepModel> postconditionSteps = default(List<StepModel>), int duration = default(int), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), List<TagModel> tags = default(List<TagModel>), List<LinkModel> links = default(List<LinkModel>), string name = default(string))
         {
             this.VersionId = versionId;
             this.MedianDuration = medianDuration;
@@ -107,6 +108,12 @@ namespace TestIT.ApiClient.Model
             this.CreatedDate = createdDate;
             this.CreatedById = createdById;
             this.GlobalId = globalId;
+            // to ensure "externalIssues" is required (not null)
+            if (externalIssues == null)
+            {
+                throw new ArgumentNullException("externalIssues is a required property for WorkItemModel and cannot be null");
+            }
+            this.ExternalIssues = externalIssues;
             this.Id = id;
             this.SectionId = sectionId;
             this.State = state;
@@ -170,7 +177,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>used for versioning changes in workitem</value>
         /*
-        <example>4d8bbb9d-960f-43d3-ac7b-2fce97c1fc4a</example>
+        <example>b63772c7-7c31-4748-8ff9-cc13975a106c</example>
         */
         [DataMember(Name = "versionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid VersionId { get; set; }
@@ -198,7 +205,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ProjectId
         /// </summary>
         /*
-        <example>4d8bbb9d-960f-43d3-ac7b-2fce97c1fc4a</example>
+        <example>b63772c7-7c31-4748-8ff9-cc13975a106c</example>
         */
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
@@ -256,7 +263,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         /*
-        <example>2025-09-17T13:05:57.874341400+03:00</example>
+        <example>2025-10-08T12:42:21.919005100Z</example>
         */
         [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
@@ -265,7 +272,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ModifiedDate
         /// </summary>
         /*
-        <example>2025-09-17T13:05:57.874341400+03:00</example>
+        <example>2025-10-08T12:42:21.919005100Z</example>
         */
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
@@ -274,7 +281,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CreatedById
         /// </summary>
         /*
-        <example>4d8bbb9d-960f-43d3-ac7b-2fce97c1fc4a</example>
+        <example>b63772c7-7c31-4748-8ff9-cc13975a106c</example>
         */
         [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
@@ -283,7 +290,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ModifiedById
         /// </summary>
         /*
-        <example>4d8bbb9d-960f-43d3-ac7b-2fce97c1fc4a</example>
+        <example>b63772c7-7c31-4748-8ff9-cc13975a106c</example>
         */
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
@@ -298,10 +305,16 @@ namespace TestIT.ApiClient.Model
         public long GlobalId { get; set; }
 
         /// <summary>
+        /// Gets or Sets ExternalIssues
+        /// </summary>
+        [DataMember(Name = "externalIssues", IsRequired = true, EmitDefaultValue = true)]
+        public List<ExternalIssueModel> ExternalIssues { get; set; }
+
+        /// <summary>
         /// Gets or Sets Id
         /// </summary>
         /*
-        <example>4d8bbb9d-960f-43d3-ac7b-2fce97c1fc4a</example>
+        <example>b63772c7-7c31-4748-8ff9-cc13975a106c</example>
         */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
@@ -310,7 +323,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets SectionId
         /// </summary>
         /*
-        <example>4d8bbb9d-960f-43d3-ac7b-2fce97c1fc4a</example>
+        <example>b63772c7-7c31-4748-8ff9-cc13975a106c</example>
         */
         [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid SectionId { get; set; }
@@ -403,6 +416,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
             sb.Append("  ModifiedById: ").Append(ModifiedById).Append("\n");
             sb.Append("  GlobalId: ").Append(GlobalId).Append("\n");
+            sb.Append("  ExternalIssues: ").Append(ExternalIssues).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  SectionId: ").Append(SectionId).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");

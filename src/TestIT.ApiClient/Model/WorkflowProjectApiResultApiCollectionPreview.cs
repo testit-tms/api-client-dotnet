@@ -40,8 +40,8 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkflowProjectApiResultApiCollectionPreview" /> class.
         /// </summary>
-        /// <param name="data">data (required).</param>
-        /// <param name="totalCount">totalCount (required).</param>
+        /// <param name="data">Preview items (required).</param>
+        /// <param name="totalCount">Total count (required).</param>
         public WorkflowProjectApiResultApiCollectionPreview(List<WorkflowProjectApiResult> data = default(List<WorkflowProjectApiResult>), int totalCount = default(int))
         {
             // to ensure "data" is required (not null)
@@ -54,14 +54,16 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Gets or Sets Data
+        /// Preview items
         /// </summary>
+        /// <value>Preview items</value>
         [DataMember(Name = "data", IsRequired = true, EmitDefaultValue = true)]
         public List<WorkflowProjectApiResult> Data { get; set; }
 
         /// <summary>
-        /// Gets or Sets TotalCount
+        /// Total count
         /// </summary>
+        /// <value>Total count</value>
         [DataMember(Name = "totalCount", IsRequired = true, EmitDefaultValue = true)]
         public int TotalCount { get; set; }
 

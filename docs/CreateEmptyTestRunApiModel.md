@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProjectId** | **Guid** | Project unique identifier                This property is to link test run with a project | 
+**ProjectId** | **Guid** | Project unique identifier              This property is to link test run with a project | 
 **Name** | **string** | Test run name | [optional] 
 **Description** | **string** | Test run description | [optional] 
 **LaunchSource** | **string** | Test run launch source | [optional] 

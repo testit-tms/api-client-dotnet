@@ -40,8 +40,9 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ExternalIssueApiFieldSuggestion" /> class.
         /// </summary>
-        /// <param name="value">value (required).</param>
-        public ExternalIssueApiFieldSuggestion(string value = default(string))
+        /// <param name="value">Value of the external issue field (required).</param>
+        /// <param name="externalService">Associated external service with this value (required).</param>
+        public ExternalIssueApiFieldSuggestion(string value = default(string), ExternalIssueExternalServiceApiResult externalService = default(ExternalIssueExternalServiceApiResult))
         {
             // to ensure "value" is required (not null)
             if (value == null)
@@ -49,13 +50,27 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("value is a required property for ExternalIssueApiFieldSuggestion and cannot be null");
             }
             this.Value = value;
+            // to ensure "externalService" is required (not null)
+            if (externalService == null)
+            {
+                throw new ArgumentNullException("externalService is a required property for ExternalIssueApiFieldSuggestion and cannot be null");
+            }
+            this.ExternalService = externalService;
         }
 
         /// <summary>
-        /// Gets or Sets Value
+        /// Value of the external issue field
         /// </summary>
+        /// <value>Value of the external issue field</value>
         [DataMember(Name = "value", IsRequired = true, EmitDefaultValue = true)]
         public string Value { get; set; }
+
+        /// <summary>
+        /// Associated external service with this value
+        /// </summary>
+        /// <value>Associated external service with this value</value>
+        [DataMember(Name = "externalService", IsRequired = true, EmitDefaultValue = true)]
+        public ExternalIssueExternalServiceApiResult ExternalService { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -66,6 +81,7 @@ namespace TestIT.ApiClient.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class ExternalIssueApiFieldSuggestion {\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  ExternalService: ").Append(ExternalService).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
