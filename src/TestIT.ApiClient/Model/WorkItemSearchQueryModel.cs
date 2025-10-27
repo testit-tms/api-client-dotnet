@@ -55,9 +55,10 @@ namespace TestIT.ApiClient.Model
         /// <param name="medianDuration">Specifies a work item median duration range to search for.</param>
         /// <param name="isAutomated">Is result must consist of only manual/automated work items.</param>
         /// <param name="tags">Collection of tags.</param>
+        /// <param name="excludeTags">Collection of tags to exclude.</param>
         /// <param name="autoTestIds">Collection of identifiers of linked autotests.</param>
         /// <param name="workItemVersionIds">Collection of identifiers work items versions..</param>
-        public WorkItemSearchQueryModel(List<Guid> projectIds = default(List<Guid>), WorkItemLinkFilterModel links = default(WorkItemLinkFilterModel), string name = default(string), List<Guid> ids = default(List<Guid>), List<long> globalIds = default(List<long>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?), List<Guid> sectionIds = default(List<Guid>), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), List<WorkItemStates> states = default(List<WorkItemStates>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<WorkItemSourceTypeModel> sourceTypes = default(List<WorkItemSourceTypeModel>), List<WorkItemEntityTypes> types = default(List<WorkItemEntityTypes>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), Int32RangeSelectorModel duration = default(Int32RangeSelectorModel), Int64RangeSelectorModel medianDuration = default(Int64RangeSelectorModel), bool? isAutomated = default(bool?), List<string> tags = default(List<string>), List<Guid> autoTestIds = default(List<Guid>), List<Guid> workItemVersionIds = default(List<Guid>))
+        public WorkItemSearchQueryModel(List<Guid> projectIds = default(List<Guid>), WorkItemLinkFilterModel links = default(WorkItemLinkFilterModel), string name = default(string), List<Guid> ids = default(List<Guid>), List<long> globalIds = default(List<long>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?), List<Guid> sectionIds = default(List<Guid>), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), List<WorkItemStates> states = default(List<WorkItemStates>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<WorkItemSourceTypeModel> sourceTypes = default(List<WorkItemSourceTypeModel>), List<WorkItemEntityTypes> types = default(List<WorkItemEntityTypes>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), Int32RangeSelectorModel duration = default(Int32RangeSelectorModel), Int64RangeSelectorModel medianDuration = default(Int64RangeSelectorModel), bool? isAutomated = default(bool?), List<string> tags = default(List<string>), List<string> excludeTags = default(List<string>), List<Guid> autoTestIds = default(List<Guid>), List<Guid> workItemVersionIds = default(List<Guid>))
         {
             this.ProjectIds = projectIds;
             this.Links = links;
@@ -79,6 +80,7 @@ namespace TestIT.ApiClient.Model
             this.MedianDuration = medianDuration;
             this.IsAutomated = isAutomated;
             this.Tags = tags;
+            this.ExcludeTags = excludeTags;
             this.AutoTestIds = autoTestIds;
             this.WorkItemVersionIds = workItemVersionIds;
         }
@@ -224,6 +226,13 @@ namespace TestIT.ApiClient.Model
         public List<string> Tags { get; set; }
 
         /// <summary>
+        /// Collection of tags to exclude
+        /// </summary>
+        /// <value>Collection of tags to exclude</value>
+        [DataMember(Name = "excludeTags", EmitDefaultValue = true)]
+        public List<string> ExcludeTags { get; set; }
+
+        /// <summary>
         /// Collection of identifiers of linked autotests
         /// </summary>
         /// <value>Collection of identifiers of linked autotests</value>
@@ -265,6 +274,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  MedianDuration: ").Append(MedianDuration).Append("\n");
             sb.Append("  IsAutomated: ").Append(IsAutomated).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
+            sb.Append("  ExcludeTags: ").Append(ExcludeTags).Append("\n");
             sb.Append("  AutoTestIds: ").Append(AutoTestIds).Append("\n");
             sb.Append("  WorkItemVersionIds: ").Append(WorkItemVersionIds).Append("\n");
             sb.Append("}\n");

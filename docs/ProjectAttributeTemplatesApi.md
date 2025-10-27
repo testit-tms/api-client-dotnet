@@ -40,7 +40,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectAttributeTemplatesApi(httpClient, config, httpClientHandler);
-            var projectId = "projectId_example";  // string | 
+            var projectId = "projectId_example";  // string | Internal (UUID) or global (integer) identifier
             var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
             var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
@@ -89,7 +89,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **projectId** | **string** |  |  |
+| **projectId** | **string** | Internal (UUID) or global (integer) identifier |  |
 | **skip** | **int?** | Amount of items to be skipped (offset) | [optional]  |
 | **take** | **int?** | Amount of items to be taken (limit) | [optional]  |
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
@@ -130,7 +130,7 @@ catch (ApiException e)
 
 Delete CustomAttributeTemplate from Project
 
- Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System delete attribute template from project
+  Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System delete attribute template from project
 
 ### Example
 ```csharp
@@ -234,7 +234,7 @@ void (empty response body)
 
 Add CustomAttributeTemplate to Project
 
- Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System add attribute template to project
+  Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System add attribute template to project
 
 ### Example
 ```csharp

@@ -59,10 +59,10 @@ namespace TestIT.ApiClient.Model
         /// <param name="className">Specifies an autotest class name to search for.</param>
         /// <param name="isEmptyClassName">Specifies an autotest class name presence status to search for.</param>
         /// <param name="lastTestResultOutcome">Specifies an autotest outcome of the last test result to search for.</param>
-        /// <param name="lastTestResultStatusCode">Specifies an autotest status code of the last test result to search for.</param>
+        /// <param name="lastTestResultStatusCodes">Specifies an autotest status codes of the last test result to search for.</param>
         /// <param name="externalKey">Specifies an autotest external key to search for.</param>
         /// <param name="lastTestResultConfigurationIds">Specifies an autotest configuration IDs of the last test result to search for.</param>
-        public AutoTestFilterApiModel(List<Guid> projectIds = default(List<Guid>), List<string> externalIds = default(List<string>), List<long> globalIds = default(List<long>), string name = default(string), bool? isFlaky = default(bool?), bool? mustBeApproved = default(bool?), Int64RangeSelectorModel stabilityPercentage = default(Int64RangeSelectorModel), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?), string varNamespace = default(string), bool? isEmptyNamespace = default(bool?), string className = default(string), bool? isEmptyClassName = default(bool?), AutotestResultOutcome? lastTestResultOutcome = default(AutotestResultOutcome?), string lastTestResultStatusCode = default(string), string externalKey = default(string), List<Guid> lastTestResultConfigurationIds = default(List<Guid>))
+        public AutoTestFilterApiModel(List<Guid> projectIds = default(List<Guid>), List<string> externalIds = default(List<string>), List<long> globalIds = default(List<long>), string name = default(string), bool? isFlaky = default(bool?), bool? mustBeApproved = default(bool?), Int64RangeSelectorModel stabilityPercentage = default(Int64RangeSelectorModel), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?), string varNamespace = default(string), bool? isEmptyNamespace = default(bool?), string className = default(string), bool? isEmptyClassName = default(bool?), AutotestResultOutcome? lastTestResultOutcome = default(AutotestResultOutcome?), List<string> lastTestResultStatusCodes = default(List<string>), string externalKey = default(string), List<Guid> lastTestResultConfigurationIds = default(List<Guid>))
         {
             this.ProjectIds = projectIds;
             this.ExternalIds = externalIds;
@@ -81,7 +81,7 @@ namespace TestIT.ApiClient.Model
             this.ClassName = className;
             this.IsEmptyClassName = isEmptyClassName;
             this.LastTestResultOutcome = lastTestResultOutcome;
-            this.LastTestResultStatusCode = lastTestResultStatusCode;
+            this.LastTestResultStatusCodes = lastTestResultStatusCodes;
             this.ExternalKey = externalKey;
             this.LastTestResultConfigurationIds = lastTestResultConfigurationIds;
         }
@@ -199,11 +199,11 @@ namespace TestIT.ApiClient.Model
         public bool? IsEmptyClassName { get; set; }
 
         /// <summary>
-        /// Specifies an autotest status code of the last test result to search for
+        /// Specifies an autotest status codes of the last test result to search for
         /// </summary>
-        /// <value>Specifies an autotest status code of the last test result to search for</value>
-        [DataMember(Name = "lastTestResultStatusCode", EmitDefaultValue = true)]
-        public string LastTestResultStatusCode { get; set; }
+        /// <value>Specifies an autotest status codes of the last test result to search for</value>
+        [DataMember(Name = "lastTestResultStatusCodes", EmitDefaultValue = true)]
+        public List<string> LastTestResultStatusCodes { get; set; }
 
         /// <summary>
         /// Specifies an autotest external key to search for
@@ -244,7 +244,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ClassName: ").Append(ClassName).Append("\n");
             sb.Append("  IsEmptyClassName: ").Append(IsEmptyClassName).Append("\n");
             sb.Append("  LastTestResultOutcome: ").Append(LastTestResultOutcome).Append("\n");
-            sb.Append("  LastTestResultStatusCode: ").Append(LastTestResultStatusCode).Append("\n");
+            sb.Append("  LastTestResultStatusCodes: ").Append(LastTestResultStatusCodes).Append("\n");
             sb.Append("  ExternalKey: ").Append(ExternalKey).Append("\n");
             sb.Append("  LastTestResultConfigurationIds: ").Append(LastTestResultConfigurationIds).Append("\n");
             sb.Append("}\n");

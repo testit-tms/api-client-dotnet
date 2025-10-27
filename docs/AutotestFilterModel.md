@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **ClassName** | **string** |  | [optional] 
 **IsEmptyClassName** | **bool?** |  | [optional] 
 **LastTestResultOutcome** | **AutotestResultOutcome** |  | [optional] 
-**LastTestResultStatusCode** | **string** |  | [optional] 
+**LastTestResultStatusCodes** | **List&lt;string&gt;** |  | [optional] 
 **ExternalKey** | **string** |  | [optional] 
 **LastTestResultConfigurationIds** | **List&lt;Guid&gt;** |  | [optional] 
 

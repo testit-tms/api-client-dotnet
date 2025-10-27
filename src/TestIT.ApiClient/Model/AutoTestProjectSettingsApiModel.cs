@@ -27,25 +27,25 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// AutoTestProjectSettingsPostModel
+    /// AutoTestProjectSettingsApiModel
     /// </summary>
-    [DataContract(Name = "AutoTestProjectSettingsPostModel")]
-    public partial class AutoTestProjectSettingsPostModel : IValidatableObject
+    [DataContract(Name = "AutoTestProjectSettingsApiModel")]
+    public partial class AutoTestProjectSettingsApiModel : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AutoTestProjectSettingsPostModel" /> class.
+        /// Initializes a new instance of the <see cref="AutoTestProjectSettingsApiModel" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected AutoTestProjectSettingsPostModel() { }
+        protected AutoTestProjectSettingsApiModel() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="AutoTestProjectSettingsPostModel" /> class.
+        /// Initializes a new instance of the <see cref="AutoTestProjectSettingsApiModel" /> class.
         /// </summary>
         /// <param name="isFlakyAuto">Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically (default to false).</param>
         /// <param name="flakyStabilityPercentage">Stability percentage for autotest flaky computing (default to 100).</param>
         /// <param name="flakyTestRunCount">Last test run count for autotest flaky computing (default to 100).</param>
         /// <param name="rerunEnabled">Auto rerun enabled (required).</param>
         /// <param name="rerunAttemptsCount">Auto rerun attempt count (required).</param>
-        public AutoTestProjectSettingsPostModel(bool isFlakyAuto = false, int flakyStabilityPercentage = 100, int flakyTestRunCount = 100, bool rerunEnabled = default(bool), int rerunAttemptsCount = default(int))
+        public AutoTestProjectSettingsApiModel(bool isFlakyAuto = false, int flakyStabilityPercentage = 100, int flakyTestRunCount = 100, bool rerunEnabled = default(bool), int rerunAttemptsCount = default(int))
         {
             this.RerunEnabled = rerunEnabled;
             this.RerunAttemptsCount = rerunAttemptsCount;
@@ -96,7 +96,7 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AutoTestProjectSettingsPostModel {\n");
+            sb.Append("class AutoTestProjectSettingsApiModel {\n");
             sb.Append("  IsFlakyAuto: ").Append(IsFlakyAuto).Append("\n");
             sb.Append("  FlakyStabilityPercentage: ").Append(FlakyStabilityPercentage).Append("\n");
             sb.Append("  FlakyTestRunCount: ").Append(FlakyTestRunCount).Append("\n");

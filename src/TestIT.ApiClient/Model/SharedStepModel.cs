@@ -68,7 +68,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets VersionId
         /// </summary>
         /*
-        <example>b63772c7-7c31-4748-8ff9-cc13975a106c</example>
+        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
         */
         [DataMember(Name = "versionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid VersionId { get; set; }

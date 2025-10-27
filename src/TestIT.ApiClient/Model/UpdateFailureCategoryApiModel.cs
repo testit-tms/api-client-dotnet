@@ -27,10 +27,10 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// UpdateAutoTestResultReasonProjectApiModel
+    /// UpdateFailureCategoryApiModel
     /// </summary>
-    [DataContract(Name = "UpdateAutoTestResultReasonProjectApiModel")]
-    public partial class UpdateAutoTestResultReasonProjectApiModel : IValidatableObject
+    [DataContract(Name = "UpdateFailureCategoryApiModel")]
+    public partial class UpdateFailureCategoryApiModel : IValidatableObject
     {
 
         /// <summary>
@@ -40,25 +40,25 @@ namespace TestIT.ApiClient.Model
         [DataMember(Name = "failureCategory", IsRequired = true, EmitDefaultValue = true)]
         public FailureCategory FailureCategory { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateAutoTestResultReasonProjectApiModel" /> class.
+        /// Initializes a new instance of the <see cref="UpdateFailureCategoryApiModel" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected UpdateAutoTestResultReasonProjectApiModel() { }
+        protected UpdateFailureCategoryApiModel() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateAutoTestResultReasonProjectApiModel" /> class.
+        /// Initializes a new instance of the <see cref="UpdateFailureCategoryApiModel" /> class.
         /// </summary>
         /// <param name="id">Failure category identifier (required).</param>
         /// <param name="name">Failure category name (required).</param>
         /// <param name="failureCategory">Category type (required).</param>
         /// <param name="failureClassRegexes">Failure category regexes.</param>
         /// <param name="projectIds">Projects identifiers.</param>
-        public UpdateAutoTestResultReasonProjectApiModel(Guid id = default(Guid), string name = default(string), FailureCategory failureCategory = default(FailureCategory), List<UpdateFailureClassRegexApiModel> failureClassRegexes = default(List<UpdateFailureClassRegexApiModel>), List<Guid> projectIds = default(List<Guid>))
+        public UpdateFailureCategoryApiModel(Guid id = default(Guid), string name = default(string), FailureCategory failureCategory = default(FailureCategory), List<UpdateFailureClassRegexApiModel> failureClassRegexes = default(List<UpdateFailureClassRegexApiModel>), List<Guid> projectIds = default(List<Guid>))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
             if (name == null)
             {
-                throw new ArgumentNullException("name is a required property for UpdateAutoTestResultReasonProjectApiModel and cannot be null");
+                throw new ArgumentNullException("name is a required property for UpdateFailureCategoryApiModel and cannot be null");
             }
             this.Name = name;
             this.FailureCategory = failureCategory;
@@ -101,7 +101,7 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class UpdateAutoTestResultReasonProjectApiModel {\n");
+            sb.Append("class UpdateFailureCategoryApiModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  FailureCategory: ").Append(FailureCategory).Append("\n");

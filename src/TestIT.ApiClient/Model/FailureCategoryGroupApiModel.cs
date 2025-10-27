@@ -27,45 +27,45 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// AutoTestResultReasonGroupItemApiResult
+    /// FailureCategoryGroupApiModel
     /// </summary>
-    [DataContract(Name = "AutoTestResultReasonGroupItemApiResult")]
-    public partial class AutoTestResultReasonGroupItemApiResult : IValidatableObject
+    [DataContract(Name = "FailureCategoryGroupApiModel")]
+    public partial class FailureCategoryGroupApiModel : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AutoTestResultReasonGroupItemApiResult" /> class.
+        /// Initializes a new instance of the <see cref="FailureCategoryGroupApiModel" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected AutoTestResultReasonGroupItemApiResult() { }
+        protected FailureCategoryGroupApiModel() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="AutoTestResultReasonGroupItemApiResult" /> class.
+        /// Initializes a new instance of the <see cref="FailureCategoryGroupApiModel" /> class.
         /// </summary>
-        /// <param name="group">Group details.</param>
-        /// <param name="items">Group data (required).</param>
-        public AutoTestResultReasonGroupItemApiResult(AutoTestResultReasonGroupApiResult group = default(AutoTestResultReasonGroupApiResult), List<AutoTestResultReasonsProjectApiResult> items = default(List<AutoTestResultReasonsProjectApiResult>))
+        /// <param name="field">Group field (required).</param>
+        /// <param name="displayField">Group display field.</param>
+        public FailureCategoryGroupApiModel(string field = default(string), string displayField = default(string))
         {
-            // to ensure "items" is required (not null)
-            if (items == null)
+            // to ensure "field" is required (not null)
+            if (field == null)
             {
-                throw new ArgumentNullException("items is a required property for AutoTestResultReasonGroupItemApiResult and cannot be null");
+                throw new ArgumentNullException("field is a required property for FailureCategoryGroupApiModel and cannot be null");
             }
-            this.Items = items;
-            this.Group = group;
+            this.Field = field;
+            this.DisplayField = displayField;
         }
 
         /// <summary>
-        /// Group details
+        /// Group field
         /// </summary>
-        /// <value>Group details</value>
-        [DataMember(Name = "group", EmitDefaultValue = true)]
-        public AutoTestResultReasonGroupApiResult Group { get; set; }
+        /// <value>Group field</value>
+        [DataMember(Name = "field", IsRequired = true, EmitDefaultValue = true)]
+        public string Field { get; set; }
 
         /// <summary>
-        /// Group data
+        /// Group display field
         /// </summary>
-        /// <value>Group data</value>
-        [DataMember(Name = "items", IsRequired = true, EmitDefaultValue = true)]
-        public List<AutoTestResultReasonsProjectApiResult> Items { get; set; }
+        /// <value>Group display field</value>
+        [DataMember(Name = "displayField", EmitDefaultValue = true)]
+        public string DisplayField { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -74,9 +74,9 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AutoTestResultReasonGroupItemApiResult {\n");
-            sb.Append("  Group: ").Append(Group).Append("\n");
-            sb.Append("  Items: ").Append(Items).Append("\n");
+            sb.Append("class FailureCategoryGroupApiModel {\n");
+            sb.Append("  Field: ").Append(Field).Append("\n");
+            sb.Append("  DisplayField: ").Append(DisplayField).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -97,6 +97,18 @@ namespace TestIT.ApiClient.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Field (string) minLength
+            if (this.Field != null && this.Field.Length < 1)
+            {
+                yield return new ValidationResult("Invalid value for Field, length must be greater than 1.", new [] { "Field" });
+            }
+
+            // DisplayField (string) minLength
+            if (this.DisplayField != null && this.DisplayField.Length < 1)
+            {
+                yield return new ValidationResult("Invalid value for DisplayField, length must be greater than 1.", new [] { "DisplayField" });
+            }
+
             yield break;
         }
     }

@@ -8,6 +8,10 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **IsSystem** | **bool** |  | 
 **IsDefault** | **bool** |  | 
+**CreatedDate** | **DateTime** |  | 
+**CreatedById** | **Guid** |  | 
+**ModifiedDate** | **DateTime** |  | 
+**ModifiedById** | **Guid** |  | 
 **Projects** | [**WorkflowProjectApiResultApiCollectionPreview**](WorkflowProjectApiResultApiCollectionPreview.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

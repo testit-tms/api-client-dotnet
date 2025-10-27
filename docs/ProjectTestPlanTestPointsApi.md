@@ -39,7 +39,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectTestPlanTestPointsApi(httpClient, config, httpClientHandler);
-            var projectId = "projectId_example";  // string | 
+            var projectId = "projectId_example";  // string | Internal (UUID) or global (integer) identifier
             var testPlanId = "testPlanId_example";  // Guid | 
             var testPlanTestPointsAutoTestsRerunApiModel = new TestPlanTestPointsAutoTestsRerunApiModel(); // TestPlanTestPointsAutoTestsRerunApiModel |  (optional) 
 
@@ -80,7 +80,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **projectId** | **string** |  |  |
+| **projectId** | **string** | Internal (UUID) or global (integer) identifier |  |
 | **testPlanId** | **Guid** |  |  |
 | **testPlanTestPointsAutoTestsRerunApiModel** | [**TestPlanTestPointsAutoTestsRerunApiModel**](TestPlanTestPointsAutoTestsRerunApiModel.md) |  | [optional]  |
 
@@ -143,7 +143,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectTestPlanTestPointsApi(httpClient, config, httpClientHandler);
-            var projectId = "projectId_example";  // string | 
+            var projectId = "projectId_example";  // string | Internal (UUID) or global (integer) identifier
             var testPlanId = "testPlanId_example";  // Guid | 
             var testPlanTestPointsAutoTestsRunApiModel = new TestPlanTestPointsAutoTestsRunApiModel(); // TestPlanTestPointsAutoTestsRunApiModel |  (optional) 
 
@@ -188,7 +188,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **projectId** | **string** |  |  |
+| **projectId** | **string** | Internal (UUID) or global (integer) identifier |  |
 | **testPlanId** | **Guid** |  |  |
 | **testPlanTestPointsAutoTestsRunApiModel** | [**TestPlanTestPointsAutoTestsRunApiModel**](TestPlanTestPointsAutoTestsRunApiModel.md) |  | [optional]  |
 

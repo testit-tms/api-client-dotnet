@@ -27,50 +27,53 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// AutoTestResultReasonGroupApiResult
+    /// Filter
     /// </summary>
-    [DataContract(Name = "AutoTestResultReasonGroupApiResult")]
-    public partial class AutoTestResultReasonGroupApiResult : IValidatableObject
+    [DataContract(Name = "Filter")]
+    public partial class Filter : IValidatableObject
     {
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="AutoTestResultReasonGroupApiResult" /> class.
+        /// Gets or Sets Operator
+        /// </summary>
+        [DataMember(Name = "operator", IsRequired = true, EmitDefaultValue = true)]
+        public FilterOperator Operator { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Filter" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected AutoTestResultReasonGroupApiResult() { }
+        protected Filter() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="AutoTestResultReasonGroupApiResult" /> class.
+        /// Initializes a new instance of the <see cref="Filter" /> class.
         /// </summary>
-        /// <param name="fieldValue">Group field value.</param>
-        /// <param name="displayFieldValue">Group display field value.</param>
-        /// <param name="count">Group entries count (required).</param>
-        public AutoTestResultReasonGroupApiResult(Object fieldValue = default(Object), Object displayFieldValue = default(Object), int count = default(int))
+        /// <param name="varOperator">varOperator (required).</param>
+        /// <param name="value">value.</param>
+        public Filter(FilterOperator varOperator = default(FilterOperator), string value = default(string))
         {
-            this.Count = count;
-            this.FieldValue = fieldValue;
-            this.DisplayFieldValue = displayFieldValue;
+            this.Operator = varOperator;
+            this.Value = value;
         }
 
         /// <summary>
-        /// Group field value
+        /// Gets or Sets Value
         /// </summary>
-        /// <value>Group field value</value>
-        [DataMember(Name = "fieldValue", EmitDefaultValue = true)]
-        public Object FieldValue { get; set; }
+        [DataMember(Name = "value", EmitDefaultValue = true)]
+        public string Value { get; set; }
 
         /// <summary>
-        /// Group display field value
+        /// Gets or Sets Field
         /// </summary>
-        /// <value>Group display field value</value>
-        [DataMember(Name = "displayFieldValue", EmitDefaultValue = true)]
-        public Object DisplayFieldValue { get; set; }
+        [DataMember(Name = "field", IsRequired = true, EmitDefaultValue = true)]
+        public string Field { get; private set; }
 
         /// <summary>
-        /// Group entries count
+        /// Returns false as Field should not be serialized given that it's read-only.
         /// </summary>
-        /// <value>Group entries count</value>
-        [DataMember(Name = "count", IsRequired = true, EmitDefaultValue = true)]
-        public int Count { get; set; }
-
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeField()
+        {
+            return false;
+        }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -78,10 +81,10 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AutoTestResultReasonGroupApiResult {\n");
-            sb.Append("  FieldValue: ").Append(FieldValue).Append("\n");
-            sb.Append("  DisplayFieldValue: ").Append(DisplayFieldValue).Append("\n");
-            sb.Append("  Count: ").Append(Count).Append("\n");
+            sb.Append("class Filter {\n");
+            sb.Append("  Operator: ").Append(Operator).Append("\n");
+            sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  Field: ").Append(Field).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

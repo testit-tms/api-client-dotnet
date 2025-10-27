@@ -1,10 +1,11 @@
-# TestIT.ApiClient.Model.WorkItemIdModel
+# TestIT.ApiClient.Model.FailureCategoryGroupSearchApiModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format | 
+**Inquiry** | [**Inquiry**](Inquiry.md) | Inquiry details | 
+**Group** | [**FailureCategoryGroupApiModel**](FailureCategoryGroupApiModel.md) | Group details | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

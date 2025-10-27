@@ -42,14 +42,16 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="inProgress">Number of test results which is running currently (required).</param>
         /// <param name="passed">Number of test results which successfully passed (required).</param>
+        /// <param name="succeeded">Number of successful test results (required).</param>
         /// <param name="failed">Number of test results which failed with an error (required).</param>
         /// <param name="skipped">Number of test results which did not run and were skipped (required).</param>
         /// <param name="blocked">Number of test results which cannot be launched (required).</param>
         /// <param name="incomplete">Number of test results which are incomplete (required).</param>
-        public TestResultsStatisticsStatusesApiResult(int inProgress = default(int), int passed = default(int), int failed = default(int), int skipped = default(int), int blocked = default(int), int incomplete = default(int))
+        public TestResultsStatisticsStatusesApiResult(int inProgress = default(int), int passed = default(int), int succeeded = default(int), int failed = default(int), int skipped = default(int), int blocked = default(int), int incomplete = default(int))
         {
             this.InProgress = inProgress;
             this.Passed = passed;
+            this.Succeeded = succeeded;
             this.Failed = failed;
             this.Skipped = skipped;
             this.Blocked = blocked;
@@ -68,7 +70,15 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Number of test results which successfully passed</value>
         [DataMember(Name = "passed", IsRequired = true, EmitDefaultValue = true)]
+        [Obsolete]
         public int Passed { get; set; }
+
+        /// <summary>
+        /// Number of successful test results
+        /// </summary>
+        /// <value>Number of successful test results</value>
+        [DataMember(Name = "succeeded", IsRequired = true, EmitDefaultValue = true)]
+        public int Succeeded { get; set; }
 
         /// <summary>
         /// Number of test results which failed with an error
@@ -110,6 +120,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("class TestResultsStatisticsStatusesApiResult {\n");
             sb.Append("  InProgress: ").Append(InProgress).Append("\n");
             sb.Append("  Passed: ").Append(Passed).Append("\n");
+            sb.Append("  Succeeded: ").Append(Succeeded).Append("\n");
             sb.Append("  Failed: ").Append(Failed).Append("\n");
             sb.Append("  Skipped: ").Append(Skipped).Append("\n");
             sb.Append("  Blocked: ").Append(Blocked).Append("\n");

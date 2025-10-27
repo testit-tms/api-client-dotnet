@@ -44,8 +44,12 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">name (required).</param>
         /// <param name="isSystem">isSystem (required).</param>
         /// <param name="isDefault">isDefault (required).</param>
+        /// <param name="createdDate">createdDate (required).</param>
+        /// <param name="createdById">createdById (required).</param>
+        /// <param name="modifiedDate">modifiedDate (required).</param>
+        /// <param name="modifiedById">modifiedById (required).</param>
         /// <param name="projects">projects (required).</param>
-        public WorkflowShortApiResult(Guid id = default(Guid), string name = default(string), bool isSystem = default(bool), bool isDefault = default(bool), WorkflowProjectApiResultApiCollectionPreview projects = default(WorkflowProjectApiResultApiCollectionPreview))
+        public WorkflowShortApiResult(Guid id = default(Guid), string name = default(string), bool isSystem = default(bool), bool isDefault = default(bool), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime modifiedDate = default(DateTime), Guid modifiedById = default(Guid), WorkflowProjectApiResultApiCollectionPreview projects = default(WorkflowProjectApiResultApiCollectionPreview))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -56,6 +60,10 @@ namespace TestIT.ApiClient.Model
             this.Name = name;
             this.IsSystem = isSystem;
             this.IsDefault = isDefault;
+            this.CreatedDate = createdDate;
+            this.CreatedById = createdById;
+            this.ModifiedDate = modifiedDate;
+            this.ModifiedById = modifiedById;
             // to ensure "projects" is required (not null)
             if (projects == null)
             {
@@ -89,6 +97,30 @@ namespace TestIT.ApiClient.Model
         public bool IsDefault { get; set; }
 
         /// <summary>
+        /// Gets or Sets CreatedDate
+        /// </summary>
+        [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
+        public DateTime CreatedDate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreatedById
+        /// </summary>
+        [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
+        public Guid CreatedById { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ModifiedDate
+        /// </summary>
+        [DataMember(Name = "modifiedDate", IsRequired = true, EmitDefaultValue = true)]
+        public DateTime ModifiedDate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ModifiedById
+        /// </summary>
+        [DataMember(Name = "modifiedById", IsRequired = true, EmitDefaultValue = true)]
+        public Guid ModifiedById { get; set; }
+
+        /// <summary>
         /// Gets or Sets Projects
         /// </summary>
         [DataMember(Name = "projects", IsRequired = true, EmitDefaultValue = true)]
@@ -106,6 +138,10 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  IsSystem: ").Append(IsSystem).Append("\n");
             sb.Append("  IsDefault: ").Append(IsDefault).Append("\n");
+            sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
+            sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
+            sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
+            sb.Append("  ModifiedById: ").Append(ModifiedById).Append("\n");
             sb.Append("  Projects: ").Append(Projects).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

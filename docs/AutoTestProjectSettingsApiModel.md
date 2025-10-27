@@ -1,4 +1,4 @@
-# TestIT.ApiClient.Model.AutoTestProjectSettingsPostModel
+# TestIT.ApiClient.Model.AutoTestProjectSettingsApiModel
 
 ## Properties
 

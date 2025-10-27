@@ -31,7 +31,7 @@ namespace TestIT.ApiClient.Api
         /// Rerun autotests.
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
         /// <param name="testPlanId"></param>
         /// <param name="testPlanTestPointsAutoTestsRerunApiModel"> (optional)</param>
         /// <returns></returns>
@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
         /// <param name="testPlanId"></param>
         /// <param name="testPlanTestPointsAutoTestsRerunApiModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -53,7 +53,7 @@ namespace TestIT.ApiClient.Api
         /// Run autotests.
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
         /// <param name="testPlanId"></param>
         /// <param name="testPlanTestPointsAutoTestsRunApiModel"> (optional)</param>
         /// <returns>TestRunNameApiResult</returns>
@@ -66,7 +66,7 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
         /// <param name="testPlanId"></param>
         /// <param name="testPlanTestPointsAutoTestsRunApiModel"> (optional)</param>
         /// <returns>ApiResponse of TestRunNameApiResult</returns>
@@ -87,7 +87,7 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
         /// <param name="testPlanId"></param>
         /// <param name="testPlanTestPointsAutoTestsRerunApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -101,7 +101,7 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
         /// <param name="testPlanId"></param>
         /// <param name="testPlanTestPointsAutoTestsRerunApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -114,7 +114,7 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
         /// <param name="testPlanId"></param>
         /// <param name="testPlanTestPointsAutoTestsRunApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -128,7 +128,7 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
         /// <param name="testPlanId"></param>
         /// <param name="testPlanTestPointsAutoTestsRunApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -351,7 +351,7 @@ namespace TestIT.ApiClient.Api
         /// Rerun autotests. 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
         /// <param name="testPlanId"></param>
         /// <param name="testPlanTestPointsAutoTestsRerunApiModel"> (optional)</param>
         /// <returns></returns>
@@ -364,7 +364,7 @@ namespace TestIT.ApiClient.Api
         /// Rerun autotests. 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
         /// <param name="testPlanId"></param>
         /// <param name="testPlanTestPointsAutoTestsRerunApiModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -417,7 +417,7 @@ namespace TestIT.ApiClient.Api
         /// Rerun autotests. 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
         /// <param name="testPlanId"></param>
         /// <param name="testPlanTestPointsAutoTestsRerunApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -431,7 +431,7 @@ namespace TestIT.ApiClient.Api
         /// Rerun autotests. 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
         /// <param name="testPlanId"></param>
         /// <param name="testPlanTestPointsAutoTestsRerunApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -488,7 +488,7 @@ namespace TestIT.ApiClient.Api
         /// Run autotests. 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
         /// <param name="testPlanId"></param>
         /// <param name="testPlanTestPointsAutoTestsRunApiModel"> (optional)</param>
         /// <returns>TestRunNameApiResult</returns>
@@ -502,7 +502,7 @@ namespace TestIT.ApiClient.Api
         /// Run autotests. 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
         /// <param name="testPlanId"></param>
         /// <param name="testPlanTestPointsAutoTestsRunApiModel"> (optional)</param>
         /// <returns>ApiResponse of TestRunNameApiResult</returns>
@@ -555,7 +555,7 @@ namespace TestIT.ApiClient.Api
         /// Run autotests. 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
         /// <param name="testPlanId"></param>
         /// <param name="testPlanTestPointsAutoTestsRunApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -570,7 +570,7 @@ namespace TestIT.ApiClient.Api
         /// Run autotests. 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
         /// <param name="testPlanId"></param>
         /// <param name="testPlanTestPointsAutoTestsRunApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
