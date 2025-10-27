@@ -62,9 +62,9 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedById">Unique ID of the project last editor.</param>
         /// <param name="globalId">Global ID of the project (required).</param>
         /// <param name="type">Type of the project (required).</param>
-        /// <param name="isFlakyAuto">Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically (required).</param>
+        /// <param name="isFlakyAuto">Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically.</param>
         /// <param name="workflowId">workflowId (required).</param>
-        public ProjectShortModel(Guid id = default(Guid), string description = default(string), string name = default(string), bool isFavorite = default(bool), int? testCasesCount = default(int?), int? sharedStepsCount = default(int?), int? checkListsCount = default(int?), int? autoTestsCount = default(int?), bool isDeleted = default(bool), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), ProjectTypeModel type = default(ProjectTypeModel), bool isFlakyAuto = default(bool), Guid workflowId = default(Guid))
+        public ProjectShortModel(Guid id = default(Guid), string description = default(string), string name = default(string), bool isFavorite = default(bool), int? testCasesCount = default(int?), int? sharedStepsCount = default(int?), int? checkListsCount = default(int?), int? autoTestsCount = default(int?), bool isDeleted = default(bool), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), ProjectTypeModel type = default(ProjectTypeModel), bool? isFlakyAuto = default(bool?), Guid workflowId = default(Guid))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -79,7 +79,6 @@ namespace TestIT.ApiClient.Model
             this.CreatedById = createdById;
             this.GlobalId = globalId;
             this.Type = type;
-            this.IsFlakyAuto = isFlakyAuto;
             this.WorkflowId = workflowId;
             this.Description = description;
             this.TestCasesCount = testCasesCount;
@@ -88,6 +87,7 @@ namespace TestIT.ApiClient.Model
             this.AutoTestsCount = autoTestsCount;
             this.ModifiedDate = modifiedDate;
             this.ModifiedById = modifiedById;
+            this.IsFlakyAuto = isFlakyAuto;
         }
 
         /// <summary>
@@ -192,9 +192,9 @@ namespace TestIT.ApiClient.Model
         /// Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically
         /// </summary>
         /// <value>Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically</value>
-        [DataMember(Name = "isFlakyAuto", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "isFlakyAuto", EmitDefaultValue = true)]
         [Obsolete]
-        public bool IsFlakyAuto { get; set; }
+        public bool? IsFlakyAuto { get; set; }
 
         /// <summary>
         /// Gets or Sets WorkflowId

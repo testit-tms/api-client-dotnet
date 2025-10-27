@@ -48,7 +48,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="filters">filters (required).</param>
         /// <param name="varOperator">varOperator (required).</param>
-        public CompositeFilter(List<Object> filters = default(List<Object>), LogicalOperator varOperator = default(LogicalOperator))
+        public CompositeFilter(List<IFilter> filters = default(List<IFilter>), LogicalOperator varOperator = default(LogicalOperator))
         {
             // to ensure "filters" is required (not null)
             if (filters == null)
@@ -63,7 +63,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Filters
         /// </summary>
         [DataMember(Name = "filters", IsRequired = true, EmitDefaultValue = true)]
-        public List<Object> Filters { get; set; }
+        public List<IFilter> Filters { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

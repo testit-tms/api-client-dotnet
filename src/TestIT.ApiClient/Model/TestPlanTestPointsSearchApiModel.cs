@@ -52,12 +52,13 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedDate">Specifies a test point range of last modification date to search for.</param>
         /// <param name="modifiedByIds">Specifies a test point last editor IDs to search for.</param>
         /// <param name="tags">Specifies a test point tags to search for.</param>
+        /// <param name="excludeTags">Specifies a test point tags to exclude to search for.</param>
         /// <param name="attributes">Specifies a test point attributes to search for.</param>
         /// <param name="workItemCreatedDate">Specifies a work item range of creation date to search for.</param>
         /// <param name="workItemCreatedByIds">Specifies a work item creator IDs to search for.</param>
         /// <param name="workItemModifiedDate">Specifies a work item range of last modification date to search for.</param>
         /// <param name="workItemModifiedByIds">Specifies a work item last editor IDs to search for.</param>
-        public TestPlanTestPointsSearchApiModel(List<Guid> testSuiteIds = default(List<Guid>), List<long> workItemGlobalIds = default(List<long>), Int64RangeSelectorModel workItemMedianDuration = default(Int64RangeSelectorModel), List<TestPointStatus> statuses = default(List<TestPointStatus>), List<string> statusCodes = default(List<string>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), bool? isAutomated = default(bool?), string name = default(string), List<Guid> configurationIds = default(List<Guid>), List<Guid?> testerIds = default(List<Guid?>), Int64RangeSelectorModel duration = default(Int64RangeSelectorModel), List<Guid> sectionIds = default(List<Guid>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), List<Guid> modifiedByIds = default(List<Guid>), List<string> tags = default(List<string>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), DateTimeRangeSelectorModel workItemCreatedDate = default(DateTimeRangeSelectorModel), List<Guid> workItemCreatedByIds = default(List<Guid>), DateTimeRangeSelectorModel workItemModifiedDate = default(DateTimeRangeSelectorModel), List<Guid> workItemModifiedByIds = default(List<Guid>))
+        public TestPlanTestPointsSearchApiModel(List<Guid> testSuiteIds = default(List<Guid>), List<long> workItemGlobalIds = default(List<long>), Int64RangeSelectorModel workItemMedianDuration = default(Int64RangeSelectorModel), List<TestPointStatus> statuses = default(List<TestPointStatus>), List<string> statusCodes = default(List<string>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), bool? isAutomated = default(bool?), string name = default(string), List<Guid> configurationIds = default(List<Guid>), List<Guid?> testerIds = default(List<Guid?>), Int64RangeSelectorModel duration = default(Int64RangeSelectorModel), List<Guid> sectionIds = default(List<Guid>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), List<Guid> modifiedByIds = default(List<Guid>), List<string> tags = default(List<string>), List<string> excludeTags = default(List<string>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), DateTimeRangeSelectorModel workItemCreatedDate = default(DateTimeRangeSelectorModel), List<Guid> workItemCreatedByIds = default(List<Guid>), DateTimeRangeSelectorModel workItemModifiedDate = default(DateTimeRangeSelectorModel), List<Guid> workItemModifiedByIds = default(List<Guid>))
         {
             this.TestSuiteIds = testSuiteIds;
             this.WorkItemGlobalIds = workItemGlobalIds;
@@ -76,6 +77,7 @@ namespace TestIT.ApiClient.Model
             this.ModifiedDate = modifiedDate;
             this.ModifiedByIds = modifiedByIds;
             this.Tags = tags;
+            this.ExcludeTags = excludeTags;
             this.Attributes = attributes;
             this.WorkItemCreatedDate = workItemCreatedDate;
             this.WorkItemCreatedByIds = workItemCreatedByIds;
@@ -204,6 +206,13 @@ namespace TestIT.ApiClient.Model
         public List<string> Tags { get; set; }
 
         /// <summary>
+        /// Specifies a test point tags to exclude to search for
+        /// </summary>
+        /// <value>Specifies a test point tags to exclude to search for</value>
+        [DataMember(Name = "excludeTags", EmitDefaultValue = true)]
+        public List<string> ExcludeTags { get; set; }
+
+        /// <summary>
         /// Specifies a test point attributes to search for
         /// </summary>
         /// <value>Specifies a test point attributes to search for</value>
@@ -263,6 +272,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
             sb.Append("  ModifiedByIds: ").Append(ModifiedByIds).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
+            sb.Append("  ExcludeTags: ").Append(ExcludeTags).Append("\n");
             sb.Append("  Attributes: ").Append(Attributes).Append("\n");
             sb.Append("  WorkItemCreatedDate: ").Append(WorkItemCreatedDate).Append("\n");
             sb.Append("  WorkItemCreatedByIds: ").Append(WorkItemCreatedByIds).Append("\n");

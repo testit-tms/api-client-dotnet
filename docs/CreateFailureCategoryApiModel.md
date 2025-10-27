@@ -1,4 +1,4 @@
-# TestIT.ApiClient.Model.CreateAutoTestResultReasonProjectApiModel
+# TestIT.ApiClient.Model.CreateFailureCategoryApiModel
 
 ## Properties
 

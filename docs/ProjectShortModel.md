@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **ModifiedById** | **Guid?** | Unique ID of the project last editor | [optional] 
 **GlobalId** | **long** | Global ID of the project | 
 **Type** | **ProjectTypeModel** | Type of the project | 
-**IsFlakyAuto** | **bool** | Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically | 
+**IsFlakyAuto** | **bool?** | Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically | [optional] 
 **WorkflowId** | **Guid** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -145,8 +145,8 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="configurationSelectModel"> (optional)</param>
-        /// <returns></returns>
-        void ApiV2ConfigurationsPurgeBulkPost(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel));
+        /// <returns>int</returns>
+        int ApiV2ConfigurationsPurgeBulkPost(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel));
 
         /// <summary>
         /// Permanently delete multiple archived configurations
@@ -156,8 +156,8 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="configurationSelectModel"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2ConfigurationsPurgeBulkPostWithHttpInfo(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel));
+        /// <returns>ApiResponse of int</returns>
+        ApiResponse<int> ApiV2ConfigurationsPurgeBulkPostWithHttpInfo(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel));
         /// <summary>
         /// Edit configuration
         /// </summary>
@@ -226,7 +226,7 @@ namespace TestIT.ApiClient.Api
         /// Create Configuration
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
+        ///   Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="configurationPostModel"> (optional)</param>
@@ -237,7 +237,7 @@ namespace TestIT.ApiClient.Api
         /// Create Configuration
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
+        ///   Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="configurationPostModel"> (optional)</param>
@@ -247,7 +247,7 @@ namespace TestIT.ApiClient.Api
         /// Get configuration by internal or global ID
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
+        ///   Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Configuration internal (guid format) or global (integer format) identifier</param>
@@ -258,7 +258,7 @@ namespace TestIT.ApiClient.Api
         /// Get configuration by internal or global ID
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
+        ///   Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Configuration internal (guid format) or global (integer format) identifier</param>
@@ -422,8 +422,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="configurationSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2ConfigurationsPurgeBulkPostAsync(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of int</returns>
+        System.Threading.Tasks.Task<int> ApiV2ConfigurationsPurgeBulkPostAsync(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Permanently delete multiple archived configurations
@@ -434,8 +434,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="configurationSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ConfigurationsPurgeBulkPostWithHttpInfoAsync(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (int)</returns>
+        System.Threading.Tasks.Task<ApiResponse<int>> ApiV2ConfigurationsPurgeBulkPostWithHttpInfoAsync(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Edit configuration
         /// </summary>
@@ -519,7 +519,7 @@ namespace TestIT.ApiClient.Api
         /// Create Configuration
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
+        ///   Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="configurationPostModel"> (optional)</param>
@@ -531,7 +531,7 @@ namespace TestIT.ApiClient.Api
         /// Create Configuration
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
+        ///   Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="configurationPostModel"> (optional)</param>
@@ -542,7 +542,7 @@ namespace TestIT.ApiClient.Api
         /// Get configuration by internal or global ID
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
+        ///   Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Configuration internal (guid format) or global (integer format) identifier</param>
@@ -554,7 +554,7 @@ namespace TestIT.ApiClient.Api
         /// Get configuration by internal or global ID
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
+        ///   Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Configuration internal (guid format) or global (integer format) identifier</param>
@@ -1509,10 +1509,11 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="configurationSelectModel"> (optional)</param>
-        /// <returns></returns>
-        public void ApiV2ConfigurationsPurgeBulkPost(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel))
+        /// <returns>int</returns>
+        public int ApiV2ConfigurationsPurgeBulkPost(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel))
         {
-            ApiV2ConfigurationsPurgeBulkPostWithHttpInfo(configurationSelectModel);
+            TestIT.ApiClient.Client.ApiResponse<int> localVarResponse = ApiV2ConfigurationsPurgeBulkPostWithHttpInfo(configurationSelectModel);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1520,8 +1521,8 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="configurationSelectModel"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2ConfigurationsPurgeBulkPostWithHttpInfo(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel))
+        /// <returns>ApiResponse of int</returns>
+        public TestIT.ApiClient.Client.ApiResponse<int> ApiV2ConfigurationsPurgeBulkPostWithHttpInfo(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel))
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1549,7 +1550,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/api/v2/configurations/purge/bulk", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<int>("/api/v2/configurations/purge/bulk", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1566,10 +1567,11 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="configurationSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2ConfigurationsPurgeBulkPostAsync(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of int</returns>
+        public async System.Threading.Tasks.Task<int> ApiV2ConfigurationsPurgeBulkPostAsync(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await ApiV2ConfigurationsPurgeBulkPostWithHttpInfoAsync(configurationSelectModel, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<int> localVarResponse = await ApiV2ConfigurationsPurgeBulkPostWithHttpInfoAsync(configurationSelectModel, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1578,8 +1580,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="configurationSelectModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ConfigurationsPurgeBulkPostWithHttpInfoAsync(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (int)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<int>> ApiV2ConfigurationsPurgeBulkPostWithHttpInfoAsync(ConfigurationSelectModel configurationSelectModel = default(ConfigurationSelectModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1610,7 +1612,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/configurations/purge/bulk", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<int>("/api/v2/configurations/purge/bulk", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2037,7 +2039,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create Configuration  Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
+        /// Create Configuration   Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="configurationPostModel"> (optional)</param>
@@ -2049,7 +2051,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create Configuration  Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
+        /// Create Configuration   Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="configurationPostModel"> (optional)</param>
@@ -2094,7 +2096,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create Configuration  Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
+        /// Create Configuration   Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="configurationPostModel"> (optional)</param>
@@ -2107,7 +2109,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create Configuration  Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
+        /// Create Configuration   Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="configurationPostModel"> (optional)</param>
@@ -2156,7 +2158,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get configuration by internal or global ID  Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
+        /// Get configuration by internal or global ID   Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Configuration internal (guid format) or global (integer format) identifier</param>
@@ -2168,7 +2170,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get configuration by internal or global ID  Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
+        /// Get configuration by internal or global ID   Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Configuration internal (guid format) or global (integer format) identifier</param>
@@ -2216,7 +2218,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get configuration by internal or global ID  Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
+        /// Get configuration by internal or global ID   Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Configuration internal (guid format) or global (integer format) identifier</param>
@@ -2229,7 +2231,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get configuration by internal or global ID  Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
+        /// Get configuration by internal or global ID   Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Configuration internal (guid format) or global (integer format) identifier</param>

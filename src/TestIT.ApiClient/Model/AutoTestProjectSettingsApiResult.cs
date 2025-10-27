@@ -27,33 +27,33 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// AutoTestProjectSettingsGetModel
+    /// AutoTestProjectSettingsApiResult
     /// </summary>
-    [DataContract(Name = "AutoTestProjectSettingsGetModel")]
-    public partial class AutoTestProjectSettingsGetModel : IValidatableObject
+    [DataContract(Name = "AutoTestProjectSettingsApiResult")]
+    public partial class AutoTestProjectSettingsApiResult : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AutoTestProjectSettingsGetModel" /> class.
+        /// Initializes a new instance of the <see cref="AutoTestProjectSettingsApiResult" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected AutoTestProjectSettingsGetModel() { }
+        protected AutoTestProjectSettingsApiResult() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="AutoTestProjectSettingsGetModel" /> class.
+        /// Initializes a new instance of the <see cref="AutoTestProjectSettingsApiResult" /> class.
         /// </summary>
         /// <param name="projectId">Unique ID of the project. (required).</param>
-        /// <param name="isFlakyAuto">Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically (default to false).</param>
-        /// <param name="flakyStabilityPercentage">Stability percentage for autotest flaky computing (default to 100).</param>
-        /// <param name="flakyTestRunCount">Last test run count for autotest flaky computing (default to 100).</param>
+        /// <param name="isFlakyAuto">Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically (required).</param>
+        /// <param name="flakyStabilityPercentage">Stability percentage for autotest flaky computing (required).</param>
+        /// <param name="flakyTestRunCount">Last test run count for autotest flaky computing (required).</param>
         /// <param name="rerunEnabled">Auto rerun enabled (required).</param>
         /// <param name="rerunAttemptsCount">Auto rerun attempt count (required).</param>
-        public AutoTestProjectSettingsGetModel(Guid projectId = default(Guid), bool isFlakyAuto = false, int flakyStabilityPercentage = 100, int flakyTestRunCount = 100, bool rerunEnabled = default(bool), int rerunAttemptsCount = default(int))
+        public AutoTestProjectSettingsApiResult(Guid projectId = default(Guid), bool isFlakyAuto = default(bool), int flakyStabilityPercentage = default(int), int flakyTestRunCount = default(int), bool rerunEnabled = default(bool), int rerunAttemptsCount = default(int))
         {
             this.ProjectId = projectId;
-            this.RerunEnabled = rerunEnabled;
-            this.RerunAttemptsCount = rerunAttemptsCount;
             this.IsFlakyAuto = isFlakyAuto;
             this.FlakyStabilityPercentage = flakyStabilityPercentage;
             this.FlakyTestRunCount = flakyTestRunCount;
+            this.RerunEnabled = rerunEnabled;
+            this.RerunAttemptsCount = rerunAttemptsCount;
         }
 
         /// <summary>
@@ -67,21 +67,21 @@ namespace TestIT.ApiClient.Model
         /// Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically
         /// </summary>
         /// <value>Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically</value>
-        [DataMember(Name = "isFlakyAuto", EmitDefaultValue = true)]
+        [DataMember(Name = "isFlakyAuto", IsRequired = true, EmitDefaultValue = true)]
         public bool IsFlakyAuto { get; set; }
 
         /// <summary>
         /// Stability percentage for autotest flaky computing
         /// </summary>
         /// <value>Stability percentage for autotest flaky computing</value>
-        [DataMember(Name = "flakyStabilityPercentage", EmitDefaultValue = false)]
+        [DataMember(Name = "flakyStabilityPercentage", IsRequired = true, EmitDefaultValue = true)]
         public int FlakyStabilityPercentage { get; set; }
 
         /// <summary>
         /// Last test run count for autotest flaky computing
         /// </summary>
         /// <value>Last test run count for autotest flaky computing</value>
-        [DataMember(Name = "flakyTestRunCount", EmitDefaultValue = false)]
+        [DataMember(Name = "flakyTestRunCount", IsRequired = true, EmitDefaultValue = true)]
         public int FlakyTestRunCount { get; set; }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AutoTestProjectSettingsGetModel {\n");
+            sb.Append("class AutoTestProjectSettingsApiResult {\n");
             sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
             sb.Append("  IsFlakyAuto: ").Append(IsFlakyAuto).Append("\n");
             sb.Append("  FlakyStabilityPercentage: ").Append(FlakyStabilityPercentage).Append("\n");
@@ -132,42 +132,6 @@ namespace TestIT.ApiClient.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // FlakyStabilityPercentage (int) maximum
-            if (this.FlakyStabilityPercentage > (int)100)
-            {
-                yield return new ValidationResult("Invalid value for FlakyStabilityPercentage, must be a value less than or equal to 100.", new [] { "FlakyStabilityPercentage" });
-            }
-
-            // FlakyStabilityPercentage (int) minimum
-            if (this.FlakyStabilityPercentage < (int)0)
-            {
-                yield return new ValidationResult("Invalid value for FlakyStabilityPercentage, must be a value greater than or equal to 0.", new [] { "FlakyStabilityPercentage" });
-            }
-
-            // FlakyTestRunCount (int) maximum
-            if (this.FlakyTestRunCount > (int)1000)
-            {
-                yield return new ValidationResult("Invalid value for FlakyTestRunCount, must be a value less than or equal to 1000.", new [] { "FlakyTestRunCount" });
-            }
-
-            // FlakyTestRunCount (int) minimum
-            if (this.FlakyTestRunCount < (int)1)
-            {
-                yield return new ValidationResult("Invalid value for FlakyTestRunCount, must be a value greater than or equal to 1.", new [] { "FlakyTestRunCount" });
-            }
-
-            // RerunAttemptsCount (int) maximum
-            if (this.RerunAttemptsCount > (int)10)
-            {
-                yield return new ValidationResult("Invalid value for RerunAttemptsCount, must be a value less than or equal to 10.", new [] { "RerunAttemptsCount" });
-            }
-
-            // RerunAttemptsCount (int) minimum
-            if (this.RerunAttemptsCount < (int)1)
-            {
-                yield return new ValidationResult("Invalid value for RerunAttemptsCount, must be a value greater than or equal to 1.", new [] { "RerunAttemptsCount" });
-            }
-
             yield break;
         }
     }

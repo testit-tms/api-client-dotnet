@@ -27,27 +27,27 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// AutoTestResultReasonGroupSearchApiModel
+    /// FailureCategoryGroupSearchApiModel
     /// </summary>
-    [DataContract(Name = "AutoTestResultReasonGroupSearchApiModel")]
-    public partial class AutoTestResultReasonGroupSearchApiModel : IValidatableObject
+    [DataContract(Name = "FailureCategoryGroupSearchApiModel")]
+    public partial class FailureCategoryGroupSearchApiModel : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AutoTestResultReasonGroupSearchApiModel" /> class.
+        /// Initializes a new instance of the <see cref="FailureCategoryGroupSearchApiModel" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected AutoTestResultReasonGroupSearchApiModel() { }
+        protected FailureCategoryGroupSearchApiModel() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="AutoTestResultReasonGroupSearchApiModel" /> class.
+        /// Initializes a new instance of the <see cref="FailureCategoryGroupSearchApiModel" /> class.
         /// </summary>
         /// <param name="inquiry">Inquiry details (required).</param>
         /// <param name="group">Group details.</param>
-        public AutoTestResultReasonGroupSearchApiModel(Inquiry inquiry = default(Inquiry), AutoTestResultReasonGroupApiModel group = default(AutoTestResultReasonGroupApiModel))
+        public FailureCategoryGroupSearchApiModel(Inquiry inquiry = default(Inquiry), FailureCategoryGroupApiModel group = default(FailureCategoryGroupApiModel))
         {
             // to ensure "inquiry" is required (not null)
             if (inquiry == null)
             {
-                throw new ArgumentNullException("inquiry is a required property for AutoTestResultReasonGroupSearchApiModel and cannot be null");
+                throw new ArgumentNullException("inquiry is a required property for FailureCategoryGroupSearchApiModel and cannot be null");
             }
             this.Inquiry = inquiry;
             this.Group = group;
@@ -65,7 +65,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Group details</value>
         [DataMember(Name = "group", EmitDefaultValue = true)]
-        public AutoTestResultReasonGroupApiModel Group { get; set; }
+        public FailureCategoryGroupApiModel Group { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -74,7 +74,7 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AutoTestResultReasonGroupSearchApiModel {\n");
+            sb.Append("class FailureCategoryGroupSearchApiModel {\n");
             sb.Append("  Inquiry: ").Append(Inquiry).Append("\n");
             sb.Append("  Group: ").Append(Group).Append("\n");
             sb.Append("}\n");

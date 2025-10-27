@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **ModifiedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) | Specifies a test point range of last modification date to search for | [optional] 
 **ModifiedByIds** | **List&lt;Guid&gt;** | Specifies a test point last editor IDs to search for | [optional] 
 **Tags** | **List&lt;string&gt;** | Specifies a test point tags to search for | [optional] 
+**ExcludeTags** | **List&lt;string&gt;** | Specifies a test point tags to exclude to search for | [optional] 
 **Attributes** | [**Dictionary&lt;string, List&lt;string&gt;&gt;**](Set.md) | Specifies a test point attributes to search for | [optional] 
 **WorkItemCreatedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) | Specifies a work item range of creation date to search for | [optional] 
 **WorkItemCreatedByIds** | **List&lt;Guid&gt;** | Specifies a work item creator IDs to search for | [optional] 

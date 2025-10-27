@@ -31,25 +31,25 @@ namespace TestIT.ApiClient.Api
         /// Add global attributes to project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attributes identifiers  System search project  System relates global attributes with project  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attributes identifiers    System search project    System relates global attributes with project    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="requestBody"> (optional)</param>
         /// <returns></returns>
-        void AddGlobaAttributesToProject(string id, List<Guid> requestBody = default(List<Guid>));
+        void AddGlobalAttributesToProject(string id, List<Guid> requestBody = default(List<Guid>));
 
         /// <summary>
         /// Add global attributes to project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attributes identifiers  System search project  System relates global attributes with project  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attributes identifiers    System search project    System relates global attributes with project    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="requestBody"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> AddGlobaAttributesToProjectWithHttpInfo(string id, List<Guid> requestBody = default(List<Guid>));
+        ApiResponse<Object> AddGlobalAttributesToProjectWithHttpInfo(string id, List<Guid> requestBody = default(List<Guid>));
         /// <summary>
         /// Archive project
         /// </summary>
@@ -74,8 +74,9 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global ID of the project</param>
         /// <param name="isDeleted"> (optional)</param>
-        /// <returns>List&lt;AutoTestResultReasonProjectApiResult&gt;</returns>
-        List<AutoTestResultReasonProjectApiResult> ApiV2ProjectsIdFailureClassesGet(string id, bool? isDeleted = default(bool?));
+        /// <returns>List&lt;FailureCategoryApiResult&gt;</returns>
+        [Obsolete]
+        List<FailureCategoryApiResult> ApiV2ProjectsIdFailureClassesGet(string id, bool? isDeleted = default(bool?));
 
         /// <summary>
         /// Get failure classes
@@ -86,8 +87,9 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global ID of the project</param>
         /// <param name="isDeleted"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;AutoTestResultReasonProjectApiResult&gt;</returns>
-        ApiResponse<List<AutoTestResultReasonProjectApiResult>> ApiV2ProjectsIdFailureClassesGetWithHttpInfo(string id, bool? isDeleted = default(bool?));
+        /// <returns>ApiResponse of List&lt;FailureCategoryApiResult&gt;</returns>
+        [Obsolete]
+        ApiResponse<List<FailureCategoryApiResult>> ApiV2ProjectsIdFailureClassesGetWithHttpInfo(string id, bool? isDeleted = default(bool?));
         /// <summary>
         /// Mark Project as favorite
         /// </summary>
@@ -110,7 +112,7 @@ namespace TestIT.ApiClient.Api
         /// Get Project filters
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User runs method execution  System returns project filters
+        ///   Use case    User sets project internal or global identifier    User runs method execution    System returns project filters
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -121,7 +123,7 @@ namespace TestIT.ApiClient.Api
         /// Get Project filters
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User runs method execution  System returns project filters
+        ///   Use case    User sets project internal or global identifier    User runs method execution    System returns project filters
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -190,7 +192,7 @@ namespace TestIT.ApiClient.Api
         /// Delete attribute from project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -203,7 +205,7 @@ namespace TestIT.ApiClient.Api
         /// Delete attribute from project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -215,7 +217,7 @@ namespace TestIT.ApiClient.Api
         /// Update attribute of project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -228,7 +230,7 @@ namespace TestIT.ApiClient.Api
         /// Update attribute of project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -240,7 +242,7 @@ namespace TestIT.ApiClient.Api
         /// Get active Project TestRuns
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User runs method execution  System returns active testruns
+        ///   Use case    User sets project internal or global identifier    User runs method execution    System returns active testruns
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -251,7 +253,7 @@ namespace TestIT.ApiClient.Api
         /// Get active Project TestRuns
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User runs method execution  System returns active testruns
+        ///   Use case    User sets project internal or global identifier    User runs method execution    System returns active testruns
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -261,7 +263,7 @@ namespace TestIT.ApiClient.Api
         /// Get Project TestRuns full models
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User sets query params  User runs method execution  System returns project test runs full models
+        ///   Use case    User sets project internal or global identifier    User sets query params    User runs method execution    System returns project test runs full models
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -286,7 +288,7 @@ namespace TestIT.ApiClient.Api
         /// Get Project TestRuns full models
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User sets query params  User runs method execution  System returns project test runs full models
+        ///   Use case    User sets project internal or global identifier    User sets query params    User runs method execution    System returns project test runs full models
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -392,7 +394,7 @@ namespace TestIT.ApiClient.Api
         /// Get projects short models
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets query params  User runs method execution  System return projects short models
+        ///   Use case    User sets query params    User runs method execution    System return projects short models
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getShortProjectsApiModel"> (optional)</param>
@@ -403,7 +405,7 @@ namespace TestIT.ApiClient.Api
         /// Get projects short models
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets query params  User runs method execution  System return projects short models
+        ///   Use case    User sets query params    User runs method execution    System return projects short models
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getShortProjectsApiModel"> (optional)</param>
@@ -413,7 +415,7 @@ namespace TestIT.ApiClient.Api
         /// Create project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project parameters (listed in request example) and runs method execution  System creates project  System returns project model (example listed in response parameters)
+        ///   Use case    User sets project parameters (listed in request example) and runs method execution    System creates project    System returns project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createProjectApiModel"> (optional)</param>
@@ -424,7 +426,7 @@ namespace TestIT.ApiClient.Api
         /// Create project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project parameters (listed in request example) and runs method execution  System creates project  System returns project model (example listed in response parameters)
+        ///   Use case    User sets project parameters (listed in request example) and runs method execution    System creates project    System returns project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createProjectApiModel"> (optional)</param>
@@ -452,7 +454,7 @@ namespace TestIT.ApiClient.Api
         /// Get all projects
         /// </summary>
         /// <remarks>
-        ///  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted projects  [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted  If User did not set isDeleted field value, System search all projects  System returns array of all found projects(listed in response model)
+        ///   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted projects    [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted    If User did not set isDeleted field value, System search all projects    System returns array of all found projects(listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -470,7 +472,7 @@ namespace TestIT.ApiClient.Api
         /// Get all projects
         /// </summary>
         /// <remarks>
-        ///  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted projects  [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted  If User did not set isDeleted field value, System search all projects  System returns array of all found projects(listed in response model)
+        ///   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted projects    [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted    If User did not set isDeleted field value, System search all projects    System returns array of all found projects(listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -487,7 +489,7 @@ namespace TestIT.ApiClient.Api
         /// Get namespaces of autotests in project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and runs method execution  System search project  System search all autotest related to the project  System returns array of autotest with namespaces and classnames (listed in response)
+        ///   Use case    User sets project internal or global identifier and runs method execution    System search project    System search all autotest related to the project    System returns array of autotest with namespaces and classnames (listed in response)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -498,7 +500,7 @@ namespace TestIT.ApiClient.Api
         /// Get namespaces of autotests in project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and runs method execution  System search project  System search all autotest related to the project  System returns array of autotest with namespaces and classnames (listed in response)
+        ///   Use case    User sets project internal or global identifier and runs method execution    System search project    System search all autotest related to the project    System returns array of autotest with namespaces and classnames (listed in response)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -508,7 +510,7 @@ namespace TestIT.ApiClient.Api
         /// Get project by ID
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and runs method execution  System search project  System returns project (example listed in response parameters)
+        ///   Use case    User sets project internal or global identifier and runs method execution    System search project    System returns project (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -519,7 +521,7 @@ namespace TestIT.ApiClient.Api
         /// Get project by ID
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and runs method execution  System search project  System returns project (example listed in response parameters)
+        ///   Use case    User sets project internal or global identifier and runs method execution    System search project    System returns project (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -529,7 +531,7 @@ namespace TestIT.ApiClient.Api
         /// Get project test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project  [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all v related to project  System returns array of found test plans (listed in response model)
+        ///   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project    [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted    [Optional] If User did not set isDeleted field value, System search all v related to project    System returns array of found test plans (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -541,7 +543,7 @@ namespace TestIT.ApiClient.Api
         /// Get project test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project  [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all v related to project  System returns array of found test plans (listed in response model)
+        ///   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project    [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted    [Optional] If User did not set isDeleted field value, System search all v related to project    System returns array of found test plans (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -552,7 +554,7 @@ namespace TestIT.ApiClient.Api
         /// Get project test runs
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all test runs related to project  System returns array of found test runs (listed in response model)
+        ///   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all test runs related to project    System returns array of found test runs (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -575,7 +577,7 @@ namespace TestIT.ApiClient.Api
         /// Get project test runs
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all test runs related to project  System returns array of found test runs (listed in response model)
+        ///   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all test runs related to project    System returns array of found test runs (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -597,7 +599,7 @@ namespace TestIT.ApiClient.Api
         /// Update project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project parameters (listed in request example) and runs method execution  System updates project  System returns updated project model (example listed in response parameters)
+        ///   Use case    User sets project parameters (listed in request example) and runs method execution    System updates project    System returns updated project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateProjectApiModel"> (optional)</param>
@@ -608,7 +610,7 @@ namespace TestIT.ApiClient.Api
         /// Update project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project parameters (listed in request example) and runs method execution  System updates project  System returns updated project model (example listed in response parameters)
+        ///   Use case    User sets project parameters (listed in request example) and runs method execution    System updates project    System returns updated project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateProjectApiModel"> (optional)</param>
@@ -627,27 +629,27 @@ namespace TestIT.ApiClient.Api
         /// Add global attributes to project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attributes identifiers  System search project  System relates global attributes with project  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attributes identifiers    System search project    System relates global attributes with project    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="requestBody"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task AddGlobaAttributesToProjectAsync(string id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task AddGlobalAttributesToProjectAsync(string id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Add global attributes to project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attributes identifiers  System search project  System relates global attributes with project  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attributes identifiers    System search project    System relates global attributes with project    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="requestBody"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> AddGlobaAttributesToProjectWithHttpInfoAsync(string id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> AddGlobalAttributesToProjectWithHttpInfoAsync(string id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Archive project
         /// </summary>
@@ -681,8 +683,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the project</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;AutoTestResultReasonProjectApiResult&gt;</returns>
-        System.Threading.Tasks.Task<List<AutoTestResultReasonProjectApiResult>> ApiV2ProjectsIdFailureClassesGetAsync(string id, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;FailureCategoryApiResult&gt;</returns>
+        [Obsolete]
+        System.Threading.Tasks.Task<List<FailureCategoryApiResult>> ApiV2ProjectsIdFailureClassesGetAsync(string id, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get failure classes
@@ -694,8 +697,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the project</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;AutoTestResultReasonProjectApiResult&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<AutoTestResultReasonProjectApiResult>>> ApiV2ProjectsIdFailureClassesGetWithHttpInfoAsync(string id, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;FailureCategoryApiResult&gt;)</returns>
+        [Obsolete]
+        System.Threading.Tasks.Task<ApiResponse<List<FailureCategoryApiResult>>> ApiV2ProjectsIdFailureClassesGetWithHttpInfoAsync(string id, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Mark Project as favorite
         /// </summary>
@@ -723,7 +727,7 @@ namespace TestIT.ApiClient.Api
         /// Get Project filters
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User runs method execution  System returns project filters
+        ///   Use case    User sets project internal or global identifier    User runs method execution    System returns project filters
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -735,7 +739,7 @@ namespace TestIT.ApiClient.Api
         /// Get Project filters
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User runs method execution  System returns project filters
+        ///   Use case    User sets project internal or global identifier    User runs method execution    System returns project filters
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -817,7 +821,7 @@ namespace TestIT.ApiClient.Api
         /// Delete attribute from project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -831,7 +835,7 @@ namespace TestIT.ApiClient.Api
         /// Delete attribute from project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -844,7 +848,7 @@ namespace TestIT.ApiClient.Api
         /// Update attribute of project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -858,7 +862,7 @@ namespace TestIT.ApiClient.Api
         /// Update attribute of project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -871,7 +875,7 @@ namespace TestIT.ApiClient.Api
         /// Get active Project TestRuns
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User runs method execution  System returns active testruns
+        ///   Use case    User sets project internal or global identifier    User runs method execution    System returns active testruns
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -883,7 +887,7 @@ namespace TestIT.ApiClient.Api
         /// Get active Project TestRuns
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User runs method execution  System returns active testruns
+        ///   Use case    User sets project internal or global identifier    User runs method execution    System returns active testruns
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -894,7 +898,7 @@ namespace TestIT.ApiClient.Api
         /// Get Project TestRuns full models
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User sets query params  User runs method execution  System returns project test runs full models
+        ///   Use case    User sets project internal or global identifier    User sets query params    User runs method execution    System returns project test runs full models
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -920,7 +924,7 @@ namespace TestIT.ApiClient.Api
         /// Get Project TestRuns full models
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User sets query params  User runs method execution  System returns project test runs full models
+        ///   Use case    User sets project internal or global identifier    User sets query params    User runs method execution    System returns project test runs full models
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -1047,7 +1051,7 @@ namespace TestIT.ApiClient.Api
         /// Get projects short models
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets query params  User runs method execution  System return projects short models
+        ///   Use case    User sets query params    User runs method execution    System return projects short models
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getShortProjectsApiModel"> (optional)</param>
@@ -1059,7 +1063,7 @@ namespace TestIT.ApiClient.Api
         /// Get projects short models
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets query params  User runs method execution  System return projects short models
+        ///   Use case    User sets query params    User runs method execution    System return projects short models
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getShortProjectsApiModel"> (optional)</param>
@@ -1070,7 +1074,7 @@ namespace TestIT.ApiClient.Api
         /// Create project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project parameters (listed in request example) and runs method execution  System creates project  System returns project model (example listed in response parameters)
+        ///   Use case    User sets project parameters (listed in request example) and runs method execution    System creates project    System returns project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createProjectApiModel"> (optional)</param>
@@ -1082,7 +1086,7 @@ namespace TestIT.ApiClient.Api
         /// Create project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project parameters (listed in request example) and runs method execution  System creates project  System returns project model (example listed in response parameters)
+        ///   Use case    User sets project parameters (listed in request example) and runs method execution    System creates project    System returns project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createProjectApiModel"> (optional)</param>
@@ -1116,7 +1120,7 @@ namespace TestIT.ApiClient.Api
         /// Get all projects
         /// </summary>
         /// <remarks>
-        ///  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted projects  [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted  If User did not set isDeleted field value, System search all projects  System returns array of all found projects(listed in response model)
+        ///   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted projects    [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted    If User did not set isDeleted field value, System search all projects    System returns array of all found projects(listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -1135,7 +1139,7 @@ namespace TestIT.ApiClient.Api
         /// Get all projects
         /// </summary>
         /// <remarks>
-        ///  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted projects  [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted  If User did not set isDeleted field value, System search all projects  System returns array of all found projects(listed in response model)
+        ///   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted projects    [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted    If User did not set isDeleted field value, System search all projects    System returns array of all found projects(listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -1153,7 +1157,7 @@ namespace TestIT.ApiClient.Api
         /// Get namespaces of autotests in project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and runs method execution  System search project  System search all autotest related to the project  System returns array of autotest with namespaces and classnames (listed in response)
+        ///   Use case    User sets project internal or global identifier and runs method execution    System search project    System search all autotest related to the project    System returns array of autotest with namespaces and classnames (listed in response)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -1165,7 +1169,7 @@ namespace TestIT.ApiClient.Api
         /// Get namespaces of autotests in project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and runs method execution  System search project  System search all autotest related to the project  System returns array of autotest with namespaces and classnames (listed in response)
+        ///   Use case    User sets project internal or global identifier and runs method execution    System search project    System search all autotest related to the project    System returns array of autotest with namespaces and classnames (listed in response)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -1176,7 +1180,7 @@ namespace TestIT.ApiClient.Api
         /// Get project by ID
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and runs method execution  System search project  System returns project (example listed in response parameters)
+        ///   Use case    User sets project internal or global identifier and runs method execution    System search project    System returns project (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -1188,7 +1192,7 @@ namespace TestIT.ApiClient.Api
         /// Get project by ID
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and runs method execution  System search project  System returns project (example listed in response parameters)
+        ///   Use case    User sets project internal or global identifier and runs method execution    System search project    System returns project (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -1199,7 +1203,7 @@ namespace TestIT.ApiClient.Api
         /// Get project test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project  [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all v related to project  System returns array of found test plans (listed in response model)
+        ///   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project    [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted    [Optional] If User did not set isDeleted field value, System search all v related to project    System returns array of found test plans (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -1212,7 +1216,7 @@ namespace TestIT.ApiClient.Api
         /// Get project test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project  [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all v related to project  System returns array of found test plans (listed in response model)
+        ///   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project    [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted    [Optional] If User did not set isDeleted field value, System search all v related to project    System returns array of found test plans (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -1224,7 +1228,7 @@ namespace TestIT.ApiClient.Api
         /// Get project test runs
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all test runs related to project  System returns array of found test runs (listed in response model)
+        ///   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all test runs related to project    System returns array of found test runs (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -1248,7 +1252,7 @@ namespace TestIT.ApiClient.Api
         /// Get project test runs
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all test runs related to project  System returns array of found test runs (listed in response model)
+        ///   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all test runs related to project    System returns array of found test runs (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -1271,7 +1275,7 @@ namespace TestIT.ApiClient.Api
         /// Update project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project parameters (listed in request example) and runs method execution  System updates project  System returns updated project model (example listed in response parameters)
+        ///   Use case    User sets project parameters (listed in request example) and runs method execution    System updates project    System returns updated project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateProjectApiModel"> (optional)</param>
@@ -1283,7 +1287,7 @@ namespace TestIT.ApiClient.Api
         /// Update project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project parameters (listed in request example) and runs method execution  System updates project  System returns updated project model (example listed in response parameters)
+        ///   Use case    User sets project parameters (listed in request example) and runs method execution    System updates project    System returns updated project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateProjectApiModel"> (optional)</param>
@@ -1504,29 +1508,29 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Add global attributes to project  Use case  User sets project internal or global identifier and attributes identifiers  System search project  System relates global attributes with project  System returns no content response
+        /// Add global attributes to project   Use case    User sets project internal or global identifier and attributes identifiers    System search project    System relates global attributes with project    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="requestBody"> (optional)</param>
         /// <returns></returns>
-        public void AddGlobaAttributesToProject(string id, List<Guid> requestBody = default(List<Guid>))
+        public void AddGlobalAttributesToProject(string id, List<Guid> requestBody = default(List<Guid>))
         {
-            AddGlobaAttributesToProjectWithHttpInfo(id, requestBody);
+            AddGlobalAttributesToProjectWithHttpInfo(id, requestBody);
         }
 
         /// <summary>
-        /// Add global attributes to project  Use case  User sets project internal or global identifier and attributes identifiers  System search project  System relates global attributes with project  System returns no content response
+        /// Add global attributes to project   Use case    User sets project internal or global identifier and attributes identifiers    System search project    System relates global attributes with project    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="requestBody"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> AddGlobaAttributesToProjectWithHttpInfo(string id, List<Guid> requestBody = default(List<Guid>))
+        public TestIT.ApiClient.Client.ApiResponse<Object> AddGlobalAttributesToProjectWithHttpInfo(string id, List<Guid> requestBody = default(List<Guid>))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'id' when calling ProjectsApi->AddGlobaAttributesToProject");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'id' when calling ProjectsApi->AddGlobalAttributesToProject");
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1559,7 +1563,7 @@ namespace TestIT.ApiClient.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("AddGlobaAttributesToProject", localVarResponse);
+                Exception _exception = this.ExceptionFactory("AddGlobalAttributesToProject", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1567,31 +1571,31 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Add global attributes to project  Use case  User sets project internal or global identifier and attributes identifiers  System search project  System relates global attributes with project  System returns no content response
+        /// Add global attributes to project   Use case    User sets project internal or global identifier and attributes identifiers    System search project    System relates global attributes with project    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="requestBody"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task AddGlobaAttributesToProjectAsync(string id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task AddGlobalAttributesToProjectAsync(string id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await AddGlobaAttributesToProjectWithHttpInfoAsync(id, requestBody, cancellationToken).ConfigureAwait(false);
+            await AddGlobalAttributesToProjectWithHttpInfoAsync(id, requestBody, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Add global attributes to project  Use case  User sets project internal or global identifier and attributes identifiers  System search project  System relates global attributes with project  System returns no content response
+        /// Add global attributes to project   Use case    User sets project internal or global identifier and attributes identifiers    System search project    System relates global attributes with project    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="requestBody"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> AddGlobaAttributesToProjectWithHttpInfoAsync(string id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> AddGlobalAttributesToProjectWithHttpInfoAsync(string id, List<Guid> requestBody = default(List<Guid>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'id' when calling ProjectsApi->AddGlobaAttributesToProject");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'id' when calling ProjectsApi->AddGlobalAttributesToProject");
 
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1627,7 +1631,7 @@ namespace TestIT.ApiClient.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("AddGlobaAttributesToProject", localVarResponse);
+                Exception _exception = this.ExceptionFactory("AddGlobalAttributesToProject", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1763,10 +1767,11 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global ID of the project</param>
         /// <param name="isDeleted"> (optional)</param>
-        /// <returns>List&lt;AutoTestResultReasonProjectApiResult&gt;</returns>
-        public List<AutoTestResultReasonProjectApiResult> ApiV2ProjectsIdFailureClassesGet(string id, bool? isDeleted = default(bool?))
+        /// <returns>List&lt;FailureCategoryApiResult&gt;</returns>
+        [Obsolete]
+        public List<FailureCategoryApiResult> ApiV2ProjectsIdFailureClassesGet(string id, bool? isDeleted = default(bool?))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<AutoTestResultReasonProjectApiResult>> localVarResponse = ApiV2ProjectsIdFailureClassesGetWithHttpInfo(id, isDeleted);
+            TestIT.ApiClient.Client.ApiResponse<List<FailureCategoryApiResult>> localVarResponse = ApiV2ProjectsIdFailureClassesGetWithHttpInfo(id, isDeleted);
             return localVarResponse.Data;
         }
 
@@ -1776,8 +1781,9 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique or global ID of the project</param>
         /// <param name="isDeleted"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;AutoTestResultReasonProjectApiResult&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<AutoTestResultReasonProjectApiResult>> ApiV2ProjectsIdFailureClassesGetWithHttpInfo(string id, bool? isDeleted = default(bool?))
+        /// <returns>ApiResponse of List&lt;FailureCategoryApiResult&gt;</returns>
+        [Obsolete]
+        public TestIT.ApiClient.Client.ApiResponse<List<FailureCategoryApiResult>> ApiV2ProjectsIdFailureClassesGetWithHttpInfo(string id, bool? isDeleted = default(bool?))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1812,7 +1818,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<AutoTestResultReasonProjectApiResult>>("/api/v2/projects/{id}/failureClasses", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<FailureCategoryApiResult>>("/api/v2/projects/{id}/failureClasses", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1830,10 +1836,11 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the project</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;AutoTestResultReasonProjectApiResult&gt;</returns>
-        public async System.Threading.Tasks.Task<List<AutoTestResultReasonProjectApiResult>> ApiV2ProjectsIdFailureClassesGetAsync(string id, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;FailureCategoryApiResult&gt;</returns>
+        [Obsolete]
+        public async System.Threading.Tasks.Task<List<FailureCategoryApiResult>> ApiV2ProjectsIdFailureClassesGetAsync(string id, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            TestIT.ApiClient.Client.ApiResponse<List<AutoTestResultReasonProjectApiResult>> localVarResponse = await ApiV2ProjectsIdFailureClassesGetWithHttpInfoAsync(id, isDeleted, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<FailureCategoryApiResult>> localVarResponse = await ApiV2ProjectsIdFailureClassesGetWithHttpInfoAsync(id, isDeleted, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1844,8 +1851,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the project</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;AutoTestResultReasonProjectApiResult&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<AutoTestResultReasonProjectApiResult>>> ApiV2ProjectsIdFailureClassesGetWithHttpInfoAsync(string id, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;FailureCategoryApiResult&gt;)</returns>
+        [Obsolete]
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<FailureCategoryApiResult>>> ApiV2ProjectsIdFailureClassesGetWithHttpInfoAsync(string id, bool? isDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1883,7 +1891,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<AutoTestResultReasonProjectApiResult>>("/api/v2/projects/{id}/failureClasses", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<FailureCategoryApiResult>>("/api/v2/projects/{id}/failureClasses", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2018,7 +2026,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Project filters  Use case  User sets project internal or global identifier  User runs method execution  System returns project filters
+        /// Get Project filters   Use case    User sets project internal or global identifier    User runs method execution    System returns project filters
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2030,7 +2038,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Project filters  Use case  User sets project internal or global identifier  User runs method execution  System returns project filters
+        /// Get Project filters   Use case    User sets project internal or global identifier    User runs method execution    System returns project filters
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2078,7 +2086,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Project filters  Use case  User sets project internal or global identifier  User runs method execution  System returns project filters
+        /// Get Project filters   Use case    User sets project internal or global identifier    User runs method execution    System returns project filters
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2091,7 +2099,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Project filters  Use case  User sets project internal or global identifier  User runs method execution  System returns project filters
+        /// Get Project filters   Use case    User sets project internal or global identifier    User runs method execution    System returns project filters
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2512,7 +2520,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete attribute from project&#39;s test plans  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+        /// Delete attribute from project&#39;s test plans   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2525,7 +2533,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete attribute from project&#39;s test plans  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+        /// Delete attribute from project&#39;s test plans   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2576,7 +2584,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete attribute from project&#39;s test plans  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+        /// Delete attribute from project&#39;s test plans   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2590,7 +2598,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete attribute from project&#39;s test plans  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+        /// Delete attribute from project&#39;s test plans   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2645,7 +2653,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update attribute of project&#39;s test plans  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+        /// Update attribute of project&#39;s test plans   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2658,7 +2666,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update attribute of project&#39;s test plans  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+        /// Update attribute of project&#39;s test plans   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2710,7 +2718,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update attribute of project&#39;s test plans  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+        /// Update attribute of project&#39;s test plans   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2724,7 +2732,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update attribute of project&#39;s test plans  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+        /// Update attribute of project&#39;s test plans   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2780,7 +2788,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get active Project TestRuns  Use case  User sets project internal or global identifier  User runs method execution  System returns active testruns
+        /// Get active Project TestRuns   Use case    User sets project internal or global identifier    User runs method execution    System returns active testruns
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2792,7 +2800,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get active Project TestRuns  Use case  User sets project internal or global identifier  User runs method execution  System returns active testruns
+        /// Get active Project TestRuns   Use case    User sets project internal or global identifier    User runs method execution    System returns active testruns
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2840,7 +2848,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get active Project TestRuns  Use case  User sets project internal or global identifier  User runs method execution  System returns active testruns
+        /// Get active Project TestRuns   Use case    User sets project internal or global identifier    User runs method execution    System returns active testruns
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2853,7 +2861,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get active Project TestRuns  Use case  User sets project internal or global identifier  User runs method execution  System returns active testruns
+        /// Get active Project TestRuns   Use case    User sets project internal or global identifier    User runs method execution    System returns active testruns
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2905,7 +2913,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Project TestRuns full models  Use case  User sets project internal or global identifier  User sets query params  User runs method execution  System returns project test runs full models
+        /// Get Project TestRuns full models   Use case    User sets project internal or global identifier    User sets query params    User runs method execution    System returns project test runs full models
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2931,7 +2939,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Project TestRuns full models  Use case  User sets project internal or global identifier  User sets query params  User runs method execution  System returns project test runs full models
+        /// Get Project TestRuns full models   Use case    User sets project internal or global identifier    User sets query params    User runs method execution    System returns project test runs full models
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -3049,7 +3057,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Project TestRuns full models  Use case  User sets project internal or global identifier  User sets query params  User runs method execution  System returns project test runs full models
+        /// Get Project TestRuns full models   Use case    User sets project internal or global identifier    User sets query params    User runs method execution    System returns project test runs full models
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -3076,7 +3084,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Project TestRuns full models  Use case  User sets project internal or global identifier  User sets query params  User runs method execution  System returns project test runs full models
+        /// Get Project TestRuns full models   Use case    User sets project internal or global identifier    User sets query params    User runs method execution    System returns project test runs full models
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -3740,7 +3748,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get projects short models  Use case  User sets query params  User runs method execution  System return projects short models
+        /// Get projects short models   Use case    User sets query params    User runs method execution    System return projects short models
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getShortProjectsApiModel"> (optional)</param>
@@ -3752,7 +3760,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get projects short models  Use case  User sets query params  User runs method execution  System return projects short models
+        /// Get projects short models   Use case    User sets query params    User runs method execution    System return projects short models
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getShortProjectsApiModel"> (optional)</param>
@@ -3797,7 +3805,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get projects short models  Use case  User sets query params  User runs method execution  System return projects short models
+        /// Get projects short models   Use case    User sets query params    User runs method execution    System return projects short models
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getShortProjectsApiModel"> (optional)</param>
@@ -3810,7 +3818,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get projects short models  Use case  User sets query params  User runs method execution  System return projects short models
+        /// Get projects short models   Use case    User sets query params    User runs method execution    System return projects short models
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getShortProjectsApiModel"> (optional)</param>
@@ -3859,7 +3867,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create project  Use case  User sets project parameters (listed in request example) and runs method execution  System creates project  System returns project model (example listed in response parameters)
+        /// Create project   Use case    User sets project parameters (listed in request example) and runs method execution    System creates project    System returns project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createProjectApiModel"> (optional)</param>
@@ -3871,7 +3879,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create project  Use case  User sets project parameters (listed in request example) and runs method execution  System creates project  System returns project model (example listed in response parameters)
+        /// Create project   Use case    User sets project parameters (listed in request example) and runs method execution    System creates project    System returns project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createProjectApiModel"> (optional)</param>
@@ -3916,7 +3924,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create project  Use case  User sets project parameters (listed in request example) and runs method execution  System creates project  System returns project model (example listed in response parameters)
+        /// Create project   Use case    User sets project parameters (listed in request example) and runs method execution    System creates project    System returns project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createProjectApiModel"> (optional)</param>
@@ -3929,7 +3937,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create project  Use case  User sets project parameters (listed in request example) and runs method execution  System creates project  System returns project model (example listed in response parameters)
+        /// Create project   Use case    User sets project parameters (listed in request example) and runs method execution    System creates project    System returns project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createProjectApiModel"> (optional)</param>
@@ -4101,7 +4109,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all projects  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted projects  [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted  If User did not set isDeleted field value, System search all projects  System returns array of all found projects(listed in response model)
+        /// Get all projects   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted projects    [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted    If User did not set isDeleted field value, System search all projects    System returns array of all found projects(listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -4120,7 +4128,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all projects  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted projects  [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted  If User did not set isDeleted field value, System search all projects  System returns array of all found projects(listed in response model)
+        /// Get all projects   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted projects    [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted    If User did not set isDeleted field value, System search all projects    System returns array of all found projects(listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -4198,7 +4206,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all projects  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted projects  [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted  If User did not set isDeleted field value, System search all projects  System returns array of all found projects(listed in response model)
+        /// Get all projects   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted projects    [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted    If User did not set isDeleted field value, System search all projects    System returns array of all found projects(listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -4218,7 +4226,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all projects  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted projects  [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted  If User did not set isDeleted field value, System search all projects  System returns array of all found projects(listed in response model)
+        /// Get all projects   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted projects    [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted    If User did not set isDeleted field value, System search all projects    System returns array of all found projects(listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -4300,7 +4308,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get namespaces of autotests in project  Use case  User sets project internal or global identifier and runs method execution  System search project  System search all autotest related to the project  System returns array of autotest with namespaces and classnames (listed in response)
+        /// Get namespaces of autotests in project   Use case    User sets project internal or global identifier and runs method execution    System search project    System search all autotest related to the project    System returns array of autotest with namespaces and classnames (listed in response)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4312,7 +4320,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get namespaces of autotests in project  Use case  User sets project internal or global identifier and runs method execution  System search project  System search all autotest related to the project  System returns array of autotest with namespaces and classnames (listed in response)
+        /// Get namespaces of autotests in project   Use case    User sets project internal or global identifier and runs method execution    System search project    System search all autotest related to the project    System returns array of autotest with namespaces and classnames (listed in response)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4360,7 +4368,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get namespaces of autotests in project  Use case  User sets project internal or global identifier and runs method execution  System search project  System search all autotest related to the project  System returns array of autotest with namespaces and classnames (listed in response)
+        /// Get namespaces of autotests in project   Use case    User sets project internal or global identifier and runs method execution    System search project    System search all autotest related to the project    System returns array of autotest with namespaces and classnames (listed in response)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4373,7 +4381,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get namespaces of autotests in project  Use case  User sets project internal or global identifier and runs method execution  System search project  System search all autotest related to the project  System returns array of autotest with namespaces and classnames (listed in response)
+        /// Get namespaces of autotests in project   Use case    User sets project internal or global identifier and runs method execution    System search project    System search all autotest related to the project    System returns array of autotest with namespaces and classnames (listed in response)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4425,7 +4433,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project by ID  Use case  User sets project internal or global identifier and runs method execution  System search project  System returns project (example listed in response parameters)
+        /// Get project by ID   Use case    User sets project internal or global identifier and runs method execution    System search project    System returns project (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4437,7 +4445,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project by ID  Use case  User sets project internal or global identifier and runs method execution  System search project  System returns project (example listed in response parameters)
+        /// Get project by ID   Use case    User sets project internal or global identifier and runs method execution    System search project    System returns project (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4485,7 +4493,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project by ID  Use case  User sets project internal or global identifier and runs method execution  System search project  System returns project (example listed in response parameters)
+        /// Get project by ID   Use case    User sets project internal or global identifier and runs method execution    System search project    System returns project (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4498,7 +4506,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project by ID  Use case  User sets project internal or global identifier and runs method execution  System search project  System returns project (example listed in response parameters)
+        /// Get project by ID   Use case    User sets project internal or global identifier and runs method execution    System search project    System returns project (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4550,7 +4558,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project test plans  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project  [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all v related to project  System returns array of found test plans (listed in response model)
+        /// Get project test plans   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project    [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted    [Optional] If User did not set isDeleted field value, System search all v related to project    System returns array of found test plans (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4563,7 +4571,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project test plans  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project  [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all v related to project  System returns array of found test plans (listed in response model)
+        /// Get project test plans   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project    [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted    [Optional] If User did not set isDeleted field value, System search all v related to project    System returns array of found test plans (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4616,7 +4624,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project test plans  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project  [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all v related to project  System returns array of found test plans (listed in response model)
+        /// Get project test plans   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project    [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted    [Optional] If User did not set isDeleted field value, System search all v related to project    System returns array of found test plans (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4630,7 +4638,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project test plans  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project  [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all v related to project  System returns array of found test plans (listed in response model)
+        /// Get project test plans   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project    [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted    [Optional] If User did not set isDeleted field value, System search all v related to project    System returns array of found test plans (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4687,7 +4695,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project test runs  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all test runs related to project  System returns array of found test runs (listed in response model)
+        /// Get project test runs   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all test runs related to project    System returns array of found test runs (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4711,7 +4719,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project test runs  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all test runs related to project  System returns array of found test runs (listed in response model)
+        /// Get project test runs   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all test runs related to project    System returns array of found test runs (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4807,7 +4815,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project test runs  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all test runs related to project  System returns array of found test runs (listed in response model)
+        /// Get project test runs   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all test runs related to project    System returns array of found test runs (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4832,7 +4840,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project test runs  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all test runs related to project  System returns array of found test runs (listed in response model)
+        /// Get project test runs   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all test runs related to project    System returns array of found test runs (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4932,7 +4940,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update project  Use case  User sets project parameters (listed in request example) and runs method execution  System updates project  System returns updated project model (example listed in response parameters)
+        /// Update project   Use case    User sets project parameters (listed in request example) and runs method execution    System updates project    System returns updated project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateProjectApiModel"> (optional)</param>
@@ -4943,7 +4951,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update project  Use case  User sets project parameters (listed in request example) and runs method execution  System updates project  System returns updated project model (example listed in response parameters)
+        /// Update project   Use case    User sets project parameters (listed in request example) and runs method execution    System updates project    System returns updated project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateProjectApiModel"> (optional)</param>
@@ -4988,7 +4996,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update project  Use case  User sets project parameters (listed in request example) and runs method execution  System updates project  System returns updated project model (example listed in response parameters)
+        /// Update project   Use case    User sets project parameters (listed in request example) and runs method execution    System updates project    System returns updated project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateProjectApiModel"> (optional)</param>
@@ -5000,7 +5008,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update project  Use case  User sets project parameters (listed in request example) and runs method execution  System updates project  System returns updated project model (example listed in response parameters)
+        /// Update project   Use case    User sets project parameters (listed in request example) and runs method execution    System updates project    System returns updated project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateProjectApiModel"> (optional)</param>

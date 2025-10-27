@@ -1,3 +1,4 @@
 1. cd src
 2. dotnet build
-3. pipelines checks
+3. VALIDATE FilterOperator Changes
+4. pipelines checks

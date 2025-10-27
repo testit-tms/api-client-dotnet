@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost*
 
 <a id="apiv2projectsprojectidsettingsautotestspost"></a>
 # **ApiV2ProjectsProjectIdSettingsAutotestsPost**
-> void ApiV2ProjectsProjectIdSettingsAutotestsPost (string projectId, AutoTestProjectSettingsPostModel autoTestProjectSettingsPostModel = null)
+> void ApiV2ProjectsProjectIdSettingsAutotestsPost (string projectId, AutoTestProjectSettingsApiModel autoTestProjectSettingsApiModel = null)
 
 Set autotest project settings.
 
@@ -39,13 +39,13 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectSettingsApi(httpClient, config, httpClientHandler);
-            var projectId = "projectId_example";  // string | 
-            var autoTestProjectSettingsPostModel = new AutoTestProjectSettingsPostModel(); // AutoTestProjectSettingsPostModel |  (optional) 
+            var projectId = "projectId_example";  // string | Internal (UUID) or global (integer) identifier
+            var autoTestProjectSettingsApiModel = new AutoTestProjectSettingsApiModel(); // AutoTestProjectSettingsApiModel |  (optional) 
 
             try
             {
                 // Set autotest project settings.
-                apiInstance.ApiV2ProjectsProjectIdSettingsAutotestsPost(projectId, autoTestProjectSettingsPostModel);
+                apiInstance.ApiV2ProjectsProjectIdSettingsAutotestsPost(projectId, autoTestProjectSettingsApiModel);
             }
             catch (ApiException  e)
             {
@@ -65,7 +65,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Set autotest project settings.
-    apiInstance.ApiV2ProjectsProjectIdSettingsAutotestsPostWithHttpInfo(projectId, autoTestProjectSettingsPostModel);
+    apiInstance.ApiV2ProjectsProjectIdSettingsAutotestsPostWithHttpInfo(projectId, autoTestProjectSettingsApiModel);
 }
 catch (ApiException e)
 {
@@ -79,8 +79,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **projectId** | **string** |  |  |
-| **autoTestProjectSettingsPostModel** | [**AutoTestProjectSettingsPostModel**](AutoTestProjectSettingsPostModel.md) |  | [optional]  |
+| **projectId** | **string** | Internal (UUID) or global (integer) identifier |  |
+| **autoTestProjectSettingsApiModel** | [**AutoTestProjectSettingsApiModel**](AutoTestProjectSettingsApiModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -111,7 +111,7 @@ void (empty response body)
 
 <a id="getautotestprojectsettings"></a>
 # **GetAutotestProjectSettings**
-> AutoTestProjectSettingsGetModel GetAutotestProjectSettings (string projectId)
+> AutoTestProjectSettingsApiResult GetAutotestProjectSettings (string projectId)
 
 Get autotest project settings.
 
@@ -141,12 +141,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProjectSettingsApi(httpClient, config, httpClientHandler);
-            var projectId = "projectId_example";  // string | 
+            var projectId = "projectId_example";  // string | Internal (UUID) or global (integer) identifier
 
             try
             {
                 // Get autotest project settings.
-                AutoTestProjectSettingsGetModel result = apiInstance.GetAutotestProjectSettings(projectId);
+                AutoTestProjectSettingsApiResult result = apiInstance.GetAutotestProjectSettings(projectId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -167,7 +167,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get autotest project settings.
-    ApiResponse<AutoTestProjectSettingsGetModel> response = apiInstance.GetAutotestProjectSettingsWithHttpInfo(projectId);
+    ApiResponse<AutoTestProjectSettingsApiResult> response = apiInstance.GetAutotestProjectSettingsWithHttpInfo(projectId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -184,11 +184,11 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **projectId** | **string** |  |  |
+| **projectId** | **string** | Internal (UUID) or global (integer) identifier |  |
 
 ### Return type
 
-[**AutoTestProjectSettingsGetModel**](AutoTestProjectSettingsGetModel.md)
+[**AutoTestProjectSettingsApiResult**](AutoTestProjectSettingsApiResult.md)
 
 ### Authorization
 

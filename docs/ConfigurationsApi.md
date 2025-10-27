@@ -631,7 +631,7 @@ void (empty response body)
 
 <a id="apiv2configurationspurgebulkpost"></a>
 # **ApiV2ConfigurationsPurgeBulkPost**
-> void ApiV2ConfigurationsPurgeBulkPost (ConfigurationSelectModel configurationSelectModel = null)
+> int ApiV2ConfigurationsPurgeBulkPost (ConfigurationSelectModel configurationSelectModel = null)
 
 Permanently delete multiple archived configurations
 
@@ -666,7 +666,8 @@ namespace Example
             try
             {
                 // Permanently delete multiple archived configurations
-                apiInstance.ApiV2ConfigurationsPurgeBulkPost(configurationSelectModel);
+                int result = apiInstance.ApiV2ConfigurationsPurgeBulkPost(configurationSelectModel);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -686,7 +687,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Permanently delete multiple archived configurations
-    apiInstance.ApiV2ConfigurationsPurgeBulkPostWithHttpInfo(configurationSelectModel);
+    ApiResponse<int> response = apiInstance.ApiV2ConfigurationsPurgeBulkPostWithHttpInfo(configurationSelectModel);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -704,7 +708,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+**int**
 
 ### Authorization
 
@@ -1053,7 +1057,7 @@ catch (ApiException e)
 
 Create Configuration
 
- Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
+  Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
 
 ### Example
 ```csharp
@@ -1159,7 +1163,7 @@ catch (ApiException e)
 
 Get configuration by internal or global ID
 
- Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
+  Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
 
 ### Example
 ```csharp

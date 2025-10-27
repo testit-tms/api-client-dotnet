@@ -47,7 +47,9 @@ namespace TestIT.ApiClient.Model
         /// <param name="skippedTestPoints">skippedTestPoints (required).</param>
         /// <param name="blockedTestPoints">blockedTestPoints (required).</param>
         /// <param name="levelAvatarEnabled">levelAvatarEnabled (required).</param>
-        public UserRankModel(int score = default(int), int workItemsCreated = default(int), int passedTestPoints = default(int), int failedTestPoints = default(int), int skippedTestPoints = default(int), int blockedTestPoints = default(int), bool levelAvatarEnabled = default(bool))
+        /// <param name="succeededTestPoints">succeededTestPoints (required).</param>
+        /// <param name="incompleteTestPoints">incompleteTestPoints (required).</param>
+        public UserRankModel(int score = default(int), int workItemsCreated = default(int), int passedTestPoints = default(int), int failedTestPoints = default(int), int skippedTestPoints = default(int), int blockedTestPoints = default(int), bool levelAvatarEnabled = default(bool), int succeededTestPoints = default(int), int incompleteTestPoints = default(int))
         {
             this.Score = score;
             this.WorkItemsCreated = workItemsCreated;
@@ -56,6 +58,8 @@ namespace TestIT.ApiClient.Model
             this.SkippedTestPoints = skippedTestPoints;
             this.BlockedTestPoints = blockedTestPoints;
             this.LevelAvatarEnabled = levelAvatarEnabled;
+            this.SucceededTestPoints = succeededTestPoints;
+            this.IncompleteTestPoints = incompleteTestPoints;
         }
 
         /// <summary>
@@ -74,6 +78,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets PassedTestPoints
         /// </summary>
         [DataMember(Name = "passedTestPoints", IsRequired = true, EmitDefaultValue = true)]
+        [Obsolete]
         public int PassedTestPoints { get; set; }
 
         /// <summary>
@@ -86,12 +91,14 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets SkippedTestPoints
         /// </summary>
         [DataMember(Name = "skippedTestPoints", IsRequired = true, EmitDefaultValue = true)]
+        [Obsolete]
         public int SkippedTestPoints { get; set; }
 
         /// <summary>
         /// Gets or Sets BlockedTestPoints
         /// </summary>
         [DataMember(Name = "blockedTestPoints", IsRequired = true, EmitDefaultValue = true)]
+        [Obsolete]
         public int BlockedTestPoints { get; set; }
 
         /// <summary>
@@ -99,6 +106,18 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         [DataMember(Name = "levelAvatarEnabled", IsRequired = true, EmitDefaultValue = true)]
         public bool LevelAvatarEnabled { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SucceededTestPoints
+        /// </summary>
+        [DataMember(Name = "succeededTestPoints", IsRequired = true, EmitDefaultValue = true)]
+        public int SucceededTestPoints { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IncompleteTestPoints
+        /// </summary>
+        [DataMember(Name = "incompleteTestPoints", IsRequired = true, EmitDefaultValue = true)]
+        public int IncompleteTestPoints { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -115,6 +134,8 @@ namespace TestIT.ApiClient.Model
             sb.Append("  SkippedTestPoints: ").Append(SkippedTestPoints).Append("\n");
             sb.Append("  BlockedTestPoints: ").Append(BlockedTestPoints).Append("\n");
             sb.Append("  LevelAvatarEnabled: ").Append(LevelAvatarEnabled).Append("\n");
+            sb.Append("  SucceededTestPoints: ").Append(SucceededTestPoints).Append("\n");
+            sb.Append("  IncompleteTestPoints: ").Append(IncompleteTestPoints).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

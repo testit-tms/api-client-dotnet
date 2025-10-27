@@ -1,12 +1,10 @@
-# TestIT.ApiClient.Model.AutoTestResultReasonGroupApiResult
+# TestIT.ApiClient.Model.WorkItemIdApiModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**FieldValue** | **Object** | Group field value | [optional] 
-**DisplayFieldValue** | **Object** | Group display field value | [optional] 
-**Count** | **int** | Group entries count | 
+**Id** | **string** | Work Item ID or Global ID | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

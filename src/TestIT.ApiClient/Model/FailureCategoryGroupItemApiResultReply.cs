@@ -27,39 +27,43 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// WorkItemIdModel
+    /// FailureCategoryGroupItemApiResultReply
     /// </summary>
-    [DataContract(Name = "WorkItemIdModel")]
-    public partial class WorkItemIdModel : IValidatableObject
+    [DataContract(Name = "FailureCategoryGroupItemApiResultReply")]
+    public partial class FailureCategoryGroupItemApiResultReply : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkItemIdModel" /> class.
+        /// Initializes a new instance of the <see cref="FailureCategoryGroupItemApiResultReply" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WorkItemIdModel() { }
+        protected FailureCategoryGroupItemApiResultReply() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkItemIdModel" /> class.
+        /// Initializes a new instance of the <see cref="FailureCategoryGroupItemApiResultReply" /> class.
         /// </summary>
-        /// <param name="id">Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format (required).</param>
-        public WorkItemIdModel(string id = default(string))
+        /// <param name="data">data (required).</param>
+        /// <param name="totalCount">totalCount (required).</param>
+        public FailureCategoryGroupItemApiResultReply(List<FailureCategoryGroupItemApiResult> data = default(List<FailureCategoryGroupItemApiResult>), int totalCount = default(int))
         {
-            // to ensure "id" is required (not null)
-            if (id == null)
+            // to ensure "data" is required (not null)
+            if (data == null)
             {
-                throw new ArgumentNullException("id is a required property for WorkItemIdModel and cannot be null");
+                throw new ArgumentNullException("data is a required property for FailureCategoryGroupItemApiResultReply and cannot be null");
             }
-            this.Id = id;
+            this.Data = data;
+            this.TotalCount = totalCount;
         }
 
         /// <summary>
-        /// Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format
+        /// Gets or Sets Data
         /// </summary>
-        /// <value>Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format</value>
-        /*
-        <example>b63772c7-7c31-4748-8ff9-cc13975a106c</example>
-        */
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
-        public string Id { get; set; }
+        [DataMember(Name = "data", IsRequired = true, EmitDefaultValue = true)]
+        public List<FailureCategoryGroupItemApiResult> Data { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TotalCount
+        /// </summary>
+        [DataMember(Name = "totalCount", IsRequired = true, EmitDefaultValue = true)]
+        public int TotalCount { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -68,8 +72,9 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WorkItemIdModel {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("class FailureCategoryGroupItemApiResultReply {\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  TotalCount: ").Append(TotalCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,12 +95,6 @@ namespace TestIT.ApiClient.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // Id (string) minLength
-            if (this.Id != null && this.Id.Length < 1)
-            {
-                yield return new ValidationResult("Invalid value for Id, length must be greater than 1.", new [] { "Id" });
-            }
-
             yield break;
         }
     }

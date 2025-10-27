@@ -27,10 +27,10 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// AutoTestResultReasonsProjectApiResult
+    /// FailureCategoryItemApiResult
     /// </summary>
-    [DataContract(Name = "AutoTestResultReasonsProjectApiResult")]
-    public partial class AutoTestResultReasonsProjectApiResult : IValidatableObject
+    [DataContract(Name = "FailureCategoryItemApiResult")]
+    public partial class FailureCategoryItemApiResult : IValidatableObject
     {
 
         /// <summary>
@@ -40,12 +40,12 @@ namespace TestIT.ApiClient.Model
         [DataMember(Name = "failureCategory", IsRequired = true, EmitDefaultValue = true)]
         public FailureCategory FailureCategory { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="AutoTestResultReasonsProjectApiResult" /> class.
+        /// Initializes a new instance of the <see cref="FailureCategoryItemApiResult" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected AutoTestResultReasonsProjectApiResult() { }
+        protected FailureCategoryItemApiResult() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="AutoTestResultReasonsProjectApiResult" /> class.
+        /// Initializes a new instance of the <see cref="FailureCategoryItemApiResult" /> class.
         /// </summary>
         /// <param name="id">Failure category identifier (required).</param>
         /// <param name="name">Failure category name.</param>
@@ -58,7 +58,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="regexCount">Regexes count (required).</param>
         /// <param name="projects">Projects names (required).</param>
         /// <param name="projectIds">Projects identifiers (required).</param>
-        public AutoTestResultReasonsProjectApiResult(Guid id = default(Guid), string name = default(string), FailureCategory failureCategory = default(FailureCategory), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), int failureCategoryId = default(int), int regexCount = default(int), List<ProjectNameApiResult> projects = default(List<ProjectNameApiResult>), List<Guid> projectIds = default(List<Guid>))
+        public FailureCategoryItemApiResult(Guid id = default(Guid), string name = default(string), FailureCategory failureCategory = default(FailureCategory), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), int failureCategoryId = default(int), int regexCount = default(int), List<ProjectNameApiResult> projects = default(List<ProjectNameApiResult>), List<Guid> projectIds = default(List<Guid>))
         {
             this.Id = id;
             this.FailureCategory = failureCategory;
@@ -69,13 +69,13 @@ namespace TestIT.ApiClient.Model
             // to ensure "projects" is required (not null)
             if (projects == null)
             {
-                throw new ArgumentNullException("projects is a required property for AutoTestResultReasonsProjectApiResult and cannot be null");
+                throw new ArgumentNullException("projects is a required property for FailureCategoryItemApiResult and cannot be null");
             }
             this.Projects = projects;
             // to ensure "projectIds" is required (not null)
             if (projectIds == null)
             {
-                throw new ArgumentNullException("projectIds is a required property for AutoTestResultReasonsProjectApiResult and cannot be null");
+                throw new ArgumentNullException("projectIds is a required property for FailureCategoryItemApiResult and cannot be null");
             }
             this.ProjectIds = projectIds;
             this.Name = name;
@@ -160,7 +160,7 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AutoTestResultReasonsProjectApiResult {\n");
+            sb.Append("class FailureCategoryItemApiResult {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  FailureCategory: ").Append(FailureCategory).Append("\n");

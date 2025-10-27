@@ -58,10 +58,10 @@ namespace TestIT.ApiClient.Model
         /// <param name="className">className.</param>
         /// <param name="isEmptyClassName">isEmptyClassName.</param>
         /// <param name="lastTestResultOutcome">lastTestResultOutcome.</param>
-        /// <param name="lastTestResultStatusCode">lastTestResultStatusCode.</param>
+        /// <param name="lastTestResultStatusCodes">lastTestResultStatusCodes.</param>
         /// <param name="externalKey">externalKey.</param>
         /// <param name="lastTestResultConfigurationIds">lastTestResultConfigurationIds.</param>
-        public AutoTestFilterModel(List<Guid> projectIds = default(List<Guid>), List<string> externalIds = default(List<string>), List<long> globalIds = default(List<long>), string name = default(string), bool? isFlaky = default(bool?), bool? mustBeApproved = default(bool?), Int64RangeSelectorModel stabilityPercentage = default(Int64RangeSelectorModel), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?), string varNamespace = default(string), bool? isEmptyNamespace = default(bool?), string className = default(string), bool? isEmptyClassName = default(bool?), AutotestResultOutcome? lastTestResultOutcome = default(AutotestResultOutcome?), string lastTestResultStatusCode = default(string), string externalKey = default(string), List<Guid> lastTestResultConfigurationIds = default(List<Guid>))
+        public AutoTestFilterModel(List<Guid> projectIds = default(List<Guid>), List<string> externalIds = default(List<string>), List<long> globalIds = default(List<long>), string name = default(string), bool? isFlaky = default(bool?), bool? mustBeApproved = default(bool?), Int64RangeSelectorModel stabilityPercentage = default(Int64RangeSelectorModel), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?), string varNamespace = default(string), bool? isEmptyNamespace = default(bool?), string className = default(string), bool? isEmptyClassName = default(bool?), AutotestResultOutcome? lastTestResultOutcome = default(AutotestResultOutcome?), List<string> lastTestResultStatusCodes = default(List<string>), string externalKey = default(string), List<Guid> lastTestResultConfigurationIds = default(List<Guid>))
         {
             this.ProjectIds = projectIds;
             this.ExternalIds = externalIds;
@@ -80,7 +80,7 @@ namespace TestIT.ApiClient.Model
             this.ClassName = className;
             this.IsEmptyClassName = isEmptyClassName;
             this.LastTestResultOutcome = lastTestResultOutcome;
-            this.LastTestResultStatusCode = lastTestResultStatusCode;
+            this.LastTestResultStatusCodes = lastTestResultStatusCodes;
             this.ExternalKey = externalKey;
             this.LastTestResultConfigurationIds = lastTestResultConfigurationIds;
         }
@@ -182,10 +182,10 @@ namespace TestIT.ApiClient.Model
         public bool? IsEmptyClassName { get; set; }
 
         /// <summary>
-        /// Gets or Sets LastTestResultStatusCode
+        /// Gets or Sets LastTestResultStatusCodes
         /// </summary>
-        [DataMember(Name = "lastTestResultStatusCode", EmitDefaultValue = true)]
-        public string LastTestResultStatusCode { get; set; }
+        [DataMember(Name = "lastTestResultStatusCodes", EmitDefaultValue = true)]
+        public List<string> LastTestResultStatusCodes { get; set; }
 
         /// <summary>
         /// Gets or Sets ExternalKey
@@ -224,7 +224,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ClassName: ").Append(ClassName).Append("\n");
             sb.Append("  IsEmptyClassName: ").Append(IsEmptyClassName).Append("\n");
             sb.Append("  LastTestResultOutcome: ").Append(LastTestResultOutcome).Append("\n");
-            sb.Append("  LastTestResultStatusCode: ").Append(LastTestResultStatusCode).Append("\n");
+            sb.Append("  LastTestResultStatusCodes: ").Append(LastTestResultStatusCodes).Append("\n");
             sb.Append("  ExternalKey: ").Append(ExternalKey).Append("\n");
             sb.Append("  LastTestResultConfigurationIds: ").Append(LastTestResultConfigurationIds).Append("\n");
             sb.Append("}\n");

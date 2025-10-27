@@ -27,43 +27,49 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// AutoTestResultReasonGroupItemApiResultReply
+    /// FailureCategoryGroupApiResult
     /// </summary>
-    [DataContract(Name = "AutoTestResultReasonGroupItemApiResultReply")]
-    public partial class AutoTestResultReasonGroupItemApiResultReply : IValidatableObject
+    [DataContract(Name = "FailureCategoryGroupApiResult")]
+    public partial class FailureCategoryGroupApiResult : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AutoTestResultReasonGroupItemApiResultReply" /> class.
+        /// Initializes a new instance of the <see cref="FailureCategoryGroupApiResult" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected AutoTestResultReasonGroupItemApiResultReply() { }
+        protected FailureCategoryGroupApiResult() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="AutoTestResultReasonGroupItemApiResultReply" /> class.
+        /// Initializes a new instance of the <see cref="FailureCategoryGroupApiResult" /> class.
         /// </summary>
-        /// <param name="data">data (required).</param>
-        /// <param name="totalCount">totalCount (required).</param>
-        public AutoTestResultReasonGroupItemApiResultReply(List<AutoTestResultReasonGroupItemApiResult> data = default(List<AutoTestResultReasonGroupItemApiResult>), int totalCount = default(int))
+        /// <param name="fieldValue">Group field value.</param>
+        /// <param name="displayFieldValue">Group display field value.</param>
+        /// <param name="count">Group entries count (required).</param>
+        public FailureCategoryGroupApiResult(Object fieldValue = default(Object), Object displayFieldValue = default(Object), int count = default(int))
         {
-            // to ensure "data" is required (not null)
-            if (data == null)
-            {
-                throw new ArgumentNullException("data is a required property for AutoTestResultReasonGroupItemApiResultReply and cannot be null");
-            }
-            this.Data = data;
-            this.TotalCount = totalCount;
+            this.Count = count;
+            this.FieldValue = fieldValue;
+            this.DisplayFieldValue = displayFieldValue;
         }
 
         /// <summary>
-        /// Gets or Sets Data
+        /// Group field value
         /// </summary>
-        [DataMember(Name = "data", IsRequired = true, EmitDefaultValue = true)]
-        public List<AutoTestResultReasonGroupItemApiResult> Data { get; set; }
+        /// <value>Group field value</value>
+        [DataMember(Name = "fieldValue", EmitDefaultValue = true)]
+        public Object FieldValue { get; set; }
 
         /// <summary>
-        /// Gets or Sets TotalCount
+        /// Group display field value
         /// </summary>
-        [DataMember(Name = "totalCount", IsRequired = true, EmitDefaultValue = true)]
-        public int TotalCount { get; set; }
+        /// <value>Group display field value</value>
+        [DataMember(Name = "displayFieldValue", EmitDefaultValue = true)]
+        public Object DisplayFieldValue { get; set; }
+
+        /// <summary>
+        /// Group entries count
+        /// </summary>
+        /// <value>Group entries count</value>
+        [DataMember(Name = "count", IsRequired = true, EmitDefaultValue = true)]
+        public int Count { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -72,9 +78,10 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AutoTestResultReasonGroupItemApiResultReply {\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
-            sb.Append("  TotalCount: ").Append(TotalCount).Append("\n");
+            sb.Append("class FailureCategoryGroupApiResult {\n");
+            sb.Append("  FieldValue: ").Append(FieldValue).Append("\n");
+            sb.Append("  DisplayFieldValue: ").Append(DisplayFieldValue).Append("\n");
+            sb.Append("  Count: ").Append(Count).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
